@@ -1,0 +1,46 @@
+/* The Way: the shared top bar (waybar.js). Same look on every page; nothing here depends on the page's own CSS. */
+.waybar{all:initial;box-sizing:border-box;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px 24px;
+  min-height:64px;padding:12px clamp(16px,5vw,64px);position:relative;z-index:50;
+  background:#052b3c;border-bottom:1px solid #c7ffff22;
+  font:600 12px/1.2 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#e9ffff}
+.waybar *,.waybar *:before,.waybar *:after{box-sizing:border-box}
+.waybar a,.waybar button{all:unset;cursor:pointer;color:#e9ffff;font:inherit;letter-spacing:inherit;text-transform:inherit;opacity:.86}
+.waybar a:hover,.waybar button:hover,.waybar [aria-current=page]{opacity:1}
+.waybar a:focus-visible,.waybar button:focus-visible{outline:2px solid #a7f0e9;outline-offset:3px;border-radius:4px}
+.waybar .wb-logo{font-weight:800;letter-spacing:.22em;opacity:1;justify-self:start}
+.waybar nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.waybar .wb-mid{justify-content:center}
+.waybar .wb-mid a{font-weight:700;opacity:1}
+.waybar .wb-right{justify-content:flex-end;grid-column:3}
+.waybar .wb-pub{grid-column:2}
+.waybar nav a[aria-current=page]{box-shadow:0 1px 0 #a7f0e9aa;padding-bottom:3px}
+.waybar .wb-name,.waybar .wb-pill{display:inline-flex;align-items:center;gap:6px;border:1px solid #c7ffff55;border-radius:100px;
+  padding:7px 14px;opacity:1;text-transform:none;letter-spacing:.02em;font-size:13px;max-width:16em}
+.waybar .wb-name[aria-current=page],.waybar .wb-name[aria-expanded=true]{border-color:#a7f0e9;background:#0a3a50}
+.waybar .wb-name-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.waybar .wb-caret{font-size:10px;opacity:.8}
+.waybar .wb-who{position:relative}
+.waybar .wb-menu{list-style:none;margin:0;padding:8px 0;position:absolute;right:0;top:calc(100% + 8px);min-width:200px;
+  background:#06283a;border:1px solid #c7ffff33;border-radius:14px;box-shadow:0 18px 50px #0008;text-transform:none;letter-spacing:.02em;font-size:14px}
+.waybar .wb-menu[hidden]{display:none}
+.waybar .wb-menu a{display:block;padding:9px 18px;opacity:.92}
+.waybar .wb-menu a:hover,.waybar .wb-menu a:focus-visible{background:#0c3d55;opacity:1;border-radius:0}
+.waybar .wb-sep{height:1px;margin:6px 0;background:#c7ffff22}
+.waybar .wb-burger{display:none}
+@media (max-width:760px){
+  .waybar{grid-template-columns:1fr auto;letter-spacing:.1em}
+  .waybar .wb-right{grid-column:2}
+  .waybar.wb-in .wb-mid,.waybar.wb-in .wb-right{display:none}
+  .waybar.wb-in .wb-burger{display:inline-flex;justify-self:end;border:1px solid #c7ffff55;border-radius:100px;padding:7px 14px;opacity:1}
+  .waybar.wb-open .wb-mid,.waybar.wb-open .wb-right{display:flex;grid-column:1/-1;flex-direction:column;align-items:flex-start;gap:14px;padding:6px 0}
+  .waybar.wb-open .wb-right{padding-top:14px;border-top:1px solid #c7ffff22}
+  .waybar.wb-open .wb-burger{grid-row:1;grid-column:2}
+  .waybar .wb-menu{position:static;margin-top:10px;box-shadow:none;min-width:0;width:100%}
+}
+
+/* One header on every public page: hide the older per-page nav bars wherever the shared bar is present. */
+body:has(#waybar) nav.topbar{display:none}
+@media (max-width:760px){
+  .waybar .wb-pub{grid-column:1/-1;grid-row:2;justify-content:flex-start}
+  .waybar .wb-right{grid-row:1}
+}

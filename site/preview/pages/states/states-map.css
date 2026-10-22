@@ -1,0 +1,12 @@
+.hubmap{max-width:980px;margin:12px auto}
+.usmap-svg{display:block;width:100%;height:auto}
+.us-st path{fill:#4fc7c0;stroke:#020b13;stroke-width:.8;transition:fill .15s}
+.us-st:hover path,.us-st:focus-visible path{fill:#bdfbf4}
+.us-st:focus{outline:none}
+.us-st:focus-visible path{stroke:#fff;stroke-width:2.5}
+.us-lab{font:600 11px Inter,system-ui,sans-serif;fill:#021018;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
+@media(max-width:600px){.us-lab{font-size:14px}}
+.rules{margin:18px 0}
+.rules summary{cursor:pointer;color:#a9f0e7;font-weight:600}
+.rulelist{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px 18px}
+.rulelist a{color:#e9ffff}

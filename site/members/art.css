@@ -1,0 +1,28 @@
+/* Hub card art (members home). Swappable on its own: replace the four SVGs in art/
+   or this file; nothing else depends on it. Remove the <link> to art.css to go back
+   to plain cards. Art is 320x180, transparent background, objects centered. */
+.tiles .tile[href*="guide"],.tiles .tile[href*="map"],.tiles .tile[href*="news"],.tiles .tile[href*="record"],.tiles .tile[href*="findings"],.tiles .tile[href*="cases"]{
+  position:relative;overflow:hidden;padding-top:calc(56.25% + 22px);isolation:isolate;align-content:start}
+.tiles .tile[href*="guide"]:before,.tiles .tile[href*="map"]:before,.tiles .tile[href*="news"]:before,.tiles .tile[href*="record"]:before,.tiles .tile[href*="findings"]:before,.tiles .tile[href*="cases"]:before{
+  content:"";position:absolute;left:0;right:0;top:6px;aspect-ratio:16/9;z-index:-1;
+  background:center/contain no-repeat;transition:transform .35s ease}
+.tiles .tile[href*="guide"]:before{background-image:url(art/guide.svg?v=1)}
+.tiles .tile[href*="news"]:before{background-image:url(art/news.svg?v=1)}
+.tiles .tile[href*="record"]:before,.tiles .tile[href*="findings"]:before{background-image:url(art/record.svg?v=1)}
+.tiles .tile[href*="cases"]:before{background-image:url(art/cases.svg?v=1)}
+/* soft spotlight behind each object so it sits on the card instead of floating */
+.tiles .tile[href*="guide"]:after,.tiles .tile[href*="map"]:after,.tiles .tile[href*="news"]:after,.tiles .tile[href*="record"]:after,.tiles .tile[href*="findings"]:after,.tiles .tile[href*="cases"]:after{
+  content:"";position:absolute;left:0;right:0;top:0;aspect-ratio:16/9;z-index:-2;
+  background:radial-gradient(ellipse 60% 55% at 50% 55%,#a7f0e914,transparent 70%)}
+.tiles .tile[href*="record"]:after,.tiles .tile[href*="findings"]:after,.tiles .tile[href*="cases"]:after{background:radial-gradient(ellipse 60% 55% at 50% 55%,#f1deb012,transparent 70%)}
+.tiles .tile:hover:before{transform:translateY(-3px) scale(1.04)}
+@media (prefers-reduced-motion:reduce){.tiles .tile:before{transition:none}.tiles .tile:hover:before{transform:none}}
+/* The map card draws a live whole-US map instead of a picture: plain states, and the
+   member's own state lit once they have saved it in "Your place". */
+.tiles .tile.us-tile:before{background-image:none}
+.tiles .tile.us-tile .usmap.small{position:absolute;left:12%;right:12%;top:12px;z-index:-1;transition:transform .35s ease}
+.tiles .tile.us-tile:hover .usmap.small{transform:translateY(-3px) scale(1.04)}
+@media (prefers-reduced-motion:reduce){.tiles .tile.us-tile .usmap.small{transition:none}.tiles .tile.us-tile:hover .usmap.small{transform:none}}
+/* Cases page header art (same picture as the home card) */
+.page-art{float:right;width:min(240px,38%);margin:-6px 0 8px 18px}
+@media (max-width:600px){.page-art{float:none;display:block;width:150px;margin:0 0 -4px}}

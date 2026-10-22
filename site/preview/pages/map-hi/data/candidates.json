@@ -1,0 +1,858 @@
+{
+ "source": "Office of Elections candidate filing report, 2026 General Election, status \"In General\" (CSV export Oct 15 2026 16:10)",
+ "statewideOrder": [
+  "governor",
+  "lieutenant_governor",
+  "oha_at_large",
+  "oha_oahu",
+  "oha_maui"
+ ],
+ "raceNames": {
+  "governor": "Governor",
+  "lieutenant_governor": "Lieutenant Governor",
+  "oha_at_large": "Office of Hawaiian Affairs trustee, at large (vote for up to 3)",
+  "oha_oahu": "Office of Hawaiian Affairs trustee, Oahu",
+  "oha_maui": "Office of Hawaiian Affairs trustee, Maui",
+  "us_house:1": "U.S. House, District 1",
+  "us_house:2": "U.S. House, District 2",
+  "state_senate:2": "State Senate, District 2",
+  "state_senate:5": "State Senate, District 5",
+  "state_senate:8": "State Senate, District 8",
+  "state_senate:9": "State Senate, District 9",
+  "state_senate:10": "State Senate, District 10",
+  "state_senate:11": "State Senate, District 11",
+  "state_senate:13": "State Senate, District 13",
+  "state_senate:14": "State Senate, District 14",
+  "state_senate:15": "State Senate, District 15",
+  "state_senate:17": "State Senate, District 17",
+  "state_senate:18": "State Senate, District 18",
+  "state_senate:19": "State Senate, District 19",
+  "state_senate:20": "State Senate, District 20",
+  "state_senate:21": "State Senate, District 21",
+  "state_senate:25": "State Senate, District 25",
+  "state_house:1": "State House, District 1",
+  "state_house:2": "State House, District 2",
+  "state_house:3": "State House, District 3",
+  "state_house:4": "State House, District 4",
+  "state_house:5": "State House, District 5",
+  "state_house:6": "State House, District 6",
+  "state_house:7": "State House, District 7",
+  "state_house:8": "State House, District 8",
+  "state_house:9": "State House, District 9",
+  "state_house:10": "State House, District 10",
+  "state_house:11": "State House, District 11",
+  "state_house:12": "State House, District 12",
+  "state_house:13": "State House, District 13",
+  "state_house:14": "State House, District 14",
+  "state_house:15": "State House, District 15",
+  "state_house:16": "State House, District 16",
+  "state_house:17": "State House, District 17",
+  "state_house:18": "State House, District 18",
+  "state_house:19": "State House, District 19",
+  "state_house:20": "State House, District 20",
+  "state_house:21": "State House, District 21",
+  "state_house:22": "State House, District 22",
+  "state_house:23": "State House, District 23",
+  "state_house:24": "State House, District 24",
+  "state_house:25": "State House, District 25",
+  "state_house:26": "State House, District 26",
+  "state_house:27": "State House, District 27",
+  "state_house:28": "State House, District 28",
+  "state_house:29": "State House, District 29",
+  "state_house:30": "State House, District 30",
+  "state_house:31": "State House, District 31",
+  "state_house:32": "State House, District 32",
+  "state_house:33": "State House, District 33",
+  "state_house:34": "State House, District 34",
+  "state_house:35": "State House, District 35",
+  "state_house:36": "State House, District 36",
+  "state_house:37": "State House, District 37",
+  "state_house:38": "State House, District 38",
+  "state_house:39": "State House, District 39",
+  "state_house:40": "State House, District 40",
+  "state_house:41": "State House, District 41",
+  "state_house:42": "State House, District 42",
+  "state_house:43": "State House, District 43",
+  "state_house:44": "State House, District 44",
+  "state_house:45": "State House, District 45",
+  "state_house:46": "State House, District 46",
+  "state_house:47": "State House, District 47",
+  "state_house:48": "State House, District 48",
+  "state_house:49": "State House, District 49",
+  "state_house:50": "State House, District 50",
+  "state_house:51": "State House, District 51"
+ },
+ "races": {
+  "governor": [
+   {
+    "name": "Gary Cordery",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Josh Green",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "lieutenant_governor": [
+   {
+    "name": "Daniel Anthony",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Derek S.K. Kawakami",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "oha_at_large": [
+   {
+    "name": "Adrian (Kealii) Akina",
+    "party": "Nonpartisan",
+    "writeIn": false
+   },
+   {
+    "name": "Ikaika Anderson",
+    "party": "Nonpartisan",
+    "writeIn": false
+   },
+   {
+    "name": "Kanekoa (Koa) Crabbe",
+    "party": "Nonpartisan",
+    "writeIn": false
+   },
+   {
+    "name": "Brickwood M. Galuteria",
+    "party": "Nonpartisan",
+    "writeIn": false
+   },
+   {
+    "name": "Keoni Souza",
+    "party": "Nonpartisan",
+    "writeIn": false
+   },
+   {
+    "name": "John Waihee IV",
+    "party": "Nonpartisan",
+    "writeIn": false
+   }
+  ],
+  "oha_oahu": [
+   {
+    "name": "Kalei Akaka",
+    "party": "Nonpartisan",
+    "writeIn": false
+   },
+   {
+    "name": "Hinaleimoana (Hina) Wong",
+    "party": "Nonpartisan",
+    "writeIn": false
+   }
+  ],
+  "oha_maui": [
+   {
+    "name": "Ke'eaumoku Kapu",
+    "party": "Nonpartisan",
+    "writeIn": false
+   },
+   {
+    "name": "Carmen Hulu Lindsey",
+    "party": "Nonpartisan",
+    "writeIn": false
+   }
+  ],
+  "us_house:1": [
+   {
+    "name": "Nathan M. Berning",
+    "party": "Nonpartisan",
+    "writeIn": false
+   },
+   {
+    "name": "Ed Case",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jordan S. Conley",
+    "party": "Green",
+    "writeIn": false
+   },
+   {
+    "name": "Adriel C. Lam",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:2": [
+   {
+    "name": "Brenton Awa",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Jill N. Tokuda",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:2": [
+   {
+    "name": "Frederick F. Fogel",
+    "party": "Libertarian",
+    "writeIn": false
+   },
+   {
+    "name": "Joy San Buenaventura",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:5": [
+   {
+    "name": "Troy N. Hashimoto",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:8": [
+   {
+    "name": "Ronald D. Kouchi",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:9": [
+   {
+    "name": "Stanley Chang",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "David A. Croswell",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:10": [
+   {
+    "name": "Jackson D. Sayama",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:11": [
+   {
+    "name": "Carol Fukunaga",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:13": [
+   {
+    "name": "Wallyn Kanoelani Christian",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Tricia Kwai Lin Nakamatsu",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:14": [
+   {
+    "name": "Donna Mercado Kim",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:15": [
+   {
+    "name": "Glenn Wakai",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:17": [
+   {
+    "name": "Donovan Dela Cruz",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:18": [
+   {
+    "name": "Danielle Maliekekai Bass",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Max G. Hanna",
+    "party": "Nonpartisan",
+    "writeIn": false
+   },
+   {
+    "name": "Kelly Puamailani Kitashima",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:19": [
+   {
+    "name": "Rachele F. Lamosao",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Elijah Pierick",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:20": [
+   {
+    "name": "Bob McDermott",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Markus Owens",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:21": [
+   {
+    "name": "Mike Gabbard",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:25": [
+   {
+    "name": "Chris Lee",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:1": [
+   {
+    "name": "Matthias Kusch",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:2": [
+   {
+    "name": "Jonathan Kennealy",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Sue Keohokapu Lee Loy",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:3": [
+   {
+    "name": "Austin Martin",
+    "party": "Libertarian",
+    "writeIn": false
+   },
+   {
+    "name": "Christopher L.T. Todd",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:4": [
+   {
+    "name": "Greggor Ilagan",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Zak Wittenhagen",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:5": [
+   {
+    "name": "Jeanne Kapela",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Dalene McCormick",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:6": [
+   {
+    "name": "Kirstin Kahaloa",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:7": [
+   {
+    "name": "Nicole Lowen",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:8": [
+   {
+    "name": "Monique Perreira",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "David A. Tarnas",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:9": [
+   {
+    "name": "Justin H. Woodson",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:10": [
+   {
+    "name": "Travis Bumanglag",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Tyson K. Miyake",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:11": [
+   {
+    "name": "Terez (T.Amato) Amato",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Sheila Walker",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:12": [
+   {
+    "name": "Dan Johnson",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Kyle T. Yamashita",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:13": [
+   {
+    "name": "Mahina Poepoe",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Robin D. Vanderpool",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:14": [
+   {
+    "name": "Elle Cochran",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Pa'ele Kiakona",
+    "party": "Green",
+    "writeIn": false
+   },
+   {
+    "name": "Sne Patel",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:15": [
+   {
+    "name": "Nadine K. Nakamura",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:16": [
+   {
+    "name": "Luke A. Evslin",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "David Hazlebeck",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:17": [
+   {
+    "name": "Misty Cluett",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Daynette (Dee) Morikawa",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:18": [
+   {
+    "name": "Joe Gedeon",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "James (Jamie) Wataru",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:19": [
+   {
+    "name": "Mark Jun Hashem",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:20": [
+   {
+    "name": "David Asing",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Tina Nakada Grandinetti",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:21": [
+   {
+    "name": "Derek Turbin",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:22": [
+   {
+    "name": "Andrew Takuya Garrett",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:23": [
+   {
+    "name": "Victor Muh",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Ikaika M. Olds",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:24": [
+   {
+    "name": "Adrian Tam",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:25": [
+   {
+    "name": "Kim Coco Iwamoto",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:26": [
+   {
+    "name": "Ian M.A. Ross",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Tony Silva",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:27": [
+   {
+    "name": "Jenna W.Y.C. Takenouchi",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:28": [
+   {
+    "name": "Michael (Cov) Ratcliffe",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:29": [
+   {
+    "name": "Ikaika Hussey",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Tess Abalos",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:30": [
+   {
+    "name": "Shirley Ann Templo",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Amanda Ybanez",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:31": [
+   {
+    "name": "Linda Ichiyama",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Nancy Valdez",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:32": [
+   {
+    "name": "Micah Pookela Kim Aiu",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Garner M. Shimizu",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:33": [
+   {
+    "name": "Sam Satoru Kong",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:34": [
+   {
+    "name": "Gaius II (Kipi) Dupio",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Gregg Takayama",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:35": [
+   {
+    "name": "Cory M. Chun",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:36": [
+   {
+    "name": "Daisy Balais Hartsfield",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:37": [
+   {
+    "name": "Trish La Chica",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:38": [
+   {
+    "name": "Lauren Cheape Matsumoto",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:39": [
+   {
+    "name": "Daniel (Danny) Degracia",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Corey Rosenlee",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:40": [
+   {
+    "name": "Rose Martinez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Julie Reyes Oda",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:41": [
+   {
+    "name": "David A. Alcos III",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:42": [
+   {
+    "name": "Diamond Garcia",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Anthony Makana Paris",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:43": [
+   {
+    "name": "Sheila Medeiros",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Kanani Souza",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:44": [
+   {
+    "name": "Darius K. Kila",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Charla (Kahealani) Weaver",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:45": [
+   {
+    "name": "Kalehua Kaopua",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Chris Muraoka",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:46": [
+   {
+    "name": "Daniel Michael Gabriel",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Amy A. Perruso",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:47": [
+   {
+    "name": "Sean Quinlan",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Mark Talaeai",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:48": [
+   {
+    "name": "Lisa C. Kitagawa",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:49": [
+   {
+    "name": "Scot Matayoshi",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "'Ale Rodas",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:50": [
+   {
+    "name": "Jesse W.M. Fitzgerald",
+    "party": "Green",
+    "writeIn": false
+   },
+   {
+    "name": "Mike Lee",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:51": [
+   {
+    "name": "Lisa Marten",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ]
+ }
+}

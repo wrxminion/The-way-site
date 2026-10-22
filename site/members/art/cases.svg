@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="A case file folder with papers, a photograph and a magnifying glass">
+<defs>
+<linearGradient id="fold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9c98a"/><stop offset="1" stop-color="#cfa863"/></linearGradient>
+<linearGradient id="foldback" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d7b16c"/><stop offset="1" stop-color="#b98f4c"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f2e4"/><stop offset="1" stop-color="#e6dfcb"/></linearGradient>
+<radialGradient id="lens" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#e9fbff" stop-opacity=".55"/><stop offset=".6" stop-color="#a9dbe6" stop-opacity=".22"/><stop offset="1" stop-color="#6fb3c4" stop-opacity=".3"/></radialGradient>
+<linearGradient id="handle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4a2a17"/><stop offset=".5" stop-color="#7a4a2a"/><stop offset="1" stop-color="#3d2212"/></linearGradient>
+<clipPath id="lensclip"><circle cx="232" cy="112" r="27"/></clipPath>
+</defs>
+<ellipse cx="160" cy="166" rx="118" ry="7" fill="#000" opacity=".35"/>
+<g transform="rotate(-4 160 100)">
+  <!-- back of the folder with its tab -->
+  <path d="M62 44 h52 l8 -10 h44 l6 10 h88 a5 5 0 0 1 5 5 v104 a5 5 0 0 1 -5 5 H62 a5 5 0 0 1 -5 -5 V49 a5 5 0 0 1 5 -5z" fill="url(#foldback)"/>
+  <!-- papers -->
+  <g transform="rotate(3 160 90)">
+    <rect x="76" y="40" width="150" height="104" rx="2" fill="url(#paper)"/>
+    <g stroke="#9a9384" stroke-width="2.2" stroke-linecap="round">
+      <path d="M88 58 h96"/><path d="M88 68 h120"/><path d="M88 76 h112"/><path d="M88 84 h118"/><path d="M88 92 h80"/>
+    </g>
+    <path d="M88 101 h60" stroke="#b33a2c" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M150 97 l4 8" stroke="#b33a2c" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(-5 200 70)">
+    <rect x="168" y="36" width="70" height="92" rx="2" fill="#fbf8ee"/>
+    <g stroke="#a9a293" stroke-width="2" stroke-linecap="round"><path d="M178 50 h44"/><path d="M178 58 h50"/><path d="M178 66 h38"/></g>
+    <!-- clipped photograph -->
+    <rect x="180" y="74" width="46" height="36" fill="#f2ede0" stroke="#d8d0bb"/>
+    <rect x="184" y="78" width="38" height="26" fill="#5d6f74"/>
+    <path d="M184 104 l11 -12 8 7 7 -9 12 14z" fill="#3c4a4e"/>
+    <circle cx="214" cy="84" r="3" fill="#dfe9e4"/>
+    <path d="M196 70 v14 a4 4 0 0 0 8 0 v-12" fill="none" stroke="#8d97a0" stroke-width="2"/>
+  </g>
+  <!-- front of the folder -->
+  <path d="M55 74 h210 a4 4 0 0 1 4 4.5 l-9 76 a5 5 0 0 1 -5 4.5 H66 a5 5 0 0 1 -5 -4.5 l-10 -76 a4 4 0 0 1 4 -4.5z" fill="url(#fold)"/>
+  <path d="M58 80 h204" stroke="#f3dca6" stroke-width="1.5" opacity=".7"/>
+  <!-- label and stamp -->
+  <rect x="86" y="96" width="92" height="22" rx="2" fill="#f6efdd" stroke="#c9b38a"/>
+  <text x="132" y="111" font-family="Georgia,serif" font-size="10" font-weight="700" fill="#4e3b1f" text-anchor="middle" letter-spacing="1.5">THE RECORD</text>
+  <g transform="rotate(-10 120 138)" opacity=".85">
+    <rect x="88" y="128" width="64" height="18" rx="3" fill="none" stroke="#b33a2c" stroke-width="2"/>
+    <text x="120" y="141" font-family="Georgia,serif" font-size="9" font-weight="700" fill="#b33a2c" text-anchor="middle" letter-spacing="2">PRIMARY</text>
+  </g>
+</g>
+<!-- magnifying glass -->
+<path d="M252 131 l26 24" stroke="#000" stroke-opacity=".25" stroke-width="11" stroke-linecap="round" transform="translate(2 3)"/>
+<path d="M252 131 l26 24" stroke="url(#handle)" stroke-width="10" stroke-linecap="round"/>
+<g clip-path="url(#lensclip)">
+  <rect x="200" y="80" width="70" height="70" fill="#f1e7cc"/>
+  <g stroke="#7d7564" stroke-width="3" stroke-linecap="round"><path d="M206 100 h50"/><path d="M206 112 h44"/><path d="M206 124 h52"/></g>
+  <circle cx="232" cy="112" r="27" fill="url(#lens)"/>
+</g>
+<circle cx="232" cy="112" r="28" fill="none" stroke="#2f3b40" stroke-width="5"/>
+<circle cx="232" cy="112" r="28" fill="none" stroke="#c9d6d9" stroke-width="1.5" opacity=".6"/>
+<path d="M216 99 a20 20 0 0 1 12 -8" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".6" fill="none"/>
+</svg>

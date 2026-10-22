@@ -1,0 +1,27 @@
+{
+ "abbr": "ID",
+ "name": "Idaho",
+ "bounds": [
+  [
+   41.99,
+   -117.24
+  ],
+  [
+   49.0,
+   -111.04
+  ]
+ ],
+ "atLarge": false,
+ "officialList": {
+  "url": "https://run.voteidaho.gov/search",
+  "label": "Idaho Secretary of State candidate search (JavaScript app)"
+ },
+ "sampleBallot": {
+  "url": "https://votertools.voteidaho.gov/TEDElectionLink/VoterServices/voter/el-sample-ballot",
+  "label": "VoteIdaho: preview your sample ballot"
+ },
+ "senateNotUp": "INCOMPLETE: we could not read the official candidate list, so we cannot say who is running in this Senate district or whether the seat is up. Check your sample ballot.",
+ "houseNotOnBallot": "INCOMPLETE: we could not read the official candidate list, so we cannot say who is running in this district. Check your sample ballot.",
+ "otherRacesNote": "County, city, school and other local races and questions may also be on your ballot.",
+ "senateNote": "U.S. Senate: Jim Risch's term ends January 3, 2027 and Mike Crapo's does not (congress-legislators file), so one Idaho seat should be up."
+}

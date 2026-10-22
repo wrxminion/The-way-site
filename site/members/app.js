@@ -1,0 +1,1907 @@
+// The Way, member area. Plain JavaScript, no build step.
+// Every piece of user text goes into the page with textContent, never innerHTML.
+(() => {
+'use strict';
+
+const cfg = window.THE_WAY_CONFIG;
+if (!cfg || /YOUR-PROJECT/.test(cfg.supabaseUrl)) {
+  document.getElementById('app').textContent = 'Setup needed: put the Supabase project URL and anon key in config.js.';
+  throw new Error('config.js not filled in');
+}
+const sb = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey, {
+  // Implicit flow: the emailed link carries the session itself, so it works even when
+  // the email is opened in a different browser or device from where it was requested.
+  auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: 'implicit' },
+});
+
+const app = document.getElementById('app');
+const state = { user: null, me: null, roles: new Set() };
+
+// ---------------------------------------------------------------- tiny DOM helpers
+
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+    else if (k === 'class') el.className = v;
+    else if (k === 'text') el.textContent = v;
+    else el.setAttribute(k, v === true ? '' : v);
+  }
+  for (const kid of kids.flat()) {
+    if (kid == null || kid === false) continue;
+    el.append(kid instanceof Node ? kid : document.createTextNode(String(kid)));
+  }
+  return el;
+}
+// A missing value must never show up as the word "null" (or "undefined"): treat those as empty.
+const clean = (v) => { if (v == null) return null; const t = String(v).trim(); return !t || /^(null|undefined|nan)$/i.test(t) ? null : t; };
+const srcTitle = (s) => clean(s.title) || (() => { try { return new URL(s.url).hostname.replace(/^www\./, ''); } catch { return clean(s.url) || 'Untitled source'; } })();
+const when = (iso) => iso ? new Date(iso).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : '';
+const day = (iso) => iso ? new Date(iso).toLocaleDateString(undefined, { dateStyle: 'medium' }) : '';
+const can = (role) => state.roles.has(role) || state.roles.has('admin');
+
+function render(...nodes) { app.replaceChildren(...nodes.flat().filter((n) => n != null && n !== false)); app.focus({ preventScroll: true }); window.scrollTo(0, 0); }
+function notice(msg, kind = 'error') { return h('div', { class: `notice ${kind}`, role: kind === 'error' ? 'alert' : 'status', text: msg }); }
+function friendly(err) {
+  const m = (err && (err.message || err.error_description)) || String(err);
+  if (/row-level security/i.test(m)) return 'You do not have permission to do that.';
+  if (/JWT|expired/i.test(m)) return 'Your sign-in expired. Please sign in again.';
+  if (/captcha/i.test(m)) return 'The human check did not pass. Reload the page and try again.';
+  return m;
+}
+// Run an async action from a button or form, showing errors next to it.
+function action(fn, slot) {
+  return async (ev) => {
+    if (ev && ev.preventDefault) ev.preventDefault();
+    const btn = ev && ev.submitter || (ev && ev.currentTarget instanceof HTMLButtonElement ? ev.currentTarget : null);
+    if (btn) btn.disabled = true;
+    if (slot) slot.replaceChildren();
+    try { await fn(ev); }
+    catch (err) { (slot || app).prepend(notice(friendly(err))); }
+    finally { if (btn) btn.disabled = false; }
+  };
+}
+async function q(promise) { const { data, error } = await promise; if (error) throw error; return data; }
+
+const askDialog = document.getElementById('ask');
+function ask(label) {
+  return new Promise((resolve) => {
+    document.getElementById('ask-label').textContent = label;
+    const input = document.getElementById('ask-input');
+    input.value = '';
+    askDialog.onclose = () => resolve(askDialog.returnValue === 'ok' ? input.value.trim() : null);
+    askDialog.showModal();
+  });
+}
+
+// ---------------------------------------------------------------- session
+
+async function loadMe() {
+  const { data: { session } } = await sb.auth.getSession();
+  state.user = session ? session.user : null;
+  state.me = null; state.roles = new Set(); state.hasRecord = false; state.hasModLog = false; state.place = null;
+  if (!state.user) return;
+  const rows = await q(sb.from('members').select('*').eq('id', state.user.id));
+  state.me = rows[0] || null;
+  if (state.me && state.me.status === 'active') {
+    const roles = await q(sb.from('member_roles').select('role').eq('member_id', state.user.id));
+    state.roles = new Set(roles.map((r) => r.role));
+    [state.hasRecord, state.hasModLog, state.place] = await Promise.all([hasPublishedRecord(), hasAny('moderation_actions'), readPlace()]);
+  }
+}
+async function hasAny(table) {
+  try {
+    const { count, error } = await sb.from(table).select('id', { count: 'exact', head: true });
+    return !error && count > 0;
+  } catch { return false; }
+}
+// Findings stay hidden until something has been published (Frank, Oct 15 2026). A publication
+// event exists only once a reviewer publishes; read as the signed-in member; if the check fails, hidden.
+const hasPublishedRecord = () => hasAny('research_publication_events');
+
+// The top bar is the shared one (waybar.js, the same on every page of the site). The member area
+// tells it who is signed in; the guide, map and case pages read the same note from this browser.
+function drawNav() {
+  const member = !!(state.me && state.me.status === 'active');
+  if (!window.WayBar) return;
+  if (!member) { WayBar.save(null); WayBar.render(null, { pending: !!state.user }); return; }
+  const st = focusAbbr();
+  // Findings and the moderation log appear only once they have something in them (Frank, Oct 15).
+  const data = { v: 1, name: state.me.display_name, roles: [...state.roles], findings: !!state.hasRecord, modlog: !!state.hasModLog,
+    ballot: st && READY.has(st) ? stateLinks(st).guide.slice(-1)[0] : null };
+  WayBar.save(data); WayBar.render(data);
+}
+
+// ---------------------------------------------------------------- sign in and accepting an invitation
+
+const PASSWORD_MIN = cfg.passwordMin || 10;
+// Every emailed link (sign-in, password reset, invitation) comes back to this folder, the member
+// area itself (/members/), never to whatever page or file name was open when it was requested.
+const APP_URL = new URL('./', location.href).href;
+// An invite link (#/join/WAY-...) leaves its code here, so it survives the email round-trip
+// (the sign-in email opens a fresh page). Cleared once the code is used.
+const INVITE_KEY = 'theway.invite';
+function takeInviteFromLink() {
+  const fromQuery = new URLSearchParams(location.search).get('invite');
+  const m = fromQuery ? [null, fromQuery] : location.hash.match(/^#\/join\/([A-Za-z0-9-]{8,80})/);
+  if (!m || !/^[A-Za-z0-9-]{8,80}$/.test(m[1])) return;
+  try { localStorage.setItem(INVITE_KEY, m[1]); } catch { /* private mode: they paste it instead */ }
+  // Drop ?invite= but keep any sign-in tokens Supabase put in the #hash for readSignInLink.
+  const q2 = new URLSearchParams(location.search); q2.delete('invite');
+  history.replaceState(null, '', location.pathname + (q2.toString() ? '?' + q2 : '') + (fromQuery ? location.hash : '#/'));
+}
+function savedInvite() { try { return localStorage.getItem(INVITE_KEY) || ''; } catch { return ''; } }
+function forgetInvite() { try { localStorage.removeItem(INVITE_KEY); } catch { /* ignore */ } }
+let recovering = false; // true after a "Forgot password" link until the new password is saved
+
+// ---------------------------------------------------------------- human check (Cloudflare Turnstile)
+// Every step that makes Supabase send an email (or try a password) carries a one-time token
+// from the widget. With no turnstileSiteKey in config.js the widget is off and nothing changes.
+const TS_KEY = cfg.turnstileSiteKey || '';
+const TS_BLOCKED = 'The human check could not load. If an ad or script blocker is on, allow challenges.cloudflare.com for this page, or try another browser.';
+const TS_FAILED = 'The human check did not pass. Reload the page and try again.';
+const TS_SLOW = 'The human check is taking too long. Tick the box above if it shows one, then try again.';
+let tsLoading = null;
+function loadTurnstile() {
+  if (!tsLoading) {
+    tsLoading = new Promise((resolve, reject) => {
+      if (window.turnstile) return resolve(window.turnstile);
+      const s = document.createElement('script');
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      s.async = true;
+      s.onload = () => (window.turnstile ? resolve(window.turnstile) : reject(new Error(TS_BLOCKED)));
+      s.onerror = () => { tsLoading = null; reject(new Error(TS_BLOCKED)); };
+      document.head.append(s);
+    });
+  }
+  return tsLoading;
+}
+function humanCheck() {
+  if (!TS_KEY) return { el: null, token: async () => undefined };
+  const el = h('div', { class: 'human-check' });
+  const status = h('p', { class: 'small dim', role: 'status' });
+  let id = null, ready = null, problem = null, waiting = [];
+  const settle = (fn) => waiting.splice(0).forEach(fn);
+  loadTurnstile().then((ts) => {
+    id = ts.render(el, {
+      sitekey: TS_KEY,
+      callback: (t) => { ready = t; problem = null; status.textContent = ''; settle((w) => w.ok(t)); },
+      'expired-callback': () => { ready = null; },
+      'error-callback': () => { problem = TS_FAILED; status.textContent = TS_FAILED; settle((w) => w.no(new Error(TS_FAILED))); return true; },
+    });
+  }).catch((err) => { problem = err.message; status.textContent = err.message; settle((w) => w.no(err)); });
+  return {
+    el: h('div', {}, el, status),
+    // one token per call; the widget then makes a fresh one for the next
+    token: () => new Promise((ok, no) => {
+      if (problem) return no(new Error(problem));
+      const take = (t) => { ready = null; try { if (id !== null) window.turnstile.reset(id); } catch { /* ignore */ } ok(t); };
+      if (ready) return take(ready);
+      status.textContent = 'Checking you are a person…';
+      let timer = null;
+      const w = { ok: (t) => { clearTimeout(timer); take(t); }, no: (e) => { clearTimeout(timer); no(e); } };
+      timer = setTimeout(() => { waiting = waiting.filter((x) => x !== w); status.textContent = ''; no(new Error(TS_SLOW)); }, 30000);
+      waiting.push(w);
+    }),
+  };
+}
+
+function signInView() {
+  const human = humanCheck();
+
+  // Sign-in wording; change it here or override any line with cfg.signInText in config.js.
+  const T = Object.assign({
+    title: 'Sign in',
+    invitedTitle: "You're invited to The Way",
+    member: 'Members sign in here with their email and password, or ask for a sign-in link by email.',
+    memberBtn: 'Sign in',
+    linkInstead: 'Email me a sign-in link',
+    forgot: 'Forgot password?',
+    resetSent: "If that email belongs to a member, we've sent a link to choose a new password. Open it in this same browser.",
+    badPassword: "That email and password don't match. No password yet? Choose \"Email me a sign-in link\", then set one on your account page.",
+    memberSent: 'Check your email and click the link. Open it in this same browser and you go straight in.',
+    noMember: "We couldn't find a member with that email. Have an invitation code? Use the box below.",
+    newTitle: 'Have an invitation code?',
+    code: "The member area is invite only. If a member gave you an invitation code, enter your email and we'll send you a sign-in link. Your code goes in on the next screen.",
+    own: "No invitation? Enter your email and we'll let you know when The Way opens to the public.",
+    codeBtn: 'I have an invitation code',
+    ownBtn: "Tell me when it's public",
+    sent: 'Check your email and click the link. Open it in this same browser. Your invitation code goes in on the next screen.',
+    invited: "Enter your email and we'll send you a sign-in link. Your invitation code is saved in this browser and fills in on the next screen.",
+    invitedBtn: 'Send my sign-in link',
+    memberTitle: 'Already a member?',
+    thanks: "Thanks, we'll let you know.",
+  }, cfg.signInText || {});
+
+  // After any emailed link: with emailCodes on, the 6-digit code from the email can be typed here.
+  function codeEntry(emailIn, msg) {
+    const codeIn = h('input', { name: 'code', inputmode: 'numeric', autocomplete: 'one-time-code', pattern: '[0-9]{6,8}', placeholder: '6-digit code' });
+    const form = h('form', { hidden: true, onsubmit: action(async () => {
+      await q(sb.auth.verifyOtp({ email: emailIn.value.trim(), token: codeIn.value.trim(), type: 'email' }));
+      await boot();
+    }, msg) }, h('label', {}, '6-digit code from the email (not your invitation code)', codeIn), h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Sign in')));
+    return { form, show: () => { form.hidden = false; codeIn.focus(); } };
+  }
+
+  // Members get a link only if their account already exists; nobody new is created that way.
+  async function sendLink(emailIn, asMember, msg, code) {
+    const email = emailIn.value.trim();
+    if (!emailIn.reportValidity()) return;
+    const captchaToken = await human.token();
+    const { error } = await sb.auth.signInWithOtp({ email, options: { shouldCreateUser: !asMember, emailRedirectTo: APP_URL, captchaToken } });
+    if (error) {
+      if (asMember && /signup|not allowed|not found/i.test(error.message || '')) throw new Error(T.noMember);
+      throw error;
+    }
+    if (cfg.emailCodes) {
+      msg.append(notice('Check your email. Click the link, or type the 6-digit sign-in code from it here.', 'ok'));
+      code.show();
+    } else {
+      msg.append(notice(asMember ? T.memberSent : T.sent, 'ok'));
+    }
+  }
+
+  // Members: email + password, or an emailed link. The human check sits under these buttons
+  // and covers every form on the page.
+  function memberPanel(main) {
+    const msg = h('div');
+    const emailIn = h('input', { type: 'email', name: 'email', required: true, autocomplete: 'username', placeholder: 'you@example.org' });
+    const passIn = h('input', { type: 'password', name: 'password', autocomplete: 'current-password', placeholder: 'Password' });
+    const code = codeEntry(emailIn, msg);
+    const form = h('form', { class: 'signin', onsubmit: action(async (ev) => {
+      if (ev.submitter && ev.submitter.value === 'link') return sendLink(emailIn, true, msg, code);
+      if (!passIn.value) { passIn.focus(); throw new Error('Type your password, or choose "' + T.linkInstead + '".'); }
+      const { error } = await sb.auth.signInWithPassword({ email: emailIn.value.trim(), password: passIn.value, options: { captchaToken: await human.token() } });
+      if (error) throw new Error(/invalid login/i.test(error.message || '') ? T.badPassword : error.message);
+      await boot();
+    }, msg) },
+      h('label', {}, 'Email', emailIn),
+      h('label', {}, 'Password', passIn),
+      h('div', { class: 'btns' },
+        h('button', { class: main ? 'primary' : '', value: 'member' }, T.memberBtn),
+        h('button', { value: 'link' }, T.linkInstead)));
+    const forgot = h('p', { class: 'small switch' }, h('a', { href: '#/', onclick: action(async () => {
+      if (!emailIn.reportValidity()) return;
+      await q(sb.auth.resetPasswordForEmail(emailIn.value.trim(), { redirectTo: APP_URL, captchaToken: await human.token() }));
+      msg.append(notice(T.resetSent, 'ok'));
+    }, msg), text: T.forgot }));
+    return h('div', { class: main ? 'panel signin-panel' : 'panel' },
+      main ? null : h('h2', { text: T.memberTitle }),
+      h('p', { class: 'muted', text: T.member }), msg, form, forgot, code.form, main ? human.el : null);
+  }
+
+  // Invite only: people with an invitation code, plus a quiet "tell me when it's public" note.
+  function newcomerPanel(invited) {
+    const msg = h('div');
+    const emailIn = h('input', { type: 'email', name: 'new-email', required: true, autocomplete: 'email', placeholder: 'you@example.org' });
+    const code = codeEntry(emailIn, msg);
+    const form = h('form', { onsubmit: action(async (ev) => {
+      if (ev.submitter && ev.submitter.value === 'own') {
+        await q(sb.rpc('notify_signup', { email: emailIn.value.trim(), source: 'commons' }));
+        form.hidden = true;
+        msg.append(notice(T.thanks, 'ok'));
+        return;
+      }
+      await sendLink(emailIn, false, msg, code);
+    }, msg) },
+      h('label', {}, 'Email', emailIn),
+      h('div', { class: 'btns' },
+        h('button', { class: invited ? 'primary' : '', value: 'code' }, invited ? T.invitedBtn : T.codeBtn)),
+      invited ? null : h('div', { class: 'notify-public' },
+        h('p', { class: 'small dim', text: T.own }),
+        h('div', { class: 'btns' }, h('button', { class: 'quiet', value: 'own' }, T.ownBtn))));
+    return h('div', { class: invited ? 'panel signin-panel' : 'panel' },
+      invited ? null : h('h2', { text: T.newTitle }),
+      h('p', { class: 'muted', text: invited ? T.invited : T.code }),
+      msg, form, code.form, invited ? human.el : null);
+  }
+
+  // Sign-in comes first. Someone who arrived on an invitation link sees their invitation first
+  // instead, with member sign-in under it.
+  const invited = !!savedInvite();
+  render(
+    h('p', { class: 'overline', text: 'The Way · Members' }),
+    h('h1', { text: invited ? T.invitedTitle : T.title }),
+    ...(invited ? [newcomerPanel(true), memberPanel(false)] : [memberPanel(true), newcomerPanel(false)]),
+  );
+}
+
+// Choose a new password: from the account page, or after a "Forgot password" email.
+function passwordView(fromReset, justJoined) {
+  const msg = h('div');
+  const p1 = h('input', { type: 'password', required: true, minlength: PASSWORD_MIN, autocomplete: 'new-password' });
+  const p2 = h('input', { type: 'password', required: true, minlength: PASSWORD_MIN, autocomplete: 'new-password' });
+  render(
+    h('p', { class: 'overline', text: 'Members' }),
+    h('h1', { text: justJoined ? `Welcome, ${state.me ? state.me.display_name : 'friend'}` : fromReset ? 'Choose a new password' : 'Set or change your password' }),
+    justJoined ? h('p', { class: 'lede', text: 'You are in. One last step: choose a password so next time you sign in with your email and password, no email link needed.' }) : null,
+    h('div', { class: 'panel' },
+      h('p', { class: 'muted', text: `Signed in as ${state.user.email}. Use at least ${PASSWORD_MIN} characters. You can still sign in with an email link any time.` }),
+      msg,
+      h('form', { onsubmit: action(async () => {
+        if (p1.value !== p2.value) throw new Error('The two passwords do not match.');
+        await q(sb.auth.updateUser({ password: p1.value }));
+        p1.value = p2.value = ''; recovering = false;
+        msg.append(notice('Password saved. Next time, sign in with your email and this password.', 'ok'));
+      }, msg) },
+        h('label', {}, 'New password', p1),
+        h('label', {}, 'Type it again', p2),
+        h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Save password'),
+          h('a', { class: 'button quiet', href: '#/', onclick: () => { recovering = false; if (justJoined) setTimeout(route); }, text: justJoined ? 'Skip for now' : 'Back to the Commons' })))),
+  );
+}
+
+function joinView() {
+  const msg = h('div');
+  const code = h('input', { name: 'code', required: true, autocomplete: 'off', spellcheck: 'false', placeholder: 'WAY-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx' });
+  const carried = savedInvite();
+  if (carried) code.value = carried;
+  const name = h('input', { name: 'name', required: true, minlength: 2, maxlength: 40, placeholder: 'How other members will see you' });
+  render(
+    h('h1', { text: 'Welcome' }),
+    h('p', { class: 'lede', text: carried ? 'You are signed in. Your invitation code is filled in from your link. Pick a display name to accept it.' : 'You are signed in. Enter your invitation code (it starts with WAY-) to accept it.' }),
+    h('div', { class: 'panel' }, msg,
+      h('form', { onsubmit: action(async () => {
+        await q(sb.rpc('redeem_invitation', { code: code.value.trim(), display_name: name.value }));
+        forgetInvite();
+        await loadMe(); drawNav();
+        passwordView(false, true);
+      }, msg) },
+        h('label', {}, 'Invitation code', code),
+        h('label', {}, 'Display name', name),
+        h('p', { class: 'small dim', text: 'Your email stays private. Members only see your display name. Choose it carefully: after this, only an admin can change it.' }),
+        h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Accept invitation'), h('button', { type: 'button', onclick: signOut }, 'Sign out')))),
+  );
+}
+
+async function signOut() { if (window.WayBar) WayBar.save(null); await sb.auth.signOut(); location.hash = '#/'; await boot(); }
+
+// ---------------------------------------------------------------- Commons
+
+// Where the public pages live, relative to the members page. Overridable in config.js.
+// The state guides and maps stay in /preview/pages/ while the member area lives in /members/.
+const PAGES = cfg.pagesBase || '/preview/pages/';
+const LINKS = Object.assign({
+  guide: `${PAGES}guide/`, map: `${PAGES}map/`, news: `${PAGES}news/`, states: `${PAGES}states/`, cases: `${PAGES}cases/`, record: 'record.html',
+}, cfg.links || {});
+
+const STATES = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia',
+  'Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland',
+  'Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey',
+  'New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island',
+  'South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
+const slugOf = (name) => name.toLowerCase().replace(/ /g, '-');
+
+// "Your place": state, and optionally ZIP and street address, saved to the member's own row
+// (member_places). Only that member can read it; not other members, moderators or admins.
+// Older versions kept it in this browser (theway.place); that copy is offered once, then removed.
+const PLACE_KEY = 'theway.place';
+function oldLocalPlace() { try { return JSON.parse(localStorage.getItem(PLACE_KEY)) || null; } catch { return null; } }
+async function readPlace() {
+  try {
+    const { data, error } = await sb.from('member_places').select('state,zip,address').eq('member_id', state.user.id).maybeSingle();
+    return !error && data && US[data.state] ? data : null;
+  } catch { return null; }
+}
+function loadPlace() {
+  if (state.place) return { state: US[state.place.state][0], code: state.place.state, zip: state.place.zip || '', address: state.place.address || '' };
+  return null;
+}
+async function savePlace(p) {
+  if (p) {
+    await q(sb.from('member_places').upsert({ member_id: state.user.id, state: p.code, zip: p.zip || null, address: p.address || null }));
+  } else {
+    await q(sb.from('member_places').delete().eq('member_id', state.user.id));
+  }
+  try { localStorage.removeItem(PLACE_KEY); } catch { /* private mode */ }
+  state.place = p ? { state: p.code, zip: p.zip || null, address: p.address || null } : null;
+}
+
+function placePanel() {
+  const box = h('div', { class: 'panel', id: 'place' });
+  const msg = h('div');
+  const draw = (editing) => {
+    const place = loadPlace();
+    if (place && !editing) {
+      const ab = place.code;
+      const guideLink = h('a', { class: 'button quiet', href: stateLinks(ab).page, text: `${place.state} voter guide` });
+      if (READY.has(ab)) guideLink.href = stateLinks(ab).guide.slice(-1)[0];
+      box.replaceChildren(
+        h('div', { class: 'row' }, h('h2', { text: 'Your place' }), h('span', { class: 'tag', text: 'only you can see this' })),
+        msg,
+        h('p', {}, h('strong', { text: place.state }), place.zip ? ` · ZIP ${place.zip}` : '', place.address ? ` · ${place.address}` : ''),
+        h('div', { class: 'btns' },
+          guideLink,
+          h('button', { class: 'quiet', onclick: () => draw(true) }, 'Change'),
+          h('button', { class: 'quiet', onclick: action(async () => { await savePlace(null); drawNav(); draw(false); }, msg) }, 'Forget it')),
+        h('p', { class: 'small dim', text: 'Matching your exact districts comes once the guide has official district data. Until then this takes you to your state.' }));
+      return;
+    }
+    const old = place || oldLocalPlace();
+    const oldCode = old ? (old.code || abbrOf(old.state)) : null;
+    const codes = Object.keys(US).sort((x, y) => US[x][0].localeCompare(US[y][0]));
+    const sel = h('select', { name: 'state', required: true }, h('option', { value: '', text: 'Choose your state' }),
+      codes.map((c) => h('option', { value: c, text: US[c][0], selected: oldCode === c })));
+    const zip = h('input', { name: 'zip', inputmode: 'numeric', pattern: '[0-9]{5}', maxlength: 5, placeholder: 'Optional, 5 digits', autocomplete: 'postal-code' });
+    const addr = h('input', { name: 'address', maxlength: 200, placeholder: 'Optional: street address', autocomplete: 'street-address' });
+    if (old && old.zip) zip.value = old.zip;
+    if (old && old.address && !/^[0-9]{5}$/.test(old.address)) addr.value = old.address;
+    else if (old && /^[0-9]{5}$/.test(old.address || '') && !zip.value) zip.value = old.address;
+    box.replaceChildren(
+      h('h2', { text: 'Your place (optional)' }), msg,
+      h('p', { class: 'small muted', text: 'Save your state, and your ZIP or address if you like, so the map and your ballot open on your state on any device. Only you can see it: not other members, moderators or admins. "Forget it" deletes it for good.' }),
+      h('form', { onsubmit: action(async () => {
+        const a = addr.value.trim(), z = zip.value.trim();
+        if (z && !/^[0-9]{5}$/.test(z)) throw new Error('A ZIP code is 5 digits.');
+        if (/[<>]/.test(a)) throw new Error('Please leave out < and > in the address.');
+        await savePlace({ code: sel.value, zip: z, address: a });
+        drawNav(); draw(false);
+      }, msg) },
+        h('label', {}, 'State', sel), h('label', {}, 'ZIP code', zip), h('label', {}, 'Street address', addr),
+        h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Save'),
+          place ? h('button', { type: 'button', onclick: () => draw(false) }, 'Cancel') : null)));
+  };
+  draw(false);
+  return box;
+}
+
+// ---------------------------------------------------------------- the whole-US map
+// Shapes come from usmap-data.js (window.US_STATES = { CO: [name, svgPath, [cx, cy]] }).
+// Which states have a guide and a map is a fixed list (READY below), set when each state
+// is uploaded. The member area never asks /preview/pages/ itself: that folder has its own
+// password, and asking would pop the browser's password box.
+const US = window.US_STATES || {};
+const abbrOf = (name) => Object.keys(US).find((a) => US[a][0] === name) || null;
+const myAbbr = () => { const p = loadPlace(); return p && p.state ? abbrOf(p.state) : null; };
+// The state picked last on the map (this browser only). The small map and the guide card follow
+// it; with nothing picked they follow the saved "Your place" state; with neither, nothing is lit.
+const PICK_KEY = 'theway.mapPick';
+const pickedAbbr = () => { try { const a = localStorage.getItem(PICK_KEY); return a && US[a] ? a : null; } catch { return null; } };
+const setPick = (a) => { try { a ? localStorage.setItem(PICK_KEY, a) : localStorage.removeItem(PICK_KEY); } catch { /* private mode */ } };
+const focusAbbr = () => pickedAbbr() || myAbbr();
+const stateLinks = (a) => {
+  const ab = a.toLowerCase();
+  const own = (cfg.stateLinks || {})[a] || {};
+  // Colorado was first, so its guide and map also live at the plain guide/ and map/.
+  const guide = own.guide ? [own.guide] : a === 'CO' ? [`${PAGES}guide-${ab}/`, LINKS.guide] : [`${PAGES}guide-${ab}/`];
+  const map = own.map ? [own.map] : a === 'CO' ? [`${PAGES}map-${ab}/`, LINKS.map] : [`${PAGES}map-${ab}/`];
+  return { guide, map, page: `${LINKS.states}${slugOf(US[a][0])}.html` };
+};
+// States whose guide and map are live in /preview/pages/. Add a state here (or in config.js
+// as readyStates: ['CO', ...]) when its pages go up.
+const READY = new Set(cfg.readyStates || ['CO', 'OK', 'NC', 'FL', 'CA', 'TX', 'VA', 'NJ', 'MI', 'KY', 'MD', 'MO', 'MA']);
+function available(a) {
+  const l = stateLinks(a);
+  // Colorado's live pages are the plain guide/ and map/.
+  const pick = (urls) => (READY.has(a) ? urls[urls.length - 1] : null);
+  return Promise.resolve({ guide: pick(l.guide), map: pick(l.map), page: l.page });
+}
+
+function usSvg(opts) {
+  const mine = opts.small ? focusAbbr() : myAbbr();
+  const wrap = document.createElement('div');
+  wrap.className = 'usmap' + (opts.small ? ' small' : '');
+  const paths = Object.keys(US).map((a) =>
+    `<path data-st="${a}" class="${a === mine ? 'mine' : ''}" d="${US[a][1]}"${opts.small ? '' : ` tabindex="0" role="button" aria-label="${US[a][0]}"`}><title>${US[a][0]}</title></path>`).join('');
+  const pin = mine && US[mine] ? `<circle class="pin" cx="${US[mine][2][0]}" cy="${US[mine][2][1]}" r="${opts.small ? 14 : 7}"/>` : '';
+  wrap.innerHTML = `<svg viewBox="0 0 975 610" role="img" aria-label="${mine ? `Map of the United States with ${US[mine][0]} highlighted` : 'Map of the United States'}">${paths}${pin}</svg>`;
+  return wrap;
+}
+
+async function mapView() {
+  const mine = myAbbr();
+  const picked = pickedAbbr();
+  const info = h('div', { class: 'panel state-pick', 'aria-live': 'polite' },
+    h('p', { class: 'muted', text: 'Pick a state on the map or from the list.' }));
+  const map = usSvg({});
+  const show = async (a, opts = {}) => {
+    setPick(a);
+    // A click goes straight to that state's district map (its own bar links on to the guide).
+    if (opts.go) { const m = READY.has(a) ? stateLinks(a).map.slice(-1)[0] : null; if (m) { location.href = m; return; } }
+    map.querySelectorAll('path.on').forEach((el) => el.classList.remove('on'));
+    const el = map.querySelector(`path[data-st="${a}"]`); if (el) el.classList.add('on');
+    info.replaceChildren(h('h3', { text: US[a][0] }), h('p', { class: 'small muted', text: 'Checking what is ready…' }));
+    const v = await available(a);
+    const btns = [
+      v.guide ? h('a', { class: 'button primary', href: v.guide, text: 'Voter guide' }) : null,
+      v.map ? h('a', { class: 'button quiet', href: v.map, text: 'District map' }) : null,
+      h('a', { class: 'button quiet', href: v.page, text: 'State page' }),
+      h('button', { type: 'button', class: 'quiet', onclick: () => {
+        setPick(null);
+        map.querySelectorAll('path.on').forEach((el) => el.classList.remove('on'));
+        info.replaceChildren(h('p', { class: 'muted', text: 'Pick a state on the map or from the list.' }));
+      } }, 'Clear')];
+    info.replaceChildren(...[h('h3', { text: US[a][0] }),
+      (v.guide || v.map) ? null : h('p', { class: 'small muted', text: 'The full guide and map for this state are still being built. The state page has what is ready.' }),
+      h('div', { class: 'btns' }, btns)].filter(Boolean));
+  };
+  map.addEventListener('click', (ev) => { const a = ev.target.closest('path') && ev.target.closest('path').dataset.st; if (a) show(a, { go: true }); });
+  map.addEventListener('keydown', (ev) => {
+    if (ev.key !== 'Enter' && ev.key !== ' ') return;
+    const a = ev.target.dataset && ev.target.dataset.st; if (a) { ev.preventDefault(); show(a, { go: true }); }
+  });
+  const names = Object.keys(US).sort((x, y) => US[x][0].localeCompare(US[y][0]));
+  const list = h('div', { class: 'state-list' }, names.map((a) =>
+    h('button', { type: 'button', class: 'quiet' + (a === mine ? ' mine' : ''), 'data-st': a, onclick: () => show(a, { go: true }) }, US[a][0])));
+  render(
+    h('p', { class: 'overline' }, h('a', { href: '#/', text: 'Home' })),
+    h('h1', { text: 'The map' }),
+    h('p', { class: 'lede', text: 'Every state. Bright states have a voter guide or district map ready.' }),
+    map,
+    h('p', { class: 'small dim maplegend' }, h('span', { class: 'key has' }), ' guide or map ready ', h('span', { class: 'key' }), ' coming ',
+      mine ? [h('span', { class: 'key mine' }), ` your state (${US[mine][0]})`] : h('a', { href: '#/account', text: 'Save your state in your account to highlight it' })),
+    info, list);
+  for (const a of names) available(a).then((v) => {
+    if (v.guide || v.map) {
+      const p = map.querySelector(`path[data-st="${a}"]`); if (p) p.classList.add('has');
+      const b = list.querySelector(`button[data-st="${a}"]`); if (b) b.classList.add('has');
+    }
+  });
+  if (picked || mine) show(picked || mine);
+}
+
+async function homeView() {
+  const wantsAdmin = can('admin'), wantsMod = can('moderator');
+  const [cats, posts, openReports, notifyCount] = await Promise.all([
+    q(sb.from('categories').select('*').order('sort_order')),
+    q(sb.from('posts').select('id,body,created_at,thread_id,author:members!posts_author_id_fkey(display_name),thread:threads(title)')
+      .is('hidden_at', null).order('id', { ascending: false }).limit(8)),
+    wantsMod ? sb.from('reports').select('id', { count: 'exact', head: true }).is('resolved_at', null).then((r) => r.count || 0) : 0,
+    wantsAdmin ? sb.from('notify_signups').select('id', { count: 'exact', head: true }).then((r) => r.count || 0) : 0,
+  ]);
+  const tile = (href, title, sub) => h('a', { class: 'tile', href }, h('strong', { text: title }), h('span', { text: sub }));
+  const guideTile = tile(LINKS.guide, 'Voter guide', 'What is on your ballot, from official sources');
+  const mapTile = () => {
+    const a = focusAbbr();
+    return h('a', { class: 'tile us-tile', href: '#/map' }, usSvg({ small: true }),
+      h('strong', { text: 'The map' }), h('span', { text: a ? `Every state, with ${US[a][0]} marked` : 'Every state at a glance' }));
+  };
+
+  render(
+    h('p', { class: 'overline', text: 'Members' }),
+    h('h1', { text: `Welcome back, ${state.me.display_name}` }),
+    h('div', { class: 'tiles' },
+      guideTile,
+      mapTile(),
+      tile(LINKS.news, 'News', 'The time machine and the feed'),
+      state.hasRecord ? tile('findings.html', 'Findings', 'What we checked, the verdict, and every change since') : null,
+      tile('#/cases', 'Cases', 'The history cases we wrote, with every source')),
+    h('p', { class: 'small place-line' }, ...(loadPlace()
+      ? ['Your place: ', h('strong', { text: loadPlace().state }), ' · ', h('a', { href: '#/account', text: 'change it in your account' })]
+      : [h('a', { href: '#/account', text: 'Save your state in your account' }), ' to open the map and your ballot on it.'])),
+    h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Invite someone to The Way' })),
+    (wantsAdmin || wantsMod || can('researcher') || can('reviewer')) ? h('div', { class: 'panel' },
+      h('h3', { text: 'Your tools' }),
+      h('div', { class: 'btns' },
+
+        wantsAdmin ? h('a', { class: 'button quiet', href: '#/admin', text: `Notify list (${notifyCount})` }) : null,
+        wantsMod ? h('a', { class: 'button quiet', href: '#/reports', text: `Reports (${openReports} open)` }) : null,
+        wantsMod && state.hasModLog ? h('a', { class: 'button quiet', href: '#/log', text: 'Moderation log' }) : null,
+        (can('researcher') || can('reviewer')) ? h('a', { class: 'button quiet', href: '#/research', text: 'Research desk' }) : null)) : null,
+    h('h2', { text: 'Latest in the Commons' }),
+    posts.length ? h('ul', { class: 'list panel' }, posts.map((p) => h('li', {},
+      h('div', { class: 'row' }, h('a', { href: `#/t/${p.thread_id}`, text: p.thread ? p.thread.title : 'Thread' }), h('span', { class: 'meta', text: when(p.created_at) })),
+      h('div', { class: 'meta', text: p.author ? p.author.display_name : 'a member' }),
+      h('div', { class: 'small post', text: p.body.length > 220 ? p.body.slice(0, 220) + '…' : p.body }))))
+      : h('p', { class: 'muted', text: 'Nothing posted yet. Start the first thread in the Commons.' }),
+    h('p', {}, h('a', { class: 'button quiet', href: '#/commons', text: 'Open the Commons' })),
+    h('h2', { text: 'Rooms' }),
+    h('p', { class: 'small muted', text: 'Members may talk about anything, candidates included. The Way itself never takes sides.' }),
+    h('ul', { class: 'list panel' }, cats.map((c) => h('li', {},
+      h('div', { class: 'row' }, h('h3', {}, h('a', { href: `#/c/${c.slug}`, text: c.title })), c.locked ? h('span', { class: 'tag', text: 'read only' }) : null),
+      h('div', { class: 'muted small', text: c.description })))),
+  );
+  const a = focusAbbr();
+  if (a) available(a).then((v) => { if (v.guide) { guideTile.href = v.guide; guideTile.lastChild.textContent = `${US[a][0]}: what is on your ballot, from official sources`; } });
+}
+
+// ---------------------------------------------------------------- the Commons (forum front page)
+const pinTag = (t) => (t.pinned_at ? h('span', { class: 'tag pin', text: 'pinned' }) : null);
+// pinned first (newest pin on top), then by latest activity
+const byPinThenRecent = (a, b) => (b.pinned_at || '').localeCompare(a.pinned_at || '') || (b.last_post_at || '').localeCompare(a.last_post_at || '');
+
+function newThreadForm(cats, preset) {
+  const msg = h('div');
+  const open = cats.filter((c) => !c.locked);
+  const room = h('select', { required: true }, h('option', { value: '', text: 'Choose a room' }),
+    open.map((c) => h('option', { value: c.id, text: c.title, selected: preset === c.id })));
+  const title = h('input', { required: true, minlength: 3, maxlength: 200, placeholder: 'What do you want to talk about?' });
+  const body = h('textarea', { required: true, maxlength: 20000, placeholder: 'Plain text. Links are fine.' });
+  return h('form', { class: 'panel', id: 'new-thread', onsubmit: action(async () => {
+    if (!(await okToPost(`${title.value} ${body.value}`))) return;
+    const tid = await q(sb.rpc('start_thread', { category_id: +room.value, title: title.value, body: body.value }));
+    location.hash = `#/t/${tid}`;
+  }, msg) }, h('h2', { text: 'Start a thread' }), msg,
+    h('label', {}, 'Room', room), h('label', {}, 'Title', title), h('label', {}, 'First post', body),
+    h('p', { class: 'small dim', text: 'Up to 5 new threads an hour. Edits stay visible in the post history.' }),
+    h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Post thread')));
+}
+
+async function commonsView() {
+  const [cats, threads] = await Promise.all([
+    q(sb.from('categories').select('*').order('sort_order')),
+    q(sb.from('threads').select('id,title,status,last_post_at,pinned_at,category_id,author:members!threads_author_id_fkey(display_name)')
+      .order('last_post_at', { ascending: false }).limit(300)),
+  ]);
+  const catById = Object.fromEntries(cats.map((c) => [c.id, c]));
+  const stats = (c) => { const ts = threads.filter((t) => t.category_id === c.id); return { n: ts.length, last: ts[0] ? ts[0].last_post_at : null }; };
+  const pinned = threads.filter((t) => t.pinned_at).sort(byPinThenRecent);
+  const recent = threads.filter((t) => !t.pinned_at).slice(0, 12);
+  const formSlot = h('div');
+  render(
+    h('img', { class: 'page-art', src: 'art/commons.svg?v=1', alt: '', width: 320, height: 180 }),
+    h('p', { class: 'overline', text: 'Members' }),
+    h('h1', { text: 'The Commons' }),
+    h('p', { class: 'lede', text: 'Where members talk: questions, ideas, research help and what is happening where you live. Members may talk about anything, candidates included. The Way itself never takes sides.' }),
+    h('div', { class: 'btns' }, h('button', { class: 'primary', onclick: () => { formSlot.replaceChildren(newThreadForm(cats)); formSlot.querySelector('select').focus(); } }, 'Start a thread')),
+    formSlot,
+    threads.length ? null : h('div', { class: 'panel empty commons-empty' },
+      h('h3', { text: 'Nothing posted yet' }),
+      h('p', { class: 'muted', text: 'Be the first. Pick a room below, or press "Start a thread".' }),
+      h('ul', { class: 'small muted' },
+        h('li', { text: 'Only members can read or post here.' }),
+        h('li', { text: 'Be civil. Argue with ideas, not people.' }),
+        h('li', { text: 'If a post breaks the rules, press Report. Moderators review every report, and every moderation action is logged.' }),
+        h('li', { text: 'Posts are plain text. Edits stay visible in the post history.' }))),
+    pinned.length ? h('div', {}, h('h2', { text: 'Pinned' }), threadList(pinned, catById)) : null,
+    h('h2', { text: 'Rooms' }),
+    h('div', { class: 'rooms' }, cats.map((c) => { const s = stats(c); return h('a', { class: 'room', href: `#/c/${c.slug}` },
+      h('strong', { text: c.title }),
+      h('span', { class: 'muted small', text: c.description }),
+      h('span', { class: 'meta', text: s.n ? `${s.n} thread${s.n === 1 ? '' : 's'} · last post ${when(s.last)}` : (c.locked ? 'read only' : 'no threads yet') })); })),
+    recent.length ? h('div', {}, h('h2', { text: 'Latest threads' }), threadList(recent, catById)) : null,
+  );
+}
+
+function threadList(threads, catById) {
+  if (!threads.length) return h('p', { class: 'muted', text: 'No threads here yet. Start the first one below.' });
+  return h('ul', { class: 'list panel' }, threads.map((t) => h('li', {},
+    h('div', { class: 'row' }, h('a', { href: `#/t/${t.id}`, text: t.title }), h('span', {}, pinTag(t), ' ', statusTag(t.status))),
+    h('div', { class: 'meta' }, [
+      catById && catById[t.category_id] ? catById[t.category_id].title + ' · ' : '',
+      'started by ', t.author ? t.author.display_name : 'a member', ' · last post ', when(t.last_post_at)]))));
+}
+function statusTag(s) {
+  if (s === 'locked') return h('span', { class: 'tag warn', text: 'locked' });
+  if (s === 'hidden') return h('span', { class: 'tag bad', text: 'hidden' });
+  return null;
+}
+
+async function categoryView(slug) {
+  const cat = (await q(sb.from('categories').select('*').eq('slug', slug)))[0];
+  if (!cat) return render(notice('That category does not exist.'));
+  const threads = await q(sb.from('threads')
+    .select('id,title,status,last_post_at,pinned_at,category_id,author:members!threads_author_id_fkey(display_name)')
+    .eq('category_id', cat.id).order('last_post_at', { ascending: false }).limit(100));
+  threads.sort(byPinThenRecent);
+  const msg = h('div');
+  const title = h('input', { required: true, minlength: 3, maxlength: 200 });
+  const body = h('textarea', { required: true, maxlength: 20000 });
+  render(
+    h('p', { class: 'overline' }, h('a', { href: '#/commons', text: 'Commons' })),
+    h('h1', { text: cat.title }), h('p', { class: 'lede', text: cat.description }),
+    threadList(threads),
+    cat.locked ? null : h('div', { class: 'panel' }, h('h2', { text: 'Start a thread' }), msg,
+      h('form', { onsubmit: action(async () => {
+        if (!(await okToPost(`${title.value} ${body.value}`))) return;
+        const tid = await q(sb.rpc('start_thread', { category_id: cat.id, title: title.value, body: body.value }));
+        location.hash = `#/t/${tid}`;
+      }, msg) }, h('label', {}, 'Title', title), h('label', {}, 'First post', body),
+        h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Post')))),
+  );
+}
+
+async function threadView(id) {
+  if (can('moderator')) await langTerms();
+  const thread = (await q(sb.from('threads')
+    .select('*,category:categories(slug,title),author:members!threads_author_id_fkey(display_name)').eq('id', id)))[0];
+  if (!thread) return render(notice('That thread does not exist or is not visible to you.'));
+  const posts = await q(sb.from('posts')
+    .select('*,author:members!posts_author_id_fkey(display_name)').eq('thread_id', id).order('id'));
+  const msg = h('div');
+  const reload = () => threadView(id);
+
+  const modTools = can('moderator') ? h('div', { class: 'btns' },
+    thread.status === 'open'
+      ? h('button', { class: 'quiet', onclick: action(() => moderate('lock_thread', id, reload), msg) }, 'Lock thread')
+      : h('button', { class: 'quiet', onclick: action(() => moderate(thread.status === 'hidden' ? 'unhide_thread' : 'unlock_thread', id, reload), msg) }, thread.status === 'hidden' ? 'Unhide thread' : 'Unlock thread'),
+    thread.status !== 'hidden' ? h('button', { class: 'quiet danger', onclick: action(() => moderate('hide_thread', id, reload), msg) }, 'Hide thread') : null,
+    h('button', { class: 'quiet', onclick: action(() => moderate(thread.pinned_at ? 'unpin_thread' : 'pin_thread', id, reload), msg) }, thread.pinned_at ? 'Unpin' : 'Pin to top'),
+  ) : null;
+
+  const reply = h('textarea', { required: true, maxlength: 20000 });
+  render(
+    h('p', { class: 'overline' }, h('a', { href: '#/commons', text: 'Commons' }), ' / ', h('a', { href: `#/c/${thread.category.slug}`, text: thread.category.title })),
+    h('div', { class: 'row' }, h('h1', { text: thread.title }), h('span', {}, pinTag(thread), ' ', statusTag(thread.status))),
+    h('p', { class: 'meta', text: `Started by ${thread.author ? thread.author.display_name : 'a member'} · ${when(thread.created_at)}` }),
+    modTools, msg,
+    h('ul', { class: 'list panel' }, posts.map((p) => postItem(p, msg, reload))),
+    thread.status === 'open'
+      ? h('div', { class: 'panel' }, h('form', { onsubmit: action(async () => {
+          if (!(await okToPost(reply.value))) return;
+          await q(sb.from('posts').insert({ thread_id: id, body: reply.value }));
+          await reload();
+        }, msg) }, h('label', {}, 'Reply', reply), h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Post reply'))))
+      : h('p', { class: 'muted', text: 'This thread is closed to new replies.' }),
+  );
+}
+
+function postItem(p, msg, reload) {
+  const mine = state.user && p.author_id === state.user.id;
+  const bodyEl = h('div', { class: `post${p.hidden_at ? ' hidden' : ''}`, text: p.body });
+  const extra = h('div');
+  const li = h('li', { id: `p${p.id}` },
+    h('div', { class: 'meta' }, [h('strong', { text: p.author ? p.author.display_name : 'a member' }), ' · ', when(p.created_at),
+      p.edited_at ? ` · edited ${when(p.edited_at)}` : '', p.hidden_at ? ' · hidden by a moderator' : '']),
+    bodyEl, extra);
+  const hits = can('moderator') ? strongWords(p.body, TERMS) : [];
+  if (hits.length) li.firstChild.append(' ', h('span', { class: 'tag warn', title: hits.join(', '), text: 'strong language' }));
+
+  const tools = h('div', { class: 'btns' });
+  if (mine && !p.hidden_at) tools.append(h('button', { class: 'quiet', onclick: () => {
+    const ta = h('textarea', { required: true, maxlength: 20000 }); ta.value = p.body;
+    extra.replaceChildren(h('form', { onsubmit: action(async () => {
+      if (!(await okToPost(ta.value))) return;
+      await q(sb.from('posts').update({ body: ta.value }).eq('id', p.id));
+      await reload();
+    }, msg) }, ta, h('p', { class: 'small dim', text: 'Edits are public: the earlier wording stays in the post history.' }),
+      h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Save edit'), h('button', { type: 'button', onclick: () => extra.replaceChildren() }, 'Cancel'))));
+  } }, 'Edit'));
+  if (p.edited_at) tools.append(h('button', { class: 'quiet', onclick: action(async () => {
+    const revs = await q(sb.from('post_revisions').select('prior_body,created_at').eq('post_id', p.id).order('id'));
+    extra.replaceChildren(h('div', { class: 'small' }, h('p', { class: 'dim', text: 'Earlier wording, oldest first:' }),
+      revs.map((r) => h('div', {}, h('div', { class: 'meta', text: `replaced ${when(r.created_at)}` }), h('blockquote', { text: r.prior_body })))));
+  }, msg) }, 'History'));
+  if (!mine) tools.append(h('button', { class: 'quiet', onclick: action(async () => {
+    const reason = await ask('What is wrong with this post? Moderators will see your report.');
+    if (!reason) return;
+    await q(sb.from('reports').insert({ post_id: p.id, reason }));
+    msg.append(notice('Thanks. A moderator will look at it.', 'ok'));
+  }, msg) }, 'Report'));
+  if (can('moderator')) tools.append(p.hidden_at
+    ? h('button', { class: 'quiet', onclick: action(() => moderate('unhide_post', p.id, reload), msg) }, 'Unhide')
+    : h('button', { class: 'quiet danger', onclick: action(() => moderate('hide_post', p.id, reload), msg) }, 'Hide'));
+  li.insertBefore(tools, extra);
+  return li;
+}
+
+async function moderate(act, id, after) {
+  const reason = await ask('Reason (every member can read the moderation log):');
+  if (!reason) return;
+  await q(sb.rpc('moderate', { action: act, subject_id: id, reason }));
+  await after();
+}
+
+async function logView() {
+  const rows = await q(sb.from('moderation_actions')
+    .select('*,moderator:members!moderation_actions_moderator_id_fkey(display_name)').order('id', { ascending: false }).limit(200));
+  render(
+    h('h1', { text: 'Moderation log' }),
+    h('p', { class: 'lede', text: 'Every moderation action, who took it, and why. Nothing here can be edited or removed.' }),
+    rows.length ? h('ul', { class: 'list panel' }, rows.map((r) => h('li', {},
+      h('div', { class: 'row' }, h('strong', { text: r.action.replace(/_/g, ' ') }), h('span', { class: 'meta', text: when(r.created_at) })),
+      h('div', { class: 'meta', text: `${r.moderator ? r.moderator.display_name : '?'} · ${r.subject_type} ${r.subject_type === 'member' || r.subject_type === 'role' ? '' : '#' + r.subject_id}` }),
+      h('div', { class: 'post', text: r.reason })))) : h('p', { class: 'muted', text: 'No moderation yet.' }),
+  );
+}
+
+// ---------------------------------------------------------------- language filter
+// The word list lives in the database (Admin > Language filter). A term ending in * matches any word
+// starting with it; other terms match whole words. Findings are blocked by the database; posts only warn.
+let TERMS = null;
+async function langTerms(fresh) {
+  if (!TERMS || fresh) TERMS = await q(sb.from('language_terms').select('term,kind').order('term')).catch(() => []);
+  return TERMS;
+}
+function strongWords(text, terms) {
+  const t = (text || '').toLowerCase();
+  return (terms || []).filter(({ term }) => {
+    const w = term.replace(/\*$/, '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`(^|[^a-z0-9])${w}${term.endsWith('*') ? '' : '(?![a-z0-9])'}`).test(t);
+  }).map((x) => x.term);
+}
+// before a post goes up: a warning, never a block
+async function okToPost(text) {
+  const hits = strongWords(text, await langTerms());
+  return !hits.length || confirm(`This has strong language (${hits.join(', ')}). You can still post it, but moderators will see it flagged. Post it?`);
+}
+
+// ---------------------------------------------------------------- reports (moderators)
+
+// ---------------------------------------------------------------- Cases (the history cases) and revision reports
+// The list comes from cases-data.js (made by tools/cases_data.py from the built cases index).
+// The case pages live in /preview/pages/cases/ and open in a new tab (that folder asks for its
+// own password). Any member can report a case for revision; moderators accept or decline.
+const CASES = window.WAY_CASES || [];
+const caseBySlug = (slug) => CASES.find((c) => c.slug === slug) || null;
+const caseUrl = (c) => `${LINKS.cases}${c.slug}.html`;
+const STATUS_TAG = { open: ['open', ''], accepted: ['accepted', 'ok'], declined: ['declined', 'warn'] };
+const safeLink = (u) => (/^https?:\/\/\S+$/i.test(u || '') ? h('a', { href: u, target: '_blank', rel: 'noopener noreferrer nofollow', text: u }) : null);
+
+function caseReportForm(preset, done) {
+  const msg = h('div');
+  const pick = h('select', { name: 'case', required: true }, h('option', { value: '', text: 'Choose a case' }),
+    CASES.map((c) => h('option', { value: c.slug, text: `Case ${c.num}: ${c.title}`, selected: preset === c.slug })));
+  const problem = h('textarea', { name: 'problem', required: true, minlength: 10, maxlength: 2000, rows: 5,
+    placeholder: 'What is wrong or missing? Quote the sentence if you can.' });
+  const src = h('input', { name: 'source', type: 'url', maxlength: 500, placeholder: 'https://… (optional)' });
+  const form = h('form', { class: 'panel case-report', onsubmit: action(async () => {
+    const url = src.value.trim();
+    if (url && !/^https?:\/\/\S+$/i.test(url)) throw new Error('The source link must start with http:// or https://');
+    await q(sb.rpc('report_case_revision', { case_slug: pick.value, problem: problem.value.trim(), source_url: url || null }));
+    form.replaceChildren(notice('Thanks. Your report is in. A moderator will review it, and you can follow it under "Your reports".', 'ok'));
+    if (done) done();
+  }, msg) },
+    h('h3', { text: 'Report for revision' }), msg,
+    h('label', {}, 'Case', pick),
+    h('label', {}, 'What should change', problem),
+    h('label', {}, 'Source that shows it (optional)', src),
+    h('p', { class: 'small dim', text: 'Moderators see your display name with the report. Up to 10 reports a day.' }),
+    h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Send report'),
+      h('button', { type: 'button', class: 'quiet', onclick: () => { form.remove(); if (location.hash.startsWith('#/cases/')) location.hash = '#/cases'; } }, 'Cancel')));
+  setTimeout(() => (preset ? problem : pick).focus());
+  return form;
+}
+
+async function casesView(openSlug) {
+  const isMod = can('moderator');
+  const [mine, queue] = await Promise.all([
+    q(sb.from('case_revision_reports').select('id,case_slug,problem,status,created_at,decision_note,decided_at')
+      .eq('reporter_id', state.user.id).order('id', { ascending: false }).limit(50)),
+    isMod ? q(sb.from('case_revision_reports')
+      .select('id,case_slug,problem,source_url,created_at,reporter:members!case_revision_reports_reporter_id_fkey(display_name)')
+      .eq('status', 'open').order('id')) : [],
+  ]);
+  const msg = h('div');
+  const caseName = (slug) => { const c = caseBySlug(slug); return c ? `Case ${c.num}: ${c.title}` : slug; };
+  // Reporting starts on the case page itself ("Report this case" links to #/cases/<slug>); the list has no report buttons.
+  const target = openSlug && caseBySlug(openSlug);
+  const formSlot = target ? h('div', { id: `report-${target.slug}` },
+    h('p', { class: 'overline', text: caseName(target.slug) }),
+    caseReportForm(target.slug, () => setTimeout(() => { location.hash = '#/cases'; }, 2500)),
+    h('p', { class: 'small' }, h('a', { href: '#/cases', text: 'Back to all cases' }))) : null;
+
+  const list = CASES.length ? h('ul', { class: 'list panel cases' }, CASES.map((c) => {
+    return h('li', { id: `case-${c.slug}` },
+      h('div', { class: 'meta', text: `Case ${c.num} · ${c.area} · ${c.years}` }),
+      h('h3', {}, h('a', { href: caseUrl(c), text: c.title })),
+      h('p', { class: 'muted small', text: c.blurb }),
+      h('div', { class: 'btns' },
+        h('a', { class: 'button quiet', href: caseUrl(c), text: 'Read the case' })));
+  })) : h('p', { class: 'muted', text: 'No cases yet.' });
+
+  const decide = (r, decision) => action(async () => {
+    const note = await ask(decision === 'accepted' ? 'Accept: what will be changed?' : 'Decline: why? (the reporter sees this)');
+    if (!note) return;
+    await q(sb.rpc('decide_case_report', { report_id: r.id, decision, note }));
+    await casesView();
+  }, msg);
+
+  render(
+    h('img', { class: 'page-art', src: 'art/cases.svg?v=1', alt: '', width: 320, height: 180 }),
+    h('p', { class: 'overline', text: 'Research' }),
+    h('h1', { text: 'Cases' }),
+    h('p', { class: 'lede', text: `The history cases we have written so far (${CASES.length} of a planned 24). Each opens in a new tab. If something in a case is wrong or missing, use "Report this case" on the case itself; a moderator reviews every report.` }),
+    msg,
+    formSlot,
+    list,
+    isMod ? h('div', { class: 'panel' }, h('h2', { text: `Revision reports to review (${queue.length})` }),
+      queue.length ? h('ul', { class: 'list' }, queue.map((r) => h('li', {},
+        h('div', { class: 'meta', text: `${caseName(r.case_slug)} · from ${r.reporter ? r.reporter.display_name : 'a member'} · ${when(r.created_at)}` }),
+        h('div', { class: 'post', text: r.problem }),
+        r.source_url ? h('p', { class: 'small' }, 'Source: ', safeLink(r.source_url) || r.source_url) : null,
+        h('div', { class: 'btns' },
+          caseBySlug(r.case_slug) ? h('a', { class: 'button quiet', href: caseUrl(caseBySlug(r.case_slug)), text: 'Open the case' }) : null,
+          h('button', { class: 'quiet', onclick: decide(r, 'accepted') }, 'Accept'),
+          h('button', { class: 'quiet danger', onclick: decide(r, 'declined') }, 'Decline'))))) : h('p', { class: 'muted small', text: 'Nothing waiting.' })) : null,
+    h('div', { class: 'panel' }, h('h2', { text: 'Your reports' }),
+      mine.length ? h('ul', { class: 'list' }, mine.map((r) => h('li', {},
+        h('div', { class: 'row' }, h('strong', { text: caseName(r.case_slug) }),
+          h('span', { class: `tag ${STATUS_TAG[r.status][1]}`, text: STATUS_TAG[r.status][0] })),
+        h('div', { class: 'meta', text: when(r.created_at) }),
+        h('div', { class: 'post', text: r.problem }),
+        r.decision_note ? h('p', { class: 'small' }, h('strong', { text: 'Moderator: ' }), r.decision_note) : null))) : h('p', { class: 'muted small', text: 'You have not reported anything yet.' })),
+  );
+  if (formSlot) window.scrollTo(0, Math.max(0, formSlot.getBoundingClientRect().top + window.scrollY - 24));
+}
+
+async function reportsView() {
+  const rows = await q(sb.from('reports')
+    .select('*,reporter:members!reports_reporter_id_fkey(display_name),post:posts(id,body,thread_id,hidden_at)')
+    .is('resolved_at', null).order('id'));
+  const msg = h('div');
+  const terms = await langTerms();
+  const recent = await q(sb.from('posts').select('id,body,thread_id,created_at,hidden_at,author:members!posts_author_id_fkey(display_name)')
+    .is('hidden_at', null).order('id', { ascending: false }).limit(300)).catch(() => []);
+  const flagged = recent.map((p) => ({ p, hits: strongWords(p.body, terms) })).filter((x) => x.hits.length);
+  render(
+    h('h1', { text: 'Reports' }), msg,
+    h('div', { class: 'panel' }, h('h2', { text: `Strong language in recent posts (${flagged.length})` }),
+      h('p', { class: 'muted small', text: 'Posts are never blocked for language; the author was warned. Hide one only if it breaks the rules.' }),
+      flagged.length ? h('ul', { class: 'list' }, flagged.map(({ p, hits }) => h('li', {},
+        h('div', { class: 'meta', text: `${p.author ? p.author.display_name : 'a member'} · ${when(p.created_at)} · ${hits.join(', ')}` }),
+        h('blockquote', { text: p.body.slice(0, 400) }),
+        h('div', { class: 'btns' }, h('a', { class: 'button quiet', href: `#/t/${p.thread_id}#p${p.id}`, text: 'Open thread' }),
+          h('button', { class: 'quiet danger', onclick: action(() => moderate('hide_post', p.id, reportsView), msg) }, 'Hide post'))))) : h('p', { class: 'muted small', text: 'None.' })),
+    h('h2', { text: 'Open reports' }),
+    rows.length ? h('ul', { class: 'list panel' }, rows.map((r) => h('li', {},
+      h('div', { class: 'meta', text: `Reported by ${r.reporter ? r.reporter.display_name : '?'} · ${when(r.created_at)}` }),
+      h('div', { class: 'post', text: r.reason }),
+      r.post ? h('blockquote', { text: r.post.body.slice(0, 600) }) : null,
+      h('div', { class: 'btns' },
+        r.post ? h('a', { class: 'button quiet', href: `#/t/${r.post.thread_id}`, text: 'Open thread' }) : null,
+        r.post && !r.post.hidden_at ? h('button', { class: 'quiet danger', onclick: action(() => moderate('hide_post', r.post.id, reportsView), msg) }, 'Hide post') : null,
+        h('button', { class: 'quiet', onclick: action(async () => {
+          const res = await ask('How was this resolved?');
+          if (!res) return;
+          await q(sb.rpc('resolve_report', { report_id: r.id, resolution: res }));
+          await reportsView();
+        }, msg) }, 'Resolve'))))) : h('p', { class: 'muted', text: 'No open reports.' }),
+  );
+}
+
+// ---------------------------------------------------------------- research desk
+
+const VERDICTS = { supported: 'Supported', mixed: 'Mixed', not_supported: 'Not supported', too_early: 'Too early to tell' };
+const verdictTag = (v) => v ? h('span', { class: `tag verdict v-${v}`, text: VERDICTS[v] || v }) : null;
+const slugify = (s) => s.toLowerCase().normalize('NFKD').replace(/[^a-z0-9\s-]/g, '').trim()
+  .replace(/\s+/g, '-').replace(/-+/g, '-').slice(0, 70).replace(/^-|-$/g, '');
+const CLAIM_RULE = 'One checkable sentence about a policy and what it did. Never about a candidate, a party or a person.';
+const CHECK_LABEL = { clear: 'AI check: nothing glaring', flagged_confirmed: 'AI check flagged something; the author sent it anyway', unchecked: 'AI check did not run' };
+
+// Where each version stands, from the append-only tables.
+function versionState(v, subs, rets, evs) {
+  const e = evs.filter((x) => x.version_id === v.id);
+  if (e.some((x) => x.event_type === 'retracted')) return 'retracted';
+  if (e.length) return 'published';
+  if (rets.some((r) => r.version_id === v.id)) return 'returned';
+  if (subs.some((s) => s.version_id === v.id)) return 'in_review';
+  return 'draft';
+}
+const STATE_TAG = {
+  draft: ['tag', 'draft'], in_review: ['tag warn', 'waiting for review'], returned: ['tag bad', 'sent back'],
+  published: ['tag ok', 'published'], retracted: ['tag bad', 'retracted'],
+};
+const stateTag = (s) => h('span', { class: STATE_TAG[s][0], text: STATE_TAG[s][1] });
+
+// The Research desk's "how it works" box and one worked example (Frank, Oct 15 2026).
+// The example is plain text in this file: it is not in the database, not published, and not a Finding.
+const DESK_EXAMPLE = {
+  claim: 'The federal minimum wage has been $7.25 an hour since July 24, 2009.',
+  verdict: 'Supported',
+  summary: 'Yes. Congress last raised it in 2007, in three steps; the last step, to $7.25, took effect on July 24, 2009. No federal increase has been enacted since (as of October 2026).',
+  evidence: 'The Fair Minimum Wage Act of 2007 (part of Public Law 110-28) raised the federal minimum in three steps: $5.85 on July 24, 2007, $6.55 on July 24, 2008, and $7.25 on July 24, 2009. The rate is written into federal law at 29 U.S.C. 206(a)(1)(C). The U.S. Department of Labor\'s history chart lists $7.25 as the federal rate from July 24, 2009.',
+  against: 'Most workers are not paid as little as $7.25. Many states and cities set higher minimums, so saying "the minimum wage is $7.25" can mislead.',
+  answer: 'True and worth saying, but this claim is only about the federal floor. Where a state or city sets a higher minimum, the higher one applies; the federal rate itself has not changed.',
+  methods: 'Read the text of the 2007 law, the current U.S. Code section, and the Labor Department\'s chart, and checked that the dates and amounts match in all three.',
+  limits: 'This says nothing about whether the rate should change. That is a policy argument, not a factual question.',
+  sources: [
+    ['primary', 'Public Law 110-28, section 8102 (Fair Minimum Wage Act of 2007), text of the law', 'https://www.congress.gov/110/plaws/publ28/PLAW-110publ28.pdf'],
+    ['primary', '29 U.S.C. 206, minimum wage (current U.S. Code)', 'https://www.law.cornell.edu/uscode/text/29/206'],
+    ['secondary', 'U.S. Department of Labor, History of Federal Minimum Wage Rates Under the Fair Labor Standards Act, 1938 to 2009', 'https://www.dol.gov/agencies/whd/minimum-wage/history/chart'],
+  ],
+};
+function deskGuide() {
+  const e = DESK_EXAMPLE;
+  const part = (label, text) => h('div', { class: 'ex-part' }, h('span', { class: 'why-label', text: label }), h('p', { text }));
+  return h('div', { class: 'panel desk-guide' },
+    h('h2', { text: 'How a finding gets published' }),
+    h('ol', { class: 'steps' },
+      h('li', {}, h('strong', { text: 'Write the claim. ' }), 'One factual claim about a policy, never about a candidate or a party. Add the evidence, at least three sources (one of them primary), the strongest case against it, your answer, and a verdict.'),
+      h('li', {}, h('strong', { text: 'AI pre-check. ' }), 'Our AI opens every source and checks the links, quotes and numbers. It only flags glaring problems; you can fix them or send it on anyway.'),
+      h('li', {}, h('strong', { text: 'A second member reviews it, then it is published. ' }), 'A reviewer checks it before it goes up. Every later change stays visible in the finding\'s history.')),
+    h('details', { class: 'example' },
+      h('summary', { text: 'Read a worked example first' }),
+      h('p', { class: 'notice', text: 'Example only. Not published and not counted as a Finding. It shows the shape of a good one.' }),
+      part('Claim', e.claim),
+      h('p', {}, h('span', { class: 'tag ok', text: e.verdict })),
+      part('Short answer', e.summary),
+      part('Evidence', e.evidence),
+      part('Strongest case against it', e.against),
+      part('Our answer', e.answer),
+      part('How we checked', e.methods),
+      part('Limits', e.limits),
+      h('div', { class: 'ex-part' }, h('span', { class: 'why-label', text: 'Sources' }),
+        h('ul', { class: 'small' }, e.sources.map(([type, title, url]) => h('li', {},
+          h('span', { class: `tag ${type === 'primary' ? 'ok' : ''}`, text: type }), ' ',
+          h('a', { href: url, target: '_blank', rel: 'noopener noreferrer', text: title })))))));
+}
+
+async function researchView() {
+  const [items, versions, subs, rets, evs] = await Promise.all([
+    q(sb.from('research_items').select('*').order('created_at', { ascending: false })),
+    q(sb.from('research_versions').select('id,item_id,version_no,claim,verdict,author_id,created_at').order('id')),
+    q(sb.from('research_submissions').select('version_id,check_state,created_at')),
+    q(sb.from('research_returns').select('version_id')),
+    q(sb.from('research_publication_events').select('version_id,event_type')),
+  ]);
+  const latestOf = (id) => versions.filter((v) => v.item_id === id).pop();
+  const itemById = Object.fromEntries(items.map((i) => [i.id, i]));
+  const waiting = versions.filter((v) => versionState(v, subs, rets, evs) === 'in_review');
+
+  const msg = h('div');
+  const title = h('input', { required: true, minlength: 10, maxlength: 200, placeholder: 'The 2012 Kansas income-tax cuts did not deliver the growth promised' });
+  const question = h('textarea', { required: true, minlength: 3, maxlength: 1000, rows: 3, placeholder: 'Why it matters, and what question this answers' });
+  const slug = h('input', { required: true, pattern: '[a-z0-9-]{3,80}', placeholder: 'kansas-2012-tax-cuts' });
+  let slugTouched = false;
+  slug.addEventListener('input', () => { slugTouched = true; });
+  title.addEventListener('input', () => { if (!slugTouched) slug.value = slugify(title.value); });
+
+  render(
+    h('p', { class: 'overline', text: 'Findings' }),
+    h('h1', { text: 'Research desk' }),
+    h('p', { class: 'lede', text: 'Make a claim, back it with evidence, face the strongest case against it, and pick a verdict. The AI fact-checks it, a second member reviews it, and then it is published.' }),
+    deskGuide(),
+    h('details', { class: 'small how-ai' }, h('summary', { text: 'How the AI fact-check works' }),
+      h('p', { class: 'muted', text: 'Our own AI, running on our own computer; the checking stays local and drafts never go to an outside AI company. It opens every source, checks links, quotes and numbers, saves each source (a public Wayback copy plus our own private screenshot and text), and flags only glaring problems. It never decides: you can fix it or send it on anyway, a second member always reviews it, and the public finding says what the AI check found.' })),
+    state.hasRecord ? h('p', {}, h('a', { href: 'findings.html', text: 'See the published Findings' })) : null,
+    can('reviewer') && waiting.length ? h('div', { class: 'panel' }, h('h2', { text: `Waiting for review (${waiting.length})` }),
+      h('ul', { class: 'list' }, waiting.map((v) => {
+        const s = subs.find((x) => x.version_id === v.id);
+        return h('li', {}, h('div', { class: 'row' }, h('a', { href: `#/research/${v.item_id}`, text: v.claim || itemById[v.item_id].title }), verdictTag(v.verdict)),
+          h('div', { class: 'meta', text: `Version ${v.version_no} · sent ${when(s.created_at)} · ${CHECK_LABEL[s.check_state]}` }));
+      }))) : null,
+    items.length ? h('ul', { class: 'list panel' }, items.map((i) => {
+      const v = latestOf(i.id);
+      return h('li', {},
+        h('div', { class: 'row' }, h('a', { href: `#/research/${i.id}`, text: (v && v.claim) || i.title }),
+          h('span', {}, v ? verdictTag(v.verdict) : null, ' ', i.published_version_id ? stateTag('published') : v ? stateTag(versionState(v, subs, rets, evs)) : stateTag('draft'))),
+        h('div', { class: 'muted small', text: i.question }));
+    })) : h('p', { class: 'muted', text: 'No findings yet.' }),
+    can('researcher') ? h('div', { class: 'panel' }, h('h2', { text: 'Start a new finding' }),
+      h('p', { class: 'muted small', text: CLAIM_RULE }), msg,
+      h('form', { onsubmit: action(async () => {
+        const row = (await q(sb.from('research_items').insert({ slug: slug.value, title: title.value.trim(), question: question.value.trim() }).select('id')))[0];
+        location.hash = `#/research/${row.id}`;
+      }, msg) }, h('label', {}, 'The claim', title), h('label', {}, 'Why it matters', question),
+        h('details', {}, h('summary', { text: 'Web address (filled in for you)' }), h('label', {}, 'Lowercase words and dashes', slug)),
+        h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Start')))) : null,
+  );
+}
+
+async function researchItemView(id) {
+  const item = (await q(sb.from('research_items').select('*').eq('id', id)))[0];
+  if (!item) return render(notice('Not found.'));
+  const [versions, events] = await Promise.all([
+    q(sb.from('research_versions').select('*,author:members!research_versions_author_id_fkey(display_name)').eq('item_id', id).order('version_no')),
+    q(sb.from('research_publication_events').select('*,reviewer:members!research_publication_events_reviewer_id_fkey(display_name)').eq('item_id', id).order('id')),
+  ]);
+  const vids = versions.map((v) => v.id);
+  const [srcs, subs, rets, checks] = vids.length ? await Promise.all([
+    q(sb.from('research_sources').select('*').in('version_id', vids).order('id')),
+    q(sb.from('research_submissions').select('*,by:members!research_submissions_submitted_by_fkey(display_name)').in('version_id', vids)),
+    q(sb.from('research_returns').select('*,by:members!research_returns_reviewer_id_fkey(display_name)').in('version_id', vids)),
+    q(sb.from('research_prechecks').select('*').in('version_id', vids).order('id')),
+  ]) : [[], [], [], []];
+  const snaps = srcs.length ? await q(sb.from('research_source_snapshots').select('*').in('source_id', srcs.map((x) => x.id))) : [];
+  const terms = await langTerms();
+  const msg = h('div');
+  const reload = () => researchItemView(id);
+  const latest = versions[versions.length - 1];
+
+  const fakeOf = (vid) => new Set(checks.filter((c) => c.version_id === vid && c.status === 'done')
+    .flatMap((c) => (c.findings || []).filter((f) => f.kind === 'quote_missing').map((f) => f.source_id)));
+  const carrySources = (v) => { const bad = fakeOf(v.id); return srcs.filter((x) => x.version_id === v.id && !bad.has(x.id)); };
+
+  const versionPanels = versions.slice().reverse().map((v) => {
+    const evs = events.filter((e) => e.version_id === v.id);
+    const st = versionState(v, subs, rets, events);
+    const vs = srcs.filter((s) => s.version_id === v.id);
+    const sub = subs.find((s) => s.version_id === v.id);
+    const ret = rets.find((r) => r.version_id === v.id);
+    const check = checks.filter((c) => c.version_id === v.id).pop();
+    // sources a check found quoting words that are not on their page: a hard stop until removed
+    const fakeIds = fakeOf(v.id);
+    const blocked = vs.filter((x) => fakeIds.has(x.id));
+    // sent to the AI = locked for good; any change is a new version
+    const locked = checks.some((c) => c.version_id === v.id);
+    const cards = groupSources(vs);
+    const hasPrimary = vs.some((x) => x.source_type === 'primary');
+    const mine = state.user && v.author_id === state.user.id;
+    const editable = mine && st === 'draft' && !locked;
+    const ownHits = strongWords([item.title, item.question, v.claim, v.summary, v.body, v.counterargument, v.counter_response, v.methods, v.limitations].join(' '), terms);
+    const quoteHits = vs.some((x) => strongWords(x.quote, terms).length);
+    const tools = h('div', { class: 'btns' });
+
+    if (can('reviewer') && !mine && st === 'in_review') {
+      tools.append(
+        h('button', { class: 'primary', onclick: action(async () => {
+          const reason = await ask("Publish: what did you check? (shown in the finding's history)");
+          if (!reason) return;
+          await q(sb.rpc('review_research_version', { version_id: v.id, event_type: item.published_version_id ? 'corrected' : 'published', reason }));
+          await reload();
+        }, msg) }, item.published_version_id ? 'Publish as correction' : 'Publish'),
+        h('button', { onclick: action(async () => {
+          const note = await ask('Send back: what needs fixing? (the author sees this)');
+          if (!note) return;
+          await q(sb.rpc('return_for_changes', { version_id: v.id, note }));
+          await reload();
+        }, msg) }, 'Send back'));
+    }
+    if (can('reviewer') && !mine && st === 'published') {
+      tools.append(h('button', { class: 'quiet danger', onclick: action(async () => {
+        const reason = await ask("Retract: why? (shown to members in the finding's history)");
+        if (!reason) return;
+        await q(sb.rpc('review_research_version', { version_id: v.id, event_type: 'retracted', reason }));
+        await reload();
+      }, msg) }, 'Retract'));
+    }
+
+    let authorBox = null;
+    if (mine && st === 'draft') {
+      const url = h('input', { type: 'url', required: true, placeholder: 'https://' });
+      const stitle = h('input', { required: true, maxlength: 500 });
+      const pub = h('input', { maxlength: 200 });
+      const pdate = h('input', { type: 'date', min: '1400-01-01', max: new Date(Date.now() + 864e5).toISOString().slice(0, 10) });
+      const quote = h('textarea', { maxlength: 5000, rows: 3, placeholder: 'Exact words, copied from the source' });
+      const loc = h('input', { maxlength: 200, placeholder: 'p. 12, table 3, or 14:05' });
+      const stype = typeSelect('secondary');
+      const sendBox = h('div');
+      const ready = v.claim && v.verdict && v.counterargument && v.counter_response;
+      authorBox = h('div', {},
+        locked ? h('p', { class: 'muted small', text: 'Sent to the AI, so this version is locked and recorded. To change anything, write a new version; it starts as a copy of this one.' })
+        : h('details', { open: cards.length < 3 }, h('summary', { text: `Add a source (${cards.length} of at least 3, one primary)` }), h('form', { onsubmit: action(async () => {
+          await q(sb.from('research_sources').insert({ version_id: v.id, url: url.value.trim(), title: clean(stitle.value) || '', source_type: stype.value,
+            publisher: clean(pub.value), published_at_claimed: pdate.value || null, quote: clean(quote.value), locator: clean(loc.value) }));
+          await reload();
+        }, msg) }, h('label', {}, 'Link', url), h('label', {}, 'Title', stitle), h('label', {}, 'Type of source', stype), h('p', { class: 'muted small', text: PRIMARY_HINT }),
+          h('label', {}, 'Publisher', pub),
+          h('label', {}, 'Date the publisher gives', pdate), h('label', {}, 'Quote (the AI checks it is really on the page)', quote), h('label', {}, 'Where in the source', loc),
+          h('p', { class: 'muted small', text: 'More quotes from the same page go on its card: "Add another quote from this source".' }),
+          h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Add source')))),
+        h('div', { class: 'sendbox' },
+          !ready ? h('p', { class: 'muted small', text: 'This version is missing the claim, verdict or the other side. Write a new version with them to send it for review.' })
+          : ownHits.length ? h('div', { class: 'notice error', role: 'note' }, h('strong', { text: 'Strong language in your own words: ' }),
+              h('span', { text: `${ownHits.join(', ')}. Reword it in a new version, or quote it from a source (quotes the AI verifies on the page are allowed).` }),
+              h('div', { class: 'btns' }, h('button', { class: 'primary', onclick: openNewVersion }, 'Write a new version')))
+          : cards.length < 3 ? h('p', { class: 'muted small', text: 'Add at least three different sources (several quotes from one page count as one), then send it for review.' })
+          : !hasPrimary ? h('p', { class: 'muted small', text: 'Mark at least one source as primary (a court record, official data, a statute or government document, or an original study), then send it for review.' })
+          : blocked.length ? h('div', { class: 'notice error', role: 'note' },
+              h('strong', { text: 'This finding can\'t go to review yet. ' }),
+              h('span', { text: `The quote for ${blocked.map((x) => `"${srcTitle(x)}"`).join(', ')} is not on its page. Write a new version: your other sources are copied over, then add that one again with the exact words from the page.` }),
+              h('div', { class: 'btns' }, h('button', { class: 'primary', onclick: openNewVersion }, 'Write a new version')))
+          : h('div', {}, h('p', { class: 'muted small', text: 'The AI checks it for glaring errors first, then it goes to a second member for review.' }),
+              locked ? null : h('p', { class: 'notice warn lock-warn', role: 'note', text: LOCK_WARNING }),
+              h('div', { class: 'btns' }, h('button', { class: 'primary', onclick: action(() => {
+                if (!locked && !confirm(LOCK_WARNING + '\n\nSend it to the AI now?')) return;
+                return sendForReview(v, sendBox, reload);
+              }, msg) }, locked ? 'Check again and send' : 'Send to AI'))),
+          sendBox));
+    }
+
+    return h('div', { class: 'panel' },
+      h('div', { class: 'row' }, h('h3', { text: `Version ${v.version_no}` }),
+        h('span', {}, item.published_version_id === v.id ? h('span', { class: 'tag ok', text: 'current' }) : null, ' ', stateTag(st))),
+      h('div', { class: 'meta', text: `${v.author ? v.author.display_name : '?'} · ${when(v.created_at)} · why: ${v.reason_for_change}` }),
+      v.claim ? h('p', { class: 'claim' }, h('span', { text: v.claim }), ' ', verdictTag(v.verdict)) : null,
+      h('p', { text: v.summary }),
+      h('details', {}, h('summary', { text: 'Evidence, the other side, how we checked' }),
+        h('h3', { text: 'Evidence' }), h('div', { class: 'post', text: v.body || '—' }),
+        v.counterargument ? [h('h3', { text: 'The strongest case against' }), h('div', { class: 'post', text: v.counterargument }),
+          h('h3', { text: 'Our answer' }), h('div', { class: 'post', text: v.counter_response })] : null,
+        h('h3', { text: 'How we checked' }), h('div', { class: 'post', text: v.methods }),
+        h('h3', { text: 'Limits' }), h('div', { class: 'post', text: v.limitations })),
+      h('h3', { text: `Sources (${cards.length})` }),
+      cards.length ? h('div', { class: 'source-cards' }, cards.map((g, i) => sourceCard(g, i + 1, snaps, {
+        fakeIds, editable, msg, reload, version: v }))) : h('p', { class: 'muted small', text: 'None yet.' }),
+      check ? checkBlock(check) : null,
+      sub ? h('p', { class: 'meta', text: `Sent for review by ${sub.by ? sub.by.display_name : '?'} on ${when(sub.created_at)} · ${CHECK_LABEL[sub.check_state]}` }) : null,
+      ret ? h('div', { class: 'notice error', role: 'note' }, h('strong', { text: `Sent back by ${ret.by ? ret.by.display_name : '?'}: ` }), h('span', { text: ret.note }),
+        mine ? h('div', { class: 'small', text: 'Write a new version with the fixes below.' }) : null) : null,
+      quoteHits && (st === 'in_review' || st === 'draft') ? h('p', { class: 'notice warn', role: 'note', text: 'Contains quoted strong language: it appears only inside source quotes, which is allowed when the AI verified the quote on its page.' }) : null,
+      can('reviewer') && !mine && st === 'in_review' ? h('p', { class: 'muted small', text: 'Before publishing: open every source and find the quote, check the numbers, make sure the claim is about a policy and not a person, and that the verdict matches the evidence.' }) : null,
+      authorBox,
+      evs.length ? h('ul', { class: 'small list' }, evs.map((e) => h('li', { text: `${e.event_type} by ${e.reviewer ? e.reviewer.display_name : '?'} on ${when(e.created_at)}: ${e.reason}` }))) : null,
+      tools);
+  });
+
+  // only the newest version open; earlier ones folded away but still there for the record
+  // ...plus the published version and any older version still waiting for a reviewer, so neither is hidden
+  const newestFirst = versions.slice().reverse();
+  const keepOpen = versionPanels.filter((_, i) => i === 0 || newestFirst[i].id === item.published_version_id
+    || versionState(newestFirst[i], subs, rets, events) === 'in_review');
+  const folded = versionPanels.filter((p) => !keepOpen.includes(p));
+  const versionBlocks = [...keepOpen,
+    folded.length ? h('details', { class: 'panel earlier' }, h('summary', { text: `Earlier versions (${folded.length})` }), folded) : null];
+
+  let newVersion = null;
+  if (can('researcher')) {
+    const ta = (name, label, min, max, rows, hint) => {
+      const el = h('textarea', { name, required: min > 0, minlength: min || null, maxlength: max, rows, placeholder: hint || null });
+      if (latest) el.value = latest[name] || '';
+      return h('label', {}, label, el);
+    };
+    const claim = h('input', { name: 'claim', required: true, minlength: 10, maxlength: 300, value: (latest && latest.claim) || item.title });
+    const verdict = h('select', { name: 'verdict', required: true },
+      h('option', { value: '', text: 'Choose a verdict' }),
+      Object.entries(VERDICTS).map(([k, label]) => h('option', { value: k, text: label, selected: latest && latest.verdict === k ? true : null })));
+    const reason = h('input', { required: true, minlength: 3, maxlength: 2000, placeholder: latest ? 'What changed, and why' : 'First version' });
+    const form = h('form', { onsubmit: action(async () => {
+        const fd = new FormData(form);
+        const [nv] = await q(sb.from('research_versions').insert({ item_id: item.id, claim: fd.get('claim').trim(), verdict: fd.get('verdict'),
+          summary: fd.get('summary'), body: fd.get('body') || '', counterargument: fd.get('counterargument'), counter_response: fd.get('counter_response'),
+          methods: fd.get('methods'), limitations: fd.get('limitations'), reason_for_change: reason.value }).select('id'));
+        // carry the sources over as new rows (the old version keeps its own, frozen); a quote the AI
+        // could not find on its page is left behind, so it has to be added again with the real words
+        const carry = latest ? carrySources(latest) : [];
+        if (nv && carry.length) {
+          const okDate = (d) => d && d >= '1400-01-01' && d <= new Date(Date.now() + 864e5).toISOString().slice(0, 10) ? d : null;
+          await q(sb.from('research_sources').insert(carry.map((x) => ({ version_id: nv.id, url: x.url, title: srcTitle(x), publisher: clean(x.publisher),
+            published_at_claimed: okDate(x.published_at_claimed), quote: clean(x.quote), locator: clean(x.locator), source_type: x.source_type }))));
+        }
+        await reload();
+      }, msg) },
+        h('label', {}, 'The claim', claim), h('p', { class: 'muted small', text: CLAIM_RULE }),
+        h('label', {}, 'Verdict', verdict),
+        ta('summary', 'Short answer (what a reader sees first)', 10, 4000, 3),
+        ta('body', 'Evidence: the facts and numbers, and which source says each one', 20, 200000, 12),
+        ta('counterargument', 'The strongest case against the claim, stated fairly', 20, 20000, 4),
+        ta('counter_response', 'Our answer: why the claim still holds, or where it does not', 10, 20000, 4),
+        ta('methods', 'How we checked', 3, 20000, 3),
+        ta('limitations', 'Limits: what this cannot tell you', 3, 20000, 3),
+        h('label', {}, 'Reason for this version', reason),
+        h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Save version')));
+    const carry = latest ? carrySources(latest) : [];
+    const left = latest ? srcs.filter((x) => x.version_id === latest.id).length - carry.length : 0;
+    if (latest) form.prepend(h('p', { class: 'muted small', text: `Everything below starts from version ${latest.version_no}. `
+      + (carry.length ? `Its sources (${groupSources(carry).length}, with ${carry.length} quote${carry.length === 1 ? '' : 's'}) will be copied into the new version, where you can edit or remove each one.` : '')
+      + (left > 0 ? ` ${left}${left === 1 ? ' quote that is' : ' quotes that are'} not on the page won't be copied; add ${left === 1 ? 'it' : 'them'} again with the exact words.` : '') }));
+    newVersion = h('details', { class: 'panel', id: 'new-version', open: !latest || null },
+      h('summary', { text: latest ? 'Write a new version' : 'Write the first version' }), form);
+  }
+
+  render(
+    h('p', { class: 'overline' }, h('a', { href: '#/research', text: 'Research desk' })),
+    h('h1', { text: (latest && latest.claim) || item.title }), h('p', { class: 'lede', text: item.question }),
+    item.published_version_id ? h('p', {}, h('a', { href: `findings.html#${encodeURIComponent(item.slug)}`, text: 'View the published finding' }), ' · ',
+      h('a', { href: `record.html?item=${encodeURIComponent(item.slug)}`, text: 'History' })) : null,
+    msg, newVersion, versionBlocks,
+  );
+}
+
+function checkBlock(c) {
+  const head = c.status === 'queued' ? 'AI fact-check: waiting for the AI'
+    : c.status === 'running' ? 'AI fact-check: checking now'
+    : c.status === 'failed' ? `AI fact-check: could not finish (${c.error || 'unknown error'})`
+    : c.outcome === 'flagged' ? 'AI fact-check: found something glaring' : 'AI fact-check: nothing glaring';
+  return h('div', { class: `check ${c.outcome || c.status}` },
+    h('div', { class: 'meta', text: `${head}${c.completed_at ? ' · ' + when(c.completed_at) : ''}${c.model ? ' · ' + c.model : ''}` }),
+    c.summary ? h('p', { class: 'small', text: c.summary }) : null,
+    findingsList(c.findings || []));
+}
+function findingsList(fs) {
+  if (!fs.length) return null;
+  const sorted = fs.slice().sort((a, b) => (a.severity === 'glaring' ? 0 : 1) - (b.severity === 'glaring' ? 0 : 1));
+  return h('ul', { class: 'findings' }, sorted.map((f) => h('li', { class: f.severity },
+    h('span', { class: `tag ${f.severity === 'glaring' ? 'bad' : ''}`, text: f.severity === 'glaring' ? 'glaring' : 'note' }), ' ',
+    h('span', { text: f.issue }), f.where ? h('span', { class: 'meta', text: ` (${f.where})` }) : null, reasons(f))));
+}
+// Why the AI flagged it: what it checked, what the source actually says, why that matters, what would fix it.
+function reasons(f) {
+  const row = (label, val, quote) => val ? h('div', { class: 'why-row' }, h('span', { class: 'why-label', text: label }),
+    quote ? h('blockquote', { text: val }) : h('span', { text: val })) : null;
+  const says = f.source_says || (f.checked && f.why && !f.source_says ? 'Nothing in the sources says this.' : '');
+  const rows = [row('What I checked', f.checked, true), row('The source says', says, !!f.source_says),
+    row('Why it matters', f.why), row('To fix it', f.fix)].filter(Boolean);
+  return rows.length ? h('div', { class: 'why' }, rows) : null;
+}
+
+const LOCK_WARNING = 'Once sent, this version is locked and recorded permanently in the record. Changes will become a new version.';
+function openNewVersion() {
+  const nv = document.getElementById('new-version');
+  if (nv) { nv.open = true; nv.scrollIntoView({ behavior: 'smooth' }); }
+}
+
+// Ask the AI to fact-check, wait for the answer, then send for review, or ask "are you sure?".
+async function sendForReview(v, box, reload) {
+  const say = (...n) => box.replaceChildren(...n.flat().filter(Boolean));
+  if (box.previousElementSibling) box.previousElementSibling.hidden = true;  // the "Fact-check and send" button
+  const submit = async (confirmWord) => {
+    const st = await q(sb.rpc('submit_for_review', { version_id: v.id, confirm: confirmWord || null }));
+    await reload();
+    return st;
+  };
+  const btn = (label, fn, cls) => h('button', { class: cls || null, onclick: action(fn, box) }, label);
+  const withoutCheck = (why) => say(notice(why, 'warn'),
+    h('div', { class: 'btns' }, btn('Send without the check', () => submit('unchecked'), 'primary'), btn('Try the check again', () => sendForReview(v, box, reload))));
+
+  const status = await q(sb.rpc('checker_status')).catch(() => null);
+  const pid = await q(sb.rpc('request_precheck', { version_id: v.id }));
+  if (status && !status.online) {
+    return withoutCheck("The AI fact-checker is offline right now, so this version can't be checked. You can send it anyway; the reviewer will see it wasn't checked.");
+  }
+  const started = Date.now();
+  say(notice('The AI is fact-checking this version. This usually takes under a minute.', 'ok'));
+  for (;;) {
+    await new Promise((r) => setTimeout(r, 3000));
+    if (!document.body.contains(box)) return;  // the page moved on
+    const c = (await q(sb.from('research_prechecks').select('*').eq('id', pid)))[0];
+    if (c && c.status === 'done') {
+      const fakes = (c.findings || []).filter((f) => f.kind === 'quote_missing');
+      if (fakes.length) {
+        return say(h('h3', { text: 'I found this:' }), findingsList(c.findings),
+          h('div', { class: 'notice error', role: 'note' },
+            h('strong', { text: 'This can\'t be posted for review until it\'s fixed. ' }),
+            h('span', { text: 'A quote is not on the page it links to. This version is locked now, so write a new version: your other sources are copied over; add that one again with the exact words from the page, then send it to the AI.' })),
+          h('div', { class: 'btns' }, btn('Write a new version', async () => { await reload(); openNewVersion(); }, 'primary')));
+      }
+      if (c.outcome === 'flagged') {
+        return say(h('h3', { text: 'I found this:' }), findingsList(c.findings),
+          c.summary ? h('p', { class: 'small muted', text: c.summary }) : null,
+          h('p', { class: 'ask', text: 'Are you sure you want to post this for review?' }),
+          h('div', { class: 'btns' },
+            btn('Go back and fix it', () => {
+              openNewVersion();
+              say(h('p', { class: 'muted small', text: 'Fix it in a new version below; it will be checked again when you send it.' }));
+            }, 'primary'),
+            btn('Post for review anyway', () => submit('flagged'))));
+      }
+      await submit(null);
+      return;
+    }
+    if (c && c.status === 'failed') return withoutCheck(`The AI couldn't finish the check (${c.error || 'unknown error'}).`);
+    if (Date.now() - started > 150000) return withoutCheck("The AI hasn't answered yet. It may be busy or offline.");
+  }
+}
+
+function languagePanel(msg) {
+  const box = h('div', { class: 'panel' });
+  const draw = async () => {
+    const terms = await langTerms(true);
+    const term = h('input', { required: true, maxlength: 40, placeholder: 'word, or start of a word followed by *' });
+    const kind = h('select', {}, h('option', { value: 'profanity', text: 'Profanity' }), h('option', { value: 'slur', text: 'Slur' }));
+    const list = (k) => h('p', { class: 'small' }, terms.filter((x) => x.kind === k).map((x) => h('span', { class: 'term-chip' }, x.term,
+      h('button', { class: 'quiet small-btn', title: 'Remove', onclick: action(async () => {
+        await q(sb.from('language_terms').delete().eq('term', x.term)); await draw();
+      }, msg) }, '×'))));
+    box.replaceChildren(
+      h('h2', { text: 'Language filter' }),
+      h('p', { class: 'muted small', text: 'A finding cannot go to review or be published with these words in its own text. Inside a source quote the AI verified, they are allowed (quoting someone is context), and the reviewer sees a note. Commons posts are never blocked: the author gets a warning and moderators see a flag. A word ending in * also catches longer words that start with it.' }),
+      h('details', {}, h('summary', { text: `Profanity (${terms.filter((x) => x.kind === 'profanity').length})` }), list('profanity')),
+      h('details', {}, h('summary', { text: `Slurs (${terms.filter((x) => x.kind === 'slur').length})` }), list('slur')),
+      h('form', { class: 'row', onsubmit: action(async () => {
+        await q(sb.from('language_terms').insert({ term: term.value.trim().toLowerCase(), kind: kind.value })); await draw();
+      }, msg) }, term, kind, h('button', { class: 'primary' }, 'Add word')));
+  };
+  draw().catch((e) => box.replaceChildren(notice(friendly(e))));
+  return box;
+}
+
+function aiPanel(msg) {
+  const box = h('div', { class: 'panel' }, h('p', { class: 'muted', text: 'Loading…' }));
+  const draw = async () => {
+    const [keys, status] = await Promise.all([q(sb.rpc('list_checker_keys')), q(sb.rpc('checker_status'))]);
+    const fresh = h('div');
+    box.replaceChildren(
+      h('h2', { text: 'AI fact-checker' }),
+      h('p', { class: 'muted small', text: 'The AI checks each finding before review. It runs on our own computer, and signs in with a checker key that can only take checks and hand back results.' }),
+      h('p', {}, h('span', { class: `tag ${status && status.online ? 'ok' : 'bad'}`, text: status && status.online ? 'online' : 'offline' }),
+        h('span', { class: 'meta', text: ` last seen ${status && status.last_seen_at ? when(status.last_seen_at) : 'never'} · ${status ? status.queued : 0} waiting` })),
+      keys.length ? h('ul', { class: 'list' }, keys.map((k) => h('li', {},
+        h('div', { class: 'row' }, h('span', { text: `${k.label} · made ${day(k.created_at)}` }),
+          k.revoked_at ? h('span', { class: 'tag bad', text: 'revoked' }) : h('span', { class: 'meta', text: k.last_seen_at ? `seen ${when(k.last_seen_at)}` : 'never used' })),
+        k.revoked_at ? null : h('div', { class: 'btns' }, h('button', { class: 'quiet danger', onclick: action(async () => {
+          if (!confirm('Revoke this key? The AI stops checking until its computer gets a new one.')) return;
+          await q(sb.rpc('revoke_checker_key', { key_id: k.id }));
+          await draw();
+        }, msg) }, 'Revoke'))))) : null,
+      h('div', { class: 'btns' }, h('button', { onclick: action(async () => {
+        const key = await q(sb.rpc('create_checker_key', { label: 'AI checker' }));
+        fresh.replaceChildren(notice('Copy this key now and paste it into the installer on the AI computer when it asks. It is shown only once.', 'ok'),
+          h('div', { class: 'code', text: key }),
+          h('div', { class: 'btns' }, h('button', { type: 'button', onclick: () => navigator.clipboard.writeText(key) }, 'Copy')));
+        await draw().then(() => box.append(fresh));
+      }, msg) }, keys.some((k) => !k.revoked_at) ? 'Make a new key' : 'Make a key for the AI checker')),
+      fresh);
+  };
+  draw().catch((err) => box.replaceChildren(notice(friendly(err))));
+  return box;
+}
+
+const PRIMARY_HINT = 'Primary = the original record itself: a court record, official data, a statute or government document, an original study. '
+  + 'Secondary = news, encyclopedias (Wikipedia), books and articles about those records. A finding needs at least one primary source.';
+function typeSelect(val) {
+  return h('select', {}, h('option', { value: 'secondary', text: 'Secondary (news, encyclopedia, book, article)', selected: val !== 'primary' || null }),
+    h('option', { value: 'primary', text: 'Primary (court record, official data, statute, government document, original study)', selected: val === 'primary' || null }));
+}
+const pageKey = (u) => (u || '').trim().toLowerCase().replace(/#.*$/, '').replace(/\/+$/, '');
+// rows that link the same page are one source card, in the order they were first added
+function groupSources(rows) {
+  const by = new Map();
+  rows.forEach((r) => { const k = pageKey(r.url); if (!by.has(k)) by.set(k, []); by.get(k).push(r); });
+  return [...by.values()];
+}
+
+// One source = one card: the page (title, link, type, publisher, date, snapshots) and its quotes.
+function sourceCard(rows, n, snaps, o = {}) {
+  const s = rows[0];
+  const ed = o.editable;
+  const rpcEdit = (row, vals) => q(sb.rpc('edit_source', { source_id: row.id, url: vals.url, title: vals.title, publisher: vals.publisher,
+    published_at_claimed: vals.published_at_claimed, quote: vals.quote, locator: vals.locator, source_type: vals.source_type }));
+  const fields = (row) => ({ url: row.url, title: srcTitle(row), publisher: clean(row.publisher), published_at_claimed: row.published_at_claimed,
+    quote: clean(row.quote), locator: clean(row.locator), source_type: row.source_type });
+  const card = h('div', { class: 'source-card' });
+  const draw = () => card.replaceChildren(
+    h('div', { class: 'row' },
+      h('div', {}, h('span', { class: 'meta', text: `${n}. ` }),
+        h('a', { href: s.url, rel: 'noopener noreferrer nofollow', target: '_blank', text: srcTitle(s) }), ' ',
+        h('span', { class: `tag ${s.source_type === 'primary' ? 'ok' : ''}`, text: s.source_type === 'primary' ? 'primary' : 'secondary' })),
+      ed ? h('span', {},
+        h('button', { class: 'quiet small-btn', onclick: () => card.replaceChildren(pageForm(s, async (vals) => {
+          for (const r of rows) await rpcEdit(r, { ...fields(r), ...vals });
+          await o.reload();
+        }, draw)) }, 'Edit source'),
+        h('button', { class: 'quiet small-btn', onclick: action(async () => {
+          if (!confirm(`Remove "${srcTitle(s)}" and its ${rows.length} quote${rows.length === 1 ? '' : 's'} from this draft?`)) return;
+          for (const r of rows) await q(sb.rpc('withdraw_source', { source_id: r.id }));
+          await o.reload();
+        }, o.msg) }, 'Remove source')) : null),
+    h('div', { class: 'meta', text: [clean(s.publisher), s.published_at_claimed ? `dated ${s.published_at_claimed}` : null, `retrieved ${day(s.retrieved_at)}`].filter(Boolean).join(' · ') }),
+    snaps ? snapLine(rows, snaps) : null,
+    h('ul', { class: 'quotes' }, rows.map((r, qi) => {
+      const fake = o.fakeIds && o.fakeIds.has(r.id);
+      const li = h('li', {});
+      const drawQ = () => li.replaceChildren(
+        clean(r.quote) ? h('blockquote', { text: clean(r.quote) }) : h('p', { class: 'muted small', text: 'No quote given.' }),
+        h('div', { class: 'small' }, clean(r.locator) ? h('span', { class: 'meta', text: clean(r.locator) }) : null,
+          fake ? [' ', h('span', { class: 'tag bad', text: 'quote not on page' })] : null,
+          strongWords(clean(r.quote) || '', TERMS).length ? [' ', h('span', { class: 'tag warn', text: 'quoted strong language' })] : null,
+          ed ? [' ', h('button', { class: 'quiet small-btn', onclick: () => li.replaceChildren(quoteForm(r, async (vals) => {
+            await rpcEdit(r, { ...fields(r), ...vals }); await o.reload();
+          }, drawQ)) }, 'Edit quote'),
+          rows.length > 1 ? h('button', { class: 'quiet small-btn', onclick: action(async () => {
+            if (!confirm('Remove this quote?')) return;
+            await q(sb.rpc('withdraw_source', { source_id: r.id })); await o.reload();
+          }, o.msg) }, 'Remove quote') : null] : null));
+      drawQ();
+      return li;
+    })),
+    ed ? h('details', { class: 'add-quote' }, h('summary', { text: 'Add another quote from this source' }),
+      quoteForm({}, async (vals) => {
+        await q(sb.from('research_sources').insert({ version_id: s.version_id, url: s.url, title: srcTitle(s), source_type: s.source_type,
+          publisher: clean(s.publisher), published_at_claimed: s.published_at_claimed, quote: clean(vals.quote), locator: clean(vals.locator) }));
+        await o.reload();
+      }, null, 'Add quote')) : null);
+  draw();
+  return card;
+}
+
+// Edit the page itself: link, title, type, publisher, date (saved as replacements; old copies stay on record).
+function pageForm(s, save, cancel) {
+  const f = (tag, attrs, val) => { const el = h(tag, attrs); el.value = val || ''; return el; };
+  const url = f('input', { type: 'url', required: true }, s.url);
+  const title = f('input', { required: true, maxlength: 500 }, srcTitle(s));
+  const type = typeSelect(s.source_type);
+  const pub = f('input', { maxlength: 200 }, s.publisher);
+  const date = f('input', { type: 'date', min: '1400-01-01', max: new Date(Date.now() + 864e5).toISOString().slice(0, 10) }, s.published_at_claimed);
+  const err = h('div');
+  return h('form', { class: 'source-edit page-edit', onsubmit: action(() => save({ url: url.value, title: title.value, source_type: type.value,
+      publisher: clean(pub.value), published_at_claimed: date.value || null }), err) },
+    h('label', {}, 'Link', url), h('label', {}, 'Title', title), h('label', {}, 'Type of source', type), h('p', { class: 'muted small', text: PRIMARY_HINT }),
+    h('label', {}, 'Publisher', pub), h('label', {}, 'Date the publisher gives', date),
+    err, h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Save source'), h('button', { type: 'button', onclick: cancel }, 'Cancel')));
+}
+
+function quoteForm(r, save, cancel, label) {
+  const quote = h('textarea', { maxlength: 5000, rows: 3, required: true, placeholder: 'Exact words, copied from the page' });
+  quote.value = clean(r.quote) || '';
+  const loc = h('input', { maxlength: 200, placeholder: 'section, page, paragraph or timestamp' });
+  loc.value = clean(r.locator) || '';
+  const err = h('div');
+  return h('form', { class: 'source-edit', onsubmit: action(() => save({ quote: clean(quote.value), locator: clean(loc.value) }), err) },
+    h('label', {}, 'Quote (exact words from the page)', quote), h('label', {}, 'Where in the source', loc),
+    err, h('div', { class: 'btns' }, h('button', { class: 'primary' }, label || 'Save quote'),
+      cancel ? h('button', { type: 'button', onclick: cancel }, 'Cancel') : null));
+}
+
+// "Snapped": the public Wayback copy, and the private screenshot and page text (desk members only).
+function snapLine(rows, snaps) {
+  const ids = new Set((Array.isArray(rows) ? rows : [rows]).map((r) => r.id));
+  const wb = snaps.find((x) => ids.has(x.source_id) && x.kind === 'wayback');
+  const pv = snaps.find((x) => ids.has(x.source_id) && x.kind === 'private');
+  if (!wb && !pv) return h('div', { class: 'snaps' }, h('span', { class: 'tag', text: 'not snapped yet' }));
+  const open = (path, label) => h('a', { href: '#', onclick: async (ev) => {
+    ev.preventDefault();
+    const w = window.open('', '_blank');
+    try {
+      const { data, error } = await sb.storage.from('source-snapshots').createSignedUrl(path, 120);
+      if (error) throw error;
+      if (w) { w.opener = null; w.location = data.signedUrl; }
+    } catch (err) { if (w) w.close(); alert(friendly(err)); }
+  }, text: label });
+  const fp = (sha, bytes) => `SHA-256 ${sha.slice(0, 12)}… · ${(bytes / 1024).toFixed(0)} KB`;
+  return h('div', { class: 'snaps' },
+    h('span', { class: 'tag ok', text: 'snapped' }), ' ',
+    wb ? [h('a', { href: wb.archive_url, rel: 'noopener noreferrer', target: '_blank', text: 'Wayback copy' }),
+      h('span', { class: 'meta', title: fp(wb.sha256, wb.bytes), text: ` ${day(wb.captured_at)}` })] : null,
+    wb && pv ? ' · ' : null,
+    pv ? [...(pv.shot_path ? [open(pv.shot_path, 'Screenshot'), ' · '] : []), open(pv.text_path, 'Page text'),
+      h('span', { class: 'meta', title: fp(pv.text_sha256, pv.text_bytes), text: ` private copy ${day(pv.captured_at)}` })] : null);
+}
+
+// ---------------------------------------------------------------- admin
+
+// ---------------------------------------------------------------- invitations
+
+const inviteLink = (code) => `${APP_URL}?invite=${encodeURIComponent(code)}`;
+function inviteLetter({ code, who, to, uses = 1, days = 14 }) {
+  return [
+    who ? `Hi ${who},` : 'Hi,', '',
+    `${state.me ? state.me.display_name : 'A member'} invited you to The Way (Michi Institute).`, '',
+    `1. Open this link: ${inviteLink(code)}`,
+    `2. Enter ${to ? `your email (${to})` : 'your own email'} and tap "Send my sign-in link".`,
+    '3. Open the email from Michi Institute in the same browser and click the link (or type its 6-digit code).',
+    '4. Pick the name other members will see, then choose a password.', '',
+    `If the link loses your invitation code, it is: ${code}`,
+    `It works ${+uses === 1 ? 'once' : `${uses} times`} and expires in ${days} days.`,
+  ].join('\n');
+}
+function copyButton(label, text, area) {
+  return h('button', { type: 'button', onclick: async (ev) => {
+    const b = ev.currentTarget;
+    try { await navigator.clipboard.writeText(text); b.textContent = 'Copied'; }
+    catch { if (area) { area.focus(); area.select(); } b.textContent = 'Selected: press Ctrl+C (or Cmd+C)'; }
+    setTimeout(() => { b.textContent = label; }, 2500);
+  } }, label);
+}
+function letterBox(letter) {
+  const box = h('textarea', { class: 'invite-letter', rows: 12, readonly: true, 'aria-label': 'Invitation message' });
+  box.value = letter;
+  return box;
+}
+function inviteStatus(i) {
+  return i.revoked_at ? h('span', { class: 'tag bad', text: 'revoked' })
+    : i.use_count >= i.max_uses ? h('span', { class: 'tag ok', text: 'used' })
+    : new Date(i.expires_at) < new Date() ? h('span', { class: 'tag', text: 'expired' })
+    : h('span', { class: 'tag warn', text: i.max_uses > 1 ? `open ${i.use_count}/${i.max_uses}` : 'open' });
+}
+const isOpen = (i) => !i.revoked_at && i.use_count < i.max_uses && new Date(i.expires_at) > new Date();
+
+// Any member: make a single-use share link (the database caps members at 5 open, 20 a day; admins are not capped).
+async function inviteView() {
+  const mod = can('moderator');
+  const [mine, names] = await Promise.all([
+    q(sb.from('invitations').select('*').eq('created_by', state.user.id).order('id', { ascending: false }).limit(50)),
+    q(sb.from('members').select('id,display_name')),
+  ]);
+  const nameOf = (id) => (names.find((m) => m.id === id) || {}).display_name || 'a member';
+  const msg = h('div');
+  const note = h('input', { id: 'invite-note', maxlength: 200, placeholder: 'Who is it for? Only you see this' });
+  const email = h('input', { id: 'invite-email', type: 'email', placeholder: 'Optional: their email', autocomplete: 'off' });
+  const fresh = h('div');
+  const human = humanCheck();
+
+  const row = (i, withCreator) => h('li', {},
+    h('div', { class: 'row' }, h('span', { text: i.note || '(no note)' }), inviteStatus(i)),
+    h('div', { class: 'meta', text: [withCreator ? `by ${nameOf(i.created_by)}` : null, `made ${day(i.created_at)}`,
+      i.recipient_email ? `for ${i.recipient_email}` : null, `expires ${day(i.expires_at)}`].filter(Boolean).join(' · ') }),
+    isOpen(i) ? h('div', { class: 'btns' }, h('button', { class: 'quiet danger', onclick: action(async () => {
+      let reason = 'not needed';
+      if (i.created_by !== state.user.id) { reason = await ask(`Revoke ${nameOf(i.created_by)}'s link: why? (shown in the moderation log)`); if (!reason) return; }
+      else if (!confirm('Revoke this link? Nobody will be able to use it.')) return;
+      await q(sb.rpc('revoke_invitation', { invitation_id: i.id, reason }));
+      await inviteView();
+    }, msg) }, 'Revoke')) : null);
+
+  const all = mod ? await q(sb.from('invitations').select('*').order('id', { ascending: false }).limit(200)) : [];
+  render(
+    h('p', { class: 'overline' }, h('a', { href: '#/', text: 'Home' })),
+    h('h1', { text: 'Invite someone to The Way' }),
+    h('p', { class: 'lede', text: 'Email an invitation to one person, or make a link and send it yourself. Each link works once and lasts 14 days.' }),
+    msg,
+    h('div', { class: 'panel' },
+      h('form', { onsubmit: action(async (ev) => {
+        const sendIt = !!(ev.submitter && ev.submitter.value === 'send');
+        const to = email.value.trim();
+        if (sendIt && !to) { email.focus(); throw new Error('Type their email first, or use "Create share link" and send it yourself.'); }
+        if (sendIt && !email.reportValidity()) return;
+        const who = note.value.trim();
+        const code = await q(sb.rpc('create_share_link', { note: who || null, recipient_email: to || null }));
+        const link = inviteLink(code);
+        const letter = inviteLetter({ code, who, to });
+        const box = letterBox(letter);
+        const sent = h('div');
+        const resend = h('button', { type: 'button', hidden: true }, 'Send the email again');
+        const mail = async () => {
+          resend.hidden = true;
+          sent.replaceChildren(notice(`Sending the invitation to ${to}…`, 'ok'));
+          // Same path as the admin form: the sign-in email doubles as the invitation. Its link signs
+          // them in and lands on ?invite=CODE, which fills in the code. Your own session is untouched.
+          let captchaToken;
+          try { captchaToken = await human.token(); } catch (err) { sent.replaceChildren(notice(`The link was made, but the email did not go out: ${err.message}`)); resend.hidden = false; return; }
+          const { error } = await sb.auth.signInWithOtp({ email: to, options: { shouldCreateUser: true, emailRedirectTo: link, captchaToken } });
+          if (!error) { sent.replaceChildren(notice(`Invitation emailed to ${to}. The link in it signs them in with the code already filled in.`, 'ok')); return; }
+          const text = error.message || String(error);
+          const wait = text.match(/after (\d+) seconds?/i);
+          let why = `The link was made, but the email did not go out: ${text}`;
+          if (wait) why = `The link was made, but only one email per address per minute can go out. Wait ${wait[1]} seconds, then press "Send the email again".`;
+          else if (/rate limit|too many|429/i.test(text)) why = 'The link was made, but the hourly email limit is used up. Try "Send the email again" later, or copy the message below and send it yourself.';
+          else if (/redirect/i.test(text)) why = 'The link was made, but Supabase refused the link address. Copy the message below and send it yourself.';
+          sent.replaceChildren(notice(why));
+          resend.hidden = false;
+        };
+        resend.onclick = action(mail, sent);
+        fresh.replaceChildren(sent, h('div', { class: 'btns' }, resend),
+          notice('Your link is ready. Copy it now: it is shown only once.', 'ok'),
+          h('div', { class: 'code', text: link }),
+          h('div', { class: 'btns' }, copyButton('Copy link', link, null), copyButton('Copy message', letter, box)),
+          h('p', { class: 'small muted', text: sendIt ? 'Backup: the same invitation as a message you can send yourself.' : 'Or send this ready-made message by text or email.' }),
+          box);
+        note.value = ''; email.value = '';
+        if (sendIt) await mail();
+        refreshMine();
+      }, msg) },
+        h('label', { for: 'invite-note' }, 'Who is it for?', note),
+        h('label', { for: 'invite-email' }, 'Their email (needed to send it; the link then works only for that address)', email),
+        human.el,
+        h('div', { class: 'btns' }, h('button', { class: 'primary', value: 'send' }, 'Send by email'),
+          h('button', { value: 'link' }, 'Create share link only')),
+        h('p', { class: 'small dim', text: can('admin') ? 'As an admin you have no limit on share links.' : 'You can have 5 open links at a time and make 20 a day.' })),
+      fresh),
+    h('h2', { text: 'Your links' }),
+    h('ul', { class: 'list panel', id: 'my-invites' }),
+    h('p', { class: 'small muted', text: 'A link drops off this list once it is used. The Way does not keep who joined through whom.' }),
+    mod ? [h('h2', { text: 'Every open link (moderators)' }),
+      h('ul', { class: 'list panel' }, all.filter(isOpen).length ? all.filter(isOpen).map((i) => row(i, true)) : [h('li', { class: 'muted', text: 'No open links.' })])] : null,
+  );
+  drawMine(mine);
+  async function refreshMine() { drawMine(await q(sb.from('invitations').select('*').eq('created_by', state.user.id).order('id', { ascending: false }).limit(50))); }
+  function drawMine(list) {
+    document.getElementById('my-invites').replaceChildren(...(list.length ? list.map((i) => row(i, false))
+      : [h('li', { class: 'muted', text: 'No links yet.' })]));
+  }
+}
+
+async function adminView() {
+  const [invites, members, roles, notify] = await Promise.all([
+    q(sb.from('invitations').select('*').order('id', { ascending: false }).limit(100)),
+    q(sb.from('members').select('*').order('joined_at')),
+    q(sb.from('member_roles').select('*')),
+    q(sb.from('notify_signups').select('id,email,source,created_at').order('created_at', { ascending: false }).limit(1000)),
+  ]);
+  const msg = h('div');
+  const note = h('input', { maxlength: 200, placeholder: 'Who is this for? (only you and moderators see this)' });
+  const email = h('input', { type: 'email', placeholder: 'name@example.org', autocomplete: 'off' });
+  const uses = h('input', { type: 'number', min: 1, max: 100, value: 1 });
+  const days = h('input', { type: 'number', min: 1, max: 90, value: 14 });
+  const fresh = h('div');
+  const adminHuman = humanCheck();
+
+
+  const rolesOf = (id) => roles.filter((r) => r.member_id === id).map((r) => r.role);
+  const nameOf = (id) => (members.find((m) => m.id === id) || {}).display_name || (id ? 'a former member' : 'setup');
+  const ALL = ['moderator', 'researcher', 'reviewer', 'admin'];
+
+  render(
+    h('h1', { text: 'Admin' }), msg,
+    h('div', { class: 'panel' }, h('h2', { text: 'Invite someone to The Way' }),
+      h('form', { onsubmit: action(async (ev) => {
+        const sendIt = !!(ev.submitter && ev.submitter.value === 'send');
+        const to = email.value.trim();
+        if (sendIt && !to) { email.focus(); throw new Error('Type their email first, or use "Create code only" and send it yourself.'); }
+        if (sendIt && !email.reportValidity()) return;
+        const code = await q(sb.rpc('create_invitation', { note: note.value || null, max_uses: +uses.value, valid_days: +days.value, recipient_email: to || null }));
+        const link = inviteLink(code);
+        const letter = inviteLetter({ code, who: note.value.trim(), to, uses: uses.value, days: days.value });
+        const box = letterBox(letter);
+        const copyBtn = copyButton;
+        const sent = h('div');
+        const resend = h('button', { type: 'button', hidden: true }, 'Send the email again');
+        const mail = async () => {
+          resend.hidden = true;
+          sent.replaceChildren(notice(`Sending the invitation to ${to}…`, 'ok'));
+          // The sign-in email doubles as the invitation: its link signs them in and lands on
+          // ?invite=CODE, which fills in the code. The admin's own session is untouched.
+          let captchaToken;
+          try { captchaToken = await adminHuman.token(); } catch (err) { sent.replaceChildren(notice(`The invitation was made, but the email did not go out: ${err.message}`)); resend.hidden = false; return; }
+          const { error } = await sb.auth.signInWithOtp({ email: to, options: { shouldCreateUser: true, emailRedirectTo: link, captchaToken } });
+          if (!error) {
+            sent.replaceChildren(notice(`Invitation emailed to ${to}. The link in it signs them in with the code already filled in; they pick a display name and they're in.`, 'ok'));
+            return;
+          }
+          const text = error.message || String(error);
+          const wait = text.match(/after (\d+) seconds?/i);
+          let why = `The invitation was made, but the email did not go out: ${text}`;
+          if (wait) why = `The invitation was made, but Supabase sends only one email per address per minute. Wait ${wait[1]} seconds, then press "Send the email again".`;
+          else if (/rate limit|too many|429/i.test(text)) why = 'The invitation was made, but the hourly email limit (30 an hour) is used up. Try "Send the email again" later, or copy the message below and send it yourself.';
+          else if (/redirect/i.test(text)) why = 'The invitation was made, but Supabase refused the link address. Check Authentication > URL Configuration allows this site, or copy the message below.';
+          sent.replaceChildren(notice(why));
+          resend.hidden = false;
+        };
+        resend.onclick = action(mail, sent);
+        fresh.replaceChildren(sent, h('div', { class: 'btns' }, resend),
+          notice('Copy this now if you need it. The code is shown only once; the database keeps only a fingerprint of it.', 'ok'),
+          h('p', { class: 'small muted', text: sendIt ? 'Backup: the same invitation as a message you can send yourself.' : 'Send this message by email or text.' }),
+          box,
+          h('div', { class: 'btns' }, copyBtn('Copy message', letter, box), copyBtn('Copy link only', link, null), copyBtn('Copy code only', code, null)),
+          h('div', { class: 'code', text: code }));
+        if (sendIt) await mail();
+        await refreshInvites();
+      }, msg) }, h('label', {}, 'Their email', email), h('label', {}, 'Note', note),
+        h('div', { class: 'row' }, h('label', {}, 'Uses', uses), h('label', {}, 'Valid for (days)', days)),
+        h('p', { class: 'small dim', text: 'The code only works for the email you type here. "Send invitation by email" emails them a link that signs them in with the code filled in.' }),
+        adminHuman.el,
+        h('div', { class: 'btns' }, h('button', { class: 'primary', value: 'send' }, 'Send invitation by email'),
+          h('button', { value: 'code' }, 'Create code only'))), fresh),
+    h('h2', { text: 'Invitations' }),
+    h('ul', { class: 'list panel', id: 'invites' }),
+    h('h2', { text: 'Members' }),
+    h('ul', { class: 'list panel' }, members.map((m) => {
+      const mine = rolesOf(m.id);
+      return h('li', {},
+        h('div', { class: 'row' }, h('strong', { text: m.display_name }),
+          h('span', {}, m.status !== 'active' ? h('span', { class: 'tag bad', text: m.status }) : null, ' ', mine.map((r) => h('span', { class: 'tag', text: r })))),
+        h('div', { class: 'meta', text: `joined ${day(m.joined_at)}` }),
+        h('div', { class: 'btns' }, h('button', { class: 'quiet', onclick: action(async () => {
+          const name = await ask(`New display name for ${m.display_name} (2 to 40 characters):`);
+          if (!name) return;
+          const reason = await ask(`Rename ${m.display_name} to "${name.trim()}": why? (shown in the moderation log)`);
+          if (!reason) return;
+          await q(sb.rpc('rename_member', { member_id: m.id, new_name: name, reason }));
+          if (m.id === state.user.id) await loadMe();
+          await adminView();
+        }, msg) }, 'Rename')),
+        m.id === state.user.id ? null : h('div', { class: 'btns' },
+          ALL.map((r) => h('button', { class: 'quiet', onclick: action(async () => {
+            const reason = await ask(`${mine.includes(r) ? 'Remove' : 'Give'} the ${r} role: why?`);
+            if (!reason) return;
+            await q(sb.rpc('set_role', { member_id: m.id, role: r, grant_it: !mine.includes(r), reason }));
+            await adminView();
+          }, msg) }, `${mine.includes(r) ? '− ' : '+ '}${r}`)),
+          h('button', { class: `quiet ${m.status === 'active' ? 'danger' : ''}`, onclick: action(async () => {
+            const next = m.status === 'active' ? 'suspended' : 'active';
+            const reason = await ask(`${next === 'suspended' ? 'Suspend' : 'Reinstate'} ${m.display_name}: why?`);
+            if (!reason) return;
+            await q(sb.rpc('set_member_status', { member_id: m.id, new_status: next, reason }));
+            await adminView();
+          }, msg) }, m.status === 'active' ? 'Suspend' : 'Reinstate')));
+    })),
+    aiPanel(msg),
+    languagePanel(msg),
+    h('h2', { text: `Notify list (${notify.length})` }),
+    h('p', { class: 'muted small', text: 'People who left their email on the public page to hear when The Way launches. Only admins see this.' }),
+    notify.length ? h('div', { class: 'btns' }, h('button', { class: 'quiet', onclick: () => navigator.clipboard.writeText(notify.map((n) => n.email).join('\n')) }, 'Copy all addresses')) : null,
+    h('ul', { class: 'list panel' }, notify.length ? notify.map((n) => h('li', {},
+      h('div', { class: 'row' }, h('span', { text: n.email }), h('span', { class: 'meta', text: `${n.source} · ${day(n.created_at)}` })),
+      h('div', { class: 'btns' }, h('button', { class: 'quiet danger', onclick: action(async () => {
+        if (!confirm(`Remove ${n.email} from the notify list?`)) return;
+        await q(sb.from('notify_signups').delete().eq('id', n.id));
+        await adminView();
+      }, msg) }, 'Remove')))) : [h('li', { class: 'muted', text: 'Nobody yet.' })]),
+  );
+
+  async function refreshInvites() {
+    const list = await q(sb.from('invitations').select('*').order('id', { ascending: false }).limit(100));
+    drawInvites(list);
+  }
+  function drawInvites(list) {
+    document.getElementById('invites').replaceChildren(...(list.length ? list.map((i) => h('li', {},
+      h('div', { class: 'row' }, h('span', { text: i.note || (i.use_count >= i.max_uses ? '(used)' : '(no note)') }), inviteStatus(i)),
+      h('div', { class: 'meta', text: `#${i.id}${i.created_by ? ` · by ${nameOf(i.created_by)}` : ''}${i.recipient_email ? ' · for ' + i.recipient_email : ''} · expires ${day(i.expires_at)}` }),
+      !i.revoked_at && i.use_count < i.max_uses ? h('div', { class: 'btns' }, h('button', { class: 'quiet danger', onclick: action(async () => {
+        const reason = await ask('Revoke this invitation: why?');
+        if (!reason) return;
+        await q(sb.rpc('revoke_invitation', { invitation_id: i.id, reason }));
+        await refreshInvites();
+      }, msg) }, 'Revoke')) : null)) : [h('li', { class: 'muted', text: 'No invitations yet.' })]));
+  }
+  drawInvites(invites);
+}
+
+// ---------------------------------------------------------------- account
+
+function accountView() {
+  render(
+    h('p', { class: 'overline', text: 'Your account' }),
+    h('h1', { text: state.me.display_name }),
+    h('div', { class: 'panel' },
+      h('h2', { text: 'You' }),
+      h('p', { class: 'muted small', text: `Signed in as ${state.user.email}. Only you and the site's administrators can see your email.` }),
+      h('p', { class: 'small dim', text: 'Display names are chosen once, when you accept your invitation. To change yours, ask an admin.' }),
+      h('p', { class: 'small', text: `Roles: ${state.roles.size ? [...state.roles].join(', ') : 'member'}` })),
+    placePanel(),
+    h('div', { class: 'panel' },
+      h('h2', { text: 'Signing in' }),
+      h('p', { class: 'small muted', text: 'Sign in with your email and password, or ask for a sign-in link on the sign-in page and we email you one. Setting a password is optional.' }),
+      h('div', { class: 'btns' }, h('a', { class: 'button', href: '#/password', text: 'Set / change password' }), h('button', { onclick: signOut }, 'Sign out'))),
+  );
+}
+
+// ---------------------------------------------------------------- router
+
+async function route() {
+  drawNav();
+  const parts = (location.hash.replace(/^#\/?/, '') || '').split('/');
+  try {
+    switch (parts[0]) {
+      case '': return await homeView();
+      case 'map': return await mapView();
+      case 'commons': return await commonsView();
+      case 'invite': return await inviteView();
+      case 'cases': return await casesView(decodeURIComponent(parts[1] || ''));
+      case 'c': return await categoryView(decodeURIComponent(parts[1] || ''));
+      case 't': return await threadView(+parts[1]);
+      case 'log': return state.hasModLog ? await logView() : await homeView();
+      case 'reports': return can('moderator') ? await reportsView() : render(notice('Moderators only.'));
+      case 'research': return (can('researcher') || can('reviewer'))
+        ? (parts[1] ? await researchItemView(+parts[1]) : await researchView()) : render(notice('Research desk members only.'));
+      case 'admin': return can('admin') ? await adminView() : render(notice('Admins only.'));
+      case 'account': return accountView();
+      case 'password': return passwordView(false);
+      case 'signout': return await signOut();
+      default: return render(notice('Page not found.'));
+    }
+  } catch (err) { render(notice(friendly(err))); }
+}
+
+// Deal with whatever an emailed sign-in link put in the address bar, then tidy it away.
+async function readSignInLink() {
+  const query = new URLSearchParams(location.search);
+  const frag = new URLSearchParams(location.hash.replace(/^#\/?/, ''));
+  let problem = query.get('error_description') || frag.get('error_description');
+  const code = query.get('code');
+  if (!problem && code) {
+    // A link from the older code-exchange flow; it only works in the browser that asked for it.
+    const { data: { session } } = await sb.auth.getSession();
+    if (!session) {
+      const { error } = await sb.auth.exchangeCodeForSession(code);
+      if (error) problem = 'That sign-in link can only be used in the browser it was requested from, or it has expired.';
+    }
+  }
+  if (frag.get('type') === 'recovery') recovering = true;
+  if (location.search || frag.has('access_token') || frag.has('error')) {
+    await sb.auth.getSession(); // let the library finish reading the link first
+    history.replaceState(null, '', location.pathname + '#/');
+  }
+  if (!problem) return null;
+  problem = problem.replace(/\+/g, ' ').trim();
+  return (/[.!?]$/.test(problem) ? problem : problem + '.') + ' Please request a new sign-in link below.';
+}
+
+// A deep link (for example #/cases/ludlow from a case page) is kept through sign-in, including the
+// emailed sign-in link, and opened once the member is in. Only the address is kept, for one day.
+const AFTER = 'theway.after';
+const DEEP = /^#\/[a-z]+(\/[A-Za-z0-9_-]{1,80})?$/;
+function keepTarget() {
+  if (!DEEP.test(location.hash) || location.hash === '#/') return;
+  try { localStorage.setItem(AFTER, JSON.stringify({ hash: location.hash, at: Date.now() })); } catch {}
+}
+function takeTarget() {
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(AFTER) || 'null'); localStorage.removeItem(AFTER); } catch {}
+  if (!saved || !DEEP.test(saved.hash || '') || Date.now() - saved.at > 864e5) return;
+  if (location.hash === '' || location.hash === '#' || location.hash === '#/') history.replaceState(null, '', location.pathname + saved.hash);
+}
+
+async function boot() {
+  keepTarget();
+  takeInviteFromLink();
+  let linkProblem = null;
+  try { linkProblem = await readSignInLink(); } catch (err) { linkProblem = friendly(err); }
+  try { await loadMe(); } catch (err) { render(notice(friendly(err))); return; }
+  drawNav();
+  if (!state.user) { signInView(); if (linkProblem) app.prepend(notice(linkProblem)); return; }
+  if (!state.me) return joinView();
+  if (state.me.status !== 'active') {
+    return render(h('h1', { text: 'Account paused' }),
+      h('p', { class: 'lede', text: 'An administrator has suspended this account. Every suspension is recorded with its reason in the moderation log.' }),
+      h('button', { onclick: signOut }, 'Sign out'));
+  }
+  if (recovering) return passwordView(true);
+  takeTarget();
+  return route();
+}
+
+// Links into the guides and maps open in a new tab; that folder asks for its own password.
+document.addEventListener('click', (ev) => {
+  const a = ev.target.closest && ev.target.closest('a[href]');
+  if (a && new URL(a.href, location.href).pathname.startsWith(PAGES)) { a.target = '_blank'; a.rel = 'noopener'; }
+}, true);
+
+window.addEventListener('hashchange', () => {
+  if (state.me && state.me.status === 'active') route();
+  else boot(); // signed out: every address shows the sign-in page
+});
+boot();
+})();

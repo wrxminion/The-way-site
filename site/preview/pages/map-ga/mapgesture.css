@@ -1,0 +1,10 @@
+/* District map frame (Frank, Oct 15 2026: "the map frame can be a bit smaller"; zooming took over page scrolling).
+   Loaded after map.css on every map-<st> page and the Colorado map. Behaviour in mapgesture.js. */
+#map{height:min(62vh,540px)}
+@media(max-width:860px){#map{height:52vh;min-height:300px;max-height:460px}}
+/* Touch: one finger scrolls the page, two fingers pinch to zoom and move the map. */
+#map.leaflet-container{touch-action:pan-x pan-y}
+.map-hint{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1000;pointer-events:none;
+  background:#021018e6;color:#e9ffff;border:1px solid #abedf55c;border-radius:12px;padding:10px 14px;font-size:14px;
+  text-align:center;max-width:80%;opacity:0;transition:opacity .2s}
+.map-hint.on{opacity:1}

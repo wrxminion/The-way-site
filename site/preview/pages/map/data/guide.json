@@ -1,0 +1,1681 @@
+{
+ "base": "../guide/",
+ "home": "index.html",
+ "races": {
+  "us_senate": "races/us-senate.html",
+  "us_house:1": "races/us-house-1.html",
+  "us_house:2": "races/us-house-2.html",
+  "us_house:3": "races/us-house-3.html",
+  "us_house:4": "races/us-house-4.html",
+  "us_house:5": "races/us-house-5.html",
+  "us_house:6": "races/us-house-6.html",
+  "us_house:7": "races/us-house-7.html",
+  "us_house:8": "races/us-house-8.html",
+  "governor": "races/governor.html",
+  "lt_governor": "races/governor.html",
+  "secretary_of_state": "races/secretary-of-state.html",
+  "treasurer": "races/treasurer.html",
+  "attorney_general": "races/attorney-general.html",
+  "board_of_ed:1": "races/board-of-ed-1.html",
+  "board_of_ed:3": "races/board-of-ed-3.html",
+  "board_of_ed:7": "races/board-of-ed-7.html",
+  "cu_regent:2": "races/cu-regent-2.html",
+  "cu_regent:6": "races/cu-regent-6.html",
+  "cu_regent:7": "races/cu-regent-7.html",
+  "state_senate:1": "races/state-senate-1.html",
+  "state_senate:3": "races/state-senate-3.html",
+  "state_senate:4": "races/state-senate-4.html",
+  "state_senate:7": "races/state-senate-7.html",
+  "state_senate:8": "races/state-senate-8.html",
+  "state_senate:9": "races/state-senate-9.html",
+  "state_senate:11": "races/state-senate-11.html",
+  "state_senate:15": "races/state-senate-15.html",
+  "state_senate:17": "races/state-senate-17.html",
+  "state_senate:20": "races/state-senate-20.html",
+  "state_senate:21": "races/state-senate-21.html",
+  "state_senate:22": "races/state-senate-22.html",
+  "state_senate:24": "races/state-senate-24.html",
+  "state_senate:25": "races/state-senate-25.html",
+  "state_senate:27": "races/state-senate-27.html",
+  "state_senate:29": "races/state-senate-29.html",
+  "state_senate:30": "races/state-senate-30.html",
+  "state_senate:31": "races/state-senate-31.html",
+  "state_senate:32": "races/state-senate-32.html",
+  "state_senate:34": "races/state-senate-34.html",
+  "state_senate:35": "races/state-senate-35.html",
+  "state_house:1": "races/state-house-1.html",
+  "state_house:2": "races/state-house-2.html",
+  "state_house:3": "races/state-house-3.html",
+  "state_house:4": "races/state-house-4.html",
+  "state_house:5": "races/state-house-5.html",
+  "state_house:6": "races/state-house-6.html",
+  "state_house:7": "races/state-house-7.html",
+  "state_house:8": "races/state-house-8.html",
+  "state_house:9": "races/state-house-9.html",
+  "state_house:10": "races/state-house-10.html",
+  "state_house:11": "races/state-house-11.html",
+  "state_house:12": "races/state-house-12.html",
+  "state_house:13": "races/state-house-13.html",
+  "state_house:14": "races/state-house-14.html",
+  "state_house:15": "races/state-house-15.html",
+  "state_house:16": "races/state-house-16.html",
+  "state_house:17": "races/state-house-17.html",
+  "state_house:18": "races/state-house-18.html",
+  "state_house:19": "races/state-house-19.html",
+  "state_house:20": "races/state-house-20.html",
+  "state_house:21": "races/state-house-21.html",
+  "state_house:22": "races/state-house-22.html",
+  "state_house:23": "races/state-house-23.html",
+  "state_house:24": "races/state-house-24.html",
+  "state_house:25": "races/state-house-25.html",
+  "state_house:26": "races/state-house-26.html",
+  "state_house:27": "races/state-house-27.html",
+  "state_house:28": "races/state-house-28.html",
+  "state_house:29": "races/state-house-29.html",
+  "state_house:30": "races/state-house-30.html",
+  "state_house:31": "races/state-house-31.html",
+  "state_house:32": "races/state-house-32.html",
+  "state_house:33": "races/state-house-33.html",
+  "state_house:34": "races/state-house-34.html",
+  "state_house:35": "races/state-house-35.html",
+  "state_house:36": "races/state-house-36.html",
+  "state_house:37": "races/state-house-37.html",
+  "state_house:38": "races/state-house-38.html",
+  "state_house:39": "races/state-house-39.html",
+  "state_house:40": "races/state-house-40.html",
+  "state_house:41": "races/state-house-41.html",
+  "state_house:42": "races/state-house-42.html",
+  "state_house:43": "races/state-house-43.html",
+  "state_house:44": "races/state-house-44.html",
+  "state_house:45": "races/state-house-45.html",
+  "state_house:46": "races/state-house-46.html",
+  "state_house:47": "races/state-house-47.html",
+  "state_house:48": "races/state-house-48.html",
+  "state_house:49": "races/state-house-49.html",
+  "state_house:50": "races/state-house-50.html",
+  "state_house:51": "races/state-house-51.html",
+  "state_house:52": "races/state-house-52.html",
+  "state_house:53": "races/state-house-53.html",
+  "state_house:54": "races/state-house-54.html",
+  "state_house:55": "races/state-house-55.html",
+  "state_house:56": "races/state-house-56.html",
+  "state_house:57": "races/state-house-57.html",
+  "state_house:58": "races/state-house-58.html",
+  "state_house:59": "races/state-house-59.html",
+  "state_house:60": "races/state-house-60.html",
+  "state_house:61": "races/state-house-61.html",
+  "state_house:62": "races/state-house-62.html",
+  "state_house:63": "races/state-house-63.html",
+  "state_house:64": "races/state-house-64.html",
+  "state_house:65": "races/state-house-65.html"
+ },
+ "candidates": {
+  "us_senate|Mark Baisley": "candidates/mark-baisley.html",
+  "us_senate|John Hickenlooper": "candidates/john-hickenlooper.html",
+  "us_senate|Bob Chew": "candidates/bob-chew.html",
+  "us_senate|Christopher Baum": "candidates/christopher-baum.html",
+  "us_senate|Blake Huber": "candidates/blake-huber.html",
+  "us_senate|Adam Withrow": "candidates/adam-withrow.html",
+  "us_senate|Donald Willoughby": "candidates/donald-willoughby.html",
+  "us_senate|Will Powers": "candidates/will-powers.html",
+  "us_senate|Ryan Apelbaum": "candidates/ryan-apelbaum.html",
+  "us_house:1|Melat Kiros": "candidates/melat-kiros.html",
+  "us_house:1|Christy Peterson": "candidates/christy-peterson.html",
+  "us_house:1|Critter Milton": "candidates/critter-milton.html",
+  "us_house:1|Chad Humphrey": "candidates/chad-humphrey.html",
+  "us_house:1|Shimon Blau": "candidates/shimon-blau.html",
+  "us_house:1|Kevin StClair": "candidates/kevin-stclair.html",
+  "us_house:1|John Wren": "candidates/john-wren.html",
+  "us_house:1|Stephen Replin": "candidates/stephen-replin.html",
+  "us_house:2|Joe Neguse": "candidates/joe-neguse.html",
+  "us_house:2|Kelley Anne Dennison": "candidates/kelley-anne-dennison.html",
+  "us_house:2|Gaylon Kent": "candidates/gaylon-kent.html",
+  "us_house:3|Dwayne L. Romero": "candidates/dwayne-l-romero.html",
+  "us_house:3|Jeff Hurd": "candidates/jeff-hurd.html",
+  "us_house:3|Cory Robertson": "candidates/cory-robertson.html",
+  "us_house:3|Clifton Brown": "candidates/clifton-brown.html",
+  "us_house:4|Lauren Boebert": "candidates/lauren-boebert.html",
+  "us_house:4|Eileen Laubacher": "candidates/eileen-laubacher.html",
+  "us_house:4|Douglas Mangeris": "candidates/douglas-mangeris.html",
+  "us_house:4|Luis Galvan": "candidates/luis-galvan.html",
+  "us_house:5|Jeff Crank": "candidates/jeff-crank.html",
+  "us_house:5|Jessica Killin": "candidates/jessica-killin.html",
+  "us_house:5|Christopher Mitchell": "candidates/christopher-mitchell.html",
+  "us_house:5|Mark \"Marky Jr\" Elworth": "candidates/mark-marky-jr-elworth.html",
+  "us_house:5|Steven Fuller": "candidates/steven-fuller.html",
+  "us_house:6|Jason Crow": "candidates/jason-crow.html",
+  "us_house:6|Jason Clark": "candidates/jason-clark.html",
+  "us_house:6|Patty McMahon": "candidates/patty-mcmahon.html",
+  "us_house:6|Meredith Ryan": "candidates/meredith-ryan.html",
+  "us_house:6|Samir Witta": "candidates/samir-witta.html",
+  "us_house:7|Tim Bennett": "candidates/tim-bennett.html",
+  "us_house:7|Brittany Pettersen": "candidates/brittany-pettersen.html",
+  "us_house:7|Susan Hall": "candidates/susan-hall.html",
+  "us_house:7|Lawrence Kyle Clark": "candidates/lawrence-kyle-clark.html",
+  "us_house:7|Dan \"Kilo\" Sallis": "candidates/dan-kilo-sallis.html",
+  "us_house:7|Joe Krzeczkowski": "candidates/joe-krzeczkowski.html",
+  "us_house:8|Gabe Evans": "candidates/gabe-evans.html",
+  "us_house:8|Manny Rutinel": "candidates/manny-rutinel.html",
+  "us_house:8|Dave Wood": "candidates/dave-wood.html",
+  "governor|Victor Marx": "candidates/victor-marx.html",
+  "governor|Phil Weiser": "candidates/phil-weiser.html",
+  "governor|Stephen T. Hamilton": "candidates/stephen-t-hamilton.html",
+  "governor|Eric Mulder": "candidates/eric-mulder.html",
+  "governor|Jeff Peckman": "candidates/jeff-peckman.html",
+  "governor|Erik Underwood": "candidates/erik-underwood.html",
+  "governor|Greg Lopez": "candidates/greg-lopez.html",
+  "lt_governor|George Washington Markert": "candidates/george-washington-markert.html",
+  "lt_governor|Lesley Dahlkemper": "candidates/lesley-dahlkemper.html",
+  "lt_governor|James K Treibert": "candidates/james-k-treibert.html",
+  "lt_governor|Wayne Harlos": "candidates/wayne-harlos.html",
+  "lt_governor|T.J. Cole": "candidates/t-j-cole.html",
+  "lt_governor|Frank Atwood": "candidates/frank-atwood.html",
+  "lt_governor|Taralyn Romero": "candidates/taralyn-romero.html",
+  "secretary_of_state|Amanda Gonzalez": "candidates/amanda-gonzalez.html",
+  "secretary_of_state|James Wiley": "candidates/james-wiley.html",
+  "secretary_of_state|Sean Vadney": "candidates/sean-vadney.html",
+  "secretary_of_state|Amanda Campbell": "candidates/amanda-campbell.html",
+  "secretary_of_state|Celeste Landry": "candidates/celeste-landry.html",
+  "treasurer|Jeff Bridges": "candidates/jeff-bridges.html",
+  "treasurer|Kevin Grantham": "candidates/kevin-grantham.html",
+  "treasurer|Jodie Barr": "candidates/jodie-barr.html",
+  "treasurer|Marilee Langner Sturgis": "candidates/marilee-langner-sturgis.html",
+  "attorney_general|Michael J. Allen": "candidates/michael-j-allen.html",
+  "attorney_general|Jena Griswold": "candidates/jena-griswold.html",
+  "board_of_ed:1|Lisa Esc\u00e1rcega": "candidates/lisa-escarcega.html",
+  "board_of_ed:1|Frederick Espinoza": "candidates/frederick-espinoza.html",
+  "board_of_ed:1|Clayton Casciato": "candidates/clayton-casciato.html",
+  "board_of_ed:3|Sherri M Wright": "candidates/sherri-m-wright.html",
+  "board_of_ed:3|Barb Clementi": "candidates/barb-clementi.html",
+  "board_of_ed:7|Karla Esser": "candidates/karla-esser.html",
+  "board_of_ed:7|Steve Barton": "candidates/steve-barton.html",
+  "board_of_ed:7|Ross Klopf": "candidates/ross-klopf.html",
+  "cu_regent:2|Marty Neilson": "candidates/marty-neilson.html",
+  "cu_regent:2|Edie Hooton": "candidates/edie-hooton.html",
+  "cu_regent:2|Richard Friend": "candidates/richard-friend.html",
+  "cu_regent:6|Veanessa Burbage": "candidates/veanessa-burbage.html",
+  "cu_regent:6|Ilana Spiegel": "candidates/ilana-spiegel.html",
+  "cu_regent:6|Joe Johnson": "candidates/joe-johnson.html",
+  "cu_regent:7|Paul Mueller": "candidates/paul-mueller.html",
+  "cu_regent:7|Nolbert Chavez": "candidates/nolbert-chavez.html",
+  "cu_regent:7|BetteRose Ryan": "candidates/betterose-ryan.html",
+  "state_senate:1|Jamie Jeffery": "candidates/jamie-jeffery.html",
+  "state_senate:1|Byron Pelton": "candidates/byron-pelton.html",
+  "state_senate:3|Aaron Gutierrez": "candidates/aaron-gutierrez.html",
+  "state_senate:3|Dana Charles": "candidates/dana-charles.html",
+  "state_senate:4|Justin Kurth": "candidates/justin-kurth.html",
+  "state_senate:4|Teddy Collins": "candidates/teddy-collins.html",
+  "state_senate:7|Janice Rich": "candidates/janice-rich.html",
+  "state_senate:8|Dylan Roberts": "candidates/dylan-roberts.html",
+  "state_senate:8|Corey Marshall": "candidates/corey-marshall.html",
+  "state_senate:9|Terri Carver": "candidates/terri-carver.html",
+  "state_senate:9|William Delano Moses III": "candidates/william-delano-moses-iii.html",
+  "state_senate:11|Tony Exum Sr": "candidates/tony-exum-sr.html",
+  "state_senate:11|Levon Stilson": "candidates/levon-stilson.html",
+  "state_senate:11|Janet Turner": "candidates/janet-turner.html",
+  "state_senate:15|Rob Woodward": "candidates/rob-woodward.html",
+  "state_senate:15|Janice Marchman": "candidates/janice-marchman.html",
+  "state_senate:17|Katie Wallace": "candidates/katie-wallace.html",
+  "state_senate:17|Pat Miller": "candidates/pat-miller.html",
+  "state_senate:20|Richard (Rich) Mancuso": "candidates/richard-rich-mancuso.html",
+  "state_senate:20|Sheila Lieder": "candidates/sheila-lieder.html",
+  "state_senate:21|Frederick Alfred Jr": "candidates/frederick-alfred-jr.html",
+  "state_senate:21|Adrienne Benavidez": "candidates/adrienne-benavidez.html",
+  "state_senate:22|Steve Harkess": "candidates/steve-harkess.html",
+  "state_senate:22|Monica Irasema Duran": "candidates/monica-irasema-duran.html",
+  "state_senate:24|Kevin Allen": "candidates/kevin-allen.html",
+  "state_senate:24|Kyle Mullica": "candidates/kyle-mullica.html",
+  "state_senate:25|Paul Kohlhoff": "candidates/paul-kohlhoff.html",
+  "state_senate:25|William Lindstedt": "candidates/william-lindstedt.html",
+  "state_senate:25|Mark Philip Bromley": "candidates/mark-philip-bromley.html",
+  "state_senate:27|Danielle Lammon": "candidates/danielle-lammon.html",
+  "state_senate:27|Tom Sullivan": "candidates/tom-sullivan.html",
+  "state_senate:27|Michele Poague": "candidates/michele-poague.html",
+  "state_senate:29|Iman M. Jodeh": "candidates/iman-m-jodeh.html",
+  "state_senate:29|Robert McKenna": "candidates/robert-mckenna.html",
+  "state_senate:30|John Carson": "candidates/john-carson.html",
+  "state_senate:30|Kevin Leung": "candidates/kevin-leung.html",
+  "state_senate:31|Matt Ball": "candidates/matt-ball.html",
+  "state_senate:32|Emily Sirota": "candidates/emily-sirota.html",
+  "state_senate:32|Sydnnia Wulff": "candidates/sydnnia-wulff.html",
+  "state_senate:34|Chela Garcia Irlando": "candidates/chela-garcia-irlando.html",
+  "state_senate:34|Jennifer Qualteri": "candidates/jennifer-qualteri.html",
+  "state_senate:34|Jacob Luria": "candidates/jacob-luria.html",
+  "state_senate:35|Rod Pelton": "candidates/rod-pelton.html",
+  "state_senate:35|Duane L Gurule": "candidates/duane-l-gurule.html",
+  "state_senate:35|Richard Graf": "candidates/richard-graf.html",
+  "state_senate:35|Travis Star Nelson": "candidates/travis-star-nelson.html",
+  "state_house:1|Javier Mabrey": "candidates/javier-mabrey.html",
+  "state_house:1|Joseph Montoya": "candidates/joseph-montoya.html",
+  "state_house:2|Scott Baldermann": "candidates/scott-baldermann.html",
+  "state_house:2|Carey Marin": "candidates/carey-marin.html",
+  "state_house:3|Gena Ozols": "candidates/gena-ozols.html",
+  "state_house:3|Rebecca Winegar": "candidates/rebecca-winegar.html",
+  "state_house:4|Ellwood Ervin": "candidates/ellwood-ervin.html",
+  "state_house:4|Cecelia Espenoza": "candidates/cecelia-espenoza.html",
+  "state_house:4|Bill Hare": "candidates/bill-hare.html",
+  "state_house:5|Justine Sandoval": "candidates/justine-sandoval.html",
+  "state_house:5|Johnnie W. Johnson": "candidates/johnnie-w-johnson.html",
+  "state_house:6|Iris Halpern": "candidates/iris-halpern.html",
+  "state_house:6|Kathleen Angel": "candidates/kathleen-angel.html",
+  "state_house:7|Jennifer Bacon": "candidates/jennifer-bacon.html",
+  "state_house:7|Jeff Wilson": "candidates/jeff-wilson.html",
+  "state_house:8|Carolyn Barnes": "candidates/carolyn-barnes.html",
+  "state_house:8|Lindsay Gilchrist": "candidates/lindsay-gilchrist.html",
+  "state_house:8|Jesse Lashawn Parris": "candidates/jesse-lashawn-parris.html",
+  "state_house:9|Tom Cowhick": "candidates/tom-cowhick.html",
+  "state_house:9|Monica VanBuskirk": "candidates/monica-vanbuskirk.html",
+  "state_house:10|Junie Joseph": "candidates/junie-joseph.html",
+  "state_house:11|Karen McCormick": "candidates/karen-mccormick.html",
+  "state_house:12|Ryan Rhatigan": "candidates/ryan-rhatigan.html",
+  "state_house:12|Kyle Brown": "candidates/kyle-brown.html",
+  "state_house:13|Consuelo Redhorse": "candidates/consuelo-redhorse.html",
+  "state_house:13|Miguel Martinez": "candidates/miguel-martinez.html",
+  "state_house:14|Ava Flanell": "candidates/ava-flanell.html",
+  "state_house:14|Sarah Emery": "candidates/sarah-emery.html",
+  "state_house:15|Jeff K. Livingston": "candidates/jeff-k-livingston.html",
+  "state_house:15|Pricella Tiegen": "candidates/pricella-tiegen.html",
+  "state_house:15|Doug Jones": "candidates/doug-jones.html",
+  "state_house:16|Jill Haffley": "candidates/jill-haffley.html",
+  "state_house:16|Steph Vigil": "candidates/steph-vigil.html",
+  "state_house:16|John C Hjersman": "candidates/john-c-hjersman.html",
+  "state_house:16|Isaac Contreras": "candidates/isaac-contreras.html",
+  "state_house:17|Regina English": "candidates/regina-english.html",
+  "state_house:17|Laura Martin": "candidates/laura-martin.html",
+  "state_house:17|John Michael Angle": "candidates/john-michael-angle.html",
+  "state_house:17|Sherrea Sterling": "candidates/sherrea-sterling.html",
+  "state_house:18|Amy T Paschal": "candidates/amy-t-paschal.html",
+  "state_house:18|Adriana Cuva": "candidates/adriana-cuva.html",
+  "state_house:19|Dan Woog": "candidates/dan-woog.html",
+  "state_house:19|Jillaire McMillan": "candidates/jillaire-mcmillan.html",
+  "state_house:20|Jarvis Caldwell": "candidates/jarvis-caldwell.html",
+  "state_house:21|Brenda Miller": "candidates/brenda-miller.html",
+  "state_house:21|Michelle Tweed": "candidates/michelle-tweed.html",
+  "state_house:22|Michael Pierson": "candidates/michael-pierson.html",
+  "state_house:22|Ken deGraaf": "candidates/ken-degraaf.html",
+  "state_house:23|Alexis Hoffkling": "candidates/alexis-hoffkling.html",
+  "state_house:23|Ross Metler": "candidates/ross-metler.html",
+  "state_house:24|Lisa Feret": "candidates/lisa-feret.html",
+  "state_house:24|Kristopher Johnson": "candidates/kristopher-johnson.html",
+  "state_house:25|Mark Herzfeld": "candidates/mark-herzfeld.html",
+  "state_house:25|Tammy Story": "candidates/tammy-story.html",
+  "state_house:26|Meghan Lukens": "candidates/meghan-lukens.html",
+  "state_house:26|James Kellogg": "candidates/james-kellogg.html",
+  "state_house:27|Danielle Varda": "candidates/danielle-varda.html",
+  "state_house:27|Eric Bodenstab": "candidates/eric-bodenstab.html",
+  "state_house:28|David Rein": "candidates/david-rein.html",
+  "state_house:29|Kristine Ireland": "candidates/kristine-ireland.html",
+  "state_house:29|Lori Goldstein": "candidates/lori-goldstein.html",
+  "state_house:30|Rebekah Stewart": "candidates/rebekah-stewart.html",
+  "state_house:30|William Tyler Switzer": "candidates/william-tyler-switzer.html",
+  "state_house:31|Gabriel Cervantes": "candidates/gabriel-cervantes.html",
+  "state_house:31|Ray Roll": "candidates/ray-roll.html",
+  "state_house:32|Michelle D. Lee": "candidates/michelle-d-lee.html",
+  "state_house:32|Chris VanDijk": "candidates/chris-vandijk.html",
+  "state_house:33|Kenny Van Nguyen": "candidates/kenny-van-nguyen.html",
+  "state_house:33|Nate Jorgensen": "candidates/nate-jorgensen.html",
+  "state_house:34|Craig Sullivan": "candidates/craig-sullivan.html",
+  "state_house:34|Jenny Willford": "candidates/jenny-willford.html",
+  "state_house:35|Lorena Garcia": "candidates/lorena-garcia.html",
+  "state_house:36|Michael Carter": "candidates/michael-carter.html",
+  "state_house:36|Paul E. Nelson": "candidates/paul-e-nelson.html",
+  "state_house:36|Andrew Gibson": "candidates/andrew-gibson.html",
+  "state_house:37|Jill Thompson": "candidates/jill-thompson.html",
+  "state_house:37|Chad Clifford": "candidates/chad-clifford.html",
+  "state_house:38|Gretchen Rydin": "candidates/gretchen-rydin.html",
+  "state_house:38|Tim Martin": "candidates/tim-martin.html",
+  "state_house:38|Norm Olsen": "candidates/norm-olsen.html",
+  "state_house:38|Allison Madrigal": "candidates/allison-madrigal.html",
+  "state_house:39|Brandi Bradley": "candidates/brandi-bradley.html",
+  "state_house:39|Christian Schilder": "candidates/christian-schilder.html",
+  "state_house:40|Clinton Porter": "candidates/clinton-porter.html",
+  "state_house:40|Naquetta Ricks": "candidates/naquetta-ricks.html",
+  "state_house:41|Jamie Jackson": "candidates/jamie-jackson.html",
+  "state_house:42|Sarah Amelia Woodson": "candidates/sarah-amelia-woodson.html",
+  "state_house:43|Robert \"Bob\" Marshall": "candidates/robert-bob-marshall.html",
+  "state_house:43|Nate Marsh": "candidates/nate-marsh.html",
+  "state_house:44|Anthony Hartsook": "candidates/anthony-hartsook.html",
+  "state_house:44|Richard Bowness": "candidates/richard-bowness.html",
+  "state_house:44|John H Sutton": "candidates/john-h-sutton.html",
+  "state_house:45|Michael Clarkson": "candidates/michael-clarkson.html",
+  "state_house:45|Max Brooks": "candidates/max-brooks.html",
+  "state_house:45|Caryn Ann Harlos": "candidates/caryn-ann-harlos.html",
+  "state_house:46|Jonathan Post": "candidates/jonathan-post.html",
+  "state_house:46|Tisha Mauro": "candidates/tisha-mauro.html",
+  "state_house:47|Vic Meyers": "candidates/vic-meyers.html",
+  "state_house:47|Ty Winter": "candidates/ty-winter.html",
+  "state_house:48|Carlos Barron": "candidates/carlos-barron.html",
+  "state_house:48|Dez Packard": "candidates/dez-packard.html",
+  "state_house:48|Eric E. Joss": "candidates/eric-e-joss.html",
+  "state_house:49|Michael Sheperek": "candidates/michael-sheperek.html",
+  "state_house:49|Lesley Smith": "candidates/lesley-smith.html",
+  "state_house:50|Ryan Gonzalez": "candidates/ryan-gonzalez.html",
+  "state_house:50|Tommy Butler": "candidates/tommy-butler.html",
+  "state_house:51|Amy Parks": "candidates/amy-parks.html",
+  "state_house:51|Jacki Marsh": "candidates/jacki-marsh.html",
+  "state_house:52|Yara Zokaie": "candidates/yara-zokaie.html",
+  "state_house:52|Steve Yurash": "candidates/steve-yurash.html",
+  "state_house:53|Daniel Frick": "candidates/daniel-frick.html",
+  "state_house:53|Andy Boesenecker": "candidates/andy-boesenecker.html",
+  "state_house:54|Jason Bias": "candidates/jason-bias.html",
+  "state_house:54|Mallory Martin": "candidates/mallory-martin.html",
+  "state_house:55|Rick Taggart": "candidates/rick-taggart.html",
+  "state_house:55|Brittni Packard": "candidates/brittni-packard.html",
+  "state_house:56|Chris Richardson": "candidates/chris-richardson.html",
+  "state_house:56|Amy L. Lunde": "candidates/amy-l-lunde.html",
+  "state_house:57|Elizabeth Velasco": "candidates/elizabeth-velasco.html",
+  "state_house:57|Russ Andrews": "candidates/russ-andrews.html",
+  "state_house:58|Larry Don Suckla": "candidates/larry-don-suckla.html",
+  "state_house:59|Katie Stewart": "candidates/katie-stewart.html",
+  "state_house:59|Naomi Riess": "candidates/naomi-riess.html",
+  "state_house:60|Kathryn Kester Green": "candidates/kathryn-kester-green.html",
+  "state_house:60|Matt Alexander": "candidates/matt-alexander.html",
+  "state_house:61|Scott Shamblin": "candidates/scott-shamblin.html",
+  "state_house:61|Eliza Hamrick": "candidates/eliza-hamrick.html",
+  "state_house:61|Kevin Gulbranson": "candidates/kevin-gulbranson.html",
+  "state_house:62|Matthew Martinez": "candidates/matthew-martinez.html",
+  "state_house:62|Steven Rodriguez": "candidates/steven-rodriguez.html",
+  "state_house:62|Donald Vermillion": "candidates/donald-vermillion.html",
+  "state_house:63|Dusty Johnson": "candidates/dusty-johnson.html",
+  "state_house:64|Maureen (Mo) Dower": "candidates/maureen-mo-dower.html",
+  "state_house:64|Scott L. Slaugh": "candidates/scott-l-slaugh.html",
+  "state_house:65|Lori Garcia Sander": "candidates/lori-garcia-sander.html"
+ },
+ "measures": {
+  "Amendment 81": "measures/amendment-81.html",
+  "Amendment 82": "measures/amendment-82.html",
+  "Amendment 83": "measures/amendment-83.html",
+  "Amendment 84": "measures/amendment-84.html",
+  "Amendment 85": "measures/amendment-85.html",
+  "Amendment 86": "measures/amendment-86.html",
+  "Amendment 87": "measures/amendment-87.html",
+  "Proposition NN": "measures/proposition-nn.html",
+  "Proposition 132": "measures/proposition-132.html",
+  "Proposition 133": "measures/proposition-133.html",
+  "Proposition 134": "measures/proposition-134.html",
+  "Proposition 135": "measures/proposition-135.html",
+  "Proposition 136": "measures/proposition-136.html",
+  "Proposition 137": "measures/proposition-137.html",
+  "Ballot Issue 7A": "measures/ballot-issue-7a.html"
+ },
+ "boulderLocal": {
+  "1A": "local/m/boulder-county-1a.html",
+  "200": "local/m/boulder-county-200.html",
+  "201": "local/m/boulder-county-201.html",
+  "2J": "local/m/boulder-2j.html",
+  "2K": "local/m/boulder-2k.html",
+  "2L": "local/m/boulder-2l.html",
+  "2M": "local/m/boulder-2m.html"
+ },
+ "local": {
+  "Boulder": {
+   "page": "local/boulder.html",
+   "count": 33
+  },
+  "Broomfield": {
+   "page": "local/broomfield.html",
+   "count": 5
+  },
+  "Denver": {
+   "page": "local/denver.html",
+   "count": 7
+  },
+  "Jefferson": {
+   "page": "local/jefferson.html",
+   "count": 21
+  },
+  "Adams": {
+   "page": "local/adams.html",
+   "count": 19
+  },
+  "Arapahoe": {
+   "page": "local/arapahoe.html",
+   "count": 20
+  },
+  "Douglas": {
+   "page": "local/douglas.html",
+   "count": 24
+  },
+  "Larimer": {
+   "page": "local/larimer.html",
+   "count": 12
+  },
+  "Weld": {
+   "page": "local/weld.html",
+   "count": 2
+  },
+  "El Paso": {
+   "page": "local/el-paso.html",
+   "count": 9
+  },
+  "Pueblo": {
+   "page": "local/pueblo.html",
+   "count": 7
+  }
+ },
+ "states": [
+  {
+   "name": "Florida",
+   "guide": "guide-fl/",
+   "map": "map-fl/"
+  },
+  {
+   "name": "North Carolina",
+   "guide": "guide-nc/",
+   "map": "map-nc/"
+  },
+  {
+   "name": "Oklahoma",
+   "guide": "guide-ok/",
+   "map": "map-ok/"
+  },
+  {
+   "name": "Virginia",
+   "guide": "guide-va/",
+   "map": "map-va/"
+  },
+  {
+   "name": "New Jersey",
+   "guide": "guide-nj/",
+   "map": "map-nj/"
+  },
+  {
+   "name": "California",
+   "guide": "guide-ca/",
+   "map": "map-ca/"
+  },
+  {
+   "name": "Texas",
+   "guide": "guide-tx/",
+   "map": "map-tx/"
+  },
+  {
+   "name": "Michigan",
+   "guide": "guide-mi/",
+   "map": "map-mi/"
+  },
+  {
+   "name": "Kentucky",
+   "guide": "guide-ky/",
+   "map": "map-ky/"
+  },
+  {
+   "name": "Maryland",
+   "guide": "guide-md/",
+   "map": "map-md/"
+  },
+  {
+   "name": "Missouri",
+   "guide": "guide-mo/",
+   "map": "map-mo/"
+  },
+  {
+   "name": "Massachusetts",
+   "guide": "guide-ma/",
+   "map": "map-ma/"
+  },
+  {
+   "name": "Washington",
+   "guide": "guide-wa/",
+   "map": "map-wa/"
+  },
+  {
+   "name": "Mississippi",
+   "guide": "guide-ms/",
+   "map": "map-ms/"
+  },
+  {
+   "name": "Nevada",
+   "guide": "guide-nv/",
+   "map": "map-nv/"
+  },
+  {
+   "name": "Iowa",
+   "guide": "guide-ia/",
+   "map": "map-ia/"
+  },
+  {
+   "name": "Oregon",
+   "guide": "guide-or/",
+   "map": "map-or/"
+  },
+  {
+   "name": "Alabama",
+   "guide": "guide-al/",
+   "map": "map-al/"
+  },
+  {
+   "name": "Arkansas",
+   "guide": "guide-ar/",
+   "map": "map-ar/"
+  },
+  {
+   "name": "Connecticut",
+   "guide": "guide-ct/",
+   "map": "map-ct/"
+  },
+  {
+   "name": "Georgia",
+   "guide": "guide-ga/",
+   "map": "map-ga/"
+  },
+  {
+   "name": "Illinois",
+   "guide": "guide-il/",
+   "map": "map-il/"
+  },
+  {
+   "name": "Indiana",
+   "guide": "guide-in/",
+   "map": "map-in/"
+  },
+  {
+   "name": "Kansas",
+   "guide": "guide-ks/",
+   "map": "map-ks/"
+  },
+  {
+   "name": "Louisiana",
+   "guide": "guide-la/",
+   "map": "map-la/"
+  },
+  {
+   "name": "Minnesota",
+   "guide": "guide-mn/",
+   "map": "map-mn/"
+  },
+  {
+   "name": "New York",
+   "guide": "guide-ny/",
+   "map": "map-ny/"
+  },
+  {
+   "name": "Ohio",
+   "guide": "guide-oh/",
+   "map": "map-oh/"
+  },
+  {
+   "name": "Pennsylvania",
+   "guide": "guide-pa/",
+   "map": "map-pa/"
+  },
+  {
+   "name": "South Carolina",
+   "guide": "guide-sc/",
+   "map": "map-sc/"
+  },
+  {
+   "name": "Tennessee",
+   "guide": "guide-tn/",
+   "map": "map-tn/"
+  },
+  {
+   "name": "Utah",
+   "guide": "guide-ut/",
+   "map": "map-ut/"
+  },
+  {
+   "name": "Wisconsin",
+   "guide": "guide-wi/",
+   "map": "map-wi/"
+  },
+  {
+   "name": "Nebraska",
+   "guide": "guide-ne/",
+   "map": "map-ne/"
+  },
+  {
+   "name": "Maine",
+   "guide": "guide-me/",
+   "map": "map-me/"
+  },
+  {
+   "name": "Delaware",
+   "guide": "guide-de/",
+   "map": "map-de/"
+  },
+  {
+   "name": "North Dakota",
+   "guide": "guide-nd/",
+   "map": "map-nd/"
+  },
+  {
+   "name": "Vermont",
+   "guide": "guide-vt/",
+   "map": "map-vt/"
+  },
+  {
+   "name": "South Dakota",
+   "guide": "guide-sd/",
+   "map": "map-sd/"
+  },
+  {
+   "name": "Alaska",
+   "guide": "guide-ak/",
+   "map": "map-ak/"
+  },
+  {
+   "name": "New Mexico",
+   "guide": "guide-nm/",
+   "map": "map-nm/"
+  },
+  {
+   "name": "West Virginia",
+   "guide": "guide-wv/",
+   "map": "map-wv/"
+  },
+  {
+   "name": "Hawaii",
+   "guide": "guide-hi/",
+   "map": "map-hi/"
+  },
+  {
+   "name": "Montana",
+   "guide": "guide-mt/",
+   "map": "map-mt/"
+  },
+  {
+   "name": "Rhode Island",
+   "guide": "guide-ri/",
+   "map": "map-ri/"
+  },
+  {
+   "name": "Wyoming",
+   "guide": "guide-wy/",
+   "map": "map-wy/"
+  },
+  {
+   "name": "Arizona",
+   "guide": "guide-az/",
+   "map": "map-az/"
+  },
+  {
+   "name": "Idaho",
+   "guide": "guide-id/",
+   "map": "map-id/"
+  },
+  {
+   "name": "New Hampshire",
+   "guide": "guide-nh/",
+   "map": "map-nh/"
+  }
+ ],
+ "localList": {
+  "Boulder": [
+   {
+    "code": "1A",
+    "title": "Early childhood care and education tax",
+    "juris": "Boulder County",
+    "page": "local/m/boulder-county-1a.html"
+   },
+   {
+    "code": "200",
+    "title": "Expand the county commission from 3 to 5 members",
+    "juris": "Boulder County",
+    "page": "local/m/boulder-county-200.html"
+   },
+   {
+    "code": "201",
+    "title": "How a five-member commission would be elected",
+    "juris": "Boulder County",
+    "page": "local/m/boulder-county-201.html"
+   },
+   {
+    "code": "2J",
+    "title": "Vacant home tax",
+    "juris": "City of Boulder",
+    "page": "local/m/boulder-2j.html"
+   },
+   {
+    "code": "2K",
+    "title": "$400 million recreation and safety bond",
+    "juris": "City of Boulder",
+    "page": "local/m/boulder-2k.html"
+   },
+   {
+    "code": "2L",
+    "title": "Firefighter collective bargaining in the city charter",
+    "juris": "City of Boulder",
+    "page": "local/m/boulder-2l.html"
+   },
+   {
+    "code": "2M",
+    "title": "City debt limit",
+    "juris": "City of Boulder",
+    "page": "local/m/boulder-2m.html"
+   },
+   {
+    "code": "3A",
+    "title": "Maintain and Increase Fire and Police Services Via Tax Increases",
+    "juris": "City of Longmont",
+    "page": "local/m/longmont-3a.html"
+   },
+   {
+    "code": "3B",
+    "title": "Charter Amendment to Protect Open Space Lands",
+    "juris": "City of Longmont",
+    "page": "local/m/longmont-3b.html"
+   },
+   {
+    "code": "3C",
+    "title": "Charter Amendment to Allow Ranked Choice Voting Methods",
+    "juris": "City of Longmont",
+    "page": "local/m/longmont-3c.html"
+   },
+   {
+    "code": "3D",
+    "title": "Charter Amendment to Adjust City Council Electoral Cycles",
+    "juris": "City of Longmont",
+    "page": "local/m/longmont-3d.html"
+   },
+   {
+    "code": "2B",
+    "title": "Historic Preservation Tax (continuation)",
+    "juris": "City of Louisville",
+    "page": "local/m/louisville-2b.html"
+   },
+   {
+    "code": "2C",
+    "title": "Charter Amendment Expanding Executive Session Topics",
+    "juris": "City of Louisville",
+    "page": "local/m/louisville-2c.html"
+   },
+   {
+    "code": "2D",
+    "title": "Charter Amendment to Change Timing for Taking Office",
+    "juris": "City of Louisville",
+    "page": "local/m/louisville-2d.html"
+   },
+   {
+    "code": "2E",
+    "title": "Charter Amendment for Initiative and Referendum Signatures",
+    "juris": "City of Louisville",
+    "page": "local/m/louisville-2e.html"
+   },
+   {
+    "code": "2F",
+    "title": "Charter Amendment Regarding Meeting Locations",
+    "juris": "City of Louisville",
+    "page": "local/m/louisville-2f.html"
+   },
+   {
+    "code": "2G",
+    "title": "Charter Amendment to Allow for Review and Comment",
+    "juris": "City of Louisville",
+    "page": "local/m/louisville-2g.html"
+   },
+   {
+    "code": "2H",
+    "title": "Charter Amendment to Update Language",
+    "juris": "City of Louisville",
+    "page": "local/m/louisville-2h.html"
+   },
+   {
+    "code": "2A",
+    "title": "Extension of an Expiring Tax for Lamont Does Park",
+    "juris": "City of Lafayette",
+    "page": "local/m/lafayette-2a.html"
+   },
+   {
+    "code": "3E",
+    "title": "New Town Lodging Tax",
+    "juris": "Town of Erie",
+    "page": "local/m/erie-3e.html"
+   },
+   {
+    "code": "3F",
+    "title": "Erie Community Center Expansion: Debt and Sales/Use Tax",
+    "juris": "Town of Erie",
+    "page": "local/m/erie-3f.html"
+   },
+   {
+    "code": "300",
+    "title": "Incorporation of Niwot as a municipality",
+    "juris": "Proposed Municipality of Niwot",
+    "page": "local/m/niwot-300.html"
+   },
+   {
+    "code": "301",
+    "title": "Home Rule Charter Commission",
+    "juris": "Proposed Municipality of Niwot",
+    "page": "local/m/niwot-301.html"
+   },
+   {
+    "code": "302",
+    "title": "2.5% sales and use tax",
+    "juris": "Proposed Municipality of Niwot",
+    "page": "local/m/niwot-302.html"
+   },
+   {
+    "code": "303",
+    "title": "4-mill property tax",
+    "juris": "Proposed Municipality of Niwot",
+    "page": "local/m/niwot-303.html"
+   },
+   {
+    "code": "304",
+    "title": "3% special sales tax on retail marijuana",
+    "juris": "Proposed Municipality of Niwot",
+    "page": "local/m/niwot-304.html"
+   },
+   {
+    "code": "305",
+    "title": "Retain and spend revenue (TABOR)",
+    "juris": "Proposed Municipality of Niwot",
+    "page": "local/m/niwot-305.html"
+   },
+   {
+    "code": "306",
+    "title": "Up to $15 million debt for streets and infrastructure",
+    "juris": "Proposed Municipality of Niwot",
+    "page": "local/m/niwot-306.html"
+   },
+   {
+    "code": "6A",
+    "title": "Wastewater treatment plant debt",
+    "juris": "Eldorado Springs Public Improvement District of Boulder County",
+    "page": "local/m/eldorado-springs-pid-6a.html"
+   },
+   {
+    "code": "6B",
+    "title": "Road resurfacing mill levy and district organization",
+    "juris": "Sombrero Ranch Public Improvement District of Boulder County",
+    "page": "local/m/sombrero-ranch-pid-6b.html"
+   },
+   {
+    "code": "6C",
+    "title": "Road resurfacing mill levy and district organization",
+    "juris": "Summerlin Public Improvement District of Boulder County",
+    "page": "local/m/summerlin-pid-6c.html"
+   },
+   {
+    "code": "7B",
+    "title": "Timberline Fire 6.0 mill levy",
+    "juris": "Timberline Fire Protection District",
+    "page": "local/m/timberline-fpd-7b.html"
+   },
+   {
+    "code": "7C",
+    "title": "Allenspark Fire 5.3 mill increase",
+    "juris": "Allenspark Fire Protection District",
+    "page": "local/m/allenspark-fpd-7c.html"
+   }
+  ],
+  "Broomfield": [
+   {
+    "code": "7E",
+    "title": "District attorney term limit: up to three consecutive terms",
+    "juris": "17th Judicial District",
+    "page": "local/m/da-17th-7e.html"
+   },
+   {
+    "code": "1A",
+    "title": "Lodging tax for Housing Authority",
+    "juris": "City and County of Broomfield",
+    "page": "local/m/broomfield-1a.html"
+   },
+   {
+    "code": "1B",
+    "title": "Xcel franchise (20 years)",
+    "juris": "City and County of Broomfield",
+    "page": "local/m/broomfield-1b.html"
+   },
+   {
+    "code": "1C",
+    "title": "Four-year mayoral terms",
+    "juris": "City and County of Broomfield",
+    "page": "local/m/broomfield-1c.html"
+   },
+   {
+    "code": "5C",
+    "title": "Override plus continuation of expiring levy",
+    "juris": "Weld County School District RE-8 (Fort Lupton)",
+    "page": "local/m/weld-re8-5c.html"
+   }
+  ],
+  "Denver": [
+   {
+    "code": "2H",
+    "title": "Auditor's Office workplace-law enforcement",
+    "juris": "City and County of Denver",
+    "page": "local/m/denver-2h.html"
+   },
+   {
+    "code": "2I",
+    "title": "Two-year budget process",
+    "juris": "City and County of Denver",
+    "page": "local/m/denver-2i.html"
+   },
+   {
+    "code": "2J",
+    "title": "Civil Service Commission and Department of Safety",
+    "juris": "City and County of Denver",
+    "page": "local/m/denver-2j.html"
+   },
+   {
+    "code": "2K",
+    "title": "Xcel Energy franchise agreement (20 years)",
+    "juris": "City and County of Denver",
+    "page": "local/m/denver-2k.html"
+   },
+   {
+    "code": "Initiated Ordinance 311",
+    "title": "Ban on force-feeding birds and sale of foie gras",
+    "juris": "City and County of Denver",
+    "page": "local/m/denver-311.html"
+   },
+   {
+    "code": "4A",
+    "title": "DPS property tax (mill levy override)",
+    "juris": "Denver Public Schools",
+    "page": "local/m/denver-dps-4a.html"
+   },
+   {
+    "code": "311",
+    "title": "",
+    "juris": "City and County of Denver",
+    "page": "local/m/city-and-county-of-denver-311.html"
+   }
+  ],
+  "Jefferson": [
+   {
+    "code": "5A",
+    "title": "Jeffco Schools mill levy override for pay and CTE",
+    "juris": "Jefferson County School District R-1 (Jeffco Public Schools)",
+    "page": "local/m/jeffco-5a.html"
+   },
+   {
+    "code": "5B",
+    "title": "Jeffco Schools capital and maintenance levy",
+    "juris": "Jefferson County School District R-1 (Jeffco Public Schools)",
+    "page": "local/m/jeffco-5b.html"
+   },
+   {
+    "code": "2G",
+    "title": "Lakewood sales and use tax for public and traffic safety",
+    "juris": "City of Lakewood",
+    "page": "local/m/lakewood-2g.html"
+   },
+   {
+    "code": "2H",
+    "title": "Start of new mayoral and council terms",
+    "juris": "City of Lakewood",
+    "page": "local/m/lakewood-2h.html"
+   },
+   {
+    "code": "2I",
+    "title": "Charter wording on voter approval of property-tax increases",
+    "juris": "City of Lakewood",
+    "page": "local/m/lakewood-2i.html"
+   },
+   {
+    "code": "2J",
+    "title": "Timing of initiative and referendum elections",
+    "juris": "City of Lakewood",
+    "page": "local/m/lakewood-2j.html"
+   },
+   {
+    "code": "2A",
+    "title": "Wheat Ridge sales and use tax increase",
+    "juris": "City of Wheat Ridge",
+    "page": "local/m/wheat-ridge-2a.html"
+   },
+   {
+    "code": "2K",
+    "title": "Edgewater sales tax for accessibility and mobility",
+    "juris": "City of Edgewater",
+    "page": "local/m/edgewater-2k.html"
+   },
+   {
+    "code": "2B",
+    "title": "Mountain View council-manager government",
+    "juris": "Town of Mountain View",
+    "page": "local/m/mountain-view-2b.html"
+   },
+   {
+    "code": "2C",
+    "title": "Mountain View boards and commissions",
+    "juris": "Town of Mountain View",
+    "page": "local/m/mountain-view-2c.html"
+   },
+   {
+    "code": "2D",
+    "title": "Morrison lodging tax room-count exemption",
+    "juris": "Town of Morrison",
+    "page": "local/m/morrison-2d.html"
+   },
+   {
+    "code": "2E",
+    "title": "Morrison lodging tax 6% to 8%",
+    "juris": "Town of Morrison",
+    "page": "local/m/morrison-2e.html"
+   },
+   {
+    "code": "2F",
+    "title": "Staggered four-year Town Board terms",
+    "juris": "Town of Morrison",
+    "page": "local/m/morrison-2f.html"
+   },
+   {
+    "code": "6A",
+    "title": "Water-system debt",
+    "juris": "Blue Mountain Water District",
+    "page": "local/m/blue-mountain-water-6a.html"
+   },
+   {
+    "code": "6B",
+    "title": "Fire apparatus levy of 4.5 mills",
+    "juris": "Golden Gate Fire Protection District",
+    "page": "local/m/golden-gate-fire-6b.html"
+   },
+   {
+    "code": "6C",
+    "title": "Arvada Fire 1% sales tax",
+    "juris": "Arvada Fire Protection District",
+    "page": "local/m/arvada-fire-6c.html"
+   },
+   {
+    "code": "6D",
+    "title": "Recreation levy, 2.6 mills",
+    "juris": "Columbine Knolls Grove Metropolitan Recreation District",
+    "page": "local/m/columbine-knolls-6d.html"
+   },
+   {
+    "code": "6E",
+    "title": "Recreation bonds up to $6.6 million",
+    "juris": "Columbine Knolls Grove Metropolitan Recreation District",
+    "page": "local/m/columbine-knolls-6e.html"
+   },
+   {
+    "code": "7B",
+    "title": "Evergreen Fire 0.89% sales tax",
+    "juris": "Evergreen Fire Protection District",
+    "page": "local/m/evergreen-fire-7b.html"
+   },
+   {
+    "code": "7C",
+    "title": "West Metro Fire 0.75% sales tax",
+    "juris": "West Metro Fire Protection District",
+    "page": "local/m/west-metro-fire-7c.html"
+   },
+   {
+    "code": "7D",
+    "title": "Conifer Fire adds 4 mills",
+    "juris": "Conifer Fire Protection District",
+    "page": "local/m/conifer-fire-7d.html"
+   }
+  ],
+  "Adams": [
+   {
+    "code": "3A",
+    "title": "Aurora community facilities sales tax and bonds",
+    "juris": "City of Aurora",
+    "page": "local/m/aurora-3a.html"
+   },
+   {
+    "code": "3B",
+    "title": "Aurora public safety sales tax and bonds",
+    "juris": "City of Aurora",
+    "page": "local/m/aurora-3b.html"
+   },
+   {
+    "code": "3C",
+    "title": "Aurora transportation sales tax and bonds",
+    "juris": "City of Aurora",
+    "page": "local/m/aurora-3c.html"
+   },
+   {
+    "code": "3D",
+    "title": "Move city elections to even-numbered years",
+    "juris": "City of Aurora",
+    "page": "local/m/aurora-3d.html"
+   },
+   {
+    "code": "3H",
+    "title": "Northglenn accommodations (lodging) tax",
+    "juris": "City of Northglenn",
+    "page": "local/m/northglenn-3h.html"
+   },
+   {
+    "code": "4A",
+    "title": "Collect full previously approved override revenue",
+    "juris": "Westminster Public Schools",
+    "page": "local/m/westminster-ps-4a.html"
+   },
+   {
+    "code": "5A",
+    "title": "Bennett schools $125 million bond",
+    "juris": "Bennett School District No. 29J",
+    "page": "local/m/bennett-29j-5a.html"
+   },
+   {
+    "code": "6A",
+    "title": "Repeal unused debt authorization",
+    "juris": "North Range Metropolitan District No. 3",
+    "page": "local/m/north-range-6a.html"
+   },
+   {
+    "code": "6B",
+    "title": "Repeal multiple-year non-debt agreement authority",
+    "juris": "North Range Metropolitan District No. 3",
+    "page": "local/m/north-range-6b.html"
+   },
+   {
+    "code": "6C",
+    "title": "Repeal capital-project levy authority",
+    "juris": "North Range Metropolitan District No. 3",
+    "page": "local/m/north-range-6c.html"
+   },
+   {
+    "code": "6D",
+    "title": "Lower operations tax cap from $20M to $9M",
+    "juris": "North Range Metropolitan District No. 3",
+    "page": "local/m/north-range-6d.html"
+   },
+   {
+    "code": "6E",
+    "title": "Adams County Fire 1% sales tax",
+    "juris": "Adams County Fire Protection District",
+    "page": "local/m/adams-fire-6e.html"
+   },
+   {
+    "code": "2A",
+    "title": "Council members resign on declaring candidacy for other office",
+    "juris": "City of Thornton",
+    "page": "local/m/thornton-2a.html"
+   },
+   {
+    "code": "7B",
+    "title": "CCWCD borrowing",
+    "juris": "Central Colorado Water Conservancy District",
+    "page": "local/m/central-colorado-water-7b.html"
+   },
+   {
+    "code": "7C",
+    "title": "Subdistrict property taxes",
+    "juris": "Groundwater Management Subdistrict, Central Colorado Water Conservancy District",
+    "page": "local/m/ccwcd-groundwater-7c.html"
+   },
+   {
+    "code": "7D",
+    "title": "Waive 5.25% property-tax revenue limit",
+    "juris": "Greater Brighton Fire Protection District",
+    "page": "local/m/greater-brighton-fire-7d.html"
+   },
+   {
+    "code": "7F",
+    "title": "Bennett Fire 0.75% sales tax",
+    "juris": "Bennett Fire Protection District",
+    "page": "local/m/bennett-fire-7f.html"
+   },
+   {
+    "code": "7G",
+    "title": "Waive 5.25% property-tax revenue limit",
+    "juris": "Bennett Fire Protection District",
+    "page": "local/m/bennett-fire-7g.html"
+   },
+   {
+    "code": "7E",
+    "title": "District attorney term limit: up to three consecutive terms",
+    "juris": "17th Judicial District",
+    "page": "local/m/da-17th-7e.html"
+   }
+  ],
+  "Arapahoe": [
+   {
+    "code": "3A",
+    "title": "Aurora community facilities sales tax and bonds",
+    "juris": "City of Aurora",
+    "page": "local/m/aurora-3a.html"
+   },
+   {
+    "code": "3B",
+    "title": "Aurora public safety sales tax and bonds",
+    "juris": "City of Aurora",
+    "page": "local/m/aurora-3b.html"
+   },
+   {
+    "code": "3C",
+    "title": "Aurora transportation sales tax and bonds",
+    "juris": "City of Aurora",
+    "page": "local/m/aurora-3c.html"
+   },
+   {
+    "code": "3D",
+    "title": "Move city elections to even-numbered years",
+    "juris": "City of Aurora",
+    "page": "local/m/aurora-3d.html"
+   },
+   {
+    "code": "5A",
+    "title": "Bennett schools $125 million bond",
+    "juris": "Bennett School District No. 29J",
+    "page": "local/m/bennett-29j-5a.html"
+   },
+   {
+    "code": "7F",
+    "title": "Bennett Fire 0.75% sales tax",
+    "juris": "Bennett Fire Protection District",
+    "page": "local/m/bennett-fire-7f.html"
+   },
+   {
+    "code": "7G",
+    "title": "Waive 5.25% property-tax revenue limit",
+    "juris": "Bennett Fire Protection District",
+    "page": "local/m/bennett-fire-7g.html"
+   },
+   {
+    "code": "2A",
+    "title": "Centennial sales and use tax for streets and bridges",
+    "juris": "City of Centennial",
+    "page": "local/m/centennial-2a.html"
+   },
+   {
+    "code": "2B",
+    "title": "Xcel franchise",
+    "juris": "City of Glendale",
+    "page": "local/m/glendale-2b.html"
+   },
+   {
+    "code": "2C",
+    "title": "Local land-use authority",
+    "juris": "City of Cherry Hills Village",
+    "page": "local/m/cherry-hills-2c.html"
+   },
+   {
+    "code": "2D",
+    "title": "Sheridan public safety sales tax",
+    "juris": "City of Sheridan",
+    "page": "local/m/sheridan-2d.html"
+   },
+   {
+    "code": "4A",
+    "title": "Littleton Schools override collections",
+    "juris": "Littleton Public Schools",
+    "page": "local/m/littleton-ps-4a.html"
+   },
+   {
+    "code": "6A",
+    "title": "District property tax for operations",
+    "juris": "The Hills at Cherry Creek Metropolitan District",
+    "page": "local/m/hills-cherry-creek-6a.html"
+   },
+   {
+    "code": "3A",
+    "title": "",
+    "juris": "City of Aurora",
+    "page": "local/m/city-of-aurora-3a.html"
+   },
+   {
+    "code": "3B",
+    "title": "",
+    "juris": "City of Aurora",
+    "page": "local/m/city-of-aurora-3b.html"
+   },
+   {
+    "code": "3C",
+    "title": "",
+    "juris": "City of Aurora",
+    "page": "local/m/city-of-aurora-3c.html"
+   },
+   {
+    "code": "3D",
+    "title": "",
+    "juris": "City of Aurora",
+    "page": "local/m/city-of-aurora-3d.html"
+   },
+   {
+    "code": "5A",
+    "title": "",
+    "juris": "Bennett School District 29J",
+    "page": "local/m/bennett-school-district-29j-5a.html"
+   },
+   {
+    "code": "7F",
+    "title": "",
+    "juris": "Bennett Fire Protection District",
+    "page": "local/m/bennett-fire-protection-district-7f.html"
+   },
+   {
+    "code": "7G",
+    "title": "",
+    "juris": "Bennett Fire Protection District",
+    "page": "local/m/bennett-fire-protection-district-7g.html"
+   }
+  ],
+  "Douglas": [
+   {
+    "code": "3A",
+    "title": "Aurora community facilities sales tax and bonds",
+    "juris": "City of Aurora",
+    "page": "local/m/aurora-3a.html"
+   },
+   {
+    "code": "3B",
+    "title": "Aurora public safety sales tax and bonds",
+    "juris": "City of Aurora",
+    "page": "local/m/aurora-3b.html"
+   },
+   {
+    "code": "3C",
+    "title": "Aurora transportation sales tax and bonds",
+    "juris": "City of Aurora",
+    "page": "local/m/aurora-3c.html"
+   },
+   {
+    "code": "3D",
+    "title": "Move city elections to even-numbered years",
+    "juris": "City of Aurora",
+    "page": "local/m/aurora-3d.html"
+   },
+   {
+    "code": "200",
+    "title": "Expand Board of County Commissioners from three to five members",
+    "juris": "Douglas County",
+    "page": "local/m/douglas-200.html"
+   },
+   {
+    "code": "201",
+    "title": "How a five-member commission would be elected",
+    "juris": "Douglas County",
+    "page": "local/m/douglas-201.html"
+   },
+   {
+    "code": "1A",
+    "title": "Keep electing all commissioners countywide",
+    "juris": "Douglas County",
+    "page": "local/m/douglas-1a.html"
+   },
+   {
+    "code": "300",
+    "title": "Voter approval for annexations over 20 acres",
+    "juris": "City of Castle Pines",
+    "page": "local/m/castle-pines-300.html"
+   },
+   {
+    "code": "301",
+    "title": "Voter ratification of annexations over 20 acres within 180 days",
+    "juris": "City of Castle Pines",
+    "page": "local/m/castle-pines-301.html"
+   },
+   {
+    "code": "5A",
+    "title": "DCSD mill levy override",
+    "juris": "Douglas County School District RE-1",
+    "page": "local/m/dcsd-5a.html"
+   },
+   {
+    "code": "6A",
+    "title": "Larkspur Fire operations mill levy",
+    "juris": "Larkspur Fire Protection District",
+    "page": "local/m/larkspur-fire-6a.html"
+   },
+   {
+    "code": "6B",
+    "title": "Larkspur Fire apparatus, station and training debt",
+    "juris": "Larkspur Fire Protection District",
+    "page": "local/m/larkspur-fire-6b.html"
+   },
+   {
+    "code": "6C-6G",
+    "title": "Stone Creek Metro District repeals (five questions)",
+    "juris": "Stone Creek Metropolitan District",
+    "page": "local/m/stone-creek-md-6c-6g.html"
+   },
+   {
+    "code": "3A",
+    "title": "",
+    "juris": "City of Aurora",
+    "page": "local/m/city-of-aurora-3a.html"
+   },
+   {
+    "code": "3B",
+    "title": "",
+    "juris": "City of Aurora",
+    "page": "local/m/city-of-aurora-3b.html"
+   },
+   {
+    "code": "3C",
+    "title": "",
+    "juris": "City of Aurora",
+    "page": "local/m/city-of-aurora-3c.html"
+   },
+   {
+    "code": "3D",
+    "title": "",
+    "juris": "City of Aurora",
+    "page": "local/m/city-of-aurora-3d.html"
+   },
+   {
+    "code": "6C",
+    "title": "",
+    "juris": "Stone Creek Metropolitan District",
+    "page": "local/m/stone-creek-metropolitan-district-6c.html"
+   },
+   {
+    "code": "6D",
+    "title": "",
+    "juris": "Stone Creek Metropolitan District",
+    "page": "local/m/stone-creek-metropolitan-district-6d.html"
+   },
+   {
+    "code": "6E",
+    "title": "",
+    "juris": "Stone Creek Metropolitan District",
+    "page": "local/m/stone-creek-metropolitan-district-6e.html"
+   },
+   {
+    "code": "6F",
+    "title": "",
+    "juris": "Stone Creek Metropolitan District",
+    "page": "local/m/stone-creek-metropolitan-district-6f.html"
+   },
+   {
+    "code": "6G",
+    "title": "",
+    "juris": "Stone Creek Metropolitan District",
+    "page": "local/m/stone-creek-metropolitan-district-6g.html"
+   },
+   {
+    "code": "7C",
+    "title": "",
+    "juris": "West Metro Fire Protection District",
+    "page": "local/m/west-metro-fire-protection-district-7c.html"
+   },
+   {
+    "code": "7D",
+    "title": "",
+    "juris": "Conifer Fire Protection District",
+    "page": "local/m/conifer-fire-protection-district-7d.html"
+   }
+  ],
+  "Larimer": [
+   {
+    "code": "1A",
+    "title": "0.3% county sales tax for wildfire resilience, roads, parks and public safety",
+    "juris": "Larimer County",
+    "page": "local/m/larimer-county-1a.html"
+   },
+   {
+    "code": "2A",
+    "title": "Wellington 0.50% public safety sales tax",
+    "juris": "Town of Wellington",
+    "page": "local/m/wellington-2a.html"
+   },
+   {
+    "code": "3G",
+    "title": "Berthoud parks and recreation revenue bonds (Mountain Vista Park)",
+    "juris": "Town of Berthoud",
+    "page": "local/m/berthoud-3g.html"
+   },
+   {
+    "code": "5A",
+    "title": "RE-5J extension of 2020 override without a new tax",
+    "juris": "Weld County School District RE-5J (Johnstown-Milliken)",
+    "page": "local/m/johnstown-milliken-re5j-5a.html"
+   },
+   {
+    "code": "6A",
+    "title": "Stanley Heights Public Improvement District No. 81 formation and mill levy",
+    "juris": "Stanley Heights Public Improvement District No. 81",
+    "page": "local/m/larimer-pid-6a.html"
+   },
+   {
+    "code": "6B",
+    "title": "Colland Center Public Improvement District No. 82 formation and mill levy",
+    "juris": "Colland Center Public Improvement District No. 82",
+    "page": "local/m/larimer-pid-6b.html"
+   },
+   {
+    "code": "6C",
+    "title": "Terry Point Estates Public Improvement District No. 85 formation and mill levy",
+    "juris": "Terry Point Estates Public Improvement District No. 85",
+    "page": "local/m/larimer-pid-6c.html"
+   },
+   {
+    "code": "6D",
+    "title": "Estes Valley fire district sales tax up to 0.5%",
+    "juris": "Estes Valley Fire Protection District",
+    "page": "local/m/estes-valley-fire-6d.html"
+   },
+   {
+    "code": "6E",
+    "title": "Thompson Crossing debt authorization",
+    "juris": "Thompson Crossing Metropolitan District No. 2",
+    "page": "local/m/thompson-crossing-md2-6e.html"
+   },
+   {
+    "code": "7C",
+    "title": "Allenspark fire district 5.3-mill increase",
+    "juris": "Allenspark Fire Protection District",
+    "page": "local/m/allenspark-fire-7c.html"
+   },
+   {
+    "code": "7E",
+    "title": "Poudre Valley Fire property tax limit waiver",
+    "juris": "Poudre Valley Fire Protection District",
+    "page": "local/m/poudre-valley-fire-7e.html"
+   },
+   {
+    "code": "7F",
+    "title": "Windsor-Severance fire district phased 4 mills",
+    "juris": "Windsor-Severance Fire Protection District",
+    "page": "local/m/windsor-severance-fire-7f.html"
+   }
+  ],
+  "Weld": [
+   {
+    "code": "5C",
+    "title": "Override plus continuation of expiring levy",
+    "juris": "Weld County School District RE-8 (Fort Lupton)",
+    "page": "local/m/weld-re8-5c.html"
+   },
+   {
+    "code": "5A",
+    "title": "RE-5J extension of 2020 override without a new tax",
+    "juris": "Weld County School District RE-5J (Johnstown-Milliken)",
+    "page": "local/m/johnstown-milliken-re5j-5a.html"
+   }
+  ],
+  "El Paso": [
+   {
+    "code": "1A",
+    "title": "Extend 0.23% public safety sales tax to 2037",
+    "juris": "El Paso County",
+    "page": "local/m/el-paso-county-1a.html"
+   },
+   {
+    "code": "2A",
+    "title": "Manitou amusement admissions tax 5% to 9.03%",
+    "juris": "City of Manitou Springs",
+    "page": "local/m/manitou-springs-2a.html"
+   },
+   {
+    "code": "2B",
+    "title": "Monument construction use tax 2.0% to 3.5%",
+    "juris": "Town of Monument",
+    "page": "local/m/monument-2b.html"
+   },
+   {
+    "code": "3A",
+    "title": "GMF 0.5% sales tax for Old Town Marshal's Building",
+    "juris": "Town of Green Mountain Falls",
+    "page": "local/m/green-mountain-falls-3a.html"
+   },
+   {
+    "code": "4A",
+    "title": "D11 $775 million bond",
+    "juris": "Colorado Springs School District 11",
+    "page": "local/m/colorado-springs-d11-4a.html"
+   },
+   {
+    "code": "4B",
+    "title": "D12 $80 million bond",
+    "juris": "El Paso County School District 12 (Cheyenne Mountain)",
+    "page": "local/m/cheyenne-mountain-d12-4b.html"
+   },
+   {
+    "code": "4C",
+    "title": "Hanover first mill levy override",
+    "juris": "Hanover School District 28",
+    "page": "local/m/hanover-d28-4c.html"
+   },
+   {
+    "code": "6A",
+    "title": "Peyton fire district 4.85 mills",
+    "juris": "Peyton Fire Protection District",
+    "page": "local/m/peyton-fire-6a.html"
+   },
+   {
+    "code": "7B",
+    "title": "Elbert fire stations funding through 2051",
+    "juris": "Elbert Fire Protection District",
+    "page": "local/m/elbert-fire-7b.html"
+   }
+  ],
+  "Pueblo": [
+   {
+    "code": "2A",
+    "title": "",
+    "juris": "City of Pueblo",
+    "page": "local/m/city-of-pueblo-2a.html"
+   },
+   {
+    "code": "2B",
+    "title": "",
+    "juris": "City of Pueblo",
+    "page": "local/m/city-of-pueblo-2b.html"
+   },
+   {
+    "code": "6A",
+    "title": "",
+    "juris": "Pueblo City-County Library District",
+    "page": "local/m/pueblo-city-county-library-district-6a.html"
+   },
+   {
+    "code": "6B",
+    "title": "",
+    "juris": "Pueblo West Metropolitan District",
+    "page": "local/m/pueblo-west-metropolitan-district-6b.html"
+   },
+   {
+    "code": "6C",
+    "title": "",
+    "juris": "Pueblo West Metropolitan District",
+    "page": "local/m/pueblo-west-metropolitan-district-6c.html"
+   },
+   {
+    "code": "6D",
+    "title": "",
+    "juris": "Edison Fire Protection District",
+    "page": "local/m/edison-fire-protection-district-6d.html"
+   },
+   {
+    "code": "7B",
+    "title": "",
+    "juris": "Rye Fire Protection District",
+    "page": "local/m/rye-fire-protection-district-7b.html"
+   }
+  ]
+ }
+}

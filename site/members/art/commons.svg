@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="A round wooden table with chairs and speech bubbles above it">
+<defs>
+<linearGradient id="top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c8925a"/><stop offset="1" stop-color="#9c6a3a"/></linearGradient>
+<linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d5130"/><stop offset="1" stop-color="#5a3820"/></linearGradient>
+<linearGradient id="chair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b98654"/><stop offset="1" stop-color="#8a5c33"/></linearGradient>
+<linearGradient id="bub" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf7ec"/><stop offset="1" stop-color="#e7e0cc"/></linearGradient>
+</defs>
+<ellipse cx="160" cy="166" rx="120" ry="8" fill="#000" opacity=".35"/>
+<!-- chairs behind -->
+<g fill="url(#chair)">
+  <rect x="92" y="88" width="34" height="40" rx="5"/>
+  <rect x="194" y="88" width="34" height="40" rx="5"/>
+  <rect x="143" y="80" width="34" height="38" rx="5"/>
+</g>
+<g stroke="#6e4626" stroke-width="2" opacity=".6"><path d="M98 96h22M98 104h22M200 96h22M200 104h22M149 88h22M149 96h22"/></g>
+<!-- table -->
+<path d="M150 132h20l6 30h-32z" fill="url(#edge)"/>
+<ellipse cx="160" cy="132" rx="96" ry="22" fill="url(#edge)"/>
+<ellipse cx="160" cy="126" rx="96" ry="22" fill="url(#top)"/>
+<ellipse cx="160" cy="126" rx="80" ry="15" fill="none" stroke="#e2b37c" stroke-width="1.5" opacity=".5"/>
+<!-- things on the table -->
+<rect x="118" y="116" width="26" height="16" rx="1.5" fill="#f4efe1" transform="rotate(-8 131 124)"/>
+<g stroke="#9a9384" stroke-width="1.6" stroke-linecap="round" transform="rotate(-8 131 124)"><path d="M122 121h17M122 125h14M122 129h16"/></g>
+<rect x="172" y="114" width="28" height="18" rx="1.5" fill="#f9f5ea" transform="rotate(6 186 123)"/>
+<g stroke="#9a9384" stroke-width="1.6" stroke-linecap="round" transform="rotate(6 186 123)"><path d="M176 119h19M176 123h15M176 127h18"/></g>
+<path d="M150 124h18l-2 9h-14z" fill="#e9f4f5"/><path d="M168 126a4 4 0 0 1 0 6" fill="none" stroke="#e9f4f5" stroke-width="2"/>
+<path d="M156 120q2 -4 0 -7M161 120q2 -4 0 -7" stroke="#e9f4f5" stroke-width="1.4" fill="none" opacity=".6"/>
+<!-- chairs in front -->
+<g fill="url(#chair)">
+  <path d="M58 132h38l-3 30h-32z"/>
+  <path d="M224 132h38l-3 30h-32z"/>
+</g>
+<g fill="#6e4626"><rect x="58" y="128" width="38" height="6" rx="2"/><rect x="224" y="128" width="38" height="6" rx="2"/></g>
+<!-- speech bubbles -->
+<g>
+  <path d="M60 22h70a10 10 0 0 1 10 10v22a10 10 0 0 1 -10 10h-40l-14 12 3 -12h-19a10 10 0 0 1 -10 -10v-22a10 10 0 0 1 10 -10z" fill="url(#bub)"/>
+  <g stroke="#8d8676" stroke-width="3" stroke-linecap="round"><path d="M64 36h56M64 46h40"/></g>
+</g>
+<g>
+  <path d="M190 12h72a10 10 0 0 1 10 10v20a10 10 0 0 1 -10 10h-18l3 11 -14 -11h-43a10 10 0 0 1 -10 -10v-20a10 10 0 0 1 10 -10z" fill="#d7f3f1"/>
+  <g stroke="#5f8f8c" stroke-width="3" stroke-linecap="round"><path d="M194 26h58M194 36h34"/></g>
+</g>
+<circle cx="160" cy="54" r="10" fill="#f9f5ea"/><text x="160" y="58.5" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#7a6a4a" text-anchor="middle">?</text>
+</svg>

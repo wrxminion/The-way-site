@@ -1,0 +1,2133 @@
+{
+ "source": "California Secretary of State, Certified List of Candidates for the November 3, 2026 General Election (certified Aug 27, 2026)",
+ "statewideOrder": [
+  "governor",
+  "lt_governor",
+  "secretary_of_state",
+  "controller",
+  "treasurer",
+  "attorney_general",
+  "insurance_commissioner",
+  "superintendent",
+  "boe_1",
+  "boe_2",
+  "boe_3",
+  "boe_4"
+ ],
+ "raceNames": {
+  "governor": "Governor",
+  "lt_governor": "Lieutenant Governor",
+  "secretary_of_state": "Secretary of State",
+  "controller": "Controller",
+  "treasurer": "Treasurer",
+  "attorney_general": "Attorney General",
+  "insurance_commissioner": "Insurance Commissioner",
+  "superintendent": "Superintendent of Public Instruction",
+  "boe_1": "Board of Equalization Member District 1",
+  "boe_2": "Board of Equalization Member District 2",
+  "boe_3": "Board of Equalization Member District 3",
+  "boe_4": "Board of Equalization Member District 4",
+  "us_house:1": "U.S. House, District 1",
+  "us_house:2": "U.S. House, District 2",
+  "us_house:3": "U.S. House, District 3",
+  "us_house:4": "U.S. House, District 4",
+  "us_house:5": "U.S. House, District 5",
+  "us_house:6": "U.S. House, District 6",
+  "us_house:7": "U.S. House, District 7",
+  "us_house:8": "U.S. House, District 8",
+  "us_house:9": "U.S. House, District 9",
+  "us_house:10": "U.S. House, District 10",
+  "us_house:11": "U.S. House, District 11",
+  "us_house:12": "U.S. House, District 12",
+  "us_house:13": "U.S. House, District 13",
+  "us_house:14": "U.S. House, District 14",
+  "us_house:15": "U.S. House, District 15",
+  "us_house:16": "U.S. House, District 16",
+  "us_house:17": "U.S. House, District 17",
+  "us_house:18": "U.S. House, District 18",
+  "us_house:19": "U.S. House, District 19",
+  "us_house:20": "U.S. House, District 20",
+  "us_house:21": "U.S. House, District 21",
+  "us_house:22": "U.S. House, District 22",
+  "us_house:23": "U.S. House, District 23",
+  "us_house:24": "U.S. House, District 24",
+  "us_house:25": "U.S. House, District 25",
+  "us_house:26": "U.S. House, District 26",
+  "us_house:27": "U.S. House, District 27",
+  "us_house:28": "U.S. House, District 28",
+  "us_house:29": "U.S. House, District 29",
+  "us_house:30": "U.S. House, District 30",
+  "us_house:31": "U.S. House, District 31",
+  "us_house:32": "U.S. House, District 32",
+  "us_house:33": "U.S. House, District 33",
+  "us_house:34": "U.S. House, District 34",
+  "us_house:35": "U.S. House, District 35",
+  "us_house:36": "U.S. House, District 36",
+  "us_house:37": "U.S. House, District 37",
+  "us_house:38": "U.S. House, District 38",
+  "us_house:39": "U.S. House, District 39",
+  "us_house:40": "U.S. House, District 40",
+  "us_house:41": "U.S. House, District 41",
+  "us_house:42": "U.S. House, District 42",
+  "us_house:43": "U.S. House, District 43",
+  "us_house:44": "U.S. House, District 44",
+  "us_house:45": "U.S. House, District 45",
+  "us_house:46": "U.S. House, District 46",
+  "us_house:47": "U.S. House, District 47",
+  "us_house:48": "U.S. House, District 48",
+  "us_house:49": "U.S. House, District 49",
+  "us_house:50": "U.S. House, District 50",
+  "us_house:51": "U.S. House, District 51",
+  "us_house:52": "U.S. House, District 52",
+  "state_senate:2": "State Senate, District 2",
+  "state_senate:4": "State Senate, District 4",
+  "state_senate:6": "State Senate, District 6",
+  "state_senate:8": "State Senate, District 8",
+  "state_senate:10": "State Senate, District 10",
+  "state_senate:12": "State Senate, District 12",
+  "state_senate:14": "State Senate, District 14",
+  "state_senate:16": "State Senate, District 16",
+  "state_senate:18": "State Senate, District 18",
+  "state_senate:20": "State Senate, District 20",
+  "state_senate:22": "State Senate, District 22",
+  "state_senate:24": "State Senate, District 24",
+  "state_senate:26": "State Senate, District 26",
+  "state_senate:28": "State Senate, District 28",
+  "state_senate:30": "State Senate, District 30",
+  "state_senate:32": "State Senate, District 32",
+  "state_senate:34": "State Senate, District 34",
+  "state_senate:36": "State Senate, District 36",
+  "state_senate:38": "State Senate, District 38",
+  "state_senate:40": "State Senate, District 40",
+  "state_house:1": "State Assembly, District 1",
+  "state_house:2": "State Assembly, District 2",
+  "state_house:3": "State Assembly, District 3",
+  "state_house:4": "State Assembly, District 4",
+  "state_house:5": "State Assembly, District 5",
+  "state_house:6": "State Assembly, District 6",
+  "state_house:7": "State Assembly, District 7",
+  "state_house:8": "State Assembly, District 8",
+  "state_house:9": "State Assembly, District 9",
+  "state_house:10": "State Assembly, District 10",
+  "state_house:11": "State Assembly, District 11",
+  "state_house:12": "State Assembly, District 12",
+  "state_house:13": "State Assembly, District 13",
+  "state_house:14": "State Assembly, District 14",
+  "state_house:15": "State Assembly, District 15",
+  "state_house:16": "State Assembly, District 16",
+  "state_house:17": "State Assembly, District 17",
+  "state_house:18": "State Assembly, District 18",
+  "state_house:19": "State Assembly, District 19",
+  "state_house:20": "State Assembly, District 20",
+  "state_house:21": "State Assembly, District 21",
+  "state_house:22": "State Assembly, District 22",
+  "state_house:23": "State Assembly, District 23",
+  "state_house:24": "State Assembly, District 24",
+  "state_house:25": "State Assembly, District 25",
+  "state_house:26": "State Assembly, District 26",
+  "state_house:27": "State Assembly, District 27",
+  "state_house:28": "State Assembly, District 28",
+  "state_house:29": "State Assembly, District 29",
+  "state_house:30": "State Assembly, District 30",
+  "state_house:31": "State Assembly, District 31",
+  "state_house:32": "State Assembly, District 32",
+  "state_house:33": "State Assembly, District 33",
+  "state_house:34": "State Assembly, District 34",
+  "state_house:35": "State Assembly, District 35",
+  "state_house:36": "State Assembly, District 36",
+  "state_house:37": "State Assembly, District 37",
+  "state_house:38": "State Assembly, District 38",
+  "state_house:39": "State Assembly, District 39",
+  "state_house:40": "State Assembly, District 40",
+  "state_house:41": "State Assembly, District 41",
+  "state_house:42": "State Assembly, District 42",
+  "state_house:43": "State Assembly, District 43",
+  "state_house:44": "State Assembly, District 44",
+  "state_house:45": "State Assembly, District 45",
+  "state_house:46": "State Assembly, District 46",
+  "state_house:47": "State Assembly, District 47",
+  "state_house:48": "State Assembly, District 48",
+  "state_house:49": "State Assembly, District 49",
+  "state_house:50": "State Assembly, District 50",
+  "state_house:51": "State Assembly, District 51",
+  "state_house:52": "State Assembly, District 52",
+  "state_house:53": "State Assembly, District 53",
+  "state_house:54": "State Assembly, District 54",
+  "state_house:55": "State Assembly, District 55",
+  "state_house:56": "State Assembly, District 56",
+  "state_house:57": "State Assembly, District 57",
+  "state_house:58": "State Assembly, District 58",
+  "state_house:59": "State Assembly, District 59",
+  "state_house:60": "State Assembly, District 60",
+  "state_house:61": "State Assembly, District 61",
+  "state_house:62": "State Assembly, District 62",
+  "state_house:63": "State Assembly, District 63",
+  "state_house:64": "State Assembly, District 64",
+  "state_house:65": "State Assembly, District 65",
+  "state_house:66": "State Assembly, District 66",
+  "state_house:67": "State Assembly, District 67",
+  "state_house:68": "State Assembly, District 68",
+  "state_house:69": "State Assembly, District 69",
+  "state_house:70": "State Assembly, District 70",
+  "state_house:71": "State Assembly, District 71",
+  "state_house:72": "State Assembly, District 72",
+  "state_house:73": "State Assembly, District 73",
+  "state_house:74": "State Assembly, District 74",
+  "state_house:75": "State Assembly, District 75",
+  "state_house:76": "State Assembly, District 76",
+  "state_house:77": "State Assembly, District 77",
+  "state_house:78": "State Assembly, District 78",
+  "state_house:79": "State Assembly, District 79",
+  "state_house:80": "State Assembly, District 80"
+ },
+ "races": {
+  "governor": [
+   {
+    "name": "Xavier Becerra",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Steve Hilton",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "lt_governor": [
+   {
+    "name": "Fiona Ma",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Gloria Romero",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "secretary_of_state": [
+   {
+    "name": "Shirley N. Weber",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Donald P. (Don) Wagner",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "controller": [
+   {
+    "name": "Malia M. Cohen",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Herb W Morgan",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "treasurer": [
+   {
+    "name": "Eleni Kounalakis",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jennifer Hawks",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "attorney_general": [
+   {
+    "name": "Rob Bonta",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Michael E. Gates",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "insurance_commissioner": [
+   {
+    "name": "Ben Allen",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jane Kim",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "superintendent": [
+   {
+    "name": "Richard Barrera",
+    "party": "Nonpartisan",
+    "writeIn": false
+   },
+   {
+    "name": "Sonja Shaw",
+    "party": "Nonpartisan",
+    "writeIn": false
+   }
+  ],
+  "boe_1": [
+   {
+    "name": "Nelson Esparza",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Shannon Grove",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "boe_2": [
+   {
+    "name": "Sally J. Lieber",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "John Pimentel",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "boe_3": [
+   {
+    "name": "Mike Gipson",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Samuel P. Sukaton",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "boe_4": [
+   {
+    "name": "Tom Umberg",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Denis Bilodeau",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:1": [
+   {
+    "name": "Mike McGuire",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "James Gallagher",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:2": [
+   {
+    "name": "Jared Huffman",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Robin Littau",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:3": [
+   {
+    "name": "Ami Bera",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Robb Tucker",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:4": [
+   {
+    "name": "Eric Jones",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Mike Thompson",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "us_house:5": [
+   {
+    "name": "Michael Masuda",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Tom McClintock",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:6": [
+   {
+    "name": "Richard Pan",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Kevin Kiley",
+    "party": "No party preference",
+    "writeIn": false
+   }
+  ],
+  "us_house:7": [
+   {
+    "name": "Doris Matsui",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Mai Vang",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "us_house:8": [
+   {
+    "name": "John Garamendi",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Rudy Recile",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:9": [
+   {
+    "name": "Josh Harder",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "John McBride",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:10": [
+   {
+    "name": "Mark DeSaulnier",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jeff Frese",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:11": [
+   {
+    "name": "Connie Chan",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Scott Wiener",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "us_house:12": [
+   {
+    "name": "Jamie Joyce",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Lateefah Simon",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "us_house:13": [
+   {
+    "name": "Adam Gray",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Kevin Lincoln",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:14": [
+   {
+    "name": "Melissa Hernandez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Aisha Wahab",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "us_house:15": [
+   {
+    "name": "Kevin Mullin",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Charles Hoelter",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:16": [
+   {
+    "name": "Sam Liccardo",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Peter Sundin Soulé",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:17": [
+   {
+    "name": "Ro Khanna",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Ritesh Tandon",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:18": [
+   {
+    "name": "Zoe Lofgren",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Shane Lewis",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:19": [
+   {
+    "name": "Jimmy Panetta",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Peter Coe Verbica",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:20": [
+   {
+    "name": "Sandra Van Scotter",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Vince Fong",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:21": [
+   {
+    "name": "Jim Costa",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Kyle Kirkland",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:22": [
+   {
+    "name": "Randy Villegas",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "David G. Valadao",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:23": [
+   {
+    "name": "Tessa Lynn Hodge",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jay Obernolte",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:24": [
+   {
+    "name": "Salud Carbajal",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Bob Smith",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:25": [
+   {
+    "name": "Raul Ruiz",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Joe Males",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:26": [
+   {
+    "name": "Jacqui Irwin",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Sam Gallucci",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:27": [
+   {
+    "name": "George Whitesides",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jason Gibbs",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:28": [
+   {
+    "name": "Judy Chu",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "April A. Verlato",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:29": [
+   {
+    "name": "Angélica María Dueñas",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Luz Maria Rivas",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "us_house:30": [
+   {
+    "name": "Laura Friedman",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Scott Alan Meyers",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:31": [
+   {
+    "name": "Gil Cisneros",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Eric Ching",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:32": [
+   {
+    "name": "Brad Sherman",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Larry Thompson",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:33": [
+   {
+    "name": "Pete Aguilar",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Stephanie M. Vargas",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:34": [
+   {
+    "name": "Jimmy Gomez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Angela Gonzales-Torres",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "us_house:35": [
+   {
+    "name": "Norma J. Torres",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Mike Cargile",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:36": [
+   {
+    "name": "Ted W. Lieu",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Houston Brignano",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:37": [
+   {
+    "name": "Sydney Kamlager-Dove",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Samantha Mota",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "us_house:38": [
+   {
+    "name": "Hilda Solis",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Pedro Antonio Casas",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:39": [
+   {
+    "name": "Mark Takano",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Steve Manos",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:40": [
+   {
+    "name": "Ken Calvert",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Young Kim",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:41": [
+   {
+    "name": "Linda Sánchez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Mitch Clemmons",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:42": [
+   {
+    "name": "Robert Garcia",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Brian Burley",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:43": [
+   {
+    "name": "Maxine Waters",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Cristian Morales",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:44": [
+   {
+    "name": "Nanette Diaz Barragan",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Genevieve Angel",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:45": [
+   {
+    "name": "Derek Tran",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Chuong V. Vo",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:46": [
+   {
+    "name": "Lou Correa",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "David Pan",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:47": [
+   {
+    "name": "Dave Min",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jenny Rae Le Roux",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:48": [
+   {
+    "name": "Marni von Wilpert",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jim Desmond",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:49": [
+   {
+    "name": "Mike Levin",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Armen Kurdian",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:50": [
+   {
+    "name": "Scott Peters",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Steve Cohen",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:51": [
+   {
+    "name": "Sara Jacobs",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Ricardo Cabrera",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "us_house:52": [
+   {
+    "name": "Juan Vargas",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jeff Belle",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:2": [
+   {
+    "name": "Damon Connolly",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Tief Gibbs",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:4": [
+   {
+    "name": "Jaron Brandon",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Alexandra Duarte",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:6": [
+   {
+    "name": "Sean Frame",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Roger Niello",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:8": [
+   {
+    "name": "Angelique Ashby",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Susan A Mason",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:10": [
+   {
+    "name": "Scott Sakakihara",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Linda R. Price",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:12": [
+   {
+    "name": "Nathan Magsig",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "William Brown Jr.",
+    "party": "Libertarian",
+    "writeIn": false
+   }
+  ],
+  "state_senate:14": [
+   {
+    "name": "Esmeralda Soria",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Darin S. DuPont",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:16": [
+   {
+    "name": "Melissa Hurtado",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Guillermo Asuncion Gonzalez",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:18": [
+   {
+    "name": "Steve Padilla",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Art Hodges",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:20": [
+   {
+    "name": "Caroline Menjivar",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Tony Rodriguez",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:22": [
+   {
+    "name": "Susan Rubio",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Mike Netter",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:24": [
+   {
+    "name": "John M. Erickson",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Brian Goldsmith",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:26": [
+   {
+    "name": "Sara Hernandez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Sarah Rascón",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_senate:28": [
+   {
+    "name": "Lola Smallwood-Cuevas",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Joe Lisuzzo",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:30": [
+   {
+    "name": "Bob J. Archuleta",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Araceli Martinez",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:32": [
+   {
+    "name": "Tiffanie Tate",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Kelly Seyarto",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:34": [
+   {
+    "name": "Avelino Valencia",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Rhonda Shader",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:36": [
+   {
+    "name": "Chris Duncan",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Tony Strickland",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:38": [
+   {
+    "name": "Catherine S. Blakespear",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Laura Bassett",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_senate:40": [
+   {
+    "name": "Mara Elliott",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Kristie Bruce-Lane",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:1": [
+   {
+    "name": "Dianna Margaret James",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Heather Hadwick",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:2": [
+   {
+    "name": "Chris Rogers",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Michael Greer",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:3": [
+   {
+    "name": "Dom Belza",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "James \"Jamie\" Johansson",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:4": [
+   {
+    "name": "Cecilia M. Aguiar-Curry",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:5": [
+   {
+    "name": "Neva Parker",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Joe Patterson",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:6": [
+   {
+    "name": "Maggy Krell",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jagtar Singh",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:7": [
+   {
+    "name": "Amy L. Slavensky",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Josh Hoover",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:8": [
+   {
+    "name": "David Jariustokaeutulelei Tangipa",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:9": [
+   {
+    "name": "Matthew Adams",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Heath Flora",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:10": [
+   {
+    "name": "Stephanie Nguyen",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Vinaya Singh",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:11": [
+   {
+    "name": "Lori D Wilson",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jenny Leilani Callison",
+    "party": "No party preference",
+    "writeIn": false
+   }
+  ],
+  "state_house:12": [
+   {
+    "name": "Jackie Elward",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Eric Lucan",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:13": [
+   {
+    "name": "Rhodesia Ransom",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Tom Patti",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:14": [
+   {
+    "name": "Buffy Wicks",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Mark Rendon",
+    "party": "Green",
+    "writeIn": false
+   }
+  ],
+  "state_house:15": [
+   {
+    "name": "Anamarie Avila Farias",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Arthur Webb",
+    "party": "No party preference",
+    "writeIn": false
+   }
+  ],
+  "state_house:16": [
+   {
+    "name": "Rebecca Bauer-Kahan",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Joseph A. Rubay",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:17": [
+   {
+    "name": "Matt Haney",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Manuel Noris-Barrera",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:18": [
+   {
+    "name": "Mia Bonta",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Andre Sandford",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:19": [
+   {
+    "name": "Catherine Stefani",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Philip Louis Wing",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:20": [
+   {
+    "name": "Liz Ortega",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Patricia Muga",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:21": [
+   {
+    "name": "Diane Papan",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jabra J Muhawieh",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:22": [
+   {
+    "name": "Juan Alanis",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:23": [
+   {
+    "name": "Marc Berman",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "David G. Johnson",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:24": [
+   {
+    "name": "Alex Lee",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Max Hsia",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:25": [
+   {
+    "name": "Ash Kalra",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Himat Singh Bainiwal",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:26": [
+   {
+    "name": "Patrick Ahrens",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Tim Gorsulowsky",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:27": [
+   {
+    "name": "Brian Pacheco",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Mike Murphy",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:28": [
+   {
+    "name": "Gail Pellerin",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Carol Pefley",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:29": [
+   {
+    "name": "Robert Rivas",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Dennis P. Sanchez",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:30": [
+   {
+    "name": "Dawn Addis",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Shannon Kessler",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:31": [
+   {
+    "name": "Annalisa Perea",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jim Polsgrove",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:32": [
+   {
+    "name": "David Couch",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:33": [
+   {
+    "name": "Hipolito Angel Cerros",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Alexandra (Ali) Macedo",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:34": [
+   {
+    "name": "Randall Putz",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Charles Frederick Hughes",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:35": [
+   {
+    "name": "Andrae Gonzales",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Saul Ayon",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:36": [
+   {
+    "name": "Ida S. Obeso-Martinez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jeff Gonzalez",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:37": [
+   {
+    "name": "Gregg Hart",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Sari Domingues",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:38": [
+   {
+    "name": "Steve Bennett",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Michael MacDonald",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:39": [
+   {
+    "name": "Juan Carrillo",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Paul Andre Marsh",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:40": [
+   {
+    "name": "Pilar Schiavo",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Rickey Tracy Hayes II",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:41": [
+   {
+    "name": "John Harabedian",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Adam Christopher Vena",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:42": [
+   {
+    "name": "Deborah Klein Lopez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Ted Nordblum",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:43": [
+   {
+    "name": "Celeste Rodriguez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Ricardo Benitez",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:44": [
+   {
+    "name": "Nicholas \"Nick\" Schultz",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Carolyn Daniels",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:45": [
+   {
+    "name": "James C. Ramos",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Greg Abdouch",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:46": [
+   {
+    "name": "Jesse Gabriel",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Tracey Schroeder",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:47": [
+   {
+    "name": "Leila Namvar",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Greg Wallis",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:48": [
+   {
+    "name": "Blanca Rubio",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Dan T. Tran",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:49": [
+   {
+    "name": "Mike Fong",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Long David Liu",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:50": [
+   {
+    "name": "Robert Garcia",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Victoria Viveros Mageno",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:51": [
+   {
+    "name": "Colin D. Hernandez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Rick Chavez Zbur",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:52": [
+   {
+    "name": "Jessica Caloza",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Andrea Lee Anderson",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:53": [
+   {
+    "name": "Michelle Rodriguez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Rafaela Romero",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:54": [
+   {
+    "name": "Mark Gonzalez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Alexandra Briseno",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:55": [
+   {
+    "name": "Ashley M. Brown",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Isaac G. Bryan",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:56": [
+   {
+    "name": "Lisa Calderon",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Jessica Martinez",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:57": [
+   {
+    "name": "Sade Elhawary",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Constance Jewel Menzies",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:58": [
+   {
+    "name": "Clarissa Cervantes",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Leticia Castillo",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:59": [
+   {
+    "name": "Phillip Chen",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Victor Hernandez",
+    "party": "Green",
+    "writeIn": false
+   }
+  ],
+  "state_house:60": [
+   {
+    "name": "Corey A Jackson",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Ed Delgado",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:61": [
+   {
+    "name": "Tina Simone McKinnor",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Brian Lockwood",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:62": [
+   {
+    "name": "José Luis Solache",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Paul Irving Jones",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:63": [
+   {
+    "name": "Natasha Johnson",
+    "party": "Republican",
+    "writeIn": false
+   },
+   {
+    "name": "Kevin Akin",
+    "party": "Peace and Freedom",
+    "writeIn": false
+   }
+  ],
+  "state_house:64": [
+   {
+    "name": "Blanca Pacheco",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Raul Ortiz Jr.",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:65": [
+   {
+    "name": "Ayanna Davis",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Lydia A. Gutiérrez",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:66": [
+   {
+    "name": "Sara Deen",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Paul Seo",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:67": [
+   {
+    "name": "Mark Pulido",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Paulo Morales",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:68": [
+   {
+    "name": "Jessie Lopez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "David Penaloza",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:69": [
+   {
+    "name": "Carolyn J. Essex",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Josh Lowenthal",
+    "party": "Democratic",
+    "writeIn": false
+   }
+  ],
+  "state_house:70": [
+   {
+    "name": "Paula Swift",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Tri Ta",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:71": [
+   {
+    "name": "JJ Galvez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Kate Sanchez",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:72": [
+   {
+    "name": "Chris Kluwe",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Gracey Van Der Mark",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:73": [
+   {
+    "name": "Cottie Petrie-Norris",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Urson Russell",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:74": [
+   {
+    "name": "Sergio Farias",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Laurie Davies",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:75": [
+   {
+    "name": "Gerald C. Boursiquot",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Carl DeMaio",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:76": [
+   {
+    "name": "Darshana Patel",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Carrie S. Espinoza Villanueva",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:77": [
+   {
+    "name": "Tasha Boerner",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Trinity Hannaway",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:78": [
+   {
+    "name": "Chris Ward",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Payton Galvez",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:79": [
+   {
+    "name": "LaShae Sharp-Collins",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Andrew Lawson",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ],
+  "state_house:80": [
+   {
+    "name": "David A. Alvarez",
+    "party": "Democratic",
+    "writeIn": false
+   },
+   {
+    "name": "Alejandro Galicia",
+    "party": "Republican",
+    "writeIn": false
+   }
+  ]
+ }
+}

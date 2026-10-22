@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Map Sources - The Way</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="map.css?v=2">
+</head>
+<body>
+<nav class="topbar" aria-label="Main"><a class="logo" href="/members/">THE WAY</a><div class="navright"><div class="navlinks"><a href="../guide/">Voter guide</a><a href="./">District map</a><a href="../news/">News</a><a href="../foundation.html">The foundation</a><a href="/preview/">The Commons</a></div><a class="join-btn" href="/members/">Members</a></div></nav>
+<main class="top">
+<div class="eyebrow">The Way / District Explorer / Sources</div>
+<h1>Where the map comes from</h1>
+<p>Every file was downloaded on October 12, 2026 from the public source below and is published here unchanged except as noted.</p>
+<h2>District lines</h2>
+<ul>
+<li><b>U.S. House (Colorado's 8 districts, 119th Congress):</b> U.S. Census Bureau, 2024 cartographic boundary file <code>cb_2024_us_cd119_500k</code>, <a href="https://www2.census.gov/geo/tiger/GENZ2024/shp/" target="_blank" rel="noopener">www2.census.gov/geo/tiger/GENZ2024/shp/</a>. Colorado features only.</li>
+<li><b>State Senate (35) and State House (65):</b> same source, <code>cb_2024_08_sldu_500k</code> and <code>cb_2024_08_sldl_500k</code>. These are the maps drawn by Colorado's independent redistricting commissions in 2021 and used from 2022 to 2030.</li>
+<li><b>Counties:</b> <code>cb_2024_us_county_500k</code>, Colorado features only.</li>
+<li><b>Boulder, Louisville and Longmont city limits:</b> <code>cb_2024_08_place_500k</code>. Census city limits can lag recent annexations.</li>
+</ul>
+<p>These are the Census Bureau's generalized 1:500,000 versions, converted to GeoJSON without further simplification (only the faint county outlines are simplified, for display). Near a boundary line they can be off by a block or more. Your county clerk's records decide which ballot you get.</p>
+<h2>Who holds each seat</h2>
+<ul>
+<li><b>U.S. House and Senate:</b> <a href="https://github.com/unitedstates/congress-legislators" target="_blank" rel="noopener">unitedstates/congress-legislators</a>, file <code>legislators-current.yaml</code>.</li>
+<li><b>Colorado legislature:</b> <a href="https://data.openstates.org/people/current/co.csv" target="_blank" rel="noopener">Open States, current Colorado legislators</a>. On October 12, 2026 it listed no member for House District 32.</li>
+</ul>
+<h2>Candidates</h2>
+<p>Colorado Secretary of State, <a href="https://www.coloradosos.gov/pubs/elections/vote/generalCandidates.html" target="_blank" rel="noopener">2026 General Election Official Candidate List</a> (spreadsheet version). The ballot was certified to the counties on September 4, 2026 and the list was updated September 15, 2026. Candidates appear in the order the Secretary of State lists them, with the party label from that list. Write-in candidates are marked.</p>
+<h2>Ballot measures</h2>
+<ul>
+<li><b>Statewide measures and 7A:</b> the 2026 Blue Book from the Colorado Legislative Council, <a href="https://leg.colorado.gov/bluebook" target="_blank" rel="noopener">leg.colorado.gov/bluebook</a>. Our one-paragraph summaries are paraphrases and are being checked word for word against the printed Blue Book.</li>
+<li><b>Boulder County (1A, 200, 201):</b> <a href="https://bouldercounty.gov/elections/ballot-information/" target="_blank" rel="noopener">Boulder County Elections</a>.</li>
+<li><b>City of Boulder (2J, 2K, 2L, 2M):</b> <a href="https://bouldercolorado.gov/2026-city-boulder-ballot-measures" target="_blank" rel="noopener">City of Boulder ballot measures</a>.</li>
+</ul>
+<h2>Software</h2>
+<p><a href="https://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a> 1.9.4 (BSD-2-Clause), served from this site. Optional street map &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>; optional address search by OpenStreetMap Nominatim.</p>
+<p><a href="./">← Back to the map</a></p>
+</main>
+</body>
+</html>

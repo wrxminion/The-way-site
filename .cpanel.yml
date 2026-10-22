@@ -1,0 +1,19 @@
+---
+deployment:
+  tasks:
+    # Target: the live docroot. Only the paths listed here are ever written.
+    # The repo holds no .htaccess (see .gitignore), so no .htaccess is ever copied or replaced.
+    # Never copied: members config, splash.js, notify.js, anything outside the site tree.
+    # Nothing on the server is deleted by a deploy.
+    - export DEPLOYPATH=/home3/minion/public_html/thewayparty.com/
+    # Docroot splash files
+    - /bin/cp site/*.* $DEPLOYPATH
+    # Public member area
+    - /bin/mkdir -p ${DEPLOYPATH}members
+    - /bin/cp -R site/members/. ${DEPLOYPATH}members/
+    # Guides, maps, cases, news, states, pages under the locked preview area
+    - /bin/mkdir -p ${DEPLOYPATH}preview/pages
+    - /bin/cp -R site/preview/pages/. ${DEPLOYPATH}preview/pages/
+    # Permissions: files 0644, folders 0755, only inside the paths above
+    - /usr/bin/find ${DEPLOYPATH}members ${DEPLOYPATH}preview/pages -type f ! -name .htaccess -exec /bin/chmod 0644 {} +
+    - /usr/bin/find ${DEPLOYPATH}members ${DEPLOYPATH}preview/pages -type d -exec /bin/chmod 0755 {} +
