@@ -152,6 +152,14 @@
   document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') { closeMenus(); if (open) { open = false; render(); } } });
   window.addEventListener('hashchange', function () { open = false; render(); });
 
+  // Cloudflare Web Analytics on every public page that carries the bar (not the member area).
+  if (!inMembers && !document.querySelector('script[data-cf-beacon]')) {
+    var cf = document.createElement('script');
+    cf.defer = true;
+    cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    cf.setAttribute('data-cf-beacon', '{"token": "9bb85ea3222345f3aed4aa50db9b3e0d"}');
+    document.head.appendChild(cf);
+  }
   window.WayBar = { render: render, save: save, read: stored };
   var start = function () { render(stored()); };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
