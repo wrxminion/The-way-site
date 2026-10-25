@@ -566,7 +566,8 @@ async function homeView() {
       mapTile(),
       tile(LINKS.news, 'News', 'The time machine and the feed'),
       state.hasRecord ? tile('findings.html', 'Findings', 'What we checked, the verdict, and every change since') : null,
-      tile('#/cases', 'Cases', 'The history cases we wrote, with every source')),
+      tile('#/cases', 'Cases', 'The history cases we wrote, with every source'),
+      wantsMod ? tile('#/review', 'Review the cases', 'Check each claim, flag problems, mark a case reviewed') : null),
     h('p', { class: 'small place-line' }, ...(loadPlace()
       ? ['Your place: ', h('strong', { text: loadPlace().state }), ' · ', h('a', { href: '#/account', text: 'change it in your account' })]
       : [h('a', { href: '#/account', text: 'Save your state in your account' }), ' to open the map and your ballot on it.'])),
@@ -1808,6 +1809,136 @@ function accountView() {
   );
 }
 
+// ---------------------------------------------------------------- Case review (moderators)
+// A moderator checks each key claim of a case, flags problems with a note, and marks the case reviewed.
+// Every step is one new row in case_review_events (append-only). The notes and the date are PUBLIC
+// (members/reviews.html); the reviewer's name is not shown there, but it is kept in the audit log.
+// The "Not yet reviewed by a person" banner on the case page itself is switched off by hand in the
+// case builder (cases-build/reviewed.json), after the review here is done.
+const REVIEW_PUBLIC = 'reviews.html';
+let claimsLoad = null;
+function loadClaims() {
+  if (window.WAY_CASE_CLAIMS) return Promise.resolve(window.WAY_CASE_CLAIMS);
+  if (!claimsLoad) claimsLoad = new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = 'cases-claims.js?v=1';
+    s.onload = () => resolve(window.WAY_CASE_CLAIMS || {});
+    s.onerror = () => { claimsLoad = null; reject(new Error('Could not load the list of claims. Reload and try again.')); };
+    document.head.append(s);
+  });
+  return claimsLoad;
+}
+const CLAIM_LABEL = { primary: 'Primary source opened', secondary: 'Secondary source only', disputed: 'Sources disagree', unverified: 'Unverified' };
+const CLAIM_TAG = { primary: 'ok', secondary: '', disputed: 'warn', unverified: 'bad' };
+const EVENT_LABEL = { claim_checked: 'Claim checked', claim_flagged: 'Claim flagged', claim_cleared: 'Flag cleared', review_started: 'Review started',
+  note: 'Note', marked_reviewed: 'Marked reviewed', reopened: 'Reopened' };
+
+async function reviewView(slug) {
+  if (!can('moderator')) return render(notice('Moderators only.'));
+  if (slug) return reviewCaseView(slug);
+  const rows = await q(sb.rpc('case_review_status'));
+  const by = Object.fromEntries(rows.map((r) => [r.case_slug, r]));
+  render(
+    h('p', { class: 'overline', text: 'Moderation' }),
+    h('h1', { text: 'Review the cases' }),
+    h('p', { class: 'lede', text: 'Open a case, check its key claims against the sources one by one, flag anything wrong, and mark the case reviewed when every claim is checked. What you write in a note is public.' }),
+    h('p', { class: 'small' }, h('a', { href: REVIEW_PUBLIC, target: '_blank', rel: 'noopener', text: 'The public review history' })),
+    CASES.length ? h('ul', { class: 'list panel cases' }, CASES.map((c) => {
+      const r = by[c.slug];
+      const tag = !r ? ['not started', ''] : r.status === 'reviewed' ? ['reviewed', 'ok'] : r.claims_flagged ? [`${r.claims_flagged} flagged`, 'warn'] : ['in review', ''];
+      return h('li', { id: `case-${c.slug}` },
+        h('div', { class: 'row' }, h('strong', {}, h('a', { href: `#/review/${c.slug}`, text: `Case ${c.num}: ${c.title}` })),
+          h('span', { class: `tag ${tag[1]}`, text: tag[0] })),
+        r ? h('p', { class: 'muted small', text: `${r.claims_checked} claim(s) checked · last activity ${day(r.last_activity)}` }) : null);
+    })) : h('p', { class: 'muted', text: 'No cases yet.' }));
+}
+
+async function reviewCaseView(slug) {
+  const c = caseBySlug(slug);
+  if (!c) return render(notice('Unknown case.'), h('p', {}, h('a', { href: '#/review', text: 'Back to the list' })));
+  const y = window.scrollY;
+  const [claimsAll, events] = await Promise.all([
+    loadClaims(),
+    q(sb.from('case_review_events')
+      .select('id,claim_key,claim_text,event_type,note,created_at,actor:members!case_review_events_actor_id_fkey(display_name)')
+      .eq('case_slug', slug).order('id')),
+  ]);
+  const claims = claimsAll[slug] || [];
+  const latest = new Map();
+  let reviewed = false;
+  for (const e of events) {
+    if (e.claim_key) latest.set(e.claim_key, e);
+    if (e.event_type === 'marked_reviewed') reviewed = true;
+    if (e.event_type === 'reopened') reviewed = false;
+  }
+  const isOk = (k) => { const e = latest.get(k); return !!e && (e.event_type === 'claim_checked' || e.event_type === 'claim_cleared'); };
+  const flagged = claims.filter((cl) => (latest.get(cl.k) || {}).event_type === 'claim_flagged');
+  const okCount = claims.filter((cl) => isOk(cl.k)).length;
+  const msg = h('div');
+  const refresh = async () => { await reviewCaseView(slug); window.scrollTo(0, y); };
+
+  const claimStep = (cl, type, label, needNote) => action(async () => {
+    let note = null;
+    if (needNote) {
+      note = await ask(type === 'claim_flagged' ? 'Flag this claim: what is wrong? (public)' : 'Clear the flag: what was fixed or confirmed? (public)');
+      if (!note) return;
+    }
+    await q(sb.rpc('review_case_claim', { case_slug: slug, claim_key: cl.k, claim_text: cl.claim, event_type: type, note }));
+    await refresh();
+  }, msg);
+  const caseStep = (type, question, minLen) => action(async () => {
+    let note = null;
+    if (question) { note = await ask(question); if (!note) return; }
+    if (minLen && note.length < minLen) throw new Error(`Please write at least ${minLen} characters.`);
+    await q(sb.rpc('review_case', { case_slug: slug, event_type: type, note }));
+    await refresh();
+  }, msg);
+
+  const claimRow = (cl) => {
+    const e = latest.get(cl.k);
+    const st = !e ? ['not checked', ''] : e.event_type === 'claim_flagged' ? ['flagged', 'bad'] : e.event_type === 'claim_cleared' ? ['flag cleared', 'ok'] : ['checked', 'ok'];
+    return h('li', { id: `claim-${cl.k}` },
+      h('div', { class: 'row' }, h('span', { class: `tag ${CLAIM_TAG[cl.status] || ''}`, text: CLAIM_LABEL[cl.status] || cl.detail }),
+        h('span', { class: `tag ${st[1]}`, text: st[0] })),
+      h('p', { class: 'post', text: cl.claim }),
+      cl.source ? h('p', { class: 'small muted', text: `Source on the page: ${cl.source}` }) : null,
+      e && e.note ? h('p', { class: 'small', text: `Last note: ${e.note}` }) : null,
+      reviewed ? null : h('div', { class: 'btns' },
+        !e || e.event_type !== 'claim_flagged' ? h('button', { class: 'quiet', disabled: isOk(cl.k) && e.event_type === 'claim_checked', onclick: claimStep(cl, 'claim_checked') }, 'Mark checked') : null,
+        !e || e.event_type !== 'claim_flagged' ? h('button', { class: 'quiet danger', onclick: claimStep(cl, 'claim_flagged', null, true) }, 'Flag') : null,
+        e && e.event_type === 'claim_flagged' ? h('button', { class: 'quiet', onclick: claimStep(cl, 'claim_cleared', null, true) }, 'Clear flag') : null));
+  };
+
+  const log = events.slice().reverse();
+  render(
+    h('p', { class: 'overline', text: `Case ${c.num} · review` }),
+    h('h1', { text: c.title }),
+    h('p', { class: 'small' }, h('a', { href: '#/review', text: 'All cases' }), ' · ', h('a', { href: caseUrl(c), target: '_blank', rel: 'noopener', text: 'Read the case' }),
+      ' · ', h('a', { href: `${REVIEW_PUBLIC}?case=${encodeURIComponent(slug)}`, target: '_blank', rel: 'noopener', text: 'Public review history' })),
+    h('p', { class: 'notice ok', text: 'Notes and dates are public. Do not write names, addresses, phone numbers or email addresses in a note.' }),
+    msg,
+    h('div', { class: 'panel' },
+      h('div', { class: 'row' }, h('strong', { text: reviewed ? 'Marked reviewed' : 'Not yet marked reviewed' }),
+        h('span', { class: 'small muted', text: `${okCount} of ${claims.length} claims checked · ${flagged.length} flagged` })),
+      reviewed
+        ? h('div', { class: 'btns' }, h('button', { class: 'quiet danger', onclick: caseStep('reopened', 'Reopen this case: why? (public)') }, 'Reopen'))
+        : h('div', { class: 'btns' },
+            events.length === 0 ? h('button', { class: 'quiet', onclick: caseStep('review_started') }, 'Start review') : null,
+            h('button', { class: 'quiet', onclick: caseStep('note', 'Add a note to this case (public)') }, 'Add a note'),
+            h('button', { class: 'primary', disabled: !claims.length || okCount < claims.length || flagged.length > 0,
+              title: 'Every claim must be checked and no flag left open',
+              onclick: caseStep('marked_reviewed', 'Mark reviewed: say in a sentence or two what you reviewed (public)', 10) }, 'Mark reviewed')),
+      reviewed ? h('p', { class: 'small muted', text: 'After this, a person switches off the "Not yet reviewed" banner on the case page by adding the case to cases-build/reviewed.json and rebuilding.' }) : null),
+    claims.length ? h('ul', { class: 'list panel review-claims' }, claims.map(claimRow))
+      : h('p', { class: 'muted', text: 'This case has no key-claims table to review.' }),
+    h('div', { class: 'panel' }, h('h2', { text: 'Everything done on this case' }),
+      log.length ? h('ul', { class: 'list' }, log.map((e) => h('li', {},
+        h('div', { class: 'meta', text: `${EVENT_LABEL[e.event_type] || e.event_type} · ${e.actor ? e.actor.display_name : 'a reviewer'} · ${when(e.created_at)}` }),
+        e.claim_text ? h('p', { class: 'small', text: e.claim_text }) : null,
+        e.note ? h('p', { class: 'post', text: e.note }) : null)))
+        : h('p', { class: 'muted small', text: 'Nothing yet.' })));
+}
+
 // ---------------------------------------------------------------- router
 
 async function route() {
@@ -1820,6 +1951,7 @@ async function route() {
       case 'commons': return await commonsView();
       case 'invite': return await inviteView();
       case 'cases': return await casesView(decodeURIComponent(parts[1] || ''));
+      case 'review': return await reviewView(decodeURIComponent(parts[1] || ''));
       case 'c': return await categoryView(decodeURIComponent(parts[1] || ''));
       case 't': return await threadView(+parts[1]);
       case 'log': return state.hasModLog ? await logView() : await homeView();

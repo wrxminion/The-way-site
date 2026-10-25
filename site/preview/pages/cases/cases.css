@@ -27,3 +27,9 @@
 .essay-body .report-btn:focus-visible{outline:2px solid #e9ffff;outline-offset:3px}
 .essay-body .report-note{font-size:13px;color:var(--muted);margin:8px 0 0}
 .topbar.subnav{justify-content:center}
+
+.essay-body .review-banner{margin:20px 0 6px;padding:14px 18px;border:1px solid #e7cb8d99;border-left:5px solid #e7cb8d;border-radius:12px;background:#e7cb8d14;color:#f7ecd0;font-size:15px;line-height:1.55}
+.essay-body .review-banner strong{color:#f3dca8}
+.essay-body .review-banner a{color:#f3dca8;text-decoration:underline}
+.essay-body .review-banner.reviewed{border-color:#a7f0e999;border-left-color:#a7f0e9;background:#a7f0e90f;color:#dff7f4}
+.essay-body .review-banner.reviewed strong{color:#a7f0e9}
