@@ -1,0 +1,15 @@
+/* Accessible disclosure for sections that opt in or match a known title. Pairs with layout-accordion.js.
+   Without JavaScript nothing changes: the section simply stays open. */
+.acc{margin:1.2em 0}
+.acc-h{margin:0}
+.acc-btn{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;cursor:pointer;
+  padding:.5em 0;min-height:44px;font:inherit;color:inherit;border-bottom:1px solid rgba(167,240,233,.28)}
+.acc-btn:hover{border-bottom-color:rgba(167,240,233,.6)}
+.acc-btn:focus-visible{outline:3px solid #ffe38a;outline-offset:3px;border-radius:4px}
+.acc-chev{flex:0 0 auto;width:.7em;height:.7em;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .22s ease;margin-right:.3em}
+.acc-btn[aria-expanded=true] .acc-chev{transform:rotate(-135deg)}
+.acc-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .22s ease,visibility 0s linear .22s;visibility:hidden}
+.acc-wrap.open{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .22s ease,visibility 0s}
+.acc-panel{overflow:hidden;min-height:0}
+@media (prefers-reduced-motion:reduce){.acc-chev,.acc-wrap,.acc-wrap.open{transition:none}}
+@media print{.acc-wrap{grid-template-rows:1fr;visibility:visible}.acc-chev{display:none}}

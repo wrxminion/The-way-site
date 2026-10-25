@@ -1,0 +1,23 @@
+/* Candidate page, first screen: compact identity, then "In their own words". The office description and the
+   long background move below, collapsed. Pairs with candidate-first-screen.js. */
+body.cfs main.wrap{padding-top:clamp(8px,2vw,20px)}
+body.cfs main.wrap h1{margin:.15em 0 .1em;font-size:clamp(28px,6vw,44px);line-height:1.08}
+body.cfs .eyebrow{margin-bottom:0}
+body.cfs p.meta{margin:.2em 0 .5em;font-size:.95rem}
+body.cfs .cfs-office{margin:.2em 0 .6em;font-size:.95rem}
+body.cfs .cfs-own{margin:.4em 0 1em}
+body.cfs .cfs-own h2{margin:.3em 0 .25em;font-size:clamp(20px,4.5vw,26px)}
+body.cfs .cfs-own .note{font-size:.9rem;margin:.1em 0 .5em}
+body.cfs .cfs-own ul.sourced{margin:.2em 0;padding-left:1.1em}
+body.cfs .cfs-own ul.sourced li{margin:.45em 0}
+body.cfs .cfs-pending{border:1px dashed currentColor;border-radius:10px;padding:10px 14px;opacity:.9}
+body.cfs details.cfs-more{margin:.8em 0;border-top:1px solid rgba(167,240,233,.28)}
+body.cfs details.cfs-more>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:600;list-style:none}
+body.cfs details.cfs-more>summary::-webkit-details-marker{display:none}
+body.cfs details.cfs-more>summary:after{content:"";margin-left:auto;width:.6em;height:.6em;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s}
+body.cfs details.cfs-more[open]>summary:after{transform:rotate(-135deg)}
+body.cfs details.cfs-more>summary:focus-visible{outline:3px solid #ffe38a;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){body.cfs details.cfs-more>summary:after{transition:none}}
+@media (min-width:900px){body.cfs .cfs-own{max-width:70ch}}
+body.cfs dl.facts.cfs-office{display:grid;grid-template-columns:max-content 1fr;gap:2px 14px;align-items:baseline}
+body.cfs dl.facts.cfs-office dt,body.cfs dl.facts.cfs-office dd{margin:0}

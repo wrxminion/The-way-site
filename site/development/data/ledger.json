@@ -140,6 +140,36 @@
    "why": "Prevent planned concepts masquerading as shipped features",
    "status_as_of_2026_10_25": "Approved rule; ledger machinery not yet built",
    "evidence_and_limits": "Live means deployed and independently smoke-tested"
+  },
+  {
+   "id": "D015",
+   "decision_date_or_range": "2026-10-25",
+   "title": "What People Do section becomes an accessible accordion",
+   "origin": "Michi_Claude_Layout_Handoff_2026-10-25.md (approved change request)",
+   "decision_or_proposal": "Collapsed by default, whole title row is one button, keyboard and screen-reader support, honors reduced motion",
+   "why": "Keep the page short without hiding the ballot link or evidence",
+   "status_as_of_2026_10_25": "Built and browser-tested in isolation; not deployed; the section itself was not found in the site copy available, so placement is unverified",
+   "evidence_and_limits": "Tested at 320 to 1280 px. Not yet checked on Pixel Fold or a screen reader. Not live."
+  },
+  {
+   "id": "D016",
+   "decision_date_or_range": "2026-10-25",
+   "title": "Candidate profile first-screen redesign",
+   "origin": "Public Reddit usability feedback (anonymous), approved 2026-10-25",
+   "decision_or_proposal": "Compact identity line, In their own words first, office description and background collapsed below",
+   "why": "The first screen should say what the person says they will do",
+   "status_as_of_2026_10_25": "Built as an enhancement script; not deployed; not live",
+   "evidence_and_limits": "Tested on one generated page (Minnesota governor race) with 0, 2 and 4 statements. Candidate facts were not changed or verified. No Evidence Profile counts exist in the data yet."
+  },
+  {
+   "id": "D017",
+   "decision_date_or_range": "2026-10-25",
+   "title": "Retire the Michi score",
+   "origin": "WAY-DEC-2026-10-25-001",
+   "decision_or_proposal": "Replace any composite candidate score with source-backed Evidence Profiles",
+   "why": "Composite scores need subjective weights and hide contested judgments",
+   "status_as_of_2026_10_25": "Approved; no score was found on the site copies checked",
+   "evidence_and_limits": "Evidence Profile counts (votes, funding) are not built. Legal review is required before election-oriented candidate profiles."
   }
  ]
 }
