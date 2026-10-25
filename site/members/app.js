@@ -1857,12 +1857,19 @@ async function reviewCaseView(slug) {
   const c = caseBySlug(slug);
   if (!c) return render(notice('Unknown case.'), h('p', {}, h('a', { href: '#/review', text: 'Back to the list' })));
   const y = window.scrollY;
-  const [claimsAll, events] = await Promise.all([
+  const [claimsAll, events, mineAll, summaryAll] = await Promise.all([
     loadClaims(),
     q(sb.from('case_review_events')
       .select('id,claim_key,claim_text,event_type,note,created_at,actor:members!case_review_events_actor_id_fkey(display_name)')
       .eq('case_slug', slug).order('id')),
+    // Phase A (0014). If the migration has not been run yet these fail quietly and the screen works as before.
+    q(sb.rpc('my_claim_reviews', { p_case_slug: slug })).catch(() => null),
+    q(sb.rpc('claim_review_summary', { p_case_slug: slug })).catch(() => null),
   ]);
+  const phaseA = mineAll !== null && summaryAll !== null;
+  const mineBy = new Map();
+  for (const m of mineAll || []) { if (!mineBy.has(m.claim_key)) mineBy.set(m.claim_key, []); mineBy.get(m.claim_key).push(m); }
+  const sumBy = new Map((summaryAll || []).map((x) => [x.claim_key, x]));
   const claims = claimsAll[slug] || [];
   const latest = new Map();
   let reviewed = false;
@@ -1903,6 +1910,7 @@ async function reviewCaseView(slug) {
       h('p', { class: 'post', text: cl.claim }),
       cl.source ? h('p', { class: 'small muted', text: `Source on the page: ${cl.source}` }) : null,
       e && e.note ? h('p', { class: 'small', text: `Last note: ${e.note}` }) : null,
+      phaseA ? claimReviewPanel(cl, mineBy.get(cl.k) || [], sumBy.get(cl.k), slug, msg, refresh) : null,
       reviewed ? null : h('div', { class: 'btns' },
         !e || e.event_type !== 'claim_flagged' ? h('button', { class: 'quiet', disabled: isOk(cl.k) && e.event_type === 'claim_checked', onclick: claimStep(cl, 'claim_checked') }, 'Mark checked') : null,
         !e || e.event_type !== 'claim_flagged' ? h('button', { class: 'quiet danger', onclick: claimStep(cl, 'claim_flagged', null, true) }, 'Flag') : null,
@@ -1937,6 +1945,76 @@ async function reviewCaseView(slug) {
         e.claim_text ? h('p', { class: 'small', text: e.claim_text }) : null,
         e.note ? h('p', { class: 'post', text: e.note }) : null)))
         : h('p', { class: 'muted small', text: 'Nothing yet.' })));
+}
+
+
+// ---- Phase A: independent claim reviews (0014). Each reviewer records their own verdict on a claim, with the
+// source, the passage that backs it and a reason. Nobody overwrites anybody: a change of mind is a new row that
+// points at the old one. Counts are process numbers (how many people looked, do they differ), not a vote.
+const VERDICT_LABEL = { supported: 'Supported', partially_supported: 'Partially supported', contradicted: 'Contradicted',
+  insufficient_evidence: 'Insufficient evidence', inaccessible: 'Source inaccessible', pending: 'Pending' };
+const ACCESS_LABEL = { opened: 'I opened the source', inaccessible: 'I could not open the source', questioned: 'The source itself looks altered or not what it claims' };
+const FLAG_LABEL = { needs_second_look: 'Needs a second look', source_conflict: 'Sources conflict', possible_error: 'Possible error in the claim', outdated: 'Out of date', other: 'Other' };
+
+function claimReviewPanel(cl, mine, sum, slug, msg, refresh) {
+  const current = mine[mine.length - 1] || null; // newest of my own rows for this claim
+  const wrap = h('div', { class: 'claim-reviews' });
+  const bits = [];
+  if (sum) bits.push(`${sum.reviewers} reviewer${sum.reviewers === 1 ? '' : 's'} so far`);
+  if (sum && sum.disagree) bits.push('verdicts differ: a moderator will take a second look');
+  wrap.append(h('p', { class: 'small muted', text: bits.length ? bits.join(' · ') : 'No one has recorded a review of this claim yet.' }));
+  if (current) wrap.append(h('p', { class: 'small', text: `Your review: ${VERDICT_LABEL[current.verdict]} (source: ${current.source_label})` }));
+
+  const open = h('div');
+  const form = () => {
+    const f = h('form', { class: 'panel', novalidate: true });
+    const sel = (name, opts, val) => h('select', { name }, Object.entries(opts).map(([k, v]) => h('option', { value: k, selected: k === val, text: v })));
+    const src = h('input', { name: 'source_label', type: 'text', maxlength: 300, required: true, value: current ? current.source_label : (cl.source || '') });
+    const url = h('input', { name: 'source_url', type: 'url', maxlength: 1000, placeholder: 'https://…', value: current && current.source_url ? current.source_url : '' });
+    const pass = h('textarea', { name: 'evidence_passage', rows: 3, maxlength: 1500 }); pass.value = current && current.evidence_passage ? current.evidence_passage : '';
+    const rat = h('textarea', { name: 'rationale', rows: 3, maxlength: 2000 }); rat.value = current && current.rationale ? current.rationale : '';
+    const flags = Object.entries(FLAG_LABEL).map(([k, v]) => h('label', { class: 'small' }, h('input', { type: 'checkbox', name: 'flag', value: k, checked: !!(current && current.flags.includes(k)) }), ' ' + v));
+    const collab = h('input', { type: 'checkbox', name: 'collab', checked: !!(current && current.review_mode === 'collaborative') });
+    const fields = [
+      ['Source you checked', src], ['Link to the source (optional)', url], ['Could you open it?', sel('source_access', ACCESS_LABEL, current ? current.source_access : 'opened')],
+      ['Your verdict on the claim', sel('verdict', VERDICT_LABEL, current ? current.verdict : 'pending')],
+      ['The passage in the source that backs the verdict (quote or page)', pass], ['Why (one or two sentences)', rat]];
+    for (const [label, input] of fields) f.append(h('label', { class: 'field' }, h('span', { text: label }), input));
+    f.append(h('fieldset', {}, h('legend', { class: 'small', text: 'Flags' }), flags));
+    f.append(h('label', { class: 'small' }, collab, ' I talked this over with another reviewer before deciding'));
+    f.append(h('p', { class: 'small muted', text: 'Passage, reason and source are public, shown under a number like "Reviewer 2". No names, addresses, phone numbers or emails.' }));
+    f.append(h('div', { class: 'btns' },
+      h('button', { class: 'primary', type: 'submit' }, current ? 'Save as a new revision' : 'Record my review'),
+      h('button', { class: 'quiet', type: 'button', onclick: () => open.replaceChildren() }, 'Cancel')));
+    f.onsubmit = action(async (ev) => {
+      ev.preventDefault();
+      const fd = new FormData(f);
+      await q(sb.rpc('submit_claim_review', {
+        p_case_slug: slug, p_claim_key: cl.k, p_claim_text: cl.claim,
+        p_source_label: fd.get('source_label'), p_source_url: fd.get('source_url') || null, p_source_access: fd.get('source_access'),
+        p_verdict: fd.get('verdict'), p_evidence_passage: fd.get('evidence_passage') || null, p_rationale: fd.get('rationale') || null,
+        p_flags: fd.getAll('flag'), p_review_mode: collab.checked ? 'collaborative' : 'independent',
+        p_supersedes_id: current ? current.id : null }));
+      await refresh();
+    }, msg);
+    return f;
+  };
+  const others = h('div');
+  const showOthers = action(async () => {
+    const rows = await q(sb.rpc('claim_reviews_for_claim', { p_case_slug: slug, p_claim_key: cl.k }));
+    others.replaceChildren(rows.length ? h('ul', { class: 'list small' }, rows.map((r) => h('li', {},
+      h('div', { class: 'meta', text: `${r.is_mine ? 'You' : r.reviewer_label} · ${VERDICT_LABEL[r.verdict]} · ${when(r.created_at)}${r.is_current ? '' : ' · replaced by a later revision'}${r.review_mode === 'collaborative' ? ' · discussed with another reviewer' : ''}` }),
+      h('p', { text: `Source: ${r.source_label} (${r.source_access})` }),
+      r.evidence_passage ? h('p', { text: `Passage: ${r.evidence_passage}` }) : null,
+      r.rationale ? h('p', { text: `Why: ${r.rationale}` }) : null,
+      r.flags.length ? h('p', { class: 'muted', text: 'Flags: ' + r.flags.map((x) => FLAG_LABEL[x]).join(', ') }) : null)))
+      : h('p', { class: 'muted small', text: 'Nothing to show yet.' }));
+  }, msg);
+  wrap.append(h('div', { class: 'btns' },
+    h('button', { class: 'quiet', type: 'button', onclick: () => open.replaceChildren(form()) }, current ? 'Revise my review' : 'Record my review'),
+    current ? h('button', { class: 'quiet', type: 'button', onclick: showOthers }, 'See the other reviewers') : null),
+    !current ? h('p', { class: 'small muted', text: 'Other reviewers\' answers open after you record yours, so no one steers anyone.' }) : null, open, others);
+  return wrap;
 }
 
 // ---------------------------------------------------------------- router

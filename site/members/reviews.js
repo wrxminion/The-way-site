@@ -51,14 +51,44 @@ async function listView() {
     recent.length ? h('div', { class: 'panel' }, h('h2', { text: 'Latest activity' }), h('ul', { class: 'list' }, recent.map((e) => event(e, true)))) : null);
 }
 
+const VERDICT = { supported: 'Supported', partially_supported: 'Partially supported', contradicted: 'Contradicted',
+  insufficient_evidence: 'Insufficient evidence', inaccessible: 'Source inaccessible', pending: 'Pending' };
+const FLAGS = { needs_second_look: 'Needs a second look', source_conflict: 'Sources conflict', possible_error: 'Possible error in the claim', outdated: 'Out of date', other: 'Other' };
+
+// Phase A (0014): independent claim reviews. Shown only if the migration has been run.
+// Counts say how many people looked and whether they differ. They are not a vote on what is true.
+async function claimSection(slug) {
+  let sums, all;
+  try { [sums, all] = await Promise.all([q(sb.rpc('claim_review_summary', { p_case_slug: slug })), q(sb.rpc('claim_review_public', { p_case_slug: slug, p_max_rows: 500 }))]); }
+  catch (e) { return null; }
+  if (!sums.length) return null;
+  const rowsBy = new Map();
+  for (const r of all) { if (!rowsBy.has(r.claim_key)) rowsBy.set(r.claim_key, []); rowsBy.get(r.claim_key).push(r); }
+  return h('div', { class: 'panel' },
+    h('h2', { text: 'Claim reviews' }),
+    h('p', { class: 'muted small', text: 'Each reviewer judges a claim on their own and the record keeps every verdict, including ones later revised. The counts show how many people looked and whether they differ. A majority does not make a claim true; one decisive document can outweigh many opinions. A disagreement sends the claim back for another look and changes nothing on the case page.' }),
+    h('ul', { class: 'list' }, sums.map((x) => h('li', {},
+      h('p', { class: 'post', text: x.claim_text }),
+      h('div', { class: 'meta', text: `${x.reviewers} reviewer${x.reviewers === 1 ? '' : 's'}${x.disagree ? ' · verdicts differ, waiting for another look' : ''} · last activity ${day(x.last_activity)}` }),
+      h('details', {}, h('summary', { class: 'small', text: 'Every review of this claim' }),
+        h('ul', { class: 'list small' }, (rowsBy.get(x.claim_key) || []).map((r) => h('li', {},
+          h('div', { class: 'meta', text: `${r.reviewer_label} · ${VERDICT[r.verdict]} · ${when(r.created_at)}${r.superseded ? ' · replaced by a later revision' : ''}${r.review_mode === 'collaborative' ? ' · discussed with another reviewer' : ''}` }),
+          h('p', {}, 'Source: ', r.source_url ? h('a', { href: r.source_url, target: '_blank', rel: 'noopener noreferrer', text: r.source_label }) : r.source_label,
+            ` (${r.source_access === 'opened' ? 'opened' : r.source_access === 'inaccessible' ? 'could not be opened' : 'looks altered or not what it claims'})`),
+          r.evidence_passage ? h('p', { text: `Passage: ${r.evidence_passage}` }) : null,
+          r.rationale ? h('p', { text: `Why: ${r.rationale}` }) : null,
+          r.flags.length ? h('p', { class: 'muted', text: 'Flags: ' + r.flags.map((f) => FLAGS[f] || f).join(', ') }) : null))))))));
+}
+
 async function caseView(slug) {
-  const rows = await q(sb.rpc('case_review_history', { case_slug: slug, max_rows: 500 }));
+  const [rows, claimsEl] = await Promise.all([q(sb.rpc('case_review_history', { case_slug: slug, max_rows: 500 })), claimSection(slug)]);
   const c = byslug(slug);
   app.replaceChildren(
     h('p', { class: 'overline', text: 'Review history' }),
     h('h1', { text: caseName(slug) }),
     h('p', { class: 'small' }, h('a', { href: 'reviews.html', text: 'All cases' }),
       c ? [' · ', h('a', { href: `/preview/pages/cases/${slug}.html`, text: 'Read the case' })] : null),
+    claimsEl,
     rows.length ? h('ul', { class: 'list panel' }, rows.map((e) => event(e, false)))
       : h('p', { class: 'muted', text: 'No person has reviewed this case yet.' }));
 }
