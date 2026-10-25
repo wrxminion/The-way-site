@@ -1,0 +1,148 @@
+{
+ "id": "intent-outcome-banking-1933-1991",
+ "version": "1.0.0",
+ "released": "2026-10-25",
+ "events": [
+  {
+   "id": "IO-1933-01",
+   "year": "1933–1934",
+   "name": "Deposit insurance and banking stabilization",
+   "kind": "Reform",
+   "intent": "Restore confidence in banks and protect small depositors after widespread bank suspensions.",
+   "mechanism": "Banking Act of 1933 created the FDIC; federal deposit insurance began January 1, 1934 with $2,500 initial coverage.",
+   "outcome": "The FDIC records approximately 9,000 bank suspensions during 1930–1933 and nine insured-bank failures in 1934. Depositor confidence improved following a package of actions.",
+   "benefit": "Protection against loss of insured deposits and reduced incentive for insured depositors to run.",
+   "tradeoff": "Deposit insurance creates moral-hazard concerns without complementary supervision and risk-based premiums.",
+   "caveat": "Before/after numbers span different regimes and definitions. Bank holiday, recapitalization and other changes occurred contemporaneously; do not assign full causal effect to insurance alone.",
+   "status": "supported; attribution qualified",
+   "sources": [
+    {
+     "name": "FDIC 90-year historical timeline",
+     "url": "https://www.fdic.gov/90years"
+    },
+    {
+     "name": "FDIC A Brief History of Deposit Insurance",
+     "url": "https://www.fdic.gov/system/files/2024-08/brhist.pdf"
+    }
+   ],
+   "check": {
+    "checked": "2026-10-25",
+    "verified": [
+     "FDIC: about 9,000 banks suspended operations 1930-1933 (fdic.gov/90years)",
+     "Banking Act of 1933 created the FDIC; first national deposit insurance protected up to $2,500 per depositor (fdic.gov/90years)"
+    ],
+    "unverified": [
+     "Nine insured-bank failures in 1934: not on the page checked",
+     "Exact start date January 1, 1934: the page checked gives the year only"
+    ]
+   }
+  },
+  {
+   "id": "IO-1980-01",
+   "year": "1980–1986",
+   "name": "Monetary Control Act and deposit-rate deregulation",
+   "kind": "Regulation change",
+   "intent": "Remove deposit-rate ceilings that penalized savers, help banks compete for deposits and strengthen monetary control.",
+   "mechanism": "Depository Institutions Deregulation and Monetary Control Act of 1980 phased out interest-rate caps and extended reserve requirements and discount-window access.",
+   "outcome": "Banks gained flexibility to attract deposits; the law also expanded some thrift powers and coincided with heightened pressure on the thrift model.",
+   "benefit": "Greater access to market-rate deposit products and broader coverage of Fed monetary tools.",
+   "tradeoff": "Higher funding costs and expanded permissions increased stress and risk for some institutions already exposed to long-term, fixed-rate mortgages.",
+   "caveat": "Interest-rate shocks predated the act; do not treat the legislation as the sole cause of subsequent failures.",
+   "status": "supported; attribution qualified",
+   "sources": [
+    {
+     "name": "Federal Reserve History: Monetary Control Act",
+     "url": "https://www.federalreservehistory.org/essays/monetary-control-act-of-1980"
+    },
+    {
+     "name": "Federal Reserve History: Regulation Q",
+     "url": "https://www.federalreservehistory.org/essays/regulation-q"
+    }
+   ],
+   "check": {
+    "checked": "2026-10-25",
+    "verified": [
+     "Signed March 31, 1980 (Federal Reserve History)",
+     "Six-year phase-out of deposit-rate ceilings, so about 1986 (end year is a calculation, not stated)",
+     "Reserve requirements extended to all depository institutions; discount window opened to any institution holding reserves",
+     "Insured deposit limit raised from $40,000 to $100,000",
+     "Expanded thrift powers, which the essay ties to unintended consequences in the S&L crisis"
+    ],
+    "unverified": [
+     "The draft's outcome sentence is general; no measured outcome figures were supplied"
+    ]
+   }
+  },
+  {
+   "id": "IO-1982-01",
+   "year": "1982",
+   "name": "Garn–St Germain Depository Institutions Act",
+   "kind": "Regulation change",
+   "intent": "Help troubled banks and thrifts adapt to high interest rates, competition and losses on legacy mortgage portfolios.",
+   "mechanism": "Authorized new deposit accounts and expanded eligible thrift assets and activities, along with emergency assistance tools.",
+   "outcome": "The changes improved flexibility and competition but some provisions amplified risk-taking and supervisory difficulties; the broader savings-and-loan crisis continued.",
+   "benefit": "More attractive deposit accounts and additional restructuring options for institutions facing stress.",
+   "tradeoff": "Additional powers given to fragile institutions could increase potential losses when combined with weak supervision and forbearance.",
+   "caveat": "S&L losses reflected interest-rate shocks, asset/liability mismatch, fraud, and regulatory failures, not one law alone.",
+   "status": "supported; mixed outcome",
+   "sources": [
+    {
+     "name": "Federal Reserve History: Garn–St Germain Act",
+     "url": "https://www.federalreservehistory.org/essays/garn-st-germain-act"
+    },
+    {
+     "name": "Federal Reserve History: Savings and Loan Crisis",
+     "url": "https://www.federalreservehistory.org/essays/savings-and-loan-crisis"
+    }
+   ],
+   "check": {
+    "checked": "2026-10-25",
+    "verified": [
+     "Signed October 15, 1982 (Federal Reserve History)",
+     "Created the money market deposit account and Super NOW account",
+     "Removed some limits on thrift assets (nonresidential and variable-rate mortgages); emergency powers for insurers including net worth certificates",
+     "Preempted state bans on due-on-sale clauses",
+     "The essay says the new powers often backfired as weak thrifts gambled and lost"
+    ],
+    "unverified": [
+     "The essay checked does not mention commercial or consumer loans specifically"
+    ]
+   }
+  },
+  {
+   "id": "IO-1989-01",
+   "year": "1989–1991",
+   "name": "FIRREA and FDICIA response",
+   "kind": "Reform",
+   "intent": "Resolve failed thrifts, restore confidence in deposit insurance, and force earlier supervisory intervention to limit public losses.",
+   "mechanism": "FIRREA reorganized thrift supervision and resolution; FDICIA added prompt corrective action and least-cost resolution requirements.",
+   "outcome": "The reforms changed supervisory processes and resolution powers after a crisis that imposed large taxpayer costs.",
+   "benefit": "Clearer failure-resolution responsibilities and capital-triggered intervention framework.",
+   "tradeoff": "Early intervention and least-cost constraints can present implementation challenges during system-wide shocks.",
+   "caveat": "A statutory reform is not itself proof that later systemic crises were prevented; assess outcomes with time-series and independent studies.",
+   "status": "legal changes verified; impacts need deeper measurement",
+   "sources": [
+    {
+     "name": "Federal Reserve History: FDICIA",
+     "url": "https://www.federalreservehistory.org/essays/fdicia"
+    },
+    {
+     "name": "FDIC: 1980–1989 chronology",
+     "url": "https://www.fdic.gov/history/1980-1989"
+    }
+   ],
+   "check": {
+    "checked": "2026-10-25",
+    "verified": [
+     "FIRREA (1989) abolished the FSLIC, which had become insolvent",
+     "FDICIA signed December 1991: prompt corrective action (five capital categories), least-cost resolution, risk-based premiums, a too-big-to-fail exception in Section 141",
+     "Nearly 25 percent of S&Ls were closed, merged or placed in conservatorship 1983-1990; taxpayer losses exceeded $100 billion; thrifts fell from nearly 3,000 (1989) to under 1,500 (1996)",
+     "A GAO study mandated by Dodd-Frank found prompt corrective action may not perform well in rapid declines"
+    ],
+    "unverified": [
+     "Long-run effect on later crises needs independent time-series studies"
+    ]
+   }
+  }
+ ]
+}

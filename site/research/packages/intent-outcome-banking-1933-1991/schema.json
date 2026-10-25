@@ -1,0 +1,25 @@
+{
+ "events.csv": {
+  "event_id": "Stable ID, never reused (IO-YYYY-NN)",
+  "years": "Year or range as text",
+  "name": "Short title of the law or decision",
+  "kind": "Reform or Regulation change",
+  "stated_intent": "What proponents or the statute said it was for",
+  "mechanism": "What the law actually did",
+  "recorded_outcome": "What the cited records show happened; not a causal finding",
+  "benefit": "Documented gain, where shown",
+  "tradeoff_or_risk": "Documented cost or risk, where shown",
+  "caveat": "Limits on drawing a causal conclusion",
+  "review_status": "Draft label; not publication-verified",
+  "source_names": "Pipe-separated source titles",
+  "source_urls": "Pipe-separated https URLs",
+  "checked_on": "ISO date a person last compared the claims with the sources"
+ },
+ "source_registry.csv": {
+  "event_id": "Matches events.csv",
+  "claim": "One checkable statement",
+  "evidence_class": "confirmed (found in a cited source) or unresolved (not found; not the same as false)",
+  "source_urls": "Pages searched",
+  "checked_on": "ISO date"
+ }
+}

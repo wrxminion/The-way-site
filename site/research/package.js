@@ -1,0 +1,1 @@
+document.getElementById('copy').addEventListener('click',async()=>{const t=document.getElementById('cite-text').textContent;try{await navigator.clipboard.writeText(t);document.getElementById('copied').textContent='Copied.'}catch(e){document.getElementById('copied').textContent='Select the text above and copy it.'}})
