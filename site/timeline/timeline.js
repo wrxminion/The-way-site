@@ -17,7 +17,7 @@ function h(tag, attrs, ...kids) {
   return el;
 }
 const safeUrl = (u) => /^https:\/\//i.test(u) ? u : null;
-async function json(path) { const r = await fetch(path, { cache: 'no-cache' }); if (!r.ok) throw new Error(path); return r.json(); }
+async function json(path) { if (window.TL_DATA && window.TL_DATA[path]) return window.TL_DATA[path]; const r = await fetch(path, { cache: 'no-cache' }); if (!r.ok) throw new Error(path); return r.json(); }
 
 function visible() {
   const t = term.trim().toLowerCase();
