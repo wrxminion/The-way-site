@@ -125,7 +125,7 @@
       var s = link(appPage ? '#/' : '/members/', 'Sign in');
       s.className = 'wb-pill';
       out.appendChild(s);
-      if (/^\/preview\/pages\//.test(path)) {
+      if (!inMembers) {
         // Signed out on a public page: the same section links on every page (Frank, Oct 19).
         var pub = el('nav', { class: 'wb-mid wb-pub', 'aria-label': 'Sections' });
         pub.appendChild(link('/preview/pages/states/', 'Ballot', 'ballot'));
