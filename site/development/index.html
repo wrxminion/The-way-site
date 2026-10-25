@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex">
+<title>Development Ledger | The Way</title>
+<meta name="description" content="Every design decision for this site, why it was made, and whether it is verified live.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/members/waybar.css?v=1">
+<link rel="stylesheet" href="/site-shared.css?v=1">
+<style>
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.filters button{background:transparent;color:var(--foam);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;cursor:pointer;min-height:40px}
+.filters button[aria-pressed=true]{background:#124a63;border-color:var(--aqua)}
+.row{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
+.row h3{margin:0 0 4px;font:600 18px Georgia,serif}.row p{margin:.3em 0;color:var(--muted)}.row b{color:var(--foam)}
+</style>
+</head>
+<body>
+<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+<main class="wrap" id="main">
+<p class="overline">Methods</p>
+<h1>Development Ledger</h1>
+<p class="lede">What we decided to build, why, and whether anyone has checked that it works on the live site. An item is only marked verified after the live page was checked and the date was recorded.</p>
+<nav class="entry" aria-label="Ways in"><a href="/preview/pages/states/">Map</a><a href="/preview/pages/news/">News</a><a href="/timeline/">Timeline</a><a href="/preview/pages/cases/">Cases</a><a href="/development/" aria-current="page">Methods and ledger</a><a href="/ai/">How we use AI</a></nav>
+<p class="banner" id="note" role="note">Loading…</p>
+<div class="filters" id="filters" role="group" aria-label="Filter by status"></div>
+<div id="list"></div>
+</main>
+<script src="/members/waybar.js?v=1" defer></script>
+<script>
+(async () => {
+  const note = document.getElementById('note'), list = document.getElementById('list'), f = document.getElementById('filters');
+  const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; };
+  const bucket = (s) => /live|verified live/i.test(s) && !/pending|unverified/i.test(s) ? 'live' : /declin/i.test(s) ? 'declined' : /defer/i.test(s) ? 'deferred' : /built|prototype|demonstrated|reported|designed|accepted|adopted|approved/i.test(s) ? 'in progress' : 'planned';
+  let data, sel = 'all';
+  try { data = await (await fetch('/development/data/ledger.json', { cache: 'no-cache' })).json(); } catch (e) { note.textContent = 'The ledger could not load. Reload the page.'; return; }
+  note.textContent = data.note;
+  const draw = () => {
+    f.replaceChildren(...['all', 'live', 'in progress', 'planned', 'deferred', 'declined'].map((k) => { const b = el('button', null, k); b.type = 'button'; b.setAttribute('aria-pressed', String(k === sel)); b.onclick = () => { sel = k; draw(); }; return b; }));
+    const rows = data.rows.filter((r) => sel === 'all' || bucket(r.status_as_of_2026_10_25) === sel);
+    list.replaceChildren(...(rows.length ? rows.map((r) => { const d = el('div', 'row'); d.id = r.id;
+      d.append(el('h3', null, r.id + ': ' + r.title), el('span', 'pill warn', r.status_as_of_2026_10_25));
+      for (const [k, l] of [['decision_date_or_range', 'When'], ['decision_or_proposal', 'Decision'], ['why', 'Why'], ['origin', 'Where it came from'], ['evidence_and_limits', 'Evidence and limits']]) { const p = el('p'); p.append(el('b', null, l + ': '), document.createTextNode(r[k] || '')); d.append(p); }
+      return d; }) : [el('p', 'lede', 'Nothing in this group yet.')]));
+  };
+  draw();
+})();
+</script>
+</body>
+</html>
