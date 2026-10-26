@@ -1,0 +1,45 @@
+/* Section page redesign: illustrated hero, step strip, panels and filter bar. Real text only. */
+.hero-wrap{position:relative;overflow:hidden;background:#04101a;border-bottom:1px solid #c7ffff22}
+.hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% 50%;opacity:.95}
+.hero-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#030d16f2 0%,#030d16d9 34%,#030d1680 58%,#030d1600 82%)}
+.hero-wrap>*:not(.hero-art){position:relative;z-index:1}
+.hero-wrap .top,.hero-wrap .essay-top{max-width:1100px;margin:0 auto;padding:46px 22px 40px;min-height:300px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left}
+.hero-wrap .top h1,.hero-wrap .essay-top h1{margin:10px 0;text-shadow:0 2px 18px #000a}
+.hero-wrap .top p,.hero-wrap .essay-top p{max-width:640px;text-shadow:0 1px 10px #000a}
+.hero-wrap .cta{margin:14px 0 0}
+@media (max-width:760px){
+  .hero-art{object-position:70% 50%}
+  .hero-wrap:after{background:linear-gradient(180deg,#030d16d0 0%,#030d16e6 100%)}
+  .hero-wrap .top,.hero-wrap .essay-top{padding:30px 16px 26px;min-height:220px}
+}
+
+/* Voter Guide: three steps and the map beside the rules panel */
+.vg-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 14px;padding:0;list-style:none;counter-reset:vg}
+.vg-steps li{counter-increment:vg;display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid #c7ffff30;border-radius:14px;background:#071f31b9}
+.vg-steps li:before{content:counter(vg);flex:none;width:34px;height:34px;border-radius:50%;border:1px solid #d9b45c;color:#f0d890;display:flex;align-items:center;justify-content:center;font-weight:700}
+.vg-steps b{display:block;font-size:1.05rem;color:#f2ffff}
+.vg-steps span{font-size:.9rem;color:#c9e1e5}
+.vg-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:18px;align-items:start}
+.vg-side{display:flex;flex-direction:column;gap:14px}
+.vg-side .callout{margin:0}
+.vg-side .rules{border:1px solid #c7ffff30;border-radius:14px;padding:12px 16px;background:#071f31b9}
+.vg-side .rules summary{cursor:pointer;font-weight:650;min-height:32px}
+.vg-side .rulelist{columns:2;padding-left:18px;margin:10px 0 0}
+@media (max-width:900px){.vg-steps{grid-template-columns:1fr}.vg-grid{grid-template-columns:1fr}}
+
+/* News: the controls become one refine bar under the hero */
+.refine-bar{background:#052b3c;border-top:1px solid #c7ffff22;border-bottom:1px solid #c7ffff22}
+.refine-bar>.inner{max-width:1200px;margin:0 auto;padding:16px 22px}
+.refine-bar .modes{margin-top:0}
+.refine-bar .filters{margin-top:12px}
+
+/* Civics & History: search and filters over the real case list */
+.cf-bar{max-width:1100px;margin:0 auto;padding:18px 22px 6px}
+.cf-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.cf-bar input[type=search],.cf-bar select{font:inherit;color:#eaf8fa;background:#06212f;border:1px solid #31606f;border-radius:999px;padding:10px 16px;min-height:44px}
+.cf-bar input[type=search]{flex:1 1 280px}
+.cf-bar label{font-size:.82rem;color:#b6cdd3;display:block;margin:0 0 3px 6px}
+.cf-count{margin:10px 6px 0;color:#b6cdd3;font-size:.9rem}
+.cf-bar :focus-visible{outline:3px solid #f0c36a;outline-offset:2px}
+
+[hidden]{display:none!important}

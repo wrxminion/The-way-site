@@ -1,5 +1,5 @@
 /* The Way: the shared top bar (waybar.js). Same look on every page; nothing here depends on the page's own CSS. */
-.waybar{all:initial;box-sizing:border-box;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px 24px;
+.waybar{all:initial;box-sizing:border-box;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px 24px;
   min-height:64px;padding:12px clamp(16px,5vw,64px);position:relative;z-index:50;
   background:#052b3c;border-bottom:1px solid #c7ffff22;
   font:600 12px/1.2 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#e9ffff}
@@ -62,3 +62,7 @@ body:has(#waybar) nav.topbar{display:none}
   .waybar .wb-search input{flex:1;width:auto;font-size:16px}
   .waybar.wb-open .wb-search{width:100%}
 }
+
+.waybar .wb-right{flex-wrap:nowrap}
+.waybar .wb-search input{width:8.5em}
+@media (max-width:760px){.waybar .wb-right{flex-wrap:wrap}}

@@ -280,6 +280,36 @@
       "why": "Frank wants every bill or ballot case study to use the same timeline.",
       "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW until the live page is checked after deploy.",
       "evidence_and_limits": "Events read by us: the 1992 and 2005 database pages, the official 2026 text of Article X section 20, three bill pages (SB22-233, SB23B-003, SB24-228) and the court opinion. Not yet read by us: the 1982 and 1997 to 2001 sources; the 1990 result is unverified. The mockup text for 2005 to 2010 was not used. Swipe was tested by script, not by hand on a phone."
+    },
+    {
+      "id": "D029",
+      "decision_date_or_range": "2026-10-26",
+      "title": "Voter Guide page redesign",
+      "origin": "Frank, Oct 26 2026, via the project coordinator; layout taken from ChatGPT mockups, text only from the site",
+      "decision_or_proposal": "Illustrated hero over the existing title and text, a \"Find your ballot\" button to the map, a three-step strip, and the map beside a panel holding the existing \"Registration and voting rules, state by state\" list and the \"How we check\" note. URLs, the map links and all 51 state links are unchanged.",
+      "why": "Frank asked for the mockup layouts filled only with real site text.",
+      "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW until checked live.",
+      "evidence_and_limits": "Checked with headless Chrome screenshots at desktop and about 500 pixels wide (a browser cannot go narrower), not on a phone. Mockup copy such as \"A more informed you\" was left out because the site has no such text."
+    },
+    {
+      "id": "D030",
+      "decision_date_or_range": "2026-10-26",
+      "title": "News page restyle",
+      "origin": "Frank, Oct 26 2026, via the project coordinator; layout taken from ChatGPT mockups, text only from the site",
+      "decision_or_proposal": "Illustrated hero over the existing title and explanation; the existing view tabs, search, state menu and source filters moved into one bar under the hero. The news feed, archive tab, sidebar, search and filters work as before.",
+      "why": "Frank asked for the mockup layout with the real news data only.",
+      "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW until checked live.",
+      "evidence_and_limits": "No mockup headlines, photos or topic filters were added: the site has no photos and no topic field. The mockup map and archive-by-month controls were not built because the page has no such feature yet. Headless screenshots only."
+    },
+    {
+      "id": "D031",
+      "decision_date_or_range": "2026-10-26",
+      "title": "Civics & History directory restyle with filters",
+      "origin": "Frank, Oct 26 2026, via the project coordinator; layout taken from ChatGPT mockups, text only from the site",
+      "decision_or_proposal": "Illustrated hero over the existing title and text; a search box and Topic and Time period menus above the existing case list. The menus are built from each case card's own label (topic and years), so every option matches real cases. A ?q= address pre-fills the search.",
+      "why": "Frank asked for the mockup directory layout with real content only.",
+      "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW until checked live.",
+      "evidence_and_limits": "Not built, because the site has no such content: the mockup's thematic category tiles and \"Historical Investigations\" text. Format filter omitted; cases have no format field. Filter tested with a ?q= address in headless Chrome (watergate gave 1 of 71)."
     }
   ]
 }
