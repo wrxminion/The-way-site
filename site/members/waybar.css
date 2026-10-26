@@ -44,3 +44,21 @@ body:has(#waybar) nav.topbar{display:none}
   .waybar .wb-pub{grid-column:1/-1;grid-row:2;justify-content:flex-start}
   .waybar .wb-right{grid-row:1}
 }
+
+/* Header search (every page). Signed out on a phone: the box moves to its own full-width row under the links. */
+.waybar .wb-search{display:inline-flex;align-items:center;gap:0;border:1px solid #c7ffff55;border-radius:100px;overflow:hidden;background:#06212f;text-transform:none;letter-spacing:.02em}
+.waybar .wb-search:focus-within{border-color:#a7f0e9}
+.waybar .wb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.waybar .wb-search input{all:unset;box-sizing:border-box;width:9.5em;padding:7px 4px 7px 14px;font-size:13px;color:#e9ffff;cursor:text}
+.waybar .wb-search input::placeholder{color:#e9ffffb0}
+.waybar .wb-search button{display:inline-flex;align-items:center;justify-content:center;width:34px;height:32px;opacity:1}
+.waybar .wb-glass{display:block;width:12px;height:12px;border:2px solid #e9ffff;border-radius:50%;position:relative}
+.waybar .wb-glass:after{content:"";position:absolute;width:7px;height:2px;background:#e9ffff;right:-7px;bottom:-3px;transform:rotate(45deg)}
+.waybar .wb-search button:focus-visible{outline-offset:-3px}
+@media (max-width:760px){
+  .waybar:not(.wb-in) .wb-right{display:contents}
+  .waybar:not(.wb-in) .wb-pill{grid-row:1;grid-column:2;justify-self:end}
+  .waybar:not(.wb-in) .wb-search{grid-column:1/-1;grid-row:3;width:100%}
+  .waybar .wb-search input{flex:1;width:auto;font-size:16px}
+  .waybar.wb-open .wb-search{width:100%}
+}

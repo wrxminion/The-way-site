@@ -47,6 +47,24 @@
     if (text != null) n.textContent = text;
     return n;
   }
+  // Site search in the bar on every page: a plain form that sends the visitor to /search/?q=... (done in script,
+  // because some pages' security policy does not allow a form to submit).
+  function searchForm() {
+    var f = el('form', { class: 'wb-search', role: 'search', action: '/search/', method: 'get' });
+    var lab = el('label', { class: 'wb-sr', for: 'wb-q' }, 'Search the whole site');
+    var inp = el('input', { id: 'wb-q', type: 'search', name: 'q', placeholder: 'Search', autocomplete: 'off', maxlength: '120' });
+    var m = /^\/search\/?$/.test(path) && /[?&]q=([^&]*)/.exec(location.search);
+    if (m) { try { inp.value = decodeURIComponent(m[1].replace(/\+/g, ' ')); } catch (e) { /* ignore */ } }
+    var btn = el('button', { type: 'submit', 'aria-label': 'Search' });
+    btn.appendChild(el('span', { 'aria-hidden': 'true', class: 'wb-glass' }));
+    f.appendChild(lab); f.appendChild(inp); f.appendChild(btn);
+    f.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var v = inp.value.trim();
+      location.href = '/search/' + (v ? '?q=' + encodeURIComponent(v) : '');
+    });
+    return f;
+  }
   function here() {
     var bar = document.getElementById('waybar');
     var set = bar && bar.getAttribute('data-here');
@@ -95,6 +113,7 @@
       mid.appendChild(link(route('cases'), 'Civics & History', 'cases'));
       mid.appendChild(link('/preview/pages/', 'About', 'about', tab));
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
+      right.appendChild(searchForm());
       var deskOk = data.roles.indexOf('admin') >= 0 || data.roles.indexOf('researcher') >= 0 || data.roles.indexOf('reviewer') >= 0;
       if (deskOk) right.appendChild(link(route('research'), 'Research', 'research'));
       right.appendChild(link(route('commons'), 'Commons', 'commons'));
@@ -127,6 +146,7 @@
       var out = el('nav', { class: 'wb-right', 'aria-label': 'Sign in' });
       var s = link(appPage ? '#/' : '/members/', 'Sign in');
       s.className = 'wb-pill';
+      out.appendChild(searchForm());
       out.appendChild(s);
       {
         // Signed out: the same section links on every page, member sign-in included: the same section links on every page (Frank, Oct 19).
