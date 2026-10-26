@@ -134,3 +134,14 @@
 .hub.hub-four{grid-template-columns:repeat(4,minmax(0,1fr));max-width:1080px}
 @media(max-width:1000px){.hub.hub-four{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.hub.hub-four{grid-template-columns:1fr}}
+
+.hub-six{grid-template-columns:repeat(3,minmax(0,1fr));max-width:1080px}
+@media(max-width:900px){.hub.hub-six{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.hub.hub-six{grid-template-columns:1fr}}
+.art-card{padding:0 0 22px;overflow:hidden}
+.art-card .depth,.art-card b,.art-card span:last-child{margin-left:20px;margin-right:20px}
+.card-art{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:0;margin:0 0 14px;opacity:.92}
+.art-how-government-works{object-position:50% 30%}.art-news,.art-research,.art-ballot-case-studies{object-position:50% 40%}
+@media(max-width:600px){.card-art{aspect-ratio:16/10}}
+
+[hidden]{display:none!important}
