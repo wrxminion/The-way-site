@@ -78,7 +78,7 @@
     bar.classList.add('waybar');
     bar.classList.toggle('wb-in', !!data);
     bar.classList.toggle('wb-open', open && !!data);
-    var logo = link(data ? route('') : (appPage ? '#/' : '/'), 'The Way');
+    var logo = link(data ? route('') : '/', 'The Way'); // signed out: always the public front page
     logo.className = 'wb-logo';
     var kids = [logo];
     if (data) {
@@ -125,8 +125,8 @@
       var s = link(appPage ? '#/' : '/members/', 'Sign in');
       s.className = 'wb-pill';
       out.appendChild(s);
-      if (!inMembers) {
-        // Signed out on a public page: the same section links on every page (Frank, Oct 19).
+      {
+        // Signed out: the same section links on every page, member sign-in included: the same section links on every page (Frank, Oct 19).
         var pub = el('nav', { class: 'wb-mid wb-pub', 'aria-label': 'Sections' });
         pub.appendChild(link('/preview/pages/states/', 'Ballot', 'ballot'));
         pub.appendChild(link('/preview/pages/news/', 'News', 'news'));
