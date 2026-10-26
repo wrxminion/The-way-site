@@ -75,6 +75,7 @@
     if (/^\/research\//.test(path)) return 'research-lib';
     if (/^\/search\//.test(path)) return 'search';
     if (/^\/preview\/pages\/news/.test(path)) return 'news';
+    if (/^\/preview\/pages\/(foundation|founder)/.test(path)) return 'about';
     if (/^#\/research/.test(h)) return 'research';
     if (/^#\/map/.test(h) || /^\/preview\/pages\/map/.test(path)) return 'map';
     if (/^\/preview\/pages\/(guide|states|map)/.test(path)) return 'ballot';
@@ -111,7 +112,7 @@
       var tab = inMembers ? { target: '_blank', rel: 'noopener' } : null;
       mid.appendChild(link('/preview/pages/news/', 'News', 'news', tab));
       mid.appendChild(link(route('cases'), 'Civics & History', 'cases'));
-      mid.appendChild(link('/preview/pages/', 'About', 'about', tab));
+      mid.appendChild(link('/preview/pages/foundation.html', 'About', 'about', tab));
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
       right.appendChild(searchForm());
       var deskOk = data.roles.indexOf('admin') >= 0 || data.roles.indexOf('researcher') >= 0 || data.roles.indexOf('reviewer') >= 0;
@@ -128,7 +129,7 @@
       var can = function (r) { return data.roles.indexOf(r) >= 0 || data.roles.indexOf('admin') >= 0; };
       item(route(''), 'Home');
       item(route('cases'), 'Civics & History');
-      item('/preview/pages/', 'About and essays');
+      item('/preview/pages/foundation.html', 'About');
       if (data.findings) item('/members/findings.html', 'Findings');
       if (can('researcher') || can('reviewer')) item(route('research'), 'Research desk');
       if (data.modlog) item(route('log'), 'Moderation log');
@@ -157,7 +158,7 @@
         pub.appendChild(link('/preview/pages/case-studies/', 'Ballot Case Studies', 'casestudies'));
         pub.appendChild(link('/preview/pages/news/', 'News', 'news'));
         pub.appendChild(link('/search/', 'Search', 'search'));
-        pub.appendChild(link('/preview/pages/', 'About', 'about'));
+        pub.appendChild(link('/preview/pages/foundation.html', 'About', 'about'));
         kids.push(pub);
       }
       kids.push(out);

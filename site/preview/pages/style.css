@@ -80,3 +80,5 @@
 @media(max-width:900px){.hub{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.navright{width:100%;justify-content:space-between;gap:12px}.topbar .join-btn{padding:8px 14px}.hub{grid-template-columns:1fr}.float-bar{right:12px;bottom:12px}.float-bar .return{padding:12px 13px}}
 .end-ctas .cta,.end .end-ctas .cta+.cta{margin:0}
+
+.about-links{max-width:860px;margin:18px auto 0;padding:0 22px;display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:2}

@@ -35,3 +35,7 @@ p.st{display:block;width:fit-content}
 .srcbtn:hover{background:rgba(167,240,233,.12)}
 .note.small{font-size:.85rem;padding:6px 10px}
 .h3like{font-size:1.15rem;margin:.6em 0 .3em}
+
+/* Same blue gradation as the other section pages (copied from the states page) */
+html,body{margin:0;min-height:100%;background:#020b13}
+body{background:radial-gradient(ellipse 100% 320px at 50% 0,rgba(183,253,255,.33),transparent 75%),radial-gradient(ellipse 55% 220px at 15% 230px,rgba(51,161,183,.13),transparent 100%),linear-gradient(180deg,#176b85 0,#13556e 130px,#0b3a53 370px,#082c42 610px,#062137 920px,#041626 1240px,#020b14 1600px);background-repeat:no-repeat;background-color:#020b14}

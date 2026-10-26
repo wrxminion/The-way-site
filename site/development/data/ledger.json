@@ -310,6 +310,36 @@
       "why": "Frank asked for the mockup directory layout with real content only.",
       "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW until checked live.",
       "evidence_and_limits": "Not built, because the site has no such content: the mockup's thematic category tiles and \"Historical Investigations\" text. Format filter omitted; cases have no format field. Filter tested with a ?q= address in headless Chrome (watergate gave 1 of 71)."
+    },
+    {
+      "id": "D032",
+      "decision_date_or_range": "2026-10-26",
+      "title": "About goes to the Foundation page",
+      "origin": "Frank, Oct 26 2026, via the project coordinator",
+      "decision_or_proposal": "The header About link on every page now opens the Foundation page. That page carries visible links to About the founder, Methodology (the methods and ledger page) and the AI paper. The front-page foundation cards stay hidden.",
+      "why": "Frank asked for About to lead to the foundation, with the founder, methods and AI pages one click away.",
+      "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW until checked live with curl; Frank will check it visually.",
+      "evidence_and_limits": "There is no separate methodology page. The Methodology link goes to the methods and ledger page, which says what was decided to build and whether it was verified. No new methodology text was written."
+    },
+    {
+      "id": "D033",
+      "decision_date_or_range": "2026-10-26",
+      "title": "Ballot Case Studies pages use the shared blue gradient",
+      "origin": "Frank, Oct 26 2026, via the project coordinator",
+      "decision_or_proposal": "The case-study stylesheet now sets the same page background as the Voter Guide page. This also applies to the Research & Press and How government works pages, which share that stylesheet.",
+      "why": "Frank saw that these pages lacked the blue gradation.",
+      "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW; Frank will check it visually.",
+      "evidence_and_limits": "Compared by reading the CSS (the states page rule was copied), not by looking at the pages."
+    },
+    {
+      "id": "D034",
+      "decision_date_or_range": "2026-10-26",
+      "title": "Research page: Coming soon label and timeline links",
+      "origin": "Frank, Oct 26 2026, via the project coordinator",
+      "decision_or_proposal": "The Download the research card is marked Coming soon, says the full set of downloads is coming soon and that this will be a resource for scholars, journalists and anyone looking to go deeper into The Way. The evidence card now names the Intent vs. Outcome timeline and adds a link to the development ledger.",
+      "why": "Frank said the button went to one specific timeline, and that the package should say it is coming soon.",
+      "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW; Frank will check it visually.",
+      "evidence_and_limits": "The first research package is a draft and stays listed. The button already linked to /timeline/, which is the Intent vs. Outcome timeline; it is now named that way, and the ledger link covers a timeline of the site itself."
     }
   ]
 }
