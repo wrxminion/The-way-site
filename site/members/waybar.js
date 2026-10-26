@@ -3,7 +3,7 @@
 //          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
 //          <script src="/members/waybar.js?v=1" defer></script>.
 // Signed in (in this browser): logo left · Map, Ballot in the middle · Commons, Invite, your name right
-// (your name opens a menu: Home, Cases, Findings, your tools, Your account, Sign out).
+// (your name opens a menu: Home, Civics & History, Findings, your tools, Your account, Sign out).
 // Signed out: logo and "Sign in" only. The member area writes what the bar needs to localStorage
 // ("theway.bar": display name, roles, which tabs exist, your ballot link). That is only for drawing
 // links; every page and the database still check the real sign-in themselves.
@@ -53,6 +53,9 @@
     if (set) return set;
     var h = appPage ? (location.hash || '#/') : '';
     if (/^#\/cases/.test(h) || /^\/preview\/pages\/cases/.test(path)) return 'cases';
+    if (/^\/preview\/pages\/case-studies/.test(path)) return 'casestudies';
+    if (/^\/research\//.test(path)) return 'research-lib';
+    if (/^\/search\//.test(path)) return 'search';
     if (/^\/preview\/pages\/news/.test(path)) return 'news';
     if (/^#\/research/.test(h)) return 'research';
     if (/^#\/map/.test(h) || /^\/preview\/pages\/map/.test(path)) return 'map';
@@ -89,7 +92,7 @@
       // News and About are public pages in the preview folder (own password), so in the member area they open in a new tab.
       var tab = inMembers ? { target: '_blank', rel: 'noopener' } : null;
       mid.appendChild(link('/preview/pages/news/', 'News', 'news', tab));
-      mid.appendChild(link(route('cases'), 'Cases', 'cases'));
+      mid.appendChild(link(route('cases'), 'Civics & History', 'cases'));
       mid.appendChild(link('/preview/pages/', 'About', 'about', tab));
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
       var deskOk = data.roles.indexOf('admin') >= 0 || data.roles.indexOf('researcher') >= 0 || data.roles.indexOf('reviewer') >= 0;
@@ -105,7 +108,7 @@
       var item = function (href, label) { var li = el('li'); li.appendChild(link(href, label)); menu.appendChild(li); };
       var can = function (r) { return data.roles.indexOf(r) >= 0 || data.roles.indexOf('admin') >= 0; };
       item(route(''), 'Home');
-      item(route('cases'), 'Cases');
+      item(route('cases'), 'Civics & History');
       item('/preview/pages/', 'About and essays');
       if (data.findings) item('/members/findings.html', 'Findings');
       if (can('researcher') || can('reviewer')) item(route('research'), 'Research desk');
@@ -128,9 +131,12 @@
       {
         // Signed out: the same section links on every page, member sign-in included: the same section links on every page (Frank, Oct 19).
         var pub = el('nav', { class: 'wb-mid wb-pub', 'aria-label': 'Sections' });
-        pub.appendChild(link('/preview/pages/states/', 'Ballot', 'ballot'));
+        pub.appendChild(link('/preview/pages/states/', 'Voter Guide', 'ballot'));
+        pub.appendChild(link('/research/', 'Research', 'research-lib'));
+        pub.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases'));
+        pub.appendChild(link('/preview/pages/case-studies/', 'Ballot Case Studies', 'casestudies'));
         pub.appendChild(link('/preview/pages/news/', 'News', 'news'));
-        pub.appendChild(link('/preview/pages/cases/', 'Cases', 'cases'));
+        pub.appendChild(link('/search/', 'Search', 'search'));
         pub.appendChild(link('/preview/pages/', 'About', 'about'));
         kids.push(pub);
       }

@@ -12,12 +12,12 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../style.css?v=3">
 <link rel="stylesheet" href="/members/waybar.css?v=1">
-<link rel="stylesheet" href="case-study.css?v=1">
+<link rel="stylesheet" href="case-study.css?v=2">
 </head>
 <body>
 <header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
 <main class="cs" id="top">
-<nav class="crumbs" aria-label="Breadcrumb"><a href="../">The Way</a> / <a href="../guide/">Voter guide</a> / Ballot case studies / TABOR</nav>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">The Way</a> / <a href="index.html">Ballot Case Studies</a> / TABOR</nav>
 <p class="badge-row"><span class="badge draft">Initial draft, not independently reviewed</span><span class="badge pending">Election pending: November 3, 2026</span></p>
 <h1>TABOR: voter control, public revenue, and Colorado's ballot choices</h1>
 <p class="deck">Understand the rules behind Colorado's recurring debates about taxes, refunds and public spending, and the evidence needed to assess their results.</p>
@@ -31,8 +31,8 @@
 <h2>The policy in plain language</h2>
 <p>Colorado voters adopted the Taxpayer's Bill of Rights, known as TABOR, in 1992. Its rules include voter approval for tax increases and a limit on how much revenue government may keep. Revenue above the applicable limit generally has to be returned unless voters allow it to be kept. Setting a tax rate and allowing the government to keep revenue are two different questions. <a class="src" href="#S1">S1</a></p>
 <p>Referendum C, approved in 2005, let the state keep all the revenue it collected for fiscal years 2005-06 through 2009-10. It also set an ongoing adjusted cap that grows from fiscal year 2007-08 revenue. Revenue above that cap is still subject to refunds. The limit grows with inflation and population. These are state mechanics; local governments are treated separately. <a class="src" href="#S1">S1</a></p>
-<p class="note">Official 1992 and 2005 results, checked October 26, 2026 in the Colorado Secretary of State's Historical Elections Database: <strong>1992 Amendment 01</strong>, 812,308 yes and 700,906 no out of 1,513,214 votes on the question (53.68 percent yes) <a class="src" href="#S7">S7</a>. <strong>2005 Referendum C</strong>, 600,222 yes and 552,662 no out of 1,152,884 votes (52.06 percent yes) <a class="src" href="#S8">S8</a>.</p>
-<p class="note warn">The current official text of Article X, section 20 has not yet been checked for this page. Read it at the state's official gateway before relying on any legal detail: <a href="https://leg.colorado.gov/laws/colorado-constitution" rel="noopener" target="_blank">leg.colorado.gov/laws/colorado-constitution</a>. Status: unverified.</p>
+<p class="note">Official 1992 and 2005 results, checked October 26, 2026 in the Colorado Secretary of State's Historical Elections Database: <strong>1992 Amendment 01</strong>, 812,308 yes and 700,906 no out of 1,513,214 votes on the question (53.68 percent yes) <a class="src" href="#S7">S7</a>. The same database lists 83,952 blank votes and 1,597,166 ballots cast; those are different denominators. <strong>2005 Referendum C</strong>, 600,222 yes and 552,662 no out of 1,152,884 votes (52.06 percent yes) <a class="src" href="#S8">S8</a>.</p>
+<p class="note">Article X, section 20 (the TABOR text): we read the current official edition, the 2026 Colorado Constitution published by the Office of Legislative Legal Services, on October 26, 2026, and keep a dated copy. Its opening rule says the preferred interpretation is to "reasonably restrain most the growth of government." A reader should open the official text for any legal detail: <a href="https://olls.info/crs/crs2026-title-00.htm" rel="noopener" target="_blank">olls.info, 2026 edition</a>. This page quotes only that sentence and summarizes the rest in plain words. We read these totals in the state database in a browser. The certification statements on the original 1992 and 2005 abstract-of-votes scans have not been read (see "What we do not yet know").</p>
 </section>
 
 <section id="example">
@@ -49,7 +49,7 @@
 <div class="lane" id="lane-intent"><h3>Intent</h3>
 <ol>
 <li id="e1992a"><b>1992</b> Ballot question asks voters to require voter approval for certain tax increases and debt, restrict some taxes, limit the rate of growth in state and local spending, allow more initiative elections, and mail information to voters. <span class="st ok">Official ballot text</span> <a class="src" href="#S7">S7</a></li>
-<li id="eIntentText"><b>Constitutional language</b> favors restraining the growth of government. Whether that is desirable is a value judgment. <span class="st warn">Current text not yet checked</span> <a class="src" href="#S2">S2</a></li>
+<li id="eIntentText"><b>Constitutional language</b> favors restraining the growth of government. Whether that is desirable is a value judgment. <span class="st ok">Official 2026 text read</span> <a class="src" href="#S2">S2</a></li>
 </ol></div>
 <div class="lane" id="lane-impl"><h3>Implementation</h3>
 <ol>
@@ -57,15 +57,16 @@
 <li id="e2005"><b>2005</b> Voters approve Referendum C. The question covered five years of keeping excess revenue and ongoing retention under a defined cap afterward. <span class="st ok">Official ballot text</span> <a class="src" href="#S8">S8</a></li>
 <li id="e0510"><b>FY 2005-06 to 2009-10</b> Referendum C retention period. <span class="st ok">Official explanation</span> <a class="src" href="#S1">S1</a></li>
 <li id="e1011"><b>FY 2010-11 onward</b> Ongoing Referendum C cap. <span class="st ok">Official explanation</span> <a class="src" href="#S1">S1</a></li>
-<li id="e2026law"><b>June 2026</b> HB26-1419 becomes law, tying a conditional over-refund calculation to federal tax changes and limiting how much can be offset in a single future year. <span class="st warn">Enacted summary read; check the signed act before legal use</span> <a class="src" href="#S9">S9</a></li>
 <li id="e2025ct"><b>September 8, 2025</b> Colorado Supreme Court holds Lakewood's ordinances were new taxes imposed without required voter approval (MetroPCS v. Lakewood). <span class="st ok">Court opinion</span> <a class="src" href="#S10">S10</a></li>
+<li id="e2026law"><b>June 2026</b> HB26-1419 becomes law, tying a conditional over-refund calculation to federal tax changes and limiting how much can be offset in a single future year. <span class="st warn">Enacted summary read; check the signed act before legal use</span> <a class="src" href="#S9">S9</a></li>
 </ol></div>
 <div class="lane" id="lane-out"><h3>Outcomes</h3>
+<p class="note small">Ordered by publication year. A study's evidence covers a different period, shown on each card.</p>
 <ol>
-<li id="e2018"><b>2018</b> Eliason and Lutz, Journal of Public Economics: no detectable effect on total taxes or spending in their comparison of Colorado with other states. <span class="st warn">Peer reviewed; abstract level</span> <a class="src" href="#S3">S3</a></li>
-<li id="e2012"><b>2012</b> St. Clair: evidence of higher revenue and spending volatility. <span class="st warn">Peer reviewed; abstract level</span> <a class="src" href="#S11">S11</a></li>
 <li id="e2007"><b>2007</b> Martell and Teske: reports pressure toward earmarking, privatizing and shifting responsibilities during downturns. <span class="st warn">Peer reviewed; abstract level</span> <a class="src" href="#S12">S12</a></li>
-<li id="e2015"><b>2015</b> Resnick, Brown and Godshall (Lincoln Institute): links TABOR-related distortions to less equal school-tax burdens; the paper says its findings did not get detailed staff review. <span class="st warn">Working paper</span> <a class="src" href="#S13">S13</a></li>
+<li id="e2012"><b>2012</b> St. Clair: evidence of higher revenue and spending volatility in Colorado local-government data. <span class="st warn">Peer reviewed; abstract level</span> <a class="src" href="#S11">S11</a></li>
+<li id="e2015"><b>2015</b> Resnick, Brown and Godshall (Lincoln Institute): says TABOR forced fairly significant redistribution of school funding in its simulation; the paper says its findings did not get detailed staff review. <span class="st ok">Working paper; sentence read on page 33</span> <a class="src" href="#S13">S13</a></li>
+<li id="e2018"><b>2018</b> Eliason and Lutz, Journal of Public Economics: no detectable effect on total taxes or spending in their comparison of Colorado with other states (evidence covers 1977 to 2012). <span class="st warn">Peer reviewed; abstract level for the final article</span> <a class="src" href="#S3">S3</a></li>
 <li id="e2026rep"><b>2026</b> Jansen and Moore (Texas A&amp;M research center): emphasizes limits on non-exempt revenue and adaptation through Referendum C and exempt activity. <span class="st warn">Research report; peer review not established</span> <a class="src" href="#S4">S4</a></li>
 </ol></div>
 </div>
@@ -89,15 +90,16 @@
 
 <section id="cards">
 <h2>Evidence cards</h2>
+<p>Each card summarizes one piece of evidence and has its own link to the underlying source. The cards are static; they do not drive the lanes above.</p>
 <div class="cards">
-<article class="card"><h3>Original ballot</h3><p>Amendment 01 combined several fiscal and election rules in one question.</p><p class="st ok">Official wording read; the scanned booklet not reviewed</p></article>
-<article class="card"><h3>Referendum C</h3><p>The ballot offered both temporary and ongoing retention authority.</p><p class="st ok">Official mechanism</p></article>
-<article class="card"><h3>Real allocations</h3><p>In FY 2024-25 the state kept $3,690.7 million under Referendum C: $1,248.8 million each to K-12 and health care, $1,188.6 million to higher education, $4.0 million to volunteer firefighter retirement and $0.5 million to transportation. Staff caution that much of this prevented cuts rather than adding services.</p><p class="st warn">Historical accounting, not a measured service effect <a class="src" href="#S14">S14</a></p></article>
-<article class="card"><h3>Aggregate effects</h3><p>One peer-reviewed study finds no detectable effect on total taxes or spending.</p><p class="st warn">Abstract level <a class="src" href="#S3">S3</a></p></article>
-<article class="card"><h3>Volatility</h3><p>One peer-reviewed study reports greater local revenue and spending volatility.</p><p class="st warn">Abstract level <a class="src" href="#S11">S11</a></p></article>
-<article class="card"><h3>Fees and enterprises</h3><p>Fee revenue of government enterprises falls outside the limit, which changes fiscal incentives. A 2022 staff memo is the explanation; its totals are older than 2026.</p><p class="st ok">Official explanation, historical <a class="src" href="#S15">S15</a></p></article>
-<article class="card"><h3>Enforcement</h3><p>The Colorado Supreme Court voided two Lakewood ordinances as taxes imposed without a vote.</p><p class="st ok">Court holding <a class="src" href="#S10">S10</a></p></article>
-<article class="card"><h3>Latest baseline</h3><p>The September 2026 forecast revises earlier expectations. See the dated forecast below.</p><p class="st warn">Forecast, not realized revenue <a class="src" href="#S16">S16</a></p></article>
+<article class="card"><h3>Original ballot</h3><p>Amendment 01 combined several fiscal and election rules in one question.</p><p class="st ok">Official wording read; the scanned booklet not reviewed</p><p class="srcline"><a class="srcbtn" href="https://historicalelectiondata.coloradosos.gov/contest/24859" rel="noopener" target="_blank">Open the source: official results page <span aria-hidden="true">&#8599;</span></a></p></article>
+<article class="card"><h3>Referendum C</h3><p>The ballot offered both temporary and ongoing retention authority.</p><p class="st ok">Official mechanism</p><p class="srcline"><a class="srcbtn" href="https://historicalelectiondata.coloradosos.gov/contest/6026" rel="noopener" target="_blank">Open the source: official results page <span aria-hidden="true">&#8599;</span></a></p></article>
+<article class="card"><h3>Real allocations</h3><p>In FY 2024-25 the state kept $3,690.7 million under Referendum C: $1,248.8 million each to K-12 and health care, $1,188.6 million to higher education, $4.0 million to volunteer firefighter retirement and $0.5 million to transportation. Staff caution that much of this prevented cuts rather than adding services.</p><p class="st warn">Historical accounting, not a measured service effect</p><p class="srcline"><a class="srcbtn" href="https://content.leg.colorado.gov/sites/default/files/R25-566_Update%20Referendum%20C%20Report-accessible.pdf" rel="noopener" target="_blank">Open the source: Legislative Council report <span aria-hidden="true">&#8599;</span></a></p></article>
+<article class="card"><h3>Aggregate effects</h3><p>One peer-reviewed study finds no detectable effect on total taxes or spending.</p><p class="st warn">Abstract level</p><p class="srcline"><a class="srcbtn" href="https://doi.org/10.1016/j.jpubeco.2018.07.008" rel="noopener" target="_blank">Open the source: Eliason and Lutz 2018 <span aria-hidden="true">&#8599;</span></a></p></article>
+<article class="card"><h3>Volatility</h3><p>One peer-reviewed study reports greater local revenue and spending volatility.</p><p class="st warn">Abstract level</p><p class="srcline"><a class="srcbtn" href="https://doi.org/10.1111/j.1540-5850.2012.01016.x" rel="noopener" target="_blank">Open the source: St. Clair 2012 <span aria-hidden="true">&#8599;</span></a></p></article>
+<article class="card"><h3>Fees and enterprises</h3><p>Fee revenue of government enterprises falls outside the limit, which changes fiscal incentives. A 2022 staff memo is the explanation; its totals are older than 2026.</p><p class="st ok">Official explanation, historical</p><p class="srcline"><a class="srcbtn" href="https://content.leg.colorado.gov/sites/default/files/r21-99_state_government_enterprises_0.pdf" rel="noopener" target="_blank">Open the source: Legislative Council memo <span aria-hidden="true">&#8599;</span></a></p></article>
+<article class="card"><h3>Enforcement</h3><p>The Colorado Supreme Court voided two Lakewood ordinances as taxes imposed without a vote.</p><p class="st ok">Court holding</p><p class="srcline"><a class="srcbtn" href="https://www.coloradojudicial.gov/system/files/opinions-2025-09/24SA178.pdf" rel="noopener" target="_blank">Open the source: court opinion <span aria-hidden="true">&#8599;</span></a></p></article>
+<article class="card"><h3>Latest baseline</h3><p>The September 2026 forecast revises earlier expectations. See the dated forecast below.</p><p class="st warn">Forecast, not realized revenue</p><p class="srcline"><a class="srcbtn" href="https://content.leg.colorado.gov/sites/default/files/2026-09/sept2026-forecast-with-cover-for-remediation-and-posting-accessible.pdf" rel="noopener" target="_blank">Open the source: September 2026 forecast <span aria-hidden="true">&#8599;</span></a></p></article>
 </div>
 </section>
 
@@ -108,10 +110,10 @@
 <caption>Studies, access and limits</caption>
 <thead><tr><th scope="col">Study</th><th scope="col">Type and access</th><th scope="col">Finding and limits</th></tr></thead>
 <tbody>
-<tr><td>Eliason and Lutz, 2018, <i>Journal of Public Economics</i> 166:115-144 <a class="src" href="#S3">S3</a></td><td>Peer reviewed. Abstract and indexed material read; full text not obtained.</td><td>No detectable overall tax or spending effect in the historical comparison (state and local data, 1977 to 2012). Not proof of no effect on services, distribution or any single fund. One state limits generalization.</td></tr>
+<tr><td>Eliason and Lutz, 2018, <i>Journal of Public Economics</i> 166:115-144 <a class="src" href="#S3">S3</a></td><td>Peer reviewed. Abstract and indexed material read; full text not obtained.</td><td>No detectable overall tax or spending effect in the historical comparison (state and local data, 1977 to 2012). Not proof of no effect on services, distribution or any single fund. One state limits generalization. The authors' December 2017 manuscript, which is not the final article, concludes in its own words "We find no evidence that TABOR influenced budget outcomes." We have not confirmed the final article uses the same wording.</td></tr>
 <tr><td>Martell and Teske, 2007, <i>Public Administration Review</i> 67:673-687 <a class="src" href="#S12">S12</a></td><td>Peer reviewed. Abstract only.</td><td>Reports incentives to earmark, privatize and shift responsibilities when limits bind. Not an estimate for 2026.</td></tr>
 <tr><td>St. Clair, 2012, <i>Public Budgeting &amp; Finance</i> 32(3):61-78 <a class="src" href="#S11">S11</a></td><td>Peer reviewed. Abstract only.</td><td>Finds higher revenue and expenditure volatility. The abstract does not allow checking the method.</td></tr>
-<tr><td>Resnick, Brown and Godshall, 2015, Lincoln Institute working paper WP15PR1 <a class="src" href="#S13">S13</a></td><td>Working paper. Page 33 sentence on redistribution confirmed; full paper otherwise not reviewed.</td><td>Reports TABOR forced fairly significant redistribution of school funding. Simulation and causal claims need full-text review.</td></tr>
+<tr><td>Resnick, Brown and Godshall, 2015, Lincoln Institute working paper WP15PR1 <a class="src" href="#S13">S13</a></td><td>Working paper. Page 33 sentence on redistribution confirmed; full paper otherwise not reviewed.</td><td>Reports TABOR forced fairly significant redistribution of school funding, an effect in the authors' simulation, not a directly observed world without TABOR. It says its findings did not get detailed staff review. We could not identify a DOI for it; WP15PR1 is a working-paper number, not a DOI.</td></tr>
 <tr><td>Jansen and Moore, 2026, Texas A&amp;M Private Enterprise Research Center <a class="src" href="#S4">S4</a></td><td>Research report. Repository abstract read; peer review not established.</td><td>Focuses on non-exempt revenues and adaptation. Review its methods before adopting conclusions.</td></tr>
 </tbody></table></div>
 <p>Published evidence includes both fiscal-management and volatility costs and a finding against a large drop in total government activity during the period studied. Neither settles whether direct voter control is worth it, and none alone establishes TABOR's net effect today.</p>
@@ -126,6 +128,7 @@
 <li><a href="../guide/measures/proposition-136.html">Proposition 136</a>: a statutory rate ceiling.</li>
 <li><a href="../guide/measures/proposition-137.html">Proposition 137</a>: dedicated sporting-goods sales-tax revenue and exemption from the limit.</li>
 </ul>
+<p class="note warn">Two vintages of numbers: the Blue Book (September 10, 2026) gives refund estimates for budget years 2026-27 and 2027-28 and says no forecast was available beyond that. The Legislative Council's September 2026 forecast, shown below, projects the current-law baseline through 2028-29. The baseline is not a re-estimate of any measure, so its figures are not swapped into the Blue Book's measure estimates. Household refund figures anywhere in the guide are estimates.</p>
 <p>The Blue Book also says it is uncertain how a conflict would be resolved if 87 and 136 both pass. Do not assume an outcome. These descriptions are short; use each measure page and the Blue Book for the exact wording. Numbers from the September 10 Blue Book are dated official estimates and are kept as published.</p>
 <h3>Questions to bring to any TABOR-related proposal</h3>
 <ul>
@@ -156,7 +159,7 @@
 <section id="unknown">
 <h2>What we do not yet know</h2>
 <p>This draft does not establish TABOR's net effect on economic growth, school quality, inequality, voter understanding or administrative cost. It does not blame Colorado's fiscal condition on TABOR alone: recessions, population change, federal money, other laws and local choices all matter.</p>
-<p>Open work before this could be called a reviewed study: confirm the current official text of Article X, section 20 and its implementing law; check the latest Legislative Council forecast and the fiscal notes for each measure; read the full Eliason and Lutz article; get the 1992 and 2005 ballot booklets and certified abstracts; build a consistent yearly series of covered revenue, cap and refunds; find research that disagrees; and get a public-finance or methods reviewer. No reviewer has signed off.</p>
+<p>Open work before this could be called a reviewed study: read the certification statements on the original 1992 and 2005 abstract-of-votes scans and check the 1992 database wording against the ballot scan (the state's file host blocks automated download, so a person has to fetch them); check the latest Legislative Council forecast and the fiscal notes for each measure; read the full published text of Eliason and Lutz (2018), St. Clair (2012) and Martell and Teske (2007), since only abstracts were read; build a consistent yearly series of covered revenue, cap and refunds; find research that disagrees; and get a public-finance or methods reviewer. No reviewer has signed off.
 </section>
 
 <section id="sources">
@@ -164,7 +167,7 @@
 <p class="note">Links checked October 26, 2026. No source files were archived. "Read" means the retrieved text or named sections, not a full audit.</p>
 <ol class="sources">
 <li id="S1">Colorado Legislative Council Staff, TABOR handbook. Official explanation; read. <a href="https://content.leg.colorado.gov/agencies/legislative-council-staff/tabor" rel="noopener" target="_blank">content.leg.colorado.gov</a></li>
-<li id="S2">Colorado Constitution, article X, section 20. Legal text; current official consolidation not yet retrieved for this page. <a href="https://leg.colorado.gov/laws/colorado-constitution" rel="noopener" target="_blank">leg.colorado.gov gateway</a></li>
+<li id="S2">Colorado Constitution, article X, section 20, 2026 edition, Office of Legislative Legal Services. Official text; read October 26, 2026; dated copy kept. <a href="https://olls.info/crs/crs2026-title-00.htm" rel="noopener" target="_blank">olls.info</a> (gateway: <a href="https://content.leg.colorado.gov/agencies/office-legislative-legal-services/2026-crs-titles-download" rel="noopener" target="_blank">2026 download page</a>)</li>
 <li id="S3">Eliason, Paul and Byron Lutz (2018), Journal of Public Economics 166:115-144. Peer reviewed; abstract level. <a href="https://doi.org/10.1016/j.jpubeco.2018.07.008" rel="noopener" target="_blank">DOI</a></li>
 <li id="S4">Jansen, Dennis W. and Tyler I. Moore (2026), Texas A&amp;M Private Enterprise Research Center. Report; peer review not established. <a href="https://oaktrust.library.tamu.edu/items/8a1e8445-6d60-4867-b219-1a4dda81ab40" rel="noopener" target="_blank">Repository record</a></li>
 <li id="S5">Colorado Legislative Council, 2026 State Ballot Information Booklet (Blue Book), September 10, 2026. Official ballot analysis. <a href="https://content.leg.colorado.gov/sites/default/files/2026-blue-book-en-accessible.pdf" rel="noopener" target="_blank">PDF</a></li>
@@ -181,7 +184,7 @@
 <li id="S16">Legislative Council Staff, September 2026 Economic and Revenue Forecast, TABOR outlook, Table 10, printed page 36. Forecast, not realized revenue. <a href="https://content.leg.colorado.gov/sites/default/files/2026-09/sept2026-forecast-with-cover-for-remediation-and-posting-accessible.pdf" rel="noopener" target="_blank">PDF</a></li>
 </ol>
 </section>
-<p class="note">Related: <a href="../cases/">The record</a> (Civics and History) and the <a href="../guide/">Voter guide</a>. Review status: initial draft, not independently reviewed.</p>
+<p class="note">Related: <a href="index.html">all Ballot Case Studies</a>, <a href="/research/">Research</a>, <a href="../cases/">Civics &amp; History</a>, the <a href="../states/">Voter Guide</a> and <a href="/search/">Search</a>. Review status: initial draft, not independently reviewed. Source copies: we keep private dated copies of the official documents cited here; a copy is not a review.</p>
 </main>
 <script src="/members/waybar.js?v=1" defer></script>
 </body>

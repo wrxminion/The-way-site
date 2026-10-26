@@ -29,3 +29,9 @@ p.st{display:block;width:fit-content}
 .sources li{margin:8px 0}
 .cs :focus-visible{outline:3px solid #f0c36a;outline-offset:2px}
 @media (max-width:820px){.lanes{grid-template-columns:1fr}}
+
+.srcline{margin:6px 0 0}
+.srcbtn{display:inline-block;border:1px solid var(--aqua);border-radius:8px;padding:6px 10px;font-size:.85rem;text-decoration:none;min-height:36px}
+.srcbtn:hover{background:rgba(167,240,233,.12)}
+.note.small{font-size:.85rem;padding:6px 10px}
+.h3like{font-size:1.15rem;margin:.6em 0 .3em}
