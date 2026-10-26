@@ -123,3 +123,6 @@
 .us-st:focus-visible path{stroke:#fff;stroke-width:2.5}
 .us-lab{font:600 11px Inter,system-ui,sans-serif;fill:#021018;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
 @media(max-width:600px){.us-lab{font-size:14px}}
+
+.depth-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;max-width:660px;width:100%;margin:24px 0 10px;text-align:left}
+.depth-cards .hub-card b{font-size:22px}
