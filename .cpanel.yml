@@ -25,6 +25,9 @@ deployment:
     # Research library
     - /bin/mkdir -p ${DEPLOYPATH}research
     - /bin/cp -R site/research/. ${DEPLOYPATH}research/
+    # Search page
+    - /bin/mkdir -p ${DEPLOYPATH}search
+    - /bin/cp -R site/search/. ${DEPLOYPATH}search/
     # Permissions: files 0644, folders 0755, only inside the paths above
     - /usr/bin/find ${DEPLOYPATH}members ${DEPLOYPATH}preview/pages -type f ! -name .htaccess -exec /bin/chmod 0644 {} +
     - /usr/bin/find ${DEPLOYPATH}members ${DEPLOYPATH}preview/pages -type d -exec /bin/chmod 0755 {} +

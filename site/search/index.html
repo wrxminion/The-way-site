@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#176b85">
+<meta name="robots" content="noindex">
+<title>Search The Way</title>
+<meta name="description" content="Search the pages of this site by title, measure number, place, topic and type, with filters. Also search links for outside research services.">
+<link rel="icon" href="/preview/pages/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/preview/pages/style.css?v=3">
+<link rel="stylesheet" href="/members/waybar.css?v=1">
+<link rel="stylesheet" href="search.css?v=1">
+</head>
+<body>
+<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+<main class="sr-page" id="top">
+<h1>Search</h1>
+<p class="lede">Search the pages on this site: candidates, races, ballot measures, case studies, research packages and more.</p>
+<form id="sform" role="search" autocomplete="off">
+<label for="q">Search for a name, measure number, place or topic</label>
+<input id="q" type="search" placeholder="Try: Amendment 87, TABOR, Pueblo, voter ID" autofocus>
+<div class="filters">
+<div><label for="f-section">Section</label><select id="f-section"><option value="">All sections</option></select></div>
+<div><label for="f-type">Type</label><select id="f-type"><option value="">All types</option></select></div>
+<div><label for="f-place">Place</label><select id="f-place"><option value="">All places</option></select></div>
+<div><label for="f-from">Year from</label><input id="f-from" type="number" inputmode="numeric" min="1600" max="2100" placeholder="any"></div>
+<div><label for="f-to">Year to</label><input id="f-to" type="number" inputmode="numeric" min="1600" max="2100" placeholder="any"></div>
+<div class="reset"><button type="button" id="reset">Clear filters</button></div>
+</div>
+</form>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+<ol id="results" class="results"></ol>
+<p><button type="button" id="more" hidden>Show more results</button></p>
+<p class="note">This searches only the titles, short descriptions, headings, measure numbers, places and years recorded for the pages of this site. It does not search the full text of every page and is not a complete index of anything. "Last verified" appears only where a page states its own check date.</p>
+
+<section class="ext" aria-labelledby="ext-h">
+<h2 id="ext-h">Search research resources</h2>
+<p>These links leave this site and open another service's own search. Michi does not index their results, and what you see there is not reviewed by us. Your search above (and any place or years you pick) is carried into each link.</p>
+<p class="qpreview">Query sent: <code id="qtext"></code></p>
+<ul class="ext-links">
+<li><a id="x-sci" target="_blank" rel="noopener" href="https://www.science.gov/scigov/desktop/en/search.html">Open Science.gov search</a> <button type="button" id="copyq">Copy query</button><span> U.S. government science and research. Free. A discovery tool, not proof of peer review. Science.gov does not take a query in the link, so copy the query above and paste it into its Full Record box.</span></li>
+<li><a id="x-bp" target="_blank" rel="noopener" href="https://ballotpedia.org/">Search Ballotpedia</a><span> Elections, ballot measures and officeholders. Free. Check legal and election claims against official records.</span></li>
+<li><a id="x-cq" target="_blank" rel="noopener" href="https://library.cqpress.com/cqresearcher/">Open CQ Researcher</a><span> Issue reports with bibliographies. Needs a library or institutional login. The link opens CQ Press (Sage), and you reach CQ Researcher by signing in through your library, then searching inside it. We cannot pass a query to it.</span></li>
+</ul>
+<h3>Ideas for wording a search</h3>
+<ul>
+<li>Use the exact measure name or number, then the state, then "fiscal note" or "Blue Book".</li>
+<li>For research, try the topic with "evaluation", "synthetic control" or "implementation".</li>
+<li>For primary sources, add the agency name, such as "Legislative Council" or "Secretary of State".</li>
+<li>TABOR examples: "Colorado TABOR fiscal outcomes", "tax and expenditure limitations synthetic control", "Referendum C implementation". These are suggested search terms, not claims about what you will find.</li>
+</ul>
+<p class="note">Finding a source elsewhere does not verify it. Saving sources to a review queue is not built yet.</p>
+</section>
+</main>
+<script src="/members/waybar.js?v=1" defer></script>
+<script src="search-index.js?v=1" defer></script>
+<script src="search.js?v=1" defer></script>
+</body>
+</html>
