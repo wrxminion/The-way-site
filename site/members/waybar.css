@@ -123,3 +123,17 @@ body:has(#waybar) nav.topbar{display:none}
  .waybar:not(.wb-in) .wb-public-menu{display:inline-flex;grid-column:1;grid-row:1;justify-self:start}
  .waybar:not(.wb-in).wb-open .wb-public-mobile{display:flex;grid-column:1/-1;grid-row:2;flex-direction:column;align-items:flex-start;gap:14px;padding:8px 0}
 }
+
+/* Signed-out header: centered identity, paired links and a usable search field. */
+@media(min-width:1101px){
+ .waybar:not(.wb-in){padding-left:176px;padding-right:176px}
+ .waybar:not(.wb-in) .wb-public-search{position:absolute;right:16px;top:50%;transform:translateY(-50%);width:140px}
+ .waybar:not(.wb-in) .wb-public-search input{width:90px}
+}
+@media(max-width:1100px){
+ .waybar:not(.wb-in) .wb-public-left,.waybar:not(.wb-in) .wb-public-right{display:none}
+ .waybar:not(.wb-in) .wb-public-menu{display:inline-flex;grid-column:1;grid-row:1;justify-self:start;border:1px solid #c7ffff55;border-radius:100px;padding:7px 12px;opacity:1}
+ .waybar:not(.wb-in) .wb-public-search{display:flex;grid-column:1/-1;grid-row:2;width:100%}
+ .waybar:not(.wb-in) .wb-public-search input{flex:1;width:auto;font-size:16px}
+ .waybar:not(.wb-in).wb-open .wb-public-mobile{display:flex;grid-column:1/-1;grid-row:3;flex-direction:column;align-items:flex-start;gap:14px;padding:8px 0}
+}
