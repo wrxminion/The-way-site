@@ -9,3 +9,6 @@ notify.js
 *.key
 id_*
 .env
+
+# Database SQL is reference material in the repository (see supabase/README.md)
+!supabase/**/*.sql
