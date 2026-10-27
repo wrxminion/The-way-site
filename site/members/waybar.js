@@ -141,6 +141,7 @@
       if (data.findings) item('/members/findings.html', 'Findings');
       if (can('moderator')) item(route('review'), 'Source verification');
       if (can('researcher') || can('reviewer')) item(route('research'), 'Research desk');
+      if (can('reviewer') || can('moderator')) item('/members/read-checks.html', 'Read checks');
       if (data.modlog) item(route('log'), 'Moderation log');
       if (can('moderator')) item(route('reports'), 'Reports');
       if (can('admin')) item(route('admin'), 'Admin');
@@ -215,6 +216,12 @@
   document.addEventListener('click', function (ev) { if (!ev.target.closest || !ev.target.closest('.wb-who')) closeMenus(); });
   document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') { closeMenus(); if (open) { open = false; render(); } } });
   window.addEventListener('hashchange', function () { open = false; render(); });
+
+  // "Member discussion" link under guide measures/candidates and history cases (discuss-link.js decides which pages).
+  if (!inMembers && /^\/preview\/pages\/(guide(-[a-z]{2})?|cases)\//.test(path)) {
+    var dcss = document.createElement('link'); dcss.rel = 'stylesheet'; dcss.href = '/members/discuss.css?v=1'; document.head.appendChild(dcss);
+    var dl = document.createElement('script'); dl.src = '/members/discuss-link.js?v=1'; document.body.appendChild(dl);
+  }
 
   // Cloudflare Web Analytics on every public page that carries the bar (not the member area).
   if (!inMembers && !document.querySelector('script[data-cf-beacon]')) {

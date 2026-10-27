@@ -29,9 +29,16 @@ async function load() {
   const { data, error } = await sb.rpc('read_check_queue', { max_rows: 30 });
   if (error) { app.replaceChildren(...head, h('p', { class: 'notice', text: /reviewer/.test(error.message) ? 'The queue is for reviewers and moderators.' : error.message })); return; }
   if (!data.length) { app.replaceChildren(...head, h('p', { class: 'muted', text: 'Nothing waiting. Thank you.' })); return; }
-  const urls = await Promise.all(data.map((r) => r.path ? sb.storage.from('read-screenshots').createSignedUrl(r.path, 600) : null));
+  // The page's security policy only allows images from this site or data: URLs, so each private screenshot is downloaded
+  // (access is still checked by the database) and shown as a data: URL.
+  const toData = (blob) => new Promise((res) => { const f = new FileReader(); f.onload = () => res(String(f.result)); f.onerror = () => res(null); f.readAsDataURL(blob); });
+  const urls = await Promise.all(data.map(async (r) => {
+    if (!r.path) return null;
+    const d = await sb.storage.from('read-screenshots').download(r.path);
+    return d.error ? null : toData(d.data);
+  }));
   app.replaceChildren(...head, h('ul', { class: 'list panel' }, data.map((r, i) => {
-    const u = urls[i] && urls[i].data && urls[i].data.signedUrl;
+    const u = urls[i];
     const why = h('input', { type: 'text', maxlength: 500, placeholder: 'Reason (needed to decline)', 'aria-label': 'Reason' });
     const msg = h('p', { class: 'small' });
     const act = (accept) => async (e) => {
@@ -42,7 +49,7 @@ async function load() {
     return h('li', {},
       h('div', { class: 'meta', text: `${r.member_name} · ${when(r.created_at)} · ${r.item_key}` }),
       h('p', { class: 'post', text: r.note }),
-      u ? h('a', { href: u, target: '_blank', rel: 'noopener noreferrer' }, h('img', { src: u, alt: 'Member screenshot', style: 'max-width:240px;max-height:180px;border-radius:8px;border:1px solid var(--line)' })) : h('p', { class: 'small muted', text: 'No screenshot.' }),
+      u ? h('img', { src: u, alt: 'Member screenshot', class: 'rc-shot' }) : h('p', { class: 'small muted', text: 'No screenshot.' }),
       h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'button', text: 'Accept', onclick: act(true) }), h('button', { type: 'button', text: 'Decline', onclick: act(false) }), why), msg);
   })));
 }

@@ -26,3 +26,9 @@
 .wd .wd-rules{font-size:13px;color:var(--wd-muted);margin:0 0 12px}
 .wd .wd-thumb{max-width:200px;max-height:140px;border-radius:8px;border:1px solid var(--wd-line);display:block;margin-top:6px}
 .wd .wd-tag{display:inline-block;border:1px solid var(--wd-line2);border-radius:999px;padding:1px 10px;font-size:12px;color:var(--wd-muted)}
+/* link block and standalone page */
+.wd-link{max-width:760px;margin:28px auto;padding:14px 18px;border:1px solid #d4ffff26;border-radius:12px;background:#06213799;color:#e9ffff;font:15px/1.5 Inter,system-ui,Arial,sans-serif}
+.wd-link a{color:#a7f0e9;font-weight:600}
+.wd-link p{margin:0}
+.wd-page-title{font:italic 20px/1.4 Georgia,serif;color:#daeff1;margin:6px 0 4px;overflow-wrap:anywhere}
+.rc-shot{max-width:240px;max-height:180px;border-radius:8px;border:1px solid #d4ffff26;display:block;margin:6px 0}
