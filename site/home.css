@@ -145,19 +145,3 @@
 @media(max-width:600px){.card-art{aspect-ratio:16/10}}
 
 [hidden]{display:none!important}
-
-/* Whale: swims across the bottom of the front page. Pure CSS, behind content, never clickable. */
-.whale-lane{position:absolute;left:0;right:0;bottom:0;height:80vh;overflow:hidden;overflow:clip;z-index:1;pointer-events:none}
-.whale{position:absolute;left:0;top:28%;width:clamp(260px,34vw,520px);opacity:.9;transform:translateX(-120%);animation:whale-swim 90s linear infinite;will-change:transform}
-.whale svg{display:block;width:100%;height:auto;overflow:visible}
-.whale-tail{transform-origin:84px 160px;animation:whale-tail 5s ease-in-out infinite alternate}
-.whale-fin{transform-origin:420px 168px;animation:whale-fin 7s ease-in-out infinite alternate}
-@keyframes whale-swim{0%{transform:translateX(-120%) translateY(0)}50%{transform:translateX(calc(50vw - 50%)) translateY(-8vh)}100%{transform:translateX(100vw) translateY(2vh)}}
-@keyframes whale-tail{to{transform:rotate(7deg)}}
-@keyframes whale-fin{to{transform:rotate(-6deg)}}
-@supports (animation-timeline:view()){
-.ocean{overflow:clip}
-.whale{animation:whale-swim linear both;animation-timeline:view();animation-range:entry 10% cover 80%}
-}
-@media(max-width:700px){.whale{top:36%;width:62vw;opacity:.8}.whale-fin{animation:none}}
-@media(prefers-reduced-motion:reduce){.whale-lane{display:none}}
