@@ -589,7 +589,7 @@ async function homeView() {
       tile(LINKS.news, 'News', 'The time machine and the feed'),
       state.hasRecord ? tile('findings.html', 'Findings', 'What we checked, the verdict, and every change since') : null,
       tile('#/cases', 'Cases', 'The history cases we wrote, with every source'),
-      wantsMod ? tile('#/review', 'Review the cases', 'Check each claim, flag problems, mark a case reviewed') : null),
+      wantsMod ? tile('#/review', 'Review the sources', 'Check each claim against its sources, flag problems, mark a case reviewed') : null),
     h('p', { class: 'small place-line' }, ...(loadPlace()
       ? ['Your place: ', h('strong', { text: loadPlace().state }), ' · ', h('a', { href: '#/account', text: 'change it in your account' })]
       : [h('a', { href: '#/account', text: 'Save your state in your account' }), ' to open the map and your ballot on it.'])),
@@ -1906,7 +1906,7 @@ async function reviewView(slug) {
   const by = Object.fromEntries(rows.map((r) => [r.case_slug, r]));
   render(
     h('p', { class: 'overline', text: 'Moderation' }),
-    h('h1', { text: 'Review the cases' }),
+    h('h1', { text: 'Review the sources' }),
     h('p', { class: 'lede', text: 'Open a case, check its key claims against the sources one by one, flag anything wrong, and mark the case reviewed when every claim is checked. What you write in a note is public.' }),
     h('p', { class: 'small' }, h('a', { href: REVIEW_PUBLIC, target: '_blank', rel: 'noopener', text: 'The public review history' })),
     CASES.length ? h('ul', { class: 'list panel cases' }, CASES.map((c) => {
