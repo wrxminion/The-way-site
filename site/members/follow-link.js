@@ -22,7 +22,7 @@
   a.href = '/members/email.html?follow=' + encodeURIComponent(topic) + '&label=' + encodeURIComponent(document.title.slice(0, 120));
   a.textContent = '✉ Email me updates about ' + kindWord;
   var small = document.createElement('span');
-  small.textContent = ' Free. Not a membership. One click to stop.';
+  small.textContent = ' Coming soon: emails start shortly. Sign up now and we will confirm by email when they begin. Free, not a membership, one click to stop.';
   box.appendChild(a); box.appendChild(small);
   host.appendChild(box);
   var css = document.createElement('link');

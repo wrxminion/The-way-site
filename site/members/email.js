@@ -39,17 +39,17 @@ async function join(topic, title) {
     e.preventDefault(); out.textContent = '';
     const { error } = await sb.rpc('email_subscribe', { p_email: email.value.trim(), p_source: 'follow', p_topics: [topic, 'new:research', 'new:cases'].filter((t, i, a) => TOPIC_RE.test(t) && a.indexOf(t) === i), p_frequency: freq.value });
     if (error) { out.textContent = /valid email/.test(error.message) ? 'Please enter a valid email address.' : 'Something went wrong. Please try again later.'; return; }
-    form.replaceChildren(el('p', {}, 'Check your inbox and click the link to confirm. Nothing is sent until you do.'));
+    form.replaceChildren(el('p', {}, 'You are signed up. Emails start soon; we will send one confirmation email first, and nothing else until you click it.'));
   });
   const { data: sess } = await sb.auth.getSession();
   const signed = sess && sess.session;
   const nodes = [el('h1', {}, 'Email me updates'), el('p', {}, topic ? 'About: ' + (title || label(topic)) : 'Choose what you want, then confirm your email.'),
-    el('p', { class: 'muted' }, 'Free. Separate from membership. We send only when there is news on what you follow, and every email has a one-click unsubscribe.')];
+    el('p', {}, 'Coming soon: emails start shortly. You can sign up now; we will send one confirmation email when they begin, and nothing else until you click it.'), el('p', { class: 'muted' }, 'Free. Separate from membership. We send only when there is news on what you follow, and every email has a one-click unsubscribe.')];
   if (signed && topic) {
     const b = el('button', { type: 'button' }, 'Use my member email: follow this');
     b.addEventListener('click', async () => {
       const { error } = await sb.rpc('email_follow_me', { p_topic: topic, p_on: true });
-      b.replaceWith(el('p', {}, error ? 'Could not save that. Try again later.' : 'Done. You will get updates by email. Manage them any time from the link in any email.'));
+      b.replaceWith(el('p', {}, error ? 'Could not save that. Try again later.' : 'Saved. Emails start soon; you will get updates by email once they begin.'));
     });
     nodes.push(b, el('p', { class: 'muted' }, 'or use a different address:'));
   }

@@ -277,7 +277,7 @@
   // "Follow / email me updates" link at the foot of measure, candidate, case, research and state pages
   if (!inMembers && path !== '/' && !document.querySelector('script[src^="/members/follow-link.js"]')) {
     var followScript = document.createElement('script');
-    followScript.src = '/members/follow-link.js?v=1';
+    followScript.src = '/members/follow-link.js?v=2';
     followScript.defer = true;
     document.head.appendChild(followScript);
   }

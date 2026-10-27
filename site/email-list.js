@@ -6,7 +6,7 @@ const BAD_EMAIL='Please enter a valid email address';
 
 const form=document.getElementById('notify-form');
 const msg=document.getElementById('notify-msg');
-const done=()=>{form.hidden=true;msg.textContent='Check your inbox and click the link to confirm. Nothing is sent until you do.';};
+const done=()=>{form.hidden=true;msg.textContent='You are on the list. Emails start soon; we will send one confirmation email first, and nothing else until you click it.';};
 
 form.addEventListener('submit',async e=>{
   e.preventDefault();
