@@ -348,7 +348,7 @@
       "origin": "Frank's request for consistent water and depth styling",
       "decision_or_proposal": "Apply shared depth gradients, moving water and light inspired by Why The Way across selected public pages, with reduced motion support.",
       "why": "Make the main sections feel like one site as readers go deeper.",
-      "status_as_of_2026_10_25": "Proposed in repository; not yet merged or verified live.",
+      "status_as_of_2026_10_25": "Merged in PR #9; live appearance and behavior not yet verified.",
       "evidence_and_limits": "Applies to selected landing pages; page-by-page visual and reduced-motion verification still required."
     },
     {
@@ -358,7 +358,7 @@
       "origin": "Frank's request for the same water and light as Why The Way",
       "decision_or_proposal": "Reuse the original surface SVG, animated light and ocean gradient on pages using the shared header, retaining pages that already have the original ocean.",
       "why": "Make the water design consistent throughout the site.",
-      "status_as_of_2026_10_25": "Proposed; not merged or verified live.",
+      "status_as_of_2026_10_25": "Merged in PR #12; live appearance and behavior not yet verified.",
       "evidence_and_limits": "The actual About SVG and CSS are reused. A browser fixture verified the waves and gradient; pages without the shared header require separate checks."
     },
     {
@@ -368,7 +368,7 @@
       "origin": "Frank reported that the live waves did not match About",
       "decision_or_proposal": "Place shared waves below illustration banners, reserve a compact surface area, and draw the decorative light behind content. Keep the original wave shapes and motion. Prevent short pages from compressing the depth gradient.",
       "why": "The earlier shared effect drew the wave across artwork and the light over content.",
-      "status_as_of_2026_10_25": "Proposed; not merged or visually verified.",
+      "status_as_of_2026_10_25": "Merged in PR #13; live appearance and behavior not yet verified.",
       "evidence_and_limits": "The live Research and About pages were inspected. JavaScript syntax and diff checks passed; local visual rendering was blocked, so the correction requires visual review before it can be called verified."
     },
     {
@@ -378,7 +378,7 @@
       "origin": "Frank's correction of the public navigation design",
       "decision_or_proposal": "Arrange Voter Guide and News to the left of The Way, Case Studies and Research to its right, and restore the search field in the header without a duplicate Search link.",
       "why": "Match the requested navigation and retain search access at the top.",
-      "status_as_of_2026_10_25": "Proposed; not merged or verified live.",
+      "status_as_of_2026_10_25": "Merged in PR #14; live appearance and behavior not yet verified.",
       "evidence_and_limits": "JavaScript syntax checked. Full browser layout and phone verification remain outstanding."
     },
     {
@@ -388,7 +388,7 @@
       "origin": "Frank's request for consistent navigation and floating controls",
       "decision_or_proposal": "Add About, Methodology and Legal to the footer, label unfinished pages coming soon, and give the essay pages a scroll-dependent Join / Sign in, search and Back to surface bar.",
       "why": "Make navigation consistent and keep quick controls available while reading.",
-      "status_as_of_2026_10_25": "Proposed; not merged or verified live.",
+      "status_as_of_2026_10_25": "Merged in PR #15; live appearance and behavior not yet verified.",
       "evidence_and_limits": "Local browser fixtures checked footer insertion, scroll visibility and simulated signed-in display; real account and all-page checks remain outstanding."
     },
     {
@@ -398,8 +398,38 @@
       "origin": "Frank's correction about draft banking research",
       "decision_or_proposal": "Remove the banking timeline link from the Research entry card and make the draft banking package a non-clickable Coming soon item.",
       "why": "The banking work is unfinished and should not appear ready for publication.",
-      "status_as_of_2026_10_25": "Proposed; not merged or verified live.",
+      "status_as_of_2026_10_25": "Merged in PR #16; live appearance and behavior not yet verified.",
       "evidence_and_limits": "Underlying research and data remain in place. The change is limited to the Research page; other entry points remain to be checked."
+    },
+    {
+      "id": "D035",
+      "decision_date_or_range": "2026-10-27",
+      "title": "About navigation",
+      "origin": "Frank's requested About navigation",
+      "decision_or_proposal": "Use the Why The Way essay for About with Methodology, Why AI and Legal links while retaining its water design.",
+      "why": "Keep the About page distinct and align its navigation with its purpose.",
+      "status_as_of_2026_10_25": "Merged in PR #6; live appearance not independently verified.",
+      "evidence_and_limits": "Repository PR #6 merged; deployment and full signed-in behavior have not been verified."
+    },
+    {
+      "id": "D036",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Shared header and floating controls",
+      "origin": "Frank's navigation and accessibility feedback",
+      "decision_or_proposal": "Center The Way, provide a mobile menu and a floating search, account and Back to Surface bar.",
+      "why": "Make site navigation and common controls easier to find.",
+      "status_as_of_2026_10_25": "Merged in PR #7; live appearance not independently verified.",
+      "evidence_and_limits": "Signed-out layout checked in a partial preview; signed-in display simulated, not tested with a real account."
+    },
+    {
+      "id": "D037",
+      "decision_date_or_range": "2026-10-27",
+      "title": "One national voter guide entry",
+      "origin": "Frank's feedback on inconsistent ballot and map links",
+      "decision_or_proposal": "Replace the older landing page's separate Colorado guide and district-map cards with one Voter Guide link to the national state-selection page.",
+      "why": "Provide a consistent entry point for the map and voter guides.",
+      "status_as_of_2026_10_25": "Proposed in this change; not yet merged or live.",
+      "evidence_and_limits": "The shared header already points to the national guide. This change addresses the two legacy landing-page cards; a complete site-wide audit remains outstanding."
     }
   ]
 }
