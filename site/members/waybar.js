@@ -83,6 +83,7 @@
     if (/^#\/(commons|c\/|t\/)/.test(h)) return 'commons';
     if (/^#\/invite/.test(h)) return 'invite';
     if (/^#\/review/.test(h)) return 'review';
+    if (/^#\/reports/.test(h)) return 'reports';
     if (/^#\/admin/.test(h)) return 'admin';
     if (/^#\/roles/.test(h)) return 'me';
     if (/^#\/?$/.test(h) && appPage) return 'home';
@@ -113,18 +114,23 @@
       // Every link here opens in the same tab. Home sits at the left, big, because it is used the most.
       var home = link(route(''), 'Home', 'home');
       home.className = 'wb-home';
+      // Public links first, then the member links. About is in the footer, so it is not here.
       var mid = el('nav', { class: 'wb-mid', 'aria-label': 'Sections' });
       mid.appendChild(link('/preview/pages/states/', 'Voter Guide', 'ballot'));
       mid.appendChild(link('/preview/pages/news/', 'News', 'news'));
-      mid.appendChild(link(route('cases'), 'Civics & History', 'cases'));
-      mid.appendChild(link('/preview/pages/deeper.html', 'About', 'about'));
-      var deskOk = can('researcher') || can('reviewer');
-      if (path !== '/' && path !== '/index.html') mid.appendChild(link(route('commons'), 'Commons', 'commons'));
-      mid.appendChild(link(route('invite'), 'Invite', 'invite'));
-      if (deskOk) mid.appendChild(link(route('research'), 'Research', 'research'));
+      mid.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases'));
+      mid.appendChild(link('/research/', 'Research', 'research-lib'));
+      mid.appendChild(link(route('commons'), 'Commons', 'commons'));
+      if (can('researcher') || can('reviewer')) mid.appendChild(link(route('research'), 'Research desk', 'research'));
       if (can('moderator')) mid.appendChild(link(route('review'), 'Source verification', 'review'));
+      // One slot by role: Admin, else Moderation, else Settings (your account) for basic members.
       if (can('admin')) mid.appendChild(link(route('admin'), 'Admin', 'admin'));
+      else if (can('moderator')) mid.appendChild(link(route('reports'), 'Moderation', 'reports'));
+      else mid.appendChild(link(route('account'), 'Settings', 'me'));
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
+      var inv = link(route('invite'), 'Invite', 'invite');
+      inv.className = 'wb-invite';
+      right.appendChild(inv);
       right.appendChild(searchForm());
       var who = el('div', { class: 'wb-who' });
       var btn = el('button', { type: 'button', class: 'wb-name', 'aria-haspopup': 'true', 'aria-expanded': 'false',
@@ -134,16 +140,15 @@
       var menu = el('ul', { class: 'wb-menu', hidden: '' });
       var item = function (href, label) { var li = el('li'); li.appendChild(link(href, label)); menu.appendChild(li); };
       item(route(''), 'Home');
+      item('/preview/pages/cases/', 'Civics & History');
+      item('/research/', 'Research');
       item(route('commons'), 'Commons');
       item(route('invite'), 'Invite someone');
-      item(route('cases'), 'Civics & History');
-      item('/preview/pages/deeper.html', 'About');
       if (data.findings) item('/members/findings.html', 'Findings');
-      if (can('moderator')) item(route('review'), 'Source verification');
       if (can('researcher') || can('reviewer')) item(route('research'), 'Research desk');
-      if (can('reviewer') || can('moderator')) item('/members/read-checks.html', 'Read checks');
+      if (can('moderator')) item(route('review'), 'Source verification');
       if (data.modlog) item(route('log'), 'Moderation log');
-      if (can('moderator')) item(route('reports'), 'Reports');
+      if (can('moderator')) item(route('reports'), 'Moderation');
       if (can('admin')) item(route('admin'), 'Admin');
       item(route('roles'), 'Roles and points');
       menu.appendChild(el('li', { class: 'wb-sep', role: 'separator' }));
@@ -179,7 +184,17 @@
     }
     bar.replaceChildren.apply(bar, kids);
     syncFloating();
+    syncWave();
   }
+  // The signed-in bar is two rows tall, so the water starts higher than on the public pages: the crest
+  // sits under the bottom of the bar, which is see-through (see waybar.css), and the waves overlap it.
+  function syncWave() {
+    var bar = document.getElementById('waybar'), w = document.querySelector('.michi-surface');
+    if (!bar || !w) return;
+    document.body.classList.toggle('wb-in-page', !!data);
+    w.style.top = data ? Math.max(40, bar.offsetHeight - 32) + 'px' : '';
+  }
+  window.addEventListener('resize', function () { syncWave(); });
   function syncFloating() {
     var floating = document.querySelector('.wb-floating');
     if (!floating) {
@@ -242,6 +257,7 @@
     water.innerHTML = "<div aria-hidden=\"true\" class=\"michi-surface\"><svg preserveAspectRatio=\"none\" viewBox=\"0 0 1200 160\"><defs><linearGradient id=\"michi-crest\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop stop-color=\"#e8ffff\" stop-opacity=\".85\"/><stop offset=\".18\" stop-color=\"#aceff8\" stop-opacity=\".42\"/><stop offset=\"1\" stop-color=\"#c4ffff\" stop-opacity=\"0\"/></linearGradient></defs><g class=\"michi-water-sheet\"><path d=\"M0 35 Q70 8 150 30 T300 25 T450 31 T600 25 T750 29 T900 24 T1050 31 T1200 22 L1200 160 L0 160 Z\" fill=\"url(#michi-crest)\" opacity=\".54\"/><path d=\"M0 35 Q70 8 150 30 T300 25 T450 31 T600 25 T750 29 T900 24 T1050 31 T1200 22\" fill=\"none\" stroke=\"#ebffff\" stroke-opacity=\".82\" stroke-width=\"2.4\"/></g><g class=\"michi-water-sheet two\"><path d=\"M0 43 Q105 12 200 38 T400 35 T600 41 T800 32 T1000 42 T1200 29\" fill=\"none\" stroke=\"#d2ffff\" stroke-opacity=\".48\" stroke-width=\"2\"/><path d=\"M0 59 Q65 43 145 57 T320 54 T490 64 T680 58 T900 62 T1080 57 T1200 58\" fill=\"none\" stroke=\"#c6f8ff\" stroke-opacity=\".24\" stroke-width=\"1.4\"/></g><g class=\"michi-water-sheet three\"><path d=\"M0 83 Q80 64 175 79 T370 75 T590 82 T805 78 T1000 85 T1200 75\" fill=\"none\" stroke=\"#c3fbfc\" stroke-opacity=\".17\" stroke-width=\"1.6\"/></g></svg></div>\n<div class=\"michi-caustics\"></div><div class=\"michi-caustics second\"></div><div class=\"michi-shafts\"></div><div class=\"michi-bubbles\"></div>\n";
     document.body.classList.add('michi-ocean-active');
     document.body.insertBefore(water, document.body.firstChild);
+    syncWave();
   }
   // My Ballot: on voter-guide pages, load the pick/save controls (browser-only; see ballot-store.js).
   if (/^\/preview\/pages\/guide(-[a-z]{2})?\//.test(path) && !inMembers) {

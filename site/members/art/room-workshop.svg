@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="A workbench with a gear, a wrench and a laptop">
+<defs>
+<linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c8925a"/><stop offset="1" stop-color="#9c6a3a"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f2e4"/><stop offset="1" stop-color="#e6dfcb"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d98a"/><stop offset="1" stop-color="#d4a94c"/></linearGradient>
+<linearGradient id="teal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd6d0"/><stop offset="1" stop-color="#4a9aa0"/></linearGradient>
+<linearGradient id="dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d5130"/><stop offset="1" stop-color="#5a3820"/></linearGradient>
+</defs>
+<ellipse cx="160" cy="166" rx="110" ry="8" fill="#000" opacity=".35"/>
+<rect x="40" y="128" width="240" height="14" rx="4" fill="url(#wood)"/><rect x="56" y="142" width="12" height="22" fill="url(#dark)"/><rect x="252" y="142" width="12" height="22" fill="url(#dark)"/>
+<g transform="translate(110 84)"><circle r="28" fill="url(#gold)"/><g fill="url(#gold)"><rect x="-6" y="-38" width="12" height="14" rx="2" transform="rotate(0)"/><rect x="-6" y="-38" width="12" height="14" rx="2" transform="rotate(45)"/><rect x="-6" y="-38" width="12" height="14" rx="2" transform="rotate(90)"/><rect x="-6" y="-38" width="12" height="14" rx="2" transform="rotate(135)"/><rect x="-6" y="-38" width="12" height="14" rx="2" transform="rotate(180)"/><rect x="-6" y="-38" width="12" height="14" rx="2" transform="rotate(225)"/><rect x="-6" y="-38" width="12" height="14" rx="2" transform="rotate(270)"/><rect x="-6" y="-38" width="12" height="14" rx="2" transform="rotate(315)"/></g><circle r="11" fill="#5a3820"/></g>
+<path d="M186 120l34-34" stroke="#b9c7cc" stroke-width="9" stroke-linecap="round"/><circle cx="224" cy="82" r="11" fill="none" stroke="#b9c7cc" stroke-width="7"/>
+<rect x="196" y="50" width="70" height="44" rx="4" fill="url(#dark)"/><rect x="201" y="55" width="60" height="34" rx="2" fill="url(#teal)"/>
+<g stroke="#e9fbff" stroke-width="2.4" stroke-linecap="round"><path d="M208 66h22M208 74h36M208 82h16"/></g><path d="M188 94h86l6 8H182z" fill="#b9c7cc"/>
+</svg>

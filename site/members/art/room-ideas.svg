@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="A glowing lightbulb above a stack of notes">
+<defs>
+<linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c8925a"/><stop offset="1" stop-color="#9c6a3a"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f2e4"/><stop offset="1" stop-color="#e6dfcb"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d98a"/><stop offset="1" stop-color="#d4a94c"/></linearGradient>
+<linearGradient id="teal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd6d0"/><stop offset="1" stop-color="#4a9aa0"/></linearGradient>
+<linearGradient id="dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d5130"/><stop offset="1" stop-color="#5a3820"/></linearGradient>
+</defs>
+<ellipse cx="160" cy="166" rx="110" ry="8" fill="#000" opacity=".35"/>
+<circle cx="160" cy="74" r="52" fill="#f3d98a" opacity=".16"/>
+<path d="M160 30a38 38 0 0 0-22 69c5 4 7 9 7 15v6h30v-6c0-6 2-11 7-15a38 38 0 0 0-22-69z" fill="url(#gold)"/>
+<path d="M146 62c4-9 12-13 22-11" fill="none" stroke="#fff8d8" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+<rect x="144" y="120" width="32" height="8" rx="3" fill="url(#dark)"/><rect x="148" y="130" width="24" height="7" rx="3" fill="url(#dark)"/>
+<g stroke="#f3d98a" stroke-width="3" stroke-linecap="round" opacity=".8"><path d="M100 40l-12-8M220 40l12-8M92 74H76M228 74h16"/></g>
+<g><rect x="84" y="142" width="64" height="18" rx="2" fill="url(#paper)" transform="rotate(-4 116 151)"/><rect x="170" y="142" width="64" height="18" rx="2" fill="url(#paper)" transform="rotate(3 202 151)"/></g>
+</svg>
