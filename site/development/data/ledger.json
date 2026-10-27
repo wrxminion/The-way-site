@@ -370,6 +370,16 @@
       "why": "Provide a consistent entry point for the voter guide and avoid duplicating the search control.",
       "status_as_of_2026_10_25": "Proposed in this change; not yet merged or live.",
       "evidence_and_limits": "The shared header already points to the national guide. This change addresses the two legacy landing-page cards; a complete site-wide audit remains outstanding."
+    },
+    {
+      "id": "D038",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Restore the signed-out homepage water header",
+      "origin": "Frank's feedback on the homepage header",
+      "decision_or_proposal": "Place the signed-out homepage navigation over the ocean with a transparent gradient and no hard divider, preserving the shared navigation and the animated surface.",
+      "why": "Keep the homepage's original water-first presentation.",
+      "status_as_of_2026_10_25": "Proposed; not merged or independently checked live.",
+      "evidence_and_limits": "CSS change is scoped to signed-out home; visual and mobile checks are still needed."
     }
   ]
 }
