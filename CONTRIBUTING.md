@@ -12,3 +12,5 @@
 8. Never commit secrets, credentials, `.htaccess` files, database files, member data, logs or zip files. See `OUTSIDE-GIT.md` for what lives elsewhere.
 9. Do not edit the files under `site/preview/pages/news/data/` by hand. A scheduled task rewrites them.
 10. Use plain language, short sentences, and no em dashes.
+
+Last reviewed: October 27, 2026.
