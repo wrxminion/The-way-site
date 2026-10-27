@@ -1730,54 +1730,8 @@ async function adminView() {
   render(
     h('h1', { text: 'Admin' }), msg,
     h('div', { class: 'panel' }, h('h2', { text: 'Invite someone to The Way' }),
-      h('form', { onsubmit: action(async (ev) => {
-        const sendIt = !!(ev.submitter && ev.submitter.value === 'send');
-        const to = email.value.trim();
-        if (sendIt && !to) { email.focus(); throw new Error('Type their email first, or use "Create code only" and send it yourself.'); }
-        if (sendIt && !email.reportValidity()) return;
-        const code = await q(sb.rpc('create_invitation', { note: note.value || null, max_uses: +uses.value, valid_days: +days.value, recipient_email: to || null }));
-        const link = inviteLink(code);
-        const letter = inviteLetter({ code, who: note.value.trim(), to, uses: uses.value, days: days.value });
-        const box = letterBox(letter);
-        const copyBtn = copyButton;
-        const sent = h('div');
-        const resend = h('button', { type: 'button', hidden: true }, 'Send the email again');
-        const mail = async () => {
-          resend.hidden = true;
-          sent.replaceChildren(notice(`Sending the invitation to ${to}…`, 'ok'));
-          // The sign-in email doubles as the invitation: its link signs them in and lands on
-          // ?invite=CODE, which fills in the code. The admin's own session is untouched.
-          let captchaToken;
-          try { captchaToken = await adminHuman.token(); } catch (err) { sent.replaceChildren(notice(`The invitation was made, but the email did not go out: ${err.message}`)); resend.hidden = false; return; }
-          const { error } = await sb.auth.signInWithOtp({ email: to, options: { shouldCreateUser: true, emailRedirectTo: link, captchaToken } });
-          if (!error) {
-            sent.replaceChildren(notice(`Invitation emailed to ${to}. The link in it signs them in with the code already filled in; they pick a display name and they're in.`, 'ok'));
-            return;
-          }
-          const text = error.message || String(error);
-          const wait = text.match(/after (\d+) seconds?/i);
-          let why = `The invitation was made, but the email did not go out: ${text}`;
-          if (wait) why = `The invitation was made, but Supabase sends only one email per address per minute. Wait ${wait[1]} seconds, then press "Send the email again".`;
-          else if (/rate limit|too many|429/i.test(text)) why = 'The invitation was made, but the hourly email limit (30 an hour) is used up. Try "Send the email again" later, or copy the message below and send it yourself.';
-          else if (/redirect/i.test(text)) why = 'The invitation was made, but Supabase refused the link address. Check Authentication > URL Configuration allows this site, or copy the message below.';
-          sent.replaceChildren(notice(why));
-          resend.hidden = false;
-        };
-        resend.onclick = action(mail, sent);
-        fresh.replaceChildren(sent, h('div', { class: 'btns' }, resend),
-          notice('Copy this now if you need it. The code is shown only once; the database keeps only a fingerprint of it.', 'ok'),
-          h('p', { class: 'small muted', text: sendIt ? 'Backup: the same invitation as a message you can send yourself.' : 'Send this message by email or text.' }),
-          box,
-          h('div', { class: 'btns' }, copyBtn('Copy message', letter, box), copyBtn('Copy link only', link, null), copyBtn('Copy code only', code, null)),
-          h('div', { class: 'code', text: code }));
-        if (sendIt) await mail();
-        await refreshInvites();
-      }, msg) }, h('label', {}, 'Their email', email), h('label', {}, 'Note', note),
-        h('div', { class: 'row' }, h('label', {}, 'Uses', uses), h('label', {}, 'Valid for (days)', days)),
-        h('p', { class: 'small dim', text: 'The code only works for the email you type here. "Send invitation by email" emails them a link that signs them in with the code filled in.' }),
-        adminHuman.el,
-        h('div', { class: 'btns' }, h('button', { class: 'primary', value: 'send' }, 'Send invitation by email'),
-          h('button', { value: 'code' }, 'Create code only'))), fresh),
+      h('p', { class: 'muted', text: 'Admins invite people the same way every member does, from the Invite page in the top bar. Every invitation shows in the list below.' }),
+      h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Go to Invite' }))),
     h('h2', { text: 'Invitations' }),
     h('ul', { class: 'list panel', id: 'invites' }),
     h('h2', { text: 'Members' }),

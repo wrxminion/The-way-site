@@ -151,3 +151,8 @@ body:has(#waybar) nav.topbar{display:none}
 /* Signed in: same see-through bar as the public pages, so the waves show through and overlap it. */
 .waybar.wb-in{background:linear-gradient(180deg,#032332c9,#073b50d9);border-bottom:0}
 .wb-in-page .michi-ocean-water{z-index:60}
+
+/* Invite is a main action: a filled button next to search. */
+.waybar.wb-in .wb-invite{display:inline-flex;align-items:center;opacity:1;font-weight:800;letter-spacing:.14em;padding:9px 20px;border-radius:100px;
+  background:#a7f0e9;color:#052b3c}
+.waybar.wb-in .wb-invite:hover,.waybar.wb-in .wb-invite[aria-current=page]{background:#d2fff9;color:#052b3c}

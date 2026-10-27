@@ -128,6 +128,9 @@
       else if (can('moderator')) mid.appendChild(link(route('reports'), 'Moderation', 'reports'));
       else mid.appendChild(link(route('account'), 'Settings', 'me'));
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
+      var inv = link(route('invite'), 'Invite', 'invite');
+      inv.className = 'wb-invite';
+      right.appendChild(inv);
       right.appendChild(searchForm());
       var who = el('div', { class: 'wb-who' });
       var btn = el('button', { type: 'button', class: 'wb-name', 'aria-haspopup': 'true', 'aria-expanded': 'false',
