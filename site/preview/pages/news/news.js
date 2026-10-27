@@ -9,7 +9,7 @@
   const $ = id => document.getElementById(id);
   const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 
-  const state = {mode:'now', asof:null, place:'', kind:'', q:'', items:[], shown:0, filtered:[], latest:null, stateDoc:null, index:null, dayCache:new Map()};
+  const state = {mode:'now', asof:null, place:'', kind:'', q:'', items:[], shown:0, filtered:[], latest:null, stateDoc:null, index:null, indexError:false, dayCache:new Map()};
 
   const fmtTime = new Intl.DateTimeFormat(undefined, {month:'short', day:'numeric', hour:'numeric', minute:'2-digit', timeZoneName:'short'});
   const fmtDay = new Intl.DateTimeFormat(undefined, {weekday:'long', month:'long', day:'numeric', year:'numeric'});
@@ -71,7 +71,7 @@
   async function loadIndex(){
     if (state.index) return state.index;
     try { const doc = await getJSON('index.json'); state.index = Array.isArray(doc.days) ? doc.days.filter(d => d && /^\d{4}-\d{2}-\d{2}$/.test(d.date)).map(d => d.date).sort() : []; }
-    catch { state.index = []; }
+    catch { state.indexError = true; state.index = []; }
     return state.index;
   }
 
@@ -85,7 +85,7 @@
       return state.dayCache.get(d);
     }));
     state.items = dedupe(docs.flatMap(itemsOf)).filter(it => it.seen <= cutoff && it.seen > start);
-    return {days, want};
+    return {days, want, missing:want.filter(d => !state.dayCache.get(d))};
   }
 
   function applyFilters(){
@@ -118,11 +118,12 @@
     const h = el('h3'); const a = el('a', null, it.title);
     a.href = it.url; a.target = '_blank'; a.rel = 'noopener noreferrer nofollow';
     h.append(a);
+    if (new URL(it.url).hostname === 'news.google.com') h.append(el('span', 'link-via', ' (via Google News)'));
     const times = el('div', 'times');
     times.append(el('span', null, it.pub != null ? 'Published ' + (it.dateOnly ? fmtDate.format(it.pub) : fmtTime.format(it.pub)) : 'Publish time not given'), document.createTextNode(' · '), el('span', null, 'First seen ' + fmtTime.format(it.seen)));
     li.append(src, h, times);
     const tags = it.states.slice(0, 3).map(s => s.toUpperCase()).concat(it.places.filter(p => p === 'colorado' || p === 'boulder'), it.topics.slice(0, 4));
-    if (tags.length){ const t = el('div', 'tags'); for (const x of tags) t.append(el('span', 'pill', x.replace(/[-_]/g, ' '))); li.append(t); }
+    if (tags.length){ const t = el('div', 'tags'); t.append(el('span', null, 'Automatic tags, may be incorrect: ')); for (const x of tags) t.append(el('span', 'pill', x.replace(/[-_]/g, ' '))); li.append(t); }
     const about = it.about.length ? it.about : it.measures.map(m => ({
       // older items: measure ids only (Colorado guide)
       label: m.replace(/^city-of-|^city-and-county-of-/, '').replace(/-/g, ' ').replace(/\b(\d+[a-z]|nn)\b/g, x => x.toUpperCase()).replace(/^./, c => c.toUpperCase()),
@@ -155,7 +156,7 @@
     state.shown += next.length;
     $('more').hidden = state.shown >= state.filtered.length;
     const n = state.filtered.length, total = state.items.length;
-    $('status').textContent = !total ? (state.mode === 'now' ? 'No headlines in the current right now.' : 'Nothing was preserved for those days.')
+    $('status').textContent = !total ? (state.mode === 'now' ? 'No headlines in the current right now.' : 'No headlines are available from the public archive for those days.')
       : !n ? 'No headlines match those filters.'
       : n.toLocaleString() + (n === 1 ? ' headline' : ' headlines') + (n < total ? ' match (of ' + total.toLocaleString() + ')' : '') + (state.mode === 'then' ? ', as seen by the end of ' + fmtDate.format(endOfLocalDay(state.asof)) : '') + '.';
   }
@@ -219,9 +220,12 @@
     $('first-day').disabled = !days.length;
     history.replaceState(null, '', '#then=' + iso);
     $('status').textContent = 'Travelling back…';
-    await loadThen(iso);
-    banner([!days.length ? 'The archive has no saved days yet. It starts keeping a copy of each day once the current is connected.' : '',
-      days.length && endOfLocalDay(iso) - WINDOW_DAYS * 864e5 < Date.parse(first) ? 'The archive begins on ' + fmtDate.format(endOfLocalDay(first)) + '. Anything older was not preserved.' : '']);
+    const result = await loadThen(iso);
+    const last = days[days.length - 1];
+    banner([state.indexError ? 'The public archive index could not be loaded. Historical results may be incomplete.' : !days.length ? 'The public archive index contains no saved days. Other archived records may exist elsewhere.' : '',
+      days.length && endOfLocalDay(iso) - WINDOW_DAYS * 864e5 < Date.parse(first) ? 'The public archive index begins on ' + fmtDate.format(endOfLocalDay(first)) + '. Earlier coverage is not shown here.' : '',
+      last && last < iso ? 'The public archive index was last updated through ' + fmtDate.format(endOfLocalDay(last)) + '. Newer archived headlines may be missing here.' : '',
+      result.missing.length ? 'Some indexed archive files could not be loaded. Results may be incomplete.' : '']);
     applyFilters();
     renderFacts([['As of', 'end of ' + fmtDate.format(endOfLocalDay(iso))], ['Headlines', state.items.length.toLocaleString()], ['Sources', sources().toLocaleString()], ['Archive kept since', days.length ? fmtDate.format(endOfLocalDay(first)) : 'not started']]);
     done();
