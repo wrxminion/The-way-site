@@ -39,6 +39,10 @@ const clean = (v) => { if (v == null) return null; const t = String(v).trim(); r
 const srcTitle = (s) => clean(s.title) || (() => { try { return new URL(s.url).hostname.replace(/^www\./, ''); } catch { return clean(s.url) || 'Untitled source'; } })();
 const when = (iso) => iso ? new Date(iso).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : '';
 const day = (iso) => iso ? new Date(iso).toLocaleDateString(undefined, { dateStyle: 'medium' }) : '';
+// What members see for a role. The stored value stays 'reviewer' / 'researcher'.
+// Deshi is Japanese for student; both words are shown so people learn it (Frank, Oct 27 2026).
+const ROLE_LABEL = { reviewer: 'Deshi (student)', researcher: 'Submitter' };
+const roleName = (r) => ROLE_LABEL[r] || r;
 const can = (role) => state.roles.has(role) || state.roles.has('admin');
 
 function render(...nodes) { app.replaceChildren(...nodes.flat().filter((n) => n != null && n !== false)); app.focus({ preventScroll: true }); window.scrollTo(0, 0); }
@@ -187,8 +191,11 @@ function humanCheck() {
   };
 }
 
-function signInView() {
+async function signInView() {
   const human = humanCheck();
+  // Open sign-up (migration 0018): anyone can make an account with their email, no invitation code.
+  let open = false;
+  try { const { data } = await sb.rpc('signup_is_open'); open = data === true; } catch { /* closed: invitation only */ }
 
   // Sign-in wording; change it here or override any line with cfg.signInText in config.js.
   const T = Object.assign({
@@ -212,6 +219,9 @@ function signInView() {
     invitedBtn: 'Send my sign-in link',
     memberTitle: 'Already a member?',
     thanks: "Thanks, we'll let you know.",
+    openTitle: 'New here? Create your account',
+    openText: "Enter your email and we'll send you a 6-digit code. Type it on the next screen, pick a display name, and you're in. Your email stays private.",
+    openBtn: 'Create my account',
   }, cfg.signInText || {});
 
   // After any emailed link: with emailCodes on, the 6-digit code from the email can be typed here.
@@ -287,13 +297,13 @@ function signInView() {
     }, msg) },
       h('label', {}, 'Email', emailIn),
       h('div', { class: 'btns' },
-        h('button', { class: invited ? 'primary' : '', value: 'code' }, invited ? T.invitedBtn : T.codeBtn)),
-      invited ? null : h('div', { class: 'notify-public' },
+        h('button', { class: invited || open ? 'primary' : '', value: 'code' }, invited ? T.invitedBtn : open ? T.openBtn : T.codeBtn)),
+      invited || open ? null : h('div', { class: 'notify-public' },
         h('p', { class: 'small dim', text: T.own }),
         h('div', { class: 'btns' }, h('button', { class: 'quiet', value: 'own' }, T.ownBtn))));
     return h('div', { class: invited ? 'panel signin-panel' : 'panel' },
-      invited ? null : h('h2', { text: T.newTitle }),
-      h('p', { class: 'muted', text: invited ? T.invited : T.code }),
+      invited ? null : h('h2', { text: open ? T.openTitle : T.newTitle }),
+      h('p', { class: 'muted', text: invited ? T.invited : open ? T.openText : T.code }),
       msg, form, code.form, invited ? human.el : null);
   }
 
@@ -303,7 +313,7 @@ function signInView() {
   render(
     h('p', { class: 'overline', text: 'The Way · Members' }),
     h('h1', { text: invited ? T.invitedTitle : T.title }),
-    ...(invited ? [newcomerPanel(true), memberPanel(false)] : [memberPanel(true), newcomerPanel(false)]),
+    ...(invited || open ? [newcomerPanel(invited), memberPanel(false)] : [memberPanel(true), newcomerPanel(false)]),
   );
 }
 
@@ -332,26 +342,29 @@ function passwordView(fromReset, justJoined) {
   );
 }
 
-function joinView() {
+async function joinView() {
   const msg = h('div');
-  const code = h('input', { name: 'code', required: true, autocomplete: 'off', spellcheck: 'false', placeholder: 'WAY-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx' });
+  let open = false;
+  try { const { data } = await sb.rpc('signup_is_open'); open = data === true; } catch { /* closed */ }
+  const code = h('input', { name: 'code', required: !open, autocomplete: 'off', spellcheck: 'false', placeholder: 'WAY-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx' });
   const carried = savedInvite();
   if (carried) code.value = carried;
   const name = h('input', { name: 'name', required: true, minlength: 2, maxlength: 40, placeholder: 'How other members will see you' });
   render(
     h('h1', { text: 'Welcome' }),
-    h('p', { class: 'lede', text: carried ? 'You are signed in. Your invitation code is filled in from your link. Pick a display name to accept it.' : 'You are signed in. Enter your invitation code (it starts with WAY-) to accept it.' }),
+    h('p', { class: 'lede', text: carried ? 'You are signed in. Your invitation code is filled in from your link. Pick a display name to accept it.' : open ? 'You are signed in. Pick a display name to finish creating your account. Got an invitation code? You can leave it in the box, but you do not need one.' : 'You are signed in. Enter your invitation code (it starts with WAY-) to accept it.' }),
     h('div', { class: 'panel' }, msg,
       h('form', { onsubmit: action(async () => {
-        await q(sb.rpc('redeem_invitation', { code: code.value.trim(), display_name: name.value }));
+        if (code.value.trim()) await q(sb.rpc('redeem_invitation', { code: code.value.trim(), display_name: name.value }));
+        else await q(sb.rpc('join_open', { display_name: name.value }));
         forgetInvite();
         await loadMe(); drawNav();
         passwordView(false, true);
       }, msg) },
-        h('label', {}, 'Invitation code', code),
+        h('label', {}, open ? 'Invitation code (optional)' : 'Invitation code', code),
         h('label', {}, 'Display name', name),
         h('p', { class: 'small dim', text: 'Your email stays private. Members only see your display name. Choose it carefully: after this, only an admin can change it.' }),
-        h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Accept invitation'), h('button', { type: 'button', onclick: signOut }, 'Sign out')))),
+        h('div', { class: 'btns' }, h('button', { class: 'primary' }, open ? 'Join The Way' : 'Accept invitation'), h('button', { type: 'button', onclick: signOut }, 'Sign out')))),
   );
 }
 
@@ -1559,6 +1572,33 @@ function inviteStatus(i) {
 }
 const isOpen = (i) => !i.revoked_at && i.use_count < i.max_uses && new Date(i.expires_at) > new Date();
 
+// Role invitations (migration 0019): a code that gives submitter (researcher) or reviewer access.
+// Reviewers and admins make submitter codes; only admins make reviewer codes. Single use, 14 days.
+function roleInvitePanel() {
+  const msg = h('div'), out = h('div');
+  const role = h('select', { id: 'role-invite-role' },
+    h('option', { value: 'researcher', text: 'Submitter: can add and send sources' }),
+    can('admin') ? h('option', { value: 'reviewer', text: 'Deshi (student): can check sources and publish' }) : null);
+  const note = h('input', { id: 'role-invite-note', maxlength: 200, placeholder: 'Who is it for? Only you see this' });
+  const email = h('input', { id: 'role-invite-email', type: 'email', placeholder: 'Optional: lock it to their email', autocomplete: 'off' });
+  return h('div', { class: 'panel' },
+    h('h2', { text: 'Give someone a role' }),
+    h('p', { class: 'muted small', text: 'Anyone can join The Way. This code gives one person Submitter or Deshi (student) access. A Deshi checks and publishes work. It works once and lasts 14 days. The role grant is recorded in the moderation log with your name.' }),
+    msg,
+    h('form', { onsubmit: action(async () => {
+      const code = await q(sb.rpc('create_role_invite', { p_role: role.value, p_note: note.value.trim() || null, p_email: email.value.trim() || null }));
+      const link = inviteLink(code);
+      out.replaceChildren(notice('Your role invitation is ready. Copy it now: it is shown only once.', 'ok'),
+        h('div', { class: 'code', text: link }), h('div', { class: 'btns' }, copyButton('Copy link', link, null)));
+      note.value = ''; email.value = '';
+    }, msg) },
+      h('label', { for: 'role-invite-role' }, 'Role', role),
+      h('label', { for: 'role-invite-note' }, 'Who is it for?', note),
+      h('label', { for: 'role-invite-email' }, 'Their email (optional)', email),
+      h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Create role invitation'))),
+    out);
+}
+
 // Any member: make a single-use share link (the database caps members at 5 open, 20 a day; admins are not capped).
 async function inviteView() {
   const mod = can('moderator');
@@ -1640,6 +1680,7 @@ async function inviteView() {
           h('button', { value: 'link' }, 'Create share link only')),
         h('p', { class: 'small dim', text: can('admin') ? 'As an admin you have no limit on share links.' : 'You can have 5 open links at a time and make 20 a day.' })),
       fresh),
+    can('reviewer') ? roleInvitePanel() : null,
     h('h2', { text: 'Your links' }),
     h('ul', { class: 'list panel', id: 'my-invites' }),
     h('p', { class: 'small muted', text: 'A link drops off this list once it is used. The Way does not keep who joined through whom.' }),
@@ -1745,11 +1786,11 @@ async function adminView() {
         }, msg) }, 'Rename')),
         m.id === state.user.id ? null : h('div', { class: 'btns' },
           ALL.map((r) => h('button', { class: 'quiet', onclick: action(async () => {
-            const reason = await ask(`${mine.includes(r) ? 'Remove' : 'Give'} the ${r} role: why?`);
+            const reason = await ask(`${mine.includes(r) ? 'Remove' : 'Give'} the ${roleName(r)} role: why?`);
             if (!reason) return;
             await q(sb.rpc('set_role', { member_id: m.id, role: r, grant_it: !mine.includes(r), reason }));
             await adminView();
-          }, msg) }, `${mine.includes(r) ? '− ' : '+ '}${r}`)),
+          }, msg) }, `${mine.includes(r) ? '− ' : '+ '}${roleName(r)}`)),
           h('button', { class: `quiet ${m.status === 'active' ? 'danger' : ''}`, onclick: action(async () => {
             const next = m.status === 'active' ? 'suspended' : 'active';
             const reason = await ask(`${next === 'suspended' ? 'Suspend' : 'Reinstate'} ${m.display_name}: why?`);
@@ -1792,6 +1833,21 @@ async function adminView() {
 
 // ---------------------------------------------------------------- account
 
+function roleCodePanel() {
+  const msg = h('div');
+  const code = h('input', { name: 'role-code', autocomplete: 'off', spellcheck: 'false', placeholder: 'WAY-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx' });
+  return h('div', { class: 'panel' },
+    h('h2', { text: 'Have a role code?' }),
+    h('p', { class: 'muted small', text: 'If a Deshi or admin gave you a code for Submitter or Deshi (student) access, enter it here.' }),
+    msg,
+    h('form', { onsubmit: action(async () => {
+      const got = await q(sb.rpc('redeem_role_invite', { code: code.value.trim() }));
+      forgetInvite(); code.value = '';
+      await loadMe(); drawNav();
+      msg.replaceChildren(notice(`Done. You now have the ${roleName(got)} role.`, 'ok'));
+    }, msg) }, h('label', {}, 'Code', code), h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Use code'))));
+}
+
 function accountView() {
   render(
     h('p', { class: 'overline', text: 'Your account' }),
@@ -1799,9 +1855,10 @@ function accountView() {
     h('div', { class: 'panel' },
       h('h2', { text: 'You' }),
       h('p', { class: 'muted small', text: `Signed in as ${state.user.email}. Only you and the site's administrators can see your email.` }),
-      h('p', { class: 'small dim', text: 'Display names are chosen once, when you accept your invitation. To change yours, ask an admin.' }),
-      h('p', { class: 'small', text: `Roles: ${state.roles.size ? [...state.roles].join(', ') : 'member'}` })),
+      h('p', { class: 'small dim', text: 'Display names are chosen once, when you join. To change yours, ask an admin.' }),
+      h('p', { class: 'small', text: `Roles: ${state.roles.size ? [...state.roles].map(roleName).join(', ') : 'member'}` })),
     placePanel(),
+    roleCodePanel(),
     h('div', { class: 'panel' },
       h('h2', { text: 'Signing in' }),
       h('p', { class: 'small muted', text: 'Sign in with your email and password, or ask for a sign-in link on the sign-in page and we email you one. Setting a password is optional.' }),
@@ -2091,14 +2148,24 @@ async function boot() {
   try { linkProblem = await readSignInLink(); } catch (err) { linkProblem = friendly(err); }
   try { await loadMe(); } catch (err) { render(notice(friendly(err))); return; }
   drawNav();
-  if (!state.user) { signInView(); if (linkProblem) app.prepend(notice(linkProblem)); return; }
-  if (!state.me) return joinView();
+  if (!state.user) { await signInView(); if (linkProblem) app.prepend(notice(linkProblem)); return; }
+  if (!state.me) return await joinView();
   if (state.me.status !== 'active') {
     return render(h('h1', { text: 'Account paused' }),
       h('p', { class: 'lede', text: 'An administrator has suspended this account. Every suspension is recorded with its reason in the moderation log.' }),
       h('button', { onclick: signOut }, 'Sign out'));
   }
   if (recovering) return passwordView(true);
+  // An existing member who opened a role-invitation link: use the saved code once, then forget it.
+  const pending = savedInvite();
+  if (pending) {
+    forgetInvite();
+    try {
+      const got = await q(sb.rpc('redeem_role_invite', { code: pending }));
+      await loadMe(); drawNav();
+      setTimeout(() => app.prepend(notice(`Your invitation worked. You now have the ${roleName(got)} role.`, 'ok')), 300);
+    } catch { /* an ordinary site link, or already used: nothing to do */ }
+  }
   takeTarget();
   return route();
 }
