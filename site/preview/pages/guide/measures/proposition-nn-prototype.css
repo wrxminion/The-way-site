@@ -1,0 +1,14 @@
+/* Proposition NN visual prototype: neutral, equal treatment for both choices. */
+.nn-choice{margin:1.6rem 0 2rem;padding:clamp(1rem,3vw,2rem);border:1px solid #75c5c47a;border-radius:18px;background:linear-gradient(155deg,#123c4b,#0b2435);color:#f5f2e7}
+.nn-choice h2{margin:.2rem 0 .4rem;color:#fff8e8}
+.nn-choice .nn-kicker{margin:0;color:#afddd5;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;font-weight:700}
+.nn-choice .nn-intro{margin:0 0 1.1rem;color:#e1efeb}
+.nn-flow{display:grid;grid-template-columns:1fr;gap:.8rem}
+.nn-current,.nn-option{border:1px solid #a4cbc34d;background:#071b2bb5;border-radius:12px;padding:1rem}
+.nn-current b,.nn-option b{display:block;color:#e8d9a7;letter-spacing:.1em;font-size:.75rem}
+.nn-current p,.nn-option p{margin:.45rem 0 0;line-height:1.5;color:#f5f2e7}
+.nn-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.nn-option .nn-label{font:700 1.25rem Georgia,serif;letter-spacing:0;color:#fff8e8}
+.nn-choice details{margin-top:1rem}
+.nn-choice a{color:#c5f0e8}
+@media(max-width:600px){.nn-choices{grid-template-columns:1fr}.nn-choice{padding:1rem}}
