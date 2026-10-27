@@ -83,6 +83,7 @@
 
 /* home: signup box, waybar in flow, link row */
 .notify{position:relative;z-index:3;text-align:center;padding:2svh 24px 8svh}
+.notify .notify-sub{margin:-8px auto 18px;max-width:460px;font-size:14px;line-height:1.5;color:#bcd7df}
 .notify #notify-line{margin:0 0 20px;font:italic clamp(19px,2vw,24px)/1.4 Georgia,serif;color:#d2f7f1}
 #notify-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:460px;margin:0 auto}
 #notify-form[hidden]{display:none}
