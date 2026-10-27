@@ -1,15 +1,11 @@
-/* Whale component (see whale.js). Behind content, never clickable. */
-.whale-lane{position:absolute;left:0;right:0;bottom:0;height:90vh;overflow:hidden;z-index:1;pointer-events:none}
+/* Whale component (see whale.js). Fixed document depth, behind content. */
+.whale-host{position:relative;isolation:isolate}
+.whale-lane{position:absolute;left:0;right:0;top:0;height:220px;overflow:hidden;z-index:-1;pointer-events:none}
 .whale-lane:before{content:"";position:absolute;inset:0;opacity:.5;background:linear-gradient(104deg,transparent 18%,rgba(170,235,245,.07) 28%,transparent 38%),linear-gradient(78deg,transparent 52%,rgba(170,235,245,.06) 62%,transparent 72%);-webkit-mask-image:linear-gradient(transparent,#000 40%,transparent);mask-image:linear-gradient(transparent,#000 40%,transparent)}
-.whale-zone{position:absolute;left:0;right:0;bottom:0;height:100vh;pointer-events:none;visibility:hidden}
 .whale{position:absolute;left:0;top:35%;width:clamp(240px,30vw,460px);opacity:0;visibility:hidden;pointer-events:none;animation-timing-function:linear;animation-fill-mode:both;animation-iteration-count:1;will-change:transform}
 .whale.swim{visibility:visible}
-.whale svg{display:block;width:100%;height:auto;overflow:visible;filter:blur(.6px);transform:scaleX(var(--whale-flip,1)) scale(var(--whale-scale,1))}
-.whale-tail{transform-origin:215px 155px;animation:whale-tail 5s ease-in-out infinite alternate}
-.whale-fin{transform-origin:490px 180px;animation:whale-fin 7s ease-in-out infinite alternate}
-@keyframes whale-ltr{0%{transform:translate(-120%,0);opacity:0}10%{opacity:.62}50%{transform:translate(calc(50vw - 50%),-5vh)}90%{opacity:.62}100%{transform:translate(100vw,2vh);opacity:0}}
-@keyframes whale-rtl{0%{transform:translate(100vw,0);opacity:0}10%{opacity:.62}50%{transform:translate(calc(50vw - 50%),-5vh)}90%{opacity:.62}100%{transform:translate(-120%,2vh);opacity:0}}
-@keyframes whale-tail{to{transform:rotate(7deg)}}
-@keyframes whale-fin{to{transform:rotate(-6deg)}}
-@media(max-width:700px){.whale{width:58vw}.whale-fin{animation:none}}
+.whale img{display:block;width:100%;height:auto;transform:scaleX(var(--whale-flip,1)) scale(var(--whale-scale,1))}
+@keyframes whale-ltr{0%{transform:translate(-120%,0);opacity:0}10%{opacity:.62}50%{transform:translate(calc(50vw - 50%),0)}90%{opacity:.62}100%{transform:translate(100vw,0);opacity:0}}
+@keyframes whale-rtl{0%{transform:translate(100vw,0);opacity:0}10%{opacity:.62}50%{transform:translate(calc(50vw - 50%),0)}90%{opacity:.62}100%{transform:translate(-120%,0);opacity:0}}
+@media(max-width:700px){.whale{width:58vw}}
 @media(prefers-reduced-motion:reduce){.whale-lane{display:none}}
