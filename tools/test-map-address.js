@@ -25,7 +25,7 @@ let fails = 0; const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m)
     else if (!/^\d+ /.test(q.replace(/, Colorado$/, '')) && /Example Street/.test(q)) body = [{ lat: '40.0150', lon: '-105.2705', display_name: 'Example Street Road, Boulder, Colorado', address: { city: 'Boulder', state: 'Colorado' } }];
     route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(body) });
   });
-  await page.route(/tile\.openstreetmap|cloudflareinsights/, (r) => r.abort());
+  await page.route(/tile\.openstreetmap|cloudflareinsights|geocoding\.geo\.census\.gov/, (r) => r.abort());
   // the district shapes are large and kept out of this test: one box over Colorado stands in for every layer
   const box = { type: 'FeatureCollection', features: [{ type: 'Feature', properties: { d: 2, n: 'Boulder', name: 'Boulder' }, geometry: { type: 'Polygon', coordinates: [[[-109.06, 36.99], [-102.04, 36.99], [-102.04, 41.01], [-109.06, 41.01], [-109.06, 36.99]]] } }] };
   await page.route(/\/data\/[a-z-]+\.geojson/, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(box) }));
@@ -40,7 +40,7 @@ let fails = 0; const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m)
   const sel = await page.textContent('#selected');
   ok(!/Maine/.test(sel) && !/Maine/.test(await page.textContent('#results')), 'a Boulder address is never sent to Maine');
   ok(/Colorado/.test(sel) && /not the exact house|street/.test(st), 'falls back to the street in Colorado and says it is not the exact house');
-  ok(asked.every((a) => a.startsWith('B ')), 'only Colorado-bounded searches were made (' + asked.length + ')');
+  ok(asked.filter((a) => !a.startsWith('CENSUS')).every((a) => a.startsWith('B ')), 'only Colorado-bounded searches were made (' + asked.length + ')');
   ok((await page.locator('#results .result').count()) > 0, 'district cards are shown for the spot');
   ok(await page.locator('#ballot .bb-plan').count() === 1, 'the ballot breakdown has a "Plan your vote" link');
   const href = await page.getAttribute('#ballot .bb-plan', 'href');

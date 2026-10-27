@@ -33,6 +33,11 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
       route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(body) });
     });
     await page.route(/tile\.openstreetmap|cloudflareinsights/, (r) => r.abort());
+    await page.route('https://geocoding.geo.census.gov/**', (route) => {
+      asked.push('CENSUS ' + new URL(route.request().url()).searchParams.get('address'));
+      if (mode !== 'census') return route.abort();
+      route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify({ result: { addressMatches: [{ matchedAddress: '12 EXAMPLE ST, BOULDER, CO, 80302', coordinates: { x: -105.27, y: 40.015 }, addressComponents: { city: 'BOULDER', state: 'CO', zip: '80302' } }] } }) });
+    });
     const boulder = { type: 'FeatureCollection', features: [{ type: 'Feature', properties: { n: 'Boulder' }, geometry: { type: 'Polygon', coordinates: [[[-105.31, 39.95], [-105.18, 39.95], [-105.18, 40.1], [-105.31, 40.1], [-105.31, 39.95]]] } }, ...box.features] };
     await page.route(/\/data\/places\.geojson/, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(boulder) }));
     await page.route(/\/data\/(?!places)[a-z-]+\.geojson/, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(box) }));
@@ -45,7 +50,25 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
     await page.fill('#q', v); await page.click('#search button');
     await page.waitForFunction(() => /Here is what|not the exact|could not find|No U.S. match|outside/.test(document.getElementById('status').textContent), null, { timeout: 40000 });
     const st = await page.textContent('#status');
-    ok(/Here is what|not the exact/.test(st) && !/Maine/.test(await page.textContent('#selected')) && asked.every((a) => a.startsWith('B ')), 'lands in Colorado: "' + (v === process.env.EXTRA_ADDR ? '(extra address)' : v) + '"');
+    ok(/Here is what|not the exact/.test(st) && !/Maine/.test(await page.textContent('#selected')) && asked.filter((a) => !a.startsWith('CENSUS')).every((a) => a.startsWith('B ')), 'lands in Colorado: "' + (v === process.env.EXTRA_ADDR ? '(extra address)' : v) + '"');
+    await page.close();
+  }
+  {
+    const asked = []; const page = await newPage(asked, 'census');
+    await page.goto(base + '/preview/pages/map/index.html');
+    await page.waitForFunction(() => !/Loading/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
+    await page.fill('#q', '12 Example St, Boulder, CO 80302'); await page.click('#search button');
+    await page.waitForFunction(() => /Here is what/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
+    ok(/12 EXAMPLE ST, BOULDER/.test(await page.textContent('#selected')) && asked.length === 1 && asked[0].startsWith('CENSUS'), 'Census geocoder is asked first and its house-number match is used (OpenStreetMap not needed)');
+    await page.close();
+  }
+  {
+    const asked = []; const page = await newPage(asked, 'empty');
+    await page.goto(base + '/preview/pages/map/index.html');
+    await page.waitForFunction(() => !/Loading/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
+    await page.fill('#q', '12 Example St, Boulder, CO 80302'); await page.click('#search button');
+    await page.waitForFunction(() => /found your town|not the exact|could not/.test(document.getElementById('status').textContent), null, { timeout: 60000 });
+    ok(asked[0].startsWith('CENSUS') && /Boulder, Colorado/.test(await page.textContent('#selected')) && !/CU|University|campus/i.test(await page.textContent('#selected')), 'Census down or no match: falls through to OpenStreetMap, then the town, with a plain label');
     await page.close();
   }
   for (const mode of ['empty', 'error']) {
@@ -83,6 +106,18 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
   r = await hub('5 Pine Rd, Portland, Maine 04101');
   ok(new URL(r.page.url()).pathname === '/preview/pages/map-me/', 'a full state name at the end works');
   await r.page.close();
+  // front page "Find your ballot"
+  {
+    const asked = []; const page = await newPage(asked);
+    await page.goto(base + '/index.html');
+    ok(await page.locator('#findballot #fb-q').count() === 1 && /Enter your street address/.test(await page.textContent('#fb-addr label')), 'front page Find your ballot has an "Enter your street address" box');
+    await page.fill('#fb-q', '12 Example Street Boulder'); await page.click('#fb-addr button');
+    ok(/state at the end/.test(await page.textContent('#fb-msg')) && new URL(page.url()).pathname === '/index.html', 'front page: no state typed, asks for one');
+    await page.fill('#fb-q', '12 Example St, Boulder, CO 80302'); await page.click('#fb-addr button');
+    await page.waitForFunction(() => /Here is what|not the exact|found your town/.test((document.getElementById('status') || {}).textContent || ''), null, { timeout: 40000 });
+    ok(new URL(page.url()).pathname === '/preview/pages/map/' && !/12 Example/.test(page.url()), 'front page: address goes to the Colorado map result, address not left in the link');
+    await page.close();
+  }
   await browser.close(); server.close();
   console.log(fails ? fails + ' FAILED' : 'ALL ADDRESS VARIANT TESTS PASSED'); process.exit(fails ? 1 : 0);
 })().catch((e) => { console.error(e); process.exit(2); });

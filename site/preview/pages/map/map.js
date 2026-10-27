@@ -308,6 +308,33 @@ $('locate').addEventListener('click',()=>{
   },()=>{status.textContent='Location not shared. You can still click the map or search an address.';},{enableHighAccuracy:false,timeout:10000});
 });
 
+/* U.S. Census Bureau geocoder: knows house numbers, free, no key. Asked first for a Colorado address. Any failure (blocked,
+   slow, no match) returns null and the OpenStreetMap search below takes over, so this can only add matches. */
+function censusLookup(text){
+  const q=new URLSearchParams({address:text,benchmark:'Public_AR_Current'}).toString();
+  const base='https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?'+q;
+  const pick=r=>{
+    const m=r&&r.result&&r.result.addressMatches&&r.result.addressMatches[0];
+    if(!m||!m.coordinates)return null;
+    const c=m.addressComponents||{};
+    if(c.state&&c.state!=='CO')return null;                 // this map is Colorado
+    return {lat:+m.coordinates.y,lon:+m.coordinates.x,display_name:m.matchedAddress,address:{city:c.city?c.city.charAt(0)+c.city.slice(1).toLowerCase():'',state:'Colorado'}};
+  };
+  const viaFetch=()=>{
+    const ctl=new AbortController(),t=setTimeout(()=>ctl.abort(),8000);
+    return fetch(base+'&format=json',{signal:ctl.signal}).then(r=>{if(!r.ok)throw 0;return r.json();}).then(pick).finally(()=>clearTimeout(t));
+  };
+  const viaScript=()=>new Promise(ok=>{          // the same service as a script tag, for browsers that block the fetch
+    const cb='cen'+Math.random().toString(36).slice(2),sc=document.createElement('script');
+    const done=v=>{clearTimeout(t);delete window[cb];sc.remove();ok(v);},t=setTimeout(()=>done(null),8000);
+    window[cb]=r=>{let v=null;try{v=pick(r);}catch(e){}done(v);};
+    sc.onerror=()=>done(null);
+    sc.src=base+'&format=jsonp&callback='+cb;
+    document.head.appendChild(sc);
+  });
+  return viaFetch().catch(()=>viaScript()).catch(()=>null);
+}
+
 /* Local fallback when OpenStreetMap cannot place the address: the town name in what was typed, matched against the
    city shapes this map already has. It puts the visitor in the right town (and shows the districts there). */
 function townFallback(text){
@@ -360,6 +387,7 @@ $('search').addEventListener('submit',async e=>{
   };
   try{
     let d=[],how=0,n=0;
+    if(typedState){const hit=await censusLookup(noUnit);if(hit)d=[hit];}   // house-number match first
     for(let i=0;i<list.length&&!d.length;i++){
       if(n++)await new Promise(r=>setTimeout(r,1100));   // Nominatim asks for at most one request per second
       d=await ask(list[i][0],true);how=list[i][1];
@@ -384,8 +412,8 @@ $('search').addEventListener('submit',async e=>{
     }
     const lat=+d[0].lat,lng=+d[0].lon,addr=d[0].address||{};
     map.setView([lat,lng],how?14:15);
-    lookup(lat,lng,d[0].display_name,addr);
-    if(how&&status.textContent==='Here is what applies at this spot.')status.textContent='We found your '+(how===1?'street':'ZIP code area')+', not the exact house. If you live near a district line, click your exact spot on the map to check.';
+    lookup(lat,lng,how===2?(zipM?'ZIP '+zipM[1]+' area, Colorado':'Colorado'):how===1?base+', Colorado (street only)':d[0].display_name,addr);
+    if(how&&status.textContent==='Here is what applies at this spot.')status.textContent='We found the '+(how===1?'street':'ZIP area')+', not the exact house. If you live near a district line, click your exact spot on the map to check.';
     if(window.matchMedia('(max-width:860px)').matches)$('selected').scrollIntoView({behavior:'smooth',block:'start'});
   }catch(err){
     const town=typedState&&townFallback(base);
