@@ -1,5 +1,7 @@
 # The Way site repo
 
+Collaborators: read `CONTRIBUTING.md` first (work on a branch, open a pull request, never push to `main`) and `OUTSIDE-GIT.md` (what is deliberately not in this repository). `main` is the live site.
+
 Source of truth for the site files. Lives on FRAK at `D:\theway\site-repo`. The live copy on HostGator is made from this repo by cPanel Git Version Control, using `.cpanel.yml`.
 
 ## Layout
@@ -30,7 +32,7 @@ The remote named `hostgator` points at the repo on the HostGator account. After 
 
 ## What a deploy does
 
-- Copies only the three splash files, `site/members/` and `site/preview/pages/` into `/home3/minion/public_html/thewayparty.com/`.
+- Copies the docroot files in `site/`, and the folders `site/members/`, `site/preview/pages/`, `site/timeline/`, `site/development/`, `site/ai/`, `site/layout/`, `site/research/` and `site/search/` into `/home3/minion/public_html/thewayparty.com/`.
 - Skips every `.htaccess`, so the password lock and the members config stay exactly as they are.
 - Deletes nothing on the server.
 - Sets files to 0644 and folders to 0755 inside `members` and `preview/pages` only.
