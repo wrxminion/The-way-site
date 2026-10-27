@@ -28,9 +28,10 @@ filt.append(el('legend', null, 'Show these kinds of events'));
 Object.entries(data.types).forEach(([k, label]) => {
   const l = el('label', 'tl-chip'); const c = document.createElement('input'); c.type = 'checkbox'; c.checked = true;
   c.addEventListener('change', () => {
+    const sel = (visible()[state.i] || {}).id;
     if (c.checked) state.types.add(k); else state.types.delete(k);
     if (!state.types.size) { state.types.add(k); c.checked = true; return; }   // never an empty timeline
-    const sel = (visible()[state.i] || {}).id; state.i = Math.max(0, visible().findIndex((e) => e.id === sel)); draw();
+    state.i = Math.max(0, visible().findIndex((e) => e.id === sel)); draw();
   });
   l.append(c, document.createTextNode(' ' + label)); filt.append(l);
 });
