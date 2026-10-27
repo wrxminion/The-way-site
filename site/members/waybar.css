@@ -109,3 +109,17 @@ body:has(#waybar) nav.topbar{display:none}
 .wb-floating-search .wb-glass{display:block;width:12px;height:12px;border:2px solid currentColor;border-radius:50%;position:relative}
 .wb-floating-search .wb-glass:after{content:"";position:absolute;width:6px;height:2px;right:-5px;bottom:-2px;background:currentColor;transform:rotate(45deg)}
 @media(max-width:480px){.wb-floating{justify-content:space-between}.wb-floating .wb-floating-access{font-size:11px}.wb-floating-search{flex:1}.wb-floating-search input{width:100%;font-size:16px}.wb-floating .wb-floating-return{font-size:11px;padding:7px 4px}}
+
+/* Signed-out public navigation: equal sides, one centered identity. */
+.waybar:not(.wb-in){grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);background:linear-gradient(180deg,#032332c9,#073b50d9);border-bottom:0}
+.waybar:not(.wb-in) .wb-logo{grid-column:2;grid-row:1;font-size:15px;white-space:nowrap}
+.waybar:not(.wb-in) .wb-public-left{grid-column:1;grid-row:1;justify-content:flex-end;flex-wrap:nowrap}
+.waybar:not(.wb-in) .wb-public-right{grid-column:3;grid-row:1;justify-content:flex-start;flex-wrap:nowrap}
+.waybar:not(.wb-in) .wb-public-left a,.waybar:not(.wb-in) .wb-public-right a{white-space:nowrap}
+.waybar:not(.wb-in) .wb-public-mobile{display:none}
+.wb-floating[hidden]{display:none}
+@media(max-width:760px){
+ .waybar:not(.wb-in) .wb-public-left,.waybar:not(.wb-in) .wb-public-right{display:none}
+ .waybar:not(.wb-in) .wb-public-menu{display:inline-flex;grid-column:1;grid-row:1;justify-self:start}
+ .waybar:not(.wb-in).wb-open .wb-public-mobile{display:flex;grid-column:1/-1;grid-row:2;flex-direction:column;align-items:flex-start;gap:14px;padding:8px 0}
+}
