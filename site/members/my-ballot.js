@@ -35,7 +35,7 @@
   // ---- data helpers
   function touched(d) {
     return Object.keys(d.contests).map(function (k) { return d.contests[k]; })
-      .filter(function (c) { return c.picks.length || c.undecided || c.compare.length || c.note || Object.keys(c.leans || {}).length || Object.keys(c.ranks || {}).length; })
+      .filter(function (c) { return c.picks.length || c.undecided || c.compare.length || c.note || Object.keys(c.leans || {}).length || Object.keys(c.ranks || {}).length || Object.keys(c.whys || {}).length || c.why; })
       .sort(function (a, b) { return (a.kind === b.kind ? 0 : a.kind === 'race' ? -1 : 1) || (a.title < b.title ? -1 : 1); });
   }
   function contestOf(d, f) {
@@ -60,6 +60,13 @@
     var rk = c.ranks || {};
     ids.sort(function (a, b) { return (rk[a] || 999) - (rk[b] || 999) || (a < b ? -1 : 1); });
     return 'My leanings (private): ' + ids.map(function (id) { return (rk[id] ? rk[id] + '. ' : '') + optLabel(c, id) + ((c.leans || {})[id] ? ' (' + LEAN[c.leans[id]] + ')' : ''); }).join('; ') + '.';
+  }
+  // The reasons, on the sheet: "Why: text" for a measure, "Why (Name): text" for each candidate.
+  function whyLines(c) {
+    var out = [];
+    if (c.why) out.push('Why: ' + c.why);
+    Object.keys(c.whys || {}).forEach(function (id) { out.push('Why (' + optLabel(c, id) + '): ' + c.whys[id]); });
+    return out;
   }
   function choiceText(c) {
     if (c.picks.length) return c.picks.map(function (id) { return optLabel(c, id); }).join(', ');
@@ -155,7 +162,7 @@
   }
   function mergeDef(d, def) {
     var c = d.contests[def.key] || { picks: [], undecided: false, compare: [], note: '' };
-    d.contests[def.key] = { key: def.key, kind: def.kind, title: def.title, url: def.url, seats: def.seats, options: def.options, picks: c.picks, undecided: c.undecided, compare: c.compare, note: c.note || '', leans: c.leans || {}, ranks: c.ranks || {} };
+    d.contests[def.key] = { key: def.key, kind: def.kind, title: def.title, url: def.url, seats: def.seats, options: def.options, picks: c.picks, undecided: c.undecided, compare: c.compare, note: c.note || '', why: c.why || '', leans: c.leans || {}, ranks: c.ranks || {}, whys: c.whys || {} };
     return d.contests[def.key];
   }
   function markForm(d, def) {
@@ -183,26 +190,43 @@
         if ((c.ranks || {})[o.id]) rank.value = c.ranks[o.id];
         rank.addEventListener('change', function () { update(function (x) { var k = mergeDef(x, def), n = parseInt(rank.value, 10); if (n >= 1 && n <= 99) k.ranks[o.id] = n; else delete k.ranks[o.id]; }); });
       }
+      var pn = null;
+      if (def.kind === 'race') {
+        var cur = (c.whys || {})[o.id] || '';
+        var ta = h('textarea', { rows: 2, maxlength: WB.LIMITS.note, placeholder: on || (c.leans || {})[o.id] ? 'Why this pick? (optional, just for you)' : 'Why you lean this way (optional, just for you)', 'aria-label': 'Your reason for ' + o.label, 'data-k': def.key + o.id + 'n' });
+        ta.value = cur;
+        ta.addEventListener('change', function () { update(function (x) { var k = mergeDef(x, def); if (ta.value.trim()) k.whys[o.id] = ta.value; else delete k.whys[o.id]; }); });
+        pn = h('details', { class: 'mk-pnote' }, h('summary', { text: cur ? 'Why \u2713' : 'Add why' }), ta);
+        if (cur) pn.open = true;
+      }
       return h('li', { class: 'mk-opt' },
         h('label', { class: 'mb-check mk-name' }, i, h('span', {}, h('b', { text: o.label }), o.sub ? h('span', { class: 'mb-sub', text: o.sub }) : null)),
         lean ? h('div', { class: 'mk-lean' }, h('span', { class: 'mk-q', text: 'Would you vote for this person?' }), lean, h('label', { class: 'mk-rk' }, h('span', { text: 'Rank' }), rank)) : null,
         def.kind === 'race' ? h('label', { class: 'mb-check mk-cmp' }, cm, h('span', { text: 'Compare' })) : null,
-        o.url ? link(o.url, 'facts', false) : null);
+        o.url ? link(o.url, 'facts', false) : null,
+        pn);
     });
     var un = h('input', { type: 'checkbox', checked: c.undecided, 'data-k': def.key + 'u' });
     un.addEventListener('change', function () { update(function (x) { var k = mergeDef(x, def); k.undecided = un.checked; if (un.checked) k.picks = []; }); });
-    var note = h('textarea', { rows: 2, maxlength: WB.LIMITS.note, placeholder: 'Your note (only on this device)', 'aria-label': 'Your note for ' + def.title });
+    var why = null;
+    if (def.kind === 'measure') {
+      why = h('textarea', { rows: 2, maxlength: WB.LIMITS.note, placeholder: 'Why this pick? (optional, just for you)', 'aria-label': 'Your reason for ' + def.title, 'data-k': def.key + 'w' });
+      why.value = c.why || '';
+      why.addEventListener('change', function () { var d3 = WB.read(ST), k3 = mergeDef(d3, def); k3.why = why.value; WB.write(WB.clean(d3, ST)); });
+    }
+    var note = h('textarea', { rows: 2, maxlength: WB.LIMITS.note, placeholder: 'Notes for this ' + (def.kind === 'measure' ? 'measure' : 'race') + ' (only on this device). Text you save from guide pages shows on your sheet too.', 'aria-label': 'Your notes for ' + def.title });
     note.value = c.note || '';
     note.addEventListener('change', function () { var d2 = WB.read(ST), k = mergeDef(d2, def); k.note = note.value; WB.write(WB.clean(d2, ST)); });
     return h('div', { class: 'mk-form' },
       h('h4', { class: 'mk-title', text: def.title }), h('p', { class: 'mb-ft' }, multi ? '(pick up to ' + def.seats + ')' : '(pick one)', ' ', def.url ? link(def.url, 'open the guide page') : null),
       h('ul', { class: 'mk-opts' }, opts),
       h('label', { class: 'mb-check' }, un, h('span', { text: 'Not sure yet' })),
+      why,
       note);
   }
   // What is already saved for a race or measure page, in a few words, so a collapsed row shows it without opening.
   function glance(d, it) {
-    var slug = (/\/([a-z0-9-]+)\.html$/.exec(it.p) || [])[1], out = [];
+    var slug = (/\/([a-z0-9-]+)\.html$/.exec(it.p) || [])[1], out = [], noted = false, why = false;
     Object.keys(d.contests).forEach(function (k) {
       var c = d.contests[k];
       if (c.url !== it.p && !(slug && (k === 'race:' + slug || k === 'measure:' + slug || k.indexOf('race:' + slug + ':') === 0))) return;
@@ -212,7 +236,11 @@
         if (L.length) out.push('Leaning: ' + L.join(', '));
         else if (c.undecided) out.push('Not sure yet');
       }
+      if (c.why || Object.keys(c.whys || {}).length) why = true;
+      if (c.note || Object.keys(d.facts).some(function (id) { return contestOf(d, d.facts[id]) === c; })) noted = true;
     });
+    if (why) out.push('Why');
+    if (noted) out.push('Notes');
     return out.join(' · ');
   }
   function markRow(d, it) {
@@ -325,31 +353,35 @@
   }
 
   function sheet(d) {
-    var cs = touched(d), picked = cs.filter(function (c) { return c.picks.length || c.undecided; });
     var printable = factList(d).filter(function (f) { return f.print; });
+    var cs = touched(d), grabbed = function (c) { return printable.filter(function (f) { return contestOf(d, f) === c; }); };
+    var picked = cs.filter(function (c) { return c.picks.length || c.undecided || c.why || Object.keys(c.whys || {}).length || c.note || grabbed(c).length; });
     var cmp = cs.filter(function (c) { return c.undecided || c.compare.length; });
     var opt = function (prop, text) {
       var i = h('input', { type: 'checkbox', checked: ui[prop] }); i.addEventListener('change', function () { ui[prop] = i.checked; draw(); });
       return h('label', { class: 'mb-check' }, i, h('span', { text: text }));
     };
     var gp = {}, gOrder = [];
-    printable.forEach(function (f) { var c = contestOf(d, f), g = c ? c.title : (f.pageTitle || 'Other'); if (!gp[g]) { gp[g] = []; gOrder.push(g); } gp[g].push(f); });
+    printable.filter(function (f) { return picked.indexOf(contestOf(d, f)) < 0; }).forEach(function (f) { var c = contestOf(d, f), g = c ? c.title : (f.pageTitle || 'Other'); if (!gp[g]) { gp[g] = []; gOrder.push(g); } gp[g].push(f); });
     return h('section', { class: 'mb-sheet-wrap' },
       h('div', { class: 'noprint' },
         h('h2', { text: 'Your printable sheet' }),
         h('p', { class: 'muted small' }, 'This is what prints. Links show their full address on paper.'),
-        h('div', { class: 'mb-opts' }, opt('includeFacts', 'Facts I marked for printing'), opt('includeCompare', 'Comparison for undecided races'), opt('includeNotes', 'My notes')),
+        h('div', { class: 'mb-opts' }, opt('includeFacts', 'Facts I marked for printing'), opt('includeCompare', 'Comparison for undecided races'), opt('includeNotes', 'My reasons and notes')),
         h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'button', onclick: function () { window.print(); }, text: 'Print this sheet' }))),
       h('article', { class: 'mb-sheet', 'aria-label': 'Printable ballot sheet' },
         h('h2', { class: 'mb-sheet-title', text: 'My ballot plan: ' + WB.STATES[ST] }),
         h('p', { class: 'mb-sheet-meta', text: 'Made ' + dayLong() + ' at michiinstitute.com. This is my own plan, not an official ballot. I will vote on the ballot I receive.' }),
         picked.length ? h('table', { class: 'mb-table mb-plan' },
-          h('thead', {}, h('tr', {}, h('th', { scope: 'col', text: 'Race or measure' }), h('th', { scope: 'col', text: 'My choice' }))),
+          h('thead', {}, h('tr', {}, h('th', { scope: 'col', text: 'Race or measure' }), h('th', { scope: 'col', text: 'My pick, my reason, my notes' }))),
           h('tbody', {}, picked.map(function (c) {
-            return h('tr', {}, h('td', { 'data-label': 'Race or measure', text: c.title }), h('td', { 'data-label': 'My choice' }, h('span', { class: 'mb-box', 'aria-hidden': 'true', text: c.picks.length ? '☑' : '☐' }), ' ', choiceText(c), leanLine(c) ? h('span', { class: 'mb-note-print', text: ' ' + leanLine(c) }) : null, c.note && ui.includeNotes ? h('span', { class: 'mb-note-print', text: ' My note: ' + c.note }) : null));
+            var mine = grabbed(c);
+            return h('tr', {}, h('td', { 'data-label': 'Race or measure', text: c.title }), h('td', { 'data-label': 'My choice' }, h('span', { class: 'mb-box', 'aria-hidden': 'true', text: c.picks.length ? '☑' : '☐' }), ' ', choiceText(c), leanLine(c) ? h('span', { class: 'mb-note-print', text: ' ' + leanLine(c) }) : null, ui.includeNotes ? whyLines(c).map(function (t) { return h('div', { class: 'mb-note-print mb-why', text: t }); }) : null,
+              ui.includeNotes && c.note ? h('div', { class: 'mb-note-print', text: 'Notes: ' + c.note }) : null,
+              ui.includeFacts && mine.length ? h('ul', { class: 'mb-facts mb-grab' }, mine.map(function (f) { return factLine(f, true); })) : null));
           }))) : h('p', { text: 'No choices yet.' }),
         ui.includeCompare && cmp.length ? h('div', {}, h('h3', { text: 'Still deciding' }), cmp.map(function (c) { return compareBlock(d, c); })) : null,
-        ui.includeFacts && printable.length ? h('div', {}, h('h3', { text: 'Facts I want with me' }), gOrder.map(function (g) {
+        ui.includeFacts && gOrder.length ? h('div', {}, h('h3', { text: 'Other facts I want with me' }), gOrder.map(function (g) {
           return h('div', {}, h('h4', { text: g }), h('ul', { class: 'mb-facts' }, gp[g].map(function (f) { return factLine(f, true); })));
         })) : null,
         h('p', { class: 'mb-sheet-foot', text: 'Sample ballot and polling places: check your state or county election office. The Way is a nonpartisan research project and takes no side on any candidate or measure.' })));

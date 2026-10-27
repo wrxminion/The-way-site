@@ -37,6 +37,13 @@
     return r;
   }
 
+  // Private reason ("why") per candidate, keyed by option id. Text only, trimmed and length-limited.
+  function onoteMap(m, ids) {
+    var r = {}; if (!m || typeof m !== 'object') return r;
+    Object.keys(m).forEach(function (k) { var t = ids[k] ? str(m[k], LIMITS.note) : ''; if (t) r[k] = t; });
+    return r;
+  }
+
   function clean(d, st) {
     var out = empty(st);
     if (!d || typeof d !== 'object') return out;
@@ -62,8 +69,8 @@
       var seats = Math.max(1, Math.min(20, parseInt(c.seats, 10) || 1));
       var picks = pick(c.picks).slice(0, seats);
       out.contests[k] = { key: k, kind: kind, title: str(c.title, LIMITS.label), url: url(c.url), seats: seats, options: opts,
-        picks: picks, undecided: c.undecided === true && !picks.length, compare: pick(c.compare), note: str(c.note, LIMITS.note),
-        leans: leanMap(c.leans, ids), ranks: rankMap(c.ranks, ids) };
+        picks: picks, undecided: c.undecided === true && !picks.length, compare: pick(c.compare), note: str(c.note, LIMITS.note), why: str(c.why, LIMITS.note),
+        leans: leanMap(c.leans, ids), ranks: rankMap(c.ranks, ids), whys: onoteMap(c.whys, ids) };
       n++;
     }
     n = 0;

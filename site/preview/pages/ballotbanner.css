@@ -37,3 +37,8 @@ div.measure{border-top:1px solid #abedf51f;padding:12px 0}
 
 .bb-saved{margin:8px 0;padding:8px 12px;border:1px solid #abedf566;border-radius:10px;background:#0a3a5080;color:#e9ffff;font-size:14px}
 .bb-saved[hidden]{display:none}
+.qwrap{display:block}
+.q-note{display:block;margin:4px 0}
+.q-note .q-nb{font:inherit;font-size:13px;color:#e9ffff;background:#0a3a50;border:1px solid #abedf566;border-radius:99px;padding:3px 12px;cursor:pointer}
+.q-note .q-ta{display:block;width:100%;max-width:520px;margin-top:6px;font:inherit;font-size:13px;color:#e9ffff;background:#041f31;border:1px solid #abedf566;border-radius:8px;padding:6px 8px;box-sizing:border-box}
+.q-note .q-ta[hidden]{display:none}

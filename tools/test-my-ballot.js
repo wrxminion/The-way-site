@@ -144,7 +144,7 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   await page.waitForSelector('.mk-form');
   ok(await page.locator('.mk-form').count() === 2, 'governor opens both contests (governor, lieutenant governor)');
   await page.locator('.mk-form').first().locator('label', { hasText: 'Phil Weiser' }).locator('input').first().check();
-  await page.locator('.mk-form').first().locator('textarea').fill('ask about housing'); await page.locator('.mk-form').first().locator('textarea').blur();
+  await page.locator('.mk-form').first().locator('textarea[aria-label^="Your notes for"]').fill('ask about housing'); await page.locator('.mk-form').first().locator('textarea[aria-label^="Your notes for"]').blur();
   s = await store();
   const gk = Object.keys(s.contests).find((k) => /governor/.test(k) && s.contests[k].picks.length);
   ok(gk && s.contests[gk].picks[0] === 'phil-weiser' && s.contests[gk].note === 'ask about housing', 'a pick and a note are saved from the marking screen');
@@ -167,6 +167,23 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   await page.locator('.mk-form', { hasText: 'Amendment 81' }).locator('label', { hasText: /^Yes/ }).locator('input').check();
   s = await store(); ok(s.contests['measure:amendment-81'] && s.contests['measure:amendment-81'].picks[0] === 'yes', 'measure Yes saved from the marking screen');
   ok((await page.locator('.mb-sheet').innerText()).includes('ask about housing'), 'notes show on the printable sheet');
+  const m81 = page.locator('.mk-form', { hasText: 'Amendment 81' });
+  await m81.locator('textarea[data-k$="w"]').fill('it protects renters'); await m81.locator('textarea[data-k$="w"]').blur();
+  await page.locator('.mk-form', { hasText: 'Governor' }).first().locator('.mk-opt', { hasText: 'Phil Weiser' }).locator('details.mk-pnote summary').click().catch(() => {});
+  s = await store(); ok(s.contests['measure:amendment-81'].why === 'it protects renters', 'a measure keeps its own Why, separate from its notes');
+  // a note typed on the guide page lands in the same item's notes, with the page link
+  await page.goto(G + 'measures/amendment-81.html'); await page.waitForSelector('.bp-dock');
+  await page.getByRole('button', { name: 'Add a note' }).click();
+  await page.locator('.bp-noteform textarea').fill('check the fiscal note');
+  await page.getByRole('button', { name: 'Save to my ballot notes' }).click();
+  await page.goto(base + '/members/my-ballot.html?state=CO'); await page.waitForSelector('.mb-sheet');
+  const sheetT = await page.locator('.mb-sheet').innerText();
+  ok(/Why: it protects renters/.test(sheetT) && /check the fiscal note/.test(sheetT), 'the sheet shows the pick, the Why and the grabbed note for the measure');
+  await page.evaluate(() => { const d = JSON.parse(localStorage.getItem('theway.ballot.v1.CO')); const k = Object.keys(d.contests).find((x) => /governor/.test(x) && d.contests[x].picks.length); d.contests[k].whys = { 'phil-weiser': 'worked on housing', evil: 'x' }; localStorage.setItem('theway.ballot.v1.CO', JSON.stringify(d)); });
+  await page.reload(); await page.waitForSelector('.mb-sheet');
+  const sheetW = await page.locator('.mb-sheet').innerText();
+  ok(/Why \(Phil Weiser\): worked on housing/.test(sheetW) && !/\bx\b.*Why/.test(sheetW) && !/Why \(evil\)/.test(sheetW), 'a candidate Why prints on the sheet; unknown ids are dropped');
+  ok(sheetT.indexOf('check the fiscal note') < (sheetT.indexOf('Other facts') < 0 ? 1e9 : sheetT.indexOf('Other facts')), 'the grabbed note sits under its measure, not in a separate pile');
   await page.evaluate(() => { sessionStorage.setItem('theway.mymarks.v1', JSON.stringify({ state: 'CO', items: [{ p: '/preview/pages/guide/races/governor.html', t: 'Governor and Lieutenant Governor' }, { p: '/preview/pages/guide/measures/amendment-81.html', t: 'Amendment 81' }] })); });
   await page.reload(); await page.waitForSelector('#mark li');
   ok(/Your pick: Yes/i.test(await page.locator('#mark li', { hasText: 'Amendment 81' }).first().innerText()), 'a collapsed measure row shows "Your pick: Yes" without opening');
