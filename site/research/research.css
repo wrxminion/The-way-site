@@ -12,3 +12,9 @@ button.copy{background:#0f3d57;color:var(--foam);border:1px solid var(--line);bo
 .search{width:100%;max-width:420px;background:#06212f;color:var(--foam);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;min-height:44px}
 
 .soon{display:inline-block;margin-left:8px;border:1px solid #f0c36a;border-radius:999px;padding:1px 10px;font-size:.75rem;color:#ffe3a6;background:#3a2a05;vertical-align:middle}
+
+.bigcards{display:grid;gap:14px;grid-template-columns:1fr;margin:0 0 28px}@media(min-width:720px){.bigcards{grid-template-columns:1fr 1fr}}
+.bigcard{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--foam)}
+.bigcard:hover,.bigcard:focus-visible{border-color:var(--aqua)}
+.bigcard img{display:block;width:100%;height:220px;object-fit:cover}
+.bc-body{display:block;padding:16px 18px}.bc-h{display:block;font:600 24px Georgia,serif}.bc-p{display:block;color:var(--muted);margin-top:4px}
