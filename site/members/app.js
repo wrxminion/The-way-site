@@ -26,6 +26,7 @@ function h(tag, attrs, ...kids) {
     if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
     else if (k === 'class') el.className = v;
     else if (k === 'text') el.textContent = v;
+    else if (k === 'style') el.style.cssText = v;   // the page CSP blocks a style attribute, but allows setting it through the style object
     else el.setAttribute(k, v === true ? '' : v);
   }
   for (const kid of kids.flat()) {
@@ -39,6 +40,10 @@ const clean = (v) => { if (v == null) return null; const t = String(v).trim(); r
 const srcTitle = (s) => clean(s.title) || (() => { try { return new URL(s.url).hostname.replace(/^www\./, ''); } catch { return clean(s.url) || 'Untitled source'; } })();
 const when = (iso) => iso ? new Date(iso).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : '';
 const day = (iso) => iso ? new Date(iso).toLocaleDateString(undefined, { dateStyle: 'medium' }) : '';
+// What members see for a role. The stored value stays 'reviewer' / 'researcher'.
+// Deshi is Japanese for student; both words are shown so people learn it (Frank, Oct 27 2026).
+const ROLE_LABEL = { reviewer: 'Deshi (student)', researcher: 'Submitter' };
+const roleName = (r) => ROLE_LABEL[r] || r;
 const can = (role) => state.roles.has(role) || state.roles.has('admin');
 
 function render(...nodes) { app.replaceChildren(...nodes.flat().filter((n) => n != null && n !== false)); app.focus({ preventScroll: true }); window.scrollTo(0, 0); }
@@ -187,8 +192,11 @@ function humanCheck() {
   };
 }
 
-function signInView() {
+async function signInView() {
   const human = humanCheck();
+  // Open sign-up (migration 0018): anyone can make an account with their email, no invitation code.
+  let open = false;
+  try { const { data } = await sb.rpc('signup_is_open'); open = data === true; } catch { /* closed: invitation only */ }
 
   // Sign-in wording; change it here or override any line with cfg.signInText in config.js.
   const T = Object.assign({
@@ -212,6 +220,9 @@ function signInView() {
     invitedBtn: 'Send my sign-in link',
     memberTitle: 'Already a member?',
     thanks: "Thanks, we'll let you know.",
+    openTitle: 'New here? Create your account',
+    openText: "Enter your email and we'll send you a 6-digit code. Type it on the next screen, pick a display name, and you're in. Your email stays private.",
+    openBtn: 'Create my account',
   }, cfg.signInText || {});
 
   // After any emailed link: with emailCodes on, the 6-digit code from the email can be typed here.
@@ -287,13 +298,13 @@ function signInView() {
     }, msg) },
       h('label', {}, 'Email', emailIn),
       h('div', { class: 'btns' },
-        h('button', { class: invited ? 'primary' : '', value: 'code' }, invited ? T.invitedBtn : T.codeBtn)),
-      invited ? null : h('div', { class: 'notify-public' },
+        h('button', { class: invited || open ? 'primary' : '', value: 'code' }, invited ? T.invitedBtn : open ? T.openBtn : T.codeBtn)),
+      invited || open ? null : h('div', { class: 'notify-public' },
         h('p', { class: 'small dim', text: T.own }),
         h('div', { class: 'btns' }, h('button', { class: 'quiet', value: 'own' }, T.ownBtn))));
     return h('div', { class: invited ? 'panel signin-panel' : 'panel' },
-      invited ? null : h('h2', { text: T.newTitle }),
-      h('p', { class: 'muted', text: invited ? T.invited : T.code }),
+      invited ? null : h('h2', { text: open ? T.openTitle : T.newTitle }),
+      h('p', { class: 'muted', text: invited ? T.invited : open ? T.openText : T.code }),
       msg, form, code.form, invited ? human.el : null);
   }
 
@@ -303,7 +314,7 @@ function signInView() {
   render(
     h('p', { class: 'overline', text: 'The Way · Members' }),
     h('h1', { text: invited ? T.invitedTitle : T.title }),
-    ...(invited ? [newcomerPanel(true), memberPanel(false)] : [memberPanel(true), newcomerPanel(false)]),
+    ...(invited || open ? [newcomerPanel(invited), memberPanel(false)] : [memberPanel(true), newcomerPanel(false)]),
   );
 }
 
@@ -332,26 +343,29 @@ function passwordView(fromReset, justJoined) {
   );
 }
 
-function joinView() {
+async function joinView() {
   const msg = h('div');
-  const code = h('input', { name: 'code', required: true, autocomplete: 'off', spellcheck: 'false', placeholder: 'WAY-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx' });
+  let open = false;
+  try { const { data } = await sb.rpc('signup_is_open'); open = data === true; } catch { /* closed */ }
+  const code = h('input', { name: 'code', required: !open, autocomplete: 'off', spellcheck: 'false', placeholder: 'WAY-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx' });
   const carried = savedInvite();
   if (carried) code.value = carried;
   const name = h('input', { name: 'name', required: true, minlength: 2, maxlength: 40, placeholder: 'How other members will see you' });
   render(
     h('h1', { text: 'Welcome' }),
-    h('p', { class: 'lede', text: carried ? 'You are signed in. Your invitation code is filled in from your link. Pick a display name to accept it.' : 'You are signed in. Enter your invitation code (it starts with WAY-) to accept it.' }),
+    h('p', { class: 'lede', text: carried ? 'You are signed in. Your invitation code is filled in from your link. Pick a display name to accept it.' : open ? 'You are signed in. Pick a display name to finish creating your account. Got an invitation code? You can leave it in the box, but you do not need one.' : 'You are signed in. Enter your invitation code (it starts with WAY-) to accept it.' }),
     h('div', { class: 'panel' }, msg,
       h('form', { onsubmit: action(async () => {
-        await q(sb.rpc('redeem_invitation', { code: code.value.trim(), display_name: name.value }));
+        if (code.value.trim()) await q(sb.rpc('redeem_invitation', { code: code.value.trim(), display_name: name.value }));
+        else await q(sb.rpc('join_open', { display_name: name.value }));
         forgetInvite();
         await loadMe(); drawNav();
         passwordView(false, true);
       }, msg) },
-        h('label', {}, 'Invitation code', code),
+        h('label', {}, open ? 'Invitation code (optional)' : 'Invitation code', code),
         h('label', {}, 'Display name', name),
         h('p', { class: 'small dim', text: 'Your email stays private. Members only see your display name. Choose it carefully: after this, only an admin can change it.' }),
-        h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Accept invitation'), h('button', { type: 'button', onclick: signOut }, 'Sign out')))),
+        h('div', { class: 'btns' }, h('button', { class: 'primary' }, open ? 'Join The Way' : 'Accept invitation'), h('button', { type: 'button', onclick: signOut }, 'Sign out')))),
   );
 }
 
@@ -541,6 +555,15 @@ async function mapView() {
   if (picked || mine) show(picked || mine);
 }
 
+// Roles, points and role applications arrive with migration 0017. Until that screen ships, this page explains it.
+function rolesView() {
+  render(
+    h('p', { class: 'overline', text: 'Members' }),
+    h('h1', { text: 'Roles and points' }),
+    h('p', { class: 'lede', text: 'Members can take on roles (researcher, Deshi (student), moderator) and earn points for checked work. Applying for a role and seeing your points will live here and on your profile. It is coming soon.' }),
+    h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/', text: 'Back to Home' }), h('a', { class: 'button quiet', href: '#/account', text: 'Your account' })));
+}
+
 async function homeView() {
   const wantsAdmin = can('admin'), wantsMod = can('moderator');
   const [cats, posts, openReports, notifyCount] = await Promise.all([
@@ -567,7 +590,7 @@ async function homeView() {
       tile(LINKS.news, 'News', 'The time machine and the feed'),
       state.hasRecord ? tile('findings.html', 'Findings', 'What we checked, the verdict, and every change since') : null,
       tile('#/cases', 'Cases', 'The history cases we wrote, with every source'),
-      wantsMod ? tile('#/review', 'Review the cases', 'Check each claim, flag problems, mark a case reviewed') : null),
+      wantsMod ? tile('#/review', 'Review the sources', 'Check each claim against its sources, flag problems, mark a case reviewed') : null),
     h('p', { class: 'small place-line' }, ...(loadPlace()
       ? ['Your place: ', h('strong', { text: loadPlace().state }), ' · ', h('a', { href: '#/account', text: 'change it in your account' })]
       : [h('a', { href: '#/account', text: 'Save your state in your account' }), ' to open the map and your ballot on it.'])),
@@ -1559,6 +1582,33 @@ function inviteStatus(i) {
 }
 const isOpen = (i) => !i.revoked_at && i.use_count < i.max_uses && new Date(i.expires_at) > new Date();
 
+// Role invitations (migration 0019): a code that gives submitter (researcher) or reviewer access.
+// Reviewers and admins make submitter codes; only admins make reviewer codes. Single use, 14 days.
+function roleInvitePanel() {
+  const msg = h('div'), out = h('div');
+  const role = h('select', { id: 'role-invite-role' },
+    h('option', { value: 'researcher', text: 'Submitter: can add and send sources' }),
+    can('admin') ? h('option', { value: 'reviewer', text: 'Deshi (student): can check sources and publish' }) : null);
+  const note = h('input', { id: 'role-invite-note', maxlength: 200, placeholder: 'Who is it for? Only you see this' });
+  const email = h('input', { id: 'role-invite-email', type: 'email', placeholder: 'Optional: lock it to their email', autocomplete: 'off' });
+  return h('div', { class: 'panel' },
+    h('h2', { text: 'Give someone a role' }),
+    h('p', { class: 'muted small', text: 'Anyone can join The Way. This code gives one person Submitter or Deshi (student) access. A Deshi checks and publishes work. It works once and lasts 14 days. The role grant is recorded in the moderation log with your name.' }),
+    msg,
+    h('form', { onsubmit: action(async () => {
+      const code = await q(sb.rpc('create_role_invite', { p_role: role.value, p_note: note.value.trim() || null, p_email: email.value.trim() || null }));
+      const link = inviteLink(code);
+      out.replaceChildren(notice('Your role invitation is ready. Copy it now: it is shown only once.', 'ok'),
+        h('div', { class: 'code', text: link }), h('div', { class: 'btns' }, copyButton('Copy link', link, null)));
+      note.value = ''; email.value = '';
+    }, msg) },
+      h('label', { for: 'role-invite-role' }, 'Role', role),
+      h('label', { for: 'role-invite-note' }, 'Who is it for?', note),
+      h('label', { for: 'role-invite-email' }, 'Their email (optional)', email),
+      h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Create role invitation'))),
+    out);
+}
+
 // Any member: make a single-use share link (the database caps members at 5 open, 20 a day; admins are not capped).
 async function inviteView() {
   const mod = can('moderator');
@@ -1640,6 +1690,7 @@ async function inviteView() {
           h('button', { value: 'link' }, 'Create share link only')),
         h('p', { class: 'small dim', text: can('admin') ? 'As an admin you have no limit on share links.' : 'You can have 5 open links at a time and make 20 a day.' })),
       fresh),
+    can('reviewer') ? roleInvitePanel() : null,
     h('h2', { text: 'Your links' }),
     h('ul', { class: 'list panel', id: 'my-invites' }),
     h('p', { class: 'small muted', text: 'A link drops off this list once it is used. The Way does not keep who joined through whom.' }),
@@ -1745,11 +1796,11 @@ async function adminView() {
         }, msg) }, 'Rename')),
         m.id === state.user.id ? null : h('div', { class: 'btns' },
           ALL.map((r) => h('button', { class: 'quiet', onclick: action(async () => {
-            const reason = await ask(`${mine.includes(r) ? 'Remove' : 'Give'} the ${r} role: why?`);
+            const reason = await ask(`${mine.includes(r) ? 'Remove' : 'Give'} the ${roleName(r)} role: why?`);
             if (!reason) return;
             await q(sb.rpc('set_role', { member_id: m.id, role: r, grant_it: !mine.includes(r), reason }));
             await adminView();
-          }, msg) }, `${mine.includes(r) ? '− ' : '+ '}${r}`)),
+          }, msg) }, `${mine.includes(r) ? '− ' : '+ '}${roleName(r)}`)),
           h('button', { class: `quiet ${m.status === 'active' ? 'danger' : ''}`, onclick: action(async () => {
             const next = m.status === 'active' ? 'suspended' : 'active';
             const reason = await ask(`${next === 'suspended' ? 'Suspend' : 'Reinstate'} ${m.display_name}: why?`);
@@ -1792,6 +1843,21 @@ async function adminView() {
 
 // ---------------------------------------------------------------- account
 
+function roleCodePanel() {
+  const msg = h('div');
+  const code = h('input', { name: 'role-code', autocomplete: 'off', spellcheck: 'false', placeholder: 'WAY-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx' });
+  return h('div', { class: 'panel' },
+    h('h2', { text: 'Have a role code?' }),
+    h('p', { class: 'muted small', text: 'If a Deshi or admin gave you a code for Submitter or Deshi (student) access, enter it here.' }),
+    msg,
+    h('form', { onsubmit: action(async () => {
+      const got = await q(sb.rpc('redeem_role_invite', { code: code.value.trim() }));
+      forgetInvite(); code.value = '';
+      await loadMe(); drawNav();
+      msg.replaceChildren(notice(`Done. You now have the ${roleName(got)} role.`, 'ok'));
+    }, msg) }, h('label', {}, 'Code', code), h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Use code'))));
+}
+
 function accountView() {
   render(
     h('p', { class: 'overline', text: 'Your account' }),
@@ -1799,9 +1865,10 @@ function accountView() {
     h('div', { class: 'panel' },
       h('h2', { text: 'You' }),
       h('p', { class: 'muted small', text: `Signed in as ${state.user.email}. Only you and the site's administrators can see your email.` }),
-      h('p', { class: 'small dim', text: 'Display names are chosen once, when you accept your invitation. To change yours, ask an admin.' }),
-      h('p', { class: 'small', text: `Roles: ${state.roles.size ? [...state.roles].join(', ') : 'member'}` })),
+      h('p', { class: 'small dim', text: 'Display names are chosen once, when you join. To change yours, ask an admin.' }),
+      h('p', { class: 'small', text: `Roles: ${state.roles.size ? [...state.roles].map(roleName).join(', ') : 'member'}` })),
     placePanel(),
+    roleCodePanel(),
     h('div', { class: 'panel' },
       h('h2', { text: 'Signing in' }),
       h('p', { class: 'small muted', text: 'Sign in with your email and password, or ask for a sign-in link on the sign-in page and we email you one. Setting a password is optional.' }),
@@ -1840,7 +1907,7 @@ async function reviewView(slug) {
   const by = Object.fromEntries(rows.map((r) => [r.case_slug, r]));
   render(
     h('p', { class: 'overline', text: 'Moderation' }),
-    h('h1', { text: 'Review the cases' }),
+    h('h1', { text: 'Review the sources' }),
     h('p', { class: 'lede', text: 'Open a case, check its key claims against the sources one by one, flag anything wrong, and mark the case reviewed when every claim is checked. What you write in a note is public.' }),
     h('p', { class: 'small' }, h('a', { href: REVIEW_PUBLIC, target: '_blank', rel: 'noopener', text: 'The public review history' })),
     CASES.length ? h('ul', { class: 'list panel cases' }, CASES.map((c) => {
@@ -1857,7 +1924,7 @@ async function reviewCaseView(slug) {
   const c = caseBySlug(slug);
   if (!c) return render(notice('Unknown case.'), h('p', {}, h('a', { href: '#/review', text: 'Back to the list' })));
   const y = window.scrollY;
-  const [claimsAll, events, mineAll, summaryAll] = await Promise.all([
+  const [claimsAll, events, mineAll, summaryAll, shotRows, page] = await Promise.all([
     loadClaims(),
     q(sb.from('case_review_events')
       .select('id,claim_key,claim_text,event_type,note,created_at,actor:members!case_review_events_actor_id_fkey(display_name)')
@@ -1865,7 +1932,13 @@ async function reviewCaseView(slug) {
     // Phase A (0014). If the migration has not been run yet these fail quietly and the screen works as before.
     q(sb.rpc('my_claim_reviews', { p_case_slug: slug })).catch(() => null),
     q(sb.rpc('claim_review_summary', { p_case_slug: slug })).catch(() => null),
+    // Screenshots (0020). Null until that migration has been run: the upload button then stays hidden.
+    q(sb.from('review_screenshots').select('claim_key').eq('case_slug', slug)).catch(() => null),
+    // The case page itself, for the source link and the "expand context" buttons. Not essential.
+    loadCasePage(c).catch(() => null),
   ]);
+  const shotCount = new Map();
+  for (const r of shotRows || []) shotCount.set(r.claim_key, (shotCount.get(r.claim_key) || 0) + 1);
   const phaseA = mineAll !== null && summaryAll !== null;
   const mineBy = new Map();
   for (const m of mineAll || []) { if (!mineBy.has(m.claim_key)) mineBy.set(m.claim_key, []); mineBy.get(m.claim_key).push(m); }
@@ -1907,10 +1980,13 @@ async function reviewCaseView(slug) {
     return h('li', { id: `claim-${cl.k}` },
       h('div', { class: 'row' }, h('span', { class: `tag ${CLAIM_TAG[cl.status] || ''}`, text: CLAIM_LABEL[cl.status] || cl.detail }),
         h('span', { class: `tag ${st[1]}`, text: st[0] })),
-      h('p', { class: 'post', text: cl.claim }),
+      h('p', { class: 'post' }, h('strong', { text: `\u201c${cl.claim}\u201d` })),
       cl.source ? h('p', { class: 'small muted', text: `Source on the page: ${cl.source}` }) : null,
+      sourceLinks(cl, c, page),
+      claimContext(cl, c, page),
       e && e.note ? h('p', { class: 'small', text: `Last note: ${e.note}` }) : null,
       phaseA ? claimReviewPanel(cl, mineBy.get(cl.k) || [], sumBy.get(cl.k), slug, msg, refresh) : null,
+      shotRows !== null ? screenshotPanel(cl, slug, shotCount.get(cl.k) || 0) : null,
       reviewed ? null : h('div', { class: 'btns' },
         !e || e.event_type !== 'claim_flagged' ? h('button', { class: 'quiet', disabled: isOk(cl.k) && e.event_type === 'claim_checked', onclick: claimStep(cl, 'claim_checked') }, 'Mark checked') : null,
         !e || e.event_type !== 'claim_flagged' ? h('button', { class: 'quiet danger', onclick: claimStep(cl, 'claim_flagged', null, true) }, 'Flag') : null,
@@ -1970,7 +2046,7 @@ function claimReviewPanel(cl, mine, sum, slug, msg, refresh) {
     const f = h('form', { class: 'panel', novalidate: true });
     const sel = (name, opts, val) => h('select', { name }, Object.entries(opts).map(([k, v]) => h('option', { value: k, selected: k === val, text: v })));
     const src = h('input', { name: 'source_label', type: 'text', maxlength: 300, required: true, value: current ? current.source_label : (cl.source || '') });
-    const url = h('input', { name: 'source_url', type: 'url', maxlength: 1000, placeholder: 'https://…', value: current && current.source_url ? current.source_url : '' });
+    const url = h('input', { name: 'source_url', type: 'url', maxlength: 1000, placeholder: 'https://…', value: current && current.source_url ? current.source_url : (cl.srcUrl || '') });
     const pass = h('textarea', { name: 'evidence_passage', rows: 3, maxlength: 1500 }); pass.value = current && current.evidence_passage ? current.evidence_passage : '';
     const rat = h('textarea', { name: 'rationale', rows: 3, maxlength: 2000 }); rat.value = current && current.rationale ? current.rationale : '';
     const flags = Object.entries(FLAG_LABEL).map(([k, v]) => h('label', { class: 'small' }, h('input', { type: 'checkbox', name: 'flag', value: k, checked: !!(current && current.flags.includes(k)) }), ' ' + v));
@@ -2017,6 +2093,177 @@ function claimReviewPanel(cl, mine, sum, slug, msg, refresh) {
   return wrap;
 }
 
+
+// ---- Source link and context for a claim. Both come from the case page itself (same site), read as text only:
+// the page is parsed into an inert document and nothing from it is ever inserted as HTML.
+const casePages = new Map();
+function loadCasePage(c) {
+  if (!casePages.has(c.slug)) casePages.set(c.slug, fetch(caseUrl(c)).then((r) => {
+    if (!r.ok) throw new Error('Could not load the case page.');
+    return r.text();
+  }).then((t) => new DOMParser().parseFromString(t, 'text/html')).catch((err) => { casePages.delete(c.slug); throw err; }));
+  return casePages.get(c.slug);
+}
+const normText = (t) => String(t || '').toLowerCase().replace(/[‘’]/g, "'").replace(/[“”]/g, '"')
+  .replace(/[^a-z0-9$%.]+/g, ' ').replace(/\s+/g, ' ').trim();
+const flat = (t) => String(t || '').replace(/\s+/g, ' ').trim();
+const STOP = new Set(['the', 'and', 'page', 'host', 'read', 'through', 'tool', 'returned', 'text', 'seen', 'only', 'summary', 'from', 'with', 'for', 'that', 'was', 'not']);
+const words = (t) => normText(t).split(' ').filter((w) => w.length >= 3 && !STOP.has(w));
+const safeHref = (href, base) => { try { const u = new URL(href, base); return /^https?:$/.test(u.protocol) ? u.href : null; } catch { return null; } };
+
+// Rows of the page's Sources table that best match the claim's source label.
+function matchSources(cl, c, doc) {
+  const rows = [...doc.querySelectorAll('#sources ~ .table-wrap table tr, #sources ~ table tr')].filter((r) => r.querySelector('a[href]'));
+  const want = [...new Set(words(cl.source))];
+  if (!want.length) return [];
+  const scored = rows.map((r) => {
+    const have = new Set(words(r.textContent));
+    const a = r.querySelector('a[href]');
+    return { score: want.filter((w) => have.has(w)).length / want.length, title: flat(a.textContent), url: safeHref(a.getAttribute('href'), caseUrl(c)) };
+  }).filter((x) => x.url && x.score >= 0.4).sort((x, y) => y.score - x.score);
+  return scored.filter((x) => x.score >= scored[0].score * 0.75).slice(0, 2);
+}
+function sourceLinks(cl, c, doc) {
+  const hits = doc ? matchSources(cl, c, doc) : [];
+  if (hits[0]) cl.srcUrl = hits[0].url;
+  const link = (href, text) => h('a', { href, target: '_blank', rel: 'noopener noreferrer', text });
+  return h('p', { class: 'small' }, hits.length
+    ? hits.map((x, i) => [i ? ' · ' : '', link(x.url, `Open the source: ${x.title.length > 90 ? x.title.slice(0, 87) + '…' : x.title} ↗`)])
+    : [link(`${caseUrl(c)}#sources`, 'Find the source in the case’s source list ↗'), h('span', { class: 'muted', text: ' (no direct link matched)' })]);
+}
+
+// Where the claim sits on the case page: the smallest paragraph, list item or table row that holds it.
+function findClaimBlock(cl, doc) {
+  const blocks = [...doc.querySelectorAll('p, li, tr, blockquote')].filter((b) => !b.closest('nav, header, footer, #sources ~ *, .toc, .in-brief'));
+  const want = normText(cl.claim);
+  const exact = blocks.filter((b) => normText(b.textContent).includes(want)).sort((a, b) => a.textContent.length - b.textContent.length)[0];
+  if (exact) return { el: exact, exact: true };
+  const ws = [...new Set(words(cl.claim))];
+  if (ws.length < 4) return null;
+  let best = null;
+  for (const b of blocks) {
+    const have = new Set(words(b.textContent));
+    const sc = ws.filter((w) => have.has(w)).length / ws.length;
+    if (sc >= 0.75 && (!best || sc > best.sc || (sc === best.sc && b.textContent.length < best.el.textContent.length))) best = { el: b, sc };
+  }
+  return best ? { el: best.el, exact: false } : null;
+}
+function blockText(el) {
+  if (el.tagName === 'TR') {
+    const table = el.closest('table');
+    const heads = table ? [...table.querySelectorAll('thead th')].map((t) => flat(t.textContent)) : [];
+    return [...el.children].map((cell, i) => (heads[i] ? `${heads[i]}: ` : '') + flat(cell.textContent)).join('\n');
+  }
+  if (/^(UL|OL)$/.test(el.tagName)) return [...el.children].map((li) => '• ' + flat(li.textContent)).join('\n');
+  if (el.tagName === 'TABLE') return [...el.querySelectorAll('tbody tr')].map((r) => [...r.children].map((x) => flat(x.textContent)).join(' | ')).join('\n');
+  return flat(el.textContent);
+}
+const clip = (t, n) => (t.length > n ? t.slice(0, n).replace(/\s+\S*$/, '') + ' …' : t);
+function claimContext(cl, c, doc) {
+  const slot = h('div', { class: 'claim-context' });
+  if (!doc) return slot;
+  const hit = findClaimBlock(cl, doc);
+  const level = { n: 0 };
+  const draw = () => {
+    if (level.n === 0) return slot.replaceChildren(h('div', { class: 'btns' }, h('button', { class: 'quiet', type: 'button', onclick: () => { level.n = 1; draw(); } }, 'Expand context')));
+    if (!hit) return slot.replaceChildren(h('p', { class: 'small muted', text: 'This claim’s wording was not found on the case page, so there is no paragraph to show. ' }, ''),
+      h('a', { class: 'small', href: caseUrl(c), target: '_blank', rel: 'noopener noreferrer', text: 'Open the case page ↗' }));
+    const el = hit.el;
+    const box = h('div', { class: 'panel small' });
+    if (level.n === 1) {
+      const txt = blockText(el);
+      box.append(h('p', { class: 'muted', text: hit.exact ? 'Paragraph on the case page' : 'Closest paragraph on the case page (the wording differs, so check it is the right one)' }), h('div', { class: 'post', text: txt }));
+    } else {
+      const unit = el.closest('table, ul, ol') || el;
+      const head = (() => { let n = unit; while (n && n.previousElementSibling) { n = n.previousElementSibling; if (/^H[23]$/.test(n.tagName)) return n; } return null; })();
+      const prev = unit.previousElementSibling && !/^H[1-6]$/.test(unit.previousElementSibling.tagName) ? unit.previousElementSibling : null;
+      const next = unit.nextElementSibling && !/^H[1-6]$/.test(unit.nextElementSibling.tagName) ? unit.nextElementSibling : null;
+      box.append(h('p', { class: 'muted', text: head ? `Wider context, under “${flat(head.textContent)}”` : 'Wider context' }));
+      for (const [label, n, mark] of [['Before', prev], ['The claim is here', unit, true], ['After', next]]) {
+        if (!n) continue;
+        box.append(h('p', { class: 'muted', text: label }), h('div', { class: mark ? 'post ctx-here' : 'post', text: clip(blockText(n), 1800) }));
+      }
+    }
+    const acts = h('div', { class: 'btns' });
+    if (level.n === 1) acts.append(h('button', { class: 'quiet', type: 'button', onclick: () => { level.n = 2; draw(); } }, 'See even more context'));
+    acts.append(h('button', { class: 'quiet', type: 'button', onclick: () => { level.n = level.n === 2 ? 1 : 0; draw(); } }, level.n === 2 ? 'Back to the paragraph' : 'Hide context'));
+    acts.append(h('a', { class: 'small', href: caseUrl(c), target: '_blank', rel: 'noopener noreferrer', text: 'Open the case page ↗' }));
+    slot.replaceChildren(box, acts);
+  };
+  slot.append(h('div', { class: 'btns' }, h('button', { class: 'quiet', type: 'button', onclick: () => { level.n = 1; draw(); } }, 'Expand context')));
+  return slot;
+}
+
+// ---- Screenshots (0020). A reviewer can attach a screenshot of the source to a claim. Safe by design:
+// the browser re-draws the picture (which drops all hidden data such as location and device info), rejects
+// anything that is not a real image, caps size, and the file goes to a PRIVATE bucket that only moderators and
+// the uploader can read. Screenshots are never shown on the public review history.
+const SHOT_MAX_PICK = 12 * 1024 * 1024, SHOT_MAX_OUT = 1500 * 1024, SHOT_MAX_SIDE = 1800;
+async function cleanShot(file) {
+  if (!/^image\/(png|jpeg|webp)$/.test(file.type)) throw new Error('Only PNG, JPEG or WebP pictures can be attached.');
+  if (file.size > SHOT_MAX_PICK) throw new Error('That picture is over 12 MB. Crop it or save it smaller.');
+  let bmp;
+  try { bmp = await createImageBitmap(file); } catch { throw new Error('That file is not a readable picture.'); }
+  const k = Math.min(1, SHOT_MAX_SIDE / Math.max(bmp.width, bmp.height));
+  const cv = document.createElement('canvas');
+  cv.width = Math.max(1, Math.round(bmp.width * k)); cv.height = Math.max(1, Math.round(bmp.height * k));
+  const cx = cv.getContext('2d');
+  cx.fillStyle = '#fff'; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(bmp, 0, 0, cv.width, cv.height);
+  if (bmp.close) bmp.close();
+  for (const qual of [0.85, 0.7, 0.55]) {
+    const blob = await new Promise((res) => cv.toBlob(res, 'image/jpeg', qual));
+    if (blob && blob.size <= SHOT_MAX_OUT) return blob;
+  }
+  throw new Error('Even after shrinking, that picture is too big. Crop it.');
+}
+function screenshotPanel(cl, slug, count) {
+  const slot = h('div', { class: 'shots' });
+  const list = h('div');
+  const msg = h('div');
+  let n = count;
+  const status = h('p', { class: 'small muted' });
+  const label = () => { status.textContent = n ? `${n} screenshot${n === 1 ? '' : 's'} attached (private: moderators only).` : 'No screenshots attached.'; };
+  label();
+  const show = action(async () => {
+    const rows = await q(sb.from('review_screenshots').select('id,path,note,created_at').eq('case_slug', slug).eq('claim_key', cl.k).order('id'));
+    // The page's CSP allows images only from this site or data: URLs, so download each file and show it as a data: URL.
+    const toData = (blob) => new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.onerror = rej; fr.readAsDataURL(blob); });
+    const imgs = await Promise.all(rows.map(async (r) => {
+      const { data, error } = await sb.storage.from('review-screenshots').download(r.path);
+      return error || !data ? null : toData(data);
+    }));
+    list.replaceChildren(rows.length ? h('div', { class: 'btns' }, rows.map((r, i) => {
+      if (!imgs[i]) return h('span', { class: 'small muted', text: 'A screenshot could not be loaded.' });
+      const img = h('img', { src: imgs[i], alt: r.note || 'Screenshot', title: (r.note ? r.note + ' \u00b7 ' : '') + 'click to enlarge', style: 'max-width:160px;max-height:120px;border-radius:8px;border:1px solid var(--line);cursor:zoom-in' });
+      img.addEventListener('click', () => {
+        const big = img.dataset.big === '1';
+        img.dataset.big = big ? '0' : '1';
+        img.style.maxWidth = big ? '160px' : '100%'; img.style.maxHeight = big ? '120px' : 'none'; img.style.cursor = big ? 'zoom-in' : 'zoom-out';
+      });
+      return img;
+    })) : h('p', { class: 'small muted', text: 'Nothing attached yet.' }));
+  }, msg);
+  const input = h('input', { type: 'file', accept: 'image/png,image/jpeg,image/webp', hidden: true });
+  const note = h('input', { type: 'text', maxlength: 200, placeholder: 'What this shows (optional, public-safe, no names)', style: 'min-width:240px' });
+  input.addEventListener('change', action(async () => {
+    const f = input.files && input.files[0];
+    if (!f) return;
+    const blob = await cleanShot(f);
+    const id = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2));
+    const path = `${state.user.id}/${slug}/${cl.k}/${id}.jpg`;
+    const up = await sb.storage.from('review-screenshots').upload(path, blob, { contentType: 'image/jpeg', upsert: false });
+    if (up.error) throw up.error;
+    await q(sb.from('review_screenshots').insert({ case_slug: slug, claim_key: cl.k, path, note: note.value.trim() || null }));
+    input.value = ''; note.value = ''; n += 1; label();
+    await show();
+  }, msg));
+  slot.append(status, h('div', { class: 'btns' },
+    h('button', { class: 'quiet', type: 'button', onclick: () => input.click() }, 'Attach a screenshot'),
+    n ? h('button', { class: 'quiet', type: 'button', onclick: show }, 'Show screenshots') : null, note, input),
+    h('p', { class: 'small muted', text: 'Private to moderators; never shown on the public history. Blur names, addresses and emails first. Pictures are re-saved as plain JPEG and capped in size.' }), msg, list);
+  return slot;
+}
+
 // ---------------------------------------------------------------- router
 
 async function route() {
@@ -2028,6 +2275,7 @@ async function route() {
       case 'map': return await mapView();
       case 'commons': return await commonsView();
       case 'invite': return await inviteView();
+      case 'roles': return rolesView();
       case 'cases': return await casesView(decodeURIComponent(parts[1] || ''));
       case 'review': return await reviewView(decodeURIComponent(parts[1] || ''));
       case 'c': return await categoryView(decodeURIComponent(parts[1] || ''));
@@ -2091,14 +2339,24 @@ async function boot() {
   try { linkProblem = await readSignInLink(); } catch (err) { linkProblem = friendly(err); }
   try { await loadMe(); } catch (err) { render(notice(friendly(err))); return; }
   drawNav();
-  if (!state.user) { signInView(); if (linkProblem) app.prepend(notice(linkProblem)); return; }
-  if (!state.me) return joinView();
+  if (!state.user) { await signInView(); if (linkProblem) app.prepend(notice(linkProblem)); return; }
+  if (!state.me) return await joinView();
   if (state.me.status !== 'active') {
     return render(h('h1', { text: 'Account paused' }),
       h('p', { class: 'lede', text: 'An administrator has suspended this account. Every suspension is recorded with its reason in the moderation log.' }),
       h('button', { onclick: signOut }, 'Sign out'));
   }
   if (recovering) return passwordView(true);
+  // An existing member who opened a role-invitation link: use the saved code once, then forget it.
+  const pending = savedInvite();
+  if (pending) {
+    forgetInvite();
+    try {
+      const got = await q(sb.rpc('redeem_role_invite', { code: pending }));
+      await loadMe(); drawNav();
+      setTimeout(() => app.prepend(notice(`Your invitation worked. You now have the ${roleName(got)} role.`, 'ok')), 300);
+    } catch { /* an ordinary site link, or already used: nothing to do */ }
+  }
   takeTarget();
   return route();
 }

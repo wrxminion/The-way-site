@@ -73,3 +73,6 @@ button{font:inherit;cursor:pointer}
 .statesel{display:flex;align-items:center;gap:8px;font-size:13px;color:#a9cdd3}
 .st-select{font:inherit;font-size:14px;color:var(--text);background:#061b28;border:1px solid #86d4d35a;border-radius:100px;padding:9px 14px;min-height:40px;max-width:100%}
 .st-select:focus-visible{outline:2px solid #91dfdc;outline-offset:2px}
+
+.card .discuss{margin-top:8px;font-size:13px}
+.card .discuss a{color:#a7f0e9}

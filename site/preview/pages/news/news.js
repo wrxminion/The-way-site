@@ -142,6 +142,10 @@
       });
       li.append(p);
     }
+    // Members: say you read it, and discuss it (lives in the member area, which is allowed to talk to the database)
+    const dd = el('div', 'discuss'); const da = el('a', null, 'Did you read it? Tell us what you found, and discuss (members)');
+    da.href = '/members/discuss.html?item=news:' + encodeURIComponent(it.id.toLowerCase().replace(/[^a-z0-9._-]+/g, '-').replace(/^[^a-z0-9]+/, '').slice(0, 120)) + '&title=' + encodeURIComponent(it.title.slice(0, 200));
+    dd.append(da); li.append(dd);
     return li;
   }
 
