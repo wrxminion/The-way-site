@@ -572,9 +572,9 @@ const AWARD_NAMES = { source_accepted: 'Source accepted', source_verified: 'Sour
   correction_accepted: 'Correction accepted', revision_published: 'Revision published', thread_accepted: 'Thread accepted' };
 function reviewCard() {
   const stat = (label, node) => h('div', { class: 'rv-stat' }, h('span', { class: 'rv-label', text: label }), node);
-  const points = h('strong', { class: 'rv-num', text: '…' }), pointsNote = h('span', { class: 'rv-note' });
-  const awards = h('div', { class: 'rv-awards' }, h('span', { class: 'rv-note', text: '…' }));
-  const waiting = h('strong', { class: 'rv-num', text: '…' }), waitingNote = h('span', { class: 'rv-note' });
+  const points = h('strong', { class: 'rv-num', text: '\u2026' }), pointsNote = h('span', { class: 'rv-note' });
+  const awards = h('div', { class: 'rv-awards' }, h('span', { class: 'rv-note', text: '\u2026' }));
+  const waiting = h('strong', { class: 'rv-num', text: '\u2026' }), waitingNote = h('span', { class: 'rv-note' });
   const card = h('a', { class: 'review-card', href: '#/review' },
     h('img', { class: 'rv-art', src: 'art/review.svg?v=1', alt: '', width: 320, height: 180 }),
     h('div', { class: 'rv-body' },
@@ -585,23 +585,23 @@ function reviewCard() {
         stat('Awards', awards),
         stat('Waiting for a 2nd review', h('div', {}, waiting, waitingNote)))));
   (async () => {
-    const dash = (n, note) => { n.textContent = '–'; if (note) note.textContent = ''; };
+    const dash = (n, note) => { n.textContent = '\u2013'; if (note) note.textContent = ''; };
     try {
       const k = (await q(sb.rpc('my_karma')))[0];
       points.textContent = String(k.total);
-      pointsNote.textContent = ` · ${k.last_30_days >= 0 ? '+' : ''}${k.last_30_days} in 30 days`;
+      pointsNote.textContent = ` \u00b7 ${k.last_30_days >= 0 ? '+' : ''}${k.last_30_days} in 30 days`;
     } catch { dash(points, pointsNote); }
     try {
       const rows = await q(sb.from('karma_events').select('kind').eq('member_id', state.me.id).order('id', { ascending: false }).limit(200));
       const n = {}; rows.forEach((r) => { n[r.kind] = (n[r.kind] || 0) + 1; });
       const kinds = Object.keys(n).filter((x) => AWARD_NAMES[x]).sort((a, b) => n[b] - n[a]).slice(0, 3);
-      awards.replaceChildren(...(kinds.length ? kinds.map((x) => h('span', { class: 'rv-chip', text: `${AWARD_NAMES[x]} × ${n[x]}` }))
+      awards.replaceChildren(...(kinds.length ? kinds.map((x) => h('span', { class: 'rv-chip', text: `${AWARD_NAMES[x]} \u00d7 ${n[x]}` }))
         : [h('span', { class: 'rv-note', text: 'None yet' })]));
-    } catch { awards.replaceChildren(h('span', { class: 'rv-note', text: '–' })); }
+    } catch { awards.replaceChildren(h('span', { class: 'rv-note', text: '\u2013' })); }
     try {
       const r = (await q(sb.rpc('my_review_summary')))[0];
       waiting.textContent = String(r.waiting_second);
-      waitingNote.textContent = ` of ${r.reviewed} you checked${r.differ ? ` · ${r.differ} differ` : ''}`;
+      waitingNote.textContent = ` of ${r.reviewed} you checked${r.differ ? ` \u00b7 ${r.differ} differ` : ''}`;
     } catch { dash(waiting, waitingNote); }
   })();
   return card;
@@ -616,6 +616,14 @@ async function homeView() {
     wantsMod ? sb.from('reports').select('id', { count: 'exact', head: true }).is('resolved_at', null).then((r) => r.count || 0) : 0,
     wantsAdmin ? sb.from('notify_signups').select('id', { count: 'exact', head: true }).then((r) => r.count || 0) : 0,
   ]);
+  // Latest threads: a failure here must never break Home, so it is loaded on its own and shown as a note.
+  let recent = [], threadsFailed = false;
+  const catById = Object.fromEntries((cats || []).map((c) => [c.id, c]));
+  try {
+    const ts = await q(sb.from('threads').select('id,title,status,last_post_at,pinned_at,category_id,author:members!threads_author_id_fkey(display_name)')
+      .order('last_post_at', { ascending: false }).limit(30));
+    recent = ts.filter((t) => !t.pinned_at).slice(0, 6);
+  } catch { threadsFailed = true; }
   const tile = (href, title, sub) => h('a', { class: 'tile', href }, h('strong', { text: title }), h('span', { text: sub }));
   const guideTile = tile(LINKS.guide, 'Voter guide', 'What is on your ballot, from official sources');
   const mapTile = () => {
@@ -647,6 +655,8 @@ async function homeView() {
         wantsMod ? h('a', { class: 'button quiet', href: '#/reports', text: `Reports (${openReports} open)` }) : null,
         wantsMod && state.hasModLog ? h('a', { class: 'button quiet', href: '#/log', text: 'Moderation log' }) : null,
         (can('researcher') || can('reviewer')) ? h('a', { class: 'button quiet', href: '#/research', text: 'Research desk' }) : null)) : null,
+    h('h2', { text: 'Latest threads' }),
+    threadsFailed ? h('p', { class: 'muted', text: 'Could not load the threads. Try again in a moment.' }) : threadList(recent, catById),
     h('h2', { text: 'Latest in the Commons' }),
     posts.length ? h('ul', { class: 'list panel' }, posts.map((p) => h('li', {},
       h('div', { class: 'row' }, h('a', { href: `#/t/${p.thread_id}`, text: p.thread ? p.thread.title : 'Thread' }), h('span', { class: 'meta', text: when(p.created_at) })),
@@ -654,7 +664,6 @@ async function homeView() {
       h('div', { class: 'small post', text: p.body.length > 220 ? p.body.slice(0, 220) + '…' : p.body }))))
       : h('p', { class: 'muted', text: 'Nothing posted yet. Start the first thread in the Commons.' }),
     h('p', {}, h('a', { class: 'button quiet', href: '#/commons', text: 'Open the Commons' })),
-    recent.length ? h('div', {}, h('h2', { text: 'Latest threads' }), threadList(recent, catById)) : null,
     h('h2', { text: 'Rooms' }),
     h('p', { class: 'small muted', text: 'Members may talk about anything, candidates included. The Way itself never takes sides.' }),
     h('ul', { class: 'list panel' }, cats.map((c) => h('li', {},
@@ -715,6 +724,7 @@ async function commonsView() {
         h('li', { text: 'If a post breaks the rules, press Report. Moderators review every report, and every moderation action is logged.' }),
         h('li', { text: 'Posts are plain text. Edits stay visible in the post history.' }))),
     pinned.length ? h('div', {}, h('h2', { text: 'Pinned' }), threadList(pinned, catById)) : null,
+    recent.length ? h('div', {}, h('h2', { text: 'Latest threads' }), threadList(recent, catById)) : null,
     h('h2', { text: 'Rooms' }),
     h('div', { class: 'rooms' }, cats.map((c) => { const s = stats(c); return h('a', { class: 'room', href: `#/c/${c.slug}` },
       ROOM_ART.has(c.slug) ? h('img', { class: 'room-art', src: `art/room-${c.slug}.svg?v=1`, alt: '', width: 320, height: 180, loading: 'lazy' }) : null,
