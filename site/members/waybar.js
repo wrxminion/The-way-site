@@ -235,6 +235,13 @@
     if (after) after.insertAdjacentElement('afterend', water);
     else document.body.insertBefore(water, document.body.firstChild);
   }
-  var start = function () { addOriginalOcean(); render(stored()); };
+  var start = function () {
+    addOriginalOcean(); render(stored());
+    if (!document.querySelector('script[src^="/preview/pages/footer-quick.js"]')) {
+      var footerScript = document.createElement('script');
+      footerScript.src = '/preview/pages/footer-quick.js?v=1';
+      document.head.appendChild(footerScript);
+    }
+  };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();

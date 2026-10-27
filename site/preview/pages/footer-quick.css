@@ -1,0 +1,10 @@
+.michi-footer-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 24px;padding:24px;color:#d4efed;font:600 13px/1.4 system-ui,sans-serif}
+.michi-footer-nav a{color:inherit}.michi-footer-nav span{opacity:.8}
+.essay-quick-links{align-items:center;flex-wrap:nowrap}
+.essay-quick-links .essay-access{white-space:nowrap;color:#fff;font:600 12px/1.2 system-ui,sans-serif}
+.essay-quick-links .essay-access a{display:inline;padding:6px 2px}
+.essay-search{display:flex;align-items:center;min-width:0;border:1px solid #c7ffff77;border-radius:999px;background:#06212f;overflow:hidden}
+.essay-search label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.essay-search input{width:125px;min-width:0;padding:7px;border:0;background:transparent;color:#fff;font:14px system-ui,sans-serif}
+.essay-search input::placeholder{color:#d7ecec}.essay-search button{border:0;padding:6px 9px;background:transparent;color:#fff;cursor:pointer}
+@media(max-width:480px){.essay-search{flex:1}.essay-search input{width:100%;font-size:16px}.essay-quick-links .essay-access{font-size:11px}.essay-quick-links a{font-size:11px;padding:7px 4px}}
