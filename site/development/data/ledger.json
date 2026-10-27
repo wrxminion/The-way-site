@@ -360,6 +360,16 @@
       "why": "Make the water design consistent throughout the site.",
       "status_as_of_2026_10_25": "Proposed; not merged or verified live.",
       "evidence_and_limits": "The actual About SVG and CSS are reused. A browser fixture verified the waves and gradient; pages without the shared header require separate checks."
+    },
+    {
+      "id": "D042",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Correct shared ocean placement and layering",
+      "origin": "Frank reported that the live waves did not match About",
+      "decision_or_proposal": "Place shared waves below illustration banners, reserve a compact surface area, and draw the decorative light behind content. Keep the original wave shapes and motion. Prevent short pages from compressing the depth gradient.",
+      "why": "The earlier shared effect drew the wave across artwork and the light over content.",
+      "status_as_of_2026_10_25": "Proposed; not merged or visually verified.",
+      "evidence_and_limits": "The live Research and About pages were inspected. JavaScript syntax and diff checks passed; local visual rendering was blocked, so the correction requires visual review before it can be called verified."
     }
   ]
 }
