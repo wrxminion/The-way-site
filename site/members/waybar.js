@@ -264,8 +264,8 @@
   // My Ballot: on voter-guide pages, load the pick/save controls (browser-only; see ballot-store.js).
   if (/^\/preview\/pages\/guide(-[a-z]{2})?\//.test(path) && !inMembers) {
     var bcss = document.createElement('link'); bcss.rel = 'stylesheet'; bcss.href = '/members/ballot-pick.css?v=2'; document.head.appendChild(bcss);
-    var bstore = document.createElement('script'); bstore.src = '/members/ballot-store.js?v=2';
-    bstore.onload = function () { var bp = document.createElement('script'); bp.src = '/members/ballot-pick.js?v=2'; document.body.appendChild(bp); };
+    var bstore = document.createElement('script'); bstore.src = '/members/ballot-store.js?v=3';
+    bstore.onload = function () { var bp = document.createElement('script'); bp.src = '/members/ballot-pick.js?v=3'; document.body.appendChild(bp); };
     document.body.appendChild(bstore);
   }
   var start = function () {

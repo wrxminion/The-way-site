@@ -52,6 +52,20 @@ let fails = 0; const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m)
   await page.click('.bb-main');
   const stash = await page.evaluate(() => JSON.parse(sessionStorage.getItem('theway.mymarks.v1') || 'null'));
   ok(stash && stash.state === 'CO' && Array.isArray(stash.items) && !JSON.stringify(stash).match(/Example Street/i), 'the list of your races is passed on, without the address');
+  // quick private answers on the ballot cards
+  const mcard = page.locator('#ballot div.measure').first();
+  ok(await mcard.locator('.m-title a').count() === 1 && /measures\/[a-z0-9-]+\.html$/.test(await mcard.locator('.m-title a').getAttribute('href')), 'a measure title is itself a link to its page');
+  ok(/^See details/.test(await mcard.locator('.m-see').innerText()) && (await mcard.evaluate((e) => [...e.children].map((c) => c.className).slice(0, 3).join(','))) === 'm-title,m-see,m-what', '"See details" sits right under the title, before the text and the dropdown');
+  await mcard.getByRole('button', { name: 'Yes', exact: true }).click();
+  const slugM = (await mcard.locator('.m-title a').getAttribute('href')).match(/([a-z0-9-]+)\.html$/)[1];
+  let st2 = await page.evaluate(() => JSON.parse(localStorage.getItem('theway.ballot.v1.CO') || 'null'));
+  ok(st2 && st2.contests['measure:' + slugM] && st2.contests['measure:' + slugM].picks[0] === 'yes', 'Yes on a measure card is saved in the shared browser store');
+  const cand = page.locator('#ballot .race li', { has: page.locator('.quick') }).first();
+  await cand.getByRole('button', { name: 'Maybe' }).click();
+  st2 = await page.evaluate(() => JSON.parse(localStorage.getItem('theway.ballot.v1.CO') || 'null'));
+  ok(Object.values(st2.contests).some((c) => c.kind === 'race' && Object.values(c.leans || {}).includes('maybe')), 'Maybe on a candidate is saved as a private lean');
+  ok(await mcard.getByRole('button', { name: 'Yes', exact: true }).getAttribute('aria-pressed') === 'true', 'the card shows the saved answer');
+  if (process.env.SHOT) await page.locator('#ballot').screenshot({ path: process.env.SHOT });
   ok(await page.locator('#ballot .bb-plan').count() === 1, 'still only one Plan your vote link after the page redraws');
   // no state typed and nothing in Colorado: other-state help is still allowed
   await page.waitForTimeout(1500); asked.length = 0;

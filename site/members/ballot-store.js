@@ -25,6 +25,18 @@
 
   function empty(st) { return { v: 1, state: st, contests: {}, facts: {}, updated: 0 }; }
 
+  // Private "would you vote for this person?" answers and rank numbers, per option id. Only for options the contest lists.
+  function leanMap(m, ids) {
+    var r = {}; if (!m || typeof m !== 'object') return r;
+    Object.keys(m).forEach(function (k) { if (ids[k] && (m[k] === 'yes' || m[k] === 'no' || m[k] === 'maybe')) r[k] = m[k]; });
+    return r;
+  }
+  function rankMap(m, ids) {
+    var r = {}; if (!m || typeof m !== 'object') return r;
+    Object.keys(m).forEach(function (k) { var n = parseInt(m[k], 10); if (ids[k] && n >= 1 && n <= 99) r[k] = n; });
+    return r;
+  }
+
   function clean(d, st) {
     var out = empty(st);
     if (!d || typeof d !== 'object') return out;
@@ -50,7 +62,8 @@
       var seats = Math.max(1, Math.min(20, parseInt(c.seats, 10) || 1));
       var picks = pick(c.picks).slice(0, seats);
       out.contests[k] = { key: k, kind: kind, title: str(c.title, LIMITS.label), url: url(c.url), seats: seats, options: opts,
-        picks: picks, undecided: c.undecided === true && !picks.length, compare: pick(c.compare), note: str(c.note, LIMITS.note) };
+        picks: picks, undecided: c.undecided === true && !picks.length, compare: pick(c.compare), note: str(c.note, LIMITS.note),
+        leans: leanMap(c.leans, ids), ranks: rankMap(c.ranks, ids) };
       n++;
     }
     n = 0;

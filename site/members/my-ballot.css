@@ -68,3 +68,16 @@
 .mk-opt .mb-sub{display:block}
 .mk-cmp{font-size:13px;color:var(--muted)}
 .mk-form textarea{min-height:0;margin-top:8px}
+
+/* marking screen: race titles stand out, one candidate per card-like row */
+.mk-race{font:normal clamp(20px,2.6vw,26px)/1.25 Georgia,serif;color:#e9ffff}
+.mk-title{font:normal clamp(24px,3.4vw,32px)/1.2 Georgia,serif;color:var(--aqua);margin:0 0 6px;padding-bottom:8px;border-bottom:2px solid #a7f0e955}
+.mk-opt{padding:10px 0;border-top:1px solid var(--line)}
+.mk-opts .mk-opt:first-child{border-top:0}
+.mk-name{flex:1 1 240px;font-size:17px}
+.mk-name b{font-size:18px;color:#e9ffff}
+.mk-lean{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;flex:1 1 280px}
+.mk-q{font-size:14px;font-weight:700;color:#e9ffff}
+.mk-lean select{width:auto;min-width:130px}
+.mk-rk{display:flex;flex-direction:row;align-items:center;gap:6px;font-size:14px;color:var(--foam)}
+.mk-rank{width:4.5em}

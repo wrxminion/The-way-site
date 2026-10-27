@@ -28,7 +28,7 @@
   function merged(d, def) {
     var c = d.contests[def.key] || { picks: [], undecided: false, compare: [] };
     d.contests[def.key] = { key: def.key, kind: def.kind, title: def.title, url: def.url, seats: def.seats, options: def.options,
-      picks: c.picks, undecided: c.undecided, compare: c.compare, note: c.note || '' };
+      picks: c.picks, undecided: c.undecided, compare: c.compare, note: c.note || '', leans: c.leans || {}, ranks: c.ranks || {} };
     return d.contests[def.key];
   }
   function change(def, fn) {
@@ -101,7 +101,7 @@
       var c = d.contests[v.def.key];
       v.rows.forEach(function (r) {
         var on = !!c && c.picks.indexOf(r.id) >= 0, cm = !!c && c.compare.indexOf(r.id) >= 0;
-        r.pick.setAttribute('aria-pressed', on ? 'true' : 'false'); r.pick.textContent = on ? 'Picked ✓' : 'Pick';
+        r.pick.setAttribute('aria-pressed', on ? 'true' : 'false'); r.pick.textContent = r.lab ? (on ? r.lab + ' ✓' : r.lab) : (on ? 'Picked ✓' : 'Pick');
         r.cmp.setAttribute('aria-pressed', cm ? 'true' : 'false'); r.cmp.textContent = cm ? 'In comparison ✓' : 'Compare';
       });
       v.undec.setAttribute('aria-pressed', c && c.undecided ? 'true' : 'false');
@@ -144,7 +144,7 @@
       b.setAttribute('aria-label', 'I would vote ' + id + ' on ' + def.title);
       b.addEventListener('click', function () { change(def, pickFn(id)); });
       v.bar.insertBefore(b, v.undec);
-      v.rows.push({ id: id, pick: b, cmp: el('span') });
+      v.rows.push({ id: id, pick: b, cmp: el('span'), lab: id === 'yes' ? 'Yes' : 'No' });
     });
     var anchor = main.querySelector('.fulltext-link') || main.querySelector('.meta') || main.querySelector('h1');
     anchor.parentNode.insertBefore(v.bar, anchor.nextSibling);
