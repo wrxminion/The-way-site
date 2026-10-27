@@ -157,7 +157,6 @@
         pub.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases'));
         pub.appendChild(link('/preview/pages/case-studies/', 'Ballot Case Studies', 'casestudies'));
         pub.appendChild(link('/preview/pages/news/', 'News', 'news'));
-        pub.appendChild(link('/search/', 'Search', 'search'));
         pub.appendChild(link('/preview/pages/deeper.html', 'About', 'about'));
         pub.appendChild(link('/preview/pages/join.html', 'Join'));
         kids.push(pub);
