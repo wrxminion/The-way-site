@@ -26,14 +26,24 @@
 <span id="live" hidden></span>
 <span id="rail" hidden></span>
 <span id="detail" hidden></span>
-<span id="intake" hidden></span>
-<span id="pt-h" hidden></span>
-<span id="ptform" hidden></span>
-<span id="pturl" hidden></span>
-<span id="ptwhy" hidden></span>
-<span id="ptcat" hidden></span>
-<span id="ptmsg" hidden></span>
+<section class="intake" id="intake" aria-labelledby="pt-h">
+<h2 id="pt-h">Pull a Thread</h2>
+<p class="lede">Found a claim or a record we should look at? Send a link. A person reads every submission. We do not publish what you send, and sending it does not promise an investigation.</p>
+<form id="ptform" novalidate>
+<label for="pturl">Link to the source (required)</label><input id="pturl" name="url" type="url" maxlength="1000" required placeholder="https://…">
+<label for="ptwhy">Why it matters (optional, up to 1000 characters)</label><textarea id="ptwhy" name="why" rows="3" maxlength="1000"></textarea>
+<label for="ptcat">Topic</label>
+<select id="ptcat" name="category"><option value="finance">Banking and money</option><option value="ballot">A ballot measure</option><option value="case">A history case</option><option value="other">Something else</option></select>
+<div class="hp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<button class="go" type="submit">Send</button>
+<p id="ptmsg" role="status"></p>
+<p class="lede small">Do not include names, addresses, phone numbers or email addresses. We do not ask for yours.</p>
+</form>
+</section>
 </main>
 <script src="/members/waybar.js?v=1" defer></script>
+<script src="/members/config.js?v=39" defer></script>
+<script src="/members/vendor/supabase-js-2.110.9.js" defer></script>
+<script src="/timeline/thread-intake.js?v=1" defer></script>
 </body>
 </html>
