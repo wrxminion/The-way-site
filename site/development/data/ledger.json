@@ -400,6 +400,36 @@
       "why": "The banking work is unfinished and should not appear ready for publication.",
       "status_as_of_2026_10_25": "Proposed; not merged or verified live.",
       "evidence_and_limits": "Underlying research and data remain in place. The change is limited to the Research page; other entry points remain to be checked."
+    },
+    {
+      "id": "D035",
+      "decision_date_or_range": "2026-10-27",
+      "title": "About navigation",
+      "origin": "Frank's requested About navigation",
+      "decision_or_proposal": "Use the Why The Way essay for About with Methodology, Why AI and Legal links while retaining its water design.",
+      "why": "Keep the About page distinct and align its navigation with its purpose.",
+      "status_as_of_2026_10_25": "Merged in PR #6; live appearance not independently verified.",
+      "evidence_and_limits": "Repository PR #6 merged; deployment and full signed-in behavior have not been verified."
+    },
+    {
+      "id": "D036",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Shared header and floating controls",
+      "origin": "Frank's navigation and accessibility feedback",
+      "decision_or_proposal": "Center The Way, provide a mobile menu and a floating search, account and Back to Surface bar.",
+      "why": "Make site navigation and common controls easier to find.",
+      "status_as_of_2026_10_25": "Merged in PR #7; live appearance not independently verified.",
+      "evidence_and_limits": "Signed-out layout checked in a partial preview; signed-in display simulated, not tested with a real account."
+    },
+    {
+      "id": "D037",
+      "decision_date_or_range": "2026-10-27",
+      "title": "One national voter guide entry",
+      "origin": "Frank's feedback on inconsistent ballot and map links",
+      "decision_or_proposal": "Replace the older landing page's separate Colorado guide and district-map cards with one Voter Guide link to the national state-selection page.",
+      "why": "Provide a consistent entry point for the map and voter guides.",
+      "status_as_of_2026_10_25": "Proposed in this change; not yet merged or live.",
+      "evidence_and_limits": "The shared header already points to the national guide. This change addresses the two legacy landing-page cards; a complete site-wide audit remains outstanding."
     }
   ]
 }
