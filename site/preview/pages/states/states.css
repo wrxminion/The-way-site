@@ -99,3 +99,10 @@ table.deadlines{width:100%;border-collapse:collapse;margin:8px 0 6px;font-size:1
 .news-list a{font:normal 18px/1.35 Georgia,serif;color:var(--text);text-decoration:none;border-bottom:1px solid #a6f0e740}
 .news-list a:hover{border-bottom-color:#a6f0e7}
 .news-list .meta{display:block;font-size:12px;color:var(--muted);margin-top:5px}
+.vg-steps .vg-pick form{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}
+.vg-steps .vg-pick input{flex:1 1 200px;min-width:0;font:inherit;color:#e9ffff;background:#03192ab8;border:1px solid #c7ffff55;border-radius:99px;padding:9px 14px}
+.vg-steps .vg-pick button{font:inherit;font-weight:800;color:#052b3b;background:#b9f6ed;border:0;border-radius:99px;padding:9px 20px;cursor:pointer}
+.vg-steps .vg-pick button:hover{background:#e4fffb}
+.vg-steps .vg-pick input:focus-visible,.vg-steps .vg-pick button:focus-visible{outline:2px solid #e4ffff;outline-offset:2px}
+.vg-addr-msg{display:block;font-size:13px;color:#bcd7df}
+.vg-addr-msg.warn{color:#ffe3a3}
