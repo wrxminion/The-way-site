@@ -2225,10 +2225,21 @@ function screenshotPanel(cl, slug, count) {
   label();
   const show = action(async () => {
     const rows = await q(sb.from('review_screenshots').select('id,path,note,created_at').eq('case_slug', slug).eq('claim_key', cl.k).order('id'));
-    const urls = await Promise.all(rows.map((r) => sb.storage.from('review-screenshots').createSignedUrl(r.path, 600)));
+    // The page's CSP allows images only from this site or data: URLs, so download each file and show it as a data: URL.
+    const toData = (blob) => new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.onerror = rej; fr.readAsDataURL(blob); });
+    const imgs = await Promise.all(rows.map(async (r) => {
+      const { data, error } = await sb.storage.from('review-screenshots').download(r.path);
+      return error || !data ? null : toData(data);
+    }));
     list.replaceChildren(rows.length ? h('div', { class: 'btns' }, rows.map((r, i) => {
-      const u = urls[i].data && urls[i].data.signedUrl;
-      return u ? h('a', { href: u, target: '_blank', rel: 'noopener noreferrer', title: r.note || when(r.created_at) }, h('img', { src: u, alt: r.note || 'Screenshot', style: 'max-width:160px;max-height:120px;border-radius:8px;border:1px solid var(--line)' })) : null;
+      if (!imgs[i]) return h('span', { class: 'small muted', text: 'A screenshot could not be loaded.' });
+      const img = h('img', { src: imgs[i], alt: r.note || 'Screenshot', title: (r.note ? r.note + ' \u00b7 ' : '') + 'click to enlarge', style: 'max-width:160px;max-height:120px;border-radius:8px;border:1px solid var(--line);cursor:zoom-in' });
+      img.addEventListener('click', () => {
+        const big = img.dataset.big === '1';
+        img.dataset.big = big ? '0' : '1';
+        img.style.maxWidth = big ? '160px' : '100%'; img.style.maxHeight = big ? '120px' : 'none'; img.style.cursor = big ? 'zoom-in' : 'zoom-out';
+      });
+      return img;
     })) : h('p', { class: 'small muted', text: 'Nothing attached yet.' }));
   }, msg);
   const input = h('input', { type: 'file', accept: 'image/png,image/jpeg,image/webp', hidden: true });
