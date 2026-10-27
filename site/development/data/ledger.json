@@ -350,6 +350,16 @@
       "why": "Make the main sections feel like one site as readers go deeper.",
       "status_as_of_2026_10_25": "Proposed in repository; not yet merged or verified live.",
       "evidence_and_limits": "Applies to selected landing pages; page-by-page visual and reduced-motion verification still required."
+    },
+    {
+      "id": "D041",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Reuse the original ocean across shared pages",
+      "origin": "Frank's request for the same water and light as Why The Way",
+      "decision_or_proposal": "Reuse the original surface SVG, animated light and ocean gradient on pages using the shared header, retaining pages that already have the original ocean.",
+      "why": "Make the water design consistent throughout the site.",
+      "status_as_of_2026_10_25": "Proposed; not merged or verified live.",
+      "evidence_and_limits": "The actual About SVG and CSS are reused. A browser fixture verified the waves and gradient; pages without the shared header require separate checks."
     }
   ]
 }
