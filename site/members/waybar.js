@@ -144,28 +144,26 @@
       burger.addEventListener('click', function () { open = !open; render(); });
       kids.push(mid, right, burger);
     } else if (!pending) {
-      var out = el('nav', { class: 'wb-right', 'aria-label': 'Sign in' });
-      var s = link(appPage ? '#/' : '/members/', 'Sign in');
-      s.className = 'wb-pill';
-      out.appendChild(searchForm());
-      out.appendChild(s);
-      {
-        // Signed out: the same section links on every page, member sign-in included: the same section links on every page (Frank, Oct 19).
-        var pub = el('nav', { class: 'wb-mid wb-pub', 'aria-label': 'Sections' });
-        pub.appendChild(link('/preview/pages/states/', 'Voter Guide', 'ballot'));
-        pub.appendChild(link('/research/', 'Research', 'research-lib'));
-        pub.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases'));
-        pub.appendChild(link('/preview/pages/case-studies/', 'Ballot Case Studies', 'casestudies'));
-        pub.appendChild(link('/preview/pages/news/', 'News', 'news'));
-        pub.appendChild(link('/search/', 'Search', 'search'));
-        pub.appendChild(link('/preview/pages/deeper.html', 'About', 'about'));
-        pub.appendChild(link('/preview/pages/join.html', 'Join'));
-        kids.push(pub);
-        var publicMenu = el('button', { type: 'button', class: 'wb-burger wb-public-menu', 'aria-expanded': open ? 'true' : 'false', 'aria-label': 'Sections menu' }, 'Menu');
-        publicMenu.addEventListener('click', function () { open = !open; render(); });
-        kids.push(publicMenu);
-      }
-      kids.push(out);
+      // Four principal public destinations flank the centered site identity.
+      var left = el('nav', { class: 'wb-public-left', 'aria-label': 'Voter information' });
+      left.appendChild(link('/preview/pages/states/', 'Voter Guide', 'ballot'));
+      left.appendChild(link('/preview/pages/news/', 'News', 'news'));
+      var rightPublic = el('nav', { class: 'wb-public-right', 'aria-label': 'Learn about The Way' });
+      rightPublic.appendChild(link('/research/', 'Research', 'research-lib'));
+      rightPublic.appendChild(link('/preview/pages/deeper.html', 'About', 'about'));
+      var mobile = el('nav', { class: 'wb-public-mobile', 'aria-label': 'Sections' });
+      mobile.appendChild(link('/preview/pages/states/', 'Voter Guide', 'ballot'));
+      mobile.appendChild(link('/preview/pages/news/', 'News', 'news'));
+      mobile.appendChild(link('/research/', 'Research', 'research-lib'));
+      mobile.appendChild(link('/preview/pages/deeper.html', 'About', 'about'));
+      mobile.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases'));
+      mobile.appendChild(link('/preview/pages/case-studies/', 'Ballot Case Studies', 'casestudies'));
+      mobile.appendChild(link('/search/', 'Search', 'search'));
+      mobile.appendChild(link('/preview/pages/join.html', 'Join'));
+      mobile.appendChild(link('/members/', 'Sign in'));
+      var publicMenu = el('button', { type: 'button', class: 'wb-burger wb-public-menu', 'aria-expanded': open ? 'true' : 'false', 'aria-label': 'Sections menu' }, 'Menu');
+      publicMenu.addEventListener('click', function () { open = !open; render(); });
+      kids.push(left, rightPublic, mobile, publicMenu);
     }
     bar.replaceChildren.apply(bar, kids);
     syncFloating();
@@ -176,6 +174,9 @@
       floating = el('nav', { class: 'wb-floating', 'aria-label': 'Quick links' });
       document.body.appendChild(floating);
       document.body.classList.add('wb-floating-ready');
+      var updateFloatingVisibility = function () { floating.hidden = window.scrollY <= 80; };
+      window.addEventListener('scroll', updateFloatingVisibility, { passive: true });
+      updateFloatingVisibility();
     }
     var items = [];
     if (!data) {
