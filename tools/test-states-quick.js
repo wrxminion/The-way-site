@@ -51,6 +51,11 @@ const CASES = [['ok', 'OK', 35.47, -97.52], ['nc', 'NC', 35.78, -78.64], ['me', 
       ok(k && stored.contests[k].picks[0] === 'yes', ST + ': Yes saved to the shared store (' + k + ')');
       ok(await m.getByRole('button', { name: 'Yes', exact: true }).first().getAttribute('aria-pressed') === 'true', ST + ': Yes shows pressed');
     }
+    const nbt = page.locator('#ballot .q-note').first();
+    await nbt.getByRole('button').click();
+    await nbt.locator('textarea').fill('asked about taxes'); await nbt.locator('textarea').blur();
+    const st2 = await page.evaluate((s) => JSON.parse(localStorage.getItem('theway.ballot.v1.' + s) || '{}'), ST);
+    ok(Object.values(st2.contests || {}).some((c) => c.note === 'asked about taxes' || c.why === 'asked about taxes' || Object.values(c.whys || {}).includes('asked about taxes')), ST + ': a note typed on the map is saved');
     const cand = page.locator('#ballot .quick').filter({ has: page.getByRole('button', { name: 'Maybe', exact: true }) }).first();
     if (await cand.count()) {
       await cand.getByRole('button', { name: 'Maybe', exact: true }).click();

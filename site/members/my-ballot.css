@@ -81,3 +81,12 @@
 .mk-lean select{width:auto;min-width:130px}
 .mk-rk{display:flex;flex-direction:row;align-items:center;gap:6px;font-size:14px;color:var(--foam)}
 .mk-rank{width:4.5em}
+
+/* private note per candidate on the marking screen */
+.mk-pnote{flex-basis:100%;font-size:13px}
+.mk-pnote summary{cursor:pointer;color:var(--muted)}
+.mk-pnote textarea{width:100%}
+
+/* sheet: each race or measure shows pick, reason and the notes grabbed from guide pages */
+.mb-why{font-style:normal;font-weight:600}
+.mb-grab{margin-top:6px}

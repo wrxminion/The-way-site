@@ -28,7 +28,7 @@
   function merged(d, def) {
     var c = d.contests[def.key] || { picks: [], undecided: false, compare: [] };
     d.contests[def.key] = { key: def.key, kind: def.kind, title: def.title, url: def.url, seats: def.seats, options: def.options,
-      picks: c.picks, undecided: c.undecided, compare: c.compare, note: c.note || '', leans: c.leans || {}, ranks: c.ranks || {} };
+      picks: c.picks, undecided: c.undecided, compare: c.compare, note: c.note || '', why: c.why || '', leans: c.leans || {}, ranks: c.ranks || {}, whys: c.whys || {} };
     return d.contests[def.key];
   }
   function change(def, fn) {
@@ -222,7 +222,7 @@
       d.facts[id] = { id: id, kind: kind, text: text, contest: contestKey || s.contest, subject: s.subject, subjectLabel: s.label,
         pageUrl: location.pathname, pageTitle: h1Text(document), srcUrl: src.url, srcLabel: src.label, print: true, compare: true, side: '', note: '', ts: Date.now() };
       WB.write(WB.clean(d, ST));
-      render('Saved. Open My Ballot to print it or add it to a comparison.');
+      render('Saved to your ballot notes. Open My Ballot to print it.');
     };
     if (racePromise) racePromise.then(function (def) {
       if (def) { var d = WB.read(ST); merged(d, def); WB.write(WB.clean(d, ST)); }
@@ -248,9 +248,25 @@
   var dock = el('div', 'bp-dock');
   dock.setAttribute('role', 'region'); dock.setAttribute('aria-label', 'My Ballot');
   var dockLink = el('a', 'bp-open', 'My Ballot'); dockLink.href = '/members/my-ballot.html?state=' + ST;
-  var hl = btn('bp-hl', 'Save highlighted text'); hl.hidden = true;
+  var hl = btn('bp-hl', 'Save to my ballot notes'); hl.hidden = true;
   msgEl = el('span', 'bp-msg'); msgEl.setAttribute('role', 'status');
-  dock.appendChild(msgEl); dock.appendChild(hl); dock.appendChild(dockLink);
+  // a quick typed note, saved like a highlight (with this page's link) under this person or measure
+  var noteBtn = null, noteForm = null;
+  if (KIND === 'candidate' || KIND === 'measure') {
+    noteBtn = btn('bp-btn bp-addnote', 'Add a note');
+    noteForm = el('div', 'bp-noteform'); noteForm.hidden = true;
+    var ta = el('textarea'); ta.rows = 3; ta.maxLength = WB.LIMITS.note; ta.setAttribute('aria-label', 'Your note, saved to your ballot notes'); ta.placeholder = 'A note to keep with this page (only on this device)';
+    var sv = btn('bp-btn', 'Save to my ballot notes');
+    noteForm.appendChild(ta); noteForm.appendChild(sv);
+    noteBtn.addEventListener('click', function () { noteForm.hidden = !noteForm.hidden; if (!noteForm.hidden) ta.focus(); });
+    sv.addEventListener('click', function () {
+      var t = ta.value.replace(/\s+/g, ' ').trim(); if (t.length < 2) return;
+      saveFact(t, { url: '', label: 'My note' }, 'highlight', WB.factId(location.pathname, 'note:' + Date.now() + t));
+      ta.value = ''; noteForm.hidden = true;
+    });
+  }
+  if (noteForm) dock.appendChild(noteForm);
+  dock.appendChild(msgEl); if (noteBtn) dock.appendChild(noteBtn); dock.appendChild(hl); dock.appendChild(dockLink);
   document.body.appendChild(dock);
 
   var pending = null;

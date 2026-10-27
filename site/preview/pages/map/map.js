@@ -190,7 +190,7 @@ const slugOf=p=>{const m=/\/([a-z0-9-]+)\.html$/.exec(p||'');return m?m[1]:'';};
 function pathOf(rel){const g=data.guide;if(!g||!rel)return '';try{return new URL(g.base+rel,location.href).pathname;}catch(e){return '';}}
 function mergeC(d,def){
   const c=d.contests[def.key]||{picks:[],undecided:false,compare:[],note:'',leans:{},ranks:{}};
-  d.contests[def.key]={key:def.key,kind:def.kind,title:def.title,url:def.url,seats:def.seats,options:def.options,picks:c.picks,undecided:c.undecided,compare:c.compare,note:c.note||'',leans:c.leans||{},ranks:c.ranks||{}};
+  d.contests[def.key]={key:def.key,kind:def.kind,title:def.title,url:def.url,seats:def.seats,options:def.options,picks:c.picks,undecided:c.undecided,compare:c.compare,note:c.note||'',leans:c.leans||{},ranks:c.ranks||{},whys:c.whys||{}};
   return d.contests[def.key];
 }
 function change(def,fn){if(!WB)return;const d=WB.read('CO');fn(mergeC(d,def));WB.write(WB.clean(d,'CO'));syncQuick();}
@@ -208,6 +208,18 @@ function quickRow(def,legend,answers,get,set){
   quick.push(d=>{const c=d.contests[def.key];const cur=c?get(c):'';btns.forEach(([b,v])=>b.setAttribute('aria-pressed',cur===v?'true':'false'));});
   return row;
 }
+/* a small private reason: "Add why" opens a box; get reads the text, set(c,text) writes it into the contest */
+function noteBox(def,label,get,set,isPicked){
+  if(!WB||!def)return null;
+  const wrap=el('span',{cls:'q-note'}),btn=el('button',{type:'button',cls:'q-b q-nb','aria-expanded':'false',text:'Add why'});
+  const ta=el('textarea',{cls:'q-ta',rows:'2',maxlength:String(WB.LIMITS.note),placeholder:'Your note (only on this device)','aria-label':label});
+  ta.hidden=true;
+  btn.addEventListener('click',()=>{ta.hidden=!ta.hidden;btn.setAttribute('aria-expanded',ta.hidden?'false':'true');if(!ta.hidden)ta.focus();});
+  ta.addEventListener('change',()=>change(def,c=>set(c,ta.value)));
+  wrap.append(btn,ta);
+  quick.push(d=>{const c=d.contests[def.key],t=c?get(c):'',w=!!(c&&isPicked&&isPicked(c));if(document.activeElement!==ta)ta.value=t;ta.placeholder=w?'Why this pick? (optional, just for you)':'Why you lean this way (optional, just for you)';btn.textContent=t?'Why ✓':'Add why';});
+  return wrap;
+}
 function raceDef(race,key,title){
   const g=data.guide,rel=g&&key?g.races[key]:null,path=pathOf(rel),slug=slugOf(path);
   if(!slug||!race)return null;
@@ -217,8 +229,11 @@ function raceDef(race,key,title){
 function leanRow(def,name){
   const o=def&&def.options.find(x=>x.label===name);
   if(!o)return null;
-  return quickRow(def,{text:'Would you vote for them?',aria:'Your private answer for '+name},[['Yes','yes'],['Maybe','maybe'],['No','no']],c=>(c.leans||{})[o.id]||'',
+  const row=quickRow(def,{text:'Would you vote for them?',aria:'Your private answer for '+name},[['Yes','yes'],['Maybe','maybe'],['No','no']],c=>(c.leans||{})[o.id]||'',
     (c,v,on)=>{c.leans=c.leans||{};if(on)delete c.leans[o.id];else c.leans[o.id]=v;});
+  if(!row)return null;
+  const nb=noteBox(def,'Your private reason for '+name,c=>(c.whys||{})[o.id]||'',(c,t)=>{c.whys=c.whys||{};if(t.trim())c.whys[o.id]=t;else delete c.whys[o.id];},c=>!!(c.leans||{})[o.id]||c.picks.indexOf(o.id)>=0);
+  return el('span',{cls:'qwrap'},[row,nb]);
 }
 function candList(race,key,title,defIn){
   const ul=el('ul'),g=data.guide,def=defIn||raceDef(race,key,title);
@@ -250,6 +265,8 @@ function measure(m,tag){
   const q=quickRow(def,{text:'How would you vote?',aria:'Your private answer for '+m.code},[['Yes','yes'],['No','no']],c=>c.picks[0]||'',
     (c,v,on)=>{c.picks=on?[]:[v];if(c.picks.length)c.undecided=false;});
   if(q)card.append(q);
+  const nb=noteBox(def,'Your private reason for '+m.code,c=>c.why||'',(c,t)=>{c.why=t.slice(0,WB.LIMITS.note);},c=>c.picks.length>0);
+  if(nb)card.append(nb);
   const body=el('div',{cls:'body'});
   if(m.yes)body.append(el('p',{},[el('b',{text:'Yes: '}),m.yes,' ',el('b',{text:'No: '}),m.no]));
   if(m.note)body.append(el('p',{cls:'note',text:m.note}));
