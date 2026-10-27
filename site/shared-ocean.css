@@ -1,3 +1,4 @@
+:root{--michi-ocean-gradient:linear-gradient(180deg,#176b85 0%,#11506a 3%,#0a344b 14%,#082a40 30%,#062037 49%,#04192c 68%,#031120 88%,#020b14 100%)}
 /* Original Why The Way ocean, scoped to pages using the shared header. */
 body.michi-ocean-active{position:relative;isolation:isolate;background:radial-gradient(ellipse 100% 20% at 50% 0,rgba(183,253,255,.33),transparent 75%),radial-gradient(ellipse 55% 14% at 15% 14%,rgba(51,161,183,.13),transparent 100%),radial-gradient(ellipse 55% 19% at 90% 33%,rgba(40,132,155,.10),transparent 100%),var(--michi-ocean-gradient)!important;background-repeat:no-repeat!important;background-color:#020b14!important}
 .michi-ocean-water{position:relative;height:100px;z-index:-1;pointer-events:none}
