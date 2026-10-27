@@ -4,9 +4,9 @@
 .whale-zone{position:absolute;left:0;right:0;bottom:0;height:100vh;pointer-events:none;visibility:hidden}
 .whale{position:absolute;left:0;top:35%;width:clamp(240px,30vw,460px);opacity:0;visibility:hidden;pointer-events:none;animation-timing-function:linear;animation-fill-mode:both;animation-iteration-count:1;will-change:transform}
 .whale.swim{visibility:visible}
-.whale svg{display:block;width:100%;height:auto;overflow:visible;filter:blur(1.8px);transform:scaleX(var(--whale-flip,1)) scale(var(--whale-scale,1))}
-.whale-tail{transform-origin:84px 160px;animation:whale-tail 5s ease-in-out infinite alternate}
-.whale-fin{transform-origin:420px 168px;animation:whale-fin 7s ease-in-out infinite alternate}
+.whale svg{display:block;width:100%;height:auto;overflow:visible;filter:blur(.6px);transform:scaleX(var(--whale-flip,1)) scale(var(--whale-scale,1))}
+.whale-tail{transform-origin:215px 155px;animation:whale-tail 5s ease-in-out infinite alternate}
+.whale-fin{transform-origin:490px 180px;animation:whale-fin 7s ease-in-out infinite alternate}
 @keyframes whale-ltr{0%{transform:translate(-120%,0);opacity:0}10%{opacity:.62}50%{transform:translate(calc(50vw - 50%),-5vh)}90%{opacity:.62}100%{transform:translate(100vw,2vh);opacity:0}}
 @keyframes whale-rtl{0%{transform:translate(100vw,0);opacity:0}10%{opacity:.62}50%{transform:translate(calc(50vw - 50%),-5vh)}90%{opacity:.62}100%{transform:translate(-120%,2vh);opacity:0}}
 @keyframes whale-tail{to{transform:rotate(7deg)}}
