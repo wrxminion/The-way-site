@@ -30,11 +30,15 @@ const CASES = [['ok', 'OK', 35.47, -97.52], ['nc', 'NC', 35.78, -78.64], ['me', 
     await page.route(/\/data\/ballot\.json/, (r) => r.fulfill(j({ election: 'General election', status: 'Test.', statewide: [{ code: 'SQ 1', title: 'Test measure', what: 'A test.', yes: 'Yes does a.', no: 'No does b.', needs: 'Majority' }], links: {} })));
     await page.route(/\/data\/candidates\.json/, (r) => r.fulfill(j({ statewideOrder: ['gov'], raceNames: { gov: 'Governor' }, races: { gov: [{ name: 'Ann Able', party: 'Independent' }, { name: 'Bo Baker', party: 'Independent' }] } })));
     await page.route(/\/data\/guide\.json/, (r) => r.fulfill(j({ base: g, home: '', races: { gov: 'races/governor.html' }, measures: { 'SQ 1': 'measures/sq-1.html' }, candidates: { 'gov|Ann Able': 'candidates/ann-able.html', 'gov|Bo Baker': 'candidates/bo-baker.html' }, local: {} })));
+    await page.addInitScript((a) => { try { if (!sessionStorage.getItem('seeded')) { sessionStorage.setItem('seeded', '1'); localStorage.setItem('theway.ballot.v1.' + a[0], JSON.stringify({ v: 1, state: a[0], contests: { 'race:governor': { key: 'race:governor', kind: 'race', title: 'Governor', url: '/preview/pages/guide-' + a[1] + '/races/governor.html', seats: 1, options: [{ id: 'ann-able', label: 'Ann Able' }], picks: ['ann-able'] } }, facts: {} })); } } catch (e) {} }, [ST, sl]);
     await page.goto(base + '/preview/pages/map-' + sl + '/index.html');
+    await page.waitForFunction(() => !/Loading/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
+    ok(await page.locator('.bb-saved').isVisible(), ST + ': saved picks and no address yet shows the "Your picks are saved" line');
     await page.waitForFunction(() => !/Loading/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
     await page.fill('#q', '1 Main Street');
     await page.click('#search button');
     await page.waitForFunction(() => document.querySelectorAll('#ballot .measure, #ballot .quick').length > 0, null, { timeout: 30000 }).catch(() => {});
+    ok(!(await page.locator('.bb-saved').isVisible()), ST + ': the line goes away once an address is searched');
     const nM = await page.locator('#ballot div.measure').count(), nQ = await page.locator('#ballot .quick').count();
     ok(nQ > 0, ST + ': quick answer rows are on the ballot (' + nQ + ' rows, ' + nM + ' measures)');
     if (nM) {

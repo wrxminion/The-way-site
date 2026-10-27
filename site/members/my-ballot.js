@@ -200,9 +200,26 @@
       h('label', { class: 'mb-check' }, un, h('span', { text: 'Not sure yet' })),
       note);
   }
+  // What is already saved for a race or measure page, in a few words, so a collapsed row shows it without opening.
+  function glance(d, it) {
+    var slug = (/\/([a-z0-9-]+)\.html$/.exec(it.p) || [])[1], out = [];
+    Object.keys(d.contests).forEach(function (k) {
+      var c = d.contests[k];
+      if (c.url !== it.p && !(slug && (k === 'race:' + slug || k === 'measure:' + slug || k.indexOf('race:' + slug + ':') === 0))) return;
+      if (c.picks.length) out.push('Your pick: ' + c.picks.map(function (id) { return optLabel(c, id); }).join(', '));
+      else {
+        var L = Object.keys(c.leans || {}).map(function (id) { return optLabel(c, id) + ' ' + ({ yes: 'Yes', maybe: 'Maybe', no: 'No' })[c.leans[id]]; });
+        if (L.length) out.push('Leaning: ' + L.join(', '));
+        else if (c.undecided) out.push('Not sure yet');
+      }
+    });
+    return out.join(' · ');
+  }
   function markRow(d, it) {
     var open = !!ui.open[it.p], defs = open ? defsFor(it.p) : (Array.isArray(ui.defs[it.p]) ? ui.defs[it.p] : null);
     var chosen = Array.isArray(defs) && defs.length ? defs.map(function (x) { var c = d.contests[x.key]; return c ? choiceText(c) : 'Not chosen yet'; }).join(' · ') : null;
+    var saved = glance(d, it);
+    if (saved) chosen = saved;
     var b = h('button', { type: 'button', class: 'quiet', 'aria-expanded': open ? 'true' : 'false', 'data-k': 'mk' + it.p, text: open ? 'Close' : 'Mark' });
     b.addEventListener('click', function () { ui.open[it.p] = !ui.open[it.p]; draw(); });
     return h('li', {},

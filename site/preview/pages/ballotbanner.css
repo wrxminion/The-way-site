@@ -34,3 +34,6 @@ div.measure{border-top:1px solid #abedf51f;padding:12px 0}
 .measure .m-more summary{cursor:pointer;font-size:13px;color:#bcd7df}
 .measure .body{font-size:13px;color:#c8dfe4;line-height:1.55;padding:6px 0 4px}
 .measure .body p{margin:0 0 6px}
+
+.bb-saved{margin:8px 0;padding:8px 12px;border:1px solid #abedf566;border-radius:10px;background:#0a3a5080;color:#e9ffff;font-size:14px}
+.bb-saved[hidden]{display:none}

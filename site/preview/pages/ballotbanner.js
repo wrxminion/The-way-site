@@ -70,6 +70,22 @@
     putPlan();
   }
 
+  // Picks already saved in this browser, but no address searched yet: say so, since the ballot cards only appear after a search.
+  if (spot && spot.parentNode && window.WayBallot) {
+    var saved = el('p', 'bb-saved', 'Your picks are saved. Search your address again to see them on the map.');
+    saved.hidden = true;
+    spot.parentNode.insertBefore(saved, spot);
+    var showSaved = function () {
+      var d = window.WayBallot.read(st), any = Object.keys(d.contests).some(function (k) {
+        var c = d.contests[k]; return c.picks.length || Object.keys(c.leans || {}).length;
+      });
+      saved.hidden = !(any && !spot.children.length);
+    };
+    new MutationObserver(showSaved).observe(spot, { childList: true });
+    document.addEventListener('theway-ballot', showSaved);
+    showSaved();
+  }
+
   function update() { box.hidden = /^\s*No location selected/i.test(sel.textContent) || !sel.textContent.trim(); }
   new MutationObserver(update).observe(sel, { childList: true, characterData: true, subtree: true });
   update();
