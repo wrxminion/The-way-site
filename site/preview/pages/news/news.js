@@ -123,7 +123,7 @@
     times.append(el('span', null, it.pub != null ? 'Published ' + (it.dateOnly ? fmtDate.format(it.pub) : fmtTime.format(it.pub)) : 'Publish time not given'), document.createTextNode(' · '), el('span', null, 'First seen ' + fmtTime.format(it.seen)));
     li.append(src, h, times);
     const tags = it.states.slice(0, 3).map(s => s.toUpperCase()).concat(it.places.filter(p => p === 'colorado' || p === 'boulder'), it.topics.slice(0, 4));
-    if (tags.length){ const t = el('div', 'tags'); t.title = 'Automatic tags may be incorrect.'; for (const x of tags) t.append(el('span', 'pill', x.replace(/[-_]/g, ' '))); li.append(t); }
+    if (tags.length){ const t = el('div', 'tags'); t.append(el('span', null, 'Automatic tags, may be incorrect: ')); for (const x of tags) t.append(el('span', 'pill', x.replace(/[-_]/g, ' '))); li.append(t); }
     const about = it.about.length ? it.about : it.measures.map(m => ({
       // older items: measure ids only (Colorado guide)
       label: m.replace(/^city-of-|^city-and-county-of-/, '').replace(/-/g, ' ').replace(/\b(\d+[a-z]|nn)\b/g, x => x.toUpperCase()).replace(/^./, c => c.toUpperCase()),
