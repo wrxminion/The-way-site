@@ -181,7 +181,17 @@
     }
     bar.replaceChildren.apply(bar, kids);
     syncFloating();
+    syncWave();
   }
+  // The signed-in bar is two rows tall, so the water starts higher than on the public pages: the crest
+  // sits under the bottom of the bar, which is see-through (see waybar.css), and the waves overlap it.
+  function syncWave() {
+    var bar = document.getElementById('waybar'), w = document.querySelector('.michi-surface');
+    if (!bar || !w) return;
+    document.body.classList.toggle('wb-in-page', !!data);
+    w.style.top = data ? Math.max(40, bar.offsetHeight - 32) + 'px' : '';
+  }
+  window.addEventListener('resize', function () { syncWave(); });
   function syncFloating() {
     var floating = document.querySelector('.wb-floating');
     if (!floating) {
@@ -244,6 +254,7 @@
     water.innerHTML = "<div aria-hidden=\"true\" class=\"michi-surface\"><svg preserveAspectRatio=\"none\" viewBox=\"0 0 1200 160\"><defs><linearGradient id=\"michi-crest\" x1=\"0\" x2=\"0\" y1=\"0\" y2=\"1\"><stop stop-color=\"#e8ffff\" stop-opacity=\".85\"/><stop offset=\".18\" stop-color=\"#aceff8\" stop-opacity=\".42\"/><stop offset=\"1\" stop-color=\"#c4ffff\" stop-opacity=\"0\"/></linearGradient></defs><g class=\"michi-water-sheet\"><path d=\"M0 35 Q70 8 150 30 T300 25 T450 31 T600 25 T750 29 T900 24 T1050 31 T1200 22 L1200 160 L0 160 Z\" fill=\"url(#michi-crest)\" opacity=\".54\"/><path d=\"M0 35 Q70 8 150 30 T300 25 T450 31 T600 25 T750 29 T900 24 T1050 31 T1200 22\" fill=\"none\" stroke=\"#ebffff\" stroke-opacity=\".82\" stroke-width=\"2.4\"/></g><g class=\"michi-water-sheet two\"><path d=\"M0 43 Q105 12 200 38 T400 35 T600 41 T800 32 T1000 42 T1200 29\" fill=\"none\" stroke=\"#d2ffff\" stroke-opacity=\".48\" stroke-width=\"2\"/><path d=\"M0 59 Q65 43 145 57 T320 54 T490 64 T680 58 T900 62 T1080 57 T1200 58\" fill=\"none\" stroke=\"#c6f8ff\" stroke-opacity=\".24\" stroke-width=\"1.4\"/></g><g class=\"michi-water-sheet three\"><path d=\"M0 83 Q80 64 175 79 T370 75 T590 82 T805 78 T1000 85 T1200 75\" fill=\"none\" stroke=\"#c3fbfc\" stroke-opacity=\".17\" stroke-width=\"1.6\"/></g></svg></div>\n<div class=\"michi-caustics\"></div><div class=\"michi-caustics second\"></div><div class=\"michi-shafts\"></div><div class=\"michi-bubbles\"></div>\n";
     document.body.classList.add('michi-ocean-active');
     document.body.insertBefore(water, document.body.firstChild);
+    syncWave();
   }
   // My Ballot: on voter-guide pages, load the pick/save controls (browser-only; see ballot-store.js).
   if (/^\/preview\/pages\/guide(-[a-z]{2})?\//.test(path) && !inMembers) {
