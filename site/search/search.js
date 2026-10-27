@@ -5,14 +5,15 @@ const $ = (id) => document.getElementById(id);
 const q = $('q'), fs = $('f-section'), ft = $('f-type'), fp = $('f-place'), fy1 = $('f-from'), fy2 = $('f-to');
 const status = $('status'), list = $('results'), more = $('more');
 if (!D) { status.textContent = 'The search index could not load. Reload the page.'; return; }
-const recs = D.recs.map((r) => ({
+const visibleRecords = D.recs.filter((r) => !/^\/timeline(?:\/|$)/.test(r.u) && !/^\/research\/packages\/intent-outcome-banking-1933-1991(?:\/|$)/.test(r.u));
+const recs = visibleRecords.map((r) => ({
   r,
   t: r.t.toLowerCase(), y: r.y.toLowerCase(), p: (r.p || '').toLowerCase(), s: r.s.toLowerCase(),
   k: (r.k || '').toLowerCase(), d: (r.d || '').toLowerCase()
 }));
-const uniq = (key) => [...new Set(D.recs.map((r) => r[key]).filter(Boolean))].sort();
+const uniq = (key) => [...new Set(visibleRecords.map((r) => r[key]).filter(Boolean))].sort();
 const fill = (sel, vals) => vals.forEach((v) => { const o = document.createElement('option'); o.value = v; o.textContent = v; sel.append(o); });
-fill(fs, ['Voter Guide', 'Research', 'Civics & History', 'Ballot Case Studies', 'News'].filter((s) => D.recs.some((r) => r.s === s)));
+fill(fs, ['Voter Guide', 'Research', 'Civics & History', 'Ballot Case Studies', 'News'].filter((s) => visibleRecords.some((r) => r.s === s)));
 fill(ft, uniq('y')); fill(fp, uniq('p'));
 let shown = 0, hits = [];
 const PAGE = 25;

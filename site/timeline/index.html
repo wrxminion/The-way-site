@@ -15,18 +15,17 @@
 <body>
 <header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
 <main class="wrap" id="main">
-<p class="overline">Timeline</p>
-<h1>What they said it would do. What the record shows.</h1>
-<p class="lede">Pick a moment. On the left, the stated goal. On the right, what the records show happened. Neither side is the last word, so every card lists its sources and what we could not check.</p>
-<nav class="entry" aria-label="Ways in"><a href="/preview/pages/states/">Map</a><a href="/preview/pages/news/">News</a><a href="/timeline/" aria-current="page">Timeline</a><a href="/preview/pages/cases/">Civics &amp; History</a><a href="/development/">Methods and ledger</a></nav>
-<p class="banner" id="status" role="note">Loading…</p>
-<div class="chips" id="chips" role="group" aria-label="Filter events"></div>
-<label class="sr" for="q">Search events</label>
-<input class="search" id="q" type="search" placeholder="Search: deposit, thrift, 1982…" autocomplete="off">
-<p class="sr" id="live" aria-live="polite"></p>
-<div class="rail" id="rail" role="tablist" aria-label="Events in date order. Swipe or use the arrow keys." tabindex="0"></div>
-<section id="detail" aria-live="polite"></section>
-
+<p class="overline">Research</p>
+<h1>Intent vs. Outcome: banking timeline</h1>
+<p class="banner" role="note">Coming soon. This banking timeline is a draft and is not publication-verified.</p>
+<p>This work is being prepared for review.</p>
+<p><a href="/research/">Return to the research library</a></p>
+<span id="status" hidden></span>
+<span id="chips" hidden></span>
+<span id="q" hidden></span>
+<span id="live" hidden></span>
+<span id="rail" hidden></span>
+<span id="detail" hidden></span>
 <section class="intake" id="intake" aria-labelledby="pt-h">
 <h2 id="pt-h">Pull a Thread</h2>
 <p class="lede">Found a claim or a record we should look at? Send a link. A person reads every submission. We do not publish what you send, and sending it does not promise an investigation.</p>
@@ -45,6 +44,6 @@
 <script src="/members/waybar.js?v=1" defer></script>
 <script src="/members/config.js?v=39" defer></script>
 <script src="/members/vendor/supabase-js-2.110.9.js" defer></script>
-<script src="data/data.js?v=1" defer></script><script src="timeline.js?v=2" defer></script>
+<script src="/timeline/thread-intake.js?v=1" defer></script>
 </body>
 </html>
