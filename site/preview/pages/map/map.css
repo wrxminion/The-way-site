@@ -70,3 +70,22 @@ main.top code{font-size:13px;color:#a6f0e7}
 ul.locallist{margin:6px 0 10px;padding-left:18px;font-size:14px;line-height:1.5}
 ul.locallist li{margin-bottom:4px}
 ul.locallist .what{color:#c0d6dc;font-size:12px}
+
+.race-title{font-size:17px!important;margin-bottom:6px!important}
+.race-title a{color:#e9ffff}
+.race li{padding:4px 0}
+.quick{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0 2px}
+.quick .q-l{font-size:12px;color:#bcd7df;flex-basis:100%}
+.quick .q-b{font:inherit;font-size:13px;color:#e9ffff;background:#0a3a50;border:1px solid #abedf566;border-radius:99px;padding:3px 12px;cursor:pointer}
+.quick .q-b:hover{background:#0f4d69}
+.quick .q-b[aria-pressed=true]{background:#a6f0e7;color:#052230;border-color:#a6f0e7;font-weight:700}
+.quick .q-b:focus-visible{outline:2px solid #fff;outline-offset:2px}
+div.measure{border-top:1px solid #abedf51f;padding:12px 0}
+.measure .m-title{font-size:16px;font-weight:700;line-height:1.35}
+.measure .m-title a{color:#e9ffff}
+.measure .m-see{margin:4px 0 6px;font-size:14px}
+.measure .m-what{margin:0 0 6px;font-size:13px;color:#c8dfe4;line-height:1.5}
+.measure .m-more{margin-top:8px}
+.measure .m-more summary{cursor:pointer;font-size:13px;color:#bcd7df}
+.measure .body{font-size:13px;color:#c8dfe4;line-height:1.55;padding:6px 0 4px}
+.measure .body p{margin:0 0 6px}

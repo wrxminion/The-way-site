@@ -182,17 +182,55 @@ function otherState(name){
 }
 /* links into the voter guide (guide.json is written by guide-build/build.py) */
 function gLink(rel,text){const g=data.guide;return g&&rel?el('a',{href:g.base+rel,text}):document.createTextNode(text);}
-function candList(race,key){
-  const ul=el('ul'),g=data.guide;
+
+/* Quick private answers on the ballot cards. Saved in this browser only, in the same store as the planner's marking screen
+   (members/ballot-store.js), so an answer given here shows there and the other way round. Never sent anywhere. */
+const WB=window.WayBallot,quick=[];
+const slugOf=p=>{const m=/\/([a-z0-9-]+)\.html$/.exec(p||'');return m?m[1]:'';};
+function pathOf(rel){const g=data.guide;if(!g||!rel)return '';try{return new URL(g.base+rel,location.href).pathname;}catch(e){return '';}}
+function mergeC(d,def){
+  const c=d.contests[def.key]||{picks:[],undecided:false,compare:[],note:'',leans:{},ranks:{}};
+  d.contests[def.key]={key:def.key,kind:def.kind,title:def.title,url:def.url,seats:def.seats,options:def.options,picks:c.picks,undecided:c.undecided,compare:c.compare,note:c.note||'',leans:c.leans||{},ranks:c.ranks||{}};
+  return d.contests[def.key];
+}
+function change(def,fn){if(!WB)return;const d=WB.read('CO');fn(mergeC(d,def));WB.write(WB.clean(d,'CO'));syncQuick();}
+function syncQuick(){if(!WB)return;const d=WB.read('CO');quick.forEach(q=>q(d));}
+/* a row of small answer buttons: [label, value] pairs; get/set read and write one value in the contest */
+function quickRow(def,legend,answers,get,set){
+  if(!WB||!def)return null;
+  const row=el('span',{cls:'quick',role:'group','aria-label':legend.aria}),btns=[];
+  row.append(el('span',{cls:'q-l',text:legend.text}));
+  for(const [lab,val] of answers){
+    const b=el('button',{type:'button',cls:'q-b','aria-pressed':'false',text:lab});
+    b.addEventListener('click',()=>change(def,c=>set(c,val,get(c)===val)));
+    btns.push([b,val]);row.append(b);
+  }
+  quick.push(d=>{const c=d.contests[def.key];const cur=c?get(c):'';btns.forEach(([b,v])=>b.setAttribute('aria-pressed',cur===v?'true':'false'));});
+  return row;
+}
+function raceDef(race,key,title){
+  const g=data.guide,rel=g&&key?g.races[key]:null,path=pathOf(rel),slug=slugOf(path);
+  if(!slug||!race)return null;
+  const options=race.map(c=>{const p=pathOf(g.candidates[key+'|'+c.name]);const id=slugOf(p);return id?{id,label:c.name,sub:c.party||'',url:p}:null;}).filter(Boolean);
+  return options.length?{key:'race:'+slug,kind:'race',title,url:path,seats:1,options}:null;
+}
+function leanRow(def,name){
+  const o=def&&def.options.find(x=>x.label===name);
+  if(!o)return null;
+  return quickRow(def,{text:'Would you vote for them?',aria:'Your private answer for '+name},[['Yes','yes'],['Maybe','maybe'],['No','no']],c=>(c.leans||{})[o.id]||'',
+    (c,v,on)=>{c.leans=c.leans||{};if(on)delete c.leans[o.id];else c.leans[o.id]=v;});
+}
+function candList(race,key,title,defIn){
+  const ul=el('ul'),g=data.guide,def=defIn||raceDef(race,key,title);
   for(const c of race){
     const rel=g&&key?g.candidates[key+'|'+c.name]:null;
-    ul.append(el('li',{},[gLink(rel,c.name),el('span',{text:' · '+c.party}),c.writeIn?el('span',{cls:'wi',text:' · write-in'}):null]));
+    ul.append(el('li',{},[gLink(rel,c.name),el('span',{text:' · '+c.party}),c.writeIn?el('span',{cls:'wi',text:' · write-in'}):null,leanRow(def,c.name)]));
   }
   return ul;
 }
 function raceBlock(title,list,emptyText,key){
   const g=data.guide,rel=g&&key?g.races[key]:null;
-  return el('div',{cls:'race'},[el('b',{},[gLink(rel,title)]),list&&list.length?candList(list,key):el('div',{cls:'note',text:emptyText||'No candidates listed.'})]);
+  return el('div',{cls:'race'},[el('b',{cls:'race-title'},[gLink(rel,title)]),list&&list.length?candList(list,key,title):el('div',{cls:'note',text:emptyText||'No candidates listed.'})]);
 }
 function govTickets(r){
   const gov=r.governor||[],lt=r.lt_governor||[];
@@ -202,15 +240,24 @@ function govTickets(r){
   });
 }
 function measure(m,tag){
-  const body=el('div',{cls:'body'},[el('p',{text:m.what})]);
   const rel=data.guide&&(data.guide.measures[m.code]||(tag&&tag!=='Rail district'&&data.guide.boulderLocal[m.code]));
-  if(rel)body.append(el('p',{},[gLink(rel,'Full page: official analysis, arguments for and against, and who is paying →')]));
+  const path=pathOf(rel),slug=slugOf(path);
+  const def=slug?{key:'measure:'+slug,kind:'measure',title:m.code+': '+m.title,url:path,seats:1,options:[{id:'yes',label:'Yes',sub:'',url:''},{id:'no',label:'No',sub:'',url:''}]}:null;
+  const titleEl=el('div',{cls:'m-title'},[rel?gLink(rel,m.code+' '+m.title):el('span',{text:m.code+' '+m.title}),tag?el('span',{cls:'tag',text:tag}):null]);
+  const card=el('div',{cls:'measure'},[titleEl]);
+  if(rel)card.append(el('div',{cls:'m-see'},[gLink(rel,'See details: official analysis, arguments for and against, and who is paying →')]));
+  card.append(el('p',{cls:'m-what',text:m.what}));
+  const q=quickRow(def,{text:'How would you vote?',aria:'Your private answer for '+m.code},[['Yes','yes'],['No','no']],c=>c.picks[0]||'',
+    (c,v,on)=>{c.picks=on?[]:[v];if(c.picks.length)c.undecided=false;});
+  if(q)card.append(q);
+  const body=el('div',{cls:'body'});
   if(m.yes)body.append(el('p',{},[el('b',{text:'Yes: '}),m.yes,' ',el('b',{text:'No: '}),m.no]));
   if(m.note)body.append(el('p',{cls:'note',text:m.note}));
   const meta=['Needs '+(m.needs==='55%'?'55% of the vote':'a majority')];
   if(m.page)meta.push('Blue Book page '+m.page);
   body.append(el('p',{cls:'note',text:meta.join(' · ')}));
-  return el('details',{cls:'measure'},[el('summary',{},[el('b',{text:m.code}),' '+m.title,tag?el('span',{cls:'tag',text:tag}):null]),body]);
+  card.append(el('details',{cls:'m-more'},[el('summary',{text:'What yes and no mean'}),body]));
+  return card;
 }
 
 
@@ -251,14 +298,17 @@ function renderBallot(at){
   const b=data.ballot,c=data.candidates;
   if(!b){return;}
   const r=(c&&c.races)||{};
+  quick.length=0;
   const box=[el('h3',{text:'On your ballot'}),el('div',{cls:'note',text:b.election+'. '+b.status})];
   box.push(el('div',{cls:'note'},['Races, from the ',link('https://www.coloradosos.gov/pubs/elections/vote/generalCandidates.html','official candidate list ↗'),':']));
   if(data.guide)box.push(el('div',{cls:'note'},['Click any name or measure for its page in the ',gLink(data.guide.home,'voter guide'),'.']));
   box.push(raceBlock('U.S. Senate',r.us_senate,null,'us_senate'));
-  const gov=el('div',{cls:'race'},[el('b',{},[gLink(data.guide&&data.guide.races.governor,'Governor and Lieutenant Governor')])]),gl=el('ul');
+  const gov=el('div',{cls:'race'},[el('b',{cls:'race-title'},[gLink(data.guide&&data.guide.races.governor,'Governor and Lieutenant Governor')])]),gl=el('ul');
+  const govDef=raceDef(r.governor||[],'governor','Governor');
+  if(govDef)govDef.key=govDef.key+':governor';      // same id the guide page and the planner use for the governor list
   for(const t of govTickets(r)){
     const G=data.guide;
-    gl.append(el('li',{},[gLink(G&&G.candidates['governor|'+t.name],t.name),t.mate?' and ':'',t.mate?gLink(G&&G.candidates['lt_governor|'+t.mate],t.mate):null,el('span',{text:' · '+t.party}),t.writeIn?el('span',{cls:'wi',text:' · write-in'}):null]));
+    gl.append(el('li',{},[gLink(G&&G.candidates['governor|'+t.name],t.name),t.mate?' and ':'',t.mate?gLink(G&&G.candidates['lt_governor|'+t.mate],t.mate):null,el('span',{text:' · '+t.party}),t.writeIn?el('span',{cls:'wi',text:' · write-in'}):null,leanRow(govDef,t.name)]));
   }
   gov.append(gl);box.push(gov);
   box.push(raceBlock('Attorney General',r.attorney_general,null,'attorney_general'));
@@ -282,7 +332,9 @@ function renderBallot(at){
   box.push(localBlock(at));
   box.push(el('div',{cls:'note'},['See your exact ballot: ',link(b.links.sampleBallot,'GoVoteColorado.gov ↗')]));
   ballotBox.replaceChildren(...box);
+  syncQuick();
 }
+document.addEventListener('theway-ballot',syncQuick);window.addEventListener('storage',syncQuick);
 
 map.on('click',e=>{
   lookup(e.latlng.lat,e.latlng.lng);
@@ -307,6 +359,48 @@ $('locate').addEventListener('click',()=>{
     lookup(p.coords.latitude,p.coords.longitude,'Your location');
   },()=>{status.textContent='Location not shared. You can still click the map or search an address.';},{enableHighAccuracy:false,timeout:10000});
 });
+
+/* U.S. Census Bureau geocoder: knows house numbers, free, no key. Asked first for a Colorado address. Any failure (blocked,
+   slow, no match) returns null and the OpenStreetMap search below takes over, so this can only add matches. */
+function censusLookup(text){
+  const q=new URLSearchParams({address:text,benchmark:'Public_AR_Current'}).toString();
+  const base='https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?'+q;
+  const pick=r=>{
+    const m=r&&r.result&&r.result.addressMatches&&r.result.addressMatches[0];
+    if(!m||!m.coordinates)return null;
+    const c=m.addressComponents||{};
+    if(c.state&&c.state!=='CO')return null;                 // this map is Colorado
+    return {lat:+m.coordinates.y,lon:+m.coordinates.x,display_name:m.matchedAddress,address:{city:c.city?c.city.charAt(0)+c.city.slice(1).toLowerCase():'',state:'Colorado'}};
+  };
+  const viaFetch=()=>{
+    const ctl=new AbortController(),t=setTimeout(()=>ctl.abort(),8000);
+    return fetch(base+'&format=json',{signal:ctl.signal}).then(r=>{if(!r.ok)throw 0;return r.json();}).then(pick).finally(()=>clearTimeout(t));
+  };
+  const viaScript=()=>new Promise(ok=>{          // the same service as a script tag, for browsers that block the fetch
+    const cb='cen'+Math.random().toString(36).slice(2),sc=document.createElement('script');
+    const done=v=>{clearTimeout(t);delete window[cb];sc.remove();ok(v);},t=setTimeout(()=>done(null),8000);
+    window[cb]=r=>{let v=null;try{v=pick(r);}catch(e){}done(v);};
+    sc.onerror=()=>done(null);
+    sc.src=base+'&format=jsonp&callback='+cb;
+    document.head.appendChild(sc);
+  });
+  return viaFetch().catch(()=>viaScript()).catch(()=>null);
+}
+
+/* Local fallback when OpenStreetMap cannot place the address: the town name in what was typed, matched against the
+   city shapes this map already has. It puts the visitor in the right town (and shows the districts there). */
+function townFallback(text){
+  const low=' '+text.toLowerCase().replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()+' ';
+  let best=null;
+  for(const f of ((data.places&&data.places.features)||[])){
+    const n=String((f.properties&&f.properties.n)||'').toLowerCase();
+    if(n&&low.includes(' '+n+' ')&&(!best||n.length>best.n.length))best={n,f};
+  }
+  if(!best)return null;
+  let a=1e9,b=1e9,c=-1e9,d=-1e9;
+  (function walk(x){if(typeof x[0]==='number'){a=Math.min(a,x[1]);c=Math.max(c,x[1]);b=Math.min(b,x[0]);d=Math.max(d,x[0]);}else x.forEach(walk);})(best.f.geometry.coordinates);
+  return {name:best.f.properties.n,lat:(a+c)/2,lng:(b+d)/2};
+}
 
 /* Address search: OpenStreetMap Nominatim, one request per second. Colorado first (bounded to the state box),
    then looser Colorado tries (no unit, no ZIP, street only, then city/ZIP), and only if nothing is found in Colorado
@@ -345,13 +439,22 @@ $('search').addEventListener('submit',async e=>{
   };
   try{
     let d=[],how=0,n=0;
+    if(typedState){const hit=await censusLookup(noUnit);if(hit)d=[hit];}   // house-number match first
     for(let i=0;i<list.length&&!d.length;i++){
       if(n++)await new Promise(r=>setTimeout(r,1100));   // Nominatim asks for at most one request per second
       d=await ask(list[i][0],true);how=list[i][1];
     }
-    if(!d.length&&!typedState){                           // no state typed: allow a match anywhere in the U.S.
+    let town=null;
+    if(!d.length&&typedState){town=townFallback(base);if(town)how=3;}
+    if(!d.length&&!town&&!typedState){                    // no state typed: allow a match anywhere in the U.S.
       await new Promise(r=>setTimeout(r,1100));
       d=await ask(noUnit,false);how=0;
+    }
+    if(town){
+      map.setView([town.lat,town.lng],12);
+      lookup(town.lat,town.lng,town.name+', Colorado',{city:town.name,state:'Colorado'});
+      status.textContent='We found your town ('+town.name+'), not your street. Click your exact spot on the map to see your districts.';
+      return;
     }
     if(!d.length){
       status.textContent=typedState||!q
@@ -361,11 +464,16 @@ $('search').addEventListener('submit',async e=>{
     }
     const lat=+d[0].lat,lng=+d[0].lon,addr=d[0].address||{};
     map.setView([lat,lng],how?14:15);
-    lookup(lat,lng,d[0].display_name,addr);
-    if(how&&status.textContent==='Here is what applies at this spot.')status.textContent='We found your '+(how===1?'street':'ZIP code area')+', not the exact house. If you live near a district line, click your exact spot on the map to check.';
+    lookup(lat,lng,how===2?(zipM?'ZIP '+zipM[1]+' area, Colorado':'Colorado'):how===1?base+', Colorado (street only)':d[0].display_name,addr);
+    if(how&&status.textContent==='Here is what applies at this spot.')status.textContent='We found the '+(how===1?'street':'ZIP area')+', not the exact house. If you live near a district line, click your exact spot on the map to check.';
     if(window.matchMedia('(max-width:860px)').matches)$('selected').scrollIntoView({behavior:'smooth',block:'start'});
   }catch(err){
-    status.textContent='Address search is unavailable right now. You can still click the map.';
+    const town=typedState&&townFallback(base);
+    if(town){
+      map.setView([town.lat,town.lng],12);
+      lookup(town.lat,town.lng,town.name+', Colorado',{city:town.name,state:'Colorado'});
+      status.textContent='Street search is unavailable right now, so we found your town ('+town.name+'). Click your exact spot on the map to see your districts.';
+    }else status.textContent='Address search is unavailable right now. You can still click the map.';
   }finally{clearTimeout(t);setTimeout(()=>{searching=false;},1100);}
 });
 

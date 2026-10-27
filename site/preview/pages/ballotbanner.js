@@ -11,9 +11,23 @@
   name = name ? name.trim() : st;
   var guide = lower === 'co' ? '../guide/' : '../guide-' + lower + '/';
 
-  var planHref = '/members/my-ballot.html?state=' + st;
+  var markHref = '/members/my-ballot.html?state=' + st + '#mark';
   function el(tag, cls, text) { var n = document.createElement(tag); n.className = cls; if (text) n.textContent = text; return n; }
   var spot = document.getElementById('ballot');          // the personal ballot breakdown in the sidebar
+
+  // Remember which races and measures the breakdown lists for this spot (page paths and names only, never the address),
+  // so the marking screen can show "your ballot" first. Stays in this browser tab (sessionStorage).
+  function stash() {
+    if (!spot) return;
+    var items = [], seen = {};
+    spot.querySelectorAll('a[href]').forEach(function (a) {
+      var u; try { u = new URL(a.getAttribute('href'), location.href); } catch (e) { return; }
+      if (u.origin !== location.origin || !/^\/preview\/pages\/guide(-[a-z]{2})?\/(races|measures)\/[a-z0-9-]+\.html$/.test(u.pathname) || seen[u.pathname]) return;
+      seen[u.pathname] = true;
+      items.push({ p: u.pathname, t: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 120) });
+    });
+    try { sessionStorage.setItem('theway.mymarks.v1', JSON.stringify({ state: st, items: items.slice(0, 80) })); } catch (e) { /* private mode */ }
+  }
 
   var box = document.createElement('section');
   box.className = 'ballot-banner';
@@ -24,44 +38,52 @@
   var h = document.createElement('h2');
   h.textContent = 'Open your ballot';
   var p = document.createElement('p');
-  p.textContent = 'See every race and measure on your ' + name + ' ballot for Tuesday, November 3, 2026.';
+  p.textContent = 'Mark your choices and keep a note for every race and measure on your ' + name + ' ballot for Tuesday, November 3, 2026.';
   text.append(h, p);
   var actions = document.createElement('div');
   actions.className = 'bb-actions';
   var main = document.createElement('a');
   main.className = 'bb-main';
-  main.href = '#ballot';
+  main.href = markHref;
   main.textContent = 'Open my ballot';
-  var plan = el('a', 'bb-alt', 'Plan your vote');
-  plan.href = planHref;
   var alt = document.createElement('a');
   alt.className = 'bb-alt';
   alt.href = guide;
   alt.textContent = 'Read the ' + name + ' voter guide';
-  actions.append(main, plan, alt);
+  actions.append(main, alt);
   box.append(text, actions);
   wrap.append(box);
+  main.addEventListener('click', stash);
 
-  // "Open my ballot" goes to the breakdown for the picked spot (it fills in beside the map), not to the planner.
-  main.addEventListener('click', function (ev) {
-    if (!spot) return;
-    ev.preventDefault();
-    spot.setAttribute('tabindex', '-1');
-    spot.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    spot.focus({ preventScroll: true });
-  });
-  // The planner is a link from inside the breakdown. map.js rebuilds #ballot on every lookup, so put the link back each time.
+  // The same door from inside the breakdown. map.js rebuilds #ballot on every lookup, so put the link back each time.
   if (spot) {
     var putPlan = function () {
       if (!spot.children.length || spot.querySelector('.bb-plan')) return;
-      var a = el('a', 'bb-plan', 'Plan your vote with this ballot \u2192');
-      a.href = planHref;
+      var a = el('a', 'bb-plan', 'Mark your choices and notes \u2192');
+      a.href = markHref;
+      a.addEventListener('click', stash);
       var wrapA = el('div', 'bb-plan-wrap');
-      wrapA.append(a, el('span', 'bb-plan-note', ' Pick what you would choose, save facts, compare, and print. Kept in your browser.'));
+      wrapA.append(a, el('span', 'bb-plan-note', ' Pick what you would choose, add a note to each race, compare, and print. Kept in your browser.'));
       spot.prepend(wrapA);
     };
     new MutationObserver(putPlan).observe(spot, { childList: true });
     putPlan();
+  }
+
+  // Picks already saved in this browser, but no address searched yet: say so, since the ballot cards only appear after a search.
+  if (spot && spot.parentNode && window.WayBallot) {
+    var saved = el('p', 'bb-saved', 'Your picks are saved. Search your address again to see them on the map.');
+    saved.hidden = true;
+    spot.parentNode.insertBefore(saved, spot);
+    var showSaved = function () {
+      var d = window.WayBallot.read(st), any = Object.keys(d.contests).some(function (k) {
+        var c = d.contests[k]; return c.picks.length || Object.keys(c.leans || {}).length;
+      });
+      saved.hidden = !(any && !spot.children.length);
+    };
+    new MutationObserver(showSaved).observe(spot, { childList: true });
+    document.addEventListener('theway-ballot', showSaved);
+    showSaved();
   }
 
   function update() { box.hidden = /^\s*No location selected/i.test(sel.textContent) || !sel.textContent.trim(); }

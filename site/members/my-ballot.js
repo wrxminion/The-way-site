@@ -12,7 +12,7 @@
   var cfg = null, sbLib = null;
   var qs = new URLSearchParams(location.search);
   var ST = (qs.get('state') || '').toUpperCase();
-  var ui = { notice: null, includeNotes: true, includeCompare: true, includeFacts: true, ack: false, busy: false, shareMsg: null, acctMsg: null, session: undefined };
+  var ui = { defs: {}, open: {}, all: null, notice: null, includeNotes: true, includeCompare: true, includeFacts: true, ack: false, busy: false, shareMsg: null, acctMsg: null, session: undefined };
 
   function h(tag, attrs) {
     var n = document.createElement(tag), kids = Array.prototype.slice.call(arguments, 2), k;
@@ -35,7 +35,7 @@
   // ---- data helpers
   function touched(d) {
     return Object.keys(d.contests).map(function (k) { return d.contests[k]; })
-      .filter(function (c) { return c.picks.length || c.undecided || c.compare.length; })
+      .filter(function (c) { return c.picks.length || c.undecided || c.compare.length || c.note || Object.keys(c.leans || {}).length || Object.keys(c.ranks || {}).length; })
       .sort(function (a, b) { return (a.kind === b.kind ? 0 : a.kind === 'race' ? -1 : 1) || (a.title < b.title ? -1 : 1); });
   }
   function contestOf(d, f) {
@@ -51,6 +51,15 @@
     var d = WB.read(ST); fn(d); WB.write(WB.clean(d, ST));
     ui.notice = msg ? { cls: 'ok', text: msg } : null;
     draw();
+  }
+  var LEAN = { yes: 'Yes', maybe: 'Maybe', no: 'No' };
+  // "My leanings: 1. Name (Yes), 2. Name (Maybe), Name (No)" in rank order, then the unranked.
+  function leanLine(c) {
+    var ids = Object.keys(c.leans || {}).concat(Object.keys(c.ranks || {}).filter(function (k) { return !(c.leans || {})[k]; }));
+    if (!ids.length) return '';
+    var rk = c.ranks || {};
+    ids.sort(function (a, b) { return (rk[a] || 999) - (rk[b] || 999) || (a < b ? -1 : 1); });
+    return 'My leanings (private): ' + ids.map(function (id) { return (rk[id] ? rk[id] + '. ' : '') + optLabel(c, id) + ((c.leans || {})[id] ? ' (' + LEAN[c.leans[id]] + ')' : ''); }).join('; ') + '.';
   }
   function choiceText(c) {
     if (c.picks.length) return c.picks.map(function (id) { return optLabel(c, id); }).join(', ');
@@ -79,7 +88,8 @@
     facts.forEach(function (f) { if (f.subject && ids.indexOf(f.subject) < 0) ids.push(f.subject); });
     return ids.map(function (id) {
       var o = c.options.filter(function (x) { return x.id === id; })[0];
-      return { label: o ? o.label : id, sub: o ? o.sub : '', url: o ? o.url : '', facts: facts.filter(function (f) { return f.subject === id; }) };
+      var mine = [(c.leans || {})[id] ? 'My lean: ' + LEAN[c.leans[id]] : '', (c.ranks || {})[id] ? 'rank ' + c.ranks[id] : ''].filter(Boolean).join(' · ');
+      return { label: o ? o.label : id, sub: o ? o.sub : '', mine: mine, url: o ? o.url : '', facts: facts.filter(function (f) { return f.subject === id; }) };
     });
   }
   function compareBlock(d, c) {
@@ -92,7 +102,7 @@
     return h('div', { class: 'mb-cmp' }, head,
       h('table', { class: 'mb-table' },
         h('thead', {}, h('tr', {}, cols.map(function (col) {
-          return h('th', { scope: 'col' }, col.url ? link(col.url, col.label) : col.label, col.sub ? h('span', { class: 'mb-sub', text: col.sub }) : null);
+          return h('th', { scope: 'col' }, col.url ? link(col.url, col.label) : col.label, col.sub ? h('span', { class: 'mb-sub', text: col.sub }) : null, col.mine ? h('span', { class: 'mb-sub', text: col.mine }) : null);
         }))),
         h('tbody', {}, h('tr', {}, cols.map(function (col) {
           return h('td', { 'data-label': col.label },
@@ -114,15 +124,149 @@
   function statePicker(have) {
     var sel = h('select', { id: 'mb-state', 'aria-label': 'State' },
       Object.keys(WB.STATES).map(function (c) { return h('option', { value: c, selected: c === ST, text: WB.STATES[c] + (have.indexOf(c) >= 0 ? ' (saved)' : '') }); }));
-    sel.addEventListener('change', function () { ST = sel.value; history.replaceState(null, '', '?state=' + ST); ui.notice = null; ui.acctMsg = null; ui.shareMsg = null; draw(); });
+    sel.addEventListener('change', function () { ST = sel.value; history.replaceState(null, '', '?state=' + ST); ui.notice = null; ui.acctMsg = null; ui.shareMsg = null; ui.defs = {}; ui.open = {}; ui.all = null; draw(); });
     return h('div', { class: 'mb-state noprint' }, h('label', { for: 'mb-state', text: 'State' }), sel,
       h('a', { class: 'button', href: guideBase(ST), text: 'Open the ' + WB.STATES[ST] + ' voter guide' }));
+  }
+
+
+  // ---- the marking screen: every race and measure, with picks and a note, all saved in this browser
+  var MARKS = 'theway.mymarks.v1';
+  function handoff() {
+    try {
+      var j = JSON.parse(sessionStorage.getItem(MARKS) || 'null');
+      if (!j || j.state !== ST || !Array.isArray(j.items)) return [];
+      return j.items.filter(function (i) { return i && /^\/preview\/pages\/guide(-[a-z]{2})?\/(races|measures)\/[a-z0-9-]+\.html$/.test(i.p); }).slice(0, 80);
+    } catch (e) { return []; }
+  }
+  function slugOf(p) { return (/\/([a-z0-9-]+)\.html$/.exec(p) || [])[1] || ''; }
+  function defsFor(path) {
+    var e = ui.defs[path];
+    if (e === undefined) {
+      ui.defs[path] = 'loading';
+      fetch(path, { credentials: 'omit' }).then(function (r) { if (!r.ok) throw 0; return r.text(); }).then(function (t) {
+        var doc = new DOMParser().parseFromString(t, 'text/html'), kind = /\/measures\//.test(path) ? 'measure' : 'race';
+        var defs = kind === 'measure' ? [WB.parseMeasure(doc, slugOf(path), path)] : WB.parseRace(doc, location.origin + path, slugOf(path));
+        defs.forEach(function (x) { delete x.ul; });
+        ui.defs[path] = defs.filter(function (x) { return x.options.length; });
+      }).catch(function () { ui.defs[path] = 'error'; }).then(draw);
+    }
+    return ui.defs[path];
+  }
+  function mergeDef(d, def) {
+    var c = d.contests[def.key] || { picks: [], undecided: false, compare: [], note: '' };
+    d.contests[def.key] = { key: def.key, kind: def.kind, title: def.title, url: def.url, seats: def.seats, options: def.options, picks: c.picks, undecided: c.undecided, compare: c.compare, note: c.note || '', leans: c.leans || {}, ranks: c.ranks || {} };
+    return d.contests[def.key];
+  }
+  function markForm(d, def) {
+    var c = d.contests[def.key] || { picks: [], undecided: false, compare: [], note: '' };
+    var multi = def.seats > 1, group = 'mk-' + def.key;
+    var opts = def.options.map(function (o) {
+      var on = c.picks.indexOf(o.id) >= 0;
+      var i = h('input', { type: multi ? 'checkbox' : 'radio', name: group, checked: on, 'data-k': def.key + o.id });
+      i.addEventListener('change', function () {
+        update(function (x) {
+          var k = mergeDef(x, def);
+          if (multi) { var at = k.picks.indexOf(o.id); if (at >= 0) k.picks.splice(at, 1); else if (k.picks.length < k.seats) k.picks.push(o.id); }
+          else k.picks = [o.id];
+          if (k.picks.length) k.undecided = false;
+        });
+      });
+      var cm = h('input', { type: 'checkbox', checked: c.compare.indexOf(o.id) >= 0, 'data-k': def.key + o.id + 'c' });
+      cm.addEventListener('change', function () { update(function (x) { var k = mergeDef(x, def), at = k.compare.indexOf(o.id); if (at >= 0) k.compare.splice(at, 1); else k.compare.push(o.id); }); });
+      var lean = null, rank = null;
+      if (def.kind === 'race') {
+        lean = h('select', { 'aria-label': 'Would you vote for ' + o.label + '?', 'data-k': def.key + o.id + 'l' },
+          [['', 'Not answered'], ['yes', 'Yes'], ['maybe', 'Maybe'], ['no', 'No']].map(function (x) { return h('option', { value: x[0], selected: (c.leans || {})[o.id] === x[0] || (!(c.leans || {})[o.id] && x[0] === ''), text: x[1] }); }));
+        lean.addEventListener('change', function () { update(function (x) { var k = mergeDef(x, def); if (lean.value) k.leans[o.id] = lean.value; else delete k.leans[o.id]; }); });
+        rank = h('input', { type: 'number', min: 1, max: 99, step: 1, inputmode: 'numeric', class: 'mk-rank', 'aria-label': 'Your ranking number for ' + o.label + ' in this race (1 is first)', placeholder: '#', 'data-k': def.key + o.id + 'r' });
+        if ((c.ranks || {})[o.id]) rank.value = c.ranks[o.id];
+        rank.addEventListener('change', function () { update(function (x) { var k = mergeDef(x, def), n = parseInt(rank.value, 10); if (n >= 1 && n <= 99) k.ranks[o.id] = n; else delete k.ranks[o.id]; }); });
+      }
+      return h('li', { class: 'mk-opt' },
+        h('label', { class: 'mb-check mk-name' }, i, h('span', {}, h('b', { text: o.label }), o.sub ? h('span', { class: 'mb-sub', text: o.sub }) : null)),
+        lean ? h('div', { class: 'mk-lean' }, h('span', { class: 'mk-q', text: 'Would you vote for this person?' }), lean, h('label', { class: 'mk-rk' }, h('span', { text: 'Rank' }), rank)) : null,
+        def.kind === 'race' ? h('label', { class: 'mb-check mk-cmp' }, cm, h('span', { text: 'Compare' })) : null,
+        o.url ? link(o.url, 'facts', false) : null);
+    });
+    var un = h('input', { type: 'checkbox', checked: c.undecided, 'data-k': def.key + 'u' });
+    un.addEventListener('change', function () { update(function (x) { var k = mergeDef(x, def); k.undecided = un.checked; if (un.checked) k.picks = []; }); });
+    var note = h('textarea', { rows: 2, maxlength: WB.LIMITS.note, placeholder: 'Your note (only on this device)', 'aria-label': 'Your note for ' + def.title });
+    note.value = c.note || '';
+    note.addEventListener('change', function () { var d2 = WB.read(ST), k = mergeDef(d2, def); k.note = note.value; WB.write(WB.clean(d2, ST)); });
+    return h('div', { class: 'mk-form' },
+      h('h4', { class: 'mk-title', text: def.title }), h('p', { class: 'mb-ft' }, multi ? '(pick up to ' + def.seats + ')' : '(pick one)', ' ', def.url ? link(def.url, 'open the guide page') : null),
+      h('ul', { class: 'mk-opts' }, opts),
+      h('label', { class: 'mb-check' }, un, h('span', { text: 'Not sure yet' })),
+      note);
+  }
+  // What is already saved for a race or measure page, in a few words, so a collapsed row shows it without opening.
+  function glance(d, it) {
+    var slug = (/\/([a-z0-9-]+)\.html$/.exec(it.p) || [])[1], out = [];
+    Object.keys(d.contests).forEach(function (k) {
+      var c = d.contests[k];
+      if (c.url !== it.p && !(slug && (k === 'race:' + slug || k === 'measure:' + slug || k.indexOf('race:' + slug + ':') === 0))) return;
+      if (c.picks.length) out.push('Your pick: ' + c.picks.map(function (id) { return optLabel(c, id); }).join(', '));
+      else {
+        var L = Object.keys(c.leans || {}).map(function (id) { return optLabel(c, id) + ' ' + ({ yes: 'Yes', maybe: 'Maybe', no: 'No' })[c.leans[id]]; });
+        if (L.length) out.push('Leaning: ' + L.join(', '));
+        else if (c.undecided) out.push('Not sure yet');
+      }
+    });
+    return out.join(' · ');
+  }
+  function markRow(d, it) {
+    var open = !!ui.open[it.p], defs = open ? defsFor(it.p) : (Array.isArray(ui.defs[it.p]) ? ui.defs[it.p] : null);
+    var chosen = Array.isArray(defs) && defs.length ? defs.map(function (x) { var c = d.contests[x.key]; return c ? choiceText(c) : 'Not chosen yet'; }).join(' · ') : null;
+    var saved = glance(d, it);
+    if (saved) chosen = saved;
+    var b = h('button', { type: 'button', class: 'quiet', 'aria-expanded': open ? 'true' : 'false', 'data-k': 'mk' + it.p, text: open ? 'Close' : 'Mark' });
+    b.addEventListener('click', function () { ui.open[it.p] = !ui.open[it.p]; draw(); });
+    return h('li', {},
+      h('div', { class: 'row' }, h('strong', { class: 'mk-race', text: it.t }), chosen ? h('span', { class: 'tag', text: chosen }) : null, b),
+      open ? (defs === 'loading' || defs === undefined ? h('p', { class: 'muted small', text: 'Loading…' })
+        : defs === 'error' ? h('p', { class: 'muted small' }, 'Could not load this page. ', link(it.p, 'Open it in the guide'), ' and use the My Ballot buttons there.')
+        : defs.map(function (x) { return markForm(d, x); })) : null);
+  }
+  function loadAll() {
+    ui.all = 'loading'; draw();
+    var b = guideBase(ST), items = [];
+    function parse(path, kind) {
+      return fetch(path, { credentials: 'omit' }).then(function (r) { if (!r.ok) throw 0; return r.text(); }).then(function (t) {
+        var doc = new DOMParser().parseFromString(t, 'text/html'), head = '';
+        doc.querySelectorAll('main h2, main ul.cards a, main ul.grid a').forEach(function (n) {
+          if (n.tagName === 'H2') { head = WB.txt(n); return; }
+          var p; try { p = new URL(n.getAttribute('href'), location.origin + path).pathname; } catch (e) { return; }
+          if (!/\/(races|measures)\/[a-z0-9-]+\.html$/.test(p) || /\/index\.html$/.test(p)) return;
+          var name = WB.txt(n);
+          items.push({ p: p, t: kind === 'race' && /^District/i.test(name) && head ? head + ': ' + name : name });
+        });
+      });
+    }
+    Promise.all([parse(b + 'measures/index.html', 'measure'), parse(b + 'races/index.html', 'race')]).then(function () { ui.all = items; }).catch(function () { ui.all = items.length ? items : 'error'; }).then(draw);
+  }
+  function markPanel(d) {
+    var mine = handoff(), kids = [];
+    kids.push(h('h2', { text: 'Mark your ballot' }),
+      h('p', { class: 'muted' }, 'This is where you choose, and keep a note for each race and measure. Open one, pick, write a note if you like. Your Yes, Maybe, No and ranking numbers are private notes to yourself: nothing is totaled, scored or shown to anyone. Everything saves in this browser as you go. Nothing is sent to us.'));
+    if (mine.length) {
+      kids.push(h('h3', { text: 'Your ballot (from the spot you picked on the map)' }),
+        h('ul', { class: 'list' }, mine.map(function (i) { return markRow(d, { p: i.p, t: i.t || slugOf(i.p) }); })));
+    } else {
+      kids.push(h('p', { class: 'notice warn' }, 'Not sure which races are yours? ', link('/preview/pages/states/', 'Pick your state or enter your address'), ' on the map and press "Open my ballot". Your own races will be listed here. Until then you can open any race below.'));
+    }
+    kids.push(h('h3', { text: 'Every race and measure in ' + WB.STATES[ST] }));
+    if (ui.all === 'loading') kids.push(h('p', { class: 'muted', text: 'Loading the list…' }));
+    else if (ui.all === 'error') kids.push(h('p', { class: 'muted' }, 'Could not load the list. ', link(guideBase(ST), 'Open the voter guide'), '.'));
+    else if (Array.isArray(ui.all)) kids.push(h('ul', { class: 'list' }, ui.all.map(function (i) { return markRow(d, i); })));
+    else kids.push(h('div', { class: 'btns' }, h('button', { type: 'button', id: 'mk-all', onclick: loadAll, text: 'Show every race and measure' })));
+    return h('section', { class: 'panel noprint', id: 'mark' }, kids);
   }
 
   function choicesPanel(d) {
     var cs = touched(d);
     return h('section', { class: 'panel noprint' },
-      h('h2', { text: 'Your choices' }),
+      h('h2', { text: 'Your choices so far' }),
       cs.length ? h('ul', { class: 'list' }, cs.map(function (c) {
         return h('li', {},
           h('div', { class: 'row' },
@@ -202,7 +346,7 @@
         picked.length ? h('table', { class: 'mb-table mb-plan' },
           h('thead', {}, h('tr', {}, h('th', { scope: 'col', text: 'Race or measure' }), h('th', { scope: 'col', text: 'My choice' }))),
           h('tbody', {}, picked.map(function (c) {
-            return h('tr', {}, h('td', { 'data-label': 'Race or measure', text: c.title }), h('td', { 'data-label': 'My choice' }, h('span', { class: 'mb-box', 'aria-hidden': 'true', text: c.picks.length ? '☑' : '☐' }), ' ', choiceText(c)));
+            return h('tr', {}, h('td', { 'data-label': 'Race or measure', text: c.title }), h('td', { 'data-label': 'My choice' }, h('span', { class: 'mb-box', 'aria-hidden': 'true', text: c.picks.length ? '☑' : '☐' }), ' ', choiceText(c), leanLine(c) ? h('span', { class: 'mb-note-print', text: ' ' + leanLine(c) }) : null, c.note && ui.includeNotes ? h('span', { class: 'mb-note-print', text: ' My note: ' + c.note }) : null));
           }))) : h('p', { text: 'No choices yet.' }),
         ui.includeCompare && cmp.length ? h('div', {}, h('h3', { text: 'Still deciding' }), cmp.map(function (c) { return compareBlock(d, c); })) : null,
         ui.includeFacts && printable.length ? h('div', {}, h('h3', { text: 'Facts I want with me' }), gOrder.map(function (g) {
@@ -370,11 +514,12 @@
       }
     }
     var d = WB.read(ST);
-    kids.push(statePicker(have), choicesPanel(d), factsPanel(d), comparePanel(d), sheet(d), keepPanel(d), accountPanel(d), sharePanel(d));
+    kids.push(statePicker(have), markPanel(d), choicesPanel(d), factsPanel(d), comparePanel(d), sheet(d), keepPanel(d), accountPanel(d), sharePanel(d));
     app.replaceChildren.apply(app, kids);
     if (focus) { var f = app.querySelector('[data-k="' + focus.replace(/"/g, '') + '"]'); if (f) f.focus(); }
   }
   document.addEventListener('theway-ballot', function () { /* own writes redraw themselves */ });
   window.addEventListener('storage', function (e) { if (e.key && e.key.indexOf('theway.ballot.v1.') === 0) draw(); });
   draw();
+  if (location.hash === '#mark') { var m = document.getElementById('mark'); if (m) m.scrollIntoView(); }
 })();

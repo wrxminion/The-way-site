@@ -25,6 +25,18 @@
 
   function empty(st) { return { v: 1, state: st, contests: {}, facts: {}, updated: 0 }; }
 
+  // Private "would you vote for this person?" answers and rank numbers, per option id. Only for options the contest lists.
+  function leanMap(m, ids) {
+    var r = {}; if (!m || typeof m !== 'object') return r;
+    Object.keys(m).forEach(function (k) { if (ids[k] && (m[k] === 'yes' || m[k] === 'no' || m[k] === 'maybe')) r[k] = m[k]; });
+    return r;
+  }
+  function rankMap(m, ids) {
+    var r = {}; if (!m || typeof m !== 'object') return r;
+    Object.keys(m).forEach(function (k) { var n = parseInt(m[k], 10); if (ids[k] && n >= 1 && n <= 99) r[k] = n; });
+    return r;
+  }
+
   function clean(d, st) {
     var out = empty(st);
     if (!d || typeof d !== 'object') return out;
@@ -50,7 +62,8 @@
       var seats = Math.max(1, Math.min(20, parseInt(c.seats, 10) || 1));
       var picks = pick(c.picks).slice(0, seats);
       out.contests[k] = { key: k, kind: kind, title: str(c.title, LIMITS.label), url: url(c.url), seats: seats, options: opts,
-        picks: picks, undecided: c.undecided === true && !picks.length, compare: pick(c.compare) };
+        picks: picks, undecided: c.undecided === true && !picks.length, compare: pick(c.compare), note: str(c.note, LIMITS.note),
+        leans: leanMap(c.leans, ids), ranks: rankMap(c.ranks, ids) };
       n++;
     }
     n = 0;
@@ -104,6 +117,62 @@
     return ('00000000' + h.toString(16)).slice(-8);
   }
 
+
+  // ---- reading a race page (used by the guide-page buttons and the planner's marking screen)
+  var NUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10 };
+  function txt(n) { return (n.textContent || '').replace(/\s+/g, ' ').trim(); }
+  function sl(s) { return s.toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60); }
+  function h1Text(doc) {
+    var h = doc.querySelector('main h1'); if (!h) return '';
+    var c = h.cloneNode(true), s = c.querySelector('.sub'), sub = '';
+    if (s) { sub = txt(s); s.remove(); }
+    return txt(c) + (sub ? ': ' + sub : '');
+  }
+  function seatsIn(text) {
+    var r = /(?:vote for|choose|select) up to (\d+|[a-z]+)/i.exec(text) || /vote for (\d+)\b/i.exec(text);
+    if (!r) return 1;
+    var n = /^\d+$/.test(r[1]) ? parseInt(r[1], 10) : (NUM[r[1].toLowerCase()] || 1);
+    return n >= 1 && n <= 20 ? n : 1;
+  }
+
+  // Race contests on a race page (or a fetched copy of one). A page with two lists (governor + lieutenant governor) has two contests.
+  function parseRace(doc, base, raceSlug) {
+    var root = doc.querySelector('main'); if (!root) return [];
+    var nodes = root.querySelectorAll('h2, h3, ul.cands'), head = '', lists = [], i;
+    for (i = 0; i < nodes.length; i++) {
+      if (nodes[i].tagName === 'UL') lists.push({ ul: nodes[i], head: head }); else head = txt(nodes[i]);
+    }
+    var title = h1Text(doc), whole = txt(root), out = [], used = {};
+    lists.forEach(function (l) {
+      var key = 'race:' + raceSlug;
+      if (lists.length > 1) { key += ':' + (sl(l.head) || 'list'); }
+      while (used[key]) key += '-2';
+      used[key] = true;
+      var seg = l.head, n = l.ul.previousElementSibling, k = 0;
+      while (n && k++ < 4 && !/^H[1-6]$/.test(n.tagName)) { seg += ' ' + txt(n); n = n.previousElementSibling; }
+      n = l.ul.nextElementSibling; k = 0;
+      while (n && k++ < 3 && !/^H[1-6]$/.test(n.tagName) && n.tagName !== 'UL') { seg += ' ' + txt(n); n = n.nextElementSibling; }
+      var seats = seatsIn(seg);
+      if (seats === 1 && lists.length === 1) seats = seatsIn(whole);
+      var options = [];
+      Array.prototype.forEach.call(l.ul.querySelectorAll(':scope > li'), function (li) {
+        var a = li.querySelector('a[href]'); if (!a) return;
+        var p;
+        try { p = new URL(a.getAttribute('href'), base).pathname; } catch (e) { return; }
+        var id = (/\/([a-z0-9-]+)\.html$/.exec(p) || [])[1]; if (!id) return;
+        var party = li.querySelector('.party'), what = li.querySelector('.what');
+        options.push({ id: id, label: txt(a), sub: [party ? txt(party) : '', what ? txt(what) : ''].filter(Boolean).join(' · '), url: p });
+      });
+      out.push({ key: key, kind: 'race', title: lists.length > 1 && l.head && l.head !== title ? title + ': ' + l.head : title,
+        url: new URL(base).pathname, seats: seats, options: options, ul: l.ul });
+    });
+    return out;
+  }
+  function parseMeasure(doc, slug, pageUrl) {
+    return { key: 'measure:' + slug, kind: 'measure', title: h1Text(doc), url: pageUrl, seats: 1,
+      options: [{ id: 'yes', label: 'Yes', sub: '', url: '' }, { id: 'no', label: 'No', sub: '', url: '' }] };
+  }
+
   window.WayBallot = { STATES: STATES, LIMITS: LIMITS, read: read, write: write, clean: clean, empty: empty, states: states, clear: clear,
-    count: count, factId: factId, ckey: ckey, slug: slug, url: url, stored: function () { return !failed; } };
+    txt: txt, sl: sl, h1Text: h1Text, parseRace: parseRace, parseMeasure: parseMeasure, count: count, factId: factId, ckey: ckey, slug: slug, url: url, stored: function () { return !failed; } };
 })();

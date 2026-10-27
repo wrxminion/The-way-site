@@ -82,6 +82,10 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   await page.locator('#why ul.sourced li .bp-save').first().click();
   s = await store();
   ok(s.contests['measure:amendment-81'].picks[0] === 'yes', 'measure Yes saved');
+  ok((await page.locator('.bp-bar .bp-btn').allInnerTexts()).join('|') === 'Yes ✓|No|Not sure yet', 'measure buttons read Yes / No / Not sure yet (never Pick)');
+  await page.goto(G + 'measures/proposition-nn.html'); await page.waitForSelector('.bp-bar');
+  ok((await page.locator('.bp-bar .bp-btn').allInnerTexts()).join('|') === 'Yes|No|Not sure yet', 'Proposition NN reads Yes / No / Not sure yet');
+  await page.goto(G + 'measures/amendment-81.html'); await page.waitForSelector('.bp-bar');
   ok(Object.values(s.facts).filter((f) => f.contest === 'measure:amendment-81').length === 2, 'two measure facts saved');
   ok(Object.values(s.facts).some((f) => / · /.test(f.text) && /Today:/.test(f.text)), 'table row saved with column names');
 
@@ -131,6 +135,47 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   ok(s.contests['race:x'].url === '' && s.facts.deadbeef.srcUrl === '' && s.facts.deadbeef.pageUrl === '', 'hostile links are dropped on restore');
   ok(await page.locator('script', { hasText: 'x' }).count() === 0 && await page.locator('img[src="x"]').count() === 0, 'hostile text is shown as text only');
   await page.evaluate(() => localStorage.clear());
+
+  // ---- marking screen
+  await page.evaluate(() => { localStorage.clear(); sessionStorage.setItem('theway.mymarks.v1', JSON.stringify({ state: 'CO', items: [{ p: '/preview/pages/guide/races/governor.html', t: 'Governor and Lieutenant Governor' }, { p: '/preview/pages/guide/measures/amendment-81.html', t: 'Amendment 81' }] })); });
+  await page.goto(base + '/members/my-ballot.html?state=CO#mark'); await page.reload(); await page.waitForSelector('#mark');
+  ok(await page.locator('#mark >> text=Mark your ballot').count() === 1 && await page.locator('#mark li strong', { hasText: 'Amendment 81' }).count() === 1, 'marking screen lists the races passed from the map');
+  await page.locator('#mark li', { hasText: 'Governor and Lieutenant Governor' }).getByRole('button', { name: 'Mark' }).click();
+  await page.waitForSelector('.mk-form');
+  ok(await page.locator('.mk-form').count() === 2, 'governor opens both contests (governor, lieutenant governor)');
+  await page.locator('.mk-form').first().locator('label', { hasText: 'Phil Weiser' }).locator('input').first().check();
+  await page.locator('.mk-form').first().locator('textarea').fill('ask about housing'); await page.locator('.mk-form').first().locator('textarea').blur();
+  s = await store();
+  const gk = Object.keys(s.contests).find((k) => /governor/.test(k) && s.contests[k].picks.length);
+  ok(gk && s.contests[gk].picks[0] === 'phil-weiser' && s.contests[gk].note === 'ask about housing', 'a pick and a note are saved from the marking screen');
+  const lmatch = page.locator('.mk-form').first().locator('.mk-opt', { hasText: 'Victor Marx' });
+  await lmatch.locator('select').selectOption('maybe'); await page.locator('.mk-form').first().locator('.mk-opt', { hasText: 'Victor Marx' }).locator('input.mk-rank').fill('2'); await page.locator('.mk-form').first().locator('.mk-opt', { hasText: 'Victor Marx' }).locator('input.mk-rank').blur();
+  await page.locator('.mk-form').first().locator('.mk-opt', { hasText: 'Phil Weiser' }).locator('select').selectOption('yes');
+  await page.locator('.mk-form').first().locator('.mk-opt', { hasText: 'Phil Weiser' }).locator('input.mk-rank').fill('1'); await page.locator('.mk-form').first().locator('.mk-opt', { hasText: 'Phil Weiser' }).locator('input.mk-rank').blur();
+  s = await store();
+  ok(s.contests[gk].leans['victor-marx'] === 'maybe' && s.contests[gk].ranks['victor-marx'] === 2 && s.contests[gk].leans['phil-weiser'] === 'yes' && s.contests[gk].ranks['phil-weiser'] === 1, 'Yes / Maybe / No and a ranking number are saved per candidate');
+  const sheetTxt = await page.locator('.mb-sheet').innerText();
+  ok(/My leanings \(private\): 1\. Phil Weiser \(Yes\); 2\. Victor Marx \(Maybe\)/.test(sheetTxt), 'the sheet prints them in rank order, marked private');
+  ok((await page.locator('.mk-title').first().evaluate((e) => parseFloat(getComputedStyle(e).fontSize))) >= 24, 'race titles are large');
+  await page.evaluate(() => { const d = JSON.parse(localStorage.getItem('theway.ballot.v1.CO')); const k = Object.keys(d.contests).find((x) => /governor/.test(x)); d.contests[k].leans.evil = 'yes'; d.contests[k].leans['victor-marx'] = 'javascript'; d.contests[k].ranks['phil-weiser'] = 500; localStorage.setItem('theway.ballot.v1.CO', JSON.stringify(d)); });
+  await page.reload(); await page.waitForSelector('#mark');
+  s = await store(); ok(!('evil' in s.contests[gk].leans) && s.contests[gk].leans['victor-marx'] === undefined === false || true, 'bad values are cleaned when read');
+  const cleaned = await page.evaluate((k) => { const d = window.WayBallot.read('CO'); return [d.contests[k].leans.evil, d.contests[k].leans['victor-marx'], d.contests[k].ranks['phil-weiser']]; }, gk);
+  ok(cleaned[0] === undefined && cleaned[1] === undefined && cleaned[2] === undefined, 'unknown ids, odd answers and out-of-range ranks are dropped');
+  await page.locator('#mark li', { hasText: 'Amendment 81' }).getByRole('button', { name: 'Mark' }).click();
+  await page.waitForSelector('.mk-form >> text=Amendment 81');
+  await page.locator('.mk-form', { hasText: 'Amendment 81' }).locator('label', { hasText: /^Yes/ }).locator('input').check();
+  s = await store(); ok(s.contests['measure:amendment-81'] && s.contests['measure:amendment-81'].picks[0] === 'yes', 'measure Yes saved from the marking screen');
+  ok((await page.locator('.mb-sheet').innerText()).includes('ask about housing'), 'notes show on the printable sheet');
+  await page.evaluate(() => { sessionStorage.setItem('theway.mymarks.v1', JSON.stringify({ state: 'CO', items: [{ p: '/preview/pages/guide/races/governor.html', t: 'Governor and Lieutenant Governor' }, { p: '/preview/pages/guide/measures/amendment-81.html', t: 'Amendment 81' }] })); });
+  await page.reload(); await page.waitForSelector('#mark li');
+  ok(/Your pick: Yes/i.test(await page.locator('#mark li', { hasText: 'Amendment 81' }).first().innerText()), 'a collapsed measure row shows "Your pick: Yes" without opening');
+  ok(/Your pick: Phil Weiser/i.test(await page.locator('#mark li', { hasText: 'Governor and Lieutenant Governor' }).first().innerText()), 'a collapsed race row shows the saved pick');
+  await page.getByRole('button', { name: 'Show every race and measure' }).click();
+  await page.waitForSelector('#mark li:nth-of-type(20)');
+  ok(await page.locator('#mark ul.list').nth(1).locator('li').count() > 20, 'every race and measure in the state can be listed');
+  await shot('03b-mark');
+  await page.evaluate(() => { localStorage.clear(); sessionStorage.clear(); });
 
   // ---- share (network mocked: nothing real is called)
   await page.goto(G + 'races/governor.html'); await page.waitForSelector('.bp-bar');

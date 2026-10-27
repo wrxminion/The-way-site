@@ -25,7 +25,7 @@ let fails = 0; const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m)
     else if (!/^\d+ /.test(q.replace(/, Colorado$/, '')) && /Example Street/.test(q)) body = [{ lat: '40.0150', lon: '-105.2705', display_name: 'Example Street Road, Boulder, Colorado', address: { city: 'Boulder', state: 'Colorado' } }];
     route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(body) });
   });
-  await page.route(/tile\.openstreetmap|cloudflareinsights/, (r) => r.abort());
+  await page.route(/tile\.openstreetmap|cloudflareinsights|geocoding\.geo\.census\.gov/, (r) => r.abort());
   // the district shapes are large and kept out of this test: one box over Colorado stands in for every layer
   const box = { type: 'FeatureCollection', features: [{ type: 'Feature', properties: { d: 2, n: 'Boulder', name: 'Boulder' }, geometry: { type: 'Polygon', coordinates: [[[-109.06, 36.99], [-102.04, 36.99], [-102.04, 41.01], [-109.06, 41.01], [-109.06, 36.99]]] } }] };
   await page.route(/\/data\/[a-z-]+\.geojson/, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(box) }));
@@ -40,16 +40,32 @@ let fails = 0; const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m)
   const sel = await page.textContent('#selected');
   ok(!/Maine/.test(sel) && !/Maine/.test(await page.textContent('#results')), 'a Boulder address is never sent to Maine');
   ok(/Colorado/.test(sel) && /not the exact house|street/.test(st), 'falls back to the street in Colorado and says it is not the exact house');
-  ok(asked.every((a) => a.startsWith('B ')), 'only Colorado-bounded searches were made (' + asked.length + ')');
+  ok(asked.filter((a) => !a.startsWith('CENSUS')).every((a) => a.startsWith('B ')), 'only Colorado-bounded searches were made (' + asked.length + ')');
   ok((await page.locator('#results .result').count()) > 0, 'district cards are shown for the spot');
   ok(await page.locator('#ballot .bb-plan').count() === 1, 'the ballot breakdown has a "Plan your vote" link');
   const href = await page.getAttribute('#ballot .bb-plan', 'href');
-  ok(href === '/members/my-ballot.html?state=CO', 'the link goes to the planner for Colorado');
+  ok(href === '/members/my-ballot.html?state=CO#mark', 'the link goes to the planner for Colorado');
   ok(await page.locator('.ballot-banner').isVisible(), 'Open your ballot banner shows once a spot is picked');
-  ok((await page.getAttribute('.bb-main', 'href')) === '#ballot', '"Open my ballot" points at the breakdown, not the planner');
+  ok((await page.getAttribute('.bb-main', 'href')) === '/members/my-ballot.html?state=CO#mark', '"Open my ballot" goes to the marking screen of the planner');
+  ok((await page.getAttribute('#ballot .bb-plan', 'href')) === '/members/my-ballot.html?state=CO#mark', 'the breakdown has the same link');
+  await page.evaluate(() => { document.querySelector('.bb-main').addEventListener('click', (e) => e.preventDefault()); });
   await page.click('.bb-main');
-  await page.waitForTimeout(600);
-  ok(!/my-ballot/.test(page.url()) && await page.evaluate(() => document.activeElement && document.activeElement.id === 'ballot'), 'clicking it stays on the map page and focuses the breakdown');
+  const stash = await page.evaluate(() => JSON.parse(sessionStorage.getItem('theway.mymarks.v1') || 'null'));
+  ok(stash && stash.state === 'CO' && Array.isArray(stash.items) && !JSON.stringify(stash).match(/Example Street/i), 'the list of your races is passed on, without the address');
+  // quick private answers on the ballot cards
+  const mcard = page.locator('#ballot div.measure').first();
+  ok(await mcard.locator('.m-title a').count() === 1 && /measures\/[a-z0-9-]+\.html$/.test(await mcard.locator('.m-title a').getAttribute('href')), 'a measure title is itself a link to its page');
+  ok(/^See details/.test(await mcard.locator('.m-see').innerText()) && (await mcard.evaluate((e) => [...e.children].map((c) => c.className).slice(0, 3).join(','))) === 'm-title,m-see,m-what', '"See details" sits right under the title, before the text and the dropdown');
+  await mcard.getByRole('button', { name: 'Yes', exact: true }).click();
+  const slugM = (await mcard.locator('.m-title a').getAttribute('href')).match(/([a-z0-9-]+)\.html$/)[1];
+  let st2 = await page.evaluate(() => JSON.parse(localStorage.getItem('theway.ballot.v1.CO') || 'null'));
+  ok(st2 && st2.contests['measure:' + slugM] && st2.contests['measure:' + slugM].picks[0] === 'yes', 'Yes on a measure card is saved in the shared browser store');
+  const cand = page.locator('#ballot .race li', { has: page.locator('.quick') }).first();
+  await cand.getByRole('button', { name: 'Maybe' }).click();
+  st2 = await page.evaluate(() => JSON.parse(localStorage.getItem('theway.ballot.v1.CO') || 'null'));
+  ok(Object.values(st2.contests).some((c) => c.kind === 'race' && Object.values(c.leans || {}).includes('maybe')), 'Maybe on a candidate is saved as a private lean');
+  ok(await mcard.getByRole('button', { name: 'Yes', exact: true }).getAttribute('aria-pressed') === 'true', 'the card shows the saved answer');
+  if (process.env.SHOT) await page.locator('#ballot').screenshot({ path: process.env.SHOT });
   ok(await page.locator('#ballot .bb-plan').count() === 1, 'still only one Plan your vote link after the page redraws');
   // no state typed and nothing in Colorado: other-state help is still allowed
   await page.waitForTimeout(1500); asked.length = 0;

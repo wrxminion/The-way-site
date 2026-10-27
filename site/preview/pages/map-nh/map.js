@@ -153,32 +153,81 @@ function lookup(lat,lng,label){
 
 /* links into the voter guide (guide.json is written by the guide generator) */
 function gLink(rel,text){const g=data.guide;return g&&rel?el('a',{href:g.base+rel,text}):document.createTextNode(text);}
-function candList(race,key){
-  const ul=el('ul'),g=data.guide;
+
+/* Quick private answers on the ballot cards. Saved in this browser only, in the same store as the planner's marking screen
+   (members/ballot-store.js), so an answer given here shows there and the other way round. Never sent anywhere. */
+const WB=window.WayBallot,quick=[];
+const ST=()=>String((typeof C!=='undefined'&&C&&C.abbr)||'').toUpperCase();
+const slugOf=p=>{const m=/\/([a-z0-9-]+)\.html$/.exec(p||'');return m?m[1]:'';};
+function pathOf(rel){const g=data.guide;if(!g||!rel)return '';try{return new URL(g.base+rel,location.href).pathname;}catch(e){return '';}}
+function mergeC(d,def){
+  const c=d.contests[def.key]||{picks:[],undecided:false,compare:[],note:'',leans:{},ranks:{}};
+  d.contests[def.key]={key:def.key,kind:def.kind,title:def.title,url:def.url,seats:def.seats,options:def.options,picks:c.picks,undecided:c.undecided,compare:c.compare,note:c.note||'',leans:c.leans||{},ranks:c.ranks||{}};
+  return d.contests[def.key];
+}
+function change(def,fn){if(!WB)return;const d=WB.read(ST());fn(mergeC(d,def));WB.write(WB.clean(d,ST()));syncQuick();}
+function syncQuick(){if(!WB)return;const d=WB.read(ST());quick.forEach(q=>q(d));}
+/* a row of small answer buttons: [label, value] pairs; get/set read and write one value in the contest */
+function quickRow(def,legend,answers,get,set){
+  if(!WB||!def)return null;
+  const row=el('span',{cls:'quick',role:'group','aria-label':legend.aria}),btns=[];
+  row.append(el('span',{cls:'q-l',text:legend.text}));
+  for(const [lab,val] of answers){
+    const b=el('button',{type:'button',cls:'q-b','aria-pressed':'false',text:lab});
+    b.addEventListener('click',()=>change(def,c=>set(c,val,get(c)===val)));
+    btns.push([b,val]);row.append(b);
+  }
+  quick.push(d=>{const c=d.contests[def.key];const cur=c?get(c):'';btns.forEach(([b,v])=>b.setAttribute('aria-pressed',cur===v?'true':'false'));});
+  return row;
+}
+function raceDef(race,key,title){
+  const g=data.guide,rel=g&&key?g.races[key]:null,path=pathOf(rel),slug=slugOf(path);
+  if(!slug||!race)return null;
+  const options=race.map(c=>{const p=pathOf(g.candidates[key+'|'+c.name]);const id=slugOf(p);return id?{id,label:c.name,sub:c.party||'',url:p}:null;}).filter(Boolean);
+  return options.length?{key:'race:'+slug,kind:'race',title,url:path,seats:1,options}:null;
+}
+function leanRow(def,name){
+  const o=def&&def.options.find(x=>x.label===name);
+  if(!o)return null;
+  return quickRow(def,{text:'Would you vote for them?',aria:'Your private answer for '+name},[['Yes','yes'],['Maybe','maybe'],['No','no']],c=>(c.leans||{})[o.id]||'',
+    (c,v,on)=>{c.leans=c.leans||{};if(on)delete c.leans[o.id];else c.leans[o.id]=v;});
+}
+function candList(race,key,title,defIn){
+  const ul=el('ul'),g=data.guide,def=defIn||raceDef(race,key,title);
   for(const c of race){
     const rel=g&&key?g.candidates[key+'|'+c.name]:null;
-    ul.append(el('li',{},[gLink(rel,c.name),el('span',{text:' · '+c.party}),c.writeIn?el('span',{cls:'wi',text:' · write-in'}):null]));
+    ul.append(el('li',{},[gLink(rel,c.name),el('span',{text:' · '+c.party}),c.writeIn?el('span',{cls:'wi',text:' · write-in'}):null,leanRow(def,c.name)]));
   }
   return ul;
 }
 function raceBlock(title,list,emptyText,key){
   const g=data.guide,rel=g&&key?g.races[key]:null;
-  return el('div',{cls:'race'},[el('b',{},[gLink(rel,title)]),list&&list.length?candList(list,key):el('div',{cls:'note',text:emptyText||'No candidates listed.'})]);
+  return el('div',{cls:'race'},[el('b',{cls:'race-title'},[gLink(rel,title)]),list&&list.length?candList(list,key,title):el('div',{cls:'note',text:emptyText||'No candidates listed.'})]);
 }
 function measure(m,tag){
-  const body=el('div',{cls:'body'},[el('p',{text:m.what})]);
   const rel=data.guide&&data.guide.measures[m.code];
-  if(rel)body.append(el('p',{},[gLink(rel,'Full page: official ballot title, full text, and what each vote means →')]));
+  const path=pathOf(rel),slug=slugOf(path);
+  const def=slug?{key:'measure:'+slug,kind:'measure',title:m.code+': '+m.title,url:path,seats:1,options:[{id:'yes',label:'Yes',sub:'',url:''},{id:'no',label:'No',sub:'',url:''}]}:null;
+  const card=el('div',{cls:'measure'},[el('div',{cls:'m-title'},[rel?gLink(rel,m.code+' '+m.title):el('span',{text:m.code+' '+m.title}),tag?el('span',{cls:'tag',text:tag}):null])]);
+  if(rel)card.append(el('div',{cls:'m-see'},[gLink(rel,'See details: official ballot title, full text, and what each vote means →')]));
+  if(m.what)card.append(el('p',{cls:'m-what',text:m.what}));
+  const q=quickRow(def,{text:'How would you vote?',aria:'Your private answer for '+m.code},[['Yes','yes'],['No','no']],c=>c.picks[0]||'',
+    (c,v,on)=>{c.picks=on?[]:[v];if(c.picks.length)c.undecided=false;});
+  if(q)card.append(q);
+  const body=el('div',{cls:'body'});
   if(m.yes)body.append(el('p',{},[el('b',{text:'Yes: '}),m.yes,' ',el('b',{text:'No: '}),m.no]));
   if(m.note)body.append(el('p',{cls:'note',text:m.note}));
   if(m.needs)body.append(el('p',{cls:'note',text:'Needs '+m.needs}));
-  return el('details',{cls:'measure'},[el('summary',{},[el('b',{text:m.code}),' '+m.title,tag?el('span',{cls:'tag',text:tag}):null]),body]);
+  if(body.children.length)card.append(el('details',{cls:'m-more'},[el('summary',{text:'What yes and no mean'}),body]));
+  return card;
 }
+document.addEventListener('theway-ballot',syncQuick);window.addEventListener('storage',syncQuick);
 
 function renderBallot(at){
   const b=data.ballot,c=data.candidates;
   if(!b){return;}
   const r=(c&&c.races)||{},names=(c&&c.raceNames)||{};
+  quick.length=0;
   const box=[el('h3',{text:'On your ballot'}),el('div',{cls:'note',text:b.election+'. '+b.status})];
   box.push(el('div',{cls:'note'},['Races, from the ',link(C.officialList.url,C.officialList.label+' ↗'),':']));
   if(data.guide)box.push(el('div',{cls:'note'},['Click any name or measure for its page in the ',gLink(data.guide.home,'voter guide'),'.']));
@@ -198,6 +247,7 @@ function renderBallot(at){
   }
   box.push(el('div',{cls:'note'},['See your exact ballot: ',link(C.sampleBallot.url,C.sampleBallot.label+' ↗')]));
   ballotBox.replaceChildren(...box);
+  syncQuick();
 }
 
 function wire(){

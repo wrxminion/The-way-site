@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 <link rel="stylesheet" href="map.css?v=ed644071">
 <link rel="stylesheet" href="/members/waybar.css?v=6">
-<link rel="stylesheet" href="../ballotbanner.css?v=3">
+<link rel="stylesheet" href="../ballotbanner.css?v=6">
 <link rel="stylesheet" href="statepick.css?v=1a7b0ee5">
 <script src="statepick.js?v=1a7b0ee5" defer></script>
 <link rel="stylesheet" href="mapgesture.css?v=8efb5392">
@@ -58,13 +58,14 @@
 </main>
 <footer class="bottom">
   <p><strong>Where this comes from.</strong> District lines: U.S. Census Bureau 2024 cartographic boundary files (Colorado's 2021 independent commission maps, in use for 2022 to 2030 elections). Boulder city limits: Census 2024 places. Officeholders: <a href="https://github.com/unitedstates/congress-legislators" target="_blank" rel="noopener">congress-legislators</a> and <a href="https://openstates.org/co/" target="_blank" rel="noopener">Open States</a>. Candidates: <a href="https://www.coloradosos.gov/pubs/elections/vote/generalCandidates.html" target="_blank" rel="noopener">Colorado Secretary of State official candidate list</a>. Measures: the <a href="https://leg.colorado.gov/bluebook" target="_blank" rel="noopener">2026 Blue Book</a>, Boulder County and the City of Boulder. All retrieved October 12, 2026. <a href="SOURCES.html">Full source list</a>.</p>
-  <p><strong>Privacy.</strong> Clicking the map and "Use my location" are worked out in your browser; nothing is sent to us. Address search sends what you type to OpenStreetMap's Nominatim service, and "Show streets" loads map pictures from OpenStreetMap. No cookies, no tracking.</p>
+  <p><strong>Privacy.</strong> Clicking the map and "Use my location" are worked out in your browser; nothing is sent to us. Address search sends what you type to the U.S. Census Bureau's geocoder and, if that finds nothing, to OpenStreetMap's Nominatim service, and "Show streets" loads map pictures from OpenStreetMap. No cookies, no tracking.</p>
   <p>The Way takes no side on any candidate or measure. Candidates are listed in the order the Secretary of State lists them.</p>
   <p class="motto">Not left. Not right. We are The Way.</p>
 </footer>
 <script src="vendor/leaflet/leaflet.js"></script>
-<script src="map.js?v=a2b7c9e1"></script>
-<script src="/members/waybar.js?v=7" defer></script>
-<script src="../ballotbanner.js?v=3" defer></script>
+<script src="/members/ballot-store.js?v=3"></script>
+<script src="map.js?v=9d0e5a12"></script>
+<script src="/members/waybar.js?v=9" defer></script>
+<script src="../ballotbanner.js?v=5" defer></script>
 </body>
 </html>
