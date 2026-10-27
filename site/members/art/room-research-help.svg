@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="A magnifying glass over an open book">
+<defs>
+<linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c8925a"/><stop offset="1" stop-color="#9c6a3a"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f2e4"/><stop offset="1" stop-color="#e6dfcb"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d98a"/><stop offset="1" stop-color="#d4a94c"/></linearGradient>
+<linearGradient id="teal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd6d0"/><stop offset="1" stop-color="#4a9aa0"/></linearGradient>
+<linearGradient id="dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d5130"/><stop offset="1" stop-color="#5a3820"/></linearGradient>
+</defs>
+<ellipse cx="160" cy="166" rx="110" ry="8" fill="#000" opacity=".35"/>
+<path d="M60 128l100-12 100 12v22l-100-12-100 12z" fill="url(#dark)"/>
+<path d="M60 112l100-12v38L60 150z" fill="url(#paper)"/><path d="M260 112l-100-12v38l100 12z" fill="#efe9d6"/>
+<g stroke="#9a9384" stroke-width="2" stroke-linecap="round"><path d="M76 116l68-8M76 124l68-8M76 132l54-6M176 108l68 8M176 116l68 8M176 124l54 6"/></g>
+<circle cx="190" cy="66" r="34" fill="#a9dbe6" opacity=".28"/><circle cx="190" cy="66" r="34" fill="none" stroke="url(#gold)" stroke-width="8"/>
+<path d="M176 52a20 20 0 0 1 16-8" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+<path d="M214 92l30 30" stroke="url(#dark)" stroke-width="10" stroke-linecap="round"/>
+</svg>

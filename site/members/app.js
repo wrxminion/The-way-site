@@ -589,7 +589,7 @@ async function homeView() {
       mapTile(),
       tile(LINKS.news, 'News', 'The time machine and the feed'),
       state.hasRecord ? tile('findings.html', 'Findings', 'What we checked, the verdict, and every change since') : null,
-      tile('#/cases', 'Cases', 'The history cases we wrote, with every source'),
+      tile(LINKS.cases, 'Civics & History', 'The history cases we wrote, with every source'),
       wantsMod ? tile('#/review', 'Review the sources', 'Check each claim against its sources, flag problems, mark a case reviewed') : null),
     h('p', { class: 'small place-line' }, ...(loadPlace()
       ? ['Your place: ', h('strong', { text: loadPlace().state }), ' · ', h('a', { href: '#/account', text: 'change it in your account' })]
@@ -610,6 +610,7 @@ async function homeView() {
       h('div', { class: 'small post', text: p.body.length > 220 ? p.body.slice(0, 220) + '…' : p.body }))))
       : h('p', { class: 'muted', text: 'Nothing posted yet. Start the first thread in the Commons.' }),
     h('p', {}, h('a', { class: 'button quiet', href: '#/commons', text: 'Open the Commons' })),
+    recent.length ? h('div', {}, h('h2', { text: 'Latest threads' }), threadList(recent, catById)) : null,
     h('h2', { text: 'Rooms' }),
     h('p', { class: 'small muted', text: 'Members may talk about anything, candidates included. The Way itself never takes sides.' }),
     h('ul', { class: 'list panel' }, cats.map((c) => h('li', {},
@@ -642,6 +643,7 @@ function newThreadForm(cats, preset) {
     h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Post thread')));
 }
 
+const ROOM_ART = new Set(['general', 'ideas', 'research-help', 'workshop', 'local', 'ballot']);
 async function commonsView() {
   const [cats, threads] = await Promise.all([
     q(sb.from('categories').select('*').order('sort_order')),
@@ -671,10 +673,10 @@ async function commonsView() {
     pinned.length ? h('div', {}, h('h2', { text: 'Pinned' }), threadList(pinned, catById)) : null,
     h('h2', { text: 'Rooms' }),
     h('div', { class: 'rooms' }, cats.map((c) => { const s = stats(c); return h('a', { class: 'room', href: `#/c/${c.slug}` },
+      ROOM_ART.has(c.slug) ? h('img', { class: 'room-art', src: `art/room-${c.slug}.svg?v=1`, alt: '', width: 320, height: 180, loading: 'lazy' }) : null,
       h('strong', { text: c.title }),
       h('span', { class: 'muted small', text: c.description }),
       h('span', { class: 'meta', text: s.n ? `${s.n} thread${s.n === 1 ? '' : 's'} · last post ${when(s.last)}` : (c.locked ? 'read only' : 'no threads yet') })); })),
-    recent.length ? h('div', {}, h('h2', { text: 'Latest threads' }), threadList(recent, catById)) : null,
   );
 }
 
@@ -2360,12 +2362,6 @@ async function boot() {
   takeTarget();
   return route();
 }
-
-// Links into the guides and maps open in a new tab; that folder asks for its own password.
-document.addEventListener('click', (ev) => {
-  const a = ev.target.closest && ev.target.closest('a[href]');
-  if (a && new URL(a.href, location.href).pathname.startsWith(PAGES)) { a.target = '_blank'; a.rel = 'noopener'; }
-}, true);
 
 window.addEventListener('hashchange', () => {
   if (state.me && state.me.status === 'active') route();

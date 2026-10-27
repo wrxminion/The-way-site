@@ -231,3 +231,10 @@ details.example ul{padding-left:18px;display:grid;gap:6px}
 .nav a[href^="/preview/"]::after,.button[href^="/preview/"]::after,.tile[href^="/preview/"] strong::after{content:" \2197";font-size:.8em;opacity:.7}
 .ctx-here{border-left:3px solid #7fe3d9;padding-left:10px}
 .claim-context .panel{margin:8px 0}
+
+/* Commons room cards: a picture on top (art/room-*.svg, same style as the home cards). */
+.room .room-art{display:block;width:100%;height:auto;aspect-ratio:16/9;margin:-2px 0 4px;transition:transform .35s ease}
+.room:hover .room-art{transform:translateY(-3px) scale(1.04)}
+@media (prefers-reduced-motion:reduce){.room .room-art{transition:none}.room:hover .room-art{transform:none}}
+/* Links to the public pages stay in the same tab, so no new-tab arrow on them. */
+.nav a[href^="/preview/"]::after,.button[href^="/preview/"]::after,.tile[href^="/preview/"] strong::after{content:none}

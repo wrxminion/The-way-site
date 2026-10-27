@@ -83,6 +83,7 @@
     if (/^#\/(commons|c\/|t\/)/.test(h)) return 'commons';
     if (/^#\/invite/.test(h)) return 'invite';
     if (/^#\/review/.test(h)) return 'review';
+    if (/^#\/reports/.test(h)) return 'reports';
     if (/^#\/admin/.test(h)) return 'admin';
     if (/^#\/roles/.test(h)) return 'me';
     if (/^#\/?$/.test(h) && appPage) return 'home';
@@ -113,17 +114,19 @@
       // Every link here opens in the same tab. Home sits at the left, big, because it is used the most.
       var home = link(route(''), 'Home', 'home');
       home.className = 'wb-home';
+      // Public links first, then the member links. About is in the footer, so it is not here.
       var mid = el('nav', { class: 'wb-mid', 'aria-label': 'Sections' });
       mid.appendChild(link('/preview/pages/states/', 'Voter Guide', 'ballot'));
       mid.appendChild(link('/preview/pages/news/', 'News', 'news'));
-      mid.appendChild(link(route('cases'), 'Civics & History', 'cases'));
-      mid.appendChild(link('/preview/pages/deeper.html', 'About', 'about'));
-      var deskOk = can('researcher') || can('reviewer');
-      if (path !== '/' && path !== '/index.html') mid.appendChild(link(route('commons'), 'Commons', 'commons'));
-      mid.appendChild(link(route('invite'), 'Invite', 'invite'));
-      if (deskOk) mid.appendChild(link(route('research'), 'Research', 'research'));
+      mid.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases'));
+      mid.appendChild(link('/research/', 'Research', 'research-lib'));
+      mid.appendChild(link(route('commons'), 'Commons', 'commons'));
+      if (can('researcher') || can('reviewer')) mid.appendChild(link(route('research'), 'Research desk', 'research'));
       if (can('moderator')) mid.appendChild(link(route('review'), 'Source verification', 'review'));
+      // One slot by role: Admin, else Moderation, else Settings (your account) for basic members.
       if (can('admin')) mid.appendChild(link(route('admin'), 'Admin', 'admin'));
+      else if (can('moderator')) mid.appendChild(link(route('reports'), 'Moderation', 'reports'));
+      else mid.appendChild(link(route('account'), 'Settings', 'me'));
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
       right.appendChild(searchForm());
       var who = el('div', { class: 'wb-who' });
@@ -134,16 +137,15 @@
       var menu = el('ul', { class: 'wb-menu', hidden: '' });
       var item = function (href, label) { var li = el('li'); li.appendChild(link(href, label)); menu.appendChild(li); };
       item(route(''), 'Home');
+      item('/preview/pages/cases/', 'Civics & History');
+      item('/research/', 'Research');
       item(route('commons'), 'Commons');
       item(route('invite'), 'Invite someone');
-      item(route('cases'), 'Civics & History');
-      item('/preview/pages/deeper.html', 'About');
       if (data.findings) item('/members/findings.html', 'Findings');
-      if (can('moderator')) item(route('review'), 'Source verification');
       if (can('researcher') || can('reviewer')) item(route('research'), 'Research desk');
-      if (can('reviewer') || can('moderator')) item('/members/read-checks.html', 'Read checks');
+      if (can('moderator')) item(route('review'), 'Source verification');
       if (data.modlog) item(route('log'), 'Moderation log');
-      if (can('moderator')) item(route('reports'), 'Reports');
+      if (can('moderator')) item(route('reports'), 'Moderation');
       if (can('admin')) item(route('admin'), 'Admin');
       item(route('roles'), 'Roles and points');
       menu.appendChild(el('li', { class: 'wb-sep', role: 'separator' }));
