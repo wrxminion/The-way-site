@@ -49,10 +49,11 @@
   }
   // Site search in the bar on every page: a plain form that sends the visitor to /search/?q=... (done in script,
   // because some pages' security policy does not allow a form to submit).
-  function searchForm() {
+  function searchForm(inputId) {
+    inputId = inputId || 'wb-q';
     var f = el('form', { class: 'wb-search', role: 'search', action: '/search/', method: 'get' });
-    var lab = el('label', { class: 'wb-sr', for: 'wb-q' }, 'Search the whole site');
-    var inp = el('input', { id: 'wb-q', type: 'search', name: 'q', placeholder: 'Search', autocomplete: 'off', maxlength: '120' });
+    var lab = el('label', { class: 'wb-sr', for: inputId }, 'Search the whole site');
+    var inp = el('input', { id: inputId, type: 'search', name: 'q', placeholder: 'Search', autocomplete: 'off', maxlength: '120' });
     var m = /^\/search\/?$/.test(path) && /[?&]q=([^&]*)/.exec(location.search);
     if (m) { try { inp.value = decodeURIComponent(m[1].replace(/\+/g, ' ')); } catch (e) { /* ignore */ } }
     var btn = el('button', { type: 'submit', 'aria-label': 'Search' });
@@ -99,15 +100,14 @@
     };
     bar.classList.add('waybar');
     bar.classList.toggle('wb-in', !!data);
-    bar.classList.toggle('wb-open', open && !!data);
+    bar.classList.toggle('wb-open', open);
     var logo = link(data ? route('') : '/', 'The Way'); // signed out: always the public front page
     logo.className = 'wb-logo';
     var kids = [logo];
     if (data) {
       var mid = el('nav', { class: 'wb-mid', 'aria-label': 'Map, ballot, news, cases' });
-      mid.appendChild(link(route('map'), 'Map', 'map'));
-      // In the member area the guides open in a new tab (that folder has its own password).
-      mid.appendChild(link(data.ballot || '/preview/pages/guide/', 'Ballot', 'ballot', inMembers ? { target: '_blank', rel: 'noopener' } : null));
+      // The national voter guide is the single map and ballot entry.
+      mid.appendChild(link('/preview/pages/states/', 'Voter Guide', 'ballot', inMembers ? { target: '_blank', rel: 'noopener' } : null));
       // News and About are public pages in the preview folder (own password), so in the member area they open in a new tab.
       var tab = inMembers ? { target: '_blank', rel: 'noopener' } : null;
       mid.appendChild(link('/preview/pages/news/', 'News', 'news', tab));
@@ -117,7 +117,7 @@
       right.appendChild(searchForm());
       var deskOk = data.roles.indexOf('admin') >= 0 || data.roles.indexOf('researcher') >= 0 || data.roles.indexOf('reviewer') >= 0;
       if (deskOk) right.appendChild(link(route('research'), 'Research', 'research'));
-      right.appendChild(link(route('commons'), 'Commons', 'commons'));
+      if (path !== '/' && path !== '/index.html') right.appendChild(link(route('commons'), 'Commons', 'commons'));
       right.appendChild(link(route('invite'), 'Invite', 'invite'));
       var who = el('div', { class: 'wb-who' });
       var btn = el('button', { type: 'button', class: 'wb-name', 'aria-haspopup': 'true', 'aria-expanded': 'false',
@@ -159,11 +159,36 @@
         pub.appendChild(link('/preview/pages/news/', 'News', 'news'));
         pub.appendChild(link('/search/', 'Search', 'search'));
         pub.appendChild(link('/preview/pages/deeper.html', 'About', 'about'));
+        pub.appendChild(link('/preview/pages/join.html', 'Join'));
         kids.push(pub);
+        var publicMenu = el('button', { type: 'button', class: 'wb-burger wb-public-menu', 'aria-expanded': open ? 'true' : 'false', 'aria-label': 'Sections menu' }, 'Menu');
+        publicMenu.addEventListener('click', function () { open = !open; render(); });
+        kids.push(publicMenu);
       }
       kids.push(out);
     }
     bar.replaceChildren.apply(bar, kids);
+    syncFloating();
+  }
+  function syncFloating() {
+    var floating = document.querySelector('.wb-floating');
+    if (!floating) {
+      floating = el('nav', { class: 'wb-floating', 'aria-label': 'Quick links' });
+      document.body.appendChild(floating);
+      document.body.classList.add('wb-floating-ready');
+    }
+    var items = [];
+    if (!data) {
+      var access = el('span', { class: 'wb-floating-access' });
+      access.appendChild(el('a', { href: '/preview/pages/join.html' }, 'Join'));
+      access.appendChild(document.createTextNode(' / '));
+      access.appendChild(el('a', { href: '/members/' }, 'Sign in'));
+      items.push(access);
+    }
+    var search = searchForm('wb-floating-q');
+    search.classList.add('wb-floating-search');
+    items.push(search, el('a', { href: '#waybar', class: 'wb-floating-return' }, 'Back to surface'));
+    floating.replaceChildren.apply(floating, items);
   }
   function toggleMenu(btn, menu, force) {
     var show = force != null ? force : menu.hidden;
