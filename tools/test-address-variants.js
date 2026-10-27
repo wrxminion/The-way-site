@@ -20,18 +20,22 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
   const base = 'http://127.0.0.1:' + server.address().port;
   const browser = await chromium.launch();
   const box = { type: 'FeatureCollection', features: [{ type: 'Feature', properties: { d: 2, n: 'Boulder', name: 'Boulder' }, geometry: { type: 'Polygon', coordinates: [[[-109.06, 36.99], [-102.04, 36.99], [-102.04, 41.01], [-109.06, 41.01], [-109.06, 36.99]]] } }] };
-  async function newPage(asked) {
+  async function newPage(asked, mode) {
     const page = await browser.newPage({ viewport: { width: 1200, height: 900 } });
     await page.route('https://nominatim.openstreetmap.org/**', (route) => {
       const u = new URL(route.request().url()), q = u.searchParams.get('q'), bounded = u.searchParams.get('bounded') === '1';
       asked.push((bounded ? 'B ' : 'U ') + q);
+      if (mode === 'error') return route.fulfill({ status: 429, contentType: 'text/plain', headers: { 'access-control-allow-origin': '*' }, body: 'slow down' });
       let body = [];
-      if (!bounded) body = [{ lat: '44.5', lon: '-69.7', display_name: 'Wrong State Road, Maine', address: { state: 'Maine' } }];
+      if (mode === 'empty') body = [];
+      else if (!bounded) body = [{ lat: '44.5', lon: '-69.7', display_name: 'Wrong State Road, Maine', address: { state: 'Maine' } }];
       else if ((!/^\d+ /.test(q) && /example street|example st/i.test(q)) || /^(Colorado )?80302$/.test(q)) body = [{ lat: '40.015', lon: '-105.27', display_name: 'Boulder, Colorado', address: { city: 'Boulder', state: 'Colorado' } }];
       route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(body) });
     });
     await page.route(/tile\.openstreetmap|cloudflareinsights/, (r) => r.abort());
-    await page.route(/\/data\/[a-z-]+\.geojson/, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(box) }));
+    const boulder = { type: 'FeatureCollection', features: [{ type: 'Feature', properties: { n: 'Boulder' }, geometry: { type: 'Polygon', coordinates: [[[-105.31, 39.95], [-105.18, 39.95], [-105.18, 40.1], [-105.31, 40.1], [-105.31, 39.95]]] } }, ...box.features] };
+    await page.route(/\/data\/places\.geojson/, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(boulder) }));
+    await page.route(/\/data\/(?!places)[a-z-]+\.geojson/, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(box) }));
     return page;
   }
   for (const v of VARIANTS) {
@@ -43,6 +47,18 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
     const st = await page.textContent('#status');
     ok(/Here is what|not the exact/.test(st) && !/Maine/.test(await page.textContent('#selected')) && asked.every((a) => a.startsWith('B ')), 'lands in Colorado: "' + (v === process.env.EXTRA_ADDR ? '(extra address)' : v) + '"');
     await page.close();
+  }
+  for (const mode of ['empty', 'error']) {
+    for (const v of ['12 Example Street, Boulder, CO 80302', '12 example street boulder colorado 80302'].concat(process.env.EXTRA_ADDR ? [process.env.EXTRA_ADDR] : [])) {
+      const asked = []; const page = await newPage(asked, mode);
+      await page.goto(base + '/preview/pages/map/index.html');
+      await page.waitForFunction(() => !/Loading/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
+      await page.fill('#q', v); await page.click('#search button');
+      await page.waitForFunction(() => /found your town|could not find|unavailable/.test(document.getElementById('status').textContent), null, { timeout: 60000 });
+      const sel = await page.textContent('#selected'), cards = await page.locator('#results .result').count();
+      ok(/Boulder, Colorado/.test(sel) && cards > 0, 'OpenStreetMap ' + (mode === 'empty' ? 'finds nothing' : 'is down') + ': still lands on Boulder, Colorado with districts shown ("' + (v === process.env.EXTRA_ADDR ? '(extra address)' : v) + '")');
+      await page.close();
+    }
   }
   // states page
   async function hub(text) {

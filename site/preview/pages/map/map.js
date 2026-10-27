@@ -308,6 +308,21 @@ $('locate').addEventListener('click',()=>{
   },()=>{status.textContent='Location not shared. You can still click the map or search an address.';},{enableHighAccuracy:false,timeout:10000});
 });
 
+/* Local fallback when OpenStreetMap cannot place the address: the town name in what was typed, matched against the
+   city shapes this map already has. It puts the visitor in the right town (and shows the districts there). */
+function townFallback(text){
+  const low=' '+text.toLowerCase().replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()+' ';
+  let best=null;
+  for(const f of ((data.places&&data.places.features)||[])){
+    const n=String((f.properties&&f.properties.n)||'').toLowerCase();
+    if(n&&low.includes(' '+n+' ')&&(!best||n.length>best.n.length))best={n,f};
+  }
+  if(!best)return null;
+  let a=1e9,b=1e9,c=-1e9,d=-1e9;
+  (function walk(x){if(typeof x[0]==='number'){a=Math.min(a,x[1]);c=Math.max(c,x[1]);b=Math.min(b,x[0]);d=Math.max(d,x[0]);}else x.forEach(walk);})(best.f.geometry.coordinates);
+  return {name:best.f.properties.n,lat:(a+c)/2,lng:(b+d)/2};
+}
+
 /* Address search: OpenStreetMap Nominatim, one request per second. Colorado first (bounded to the state box),
    then looser Colorado tries (no unit, no ZIP, street only, then city/ZIP), and only if nothing is found in Colorado
    do we look anywhere in the U.S. so a visitor from another state gets pointed to that state's guide.
@@ -349,9 +364,17 @@ $('search').addEventListener('submit',async e=>{
       if(n++)await new Promise(r=>setTimeout(r,1100));   // Nominatim asks for at most one request per second
       d=await ask(list[i][0],true);how=list[i][1];
     }
-    if(!d.length&&!typedState){                           // no state typed: allow a match anywhere in the U.S.
+    let town=null;
+    if(!d.length&&typedState){town=townFallback(base);if(town)how=3;}
+    if(!d.length&&!town&&!typedState){                    // no state typed: allow a match anywhere in the U.S.
       await new Promise(r=>setTimeout(r,1100));
       d=await ask(noUnit,false);how=0;
+    }
+    if(town){
+      map.setView([town.lat,town.lng],12);
+      lookup(town.lat,town.lng,town.name+', Colorado',{city:town.name,state:'Colorado'});
+      status.textContent='We found your town ('+town.name+'), not your street. Click your exact spot on the map to see your districts.';
+      return;
     }
     if(!d.length){
       status.textContent=typedState||!q
@@ -365,7 +388,12 @@ $('search').addEventListener('submit',async e=>{
     if(how&&status.textContent==='Here is what applies at this spot.')status.textContent='We found your '+(how===1?'street':'ZIP code area')+', not the exact house. If you live near a district line, click your exact spot on the map to check.';
     if(window.matchMedia('(max-width:860px)').matches)$('selected').scrollIntoView({behavior:'smooth',block:'start'});
   }catch(err){
-    status.textContent='Address search is unavailable right now. You can still click the map.';
+    const town=typedState&&townFallback(base);
+    if(town){
+      map.setView([town.lat,town.lng],12);
+      lookup(town.lat,town.lng,town.name+', Colorado',{city:town.name,state:'Colorado'});
+      status.textContent='Street search is unavailable right now, so we found your town ('+town.name+'). Click your exact spot on the map to see your districts.';
+    }else status.textContent='Address search is unavailable right now. You can still click the map.';
   }finally{clearTimeout(t);setTimeout(()=>{searching=false;},1100);}
 });
 

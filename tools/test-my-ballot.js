@@ -132,6 +132,29 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   ok(await page.locator('script', { hasText: 'x' }).count() === 0 && await page.locator('img[src="x"]').count() === 0, 'hostile text is shown as text only');
   await page.evaluate(() => localStorage.clear());
 
+  // ---- marking screen
+  await page.evaluate(() => { localStorage.clear(); sessionStorage.setItem('theway.mymarks.v1', JSON.stringify({ state: 'CO', items: [{ p: '/preview/pages/guide/races/governor.html', t: 'Governor and Lieutenant Governor' }, { p: '/preview/pages/guide/measures/amendment-81.html', t: 'Amendment 81' }] })); });
+  await page.goto(base + '/members/my-ballot.html?state=CO#mark'); await page.reload(); await page.waitForSelector('#mark');
+  ok(await page.locator('#mark >> text=Mark your ballot').count() === 1 && await page.locator('#mark li strong', { hasText: 'Amendment 81' }).count() === 1, 'marking screen lists the races passed from the map');
+  await page.locator('#mark li', { hasText: 'Governor and Lieutenant Governor' }).getByRole('button', { name: 'Mark' }).click();
+  await page.waitForSelector('.mk-form');
+  ok(await page.locator('.mk-form').count() === 2, 'governor opens both contests (governor, lieutenant governor)');
+  await page.locator('.mk-form').first().locator('label', { hasText: 'Phil Weiser' }).locator('input').first().check();
+  await page.locator('.mk-form').first().locator('textarea').fill('ask about housing'); await page.locator('.mk-form').first().locator('textarea').blur();
+  s = await store();
+  const gk = Object.keys(s.contests).find((k) => /governor/.test(k) && s.contests[k].picks.length);
+  ok(gk && s.contests[gk].picks[0] === 'phil-weiser' && s.contests[gk].note === 'ask about housing', 'a pick and a note are saved from the marking screen');
+  await page.locator('#mark li', { hasText: 'Amendment 81' }).getByRole('button', { name: 'Mark' }).click();
+  await page.waitForSelector('.mk-form >> text=Amendment 81');
+  await page.locator('.mk-form', { hasText: 'Amendment 81' }).locator('label', { hasText: /^Yes/ }).locator('input').check();
+  s = await store(); ok(s.contests['measure:amendment-81'] && s.contests['measure:amendment-81'].picks[0] === 'yes', 'measure Yes saved from the marking screen');
+  ok((await page.locator('.mb-sheet').innerText()).includes('ask about housing'), 'notes show on the printable sheet');
+  await page.getByRole('button', { name: 'Show every race and measure' }).click();
+  await page.waitForSelector('#mark li:nth-of-type(20)');
+  ok(await page.locator('#mark ul.list').nth(1).locator('li').count() > 20, 'every race and measure in the state can be listed');
+  await shot('03b-mark');
+  await page.evaluate(() => { localStorage.clear(); sessionStorage.clear(); });
+
   // ---- share (network mocked: nothing real is called)
   await page.goto(G + 'races/governor.html'); await page.waitForSelector('.bp-bar');
   await page.locator('ul.cands li', { hasText: 'Phil Weiser' }).getByRole('button', { name: /^Pick/ }).click();

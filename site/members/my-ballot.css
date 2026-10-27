@@ -61,3 +61,10 @@
   .mb-table.mb-plan td,.mb-cmp .mb-table td{display:table-cell}
   .mb-table.mb-plan td:before,.mb-cmp .mb-table td:before{content:none}
 }
+
+.mk-form{margin:10px 0 16px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#03192a80}
+.mk-opts{list-style:none;margin:8px 0;padding:0;display:grid;gap:8px}
+.mk-opt{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.mk-opt .mb-sub{display:block}
+.mk-cmp{font-size:13px;color:var(--muted)}
+.mk-form textarea{min-height:0;margin-top:8px}

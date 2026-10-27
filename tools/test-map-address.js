@@ -44,12 +44,14 @@ let fails = 0; const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m)
   ok((await page.locator('#results .result').count()) > 0, 'district cards are shown for the spot');
   ok(await page.locator('#ballot .bb-plan').count() === 1, 'the ballot breakdown has a "Plan your vote" link');
   const href = await page.getAttribute('#ballot .bb-plan', 'href');
-  ok(href === '/members/my-ballot.html?state=CO', 'the link goes to the planner for Colorado');
+  ok(href === '/members/my-ballot.html?state=CO#mark', 'the link goes to the planner for Colorado');
   ok(await page.locator('.ballot-banner').isVisible(), 'Open your ballot banner shows once a spot is picked');
-  ok((await page.getAttribute('.bb-main', 'href')) === '#ballot', '"Open my ballot" points at the breakdown, not the planner');
+  ok((await page.getAttribute('.bb-main', 'href')) === '/members/my-ballot.html?state=CO#mark', '"Open my ballot" goes to the marking screen of the planner');
+  ok((await page.getAttribute('#ballot .bb-plan', 'href')) === '/members/my-ballot.html?state=CO#mark', 'the breakdown has the same link');
+  await page.evaluate(() => { document.querySelector('.bb-main').addEventListener('click', (e) => e.preventDefault()); });
   await page.click('.bb-main');
-  await page.waitForTimeout(600);
-  ok(!/my-ballot/.test(page.url()) && await page.evaluate(() => document.activeElement && document.activeElement.id === 'ballot'), 'clicking it stays on the map page and focuses the breakdown');
+  const stash = await page.evaluate(() => JSON.parse(sessionStorage.getItem('theway.mymarks.v1') || 'null'));
+  ok(stash && stash.state === 'CO' && Array.isArray(stash.items) && !JSON.stringify(stash).match(/Example Street/i), 'the list of your races is passed on, without the address');
   ok(await page.locator('#ballot .bb-plan').count() === 1, 'still only one Plan your vote link after the page redraws');
   // no state typed and nothing in Colorado: other-state help is still allowed
   await page.waitForTimeout(1500); asked.length = 0;
