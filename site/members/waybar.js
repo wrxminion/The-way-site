@@ -149,21 +149,22 @@
       left.appendChild(link('/preview/pages/states/', 'Voter Guide', 'ballot'));
       left.appendChild(link('/preview/pages/news/', 'News', 'news'));
       var rightPublic = el('nav', { class: 'wb-public-right', 'aria-label': 'Learn about The Way' });
+      rightPublic.appendChild(link('/preview/pages/case-studies/', 'Case Studies', 'casestudies'));
       rightPublic.appendChild(link('/research/', 'Research', 'research-lib'));
-      rightPublic.appendChild(link('/preview/pages/deeper.html', 'About', 'about'));
       var mobile = el('nav', { class: 'wb-public-mobile', 'aria-label': 'Sections' });
       mobile.appendChild(link('/preview/pages/states/', 'Voter Guide', 'ballot'));
       mobile.appendChild(link('/preview/pages/news/', 'News', 'news'));
+      mobile.appendChild(link('/preview/pages/case-studies/', 'Case Studies', 'casestudies'));
       mobile.appendChild(link('/research/', 'Research', 'research-lib'));
-      mobile.appendChild(link('/preview/pages/deeper.html', 'About', 'about'));
       mobile.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases'));
-      mobile.appendChild(link('/preview/pages/case-studies/', 'Ballot Case Studies', 'casestudies'));
-      mobile.appendChild(link('/search/', 'Search', 'search'));
+      mobile.appendChild(link('/preview/pages/deeper.html', 'About', 'about'));
       mobile.appendChild(link('/preview/pages/join.html', 'Join'));
       mobile.appendChild(link('/members/', 'Sign in'));
       var publicMenu = el('button', { type: 'button', class: 'wb-burger wb-public-menu', 'aria-expanded': open ? 'true' : 'false', 'aria-label': 'Sections menu' }, 'Menu');
       publicMenu.addEventListener('click', function () { open = !open; render(); });
-      kids.push(left, rightPublic, mobile, publicMenu);
+      var topSearch = searchForm('wb-top-q');
+      topSearch.classList.add('wb-public-search');
+      kids.push(left, rightPublic, mobile, publicMenu, topSearch);
     }
     bar.replaceChildren.apply(bar, kids);
     syncFloating();

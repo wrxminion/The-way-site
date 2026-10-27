@@ -370,6 +370,16 @@
       "why": "The earlier shared effect drew the wave across artwork and the light over content.",
       "status_as_of_2026_10_25": "Proposed; not merged or visually verified.",
       "evidence_and_limits": "The live Research and About pages were inspected. JavaScript syntax and diff checks passed; local visual rendering was blocked, so the correction requires visual review before it can be called verified."
+    },
+    {
+      "id": "D043",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Correct public header order and restore search field",
+      "origin": "Frank's correction of the public navigation design",
+      "decision_or_proposal": "Arrange Voter Guide and News to the left of The Way, Case Studies and Research to its right, and restore the search field in the header without a duplicate Search link.",
+      "why": "Match the requested navigation and retain search access at the top.",
+      "status_as_of_2026_10_25": "Proposed; not merged or verified live.",
+      "evidence_and_limits": "JavaScript syntax checked. Full browser layout and phone verification remain outstanding."
     }
   ]
 }
