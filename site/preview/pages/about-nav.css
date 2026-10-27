@@ -8,3 +8,13 @@
  .about-nav .navright{width:100%;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:10px 16px}
  .about-nav .navlinks{width:100%;display:flex;flex-wrap:wrap;gap:8px 14px}
 }
+
+/* Search uses the same compact control as the public header. */
+.about-search{display:flex;align-items:center;min-width:0;border:1px solid #c7ffff77;border-radius:999px;background:#06212f;overflow:hidden;letter-spacing:normal;text-transform:none}
+.about-search label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.about-search input{box-sizing:border-box;width:8.5em;min-width:0;padding:7px 4px 7px 14px;border:0;background:transparent;color:#e9ffff;font:13px system-ui,sans-serif}
+.about-search input::placeholder{color:#d7ecec}
+.about-search button{padding:7px 10px;border:0;background:transparent;color:#e9ffff;cursor:pointer;font:600 12px system-ui,sans-serif}
+.about-search:focus-within{border-color:#a7f0e9}
+.about-search button:focus-visible,.about-search input:focus-visible{outline:2px solid #a7f0e9;outline-offset:-2px}
+@media(max-width:700px){.about-search{flex:1}.about-search input{width:100%;font-size:16px}}
