@@ -270,6 +270,17 @@
   }
   var start = function () {
     addOriginalOcean(); render(stored());
+    // One document-anchored whale on each page, sharing the cached asset.
+    if (!document.querySelector('link[href^="/whale.css"]')) {
+      var whaleCss = document.createElement('link');
+      whaleCss.rel = 'stylesheet'; whaleCss.href = '/whale.css?v=4';
+      document.head.appendChild(whaleCss);
+    }
+    if (!document.querySelector('script[src^="/whale.js"]')) {
+      var whaleScript = document.createElement('script');
+      whaleScript.src = '/whale.js?v=4';
+      document.head.appendChild(whaleScript);
+    }
     if (!document.querySelector('script[src^="/preview/pages/footer-quick.js"]')) {
       var footerScript = document.createElement('script');
       footerScript.src = '/preview/pages/footer-quick.js?v=1';
