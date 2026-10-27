@@ -146,6 +146,11 @@
     const dd = el('div', 'discuss'); const da = el('a', null, 'Did you read it? Tell us what you found, and discuss (members)');
     da.href = '/members/discuss.html?item=news:' + encodeURIComponent(it.id.toLowerCase().replace(/[^a-z0-9._-]+/g, '-').replace(/^[^a-z0-9]+/, '').slice(0, 120)) + '&title=' + encodeURIComponent(it.title.slice(0, 200));
     dd.append(da); li.append(dd);
+    // Follow-ups by email: the first measure it may be about, else its first state. Opens the sign-up page (this page may not call out).
+    let ft = '';
+    for (const x of about){ const mm = String(x.page).match(/^guide(?:-([a-z]{2}))?\/measures\/([a-z0-9-]+)\.html$/); if (mm){ ft = 'measure:' + (mm[1] ? mm[1] + '-' : '') + mm[2]; break; } }
+    if (!ft && it.states.length && /^[a-z]{2}$/.test(it.states[0])) ft = 'state:' + it.states[0];
+    if (ft){ const fd = el('div', 'discuss'); const fa = el('a', null, '\u2709 Email me follow-up stories on this'); fa.href = '/members/email.html?follow=' + encodeURIComponent(ft) + '&label=' + encodeURIComponent(it.title.slice(0, 120)); fd.append(fa); li.append(fd); }
     return li;
   }
 

@@ -24,8 +24,11 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/members/waybar.css?v=6">
 <link rel="stylesheet" href="/shared-ocean.css?v=5">
-<link rel="stylesheet" href="home.css?v=12">
+<link rel="stylesheet" href="home.css?v=13">
 <link rel="stylesheet" href="/whale.css?v=2">
+ <script src="email-list.js?v=2" defer></script>
+<script src="/whale.js?v=2" defer></script>
+<script src="/members/waybar.js?v=7" defer></script>
 </head>
 <body class="home">
 <header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
@@ -50,6 +53,7 @@
 </nav></section>
 <section class="notify" aria-labelledby="notify-line">
 <p id="notify-line">When it surfaces, you'll know.</p>
+<p class="notify-sub">Free email updates: new research and cases, plus news on anything you choose to follow. Coming soon: emails start shortly. Sign up now and you will get one confirmation email when they begin. Not a membership. One click to leave.</p>
 <form id="notify-form" novalidate>
 <label class="sr" for="notify-email">Email address</label>
 <input id="notify-email" name="email" type="email" autocomplete="email" placeholder="your@email" required maxlength="254">
@@ -67,9 +71,6 @@
 </main>
 <a class="return" id="return" href="#top">&uarr; Return to the surface</a>
 <script src="splash.js?v=6" defer></script>
-<script src="notify.js?v=6" defer></script>
-<script src="/whale.js?v=2" defer></script>
-<script src="/members/waybar.js?v=6" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9bb85ea3222345f3aed4aa50db9b3e0d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
