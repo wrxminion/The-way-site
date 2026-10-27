@@ -119,6 +119,7 @@
       mid.appendChild(link('/preview/pages/states/', 'Voter Guide', 'ballot'));
       mid.appendChild(link('/preview/pages/news/', 'News', 'news'));
       mid.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases'));
+      mid.appendChild(link('/preview/pages/case-studies/', 'Case Studies', 'casestudies'));
       mid.appendChild(link('/research/', 'Research', 'research-lib'));
       mid.appendChild(link(route('commons'), 'Commons', 'commons'));
       if (can('researcher') || can('reviewer')) mid.appendChild(link(route('research'), 'Research desk', 'research'));
@@ -141,6 +142,7 @@
       var item = function (href, label) { var li = el('li'); li.appendChild(link(href, label)); menu.appendChild(li); };
       item(route(''), 'Home');
       item('/preview/pages/cases/', 'Civics & History');
+      item('/preview/pages/case-studies/', 'Case Studies');
       item('/research/', 'Research');
       item(route('commons'), 'Commons');
       item(route('invite'), 'Invite someone');
