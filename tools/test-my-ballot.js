@@ -183,6 +183,11 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   await page.reload(); await page.waitForSelector('.mb-sheet');
   const sheetW = await page.locator('.mb-sheet').innerText();
   ok(/Why \(Phil Weiser\): worked on housing/.test(sheetW) && !/\bx\b.*Why/.test(sheetW) && !/Why \(evil\)/.test(sheetW), 'a candidate Why prints on the sheet; unknown ids are dropped');
+  // local measure pages get the same controls, including Not sure yet
+  await page.goto(G + 'local/m/adams-fire-6e.html'); await page.waitForSelector('.bp-bar');
+  ok(await page.locator('.bp-bar').getByRole('button', { name: 'Not sure yet' }).count() === 1, 'a local measure page has Yes / No / Not sure yet');
+  await page.locator('.bp-bar').getByRole('button', { name: 'Not sure yet' }).click();
+  s = await store(); ok(s.contests['measure:adams-fire-6e'] && s.contests['measure:adams-fire-6e'].undecided === true, 'Not sure yet is saved for a local measure');
   // a news story listed under "Latest news" on a candidate page can be saved to that candidate's notes
   await page.route('**/news/data/candidates/co-john-hickenlooper.json', (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ schema: 'theway-news/1', items: [{ title: 'Senator talks housing bill', source: 'Example Times', source_url: 'https://example.com/story-1', published_at: '2026-10-20T10:00:00Z' }] }) }));
   await page.goto(G + 'candidates/john-hickenlooper.html'); await page.waitForSelector('ul.news li .bp-save');

@@ -45,6 +45,7 @@ let fails = 0; const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m)
   ok(await page.locator('#ballot .bb-plan').count() === 1, 'the ballot breakdown has a "Plan your vote" link');
   const href = await page.getAttribute('#ballot .bb-plan', 'href');
   ok(href === '/members/my-ballot.html?state=CO#mark', 'the link goes to the planner for Colorado');
+  ok(await page.locator('#ballot .locallist li .quick').count() > 0 && await page.locator('#ballot .locallist li .quick').first().getByRole('button', { name: 'Not sure yet' }).count() === 1, 'local measures on the map have Yes / No / Not sure yet');
   ok(await page.locator('.ballot-banner').isVisible(), 'Open your ballot banner shows once a spot is picked');
   ok((await page.getAttribute('.bb-main', 'href')) === '/members/my-ballot.html?state=CO#mark', '"Open my ballot" goes to the marking screen of the planner');
   ok((await page.getAttribute('#ballot .bb-plan', 'href')) === '/members/my-ballot.html?state=CO#mark', 'the breakdown has the same link');

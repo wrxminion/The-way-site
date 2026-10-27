@@ -143,7 +143,7 @@
     try {
       var j = JSON.parse(sessionStorage.getItem(MARKS) || 'null');
       if (!j || j.state !== ST || !Array.isArray(j.items)) return [];
-      return j.items.filter(function (i) { return i && /^\/preview\/pages\/guide(-[a-z]{2})?\/(races|measures)\/[a-z0-9-]+\.html$/.test(i.p); }).slice(0, 80);
+      return j.items.filter(function (i) { return i && /^\/preview\/pages\/guide(-[a-z]{2})?\/(races|measures|local\/m)\/[a-z0-9-]+\.html$/.test(i.p); }).slice(0, 80);
     } catch (e) { return []; }
   }
   function slugOf(p) { return (/\/([a-z0-9-]+)\.html$/.exec(p) || [])[1] || ''; }
@@ -152,7 +152,7 @@
     if (e === undefined) {
       ui.defs[path] = 'loading';
       fetch(path, { credentials: 'omit' }).then(function (r) { if (!r.ok) throw 0; return r.text(); }).then(function (t) {
-        var doc = new DOMParser().parseFromString(t, 'text/html'), kind = /\/measures\//.test(path) ? 'measure' : 'race';
+        var doc = new DOMParser().parseFromString(t, 'text/html'), kind = /\/(measures|local\/m)\//.test(path) ? 'measure' : 'race';
         var defs = kind === 'measure' ? [WB.parseMeasure(doc, slugOf(path), path)] : WB.parseRace(doc, location.origin + path, slugOf(path));
         defs.forEach(function (x) { delete x.ul; });
         ui.defs[path] = defs.filter(function (x) { return x.options.length; });
