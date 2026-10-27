@@ -380,6 +380,16 @@
       "why": "Match the requested navigation and retain search access at the top.",
       "status_as_of_2026_10_25": "Proposed; not merged or verified live.",
       "evidence_and_limits": "JavaScript syntax checked. Full browser layout and phone verification remain outstanding."
+    },
+    {
+      "id": "D044",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Footer links and essay quick controls",
+      "origin": "Frank's request for consistent navigation and floating controls",
+      "decision_or_proposal": "Add About, Methodology and Legal to the footer, label unfinished pages coming soon, and give the essay pages a scroll-dependent Join / Sign in, search and Back to surface bar.",
+      "why": "Make navigation consistent and keep quick controls available while reading.",
+      "status_as_of_2026_10_25": "Proposed; not merged or verified live.",
+      "evidence_and_limits": "Local browser fixtures checked footer insertion, scroll visibility and simulated signed-in display; real account and all-page checks remain outstanding."
     }
   ]
 }
