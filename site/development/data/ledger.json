@@ -364,10 +364,10 @@
     {
       "id": "D037",
       "decision_date_or_range": "2026-10-27",
-      "title": "One national voter guide entry",
+      "title": "Consistent Voter Guide and search navigation",
       "origin": "Frank's feedback on inconsistent ballot and map links",
-      "decision_or_proposal": "Replace the older landing page's separate Colorado guide and district-map cards with one Voter Guide link to the national state-selection page.",
-      "why": "Provide a consistent entry point for the map and voter guides.",
+      "decision_or_proposal": "Replace the older landing page's separate Colorado guide and district-map cards with one Voter Guide link to the national state-selection page. Remove the redundant Search link from the shared public navigation; retain the search box.",
+      "why": "Provide a consistent entry point for the voter guide and avoid duplicating the search control.",
       "status_as_of_2026_10_25": "Proposed in this change; not yet merged or live.",
       "evidence_and_limits": "The shared header already points to the national guide. This change addresses the two legacy landing-page cards; a complete site-wide audit remains outstanding."
     }
