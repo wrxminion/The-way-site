@@ -3,7 +3,7 @@
 //          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
 //          <script src="/members/waybar.js?v=1" defer></script>.
 // Signed in (in this browser): logo left · Map, Ballot in the middle · Commons, Invite, your name right
-// (your name opens a menu: Home, Civics & History, Findings, your tools, Your account, Sign out).
+// (Home is big at the left; your name opens a menu with every page you can reach; everything opens in the same tab).
 // Signed out: logo and "Sign in" only. The member area writes what the bar needs to localStorage
 // ("theway.bar": display name, roles, which tabs exist, your ballot link). That is only for drawing
 // links; every page and the database still check the real sign-in themselves.
@@ -82,6 +82,10 @@
     if (/^\/preview\/pages\/(guide|states|map)/.test(path)) return 'ballot';
     if (/^#\/(commons|c\/|t\/)/.test(h)) return 'commons';
     if (/^#\/invite/.test(h)) return 'invite';
+    if (/^#\/review/.test(h)) return 'review';
+    if (/^#\/admin/.test(h)) return 'admin';
+    if (/^#\/roles/.test(h)) return 'me';
+    if (/^#\/?$/.test(h) && appPage) return 'home';
     if (/^#\/(account|password)/.test(h)) return 'me';
     return '';
   }
@@ -105,20 +109,23 @@
     logo.className = 'wb-logo';
     var kids = [logo];
     if (data) {
-      var mid = el('nav', { class: 'wb-mid', 'aria-label': 'Map, ballot, news, cases' });
-      // The national voter guide is the single map and ballot entry.
-      mid.appendChild(link('/preview/pages/states/', 'Voter Guide', 'ballot', inMembers ? { target: '_blank', rel: 'noopener' } : null));
-      // News and About are public pages in the preview folder (own password), so in the member area they open in a new tab.
-      var tab = inMembers ? { target: '_blank', rel: 'noopener' } : null;
-      mid.appendChild(link('/preview/pages/news/', 'News', 'news', tab));
+      var can = function (r) { return data.roles.indexOf(r) >= 0 || data.roles.indexOf('admin') >= 0; };
+      // Every link here opens in the same tab. Home sits at the left, big, because it is used the most.
+      var home = link(route(''), 'Home', 'home');
+      home.className = 'wb-home';
+      var mid = el('nav', { class: 'wb-mid', 'aria-label': 'Sections' });
+      mid.appendChild(link('/preview/pages/states/', 'Voter Guide', 'ballot'));
+      mid.appendChild(link('/preview/pages/news/', 'News', 'news'));
       mid.appendChild(link(route('cases'), 'Civics & History', 'cases'));
-      mid.appendChild(link('/preview/pages/deeper.html', 'About', 'about', tab));
+      mid.appendChild(link('/preview/pages/deeper.html', 'About', 'about'));
+      var deskOk = can('researcher') || can('reviewer');
+      if (path !== '/' && path !== '/index.html') mid.appendChild(link(route('commons'), 'Commons', 'commons'));
+      mid.appendChild(link(route('invite'), 'Invite', 'invite'));
+      if (deskOk) mid.appendChild(link(route('research'), 'Research', 'research'));
+      if (can('moderator')) mid.appendChild(link(route('review'), 'Source verification', 'review'));
+      if (can('admin')) mid.appendChild(link(route('admin'), 'Admin', 'admin'));
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
       right.appendChild(searchForm());
-      var deskOk = data.roles.indexOf('admin') >= 0 || data.roles.indexOf('researcher') >= 0 || data.roles.indexOf('reviewer') >= 0;
-      if (deskOk) right.appendChild(link(route('research'), 'Research', 'research'));
-      if (path !== '/' && path !== '/index.html') right.appendChild(link(route('commons'), 'Commons', 'commons'));
-      right.appendChild(link(route('invite'), 'Invite', 'invite'));
       var who = el('div', { class: 'wb-who' });
       var btn = el('button', { type: 'button', class: 'wb-name', 'aria-haspopup': 'true', 'aria-expanded': 'false',
         'aria-current': cur === 'me' ? 'page' : null, title: 'Your account and menu' });
@@ -126,15 +133,18 @@
       btn.appendChild(el('span', { class: 'wb-caret', 'aria-hidden': 'true' }, '▾'));
       var menu = el('ul', { class: 'wb-menu', hidden: '' });
       var item = function (href, label) { var li = el('li'); li.appendChild(link(href, label)); menu.appendChild(li); };
-      var can = function (r) { return data.roles.indexOf(r) >= 0 || data.roles.indexOf('admin') >= 0; };
       item(route(''), 'Home');
+      item(route('commons'), 'Commons');
+      item(route('invite'), 'Invite someone');
       item(route('cases'), 'Civics & History');
       item('/preview/pages/deeper.html', 'About');
       if (data.findings) item('/members/findings.html', 'Findings');
+      if (can('moderator')) item(route('review'), 'Source verification');
       if (can('researcher') || can('reviewer')) item(route('research'), 'Research desk');
       if (data.modlog) item(route('log'), 'Moderation log');
       if (can('moderator')) item(route('reports'), 'Reports');
       if (can('admin')) item(route('admin'), 'Admin');
+      item(route('roles'), 'Roles and points');
       menu.appendChild(el('li', { class: 'wb-sep', role: 'separator' }));
       item(route('account'), 'Your account');
       item(route('signout'), 'Sign out');
@@ -142,7 +152,7 @@
       who.appendChild(btn); who.appendChild(menu); right.appendChild(who);
       var burger = el('button', { type: 'button', class: 'wb-burger', 'aria-expanded': open ? 'true' : 'false', 'aria-label': 'Menu' }, 'Menu');
       burger.addEventListener('click', function () { open = !open; render(); });
-      kids.push(mid, right, burger);
+      kids.push(home, mid, right, burger);
     } else if (!pending) {
       // Four principal public destinations flank the centered site identity.
       var left = el('nav', { class: 'wb-public-left', 'aria-label': 'Voter information' });

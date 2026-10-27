@@ -554,6 +554,15 @@ async function mapView() {
   if (picked || mine) show(picked || mine);
 }
 
+// Roles, points and role applications arrive with migration 0017. Until that screen ships, this page explains it.
+function rolesView() {
+  render(
+    h('p', { class: 'overline', text: 'Members' }),
+    h('h1', { text: 'Roles and points' }),
+    h('p', { class: 'lede', text: 'Members can take on roles (researcher, Deshi (student), moderator) and earn points for checked work. Applying for a role and seeing your points will live here and on your profile. It is coming soon.' }),
+    h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/', text: 'Back to Home' }), h('a', { class: 'button quiet', href: '#/account', text: 'Your account' })));
+}
+
 async function homeView() {
   const wantsAdmin = can('admin'), wantsMod = can('moderator');
   const [cats, posts, openReports, notifyCount] = await Promise.all([
@@ -2085,6 +2094,7 @@ async function route() {
       case 'map': return await mapView();
       case 'commons': return await commonsView();
       case 'invite': return await inviteView();
+      case 'roles': return rolesView();
       case 'cases': return await casesView(decodeURIComponent(parts[1] || ''));
       case 'review': return await reviewView(decodeURIComponent(parts[1] || ''));
       case 'c': return await categoryView(decodeURIComponent(parts[1] || ''));
