@@ -226,7 +226,7 @@
       "decision_date_or_range": "2026-10-26",
       "title": "News ingestion, tagging and backfill",
       "origin": "Frank, Oct 26 2026, via the project coordinator; librarian meeting feedback as reported by Frank",
-      "decision_or_proposal": "A 50-state collector, tagging of candidates, statewide measures and 222 local measures from the guide pages on every run, a private append-only archive, two scheduled tasks on FRAK (every 2 hours, and a weekly check), and a monthly backfill walking back to Jan 1 2026 and then further.",
+      "decision_or_proposal": "A 50-state collector, tagging of candidates, statewide measures and 222 local measures from the guide pages on every run, a private append-only archive, two scheduled tasks on a private workstation (every 2 hours, and a weekly check), and a monthly backfill walking back to Jan 1 2026 and then further.",
       "why": "The public feed had gone stale after Oct 17 because the earlier process was manual.",
       "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW. Scheduled runs every 2 hours have committed to the repository since 2026-10-26. The backfill to 2026-01-01 finished for all states on 2026-10-27; a deeper pass toward May 2025 is still running.",
       "evidence_and_limits": "The public feed shows the newest 200 per state and 3,000 overall; the private archive keeps everything collected. 225 local measures have no usable ballot code and are not tagged. No article text or page copies are kept for news yet. The deeper pass stops by itself when a round adds fewer than 200 items. One Maine error is covered by a later pass. A person has not yet checked two full scheduled cycles end to end."
