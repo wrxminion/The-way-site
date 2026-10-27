@@ -1,0 +1,10 @@
+/* Keep About's water-themed header readable on narrow screens. */
+.about-nav .navright{align-items:center}
+.about-nav .navright>a:not(.join-btn){color:#e9ffff;text-decoration:none;font-size:11px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.about-nav .navright>a:focus-visible{outline:2px solid #e4ffff;outline-offset:3px}
+.about-nav .navlinks span{opacity:.75}
+@media(max-width:700px){
+ .about-nav{gap:12px}
+ .about-nav .navright{width:100%;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:10px 16px}
+ .about-nav .navlinks{width:100%;display:flex;flex-wrap:wrap;gap:8px 14px}
+}

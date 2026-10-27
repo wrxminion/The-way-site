@@ -1,0 +1,4 @@
+.essay-quick-links{position:fixed;z-index:49;bottom:12px;right:12px;display:flex;flex-wrap:wrap;gap:4px;padding:5px;background:#052b3cf2;border:1px solid #a7f0e980;border-radius:14px;box-shadow:0 3px 14px #0006}
+.essay-quick-links a{display:block;padding:8px 9px;color:#fff;text-decoration:none;font:600 12px/1.2 system-ui,sans-serif;white-space:nowrap}
+.essay-quick-links a:focus-visible{outline:2px solid #a7f0e9;outline-offset:-2px}
+@media(max-width:480px){.essay-quick-links{left:8px;right:8px;bottom:8px;justify-content:space-around}.essay-quick-links a{padding:8px 5px;font-size:11px}}
