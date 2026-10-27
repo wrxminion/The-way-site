@@ -390,6 +390,16 @@
       "why": "Make navigation consistent and keep quick controls available while reading.",
       "status_as_of_2026_10_25": "Proposed; not merged or verified live.",
       "evidence_and_limits": "Local browser fixtures checked footer insertion, scroll visibility and simulated signed-in display; real account and all-page checks remain outstanding."
+    },
+    {
+      "id": "D045",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Remove unfinished banking links from research entry",
+      "origin": "Frank's correction about draft banking research",
+      "decision_or_proposal": "Remove the banking timeline link from the Research entry card and make the draft banking package a non-clickable Coming soon item.",
+      "why": "The banking work is unfinished and should not appear ready for publication.",
+      "status_as_of_2026_10_25": "Proposed; not merged or verified live.",
+      "evidence_and_limits": "Underlying research and data remain in place. The change is limited to the Research page; other entry points remain to be checked."
     }
   ]
 }
