@@ -1923,7 +1923,7 @@ async function reviewCaseView(slug) {
   const c = caseBySlug(slug);
   if (!c) return render(notice('Unknown case.'), h('p', {}, h('a', { href: '#/review', text: 'Back to the list' })));
   const y = window.scrollY;
-  const [claimsAll, events, mineAll, summaryAll] = await Promise.all([
+  const [claimsAll, events, mineAll, summaryAll, shotRows, page] = await Promise.all([
     loadClaims(),
     q(sb.from('case_review_events')
       .select('id,claim_key,claim_text,event_type,note,created_at,actor:members!case_review_events_actor_id_fkey(display_name)')
@@ -1931,7 +1931,13 @@ async function reviewCaseView(slug) {
     // Phase A (0014). If the migration has not been run yet these fail quietly and the screen works as before.
     q(sb.rpc('my_claim_reviews', { p_case_slug: slug })).catch(() => null),
     q(sb.rpc('claim_review_summary', { p_case_slug: slug })).catch(() => null),
+    // Screenshots (0020). Null until that migration has been run: the upload button then stays hidden.
+    q(sb.from('review_screenshots').select('claim_key').eq('case_slug', slug)).catch(() => null),
+    // The case page itself, for the source link and the "expand context" buttons. Not essential.
+    loadCasePage(c).catch(() => null),
   ]);
+  const shotCount = new Map();
+  for (const r of shotRows || []) shotCount.set(r.claim_key, (shotCount.get(r.claim_key) || 0) + 1);
   const phaseA = mineAll !== null && summaryAll !== null;
   const mineBy = new Map();
   for (const m of mineAll || []) { if (!mineBy.has(m.claim_key)) mineBy.set(m.claim_key, []); mineBy.get(m.claim_key).push(m); }
@@ -1973,10 +1979,13 @@ async function reviewCaseView(slug) {
     return h('li', { id: `claim-${cl.k}` },
       h('div', { class: 'row' }, h('span', { class: `tag ${CLAIM_TAG[cl.status] || ''}`, text: CLAIM_LABEL[cl.status] || cl.detail }),
         h('span', { class: `tag ${st[1]}`, text: st[0] })),
-      h('p', { class: 'post', text: cl.claim }),
+      h('p', { class: 'post' }, h('strong', { text: `\u201c${cl.claim}\u201d` })),
       cl.source ? h('p', { class: 'small muted', text: `Source on the page: ${cl.source}` }) : null,
+      sourceLinks(cl, c, page),
+      claimContext(cl, c, page),
       e && e.note ? h('p', { class: 'small', text: `Last note: ${e.note}` }) : null,
       phaseA ? claimReviewPanel(cl, mineBy.get(cl.k) || [], sumBy.get(cl.k), slug, msg, refresh) : null,
+      shotRows !== null ? screenshotPanel(cl, slug, shotCount.get(cl.k) || 0) : null,
       reviewed ? null : h('div', { class: 'btns' },
         !e || e.event_type !== 'claim_flagged' ? h('button', { class: 'quiet', disabled: isOk(cl.k) && e.event_type === 'claim_checked', onclick: claimStep(cl, 'claim_checked') }, 'Mark checked') : null,
         !e || e.event_type !== 'claim_flagged' ? h('button', { class: 'quiet danger', onclick: claimStep(cl, 'claim_flagged', null, true) }, 'Flag') : null,
@@ -2036,7 +2045,7 @@ function claimReviewPanel(cl, mine, sum, slug, msg, refresh) {
     const f = h('form', { class: 'panel', novalidate: true });
     const sel = (name, opts, val) => h('select', { name }, Object.entries(opts).map(([k, v]) => h('option', { value: k, selected: k === val, text: v })));
     const src = h('input', { name: 'source_label', type: 'text', maxlength: 300, required: true, value: current ? current.source_label : (cl.source || '') });
-    const url = h('input', { name: 'source_url', type: 'url', maxlength: 1000, placeholder: 'https://…', value: current && current.source_url ? current.source_url : '' });
+    const url = h('input', { name: 'source_url', type: 'url', maxlength: 1000, placeholder: 'https://…', value: current && current.source_url ? current.source_url : (cl.srcUrl || '') });
     const pass = h('textarea', { name: 'evidence_passage', rows: 3, maxlength: 1500 }); pass.value = current && current.evidence_passage ? current.evidence_passage : '';
     const rat = h('textarea', { name: 'rationale', rows: 3, maxlength: 2000 }); rat.value = current && current.rationale ? current.rationale : '';
     const flags = Object.entries(FLAG_LABEL).map(([k, v]) => h('label', { class: 'small' }, h('input', { type: 'checkbox', name: 'flag', value: k, checked: !!(current && current.flags.includes(k)) }), ' ' + v));
@@ -2081,6 +2090,166 @@ function claimReviewPanel(cl, mine, sum, slug, msg, refresh) {
     current ? h('button', { class: 'quiet', type: 'button', onclick: showOthers }, 'See the other reviewers') : null),
     !current ? h('p', { class: 'small muted', text: 'Other reviewers\' answers open after you record yours, so no one steers anyone.' }) : null, open, others);
   return wrap;
+}
+
+
+// ---- Source link and context for a claim. Both come from the case page itself (same site), read as text only:
+// the page is parsed into an inert document and nothing from it is ever inserted as HTML.
+const casePages = new Map();
+function loadCasePage(c) {
+  if (!casePages.has(c.slug)) casePages.set(c.slug, fetch(caseUrl(c)).then((r) => {
+    if (!r.ok) throw new Error('Could not load the case page.');
+    return r.text();
+  }).then((t) => new DOMParser().parseFromString(t, 'text/html')).catch((err) => { casePages.delete(c.slug); throw err; }));
+  return casePages.get(c.slug);
+}
+const normText = (t) => String(t || '').toLowerCase().replace(/[‘’]/g, "'").replace(/[“”]/g, '"')
+  .replace(/[^a-z0-9$%.]+/g, ' ').replace(/\s+/g, ' ').trim();
+const flat = (t) => String(t || '').replace(/\s+/g, ' ').trim();
+const STOP = new Set(['the', 'and', 'page', 'host', 'read', 'through', 'tool', 'returned', 'text', 'seen', 'only', 'summary', 'from', 'with', 'for', 'that', 'was', 'not']);
+const words = (t) => normText(t).split(' ').filter((w) => w.length >= 3 && !STOP.has(w));
+const safeHref = (href, base) => { try { const u = new URL(href, base); return /^https?:$/.test(u.protocol) ? u.href : null; } catch { return null; } };
+
+// Rows of the page's Sources table that best match the claim's source label.
+function matchSources(cl, c, doc) {
+  const rows = [...doc.querySelectorAll('#sources ~ .table-wrap table tr, #sources ~ table tr')].filter((r) => r.querySelector('a[href]'));
+  const want = [...new Set(words(cl.source))];
+  if (!want.length) return [];
+  const scored = rows.map((r) => {
+    const have = new Set(words(r.textContent));
+    const a = r.querySelector('a[href]');
+    return { score: want.filter((w) => have.has(w)).length / want.length, title: flat(a.textContent), url: safeHref(a.getAttribute('href'), caseUrl(c)) };
+  }).filter((x) => x.url && x.score >= 0.4).sort((x, y) => y.score - x.score);
+  return scored.filter((x) => x.score >= scored[0].score * 0.75).slice(0, 2);
+}
+function sourceLinks(cl, c, doc) {
+  const hits = doc ? matchSources(cl, c, doc) : [];
+  if (hits[0]) cl.srcUrl = hits[0].url;
+  const link = (href, text) => h('a', { href, target: '_blank', rel: 'noopener noreferrer', text });
+  return h('p', { class: 'small' }, hits.length
+    ? hits.map((x, i) => [i ? ' · ' : '', link(x.url, `Open the source: ${x.title.length > 90 ? x.title.slice(0, 87) + '…' : x.title} ↗`)])
+    : [link(`${caseUrl(c)}#sources`, 'Find the source in the case’s source list ↗'), h('span', { class: 'muted', text: ' (no direct link matched)' })]);
+}
+
+// Where the claim sits on the case page: the smallest paragraph, list item or table row that holds it.
+function findClaimBlock(cl, doc) {
+  const blocks = [...doc.querySelectorAll('p, li, tr, blockquote')].filter((b) => !b.closest('nav, header, footer, #sources ~ *, .toc, .in-brief'));
+  const want = normText(cl.claim);
+  const exact = blocks.filter((b) => normText(b.textContent).includes(want)).sort((a, b) => a.textContent.length - b.textContent.length)[0];
+  if (exact) return { el: exact, exact: true };
+  const ws = [...new Set(words(cl.claim))];
+  if (ws.length < 4) return null;
+  let best = null;
+  for (const b of blocks) {
+    const have = new Set(words(b.textContent));
+    const sc = ws.filter((w) => have.has(w)).length / ws.length;
+    if (sc >= 0.75 && (!best || sc > best.sc || (sc === best.sc && b.textContent.length < best.el.textContent.length))) best = { el: b, sc };
+  }
+  return best ? { el: best.el, exact: false } : null;
+}
+function blockText(el) {
+  if (el.tagName === 'TR') {
+    const table = el.closest('table');
+    const heads = table ? [...table.querySelectorAll('thead th')].map((t) => flat(t.textContent)) : [];
+    return [...el.children].map((cell, i) => (heads[i] ? `${heads[i]}: ` : '') + flat(cell.textContent)).join('\n');
+  }
+  if (/^(UL|OL)$/.test(el.tagName)) return [...el.children].map((li) => '• ' + flat(li.textContent)).join('\n');
+  if (el.tagName === 'TABLE') return [...el.querySelectorAll('tbody tr')].map((r) => [...r.children].map((x) => flat(x.textContent)).join(' | ')).join('\n');
+  return flat(el.textContent);
+}
+const clip = (t, n) => (t.length > n ? t.slice(0, n).replace(/\s+\S*$/, '') + ' …' : t);
+function claimContext(cl, c, doc) {
+  const slot = h('div', { class: 'claim-context' });
+  if (!doc) return slot;
+  const hit = findClaimBlock(cl, doc);
+  const level = { n: 0 };
+  const draw = () => {
+    if (level.n === 0) return slot.replaceChildren(h('div', { class: 'btns' }, h('button', { class: 'quiet', type: 'button', onclick: () => { level.n = 1; draw(); } }, 'Expand context')));
+    if (!hit) return slot.replaceChildren(h('p', { class: 'small muted', text: 'This claim’s wording was not found on the case page, so there is no paragraph to show. ' }, ''),
+      h('a', { class: 'small', href: caseUrl(c), target: '_blank', rel: 'noopener noreferrer', text: 'Open the case page ↗' }));
+    const el = hit.el;
+    const box = h('div', { class: 'panel small' });
+    if (level.n === 1) {
+      const txt = blockText(el);
+      box.append(h('p', { class: 'muted', text: hit.exact ? 'Paragraph on the case page' : 'Closest paragraph on the case page (the wording differs, so check it is the right one)' }), h('div', { class: 'post', text: txt }));
+    } else {
+      const unit = el.closest('table, ul, ol') || el;
+      const head = (() => { let n = unit; while (n && n.previousElementSibling) { n = n.previousElementSibling; if (/^H[23]$/.test(n.tagName)) return n; } return null; })();
+      const prev = unit.previousElementSibling && !/^H[1-6]$/.test(unit.previousElementSibling.tagName) ? unit.previousElementSibling : null;
+      const next = unit.nextElementSibling && !/^H[1-6]$/.test(unit.nextElementSibling.tagName) ? unit.nextElementSibling : null;
+      box.append(h('p', { class: 'muted', text: head ? `Wider context, under “${flat(head.textContent)}”` : 'Wider context' }));
+      for (const [label, n, mark] of [['Before', prev], ['The claim is here', unit, true], ['After', next]]) {
+        if (!n) continue;
+        box.append(h('p', { class: 'muted', text: label }), h('div', { class: mark ? 'post ctx-here' : 'post', text: clip(blockText(n), 1800) }));
+      }
+    }
+    const acts = h('div', { class: 'btns' });
+    if (level.n === 1) acts.append(h('button', { class: 'quiet', type: 'button', onclick: () => { level.n = 2; draw(); } }, 'See even more context'));
+    acts.append(h('button', { class: 'quiet', type: 'button', onclick: () => { level.n = level.n === 2 ? 1 : 0; draw(); } }, level.n === 2 ? 'Back to the paragraph' : 'Hide context'));
+    acts.append(h('a', { class: 'small', href: caseUrl(c), target: '_blank', rel: 'noopener noreferrer', text: 'Open the case page ↗' }));
+    slot.replaceChildren(box, acts);
+  };
+  slot.append(h('div', { class: 'btns' }, h('button', { class: 'quiet', type: 'button', onclick: () => { level.n = 1; draw(); } }, 'Expand context')));
+  return slot;
+}
+
+// ---- Screenshots (0020). A reviewer can attach a screenshot of the source to a claim. Safe by design:
+// the browser re-draws the picture (which drops all hidden data such as location and device info), rejects
+// anything that is not a real image, caps size, and the file goes to a PRIVATE bucket that only moderators and
+// the uploader can read. Screenshots are never shown on the public review history.
+const SHOT_MAX_PICK = 12 * 1024 * 1024, SHOT_MAX_OUT = 1500 * 1024, SHOT_MAX_SIDE = 1800;
+async function cleanShot(file) {
+  if (!/^image\/(png|jpeg|webp)$/.test(file.type)) throw new Error('Only PNG, JPEG or WebP pictures can be attached.');
+  if (file.size > SHOT_MAX_PICK) throw new Error('That picture is over 12 MB. Crop it or save it smaller.');
+  let bmp;
+  try { bmp = await createImageBitmap(file); } catch { throw new Error('That file is not a readable picture.'); }
+  const k = Math.min(1, SHOT_MAX_SIDE / Math.max(bmp.width, bmp.height));
+  const cv = document.createElement('canvas');
+  cv.width = Math.max(1, Math.round(bmp.width * k)); cv.height = Math.max(1, Math.round(bmp.height * k));
+  const cx = cv.getContext('2d');
+  cx.fillStyle = '#fff'; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(bmp, 0, 0, cv.width, cv.height);
+  if (bmp.close) bmp.close();
+  for (const qual of [0.85, 0.7, 0.55]) {
+    const blob = await new Promise((res) => cv.toBlob(res, 'image/jpeg', qual));
+    if (blob && blob.size <= SHOT_MAX_OUT) return blob;
+  }
+  throw new Error('Even after shrinking, that picture is too big. Crop it.');
+}
+function screenshotPanel(cl, slug, count) {
+  const slot = h('div', { class: 'shots' });
+  const list = h('div');
+  const msg = h('div');
+  let n = count;
+  const status = h('p', { class: 'small muted' });
+  const label = () => { status.textContent = n ? `${n} screenshot${n === 1 ? '' : 's'} attached (private: moderators only).` : 'No screenshots attached.'; };
+  label();
+  const show = action(async () => {
+    const rows = await q(sb.from('review_screenshots').select('id,path,note,created_at').eq('case_slug', slug).eq('claim_key', cl.k).order('id'));
+    const urls = await Promise.all(rows.map((r) => sb.storage.from('review-screenshots').createSignedUrl(r.path, 600)));
+    list.replaceChildren(rows.length ? h('div', { class: 'btns' }, rows.map((r, i) => {
+      const u = urls[i].data && urls[i].data.signedUrl;
+      return u ? h('a', { href: u, target: '_blank', rel: 'noopener noreferrer', title: r.note || when(r.created_at) }, h('img', { src: u, alt: r.note || 'Screenshot', style: 'max-width:160px;max-height:120px;border-radius:8px;border:1px solid var(--line)' })) : null;
+    })) : h('p', { class: 'small muted', text: 'Nothing attached yet.' }));
+  }, msg);
+  const input = h('input', { type: 'file', accept: 'image/png,image/jpeg,image/webp', hidden: true });
+  const note = h('input', { type: 'text', maxlength: 200, placeholder: 'What this shows (optional, public-safe, no names)', style: 'min-width:240px' });
+  input.addEventListener('change', action(async () => {
+    const f = input.files && input.files[0];
+    if (!f) return;
+    const blob = await cleanShot(f);
+    const id = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2));
+    const path = `${state.user.id}/${slug}/${cl.k}/${id}.jpg`;
+    const up = await sb.storage.from('review-screenshots').upload(path, blob, { contentType: 'image/jpeg', upsert: false });
+    if (up.error) throw up.error;
+    await q(sb.from('review_screenshots').insert({ case_slug: slug, claim_key: cl.k, path, note: note.value.trim() || null }));
+    input.value = ''; note.value = ''; n += 1; label();
+    await show();
+  }, msg));
+  slot.append(status, h('div', { class: 'btns' },
+    h('button', { class: 'quiet', type: 'button', onclick: () => input.click() }, 'Attach a screenshot'),
+    n ? h('button', { class: 'quiet', type: 'button', onclick: show }, 'Show screenshots') : null, note, input),
+    h('p', { class: 'small muted', text: 'Private to moderators; never shown on the public history. Blur names, addresses and emails first. Pictures are re-saved as plain JPEG and capped in size.' }), msg, list);
+  return slot;
 }
 
 // ---------------------------------------------------------------- router

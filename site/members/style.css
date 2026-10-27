@@ -229,3 +229,5 @@ details.example ul{padding-left:18px;display:grid;gap:6px}
 }
 /* links into the guides, maps, news and cases open in a new tab; mark them so it is no surprise */
 .nav a[href^="/preview/"]::after,.button[href^="/preview/"]::after,.tile[href^="/preview/"] strong::after{content:" \2197";font-size:.8em;opacity:.7}
+.ctx-here{border-left:3px solid #7fe3d9;padding-left:10px}
+.claim-context .panel{margin:8px 0}
