@@ -2,3 +2,14 @@
 .essay-quick-links a{display:block;padding:8px 9px;color:#fff;text-decoration:none;font:600 12px/1.2 system-ui,sans-serif;white-space:nowrap}
 .essay-quick-links a:focus-visible{outline:2px solid #a7f0e9;outline-offset:-2px}
 @media(max-width:480px){.essay-quick-links{left:8px;right:8px;bottom:8px;justify-content:space-around}.essay-quick-links a{padding:8px 5px;font-size:11px}}
+
+.essay-quick-links{align-items:center;flex-wrap:nowrap}
+.essay-quick-access{white-space:nowrap;color:#fff;font:600 12px/1.2 system-ui,sans-serif}
+.essay-quick-access a{display:inline;padding:6px 2px}
+.essay-quick-access[hidden]{display:none}
+.essay-quick-search{display:flex;align-items:center;min-width:0;border:1px solid #c7ffff77;border-radius:999px;background:#06212f;overflow:hidden}
+.essay-quick-search label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.essay-quick-search input{width:125px;min-width:0;padding:7px;border:0;background:transparent;color:#fff;font:14px system-ui,sans-serif}
+.essay-quick-search input::placeholder{color:#d7ecec}
+.essay-quick-search button{border:0;padding:6px 9px;background:transparent;color:#fff;font:600 12px system-ui,sans-serif;cursor:pointer}
+@media(max-width:480px){.essay-quick-links{justify-content:space-between}.essay-quick-access{font-size:11px}.essay-quick-search{flex:1}.essay-quick-search input{width:100%;font-size:16px}.essay-quick-links .essay-quick-return{font-size:11px;padding:7px 4px}}
