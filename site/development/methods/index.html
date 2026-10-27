@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex">
+<title>Methods | The Way</title>
+<meta name="description" content="How The Way collects, labels, checks and publishes its material, and what is kept outside the public code.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/members/waybar.css?v=1">
+<link rel="stylesheet" href="/site-shared.css?v=1">
+<link rel="stylesheet" href="/development/development.css?v=2">
+<link rel="stylesheet" href="/preview/pages/banner.css?v=1">
+<link rel="stylesheet" href="/water-depth.css?v=1">
+</head>
+<body class="water-depth">
+<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+<div class="page-banner"><img src="/preview/pages/img/cards/banner-research-1200.webp" srcset="/preview/pages/img/cards/banner-research-640.webp 640w, /preview/pages/img/cards/banner-research-1200.webp 1200w" sizes="100vw" width="1200" height="260" alt="" decoding="async"></div>
+<main class="wrap prose" id="main">
+<p class="crumbs"><a href="/">Surface</a> / <a href="/research/">Research</a> / Methods</p>
+<p class="overline">Research</p>
+<h1>Methods</h1>
+<p class="lede">How material gets onto this site, what the labels mean, and what you can check yourself.</p>
+<nav class="entry" aria-label="For scholars"><a href="/development/">Ledger</a><a href="/development/methods/" aria-current="page">Methods</a><a href="/ai/">How we use AI</a><a href="https://github.com/wrxminion/The-way-site" rel="noopener">Source code on GitHub</a></nav>
+
+<h2>What the status labels mean</h2>
+<p>The <a href="/development/">Development Ledger</a> records each decision about the site. A row is marked LIVE_VERIFIED only after a person opened the live page and the date was written down. IMPLEMENTED_PENDING_REVIEW, or a row that says it was merged, means the work is in the repository but a person has not yet checked the live page.</p>
+<p>On a page, a label such as "initial draft, not independently reviewed" stays until a person has compared each claim with its sources. We do not remove a caveat to make a page look finished.</p>
+
+<h2>Sources</h2>
+<ul>
+<li>A fact needs a source link. We do not publish invented numbers, quotes or sources.</li>
+<li>We keep dated copies of the government sources we cite (original file, screenshot, text, hashes and a record of where it came from). These copies are private; only federal works may be shown publicly.</li>
+<li>We respect robots.txt. Where a state host disallows automated download, the source is recorded as blocked and a second host is sought.</li>
+<li>AI-written prose is kept apart from quoted source text. See <a href="/ai/">How we use AI</a>.</li>
+</ul>
+
+<h2>News</h2>
+<ul>
+<li>A collector runs every 2 hours and a weekly check re-runs the method. It gathers headlines and links by state.</li>
+<li>The site shows the newest 200 items per state and 3,000 overall. A private archive keeps everything collected, with the time each item was fetched.</li>
+<li>Links are collected automatically. A headline does not mean we agree with it, and a link may not lead where the headline suggests.</li>
+<li>Tags (place and ballot measure) are applied by software and can be wrong; the uncertainty is shown on the page.</li>
+</ul>
+
+<h2>Code and changes</h2>
+<ul>
+<li>The site is static HTML, CSS and JavaScript. The source is public at <a href="https://github.com/wrxminion/The-way-site" rel="noopener">github.com/wrxminion/The-way-site</a>. The main branch is the live site and publishes within about 15 minutes of a merge.</li>
+<li>Larger changes go through a pull request that the maintainer reviews. Small fixes and the news data are committed directly by the maintainer's setup.</li>
+<li>Pages must work under a strict content security policy: no inline scripts, no inline styles, no outside images or fonts.</li>
+<li>URLs and record IDs stay stable. A page that moves leaves a redirect.</li>
+<li>Database definitions are in the repository under supabase/ as reference only; they are not deployed by the site.</li>
+</ul>
+
+<h2>What is not in the public code</h2>
+<table>
+<thead><tr><th>Item</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Passwords, keys, server rule files</td><td>Secrets and access rules.</td></tr>
+<tr><td>Member data (accounts, posts, reviews)</td><td>Private. Held in a hosted database with row-level access rules.</td></tr>
+<tr><td>Private news archive and evidence copies</td><td>Large, append-only, and some copies may not be republished.</td></tr>
+<tr><td>Collector scripts and run logs</td><td>Not part of the site.</td></tr>
+</tbody>
+</table>
+
+<h2>Corrections</h2>
+<p>Corrections stay visible with a date and a reason. The repository history shows every change to every page.</p>
+</main>
+<script src="/members/waybar.js?v=1" defer></script>
+</body>
+</html>

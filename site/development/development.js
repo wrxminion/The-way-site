@@ -1,7 +1,7 @@
 (async () => {
   const note = document.getElementById('note'), list = document.getElementById('list'), f = document.getElementById('filters');
   const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; };
-  const bucket = (s) => /live|verified live/i.test(s) && !/pending|unverified/i.test(s) ? 'live' : /declin/i.test(s) ? 'declined' : /defer/i.test(s) ? 'deferred' : /built|prototype|demonstrated|reported|designed|accepted|adopted|approved/i.test(s) ? 'in progress' : 'planned';
+  const bucket = (s) => /LIVE_VERIFIED/.test(s) ? 'live' : /declin/i.test(s) ? 'declined' : /defer/i.test(s) ? 'deferred' : /merged|implemented|built|prototype|demonstrated|reported|designed|accepted|adopted|approved|superseded/i.test(s) ? 'in progress' : 'planned';
   let data, sel = 'all';
   try { data = window.LEDGER_DATA || await (await fetch('/development/data/ledger.json', { cache: 'no-cache' })).json(); } catch (e) { note.textContent = 'The ledger could not load. Reload the page.'; return; }
   note.textContent = data.note;

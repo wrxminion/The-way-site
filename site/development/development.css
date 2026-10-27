@@ -4,3 +4,6 @@
 .filters button[aria-pressed=true]{background:#124a63;border-color:var(--aqua)}
 .row{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
 .row h3{margin:0 0 4px;font:600 18px Georgia,serif}.row p{margin:.3em 0;color:var(--muted)}.row b{color:var(--foam)}
+.crumbs{font-size:.9rem;color:var(--muted);margin:0 0 8px}.crumbs a{color:var(--aqua)}
+.entry a{color:var(--aqua)}.entry a[aria-current=page]{color:#fff}
+.prose h2{margin-top:1.6em}.prose p,.prose li{max-width:70ch}.prose table{width:100%;border-collapse:collapse;font-size:.95rem}.prose th,.prose td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}

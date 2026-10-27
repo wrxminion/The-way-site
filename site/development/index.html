@@ -6,24 +6,28 @@
 <meta name="color-scheme" content="dark">
 <meta name="robots" content="noindex">
 <title>Development Ledger | The Way</title>
-<meta name="description" content="Every design decision for this site, why it was made, and whether it is verified live.">
+<meta name="description" content="Every design decision for this site, why it was made, and whether it has been checked on the live site.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/members/waybar.css?v=1">
 <link rel="stylesheet" href="/site-shared.css?v=1">
-<link rel="stylesheet" href="/development/development.css?v=1">
+<link rel="stylesheet" href="/development/development.css?v=2">
+<link rel="stylesheet" href="/preview/pages/banner.css?v=1">
+<link rel="stylesheet" href="/water-depth.css?v=1">
 </head>
-<body>
+<body class="water-depth">
 <header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+<div class="page-banner"><img src="/preview/pages/img/cards/banner-research-1200.webp" srcset="/preview/pages/img/cards/banner-research-640.webp 640w, /preview/pages/img/cards/banner-research-1200.webp 1200w" sizes="100vw" width="1200" height="260" alt="" decoding="async"></div>
 <main class="wrap" id="main">
-<p class="overline">Methods</p>
+<p class="crumbs"><a href="/">Surface</a> / <a href="/research/">Research</a> / Ledger</p>
+<p class="overline">Research</p>
 <h1>Development Ledger</h1>
-<p class="lede">What we decided to build, why, and whether anyone has checked that it works on the live site. An item is only marked verified after the live page was checked and the date was recorded.</p>
-<nav class="entry" aria-label="Ways in"><a href="/preview/pages/states/">Map</a><a href="/preview/pages/news/">News</a><a href="/timeline/">Timeline</a><a href="/preview/pages/cases/">Civics &amp; History</a><a href="/development/" aria-current="page">Methods and ledger</a><a href="/ai/">How we use AI</a></nav>
+<p class="lede">What we decided to build, why, and whether anyone has checked that it works on the live site. An item is only marked LIVE_VERIFIED after the live page was opened and the date was recorded.</p>
+<nav class="entry" aria-label="For scholars"><a href="/development/" aria-current="page">Ledger</a><a href="/development/methods/">Methods</a><a href="/ai/">How we use AI</a><a href="https://github.com/wrxminion/The-way-site" rel="noopener">Source code on GitHub</a></nav>
 <p class="banner" id="note" role="note">Loading…</p>
 <div class="filters" id="filters" role="group" aria-label="Filter by status"></div>
 <div id="list"></div>
 </main>
 <script src="/members/waybar.js?v=1" defer></script>
-<script src="/development/data/ledger.js?v=1" defer></script><script src="/development/development.js?v=1" defer></script>
+<script src="/development/data/ledger.js?v=2" defer></script><script src="/development/development.js?v=2" defer></script>
 </body>
 </html>

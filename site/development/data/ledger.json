@@ -1,5 +1,5 @@
 {
-  "note": "Reconstructed from project discussions, screenshots and user statements. Not a verified Git or deployment log. Nothing here is marked LIVE_VERIFIED.",
+  "note": "Dates up to 2026-10-25 were reconstructed from project discussions and screenshots. From 2026-10-26 the rows follow the git history of github.com/wrxminion/The-way-site. Only rows marked LIVE_VERIFIED were opened on the live site, on the date shown. IMPLEMENTED_PENDING_REVIEW and \"Merged\" mean the work is in the repository but a person has not yet checked the live page. The IDs D038 and D040 were never used.",
   "rows": [
     {
       "id": "D001",
@@ -18,8 +18,8 @@
       "origin": "Project planning; user-reported site",
       "decision_or_proposal": "Make ballots accessible by state with source-linked explanations and consequences",
       "why": "Visitors need a practical entry point; map turns complex elections into local questions",
-      "status_as_of_2026_10_25": "User reported built; independent live audit pending",
-      "evidence_and_limits": "User reported nationwide ballot map; do not claim every state content verified"
+      "status_as_of_2026_10_25": "Built and linked from the front page; a person has not yet compared every state page with its official sources",
+      "evidence_and_limits": "The repository holds 49 state guide folders and 50 state map folders besides Colorado. User reported the nationwide ballot map; do not claim every state's content has been checked by a person against official sources."
     },
     {
       "id": "D003",
@@ -38,8 +38,8 @@
       "origin": "Research / website planning",
       "decision_or_proposal": "Connect donors, intermediaries, institutions, payments and policies",
       "why": "Follow money with typed relationships and visible uncertainty",
-      "status_as_of_2026_10_25": "Prototype / implementation pending audit",
-      "evidence_and_limits": "Source money data not necessarily complete"
+      "status_as_of_2026_10_25": "Built: the Money Timeline is in the repository and deployed; some money rows still need a record check",
+      "evidence_and_limits": "Five money rows are waiting for a check against the state campaign finance records (TRACER). Source money data is not necessarily complete."
     },
     {
       "id": "D005",
@@ -68,8 +68,8 @@
       "origin": "Internal project planning",
       "decision_or_proposal": "Expose five views of shared evidence database",
       "why": "Different audiences need distinct starting points, not siloed datasets",
-      "status_as_of_2026_10_25": "Design adopted; deployment audit pending",
-      "evidence_and_limits": "No assumption that all five are functional"
+      "status_as_of_2026_10_25": "Superseded by D018: the header and front page now carry four destinations. LIVE_VERIFIED 2026-10-26 under D018.",
+      "evidence_and_limits": "The five-entrypoint design was replaced by four destinations on 2026-10-26; see D018 for what was opened on the live site."
     },
     {
       "id": "D008",
@@ -88,8 +88,8 @@
       "origin": "User editorial direction",
       "decision_or_proposal": "Every article opens with substance and question; graphics explain before deep dive",
       "why": "Engage quickly without sacrificing rigor",
-      "status_as_of_2026_10_25": "Accepted editorial requirement; template not site-audited",
-      "evidence_and_limits": "Never sensationalize beyond evidence"
+      "status_as_of_2026_10_25": "Accepted editorial requirement; no shared page template for it exists in the repository yet",
+      "evidence_and_limits": "Applied to pages one at a time by a person. Never sensationalize beyond evidence."
     },
     {
       "id": "D010",
@@ -228,8 +228,8 @@
       "origin": "Frank, Oct 26 2026, via the project coordinator; librarian meeting feedback as reported by Frank",
       "decision_or_proposal": "A 50-state collector, tagging of candidates, statewide measures and 222 local measures from the guide pages on every run, a private append-only archive, two scheduled tasks on FRAK (every 2 hours, and a weekly check), and a monthly backfill walking back to Jan 1 2026 and then further.",
       "why": "The public feed had gone stale after Oct 17 because the earlier process was manual.",
-      "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW. Not verified complete: backfill still running, and the scheduled runs have not yet been checked over two cycles.",
-      "evidence_and_limits": "The public feed shows the newest 200 per state and 3,000 overall; the private archive keeps everything collected. 225 local measures have no usable ballot code and are not tagged. No article text or page copies are kept for news yet."
+      "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW. Scheduled runs every 2 hours have committed to the repository since 2026-10-26. The backfill to 2026-01-01 finished for all states on 2026-10-27; a deeper pass toward May 2025 is still running.",
+      "evidence_and_limits": "The public feed shows the newest 200 per state and 3,000 overall; the private archive keeps everything collected. 225 local measures have no usable ballot code and are not tagged. No article text or page copies are kept for news yet. The deeper pass stops by itself when a round adds fewer than 200 items. One Maine error is covered by a later pass. A person has not yet checked two full scheduled cycles end to end."
     },
     {
       "id": "D024",
@@ -318,8 +318,8 @@
       "origin": "Frank, Oct 26 2026, via the project coordinator",
       "decision_or_proposal": "The header About link on every page now opens the Foundation page. That page carries visible links to About the founder, Methodology (the methods and ledger page) and the AI paper. The front-page foundation cards stay hidden.",
       "why": "Frank asked for About to lead to the foundation, with the founder, methods and AI pages one click away.",
-      "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW until checked live with curl; Frank will check it visually.",
-      "evidence_and_limits": "There is no separate methodology page. The Methodology link goes to the methods and ledger page, which says what was decided to build and whether it was verified. No new methodology text was written."
+      "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW until checked live with curl; Frank will check it visually. Methods now have their own page (D055).",
+      "evidence_and_limits": "The Methodology link on the Foundation page now goes to the separate Methods page (D055) instead of the ledger."
     },
     {
       "id": "D033",
@@ -428,8 +428,108 @@
       "origin": "Frank's feedback on inconsistent ballot and map links",
       "decision_or_proposal": "Replace the older landing page's separate Colorado guide and district-map cards with one Voter Guide link to the national state-selection page.",
       "why": "Provide a consistent entry point for the map and voter guides.",
+      "status_as_of_2026_10_25": "Merged in PR #8; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "The shared header already points to the national guide. This change addressed the two legacy landing-page cards. A person has not yet opened every page to check for older links."
+    },
+    {
+      "id": "D046",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Header search on the About page",
+      "origin": "Codex change (PR #21)",
+      "decision_or_proposal": "The About header search box now goes to the search page with the typed words.",
+      "why": "Search should behave the same on every page.",
+      "status_as_of_2026_10_25": "Merged in PR #21; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Not opened on the live site by a person since the merge."
+    },
+    {
+      "id": "D047",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Homepage uses the shared ocean",
+      "origin": "Water styling feedback from Frank (PR #22)",
+      "decision_or_proposal": "The front page uses the same ocean gradient as the Why The Way page.",
+      "why": "One look across pages.",
+      "status_as_of_2026_10_25": "Merged in PR #22; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Visual match only. Whether the water should overlap the header or sit below it is still being decided."
+    },
+    {
+      "id": "D048",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Proposition NN shown as visual choice cards",
+      "origin": "Codex change (PR #3)",
+      "decision_or_proposal": "Proposition NN choices are presented in visual cards.",
+      "why": "Easier to scan.",
+      "status_as_of_2026_10_25": "Merged in PR #3; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Commit titles and the diff were read; a person has not compared the cards with the measure text on the live page."
+    },
+    {
+      "id": "D049",
+      "decision_date_or_range": "2026-10-27",
+      "title": "News archive and link-destination wording",
+      "origin": "Codex changes (PR #18)",
+      "decision_or_proposal": "The news pages say what is available in the archive and that links are collected automatically, and now disclose where a news link leads.",
+      "why": "Be plain about what the news feed is.",
+      "status_as_of_2026_10_25": "Merged in PR #18; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Wording only; the feed itself is D023."
+    },
+    {
+      "id": "D050",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Timeline keeps the selected event when the filter changes",
+      "origin": "Codex change (PR #17)",
+      "decision_or_proposal": "Changing a timeline filter no longer drops the event the reader selected.",
+      "why": "Avoid losing your place.",
+      "status_as_of_2026_10_25": "Merged in PR #17; live behavior not yet verified.",
+      "evidence_and_limits": "A person has not tried it on the live page."
+    },
+    {
+      "id": "D051",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Database SQL kept in the public repository for reference",
+      "origin": "Maintainer decision (PR #23)",
+      "decision_or_proposal": "Migrations 0001 to 0016, run-once scripts and the members backend plan are in supabase/. A 0017 draft is marked unapproved and is not to be run.",
+      "why": "Let readers see how tables and access rules are defined.",
+      "status_as_of_2026_10_25": "Merged in PR #23. Reference only: nothing here is deployed by the site.",
+      "evidence_and_limits": "Git does not record which migrations were applied to the live database. Project notes say 0013 to 0015 were applied on 2026-10-27; 0016 was not."
+    },
+    {
+      "id": "D052",
+      "decision_date_or_range": "2026-10-27",
+      "title": "My Ballot vote planner",
+      "origin": "Project plan (PR #24)",
+      "decision_or_proposal": "Readers can pick a choice on a voter-guide page, compare picks and print a sheet. By default picks stay in the browser.",
+      "why": "Plan a vote without making an account.",
+      "status_as_of_2026_10_25": "Merged in PR #24; live behavior not yet verified.",
+      "evidence_and_limits": "Saving to an account and the anonymous forecast need migration 0016, which has not been applied. The author ran a script test (tools/test-my-ballot.js); a person has not tested it on the live site."
+    },
+    {
+      "id": "D053",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Members backend: join links, case and claim reviews, Pull a Thread",
+      "origin": "Members plan (Oct 27)",
+      "decision_or_proposal": "Migrations 0013 to 0015 and the join-link setup were run in the database, and the run checklist came back all ok.",
+      "why": "Needed before members can be invited and review work.",
+      "status_as_of_2026_10_25": "IMPLEMENTED_PENDING_REVIEW. Applied 2026-10-27 per the run checklist; not checked from the public site.",
+      "evidence_and_limits": "Applied by the maintainer through the database dashboard; git does not record it. Roles and karma (0017) is a draft that has not been approved."
+    },
+    {
+      "id": "D054",
+      "decision_date_or_range": "2026-10-26 to 2026-10-27",
+      "title": "Branch protection and contributor rules",
+      "origin": "Repository opened to Codex and collaborators by the maintainer",
+      "decision_or_proposal": "Larger changes go through a pull request that the maintainer merges. The maintainer and the news task may commit small fixes and news data to main. CONTRIBUTING.md and OUTSIDE-GIT.md state the rules and what is kept outside git.",
+      "why": "Keep main (the live site) from being changed by accident while the repository is public.",
+      "status_as_of_2026_10_25": "In effect: the protection rule on main is active and CONTRIBUTING.md was added 2026-10-26.",
+      "evidence_and_limits": "Direct commits by the maintainer and news task are allowed on purpose. Merging to main publishes within about 15 minutes."
+    },
+    {
+      "id": "D055",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Research section for scholars: ledger cleanup and separate Methods page",
+      "origin": "Maintainer request",
+      "decision_or_proposal": "The Research page no longer carries the old summary line. The ledger page has its own scholar bar (Ledger, Methods, How we use AI, Source code on GitHub) and the Research header and water. Methods has its own page. Rows that said a check was pending were rewritten to say what was and was not checked.",
+      "why": "Researchers should find the record of what changed and how it is checked.",
       "status_as_of_2026_10_25": "Proposed in this change; not yet merged or live.",
-      "evidence_and_limits": "The shared header already points to the national guide. This change addresses the two legacy landing-page cards; a complete site-wide audit remains outstanding."
+      "evidence_and_limits": "Written from the repository and project notes. The live site could not be opened from where this was written, so no row here was newly checked live."
     }
   ]
 }
