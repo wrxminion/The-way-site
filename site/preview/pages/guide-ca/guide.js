@@ -58,6 +58,50 @@
       } else {
         li.appendChild(pill('span', 'notsnapped', 'Not snapped'));
       }
+      if (it.ai && it.ai.campaign_source === true) {
+        var cs = document.createElement('div');
+        cs.className = 'ai ai-campaign';
+        cs.textContent = 'Campaign source: written by a campaign, party or press-release service, not independent news. No summary made.';
+        li.appendChild(cs);
+      } else if (it.ai && typeof it.ai === 'object') {
+        // Word-for-word quote (machine-checked) and a short neutral AI synopsis; labelled, with the source and a report link.
+        var ai = document.createElement('div');
+        ai.className = 'ai';
+        var qt = it.ai.quotes && typeof it.ai.quotes[sec.dataset.newsId] === 'string' ? it.ai.quotes[sec.dataset.newsId].slice(0, 340) : '';
+        if (qt) {
+          var bq = document.createElement('blockquote');
+          bq.className = 'ai-quote';
+          bq.textContent = '\u201c' + qt + '\u201d';
+          var cite = document.createElement('div');
+          cite.className = 'ai-cite';
+          cite.appendChild(document.createTextNode(String(it.source || u.hostname) + ' \u00b7 '));
+          var full = document.createElement('a');
+          full.href = u.href;
+          full.rel = 'noopener noreferrer';
+          full.target = '_blank';
+          full.textContent = 'Read the full article';
+          cite.appendChild(full);
+          ai.appendChild(bq);
+          ai.appendChild(cite);
+        }
+        if (typeof it.ai.synopsis === 'string' && it.ai.synopsis) {
+          var sp = document.createElement('p');
+          sp.className = 'ai-syn';
+          var lb = document.createElement('b');
+          lb.textContent = it.ai.review === 'reviewed' ? 'AI synopsis, reviewed by a person: ' : 'AI synopsis, unchecked: ';
+          sp.appendChild(lb);
+          sp.appendChild(document.createTextNode(it.ai.synopsis.slice(0, 320)));
+          ai.appendChild(sp);
+        }
+        if (ai.children.length) {
+          var rep = document.createElement('a');
+          rep.className = 'ai-report';
+          rep.textContent = 'Report a problem with this quote or summary';
+          rep.href = '/members/discuss.html?item=news:' + encodeURIComponent(String(it.id || '').toLowerCase().replace(/[^a-z0-9._-]+/g, '-').replace(/^[^a-z0-9]+/, '').slice(0, 120)) + '&title=' + encodeURIComponent(String(it.title || '').slice(0, 200)) + '&report=ai';
+          ai.appendChild(rep);
+          li.appendChild(ai);
+        }
+      }
       ul.appendChild(li);
     });
     if (!ul.children.length) return;

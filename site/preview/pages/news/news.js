@@ -26,7 +26,17 @@
   function aboutOf(v){
     // [{label, page}] from the publisher; page is a guide path under the pages folder, checked strictly.
     return (Array.isArray(v) ? v : []).filter(x => x && typeof x === 'object' && /^[a-z0-9-]+(\/[a-z0-9-]+)*\.html$/.test(String(x.page)) && typeof x.label === 'string' && x.label.trim())
-      .slice(0, 6).map(x => ({label: x.label.trim().slice(0, 120), page: String(x.page)}));
+      .slice(0, 6).map(x => ({id: typeof x.id === 'string' ? x.id.slice(0, 80) : '', label: x.label.trim().slice(0, 120), page: String(x.page)}));
+  }
+
+  function aiOf(v){
+    // Machine-made summary and quote (news-build/news_enrich.py). Plain text only, length-limited, always labelled.
+    if (!v || typeof v !== 'object') return null;
+    if (v.campaign_source === true) return {campaign: true, synopsis: '', quotes: {}, reviewed: false};
+    const synopsis = str(v.synopsis, 320).trim(), quotes = {};
+    if (v.quotes && typeof v.quotes === 'object') for (const k of Object.keys(v.quotes).slice(0, 6)){ const q = str(v.quotes[k], 340).trim(); if (q) quotes[k.slice(0, 80)] = q; }
+    if (!synopsis && !Object.keys(quotes).length) return null;
+    return {synopsis, quotes, reviewed: v.review === 'reviewed'};
   }
 
   function snapOf(v){
@@ -45,7 +55,7 @@
     const pub = dateOnly ? endOfLocalDay(raw.published_at) - 12 * 3600e3 : parseTime(raw.published_at);
     return {id:str(raw.id, 80) || url, url, title, source:str(raw.source, 120).trim() || new URL(url).hostname,
       kind:KIND_LABEL[raw.kind] ? raw.kind : 'news', pub, dateOnly, seen, sort:pub != null ? pub : seen,
-      places:list(raw.places), states:list(raw.states), topics:list(raw.topics), snap:snapOf(raw.snapshot), measures:list(raw.measures).filter(m => /^[a-z0-9-]{1,80}$/.test(m)).slice(0, 5), about:aboutOf(raw.about), hay:(title + ' ' + str(raw.source, 120)).toLowerCase()};
+      places:list(raw.places), states:list(raw.states), topics:list(raw.topics), snap:snapOf(raw.snapshot), measures:list(raw.measures).filter(m => /^[a-z0-9-]{1,80}$/.test(m)).slice(0, 5), about:aboutOf(raw.about), ai:aiOf(raw.ai), hay:(title + ' ' + str(raw.source, 120)).toLowerCase()};
   }
 
   async function getJSON(path){
@@ -141,6 +151,26 @@
         p.append(a);
       });
       li.append(p);
+    }
+    if (it.ai && it.ai.campaign){
+      li.append(el('div', 'ai ai-campaign', 'Campaign source: written by a campaign, party or press-release service, not independent news. No summary made.'));
+    } else if (it.ai){
+      // Quote copied word for word from the article (checked by machine), plus a short neutral AI synopsis. Always links to the source.
+      const box = el('div', 'ai');
+      const qa = about.find(x => x.id && it.ai.quotes[x.id]);
+      if (qa){
+        const q = el('blockquote', 'ai-quote', '\u201c' + it.ai.quotes[qa.id] + '\u201d');
+        const c = el('div', 'ai-cite', 'Why it matters to ' + qa.label + ' \u00b7 ' + it.source + ' \u00b7 ');
+        const r = el('a', null, 'Read the full article'); r.href = it.url; r.target = '_blank'; r.rel = 'noopener noreferrer nofollow';
+        c.append(r); box.append(q, c);
+      }
+      if (it.ai.synopsis){
+        const sy = el('p', 'ai-syn'); sy.append(el('b', null, it.ai.reviewed ? 'AI synopsis, reviewed by a person: ' : 'AI synopsis, unchecked: '), document.createTextNode(it.ai.synopsis));
+        box.append(sy);
+      }
+      const rp = el('a', 'ai-report', 'Report a problem with this quote or summary');
+      rp.href = '/members/discuss.html?item=news:' + encodeURIComponent(it.id.toLowerCase().replace(/[^a-z0-9._-]+/g, '-').replace(/^[^a-z0-9]+/, '').slice(0, 120)) + '&title=' + encodeURIComponent(it.title.slice(0, 200)) + '&report=ai';
+      box.append(rp); li.append(box);
     }
     // Members: say you read it, and discuss it (lives in the member area, which is allowed to talk to the database)
     const dd = el('div', 'discuss'); const da = el('a', null, 'Did you read it? Tell us what you found, and discuss (members)');
