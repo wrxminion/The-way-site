@@ -9,3 +9,7 @@
 .ballot-banner .bb-alt{color:#e9ffff;font-weight:650;text-underline-offset:3px}
 .ballot-banner a:focus-visible{outline:2px solid #e4ffff;outline-offset:3px}
 @media(max-width:860px){.ballot-banner{padding:18px 16px}.ballot-banner .bb-main{width:100%;text-align:center;box-sizing:border-box}}
+
+.bb-plan-wrap{margin:0 0 16px;padding:12px 14px;border:1px solid #abedf566;border-radius:12px;background:#0a3a50}
+.bb-plan{color:#e9ffff;font-weight:800;text-underline-offset:3px}
+.bb-plan-note{display:block;margin-top:4px;font-size:13px;color:#bcd7df}
