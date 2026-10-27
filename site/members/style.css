@@ -238,3 +238,22 @@ details.example ul{padding-left:18px;display:grid;gap:6px}
 @media (prefers-reduced-motion:reduce){.room .room-art{transition:none}.room:hover .room-art{transform:none}}
 /* Links to the public pages stay in the same tab, so no new-tab arrow on them. */
 .nav a[href^="/preview/"]::after,.button[href^="/preview/"]::after,.tile[href^="/preview/"] strong::after{content:none}
+
+/* Home: the "Review the sources" card runs across the whole page, above the other cards. */
+.review-card{display:grid;grid-template-columns:minmax(150px,260px) 1fr;gap:6px 24px;align-items:center;margin:0 0 18px;padding:20px 26px;
+  border:1px solid #c7ffff44;border-radius:20px;background:#03192ad0;backdrop-filter:blur(8px);color:inherit;text-decoration:none;transition:border-color .2s,background .2s}
+.review-card:hover{border-color:#a7f0e9;background:#0a2c40e0}
+.review-card .rv-art{width:100%;height:auto;aspect-ratio:16/9;transition:transform .35s ease}
+.review-card:hover .rv-art{transform:translateY(-3px) scale(1.04)}
+.review-card .rv-body{display:grid;gap:8px}
+.review-card .rv-title{font:normal 28px/1.15 var(--serif);color:var(--foam)}
+.review-card .rv-sub{font-size:15px;line-height:1.5;color:#c9e1e5}
+.review-card .rv-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px;margin-top:6px}
+.review-card .rv-stat{display:grid;gap:4px;align-content:start;padding:12px 14px;border:1px solid #c7ffff22;border-radius:14px;background:#06213788}
+.review-card .rv-label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9fc3c9}
+.review-card .rv-num{font:normal 30px/1 var(--serif);color:var(--foam)}
+.review-card .rv-note{font-size:13px;color:#9fc3c9}
+.review-card .rv-awards{display:flex;flex-wrap:wrap;gap:6px}
+.review-card .rv-chip{padding:4px 10px;border-radius:100px;background:#f3d98a22;border:1px solid #f3d98a66;color:#f3e3b0;font-size:13px}
+@media (max-width:700px){.review-card{grid-template-columns:1fr;padding:16px}.review-card .rv-art{max-width:220px}}
+@media (prefers-reduced-motion:reduce){.review-card,.review-card .rv-art{transition:none}.review-card:hover .rv-art{transform:none}}
