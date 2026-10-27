@@ -183,6 +183,15 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   await page.reload(); await page.waitForSelector('.mb-sheet');
   const sheetW = await page.locator('.mb-sheet').innerText();
   ok(/Why \(Phil Weiser\): worked on housing/.test(sheetW) && !/\bx\b.*Why/.test(sheetW) && !/Why \(evil\)/.test(sheetW), 'a candidate Why prints on the sheet; unknown ids are dropped');
+  // one list: no separate "Your choices so far"; Clear / Remove live inside each row's Mark
+  await page.goto(base + '/members/my-ballot.html?state=CO#mark'); await page.reload(); await page.waitForSelector('#mark li');
+  ok(await page.locator('text=Your choices so far').count() === 0, 'there is one list, no duplicate "Your choices so far"');
+  const row81 = page.locator('#mark li', { hasText: 'Amendment 81' }).first();
+  await row81.getByRole('button', { name: 'Mark' }).click();
+  await row81.getByRole('button', { name: 'Clear my choice' }).click();
+  s = await store(); ok(!s.contests['measure:amendment-81'] || (s.contests['measure:amendment-81'].picks.length === 0 && !s.contests['measure:amendment-81'].undecided), 'Clear my choice inside the row clears the pick');
+  await page.locator('.mk-form', { hasText: 'Amendment 81' }).locator('label', { hasText: /^Yes/ }).locator('input').check();
+  await page.locator('#mark li', { hasText: 'Amendment 81' }).first().getByRole('button', { name: 'Close' }).click();
   // local measure pages get the same controls, including Not sure yet
   await page.goto(G + 'local/m/adams-fire-6e.html'); await page.waitForSelector('.bp-bar');
   ok(await page.locator('.bp-bar').getByRole('button', { name: 'Not sure yet' }).count() === 1, 'a local measure page has Yes / No / Not sure yet');
@@ -215,7 +224,7 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   ok(/Your pick: Phil Weiser/i.test(await page.locator('#mark li', { hasText: 'Governor and Lieutenant Governor' }).first().innerText()), 'a collapsed race row shows the saved pick');
   await page.getByRole('button', { name: 'Show every race and measure' }).click();
   await page.waitForSelector('#mark li:nth-of-type(20)');
-  ok(await page.locator('#mark ul.list').nth(1).locator('li').count() > 20, 'every race and measure in the state can be listed');
+  ok(await page.locator('#mark ul.list').last().locator('li').count() > 20, 'every race and measure in the state can be listed');
   await shot('03b-mark');
   await page.evaluate(() => { localStorage.clear(); sessionStorage.clear(); });
 
