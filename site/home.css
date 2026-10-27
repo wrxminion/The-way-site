@@ -145,3 +145,7 @@
 @media(max-width:600px){.card-art{aspect-ratio:16/10}}
 
 [hidden]{display:none!important}
+
+/* On the signed-out home page, let the original ocean flow behind the navigation. */
+.home .waybar:not(.wb-in){position:absolute;top:0;left:0;right:0;background:linear-gradient(180deg,#032332b3,transparent);border-bottom:0}
+.home .waybar:not(.wb-in).wb-open{background:#052b3cf2}
