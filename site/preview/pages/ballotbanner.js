@@ -34,7 +34,7 @@
   alt.textContent = 'Read the ' + name + ' voter guide';
   actions.append(main, alt);
   box.append(text, actions);
-  wrap.after(box);
+  wrap.append(box);
 
   function update() { box.hidden = /^\s*No location selected/i.test(sel.textContent) || !sel.textContent.trim(); }
   new MutationObserver(update).observe(sel, { childList: true, characterData: true, subtree: true });
