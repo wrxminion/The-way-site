@@ -42,7 +42,7 @@ const when = (iso) => iso ? new Date(iso).toLocaleString(undefined, { dateStyle:
 const day = (iso) => iso ? new Date(iso).toLocaleDateString(undefined, { dateStyle: 'medium' }) : '';
 // What members see for a role. The stored value stays 'reviewer' / 'researcher'.
 // Deshi is Japanese for student; both words are shown so people learn it (Frank, Oct 27 2026).
-const ROLE_LABEL = { reviewer: 'Deshi (student)', researcher: 'Submitter' };
+const ROLE_LABEL = { reviewer: 'Deshi (student, reviewer)', researcher: 'Author (Submitter)', editor: 'Renshi (editor)' };
 const roleName = (r) => ROLE_LABEL[r] || r;
 const can = (role) => state.roles.has(role) || state.roles.has('admin');
 
@@ -561,7 +561,7 @@ function rolesView() {
   render(
     h('p', { class: 'overline', text: 'Members' }),
     h('h1', { text: 'Roles and points' }),
-    h('p', { class: 'lede', text: 'Members can take on roles (researcher, Deshi (student), moderator) and earn points for checked work. Applying for a role and seeing your points will live here and on your profile. It is coming soon.' }),
+    h('p', { class: 'lede', text: 'Members can take on roles (Author, Deshi (student, reviewer), Renshi (editor), moderator) and earn points for checked work. Applying for a role and seeing your points will live here and on your profile. It is coming soon.' }),
     h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/', text: 'Back to Home' }), h('a', { class: 'button quiet', href: '#/account', text: 'Your account' })));
 }
 
@@ -638,7 +638,7 @@ async function homeView() {
     h('p', { class: 'small place-line' }, ...(loadPlace()
       ? ['Your place: ', h('strong', { text: loadPlace().state }), ' · ', h('a', { href: '#/account', text: 'change it in your account' })]
       : [h('a', { href: '#/account', text: 'Save your state in your account' }), ' to open the map and your ballot on it.'])),
-    h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Invite someone to The Way' })),
+    h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Invite someone to The Way' }), h('a', { class: 'button', href: 'author.html', text: 'Author desk and ranks' })),
     (wantsAdmin || wantsMod || can('researcher') || can('reviewer')) ? h('div', { class: 'panel' },
       h('h3', { text: 'Your tools' }),
       h('div', { class: 'btns' },
@@ -1634,12 +1634,12 @@ function roleInvitePanel() {
   const msg = h('div'), out = h('div');
   const role = h('select', { id: 'role-invite-role' },
     h('option', { value: 'researcher', text: 'Submitter: can add and send sources' }),
-    can('admin') ? h('option', { value: 'reviewer', text: 'Deshi (student): can check sources and publish' }) : null);
+    can('admin') ? h('option', { value: 'reviewer', text: 'Deshi (student, reviewer): can check sources and publish' }) : null);
   const note = h('input', { id: 'role-invite-note', maxlength: 200, placeholder: 'Who is it for? Only you see this' });
   const email = h('input', { id: 'role-invite-email', type: 'email', placeholder: 'Optional: lock it to their email', autocomplete: 'off' });
   return h('div', { class: 'panel' },
     h('h2', { text: 'Give someone a role' }),
-    h('p', { class: 'muted small', text: 'Anyone can join The Way. This code gives one person Submitter or Deshi (student) access. A Deshi checks and publishes work. It works once and lasts 14 days. The role grant is recorded in the moderation log with your name.' }),
+    h('p', { class: 'muted small', text: 'Anyone can join The Way. This code gives one person Submitter or Deshi (student, reviewer) access. A Deshi checks and publishes work. It works once and lasts 14 days. The role grant is recorded in the moderation log with your name.' }),
     msg,
     h('form', { onsubmit: action(async () => {
       const code = await q(sb.rpc('create_role_invite', { p_role: role.value, p_note: note.value.trim() || null, p_email: email.value.trim() || null }));
@@ -1769,7 +1769,7 @@ async function adminView() {
 
   const rolesOf = (id) => roles.filter((r) => r.member_id === id).map((r) => r.role);
   const nameOf = (id) => (members.find((m) => m.id === id) || {}).display_name || (id ? 'a former member' : 'setup');
-  const ALL = ['moderator', 'researcher', 'reviewer', 'admin'];
+  const ALL = ['moderator', 'researcher', 'reviewer', 'editor', 'admin'];
 
   render(
     h('h1', { text: 'Admin' }), msg,
@@ -1848,7 +1848,7 @@ function roleCodePanel() {
   const code = h('input', { name: 'role-code', autocomplete: 'off', spellcheck: 'false', placeholder: 'WAY-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx' });
   return h('div', { class: 'panel' },
     h('h2', { text: 'Have a role code?' }),
-    h('p', { class: 'muted small', text: 'If a Deshi or admin gave you a code for Submitter or Deshi (student) access, enter it here.' }),
+    h('p', { class: 'muted small', text: 'If a Deshi or admin gave you a code for Submitter or Deshi (student, reviewer) access, enter it here.' }),
     msg,
     h('form', { onsubmit: action(async () => {
       const got = await q(sb.rpc('redeem_role_invite', { code: code.value.trim() }));
