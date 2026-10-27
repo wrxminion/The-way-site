@@ -1,0 +1,22 @@
+/* The Way: My Ballot controls on voter-guide pages (ballot-pick.js). Same ocean palette as guide.css. */
+.bp-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:14px 0;padding:10px 14px;border:1px solid #abedf540;border-radius:12px;background:#051b28b0;font-size:14px}
+.bp-tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#a7f0e9;font-weight:700}
+.bp-intro{color:#d3e6ea}
+.bp-status{color:#bcd7df;flex:1 1 180px}
+.bp-priv{flex-basis:100%;font-size:12px;color:#9fbac2}
+.bp-ctl{display:flex;flex-basis:100%;gap:8px;margin-top:4px}
+.bp-btn,.bp-save,.bp-hl{font:inherit;font-size:13px;line-height:1.2;cursor:pointer;color:#e9ffff;background:#0a3a50;border:1px solid #abedf566;border-radius:99px;padding:6px 12px}
+.bp-btn:hover,.bp-save:hover,.bp-hl:hover{background:#0f4d69}
+.bp-btn[aria-pressed=true],.bp-save[aria-pressed=true]{background:#a6f0e7;color:#052230;border-color:#a6f0e7;font-weight:700}
+.bp-btn:focus-visible,.bp-save:focus-visible,.bp-hl:focus-visible,.bp-open:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.bp-save{font-size:11px;padding:2px 9px;margin-left:6px;vertical-align:baseline;opacity:.85}
+.bp-save:hover,.bp-save[aria-pressed=true]{opacity:1}
+.bp-dock{position:fixed;right:12px;bottom:12px;z-index:60;display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:8px;max-width:calc(100vw - 24px)}
+.bp-open{display:inline-block;background:#a6f0e7;color:#052230;font-weight:700;font-size:14px;text-decoration:none;border-radius:99px;padding:9px 16px;box-shadow:0 8px 28px #0008}
+.bp-open:hover{background:#fff;color:#052230}
+.bp-hl{background:#06283a;padding:9px 14px;box-shadow:0 8px 28px #0008}
+.bp-msg{flex-basis:100%;text-align:right;font-size:13px;color:#e9ffff;background:#06283aee;border-radius:10px;padding:0 10px}
+.bp-msg:empty{display:none;padding:0}
+.bp-msg:not(:empty){padding:6px 10px}
+.bp-wait .bp-status{opacity:.7}
+@media print{.bp-bar,.bp-dock,.bp-save,.bp-ctl{display:none!important}}
