@@ -1,14 +1,21 @@
-// Adds a "Member discussion" link under ballot measures and history cases (and candidates, once switched on here
-// AND in the database). Loaded by waybar.js. The discussion itself lives on /members/discuss.html because the
+// Adds a "Member discussion" link under ballot measures and history cases, and under candidates for admins only
+// (Frank Oct 27; the database enforces the same limit, so this link is only a convenience). Loaded by waybar.js. The discussion itself lives on /members/discuss.html because the
 // public pages' security policy does not allow them to talk to the database.
 (() => {
 'use strict';
-const CANDIDATES_ON = false;   // keep OFF until the lawyer answers questions 47-50, then also run set_comment_kind in the database
 const path = location.pathname;
+// Roles come from what the member area wrote for the top bar ("theway.bar"). To open candidate comments to more
+// people later, change the role test here AND run set_comment_kind_role in the database.
+function isAdmin() {
+  try {
+    const bar = JSON.parse(localStorage.getItem('theway.bar') || 'null');
+    return !!(bar && Array.isArray(bar.roles) && (bar.roles.includes('admin') || bar.roles.includes('super_admin')));
+  } catch (e) { return false; }
+}
 let kind = null, id = null, m;
 if ((m = /^\/preview\/pages\/guide(?:-([a-z]{2}))?\/measures\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path))) { kind = 'measure'; id = `${m[1] || 'co'}-${m[2]}`; }
 else if ((m = /^\/preview\/pages\/guide(?:-([a-z]{2}))?\/local\/m\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path))) { kind = 'measure'; id = `${m[1] || 'co'}-local-${m[2]}`; }
-else if (CANDIDATES_ON && (m = /^\/preview\/pages\/guide(?:-([a-z]{2}))?\/candidates\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path))) { kind = 'candidate'; id = `${m[1] || 'co'}-${m[2]}`; }
+else if (isAdmin() && (m = /^\/preview\/pages\/guide(?:-([a-z]{2}))?\/candidates\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path))) { kind = 'candidate'; id = `${m[1] || 'co'}-${m[2]}`; }
 else if ((m = /^\/preview\/pages\/cases\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path)) && m[1] !== 'index') { kind = 'case'; id = m[1]; }
 if (!kind || id.length > 120) return;
 let signedIn = false;

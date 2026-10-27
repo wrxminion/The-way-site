@@ -10,7 +10,7 @@
 (function () {
   'use strict';
   var KEY = 'theway.bar';
-  var ROLES = ['admin', 'moderator', 'researcher', 'reviewer'];
+  var ROLES = ['admin', 'super_admin', 'moderator', 'researcher', 'reviewer'];
   var GUIDE = /^\/preview\/pages\/guide(-[a-z]{2})?\/$/;
   var path = location.pathname;
   var inMembers = path.indexOf('/members/') === 0;

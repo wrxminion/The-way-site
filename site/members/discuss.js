@@ -111,7 +111,9 @@ async function mount(root) {
   const msg = h('div');
   async function loadComments() {
     const { data, error } = await sb.rpc('comments_for', { p_item: k.key });
-    if (error) { put(listSlot, h('p', { class: 'wd-err', text: /Members only/.test(error.message) ? 'Only active members can read the discussion.' : niceError(error) })); return false; }
+    if (error) {
+      if (/higher role/.test(error.message)) { root.replaceChildren(); root.classList.remove('wd'); return false; }   // limited to a higher role: show nothing
+      put(listSlot, h('p', { class: 'wd-err', text: /Members only/.test(error.message) ? 'Only active members can read the discussion.' : niceError(error) })); return false; }
     const top = data.filter((c) => c.parent_id == null);
     const kids = (id) => data.filter((c) => c.parent_id === id);
     const item = (c, isReply) => {
