@@ -468,12 +468,13 @@ function placePanel() {
 const US = window.US_STATES || {};
 const abbrOf = (name) => Object.keys(US).find((a) => US[a][0] === name) || null;
 const myAbbr = () => { const p = loadPlace(); return p && p.state ? abbrOf(p.state) : null; };
-// The state picked last on the map (this browser only). The small map and the guide card follow
-// it; with nothing picked they follow the saved "Your place" state; with neither, nothing is lit.
+// The state picked last on the map (this browser only). The small map and the guide card follow the saved
+// "Your place" state first (so they always match the line under the cards); with no place saved they
+// follow the state last picked on the map; with neither, nothing is lit.
 const PICK_KEY = 'theway.mapPick';
 const pickedAbbr = () => { try { const a = localStorage.getItem(PICK_KEY); return a && US[a] ? a : null; } catch { return null; } };
 const setPick = (a) => { try { a ? localStorage.setItem(PICK_KEY, a) : localStorage.removeItem(PICK_KEY); } catch { /* private mode */ } };
-const focusAbbr = () => pickedAbbr() || myAbbr();
+const focusAbbr = () => myAbbr() || pickedAbbr();
 const stateLinks = (a) => {
   const ab = a.toLowerCase();
   const own = (cfg.stateLinks || {})[a] || {};
@@ -564,6 +565,48 @@ function rolesView() {
     h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/', text: 'Back to Home' }), h('a', { class: 'button quiet', href: '#/account', text: 'Your account' })));
 }
 
+// The "Review the sources" card on top of the home page (moderators and admins): points, awards and the
+// claims waiting for a second reviewer. The numbers come from 0017 (my_karma, karma_events) and 0023
+// (my_review_summary); until those are run the card still works as a link and shows dashes.
+const AWARD_NAMES = { source_accepted: 'Source accepted', source_verified: 'Source verified', claim_review_agreed: 'Review confirmed',
+  correction_accepted: 'Correction accepted', revision_published: 'Revision published', thread_accepted: 'Thread accepted' };
+function reviewCard() {
+  const stat = (label, node) => h('div', { class: 'rv-stat' }, h('span', { class: 'rv-label', text: label }), node);
+  const points = h('strong', { class: 'rv-num', text: '…' }), pointsNote = h('span', { class: 'rv-note' });
+  const awards = h('div', { class: 'rv-awards' }, h('span', { class: 'rv-note', text: '…' }));
+  const waiting = h('strong', { class: 'rv-num', text: '…' }), waitingNote = h('span', { class: 'rv-note' });
+  const card = h('a', { class: 'review-card', href: '#/review' },
+    h('img', { class: 'rv-art', src: 'art/review.svg?v=1', alt: '', width: 320, height: 180 }),
+    h('div', { class: 'rv-body' },
+      h('strong', { class: 'rv-title', text: 'Review the sources' }),
+      h('span', { class: 'rv-sub', text: 'Check each claim against its sources, flag problems, mark a case reviewed' }),
+      h('div', { class: 'rv-stats' },
+        stat('Your points', h('div', {}, points, pointsNote)),
+        stat('Awards', awards),
+        stat('Waiting for a 2nd review', h('div', {}, waiting, waitingNote)))));
+  (async () => {
+    const dash = (n, note) => { n.textContent = '–'; if (note) note.textContent = ''; };
+    try {
+      const k = (await q(sb.rpc('my_karma')))[0];
+      points.textContent = String(k.total);
+      pointsNote.textContent = ` · ${k.last_30_days >= 0 ? '+' : ''}${k.last_30_days} in 30 days`;
+    } catch { dash(points, pointsNote); }
+    try {
+      const rows = await q(sb.from('karma_events').select('kind').eq('member_id', state.me.id).order('id', { ascending: false }).limit(200));
+      const n = {}; rows.forEach((r) => { n[r.kind] = (n[r.kind] || 0) + 1; });
+      const kinds = Object.keys(n).filter((x) => AWARD_NAMES[x]).sort((a, b) => n[b] - n[a]).slice(0, 3);
+      awards.replaceChildren(...(kinds.length ? kinds.map((x) => h('span', { class: 'rv-chip', text: `${AWARD_NAMES[x]} × ${n[x]}` }))
+        : [h('span', { class: 'rv-note', text: 'None yet' })]));
+    } catch { awards.replaceChildren(h('span', { class: 'rv-note', text: '–' })); }
+    try {
+      const r = (await q(sb.rpc('my_review_summary')))[0];
+      waiting.textContent = String(r.waiting_second);
+      waitingNote.textContent = ` of ${r.reviewed} you checked${r.differ ? ` · ${r.differ} differ` : ''}`;
+    } catch { dash(waiting, waitingNote); }
+  })();
+  return card;
+}
+
 async function homeView() {
   const wantsAdmin = can('admin'), wantsMod = can('moderator');
   const [cats, posts, openReports, notifyCount] = await Promise.all([
@@ -584,13 +627,14 @@ async function homeView() {
   render(
     h('p', { class: 'overline', text: 'Members' }),
     h('h1', { text: `Welcome back, ${state.me.display_name}` }),
+    wantsMod ? reviewCard() : null,
     h('div', { class: 'tiles' },
       guideTile,
       mapTile(),
       tile(LINKS.news, 'News', 'The time machine and the feed'),
       state.hasRecord ? tile('findings.html', 'Findings', 'What we checked, the verdict, and every change since') : null,
       tile(LINKS.cases, 'Civics & History', 'The history cases we wrote, with every source'),
-      wantsMod ? tile('#/review', 'Review the sources', 'Check each claim against its sources, flag problems, mark a case reviewed') : null),
+      null),
     h('p', { class: 'small place-line' }, ...(loadPlace()
       ? ['Your place: ', h('strong', { text: loadPlace().state }), ' · ', h('a', { href: '#/account', text: 'change it in your account' })]
       : [h('a', { href: '#/account', text: 'Save your state in your account' }), ' to open the map and your ballot on it.'])),
