@@ -654,7 +654,6 @@ async function homeView() {
       h('div', { class: 'small post', text: p.body.length > 220 ? p.body.slice(0, 220) + '…' : p.body }))))
       : h('p', { class: 'muted', text: 'Nothing posted yet. Start the first thread in the Commons.' }),
     h('p', {}, h('a', { class: 'button quiet', href: '#/commons', text: 'Open the Commons' })),
-    recent.length ? h('div', {}, h('h2', { text: 'Latest threads' }), threadList(recent, catById)) : null,
     h('h2', { text: 'Rooms' }),
     h('p', { class: 'small muted', text: 'Members may talk about anything, candidates included. The Way itself never takes sides.' }),
     h('ul', { class: 'list panel' }, cats.map((c) => h('li', {},
@@ -715,6 +714,7 @@ async function commonsView() {
         h('li', { text: 'If a post breaks the rules, press Report. Moderators review every report, and every moderation action is logged.' }),
         h('li', { text: 'Posts are plain text. Edits stay visible in the post history.' }))),
     pinned.length ? h('div', {}, h('h2', { text: 'Pinned' }), threadList(pinned, catById)) : null,
+    recent.length ? h('div', {}, h('h2', { text: 'Latest threads' }), threadList(recent, catById)) : null,
     h('h2', { text: 'Rooms' }),
     h('div', { class: 'rooms' }, cats.map((c) => { const s = stats(c); return h('a', { class: 'room', href: `#/c/${c.slug}` },
       ROOM_ART.has(c.slug) ? h('img', { class: 'room-art', src: `art/room-${c.slug}.svg?v=1`, alt: '', width: 320, height: 180, loading: 'lazy' }) : null,
