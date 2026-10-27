@@ -308,34 +308,61 @@ $('locate').addEventListener('click',()=>{
   },()=>{status.textContent='Location not shared. You can still click the map or search an address.';},{enableHighAccuracy:false,timeout:10000});
 });
 
-/* Address search: OpenStreetMap Nominatim, one request per submit, Colorado only. */
+/* Address search: OpenStreetMap Nominatim, one request per second. Colorado first (bounded to the state box),
+   then looser Colorado tries (no unit, no ZIP, street only, then city/ZIP), and only if nothing is found in Colorado
+   do we look anywhere in the U.S. so a visitor from another state gets pointed to that state's guide.
+   A street name that also exists in another state (Maine, say) must never win over a Colorado address. */
 let searching=false;
+const CO_BOX='-109.06,41.01,-102.04,36.99';
+const CO_ABBR=/(^|[\s,])(CO|Colo\.?|Colorado)(?=[\s,]*(\d{5}(-\d{4})?)?\s*$)/i;
 $('search').addEventListener('submit',async e=>{
   e.preventDefault();
   const q=$('q').value.trim();
   if(!q||searching)return;
   searching=true;status.textContent='Looking up that address…';
-  const tries=[q];
   const noUnit=q.replace(/\s*(#|\b(apt|apartment|unit|ste|suite|lot|spc|space|bldg|building|rm|room)\.?)\s*[\w-]+/ig,'').replace(/\s+,/g,',').trim();
-  if(noUnit!==q)tries.push(noUnit);
-  const noZip=noUnit.replace(/[,\s]*\b\d{5}(-\d{4})?\b\s*$/,'').trim();
-  if(noZip!==noUnit)tries.push(noZip);
-  const ctl=new AbortController(),t=setTimeout(()=>ctl.abort(),20000);
+  const zipM=noUnit.match(/\b(\d{5})(-\d{4})?\s*$/);
+  const noZip=noUnit.replace(/[,\s]*\b\d{5}(-\d{4})?\s*$/,'').trim();
+  const typedState=CO_ABBR.test(noZip)||/\bcolorado\b/i.test(noZip);
+  const base=noZip.replace(CO_ABBR,'').replace(/[,\s]+$/,'').trim();          // street and city, no state or ZIP
+  const noNumber=base.replace(/^\s*\d+[A-Za-z]?\s+/,'').trim();                // street and city, no house number
+  const withCO=x=>/\b(CO|Colorado)\b/i.test(x)?x:x+', Colorado';
+  // [query, how exact]: 0 = the address, 1 = the street only, 2 = the ZIP or town only
+  const tries=[[withCO(noUnit),0]];
+  if(noZip!==noUnit)tries.push([withCO(noZip),0]);
+  if(noNumber&&noNumber!==base)tries.push([withCO(noNumber),1]);
+  if(zipM){tries.push(['Colorado '+zipM[1],2]);tries.push([zipM[1],2]);}
+  const seen=new Set(),list=tries.filter(t=>{const k=t[0].toLowerCase();if(seen.has(k))return false;seen.add(k);return true;});
+  const ctl=new AbortController(),t=setTimeout(()=>ctl.abort(),30000);
+  const ask=async(text,bounded)=>{
+    const u=new URL('https://nominatim.openstreetmap.org/search');
+    const o={q:text,format:'jsonv2',limit:'1',countrycodes:'us',addressdetails:'1',viewbox:CO_BOX};
+    if(bounded)o.bounded='1';
+    u.search=new URLSearchParams(o).toString();
+    const r=await fetch(u,{signal:ctl.signal,headers:{'Accept':'application/json'}});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    return r.json();
+  };
   try{
-    let d=[];
-    for(let i=0;i<tries.length&&!d.length;i++){
-      if(i)await new Promise(r=>setTimeout(r,1100));   // Nominatim asks for at most one request per second
-      const u=new URL('https://nominatim.openstreetmap.org/search');
-      // any U.S. address; the Colorado box only ranks Colorado matches first
-      u.search=new URLSearchParams({q:tries[i],format:'jsonv2',limit:'1',countrycodes:'us',addressdetails:'1',viewbox:'-109.06,41.01,-102.04,36.99'}).toString();
-      const r=await fetch(u,{signal:ctl.signal,headers:{'Accept':'application/json'}});
-      if(!r.ok)throw new Error('HTTP '+r.status);
-      d=await r.json();
+    let d=[],how=0,n=0;
+    for(let i=0;i<list.length&&!d.length;i++){
+      if(n++)await new Promise(r=>setTimeout(r,1100));   // Nominatim asks for at most one request per second
+      d=await ask(list[i][0],true);how=list[i][1];
     }
-    if(!d.length){status.textContent='No U.S. match for that address. Try the street, city and state (no apartment number), or click your spot on the map.';return;}
+    if(!d.length&&!typedState){                           // no state typed: allow a match anywhere in the U.S.
+      await new Promise(r=>setTimeout(r,1100));
+      d=await ask(noUnit,false);how=0;
+    }
+    if(!d.length){
+      status.textContent=typedState||!q
+        ?'We could not find that address in Colorado. Try just the street and city, or your ZIP code, or click your spot on the map.'
+        :'No U.S. match for that address. Try the street, city and state (no apartment number), or click your spot on the map.';
+      return;
+    }
     const lat=+d[0].lat,lng=+d[0].lon,addr=d[0].address||{};
-    map.setView([lat,lng],15);
+    map.setView([lat,lng],how?14:15);
     lookup(lat,lng,d[0].display_name,addr);
+    if(how&&status.textContent==='Here is what applies at this spot.')status.textContent='We found your '+(how===1?'street':'ZIP code area')+', not the exact house. If you live near a district line, click your exact spot on the map to check.';
     if(window.matchMedia('(max-width:860px)').matches)$('selected').scrollIntoView({behavior:'smooth',block:'start'});
   }catch(err){
     status.textContent='Address search is unavailable right now. You can still click the map.';
