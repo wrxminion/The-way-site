@@ -265,7 +265,7 @@
   if (/^\/preview\/pages\/guide(-[a-z]{2})?\//.test(path) && !inMembers) {
     var bcss = document.createElement('link'); bcss.rel = 'stylesheet'; bcss.href = '/members/ballot-pick.css?v=3'; document.head.appendChild(bcss);
     var bstore = document.createElement('script'); bstore.src = '/members/ballot-store.js?v=5';
-    bstore.onload = function () { var bp = document.createElement('script'); bp.src = '/members/ballot-pick.js?v=5'; document.body.appendChild(bp); };
+    bstore.onload = function () { var bp = document.createElement('script'); bp.src = '/members/ballot-pick.js?v=6'; document.body.appendChild(bp); };
     document.body.appendChild(bstore);
   }
   var start = function () {

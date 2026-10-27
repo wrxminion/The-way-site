@@ -183,6 +183,26 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   await page.reload(); await page.waitForSelector('.mb-sheet');
   const sheetW = await page.locator('.mb-sheet').innerText();
   ok(/Why \(Phil Weiser\): worked on housing/.test(sheetW) && !/\bx\b.*Why/.test(sheetW) && !/Why \(evil\)/.test(sheetW), 'a candidate Why prints on the sheet; unknown ids are dropped');
+  // a news story listed under "Latest news" on a candidate page can be saved to that candidate's notes
+  await page.route('**/news/data/candidates/co-john-hickenlooper.json', (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ schema: 'theway-news/1', items: [{ title: 'Senator talks housing bill', source: 'Example Times', source_url: 'https://example.com/story-1', published_at: '2026-10-20T10:00:00Z' }] }) }));
+  await page.goto(G + 'candidates/john-hickenlooper.html'); await page.waitForSelector('ul.news li .bp-save');
+  await page.locator('ul.news li .bp-save').click();
+  s = await store();
+  const nf = Object.values(s.facts).find((f) => /Senator talks housing bill/.test(f.text));
+  ok(nf && /Example Times/.test(nf.text) && nf.srcUrl === 'https://example.com/story-1' && nf.subject === 'john-hickenlooper', 'a news story saves with headline, publisher, date, link, under that candidate');
+  ok(/Saved/.test(await page.locator('ul.news li .bp-save').innerText()), 'the news button shows Saved');
+  await page.goto(base + '/members/my-ballot.html?state=CO'); await page.waitForSelector('.mb-sheet');
+  ok((await page.locator('.mb-sheet').innerText()).includes('Senator talks housing bill'), 'the saved story prints on the sheet');
+  // the news page: a story that may be about a measure can be saved to that measure's notes
+  const np = await page.context().newPage();
+  await np.route('**/preview/pages/news/data/latest.json', (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ generated_at: new Date().toISOString(), coverage: {}, items: [{ id: 'abc123', kind: 'news', title: 'Amendment 81 explained', source: 'Example Daily', url: 'https://example.com/a81', published_at: new Date().toISOString(), first_seen_at: new Date().toISOString(), about: [{ label: 'Amendment 81', page: 'guide/measures/amendment-81.html' }] }] }) }));
+  await np.goto(base + '/preview/pages/news/index.html'); await np.waitForSelector('.save-note');
+  await np.locator('.save-note').first().click();
+  s = await np.evaluate(() => JSON.parse(localStorage.getItem('theway.ballot.v1.CO')));
+  const nf2 = Object.values(s.facts).find((f) => /Amendment 81 explained/.test(f.text));
+  ok(nf2 && nf2.contest === 'measure:amendment-81' && nf2.srcUrl === 'https://example.com/a81' && s.contests['measure:amendment-81'], 'a story saved from the news page lands in that measure\'s notes');
+  await np.close();
+  await page.goto(base + '/members/my-ballot.html?state=CO'); await page.waitForSelector('.mb-sheet');
   ok(sheetT.indexOf('check the fiscal note') < (sheetT.indexOf('Other facts') < 0 ? 1e9 : sheetT.indexOf('Other facts')), 'the grabbed note sits under its measure, not in a separate pile');
   await page.evaluate(() => { sessionStorage.setItem('theway.mymarks.v1', JSON.stringify({ state: 'CO', items: [{ p: '/preview/pages/guide/races/governor.html', t: 'Governor and Lieutenant Governor' }, { p: '/preview/pages/guide/measures/amendment-81.html', t: 'Amendment 81' }] })); });
   await page.reload(); await page.waitForSelector('#mark li');

@@ -111,7 +111,7 @@
     factBtns.forEach(function (f) {
       var on = !!d.facts[f.id];
       f.btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-      f.btn.textContent = on ? 'Saved ✓' : '＋ Save';
+      f.btn.textContent = on ? 'Saved ✓' : (f.label || '＋ Save');
     });
     var n = WB.count(d);
     if (dockLink) dockLink.textContent = 'My Ballot' + (n ? ' (' + n + ')' : '');
@@ -243,6 +243,34 @@
     host.appendChild(b);
     factBtns.push({ id: id, btn: b });
   });
+
+
+  // ---- news stories listed under "Latest news" on candidate and measure pages (they arrive after the page loads)
+  (function () {
+    var sec = document.getElementById('news');
+    if (!sec || (KIND !== 'candidate' && KIND !== 'measure')) return;
+    function scan() {
+      var added = false;
+      Array.prototype.forEach.call(sec.querySelectorAll('ul.news > li'), function (li) {
+        if (li.querySelector('.bp-save')) return;
+        var a = li.querySelector('a[href^="http"]:not(.pill)'); if (!a) return;
+        var head = txt(a), date = txt(li.querySelector('.date') || document.createElement('i'));
+        var pub = ((li.childNodes[1] && li.childNodes[1].nodeType === 3 ? li.childNodes[1].textContent : '') || '').replace(/^\s+|[\s:]+$/g, '');
+        var text = head + ' (' + [pub, date].filter(Boolean).join(', ') + ')';
+        if (text.length > WB.LIMITS.text) text = text.slice(0, WB.LIMITS.text);
+        var id = WB.factId(location.pathname, 'news:' + a.href);
+        var b = btn('bp-save', '＋ Save to my notes', 'Save this news story to my ballot notes: ' + head.slice(0, 70));
+        b.setAttribute('aria-pressed', 'false');
+        b.addEventListener('click', function () { saveFact(text, { url: a.href, label: pub || a.hostname }, 'item', id); });
+        li.appendChild(document.createTextNode(' ')); li.appendChild(b);
+        factBtns.push({ id: id, btn: b, label: '＋ Save to my notes' });
+        added = true;
+      });
+      if (added) render();
+    }
+    new MutationObserver(scan).observe(sec, { childList: true, subtree: true });
+    scan();
+  })();
 
   // ---- dock: link to the planner, status line, and "save highlighted text"
   var dock = el('div', 'bp-dock');

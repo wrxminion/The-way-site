@@ -101,6 +101,35 @@
     renderKinds();
   }
 
+  // "Save to my ballot notes": keeps this story (headline, publisher, date, link) with the candidate or measure it may be about,
+  // in this browser only (members/ballot-store.js). Nothing is sent anywhere.
+  function saveButton(it, x){
+    const WB = window.WayBallot;
+    const m = WB && String(x.page).match(/^guide(?:-([a-z]{2}))?\/(measures|candidates)\/([a-z0-9-]+)\.html$/);
+    if (!m) return null;
+    const ST = m[1] ? m[1].toUpperCase() : 'CO';
+    if (!WB.STATES[ST]) return null;
+    const date = it.pub != null ? fmtDate.format(it.pub) : '';
+    const text = (it.title + ' (' + [it.source, date].filter(Boolean).join(', ') + ')').slice(0, WB.LIMITS.text);
+    const id = WB.factId('/news/' + x.page, 'news:' + it.url);
+    const b = el('button', 'save-note', '＋ Save to my ballot notes'); b.type = 'button';
+    b.setAttribute('aria-label', 'Save this story to my ballot notes for ' + x.label);
+    const sync = () => { const on = !!WB.read(ST).facts[id]; b.textContent = on ? 'Saved ✓' : '＋ Save to my ballot notes'; b.setAttribute('aria-pressed', String(on)); };
+    b.addEventListener('click', () => {
+      const d = WB.read(ST);
+      if (d.facts[id]) delete d.facts[id];
+      else {
+        const guide = '/preview/pages/' + x.page, measure = m[2] === 'measures';
+        if (measure && !d.contests['measure:' + m[3]]) d.contests['measure:' + m[3]] = { key:'measure:' + m[3], kind:'measure', title:x.label, url:guide, seats:1, picks:[], undecided:false, compare:[], note:'', options:[{id:'yes', label:'Yes', sub:'', url:''}, {id:'no', label:'No', sub:'', url:''}] };
+        d.facts[id] = { id, kind:'item', text, contest:measure ? 'measure:' + m[3] : '', subject:measure ? '' : m[3], subjectLabel:measure ? '' : x.label,
+          pageUrl:guide, pageTitle:x.label, srcUrl:it.url, srcLabel:it.source, print:true, compare:true, side:'', note:'', ts:Date.now() };
+      }
+      WB.write(WB.clean(d, ST)); sync();
+    });
+    sync();
+    return b;
+  }
+
   function card(it){
     const li = el('li', 'card');
     const src = el('div', 'src');
@@ -139,6 +168,8 @@
         if (seen.size) p.append(document.createTextNode(', '));
         seen.add(x.label);
         p.append(a);
+        const sv = saveButton(it, x);
+        if (sv) p.append(document.createTextNode(' '), sv);
       });
       li.append(p);
     }
