@@ -73,7 +73,11 @@ export async function handler(req: Request, env = Deno.env, mk = createClient): 
     // fixed Cloudflare address, not a user-supplied link
     const r = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body });
     const j = await r.json().catch(() => ({}));
-    if (!j.success) return reply(origin, 400, { error: "The human check did not pass. Please try again." });
+    if (!j.success) {
+      // Cloudflare's reason codes (for example invalid-input-secret), never the secret or the token
+      console.log("turnstile failed:", JSON.stringify(j["error-codes"] ?? []), "hostname:", j.hostname ?? "");
+      return reply(origin, 400, { error: "The human check did not pass. Please try again." });
+    }
   }
   const day = new Date().toISOString().slice(0, 10);
   const rateKey = member ? await sha256hex(`${salt}|m|${member}`) : await sha256hex(`${salt}|${day}|${ip}`);

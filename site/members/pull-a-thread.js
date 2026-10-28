@@ -175,7 +175,7 @@ function draftPanel(receipt, t, box, shot) {
     box.replaceChildren(h('p', { role: 'status', text: 'Deleted. The text and your note are gone, and the picture is removed.' }));
     live.textContent = 'Deleted.';
   });
-  wrap.append(
+  wrap.append(...[
     h('p', { text: shot ? 'Our own program read this from your picture and may have made mistakes. Fix anything that is wrong.'
       : 'Our own program hid the names of the people who wrote the posts. Names inside the posts were left alone. Check that nothing you want private is left.' }),
     t.hide_names && shot ? h('p', { text: 'We also hid the names of the people who wrote the posts. Names inside the posts were left alone.' }) : null,
@@ -183,7 +183,7 @@ function draftPanel(receipt, t, box, shot) {
     !t.ocr_text && shot ? h('p', { text: 'We could not read any text in your picture. Type or paste what it says instead.' }) : null,
     h('label', { for: 'pt-ocr-text', text: shot ? 'What the screenshot says' : 'Your text' }), ta,
     h('p', { class: 'muted small', text: `Not sent yet. If you do not press Send within about ${Math.max(1, t.draft_minutes_left || 60)} minutes, we delete ${shot ? 'the picture and ' : ''}this text for good.` }),
-    h('div', { class: 'btns' }, send, del), out);
+    h('div', { class: 'btns' }, send, del), out].filter(Boolean));   // DOM append() would print "null"
   box.append(wrap);
 }
 function watch(receipt, box, draft) {
