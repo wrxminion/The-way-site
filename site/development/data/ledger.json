@@ -760,6 +760,36 @@
       "why": "Added automatically when the change was merged.",
       "status_as_of_2026_10_25": "Merged in PR #76; live appearance and behavior not yet verified.",
       "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live page."
+    },
+    {
+      "id": "D079",
+      "decision_date_or_range": "2026-10-28",
+      "title": "Ledger posting starts from a ledger: line, no label needed",
+      "origin": "Maintainer (PR #62)",
+      "decision_or_proposal": "Ledger posting now starts from a line beginning with ledger: in the pull request text, so a label is no longer needed.",
+      "why": "Added automatically when the change was merged.",
+      "status_as_of_2026_10_25": "Merged in PR #62; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live page."
+    },
+    {
+      "id": "D080",
+      "decision_date_or_range": "2026-10-28",
+      "title": "Ledger posting not blocked by a sentence mentioning the skip wording",
+      "origin": "Maintainer (PR #63)",
+      "decision_or_proposal": "Ledger posting is no longer blocked when a pull request description only mentions the skip wording inside a sentence.",
+      "why": "Added automatically when the change was merged.",
+      "status_as_of_2026_10_25": "Merged in PR #63; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live page."
+    },
+    {
+      "id": "D081",
+      "decision_date_or_range": "2026-10-28",
+      "title": "Failed ledger posts now say which step failed",
+      "origin": "Maintainer (PR #64)",
+      "decision_or_proposal": "A failed ledger post now reports which step failed, so the cause can be read without special access.",
+      "why": "Added automatically when the change was merged.",
+      "status_as_of_2026_10_25": "Merged in PR #64; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live page."
     }
   ]
 }
