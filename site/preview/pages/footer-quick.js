@@ -9,8 +9,9 @@
     nav.setAttribute('aria-label', 'About and policies');
     var about = document.createElement('a');
     about.href = '/preview/pages/deeper.html'; about.textContent = 'About';
-    var methods = document.createElement('span');
-    methods.textContent = 'Methodology (coming soon)';
+    var methods = document.createElement('a');
+    methods.href = '/development/methods/';
+    methods.textContent = 'Methodology';
     var legal = document.createElement('span');
     legal.textContent = 'Legal (coming soon)';
     nav.appendChild(about); nav.appendChild(methods); nav.appendChild(legal);

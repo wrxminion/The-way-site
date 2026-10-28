@@ -63,6 +63,7 @@ if (fs.existsSync(research)) {
   }
 }
 recs.push({ u: '/research/', t: 'Research library', s: 'Research', y: 'Collection', p: 'United States', yr: 0, d: 'Versioned research packages with data files, source registers and citation text.', k: 'research packages datasets', v: '' });
+recs.push({ u: '/development/methods/research-methodology.html', t: 'Research methodology: working draft', s: 'Research', y: 'Methods paper', p: 'United States', yr: 0, d: 'Version 0.1. Proposed research standards for sources, uncertainty, competing explanations, human review and corrections.', k: 'methodology methods evidence preservation AI limitations working draft proposed', v: '' });
 recs.push({ u: '/timeline/', t: 'Timeline: Intent vs. Outcome', s: 'Civics & History', y: 'Timeline', p: 'United States', yr: 1933, d: 'For each moment, the stated goal on one side and what the records show on the other.', k: 'banking 1933 1991 intent outcome', v: '' });
 recs.sort((a, b) => a.u.localeCompare(b.u));
 const out = { built: new Date().toISOString().slice(0, 10), count: recs.length, recs };

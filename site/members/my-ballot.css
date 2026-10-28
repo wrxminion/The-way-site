@@ -49,7 +49,7 @@
 
 @media print{
   html,body{background:#fff!important;color:#000!important}
-  body:before,.waybar,.noprint,.foot,.michi-ocean-water,.toc{display:none!important}
+  body:before,.waybar,.noprint,.foot,.michi-ocean-water,.toc,body>footer,.essay-quick-links,.whale-lane{display:none!important}
   main{max-width:none;padding:0}
   .mb-sheet{background:#fff;padding:0;border-radius:0;font-size:12pt}
   .mb-sheet a{color:#000;text-decoration:none}
