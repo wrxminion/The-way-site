@@ -86,7 +86,25 @@ const srv = http.createServer((q, s) => {
     await pg.goto(`http://localhost:${srv.address().port}/members/_t.html`); await pg.waitForTimeout(500); await pg.evaluate(() => window.scrollTo(0, 600)); await pg.waitForTimeout(300);
     const sizes = await pg.evaluate(() => ['.wb-floating a', '.wb-dock-login', '.wb-dock-signup', '.wb-thread-fab', '.wb-bubbles-toggle'].map((q) => { const r = document.querySelector(q).getBoundingClientRect(); return [q, Math.round(r.width), Math.round(r.height)]; }));
     ok(sizes.every(([, w, h]) => w >= 40 && h >= 40), 'every bubble and link is at least 40 px each way (' + sizes.map((x) => x.join(' ')).join(', ') + ')');
+    // hover motion on our own art
+    const anim = (q, on) => pg.evaluate(([qq]) => getComputedStyle(document.querySelector(qq)).animationName, [q]);
+    await pg.hover('.wb-floating a', { force: true }); await pg.waitForTimeout(100);
+    ok(await anim('.wb-floating .wb-diver') === 'wb-swim', 'the diver swims on hover');
+    await pg.hover('.wb-dock-auth', { force: true }); await pg.waitForTimeout(100);
+    ok(await anim('.wb-dock-auth .wb-art') === 'wb-pop', 'the Log in bubble pops on hover');
+    await pg.hover('.wb-thread-fab', { force: true }); await pg.waitForTimeout(100);
+    ok(await anim('.wb-thread-fab .wb-art') === 'wb-tug', 'the Pull a thread bubble tugs on hover');
+    await pg.mouse.move(5, 5);
+    await pg.focus('.wb-dock-login'); await pg.waitForTimeout(100);
+    ok(await anim('.wb-dock-auth .wb-art') === 'wb-pop', 'and on keyboard focus');
     await ctx.close();
+    const rc = await b.newContext({ viewport: { width: 1280, height: 700 }, reducedMotion: 'reduce' });
+    const pr = await rc.newPage();
+    await pr.route('**/rest/**', (r) => r.fulfill({ status: 200, body: 'null', contentType: 'application/json' }));
+    await pr.goto(`http://localhost:${srv.address().port}/members/_t.html`); await pr.waitForTimeout(500); await pr.evaluate(() => window.scrollTo(0, 600)); await pr.waitForTimeout(300);
+    await pr.hover('.wb-floating a', { force: true }); await pr.hover('.wb-dock-auth', { force: true }); await pr.hover('.wb-thread-fab', { force: true }); await pr.waitForTimeout(100);
+    ok(['.wb-floating .wb-diver', '.wb-dock-auth .wb-art', '.wb-thread-fab .wb-art'].every((q) => true) && (await pr.evaluate(() => ['.wb-floating .wb-diver', '.wb-dock-auth .wb-art', '.wb-thread-fab .wb-art'].map((q) => getComputedStyle(document.querySelector(q)).animationName))).every((n) => n === 'none'), 'reduced motion: no hover motion');
+    await rc.close();
   }
   await b.close(); srv.close(); process.exit(fail);
 })();

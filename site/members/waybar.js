@@ -97,10 +97,21 @@
   }
   // The Pull a Thread link in the signed-out header is ChatGPT's artwork (the words drawn as the thread, a hand pulling it).
   // The words are real text to a screen reader through the image's alt text.
+  // The thread lettering in the menus. Slack at rest; on mouse over and keyboard focus the thread is pulled taut once (about a second)
+  // and stays taut until the pointer or focus leaves. Reduced motion gets the taut still and no animation; touch gets the slack still.
   function threadArt(a) {
     a.textContent = '';
-    a.appendChild(el('img', { class: 'wb-pat-img', src: '/members/art/pull-a-thread-words-1x.webp',
-      srcset: '/members/art/pull-a-thread-words-1x.webp 1x, /members/art/pull-a-thread-words-2x.webp 2x', alt: 'Pull a Thread', width: '136', height: '44', decoding: 'async' }));
+    var ART = '/members/art/thread-', reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var still = function (n) { return ART + n + '-240.webp 1x, ' + ART + n + '-480.webp 2x'; };
+    var img = el('img', { class: 'wb-pat-img', src: ART + (reduce ? 'taut' : 'slack') + '-240.webp', srcset: still(reduce ? 'taut' : 'slack'), alt: 'Pull a Thread', width: '136', height: '43', decoding: 'async' });
+    if (!reduce) {
+      var pull = function () { img.removeAttribute('srcset'); img.src = ''; void img.offsetWidth; img.src = ART + 'pull-480.webp'; };
+      var rest = function () { img.src = ART + 'slack-240.webp'; img.srcset = still('slack'); };
+      a.addEventListener('mouseenter', pull); a.addEventListener('focus', pull);
+      a.addEventListener('mouseleave', rest); a.addEventListener('blur', rest);
+      if (!(navigator.connection && navigator.connection.saveData)) setTimeout(function () { new Image().src = ART + 'pull-480.webp'; }, 2500);   // so the first hover does not wait
+    }
+    a.appendChild(img);
     return a;
   }
   // Site search in the bar on every page: a plain form that sends the visitor to /search/?q=... (done in script,
@@ -507,8 +518,16 @@
   var signedOutNow = false;
   // One bubble picture: a decorative image (the words inside it are repeated as real text, hidden or laid over it).
   function bubbleArt(name, w, h) {
-    var base = '/members/art/bubble-' + name;
-    return el('img', { class: 'wb-art', src: base + '-1x.webp', srcset: base + '-1x.webp 1x, ' + base + '-2x.webp 2x', alt: '', 'aria-hidden': 'true', width: String(w), height: String(h), style: 'width:' + w + 'px', decoding: 'async' });
+    var mk = function (file, cls) {
+      var base = '/members/art/bubble-' + file;
+      return el('img', { class: cls, src: base + '-1x.webp', srcset: base + '-1x.webp 1x, ' + base + '-2x.webp 2x', alt: '', 'aria-hidden': 'true', width: String(w), height: String(h), style: 'width:' + w + 'px', decoding: 'async' });
+    };
+    if (name !== 'back') return mk(name, 'wb-art');
+    // the diver is its own layer so it can swim up a little on hover; at rest the two layers look like one picture
+    var stack = el('span', { class: 'wb-art-stack', style: 'width:' + w + 'px' });
+    stack.appendChild(mk('back-base', 'wb-art'));
+    stack.appendChild(mk('back-diver', 'wb-art wb-diver'));
+    return stack;
   }
   function syncDock() {
     var dock = document.querySelector('.wb-dock');
