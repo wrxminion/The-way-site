@@ -28,7 +28,7 @@
     return n;
   }
   function dayLong() { return new Date().toLocaleDateString(undefined, { dateStyle: 'long' }); }
-  function guideBase(st) { return '/preview/pages/guide' + (st === 'CO' ? '' : '-' + st.toLowerCase()) + '/'; }
+  function guideBase(st) { return '/guide' + (st === 'CO' ? '' : '-' + st.toLowerCase()) + '/'; }
   function optLabel(c, id) { var o = c.options.filter(function (x) { return x.id === id; })[0]; return o ? o.label : id; }
   function link(href, text, ext) { return h('a', { href: href, target: ext ? '_blank' : null, rel: ext ? 'noopener noreferrer' : null, text: text }); }
 
@@ -159,7 +159,7 @@
     try {
       var j = JSON.parse(sessionStorage.getItem(MARKS) || 'null');
       if (!j || j.state !== ST || !Array.isArray(j.items)) return [];
-      return j.items.filter(function (i) { return i && /^\/preview\/pages\/guide(-[a-z]{2})?\/(races|measures|local\/m)\/[a-z0-9-]+\.html$/.test(i.p); }).slice(0, 80);
+      return j.items.filter(function (i) { return i && /^\/guide(-[a-z]{2})?\/(races|measures|local\/m)\/[a-z0-9-]+\.html$/.test(i.p); }).slice(0, 80);
     } catch (e) { return []; }
   }
   function slugOf(p) { return (/\/([a-z0-9-]+)\.html$/.exec(p) || [])[1] || ''; }
@@ -323,7 +323,7 @@
         h('ul', { class: 'list' }, extra.map(function (i) { return markRow(d, i); })));
     }
     if (!mine.length && !extra.length) {
-      kids.push(h('p', { class: 'notice warn' }, 'Not sure which races are yours? ', link('/preview/pages/states/', 'Pick your state or enter your address'), ' on the map and press "Open my ballot". Your own races will be listed here. Until then you can open any race below.'));
+      kids.push(h('p', { class: 'notice warn' }, 'Not sure which races are yours? ', link('/states/', 'Pick your state or enter your address'), ' on the map and press "Open my ballot". Your own races will be listed here. Until then you can open any race below.'));
     }
     kids.push(h('h3', { text: 'Every race and measure in ' + WB.STATES[ST] }));
     if (ui.all === 'loading') kids.push(h('p', { class: 'muted', text: 'Loading the list…' }));
@@ -662,7 +662,7 @@
       if (!ST) {
         kids.push(h('section', { class: 'panel noprint' }, h('h2', { text: 'Start in the voter guide' }),
           h('p', {}, 'Nothing saved yet. Open any state\'s guide, then use the My Ballot buttons on races, candidates and ballot measures.'),
-          h('div', { class: 'btns' }, h('a', { class: 'button primary', href: guideBase('CO'), text: 'Colorado voter guide' }), h('a', { class: 'button', href: '/preview/pages/states/', text: 'Pick another state' }))));
+          h('div', { class: 'btns' }, h('a', { class: 'button primary', href: guideBase('CO'), text: 'Colorado voter guide' }), h('a', { class: 'button', href: '/states/', text: 'Pick another state' }))));
         app.replaceChildren.apply(app, kids); return;
       }
     }

@@ -10,7 +10,7 @@ if (!m) { mount.textContent = 'This page needs an item to discuss. Go back and u
 const title = String(q.get('title') || '').slice(0, 200);
 document.getElementById('dp-title').textContent = title;
 if (title) document.title = `Discussion: ${title.slice(0, 60)} · The Way`;
-const back = { news: ['/preview/pages/news/', 'Back to the news'], case: [`/preview/pages/cases/${m[2]}.html`, 'Back to the case'], measure: null, candidate: null }[m[1]];
+const back = { news: ['/news/', 'Back to the news'], case: [`/cases/${m[2]}.html`, 'Back to the case'], measure: null, candidate: null }[m[1]];
 const pb = document.getElementById('dp-back');
 if (back) { const a = document.createElement('a'); a.href = back[0]; a.textContent = back[1]; pb.append(a); }
 else { pb.append('Use your browser\'s back button to return to the page you were reading.'); }

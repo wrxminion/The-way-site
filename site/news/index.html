@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#176b85">
+<meta name="robots" content="noindex,nofollow">
+<title>Information Currents — The Way</title>
+<meta name="description" content="Election, voting and policy news as it arrives, and a way to travel back to what was known on any day.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="news.css?v=d0cc3cf8">
+<link rel="stylesheet" href="/members/waybar.css?v=14">
+<link rel="stylesheet" href="/banner.css?v=1"><link rel="stylesheet" href="/redesign.css?v=1"><link rel="stylesheet" href="/water-depth.css?v=1">
+<link rel="canonical" href="https://michiinstitute.com/news/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Information Currents — The Way">
+<meta property="og:description" content="Election, voting and policy news as it arrives, and a way to travel back to what was known on any day.">
+<meta property="og:url" content="https://michiinstitute.com/news/">
+<meta property="og:site_name" content="The Way | Michi Institute">
+<meta property="og:image" content="https://michiinstitute.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="water-depth">
+<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-mid wb-pub" aria-label="Sections"><a href="/states/">Ballot</a><a href="/news/">News</a><a href="/cases/">Civics &amp; History</a><a href="/foundation.html">Why?</a></nav><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+
+<div class="hero-wrap"><img class="hero-art" src="/img/cards/hero-news-1600.webp" srcset="/img/cards/hero-news-800.webp 800w, /img/cards/hero-news-1600.webp 1600w" sizes="100vw" width="1600" height="480" alt="" decoding="async"><header class="top">
+  <div class="eyebrow">The Way / Observatory / Information Currents</div>
+  <h1>What is moving through the water?</h1>
+  <p>Election, voting and policy headlines collected from named news outlets, sorted by time and nothing else. Links may go through Google News before reaching the publisher. Nothing here has been checked yet: a headline shows what someone published, not that it is true.</p>
+
+  </header></div>
+<div class="refine-bar"><div class="inner"><div class="modes" role="tablist" aria-label="View">
+    <button type="button" role="tab" id="tab-now" aria-selected="true" aria-controls="panel">Latest headlines</button>
+    <button type="button" role="tab" id="tab-then" aria-selected="false" aria-controls="panel">Travel back in time</button>
+  </div>
+
+  <div class="timemachine" id="timemachine" hidden>
+    <label for="asof">Show what The Way had seen by the end of</label>
+    <div class="tm-row">
+      <input type="date" id="asof">
+      <div class="presets" role="group" aria-label="Quick dates">
+        <button type="button" data-back="0">Today</button>
+        <button type="button" data-back="1">Yesterday</button>
+        <button type="button" data-back="7">One week ago</button>
+        <button type="button" id="first-day">First day kept</button>
+      </div>
+    </div>
+    <p class="tm-note" id="tmnote">Pick a day. You'll see the headlines from the seven days before it, exactly as they looked when we first saw them. Nothing learned later leaks in.</p>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filters">
+    <label class="sr" for="q">Search headlines</label>
+    <input id="q" type="search" placeholder="Search headlines or sources" maxlength="120" autocomplete="off">
+    <div class="statesel" id="places"><label for="st">Where</label><select id="st" class="st-select"><option value="" selected>All states</option><option value="al">Alabama</option><option value="ak">Alaska</option><option value="az">Arizona</option><option value="ar">Arkansas</option><option value="ca">California</option><option value="co">Colorado</option><option value="ct">Connecticut</option><option value="de">Delaware</option><option value="dc">District of Columbia</option><option value="fl">Florida</option><option value="ga">Georgia</option><option value="hi">Hawaii</option><option value="id">Idaho</option><option value="il">Illinois</option><option value="in">Indiana</option><option value="ia">Iowa</option><option value="ks">Kansas</option><option value="ky">Kentucky</option><option value="la">Louisiana</option><option value="me">Maine</option><option value="md">Maryland</option><option value="ma">Massachusetts</option><option value="mi">Michigan</option><option value="mn">Minnesota</option><option value="ms">Mississippi</option><option value="mo">Missouri</option><option value="mt">Montana</option><option value="ne">Nebraska</option><option value="nv">Nevada</option><option value="nh">New Hampshire</option><option value="nj">New Jersey</option><option value="nm">New Mexico</option><option value="ny">New York</option><option value="nc">North Carolina</option><option value="nd">North Dakota</option><option value="oh">Ohio</option><option value="ok">Oklahoma</option><option value="or">Oregon</option><option value="pa">Pennsylvania</option><option value="ri">Rhode Island</option><option value="sc">South Carolina</option><option value="sd">South Dakota</option><option value="tn">Tennessee</option><option value="tx">Texas</option><option value="ut">Utah</option><option value="vt">Vermont</option><option value="va">Virginia</option><option value="wa">Washington</option><option value="wv">West Virginia</option><option value="wi">Wisconsin</option><option value="wy">Wyoming</option></select></div>
+    <div class="chips" id="kinds" role="group" aria-label="Type of source"></div>
+  </div>
+</div></div>
+
+<main class="layout" id="panel" role="tabpanel" aria-labelledby="tab-now">
+  <section class="feed" aria-live="polite" aria-busy="true">
+    <div class="banner" id="banner" hidden></div>
+    <p class="status" id="status">Loading the current…</p>
+    <ol class="cards" id="cards"></ol>
+    <button type="button" class="more" id="more" hidden>Show more</button>
+  </section>
+  <aside class="sidebar">
+    <h2>Reading the current</h2>
+    <dl class="facts" id="facts"></dl>
+    <h3>How to read a card</h3>
+    <ul class="howto">
+      <li><b>Published</b> is the time the source claims. It can be wrong or changed later.</li>
+      <li><b>First seen</b> is when The Way's archive first recorded it. Travel back in time uses this, so a story never appears before we actually had it.</li>
+      <li><b>Unchecked</b> means found automatically and not yet reviewed by a person.</li>
+      <li><b>Snapped</b> means a full copy of the page was saved in our archive, with a fingerprint that proves it hasn't changed since. <b>Not snapped</b> means we kept the headline, link and times, but no copy of the page yet. If a story is edited or deleted later, a snapped copy still shows what it said.</li>
+    </ul>
+    <h3>What this is not</h3>
+    <p>It is not a poll. How often something is covered says nothing about what voters think. Coverage leans toward big national outlets, and some sources are missing.</p>
+    <p>We show headlines and links only. The full story belongs to the people who wrote it, so read it at the source.</p>
+  </aside>
+</main>
+
+<footer class="bottom">
+  <p><strong>Privacy.</strong> This page loads one file from this site and runs everything in your browser. Clicking a headline may go through Google News or another link provider before reaching the publisher, which has its own rules. No cookies, no tracking.</p>
+  <p>The Way takes no side on any candidate or measure. Items are in time order. Nothing is ranked by clicks or popularity.</p>
+  <p class="motto">Not left. Not right. We are The Way.</p>
+</footer>
+<script src="/members/ballot-store.js?v=6"></script>
+<script src="news.js?v=save-notes-1"></script>
+<script src="/members/waybar.js?v=27" defer></script>
+</body>
+</html>

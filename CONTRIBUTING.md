@@ -12,7 +12,7 @@ How changes reach `main`: Codex and any larger change go through a pull request 
 6. Pages must work under the strict content security policy: no inline `<script>`, no inline `style=` attributes, no external images or fonts. Put code in files.
 7. Keep URLs and record IDs stable. If a page moves, leave a redirect page at the old address.
 8. Never commit secrets, credentials, `.htaccess` files, database files, member data, logs or zip files. See `OUTSIDE-GIT.md` for what lives elsewhere.
-9. Do not edit the files under `site/preview/pages/news/data/` by hand. A scheduled task rewrites them.
+9. Do not edit the files under `site/news/data/` by hand. A scheduled task rewrites them.
 10. Use plain language, short sentences, and no em dashes.
 
 11. Database SQL lives in `supabase/` as reference only. It is not deployed. Never edit an applied migration; add a new numbered file, and do not run or merge anything in `supabase/members-backend/draft-unapproved/`.

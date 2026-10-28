@@ -24,14 +24,14 @@ const CASES = [['ok', 'OK', 35.47, -97.52], ['nc', 'NC', 35.78, -78.64], ['me', 
     await page.route(/tile\.openstreetmap|cloudflareinsights|geocoding\.geo\.census\.gov/, (r) => r.abort());
     const j = (o) => ({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(o) });
     const poly = { type: 'FeatureCollection', features: [{ type: 'Feature', properties: { d: '1', n: 'One', name: 'One', NAME: 'One' }, geometry: { type: 'Polygon', coordinates: [[[-180, 15], [-60, 15], [-60, 72], [-180, 72], [-180, 15]]] } }] };
-    const g = '/preview/pages/guide-' + sl + '/';
+    const g = '/guide-' + sl + '/';
     await page.route(/\/data\/[a-z-]+\.geojson/, (r) => r.fulfill(j(poly)));
     await page.route(/\/data\/config\.json/, (r) => r.fulfill(j({ name: ST, abbr: ST, bounds: [[lat - 2, lon - 2], [lat + 2, lon + 2]], officialList: { url: 'https://example.gov/', label: 'Official list' }, sampleBallot: { url: 'https://example.gov/', label: 'Sample ballot' }, senateNotUp: 'Not up.', houseNotOnBallot: 'Not up.' })));
     await page.route(/\/data\/ballot\.json/, (r) => r.fulfill(j({ election: 'General election', status: 'Test.', statewide: [{ code: 'SQ 1', title: 'Test measure', what: 'A test.', yes: 'Yes does a.', no: 'No does b.', needs: 'Majority' }], links: {} })));
     await page.route(/\/data\/candidates\.json/, (r) => r.fulfill(j({ statewideOrder: ['gov'], raceNames: { gov: 'Governor' }, races: { gov: [{ name: 'Ann Able', party: 'Independent' }, { name: 'Bo Baker', party: 'Independent' }] } })));
     await page.route(/\/data\/guide\.json/, (r) => r.fulfill(j({ base: g, home: '', races: { gov: 'races/governor.html' }, measures: { 'SQ 1': 'measures/sq-1.html' }, candidates: { 'gov|Ann Able': 'candidates/ann-able.html', 'gov|Bo Baker': 'candidates/bo-baker.html' }, local: {} })));
-    await page.addInitScript((a) => { try { if (!sessionStorage.getItem('seeded')) { sessionStorage.setItem('seeded', '1'); localStorage.setItem('theway.ballot.v1.' + a[0], JSON.stringify({ v: 1, state: a[0], contests: { 'race:governor': { key: 'race:governor', kind: 'race', title: 'Governor', url: '/preview/pages/guide-' + a[1] + '/races/governor.html', seats: 1, options: [{ id: 'ann-able', label: 'Ann Able' }], picks: ['ann-able'] } }, facts: {} })); } } catch (e) {} }, [ST, sl]);
-    await page.goto(base + '/preview/pages/map-' + sl + '/index.html');
+    await page.addInitScript((a) => { try { if (!sessionStorage.getItem('seeded')) { sessionStorage.setItem('seeded', '1'); localStorage.setItem('theway.ballot.v1.' + a[0], JSON.stringify({ v: 1, state: a[0], contests: { 'race:governor': { key: 'race:governor', kind: 'race', title: 'Governor', url: '/guide-' + a[1] + '/races/governor.html', seats: 1, options: [{ id: 'ann-able', label: 'Ann Able' }], picks: ['ann-able'] } }, facts: {} })); } } catch (e) {} }, [ST, sl]);
+    await page.goto(base + '/map-' + sl + '/index.html');
     await page.waitForFunction(() => !/Loading/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
     ok(await page.locator('.bb-saved').isVisible(), ST + ': saved picks and no address yet shows the "Your picks are saved" line');
     await page.waitForFunction(() => !/Loading/.test(document.getElementById('status').textContent), null, { timeout: 30000 });

@@ -10,7 +10,7 @@ This repository is public. It holds the website source only. The items below exi
 | Database (members, posts, reviews, sign-ins) | A hosted Supabase project | Private user data. The SQL that defines the tables and rules is in `supabase/` (reference only, not deployed); which of it has been applied to the live project is not recorded in git. The site only carries the project URL and a publishable key in `site/members/config.js`, which is public by design. Row-level security protects the data. Service keys and the database password are never in git. |
 | Email sending settings, Turnstile secret, analytics tokens beyond the public beacon | The Supabase dashboard and the host | Secrets. |
 | Deploy credentials (host SSH key, cPanel login) | The maintainer's workstation and the host | Secrets. The deploy copies only what `.cpanel.yml` lists. |
-| News collector and publisher scripts | The maintainer's workstation | Not part of the site. They write the JSON files under `site/preview/pages/news/data/` and push them to this repository on a schedule. |
+| News collector and publisher scripts | The maintainer's workstation | Not part of the site. They write the JSON files under `site/news/data/` and push them to this repository on a schedule. |
 | Private news archive (every headline ever collected, with the time it was fetched) | The maintainer's workstation | Large, append-only, and never trimmed. The site publishes only the newest 200 per state and 3,000 overall. |
 | Evidence vault (dated copies of cited government sources: original files, screenshots, text, OCR, hashes, provenance records) | The maintainer's workstation | Private copies. Only federal works may be shown publicly. |
 | Logs of collector runs and the weekly method audit reports | The maintainer's workstation | Operational records. |
@@ -20,9 +20,9 @@ This repository is public. It holds the website source only. The items below exi
 ## How the live site relates to this repository
 
 - `main` is the live site. The host pulls `main` and runs the recipe in `.cpanel.yml` about every 15 minutes. Anything merged to `main` goes live.
-- The recipe copies `site/*.*`, `site/members/`, `site/preview/pages/`, `site/timeline/`, `site/development/`, `site/ai/`, `site/layout/`, `site/research/` and `site/search/`. It deletes nothing on the server.
+- The recipe copies `site/*.*`, `site/members/`, the guide, map, cases, case-studies, states, news and img folders, `site/timeline/`, `site/development/`, `site/ai/`, `site/layout/`, `site/research/` and `site/search/`. It deletes nothing on the server.
 - Some files on the server are not in this repository on purpose: `.htaccess` files and any host-only configuration. News data for candidates and measures that already existed on the server was copied into the repository on October 26, 2026 so a deploy cannot overwrite newer server files with older ones.
-- The scheduled news task commits only under `site/preview/pages/news/data/`. It pushes straight to `main`, so branch protection must let the repository owner bypass the pull-request rule.
+- The scheduled news task commits only under `site/news/data/`. It pushes straight to `main`, so branch protection must let the repository owner bypass the pull-request rule.
 
 ## Running the site locally
 

@@ -8,7 +8,7 @@ Source of truth for the site files. Lives on FRAK at `D:\theway\site-repo`. The 
 
 - `site/index.html`, `site/404.html`, `site/style.css`: the splash files at the docroot.
 - `site/members/`: the public member area.
-- `site/preview/pages/<folder>/`: guides (`guide`, `guide-<st>`), maps (`map`, `map-<st>`), `cases`, `news`, `states`, `pages`.
+- `site/<folder>/`: guides (`guide`, `guide-<st>`), maps (`map`, `map-<st>`), `cases`, `case-studies`, `news`, `states`, `img`, plus the essay pages at the site root.
 - `.cpanel.yml`: the deploy recipe.
 
 Never in this repo: any `.htaccess`, `splash.js`, `notify.js`, passwords, keys, tokens, zips, database files.
@@ -32,10 +32,10 @@ The remote named `hostgator` points at the repo on the HostGator account. After 
 
 ## What a deploy does
 
-- Copies the docroot files in `site/`, and the folders `site/members/`, `site/preview/pages/`, `site/timeline/`, `site/development/`, `site/ai/`, `site/layout/`, `site/research/` and `site/search/` into `/home3/minion/public_html/thewayparty.com/`.
+- Copies the docroot files in `site/`, and the folders `site/members/`, the guide, map, cases, case-studies, states, news and img folders, `site/timeline/`, `site/development/`, `site/ai/`, `site/layout/`, `site/research/` and `site/search/` into `/home3/minion/public_html/thewayparty.com/`.
 - Skips every `.htaccess`, so the password lock and the members config stay exactly as they are.
 - Deletes nothing on the server.
-- Sets files to 0644 and folders to 0755 inside `members` and `preview/pages` only.
+- Sets files to 0644 and folders to 0755 inside `members` and the guide, map, cases, case-studies, states, news and img folders only.
 
 ## One-time setup (done by a person, not stored here)
 

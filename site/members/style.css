@@ -228,7 +228,7 @@ details.example ul{padding-left:18px;display:grid;gap:6px}
   .nav.mid{justify-content:flex-start}
 }
 /* links into the guides, maps, news and cases open in a new tab; mark them so it is no surprise */
-.nav a[href^="/preview/"]::after,.button[href^="/preview/"]::after,.tile[href^="/preview/"] strong::after{content:" \2197";font-size:.8em;opacity:.7}
+.nav a[href^="/guide"]::after,.button[href^="/guide"]::after,.tile[href^="/guide"] strong::after,.nav a[href^="/map"]::after,.button[href^="/map"]::after,.tile[href^="/map"] strong::after,.nav a[href^="/news/"]::after,.button[href^="/news/"]::after,.tile[href^="/news/"] strong::after,.nav a[href^="/states/"]::after,.button[href^="/states/"]::after,.tile[href^="/states/"] strong::after,.nav a[href^="/cases/"]::after,.button[href^="/cases/"]::after,.tile[href^="/cases/"] strong::after,.nav a[href^="/case-studies/"]::after,.button[href^="/case-studies/"]::after,.tile[href^="/case-studies/"] strong::after{content:" \2197";font-size:.8em;opacity:.7}
 .ctx-here{border-left:3px solid #7fe3d9;padding-left:10px}
 .claim-context .panel{margin:8px 0}
 
@@ -237,7 +237,7 @@ details.example ul{padding-left:18px;display:grid;gap:6px}
 .room:hover .room-art{transform:translateY(-3px) scale(1.04)}
 @media (prefers-reduced-motion:reduce){.room .room-art{transition:none}.room:hover .room-art{transform:none}}
 /* Links to the public pages stay in the same tab, so no new-tab arrow on them. */
-.nav a[href^="/preview/"]::after,.button[href^="/preview/"]::after,.tile[href^="/preview/"] strong::after{content:none}
+.nav a[href^="/guide"]::after,.button[href^="/guide"]::after,.tile[href^="/guide"] strong::after,.nav a[href^="/map"]::after,.button[href^="/map"]::after,.tile[href^="/map"] strong::after,.nav a[href^="/news/"]::after,.button[href^="/news/"]::after,.tile[href^="/news/"] strong::after,.nav a[href^="/states/"]::after,.button[href^="/states/"]::after,.tile[href^="/states/"] strong::after,.nav a[href^="/cases/"]::after,.button[href^="/cases/"]::after,.tile[href^="/cases/"] strong::after,.nav a[href^="/case-studies/"]::after,.button[href^="/case-studies/"]::after,.tile[href^="/case-studies/"] strong::after{content:none}
 
 /* Home: the "Review the sources" card runs across the whole page, above the other cards. */
 .review-card{display:grid;grid-template-columns:minmax(150px,260px) 1fr;gap:6px 24px;align-items:center;margin:0 0 18px;padding:20px 26px;

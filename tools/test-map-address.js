@@ -29,7 +29,7 @@ let fails = 0; const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m)
   // the district shapes are large and kept out of this test: one box over Colorado stands in for every layer
   const box = { type: 'FeatureCollection', features: [{ type: 'Feature', properties: { d: 2, n: 'Boulder', name: 'Boulder' }, geometry: { type: 'Polygon', coordinates: [[[-109.06, 36.99], [-102.04, 36.99], [-102.04, 41.01], [-109.06, 41.01], [-109.06, 36.99]]] } }] };
   await page.route(/\/data\/[a-z-]+\.geojson/, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(box) }));
-  await page.goto(base + '/preview/pages/map/index.html');
+  await page.goto(base + '/map/index.html');
   await page.waitForFunction(() => !/Loading/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
   await page.fill('#q', '1 Example Street Boulder CO 80302');
   page.on('console', (m) => process.env.DBG && console.log('console:', m.text()));
