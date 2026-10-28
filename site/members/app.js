@@ -498,7 +498,8 @@ function available(a) {
 }
 
 function usSvg(opts) {
-  const mine = opts.small ? focusAbbr() : myAbbr();
+  // The small map on the home card is the whole country with nothing lit; the full map page lights your state.
+  const mine = opts.small ? null : myAbbr();
   const wrap = document.createElement('div');
   wrap.className = 'usmap' + (opts.small ? ' small' : '');
   const paths = Object.keys(US).map((a) =>
@@ -663,7 +664,7 @@ async function homeView() {
     h('span', { class: 'home-cta', text: a0 ? 'Open your voter guide' : 'Choose your state' }));
   if (!a0) ballotCard.href = '#/account';
   const mapTile = () => h('a', { class: 'tile us-tile', href: '#/map' }, usSvg({ small: true }),
-    h('strong', { text: 'The map' }), h('span', { text: a0 ? `Every state, with ${US[a0][0]} marked` : 'Every state at a glance' }));
+    h('strong', { text: 'The map' }), h('span', { text: 'Every state at a glance' }));
   const review = wantsMod ? reviewParts() : null;
   const authorCard = h('a', { class: 'home-card', href: 'author.html' },
     h('strong', { class: 'home-card-title', text: 'Contribute' }),
