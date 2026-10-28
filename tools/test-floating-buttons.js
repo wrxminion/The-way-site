@@ -5,10 +5,11 @@ const { chromium } = require('playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const root = path.join(__dirname, '..', 'site', 'members');
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.webp': 'image/webp', '.svg': 'image/svg+xml' };
-const page = '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="waybar.css"></head><body style="height:3000px"><header id="waybar" class="waybar"></header><script src="waybar.js"></script></body></html>';
+const page = '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="waybar.css"><link rel="stylesheet" href="_t.css"></head><body><header id="waybar" class="waybar"></header><script src="waybar.js"></script></body></html>';
 const srv = http.createServer((q, s) => {
   const u = q.url.split('?')[0].replace(/^\/members\//, '/');
-  if (u === '/_t.html') { s.writeHead(200, { 'content-type': 'text/html' }); return s.end(page); }
+  if (u === '/_t.html') { s.writeHead(200, { 'content-type': 'text/html', 'content-security-policy': "default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'; connect-src 'self' https:" }); return s.end(page); }   // the real site blocks inline styles, so the test does too
+  if (u === '/_t.css') { s.writeHead(200, { 'content-type': 'text/css' }); return s.end('body{height:3000px}'); }   // tall page, from a file because inline styles are blocked
   const p = path.join(root, u);
   if (!p.startsWith(root) || !fs.existsSync(p) || fs.statSync(p).isDirectory()) { s.writeHead(404); return s.end(); }
   s.writeHead(200, { 'content-type': types[path.extname(p)] || 'application/octet-stream' }); fs.createReadStream(p).pipe(s);
@@ -76,6 +77,7 @@ const srv = http.createServer((q, s) => {
     await pg.keyboard.press('Tab').catch(() => {}); await pg.focus('.wb-bubbles-toggle'); await pg.keyboard.press('Space'); await pg.waitForTimeout(100);
     await pg.evaluate(() => window.scrollTo(0, 700)); await pg.waitForTimeout(200);
     ok((await vis()).every(Boolean) && await pg.evaluate(() => localStorage.getItem('theway.bubbles')) === null, 'the up arrow brings them back and forgets the choice');
+    ok(await pg.evaluate(() => document.querySelector('.wb-rise').classList.contains('wb-burst') && getComputedStyle(document.querySelector('.wb-rise i.wb-b')).display === 'block'), 'a short extra burst of bubbles when the arrow brings them back');
     await ctx.close();
   }
   // tap targets
@@ -86,6 +88,10 @@ const srv = http.createServer((q, s) => {
     await pg.goto(`http://localhost:${srv.address().port}/members/_t.html`); await pg.waitForTimeout(500); await pg.evaluate(() => window.scrollTo(0, 600)); await pg.waitForTimeout(300);
     const sizes = await pg.evaluate(() => ['.wb-floating a', '.wb-dock-login', '.wb-dock-signup', '.wb-thread-fab', '.wb-bubbles-toggle'].map((q) => { const r = document.querySelector(q).getBoundingClientRect(); return [q, Math.round(r.width), Math.round(r.height)]; }));
     ok(sizes.every(([, w, h]) => w >= 40 && h >= 40), 'every bubble and link is at least 40 px each way (' + sizes.map((x) => x.join(' ')).join(', ') + ')');
+    const wd = await pg.evaluate(() => ['.wb-floating .wb-art', '.wb-dock-auth .wb-art', '.wb-thread-fab .wb-art'].map((q) => Math.round(document.querySelector(q).getBoundingClientRect().width)));
+    ok(Math.max(...wd) - Math.min(...wd) <= 2 && wd[0] >= 100, 'the three bubbles are the same size on desktop (' + wd.join(', ') + ') with the real page security policy');
+    const rise = await pg.evaluate(() => { const r = document.querySelector('.wb-rise'); return r && { n: r.children.length, hidden: r.getAttribute('aria-hidden'), pe: getComputedStyle(r).pointerEvents, anim: getComputedStyle(r.firstChild).animationName }; });
+    ok(rise && rise.n >= 6 && rise.hidden === 'true' && rise.pe === 'none' && rise.anim === 'wb-rise', 'small decorative bubbles rise: hidden from screen readers, no pointer events');
     // hover motion on our own art
     const anim = (q, on) => pg.evaluate(([qq]) => getComputedStyle(document.querySelector(qq)).animationName, [q]);
     await pg.hover('.wb-floating a', { force: true }); await pg.waitForTimeout(100);
@@ -104,6 +110,7 @@ const srv = http.createServer((q, s) => {
     await pr.goto(`http://localhost:${srv.address().port}/members/_t.html`); await pr.waitForTimeout(500); await pr.evaluate(() => window.scrollTo(0, 600)); await pr.waitForTimeout(300);
     await pr.hover('.wb-floating a', { force: true }); await pr.hover('.wb-dock-auth', { force: true }); await pr.hover('.wb-thread-fab', { force: true }); await pr.waitForTimeout(100);
     ok(['.wb-floating .wb-diver', '.wb-dock-auth .wb-art', '.wb-thread-fab .wb-art'].every((q) => true) && (await pr.evaluate(() => ['.wb-floating .wb-diver', '.wb-dock-auth .wb-art', '.wb-thread-fab .wb-art'].map((q) => getComputedStyle(document.querySelector(q)).animationName))).every((n) => n === 'none'), 'reduced motion: no hover motion');
+    ok(await pr.evaluate(() => getComputedStyle(document.querySelector('.wb-rise')).display) === 'none', 'reduced motion: the rising bubbles are not shown');
     await rc.close();
   }
   await b.close(); srv.close(); process.exit(fail);

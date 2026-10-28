@@ -520,14 +520,31 @@
   function bubbleArt(name, w, h) {
     var mk = function (file, cls) {
       var base = '/members/art/bubble-' + file;
-      return el('img', { class: cls, src: base + '-1x.webp', srcset: base + '-1x.webp 1x, ' + base + '-2x.webp 2x', alt: '', 'aria-hidden': 'true', width: String(w), height: String(h), style: 'width:' + w + 'px', decoding: 'async' });
+      return el('img', { class: cls, src: base + '-1x.webp', srcset: base + '-1x.webp 1x, ' + base + '-2x.webp 2x', alt: '', 'aria-hidden': 'true', width: String(w), height: String(h), decoding: 'async' });
     };
+    // sizes come from the stylesheet (the page security policy blocks inline style attributes)
     if (name !== 'back') return mk(name, 'wb-art');
     // the diver is its own layer so it can swim up a little on hover; at rest the two layers look like one picture
-    var stack = el('span', { class: 'wb-art-stack', style: 'width:' + w + 'px' });
+    var stack = el('span', { class: 'wb-art-stack' });
     stack.appendChild(mk('back-base', 'wb-art'));
     stack.appendChild(mk('back-diver', 'wb-art wb-diver'));
     return stack;
+  }
+  // A few small decorative air bubbles rise behind the buttons. Not links, not read out, no pointer events; hidden for reduced motion.
+  function syncRise() {
+    if (document.querySelector('.wb-rise')) return;
+    var r = el('div', { class: 'wb-rise', 'aria-hidden': 'true' });
+    for (var i = 0; i < 9; i++) r.appendChild(el('i', {}));
+    for (var k = 0; k < 6; k++) r.appendChild(el('i', { class: 'wb-b' }));
+    document.body.appendChild(r);
+    riseBurst();
+  }
+  // a few extra bubbles for about five seconds when the button bubbles appear
+  var burstTimer = 0;
+  function riseBurst() {
+    var r = document.querySelector('.wb-rise'); if (!r) return;
+    r.classList.remove('wb-burst'); void r.offsetWidth; r.classList.add('wb-burst');
+    clearTimeout(burstTimer); burstTimer = setTimeout(function () { r.classList.remove('wb-burst'); }, 5500);
   }
   function syncDock() {
     var dock = document.querySelector('.wb-dock');
@@ -575,6 +592,7 @@
         var off = !document.documentElement.classList.contains('wb-bubbles-off');
         try { off ? localStorage.setItem(BUBBLES, 'off') : localStorage.removeItem(BUBBLES); } catch (e) { /* private mode: it just will not be remembered */ }
         paintToggle(btn, off);
+        if (!off) riseBurst();
       });
       var d = document.querySelector('.wb-dock'); (d || document.body).appendChild(btn);
     }
@@ -583,6 +601,7 @@
   function syncFloating() {
     syncDock();
     syncToggle();
+    syncRise();
     var floating = document.querySelector('.wb-floating');
     if (!floating) {
       floating = el('nav', { class: 'wb-floating', 'aria-label': 'Quick links' });
