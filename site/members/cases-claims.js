@@ -41,7 +41,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Total amount of Iran-sale profit that reached the contras",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "Different pages state it differently; not reconciled, no single figure given"
+"source": "Final Report of the Independent Counsel for Iran/Contra Matters; Iran-Contra affair (Wikipedia). Pages state different figures, not reconciled, no single figure given"
 },
 {
 "k": "982a7939d0",
@@ -125,7 +125,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Boland limits did not apply to the National Security Council",
 "status": "disputed",
 "detail": "Disputed",
-"source": "Minority and administration view (read only secondhand) versus Walsh's contrary conclusion; no court decided it"
+"source": "Final Report of the Independent Counsel for Iran/Contra Matters (Walsh's contrary conclusion); Report of the Congressional Committees Investigating the Iran-Contra Affair; Iran-Contra affair (Wikipedia). Minority and administration view read only secondhand; no court decided it"
 },
 {
 "k": "376ca0a9da",
@@ -332,7 +332,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "A dust cloud reached Washington during Bennett's testimony and moved Congress",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "Rests on a 1950 biography; WETA says the timing claim is reported but not confirmed"
+"source": "Hugh Bennett and the Perfect Storm (WETA Boundary Stones). Timing is reported but not confirmed; the 1950 biography it rests on was not opened"
 },
 {
 "k": "fae564e78d",
@@ -1699,7 +1699,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Whether the Barofsky July 22 testimony and the July 21 Oversight hearing are one hearing",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "Not resolved"
+"source": "Testimony of Neil Barofsky (July 2009), House Financial Services Committee; Will Treasury answer for lack of TARP transparency (July 21, 2009), House Oversight Committee. Not resolved"
 }
 ],
 "flint-water": [
@@ -2097,7 +2097,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "House Resolution 387 (January 27, 1914) predates the April 20 massacre",
 "status": "unverified",
 "detail": "Unverified",
-"source": "Plausible and consistent with our \"early 1914\" House subcommittee line; resolution text not opened"
+"source": "Needs a source: the text of House Resolution 387 was not opened. Plausible and consistent with our \"early 1914\" House subcommittee line"
 },
 {
 "k": "8078458d90",
@@ -2232,7 +2232,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Viola Fletcher died November 24, 2025; Randle last known survivor",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "KJRH; current status as of October 2026 not checked"
+"source": "Mother Viola Fletcher dies (KJRH). Current status as of October 2026 not checked"
 },
 {
 "k": "4623981d13",
@@ -2376,7 +2376,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "About 675 Colorado volunteer soldiers attacked a camp of about 750 people on November 29, 1864",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "NPS park page (re-opened 2026-10-25)"
+"source": "The Sand Creek Massacre (National Park Service), re-opened 2026-10-25"
 },
 {
 "k": "bbf055739e",
@@ -2453,7 +2453,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Treaty of the Little Arkansas, Oct. 14, 1865, Article 6 promised land and compensation",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "Avalon Project page failed to load in this study; terms from search result summary and secondary sources"
+"source": "Treaty of Little Arkansas River (original) (DocsTeach, National Archives); Edward Wynkoop (NPS). The Avalon Project page (Treaty with the Cheyenne and Arapaho, 1865) failed to load in this study"
 },
 {
 "k": "89405e602a",
@@ -2581,7 +2581,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Hatfield's 1921 Senate testimony",
 "status": "unverified",
 "detail": "Unverified",
-"source": "Not in our file; an earlier outside draft's date was not confirmed, and a source shows testimony by his widow after his death"
+"source": "Needs a source: not in our file. Sid Hatfield (Lon Savage, e-WV) gives no testimony date; an earlier outside draft's date was not confirmed, and a source shows testimony by his widow after his death"
 },
 {
 "k": "6d5c39aadc",
@@ -2758,7 +2758,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Dollar claims for Black landowner or sharecropper losses",
 "status": "unverified",
 "detail": "Unverified",
-"source": "Our file gives none; not added"
+"source": "Needs a source: our file gives none; not added"
 }
 ],
 "hawks-nest": [
@@ -3235,7 +3235,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Cancer SIR of 1.40",
 "status": "unverified",
 "detail": "Unverified",
-"source": "Not found in the community report or the PubMed abstract (bladder 1.44, kidney 1.48 are the values given)"
+"source": "Love Canal Follow-up Health Study (Oct. 2008), N.Y. State Dept. of Health. Not found in the community report or the PubMed abstract (bladder 1.44, kidney 1.48 are the values given)"
 },
 {
 "k": "c53437c189",
@@ -3293,7 +3293,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Farm electrification: 1930 about one in ten; mid-1950s nearly all; 97 percent by 1960 (Living New Deal) or all but 4 percent by 1956 (Asterisk)",
 "status": "disputed",
 "detail": "Disputed (sources disagree, each figure shown)",
-"source": "Living New Deal; Asterisk; Richmond Fed. Census-style percentages such as 13.4 percent (1930) and 33.3 percent (1940) are not used here; the source PDF could not be read"
+"source": "Living New Deal (Rural Electrification Administration (REA) (1935)); How Co-ops Electrified America (Asterisk Magazine); Economic history (Econ Focus, Q1 2020), Federal Reserve Bank of Richmond. Census-style percentages such as 13.4 percent (1930) and 33.3 percent (1940) are not used here; the source PDF could not be read"
 },
 {
 "k": "60a0024cb9",
@@ -3372,7 +3372,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "At least 12 members of Congress were offered money: 7 took it, 5 did not (7 of 12, about 58 percent, a floor on the number approached)",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "The 7 rests on the Senate report; the 5 rests on one FBI memo (opened) plus secondary sources; the 12 is our sum, and no full list of those approached was found"
+"source": "Final Report of the Select Committee to Study Undercover Activities (U.S. Senate, via NCJRS) for the 7; Legal Counsel Division memo, \"ABSCAM\" (FBI Vault) for the 5, plus secondary sources. The 12 is our sum, and no full list of those approached was found"
 },
 {
 "k": "9f62b60635",
@@ -3535,7 +3535,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Public Citizen v. Heckler, 653 F. Supp. 1229 (D.D.C.), decided Dec. 31, 1986",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "LSU Law Center case copy, opened 2026-10-25 (copy of the opinion, not the court's own docket)"
+"source": "Public Citizen v. Heckler, 653 F. Supp. 1229 (D.D.C. 1986), LSU Law Center case copy, opened 2026-10-25 (copy of the opinion, not the court's own docket)"
 },
 {
 "k": "aea0992500",
@@ -3649,7 +3649,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "1954 field trial reached about 1.8 million children; vaccinated count 440,000 versus \"nearly 420,000\", placebo 210,000 versus \"about 200,000\"",
 "status": "disputed",
 "detail": "Disputed (sources disagree): 440,000 and 210,000 (Wikipedia); 420,000 and 200,000 (Scientific American)",
-"source": "As listed; the 1955 Francis report was not opened"
+"source": "Polio vaccine (Wikipedia); Hidden Black Scientists Proved the Polio Vaccine Worked (Scientific American). The 1955 Francis report was not opened"
 },
 {
 "k": "dc82bb5c5c",
@@ -3677,7 +3677,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Cutter cases: 204 linked cases and 11 deaths as of Oct. 28, 1955",
 "status": "disputed",
 "detail": "Disputed (sources disagree): 204 (Langmuir et al. 1956, preliminary); 260 (Wikipedia); \"over 250\" (CDC museum page)",
-"source": "As listed; not reconciled"
+"source": "1955 National Poliomyelitis Surveillance Program (Langmuir, Nathanson, AJPH); Cutter Laboratories (Wikipedia); Cutter Incident report page (CDC Museum). Not reconciled"
 },
 {
 "k": "46f4afbbb3",
@@ -3698,7 +3698,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Number of children given Cutter vaccine",
 "status": "disputed",
 "detail": "Disputed (sources disagree): 409,000 (Wikipedia, Polio vaccine); 120,000 (Wikipedia, Cutter); over 200,000 (USC Scalar)",
-"source": "As listed"
+"source": "Polio vaccine (Wikipedia); Cutter Laboratories (Wikipedia); The Cutter Incident (Jonas Salk site, USC Scalar)"
 },
 {
 "k": "43c8318fc6",
@@ -3754,7 +3754,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "All-IPV schedule recommended in 2000",
 "status": "disputed",
 "detail": "Disputed (sources disagree): 2000 (Surveillance Manual); 1999 and 2000 (Pink Book)",
-"source": "As listed; page uses 2000"
+"source": "Poliomyelitis, Surveillance Manual chapter 12 (CDC); Poliomyelitis, Pink Book (CDC). Page uses 2000"
 },
 {
 "k": "8a829ed39f",
@@ -3875,7 +3875,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Size of the decline",
 "status": "disputed",
 "detail": "Disputed (sources disagree): 20 to 30% (MMWR 2002); 27% (MMWR 2004); 28% (MMWR 2015); 35% (Wikipedia CDC summary); 20 to 50% (Mason 2007); 46% in Canada and 30% in a meta-analysis (Wikipedia only)",
-"source": "As listed; no figure chosen"
+"source": "Folic acid for the prevention of NTDs (MMWR RR-13, 2002); Spina Bifida and Anencephaly Before and After Folic Acid Mandate (MMWR, CDC); Updated Estimates of NTDs Prevented by Mandatory Folic Acid Fortification (CDC); Folic acid (Wikipedia); Folic acid linked to colorectal cancer hypothesis (Mason et al., 2007). No figure chosen"
 },
 {
 "k": "1fdcf2f859",
@@ -4322,7 +4322,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Browner 1996: children's blood lead down 70 percent",
 "status": "disputed",
 "detail": "Disputed (sources disagree): 70 percent (EPA 1996 release, mid-1990s) versus 96 percent (EPA indicator, to 2017 to 2020); different end dates, not a direct conflict",
-"source": "As listed"
+"source": "EPA Takes Final Step in Phaseout of Leaded Gasoline (Jan. 29, 1996), U.S. EPA archive; Biomonitoring: Lead (America's Children and the Environment), U.S. EPA"
 },
 {
 "k": "559411918a",
@@ -4357,7 +4357,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Gasoline lead explains about 56 percent of the 1992 to 2002 fall in violent crime",
 "status": "disputed",
 "detail": "Disputed (sources disagree): about 56 percent (Reyes 2007); 0 to 5 percent using the strongest studies, 3 to 36 percent using all (meta-analysis as cited by VerBruggen, not opened)",
-"source": "As listed; page does not rely on this claim"
+"source": "Environmental Policy as Social Policy? (Reyes), NBER Working Paper 13097; Lead and Crime: A Review of the Evidence (VerBruggen), Manhattan Institute. Page does not rely on this claim"
 },
 {
 "k": "895188d7bd",
@@ -4776,7 +4776,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Population about 100,000 in the early 1980s",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "Wikipedia only; looks inconsistent with pair counts; not used"
+"source": "Bald eagle (Wikipedia) only. Looks inconsistent with the pair counts in America's Bald Eagle Population Continues to Soar (U.S. Department of the Interior); not used"
 },
 {
 "k": "9a8879fa27",
@@ -4955,7 +4955,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "More than 3 million men took part",
 "status": "disputed",
 "detail": "Disputed (sources disagree): more than 3 million (NARA, NPS, Britannica) versus over 2.5 million (Hoak thesis)",
-"source": "Counting rules not reconciled"
+"source": "Civilian Conservation Corps (Britannica); NPS CCC overview (npshistory-changing-times); Civilian Conservation Corps finding aid (National Archives, Atlanta); The Men in Green (M. Hoak, M.A. thesis). Counting rules not reconciled"
 },
 {
 "k": "df11da11d0",
@@ -4976,7 +4976,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Peak of 505,782 enrollees on August 31, 1935",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "Wikipedia; NARA and Britannica give other peak figures"
+"source": "Civilian Conservation Corps (Wikipedia). Civilian Conservation Corps (Britannica) and the National Archives finding aid give other peak figures"
 },
 {
 "k": "adf6fc9dfc",
@@ -5209,7 +5209,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Medicaid savings of $1.77 to $3.13 per dollar",
 "status": "disputed",
 "detail": "Disputed (sources disagree)",
-"source": "Wikipedia list versus Besharov and Germanis (\"simply untrue\"); neither original study opened"
+"source": "WIC program (Wikipedia); Debating WIC (Besharov, Ku), University of Maryland Welfare Reform Academy. Besharov and Germanis call it \"simply untrue\"; neither original study opened"
 },
 {
 "k": "4338d4520c",
@@ -5479,7 +5479,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "A later law extended funding through FY2027",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "Seen only in search-result titles"
+"source": "Bipartisan Budget Act of 2018, CHIP provisions (R45136), Congressional Research Service. Seen only in search-result titles; not opened"
 },
 {
 "k": "28fc280995",
@@ -5565,7 +5565,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "FY2024 spending",
 "status": "disputed",
 "detail": "Disputed (sources disagree): about $17.8 billion NSLP (R46234) versus $23.5 billion lunch plus breakfast (R48515)",
-"source": "Different scope"
+"source": "Child nutrition programs overview (R46234), Congressional Research Service; School Lunch and Breakfast Participation: A Snapshot of Recent Trends, Congressional Research Service. The two figures cover different scope"
 },
 {
 "k": "aabc0bbaea",
@@ -5579,7 +5579,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "1981 budget cut size",
 "status": "disputed",
 "detail": "Disputed (sources disagree): about $1 billion (Education Week, FRAC) versus $1.5 billion (TIME via Spotlight on Poverty) versus 25% (Wikipedia)",
-"source": "As listed"
+"source": "Ketchup as a vegetable (Wikipedia); Lunch Participation Drops by 12%, Group Says (Education Week). The FRAC and TIME (via Spotlight on Poverty) figures have no row in the Sources table"
 },
 {
 "k": "85bf2ec03b",
@@ -5707,7 +5707,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Participation in 1994 was 27.5 million or 28 million",
 "status": "disputed",
 "detail": "Disputed (sources disagree): 27.5 million (FNS) versus 28 million (Wikipedia)",
-"source": "As listed"
+"source": "SNAP history (USDA FNS); Supplemental Nutrition Assistance Program (Wikipedia)"
 },
 {
 "k": "8fd6023ef3",
@@ -5842,7 +5842,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Patients in 2024 or 2025",
 "status": "disputed",
 "detail": "Disputed (sources disagree): 32.4 million (GWU summary; HRSA meta description) versus 32.7 million (HRSA page body)",
-"source": "As listed"
+"source": "2024 Community Health Center UDS Highlights (Geiger Gibson Program, GWU); Health center data highlights (HRSA)"
 },
 {
 "k": "58a2f6c004",
@@ -5935,7 +5935,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "$10,000 appropriated for the trial",
 "status": "disputed",
 "detail": "Disputed (sources disagree): 1893 (USPS, March 3, 1893) versus 1891 (Richmond Fed)",
-"source": "As listed"
+"source": "Rural Free Delivery (web history), USPS; Econ Focus, 2025 (economic history), Federal Reserve Bank of Richmond"
 },
 {
 "k": "c905fb7eaa",
@@ -5970,7 +5970,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "First-year service",
 "status": "disputed",
 "detail": "Disputed (sources disagree): 44 routes in 29 states (USPS) versus 82 routes in 28 states and one territory (Encyclopedia.com; Wikipedia)",
-"source": "As listed"
+"source": "Rural Free Delivery (USPS Historian, Aug. 2013); Rural Free Delivery (Encyclopedia.com); Rural Free Delivery (Wikipedia)"
 },
 {
 "k": "5e94e18fc5",
@@ -6524,7 +6524,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "1974 Tower amendment rejected, Javits amendment adopted; HEW rules June 1975",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "Wikipedia (Javits wording summarized, not quoted from the Record)"
+"source": "Title IX (Wikipedia). Javits wording summarized, not quoted from the Congressional Record"
 },
 {
 "k": "f28eef7248",
@@ -6566,7 +6566,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "College women's share in 1972",
 "status": "disputed",
 "detail": "Disputed: 1.7% of women undergraduates (GAO); 15% of NCAA athletes (Women's Sports Foundation, advocacy)",
-"source": "Different measures"
+"source": "Intercollegiate Athletics, GAO/HEHS-00-24 (1999), U.S. GAO; As Title IX Turns 50 (Women's Sports Foundation, advocacy). Different measures"
 },
 {
 "k": "1ac1086061",
@@ -6636,7 +6636,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Civil Rights Restoration Act year",
 "status": "disputed",
 "detail": "Disputed: 1988 (Wikipedia); CRS text refers to the \"Act of 1987\"",
-"source": "Likely bill year versus enactment; unverified"
+"source": "Title IX (Wikipedia); Title IX Athletics: legal history, IF12325 (Congressional Research Service). Likely bill year versus enactment; unverified"
 },
 {
 "k": "4fb3e2a6cf",
@@ -6913,49 +6913,49 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Adoptions were 26 percent of equitable-sharing forfeitures in 2014, 5 percent in 2016, about 10 percent since 2019",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "IJ"
+"source": "Evaluating efforts to reform equitable sharing (Institute for Justice)"
 },
 {
 "k": "fd987a99a0",
 "claim": "Holder barred most adoptions in January 2015; Sessions reinstated them in July 2017",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "IJ; Heritage"
+"source": "Evaluating efforts to reform equitable sharing (Institute for Justice); Congress takes positive steps to protect property owners (Heritage Foundation)"
 },
 {
 "k": "54d0a79420",
 "claim": "New Mexico, Nebraska, North Carolina and Maine ended civil forfeiture",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "IJ press release (dates for three not given)"
+"source": "Maine Becomes Fourth State to End Civil Forfeiture (Institute for Justice press release). Dates for three states not given"
 },
 {
 "k": "19638a6f8a",
 "claim": "Maine's law took effect in July 2021, limits equitable sharing to $100,000 or more cash",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "IJ press release"
+"source": "Maine Becomes Fourth State to End Civil Forfeiture (Institute for Justice press release)"
 },
 {
 "k": "085f0c65c2",
 "claim": "Half of currency forfeitures in 24 states are under $1,678",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "IJ Policing for Profit 4"
+"source": "Policing for Profit 4 (March 2026), Institute for Justice"
 },
 {
 "k": "d0e52267bb",
 "claim": "71 percent of DOJ forfeitures are administrative",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "IJ Policing for Profit 4"
+"source": "Policing for Profit 4 (March 2026), Institute for Justice"
 },
 {
 "k": "26c52145bd",
 "claim": "62 to 76 percent of seizures forfeited by default in three states",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "IJ Policing for Profit 4"
+"source": "Policing for Profit 4 (March 2026), Institute for Justice"
 },
 {
 "k": "d5006d862a",
@@ -6976,7 +6976,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Share of federal forfeitures with no conviction or charge",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "No official figure found"
+"source": "Needs a source: no official figure found"
 }
 ],
 "drug-policy": [
@@ -7146,7 +7146,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "State and federal prisoners 1,230,100 at end of 2022",
 "status": "primary",
 "detail": "Verified (primary source opened)",
-"source": "BJS"
+"source": "Prisoners in 2022, statistical tables (Bureau of Justice Statistics)"
 },
 {
 "k": "e82b14d743",
@@ -7288,7 +7288,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Texas leases ended by end of 1912; full state control by Jan. 1, 1914",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "TSHA"
+"source": "Convict lease system (Texas State Historical Association)"
 },
 {
 "k": "5b70bc9731",
@@ -7316,7 +7316,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Louisiana 1844 and California 1851 leases",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "Outside lead only"
+"source": "Needs a source: outside lead only, not confirmed"
 }
 ],
 "plea-bargaining": [
@@ -7595,7 +7595,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "763,391 people in the community who would otherwise be hospitalized",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "Torrey's own estimate; not independently checked"
+"source": "Out of the Shadows, excerpt (E. Fuller Torrey), PBS Frontline. Torrey's own estimate; not independently checked"
 },
 {
 "k": "3dbac6f860",
@@ -7758,7 +7758,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "FFY 2022 race and ethnicity shares",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "Table columns did not line up on our read; not used"
+"source": "AFCARS Report 30 (FFY 2022). Table columns did not line up on our read; not used"
 },
 {
 "k": "79d3d1f8fd",
@@ -7886,7 +7886,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Brackeen dissents' reasoning",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "Not read"
+"source": "Haaland v. Brackeen, No. 21-376 (2023), Cornell LII (court opinion). The dissents were not read"
 },
 {
 "k": "d9963b4a0f",
@@ -8035,7 +8035,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Share of today's wealth gap caused by 1930s programs",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "No source found"
+"source": "Needs a source: no source found"
 }
 ],
 "urban-renewal": [
@@ -8179,7 +8179,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "1938 Act expressly excluded domestic workers",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "Not found in the text read"
+"source": "Fair Labor Standards Act, 52 Stat. 1060 (GovInfo). Not found in the text read"
 },
 {
 "k": "72d4a81982",
@@ -8654,7 +8654,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "85 percent of displaced Camden families were minorities",
 "status": "secondary",
 "detail": "Verified (secondary only)",
-"source": "Mohl, citing 1968 HUD task force"
+"source": "Stop the Road: Freeway Revolts in American Cities (R. Mohl), PRRAC. Mohl cites a 1968 HUD task force"
 },
 {
 "k": "60fa1d68a2",
@@ -9315,7 +9315,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "Extent of spending without donor disclosure",
 "status": "unverified",
 "detail": "Unverified (not confirmed)",
-"source": "Not examined"
+"source": "Needs a source: not examined"
 }
 ],
 "hava": [
@@ -9615,7 +9615,7 @@ window.WAY_CASE_CLAIMS = {
 "claim": "PSO's request totaled $597 million",
 "status": "disputed",
 "detail": "Disputed (sources disagree): $597 million (OK Energy Today), $475 million (Gann release), $299 million (outside lead, unopened)",
-"source": "As listed"
+"source": "Regulators to meet and deal with rate changes (Oct. 1, 2026), OK Energy Today; Gann release (June 2, 2026), Oklahoma House of Representatives. The $299 million lead is unopened"
 },
 {
 "k": "8f995c8011",
