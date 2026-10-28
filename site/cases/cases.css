@@ -12,7 +12,11 @@
 .essay-body em{color:#ebffff}
 .cases-hub{padding:0 16px 40px}
 .cases-hub .hub{grid-template-columns:repeat(2,minmax(0,1fr))}
-.cases-hub .hub-lead{margin:0 0 16px}
+.cases-hub .hub-lead{max-width:980px;width:100%;margin:10px auto 16px}
+.cases-hub .hub-gov{overflow:hidden;padding:0 0 24px}
+.cases-hub .hub-gov img{display:block;width:100%;height:auto;aspect-ratio:1200/260;object-fit:cover}
+.cases-hub .hub-gov .depth,.cases-hub .hub-gov b,.cases-hub .hub-gov span:last-child{padding:0 22px}
+.cases-hub .hub-gov .depth{padding-top:14px}
 .cases-hub .more{text-align:center;color:var(--muted)}
 @media(max-width:700px){.cases-hub .hub{grid-template-columns:1fr}}
 @media(max-width:700px){
