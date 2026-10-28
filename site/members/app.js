@@ -227,6 +227,17 @@ function ageQuestion() {
   };
 }
 
+// "Are you a teacher?" (migration 0042). Yes or No, neither chosen in advance. Self-reported; kept private by default.
+function teacherQuestion() {
+  const id = 'teacher-' + Math.random().toString(36).slice(2, 8);
+  const opt = (value, label) => h('label', { class: 'age-opt' }, h('input', { type: 'radio', name: id, value }), ' ' + label);
+  const el = h('fieldset', { class: 'age-q' },
+    h('legend', { text: 'Are you a teacher?' }),
+    opt('yes', 'Yes'), opt('no', 'No'),
+    h('p', { class: 'small dim', text: 'Teachers get a private Teacher tag and, soon, classroom resources. Nobody else sees it unless you choose to show it later, on your account page.' }));
+  return { el, value: () => { const r = el.querySelector('input:checked'); return r ? r.value : ''; } };
+}
+
 async function signInView() {
   const human = humanCheck();
   // Open sign-up (migration 0018): anyone can make an account with their email, no invitation code.
@@ -394,6 +405,7 @@ async function joinView() {
   if (carried) code.value = carried;
   const name = h('input', { name: 'name', required: true, minlength: 2, maxlength: 40, placeholder: 'How other members will see you' });
   const age = ageQuestion();
+  const teacher = teacherQuestion();
   render(
     h('h1', { text: 'Welcome' }),
     h('p', { class: 'lede', text: carried ? 'You are signed in. Your invitation code is filled in from your link. Pick a display name to accept it.' : open ? 'You are signed in. Pick a display name to finish creating your account. Got an invitation code? You can leave it in the box, but you do not need one.' : 'You are signed in. Enter your invitation code (it starts with WAY-) to accept it.' }),
@@ -408,11 +420,13 @@ async function joinView() {
         if (code.value.trim()) await q(sb.rpc('redeem_invitation', { code: code.value.trim(), display_name: name.value }));
         else await q(sb.rpc('join_open', { display_name: name.value }));
         try { await sb.rpc('confirm_adult'); } catch { /* migration 0041 not run yet: do not block joining */ }
+        if (teacher.value()) { try { await sb.rpc('set_teacher', { p_teacher: teacher.value() === 'yes', p_public: false }); } catch { /* migration 0042 not run yet: do not block joining */ } }
         forgetInvite();
         await loadMe(); drawNav();
         passwordView(false, true);
       }, msg) },
         age.el,
+        teacher.el,
         h('label', {}, open ? 'Invitation code (optional)' : 'Invitation code', code),
         h('label', {}, 'Display name', name),
         h('p', { class: 'small dim', text: 'Your email stays private. Members only see your display name. Choose it carefully: after this, only an admin can change it.' }),
@@ -2092,6 +2106,29 @@ function roleCodePanel() {
     }, msg) }, h('label', {}, 'Code', code), h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Use code'))));
 }
 
+// Teacher tag on the account page: only the member can see this row. "Show publicly" is the member's own choice, off by default.
+function teacherPanel() {
+  const box = h('div', { class: 'panel' }, h('h2', { text: 'Teacher tag' }), h('p', { class: 'small dim', text: 'Loading…' }));
+  (async () => {
+    let row = null;
+    try { row = (await q(sb.from('member_teacher').select('is_teacher,tag_public').eq('member_id', state.user.id)))[0] || null; }
+    catch { box.replaceChildren(h('h2', { text: 'Teacher tag' }), h('p', { class: 'small dim', text: 'Not available yet.' })); return; }
+    const msg = h('div');
+    const isT = !!(row && row.is_teacher);
+    const pub = h('input', { type: 'checkbox', checked: !!(row && row.tag_public) });
+    const save = (t, p) => action(async () => { await q(sb.rpc('set_teacher', { p_teacher: t, p_public: p })); accountView(); }, msg);
+    box.replaceChildren(
+      h('h2', { text: 'Teacher tag' }),
+      h('p', { class: 'small muted', text: isT ? 'You told us you are a teacher. The tag is private unless you show it. Nobody checks it; it is your own word.' : 'Are you a teacher? Say so and you get a private Teacher tag and, soon, classroom resources.' }),
+      msg,
+      isT ? h('label', { class: 'small' }, pub, ' Show the Teacher tag publicly') : null,
+      h('div', { class: 'btns' },
+        isT ? h('button', { onclick: () => save(true, pub.checked)() }, 'Save') : h('button', { onclick: () => save(true, false)() }, 'I am a teacher'),
+        isT ? h('button', { class: 'quiet', onclick: () => save(false, false)() }, 'Remove the tag') : null));
+  })();
+  return box;
+}
+
 function accountView() {
   render(
     h('p', { class: 'overline', text: 'Your account' }),
@@ -2102,6 +2139,7 @@ function accountView() {
       h('p', { class: 'small dim', text: 'Display names are chosen once, when you join. To change yours, ask an admin.' }),
       h('p', { class: 'small', text: `Roles: ${state.roles.size ? [...state.roles].map(roleName).join(', ') : 'member'}` })),
     placePanel(),
+    teacherPanel(),
     roleCodePanel(),
     h('div', { class: 'panel' },
       h('h2', { text: 'Signing in' }),
