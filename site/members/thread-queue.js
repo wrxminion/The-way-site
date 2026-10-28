@@ -108,7 +108,7 @@ function item(r, mineId) {
   const disp = h('select', {}, [['accepted', 'Accept: we will research it'], ['needs_evidence', 'Needs more evidence'], ['answered', 'Answered with what we have'],
     ['duplicate', 'Repeat of another item'], ['declined', 'Decline']].map(([v, l]) => h('option', { value: v, text: l })));
   const shotBox = h('div');
-  li.append(
+  li.append(...[   // empty parts are null; append(null) would print the word null, so they are dropped
     h('div', { class: 'row' },
       h('strong', {}, `#${r.rank} · item ${r.id} · `, r.kind === 'url' ? 'link' : r.kind === 'screenshot' ? 'screenshot' : 'question'),
       h('span', { class: 'pt-score' }, h('span', { class: 'tag ok', text: `score ${r.score}` }), ' ', h('span', { class: `tag ${r.status === 'in_review' ? 'warn' : ''}`, text: r.status.replace('_', ' ') }))),
@@ -129,7 +129,7 @@ function item(r, mineId) {
     prelimBox(r),
     leadsBox(r),
     r.matches && r.matches.length ? h('div', {}, h('strong', { class: 'small', text: 'We may already have:' }), r.matches.map((m) => h('div', { class: 'pt-match small', text: `${m.title} (${m.kind}, ${m.strength === 'source' ? 'cites this link' : m.why})` }))) : null,
-    h('details', {}, h('summary', { text: 'Why this score' }), parts(r.parts)));
+    h('details', {}, h('summary', { text: 'Why this score' }), parts(r.parts))].filter(Boolean));
   const acts = h('div', { class: 'pt-actions' });
   if (r.status === 'queued' || r.status === 'matched') acts.append(h('button', { type: 'button', class: 'primary', onclick: () => act(call('pick_thread', { p_id: r.id }), 'Picked. It is yours until you close or put it back.'), text: 'Pick this one' }));
   if (r.status === 'in_review' && r.claimed_by_me) acts.append(h('button', { type: 'button', onclick: () => act(call('release_thread', { p_id: r.id }), 'Put back in the queue.'), text: 'Put back' }));
