@@ -196,6 +196,37 @@ function humanCheck() {
   };
 }
 
+// Age question (migration 0041). A neutral question with no answer chosen in advance. 18 or older may go on; anyone younger stops
+// with a friendly note. Only "adult confirmed" is ever stored (members.adult_confirmed_at). An under-18 answer is remembered in this
+// browser only, so pressing Back does not offer the question again; nothing is sent to us.
+const AGE_KEY = 'theway.agegate';
+const ageStopped = () => { try { return localStorage.getItem(AGE_KEY) === 'under18'; } catch { return false; } };
+const markAgeStopped = () => { try { localStorage.setItem(AGE_KEY, 'under18'); } catch { /* private mode */ } };
+function ageQuestion() {
+  const id = 'age-' + Math.random().toString(36).slice(2, 8);
+  const opt = (value, label) => h('label', { class: 'age-opt' }, h('input', { type: 'radio', name: id, value }), ' ' + label);
+  const el = h('fieldset', { class: 'age-q' },
+    h('legend', { text: 'Are you 18 or older?' }),
+    opt('yes', 'Yes'), opt('no', 'No'),
+    h('p', { class: 'small dim', text: 'We ask so we can keep younger visitors safe. We do not keep your age or birth date.' }));
+  const note = notice('Thank you for being honest. Member accounts are for people 18 and older right now. A login for kids and teens is on the plan. You can still read the public guides, cases and maps without an account.', 'ok');
+  note.hidden = true;
+  return {
+    el, note,
+    value: () => { const r = el.querySelector('input:checked'); return r ? r.value : ''; },
+    // true when the person may go on; shows the note and stops otherwise
+    check(form) {
+      const v = this.value();
+      if (!v) throw new Error('Please answer: are you 18 or older?');
+      if (v === 'yes') return true;
+      markAgeStopped();
+      if (form) form.hidden = true;
+      note.hidden = false;
+      return false;
+    },
+  };
+}
+
 async function signInView() {
   const human = humanCheck();
   // Open sign-up (migration 0018): anyone can make an account with their email, no invitation code.
@@ -291,7 +322,11 @@ async function signInView() {
     const msg = h('div');
     const emailIn = h('input', { type: 'email', name: 'new-email', required: true, autocomplete: 'email', placeholder: 'you@example.org' });
     const code = codeEntry(emailIn, msg);
-    const form = h('form', { onsubmit: action(async (ev) => {
+    const age = ageQuestion();
+    const stopped = ageStopped();
+    age.note.hidden = !stopped;
+    const form = h('form', { hidden: stopped, onsubmit: action(async (ev) => {
+      if (!age.check(form)) return;
       if (ev.submitter && ev.submitter.value === 'own') {
         await q(sb.rpc('notify_signup', { email: emailIn.value.trim(), source: 'commons' }));
         form.hidden = true;
@@ -300,6 +335,7 @@ async function signInView() {
       }
       await sendLink(emailIn, false, msg, code);
     }, msg) },
+      age.el,
       h('label', {}, 'Email', emailIn),
       h('div', { class: 'btns' },
         h('button', { class: invited || open ? 'primary' : '', value: 'code' }, invited ? T.invitedBtn : open ? T.openBtn : T.codeBtn)),
@@ -309,7 +345,7 @@ async function signInView() {
     return h('div', { class: invited ? 'panel signin-panel' : 'panel' },
       invited ? null : h('h2', { text: open ? T.openTitle : T.newTitle }),
       h('p', { class: 'muted', text: invited ? T.invited : open ? T.openText : T.code }),
-      msg, form, code.form, invited ? human.el : null);
+      msg, age.note, form, code.form, invited ? human.el : null);
   }
 
   // Sign-in comes first. Someone who arrived on an invitation link sees their invitation first
@@ -357,17 +393,26 @@ async function joinView() {
   const carried = savedInvite();
   if (carried) code.value = carried;
   const name = h('input', { name: 'name', required: true, minlength: 2, maxlength: 40, placeholder: 'How other members will see you' });
+  const age = ageQuestion();
   render(
     h('h1', { text: 'Welcome' }),
     h('p', { class: 'lede', text: carried ? 'You are signed in. Your invitation code is filled in from your link. Pick a display name to accept it.' : open ? 'You are signed in. Pick a display name to finish creating your account. Got an invitation code? You can leave it in the box, but you do not need one.' : 'You are signed in. Enter your invitation code (it starts with WAY-) to accept it.' }),
     h('div', { class: 'panel' }, msg,
-      h('form', { onsubmit: action(async () => {
+      age.note,
+      h('form', { id: 'join-form', onsubmit: action(async (ev) => {
+        if (!age.check(ev.target)) {
+          // Under 18: no account is made. Sign out so the half-made sign-in does not linger.
+          await sb.auth.signOut();
+          return;
+        }
         if (code.value.trim()) await q(sb.rpc('redeem_invitation', { code: code.value.trim(), display_name: name.value }));
         else await q(sb.rpc('join_open', { display_name: name.value }));
+        try { await sb.rpc('confirm_adult'); } catch { /* migration 0041 not run yet: do not block joining */ }
         forgetInvite();
         await loadMe(); drawNav();
         passwordView(false, true);
       }, msg) },
+        age.el,
         h('label', {}, open ? 'Invitation code (optional)' : 'Invitation code', code),
         h('label', {}, 'Display name', name),
         h('p', { class: 'small dim', text: 'Your email stays private. Members only see your display name. Choose it carefully: after this, only an admin can change it.' }),
