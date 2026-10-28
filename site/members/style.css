@@ -257,3 +257,9 @@ details.example ul{padding-left:18px;display:grid;gap:6px}
 .review-card .rv-chip{padding:4px 10px;border-radius:100px;background:#f3d98a22;border:1px solid #f3d98a66;color:#f3e3b0;font-size:13px}
 @media (max-width:700px){.review-card{grid-template-columns:1fr;padding:16px}.review-card .rv-art{max-width:220px}}
 @media (prefers-reduced-motion:reduce){.review-card,.review-card .rv-art{transition:none}.review-card:hover .rv-art{transform:none}}
+
+/* Age question on sign-up (migration 0041) */
+.age-q { border: 1px solid var(--line, #d9dee7); border-radius: 6px; padding: .6rem .9rem; margin: 0 0 1rem; }
+.age-q legend { font-weight: 600; padding: 0 .3rem; }
+.age-opt { display: block; padding: .25rem 0; cursor: pointer; }
+.age-opt input { width: auto; margin-right: .4rem; }
