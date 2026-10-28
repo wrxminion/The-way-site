@@ -78,7 +78,7 @@ function prelimCard(t) {
     sec('supports', 'Supports it', 'Records that back up what you sent.'),
     sec('contradicts', 'Contradicts it', 'Records that point the other way.'),
     sec('related', 'Related, but does not settle it', 'Records on the same subject that neither back it up nor rule it out.'),
-    h('p', { class: 'muted small', text: 'This answer comes from everything public on our site: all our data points. Outside research is done only after a request is sent for review. A reviewer can check this answer, correct it, or start a deeper investigation. Every change is logged.' }));
+    h('p', { class: 'muted small', text: 'This answer comes from everything public on our site: all our data points. Outside sources are looked for only after a request is sent, and a person checks them before they count as evidence. A reviewer can check this answer, correct it, or start a deeper investigation. Every change is logged.' }));
 }
 
 // What a person sees depends on what is true. Only a reviewer's "answered" is shown as reviewed evidence.
@@ -167,6 +167,7 @@ function draftPanel(receipt, t, box, shot) {
     const { data } = await sb.rpc('thread_status', { p_receipt: receipt });
     if (data) box.querySelector('.pt-dynamic')?.replaceChildren(...outcome(Object.assign({ code: data.code }, data), receipt));
     watch(receipt, box, false);
+    leadsSection(receipt, box.closest('.pt-sent') || box);
   });
   del.addEventListener('click', async () => {
     busy(true);
@@ -211,6 +212,31 @@ function watch(receipt, box, draft) {
   };
   setTimeout(tick, draft ? 1500 : 3000);
 }
+// Unchecked web leads, found by our own computer after a request is sent. Always labelled; a person checks them later.
+function leadsSection(receipt, box) {
+  box.querySelector('.pt-leads')?.remove();
+  const sec = h('section', { class: 'pt-leads' });
+  box.append(sec);
+  let tries = 0;
+  const paint = async () => {
+    if (!sec.isConnected) return;
+    const { data } = await sb.rpc('thread_leads', { p_receipt: receipt });
+    if (!sec.isConnected || !data) return;
+    const list = data.leads || [];
+    if (!list.length && (data.status === 'none' || data.status === 'failed')) { sec.replaceChildren(); return; }
+    if (!list.length && data.status === 'done') { sec.replaceChildren(h('p', { class: 'muted small', text: 'We looked for outside sources and found none we could use yet. A reviewer will look further.' })); return; }
+    if (!list.length) { sec.replaceChildren(h('p', { class: 'muted small', role: 'status', text: 'Looking for outside sources…' })); if (++tries < 80) setTimeout(paint, 15000); return; }
+    sec.replaceChildren(h('h2', {}, 'Leads we found on the web'),
+      h('p', { class: 'pt-badge', text: 'AI-researched leads, not yet checked by a person' }),
+      h('p', { class: 'pt-help', text: 'We will update this when a human reviewer verifies the sources. Until then, treat these as places to look, not as proof.' }),
+      h('ul', { class: 'pt-matches' }, list.map((l) => h('li', {},
+        h('strong', {}, /^https:\/\//i.test(l.url) ? h('a', { href: l.url, rel: 'noopener noreferrer nofollow', target: '_blank', text: l.title || l.url }) : (l.title || l.url)),
+        h('span', { class: 'muted small', text: l.checked ? ' Checked by a person' : ' Not checked yet' }),
+        h('p', { class: 'pt-blurb', text: l.excerpt })))));
+    if (data.status === 'pending' || data.status === 'running') { if (++tries < 80) setTimeout(paint, 15000); }
+  };
+  paint();
+}
 function showSent(receipt, status, matches, draft) {
   const first = draft ? h('p', { class: 'muted', text: 'Nothing is sent to the reviewers yet. First you check the text.' })
     : outcome({ status: status === 'matched' ? 'We already have something on this' : 'Waiting for a reviewer', code: status, matches }, receipt);
@@ -220,6 +246,7 @@ function showSent(receipt, status, matches, draft) {
   results.replaceChildren(box);
   live.textContent = draft ? 'Received. Reading it now.' : status === 'matched' ? 'We found related evidence.' : 'Sent. It is waiting for a reviewer.';
   if (draft || status === 'queued') watch(receipt, box, draft);
+  if (!draft) leadsSection(receipt, box);
   box.scrollIntoView?.({ block: 'nearest' });
 }
 
@@ -335,7 +362,7 @@ function view() {
     checks.push(h('label', { class: 'pt-check-row' }, h('input', { type: 'checkbox', name: 'text_only', checked: true }),
       h('span', {}, h('strong', { text: 'Send only the text. ' }), 'We read the text, then delete the picture right away. A reviewer never sees it.')));
   } else if (mode === 'question' || mode === 'text') {
-    checks.push(h('p', { class: 'pt-help', text: 'Our AI runs on our own computer. No outside AI service is used, and it does not learn from or train on what you send. Your first answer comes from everything public on our site, all our data points. Outside research is done only after a request is sent for review.' }));
+    checks.push(h('p', { class: 'pt-help', text: 'Our AI runs on our own computer. No outside AI service is used, and it does not learn from or train on what you send. Your first answer comes from everything public on our site, all our data points. After you send, our program also looks for outside sources on the web: only a short search phrase about the subject is used, never your name, email, picture or full text. Those leads stay marked as not checked until a person verifies them.' }));
   }
   if (mode === 'text' || mode === 'screenshot') {   // not for typed questions
     checks.push(h('label', { class: 'pt-check-row' }, h('input', { type: 'checkbox', name: 'hide_names' }),
@@ -367,6 +394,7 @@ function otherPanels() {
     if (error) return out.replaceChildren(h('p', { class: 'muted', text: 'Could not check right now.' }));
     if (!data) return out.replaceChildren(h('p', { class: 'muted', text: 'No match for that code.' }));
     out.replaceChildren(...outcome(data, inp.value.trim()));
+    leadsSection(inp.value.trim(), out);
   } });
   return h('details', { class: 'pt-check' }, h('summary', { text: 'Check on something you sent' }), h('label', { for: 'pt-receipt', text: 'Your code' }), inp, btn, out);
 }
