@@ -1927,7 +1927,7 @@ function teamUploadForm() {
 }
 
 async function privateResearchView() {
-  const mine = await q(sb.from('private_research').select('id,title,visibility,updated_at').eq('owner_id', state.user.id).order('updated_at', { ascending: false }));
+  const mine = await q(sb.from('private_research').select('id,title,visibility,updated_at,origin,verified').eq('owner_id', state.user.id).order('updated_at', { ascending: false }));
   const desk = can('researcher') || can('reviewer') || can('moderator');
   const shared = desk ? await q(sb.from('private_research').select('id,title,owner_id,shared_at').eq('visibility', 'shared').neq('owner_id', state.user.id).order('shared_at', { ascending: false }).limit(100)) : [];
   let team = [], teamErr = null;
@@ -1949,9 +1949,9 @@ async function privateResearchView() {
       location.hash = `#/private/${row.id}`;
     }, slot) }, h('h2', { text: 'New note' }), title, h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit', text: 'Create' }))),
     h('h2', { text: 'Your notes' }),
-    h('ul', { class: 'list panel' }, mine.length ? mine.map((n) => h('li', {},
+    h('ul', { class: 'list panel' }, mine.length ? mine.map((n) => (n.origin ? savedNoteRow(n) : h('li', {},
       h('div', { class: 'row' }, h('a', { href: `#/private/${n.id}`, text: n.title }),
-        h('span', {}, h('span', { class: 'tag', text: n.visibility === 'shared' ? 'shared' : 'private' }), ' ', h('span', { class: 'meta', text: day(n.updated_at) }))))) : [h('li', { class: 'muted', text: 'Nothing yet.' })]),
+        h('span', {}, h('span', { class: 'tag', text: n.visibility === 'shared' ? 'shared' : 'private' }), ' ', h('span', { class: 'meta', text: day(n.updated_at) })))))) : [h('li', { class: 'muted', text: 'Nothing yet.' })]),
     desk ? [h('h2', { text: 'Shared with the research desk' }),
       h('ul', { class: 'list panel' }, shared.length ? shared.map((n) => h('li', {}, h('div', { class: 'row' }, h('a', { href: `#/private/${n.id}`, text: n.title }), h('span', { class: 'meta', text: day(n.shared_at) })))) : [h('li', { class: 'muted', text: 'Nothing shared yet.' })])] : null,
     isSuper() ? [h('h2', { text: 'Team research (super admins only)' }),
@@ -1960,6 +1960,60 @@ async function privateResearchView() {
       groups.map((g) => h('div', { class: 'panel' }, h('h3', { text: g }),
         h('ul', { class: 'list' }, team.filter((f) => f.group === g).map((f) => h('li', {},
           h('div', { class: 'row' }, h('a', { href: `#/private/team/${encodeURIComponent(f.path)}`, text: f.title }), h('span', { class: 'meta', text: kb(f.size || 0) })))))))] : null);
+}
+
+
+// Notes saved from Pull a Thread or elsewhere carry their sources and a "not verified yet" flag until the member has checked every source.
+const noteFlag = (n) => h('span', { class: `tag ${n.verified ? '' : 'warn'}`, text: n.verified ? 'checked' : 'not verified yet' });
+// In the list a saved note is an accordion: the headline shows, and it opens to the details and sources.
+function savedNoteRow(n) {
+  const inner = h('div', { class: 'small' }, h('p', { class: 'muted', text: 'Loading…' }));
+  let loaded = false;
+  const det = h('details', { class: 'saved-note' },
+    h('summary', {}, h('b', { text: n.title }), ' ', noteFlag(n), ' ', h('span', { class: 'meta', text: day(n.updated_at) })), inner);
+  det.addEventListener('toggle', async () => {
+    if (!det.open || loaded) return; loaded = true;
+    try {
+      const r = (await q(sb.from('private_research').select('body,sources').eq('id', n.id)))[0] || { body: '', sources: [] };
+      inner.replaceChildren(...textBlocks(r.body), sourceLinks(r.sources), h('p', {}, h('a', { href: `#/private/${n.id}`, text: n.verified ? 'Open the note' : 'Open the note to check the sources' })));
+    } catch { loaded = false; inner.replaceChildren(h('p', { class: 'muted', text: 'Could not load this note.' })); }
+  });
+  return h('li', {}, det);
+}
+function sourceLinks(list) {
+  const src = Array.isArray(list) ? list : [];
+  return src.length ? h('ul', { class: 'small' }, src.map((x) => h('li', {}, h('a', { href: x.url, target: '_blank', rel: 'noopener noreferrer nofollow', text: x.title || x.url }),
+    x.checked ? ` (${x.verdict === 'not_confirmed' ? 'checked: did not back it up' : 'checked'})` : ' (not checked yet)'))) : h('p', { class: 'small dim', text: 'No sources were kept with this note.' });
+}
+// Check each source yourself. A check can also be sent to the reviewers: the link, your verdict and your reason, never your name or your note.
+function sourceChecker(n, redraw, slot) {
+  const src = Array.isArray(n.sources) ? n.sources : [];
+  if (!src.length) return null;
+  const rows = src.map((x, i) => {
+    if (x.checked) return h('li', {}, h('a', { href: x.url, target: '_blank', rel: 'noopener noreferrer nofollow', text: x.title || x.url }),
+      h('span', { class: 'small dim', text: x.verdict === 'not_confirmed' ? ' You checked it: it did not back the note up.' : ' You checked it.' }));
+    const verdict = h('select', { 'aria-label': 'What you found' }, h('option', { value: 'confirmed', text: 'It backs this up' }), h('option', { value: 'not_confirmed', text: 'It does not back this up' }));
+    const reason = h('input', { maxlength: 300, placeholder: 'What did you check? (5 or more characters)', 'aria-label': 'What you checked' });
+    const share = h('input', { type: 'checkbox', checked: true });
+    return h('li', {}, h('a', { href: x.url, target: '_blank', rel: 'noopener noreferrer nofollow', text: x.title || x.url }),
+      h('div', { class: 'row' }, verdict, reason),
+      h('label', { class: 'small' }, share, ' Also send this check to the reviewers (the link, your answer and your reason; not your name, not your note)'),
+      h('button', { type: 'button', class: 'quiet', text: 'Mark checked', onclick: action(async () => {
+        const why = reason.value.trim();
+        if (why.length < 5) throw new Error('Say what you checked, in at least 5 characters.');
+        if (share.checked) await q(sb.rpc('submit_source_check', { p_url: x.url, p_title: x.title || '', p_verdict: verdict.value, p_reason: why }));
+        const next = src.map((y, j) => (j === i ? { ...y, checked: true, verdict: verdict.value } : y));
+        const ok = next.every((y) => y.checked && y.verdict !== 'not_confirmed');
+        await q(sb.from('private_research').update({ sources: next, verified: ok }).eq('id', n.id));
+        if (window.WayBallot && n.ballot_state) {      // keep the line on this device's ballot in step
+          try { const d = window.WayBallot.read(n.ballot_state), f = d.facts[window.WayBallot.factId('thread-note', String(n.id))]; if (f) { f.flag = ok ? 'checked' : 'unverified'; window.WayBallot.write(window.WayBallot.clean(d, n.ballot_state)); } } catch { /* ballot is optional */ }
+        }
+        await redraw();
+      }, slot) }));
+  });
+  return h('div', { class: 'panel' }, h('h2', { text: 'Sources' }), noteFlag(n),
+    h('p', { class: 'small dim', text: n.verified ? 'You checked every source.' : 'Open each source, read it, and mark it checked. Until then this note is flagged as not verified.' }),
+    h('ul', { class: 'list' }, rows));
 }
 
 async function privateNoteView(id) {
@@ -1973,6 +2027,8 @@ async function privateNoteView(id) {
   render(
     h('p', {}, h('a', { href: '#/private', text: '← Private research' })),
     h('h1', { text: 'Your note' }), slot,
+    n.origin ? sourceChecker(n, () => privateNoteView(id), slot) : null,
+    n.ballot_key ? h('p', { class: 'small dim', text: `On your ballot (${n.ballot_state}), printing ${n.print_mode === 'full' ? 'the full details' : 'the headline only'}. Change that in My Ballot.` }) : null,
     h('form', { class: 'panel', onsubmit: save(() => ({ title: title.value.trim(), body: body.value }), async () => { slot.replaceChildren(notice('Saved.', 'ok')); }) },
       title, body,
       h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit', text: 'Save' }),
