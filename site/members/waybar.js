@@ -2,10 +2,10 @@
 // Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=1"> in <head>,
 //          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
 //          <script src="/members/waybar.js?v=1" defer></script>.
-// Signed in, desktop: logo centered · section links, a "More" button and Invite · search · your name (account menu).
-// Signed in, phone: a compact header (logo, search, account) and a bottom bar with Vote, Commons, Contribute, More.
+// Signed in, desktop: logo centered · section links, a "Menu" button and Invite · search · your name (account menu).
+// Signed in, phone: a compact header (logo, search, account) and a bottom bar with Vote, Commons, Contribute, Menu.
 // Signed out: logo and public sections, search, "Log in" and "Sign up"; on a phone the sections sit in a Menu panel.
-// Vote, Contribute, More and the signed-out Menu all open the SAME side panel (from the right, next to its trigger).
+// Vote, Contribute, Menu and the signed-out Menu all open the SAME side panel (from the right, next to its trigger).
 // The member area writes what the bar needs to localStorage ("theway.bar": display name, roles, which tabs exist,
 // your ballot link). That is only for drawing links; every page and the database still check the real sign-in themselves.
 (function () {
@@ -94,6 +94,14 @@
     p.setAttribute('d', ICONS[name] || ICONS.more);
     s.appendChild(p);
     return s;
+  }
+  // The Pull a Thread link in the signed-out header is ChatGPT's artwork (the words drawn as the thread, a hand pulling it).
+  // The words are real text to a screen reader through the image's alt text.
+  function threadArt(a) {
+    a.textContent = '';
+    a.appendChild(el('img', { class: 'wb-pat-img', src: '/members/art/pull-a-thread-words-1x.webp',
+      srcset: '/members/art/pull-a-thread-words-1x.webp 1x, /members/art/pull-a-thread-words-2x.webp 2x', alt: 'Pull a Thread', width: '136', height: '44', decoding: 'async' }));
+    return a;
   }
   // Site search in the bar on every page: a plain form that sends the visitor to /search/?q=... (done in script,
   // because some pages' security policy does not allow a form to submit).
@@ -202,12 +210,12 @@
     contribute.push({ href: '/members/author.html', label: 'Author tools', desc: 'Send an article or a source, and see your rank', icon: 'author', key: 'author' });
     contribute.push({ href: route('private'), label: 'Private research', desc: 'Your own notes and team files, never published', icon: 'private', key: 'private' });
     var explore = [
+      { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread', art: true },
       { href: '/preview/pages/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
       { href: '/preview/pages/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
       { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
       { href: '/preview/pages/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
       { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
-      { href: THREAD, label: 'Pull a Thread', desc: 'Send us a link, a screenshot or a question to check', icon: 'thread', key: 'thread' },
       { href: route('map'), label: 'Map', desc: 'Every state at a glance', icon: 'map', key: 'map' }
     ];
     if (d.findings) explore.push({ href: '/members/findings.html', label: 'Findings', desc: 'What members checked, with the verdict', icon: 'findings', key: 'findings' });
@@ -225,20 +233,19 @@
     return {
       vote: { title: 'Vote', groups: vote },
       contribute: { title: 'Contribute', groups: [{ items: contribute }] },
-      more: { title: 'More', groups: more }
+      more: { title: 'Menu', groups: more }
     };
   }
   function publicPanel() {
     return { title: 'Menu', groups: [
       { heading: 'Explore', items: [
-        { href: STATES, label: 'Voter Guide', icon: 'ballot', key: 'ballot' },
-        { href: '/preview/pages/news/', label: 'News', icon: 'news', key: 'news' },
-        { href: '/preview/pages/cases/', label: 'Civics & History', icon: 'cases', key: 'cases' },
-        { href: GOV, label: 'Government', icon: 'govworks', key: 'govworks' },
+        { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread', art: true },
+        { href: STATES, label: 'Voter Guide', desc: 'Your state, your ballot', icon: 'ballot', key: 'ballot' },
+        { href: '/preview/pages/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
+        { href: '/preview/pages/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
+        { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
         { href: '/preview/pages/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
-        { href: '/research/', label: 'Research', icon: 'research-lib', key: 'research-lib' },
-        { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread' },
-        { href: '/preview/pages/deeper.html', label: 'Why?', icon: 'about', key: 'about' }
+        { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' }
       ] },
       { heading: 'Your account', items: [
         { href: '/members/', label: 'Log in', icon: 'login', key: 'login' },
@@ -290,11 +297,16 @@
       g.items.forEach(function (it) {
         var li = el('li');
         var a = el('a', { href: it.href, 'aria-current': it.key === cur ? 'page' : null });
-        a.appendChild(icon(it.icon));
-        var t = el('span', { class: 'wb-item-text' });
-        t.appendChild(el('span', { class: 'wb-item-label' }, it.label));
-        if (it.desc) t.appendChild(el('span', { class: 'wb-item-desc' }, it.desc));
-        a.appendChild(t);
+        if (it.art) {
+          a.className = 'wb-art-item';
+          threadArt(a);
+        } else {
+          a.appendChild(icon(it.icon));
+          var t = el('span', { class: 'wb-item-text' });
+          t.appendChild(el('span', { class: 'wb-item-label' }, it.label));
+          if (it.desc) t.appendChild(el('span', { class: 'wb-item-desc' }, it.desc));
+          a.appendChild(t);
+        }
         a.addEventListener('click', function () { closePanel(false); });
         li.appendChild(a); ul.appendChild(li);
       });
@@ -390,7 +402,7 @@
       mid.appendChild(link(route('commons'), 'Commons', 'commons', cur));
       if (can(data, 'researcher') || can(data, 'reviewer')) mid.appendChild(link(route('research'), 'Research desk', 'research', cur));
       if (can(data, 'moderator')) mid.appendChild(link(route('review'), 'Review sources', 'review', cur));
-      var moreBtn = panelButton('more', 'More', 'wb-more-link');
+      var moreBtn = panelButton('more', 'Menu', 'wb-more-link');
       mid.appendChild(moreBtn);
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
       var inv = link(route('invite'), 'Invite', 'invite', cur);
@@ -429,15 +441,19 @@
     } else if (!pending) {
       panels = { menu: publicPanel() };
       var pub = el('nav', { class: 'wb-pub', 'aria-label': 'Sections' });
-      pub.appendChild(link(STATES, 'Voter Guide', 'ballot', cur));
-      pub.appendChild(link('/preview/pages/news/', 'News', 'news', cur));
-      pub.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases', cur));
-      pub.appendChild(link(GOV, 'Government', 'govworks', cur));
-      pub.appendChild(link('/preview/pages/case-studies/', 'Case Studies', 'casestudies', cur));
-      pub.appendChild(link('/research/', 'Research', 'research-lib', cur));
-      pub.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur));
+      // Two groups with the logo between them on a wide screen (Voter Guide, News, Civics & History | logo | the rest).
+      var pubL = el('div', { class: 'wb-pub-l' }), pubR = el('div', { class: 'wb-pub-r' });
+      pubL.appendChild(link(STATES, 'Voter Guide', 'ballot', cur));
+      pubL.appendChild(link('/preview/pages/news/', 'News', 'news', cur));
+      pubL.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases', cur));
+      pubR.appendChild(link(GOV, 'Government', 'govworks', cur));
+      pubR.appendChild(link('/preview/pages/case-studies/', 'Case Studies', 'casestudies', cur));
+      pubR.appendChild(link('/research/', 'Research', 'research-lib', cur));
+      threadArt(pubR.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur))).className = 'wb-pat-row';
+      pub.appendChild(pubL); pub.appendChild(pubR);
       var menuBtn = panelButton('menu', 'Menu', 'wb-menu-btn', 'menu');
       var tools = el('div', { class: 'wb-tools' });
+      threadArt(tools.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur))).className = 'wb-pat-tools';
       tools.appendChild(searchForm('wb-top-q'));
       var auth = el('nav', { class: 'wb-auth', 'aria-label': 'Account' });
       auth.appendChild(link('/members/', 'Log in', 'login', cur)).className = 'wb-login';
@@ -473,7 +489,7 @@
     commons.className = 'wb-tab';
     commons.textContent = '';
     commons.appendChild(icon('commons')); commons.appendChild(el('span', { class: 'wb-label' }, 'Commons'));
-    bottom.replaceChildren(tab('vote', 'Vote', 'vote'), commons, tab('contribute', 'Contribute', 'contribute'), tab('more', 'More', 'more'));
+    bottom.replaceChildren(tab('vote', 'Vote', 'vote'), commons, tab('contribute', 'Contribute', 'contribute'), tab('more', 'Menu', 'more'));
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {

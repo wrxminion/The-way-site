@@ -59,12 +59,35 @@
 .waybar .wb-search button:focus-visible{outline-offset:-3px}
 
 /* ---------- signed out: desktop ---------- */
-.waybar:not(.wb-in){grid-template-columns:auto minmax(0,1fr) auto;background:linear-gradient(180deg,#032332c9,#073b50d9);border-bottom:0}
-.waybar:not(.wb-in) .wb-logo{grid-column:1;grid-row:1;font-size:15px}
-.waybar:not(.wb-in) .wb-pub{grid-column:2;grid-row:1;justify-content:center;flex-wrap:wrap}
+.waybar:not(.wb-in){grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);background:linear-gradient(180deg,#032332c9,#073b50d9);border-bottom:0}
+.waybar:not(.wb-in) .wb-logo{grid-column:2;grid-row:1;justify-self:center;font-size:15px}
+/* Narrower desktop: logo centered on top, the section links in one centered line under it. */
+.waybar:not(.wb-in) .wb-pub{display:flex;grid-column:1/-1;grid-row:2;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px 28px}
+.waybar:not(.wb-in) .wb-pub-l,.waybar:not(.wb-in) .wb-pub-r{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 18px}
 .waybar:not(.wb-in) .wb-pub a{white-space:nowrap}
 .waybar:not(.wb-in) .wb-menu-btn{display:none}
-.waybar:not(.wb-in) .wb-tools{grid-column:3;grid-row:1;display:flex;align-items:center;gap:10px}
+.waybar:not(.wb-in) .wb-tools{grid-column:3;grid-row:1;justify-self:end;display:flex;align-items:center;gap:10px}
+/* Wide desktop: one row. Three links, the logo dead center, three links; the search, Log in and Sign up sit at the far right. */
+.waybar .wb-pat-tools{display:none}
+.waybar .wb-pat-img{display:block;height:44px;width:auto}
+.waybar .wb-pat-row,.waybar .wb-pat-tools{opacity:1}
+@media (min-width:1480px){
+  .waybar:not(.wb-in){grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);column-gap:24px}
+  .waybar:not(.wb-in) .wb-pub{display:contents}
+  .waybar:not(.wb-in) .wb-pub-l{grid-column:1;grid-row:1;flex-wrap:nowrap;justify-content:flex-end}
+  .waybar:not(.wb-in) .wb-logo{grid-column:2;grid-row:1}
+  .waybar:not(.wb-in) .wb-pub-r{grid-column:3;grid-row:1;flex-wrap:nowrap;justify-content:flex-start}
+  .waybar:not(.wb-in) .wb-pub-l,.waybar:not(.wb-in) .wb-pub-r{gap:6px 12px}
+  .waybar:not(.wb-in) .wb-pub a,.waybar:not(.wb-in) .wb-pat-tools{letter-spacing:.08em;font-size:11.5px}
+  .waybar:not(.wb-in) .wb-tools{gap:8px}
+  .waybar:not(.wb-in) .wb-login,.waybar:not(.wb-in) .wb-signup{padding:0 12px}
+  .waybar:not(.wb-in) .wb-pat-row{display:none}
+  .waybar:not(.wb-in) .wb-tools{position:absolute;right:12px;top:50%;transform:translateY(-50%);grid-column:auto}
+  .waybar:not(.wb-in) .wb-tools .wb-pat-tools{display:inline-flex;align-items:center;white-space:nowrap}
+  .waybar:not(.wb-in) .wb-search input{display:none}
+  .waybar:not(.wb-in) .wb-search button{width:36px}
+}
+@media (min-width:1700px){.waybar:not(.wb-in) .wb-search input{display:block;width:7em}}
 .waybar .wb-auth{flex-wrap:nowrap;gap:8px}
 .waybar .wb-login,.waybar .wb-signup{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 16px;border-radius:100px;
   border:1px solid #c7ffff77;opacity:1;text-transform:none;letter-spacing:.02em;font-size:14px;font-weight:700;white-space:nowrap}
@@ -76,13 +99,7 @@
 /* Older per-page nav bars are hidden wherever the shared bar is present. */
 body:has(#waybar) nav.topbar{display:none}
 
-/* Medium widths: the section links wrap under the logo instead of squeezing. */
-@media (max-width:1000px) and (min-width:761px){
-  .waybar:not(.wb-in){grid-template-columns:minmax(0,1fr) auto}
-  .waybar:not(.wb-in) .wb-pub{grid-column:1/-1;grid-row:2}
-  .waybar:not(.wb-in) .wb-tools{grid-column:2}
-  .waybar .wb-search input{width:7em}
-}
+@media (max-width:1239px) and (min-width:761px){.waybar .wb-search input{width:7em}}
 
 /* ---------- phone: compact header; bottom bar and side panel carry the navigation ---------- */
 @media (max-width:760px){
@@ -105,7 +122,7 @@ body:has(#waybar) nav.topbar{display:none}
   .waybar .wb-search button{width:44px;height:44px}
   /* signed out: row 1 logo and Menu; row 2 search with Log in and Sign up beside it */
   .waybar:not(.wb-in){grid-template-columns:minmax(0,1fr) auto}
-  .waybar:not(.wb-in) .wb-logo{grid-column:1;grid-row:1}
+  .waybar:not(.wb-in) .wb-logo{grid-column:1;grid-row:1;justify-self:start}
   .waybar:not(.wb-in) .wb-pub{display:none}
   .waybar:not(.wb-in) .wb-menu-btn{display:inline-flex;align-items:center;gap:8px;grid-column:2;grid-row:1;min-height:44px;padding:0 14px;border:1px solid #c7ffff55;border-radius:100px;opacity:1;text-transform:none;letter-spacing:.02em;font-size:14px;font-weight:700}
   .waybar:not(.wb-in) .wb-menu-btn[aria-expanded=true]{border-color:#a7f0e9;background:#0a3a50}
@@ -166,6 +183,8 @@ body:has(#waybar) nav.topbar{display:none}
 .wb-group a:focus-visible{outline:2px solid #a7f0e9;outline-offset:-2px}
 .wb-group a[aria-current=page]{background:#0a3a50;box-shadow:inset 3px 0 0 #a7f0e9}
 .wb-group .wb-ico{color:#a7f0e9}
+.wb-group a.wb-art-item{flex-direction:column;align-items:flex-start;gap:.2rem;padding:.6rem .6rem .5rem;background:#0a3a5080;box-shadow:inset 0 0 0 1px #a7f0e955}
+.wb-group a.wb-art-item .wb-pat-img{height:52px;max-width:100%;width:auto}
 .wb-item-text{display:flex;flex-direction:column;min-width:0}
 .wb-item-label{font-size:1rem;font-weight:700;color:#fff;overflow-wrap:break-word}
 .wb-item-desc{font-size:.85rem;opacity:.78;margin-top:1px;overflow-wrap:break-word}
