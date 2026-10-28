@@ -1,10 +1,11 @@
 name: Ledger auto-post
 
-# When a pull request is merged into main, and ONLY if it carries the label
-# "ledger" and a body line that starts with "ledger:", open a small follow-up
+# When a pull request is merged into main, and ONLY if its body has a line that
+# starts with "ledger:", open a small follow-up
 # pull request that adds one neutral row to the public development ledger.
 # The row text is the "ledger:" line, never the PR title or any other text.
 # PRs labeled "do-not-publish" or containing "DO NOT PUBLISH" are skipped.
+# No label is needed: the "ledger:" line is the opt-in.
 # Main is protected, so this opens a PR for the maintainer to merge; it uses
 # only the built-in GITHUB_TOKEN.
 
@@ -22,7 +23,6 @@ jobs:
     if: >-
       github.event.pull_request.merged == true &&
       github.event.pull_request.head.repo.full_name == github.repository &&
-      contains(github.event.pull_request.labels.*.name, 'ledger') &&
       !contains(github.event.pull_request.labels.*.name, 'do-not-publish') &&
       !startsWith(github.event.pull_request.head.ref, 'ledger-auto/')
     runs-on: ubuntu-latest
