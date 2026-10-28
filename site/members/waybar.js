@@ -188,7 +188,7 @@
         { href: '/preview/pages/cases/', label: 'Civics & History', icon: 'cases', key: 'cases' },
         { href: '/preview/pages/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
         { href: '/research/', label: 'Research', icon: 'research-lib', key: 'research-lib' },
-        { href: '/preview/pages/deeper.html', label: 'About The Way', icon: 'about', key: 'about' }
+        { href: '/preview/pages/deeper.html', label: 'Why?', icon: 'about', key: 'about' }
       ] },
       { heading: 'Your account', items: [
         { href: '/members/', label: 'Log in', icon: 'login', key: 'login' },
