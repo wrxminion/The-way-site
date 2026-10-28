@@ -646,7 +646,7 @@ async function homeView() {
     h('p', { class: 'small place-line' }, ...(loadPlace()
       ? ['Your place: ', h('strong', { text: loadPlace().state }), ' · ', h('a', { href: '#/account', text: 'change it in your account' })]
       : [h('a', { href: '#/account', text: 'Save your state in your account' }), ' to open the map and your ballot on it.'])),
-    h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Invite someone to The Way' }), h('a', { class: 'button', href: 'author.html', text: 'Author desk and ranks' })),
+    h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Invite someone to The Way' }), h('a', { class: 'button', href: 'author.html', text: 'Author desk and ranks' }), h('a', { class: 'button', href: '#/private', text: 'Private research' })),
     (wantsAdmin || wantsMod || can('researcher') || can('reviewer')) ? h('div', { class: 'panel' },
       h('h3', { text: 'Your tools' }),
       h('div', { class: 'btns' },
@@ -1761,6 +1761,123 @@ async function inviteView() {
   }
 }
 
+// ---------------------------------------------------------------- private research
+// Every member gets a private notebook (table private_research, owner-only). Super admins also see the
+// team's own research files from the private bucket team-research (index.json lists them).
+
+const isSuper = () => state.roles.has('super_admin');
+const kb = (n) => (n >= 1048576 ? `${(n / 1048576).toFixed(1)} MB` : `${Math.max(1, Math.round(n / 1024))} KB`);
+
+// Plain-text view of a note or file: headings, bullets and paragraphs, all through textContent.
+function textBlocks(text) {
+  const out = []; let para = [];
+  const flush = () => { if (para.length) { out.push(h('p', { text: para.join(' ') })); para = []; } };
+  for (const raw of String(text).split('\n')) {
+    const line = raw.trimEnd();
+    const hd = line.match(/^(#{1,4})\s+(.*)$/);
+    if (!line.trim()) flush();
+    else if (hd) { flush(); out.push(h(hd[1].length === 1 ? 'h2' : 'h3', { text: hd[2] })); }
+    else if (/^\s*[-*]\s+/.test(line)) { flush(); out.push(h('p', { class: 'small', text: '• ' + line.replace(/^\s*[-*]\s+/, '') })); }
+    else para.push(line.trim());
+  }
+  flush();
+  return out;
+}
+
+const TEAM_TYPES = { md: 'text/markdown', txt: 'text/plain', json: 'application/json', csv: 'text/csv', pdf: 'application/pdf' };
+// Super admins pick the prepared folder (it holds index.json); each file is added or replaced, index.json last.
+function teamUploadForm() {
+  const input = h('input', { type: 'file', multiple: true, webkitdirectory: true });
+  const out = h('div');
+  return h('div', { class: 'panel' }, h('h3', { text: 'Upload folder' }),
+    h('p', { class: 'small dim', text: 'Pick the prepared team-research-upload folder. Files with the same name are replaced.' }), input, out,
+    h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'button', text: 'Upload', onclick: action(async () => {
+      const files = [...input.files].map((f) => {
+        const parts = (f.webkitRelativePath || f.name).split('/'); if (parts.length > 1) parts.shift();
+        return { f, path: parts.join('/'), type: TEAM_TYPES[(parts[parts.length - 1].split('.').pop() || '').toLowerCase()] };
+      }).filter((x) => x.type && !/(^|\/)\.\.?(\/|$)/.test(x.path));
+      if (!files.length) throw new Error('Pick the folder first.');
+      files.sort((a, b) => (a.path === 'index.json') - (b.path === 'index.json'));
+      for (let i = 0; i < files.length; i++) {
+        out.replaceChildren(h('p', { class: 'small', text: `Uploading ${i + 1} of ${files.length}` }));
+        await q(sb.storage.from('team-research').upload(files[i].path, files[i].f, { upsert: true, contentType: files[i].type }));
+      }
+      await privateResearchView();
+    }, out) })));
+}
+
+async function privateResearchView() {
+  const mine = await q(sb.from('private_research').select('id,title,visibility,updated_at').eq('owner_id', state.user.id).order('updated_at', { ascending: false }));
+  const desk = can('researcher') || can('reviewer') || can('moderator');
+  const shared = desk ? await q(sb.from('private_research').select('id,title,owner_id,shared_at').eq('visibility', 'shared').neq('owner_id', state.user.id).order('shared_at', { ascending: false }).limit(100)) : [];
+  let team = [], teamErr = null;
+  if (isSuper()) {
+    const { data, error } = await sb.storage.from('team-research').download('index.json');
+    if (error) teamErr = 'The team research is not uploaded yet.';
+    else { try { team = JSON.parse(await data.text()); } catch { teamErr = 'The team research index could not be read.'; } }
+  }
+  const title = h('input', { maxlength: 200, required: true, placeholder: 'Title' });
+  const slot = h('div');
+  const groups = [...new Set(team.map((f) => f.group))].sort();
+  render(
+    h('h1', { text: 'Private research' }),
+    h('p', { class: 'lede', text: 'Your notes, kept private by default. Only you can read them, not moderators or admins. Share one when you are ready and the research desk can review it.' }),
+    slot,
+    h('form', { class: 'panel', onsubmit: action(async () => {
+      const t = title.value.trim(); if (!t) return;
+      const row = (await q(sb.from('private_research').insert({ owner_id: state.user.id, title: t }).select('id')))[0];
+      location.hash = `#/private/${row.id}`;
+    }, slot) }, h('h2', { text: 'New note' }), title, h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit', text: 'Create' }))),
+    h('h2', { text: 'Your notes' }),
+    h('ul', { class: 'list panel' }, mine.length ? mine.map((n) => h('li', {},
+      h('div', { class: 'row' }, h('a', { href: `#/private/${n.id}`, text: n.title }),
+        h('span', {}, h('span', { class: 'tag', text: n.visibility === 'shared' ? 'shared' : 'private' }), ' ', h('span', { class: 'meta', text: day(n.updated_at) }))))) : [h('li', { class: 'muted', text: 'Nothing yet.' })]),
+    desk ? [h('h2', { text: 'Shared with the research desk' }),
+      h('ul', { class: 'list panel' }, shared.length ? shared.map((n) => h('li', {}, h('div', { class: 'row' }, h('a', { href: `#/private/${n.id}`, text: n.title }), h('span', { class: 'meta', text: day(n.shared_at) })))) : [h('li', { class: 'muted', text: 'Nothing shared yet.' })])] : null,
+    isSuper() ? [h('h2', { text: 'Team research (super admins only)' }),
+      teamErr ? h('p', { class: 'muted', text: teamErr }) : null,
+      teamUploadForm(),
+      groups.map((g) => h('div', { class: 'panel' }, h('h3', { text: g }),
+        h('ul', { class: 'list' }, team.filter((f) => f.group === g).map((f) => h('li', {},
+          h('div', { class: 'row' }, h('a', { href: `#/private/team/${encodeURIComponent(f.path)}`, text: f.title }), h('span', { class: 'meta', text: kb(f.size || 0) })))))))] : null);
+}
+
+async function privateNoteView(id) {
+  const rows = await q(sb.from('private_research').select('*').eq('id', id));
+  if (!rows.length) return render(notice('That note was not found, or it is private to someone else.'));
+  const n = rows[0], own = n.owner_id === state.user.id, slot = h('div');
+  const title = h('input', { maxlength: 200, required: true, value: n.title });
+  const body = h('textarea', { maxlength: 100000, rows: 22 }); body.value = n.body;
+  const save = (patch, then) => action(async () => { await q(sb.from('private_research').update(patch()).eq('id', id)); await then(); }, slot);
+  if (!own) return render(h('p', {}, h('a', { href: '#/private', text: '← Private research' })), h('h1', { text: n.title }), h('span', { class: 'tag', text: 'shared with the research desk' }), textBlocks(n.body));
+  render(
+    h('p', {}, h('a', { href: '#/private', text: '← Private research' })),
+    h('h1', { text: 'Your note' }), slot,
+    h('form', { class: 'panel', onsubmit: save(() => ({ title: title.value.trim(), body: body.value }), async () => { slot.replaceChildren(notice('Saved.', 'ok')); }) },
+      title, body,
+      h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit', text: 'Save' }),
+        n.visibility === 'shared'
+          ? h('button', { type: 'button', class: 'quiet', text: 'Make private again', onclick: save(() => ({ title: title.value.trim(), body: body.value, visibility: 'private' }), privateResearchView) })
+          : h('button', { type: 'button', class: 'quiet', text: 'Share with the research desk', onclick: save(() => ({ title: title.value.trim(), body: body.value, visibility: 'shared' }), privateResearchView) }),
+        h('button', { type: 'button', class: 'quiet', text: 'Delete', onclick: action(async () => {
+          if (!confirm('Delete this note for good?')) return;
+          await q(sb.from('private_research').delete().eq('id', id)); location.hash = '#/private';
+        }, slot) })),
+      h('p', { class: 'small dim', text: n.visibility === 'shared' ? 'Shared: members on the research desk can read this note. You can make it private again at any time.' : 'Private: only you can read this note.' })));
+}
+
+async function teamFileView(path) {
+  if (!isSuper()) return render(notice('Super admins only.'));
+  const { data, error } = await sb.storage.from('team-research').download(path);
+  if (error) throw error;
+  const text = await data.text();
+  let shown;
+  if (/\.json$/i.test(path)) { let pretty = text; try { pretty = JSON.stringify(JSON.parse(text), null, 2); } catch { /* show as is */ } shown = h('pre', { class: 'panel', text: pretty }); }
+  else if (/\.(md|txt)$/i.test(path)) shown = h('div', { class: 'panel' }, textBlocks(text));
+  else shown = h('pre', { class: 'panel', text });
+  render(h('p', {}, h('a', { href: '#/private', text: '← Private research' })), h('h1', { text: path.split('/').pop() }), h('span', { class: 'tag', text: 'team research, super admins only' }), shown);
+}
+
 async function adminView() {
   const [invites, members, roles, notify] = await Promise.all([
     q(sb.from('invitations').select('*').order('id', { ascending: false }).limit(100)),
@@ -2315,6 +2432,7 @@ async function route() {
       case 'reports': return can('moderator') ? await reportsView() : render(notice('Moderators only.'));
       case 'research': return (can('researcher') || can('reviewer'))
         ? (parts[1] ? await researchItemView(+parts[1]) : await researchView()) : render(notice('Research desk members only.'));
+      case 'private': return parts[1] === 'team' ? await teamFileView(decodeURIComponent(parts[2] || '')) : (parts[1] ? await privateNoteView(+parts[1]) : await privateResearchView());
       case 'admin': return can('admin') ? await adminView() : render(notice('Admins only.'));
       case 'account': return accountView();
       case 'password': return passwordView(false);

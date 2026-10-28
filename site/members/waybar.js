@@ -77,6 +77,7 @@
     if (/^\/search\//.test(path)) return 'search';
     if (/^\/preview\/pages\/news/.test(path)) return 'news';
     if (/^\/preview\/pages\/(foundation|founder|deeper)/.test(path)) return 'about';
+    if (/^#\/private/.test(h)) return 'me';
     if (/^#\/research/.test(h)) return 'research';
     if (/^#\/map/.test(h) || /^\/preview\/pages\/map/.test(path)) return 'map';
     if (/^\/preview\/pages\/(guide|states|map)/.test(path)) return 'ballot';
@@ -146,6 +147,7 @@
       item('/research/', 'Research');
       item(route('commons'), 'Commons');
       item(route('invite'), 'Invite someone');
+      item(route('private'), 'Private research');
       if (data.findings) item('/members/findings.html', 'Findings');
       if (can('researcher') || can('reviewer')) item(route('research'), 'Research desk');
       if (can('moderator')) item(route('review'), 'Source verification');
