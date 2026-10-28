@@ -34,3 +34,5 @@ deployment:
     # Live ledger rows and checks: copied from the ledger-data branch (public raw files) so the ledger page stays same-origin.
     # A failure here never stops a deploy (the page works without these two files).
     - /bin/sh -c 'DEPLOYPATH=/home3/minion/public_html/thewayparty.com/; for f in live-rows checks; do /usr/bin/curl -fsS --max-time 20 -o ${DEPLOYPATH}development/data/$f.tmp https://raw.githubusercontent.com/wrxminion/The-way-site/ledger-data/$f.json && /bin/mv -f ${DEPLOYPATH}development/data/$f.tmp ${DEPLOYPATH}development/data/$f.json || /bin/rm -f ${DEPLOYPATH}development/data/$f.tmp; done; true'
+    # Review status of AI-written pages: same idea, one file at the docroot. The seed in site/content-status.json is used if this fails.
+    - /bin/sh -c 'DEPLOYPATH=/home3/minion/public_html/thewayparty.com/; /usr/bin/curl -fsS --max-time 20 -o ${DEPLOYPATH}content-status.tmp https://raw.githubusercontent.com/wrxminion/The-way-site/ledger-data/content-status.json && /bin/mv -f ${DEPLOYPATH}content-status.tmp ${DEPLOYPATH}content-status.json || /bin/rm -f ${DEPLOYPATH}content-status.tmp; true'
