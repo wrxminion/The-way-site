@@ -7,6 +7,6 @@ window.THE_WAY_CONFIG = {
   emailCodes: true,
   // Cloudflare Turnstile site key (public). Leave '' to switch the human check off.
   // The matching SECRET key goes only into Supabase (Authentication > Bot and Abuse Protection).
-  turnstileSiteKey: '',
+  turnstileSiteKey: '0x4AAAAAAFp1RfMi01UJ0Kff',
   readyStates: ["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],
 };

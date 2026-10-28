@@ -437,7 +437,7 @@
   }
   function lib() {
     if (sbLib) return sbLib;
-    sbLib = (window.THE_WAY_CONFIG ? Promise.resolve() : loadScript('config.js?v=39')).then(function () {
+    sbLib = (window.THE_WAY_CONFIG ? Promise.resolve() : loadScript('config.js?v=40')).then(function () {
       return window.supabase ? null : loadScript('vendor/supabase-js-2.110.9.js');
     }).then(function () { cfg = window.THE_WAY_CONFIG; if (!cfg || !window.supabase) throw 0; });
     return sbLib;

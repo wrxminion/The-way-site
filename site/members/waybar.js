@@ -60,6 +60,8 @@
     commons: 'M4 5h16v11H9l-5 4z',
     contribute: 'M12 5v14 M5 12h14',
     more: 'M5 12h.01 M12 12h.01 M19 12h.01',
+    bell: 'M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z M10 20a2 2 0 0 0 4 0',
+    thread: 'M4 18c5-11 8 3 12-6 1.5-4.5 2.5-5 4-6',
     search: 'M10.5 4a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13z M15.5 15.5L20 20',
     news: 'M5 4h12v16H5z M17 8h3v10a2 2 0 0 1-2 2 M8 8h6 M8 12h6 M8 16h4',
     cases: 'M3 9l9-5 9 5 M5 10v8 M10 10v8 M14 10v8 M19 10v8 M3 20h18',
@@ -122,6 +124,7 @@
     if (/^\/preview\/pages\/case-studies/.test(path)) return 'casestudies';
     if (/^\/research\//.test(path)) return 'research-lib';
     if (/^\/search\//.test(path)) return 'search';
+    if (/^\/members\/pull-a-thread/.test(path)) return 'thread';
     if (/^\/preview\/pages\/news/.test(path)) return 'news';
     if (/^\/preview\/pages\/(foundation|founder|deeper)/.test(path)) return 'about';
     if (/^\/members\/my-ballot/.test(path)) return 'myballot';
@@ -146,6 +149,45 @@
   }
 
   // ---- what the menus hold (one list, used by the bottom bar, the side panel and the desktop links) ----
+  var THREAD = '/members/pull-a-thread.html';
+  var NOTES = '/members/notifications.html';
+  // Bell with the unread count. The count is asked for at most once a minute and kept in localStorage ("theway.unread");
+  // notifications.html keeps it current. No DMs: notices come only from the site.
+  function bellLink(cur) {
+    var a = el('a', { class: 'wb-bell', href: NOTES, 'aria-label': 'Notifications', 'aria-current': /^\/members\/notifications/.test(path) ? 'page' : null });
+    a.appendChild(icon('bell'));
+    a.appendChild(el('span', { class: 'wb-bell-badge', hidden: '' }));
+    setTimeout(function () { refreshUnread(a); }, 0);
+    return a;
+  }
+  function showUnread(a, n) {
+    var b = a.querySelector('.wb-bell-badge'); if (!b) return;
+    b.hidden = !(n > 0); b.textContent = n > 99 ? '99+' : String(n);
+    a.setAttribute('aria-label', n > 0 ? 'Notifications, ' + n + ' unread' : 'Notifications');
+  }
+  function refreshUnread(a) {
+    var cached = null;
+    try { cached = JSON.parse(localStorage.getItem('theway.unread') || 'null'); } catch (e) { /* none */ }
+    if (cached && typeof cached.n === 'number') showUnread(a, cached.n);
+    if (cached && Date.now() - cached.t < 60000) return;
+    var tok = null;
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i) || '';
+        if (/^sb-.+-auth-token$/.test(k)) { var v = JSON.parse(localStorage.getItem(k) || 'null'); if (v && v.access_token && (!v.expires_at || v.expires_at * 1000 > Date.now())) tok = v.access_token; }
+      }
+    } catch (e) { return; }
+    if (!tok) return;
+    var go = function () {
+      var cfg = window.THE_WAY_CONFIG; if (!cfg) return;
+      fetch(cfg.supabaseUrl + '/rest/v1/rpc/my_unread_count', { method: 'POST', headers: { apikey: cfg.supabaseAnonKey, authorization: 'Bearer ' + tok, 'content-type': 'application/json' }, body: '{}' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (n) { if (typeof n === 'number') { try { localStorage.setItem('theway.unread', JSON.stringify({ n: n, t: Date.now() })); } catch (e) { /* ignore */ } showUnread(a, n); } })
+        .catch(function () { /* the bell just stays as it was */ });
+    };
+    if (window.THE_WAY_CONFIG) go();
+    else { var sc = document.createElement('script'); sc.src = '/members/config.js?v=40'; sc.onload = go; document.head.appendChild(sc); }
+  }
   function can(d, r) { return d.roles.indexOf(r) >= 0 || d.roles.indexOf('admin') >= 0; }
   function memberPanels(d) {
     var st = d.state;
@@ -165,11 +207,13 @@
       { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
       { href: '/preview/pages/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
       { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
+      { href: THREAD, label: 'Pull a Thread', desc: 'Send us a link, a screenshot or a question to check', icon: 'thread', key: 'thread' },
       { href: route('map'), label: 'Map', desc: 'Every state at a glance', icon: 'map', key: 'map' }
     ];
     if (d.findings) explore.push({ href: '/members/findings.html', label: 'Findings', desc: 'What members checked, with the verdict', icon: 'findings', key: 'findings' });
     var community = [
       { href: route('invite'), label: 'Invite someone', icon: 'invite', key: 'invite' },
+      { href: NOTES, label: 'Notifications', desc: 'Replies and updates for you', icon: 'bell', key: 'notes' },
       { href: route('roles'), label: 'Ranks & awards', desc: 'Author, Deshi and Renshi, and points', icon: 'roles', key: 'roles' }
     ];
     var manage = [];
@@ -193,6 +237,7 @@
         { href: GOV, label: 'Government', icon: 'govworks', key: 'govworks' },
         { href: '/preview/pages/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
         { href: '/research/', label: 'Research', icon: 'research-lib', key: 'research-lib' },
+        { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread' },
         { href: '/preview/pages/deeper.html', label: 'Why?', icon: 'about', key: 'about' }
       ] },
       { heading: 'Your account', items: [
@@ -341,6 +386,7 @@
       mid.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases', cur));
       mid.appendChild(link('/preview/pages/case-studies/', 'Case Studies', 'casestudies', cur));
       mid.appendChild(link('/research/', 'Research', 'research-lib', cur));
+      mid.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur));
       mid.appendChild(link(route('commons'), 'Commons', 'commons', cur));
       if (can(data, 'researcher') || can(data, 'reviewer')) mid.appendChild(link(route('research'), 'Research desk', 'research', cur));
       if (can(data, 'moderator')) mid.appendChild(link(route('review'), 'Review sources', 'review', cur));
@@ -361,6 +407,7 @@
       });
       right.appendChild(sb);
       right.appendChild(searchForm());
+      right.appendChild(bellLink(cur));
       // Account menu: only personal things (your account, sign out). Everything else is in the menus above.
       var who = el('div', { class: 'wb-who' });
       var btn = el('button', { type: 'button', class: 'wb-name', 'aria-haspopup': 'true', 'aria-expanded': 'false',
@@ -372,6 +419,7 @@
       var item = function (href, label) { var li = el('li'); li.appendChild(link(href, label)); menu.appendChild(li); };
       menu.appendChild(el('li', { class: 'wb-menu-name' }, data.name));
       item(route('account'), 'Your account');
+      item(NOTES, 'Notifications');
       menu.appendChild(el('li', { class: 'wb-sep', role: 'separator' }));
       item(route('signout'), 'Sign out');
       btn.addEventListener('click', function (ev) { ev.stopPropagation(); toggleMenu(btn, menu); });
@@ -387,6 +435,7 @@
       pub.appendChild(link(GOV, 'Government', 'govworks', cur));
       pub.appendChild(link('/preview/pages/case-studies/', 'Case Studies', 'casestudies', cur));
       pub.appendChild(link('/research/', 'Research', 'research-lib', cur));
+      pub.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur));
       var menuBtn = panelButton('menu', 'Menu', 'wb-menu-btn', 'menu');
       var tools = el('div', { class: 'wb-tools' });
       tools.appendChild(searchForm('wb-top-q'));
@@ -435,7 +484,21 @@
   }
   window.addEventListener('resize', function () { syncWave(); });
   // One small "Back to surface" button after scrolling (search and Log in / Sign up live in the header).
+  // The Pull a Thread floating link: ChatGPT's text-free hand (art/pull-a-thread-hand-*.webp, decorative) plus a real printed
+  // label. It goes bottom left on every page except the Pull a Thread pages themselves. A plain link, no script behind it.
+  function syncThreadFab() {
+    var fab = document.querySelector('.wb-thread-fab');
+    if (/^\/members\/(pull-a-thread|thread-queue|notifications)/.test(path)) { if (fab) fab.remove(); return; }
+    if (fab) return;
+    fab = el('a', { class: 'wb-thread-fab', href: THREAD });
+    var img = el('img', { src: '/members/art/pull-a-thread-hand-120.webp', srcset: '/members/art/pull-a-thread-hand-120.webp 1x, /members/art/pull-a-thread-hand-240.webp 2x',
+                          alt: '', 'aria-hidden': 'true', width: '120', height: '102', decoding: 'async', loading: 'lazy' });
+    fab.appendChild(img);
+    fab.appendChild(el('span', { class: 'wb-thread-fab-label' }, 'Pull a thread'));
+    document.body.appendChild(fab);
+  }
   function syncFloating() {
+    syncThreadFab();
     var floating = document.querySelector('.wb-floating');
     if (!floating) {
       floating = el('nav', { class: 'wb-floating', 'aria-label': 'Quick links' });
