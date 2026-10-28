@@ -1898,7 +1898,7 @@ function loadClaims() {
   if (window.WAY_CASE_CLAIMS) return Promise.resolve(window.WAY_CASE_CLAIMS);
   if (!claimsLoad) claimsLoad = new Promise((resolve, reject) => {
     const s = document.createElement('script');
-    s.src = 'cases-claims.js?v=1';
+    s.src = 'cases-claims.js?v=2';
     s.onload = () => resolve(window.WAY_CASE_CLAIMS || {});
     s.onerror = () => { claimsLoad = null; reject(new Error('Could not load the list of claims. Reload and try again.')); };
     document.head.append(s);
@@ -2117,7 +2117,7 @@ function loadCasePage(c) {
 const normText = (t) => String(t || '').toLowerCase().replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/[‐-―−]/g, '-')
   .replace(/(\d),(\d)/g, '$1$2').replace(/[^a-z0-9$%]+/g, ' ').replace(/\s+/g, ' ').trim();
 const flat = (t) => String(t || '').replace(/\s+/g, ' ').trim();
-const safeHref = (href, base) => { try { const u = new URL(href, base); return /^https?:$/.test(u.protocol) ? u.href : null; } catch { return null; } };
+const safeHref = (href, base) => { try { const u = new URL(href, new URL(base, location.href)); return /^https?:$/.test(u.protocol) ? u.href : null; } catch { return null; } };
 const NUMW = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15, sixteen: 16, seventeen: 17, eighteen: 18, nineteen: 19, twenty: 20, thirty: 30, forty: 40, fifty: 50, hundred: 100, first: 1, second: 2, third: 3 };
 const STOP = new Set(['the', 'and', 'page', 'host', 'read', 'through', 'tool', 'returned', 'text', 'seen', 'only', 'from', 'with', 'for', 'that', 'was', 'were', 'not', 'are', 'its', 'has', 'had', 'his', 'her', 'who', 'did', 'but', 'this', 'than', 'also', 'into', 'been', 'which', 'when', 'they', 'their', 'there', 'then', 'about']);
 const stem = (w) => (NUMW[w] ? String(NUMW[w]) : w.length > 4 ? w.replace(/(ing|ed|es|s|ly)$/, '') : w);
