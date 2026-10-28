@@ -473,11 +473,11 @@ function view() {
   }
   const trap = h('div', { class: 'pt-hp', 'aria-hidden': 'true' }, h('input', { name: 'website', tabindex: '-1', autocomplete: 'off' }));
   const ts = h('div', { class: 'pt-ts' });
-  const BA = '/members/art/', still = BA + 'thread-slack-240.webp', pulled = BA + 'thread-pull-480.webp';
-  const goImg = h('img', { src: still, alt: '', width: '120', height: '120', class: 'pt-go-art', 'aria-hidden': 'true' });
+  const BA = '/members/art/', still = BA + 'thread-slack-480.webp', pulled = BA + 'thread-pull-480.webp';
+  const goImg = h('img', { src: still, alt: '', width: '480', height: '153', class: 'pt-go-art', 'aria-hidden': 'true' });
   const go = h('button', { type: 'submit', class: 'pt-go' }, goImg, h('span', { class: 'pt-go-text', text: 'Submit' }));   // real text under the picture is the button's name
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
-  go.addEventListener('click', () => { if (reduce && reduce.matches) { goImg.src = BA + 'thread-taut-240.webp'; return; } goImg.src = pulled + '?t=' + Date.now(); });   // plays once per press; still for reduced motion
+  go.addEventListener('click', () => { if (reduce && reduce.matches) { goImg.src = BA + 'thread-taut-480.webp'; return; } goImg.src = pulled + '?t=' + Date.now(); });   // plays once per press; still for reduced motion
   form.append(modes, summary, framed, note, ...checks, trap, ts, h('div', { class: 'pt-gorow' }, go, session ? null : h('span', { class: 'muted', text: 'No account needed' })),
     h('p', { class: 'pt-privacy', text: 'Reviewers see what you send, never who you are. Your screenshot and email stay private. Questions and evidence can become public after review, reworded without names or private details. Email addresses stay private.' }));
   form.addEventListener('submit', (ev) => { ev.preventDefault(); send(form, summary); });
