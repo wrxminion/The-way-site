@@ -62,6 +62,25 @@ function card(kind, title, ...kids) {
   const f = { reviewed: 'pat-reviewed-evidence.svg', related: 'pat-related-evidence.svg', closer: 'pat-needs-review.svg' }[kind];
   return h('section', { class: `pt-outcome pt-${kind}` }, h('h2', {}, icon(f), title), ...kids);
 }
+// The quick answer from our own records: supports, contradicts, related but does not settle it. Labeled AI-generated until a reviewer checks it.
+function prelimCard(t) {
+  const pr = t.prelim;
+  const sec = (key, title, hint) => (pr[key] && pr[key].length)
+    ? h('div', { class: 'pt-sec' }, h('h3', { text: title }), h('p', { class: 'pt-help', text: hint }), h('ul', { class: 'pt-matches' }, pr[key].map((m) => h('li', {},
+        h('strong', {}, m.path ? h('a', { href: m.path, text: m.title }) : m.title),
+        h('span', { class: 'muted small', text: m.kind === 'finding' ? ' A member-checked finding (members can read it)' : m.kind === 'case' ? ' A history case' : ' Already on the site' }),
+        m.blurb ? h('p', { class: 'pt-blurb', text: m.blurb }) : null)))) : null;
+  return h('section', { class: 'pt-outcome pt-prelim' }, h('h2', {}, icon('pat-related-evidence.svg'), 'What our records show'),
+    h('p', { class: 'pt-badge', text: pr.label }),
+    lead(),
+    pr.enough || (pr.related && pr.related.length) ? null : h('p', { text: 'We do not have enough evidence in our records to say yet. That is a real answer, and a reviewer will look into it.' }),
+    !pr.enough && pr.related && pr.related.length ? h('p', { text: 'Nothing we have settles this yet. What we found is related only.' }) : null,
+    sec('supports', 'Supports it', 'Records that back up what you sent.'),
+    sec('contradicts', 'Contradicts it', 'Records that point the other way.'),
+    sec('related', 'Related, but does not settle it', 'Records on the same subject that neither back it up nor rule it out.'),
+    h('p', { class: 'muted small', text: 'A reviewer can check this answer, correct it, or start a deeper investigation. Every change is logged.' }));
+}
+
 // What a person sees depends on what is true. Only a reviewer's "answered" is shown as reviewed evidence.
 function outcome(t, receipt) {
   const m = t.matches || [];
@@ -71,10 +90,13 @@ function outcome(t, receipt) {
       t.code === 'draft' ? h('p', { class: 'muted small', text: 'Open the page you sent it from to check the text and send it.' }) : null));
     return parts;
   }
+  if (t.prelim) parts.push(prelimCard(t));
+  else if (t.prelim_reading) parts.push(h('section', { class: 'pt-outcome pt-prelim' }, h('h2', {}, icon('pat-progress-static.svg'), 'Checking our records…'),
+    h('p', { role: 'status', text: 'We are comparing what you sent with what we already have. This can take a minute.' })));
   if (t.code === 'answered' || (t.status === 'Answered')) {
     parts.push(card('reviewed', 'Reviewed evidence', lead(), h('p', { text: t.note || 'A reviewer answered this with what we already have.' }), matchList(m),
       h('p', { class: 'muted small', text: 'Status: answered by a reviewer.' })));
-  } else if (m.length) {
+  } else if (m.length && !t.prelim && !t.prelim_reading) {
     parts.push(card('related', 'Related evidence', lead(), h('p', { text: 'We already have something related to what you sent. It does not by itself answer your question, and it is not a review of your item.' }), matchList(m),
       receipt ? h('div', { class: 'btns' }, h('button', { type: 'button', onclick: async (ev) => {
         ev.currentTarget.disabled = true;
@@ -177,14 +199,15 @@ function watch(receipt, box, draft) {
       if (!shown || data.ocr_reading) setTimeout(tick, 4000);
       return;
     }
-    const waiting = data && data.reading;
+    const waiting = data && (data.reading || data.prelim_reading);
+    if (data && data.prelim_reading && !askedFollow) results.querySelector('.pt-dynamic')?.replaceChildren(...outcome(Object.assign({ code: data.code }, data), receipt));
     if (data && !waiting && !askedFollow && !['In review'].includes(data.status)) {
       const fresh = outcome(Object.assign({ code: data.code }, data), receipt);
       results.querySelector('.pt-dynamic')?.replaceChildren(...fresh);
       if (data.status === 'Waiting for a reviewer') { askedFollow = true; followUp(receipt, box); }
     }
     if (Date.now() - t0 >= WAIT_MS && !askedFollow) { askedFollow = true; followUp(receipt, box); }
-    if (Date.now() - t0 < 120000 && (waiting || !askedFollow)) setTimeout(tick, 5000);
+    if (Date.now() - t0 < 180000 && (waiting || !askedFollow)) setTimeout(tick, 5000);
   };
   setTimeout(tick, draft ? 1500 : 3000);
 }

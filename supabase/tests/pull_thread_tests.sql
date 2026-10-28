@@ -2,6 +2,7 @@
 -- on a throwaway Postgres 16 with the Supabase stub (see CONTRIBUTING). Not run against the live project.
 \set ON_ERROR_STOP 1
 \set QUIET 1
+select set_config('test.kp', substring(pg_get_functiondef('private.checker_key_id(text)'::regprocedure) from '\^([A-Z]+-)'), false);   -- the key prefix the database expects, read from the database
 create schema if not exists ptt;
 grant usage on schema ptt to anon, authenticated, service_role;
 create or replace function ptt.ok(cond boolean, what text) returns void language plpgsql as $$
@@ -32,7 +33,7 @@ insert into public.member_roles (member_id, role) values
   ('00000000-0000-0000-0000-0000000000a1','admin'),('00000000-0000-0000-0000-0000000000e1','reviewer'),
   ('00000000-0000-0000-0000-0000000000f1','reviewer') on conflict do nothing;
 insert into private.checker_keys (key_hash, label, created_by)
-  values (encode(extensions.digest('ARCH-' || repeat('b', 64), 'sha256'), 'hex'), 'pt-test', '00000000-0000-0000-0000-0000000000a1');
+  values (encode(extensions.digest(current_setting('test.kp') || repeat('b', 64), 'sha256'), 'hex'), 'pt-test', '00000000-0000-0000-0000-0000000000a1');
 
 -- one published finding that cites a link, to match against (the insert triggers read the signed-in id)
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000a1"}', false);
@@ -125,13 +126,13 @@ commit;
 ------------------------------------------------------------------ the archiver reads the link (checker key)
 begin;
 set local role anon;
-select ptt.fails($$select public.checker_thread_next('ARCH-wrong')$$, 'Unknown checker key', 'wrong key refused');
-insert into ptt.keep select 'job', public.checker_thread_next('ARCH-' || repeat('b', 64))::text;
+select ptt.fails($$select public.checker_thread_next('wrong-key')$$, 'Unknown checker key', 'wrong key refused');
+insert into ptt.keep select 'job', public.checker_thread_next(current_setting('test.kp') || repeat('b', 64))::text;
 select ptt.ok((select v::jsonb->>'url' from ptt.keep where k='job') like 'https://news.example.com/story/42%', 'worker is handed a link');
-select public.checker_thread_done('ARCH-' || repeat('b', 64), ((select v::jsonb->>'intake_id' from ptt.keep where k='job'))::bigint,
+select public.checker_thread_done(current_setting('test.kp') || repeat('b', 64), ((select v::jsonb->>'intake_id' from ptt.keep where k='job'))::bigint,
   '{"title":"County jail <b>contract</b> approved","excerpt":"The board voted 3-2 to approve the contract.","checkable":true,"fetch":"ok"}'::jsonb);
-select ptt.fails($$select public.checker_thread_done('ARCH-' || repeat('b', 64), 1, '{"title":"again"}'::jsonb)$$, 'not being read', 'a finished item cannot be filled twice');
-select public.checker_thread_index_put('ARCH-' || repeat('b', 64), '[{"kind":"case","ref":"iran-contra","title":"Iran-Contra secret arms sales","blurb":"Secret arms sales defied congressional limits","path":"/cases/iran-contra/","urls":["https://news.example.com/story/42"]}]'::jsonb);
+select ptt.fails($$select public.checker_thread_done(current_setting('test.kp') || repeat('b', 64), 1, '{"title":"again"}'::jsonb)$$, 'not being read', 'a finished item cannot be filled twice');
+select public.checker_thread_index_put(current_setting('test.kp') || repeat('b', 64), '[{"kind":"case","ref":"iran-contra","title":"Iran-Contra secret arms sales","blurb":"Secret arms sales defied congressional limits","path":"/cases/iran-contra/","urls":["https://news.example.com/story/42"]}]'::jsonb);
 commit;
 begin;
 set local role service_role;
@@ -152,7 +153,7 @@ begin;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000e1"}', true);
 set local role authenticated;
 select ptt.ok((select count(*) from public.list_thread_queue()) >= 5, 'reviewer reads the queue');
-select ptt.ok((select count(*) from public.list_thread_queue() where status = 'matched') = 0, 'matched items are not in the open queue');
+select ptt.ok((select count(*) from public.list_thread_queue() where status = 'matched') >= 1, 'matched items are in the queue too (every request is reviewed)');
 -- the item the archiver marked checkable and the link with 2 other senders must outrank a plain older question
 select ptt.ok((select kind from public.list_thread_queue() order by rank limit 1) = 'url', 'the link with reach and a checkable claim ranks first, not the oldest');
 select ptt.ok((select id from public.list_thread_queue() order by rank limit 1) <> (select min(id) from public.list_thread_queue() where status='queued'), 'ranking is not first in first out');

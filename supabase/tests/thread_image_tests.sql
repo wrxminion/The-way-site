@@ -1,6 +1,7 @@
 -- Tests for 0035 (screenshot privacy). Run after 0001 to 0019, 0026, 0030 to 0035 in a fresh database with the Supabase stub.
 \set ON_ERROR_STOP 1
 \set QUIET 1
+select set_config('test.kp', substring(pg_get_functiondef('private.checker_key_id(text)'::regprocedure) from '\^([A-Z]+-)'), false);   -- the key prefix the database expects, read from the database
 create schema if not exists itt;
 grant usage on schema itt to anon, authenticated, service_role;
 create or replace function itt.ok(cond boolean, what text) returns void language plpgsql as $$
@@ -21,7 +22,7 @@ grant all on itt.keep to anon, authenticated, service_role;
 insert into auth.users values ('00000000-0000-0000-0000-0000000000a1','a@x.org'),('00000000-0000-0000-0000-0000000000e1','e@x.org'),('00000000-0000-0000-0000-0000000000e2','e2@x.org') on conflict do nothing;
 insert into public.members (id, display_name) values ('00000000-0000-0000-0000-0000000000a1','Admin A'),('00000000-0000-0000-0000-0000000000e1','Reviewer One'),('00000000-0000-0000-0000-0000000000e2','Reviewer Two') on conflict do nothing;
 insert into public.member_roles (member_id, role) values ('00000000-0000-0000-0000-0000000000a1','admin'),('00000000-0000-0000-0000-0000000000e1','reviewer'),('00000000-0000-0000-0000-0000000000e2','reviewer') on conflict do nothing;
-insert into private.checker_keys (key_hash, label, created_by) values (encode(extensions.digest('ARCH-' || repeat('d', 64), 'sha256'), 'hex'), 'img-test', '00000000-0000-0000-0000-0000000000a1');
+insert into private.checker_keys (key_hash, label, created_by) values (encode(extensions.digest(current_setting('test.kp') || repeat('d', 64), 'sha256'), 'hex'), 'img-test', '00000000-0000-0000-0000-0000000000a1');
 
 begin;
 set local role service_role;
@@ -38,12 +39,12 @@ select itt.ok((select image_delete_after from public.thread_intakes where id = 2
 -- the reader finishes both
 begin;
 set local role anon;
-select public.checker_thread_ocr_next('ARCH-' || repeat('d', 64));
-select public.checker_thread_ocr_done('ARCH-' || repeat('d', 64), 1, 'Some conversation text that is long enough to count as readable text here', false);
-select public.checker_thread_ocr_next('ARCH-' || repeat('d', 64));
-select public.checker_thread_ocr_done('ARCH-' || repeat('d', 64), 2, 'Another conversation text that is long enough to count as readable text here', false);
-select public.checker_thread_ocr_next('ARCH-' || repeat('d', 64));
-select public.checker_thread_ocr_fail('ARCH-' || repeat('d', 64), 3, 'reader failed');
+select public.checker_thread_ocr_next(current_setting('test.kp') || repeat('d', 64));
+select public.checker_thread_ocr_done(current_setting('test.kp') || repeat('d', 64), 1, 'Some conversation text that is long enough to count as readable text here', false);
+select public.checker_thread_ocr_next(current_setting('test.kp') || repeat('d', 64));
+select public.checker_thread_ocr_done(current_setting('test.kp') || repeat('d', 64), 2, 'Another conversation text that is long enough to count as readable text here', false);
+select public.checker_thread_ocr_next(current_setting('test.kp') || repeat('d', 64));
+select public.checker_thread_ocr_fail(current_setting('test.kp') || repeat('d', 64), 3, 'reader failed');
 commit;
 select itt.ok((select image_delete_after from public.thread_intakes where id = 1) <= now(), 'text-only: due as soon as the text is read');
 select itt.ok((select image_delete_after from public.thread_intakes where id = 3) <= now(), 'text-only: due even when the reader failed');
@@ -51,19 +52,23 @@ select itt.ok((select image_delete_after from public.thread_intakes where id = 2
 select itt.ok((select image_delete_after from public.thread_intakes where id = 2) > now() + interval '2 days', 'kept: not before then');
 begin;
 set local role anon;
-select itt.fails($$select * from public.checker_thread_images_due('ARCH-nope')$$, 'Unknown checker key', 'the due list needs the key');
-select itt.ok((select count(*) from public.checker_thread_images_due('ARCH-' || repeat('d', 64))) = 2, 'only the text-only pictures are due');
+select itt.fails($$select * from public.checker_thread_images_due('wrong-key')$$, 'Unknown checker key', 'the due list needs the key');
+select itt.ok((select count(*) from public.checker_thread_images_due(current_setting('test.kp') || repeat('d', 64))) = 2, 'only the text-only pictures are due');
 commit;
 begin;
 set local role service_role;
-select itt.ok(public.checker_thread_image_due_ok('ARCH-' || repeat('d', 64), 1, '00000000-0000-0000-0000-0000000000b1.png'), 'the delete step may remove a due picture');
-select itt.ok(not public.checker_thread_image_due_ok('ARCH-' || repeat('d', 64), 2, '00000000-0000-0000-0000-0000000000b2.png'), 'it may not remove a picture that is not due');
-select itt.ok(not public.checker_thread_image_due_ok('ARCH-' || repeat('d', 64), 1, '00000000-0000-0000-0000-0000000000b2.png'), 'it may not remove a different file');
+select itt.ok(public.checker_thread_image_due_ok(current_setting('test.kp') || repeat('d', 64), 1, '00000000-0000-0000-0000-0000000000b1.png'), 'the delete step may remove a due picture');
+select itt.ok(not public.checker_thread_image_due_ok(current_setting('test.kp') || repeat('d', 64), 2, '00000000-0000-0000-0000-0000000000b2.png'), 'it may not remove a picture that is not due');
+select itt.ok(not public.checker_thread_image_due_ok(current_setting('test.kp') || repeat('d', 64), 1, '00000000-0000-0000-0000-0000000000b2.png'), 'it may not remove a different file');
 commit;
 begin;
 set local role anon;
-select public.checker_thread_image_deleted('ARCH-' || repeat('d', 64), 1, '00000000-0000-0000-0000-0000000000b1.png');
-select public.checker_thread_image_deleted('ARCH-' || repeat('d', 64), 2, '00000000-0000-0000-0000-0000000000b2.png');   -- not due: ignored
+set local role service_role;
+select public.checker_thread_image_deleted(current_setting('test.kp') || repeat('d', 64), 1, '00000000-0000-0000-0000-0000000000b1.png');
+set local role anon;
+set local role service_role;
+select public.checker_thread_image_deleted(current_setting('test.kp') || repeat('d', 64), 2, '00000000-0000-0000-0000-0000000000b2.png');   -- not due: ignored
+set local role anon;
 commit;
 select itt.ok((select image_deleted_at is not null from public.thread_intakes where id = 1), 'a deleted picture is marked');
 select itt.ok((select image_deleted_at is null from public.thread_intakes where id = 2), 'a picture that was not due is untouched');
@@ -92,10 +97,10 @@ insert into itt.keep select 'r5', public.intake_thread('screenshot',null,null,'D
 commit;
 begin;
 set local role anon;
-select public.checker_thread_ocr_next('ARCH-' || repeat('d', 64));
-select public.checker_thread_ocr_done('ARCH-' || repeat('d', 64), 4, 'Private conversation text that nobody should keep if it is never sent on', false);
-select public.checker_thread_ocr_next('ARCH-' || repeat('d', 64));
-select public.checker_thread_ocr_done('ARCH-' || repeat('d', 64), 5, 'Another private conversation text that the sender decided to throw away now', false);
+select public.checker_thread_ocr_next(current_setting('test.kp') || repeat('d', 64));
+select public.checker_thread_ocr_done(current_setting('test.kp') || repeat('d', 64), 4, 'Private conversation text that nobody should keep if it is never sent on', false);
+select public.checker_thread_ocr_next(current_setting('test.kp') || repeat('d', 64));
+select public.checker_thread_ocr_done(current_setting('test.kp') || repeat('d', 64), 5, 'Another private conversation text that the sender decided to throw away now', false);
 select public.thread_discard((select v from itt.keep where k='r5'));
 select itt.ok((public.thread_status((select v from itt.keep where k='r5'))->>'ocr_text') is null and (public.thread_status((select v from itt.keep where k='r5'))->>'code') = 'discarded', 'a discarded draft loses its text at once');
 select itt.fails($$select public.thread_discard((select v from itt.keep where k='r1'))$$, 'already sent', 'a sent request cannot be discarded here');
@@ -103,7 +108,7 @@ commit;
 update public.thread_intakes set draft_expires_at = now() - interval '1 minute' where id = 4;
 begin;
 set local role anon;
-select count(*) from public.checker_thread_images_due('ARCH-' || repeat('d', 64));   -- the worker pass also sweeps drafts
+select count(*) from public.checker_thread_images_due(current_setting('test.kp') || repeat('d', 64));   -- the worker pass also sweeps drafts
 commit;
 select itt.ok((select status = 'expired' and ocr_text is null and ocr_text_fixed is null and note is null from public.thread_intakes where id = 4), 'an unsent draft loses its text and note after the window');
 select itt.ok((select status = 'discarded' and note is null and ocr_text is null from public.thread_intakes where id = 5), 'a discarded draft keeps neither');
@@ -131,19 +136,19 @@ begin;
 set local role anon;
 select itt.ok((public.thread_status((select v from itt.keep where k='q1'))->>'ocr_reading')::boolean, 'the sender is told it is being read');
 select itt.fails($$select public.thread_confirm((select v from itt.keep where k='q1'))$$, 'still reading', 'it cannot be sent before the names are hidden');
-select itt.fails($$select public.checker_thread_redact_next('ARCH-wrong')$$, 'Unknown checker key', 'the redact job needs the key');
-insert into itt.keep select 'j1', public.checker_thread_redact_next('ARCH-' || repeat('d', 64))::text;
+select itt.fails($$select public.checker_thread_redact_next('wrong-key')$$, 'Unknown checker key', 'the redact job needs the key');
+insert into itt.keep select 'j1', public.checker_thread_redact_next(current_setting('test.kp') || repeat('d', 64))::text;
 select itt.ok((select v::jsonb->>'text' from itt.keep where k='j1') like 'XyzBDA says%', 'the archiver is handed the text');
-select public.checker_thread_redact_done('ARCH-' || repeat('d', 64), (select (v::jsonb->>'intake_id')::bigint from itt.keep where k='j1'),
+select public.checker_thread_redact_done(current_setting('test.kp') || repeat('d', 64), (select (v::jsonb->>'intake_id')::bigint from itt.keep where k='j1'),
   '[poster 1] says Elon Musk bought the company with secret money', null, true, null);
 select itt.ok((public.thread_status((select v from itt.keep where k='q1'))->>'ocr_text') like '[poster 1] says Elon Musk%', 'the sender sees the redacted text, names inside the content stay');
 select public.thread_correct_text((select v from itt.keep where k='q1'), '[poster 1] says Elon Musk bought the company with secret money, I think');
 select itt.ok((public.thread_status((select v from itt.keep where k='q1'))->>'ocr_text') like '%I think', 'the sender can edit before sending');
-insert into itt.keep select 'j2', public.checker_thread_redact_next('ARCH-' || repeat('d', 64))::text;
-select public.checker_thread_redact_done('ARCH-' || repeat('d', 64), (select (v::jsonb->>'intake_id')::bigint from itt.keep where k='j2'),
+insert into itt.keep select 'j2', public.checker_thread_redact_next(current_setting('test.kp') || repeat('d', 64))::text;
+select public.checker_thread_redact_done(current_setting('test.kp') || repeat('d', 64), (select (v::jsonb->>'intake_id')::bigint from itt.keep where k='j2'),
   'A second pasted post by [handle] about the county budget', null, false, 'The model could not be used');
 select itt.ok((public.thread_status((select v from itt.keep where k='q2'))->>'redact_note') like 'The model could not%', 'when the model could not finish, the sender is told');
-select itt.fails($$select public.checker_thread_redact_done('ARCH-' || repeat('d', 64), 999999, 'text long enough here', null, true, null)$$, 'not being redacted', 'only a running job can be filled');
+select itt.fails($$select public.checker_thread_redact_done(current_setting('test.kp') || repeat('d', 64), 999999, 'text long enough here', null, true, null)$$, 'not being redacted', 'only a running job can be filled');
 select public.thread_confirm((select v from itt.keep where k='q1'));
 commit;
 select itt.ok((select question not like '%XyzBDA%' from public.thread_intakes where id = (select (v::jsonb->>'intake_id')::bigint from itt.keep where k='j1')), 'the unredacted text is gone from the database');
@@ -152,7 +157,7 @@ select itt.ok((select status from public.thread_intakes where question like '[po
 update public.thread_intakes set draft_expires_at = now() - interval '1 minute' where question like 'A second pasted post%';
 begin;
 set local role anon;
-select count(*) from public.checker_thread_images_due('ARCH-' || repeat('d', 64));
+select count(*) from public.checker_thread_images_due(current_setting('test.kp') || repeat('d', 64));
 commit;
 select itt.ok((select question = 'Deleted: not sent in time' and note is null from public.thread_intakes where status = 'expired' and kind = 'question'), 'an unsent pasted text is wiped');
 -- screenshot flagged hide names reaches the reader with the flag
@@ -162,7 +167,7 @@ select public.intake_thread('screenshot',null,null,'Hidden names picture here','
 commit;
 begin;
 set local role anon;
-select itt.ok((public.checker_thread_ocr_next('ARCH-' || repeat('d', 64))::jsonb->>'hide_names')::boolean, 'the reader is told to hide poster names');
+select itt.ok((public.checker_thread_ocr_next(current_setting('test.kp') || repeat('d', 64))::jsonb->>'hide_names')::boolean, 'the reader is told to hide poster names');
 commit;
 -- reviewers
 begin;
@@ -205,4 +210,5 @@ set local role authenticated;
 select public.resolve_thread(2, 'declined', 'Not something we can research further');
 commit;
 select itt.ok((select image_delete_after <= now() + interval '1 day 1 minute' from public.thread_intakes where id = 2), 'a closed item: picture gone within a day');
+select itt.ok(not has_function_privilege('anon','public.checker_thread_ocr_ok(text,bigint,text)','execute') and not has_function_privilege('authenticated','public.checker_thread_image_deleted(text,bigint,text)','execute') and not has_function_privilege('anon','public.checker_thread_image_due_ok(text,bigint,text)','execute'), 'the three Edge-Function-only calls are closed to the browser and the archiver key');
 select 'ALL PICTURE PRIVACY TESTS PASSED' as result;

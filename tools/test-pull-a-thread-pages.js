@@ -114,6 +114,23 @@ const XSS = '<img src=x onerror="window.__pwned=1">';
   await page.click('form.pt-form button[type=submit]');
   await page.waitForSelector('.pt-ocr textarea');
   ok(sent.includes('name="image_mode"\r\n\r\nreview') && !sent.includes('name="hide_names"'), 'unticking send only the text lets a reviewer open the picture; hide names off sends no flag');
+  // preliminary answer card
+  await page.route('**/rest/v1/rpc/thread_status', (route) => route.fulfill({ status: 200, headers: { 'access-control-allow-origin': '*' }, contentType: 'application/json',
+    body: JSON.stringify({ kind: 'question', code: 'matched', status: 'We already have something on this', reading: false, prelim_reading: false, matches: [],
+      prelim: { label: 'Preliminary, AI-generated', enough: true, supports: [{ kind: 'case', title: 'Iran-Contra arms sales', path: '/preview/pages/cases/iran-contra.html', blurb: XSS }],
+        contradicts: [], related: [{ kind: 'finding', title: 'A finding title', path: null, blurb: null }] } }) }));
+  await page.fill('#pt-receipt', 'abc123').catch(() => {});
+  await page.goto(base + '/members/pull-a-thread.html');
+  await page.waitForSelector('form.pt-form');
+  await page.click('summary:has-text("Check on something you sent")');
+  await page.fill('#pt-receipt', 'abc123');
+  await page.click('button:has-text("Check")');
+  await page.waitForSelector('.pt-prelim .pt-badge');
+  ok((await page.locator('.pt-badge').innerText()) === 'Preliminary, AI-generated', 'the answer is labeled Preliminary, AI-generated');
+  ok(await page.locator('.pt-prelim h3').allInnerTexts().then((t) => t.join('|') === 'Supports it|Related, but does not settle it'), 'sections: supports and related shown, empty contradicts hidden');
+  ok(await page.locator('.pt-prelim .pt-lead em').innerText() === 'together!' && /Here.s what our records show so far/.test(await page.locator('.pt-prelim .pt-lead').innerText()), 'the answer carries Frank\'s line');
+  ok(await page.locator('.pt-prelim img[src^="x"]').count() === 0 && await page.evaluate(() => window.__pwned === undefined), 'record text is shown as text');
+  ok(await page.locator('.pt-prelim a[href="/preview/pages/cases/iran-contra.html"]').count() === 1 && await page.locator('.pt-prelim a:has-text("A finding title")').count() === 0, 'a finding has a title but no link');
   // queue page
   await page.route('**/rest/v1/rpc/list_thread_queue', (route) => route.fulfill({ status: 200, headers: { 'access-control-allow-origin': '*' }, contentType: 'application/json',
     body: JSON.stringify([{ id: 5, kind: 'url', url: 'javascript:alert(1)', question: null, note: XSS, shot_path: null, status: 'queued', created_at: '2026-10-28T10:00:00Z',

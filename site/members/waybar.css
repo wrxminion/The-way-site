@@ -203,3 +203,74 @@ html.wb-lock,html.wb-lock body{overflow:hidden}
 .waybar .wb-bell svg{width:22px;height:22px}
 .waybar .wb-bell-badge{position:absolute;top:4px;right:2px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#ffd166;color:#052b3c;font:800 11px/18px system-ui,sans-serif;text-align:center}
 .waybar .wb-bell-badge[hidden]{display:none}
+/* very narrow phones (320 px): keep "Pull a thread" (left) and "Back to surface" (right) from touching */
+@media (max-width:359px){
+  .wb-thread-fab{gap:6px;padding:4px 10px 4px 6px;min-height:44px;font-size:14px}
+  .wb-thread-fab img{width:34px}
+  .wb-floating a{padding:0 10px;font-size:12px}
+}
+
+/* Bottom left dock: Log in / Sign up (signed-out visitors), then Pull a thread. Back to surface stays bottom right. */
+.wb-dock{position:fixed;z-index:48;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:8px;max-width:calc(100vw - 24px)}
+.wb-dock .wb-thread-fab{position:static}
+.wb-dock-auth{display:inline-flex;align-items:center;gap:6px;min-height:48px;padding:0 6px;background:#052b3cf2;border:1px solid #a7f0e980;border-radius:999px;box-shadow:0 3px 14px #0006;color:#fff;font:700 14px/1.2 system-ui,sans-serif;white-space:nowrap}
+.wb-dock-auth a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;color:#fff;text-decoration:none}
+.wb-dock-auth a:hover{text-decoration:underline}
+.wb-dock-auth a:focus-visible{outline:3px solid #a7f0e9;outline-offset:1px;border-radius:999px}
+.wb-dock-signup{color:#a7f0e9!important}
+@media (max-width:760px){html.wb-has-bottom .wb-dock{bottom:calc(4.5rem + env(safe-area-inset-bottom) + 8px)}}
+/* phones: the Log in / Sign up bubble is hidden (Log in and Sign up are in the Menu and the header); Pull a thread and Back to surface stay */
+@media (max-width:760px){.wb-dock-auth{display:none}}
+@media print{.wb-dock{display:none}}
+
+/* Air bubbles: the three floating buttons (Log in / Sign up, Pull a thread, Back to surface) get a soft translucent rim and a small
+   highlight glint. Pure CSS. The fill stays dark enough that the white text keeps its contrast (about 14 to 1). */
+.wb-dock-auth,.wb-thread-fab,.wb-floating{
+  position:relative;
+  background:radial-gradient(120% 140% at 28% 18%,#0b4660f2 0%,#052b3cf5 55%,#031d2bf7 100%);
+  border:2px solid #c9fff6b8;
+  box-shadow:inset 0 0 0 1px #ffffff40,inset 0 -5px 10px #7fe3d933,inset 0 4px 8px #ffffff1f,0 3px 14px #0007,0 0 10px #7fe3d933;
+}
+.wb-floating{position:fixed}
+.wb-dock-auth::before,.wb-thread-fab::before,.wb-floating::before{
+  content:"";position:absolute;top:5px;right:18px;width:14px;height:6px;border-radius:50%;
+  background:radial-gradient(closest-side,#ffffffd9,#ffffff00);transform:rotate(-18deg);pointer-events:none}
+.wb-dock-auth::after,.wb-thread-fab::after,.wb-floating::after{
+  content:"";position:absolute;bottom:5px;left:20px;width:6px;height:3px;border-radius:50%;background:#ffffff66;pointer-events:none}
+.wb-thread-fab:hover,.wb-floating:hover{box-shadow:inset 0 0 0 1px #ffffff66,inset 0 -5px 10px #7fe3d94d,inset 0 4px 8px #ffffff33,0 3px 14px #0007,0 0 14px #7fe3d966}
+@media (forced-colors:active){
+  .wb-dock-auth,.wb-thread-fab,.wb-floating{background:Canvas;border:2px solid CanvasText;box-shadow:none}
+  .wb-dock-auth::before,.wb-thread-fab::before,.wb-floating::before,.wb-dock-auth::after,.wb-thread-fab::after,.wb-floating::after{display:none}
+}
+
+/* Gentle drift, as if floating: a few pixels, slow, each bubble on its own rhythm. It stops on mouse over and on keyboard focus,
+   and is off for anyone who asks for reduced motion. The drift is at most 3 px so bubbles never touch each other or the bottom bar. */
+@keyframes wb-bubble-drift{
+  0%{transform:translate(0,0)}
+  25%{transform:translate(2px,-3px)}
+  50%{transform:translate(-1px,-1px)}
+  75%{transform:translate(-2px,-3px)}
+  100%{transform:translate(0,0)}
+}
+.wb-dock-auth,.wb-thread-fab,.wb-floating{animation:wb-bubble-drift 9s ease-in-out infinite}
+.wb-thread-fab{animation-duration:11s;animation-delay:-3s}
+.wb-floating{animation-duration:13s;animation-delay:-6s}
+.wb-dock-auth:hover,.wb-thread-fab:hover,.wb-floating:hover,
+.wb-dock-auth:focus-within,.wb-thread-fab:focus-visible,.wb-floating:focus-within{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.wb-dock-auth,.wb-thread-fab,.wb-floating{animation:none}}
+
+/* The down-arrow bubble: hides the floating buttons; with the buttons hidden it sits in their place as an up arrow and brings them back. */
+html{--wb-dock-bottom:calc(12px + env(safe-area-inset-bottom))}
+@media (max-width:760px){html.wb-has-bottom{--wb-dock-bottom:calc(4.5rem + env(safe-area-inset-bottom) + 8px)}}
+.wb-bubbles-toggle{position:fixed;z-index:49;left:12px;bottom:calc(var(--wb-dock-bottom) + 78px);width:40px;height:40px;padding:0;display:grid;place-items:center;border-radius:50%;
+  color:#fff;cursor:pointer;background:radial-gradient(120% 140% at 28% 18%,#0b4660f2 0%,#052b3cf5 55%,#031d2bf7 100%);border:2px solid #c9fff6b8;
+  box-shadow:inset 0 0 0 1px #ffffff40,inset 0 -4px 8px #7fe3d933,inset 0 3px 6px #ffffff1f,0 3px 14px #0007}
+.wb-bubbles-toggle:hover{box-shadow:inset 0 0 0 1px #ffffff66,inset 0 -4px 8px #7fe3d94d,inset 0 3px 6px #ffffff33,0 3px 14px #0007,0 0 14px #7fe3d966}
+.wb-bubbles-toggle:focus-visible{outline:3px solid #a7f0e9;outline-offset:3px}
+.wb-bubbles-toggle svg{display:block;transition:transform .2s}
+html.wb-bubbles-off .wb-bubbles-toggle{bottom:var(--wb-dock-bottom)}
+html.wb-bubbles-off .wb-bubbles-toggle svg{transform:rotate(180deg)}
+html.wb-bubbles-off .wb-dock,html.wb-bubbles-off .wb-floating{display:none!important}
+@media (prefers-reduced-motion:reduce){.wb-bubbles-toggle svg{transition:none}}
+@media (forced-colors:active){.wb-bubbles-toggle{background:Canvas;border:2px solid CanvasText;box-shadow:none}}
+@media print{.wb-bubbles-toggle{display:none}}

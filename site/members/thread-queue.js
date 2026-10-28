@@ -33,6 +33,36 @@ function parts(list) {
 function safeLink(url) {
   return /^https?:\/\//i.test(url) ? h('a', { href: url, rel: 'noopener noreferrer nofollow', target: '_blank', text: url }) : h('span', { text: url });
 }
+// The preliminary answer made from our records. The reviewer who picked the item can check it, move a record, or remove one (reason required, logged).
+function prelimBox(r) {
+  if (r.prelim_status === 'pending' || r.prelim_status === 'running') return h('p', { class: 'muted small', text: 'Preliminary answer: still being made.' });
+  if (r.prelim_status === 'failed') return h('p', { class: 'muted small', text: 'Preliminary answer: it could not be made (the local model was not available). Use the records below.' });
+  const p = r.prelim; if (!p) return null;
+  const wrap = h('div', { class: 'pt-excerpt' }, h('strong', { text: p.checked ? 'Preliminary answer (checked by a reviewer):' : 'Preliminary answer (AI-generated, not checked yet):' }),
+    !p.enough ? h('p', { class: 'small', text: 'Not enough evidence in our records to say.' }) : null);
+  const names = { supports: 'Supports it', contradicts: 'Contradicts it', related: 'Related, does not settle it' };
+  for (const sec of ['supports', 'contradicts', 'related']) {
+    for (const it of (p[sec] || [])) {
+      const row = h('div', { class: 'small' }, h('strong', { text: `${names[sec]}: ` }), `${it.title} (${it.kind})`);
+      if (r.claimed_by_me) {
+        const sel = h('select', { 'aria-label': `Move ${it.title}` }, ['supports', 'contradicts', 'related', 'remove'].map((v) => h('option', { value: v, text: v === 'remove' ? 'Remove from answer' : names[v], selected: v === sec })));
+        const b = h('button', { type: 'button', class: 'quiet', text: 'Change', onclick: async () => {
+          if (sel.value === sec) return;
+          const reason = window.prompt('Why? (5 to 300 characters. This is logged with your name.)'); if (reason === null) return;
+          act(call('thread_prelim_correct', { p_id: r.id, p_kind: it.kind, p_ref: it.ref, p_section: sel.value, p_reason: reason }), 'Answer changed.');
+        } });
+        row.append(' ', sel, ' ', b);
+      }
+      wrap.append(row);
+    }
+  }
+  if (r.claimed_by_me) wrap.append(h('div', { class: 'pt-actions' }, h('button', { type: 'button', class: 'quiet', text: 'I checked this answer', onclick: () => {
+    const reason = window.prompt('Anything to note? (5 to 300 characters)', 'I read it and it stands as it is'); if (reason === null) return;
+    act(call('thread_prelim_correct', { p_id: r.id, p_kind: null, p_ref: null, p_section: 'keep', p_reason: reason }), 'Marked as checked.');
+  } })));
+  return wrap;
+}
+
 // The picture is hidden by default. Opening it needs the item picked by you, the sender allowing it, and a written reason; it is logged.
 async function openImage(r, holder, btn) {
   const reason = window.prompt('Why is the picture absolutely needed for this review? (8 to 300 characters)\nThis is logged with your name.');
@@ -72,6 +102,7 @@ function item(r, mineId) {
       : h('p', { class: 'muted small', text: 'A picture was kept for review. Pick this item to open it if the text is not enough.' }))
       : r.image_state === 'text_only' ? h('p', { class: 'muted small', text: 'The sender chose to send only the text. There is no picture.' })
       : r.image_state === 'deleted' ? h('p', { class: 'muted small', text: 'The picture has been deleted. Use the text.' }) : null,
+    prelimBox(r),
     r.matches && r.matches.length ? h('div', {}, h('strong', { class: 'small', text: 'We may already have:' }), r.matches.map((m) => h('div', { class: 'pt-match small', text: `${m.title} (${m.kind}, ${m.strength === 'source' ? 'cites this link' : m.why})` }))) : null,
     h('details', {}, h('summary', { text: 'Why this score' }), parts(r.parts)));
   const acts = h('div', { class: 'pt-actions' });

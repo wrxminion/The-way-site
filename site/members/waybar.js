@@ -448,6 +448,7 @@
     if (!data) renderBottom(cur);
     bar.replaceChildren.apply(bar, kids);
     document.documentElement.classList.toggle('wb-has-bottom', !!data);
+    signedOutNow = !data && !pending;
     syncFloating();
     syncWave();
     if (wasOpen && panels[wasOpen]) {
@@ -486,19 +487,62 @@
   // One small "Back to surface" button after scrolling (search and Log in / Sign up live in the header).
   // The Pull a Thread floating link: ChatGPT's text-free hand (art/pull-a-thread-hand-*.webp, decorative) plus a real printed
   // label. It goes bottom left on every page except the Pull a Thread pages themselves. A plain link, no script behind it.
-  function syncThreadFab() {
+  // Bottom left dock: Log in / Sign up (signed-out visitors only), then Pull a thread. "Back to surface" is bottom right.
+  var signedOutNow = false;
+  function syncDock() {
+    var dock = document.querySelector('.wb-dock');
     var fab = document.querySelector('.wb-thread-fab');
-    if (/^\/members\/(pull-a-thread|thread-queue|notifications)/.test(path)) { if (fab) fab.remove(); return; }
+    var onThread = /^\/members\/(pull-a-thread|thread-queue|notifications)/.test(path);
+    document.documentElement.classList.toggle('wb-signed-out', signedOutNow);
+    if (!signedOutNow && onThread) { if (dock) dock.remove(); return; }
+    if (!dock) { dock = el('nav', { class: 'wb-dock', 'aria-label': 'Log in and Pull a thread' }); document.body.appendChild(dock); }
+    var auth = dock.querySelector('.wb-dock-auth');
+    if (signedOutNow && !auth) {
+      auth = el('span', { class: 'wb-dock-auth' });
+      auth.appendChild(el('a', { href: '/members/', class: 'wb-dock-login' }, 'Log in'));
+      auth.appendChild(el('span', { 'aria-hidden': 'true' }, '/'));
+      auth.appendChild(el('a', { href: route('signup'), class: 'wb-dock-signup' }, 'Sign up'));
+      dock.insertBefore(auth, dock.firstChild);
+    } else if (!signedOutNow && auth) auth.remove();
+    if (onThread) { if (fab) fab.remove(); return; }
     if (fab) return;
     fab = el('a', { class: 'wb-thread-fab', href: THREAD });
     var img = el('img', { src: '/members/art/pull-a-thread-hand-120.webp', srcset: '/members/art/pull-a-thread-hand-120.webp 1x, /members/art/pull-a-thread-hand-240.webp 2x',
                           alt: '', 'aria-hidden': 'true', width: '120', height: '102', decoding: 'async', loading: 'lazy' });
     fab.appendChild(img);
     fab.appendChild(el('span', { class: 'wb-thread-fab-label' }, 'Pull a thread'));
-    document.body.appendChild(fab);
+    dock.appendChild(fab);
+  }
+  // A small down-arrow bubble hides the floating buttons; the same bubble (arrow up) brings them back. The choice is remembered.
+  var BUBBLES = 'theway.bubbles';
+  function bubblesOff() { try { return localStorage.getItem(BUBBLES) === 'off'; } catch (e) { return false; } }
+  function paintToggle(btn, off) {
+    document.documentElement.classList.toggle('wb-bubbles-off', off);
+    btn.setAttribute('aria-expanded', off ? 'false' : 'true');
+    btn.setAttribute('aria-label', off ? 'Show the floating buttons' : 'Hide the floating buttons');
+    btn.title = off ? 'Show the floating buttons' : 'Hide the floating buttons';
+  }
+  function syncToggle() {
+    var btn = document.querySelector('.wb-bubbles-toggle');
+    if (!btn) {
+      btn = el('button', { type: 'button', class: 'wb-bubbles-toggle' });
+      var ns = 'http://www.w3.org/2000/svg', svg = document.createElementNS(ns, 'svg'), pth = document.createElementNS(ns, 'path');
+      svg.setAttribute('viewBox', '0 0 24 24'); svg.setAttribute('width', '20'); svg.setAttribute('height', '20'); svg.setAttribute('aria-hidden', 'true'); svg.setAttribute('focusable', 'false');
+      pth.setAttribute('d', 'M6 9l6 6 6-6'); pth.setAttribute('fill', 'none'); pth.setAttribute('stroke', 'currentColor'); pth.setAttribute('stroke-width', '2.5');
+      pth.setAttribute('stroke-linecap', 'round'); pth.setAttribute('stroke-linejoin', 'round');
+      svg.appendChild(pth); btn.appendChild(svg);
+      btn.addEventListener('click', function () {
+        var off = !document.documentElement.classList.contains('wb-bubbles-off');
+        try { off ? localStorage.setItem(BUBBLES, 'off') : localStorage.removeItem(BUBBLES); } catch (e) { /* private mode: it just will not be remembered */ }
+        paintToggle(btn, off);
+      });
+      document.body.appendChild(btn);
+    }
+    paintToggle(btn, bubblesOff());
   }
   function syncFloating() {
-    syncThreadFab();
+    syncToggle();
+    syncDock();
     var floating = document.querySelector('.wb-floating');
     if (!floating) {
       floating = el('nav', { class: 'wb-floating', 'aria-label': 'Quick links' });
