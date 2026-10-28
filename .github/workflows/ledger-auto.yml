@@ -25,7 +25,7 @@ jobs:
       github.event.pull_request.merged == true &&
       github.event.pull_request.head.repo.full_name == github.repository &&
       !contains(github.event.pull_request.labels.*.name, 'do-not-publish') &&
-      !startsWith(github.event.pull_request.head.ref, 'ledger-auto/')
+      !startsWith(github.event.pull_request.head.ref, 'ledger-row/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -51,7 +51,7 @@ jobs:
           if git diff --quiet; then echo "nothing to add"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          BR="ledger-auto/pr-$PR_NUMBER"
+          BR="ledger-row/pr-$PR_NUMBER"
           git checkout -b "$BR"
           git add site/development
           OUT=$(git commit -m "Ledger: add row for PR #$PR_NUMBER" 2>&1) || { echo "::error::commit failed: $(echo "$OUT" | tr '\n' ' ' | cut -c1-400)"; exit 1; }
