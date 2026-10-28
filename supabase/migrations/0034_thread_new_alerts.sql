@@ -37,4 +37,4 @@ begin
      order by t.id limit greatest(1, least(coalesce(p_limit, 100), 200));
 end $$;
 revoke all on function private.thread_new_alert(), public.checker_thread_new(text,bigint,int) from public, anon, authenticated;
-grant execute on function public.checker_thread_new(text,bigint,int) to service_role;
+grant execute on function public.checker_thread_new(text,bigint,int) to anon, authenticated, service_role;   -- like the other archiver calls: callable, but the first line of the function rejects any key that is not the archiver's

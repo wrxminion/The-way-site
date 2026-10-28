@@ -39,13 +39,14 @@ begin
      order by t.id limit greatest(1, least(coalesce(p_limit, 100), 200));
 end $$;
 revoke all on function private.thread_new_alert(), public.checker_thread_new(text,bigint,int) from public, anon, authenticated;
-grant execute on function public.checker_thread_new(text,bigint,int) to service_role;
+grant execute on function public.checker_thread_new(text,bigint,int) to anon, authenticated, service_role;   -- like the other archiver calls: callable, but the first line of the function rejects any key that is not the archiver's
 
 -- Check: every row must say ok.
 select 'new requests alert the admins' as check_name,
        case when exists (select 1 from pg_trigger where tgname = 'thread_intakes_new_alert') then 'ok' else 'MISSING' end as result
 union all
-select 'only the archiver can read the list',
+select 'the archiver can call the list (the function itself rejects any other key)',
        case when has_function_privilege('service_role','public.checker_thread_new(text,bigint,int)','execute')
-             and not has_function_privilege('anon','public.checker_thread_new(text,bigint,int)','execute')
-             and not has_function_privilege('authenticated','public.checker_thread_new(text,bigint,int)','execute') then 'ok' else 'WRONG' end;
+             and has_function_privilege('anon','public.checker_thread_new(text,bigint,int)','execute')
+             and has_function_privilege('authenticated','public.checker_thread_new(text,bigint,int)','execute')
+             and not has_function_privilege('public','public.checker_thread_new(text,bigint,int)','execute') then 'ok' else 'WRONG' end;
