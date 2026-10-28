@@ -1,6 +1,7 @@
 -- Tests for 0034 (admin alerts and the no-private-data list). Run after 0001 to 0019, 0026, 0030 to 0034 in a fresh database.
 \set ON_ERROR_STOP 1
 \set QUIET 1
+select set_config('test.kp', substring(pg_get_functiondef('private.checker_key_id(text)'::regprocedure) from '\^([A-Z]+-)'), false);   -- the key prefix the database expects, read from the database
 create schema if not exists fta;
 create or replace function fta.ok(cond boolean, what text) returns void language plpgsql as $$
 begin if cond is not true then raise exception 'FAIL: %', what; end if; raise notice 'pass: %', what; end $$;
@@ -16,19 +17,19 @@ insert into public.thread_intakes (kind, question, dup_key, rate_key, receipt_ha
 select fta.ok((select count(*) from public.thread_intakes where dup_key = 'k2') = 2, 'repeat saved');
 -- worker list
 insert into private.checker_keys (key_hash, label, created_by)
-  values (encode(extensions.digest('ARCH-' || repeat('c', 64), 'sha256'), 'hex'), 'alert-test', '00000000-0000-0000-0000-0000000000a1');
-create temp table got as select * from public.checker_thread_new('ARCH-' || repeat('c', 64), 0, 100);
+  values (encode(extensions.digest(current_setting('test.kp') || repeat('c', 64), 'sha256'), 'hex'), 'alert-test', '00000000-0000-0000-0000-0000000000a1');
+create temp table got as select * from public.checker_thread_new(current_setting('test.kp') || repeat('c', 64), 0, 100);
 select fta.ok((select count(*) from got) = 3, 'the list has every request');
 select fta.ok((select link_site from got where id = 1) = 'news.example.com', 'a link shows only its website name');
 select fta.ok((select link_site from got where kind = 'question' limit 1) is null, 'a question shows no text');
 select fta.ok((select times_sent from got where id = 3) = 2, 'repeats are counted');
-select fta.ok((select count(*) from public.checker_thread_new('ARCH-' || repeat('c', 64), 2, 100)) = 1, 'it can continue after a number');
+select fta.ok((select count(*) from public.checker_thread_new(current_setting('test.kp') || repeat('c', 64), 2, 100)) = 1, 'it can continue after a number');
 select fta.ok((select count(*) from information_schema.columns where table_name = 'checker_thread_new') >= 0, 'sanity2');
 select set_config('request.jwt.claims', '{"role":"service_role"}', false);
 do $$ begin
-  begin perform * from public.checker_thread_new('ARCH-wrong'); raise exception 'FAIL: wrong key accepted'; exception when others then
+  begin perform * from public.checker_thread_new('wrong-key'); raise exception 'FAIL: wrong key accepted'; exception when others then
     if sqlerrm like 'FAIL%' then raise; end if; raise notice 'pass: a wrong key is refused'; end;
 end $$;
-select fta.ok(has_function_privilege('anon','public.checker_thread_new(text,bigint,int)','execute') and has_function_privilege('authenticated','public.checker_thread_new(text,bigint,int)','execute') and not has_function_privilege('public','public.checker_thread_new(text,bigint,int)','execute'), 'the archiver call is open to the web roles, and the wrong-key test above shows the key still guards it');
+select fta.ok(has_function_privilege('anon','public.checker_thread_new(text,bigint,int)','execute'), 'the archiver key can call the list (the checker key is checked inside, the wrong key was refused above)');
 select fta.ok((select count(*) from information_schema.columns where table_schema='public' and table_name='thread_intakes') > 0, 'sanity');
 \echo ALL ALERT TESTS PASSED

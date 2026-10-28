@@ -74,3 +74,7 @@
 .pt-check-row .pt-help{display:block;margin-top:4px}
 .pt-check-row :focus-visible{outline:3px solid #a7f0e9;outline-offset:2px}
 .pt-lead{font-size:18px;margin:0 0 8px}
+.pt-prelim{border-color:#8cddd0}
+.pt-badge{display:inline-block;margin:0 0 8px;padding:4px 12px;border:2px solid #ffe3a3;border-radius:999px;font-weight:600;font-size:15px;color:#ffe3a3}
+.pt-sec h3{margin:14px 0 2px;font-size:18px}
+.pt-blurb{margin:4px 0 0;font-size:15px;color:var(--muted)}
