@@ -140,7 +140,7 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   await page.evaluate(() => { localStorage.clear(); sessionStorage.setItem('theway.mymarks.v1', JSON.stringify({ state: 'CO', items: [{ p: '/preview/pages/guide/races/governor.html', t: 'Governor and Lieutenant Governor' }, { p: '/preview/pages/guide/measures/amendment-81.html', t: 'Amendment 81' }] })); });
   await page.goto(base + '/members/my-ballot.html?state=CO#mark'); await page.reload(); await page.waitForSelector('#mark');
   ok(await page.locator('#mark >> text=Mark your ballot').count() === 1 && await page.locator('#mark li strong', { hasText: 'Amendment 81' }).count() === 1, 'marking screen lists the races passed from the map');
-  await page.locator('#mark li', { hasText: 'Governor and Lieutenant Governor' }).getByRole('button', { name: 'Mark' }).click();
+  await page.locator('#mark li', { hasText: 'Governor and Lieutenant Governor' }).getByRole('button', { name: /^Choose for / }).click();
   await page.waitForSelector('.mk-form');
   ok(await page.locator('.mk-form').count() === 2, 'governor opens both contests (governor, lieutenant governor)');
   await page.locator('.mk-form').first().locator('label', { hasText: 'Phil Weiser' }).locator('input').first().check();
@@ -162,7 +162,7 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   s = await store(); ok(!('evil' in s.contests[gk].leans) && s.contests[gk].leans['victor-marx'] === undefined === false || true, 'bad values are cleaned when read');
   const cleaned = await page.evaluate((k) => { const d = window.WayBallot.read('CO'); return [d.contests[k].leans.evil, d.contests[k].leans['victor-marx'], d.contests[k].ranks['phil-weiser']]; }, gk);
   ok(cleaned[0] === undefined && cleaned[1] === undefined && cleaned[2] === undefined, 'unknown ids, odd answers and out-of-range ranks are dropped');
-  await page.locator('#mark li', { hasText: 'Amendment 81' }).getByRole('button', { name: 'Mark' }).click();
+  await page.locator('#mark li', { hasText: 'Amendment 81' }).getByRole('button', { name: /^Choose for / }).click();
   await page.waitForSelector('.mk-form >> text=Amendment 81');
   await page.locator('.mk-form', { hasText: 'Amendment 81' }).locator('label', { hasText: /^Yes/ }).locator('input').check();
   s = await store(); ok(s.contests['measure:amendment-81'] && s.contests['measure:amendment-81'].picks[0] === 'yes', 'measure Yes saved from the marking screen');
@@ -187,7 +187,7 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   await page.goto(base + '/members/my-ballot.html?state=CO#mark'); await page.reload(); await page.waitForSelector('#mark li');
   ok(await page.locator('text=Your choices so far').count() === 0, 'there is one list, no duplicate "Your choices so far"');
   const row81 = page.locator('#mark li', { hasText: 'Amendment 81' }).first();
-  await row81.getByRole('button', { name: 'Mark' }).click();
+  await row81.getByRole('button', { name: /^Choose for / }).click();
   await row81.getByRole('button', { name: 'Clear my choice' }).click();
   s = await store(); ok(!s.contests['measure:amendment-81'] || (s.contests['measure:amendment-81'].picks.length === 0 && !s.contests['measure:amendment-81'].undecided), 'Clear my choice inside the row clears the pick');
   await page.locator('.mk-form', { hasText: 'Amendment 81' }).locator('label', { hasText: /^Yes/ }).locator('input').check();

@@ -709,7 +709,7 @@
   // Review-status label on pages the AI wrote (the script decides which pages; see /ai-label.js)
   if (!inMembers && (path.indexOf('/preview/pages/') === 0 || path.indexOf('/research/') === 0) && !document.querySelector('script[src^="/ai-label.js"]')) {
     var labelScript = document.createElement('script');
-    labelScript.src = '/ai-label.js?v=1';
+    labelScript.src = '/ai-label.js?v=2';
     labelScript.defer = true;
     document.head.appendChild(labelScript);
   }

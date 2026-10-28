@@ -30,7 +30,9 @@
 .pt-icon{width:24px;height:24px;flex:none}
 .pt-framed{position:relative;border:3px solid #8cddd0;border-radius:23px;padding:16px 16px 12px;background:var(--panel)}
 .pt-thread-corner{position:absolute;top:-3px;right:-3px;width:120px;height:40px;pointer-events:none;background:url(art/pat/pat-thread-input-frame.svg) right top/340px auto no-repeat}
-.pt-hand{position:absolute;top:-34px;right:18px;width:96px;height:auto;pointer-events:none}
+/* the fingertips (left edge of the picture, a quarter of the way down) pinch the border line itself; the hand hangs over the border, inside the box width, so it never reaches the cards above */
+.pt-hand{position:absolute;top:calc(var(--pt-hand-w) * -.29 - 1px);right:8px;width:var(--pt-hand-w);height:auto;pointer-events:none}
+.pt-framed{--pt-hand-w:84px}
 .pt-field{display:grid;gap:8px}
 .pt-field label{font-size:17px;font-weight:600}
 .pt-field textarea,.pt-field input[type=url],.pt-field input[type=text]{width:100%;min-height:48px;font-size:17px}
@@ -43,9 +45,10 @@
 .pt-fielderr,.pt-err{margin:0;color:var(--danger);font-size:15px}
 .pt-gorow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:6px}
 .pt-gorow button{min-height:48px;padding:0 24px;font-size:17px}
-.pt-gorow .pt-go{display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:0;padding:4px 8px;min-height:48px;color:var(--foam);cursor:pointer}
-.pt-go-art{width:120px;height:120px;display:block}
-.pt-go-text{font-size:18px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.pt-gorow{gap:6px 18px}
+.pt-gorow .pt-go{display:grid;background:none;border:0;padding:0;min-height:48px;width:min(340px,100%);color:var(--foam);cursor:pointer}
+.pt-go-art{grid-area:1/1;width:100%;height:auto;object-fit:contain;display:block}
+.pt-go-text{grid-area:1/1;align-self:end;justify-self:center;font-size:18px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;line-height:1;padding-bottom:2px;text-shadow:0 1px 6px #021a26,0 0 2px #021a26}
 .pt-gorow .pt-go:disabled{opacity:.6;cursor:default}
 .pt-privacy{font-size:14px;color:var(--muted);margin:4px 0 0}
 .pt-live{min-height:1.2em;margin:6px 0;font-size:15px}
@@ -64,7 +67,7 @@
 .pt-modes :focus-visible,.pt-field :focus-visible,.pt-gorow :focus-visible,.pt-still :focus-visible,.pt-ocr :focus-visible,.pt-check :focus-visible{outline:3px solid #a7f0e9;outline-offset:2px}
 @media (max-width:640px){
   .pt-modes{grid-template-columns:repeat(2,1fr)}
-  .pt-hand{display:none}
+  .pt-framed{--pt-hand-w:64px}
   .pt-thread-corner{width:80px}
   .pt-framed{padding:14px 12px 10px}
 }
