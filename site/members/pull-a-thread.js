@@ -78,7 +78,7 @@ function prelimCard(t) {
     sec('supports', 'Supports it', 'Records that back up what you sent.'),
     sec('contradicts', 'Contradicts it', 'Records that point the other way.'),
     sec('related', 'Related, but does not settle it', 'Records on the same subject that neither back it up nor rule it out.'),
-    h('p', { class: 'muted small', text: 'A reviewer can check this answer, correct it, or start a deeper investigation. Every change is logged.' }));
+    h('p', { class: 'muted small', text: 'This answer comes from everything public on our site: all our data points. Outside research is done only after a request is sent for review. A reviewer can check this answer, correct it, or start a deeper investigation. Every change is logged.' }));
 }
 
 // What a person sees depends on what is true. Only a reviewer's "answered" is shown as reviewed evidence.
@@ -335,7 +335,7 @@ function view() {
     checks.push(h('label', { class: 'pt-check-row' }, h('input', { type: 'checkbox', name: 'text_only', checked: true }),
       h('span', {}, h('strong', { text: 'Send only the text. ' }), 'We read the text, then delete the picture right away. A reviewer never sees it.')));
   } else if (mode === 'question' || mode === 'text') {
-    checks.push(h('p', { class: 'pt-help', text: 'Our AI runs on our own computer. No outside AI service is used, and it does not learn from or train on what you send.' }));
+    checks.push(h('p', { class: 'pt-help', text: 'Our AI runs on our own computer. No outside AI service is used, and it does not learn from or train on what you send. Your first answer comes from everything public on our site, all our data points. Outside research is done only after a request is sent for review.' }));
   }
   if (mode === 'text' || mode === 'screenshot') {   // not for typed questions
     checks.push(h('label', { class: 'pt-check-row' }, h('input', { type: 'checkbox', name: 'hide_names' }),
