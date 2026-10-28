@@ -1,5 +1,5 @@
 {
-  "note": "Dates up to 2026-10-25 were reconstructed from project discussions and screenshots. From 2026-10-26 the rows follow the git history of github.com/wrxminion/The-way-site. Only rows marked LIVE_VERIFIED were opened on the live site, on the date shown. IMPLEMENTED_PENDING_REVIEW and \"Merged\" mean the work is in the repository but a person has not yet checked the live page. The IDs D038 and D040 were never used.",
+  "note": "Dates up to 2026-10-25 were reconstructed from project discussions and screenshots. From 2026-10-26 the rows follow the git history of github.com/wrxminion/The-way-site. Only rows marked LIVE_VERIFIED were opened on the live site, on the date shown. IMPLEMENTED_PENDING_REVIEW and \"Merged\" mean the work is in the repository but a person has not yet checked the live page. Rows through D071 follow merged pull requests up to PR #54 (the members-only research tab is not listed). The IDs D038 and D040 were never used.",
   "rows": [
     {
       "id": "D001",
@@ -528,8 +528,168 @@
       "origin": "Maintainer request",
       "decision_or_proposal": "The Research page no longer carries the old summary line. The ledger page has its own scholar bar (Ledger, Methods, How we use AI, Source code on GitHub) and the Research header and water. Methods has its own page. Rows that said a check was pending were rewritten to say what was and was not checked.",
       "why": "Researchers should find the record of what changed and how it is checked.",
-      "status_as_of_2026_10_25": "Proposed in this change; not yet merged or live.",
+      "status_as_of_2026_10_25": "Merged in PR #26; live appearance not yet verified.",
       "evidence_and_limits": "Written from the repository and project notes. The live site could not be opened from where this was written, so no row here was newly checked live."
+    },
+    {
+      "id": "D056",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Background whale on the front page and across pages",
+      "origin": "Maintainer and Codex changes (PRs #25, #30, #36, #40, #43)",
+      "decision_or_proposal": "A blue whale swims through the background. The first scroll-linked version was removed, then replaced by a far-away blurred silhouette that crosses every 20 to 30 seconds, and finally by the approved blue whale at a fixed random depth on each page. Waves overlapping the header were restored.",
+      "why": "A quiet visual identity that matches the ocean theme.",
+      "status_as_of_2026_10_25": "Merged in PRs #25, #30, #36, #40 and #43; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Commit titles were read; a person has not yet checked the live pages."
+    },
+    {
+      "id": "D057",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Open your ballot banner on state maps",
+      "origin": "Maintainer changes (PRs #27, #31)",
+      "decision_or_proposal": "After a reader picks a spot on a state map, a compact Open your ballot banner appears inside the map frame.",
+      "why": "Lead the reader from the map to their own ballot.",
+      "status_as_of_2026_10_25": "Merged in PRs #27 and #31; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Commit titles were read; a person has not yet checked the live pages."
+    },
+    {
+      "id": "D058",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Research and state pages: card changes",
+      "origin": "Maintainer changes (PRs #28, #29)",
+      "decision_or_proposal": "The Research page shows two large cards (Civics and History, How government works) above How do we know. The state count cards moved below Pick your state.",
+      "why": "Put the main choices first.",
+      "status_as_of_2026_10_25": "Merged in PRs #28 and #29; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Commit titles were read; a person has not yet checked the live pages."
+    },
+    {
+      "id": "D059",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Members menu, bar and comment rules",
+      "origin": "Maintainer changes (PRs #32, #33, #35)",
+      "decision_or_proposal": "Candidate comments are for admins only. The members bar gained an Invite link and a Case Studies tab and shows the waves. Review screenshots show as inline images to fit the page security rules.",
+      "why": "Keep candidate discussion restricted until a lawyer has reviewed it; make the member menu easier to use.",
+      "status_as_of_2026_10_25": "Merged in PRs #32, #33 and #35; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Commit titles were read; a person has not yet checked the live pages."
+    },
+    {
+      "id": "D060",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Colorado address search and Open my ballot fixed",
+      "origin": "Maintainer change (PR #34)",
+      "decision_or_proposal": "Colorado address search lands in the right town, Open my ballot works, and the states page has an address box.",
+      "why": "The address search sent some readers to the wrong place.",
+      "status_as_of_2026_10_25": "Merged in PR #34; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Commit titles were read; a person has not yet checked the live pages."
+    },
+    {
+      "id": "D061",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Email list controls labeled coming soon",
+      "origin": "Maintainer change (PR #37)",
+      "decision_or_proposal": "Follow links appear on News, Research and Cases pages and on each news card. Sign-up is labeled coming soon.",
+      "why": "Sending is off until a mailing address is in place, so the page says so.",
+      "status_as_of_2026_10_25": "Merged in PR #37; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Sending is not turned on. Nothing is emailed to anyone."
+    },
+    {
+      "id": "D062",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Members home: Review the sources card and Author desk",
+      "origin": "Maintainer changes (PRs #38, #42)",
+      "decision_or_proposal": "Members home leads with a Review the sources card showing points, awards and second-review counts. An Author desk and a ranks page were added (Author, Deshi, Renshi).",
+      "why": "Make source review the first thing members see and show how work is recognized.",
+      "status_as_of_2026_10_25": "Merged in PRs #38 and #42; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Commit titles were read; a person has not yet checked the live pages."
+    },
+    {
+      "id": "D063",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Why I Started Looking essay rewritten",
+      "origin": "Maintainer change (PR #39)",
+      "decision_or_proposal": "The essay now uses a national framing and has a Japanese section. Sources were added for the Japanese section claims and for E pluribus unum.",
+      "why": "Make the essay broader and source its claims.",
+      "status_as_of_2026_10_25": "Merged in PR #39; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Source links were added; a person has not yet checked each claim against its source."
+    },
+    {
+      "id": "D064",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Homepage navigation card pictures",
+      "origin": "Codex change (PR #41)",
+      "decision_or_proposal": "The homepage navigation cards have illustrations, including a state map picture.",
+      "why": "Make the cards easier to tell apart.",
+      "status_as_of_2026_10_25": "Merged in PR #41; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Commit titles were read; a person has not yet checked the live pages."
+    },
+    {
+      "id": "D065",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Private Yes, Maybe, No picks and ranking on ballots",
+      "origin": "Maintainer changes (PRs #44, #45)",
+      "decision_or_proposal": "Readers can mark Yes, Maybe or No and rank each candidate, with quick picks on state map ballot cards and Yes or No on measures. Each item has Pick, Why and Notes fields and a print sheet. The front page has an address box that tries the Census geocoder first for Colorado.",
+      "why": "Let a reader plan a vote privately and print the plan.",
+      "status_as_of_2026_10_25": "Merged in PRs #44 and #45; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Picks stay in the browser by default. A script test exists (tools/test-my-ballot.js); a person has not tested every page live."
+    },
+    {
+      "id": "D066",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Local measures, Not sure yet, and saving news to ballot notes",
+      "origin": "Maintainer change (PR #49)",
+      "decision_or_proposal": "Local measure pages and the map list accept Yes, No or Not sure yet. My Ballot is one list with Clear my choice and Remove from my ballot inside each row. News stories can be saved to ballot notes.",
+      "why": "Cover local measures and keep related reading with the choice.",
+      "status_as_of_2026_10_25": "Merged in PR #49; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Commit titles were read; a person has not yet checked the live pages."
+    },
+    {
+      "id": "D067",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Source review screen and members Home fixes",
+      "origin": "Maintainer changes (PRs #47, #48, #50)",
+      "decision_or_proposal": "The review screen matches source links and paragraphs more closely and shows real links. Members Home loads Latest threads on its own so a failure cannot break the page. The milk case has a new timeline row and source row.",
+      "why": "Make reviewing sources work for members.",
+      "status_as_of_2026_10_25": "Merged in PRs #47, #48 and #50; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Commit titles were read; a person has not yet checked the live pages."
+    },
+    {
+      "id": "D068",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Inline source links on 51 case pages and exact document pages",
+      "origin": "Maintainer changes (PRs #51, #52, #53)",
+      "decision_or_proposal": "Case pages have inline source links. Iran-Contra citations point at the exact report chapters. Three source links point at exact document pages.",
+      "why": "Let a reader reach the source from the sentence that cites it.",
+      "status_as_of_2026_10_25": "Merged in PRs #51, #52 and #53; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Links were added; a person has not yet followed each one."
+    },
+    {
+      "id": "D069",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Wrong claims corrected in three case texts",
+      "origin": "Maintainer change (PR #54)",
+      "decision_or_proposal": "Wrong claims were fixed in the TARP, plea bargaining and rural free delivery case text and in the claims file.",
+      "why": "Corrections found during source review.",
+      "status_as_of_2026_10_25": "Merged in PR #54; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Fixed against the sources named on those pages; a second person has not yet checked the new text."
+    },
+    {
+      "id": "D070",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Database changes 0017 to 0024 reported applied",
+      "origin": "Maintainer, through the database dashboard",
+      "decision_or_proposal": "Project notes record that migrations 0017 to 0024 were run and checked on 2026-10-27 (roles, awards and related tables).",
+      "why": "Needed for member roles, points and awards.",
+      "status_as_of_2026_10_25": "Reported applied; not checked from the public site.",
+      "evidence_and_limits": "Git does not record this and these files are not in the public repository. Treat as reported, not independently verified."
+    },
+    {
+      "id": "D071",
+      "decision_date_or_range": "2026-10-28",
+      "title": "Ledger updates itself from labeled pull requests",
+      "origin": "Maintainer request",
+      "decision_or_proposal": "A merged pull request with the label ledger and a ledger: line in its body causes a follow-up pull request that adds one neutral row to this ledger. Titles and other text are never copied.",
+      "why": "Keep this record current without hand editing.",
+      "status_as_of_2026_10_25": "Proposed in this change; not yet merged or live.",
+      "evidence_and_limits": "Proposed in this change; not yet merged. The follow-up pull request still needs the maintainer to merge it."
     }
   ]
 }
