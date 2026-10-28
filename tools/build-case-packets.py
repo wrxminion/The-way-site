@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Build one downloadable research packet per case page.
 
-Reads site/preview/pages/cases/<slug>.html and writes
-site/preview/pages/cases/packets/<slug>-research-packet.html.
+Reads site/cases/<slug>.html and writes
+site/cases/packets/<slug>-research-packet.html.
 
 Each packet is a single self-contained file that prints well (the browser's Print,
 then Save as PDF, gives a PDF). It holds:
@@ -30,10 +30,10 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CASES = ROOT / "site" / "preview" / "pages" / "cases"
+CASES = ROOT / "site" / "cases"
 OUT = CASES / "packets"
 DATA = ROOT / "tools" / "case-packet-data.json"
-BASE = "https://michiinstitute.com/preview/pages/cases/"
+BASE = "https://michiinstitute.com/cases/"
 REVIEW_PAGE = "https://michiinstitute.com/members/reviews.html?case="
 
 NOT_REVIEWED = ("Not yet reviewed by a person. This page was researched and written with the help of "
@@ -68,7 +68,7 @@ def git_log(slug):
     try:
         out = subprocess.run(
             ["git", "-C", str(ROOT), "log", "--no-merges", "--format=%as|%s", "--",
-             "site/preview/pages/cases/%s.html" % slug],
+             "site/cases/%s.html" % slug],
             capture_output=True, text=True, check=True).stdout
     except Exception:
         return []
@@ -211,7 +211,7 @@ def build(slug, extra):
             'Packet built %s. %s' % (title, case_no or "n/a", checked or "date not stated", today, url))
 
     page = """<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{t} - research packet - The Way</title>
 <style>{css}</style></head><body>
 <p class="small">The Way research packet. Built {today}. Online version: <a href="{url}">{url}</a></p>

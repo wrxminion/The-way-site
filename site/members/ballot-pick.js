@@ -7,7 +7,7 @@
   'use strict';
   var WB = window.WayBallot;
   var main = document.querySelector('main');
-  var m = /^\/preview\/pages\/guide(-[a-z]{2})?\/(?:(races|measures|candidates|local\/m)\/([a-z0-9-]+)\.html)?$/.exec(location.pathname);
+  var m = /^\/guide(-[a-z]{2})?\/(?:(races|measures|candidates|local\/m)\/([a-z0-9-]+)\.html)?$/.exec(location.pathname);
   if (!WB || !main || !m) return;
   var ST = m[1] ? m[1].slice(1).toUpperCase() : 'CO';
   var KIND = { races: 'race', measures: 'measure', 'local/m': 'measure', candidates: 'candidate' }[m[2]] || '';

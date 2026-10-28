@@ -12,9 +12,9 @@
   'use strict';
   var KEY = 'theway.bar';
   var ROLES = ['admin', 'super_admin', 'moderator', 'researcher', 'reviewer', 'editor'];
-  var GUIDE = /^\/preview\/pages\/guide(-[a-z]{2})?\/$/;
-  var STATES = '/preview/pages/states/';
-  var GOV = '/preview/pages/how-government-works.html';
+  var GUIDE = /^\/guide(-[a-z]{2})?\/$/;
+  var STATES = '/states/';
+  var GOV = '/how-government-works.html';
   var path = location.pathname;
   var inMembers = path.indexOf('/members/') === 0;
   var appPage = /^\/members\/(index\.html)?$/.test(path); // the member app itself (hash routes)
@@ -138,23 +138,23 @@
     var set = bar && bar.getAttribute('data-here');
     if (set) return set;
     var h = appPage ? (location.hash || '#/') : '';
-    if (/^#\/cases/.test(h) || /^\/preview\/pages\/cases/.test(path)) return 'cases';
-    if (/^\/preview\/pages\/how-government-works/.test(path)) return 'govworks';
-    if (/^\/preview\/pages\/case-studies/.test(path)) return 'casestudies';
+    if (/^#\/cases/.test(h) || /^\/cases/.test(path)) return 'cases';
+    if (/^\/how-government-works/.test(path)) return 'govworks';
+    if (/^\/case-studies/.test(path)) return 'casestudies';
     if (/^\/research\//.test(path)) return 'research-lib';
     if (/^\/search\//.test(path)) return 'search';
     if (/^\/members\/pull-a-thread/.test(path)) return 'thread';
-    if (/^\/preview\/pages\/news/.test(path)) return 'news';
-    if (/^\/preview\/pages\/(foundation|founder|deeper)/.test(path)) return 'about';
+    if (/^\/news/.test(path)) return 'news';
+    if (/^\/(foundation|founder|deeper)/.test(path)) return 'about';
     if (/^\/members\/my-ballot/.test(path)) return 'myballot';
     if (/^\/members\/author/.test(path)) return 'author';
     if (/^\/members\/findings/.test(path)) return 'findings';
     if (/^\/members\/(discuss|read-checks)/.test(path)) return 'commons';
     if (/^#\/private/.test(h)) return 'private';
     if (/^#\/research/.test(h) || /^#\/projects/.test(h)) return 'research';
-    if (/^#\/map/.test(h) || /^\/preview\/pages\/map/.test(path)) return 'map';
-    if (/^\/preview\/pages\/states/.test(path)) return 'states';
-    if (/^\/preview\/pages\/(guide|map)/.test(path)) return 'ballot';
+    if (/^#\/map/.test(h) || /^\/map/.test(path)) return 'map';
+    if (/^\/states/.test(path)) return 'states';
+    if (/^\/(guide|map)/.test(path)) return 'ballot';
     if (/^#\/(commons|c\/|t\/)/.test(h)) return 'commons';
     if (/^#\/invite/.test(h)) return 'invite';
     if (/^#\/review/.test(h)) return 'review';
@@ -222,10 +222,10 @@
     contribute.push({ href: route('private'), label: 'Private research', desc: 'Your own notes and team files, never published', icon: 'private', key: 'private' });
     var explore = [
       { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread', art: true },
-      { href: '/preview/pages/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
-      { href: '/preview/pages/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
+      { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
+      { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
       { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
-      { href: '/preview/pages/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
+      { href: '/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
       { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
       { href: route('map'), label: 'Map', desc: 'Every state at a glance', icon: 'map', key: 'map' }
     ];
@@ -252,10 +252,10 @@
       { heading: 'Explore', items: [
         { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread', art: true },
         { href: STATES, label: 'Voter Guide', desc: 'Your state, your ballot', icon: 'ballot', key: 'ballot' },
-        { href: '/preview/pages/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
-        { href: '/preview/pages/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
+        { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
+        { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
         { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
-        { href: '/preview/pages/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
+        { href: '/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
         { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' }
       ] },
       { heading: 'Your account', items: [
@@ -405,9 +405,9 @@
       // Desktop section links (a phone shows the bottom bar instead).
       var mid = el('nav', { class: 'wb-mid', 'aria-label': 'Sections' });
       mid.appendChild(link(data.ballot || STATES, 'Voter Guide', 'ballot', cur));
-      mid.appendChild(link('/preview/pages/news/', 'News', 'news', cur));
-      mid.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases', cur));
-      mid.appendChild(link('/preview/pages/case-studies/', 'Case Studies', 'casestudies', cur));
+      mid.appendChild(link('/news/', 'News', 'news', cur));
+      mid.appendChild(link('/cases/', 'Civics & History', 'cases', cur));
+      mid.appendChild(link('/case-studies/', 'Case Studies', 'casestudies', cur));
       mid.appendChild(link('/research/', 'Research', 'research-lib', cur));
       mid.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur));
       mid.appendChild(link(route('commons'), 'Commons', 'commons', cur));
@@ -455,10 +455,10 @@
       // Two groups with the logo between them on a wide screen (Voter Guide, News, Civics & History | logo | the rest).
       var pubL = el('div', { class: 'wb-pub-l' }), pubR = el('div', { class: 'wb-pub-r' });
       pubL.appendChild(link(STATES, 'Voter Guide', 'ballot', cur));
-      pubL.appendChild(link('/preview/pages/news/', 'News', 'news', cur));
-      pubL.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases', cur));
+      pubL.appendChild(link('/news/', 'News', 'news', cur));
+      pubL.appendChild(link('/cases/', 'Civics & History', 'cases', cur));
       pubR.appendChild(link(GOV, 'Government', 'govworks', cur));
-      pubR.appendChild(link('/preview/pages/case-studies/', 'Case Studies', 'casestudies', cur));
+      pubR.appendChild(link('/case-studies/', 'Case Studies', 'casestudies', cur));
       pubR.appendChild(link('/research/', 'Research', 'research-lib', cur));
       threadArt(pubR.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur))).className = 'wb-pat-row';
       pub.appendChild(pubL); pub.appendChild(pubR);
@@ -647,7 +647,7 @@
   window.addEventListener('pageshow', function (ev) { if (ev.persisted) closePanel(false); });
 
   // "Member discussion" link under guide measures/candidates and history cases (discuss-link.js decides which pages).
-  if (!inMembers && /^\/preview\/pages\/(guide(-[a-z]{2})?|cases)\//.test(path)) {
+  if (!inMembers && /^\/(guide(-[a-z]{2})?|cases)\//.test(path)) {
     var dcss = document.createElement('link'); dcss.rel = 'stylesheet'; dcss.href = '/members/discuss.css?v=1'; document.head.appendChild(dcss);
     var dl = document.createElement('script'); dl.src = '/members/discuss-link.js?v=1'; document.body.appendChild(dl);
   }
@@ -674,7 +674,7 @@
     syncWave();
   }
   // My Ballot: on voter-guide pages, load the pick/save controls (browser-only; see ballot-store.js).
-  if (/^\/preview\/pages\/guide(-[a-z]{2})?\//.test(path) && !inMembers) {
+  if (/^\/guide(-[a-z]{2})?\//.test(path) && !inMembers) {
     var bcss = document.createElement('link'); bcss.rel = 'stylesheet'; bcss.href = '/members/ballot-pick.css?v=3'; document.head.appendChild(bcss);
     var bstore = document.createElement('script'); bstore.src = '/members/ballot-store.js?v=6';
     bstore.onload = function () { var bp = document.createElement('script'); bp.src = '/members/ballot-pick.js?v=7'; document.body.appendChild(bp); };
@@ -693,9 +693,9 @@
       whaleScript.src = '/whale.js?v=4';
       document.head.appendChild(whaleScript);
     }
-    if (!document.querySelector('script[src^="/preview/pages/footer-quick.js"]')) {
+    if (!document.querySelector('script[src^="/footer-quick.js"]')) {
       var footerScript = document.createElement('script');
-      footerScript.src = '/preview/pages/footer-quick.js?v=1';
+      footerScript.src = '/footer-quick.js?v=1';
       document.head.appendChild(footerScript);
     }
   };
@@ -707,7 +707,7 @@
     document.head.appendChild(followScript);
   }
   // Review-status label on pages the AI wrote (the script decides which pages; see /ai-label.js)
-  if (!inMembers && (path.indexOf('/preview/pages/') === 0 || path.indexOf('/research/') === 0) && !document.querySelector('script[src^="/ai-label.js"]')) {
+  if (!inMembers && (path.indexOf('/') === 0 || path.indexOf('/research/') === 0) && !document.querySelector('script[src^="/ai-label.js"]')) {
     var labelScript = document.createElement('script');
     labelScript.src = '/ai-label.js?v=2';
     labelScript.defer = true;

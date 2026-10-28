@@ -45,7 +45,7 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
   }
   for (const v of VARIANTS) {
     const asked = []; const page = await newPage(asked);
-    await page.goto(base + '/preview/pages/map/index.html');
+    await page.goto(base + '/map/index.html');
     await page.waitForFunction(() => !/Loading/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
     await page.fill('#q', v); await page.click('#search button');
     await page.waitForFunction(() => /Here is what|not the exact|could not find|No U.S. match|outside/.test(document.getElementById('status').textContent), null, { timeout: 40000 });
@@ -55,7 +55,7 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
   }
   {
     const asked = []; const page = await newPage(asked, 'census');
-    await page.goto(base + '/preview/pages/map/index.html');
+    await page.goto(base + '/map/index.html');
     await page.waitForFunction(() => !/Loading/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
     await page.fill('#q', '12 Example St, Boulder, CO 80302'); await page.click('#search button');
     await page.waitForFunction(() => /Here is what/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
@@ -64,7 +64,7 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
   }
   {
     const asked = []; const page = await newPage(asked, 'empty');
-    await page.goto(base + '/preview/pages/map/index.html');
+    await page.goto(base + '/map/index.html');
     await page.waitForFunction(() => !/Loading/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
     await page.fill('#q', '12 Example St, Boulder, CO 80302'); await page.click('#search button');
     await page.waitForFunction(() => /found your town|not the exact|could not/.test(document.getElementById('status').textContent), null, { timeout: 60000 });
@@ -74,7 +74,7 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
   for (const mode of ['empty', 'error']) {
     for (const v of ['12 Example Street, Boulder, CO 80302', '12 example street boulder colorado 80302'].concat(process.env.EXTRA_ADDR ? [process.env.EXTRA_ADDR] : [])) {
       const asked = []; const page = await newPage(asked, mode);
-      await page.goto(base + '/preview/pages/map/index.html');
+      await page.goto(base + '/map/index.html');
       await page.waitForFunction(() => !/Loading/.test(document.getElementById('status').textContent), null, { timeout: 30000 });
       await page.fill('#q', v); await page.click('#search button');
       await page.waitForFunction(() => /found your town|could not find|unavailable/.test(document.getElementById('status').textContent), null, { timeout: 60000 });
@@ -86,7 +86,7 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
   // states page
   async function hub(text) {
     const asked = []; const page = await newPage(asked);
-    await page.goto(base + '/preview/pages/states/index.html');
+    await page.goto(base + '/states/index.html');
     ok(await page.locator('.vg-pick #vg-q').count() === 1 && /Pick your state \/ enter your address/.test(await page.textContent('.vg-pick b')), 'step 1 card reads "Pick your state / enter your address" with a box');
     await page.fill('#vg-q', text); await page.click('.vg-pick button');
     await page.waitForTimeout(800);
@@ -94,7 +94,7 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
   }
   let r = await hub('12 Example St, Boulder, CO 80302');
   await r.page.waitForFunction(() => /Here is what|not the exact/.test((document.getElementById('status') || {}).textContent || ''), null, { timeout: 40000 }).catch(async (e) => { console.log('URL', r.page.url(), 'STATUS', await r.page.textContent('#status').catch(() => '?'), 'Q', await r.page.inputValue('#q').catch(() => '?'), r.asked); throw e; });
-  ok(/\/preview\/pages\/map\/$/.test(r.page.url()), 'Colorado address opens the Colorado map and finds the spot, address removed from the web address (' + new URL(r.page.url()).pathname + new URL(r.page.url()).hash + ')');
+  ok(/\/map\/$/.test(r.page.url()), 'Colorado address opens the Colorado map and finds the spot, address removed from the web address (' + new URL(r.page.url()).pathname + new URL(r.page.url()).hash + ')');
   ok(await r.page.inputValue('#q') !== '' && !/q=/.test(r.page.url()), 'address is not left in the link');
   await r.page.close();
   r = await hub('12 Example Street Boulder');
@@ -104,7 +104,7 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
   ok(/\/map-me\/$/.test(r.page.url()), 'a state name alone opens that state map');
   await r.page.close();
   r = await hub('5 Pine Rd, Portland, Maine 04101');
-  ok(new URL(r.page.url()).pathname === '/preview/pages/map-me/', 'a full state name at the end works');
+  ok(new URL(r.page.url()).pathname === '/map-me/', 'a full state name at the end works');
   await r.page.close();
   // front page "Find your ballot"
   {
@@ -115,7 +115,7 @@ if (process.env.EXTRA_ADDR) VARIANTS.push(process.env.EXTRA_ADDR);
     ok(/state at the end/.test(await page.textContent('#fb-msg')) && new URL(page.url()).pathname === '/index.html', 'front page: no state typed, asks for one');
     await page.fill('#fb-q', '12 Example St, Boulder, CO 80302'); await page.click('#fb-addr button');
     await page.waitForFunction(() => /Here is what|not the exact|found your town/.test((document.getElementById('status') || {}).textContent || ''), null, { timeout: 40000 });
-    ok(new URL(page.url()).pathname === '/preview/pages/map/' && !/12 Example/.test(page.url()), 'front page: address goes to the Colorado map result, address not left in the link');
+    ok(new URL(page.url()).pathname === '/map/' && !/12 Example/.test(page.url()), 'front page: address goes to the Colorado map result, address not left in the link');
     await page.close();
   }
   await browser.close(); server.close();

@@ -12,7 +12,7 @@ const srv = http.createServer((q, s) => {
   s.writeHead(200, { 'content-type': types[path.extname(f)] || 'application/octet-stream' }); fs.createReadStream(f).pipe(s);
 });
 const CORS = { 'access-control-allow-origin': '*', 'access-control-allow-headers': '*', 'access-control-allow-methods': '*' };
-const BALLOT = { v: 1, state: 'CO', updated: 1, facts: {}, contests: { 'race:governor': { key: 'race:governor', kind: 'race', title: 'Governor', url: '/preview/pages/guide/races/governor.html', seats: 1,
+const BALLOT = { v: 1, state: 'CO', updated: 1, facts: {}, contests: { 'race:governor': { key: 'race:governor', kind: 'race', title: 'Governor', url: '/guide/races/governor.html', seats: 1,
   options: [{ id: 'a', label: 'Candidate A', sub: '', url: '' }], picks: ['a'], undecided: false, compare: [], note: '', why: '', leans: {}, ranks: {}, whys: {} } } };
 let fails = 0;
 const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails++; };
@@ -26,7 +26,7 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
     const errs = []; page.on('pageerror', (e) => errs.push(e.message)); page.errs = errs; page.inserts = [];
     await page.route('**/functions/v1/pull-thread', (route) => route.request().method() === 'OPTIONS' ? route.fulfill({ status: 204, headers: CORS })
       : route.fulfill({ status: 200, headers: CORS, contentType: 'application/json', body: JSON.stringify({ receipt: 'abc123', status: 'matched',
-        matches: [{ kind: 'case', title: 'Iran-Contra', path: 'https://michiinstitute.com/preview/pages/cases/iran-contra.html', strength: 'words', blurb: 'Secret arms sales.' }] }) }));
+        matches: [{ kind: 'case', title: 'Iran-Contra', path: 'https://michiinstitute.com/cases/iran-contra.html', strength: 'words', blurb: 'Secret arms sales.' }] }) }));
     await page.route('**/rest/v1/rpc/**', (route) => route.fulfill({ status: 200, headers: CORS, contentType: 'application/json', body: 'null' }));
     await page.route('**/rest/v1/private_research*', (route) => {
       if (route.request().method() === 'OPTIONS') return route.fulfill({ status: 204, headers: CORS });

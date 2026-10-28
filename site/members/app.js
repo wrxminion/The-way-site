@@ -507,8 +507,8 @@ async function signOut() { if (window.WayBar) WayBar.save(null); await sb.auth.s
 // ---------------------------------------------------------------- Commons
 
 // Where the public pages live, relative to the members page. Overridable in config.js.
-// The state guides and maps stay in /preview/pages/ while the member area lives in /members/.
-const PAGES = cfg.pagesBase || '/preview/pages/';
+// The state guides and maps stay in / while the member area lives in /members/.
+const PAGES = cfg.pagesBase || '/';
 const LINKS = Object.assign({
   guide: `${PAGES}guide/`, map: `${PAGES}map/`, news: `${PAGES}news/`, states: `${PAGES}states/`, cases: `${PAGES}cases/`, record: 'record.html',
 }, cfg.links || {});
@@ -596,7 +596,7 @@ function placePanel() {
 // ---------------------------------------------------------------- the whole-US map
 // Shapes come from usmap-data.js (window.US_STATES = { CO: [name, svgPath, [cx, cy]] }).
 // Which states have a guide and a map is a fixed list (READY below), set when each state
-// is uploaded. The member area never asks /preview/pages/ itself: that folder has its own
+// is uploaded. The member area never asks / itself: that folder has its own
 // password, and asking would pop the browser's password box.
 const US = window.US_STATES || {};
 const abbrOf = (name) => Object.keys(US).find((a) => US[a][0] === name) || null;
@@ -616,7 +616,7 @@ const stateLinks = (a) => {
   const map = own.map ? [own.map] : a === 'CO' ? [`${PAGES}map-${ab}/`, LINKS.map] : [`${PAGES}map-${ab}/`];
   return { guide, map, page: `${LINKS.states}${slugOf(US[a][0])}.html` };
 };
-// States whose guide and map are live in /preview/pages/. Add a state here (or in config.js
+// States whose guide and map are live in /. Add a state here (or in config.js
 // as readyStates: ['CO', ...]) when its pages go up.
 const READY = new Set(cfg.readyStates || ['CO', 'OK', 'NC', 'FL', 'CA', 'TX', 'VA', 'NJ', 'MI', 'KY', 'MD', 'MO', 'MA']);
 function available(a) {
@@ -1065,7 +1065,7 @@ async function okToPost(text) {
 
 // ---------------------------------------------------------------- Cases (the history cases) and revision reports
 // The list comes from cases-data.js (made by tools/cases_data.py from the built cases index).
-// The case pages live in /preview/pages/cases/ and open in a new tab (that folder asks for its
+// The case pages live in /cases/ and open in a new tab (that folder asks for its
 // own password). Any member can report a case for revision; moderators accept or decline.
 const CASES = window.WAY_CASES || [];
 const caseBySlug = (slug) => CASES.find((c) => c.slug === slug) || null;

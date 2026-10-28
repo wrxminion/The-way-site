@@ -22,7 +22,7 @@
       var st=stateOf(q);
       if(!st){msg.classList.add('warn');msg.textContent='Put your state at the end, like "Denver, CO 80202", or click your state on the map below.';return;}
       var only=q.replace(/[,\s.]/g,'').length<=N[st].length&&(q.length===2||q.toLowerCase()===N[st].toLowerCase());
-      location.href='/preview/pages/map'+(st==='CO'?'':'-'+st.toLowerCase())+'/'+(only?'':'#q='+encodeURIComponent(q));
+      location.href='/map'+(st==='CO'?'':'-'+st.toLowerCase())+'/'+(only?'':'#q='+encodeURIComponent(q));
     });
   })();
 })();

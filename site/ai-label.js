@@ -7,7 +7,7 @@
 (function () {
   'use strict';
   var path = location.pathname.replace(/index\.html$/, '');
-  var AI = /^\/preview\/pages\/(guide(-[a-z]{2})?\/|how-government-works\.html$|news\/|cases\/[^/]+\.html$|cases\/packets\/)|^\/research\/packages\//;
+  var AI = /^\/(guide(-[a-z]{2})?\/|how-government-works\.html$|news\/|cases\/[^/]+\.html$|cases\/packets\/)|^\/research\/packages\//;
   if (!AI.test(path) || document.querySelector('.ai-label, .review-banner')) return;
 
   var STATUS = {

@@ -13,10 +13,10 @@ function isAdmin() {
   } catch (e) { return false; }
 }
 let kind = null, id = null, m;
-if ((m = /^\/preview\/pages\/guide(?:-([a-z]{2}))?\/measures\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path))) { kind = 'measure'; id = `${m[1] || 'co'}-${m[2]}`; }
-else if ((m = /^\/preview\/pages\/guide(?:-([a-z]{2}))?\/local\/m\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path))) { kind = 'measure'; id = `${m[1] || 'co'}-local-${m[2]}`; }
-else if (isAdmin() && (m = /^\/preview\/pages\/guide(?:-([a-z]{2}))?\/candidates\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path))) { kind = 'candidate'; id = `${m[1] || 'co'}-${m[2]}`; }
-else if ((m = /^\/preview\/pages\/cases\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path)) && m[1] !== 'index') { kind = 'case'; id = m[1]; }
+if ((m = /^\/guide(?:-([a-z]{2}))?\/measures\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path))) { kind = 'measure'; id = `${m[1] || 'co'}-${m[2]}`; }
+else if ((m = /^\/guide(?:-([a-z]{2}))?\/local\/m\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path))) { kind = 'measure'; id = `${m[1] || 'co'}-local-${m[2]}`; }
+else if (isAdmin() && (m = /^\/guide(?:-([a-z]{2}))?\/candidates\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path))) { kind = 'candidate'; id = `${m[1] || 'co'}-${m[2]}`; }
+else if ((m = /^\/cases\/([a-z0-9][a-z0-9-]*)\.html$/.exec(path)) && m[1] !== 'index') { kind = 'case'; id = m[1]; }
 if (!kind || id.length > 120) return;
 let signedIn = false;
 try { for (let i = 0; i < localStorage.length; i++) if (/^sb-.+-auth-token$/.test(localStorage.key(i) || '')) signedIn = true; } catch (e) { /* private mode */ }

@@ -87,7 +87,7 @@ async function caseView(slug) {
     h('p', { class: 'overline', text: 'Review history' }),
     h('h1', { text: caseName(slug) }),
     h('p', { class: 'small' }, h('a', { href: 'reviews.html', text: 'All cases' }),
-      c ? [' · ', h('a', { href: `/preview/pages/cases/${slug}.html`, text: 'Read the case' })] : null),
+      c ? [' · ', h('a', { href: `/cases/${slug}.html`, text: 'Read the case' })] : null),
     claimsEl,
     rows.length ? h('ul', { class: 'list panel' }, rows.map((e) => event(e, false)))
       : h('p', { class: 'muted', text: 'No person has reviewed this case yet.' }));

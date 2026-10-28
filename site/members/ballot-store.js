@@ -18,7 +18,7 @@
   // Links we keep: pages on this site (a path under the guide) or an https source. Never javascript: or data:.
   function url(v) {
     if (typeof v !== 'string' || v.length > 600) return '';
-    if (/^\/preview\/pages\/guide(-[a-z]{2})?\/[A-Za-z0-9._\/-]*$/.test(v)) return v;
+    if (/^\/guide(-[a-z]{2})?\/[A-Za-z0-9._\/-]*$/.test(v)) return v;
     try { var u = new URL(v); return u.protocol === 'https:' ? u.href : ''; } catch (e) { return ''; }
   }
   function ckey(v) { return typeof v === 'string' && /^(race|measure):[a-z0-9-]{1,80}(:[a-z0-9-]{1,80})?$/.test(v) ? v : ''; }

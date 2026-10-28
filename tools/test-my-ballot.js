@@ -33,7 +33,7 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   page.on('request', (r) => { if (!r.url().startsWith(base)) requests.push(r.url()); });
   const shot = async (n) => { if (SHOTS) await page.screenshot({ path: path.join(SHOTS, n + '.png'), fullPage: true }); };
   const store = () => page.evaluate(() => JSON.parse(localStorage.getItem('theway.ballot.v1.CO') || 'null'));
-  const G = base + '/preview/pages/guide/';
+  const G = base + '/guide/';
 
   // ---- race page
   await page.goto(G + 'races/governor.html');
@@ -90,9 +90,9 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   ok(Object.values(s.facts).some((f) => / · /.test(f.text) && /Today:/.test(f.text)), 'table row saved with column names');
 
   // ---- another state
-  await page.goto(base + '/preview/pages/guide-ok/races/index.html');
+  await page.goto(base + '/guide-ok/races/index.html');
   const okRace = await page.evaluate(async () => { const a = document.querySelector('main a[href$=".html"]'); return a ? a.getAttribute('href') : ''; });
-  if (okRace) { await page.goto(new URL(okRace, base + '/preview/pages/guide-ok/races/index.html').href); await page.waitForTimeout(400);
+  if (okRace) { await page.goto(new URL(okRace, base + '/guide-ok/races/index.html').href); await page.waitForTimeout(400);
     ok(await page.locator('.bp-dock').count() === 1, 'Oklahoma guide pages get the dock'); }
 
   // ---- planner
@@ -137,7 +137,7 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   await page.evaluate(() => localStorage.clear());
 
   // ---- marking screen
-  await page.evaluate(() => { localStorage.clear(); sessionStorage.setItem('theway.mymarks.v1', JSON.stringify({ state: 'CO', items: [{ p: '/preview/pages/guide/races/governor.html', t: 'Governor and Lieutenant Governor' }, { p: '/preview/pages/guide/measures/amendment-81.html', t: 'Amendment 81' }] })); });
+  await page.evaluate(() => { localStorage.clear(); sessionStorage.setItem('theway.mymarks.v1', JSON.stringify({ state: 'CO', items: [{ p: '/guide/races/governor.html', t: 'Governor and Lieutenant Governor' }, { p: '/guide/measures/amendment-81.html', t: 'Amendment 81' }] })); });
   await page.goto(base + '/members/my-ballot.html?state=CO#mark'); await page.reload(); await page.waitForSelector('#mark');
   ok(await page.locator('#mark >> text=Mark your ballot').count() === 1 && await page.locator('#mark li strong', { hasText: 'Amendment 81' }).count() === 1, 'marking screen lists the races passed from the map');
   await page.locator('#mark li', { hasText: 'Governor and Lieutenant Governor' }).getByRole('button', { name: /^Choose for / }).click();
@@ -226,8 +226,8 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   ok((await page.locator('.mb-sheet').innerText()).includes('Senator talks housing bill'), 'the saved story prints on the sheet');
   // the news page: a story that may be about a measure can be saved to that measure's notes
   const np = await page.context().newPage();
-  await np.route('**/preview/pages/news/data/latest.json', (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ generated_at: new Date().toISOString(), coverage: {}, items: [{ id: 'abc123', kind: 'news', title: 'Amendment 81 explained', source: 'Example Daily', url: 'https://example.com/a81', published_at: new Date().toISOString(), first_seen_at: new Date().toISOString(), about: [{ label: 'Amendment 81', page: 'guide/measures/amendment-81.html' }] }] }) }));
-  await np.goto(base + '/preview/pages/news/index.html'); await np.waitForSelector('.save-note');
+  await np.route('**/news/data/latest.json', (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ generated_at: new Date().toISOString(), coverage: {}, items: [{ id: 'abc123', kind: 'news', title: 'Amendment 81 explained', source: 'Example Daily', url: 'https://example.com/a81', published_at: new Date().toISOString(), first_seen_at: new Date().toISOString(), about: [{ label: 'Amendment 81', page: 'guide/measures/amendment-81.html' }] }] }) }));
+  await np.goto(base + '/news/index.html'); await np.waitForSelector('.save-note');
   await np.locator('.save-note').first().click();
   s = await np.evaluate(() => JSON.parse(localStorage.getItem('theway.ballot.v1.CO')));
   const nf2 = Object.values(s.facts).find((f) => /Amendment 81 explained/.test(f.text));
@@ -235,7 +235,7 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   await np.close();
   await page.goto(base + '/members/my-ballot.html?state=CO'); await page.waitForSelector('.mb-sheet');
   ok(sheetT.indexOf('check the fiscal note') < (sheetT.indexOf('Other facts') < 0 ? 1e9 : sheetT.indexOf('Other facts')), 'the grabbed note sits under its measure, not in a separate pile');
-  await page.evaluate(() => { sessionStorage.setItem('theway.mymarks.v1', JSON.stringify({ state: 'CO', items: [{ p: '/preview/pages/guide/races/governor.html', t: 'Governor and Lieutenant Governor' }, { p: '/preview/pages/guide/measures/amendment-81.html', t: 'Amendment 81' }] })); });
+  await page.evaluate(() => { sessionStorage.setItem('theway.mymarks.v1', JSON.stringify({ state: 'CO', items: [{ p: '/guide/races/governor.html', t: 'Governor and Lieutenant Governor' }, { p: '/guide/measures/amendment-81.html', t: 'Amendment 81' }] })); });
   await page.reload(); await page.waitForSelector('#mark li');
   ok(/Your pick: Yes/i.test(await page.locator('#mark li', { hasText: 'Amendment 81' }).first().innerText()), 'a collapsed measure row shows "Your pick: Yes" without opening');
   ok(/Your pick: Phil Weiser/i.test(await page.locator('#mark li', { hasText: 'Governor and Lieutenant Governor' }).first().innerText()), 'a collapsed race row shows the saved pick');

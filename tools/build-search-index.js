@@ -2,7 +2,7 @@
 // Reads only titles, descriptions, headings and a few labelled fields from the pages. No page text is copied wholesale.
 const fs = require('fs'), path = require('path');
 const SITE = path.join(__dirname, '..', 'site') + path.sep;
-const PAGES = SITE + 'preview/pages/';
+const PAGES = SITE; // the guide, map, cases, news and states folders sit at the site root
 const STATES = { ak: 'Alaska', al: 'Alabama', ar: 'Arkansas', az: 'Arizona', ca: 'California', co: 'Colorado', ct: 'Connecticut', de: 'Delaware', fl: 'Florida', ga: 'Georgia', hi: 'Hawaii', ia: 'Iowa', id: 'Idaho', il: 'Illinois', in: 'Indiana', ks: 'Kansas', ky: 'Kentucky', la: 'Louisiana', ma: 'Massachusetts', md: 'Maryland', me: 'Maine', mi: 'Michigan', mn: 'Minnesota', mo: 'Missouri', ms: 'Mississippi', mt: 'Montana', nc: 'North Carolina', nd: 'North Dakota', ne: 'Nebraska', nh: 'New Hampshire', nj: 'New Jersey', nm: 'New Mexico', nv: 'Nevada', ny: 'New York', oh: 'Ohio', ok: 'Oklahoma', or: 'Oregon', pa: 'Pennsylvania', ri: 'Rhode Island', sc: 'South Carolina', sd: 'South Dakota', tn: 'Tennessee', tx: 'Texas', ut: 'Utah', va: 'Virginia', vt: 'Vermont', wa: 'Washington', wi: 'Wisconsin', wv: 'West Virginia', wy: 'Wyoming' };
 const ent = (s) => s.replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&ldquo;|&rdquo;/g, '"').replace(/&mdash;|&ndash;/g, '-').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 const strip = (s) => ent(s.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
