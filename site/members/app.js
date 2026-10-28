@@ -69,6 +69,7 @@ function action(fn, slot) {
 }
 async function q(promise) { const { data, error } = await promise; if (error) throw error; return data; }
 // Research projects, finding links and "AI help write my claim" live in claim-links.js (migration 0026).
+const STATS = window.TheWayStats ? window.TheWayStats.make({ sb, h, q, when }) : null;
 const CL = window.TheWayClaim ? window.TheWayClaim.make({ sb, h, q, notice, action, render, can }) : null;
 
 const askDialog = document.getElementById('ask');
@@ -773,7 +774,7 @@ async function commonsView() {
     h('h2', { text: 'Rooms' }),
     h('div', { class: 'rooms' }, cats.map((c) => { const s = stats(c); return h('a', { class: 'room', href: `#/c/${c.slug}` },
       ROOM_ART.has(c.slug) ? h('img', { class: 'room-art', src: `art/room-${c.slug}.svg?v=1`, alt: '', width: 320, height: 180, loading: 'lazy' }) : null,
-      h('strong', { text: c.title }),
+      h('strong', { text: c.title }, c.min_role ? h('span', { class: 'tag warn', text: 'admins only' }) : null),
       h('span', { class: 'muted small', text: c.description }),
       h('span', { class: 'meta', text: s.n ? `${s.n} thread${s.n === 1 ? '' : 's'} · last post ${when(s.last)}` : (c.locked ? 'read only' : 'no threads yet') })); })),
   );
@@ -1958,6 +1959,7 @@ async function adminView() {
 
   render(
     h('h1', { text: 'Admin' }), msg,
+    state.roles.has('super_admin') && STATS ? STATS.panel() : null,
     h('div', { class: 'panel' }, h('h2', { text: 'Invite someone to The Way' }),
       h('p', { class: 'muted', text: 'Admins invite people the same way every member does, from the Invite page in the top bar. Every invitation shows in the list below.' }),
       h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Go to Invite' }))),
