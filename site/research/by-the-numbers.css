@@ -1,0 +1,15 @@
+/* "By the numbers" panel on the Research page (by-the-numbers.js). Colors come from the site's own variables. */
+#numbers{margin:36px 0 8px}
+.bn-note{color:var(--muted);font-size:.9rem;margin:6px 0 12px}
+.bn-tiles{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));margin:12px 0}
+.bn-tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:2px}
+.bn-tile strong{font:normal 30px/1.1 Georgia,serif}.bn-tile span{color:var(--muted);font-size:.85rem}
+.bn-cols{display:grid;gap:12px;grid-template-columns:1fr}@media(min-width:720px){.bn-cols{grid-template-columns:1fr 1fr}}
+.bn-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
+.bn-card h3{margin:0 0 6px;font:600 20px Georgia,serif}
+.bn-list{margin:6px 0;padding-left:20px}.bn-list li{padding:4px 0}
+ul.bn-list{list-style:none;padding:0}ul.bn-list li{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line)}
+.bn-views{color:var(--muted);font-size:.85rem;white-space:nowrap;margin-left:8px}
+.bn-map{width:100%;height:auto;display:block}
+.bn-shape{stroke:#020f1a;stroke-width:.6}
+.bn-l0{fill:#12384e}.bn-l1{fill:#1b6a73}.bn-l2{fill:#259a94}.bn-l3{fill:#52c9b6}.bn-l4{fill:#8fe8d4}.bn-l5{fill:#d4fff4}
