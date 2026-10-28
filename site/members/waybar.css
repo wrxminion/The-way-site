@@ -200,7 +200,6 @@ html.wb-lock,html.wb-lock body{overflow:hidden}
 .wb-floating-ready #return{display:none!important}
 .wb-floating-ready{padding-bottom:75px}
 @media (max-width:760px){
-  html.wb-has-bottom .wb-floating{bottom:calc(4.5rem + env(safe-area-inset-bottom) + 8px)}
   html.wb-has-bottom body.wb-floating-ready{padding-bottom:calc(4.5rem + env(safe-area-inset-bottom))}
 }
 
@@ -287,9 +286,24 @@ html{--wb-dock-bottom:calc(12px + env(safe-area-inset-bottom))}
 .wb-bubbles-toggle:hover{box-shadow:inset 0 0 0 1px #ffffff66,inset 0 -4px 8px #7fe3d94d,inset 0 3px 6px #ffffff33,0 3px 14px #0007,0 0 14px #7fe3d966}
 .wb-bubbles-toggle:focus-visible{outline:3px solid #a7f0e9;outline-offset:3px}
 .wb-bubbles-toggle svg{display:block;transition:transform .2s}
-html.wb-bubbles-off .wb-bubbles-toggle{bottom:var(--wb-dock-bottom)}
 html.wb-bubbles-off .wb-bubbles-toggle svg{transform:rotate(180deg)}
-html.wb-bubbles-off .wb-dock,html.wb-bubbles-off .wb-floating{display:none!important}
+html.wb-bubbles-off .wb-dock>:not(.wb-bubbles-toggle){display:none!important}
 @media (prefers-reduced-motion:reduce){.wb-bubbles-toggle svg{transition:none}}
 @media (forced-colors:active){.wb-bubbles-toggle{background:Canvas;border:2px solid CanvasText;box-shadow:none}}
 @media print{.wb-bubbles-toggle{display:none}}
+
+/* Bottom right column (Frank, Oct 28), top to bottom: hide arrow, up hand (Back to surface, no printed text), Log in / Sign up, Pull a thread.
+   One clean rim on each bubble for now (ChatGPT is designing the final bubbles). */
+.wb-dock{left:auto;right:12px;flex-direction:column;align-items:flex-end;max-width:none;gap:12px}
+.wb-dock .wb-bubbles-toggle{position:relative;left:auto;bottom:auto;order:0}
+.wb-dock .wb-floating{position:relative;right:auto;bottom:auto;order:1;padding:0;width:48px;height:48px;justify-content:center}
+.wb-dock .wb-dock-auth{order:2}
+.wb-dock .wb-thread-fab{order:3}
+.wb-dock .wb-floating a{width:44px;min-height:44px;padding:0;justify-content:center;font-size:26px;line-height:1}
+.wb-dock .wb-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.wb-dock .wb-dock-auth,.wb-dock .wb-thread-fab,.wb-dock .wb-floating,.wb-dock .wb-bubbles-toggle{
+  background:#052b3cf5;border:2px solid #a7f0e9cc;box-shadow:0 3px 12px #0006}
+.wb-dock .wb-dock-auth::before,.wb-dock .wb-thread-fab::before,.wb-dock .wb-floating::before,
+.wb-dock .wb-dock-auth::after,.wb-dock .wb-thread-fab::after,.wb-dock .wb-floating::after{display:none}
+.wb-dock .wb-thread-fab:hover,.wb-dock .wb-floating:hover,.wb-dock .wb-bubbles-toggle:hover{box-shadow:0 3px 12px #0006,0 0 12px #7fe3d966}
+@media (forced-colors:active){.wb-dock .wb-dock-auth,.wb-dock .wb-thread-fab,.wb-dock .wb-floating,.wb-dock .wb-bubbles-toggle{background:Canvas;border:2px solid CanvasText;box-shadow:none}}
