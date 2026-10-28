@@ -71,6 +71,7 @@ async function q(promise) { const { data, error } = await promise; if (error) th
 // Research projects, finding links and "AI help write my claim" live in claim-links.js (migration 0026).
 const STATS = window.TheWayStats ? window.TheWayStats.make({ sb, h, q, when }) : null;
 const LEDGER = window.TheWayLedger ? window.TheWayLedger.make({ sb, h, q }) : null;
+const CSTAT = window.TheWayContentStatus ? window.TheWayContentStatus.make({ sb, h, q, render, notice, when }) : null;
 const CL = window.TheWayClaim ? window.TheWayClaim.make({ sb, h, q, notice, action, render, can }) : null;
 
 const askDialog = document.getElementById('ask');
@@ -2021,6 +2022,7 @@ async function adminView() {
     h('h1', { text: 'Admin' }), msg,
     state.roles.has('super_admin') && STATS ? STATS.panel() : null,
     can('admin') && LEDGER ? LEDGER.panel() : null,
+    can('admin') && CSTAT ? CSTAT.panel() : null,
     h('div', { class: 'panel' }, h('h2', { text: 'Invite someone to The Way' }),
       h('p', { class: 'muted', text: 'Admins invite people the same way every member does, from the Invite page in the top bar. Every invitation shows in the list below.' }),
       h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Go to Invite' }))),
@@ -2569,6 +2571,7 @@ async function route() {
       case 'commons': return await commonsView();
       case 'invite': return await inviteView();
       case 'roles': return rolesView();
+      case 'status': return CSTAT ? await CSTAT.view(parts[1] || '', parts[2] || '') : render(notice('Page not found.'));
       case 'cases': return await casesView(decodeURIComponent(parts[1] || ''));
       case 'review': return await reviewView(decodeURIComponent(parts[1] || ''));
       case 'c': return await categoryView(decodeURIComponent(parts[1] || ''));
@@ -2616,7 +2619,7 @@ async function readSignInLink() {
 // A deep link (for example #/cases/ludlow from a case page) is kept through sign-in, including the
 // emailed sign-in link, and opened once the member is in. Only the address is kept, for one day.
 const AFTER = 'theway.after';
-const DEEP = /^#\/[a-z]+(\/[A-Za-z0-9_-]{1,80})?$/;
+const DEEP = /^#\/[a-z]+(\/[A-Za-z0-9_-]{1,80})?$|^#\/status\/[A-Za-z0-9_-]{1,400}(\/[a-z_]{1,20})?$/;
 function keepTarget() {
   if (!DEEP.test(location.hash) || location.hash === '#/' || location.hash === '#/signup') return;
   try { localStorage.setItem(AFTER, JSON.stringify({ hash: location.hash, at: Date.now() })); } catch {}
