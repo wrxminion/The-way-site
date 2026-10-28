@@ -46,13 +46,15 @@
     d.append(sm, body);
     var host = document.querySelector('.essay-body') || document.querySelector('main');
     var h1 = host && host.querySelector('h1') || document.querySelector('main h1');
-    if (document.querySelector('.essay-body')) host.prepend(d);
+    var cs = host && getComputedStyle(host);
+    if (cs && /flex/.test(cs.display)) host.insertAdjacentElement('beforebegin', d); // a flex main would make it a column
+    else if (document.querySelector('.essay-body')) host.prepend(d);
     else if (h1) { var top = h1.parentNode.tagName === 'HEADER' ? h1.parentNode : h1; top.insertAdjacentElement('afterend', d); }
     else if (host) host.prepend(d);
   }
 
   function start() {
-    ['/notice.css?v=2', '/ai-label.css?v=1'].forEach(function (h) {
+    ['/notice.css?v=2', '/ai-label.css?v=2'].forEach(function (h) {
       if (document.querySelector('link[href^="' + h.split('?')[0] + '"]')) return;
       var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = h; document.head.appendChild(l);
     });

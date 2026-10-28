@@ -1,5 +1,5 @@
 /* Review-status label on AI-written pages (see ai-label.js). Builds on notice.css. */
-.notice.ai-label{margin:14px 0}
+.notice.ai-label{margin:14px 0;grid-column:1/-1;align-self:start;max-width:100%}
 .ai-label .notice-body p{margin:.4em 0}
 .ai-label-pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--nl)}
 .ai-label-pick select{min-height:44px;font:inherit;color:#fff;background:#0d1720;border:1px solid var(--nl);border-radius:8px;padding:6px 10px}
