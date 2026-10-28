@@ -1,0 +1,55 @@
+name: Ledger checks
+
+# Every 15 minutes, read which ledger rows are marked "checked by a person" (set by admins on the
+# members Admin page) and copy the answer to checks.json on the ledger-data branch, which the
+# public ledger page reads. No secret: public.ledger_checks_public() is readable with the site's
+# public key (the same one in site/members/config.js) and returns only row ids. Main is not touched.
+
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ledger-data
+  cancel-in-progress: false
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Copy the checks to the ledger-data branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -eu
+          SB=$(grep -o "supabaseUrl: '[^']*'" site/members/config.js | cut -d"'" -f2)
+          KEY=$(grep -o "supabaseAnonKey: '[^']*'" site/members/config.js | cut -d"'" -f2)
+          test -n "$SB" && test -n "$KEY"
+          if ! curl -sS --fail -X POST "$SB/rest/v1/rpc/ledger_checks_public" -H "apikey: $KEY" -H "Content-Type: application/json" -d '{}' -o "$RUNNER_TEMP/checks.json"; then
+            echo "Database call failed (is migration 0040 run?). Nothing changed."; exit 0
+          fi
+          node -e "const j=JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'));if(!Array.isArray(j.checked)||!Array.isArray(j.unchecked))process.exit(1);require('fs').writeFileSync(process.argv[1],JSON.stringify({checked:j.checked,unchecked:j.unchecked},null,2)+'\n')" "$RUNNER_TEMP/checks.json"
+          URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads "$URL" ledger-data >/dev/null 2>&1; then
+            git clone -q --depth=1 -b ledger-data "$URL" /tmp/data
+          else
+            git init -q -b ledger-data /tmp/data
+            git -C /tmp/data remote add origin "$URL"
+            echo '{"rows":[]}' > /tmp/data/live-rows.json
+          fi
+          cp "$RUNNER_TEMP/checks.json" /tmp/data/checks.json
+          cd /tmp/data
+          git add -A
+          if git diff --cached --quiet; then echo "No change."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Ledger checks"
+          git push -q origin HEAD:ledger-data

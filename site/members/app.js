@@ -70,6 +70,7 @@ function action(fn, slot) {
 async function q(promise) { const { data, error } = await promise; if (error) throw error; return data; }
 // Research projects, finding links and "AI help write my claim" live in claim-links.js (migration 0026).
 const STATS = window.TheWayStats ? window.TheWayStats.make({ sb, h, q, when }) : null;
+const LEDGER = window.TheWayLedger ? window.TheWayLedger.make({ sb, h, q }) : null;
 const CL = window.TheWayClaim ? window.TheWayClaim.make({ sb, h, q, notice, action, render, can }) : null;
 
 const askDialog = document.getElementById('ask');
@@ -1960,6 +1961,7 @@ async function adminView() {
   render(
     h('h1', { text: 'Admin' }), msg,
     state.roles.has('super_admin') && STATS ? STATS.panel() : null,
+    can('admin') && LEDGER ? LEDGER.panel() : null,
     h('div', { class: 'panel' }, h('h2', { text: 'Invite someone to The Way' }),
       h('p', { class: 'muted', text: 'Admins invite people the same way every member does, from the Invite page in the top bar. Every invitation shows in the list below.' }),
       h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Go to Invite' }))),
