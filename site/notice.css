@@ -1,0 +1,23 @@
+/* Collapsible site notice. Levels: info (green), warn (yellow), critical (red).
+   <details class="notice notice-warn"><summary><span class="notice-tag">Warning</span><span class="notice-sum">One line</span><span class="notice-more"><span class="on-closed">Details</span><span class="on-open">Hide details</span></span></summary><div class="notice-body">Full text</div></details> */
+.notice{--nc:#ffd98a;--nb:#2a2410;--nl:#7a6430;border:1px solid var(--nl);border-left-width:5px;background:var(--nb);color:#f6efe0;border-radius:10px;margin:18px 0;font-size:.95rem}
+.notice-info{--nc:#9af0c8;--nb:#0d2a22;--nl:#2f7a5c}
+.notice-critical{--nc:#ffb4ae;--nb:#341216;--nl:#a8403f}
+.notice>summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:10px 14px;cursor:pointer;list-style:none;min-height:44px}
+.notice>summary::-webkit-details-marker{display:none}
+.notice>summary:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.notice-tag{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--nc);border:1px solid var(--nc);border-radius:999px;padding:2px 10px 2px 6px;white-space:nowrap}
+.notice-tag::before{content:"i";display:inline-block;width:1.25em;height:1.25em;line-height:1.25em;text-align:center;border-radius:50%;background:var(--nc);color:var(--nb);font:700 .85em Georgia,serif}
+.notice-warn .notice-tag::before{content:"!";font-family:Inter,system-ui,Arial,sans-serif;border-radius:3px;clip-path:polygon(50% 0,100% 100%,0 100%);padding-top:.25em;line-height:1.1}
+.notice-critical .notice-tag::before{content:"\00d7";font-family:Inter,system-ui,Arial,sans-serif}
+.notice-sum{flex:1 1 240px;min-width:0;color:#fff}
+.notice-more{margin-left:auto;font-size:.85rem;color:var(--nc);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.notice-more::after{content:"";display:inline-block;width:.5em;height:.5em;margin-left:.45em;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .15s}
+.notice[open] .notice-more::after{transform:rotate(-135deg) translate(0,0)}
+.notice .on-open,.notice[open] .on-closed{display:none}
+.notice[open] .on-open{display:inline}
+.notice-body{padding:2px 14px 12px;border-top:1px solid var(--nl);margin:0 0;padding-top:10px}
+.notice-body p{margin:.5em 0}
+.notice-body a{color:var(--nc)}
+@media (max-width:560px){.notice-more{margin-left:0}}
+@media (prefers-reduced-motion:reduce){.notice-more::after{transition:none}}

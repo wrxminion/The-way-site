@@ -29,11 +29,8 @@
 .essay-body .report-note{font-size:13px;color:var(--muted);margin:8px 0 0}
 .topbar.subnav{justify-content:center}
 
-.essay-body .review-banner{margin:20px 0 6px;padding:14px 18px;border:1px solid #e7cb8d99;border-left:5px solid #e7cb8d;border-radius:12px;background:#e7cb8d14;color:#f7ecd0;font-size:15px;line-height:1.55}
+.essay-body .review-banner{margin:20px 0 6px;font-size:15px;line-height:1.55}
 .essay-body .review-banner strong{color:#f3dca8}
-.essay-body .review-banner a{color:#f3dca8;text-decoration:underline}
-.essay-body .review-banner.reviewed{border-color:#a7f0e999;border-left-color:#a7f0e9;background:#a7f0e90f;color:#dff7f4}
-.essay-body .review-banner.reviewed strong{color:#a7f0e9}
 
 /* Report / print / download row (top and bottom of each case page) */
 .essay-body .report-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 14px}
@@ -58,6 +55,9 @@ html,body,.ocean,.essay-ocean{background:#fff!important;color:#111!important;min
 .essay-body p a[href^="http"]::after,.essay-body li a[href^="http"]::after{content:" (" attr(href) ")";font-size:8.5pt;color:#444!important;word-break:break-all}
 .essay-body .in-brief,.essay-body .review-banner,.essay-body .table-wrap{background:#fff!important;border:1px solid #888!important}
 .essay-body .review-banner{border-left:5px solid #000!important;break-inside:avoid;font-size:10.5pt}
+.essay-body .review-banner::details-content{content-visibility:visible!important;display:block!important}
+.essay-body .review-banner .notice-body{display:block!important}
+.essay-body .review-banner .notice-more{display:none!important}
 .essay-body:not(:has(.review-banner)) .meta::before{content:"Not yet reviewed by a person. This page was researched and written with the help of AI tools and no person has checked the sources yet. Treat it as a draft.";display:block;margin:0 0 8px;padding:8px 12px;border:1px solid #888;border-left:5px solid #000;font-size:10.5pt;font-weight:700;text-transform:none;letter-spacing:0;line-height:1.4}
 .essay-body .table-wrap{overflow:visible!important}
 .essay-body table{min-width:0!important;font-size:9.5pt}
