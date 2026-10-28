@@ -362,6 +362,83 @@
       cs.length ? cs.map(function (c) { return compareBlock(d, c); }) : h('p', { class: 'muted', text: 'Nothing to compare yet.' }));
   }
 
+
+  // ---- "Download my ballot": one self-contained HTML file (inline style and a tiny inline script, no network).
+  // It lists each race or measure with the pick, the reason and the saved notes, and a "I voted this way" box that
+  // is remembered by the browser that opens the file. Built here, in this browser; nothing is sent anywhere.
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+  // Phone rules at the polls, only where we found the state's own current page or rule. Everything else says "not found".
+  // Checked October 28, 2026. These can change; the file tells people to check their state's laws.
+  var PHONE_RULES = {
+    TX: { rule: 'Since September 1, 2025, wireless devices such as phones, tablets and laptops are not allowed in a room where voting is taking place. Recording images or sound is not allowed within 100 feet of a voting station.', src: 'https://www.sos.state.tx.us/elections/laws/advisory2026-26.shtml', label: 'Texas Secretary of State advisory' },
+    VA: { rule: 'Electronic devices are generally permitted inside the polling place. Officers may restrict use that hinders or disrupts voting or tries to influence a voter, and a local board may not ban devices for everyone.', src: 'https://law.lis.virginia.gov/admincode/title1/agency20/chapter60/section30/', label: '1VAC20-60-30, Virginia Administrative Code' },
+    NC: { rule: 'Voters may have a phone with them while voting, but may not photograph the ballot or talk, text or email with anyone. Candidate information may be looked up.', src: 'https://www.ncsbe.gov/about-elections/election-security/phone-usage-polls', label: 'North Carolina State Board of Elections' },
+    CA: { rule: 'Voters may use a smartphone or similar device at the polling place as long as the use does not break other rules, such as showing a marked ballot so its contents can be seen (Elections Code 14291) or crowding the booth (14221, 14224).', src: 'https://www.sos.ca.gov/elections/publications-and-resources/elections-officers-digest/election-day', label: 'California Secretary of State' }
+  };
+  function phoneRulesHtml() {
+    var mine = PHONE_RULES[ST], name = WB.STATES[ST];
+    function line(st) { var r = PHONE_RULES[st]; return '<li><b>' + esc(WB.STATES[st]) + ':</b> ' + esc(r.rule) + ' <a href="' + esc(r.src) + '" rel="noopener noreferrer">' + esc(r.label) + '</a></li>'; }
+    return '<section class="note"><h2>Check your state\'s laws!</h2>' +
+      '<p>Rules about phones and photos at the polls differ by state and can change. Ask your county election office. To be safe, use this file outside the polling place (before you go and after you leave), or print it, and tick "I voted this way" afterward.</p>' +
+      (mine ? '<p><b>' + esc(name) + ':</b> ' + esc(mine.rule) + ' <a href="' + esc(mine.src) + '" rel="noopener noreferrer">' + esc(mine.label) + '</a> <i>(checked October 28, 2026)</i></p>'
+            : '<p><b>' + esc(name) + ':</b> We did not find a rule for ' + esc(name) + ' yet. Check your state.</p>') +
+      '<details><summary>What we found in other states</summary><ul>' + Object.keys(PHONE_RULES).filter(function (s) { return s !== ST; }).map(line).join('') +
+      '</ul><p>Every other state: not found yet. Check your state.</p></details></section>';
+  }
+  function ballotFile(d) {
+    var facts = factList(d).filter(function (f) { return f.print; });
+    var items = touched(d).map(function (c) {
+      var mine = facts.filter(function (f) { return contestOf(d, f) === c; });
+      return { c: c, facts: mine };
+    }).filter(function (x) { var c = x.c; return c.picks.length || c.undecided || c.why || Object.keys(c.whys || {}).length || Object.keys(c.leans || {}).length || c.note || x.facts.length; });
+    var id = (Date.now().toString(36) + Math.random().toString(36).slice(2, 8));
+    var rows = items.map(function (x, i) {
+      var c = x.c, ll = leanLine(c), why = whyLines(c);
+      var notes = [];
+      if (c.note) notes.push('<p>' + esc(c.note) + '</p>');
+      if (x.facts.length) notes.push('<ul>' + x.facts.map(function (f) {
+        return '<li>' + (f.subjectLabel ? '<b>' + esc(f.subjectLabel) + ': </b>' : '') + esc(f.text) +
+          (f.srcUrl ? ' <a href="' + esc(f.srcUrl) + '" rel="noopener noreferrer">' + esc(f.srcLabel || 'source') + '</a>' : '') + '</li>';
+      }).join('') + '</ul>');
+      return '<li class="item"><div class="top"><label class="vote"><input type="checkbox" data-i="' + i + '"><span>I voted this way</span></label>' +
+        '<h2>' + esc(c.title) + '</h2></div>' +
+        '<p class="pick"><span class="box" aria-hidden="true">' + (c.picks.length ? '☑' : '☐') + '</span> <b>' + esc(choiceText(c)) + '</b></p>' +
+        (ll ? '<p class="lean">' + esc(ll) + '</p>' : '') +
+        why.map(function (t) { return '<p class="why">' + esc(t) + '</p>'; }).join('') +
+        (notes.length ? '<details><summary>My notes</summary>' + notes.join('') + '</details>' : '') + '</li>';
+    }).join('');
+    var css = 'html{-webkit-text-size-adjust:100%}body{margin:0;background:#fbfaf5;color:#16191b;font:18px/1.45 Georgia,"Times New Roman",serif}' +
+      'main{max-width:42rem;margin:0 auto;padding:16px}h1{font-size:26px;margin:.2em 0}h2{font-size:21px;margin:.3em 0}' +
+      '.meta,.note{font-size:15px;color:#4a5358}.note{border:1px solid #9aa5a9;border-radius:8px;padding:8px 10px;background:#fff}' +
+      'ul.list{list-style:none;margin:16px 0;padding:0}.item{border:1px solid #9aa5a9;border-radius:10px;padding:12px;margin:12px 0;background:#fff}' +
+      '.vote{display:flex;align-items:center;gap:10px;font:700 17px/1.2 system-ui,sans-serif;min-height:44px}.vote input{width:28px;height:28px;flex:none}' +
+      '.item.done{border-color:#1e7a46;background:#eef8f1}.pick{font-size:20px;margin:.3em 0}.lean,.why{margin:.3em 0}.why{font-style:italic}' +
+      'summary{cursor:pointer;font:600 16px system-ui,sans-serif;padding:8px 0}details ul{padding-left:20px}a{color:#0b4f6c;word-break:break-word}' +
+      '#count{font:700 16px system-ui,sans-serif}@media print{.vote{display:none}.item{break-inside:avoid}details>*{display:block}}';
+    var js = '(function(){var K="theway.voted.' + id + '",b=document.querySelectorAll("input[data-i]"),s={};' +
+      'try{s=JSON.parse(localStorage.getItem(K)||"{}")||{}}catch(e){}' +
+      'function n(){var c=0;b.forEach(function(x){var on=!!x.checked;x.closest(".item").classList.toggle("done",on);if(on)c++});' +
+      'document.getElementById("count").textContent=c+" of "+b.length+" marked as voted"}' +
+      'b.forEach(function(x){x.checked=!!s[x.getAttribute("data-i")];x.addEventListener("change",function(){' +
+      's[x.getAttribute("data-i")]=x.checked?1:0;try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}n()})});n()})();';
+    return '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
+      '<meta name="robots" content="noindex"><title>My ballot plan: ' + esc(WB.STATES[ST]) + '</title><style>' + css + '</style></head><body><main>' +
+      '<h1>My ballot plan: ' + esc(WB.STATES[ST]) + '</h1>' +
+      '<p class="meta">Made ' + esc(dayLong()) + ' at michiinstitute.com. This is my own plan, not an official ballot. I will vote on the ballot I receive. This file works offline and sends nothing anywhere.</p>' +
+      phoneRulesHtml() +
+      '<p id="count"></p>' +
+      (rows ? '<ul class="list">' + rows + '</ul>' : '<p>No choices yet.</p>') +
+      '<p class="meta">Tick "I voted this way" only for your own record. The ticks stay on this device, in this browser. The Way is a nonpartisan project and takes no side on any candidate or measure.</p>' +
+      '</main><script>' + js + '</script></body></html>';
+  }
+  function downloadBallot(d) {
+    var blob = new Blob([ballotFile(d)], { type: 'text/html;charset=utf-8' });
+    var u = URL.createObjectURL(blob), a = document.createElement('a');
+    a.href = u; a.download = 'my-ballot-' + ST.toLowerCase() + '.html';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(u); }, 4000);
+  }
+
   function sheet(d) {
     var printable = factList(d).filter(function (f) { return f.print; });
     var cs = touched(d), grabbed = function (c) { return printable.filter(function (f) { return contestOf(d, f) === c; }); };
@@ -378,7 +455,9 @@
         h('h2', { text: 'Your printable sheet' }),
         h('p', { class: 'muted small' }, 'This is what prints. Links show their full address on paper.'),
         h('div', { class: 'mb-opts' }, opt('includeFacts', 'Facts I marked for printing'), opt('includeCompare', 'Comparison for undecided races'), opt('includeNotes', 'My reasons and notes')),
-        h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'button', onclick: function () { window.print(); }, text: 'Print this sheet' }))),
+        h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'button', onclick: function () { window.print(); }, text: 'Print this sheet' }),
+          h('button', { type: 'button', onclick: function () { downloadBallot(d); }, text: 'Download my ballot (works offline)' })),
+        h('p', { class: 'muted small' }, 'The download is one file you can open on any phone, with a box to tick when you have voted that way. It is made in this browser and never sent to us. Check your state\'s laws about phones at the polls, and to be safe use the file outside the polling place or print the sheet instead.')),
       h('article', { class: 'mb-sheet', 'aria-label': 'Printable ballot sheet' },
         h('h2', { class: 'mb-sheet-title', text: 'My ballot plan: ' + WB.STATES[ST] }),
         h('p', { class: 'mb-sheet-meta', text: 'Made ' + dayLong() + ' at michiinstitute.com. This is my own plan, not an official ballot. I will vote on the ballot I receive.' }),

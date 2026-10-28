@@ -192,6 +192,23 @@ const ok = (c, m) => { console.log((c ? 'pass: ' : 'FAIL: ') + m); if (!c) fails
   s = await store(); ok(!s.contests['measure:amendment-81'] || (s.contests['measure:amendment-81'].picks.length === 0 && !s.contests['measure:amendment-81'].undecided), 'Clear my choice inside the row clears the pick');
   await page.locator('.mk-form', { hasText: 'Amendment 81' }).locator('label', { hasText: /^Yes/ }).locator('input').check();
   await page.locator('#mark li', { hasText: 'Amendment 81' }).first().getByRole('button', { name: 'Close' }).click();
+  // download: one offline HTML file with picks, why, notes, and "I voted this way" ticks
+  await page.evaluate(() => { const d = JSON.parse(localStorage.getItem('theway.ballot.v1.CO')); const k = Object.keys(d.contests).find((x) => /governor/.test(x)); d.contests[k].note = 'remember <script>window.__x=1</script> & "quotes"'; localStorage.setItem('theway.ballot.v1.CO', JSON.stringify(d)); });
+  await page.goto(base + '/members/my-ballot.html?state=CO'); await page.waitForSelector('.mb-sheet');
+  const [dlf] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: /Download my ballot/ }).click()]);
+  const dlPath = require('path').join(require('os').tmpdir(), 'mb-' + Date.now() + '.html'); await dlf.saveAs(dlPath);
+  const html = fs.readFileSync(dlPath, 'utf8');
+  ok(dlf.suggestedFilename() === 'my-ballot-co.html' && /<style>/.test(html) && !/<link |src=|http-equiv|fetch\(|XMLHttpRequest/.test(html.replace(/<a href="[^"]*"/g, '')), 'the download is one file with inline style and script, no external loads');
+  ok(/Check your state's laws!/.test(html) && /We did not find a rule for Colorado/.test(html) && /sos\.state\.tx\.us/.test(html) && /outside the polling place/.test(html) && /Why \(Phil Weiser\)|Why: it protects renters/.test(html) && /&lt;script&gt;window.__x=1/.test(html) && !/<script>window\.__x/.test(html), 'it carries the phone note and the reasons, and escapes notes');
+  const fp = await browser.newPage(); const reqs = []; fp.on('request', (r) => { if (!r.url().startsWith('file:')) reqs.push(r.url()); });
+  await fp.goto('file://' + dlPath);
+  ok(await fp.evaluate(() => window.__x === undefined), 'a note with a script tag does not run');
+  await fp.locator('input[data-i="0"]').check();
+  ok(/1 of \d+ marked as voted/.test(await fp.locator('#count').innerText()), 'ticking "I voted this way" updates the count');
+  await fp.reload();
+  ok(await fp.locator('input[data-i="0"]').isChecked(), 'the tick is remembered after reopening the file');
+  ok(reqs.length === 0, 'the file makes no network requests');
+  await fp.close();
   // local measure pages get the same controls, including Not sure yet
   await page.goto(G + 'local/m/adams-fire-6e.html'); await page.waitForSelector('.bp-bar');
   ok(await page.locator('.bp-bar').getByRole('button', { name: 'Not sure yet' }).count() === 1, 'a local measure page has Yes / No / Not sure yet');
