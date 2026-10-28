@@ -314,3 +314,15 @@ html.wb-bubbles-off .wb-dock>:not(.wb-bubbles-toggle){display:none!important}
 .wb-dock .wb-bubble:hover{filter:drop-shadow(0 0 8px #7fe3d9aa)}
 @media (forced-colors:active){.wb-dock .wb-bubbles-toggle{background:Canvas;border:2px solid CanvasText;box-shadow:none}}
 @media (max-width:760px){.wb-dock .wb-dock-auth{display:none}.wb-dock .wb-art[width="150"]{width:124px!important;height:auto}}
+
+/* Hover and focus motion (small, once): the diver swims up a little, the Log in bubble pops, the Pull a thread bubble gets a tug. The drift pauses
+   on hover and focus already. Nothing moves for people who ask for reduced motion. */
+.wb-dock .wb-art-stack{position:relative;display:block}
+.wb-dock .wb-art-stack .wb-diver{position:absolute;left:0;top:0}
+@keyframes wb-swim{0%{transform:translate(0,0) rotate(0)}40%{transform:translate(2px,-7px) rotate(2deg)}70%{transform:translate(0,-3px) rotate(-1deg)}100%{transform:translate(0,0) rotate(0)}}
+@keyframes wb-pop{0%{transform:scale(1)}30%{transform:scale(1.1)}55%{transform:scale(.96)}75%{transform:scale(1.03)}100%{transform:scale(1)}}
+@keyframes wb-tug{0%{transform:translate(0,0) rotate(0)}22%{transform:translate(-3px,1px) rotate(-2deg)}48%{transform:translate(5px,-1px) rotate(2.5deg)}72%{transform:translate(-2px,0) rotate(-1deg)}100%{transform:translate(0,0) rotate(0)}}
+.wb-dock .wb-floating:hover .wb-diver,.wb-dock .wb-floating:focus-within .wb-diver{animation:wb-swim 1.1s ease-in-out 1}
+.wb-dock .wb-dock-auth:hover .wb-art,.wb-dock .wb-dock-auth:focus-within .wb-art{animation:wb-pop .7s ease-out 1}
+.wb-dock .wb-thread-fab:hover .wb-art,.wb-dock .wb-thread-fab:focus-visible .wb-art{animation:wb-tug .8s ease-in-out 1}
+@media (prefers-reduced-motion:reduce){.wb-dock .wb-diver,.wb-dock .wb-dock-auth .wb-art,.wb-dock .wb-thread-fab .wb-art{animation:none!important}}
