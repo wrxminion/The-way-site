@@ -44,6 +44,13 @@
     return r;
   }
 
+  // Sources kept with a saved note: up to 8 https links with a short label.
+  function srcList(v) {
+    var r = [];
+    (Array.isArray(v) ? v : []).forEach(function (x) { var u = x && url(x.url); if (u && /^https:/.test(u) && r.length < 8) r.push({ url: u, label: str(x.label, 80) }); });
+    return r;
+  }
+
   function clean(d, st) {
     var out = empty(st);
     if (!d || typeof d !== 'object') return out;
@@ -78,12 +85,14 @@
       if (n >= LIMITS.facts) break;
       var f = d.facts[k];
       if (!f || !/^[a-f0-9]{8}$/.test(k)) continue;
-      var text = str(f.text, LIMITS.text);
+      var text = str(f.text, LIMITS.text) || (f.kind === 'note' ? str(f.headline, LIMITS.text) : '');
       if (!text) continue;
-      out.facts[k] = { id: k, kind: f.kind === 'highlight' ? 'highlight' : 'item', text: text,
+      out.facts[k] = { id: k, kind: f.kind === 'highlight' ? 'highlight' : f.kind === 'note' ? 'note' : 'item', text: text,
         contest: ckey(f.contest), subject: slug(f.subject), subjectLabel: str(f.subjectLabel, LIMITS.label),
         pageUrl: url(f.pageUrl), pageTitle: str(f.pageTitle, LIMITS.label), srcUrl: url(f.srcUrl), srcLabel: str(f.srcLabel, 80),
         print: f.print !== false, compare: f.compare !== false, side: f.side === 'yes' || f.side === 'no' ? f.side : '',
+        headline: str(f.headline, LIMITS.label), printMode: f.printMode === 'full' ? 'full' : 'headline',
+        flag: f.flag === 'checked' ? 'checked' : f.flag === 'unverified' ? 'unverified' : '', srcs: srcList(f.srcs),
         note: str(f.note, LIMITS.note), ts: Math.max(0, Math.min(Date.now() + 864e5, +f.ts || 0)) };
       n++;
     }

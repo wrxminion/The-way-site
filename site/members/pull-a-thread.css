@@ -82,3 +82,10 @@
 .pt-badge{display:inline-block;margin:0 0 8px;padding:4px 12px;border:2px solid #ffe3a3;border-radius:999px;font-weight:600;font-size:15px;color:#ffe3a3}
 .pt-sec h3{margin:14px 0 2px;font-size:18px}
 .pt-blurb{margin:4px 0 0;font-size:15px;color:var(--muted)}
+/* Save to notes */
+.pt-save{margin:6px 0}
+.pt-save-btn,.pt-save-panel input,.pt-save-panel select,.pt-save-panel button{min-height:44px}
+.pt-save-panel{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:6px;display:grid;gap:8px}
+.pt-save-panel :focus-visible,.pt-save-btn:focus-visible{outline:3px solid #a7f0e9;outline-offset:2px}
+.pt-flag{border-left:3px solid #d9a441;padding-left:10px;margin:0}
+.pt-modes-print{border:0;padding:0;margin:0;display:grid;gap:6px}

@@ -90,3 +90,9 @@
 /* sheet: each race or measure shows pick, reason and the notes grabbed from guide pages */
 .mb-why{font-style:normal;font-weight:600}
 .mb-grab{margin-top:6px}
+.mb-acc summary{cursor:pointer}
+.mb-acc[open] summary{margin-bottom:6px}
+.mb-detail{margin:4px 0}
+.mb-srcs{margin:4px 0;padding-left:18px}
+.mb-flag-unverified{border:1px solid #d9a441}
+@media print{.mb-flag-unverified{border:1px solid #16191b}}

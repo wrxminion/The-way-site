@@ -50,12 +50,98 @@ let session = null, mode = 'question', tsToken = null, tsId = null, watching = 0
 const live = h('p', { class: 'pt-live', role: 'status', 'aria-live': 'polite' });     // short announcements only
 const results = h('div', { class: 'pt-results' });
 
+
+// ---------------------------------------------------------------- Save to notes
+// Any result block can be saved as a private note (table private_research, owner-only). Unchecked things are flagged
+// "not verified yet" so the member can go to the sources and check them. A note can also go on one item of My Ballot,
+// printing as the headline alone or with the full details. Signed-out visitors are asked to log in.
+const WB = window.WayBallot;
+let asked = '';                                                   // what the visitor just sent, used as the default headline
+const absUrl = (u) => { try { const x = new URL(u, location.origin); return x.protocol === 'https:' ? x.href : ''; } catch { return ''; } };
+const hostOf = (u) => { try { return new URL(u).hostname; } catch { return u; } };
+function ballotChoices() {
+  const out = [];
+  if (!WB) return out;
+  for (const st of WB.states()) {
+    const d = WB.read(st);
+    for (const k of Object.keys(d.contests)) out.push({ value: `${st}|${k}`, label: `${WB.STATES[st]}: ${d.contests[k].title || k}` });
+  }
+  return out;
+}
+const MATCH_KIND = (m) => (m.kind === 'finding' ? 'A member-checked finding' : m.kind === 'case' ? 'A history case' : 'Already on the site');
+const matchItem = (m, extra) => ({ headline: m.title, details: [m.blurb || MATCH_KIND(m), extra].filter(Boolean).join('\n'),
+  sources: m.path ? [{ url: absUrl(m.path), title: m.title }] : [], origin: 'site_match', verified: m.kind === 'finding' });
+function saveBar(getItem) {
+  const wrap = h('div', { class: 'pt-save' });
+  const btn = h('button', { type: 'button', class: 'quiet pt-save-btn', 'aria-expanded': 'false', text: 'Save to notes' });
+  const panel = h('div', { class: 'pt-save-panel', hidden: true });
+  const open = () => {
+    const item = getItem();
+    const choices = ballotChoices();
+    const head = h('input', { id: `pt-sv-${++svId}`, maxlength: '200', value: String(item.headline || 'Pull a Thread note').slice(0, 200) });
+    const sel = h('select', { id: `pt-svb-${svId}` }, h('option', { value: '', text: 'Not on my ballot' }), choices.map((c) => h('option', { value: c.value, text: c.label })));
+    const mode = (v, t, on) => h('label', { class: 'pt-check-row' }, h('input', { type: 'radio', name: `pt-pm-${svId}`, value: v, checked: on }), h('span', { text: t }));
+    const modes = h('fieldset', { class: 'pt-modes-print', hidden: true }, h('legend', { class: 'pt-sr', text: 'What prints on my ballot' }),
+      mode('headline', 'Print the headline only (a short reminder)', true), mode('full', 'Print the full details and sources', false));
+    sel.addEventListener('change', () => { modes.hidden = !sel.value; });
+    const out = h('p', { class: 'pt-err', role: 'status' });
+    const save = h('button', { type: 'button', class: 'primary', text: 'Save note' });
+    save.addEventListener('click', async () => {
+      const title = head.value.trim();
+      if (!title) { out.textContent = 'Give the note a headline.'; return; }
+      save.disabled = true; out.textContent = '';
+      const srcs = (item.sources || []).filter((x) => x && /^https:\/\//i.test(x.url || '') && x.url.length <= 1000).slice(0, 12);
+      const [st, key] = sel.value ? sel.value.split('|') : [null, null];
+      const pm = (panel.querySelector(`input[name="pt-pm-${svId}"]:checked`) || {}).value === 'full' ? 'full' : 'headline';
+      const row = { owner_id: session.user.id, title: title.slice(0, 200), body: String(item.details || '').slice(0, 100000), origin: item.origin,
+        sources: srcs.map((x) => ({ url: x.url, title: String(x.title || '').slice(0, 200), checked: !!item.verified })), verified: !!item.verified,
+        ballot_state: st, ballot_key: key, print_mode: pm };
+      const { data, error } = await sb.from('private_research').insert(row).select('id');
+      if (error) { save.disabled = false; out.textContent = error.message || 'Could not save. Please try again.'; return; }
+      let onBallot = false;
+      if (st && WB) {
+        try {
+          const d = WB.read(st), id = WB.factId('thread-note', String(data && data[0] && data[0].id));   // the note's id, so checking the note later can update this line
+          d.facts[id] = { id, kind: 'note', headline: title.slice(0, 160), text: String(item.details || title).slice(0, 1200), contest: key, subject: '', subjectLabel: '',
+            pageUrl: '', pageTitle: 'Pull a Thread', srcUrl: srcs[0] ? srcs[0].url : '', srcLabel: srcs[0] ? (srcs[0].title || hostOf(srcs[0].url)) : '',
+            srcs: srcs.map((x) => ({ url: x.url, label: x.title || hostOf(x.url) })), print: true, compare: false, side: '', note: '', ts: Date.now(),
+            flag: item.verified ? 'checked' : 'unverified', printMode: pm };
+          onBallot = WB.write(WB.clean(d, st));
+        } catch { onBallot = false; }
+      }
+      const id = data && data[0] && data[0].id;
+      panel.replaceChildren(h('p', { role: 'status' }, 'Saved to your private notes. ',
+        item.verified ? '' : 'It is marked not verified yet: open it to check the sources yourself. ',
+        id ? h('a', { href: `/members/#/private/${id}`, text: 'Open the note' }) : null,
+        st ? (onBallot ? ' It is also on your ballot.' : ' We could not add it to your ballot on this device.') : ''));
+      btn.disabled = true; btn.textContent = 'Saved'; live.textContent = 'Saved to your notes.';
+    });
+    panel.replaceChildren(h('label', { for: head.id, text: 'Headline' }), head,
+      item.verified ? h('p', { class: 'pt-help', text: 'Already checked by a person on our side.' })
+        : h('p', { class: 'pt-flag', text: 'Not verified yet. This note will be flagged so you can go back to the sources and check them yourself. Your check can also help our reviewers.' }),
+      ...(choices.length ? [h('label', { for: sel.id, text: 'Also put it on my ballot (optional)' }), sel, modes] : [h('p', { class: 'pt-help', text: 'Mark a race or measure in My Ballot first if you want notes on your printed ballot.' })]),
+      h('div', { class: 'btns' }, save), out);
+  };
+  btn.addEventListener('click', () => {
+    if (!session) {
+      panel.hidden = false;
+      panel.replaceChildren(h('p', { role: 'status' }, 'Log in to save notes. Your notes are private to you. ', h('a', { href: '/members/', text: 'Log in' })));
+      return;
+    }
+    if (panel.hidden) { open(); panel.hidden = false; btn.setAttribute('aria-expanded', 'true'); } else { panel.hidden = true; btn.setAttribute('aria-expanded', 'false'); }
+  });
+  wrap.append(btn, panel);
+  return wrap;
+}
+let svId = 0;
+
 // ---------------------------------------------------------------- outcome cards
 function matchList(matches) {
   if (!matches || !matches.length) return null;
   return h('ul', { class: 'pt-matches' }, matches.map((m) => h('li', {},
     h('strong', {}, m.path ? h('a', { href: m.path, text: m.title }) : m.title),
-    h('span', { class: 'muted small', text: ` ${m.kind === 'finding' ? 'A member-checked finding (members can read it)' : m.kind === 'case' ? 'A history case' : 'Already on the site'} · ${m.strength === 'source' ? 'cites the link you sent' : 'shares key words with what you sent'}` }))));
+    h('span', { class: 'muted small', text: ` ${m.kind === 'finding' ? 'A member-checked finding (members can read it)' : m.kind === 'case' ? 'A history case' : 'Already on the site'} · ${m.strength === 'source' ? 'cites the link you sent' : 'shares key words with what you sent'}` }),
+    saveBar(() => matchItem(m)))));
 }
 const lead = () => h('p', { class: 'pt-lead' }, 'Here\u2019s what our records show so far. Follow this thread as we learn more ', h('strong', {}, h('em', { text: 'together!' })));
 function card(kind, title, ...kids) {
@@ -63,13 +149,24 @@ function card(kind, title, ...kids) {
   return h('section', { class: `pt-outcome pt-${kind}` }, h('h2', {}, icon(f), title), ...kids);
 }
 // The quick answer from our own records: supports, contradicts, related but does not settle it. Labeled AI-generated until a reviewer checks it.
+function prelimItem(t) {
+  const pr = t.prelim, lines = [pr.label, ''], sources = [];
+  for (const [key, title] of [['supports', 'Supports it'], ['contradicts', 'Contradicts it'], ['related', 'Related, but does not settle it']]) {
+    if (!(pr[key] && pr[key].length)) continue;
+    lines.push(`${title}:`);
+    for (const m of pr[key]) { lines.push(`- ${m.title}${m.blurb ? ': ' + m.blurb : ''}`); if (m.path && absUrl(m.path) && !sources.some((x) => x.url === absUrl(m.path))) sources.push({ url: absUrl(m.path), title: m.title }); }
+  }
+  if (lines.length === 2) lines.push(pr.enough ? 'See the records on our site.' : 'We did not have enough evidence in our records to say yet.');
+  return { headline: asked || 'Pull a Thread answer', details: lines.join('\n'), sources, origin: 'ai_answer', verified: false };
+}
 function prelimCard(t) {
   const pr = t.prelim;
   const sec = (key, title, hint) => (pr[key] && pr[key].length)
     ? h('div', { class: 'pt-sec' }, h('h3', { text: title }), h('p', { class: 'pt-help', text: hint }), h('ul', { class: 'pt-matches' }, pr[key].map((m) => h('li', {},
         h('strong', {}, m.path ? h('a', { href: m.path, text: m.title }) : m.title),
         h('span', { class: 'muted small', text: m.kind === 'finding' ? ' A member-checked finding (members can read it)' : m.kind === 'case' ? ' A history case' : ' Already on the site' }),
-        m.blurb ? h('p', { class: 'pt-blurb', text: m.blurb }) : null)))) : null;
+        m.blurb ? h('p', { class: 'pt-blurb', text: m.blurb }) : null,
+        saveBar(() => matchItem(m, `${title}: ${hint}`)))))) : null;
   return h('section', { class: 'pt-outcome pt-prelim' }, h('h2', {}, icon('pat-related-evidence.svg'), 'What our records show'),
     h('p', { class: 'pt-badge', text: pr.label }),
     lead(),
@@ -78,6 +175,7 @@ function prelimCard(t) {
     sec('supports', 'Supports it', 'Records that back up what you sent.'),
     sec('contradicts', 'Contradicts it', 'Records that point the other way.'),
     sec('related', 'Related, but does not settle it', 'Records on the same subject that neither back it up nor rule it out.'),
+    saveBar(() => prelimItem(t)),
     h('p', { class: 'muted small', text: 'This answer comes from everything public on our site: all our data points. Outside sources are looked for only after a request is sent, and a person checks them before they count as evidence. A reviewer can check this answer, correct it, or start a deeper investigation. Every change is logged.' }));
 }
 
@@ -95,7 +193,9 @@ function outcome(t, receipt) {
     h('p', { role: 'status', text: 'We are comparing what you sent with what we already have. This can take a minute.' })));
   if (t.code === 'answered' || (t.status === 'Answered')) {
     parts.push(card('reviewed', 'Reviewed evidence', lead(), h('p', { text: t.note || 'A reviewer answered this with what we already have.' }), matchList(m),
-      h('p', { class: 'muted small', text: 'Status: answered by a reviewer.' })));
+      h('p', { class: 'muted small', text: 'Status: answered by a reviewer.' }),
+      saveBar(() => ({ headline: asked || 'Reviewed answer', details: t.note || 'A reviewer answered this with what we already have.',
+        sources: m.map((x) => (x.path ? { url: absUrl(x.path), title: x.title } : null)).filter((x) => x && x.url), origin: 'reviewed', verified: true }))));
   } else if (m.length && !t.prelim && !t.prelim_reading) {
     parts.push(card('related', 'Related evidence', lead(), h('p', { text: 'We already have something related to what you sent. It does not by itself answer your question, and it is not a review of your item.' }), matchList(m),
       receipt ? h('div', { class: 'btns' }, h('button', { type: 'button', onclick: async (ev) => {
@@ -232,7 +332,8 @@ function leadsSection(receipt, box) {
       h('ul', { class: 'pt-matches' }, list.map((l) => h('li', {},
         h('strong', {}, /^https:\/\//i.test(l.url) ? h('a', { href: l.url, rel: 'noopener noreferrer nofollow', target: '_blank', text: l.title || l.url }) : (l.title || l.url)),
         h('span', { class: 'muted small', text: l.checked ? ' Checked by a person' : ' Not checked yet' }),
-        h('p', { class: 'pt-blurb', text: l.excerpt })))));
+        h('p', { class: 'pt-blurb', text: l.excerpt }),
+        saveBar(() => ({ headline: l.title || l.url, details: l.excerpt, sources: [{ url: l.url, title: l.title || hostOf(l.url) }], origin: 'web_lead', verified: !!l.checked }))))));
     if (data.status === 'pending' || data.status === 'running') { if (++tries < 80) setTimeout(paint, 15000); }
   };
   paint();
@@ -310,6 +411,7 @@ async function send(form, summary) {
   if (!res) return;
   if (!res.ok) { live.textContent = body && body.error ? body.error : 'Something went wrong. Please try again.'; return; }
   remember(body.receipt);
+  asked = (kind === 'url' ? `Link: ${hostOf(fd.get('url'))}` : kind === 'screenshot' ? (form.elements.note.value.trim() || 'Screenshot') : q).replace(/\s+/g, ' ').slice(0, 160);
   form.reset(); shotFile = null; view();
   showSent(body.receipt, body.status, body.matches, kind === 'screenshot' || body.status === 'draft');
 }

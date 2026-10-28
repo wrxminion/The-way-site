@@ -165,7 +165,20 @@ async function load() {
     h('h1', { text: 'Pull a Thread queue' }),
     h('p', { class: 'lede', text: 'Ranked by our score, highest first. The top item is a suggestion: pick any item you want, and say why when you move or close one.' }),
     tabs, note,
-    rows.length ? h('ul', { class: 'list panel' }, rows.map((r) => item(r))) : h('p', { class: 'muted', text: 'Nothing here right now.' }));
+    rows.length ? h('ul', { class: 'list panel' }, rows.map((r) => item(r))) : h('p', { class: 'muted', text: 'Nothing here right now.' }),
+    await memberChecks());
+}
+// Sources that members read for themselves and chose to send us: the link, their answer and their reason. No names.
+async function memberChecks() {
+  let list;
+  try { list = await call('source_checks_for_review', { p_limit: 100 }); } catch { return null; }
+  if (!Array.isArray(list)) return null;
+  return h('details', { class: 'panel' }, h('summary', { text: `Sources members checked (${list.length})` }),
+    h('p', { class: 'muted small', text: 'These are members\u2019 own checks, not ours yet. Use them to decide which sources to look at first.' }),
+    list.length ? h('ul', { class: 'list small' }, list.map((c) => h('li', {},
+      /^https:\/\//i.test(c.url) ? h('a', { href: c.url, target: '_blank', rel: 'noopener noreferrer nofollow', text: c.title || c.url }) : (c.title || c.url),
+      h('span', { class: 'muted', text: ` ${c.verdict === 'confirmed' ? 'backs it up' : 'does not back it up'} · ${c.members_confirmed} said yes, ${c.members_not_confirmed} said no · ${when(c.created_at)}` }),
+      h('p', { text: c.reason })))) : h('p', { class: 'muted', text: 'None yet.' }));
 }
 load();
 })();

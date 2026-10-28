@@ -77,7 +77,23 @@
   function sourceLink(f) {
     return f.srcUrl ? [' ', link(f.srcUrl, 'source: ' + (f.srcLabel || new URL(f.srcUrl).hostname), true)] : null;
   }
+  var FLAG = { unverified: 'Not verified yet (AI researched, unchecked)', checked: 'Checked by me' };
+  function flagTag(f) { return f.flag ? h('span', { class: 'tag mb-flag mb-flag-' + f.flag, text: FLAG[f.flag] }) : null; }
+  function srcLinks(f) {
+    return f.srcs && f.srcs.length ? h('ul', { class: 'mb-srcs' }, f.srcs.map(function (x) { return h('li', {}, link(x.url, x.label || new URL(x.url).hostname, true)); })) : null;
+  }
+  // A saved Pull a Thread note: on the sheet it prints as a headline alone, or the headline with the details and sources.
+  function noteLine(f, showWho) {
+    var full = f.printMode === 'full';
+    return h('li', { class: 'mb-fact mb-notefact' },
+      showWho && f.subjectLabel ? h('b', { text: f.subjectLabel + ': ' }) : null,
+      h('b', { text: f.headline || f.text }), ' ', flagTag(f),
+      full && f.headline && f.text !== f.headline ? h('div', { class: 'mb-detail', text: f.text }) : null,
+      full ? srcLinks(f) : null,
+      f.note && ui.includeNotes ? h('span', { class: 'mb-note-print', text: ' My note: ' + f.note }) : null);
+  }
   function factLine(f, showWho) {
+    if (f.kind === 'note') return noteLine(f, showWho);
     return h('li', { class: 'mb-fact' },
       showWho && f.subjectLabel ? h('b', { text: f.subjectLabel + ': ' }) : null,
       f.text, sourceLink(f),
@@ -334,6 +350,22 @@
     var note = h('textarea', { rows: 2, maxlength: WB.LIMITS.note, placeholder: 'Your own note (only on this device)', 'aria-label': 'Your note on this fact' });
     note.value = f.note;
     note.addEventListener('change', function () { var d2 = WB.read(ST); if (d2.facts[k]) { d2.facts[k].note = note.value; WB.write(WB.clean(d2, ST)); } });
+    var modeSel = null;
+    if (f.kind === 'note') {
+      modeSel = h('select', { 'aria-label': 'What to print for this note', 'data-k': k + 'printMode' },
+        [['headline', 'Print the headline only'], ['full', 'Print the full details']].map(function (o) { return h('option', { value: o[0], selected: f.printMode === o[0], text: o[1] }); }));
+      modeSel.addEventListener('change', function () { set('printMode', modeSel.value); });
+    }
+    if (f.kind === 'note') {
+      return h('li', { class: 'mb-card' },
+        h('details', { class: 'mb-acc', 'data-k': k + 'acc' },
+          h('summary', {}, h('b', { text: f.headline || f.text }), ' ', flagTag(f)),
+          f.text && f.text !== f.headline ? h('p', { class: 'mb-detail', text: f.text }) : null, srcLinks(f),
+          f.flag === 'unverified' ? h('p', { class: 'muted small', text: 'Go to the sources and check them yourself. Open the saved note in Private research to mark them checked.' }) : null),
+        h('div', { class: 'mb-ctl' }, ck('print', 'Put on my printed sheet'), modeSel,
+          h('button', { class: 'quiet danger', type: 'button', onclick: function () { update(function (x) { delete x.facts[k]; }); }, text: 'Remove' })),
+        note);
+    }
     return h('li', { class: 'mb-card' },
       h('p', { class: 'mb-ft' }, f.kind === 'highlight' ? h('span', { class: 'tag', text: 'highlight' }) : null, ' ', f.text, sourceLink(f)),
       h('p', { class: 'muted small' }, (f.subjectLabel ? f.subjectLabel + ' · ' : ''), f.pageUrl ? link(f.pageUrl, f.pageTitle || 'page') : f.pageTitle),
