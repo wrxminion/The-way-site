@@ -2114,50 +2114,71 @@ function loadCasePage(c) {
   }).then((t) => new DOMParser().parseFromString(t, 'text/html')).catch((err) => { casePages.delete(c.slug); throw err; }));
   return casePages.get(c.slug);
 }
-const normText = (t) => String(t || '').toLowerCase().replace(/[‘’]/g, "'").replace(/[“”]/g, '"')
-  .replace(/[^a-z0-9$%.]+/g, ' ').replace(/\s+/g, ' ').trim();
+const normText = (t) => String(t || '').toLowerCase().replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/[‐-―−]/g, '-')
+  .replace(/(\d),(\d)/g, '$1$2').replace(/[^a-z0-9$%]+/g, ' ').replace(/\s+/g, ' ').trim();
 const flat = (t) => String(t || '').replace(/\s+/g, ' ').trim();
-const STOP = new Set(['the', 'and', 'page', 'host', 'read', 'through', 'tool', 'returned', 'text', 'seen', 'only', 'summary', 'from', 'with', 'for', 'that', 'was', 'not']);
-const words = (t) => normText(t).split(' ').filter((w) => w.length >= 3 && !STOP.has(w));
 const safeHref = (href, base) => { try { const u = new URL(href, base); return /^https?:$/.test(u.protocol) ? u.href : null; } catch { return null; } };
+const NUMW = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15, sixteen: 16, seventeen: 17, eighteen: 18, nineteen: 19, twenty: 20, thirty: 30, forty: 40, fifty: 50, hundred: 100, first: 1, second: 2, third: 3 };
+const STOP = new Set(['the', 'and', 'page', 'host', 'read', 'through', 'tool', 'returned', 'text', 'seen', 'only', 'from', 'with', 'for', 'that', 'was', 'were', 'not', 'are', 'its', 'has', 'had', 'his', 'her', 'who', 'did', 'but', 'this', 'than', 'also', 'into', 'been', 'which', 'when', 'they', 'their', 'there', 'then', 'about']);
+const stem = (w) => (NUMW[w] ? String(NUMW[w]) : w.length > 4 ? w.replace(/(ing|ed|es|s|ly)$/, '') : w);
+const words = (t) => normText(t).split(' ').filter((w) => (w.length >= 3 || /^\d+$/.test(w)) && !STOP.has(w)).map(stem);
+const hostWords = (href) => { try { const u = new URL(href); return [...u.hostname.replace(/^www\./, '').split('.'), ...u.pathname.split(/[\/._-]+/)].filter((x) => x.length >= 3).map((x) => x.toLowerCase()); } catch { return []; } };
 
-// Rows of the page's Sources table that best match the claim's source label.
+// Every external link on the case page, with the words around it (its own text, its table row or list item, the host).
+function pageLinks(c, doc) {
+  const out = [];
+  const seen = new Set();
+  for (const a of doc.querySelectorAll('a[href]')) {
+    const url = safeHref(a.getAttribute('href'), caseUrl(c));
+    if (!url || seen.has(url) || /^https?:\/\/(www\.)?(michiinstitute|thewayparty)\./.test(url)) continue;
+    seen.add(url);
+    const box = a.closest('tr, li, p') || a.parentElement;
+    const inSources = !!a.closest('table') && !!(box && box.closest('table')) && !!doc.querySelector('#sources') && !!(doc.querySelector('#sources').compareDocumentPosition(a) & 4);
+    out.push({ url, title: flat(a.textContent) || url, have: new Set([...words(box ? box.textContent : a.textContent), ...hostWords(url).map(stem)]), inSources });
+  }
+  return out;
+}
 function matchSources(cl, c, doc) {
-  const rows = [...doc.querySelectorAll('#sources ~ .table-wrap table tr, #sources ~ table tr')].filter((r) => r.querySelector('a[href]'));
   const want = [...new Set(words(cl.source))];
-  if (!want.length) return [];
-  const scored = rows.map((r) => {
-    const have = new Set(words(r.textContent));
-    const a = r.querySelector('a[href]');
-    return { score: want.filter((w) => have.has(w)).length / want.length, title: flat(a.textContent), url: safeHref(a.getAttribute('href'), caseUrl(c)) };
-  }).filter((x) => x.url && x.score >= 0.4).sort((x, y) => y.score - x.score);
-  return scored.filter((x) => x.score >= scored[0].score * 0.75).slice(0, 2);
-}
-function sourceLinks(cl, c, doc) {
-  const hits = doc ? matchSources(cl, c, doc) : [];
-  if (hits[0]) cl.srcUrl = hits[0].url;
-  const link = (href, text) => h('a', { href, target: '_blank', rel: 'noopener noreferrer', text });
-  return h('p', { class: 'small' }, hits.length
-    ? hits.map((x, i) => [i ? ' · ' : '', link(x.url, `Open the source: ${x.title.length > 90 ? x.title.slice(0, 87) + '…' : x.title} ↗`)])
-    : [link(`${caseUrl(c)}#sources`, 'Find the source in the case’s source list ↗'), h('span', { class: 'muted', text: ' (no direct link matched)' })]);
+  if (!want.length) return { hits: [], close: false };
+  const scored = pageLinks(c, doc).map((l) => ({ ...l, score: want.filter((w) => l.have.has(w)).length / want.length + (l.inSources ? 0.05 : 0) }))
+    .filter((x) => x.score > 0.2).sort((x, y) => y.score - x.score);
+  if (!scored.length) return { hits: [], close: false };
+  const best = scored[0].score;
+  return { hits: scored.filter((x) => x.score >= best - 0.1).slice(0, 2), close: best < 0.6 };
 }
 
-// Where the claim sits on the case page: the smallest paragraph, list item or table row that holds it.
 function findClaimBlock(cl, doc) {
-  const blocks = [...doc.querySelectorAll('p, li, tr, blockquote')].filter((b) => !b.closest('nav, header, footer, #sources ~ *, .toc, .in-brief'));
+  const all = [...doc.querySelectorAll('p, li, tr, blockquote, dd')].filter((b) => !b.closest('nav, header, footer, .toc, #sources ~ *') && !b.querySelector('p, li, tr'));
   const want = normText(cl.claim);
-  const exact = blocks.filter((b) => normText(b.textContent).includes(want)).sort((a, b) => a.textContent.length - b.textContent.length)[0];
+  const exact = all.filter((b) => normText(b.textContent).includes(want)).sort((a, b) => a.textContent.length - b.textContent.length)[0];
   if (exact) return { el: exact, exact: true };
   const ws = [...new Set(words(cl.claim))];
-  if (ws.length < 4) return null;
+  if (ws.length < 3) return null;
   let best = null;
-  for (const b of blocks) {
+  for (const b of all) {
     const have = new Set(words(b.textContent));
-    const sc = ws.filter((w) => have.has(w)).length / ws.length;
-    if (sc >= 0.75 && (!best || sc > best.sc || (sc === best.sc && b.textContent.length < best.el.textContent.length))) best = { el: b, sc };
+    let sc = ws.filter((w) => have.has(w)).length / ws.length;
+    // numbers are the strongest clue: a block missing any number of the claim loses ground
+    const nums = ws.filter((w) => /^\d/.test(w));
+    if (nums.length && nums.every((n) => have.has(n))) sc += 0.1;
+    if (b.closest('.in-brief')) sc -= 0.05;
+    if (!best || sc > best.sc + 0.02 || (Math.abs(sc - best.sc) <= 0.02 && b.textContent.length < best.el.textContent.length)) best = { el: b, sc };
   }
-  return best ? { el: best.el, exact: false } : null;
+  return best && best.sc >= 0.45 ? { el: best.el, exact: false, sc: best.sc } : null;
 }
+
+function sourceLinks(cl, c, doc) {
+  const m = doc ? matchSources(cl, c, doc) : { hits: [], close: false };
+  if (m.hits[0]) cl.srcUrl = m.hits[0].url;
+  const link = (href, text) => h('a', { href, target: '_blank', rel: 'noopener noreferrer', text });
+  const clipT = (t) => (t.length > 90 ? t.slice(0, 87) + '\u2026' : t);
+  return h('p', { class: 'small' }, m.hits.length
+    ? [m.close ? h('span', { class: 'muted', text: 'Closest match: ' }) : null,
+       m.hits.map((x, i) => [i ? ' \u00b7 ' : '', link(x.url, `Open the source: ${clipT(x.title)} \u2197`)])]
+    : [link(`${caseUrl(c)}#sources`, 'See the case\u2019s source list \u2197'), h('span', { class: 'muted', text: ' (this claim names no single source)' })]);
+}
+
 function blockText(el) {
   if (el.tagName === 'TR') {
     const table = el.closest('table');
@@ -2171,7 +2192,7 @@ function blockText(el) {
 const clip = (t, n) => (t.length > n ? t.slice(0, n).replace(/\s+\S*$/, '') + ' …' : t);
 function claimContext(cl, c, doc) {
   const slot = h('div', { class: 'claim-context' });
-  if (!doc) return slot;
+  if (!doc) return h('p', { class: 'small' }, h('a', { href: caseUrl(c), target: '_blank', rel: 'noopener noreferrer', text: 'Open the case page \u2197' }), h('span', { class: 'muted', text: ' (the case text could not be loaded here)' }));
   const hit = findClaimBlock(cl, doc);
   const level = { n: 0 };
   const draw = () => {
