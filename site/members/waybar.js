@@ -550,7 +550,7 @@
     var cf = document.createElement('script');
     cf.defer = true;
     cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-    cf.setAttribute('data-cf-beacon', '{"token": "9bb85ea3222345f3aed4aa50db9b3e0d"}');
+    cf.setAttribute('data-cf-beacon', '{"token": "d7281223266b45dd905b3f994da3fd0e"}');
     document.head.appendChild(cf);
   }
   window.WayBar = { render: render, save: save, read: stored };
