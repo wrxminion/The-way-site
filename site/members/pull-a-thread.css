@@ -1,0 +1,75 @@
+/* Pull a Thread pages: minimal, functional. ChatGPT supplies the final look. */
+.pt-kinds{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.pt-kinds button[aria-pressed="true"]{background:#2a8f95;border-color:#7fe3d9}
+.pt-form{display:grid;gap:12px}
+.pt-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.pt-match{border-left:3px solid #7fe3d9;padding:6px 12px;margin:8px 0}
+.pt-score{font-variant-numeric:tabular-nums}
+.pt-parts{margin:6px 0 0;padding-left:18px;font-size:13px}
+.pt-parts .neg{color:var(--warn)}
+.pt-excerpt{white-space:pre-wrap;overflow-wrap:anywhere;border:1px dashed var(--line);border-radius:10px;padding:8px 10px;font-size:13px;margin:8px 0}
+.pt-item[data-top="1"]{outline:1px solid #7fe3d9;outline-offset:4px;border-radius:6px}
+.pt-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.pt-actions input{width:auto;min-width:200px;flex:1}
+.pt-shot{max-width:100%;max-height:420px;border:1px solid var(--line);border-radius:8px;margin-top:8px}
+.pt-note[data-unread="1"]{border-left:3px solid #ffd166;padding-left:12px}
+.pt-follow{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+/* easy to use first: big targets and clear focus on these pages */
+.pt-form input,.pt-form textarea,.pt-form select,.pt-form button,.pt-follow input,.pt-follow button,.pt-actions button,.pt-actions input,.pt-actions select,.pt-kinds button{min-height:44px}
+.pt-form :focus-visible,.pt-follow :focus-visible,.pt-actions :focus-visible,.pt-kinds :focus-visible{outline:3px solid #a7f0e9;outline-offset:2px}
+.pt-form label,.pt-follow label{font-size:16px}
+
+/* ChatGPT design, Oct 28: four choices, threaded frame on inputs only, plain text everywhere else */
+.pt-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pt-modes{border:0;margin:0 0 14px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.pt-mode{position:relative;display:block;cursor:pointer}
+.pt-mode input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.pt-mode-box{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:76px;padding:10px 6px;text-align:center;font:600 16px/1.2 var(--sans);color:var(--foam);background:var(--panel);border:2px solid var(--line-strong);border-radius:14px}
+.pt-mode input:checked+.pt-mode-box{border-color:#8cddd0;background:#0b3a4e;box-shadow:0 0 0 2px #8cddd055}
+.pt-mode input:focus-visible+.pt-mode-box{outline:3px solid #a7f0e9;outline-offset:3px}
+.pt-icon{width:24px;height:24px;flex:none}
+.pt-framed{position:relative;border:3px solid #8cddd0;border-radius:23px;padding:16px 16px 12px;background:var(--panel)}
+.pt-thread-corner{position:absolute;top:-3px;right:-3px;width:120px;height:40px;pointer-events:none;background:url(art/pat/pat-thread-input-frame.svg) right top/340px auto no-repeat}
+.pt-hand{position:absolute;top:-34px;right:18px;width:96px;height:auto;pointer-events:none}
+.pt-field{display:grid;gap:8px}
+.pt-field label{font-size:17px;font-weight:600}
+.pt-field textarea,.pt-field input[type=url],.pt-field input[type=text]{width:100%;min-height:48px;font-size:17px}
+.pt-help{margin:0;font-size:14px;color:var(--muted)}
+.pt-file{min-height:48px}
+.pt-fileinfo{margin:0;font-size:14px}
+.pt-summary{border:2px solid var(--danger);border-radius:12px;padding:10px 14px;margin:0 0 12px;color:var(--danger)}
+.pt-summary ul{margin:6px 0 0;padding-left:20px}
+.pt-summary a{color:var(--foam)}
+.pt-fielderr,.pt-err{margin:0;color:var(--danger);font-size:15px}
+.pt-gorow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:6px}
+.pt-gorow button{min-height:48px;padding:0 24px;font-size:17px}
+.pt-privacy{font-size:14px;color:var(--muted);margin:4px 0 0}
+.pt-live{min-height:1.2em;margin:6px 0;font-size:15px}
+.pt-outcome,.pt-still,.pt-ocr{border:2px solid var(--line-strong);border-radius:16px;padding:14px 16px;margin:14px 0;background:var(--panel)}
+.pt-outcome h2,.pt-still h2,.pt-ocr h2{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:20px}
+.pt-reviewed{border-color:#b5f5c9}
+.pt-related{border-color:#8cddd0}
+.pt-closer{border-color:#ffe3a3}
+.pt-matches{margin:8px 0;padding-left:20px}
+.pt-matches li{margin:6px 0}
+.pt-code code{font-size:20px;letter-spacing:.06em;padding:2px 8px;border:1px solid var(--line-strong);border-radius:8px}
+.pt-ocr textarea{width:100%;font-size:16px}
+.pt-check{margin-top:18px}
+.pt-check summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600}
+.pt-check input{min-height:44px}
+.pt-modes :focus-visible,.pt-field :focus-visible,.pt-gorow :focus-visible,.pt-still :focus-visible,.pt-ocr :focus-visible,.pt-check :focus-visible{outline:3px solid #a7f0e9;outline-offset:2px}
+@media (max-width:640px){
+  .pt-modes{grid-template-columns:repeat(2,1fr)}
+  .pt-hand{display:none}
+  .pt-thread-corner{width:80px}
+  .pt-framed{padding:14px 12px 10px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* screenshot privacy notes and the two check boxes */
+.pt-notice{border:2px solid var(--line-strong);border-radius:14px;padding:10px 14px;background:var(--panel)}
+.pt-notice p{margin:6px 0;font-size:15px}
+.pt-check-row{display:flex;gap:12px;align-items:flex-start;min-height:44px;padding:8px 0;font-size:16px;cursor:pointer}
+.pt-check-row input{width:24px;height:24px;flex:none;margin-top:2px}
+.pt-check-row .pt-help{display:block;margin-top:4px}
+.pt-check-row :focus-visible{outline:3px solid #a7f0e9;outline-offset:2px}

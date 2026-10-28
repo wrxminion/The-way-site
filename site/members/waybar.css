@@ -187,3 +187,19 @@ html.wb-lock,html.wb-lock body{overflow:hidden}
 
 /* On a phone the crest sits below the bar, so the water stays under it and under the account menu. */
 @media (max-width:760px){.wb-in-page .michi-ocean-water{z-index:40}}
+
+/* ---------- Pull a Thread floating link: text-free hand art plus a printed label ---------- */
+.wb-thread-fab{position:fixed;z-index:48;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:4px 16px 4px 8px;background:#052b3cf2;border:1px solid #a7f0e980;border-radius:999px;box-shadow:0 3px 14px #0006;color:#fff;text-decoration:none;font:700 16px/1.2 system-ui,sans-serif;white-space:nowrap}
+.wb-thread-fab img{display:block;width:44px;height:auto;pointer-events:none}
+.wb-thread-fab:hover{background:#0a4258}
+.wb-thread-fab:focus-visible{outline:3px solid #a7f0e9;outline-offset:3px}
+@media (max-width:760px){html.wb-has-bottom .wb-thread-fab{bottom:calc(4.5rem + env(safe-area-inset-bottom) + 8px)}}
+@media print{.wb-thread-fab{display:none}}
+
+/* ---------- notification bell ---------- */
+.waybar .wb-bell{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;color:#fff}
+.waybar .wb-bell:hover,.waybar .wb-bell[aria-current=page]{background:#b3f5e331}
+.waybar .wb-bell:focus-visible{outline:2px solid #a7f0e9;outline-offset:2px}
+.waybar .wb-bell svg{width:22px;height:22px}
+.waybar .wb-bell-badge{position:absolute;top:4px;right:2px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#ffd166;color:#052b3c;font:800 11px/18px system-ui,sans-serif;text-align:center}
+.waybar .wb-bell-badge[hidden]{display:none}

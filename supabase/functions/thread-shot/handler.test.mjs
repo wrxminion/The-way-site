@@ -1,0 +1,32 @@
+// Node check with a fake database and storage:  node handler.test.mjs
+import { readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+const src = readFileSync(new URL('./index.ts', import.meta.url), 'utf8').replace(/^import .*$/m, 'const createClient = null;').replace('if (import.meta.main) Deno.serve((req) => handler(req));', '');
+const f = join(tmpdir(), 'thread-shot-under-test.ts'); writeFileSync(f, src);
+const m = await import(f);
+let pass = 0; const ok = (c, w) => { if (!c) { console.error('FAIL:', w); process.exit(1); } pass++; console.log('pass:', w); };
+const env = { get: (k) => ({ SUPABASE_URL: 'http://x', SUPABASE_SERVICE_ROLE_KEY: 'k' })[k] };
+const log = [];
+const mk = (allowed) => () => ({ rpc: async (n, a) => { log.push(['rpc', n, a]); return { data: allowed, error: null }; },
+  storage: { from: () => ({ remove: async (l) => { log.push(['remove', l]); return { error: null }; }, download: async (p) => { log.push(['download', p]); return { data: new Blob([new Uint8Array([1, 2, 3])]), error: null }; } }) } });
+const good = '00000000-0000-0000-0000-0000000000aa.png';
+const post = (b, method = 'POST') => new Request('https://x/f', { method, body: method === 'POST' ? JSON.stringify(b) : undefined });
+let r = await m.handler(post({ checker_key: 'k', intake_id: 1, path: good }, 'GET'), env, mk(true));
+ok(r.status === 404, 'only POST');
+r = await m.handler(post({ checker_key: 'k', intake_id: 1, path: '../../etc/passwd' }), env, mk(true));
+ok(r.status === 404 && log.length === 0, 'a path that is not a screenshot name never reaches the database');
+r = await m.handler(post({ checker_key: 'k', intake_id: '1', path: good }), env, mk(true));
+ok(r.status === 404, 'a bad id is refused');
+r = await m.handler(post({ checker_key: 'k', intake_id: 1, path: good }), env, mk(false));
+ok(r.status === 404 && !log.some((c) => c[0] === 'download'), 'the database saying no means nothing is downloaded');
+r = await m.handler(post({ checker_key: 'k', intake_id: 1, path: good }), env, mk(true));
+ok(r.status === 200 && r.headers.get('content-type') === 'image/png' && r.headers.get('cache-control') === 'no-store', 'an allowed job gets its image, not cached');
+ok(log.some((c) => c[0] === 'download' && c[1] === good), 'only that file is downloaded');
+log.length = 0;
+r = await m.handler(post({ action: 'delete', checker_key: 'k', intake_id: 1, path: good }), env, mk(false));
+ok(r.status === 404 && !log.some((c) => c[0] === 'remove'), 'delete: the database saying not due removes nothing');
+r = await m.handler(post({ action: 'delete', checker_key: 'k', intake_id: 1, path: good }), env, mk(true));
+ok(r.status === 200 && log.some((c) => c[0] === 'remove' && c[1][0] === good) && log.some((c) => c[1] === 'checker_thread_image_deleted'), 'delete: a due picture is removed and marked');
+ok(!log.some((c) => c[0] === 'download'), 'delete: nothing is downloaded');
+console.log(`ALL ${pass} SCREENSHOT SERVER CHECKS PASSED`);
