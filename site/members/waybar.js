@@ -505,6 +505,11 @@
   // label. It goes bottom left on every page except the Pull a Thread pages themselves. A plain link, no script behind it.
   // Bottom right column, top to bottom: hide arrow, up hand (Back to surface), Log in / Sign up (signed-out visitors only), Pull a thread.
   var signedOutNow = false;
+  // One bubble picture: a decorative image (the words inside it are repeated as real text, hidden or laid over it).
+  function bubbleArt(name, w, h) {
+    var base = '/members/art/bubble-' + name;
+    return el('img', { class: 'wb-art', src: base + '-1x.webp', srcset: base + '-1x.webp 1x, ' + base + '-2x.webp 2x', alt: '', 'aria-hidden': 'true', width: String(w), height: String(h), style: 'width:' + w + 'px', decoding: 'async' });
+  }
   function syncDock() {
     var dock = document.querySelector('.wb-dock');
     var fab = document.querySelector('.wb-thread-fab');
@@ -513,7 +518,8 @@
     if (!dock) { dock = el('nav', { class: 'wb-dock', 'aria-label': 'Quick links' }); document.body.appendChild(dock); }
     var auth = dock.querySelector('.wb-dock-auth');
     if (signedOutNow && !auth) {
-      auth = el('span', { class: 'wb-dock-auth' });
+      auth = el('span', { class: 'wb-dock-auth wb-bubble' });
+      auth.appendChild(bubbleArt('login', 120, 120));
       auth.appendChild(el('a', { href: '/members/', class: 'wb-dock-login' }, 'Log in'));
       auth.appendChild(el('span', { 'aria-hidden': 'true' }, '/'));
       auth.appendChild(el('a', { href: route('signup'), class: 'wb-dock-signup' }, 'Sign up'));
@@ -522,10 +528,10 @@
     if (onThread) { if (fab) fab.remove(); return; }
     if (fab) return;
     fab = el('a', { class: 'wb-thread-fab', href: THREAD });
-    var img = el('img', { src: '/members/art/pull-a-thread-hand-120.webp', srcset: '/members/art/pull-a-thread-hand-120.webp 1x, /members/art/pull-a-thread-hand-240.webp 2x',
-                          alt: '', 'aria-hidden': 'true', width: '120', height: '102', decoding: 'async', loading: 'lazy' });
-    fab.appendChild(img);
-    fab.appendChild(el('span', { class: 'wb-thread-fab-label' }, 'Pull a thread'));
+    // ChatGPT's clear bubble art: the lettering is part of the picture (decorative; the hidden text is the name).
+    fab.className += ' wb-bubble';
+    fab.appendChild(bubbleArt('pull', 150, 150));
+    fab.appendChild(el('span', { class: 'wb-sr' }, 'Pull a thread'));
     dock.appendChild(fab);
   }
   // A small down-arrow bubble hides the floating buttons; the same bubble (arrow up) brings them back. The choice is remembered.
@@ -563,7 +569,7 @@
       floating = el('nav', { class: 'wb-floating', 'aria-label': 'Quick links' });
       // a hand pointing up, no printed text (the hand is a placeholder until ChatGPT's art lands); the name is for screen readers
       var back = el('a', { href: '#waybar', class: 'wb-floating-return' });
-      back.appendChild(el('span', { 'aria-hidden': 'true', class: 'wb-up-hand' }, '\u261D'));
+      back.appendChild(bubbleArt('back', 104, 104));
       back.appendChild(el('span', { class: 'wb-sr' }, 'Back to surface'));
       floating.appendChild(back);
       (document.querySelector('.wb-dock') || document.body).appendChild(floating);
