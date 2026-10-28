@@ -503,15 +503,14 @@
   // One small "Back to surface" button after scrolling (search and Log in / Sign up live in the header).
   // The Pull a Thread floating link: ChatGPT's text-free hand (art/pull-a-thread-hand-*.webp, decorative) plus a real printed
   // label. It goes bottom left on every page except the Pull a Thread pages themselves. A plain link, no script behind it.
-  // Bottom left dock: Log in / Sign up (signed-out visitors only), then Pull a thread. "Back to surface" is bottom right.
+  // Bottom right column, top to bottom: hide arrow, up hand (Back to surface), Log in / Sign up (signed-out visitors only), Pull a thread.
   var signedOutNow = false;
   function syncDock() {
     var dock = document.querySelector('.wb-dock');
     var fab = document.querySelector('.wb-thread-fab');
     var onThread = /^\/members\/(pull-a-thread|thread-queue|notifications)/.test(path);
     document.documentElement.classList.toggle('wb-signed-out', signedOutNow);
-    if (!signedOutNow && onThread) { if (dock) dock.remove(); return; }
-    if (!dock) { dock = el('nav', { class: 'wb-dock', 'aria-label': 'Log in and Pull a thread' }); document.body.appendChild(dock); }
+    if (!dock) { dock = el('nav', { class: 'wb-dock', 'aria-label': 'Quick links' }); document.body.appendChild(dock); }
     var auth = dock.querySelector('.wb-dock-auth');
     if (signedOutNow && !auth) {
       auth = el('span', { class: 'wb-dock-auth' });
@@ -552,18 +551,22 @@
         try { off ? localStorage.setItem(BUBBLES, 'off') : localStorage.removeItem(BUBBLES); } catch (e) { /* private mode: it just will not be remembered */ }
         paintToggle(btn, off);
       });
-      document.body.appendChild(btn);
+      var d = document.querySelector('.wb-dock'); (d || document.body).appendChild(btn);
     }
     paintToggle(btn, bubblesOff());
   }
   function syncFloating() {
-    syncToggle();
     syncDock();
+    syncToggle();
     var floating = document.querySelector('.wb-floating');
     if (!floating) {
       floating = el('nav', { class: 'wb-floating', 'aria-label': 'Quick links' });
-      floating.appendChild(el('a', { href: '#waybar', class: 'wb-floating-return' }, 'Back to surface'));
-      document.body.appendChild(floating);
+      // a hand pointing up, no printed text (the hand is a placeholder until ChatGPT's art lands); the name is for screen readers
+      var back = el('a', { href: '#waybar', class: 'wb-floating-return' });
+      back.appendChild(el('span', { 'aria-hidden': 'true', class: 'wb-up-hand' }, '\u261D'));
+      back.appendChild(el('span', { class: 'wb-sr' }, 'Back to surface'));
+      floating.appendChild(back);
+      (document.querySelector('.wb-dock') || document.body).appendChild(floating);
       document.body.classList.add('wb-floating-ready');
       var updateFloatingVisibility = function () { floating.hidden = window.scrollY <= 80; };
       window.addEventListener('scroll', updateFloatingVisibility, { passive: true });

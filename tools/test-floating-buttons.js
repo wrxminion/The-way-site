@@ -61,7 +61,13 @@ const srv = http.createServer((q, s) => {
     const pg = await ctx.newPage();
     await pg.route('**/rest/**', (r) => r.fulfill({ status: 200, body: 'null', contentType: 'application/json' }));
     await pg.goto(`http://localhost:${srv.address().port}/members/_t.html`); await pg.waitForTimeout(500); await pg.evaluate(() => window.scrollTo(0, 600)); await pg.waitForTimeout(300);
-    const vis = () => pg.evaluate(() => ['.wb-dock', '.wb-floating'].map((s) => { const e = document.querySelector(s); return !!e && getComputedStyle(e).display !== 'none'; }));
+    const vis = () => pg.evaluate(() => ['.wb-thread-fab', '.wb-floating'].map((s) => { const e = document.querySelector(s); return !!e && getComputedStyle(e).display !== 'none'; }));
+    const lay = await pg.evaluate(() => { const r = (q) => document.querySelector(q).getBoundingClientRect(); const t = r('.wb-bubbles-toggle'), b = r('.wb-floating'), a = r('.wb-dock-auth'), f = r('.wb-thread-fab');
+      return { right: [t, b, a, f].every((x) => innerWidth - x.right >= 4 && innerWidth - x.right <= 20), order: t.bottom <= b.top + 4 && b.bottom <= a.top + 4 && a.bottom <= f.top + 4,
+               text: document.querySelector('.wb-up-hand').textContent.trim(), sr: document.querySelector('.wb-floating .wb-sr').getBoundingClientRect().width, name: document.querySelector('.wb-floating a').textContent.trim() }; });
+    ok(lay.right, 'all four bubbles sit in the bottom right corner');
+    ok(lay.order, 'top to bottom: hide arrow, up hand, Log in / Sign up, Pull a thread');
+    ok(lay.text === '\u261D' && lay.sr <= 1 && /Back to surface/.test(lay.name), 'the up hand shows no printed text and keeps its name for screen readers');
     ok((await vis()).every(Boolean) && await pg.getAttribute('.wb-bubbles-toggle', 'aria-label') === 'Hide the floating buttons', 'the down arrow is there, labeled Hide the floating buttons');
     await pg.focus('.wb-bubbles-toggle'); await pg.keyboard.press('Enter'); await pg.waitForTimeout(100);
     ok((await vis()).every((v) => !v) && await pg.getAttribute('.wb-bubbles-toggle', 'aria-label') === 'Show the floating buttons' && await pg.getAttribute('.wb-bubbles-toggle', 'aria-expanded') === 'false', 'Enter on the arrow hides the bubbles and relabels it');
