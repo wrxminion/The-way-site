@@ -337,7 +337,7 @@ function view() {
   } else if (mode === 'question' || mode === 'text') {
     checks.push(h('p', { class: 'pt-help', text: 'Our AI runs on our own computer. No outside AI service is used, and it does not learn from or train on what you send.' }));
   }
-  if (mode !== 'url') {
+  if (mode === 'text' || mode === 'screenshot') {   // not for typed questions
     checks.push(h('label', { class: 'pt-check-row' }, h('input', { type: 'checkbox', name: 'hide_names' }),
       h('span', {}, h('strong', { text: 'Hide names of senders. ' }), 'Our program hides the names and handles of the people who wrote the posts or comments (yours too). Names inside the posts stay. You see the result before anything is sent.',
         h('span', { class: 'pt-help', text: ' If the person who wrote the post is the public official you are asking about, hiding names also hides that it is their quote. That can make it harder for us to check.' }))));

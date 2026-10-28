@@ -61,6 +61,11 @@ const XSS = '<img src=x onerror="window.__pwned=1">';
   await page.click('form.pt-form button[type=submit]');
   ok(await page.locator('.pt-summary li').count() === 2 && sent === null, 'screenshot mode asks for a file and a note');
   // honeypot
+  await page.click('input[name=mode][value=question]', { force: true });
+  ok(await page.locator('input[name=hide_names]').count() === 0, 'Ask a question has no Hide names option');
+  await page.click('input[name=mode][value=text]', { force: true });
+  ok(await page.locator('input[name=hide_names]').count() === 1, 'Add text keeps the Hide names option');
+  await page.click('input[name=mode][value=question]', { force: true });
   await page.click('input[name=mode][value=url]', { force: true });
   await page.fill('input[name=url]', 'https://x.example/a');
   await page.evaluate(() => { document.querySelector('input[name=website]').value = 'bot'; });
