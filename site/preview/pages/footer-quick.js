@@ -8,7 +8,7 @@
     nav.className = 'michi-footer-nav';
     nav.setAttribute('aria-label', 'About and policies');
     var about = document.createElement('a');
-    about.href = '/preview/pages/deeper.html'; about.textContent = 'About';
+    about.href = '/preview/pages/deeper.html'; about.textContent = 'Why?';
     var methods = document.createElement('a');
     methods.href = '/development/methods/';
     methods.textContent = 'Methodology';

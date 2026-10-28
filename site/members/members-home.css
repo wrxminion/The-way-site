@@ -1,0 +1,28 @@
+/* Members home: compact heading, ballot and review cards first, one activity feed, then rooms and tools. */
+.home-head{margin:4px 0 12px}
+h1.home-hello{font:normal clamp(24px,4.5vw,34px)/1.2 var(--serif);letter-spacing:-.02em;margin:12px 0 4px;text-shadow:none}
+.home-head .place-line{margin:0}
+.home-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:8px 0 14px}
+.home-card{display:grid;align-content:start;gap:8px;padding:20px 22px;border:1px solid #c7ffff3a;border-radius:20px;background:linear-gradient(180deg,#0a3a50d8,#052b3cd8);
+  color:var(--foam);text-decoration:none;min-width:0}
+.home-card:hover{border-color:#a7f0e9;background:#0a3a50f0}
+.home-card:focus-visible{outline:2px solid #a7f0e9;outline-offset:3px}
+.home-card-title{font:normal 24px/1.15 var(--serif);color:var(--foam)}
+.home-card-sub{font-size:15px;line-height:1.5;color:#c9e1e5}
+.home-cta{display:inline-flex;align-items:center;justify-self:start;min-height:44px;padding:0 20px;margin-top:4px;border-radius:100px;background:#a7f0e9;color:#052b3c;font:700 15px var(--sans)}
+.home-card:hover .home-cta,.home-review:hover .home-cta{background:#d2fff9}
+/* the review card as an action card (the figures moved to "Your contribution") */
+.review-card.home-review{margin:0;grid-template-columns:1fr;gap:8px;padding:20px 22px;border-radius:20px}
+.home-review .rv-art{display:none}
+.home-review .rv-title{font-size:24px}
+.review-card.home-progress{grid-template-columns:1fr;margin:0 0 14px;cursor:default}
+.review-card.home-progress:hover{border-color:inherit;background:inherit}
+.home-quick{margin:0 0 6px}
+.home-quick .button{min-height:44px}
+.home-feed .row a{overflow-wrap:anywhere}
+main h2{overflow-wrap:anywhere}
+@media (max-width:700px){
+  .home-actions{grid-template-columns:1fr}
+  .home-card,.review-card.home-review{padding:16px}
+  .home-quick .button{flex:1 1 auto;justify-content:center}
+}
