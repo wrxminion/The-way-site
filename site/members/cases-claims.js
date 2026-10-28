@@ -1576,18 +1576,18 @@ window.WAY_CASE_CLAIMS = {
 "source": "CBO final report"
 },
 {
-"k": "e3fdcd41d4",
-"claim": "Treasury recovered $441.7 billion on $426.4 billion invested, a $15.3 billion surplus on investments",
-"status": "secondary",
-"detail": "Verified (secondary only)",
-"source": "Wikipedia citing Treasury and the Wall Street Journal; Treasury page not opened"
+"k": "1e19301c99",
+"claim": "Financial-institution support made a net gain: $9 billion (CBO), with $16.3 billion of income on the Capital Purchase Program (Treasury)",
+"status": "primary",
+"detail": "Verified (primary source opened)",
+"source": "CBO final report (April 2024); Treasury TARP page Table 1 (Sept. 30, 2023)"
 },
 {
-"k": "14705d1ab7",
-"claim": "Net cost headline: $31 billion (CBO) versus $15.3 billion surplus on investments",
-"status": "disputed",
-"detail": "Disputed (different scopes: $31 billion cost includes housing programs; $15.3 billion surplus covers investments)",
-"source": "CBO; Wikipedia citing Treasury"
+"k": "44b26eecc6",
+"claim": "Net cost headline: $31 billion for all of TARP (CBO; $31.1 billion Treasury) versus a $9 billion net gain on bank support (CBO)",
+"status": "primary",
+"detail": "Verified (different scopes: the total adds mortgage programs, $31 billion, and auto, $12 billion, to the bank gain)",
+"source": "CBO final report; Treasury TARP page"
 },
 {
 "k": "f75727a01b",
@@ -7405,11 +7405,11 @@ window.WAY_CASE_CLAIMS = {
 "source": "Cited by Rakoff via Marshall Project; estimate not traced"
 },
 {
-"k": "04be2c8faa",
-"claim": "18 percent of exonerees pleaded guilty",
-"status": "unverified",
-"detail": "Unverified (not confirmed)",
-"source": "NACDL letter; Registry home page has no such figure"
+"k": "d718ded5b8",
+"claim": "15 percent of known exonerees pleaded guilty (261 of 1,702, as of Nov. 2015)",
+"status": "primary",
+"detail": "Verified (primary source opened)",
+"source": "Registry, Innocents Who Plead Guilty; the 2023 NACDL letter says 18 percent, not matched"
 },
 {
 "k": "35bcdd2c61",
