@@ -14,6 +14,7 @@
   var ROLES = ['admin', 'super_admin', 'moderator', 'researcher', 'reviewer', 'editor'];
   var GUIDE = /^\/preview\/pages\/guide(-[a-z]{2})?\/$/;
   var STATES = '/preview/pages/states/';
+  var GOV = '/preview/pages/how-government-works.html';
   var path = location.pathname;
   var inMembers = path.indexOf('/members/') === 0;
   var appPage = /^\/members\/(index\.html)?$/.test(path); // the member app itself (hash routes)
@@ -69,6 +70,7 @@
     roles: 'M12 3l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.5 6.8 19.2l1-5.9L3.5 9.2l5.9-.8z',
     reports: 'M5 21V4 M5 5h12l-2 4 2 4H5',
     log: 'M5 5h14 M5 10h14 M5 15h14 M5 20h9',
+    govworks: 'M12 3l9 4v2H3V7z M5 10v8 M9 10v8 M15 10v8 M19 10v8 M3 21h18',
     admin: 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z',
     review: 'M12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18z M8 12l3 3 5-6',
     research: 'M4 20l4-1 11-11a2.1 2.1 0 0 0-3-3L5 16z M14 7l3 3',
@@ -116,6 +118,7 @@
     if (set) return set;
     var h = appPage ? (location.hash || '#/') : '';
     if (/^#\/cases/.test(h) || /^\/preview\/pages\/cases/.test(path)) return 'cases';
+    if (/^\/preview\/pages\/how-government-works/.test(path)) return 'govworks';
     if (/^\/preview\/pages\/case-studies/.test(path)) return 'casestudies';
     if (/^\/research\//.test(path)) return 'research-lib';
     if (/^\/search\//.test(path)) return 'search';
@@ -159,6 +162,7 @@
     var explore = [
       { href: '/preview/pages/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
       { href: '/preview/pages/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
+      { href: GOV, label: 'How government works', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
       { href: '/preview/pages/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
       { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
       { href: route('map'), label: 'Map', desc: 'Every state at a glance', icon: 'map', key: 'map' }
@@ -186,6 +190,7 @@
         { href: STATES, label: 'Voter Guide', icon: 'ballot', key: 'ballot' },
         { href: '/preview/pages/news/', label: 'News', icon: 'news', key: 'news' },
         { href: '/preview/pages/cases/', label: 'Civics & History', icon: 'cases', key: 'cases' },
+        { href: GOV, label: 'How government works', icon: 'govworks', key: 'govworks' },
         { href: '/preview/pages/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
         { href: '/research/', label: 'Research', icon: 'research-lib', key: 'research-lib' },
         { href: '/preview/pages/deeper.html', label: 'Why?', icon: 'about', key: 'about' }
@@ -379,6 +384,7 @@
       pub.appendChild(link(STATES, 'Voter Guide', 'ballot', cur));
       pub.appendChild(link('/preview/pages/news/', 'News', 'news', cur));
       pub.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases', cur));
+      pub.appendChild(link(GOV, 'How government works', 'govworks', cur));
       pub.appendChild(link('/preview/pages/case-studies/', 'Case Studies', 'casestudies', cur));
       pub.appendChild(link('/research/', 'Research', 'research-lib', cur));
       var menuBtn = panelButton('menu', 'Menu', 'wb-menu-btn', 'menu');
