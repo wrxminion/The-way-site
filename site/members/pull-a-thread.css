@@ -43,6 +43,10 @@
 .pt-fielderr,.pt-err{margin:0;color:var(--danger);font-size:15px}
 .pt-gorow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:6px}
 .pt-gorow button{min-height:48px;padding:0 24px;font-size:17px}
+.pt-gorow .pt-go{display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:0;padding:4px 8px;min-height:48px;color:var(--foam);cursor:pointer}
+.pt-go-art{width:120px;height:120px;display:block}
+.pt-go-text{font-size:18px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.pt-gorow .pt-go:disabled{opacity:.6;cursor:default}
 .pt-privacy{font-size:14px;color:var(--muted);margin:4px 0 0}
 .pt-live{min-height:1.2em;margin:6px 0;font-size:15px}
 .pt-outcome,.pt-still,.pt-ocr{border:2px solid var(--line-strong);border-radius:16px;padding:14px 16px;margin:14px 0;background:var(--panel)}
