@@ -1,18 +1,13 @@
 name: Ledger auto-post
 
-# When a pull request is merged into main, and ONLY if its body has a line that
-# starts with "ledger:", open a small follow-up
-# pull request that adds one neutral row to the public development ledger.
+# When a pull request is merged into main and its body has a line that starts
+# with "ledger:", add one neutral row to the public development ledger at once.
+# No second pull request: the row is written to a data branch, "ledger-data"
+# (file live-rows.json), which the ledger page reads. Main is never touched, so
+# the protection rule on main is not involved. Only the built-in GITHUB_TOKEN is used.
 # The row text is the "ledger:" line, never the PR title or any other text.
-# PRs labeled "do-not-publish", or with a body line that says only DO NOT PUBLISH (capitals, nothing else on the line), are skipped.
-# Mentioning the phrase inside a sentence does not skip a post.
-# No label is needed: the "ledger:" line is the opt-in.
-# Main is protected, so this opens a PR for the maintainer to merge; it uses
-# only the built-in GITHUB_TOKEN.
-
-concurrency:
-  group: ledger-row
-  cancel-in-progress: false
+# PRs labeled "do-not-publish", or with a body line that says only DO NOT PUBLISH
+# (capitals, nothing else on the line), are skipped.
 
 on:
   pull_request:
@@ -21,22 +16,24 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+
+concurrency:
+  group: ledger-data
+  cancel-in-progress: false
 
 jobs:
   ledger:
     if: >-
       github.event.pull_request.merged == true &&
       github.event.pull_request.head.repo.full_name == github.repository &&
-      !contains(github.event.pull_request.labels.*.name, 'do-not-publish') &&
-      !startsWith(github.event.pull_request.head.ref, 'ledger-row/')
+      !contains(github.event.pull_request.labels.*.name, 'do-not-publish')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 1
-      - name: Add ledger row and open PR
+      - name: Add row to the ledger-data branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
@@ -45,21 +42,24 @@ jobs:
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
         run: |
           set -eu
-          # If any command fails, name it in a public annotation so the cause can be read without logs.
           trap 'echo "::error::ledger step failed at script line $LINENO: $BASH_COMMAND"' ERR
           if printf '%s\n' "$PR_BODY" | tr -d '\r' | grep -qE '^[[:space:]]*DO NOT PUBLISH[[:space:]]*$'; then echo "marked do not publish"; exit 0; fi
           LINE=$(printf '%s\n' "$PR_BODY" | tr -d '\r' | grep -m1 -iE '^ledger:[[:space:]]*[^[:space:]]' | sed -E 's/^[Ll][Ee][Dd][Gg][Ee][Rr]:[[:space:]]*//' || true)
           if [ -z "$LINE" ]; then echo "no ledger: line"; exit 0; fi
           case "$PR_AUTHOR" in wrxminion|ShihanOfMichi) ORIGIN="Maintainer";; *) ORIGIN="Contributor";; esac
-          node tools/ledger-append.js "$PR_NUMBER" "${PR_DATE%%T*}" "$ORIGIN" "$LINE"
-          if git diff --quiet; then echo "nothing to add"; exit 0; fi
+          URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads "$URL" ledger-data >/dev/null 2>&1; then
+            git clone -q --depth=1 -b ledger-data "$URL" /tmp/data
+          else
+            git init -q -b ledger-data /tmp/data
+            git -C /tmp/data remote add origin "$URL"
+            echo '{"rows":[]}' > /tmp/data/live-rows.json
+          fi
+          node tools/ledger-live.js /tmp/data/live-rows.json "$PR_NUMBER" "${PR_DATE%%T*}" "$ORIGIN" "$LINE"
+          cd /tmp/data
+          git add live-rows.json
+          if git diff --cached --quiet; then echo "nothing to add"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          BR="ledger-row/pr-$PR_NUMBER"
-          git checkout -b "$BR"
-          git add site/development
-          OUT=$(git commit -m "Ledger: add row for PR #$PR_NUMBER" 2>&1) || { echo "::error::commit failed: $(echo "$OUT" | tr '\n' ' ' | cut -c1-400)"; exit 1; }
-          OUT=$(git push origin "$BR" 2>&1) || { echo "::error::push failed: $(echo "$OUT" | tr '\n' ' ' | cut -c1-400)"; exit 1; }
-          SRC=$(node -e 'process.stdout.write(JSON.stringify({pr:+process.argv[1],date:process.argv[2],origin:process.argv[3],text:process.argv[4]}))' "$PR_NUMBER" "${PR_DATE%%T*}" "$ORIGIN" "$LINE")
-          BODY=$(printf 'Adds one public ledger row for #%s, from its ledger: line. Check the wording, then merge. The site updates on the next quarter-hour deploy.\n\nIf main changes first, a bot refreshes this branch so it never conflicts. Do not edit it by hand.\n\n<!-- ledger-src %s -->' "$PR_NUMBER" "$SRC")
-          OUT=$(gh pr create --base main --head "$BR" --title "Ledger: add row for PR #$PR_NUMBER" --body "$BODY" 2>&1) || { echo "::error::pr create failed: $(echo "$OUT" | tr '\n' ' ' | cut -c1-400)"; exit 1; }
+          git commit -q -m "Ledger row for PR #$PR_NUMBER"
+          git push -q origin HEAD:ledger-data

@@ -29,4 +29,4 @@ To block a row even when a ledger line exists, put the words DO NOT PUBLISH alon
 
 ## What happens next
 
-After the PR merges, a bot opens a small follow-up PR named "Ledger: add row for PR #N". The maintainer reads the wording and merges it. If the bot opens none, the PR body had no valid `ledger:` line.
+After the PR merges, a bot adds the row to the ledger page within a minute or two (the page reads it from the ledger-data branch). No second PR is opened and nobody has to merge anything. If no row appears, the PR body had no valid `ledger:` line. A person marks rows "Live, checked by a person" on the members Admin page (Ledger checks).
