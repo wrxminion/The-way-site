@@ -116,7 +116,7 @@ function drawNav() {
   const st = focusAbbr();
   // Findings and the moderation log appear only once they have something in them (Frank, Oct 15).
   const data = { v: 1, name: state.me.display_name, roles: [...state.roles], findings: !!state.hasRecord, modlog: !!state.hasModLog,
-    ballot: st && READY.has(st) ? stateLinks(st).guide.slice(-1)[0] : null };
+    ballot: st && READY.has(st) ? stateLinks(st).guide.slice(-1)[0] : null, state: st && READY.has(st) ? US[st][0] : '' };
   WayBar.save(data); WayBar.render(data);
 }
 
@@ -318,6 +318,8 @@ async function signInView() {
     h('h1', { text: invited ? T.invitedTitle : T.title }),
     ...(invited || open ? [newcomerPanel(invited), memberPanel(false)] : [memberPanel(true), newcomerPanel(false)]),
   );
+  // The bar's "Sign up" link (#/signup) lands on the create-account box.
+  if (location.hash === '#/signup') { const f = app.querySelector('[name=new-email]'); if (f) { f.scrollIntoView({ block: 'center' }); f.focus({ preventScroll: true }); } }
 }
 
 // Choose a new password: from the account page, or after a "Forgot password" email.
@@ -567,46 +569,71 @@ function rolesView() {
     h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/', text: 'Back to Home' }), h('a', { class: 'button quiet', href: '#/account', text: 'Your account' })));
 }
 
-// The "Review the sources" card on top of the home page (moderators and admins): points, awards and the
-// claims waiting for a second reviewer. The numbers come from 0017 (my_karma, karma_events) and 0023
-// (my_review_summary); until those are run the card still works as a link and shows dashes.
+// "Review sources" on the home page (moderators and admins). Two parts share one load: an action card near the top
+// (leads with what to do next) and a progress panel lower down (points, awards, claims waiting for a second reviewer).
+// The numbers come from 0017 (my_karma, karma_events) and 0023 (my_review_summary); until those are run the
+// card still works as a link and the figures show dashes.
 const AWARD_NAMES = { source_accepted: 'Source accepted', source_verified: 'Source verified', claim_review_agreed: 'Review confirmed',
   correction_accepted: 'Correction accepted', revision_published: 'Revision published', thread_accepted: 'Thread accepted' };
-function reviewCard() {
+function reviewParts() {
   const stat = (label, node) => h('div', { class: 'rv-stat' }, h('span', { class: 'rv-label', text: label }), node);
-  const points = h('strong', { class: 'rv-num', text: '\u2026' }), pointsNote = h('span', { class: 'rv-note' });
-  const awards = h('div', { class: 'rv-awards' }, h('span', { class: 'rv-note', text: '\u2026' }));
-  const waiting = h('strong', { class: 'rv-num', text: '\u2026' }), waitingNote = h('span', { class: 'rv-note' });
-  const card = h('a', { class: 'review-card', href: '#/review' },
+  const points = h('strong', { class: 'rv-num', text: '…' }), pointsNote = h('span', { class: 'rv-note' });
+  const awards = h('div', { class: 'rv-awards' }, h('span', { class: 'rv-note', text: '…' }));
+  const waiting = h('strong', { class: 'rv-num', text: '…' }), waitingNote = h('span', { class: 'rv-note' });
+  const cta = h('span', { class: 'home-cta', text: 'Review sources' });
+  const sub = h('span', { class: 'rv-sub', text: 'Check each claim against its sources, flag problems, mark a case reviewed' });
+  const action = h('a', { class: 'review-card home-review', href: '#/review' },
     h('img', { class: 'rv-art', src: 'art/review.svg?v=1', alt: '', width: 320, height: 180 }),
+    h('div', { class: 'rv-body' }, h('strong', { class: 'rv-title', text: 'Review sources' }), sub, cta));
+  const progress = h('div', { class: 'review-card home-progress' },
     h('div', { class: 'rv-body' },
-      h('strong', { class: 'rv-title', text: 'Review the sources' }),
-      h('span', { class: 'rv-sub', text: 'Check each claim against its sources, flag problems, mark a case reviewed' }),
+      h('strong', { class: 'rv-title', text: 'Your review progress' }),
       h('div', { class: 'rv-stats' },
         stat('Your points', h('div', {}, points, pointsNote)),
         stat('Awards', awards),
         stat('Waiting for a 2nd review', h('div', {}, waiting, waitingNote)))));
   (async () => {
-    const dash = (n, note) => { n.textContent = '\u2013'; if (note) note.textContent = ''; };
+    const dash = (n, note) => { n.textContent = '–'; if (note) note.textContent = ''; };
     try {
       const k = (await q(sb.rpc('my_karma')))[0];
       points.textContent = String(k.total);
-      pointsNote.textContent = ` \u00b7 ${k.last_30_days >= 0 ? '+' : ''}${k.last_30_days} in 30 days`;
+      pointsNote.textContent = ` · ${k.last_30_days >= 0 ? '+' : ''}${k.last_30_days} in 30 days`;
     } catch { dash(points, pointsNote); }
     try {
       const rows = await q(sb.from('karma_events').select('kind').eq('member_id', state.me.id).order('id', { ascending: false }).limit(200));
       const n = {}; rows.forEach((r) => { n[r.kind] = (n[r.kind] || 0) + 1; });
       const kinds = Object.keys(n).filter((x) => AWARD_NAMES[x]).sort((a, b) => n[b] - n[a]).slice(0, 3);
-      awards.replaceChildren(...(kinds.length ? kinds.map((x) => h('span', { class: 'rv-chip', text: `${AWARD_NAMES[x]} \u00d7 ${n[x]}` }))
+      awards.replaceChildren(...(kinds.length ? kinds.map((x) => h('span', { class: 'rv-chip', text: `${AWARD_NAMES[x]} × ${n[x]}` }))
         : [h('span', { class: 'rv-note', text: 'None yet' })]));
-    } catch { awards.replaceChildren(h('span', { class: 'rv-note', text: '\u2013' })); }
+    } catch { awards.replaceChildren(h('span', { class: 'rv-note', text: '–' })); }
     try {
       const r = (await q(sb.rpc('my_review_summary')))[0];
       waiting.textContent = String(r.waiting_second);
-      waitingNote.textContent = ` of ${r.reviewed} you checked${r.differ ? ` \u00b7 ${r.differ} differ` : ''}`;
+      waitingNote.textContent = ` of ${r.reviewed} you checked${r.differ ? ` · ${r.differ} differ` : ''}`;
+      // A new reviewer is told what to do first; someone who has reviewed is told what is waiting.
+      if (!r.reviewed) { cta.textContent = 'Start your first review'; sub.textContent = 'Pick a case, check one claim against its sources, and earn your first points.'; }
+      else { cta.textContent = r.waiting_second ? `Continue reviewing (${r.waiting_second} waiting)` : 'Continue reviewing'; }
     } catch { dash(waiting, waitingNote); }
   })();
-  return card;
+  return { action, progress };
+}
+
+// One list for the home page: threads and the newest posts together, one line per thread (a thread's first post is the
+// same text as the thread, so it is shown once, with the newest post under it).
+function activityFeed(threads, posts, catById) {
+  const byThread = new Map();
+  for (const p of posts) {   // posts arrive newest first, so the first one seen is the latest
+    if (!p.thread_id || byThread.has(p.thread_id)) continue;
+    byThread.set(p.thread_id, { id: p.thread_id, title: p.thread ? p.thread.title : 'Thread', at: p.created_at,
+      who: p.author ? p.author.display_name : 'a member', body: p.body, cat: null });
+  }
+  for (const t of threads) {
+    const e = byThread.get(t.id) || { id: t.id, who: t.author ? t.author.display_name : 'a member', body: '', at: t.last_post_at };
+    e.title = t.title; e.cat = catById[t.category_id] || null;
+    if ((t.last_post_at || '') > (e.at || '')) e.at = t.last_post_at;
+    byThread.set(t.id, e);
+  }
+  return [...byThread.values()].sort((a, b) => (b.at || '').localeCompare(a.at || '')).slice(0, 8);
 }
 
 async function homeView() {
@@ -614,56 +641,54 @@ async function homeView() {
   const [cats, posts, openReports, notifyCount] = await Promise.all([
     q(sb.from('categories').select('*').order('sort_order')),
     q(sb.from('posts').select('id,body,created_at,thread_id,author:members!posts_author_id_fkey(display_name),thread:threads(title)')
-      .is('hidden_at', null).order('id', { ascending: false }).limit(8)),
+      .is('hidden_at', null).order('id', { ascending: false }).limit(12)),
     wantsMod ? sb.from('reports').select('id', { count: 'exact', head: true }).is('resolved_at', null).then((r) => r.count || 0) : 0,
     wantsAdmin ? sb.from('notify_signups').select('id', { count: 'exact', head: true }).then((r) => r.count || 0) : 0,
   ]);
-  // Latest threads: a failure here must never break Home, so it is loaded on its own and shown as a note.
-  let recent = [], threadsFailed = false;
+  // Latest threads: a failure here must never break Home, so it is loaded on its own; the feed then shows posts only.
+  let recent = [];
   const catById = Object.fromEntries((cats || []).map((c) => [c.id, c]));
   try {
     const ts = await q(sb.from('threads').select('id,title,status,last_post_at,pinned_at,category_id,author:members!threads_author_id_fkey(display_name)')
       .order('last_post_at', { ascending: false }).limit(30));
     recent = ts.filter((t) => !t.pinned_at).slice(0, 6);
-  } catch { threadsFailed = true; }
+  } catch { /* the feed still has the posts */ }
+  const feed = activityFeed(recent, posts, catById);
   const tile = (href, title, sub) => h('a', { class: 'tile', href }, h('strong', { text: title }), h('span', { text: sub }));
-  const guideTile = tile(LINKS.guide, 'Voter guide', 'What is on your ballot, from official sources');
-  const mapTile = () => {
-    const a = focusAbbr();
-    return h('a', { class: 'tile us-tile', href: '#/map' }, usSvg({ small: true }),
-      h('strong', { text: 'The map' }), h('span', { text: a ? `Every state, with ${US[a][0]} marked` : 'Every state at a glance' }));
-  };
+  const a0 = focusAbbr();
+  const place = loadPlace();
+  const ballotCard = h('a', { class: 'home-card home-ballot', href: LINKS.guide },
+    h('strong', { class: 'home-card-title', text: 'Your ballot' }),
+    h('span', { class: 'home-card-sub', text: a0 ? `${US[a0][0]}: what is on your ballot, from official sources` : 'Save your state to see what is on your ballot' }),
+    h('span', { class: 'home-cta', text: a0 ? 'Open your voter guide' : 'Choose your state' }));
+  if (!a0) ballotCard.href = '#/account';
+  const mapTile = () => h('a', { class: 'tile us-tile', href: '#/map' }, usSvg({ small: true }),
+    h('strong', { text: 'The map' }), h('span', { text: a0 ? `Every state, with ${US[a0][0]} marked` : 'Every state at a glance' }));
+  const review = wantsMod ? reviewParts() : null;
+  const authorCard = h('a', { class: 'home-card', href: 'author.html' },
+    h('strong', { class: 'home-card-title', text: 'Contribute' }),
+    h('span', { class: 'home-card-sub', text: 'Send an article or a source, and see how close you are to the next rank' }),
+    h('span', { class: 'home-cta', text: 'Open author tools' }));
+  const hasTools = wantsAdmin || wantsMod || can('researcher') || can('reviewer');
 
   render(
-    h('p', { class: 'overline', text: 'Members' }),
-    h('h1', { text: `Welcome back, ${state.me.display_name}` }),
-    wantsMod ? reviewCard() : null,
-    h('div', { class: 'tiles' },
-      guideTile,
-      mapTile(),
-      tile(LINKS.news, 'News', 'The time machine and the feed'),
-      state.hasRecord ? tile('findings.html', 'Findings', 'What we checked, the verdict, and every change since') : null,
-      tile(LINKS.cases, 'Civics & History', 'The history cases we wrote, with every source'),
-      null),
-    h('p', { class: 'small place-line' }, ...(loadPlace()
-      ? ['Your place: ', h('strong', { text: loadPlace().state }), ' · ', h('a', { href: '#/account', text: 'change it in your account' })]
-      : [h('a', { href: '#/account', text: 'Save your state in your account' }), ' to open the map and your ballot on it.'])),
-    h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Invite someone to The Way' }), h('a', { class: 'button', href: 'author.html', text: 'Author desk and ranks' }), h('a', { class: 'button', href: '#/private', text: 'Private research' })),
-    (wantsAdmin || wantsMod || can('researcher') || can('reviewer')) ? h('div', { class: 'panel' },
-      h('h3', { text: 'Your tools' }),
-      h('div', { class: 'btns' },
-
-        wantsAdmin ? h('a', { class: 'button quiet', href: '#/admin', text: `Notify list (${notifyCount})` }) : null,
-        wantsMod ? h('a', { class: 'button quiet', href: '#/reports', text: `Reports (${openReports} open)` }) : null,
-        wantsMod && state.hasModLog ? h('a', { class: 'button quiet', href: '#/log', text: 'Moderation log' }) : null,
-        (can('researcher') || can('reviewer')) ? h('a', { class: 'button quiet', href: '#/research', text: 'Research desk' }) : null)) : null,
-    h('h2', { text: 'Latest threads' }),
-    threadsFailed ? h('p', { class: 'muted', text: 'Could not load the threads. Try again in a moment.' }) : threadList(recent, catById),
-    h('h2', { text: 'Latest in the Commons' }),
-    posts.length ? h('ul', { class: 'list panel' }, posts.map((p) => h('li', {},
-      h('div', { class: 'row' }, h('a', { href: `#/t/${p.thread_id}`, text: p.thread ? p.thread.title : 'Thread' }), h('span', { class: 'meta', text: when(p.created_at) })),
-      h('div', { class: 'meta', text: p.author ? p.author.display_name : 'a member' }),
-      h('div', { class: 'small post', text: p.body.length > 220 ? p.body.slice(0, 220) + '…' : p.body }))))
+    h('div', { class: 'home-head' },
+      h('h1', { class: 'home-hello', text: `Welcome back, ${state.me.display_name}` }),
+      h('p', { class: 'small place-line' }, ...(place
+        ? ['Your state: ', h('strong', { text: place.state }), ' · ', h('a', { href: '#/account', text: 'Change' })]
+        : [h('a', { href: '#/account', text: 'Save your state in your account' }), ' to open the map and your ballot on it.']))),
+    h('div', { class: 'home-actions' },
+      ballotCard,
+      review ? review.action : authorCard),
+    h('div', { class: 'btns home-quick' },
+      h('a', { class: 'button', href: 'my-ballot.html', text: 'My ballot picks' }),
+      h('a', { class: 'button', href: '#/map', text: 'Map' }),
+      h('a', { class: 'button primary', href: '#/invite', text: 'Invite someone' })),
+    h('h2', { text: 'Latest activity' }),
+    feed.length ? h('ul', { class: 'list panel home-feed' }, feed.map((e) => h('li', {},
+      h('div', { class: 'row' }, h('a', { href: `#/t/${e.id}`, text: e.title }), h('span', { class: 'meta', text: when(e.at) })),
+      h('div', { class: 'meta', text: [e.who, e.cat ? e.cat.title : null].filter(Boolean).join(' · ') }),
+      e.body ? h('div', { class: 'small post', text: e.body.length > 220 ? e.body.slice(0, 220) + '…' : e.body }) : null)))
       : h('p', { class: 'muted', text: 'Nothing posted yet. Start the first thread in the Commons.' }),
     h('p', {}, h('a', { class: 'button quiet', href: '#/commons', text: 'Open the Commons' })),
     h('h2', { text: 'Rooms' }),
@@ -671,9 +696,26 @@ async function homeView() {
     h('ul', { class: 'list panel' }, cats.map((c) => h('li', {},
       h('div', { class: 'row' }, h('h3', {}, h('a', { href: `#/c/${c.slug}`, text: c.title })), c.locked ? h('span', { class: 'tag', text: 'read only' }) : null),
       h('div', { class: 'muted small', text: c.description })))),
+    h('h2', { text: 'Your contribution' }),
+    review ? review.progress : null,
+    h('div', { class: 'panel' },
+      h('h3', { text: 'Your tools' }),
+      h('div', { class: 'btns' },
+        h('a', { class: 'button quiet', href: 'author.html', text: 'Author desk and ranks' }),
+        h('a', { class: 'button quiet', href: '#/private', text: 'Private research' }),
+        wantsMod ? h('a', { class: 'button quiet', href: '#/review', text: 'Review sources' }) : null,
+        (can('researcher') || can('reviewer')) ? h('a', { class: 'button quiet', href: '#/research', text: 'Research desk' }) : null,
+        wantsAdmin ? h('a', { class: 'button quiet', href: '#/admin', text: `Notify list (${notifyCount})` }) : null,
+        wantsMod ? h('a', { class: 'button quiet', href: '#/reports', text: `Reports (${openReports} open)` }) : null,
+        wantsMod && state.hasModLog ? h('a', { class: 'button quiet', href: '#/log', text: 'Moderation log' }) : null)),
+    h('h2', { text: 'Explore' }),
+    h('div', { class: 'tiles' },
+      mapTile(),
+      tile(LINKS.news, 'News', 'The time machine and the feed'),
+      state.hasRecord ? tile('findings.html', 'Findings', 'What we checked, the verdict, and every change since') : null,
+      tile(LINKS.cases, 'Civics & History', 'The history cases we wrote, with every source')),
   );
-  const a = focusAbbr();
-  if (a) available(a).then((v) => { if (v.guide) { guideTile.href = v.guide; guideTile.lastChild.textContent = `${US[a][0]}: what is on your ballot, from official sources`; } });
+  if (a0) available(a0).then((v) => { if (v.guide) ballotCard.href = v.guide; });
 }
 
 // ---------------------------------------------------------------- the Commons (forum front page)
@@ -2047,7 +2089,7 @@ async function reviewView(slug) {
   const by = Object.fromEntries(rows.map((r) => [r.case_slug, r]));
   render(
     h('p', { class: 'overline', text: 'Moderation' }),
-    h('h1', { text: 'Review the sources' }),
+    h('h1', { text: 'Review sources' }),
     h('p', { class: 'lede', text: 'Open a case, check its key claims against the sources one by one, flag anything wrong, and mark the case reviewed when every claim is checked. What you write in a note is public.' }),
     h('p', { class: 'small' }, h('a', { href: REVIEW_PUBLIC, target: '_blank', rel: 'noopener', text: 'The public review history' })),
     CASES.length ? h('ul', { class: 'list panel cases' }, CASES.map((c) => {
@@ -2450,6 +2492,7 @@ async function route() {
       case 'admin': return can('admin') ? await adminView() : render(notice('Admins only.'));
       case 'account': return accountView();
       case 'password': return passwordView(false);
+      case 'signup': return await homeView();
       case 'signout': return await signOut();
       default: return render(notice('Page not found.'));
     }
@@ -2485,7 +2528,7 @@ async function readSignInLink() {
 const AFTER = 'theway.after';
 const DEEP = /^#\/[a-z]+(\/[A-Za-z0-9_-]{1,80})?$/;
 function keepTarget() {
-  if (!DEEP.test(location.hash) || location.hash === '#/') return;
+  if (!DEEP.test(location.hash) || location.hash === '#/' || location.hash === '#/signup') return;
   try { localStorage.setItem(AFTER, JSON.stringify({ hash: location.hash, at: Date.now() })); } catch {}
 }
 function takeTarget() {

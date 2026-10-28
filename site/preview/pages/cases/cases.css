@@ -12,6 +12,7 @@
 .essay-body em{color:#ebffff}
 .cases-hub{padding:0 16px 40px}
 .cases-hub .hub{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cases-hub .hub-lead{margin:0 0 16px}
 .cases-hub .more{text-align:center;color:var(--muted)}
 @media(max-width:700px){.cases-hub .hub{grid-template-columns:1fr}}
 @media(max-width:700px){
@@ -33,3 +34,36 @@
 .essay-body .review-banner a{color:#f3dca8;text-decoration:underline}
 .essay-body .review-banner.reviewed{border-color:#a7f0e999;border-left-color:#a7f0e9;background:#a7f0e90f;color:#dff7f4}
 .essay-body .review-banner.reviewed strong{color:#a7f0e9}
+
+/* Report / print / download row (top and bottom of each case page) */
+.essay-body .report-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 14px}
+.essay-body .report-tools{display:flex;flex-wrap:wrap;gap:10px;margin-left:auto}
+.essay-body .report-note{flex:0 0 100%;margin:0}
+.essay-body button.report-btn{border:0;cursor:pointer;font-family:inherit}
+@media(max-width:700px){.essay-body .report-tools{margin-left:0}}
+
+/* Printing: plain paper, no ocean, keep the review notice and the sources */
+@media print{
+@page{margin:16mm}
+html,body,.ocean,.essay-ocean{background:#fff!important;color:#111!important;min-height:0!important}
+.waybar,#waybar,.topbar,.subnav,.surface,.caustics,.shafts,.bubbles,.float-bar,.report-box,.depth-cta,.text-link,.otp,.otp-jump,.otp-side,.foot .tagline,nav.toc,.wb-floating,.ocean::before,.ocean::after,.essay-top::before,.essay-top::after,.wb-search,.wb-floating-search,.wd-link,.follow-box,.return,.cta{display:none!important}
+.essay-body,.essay-body .note{background:#fff!important;background-image:none!important}
+.essay-top{padding:0 0 10px!important;max-width:none!important}
+.essay-top h1{font-size:28pt!important;color:#111!important}
+.essay-top .overline,.essay-top .essay-intro{color:#333!important}
+.essay-content{padding:0!important;max-width:none!important}
+.essay-body,.essay-body *{color:#111!important;text-shadow:none!important;box-shadow:none!important}
+.essay-body{font-size:11pt;line-height:1.5}
+.essay-body a{color:#0a4a63!important;text-decoration:underline}
+.essay-body p a[href^="http"]::after,.essay-body li a[href^="http"]::after{content:" (" attr(href) ")";font-size:8.5pt;color:#444!important;word-break:break-all}
+.essay-body .in-brief,.essay-body .review-banner,.essay-body .table-wrap{background:#fff!important;border:1px solid #888!important}
+.essay-body .review-banner{border-left:5px solid #000!important;break-inside:avoid;font-size:10.5pt}
+.essay-body:not(:has(.review-banner)) .meta::before{content:"Not yet reviewed by a person. This page was researched and written with the help of AI tools and no person has checked the sources yet. Treat it as a draft.";display:block;margin:0 0 8px;padding:8px 12px;border:1px solid #888;border-left:5px solid #000;font-size:10.5pt;font-weight:700;text-transform:none;letter-spacing:0;line-height:1.4}
+.essay-body .table-wrap{overflow:visible!important}
+.essay-body table{min-width:0!important;font-size:9.5pt}
+.essay-body thead{display:table-header-group!important}
+.essay-body tr{display:table-row!important;break-inside:avoid}
+.essay-body td,.essay-body th{display:table-cell!important;border-bottom:1px solid #bbb!important;background:#fff!important}
+.essay-body h2,.essay-body h3{break-after:avoid}
+.foot{color:#444!important;font-size:9pt}
+}

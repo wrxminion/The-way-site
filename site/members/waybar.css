@@ -1,5 +1,5 @@
-/* The Way: the shared top bar (waybar.js). Same look on every page; nothing here depends on the page's own CSS. */
-.waybar{all:initial;box-sizing:border-box;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px 24px;
+/* The Way: the shared top bar, bottom bar and side panel (waybar.js). Same look on every page; nothing here depends on the page's own CSS. */
+.waybar{all:initial;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:10px 16px;
   min-height:64px;padding:12px clamp(16px,5vw,64px);position:relative;z-index:50;
   background:#052b3c;border-bottom:1px solid #c7ffff22;
   font:600 12px/1.2 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#e9ffff}
@@ -7,152 +7,183 @@
 .waybar a,.waybar button{all:unset;cursor:pointer;color:#e9ffff;font:inherit;letter-spacing:inherit;text-transform:inherit;opacity:.86}
 .waybar a:hover,.waybar button:hover,.waybar [aria-current=page]{opacity:1}
 .waybar a:focus-visible,.waybar button:focus-visible{outline:2px solid #a7f0e9;outline-offset:3px;border-radius:4px}
-.waybar .wb-logo{font-weight:800;letter-spacing:.22em;opacity:1;justify-self:start}
+.waybar .wb-logo{font-weight:800;letter-spacing:.22em;opacity:1;justify-self:start;white-space:nowrap}
 .waybar nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
-.waybar .wb-mid{justify-content:center}
-.waybar .wb-mid a{font-weight:700;opacity:1}
-.waybar .wb-right{justify-content:flex-end;grid-column:3}
-.waybar .wb-pub{grid-column:2}
-.waybar nav a[aria-current=page]{box-shadow:0 1px 0 #a7f0e9aa;padding-bottom:3px}
-.waybar .wb-name,.waybar .wb-pill{display:inline-flex;align-items:center;gap:6px;border:1px solid #c7ffff55;border-radius:100px;
+.waybar nav a[aria-current=page],.waybar nav button[aria-current=page]{box-shadow:0 1px 0 #a7f0e9aa;padding-bottom:3px}
+.waybar .wb-sr,.wb-layer .wb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wb-ico{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Fallback link shown before the script runs (signed out) */
+.waybar .wb-pill{display:inline-flex;align-items:center;gap:6px;border:1px solid #c7ffff55;border-radius:100px;padding:7px 14px;opacity:1;text-transform:none;letter-spacing:.02em;font-size:13px}
+.waybar>.wb-right:only-of-type{grid-column:3}
+
+/* ---------- signed in: desktop ---------- */
+.waybar.wb-in .wb-home{grid-column:1;grid-row:1;justify-self:start;display:inline-flex;align-items:center;opacity:1;
+  font-size:16px;font-weight:800;letter-spacing:.16em;padding:11px 24px;border:2px solid #a7f0e9;border-radius:100px;background:#0a3a50}
+.waybar.wb-in .wb-home:hover,.waybar.wb-in .wb-home[aria-current=page]{background:#0f4d6a}
+.waybar.wb-in .wb-logo{grid-column:2;grid-row:1;justify-self:center}
+.waybar.wb-in .wb-mid{grid-column:1/-1;grid-row:2;justify-content:center}
+.waybar.wb-in .wb-mid a,.waybar.wb-in .wb-mid button{font-weight:700;opacity:1}
+.waybar.wb-in .wb-more-link{display:inline-flex;align-items:center;gap:6px;border:1px solid #c7ffff55;border-radius:100px;padding:5px 14px}
+.waybar.wb-in .wb-more-link[aria-expanded=true]{border-color:#a7f0e9;background:#0a3a50}
+.waybar.wb-in .wb-right{grid-column:3;grid-row:1;justify-content:flex-end;flex-wrap:wrap}
+.waybar.wb-in .wb-invite{display:inline-flex;align-items:center;opacity:1;font-weight:800;letter-spacing:.14em;padding:9px 20px;border-radius:100px;background:#a7f0e9;color:#052b3c}
+.waybar.wb-in .wb-invite:hover,.waybar.wb-in .wb-invite[aria-current=page]{background:#d2fff9;color:#052b3c}
+.waybar.wb-in{background:linear-gradient(180deg,#032332c9,#073b50d9);border-bottom:0}
+.wb-in-page .michi-ocean-water{z-index:60}
+.waybar .wb-search-toggle{display:none}
+.waybar .wb-avatar{display:none}
+
+.waybar .wb-name{display:inline-flex;align-items:center;gap:6px;border:1px solid #c7ffff55;border-radius:100px;
   padding:7px 14px;opacity:1;text-transform:none;letter-spacing:.02em;font-size:13px;max-width:16em}
 .waybar .wb-name[aria-current=page],.waybar .wb-name[aria-expanded=true]{border-color:#a7f0e9;background:#0a3a50}
 .waybar .wb-name-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .waybar .wb-caret{font-size:10px;opacity:.8}
 .waybar .wb-who{position:relative}
-.waybar .wb-menu{list-style:none;margin:0;padding:8px 0;position:absolute;right:0;top:calc(100% + 8px);min-width:200px;
-  background:#06283a;border:1px solid #c7ffff33;border-radius:14px;box-shadow:0 18px 50px #0008;text-transform:none;letter-spacing:.02em;font-size:14px}
+.waybar .wb-menu{list-style:none;margin:0;padding:8px 0;position:absolute;right:0;top:calc(100% + 8px);min-width:200px;max-width:calc(100vw - 32px);z-index:5;
+  background:#06283a;border:1px solid #c7ffff33;border-radius:14px;box-shadow:0 18px 50px #0008;text-transform:none;letter-spacing:.02em;font-size:15px}
 .waybar .wb-menu[hidden]{display:none}
-.waybar .wb-menu a{display:block;padding:9px 18px;opacity:.92}
+.waybar .wb-menu-name{padding:8px 18px 10px;font-weight:700;opacity:.75;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.waybar .wb-menu a{display:block;padding:12px 18px;min-height:44px;opacity:.92}
 .waybar .wb-menu a:hover,.waybar .wb-menu a:focus-visible{background:#0c3d55;opacity:1;border-radius:0}
 .waybar .wb-sep{height:1px;margin:6px 0;background:#c7ffff22}
-.waybar .wb-burger{display:none}
-@media (max-width:760px){
-  .waybar{grid-template-columns:1fr auto;letter-spacing:.1em}
-  .waybar .wb-right{grid-column:2}
-  .waybar.wb-in .wb-mid,.waybar.wb-in .wb-right{display:none}
-  .waybar.wb-in .wb-burger{display:inline-flex;justify-self:end;border:1px solid #c7ffff55;border-radius:100px;padding:7px 14px;opacity:1}
-  .waybar.wb-open .wb-mid,.waybar.wb-open .wb-right{display:flex;grid-column:1/-1;flex-direction:column;align-items:flex-start;gap:14px;padding:6px 0}
-  .waybar.wb-open .wb-right{padding-top:14px;border-top:1px solid #c7ffff22}
-  .waybar.wb-open .wb-burger{grid-row:1;grid-column:2}
-  .waybar .wb-menu{position:static;margin-top:10px;box-shadow:none;min-width:0;width:100%}
-}
 
-/* One header on every public page: hide the older per-page nav bars wherever the shared bar is present. */
-body:has(#waybar) nav.topbar{display:none}
-@media (max-width:760px){
-  .waybar .wb-pub{grid-column:1/-1;grid-row:2;justify-content:flex-start}
-  .waybar .wb-right{grid-row:1}
-}
-
-/* Header search (every page). Signed out on a phone: the box moves to its own full-width row under the links. */
+/* ---------- search ---------- */
 .waybar .wb-search{display:inline-flex;align-items:center;gap:0;border:1px solid #c7ffff55;border-radius:100px;overflow:hidden;background:#06212f;text-transform:none;letter-spacing:.02em}
 .waybar .wb-search:focus-within{border-color:#a7f0e9}
-.waybar .wb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.waybar .wb-search input{all:unset;box-sizing:border-box;width:9.5em;padding:7px 4px 7px 14px;font-size:13px;color:#e9ffff;cursor:text}
+.waybar .wb-search input{all:unset;box-sizing:border-box;width:8.5em;padding:7px 4px 7px 14px;font-size:13px;color:#e9ffff;cursor:text}
 .waybar .wb-search input::placeholder{color:#e9ffffb0}
 .waybar .wb-search button{display:inline-flex;align-items:center;justify-content:center;width:34px;height:32px;opacity:1}
 .waybar .wb-glass{display:block;width:12px;height:12px;border:2px solid #e9ffff;border-radius:50%;position:relative}
 .waybar .wb-glass:after{content:"";position:absolute;width:7px;height:2px;background:#e9ffff;right:-7px;bottom:-3px;transform:rotate(45deg)}
 .waybar .wb-search button:focus-visible{outline-offset:-3px}
-@media (max-width:760px){
-  .waybar:not(.wb-in) .wb-right{display:contents}
-  .waybar:not(.wb-in) .wb-pill{grid-row:1;grid-column:2;justify-self:end}
-  .waybar:not(.wb-in) .wb-search{grid-column:1/-1;grid-row:3;width:100%}
-  .waybar .wb-search input{flex:1;width:auto;font-size:16px}
-  .waybar.wb-open .wb-search{width:100%}
+
+/* ---------- signed out: desktop ---------- */
+.waybar:not(.wb-in){grid-template-columns:auto minmax(0,1fr) auto;background:linear-gradient(180deg,#032332c9,#073b50d9);border-bottom:0}
+.waybar:not(.wb-in) .wb-logo{grid-column:1;grid-row:1;font-size:15px}
+.waybar:not(.wb-in) .wb-pub{grid-column:2;grid-row:1;justify-content:center;flex-wrap:wrap}
+.waybar:not(.wb-in) .wb-pub a{white-space:nowrap}
+.waybar:not(.wb-in) .wb-menu-btn{display:none}
+.waybar:not(.wb-in) .wb-tools{grid-column:3;grid-row:1;display:flex;align-items:center;gap:10px}
+.waybar .wb-auth{flex-wrap:nowrap;gap:8px}
+.waybar .wb-login,.waybar .wb-signup{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 16px;border-radius:100px;
+  border:1px solid #c7ffff77;opacity:1;text-transform:none;letter-spacing:.02em;font-size:14px;font-weight:700;white-space:nowrap}
+.waybar .wb-signup{background:#a7f0e9;border-color:#a7f0e9;color:#052b3c}
+.waybar .wb-signup:hover{background:#d2fff9}
+.waybar .wb-login:hover{background:#0a3a50}
+.waybar .wb-login[aria-current=page],.waybar .wb-signup[aria-current=page]{box-shadow:none;padding-bottom:0}
+
+/* Older per-page nav bars are hidden wherever the shared bar is present. */
+body:has(#waybar) nav.topbar{display:none}
+
+/* Medium widths: the section links wrap under the logo instead of squeezing. */
+@media (max-width:1000px) and (min-width:761px){
+  .waybar:not(.wb-in){grid-template-columns:minmax(0,1fr) auto}
+  .waybar:not(.wb-in) .wb-pub{grid-column:1/-1;grid-row:2}
+  .waybar:not(.wb-in) .wb-tools{grid-column:2}
+  .waybar .wb-search input{width:7em}
 }
 
-.waybar .wb-right{flex-wrap:nowrap}
-.waybar .wb-search input{width:8.5em}
-@media (max-width:760px){.waybar .wb-right{flex-wrap:wrap}}
-
-/* Keep the site identity centered; section navigation remains in its own row. */
-.waybar{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px 16px}
-.waybar .wb-logo{grid-column:2;grid-row:1;justify-self:center}
-.waybar .wb-mid{grid-column:1/-1;grid-row:2;justify-content:center}
-.waybar .wb-right{grid-column:3;grid-row:1}
+/* ---------- phone: compact header; bottom bar and side panel carry the navigation ---------- */
 @media (max-width:760px){
-  .waybar{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
-  .waybar .wb-pub{grid-column:1/-1;grid-row:2;justify-content:center}
-  .waybar:not(.wb-in) .wb-pill{grid-column:3;grid-row:1}
-  .waybar:not(.wb-in) .wb-search{grid-column:1/-1;grid-row:3}
-  .waybar.wb-in .wb-burger,.waybar.wb-open .wb-burger{grid-column:3;grid-row:1}
-  .waybar.wb-open .wb-mid{grid-column:1/-1;grid-row:2}
-  .waybar.wb-open .wb-right{grid-column:1/-1;grid-row:3}
+  .waybar{gap:8px;padding:8px 16px;letter-spacing:.1em;min-height:56px}
+  .waybar .wb-logo{font-size:14px;display:inline-flex;align-items:center;min-height:44px}
+  /* signed in: logo | search | account, search field opens as its own row */
+  .waybar.wb-in{grid-template-columns:minmax(0,1fr) auto auto}
+  .waybar.wb-in .wb-home,.waybar.wb-in .wb-mid,.waybar.wb-in .wb-invite{display:none}
+  .waybar.wb-in .wb-logo{grid-column:1;grid-row:1;justify-self:start;font-size:14px}
+  .waybar.wb-in .wb-right{display:contents}
+  .waybar.wb-in .wb-search-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;opacity:1;grid-column:2;grid-row:1}
+  .waybar.wb-in .wb-search-toggle[aria-expanded=true]{background:#0a3a50}
+  .waybar.wb-in .wb-who{grid-column:3;grid-row:1}
+  .waybar.wb-in .wb-search{display:none}
+  .waybar.wb-in.wb-search-open .wb-search{display:flex;grid-column:1/-1;grid-row:2;width:100%}
+  .waybar.wb-in .wb-name{width:44px;height:44px;padding:0;justify-content:center;border-radius:50%}
+  .waybar.wb-in .wb-name-text,.waybar.wb-in .wb-caret{display:none}
+  .waybar.wb-in .wb-avatar{display:inline-flex;font-size:16px;font-weight:800;letter-spacing:0;text-transform:none}
+  .waybar .wb-search input{flex:1;width:auto;min-width:0;font-size:16px;padding:11px 4px 11px 14px}
+  .waybar .wb-search button{width:44px;height:44px}
+  /* signed out: row 1 logo and Menu; row 2 search with Log in and Sign up beside it */
+  .waybar:not(.wb-in){grid-template-columns:minmax(0,1fr) auto}
+  .waybar:not(.wb-in) .wb-logo{grid-column:1;grid-row:1}
+  .waybar:not(.wb-in) .wb-pub{display:none}
+  .waybar:not(.wb-in) .wb-menu-btn{display:inline-flex;align-items:center;gap:8px;grid-column:2;grid-row:1;min-height:44px;padding:0 14px;border:1px solid #c7ffff55;border-radius:100px;opacity:1;text-transform:none;letter-spacing:.02em;font-size:14px;font-weight:700}
+  .waybar:not(.wb-in) .wb-menu-btn[aria-expanded=true]{border-color:#a7f0e9;background:#0a3a50}
+  .waybar:not(.wb-in) .wb-tools{grid-column:1/-1;grid-row:2;width:100%;gap:8px}
+  .waybar:not(.wb-in) .wb-search{flex:1 1 0;min-width:0}
+  .waybar .wb-login,.waybar .wb-signup{min-height:44px;padding:0 12px;font-size:14px}
+  .waybar .wb-auth{flex:none;gap:6px}
+}
+@media (max-width:359px){
+  .waybar:not(.wb-in) .wb-login,.waybar:not(.wb-in) .wb-signup{padding:0 9px;font-size:13px}
+  .waybar .wb-logo{letter-spacing:.14em;font-size:13px}
 }
 
+/* ---------- bottom bar (members, phone only) ---------- */
+.wb-bottom{display:none}
+@media (max-width:760px){
+  .wb-bottom{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:fixed;left:0;right:0;bottom:0;z-index:70;
+    padding:0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    background:#052b3c;border-top:1px solid #a7f0e955;box-shadow:0 -6px 20px #0006;
+    font:600 min(.75rem,4.6vw)/1.15 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;letter-spacing:0;text-transform:none}
+  .wb-bottom a,.wb-bottom button{all:unset;box-sizing:border-box;cursor:pointer;color:#cfeeee;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+    min-height:3.5rem;padding:6px 2px;text-align:center;font:inherit;position:relative;-webkit-tap-highlight-color:transparent}
+  .wb-bottom .wb-label{max-width:100%;overflow-wrap:break-word}
+  .wb-bottom [aria-current=page]{color:#fff;background:#0a3a50}
+  .wb-bottom [aria-current=page]:before{content:"";position:absolute;top:0;left:22%;right:22%;height:3px;border-radius:0 0 3px 3px;background:#a7f0e9}
+  .wb-bottom [aria-expanded=true]{color:#fff;background:#0c3d55}
+  .wb-bottom a:focus-visible,.wb-bottom button:focus-visible{outline:2px solid #a7f0e9;outline-offset:-4px;border-radius:6px}
+  /* room so the bar never covers content or the last controls on a page */
+  html.wb-has-bottom body{padding-bottom:calc(4.5rem + env(safe-area-inset-bottom))}
+}
+@media (max-width:760px) and (orientation:landscape) and (max-height:480px){
+  .wb-bottom a,.wb-bottom button{flex-direction:row;gap:6px;min-height:2.75rem}
+  html.wb-has-bottom body{padding-bottom:calc(3.5rem + env(safe-area-inset-bottom))}
+}
+
+/* ---------- side panel: opens from the right, next to its trigger ---------- */
+.wb-layer{position:fixed;inset:0;z-index:100;font:500 1rem/1.35 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;letter-spacing:0;text-transform:none;color:#e9ffff}
+.wb-layer[hidden]{display:none}
+.wb-scrim{position:absolute;inset:0;background:#021520b3}
+.wb-panel{position:absolute;top:0;right:0;bottom:0;width:min(23.5rem,92vw);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  background:#06283a;border-left:1px solid #c7ffff33;box-shadow:-18px 0 50px #0008;
+  padding:max(.75rem,env(safe-area-inset-top)) max(1rem,env(safe-area-inset-right)) calc(1.25rem + env(safe-area-inset-bottom)) 1rem;
+  animation:wb-in .18s ease-out}
+.wb-panel:focus{outline:none}
+@keyframes wb-in{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.wb-panel{animation:none}}
+.wb-panel-head{display:flex;align-items:center;justify-content:space-between;gap:.75rem;position:sticky;top:0;background:#06283a;padding:.25rem 0 .5rem;z-index:1}
+.wb-panel-head h2{margin:0;font-size:1.25rem;font-weight:800;letter-spacing:.02em;color:#fff}
+.wb-close{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:.4rem;min-height:2.75rem;padding:0 .9rem 0 .7rem;border:1px solid #c7ffff66;border-radius:100px;cursor:pointer;color:#e9ffff;font:700 .9rem/1 Inter,system-ui,sans-serif}
+.wb-close .wb-ico{width:20px;height:20px}
+.wb-close:hover{background:#0c3d55}
+.wb-group{margin:.5rem 0 1rem}
+.wb-group h3{margin:0 0 .35rem;padding:0 .25rem;font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#a7f0e9}
+.wb-group ul{list-style:none;margin:0;padding:0}
+.wb-group li+li{margin-top:2px}
+.wb-group a{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:.8rem;width:100%;min-height:3rem;padding:.55rem .6rem;border-radius:12px;cursor:pointer;color:#e9ffff;font:inherit;position:relative}
+.wb-group a:hover{background:#0c3d55}
+.wb-group a:focus-visible{outline:2px solid #a7f0e9;outline-offset:-2px}
+.wb-group a[aria-current=page]{background:#0a3a50;box-shadow:inset 3px 0 0 #a7f0e9}
+.wb-group .wb-ico{color:#a7f0e9}
+.wb-item-text{display:flex;flex-direction:column;min-width:0}
+.wb-item-label{font-size:1rem;font-weight:700;color:#fff;overflow-wrap:break-word}
+.wb-item-desc{font-size:.85rem;opacity:.78;margin-top:1px;overflow-wrap:break-word}
+html.wb-lock,html.wb-lock body{overflow:hidden}
+
+/* ---------- back to surface ---------- */
 .wb-to-top{position:fixed;right:12px;bottom:12px;z-index:45;padding:10px 14px;border:1px solid #a7f0e980;border-radius:999px;background:#052b3c;color:#fff;text-decoration:none;font:600 13px/1.2 system-ui,sans-serif;box-shadow:0 3px 14px #0006}
 .wb-to-top:focus-visible{outline:2px solid #a7f0e9;outline-offset:3px}
-
-@media(max-width:760px){
- .waybar:not(.wb-in) .wb-pub{display:none}
- .waybar:not(.wb-in).wb-open .wb-pub{display:flex;grid-column:1/-1;grid-row:2;flex-direction:column;align-items:flex-start}
- .waybar:not(.wb-in) .wb-public-menu{display:inline-flex;grid-column:1;grid-row:1;justify-self:start;border:1px solid #c7ffff55;border-radius:100px;padding:7px 12px;opacity:1}
-}
-
-.wb-floating{position:fixed;z-index:49;bottom:12px;right:12px;display:flex;flex-wrap:wrap;gap:4px;padding:5px;background:#052b3cf2;border:1px solid #a7f0e980;border-radius:14px;box-shadow:0 3px 14px #0006}
-.wb-floating a{display:block;padding:8px 9px;color:#fff;text-decoration:none;font:600 12px/1.2 system-ui,sans-serif;white-space:nowrap}
-.wb-floating a:focus-visible{outline:2px solid #a7f0e9;outline-offset:-2px;border-radius:4px}
+.wb-floating{position:fixed;z-index:49;bottom:12px;right:12px;display:flex;padding:3px;background:#052b3cf2;border:1px solid #a7f0e980;border-radius:999px;box-shadow:0 3px 14px #0006}
+.wb-floating[hidden]{display:none}
+.wb-floating a{display:flex;align-items:center;min-height:44px;padding:0 14px;color:#fff;text-decoration:none;font:600 13px/1.2 system-ui,sans-serif;white-space:nowrap}
+.wb-floating a:focus-visible{outline:2px solid #a7f0e9;outline-offset:-2px;border-radius:999px}
 .wb-floating-ready #return{display:none!important}
 .wb-floating-ready{padding-bottom:75px}
-@media(max-width:480px){.wb-floating{left:8px;right:8px;bottom:8px;justify-content:space-around}.wb-floating a{padding:8px 5px;font-size:11px}}
-
-.wb-floating{align-items:center;flex-wrap:nowrap}
-.wb-floating .wb-floating-access{white-space:nowrap;color:#fff;font:600 12px/1.2 system-ui,sans-serif}
-.wb-floating .wb-floating-access a{display:inline;padding:6px 2px}
-.wb-floating-search{display:flex;align-items:center;min-width:0;border:1px solid #c7ffff77;border-radius:999px;background:#06212f;overflow:hidden}
-.wb-floating-search label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.wb-floating-search input{width:125px;min-width:0;padding:7px;border:0;background:transparent;color:#fff;font:14px system-ui,sans-serif}
-.wb-floating-search input::placeholder{color:#d7ecec}
-.wb-floating-search button{border:0;padding:6px 9px;background:transparent;color:#fff;cursor:pointer}
-.wb-floating-search .wb-glass{display:block;width:12px;height:12px;border:2px solid currentColor;border-radius:50%;position:relative}
-.wb-floating-search .wb-glass:after{content:"";position:absolute;width:6px;height:2px;right:-5px;bottom:-2px;background:currentColor;transform:rotate(45deg)}
-@media(max-width:480px){.wb-floating{justify-content:space-between}.wb-floating .wb-floating-access{font-size:11px}.wb-floating-search{flex:1}.wb-floating-search input{width:100%;font-size:16px}.wb-floating .wb-floating-return{font-size:11px;padding:7px 4px}}
-
-/* Signed-out public navigation: equal sides, one centered identity. */
-.waybar:not(.wb-in){grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);background:linear-gradient(180deg,#032332c9,#073b50d9);border-bottom:0}
-.waybar:not(.wb-in) .wb-logo{grid-column:2;grid-row:1;font-size:15px;white-space:nowrap}
-.waybar:not(.wb-in) .wb-public-left{grid-column:1;grid-row:1;justify-content:flex-end;flex-wrap:nowrap}
-.waybar:not(.wb-in) .wb-public-right{grid-column:3;grid-row:1;justify-content:flex-start;flex-wrap:nowrap}
-.waybar:not(.wb-in) .wb-public-left a,.waybar:not(.wb-in) .wb-public-right a{white-space:nowrap}
-.waybar:not(.wb-in) .wb-public-mobile{display:none}
-.wb-floating[hidden]{display:none}
-@media(max-width:760px){
- .waybar:not(.wb-in) .wb-public-left,.waybar:not(.wb-in) .wb-public-right{display:none}
- .waybar:not(.wb-in) .wb-public-menu{display:inline-flex;grid-column:1;grid-row:1;justify-self:start}
- .waybar:not(.wb-in).wb-open .wb-public-mobile{display:flex;grid-column:1/-1;grid-row:2;flex-direction:column;align-items:flex-start;gap:14px;padding:8px 0}
-}
-
-/* Signed-out header: centered identity, paired links and a usable search field. */
-@media(min-width:1101px){
- .waybar:not(.wb-in){padding-left:176px;padding-right:176px}
- .waybar:not(.wb-in) .wb-public-search{position:absolute;right:16px;top:50%;transform:translateY(-50%);width:140px}
- .waybar:not(.wb-in) .wb-public-search input{width:90px}
-}
-@media(max-width:1100px){
- .waybar:not(.wb-in) .wb-public-left,.waybar:not(.wb-in) .wb-public-right{display:none}
- .waybar:not(.wb-in) .wb-public-menu{display:inline-flex;grid-column:1;grid-row:1;justify-self:start;border:1px solid #c7ffff55;border-radius:100px;padding:7px 12px;opacity:1}
- .waybar:not(.wb-in) .wb-public-search{display:flex;grid-column:1/-1;grid-row:2;width:100%}
- .waybar:not(.wb-in) .wb-public-search input{flex:1;width:auto;font-size:16px}
- .waybar:not(.wb-in).wb-open .wb-public-mobile{display:flex;grid-column:1/-1;grid-row:3;flex-direction:column;align-items:flex-start;gap:14px;padding:8px 0}
-}
-
-/* Signed in: a big Home button at the left (the most used link), the site name centered above the links. */
-.waybar.wb-in .wb-home{grid-column:1;grid-row:1;justify-self:start;display:inline-flex;align-items:center;opacity:1;
-  font-size:16px;font-weight:800;letter-spacing:.16em;padding:11px 24px;border:2px solid #a7f0e9;border-radius:100px;background:#0a3a50}
-.waybar.wb-in .wb-home:hover,.waybar.wb-in .wb-home[aria-current=page]{background:#0f4d6a}
-.waybar.wb-in .wb-right{flex-wrap:wrap}
 @media (max-width:760px){
-  .waybar.wb-in .wb-home{font-size:15px;padding:10px 18px}
-  .waybar.wb-in .wb-logo{font-size:13px}
+  html.wb-has-bottom .wb-floating{bottom:calc(4.5rem + env(safe-area-inset-bottom) + 8px)}
+  html.wb-has-bottom body.wb-floating-ready{padding-bottom:calc(4.5rem + env(safe-area-inset-bottom))}
 }
 
-/* Signed in: same see-through bar as the public pages, so the waves show through and overlap it. */
-.waybar.wb-in{background:linear-gradient(180deg,#032332c9,#073b50d9);border-bottom:0}
-.wb-in-page .michi-ocean-water{z-index:60}
-
-/* Invite is a main action: a filled button next to search. */
-.waybar.wb-in .wb-invite{display:inline-flex;align-items:center;opacity:1;font-weight:800;letter-spacing:.14em;padding:9px 20px;border-radius:100px;
-  background:#a7f0e9;color:#052b3c}
-.waybar.wb-in .wb-invite:hover,.waybar.wb-in .wb-invite[aria-current=page]{background:#d2fff9;color:#052b3c}
+/* On a phone the crest sits below the bar, so the water stays under it and under the account menu. */
+@media (max-width:760px){.wb-in-page .michi-ocean-water{z-index:40}}

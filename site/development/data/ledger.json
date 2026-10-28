@@ -690,6 +690,16 @@
       "why": "Keep this record current without hand editing.",
       "status_as_of_2026_10_25": "Proposed in this change; not yet merged or live.",
       "evidence_and_limits": "Proposed in this change; not yet merged. The follow-up pull request still needs the maintainer to merge it."
+    },
+    {
+      "id": "D072",
+      "decision_date_or_range": "2026-10-28",
+      "title": "The automatic ledger posting was fixed so its follow-up pull requests can be created",
+      "origin": "Maintainer (PR #65)",
+      "decision_or_proposal": "The automatic ledger posting was fixed so its follow-up pull requests can be created.",
+      "why": "Added automatically when the change was merged.",
+      "status_as_of_2026_10_25": "Merged in PR #65; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live page."
     }
   ]
 }

@@ -1,10 +1,12 @@
 name: Ledger auto-post
 
-# When a pull request is merged into main, and ONLY if it carries the label
-# "ledger" and a body line that starts with "ledger:", open a small follow-up
+# When a pull request is merged into main, and ONLY if its body has a line that
+# starts with "ledger:", open a small follow-up
 # pull request that adds one neutral row to the public development ledger.
 # The row text is the "ledger:" line, never the PR title or any other text.
-# PRs labeled "do-not-publish" or containing "DO NOT PUBLISH" are skipped.
+# PRs labeled "do-not-publish", or with a body line that says only DO NOT PUBLISH (capitals, nothing else on the line), are skipped.
+# Mentioning the phrase inside a sentence does not skip a post.
+# No label is needed: the "ledger:" line is the opt-in.
 # Main is protected, so this opens a PR for the maintainer to merge; it uses
 # only the built-in GITHUB_TOKEN.
 
@@ -22,9 +24,8 @@ jobs:
     if: >-
       github.event.pull_request.merged == true &&
       github.event.pull_request.head.repo.full_name == github.repository &&
-      contains(github.event.pull_request.labels.*.name, 'ledger') &&
       !contains(github.event.pull_request.labels.*.name, 'do-not-publish') &&
-      !startsWith(github.event.pull_request.head.ref, 'ledger-auto/')
+      !startsWith(github.event.pull_request.head.ref, 'ledger-row/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,7 +41,9 @@ jobs:
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
         run: |
           set -eu
-          if printf '%s' "$PR_BODY" | grep -qiE 'do[ -]?not[ -]?publish'; then echo "marked do not publish"; exit 0; fi
+          # If any command fails, name it in a public annotation so the cause can be read without logs.
+          trap 'echo "::error::ledger step failed at script line $LINENO: $BASH_COMMAND"' ERR
+          if printf '%s\n' "$PR_BODY" | tr -d '\r' | grep -qE '^[[:space:]]*DO NOT PUBLISH[[:space:]]*$'; then echo "marked do not publish"; exit 0; fi
           LINE=$(printf '%s\n' "$PR_BODY" | tr -d '\r' | grep -m1 -iE '^ledger:[[:space:]]*[^[:space:]]' | sed -E 's/^[Ll][Ee][Dd][Gg][Ee][Rr]:[[:space:]]*//' || true)
           if [ -z "$LINE" ]; then echo "no ledger: line"; exit 0; fi
           case "$PR_AUTHOR" in wrxminion|ShihanOfMichi) ORIGIN="Maintainer";; *) ORIGIN="Contributor";; esac
@@ -48,11 +51,9 @@ jobs:
           if git diff --quiet; then echo "nothing to add"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          BR="ledger-auto/pr-$PR_NUMBER"
+          BR="ledger-row/pr-$PR_NUMBER"
           git checkout -b "$BR"
           git add site/development
-          git commit -m "Ledger: add row for PR #$PR_NUMBER"
-          git push origin "$BR"
-          gh pr create --base main --head "$BR" \
-            --title "Ledger: add row for PR #$PR_NUMBER" \
-            --body "Adds one public ledger row for #$PR_NUMBER, from its \`ledger:\` line. Check the wording, then merge. The site updates on the next quarter-hour deploy."
+          OUT=$(git commit -m "Ledger: add row for PR #$PR_NUMBER" 2>&1) || { echo "::error::commit failed: $(echo "$OUT" | tr '\n' ' ' | cut -c1-400)"; exit 1; }
+          OUT=$(git push origin "$BR" 2>&1) || { echo "::error::push failed: $(echo "$OUT" | tr '\n' ' ' | cut -c1-400)"; exit 1; }
+          OUT=$(gh pr create --base main --head "$BR" --title "Ledger: add row for PR #$PR_NUMBER" --body "Adds one public ledger row for #$PR_NUMBER, from its ledger: line. Check the wording, then merge. The site updates on the next quarter-hour deploy." 2>&1) || { echo "::error::pr create failed: $(echo "$OUT" | tr '\n' ' ' | cut -c1-400)"; exit 1; }
