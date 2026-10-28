@@ -68,6 +68,8 @@ function action(fn, slot) {
   };
 }
 async function q(promise) { const { data, error } = await promise; if (error) throw error; return data; }
+// Research projects, finding links and "AI help write my claim" live in claim-links.js (migration 0026).
+const CL = window.TheWayClaim ? window.TheWayClaim.make({ sb, h, q, notice, action, render, can }) : null;
 
 const askDialog = document.getElementById('ask');
 function ask(label) {
@@ -1107,11 +1109,13 @@ async function researchView() {
   let slugTouched = false;
   slug.addEventListener('input', () => { slugTouched = true; });
   title.addEventListener('input', () => { if (!slugTouched) slug.value = slugify(title.value); });
+  const picker = CL ? CL.startPicker() : null;
 
   render(
     h('p', { class: 'overline', text: 'Findings' }),
     h('h1', { text: 'Research desk' }),
     h('p', { class: 'lede', text: 'Make a claim, back it with evidence, face the strongest case against it, and pick a verdict. The AI fact-checks it, a second member reviews it, and then it is published.' }),
+    CL ? h('p', {}, h('a', { href: '#/projects', text: 'Research projects' }), ' · findings grouped by topic') : null,
     deskGuide(),
     h('details', { class: 'small how-ai' }, h('summary', { text: 'How the AI fact-check works' }),
       h('p', { class: 'muted', text: 'Our own AI, running on our own computer; the checking stays local and drafts never go to an outside AI company. It opens every source, checks links, quotes and numbers, saves each source (a public Wayback copy plus our own private screenshot and text), and flags only glaring problems. It never decides: you can fix it or send it on anyway, a second member always reviews it, and the public finding says what the AI check found.' })),
@@ -1133,8 +1137,9 @@ async function researchView() {
       h('p', { class: 'muted small', text: CLAIM_RULE }), msg,
       h('form', { onsubmit: action(async () => {
         const row = (await q(sb.from('research_items').insert({ slug: slug.value, title: title.value.trim(), question: question.value.trim() }).select('id')))[0];
+        if (picker) await picker.link(row.id);   // a failed link never loses the finding; link it again from its page
         location.hash = `#/research/${row.id}`;
-      }, msg) }, h('label', {}, 'The claim', title), h('label', {}, 'Why it matters', question),
+      }, msg) }, h('label', {}, 'The claim', title), h('label', {}, 'Why it matters', question), picker ? picker.node : null,
         h('details', {}, h('summary', { text: 'Web address (filled in for you)' }), h('label', {}, 'Lowercase words and dashes', slug)),
         h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Start')))) : null,
   );
@@ -1159,6 +1164,8 @@ async function researchItemView(id) {
   const msg = h('div');
   const reload = () => researchItemView(id);
   const latest = versions[versions.length - 1];
+  const canLink = can('reviewer') || can('editor') || (can('researcher') && state.user && (item.created_by === state.user.id || versions.some((v) => v.author_id === state.user.id)));
+  const linksPanel = CL ? await CL.itemLinks(item, canLink, reload) : null;
 
   const fakeOf = (vid) => new Set(checks.filter((c) => c.version_id === vid && c.status === 'done')
     .flatMap((c) => (c.findings || []).filter((f) => f.kind === 'quote_missing').map((f) => f.source_id)));
@@ -1250,11 +1257,14 @@ async function researchItemView(id) {
           sendBox));
     }
 
+    const aiNote = h('div');
+    if (CL) CL.versionNote(v.id).then((n) => { if (n) aiNote.append(n); });
     return h('div', { class: 'panel' },
       h('div', { class: 'row' }, h('h3', { text: `Version ${v.version_no}` }),
         h('span', {}, item.published_version_id === v.id ? h('span', { class: 'tag ok', text: 'current' }) : null, ' ', stateTag(st))),
       h('div', { class: 'meta', text: `${v.author ? v.author.display_name : '?'} · ${when(v.created_at)} · why: ${v.reason_for_change}` }),
       v.claim ? h('p', { class: 'claim' }, h('span', { text: v.claim }), ' ', verdictTag(v.verdict)) : null,
+      aiNote,
       h('p', { text: v.summary }),
       h('details', {}, h('summary', { text: 'Evidence, the other side, how we checked' }),
         h('h3', { text: 'Evidence' }), h('div', { class: 'post', text: v.body || '—' }),
@@ -1302,6 +1312,7 @@ async function researchItemView(id) {
         const [nv] = await q(sb.from('research_versions').insert({ item_id: item.id, claim: fd.get('claim').trim(), verdict: fd.get('verdict'),
           summary: fd.get('summary'), body: fd.get('body') || '', counterargument: fd.get('counterargument'), counter_response: fd.get('counter_response'),
           methods: fd.get('methods'), limitations: fd.get('limitations'), reason_for_change: reason.value }).select('id'));
+        if (aiBox && nv) { try { await CL.draftUsed(aiBox, nv.id); } catch { /* the version is saved; only the AI note is missing */ } }
         // carry the sources over as new rows (the old version keeps its own, frozen); a quote the AI
         // could not find on its page is left behind, so it has to be added again with the real words
         const carry = latest ? carrySources(latest) : [];
@@ -1322,6 +1333,8 @@ async function researchItemView(id) {
         ta('limitations', 'Limits: what this cannot tell you', 3, 20000, 3),
         h('label', {}, 'Reason for this version', reason),
         h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Save version')));
+    const aiBox = CL ? CL.draftBox(form) : null;
+    if (aiBox) form.prepend(aiBox.node);
     const carry = latest ? carrySources(latest) : [];
     const left = latest ? srcs.filter((x) => x.version_id === latest.id).length - carry.length : 0;
     if (latest) form.prepend(h('p', { class: 'muted small', text: `Everything below starts from version ${latest.version_no}. `
@@ -1336,7 +1349,7 @@ async function researchItemView(id) {
     h('h1', { text: (latest && latest.claim) || item.title }), h('p', { class: 'lede', text: item.question }),
     item.published_version_id ? h('p', {}, h('a', { href: `findings.html#${encodeURIComponent(item.slug)}`, text: 'View the published finding' }), ' · ',
       h('a', { href: `record.html?item=${encodeURIComponent(item.slug)}`, text: 'History' })) : null,
-    msg, newVersion, versionBlocks,
+    msg, linksPanel, newVersion, versionBlocks,
   );
 }
 
@@ -2433,6 +2446,7 @@ async function route() {
       case 'research': return (can('researcher') || can('reviewer'))
         ? (parts[1] ? await researchItemView(+parts[1]) : await researchView()) : render(notice('Research desk members only.'));
       case 'private': return parts[1] === 'team' ? await teamFileView(decodeURIComponent(parts[2] || '')) : (parts[1] ? await privateNoteView(+parts[1]) : await privateResearchView());
+      case 'projects': return CL && (can('researcher') || can('reviewer')) ? await CL.projectsView() : render(notice('Research desk members only.'));
       case 'admin': return can('admin') ? await adminView() : render(notice('Admins only.'));
       case 'account': return accountView();
       case 'password': return passwordView(false);
