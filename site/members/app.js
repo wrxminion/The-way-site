@@ -151,7 +151,7 @@ let recovering = false; // true after a "Forgot password" link until the new pas
 const TS_KEY = cfg.turnstileSiteKey || '';
 const TS_BLOCKED = 'The human check could not load. If an ad or script blocker is on, allow challenges.cloudflare.com for this page, or try another browser.';
 const TS_FAILED = 'The human check did not pass. Reload the page and try again.';
-const TS_SLOW = 'The human check is taking too long. Tick the box above if it shows one, then try again.';
+const TS_SLOW = 'The human check is taking too long. If a box shows just above the buttons, tick it, then try again. On a slow connection, wait a moment and press the button again.';
 let tsLoading = null;
 function loadTurnstile() {
   if (!tsLoading) {
@@ -171,18 +171,32 @@ function humanCheck() {
   if (!TS_KEY) return { el: null, token: async () => undefined };
   const el = h('div', { class: 'human-check' });
   const status = h('p', { class: 'small dim', role: 'status' });
+  const wrap = h('div', {}, el, status);
   let id = null, ready = null, problem = null, waiting = [];
   const settle = (fn) => waiting.splice(0).forEach(fn);
-  loadTurnstile().then((ts) => {
+  // Draw the widget only once its box is really on the page (the view is drawn after this runs), and drop it if the view is drawn
+  // again, which would otherwise delete the box in the middle of the challenge ("Cannot find Widget").
+  const onPage = () => new Promise((res, rej) => {
+    let n = 0;
+    (function look() { if (wrap.isConnected) return res(); if (++n > 100) return rej(new Error(TS_FAILED)); setTimeout(look, 100); })();
+  });
+  Promise.all([loadTurnstile(), onPage()]).then(([ts]) => {
     id = ts.render(el, {
       sitekey: TS_KEY,
       callback: (t) => { ready = t; problem = null; status.textContent = ''; settle((w) => w.ok(t)); },
       'expired-callback': () => { ready = null; },
       'error-callback': () => { problem = TS_FAILED; status.textContent = TS_FAILED; settle((w) => w.no(new Error(TS_FAILED))); return true; },
     });
+    const watch = setInterval(() => {
+      if (wrap.isConnected) return;
+      clearInterval(watch);
+      try { ts.remove(id); } catch { /* already gone */ }
+      id = null; ready = null;
+      settle((w) => w.no(new Error('The page was redrawn during the human check. Press the button again.')));
+    }, 500);
   }).catch((err) => { problem = err.message; status.textContent = err.message; settle((w) => w.no(err)); });
   return {
-    el: h('div', {}, el, status),
+    el: wrap,
     // one token per call; the widget then makes a fresh one for the next
     token: () => new Promise((ok, no) => {
       if (problem) return no(new Error(problem));
@@ -191,7 +205,7 @@ function humanCheck() {
       status.textContent = 'Checking you are a person…';
       let timer = null;
       const w = { ok: (t) => { clearTimeout(timer); take(t); }, no: (e) => { clearTimeout(timer); no(e); } };
-      timer = setTimeout(() => { waiting = waiting.filter((x) => x !== w); status.textContent = ''; no(new Error(TS_SLOW)); }, 30000);
+      timer = setTimeout(() => { waiting = waiting.filter((x) => x !== w); status.textContent = ''; no(new Error(TS_SLOW)); }, 60000);
       waiting.push(w);
     }),
   };
@@ -239,8 +253,14 @@ function teacherQuestion() {
   return { el, value: () => { const r = el.querySelector('input:checked'); return r ? r.value : ''; } };
 }
 
+// The answers given on the create-account steps, kept in this browser until the join screen, so nobody is asked twice.
+const ADULT_KEY = 'theway.age18', TEACH_KEY = 'theway.teacher';
+const keptAdult = () => { try { return localStorage.getItem(ADULT_KEY) === 'yes'; } catch { return false; } };
+const keptTeacher = () => { try { return localStorage.getItem(TEACH_KEY) || ''; } catch { return ''; } };
+const keepAnswers = (teacher) => { try { localStorage.setItem(ADULT_KEY, 'yes'); if (teacher) localStorage.setItem(TEACH_KEY, teacher); else localStorage.removeItem(TEACH_KEY); } catch { /* private mode: asked again on the join screen */ } };
+const forgetAnswers = () => { try { localStorage.removeItem(ADULT_KEY); localStorage.removeItem(TEACH_KEY); } catch { /* ignore */ } };
+
 async function signInView() {
-  const human = humanCheck();
   // Open sign-up (migration 0018): anyone can make an account with their email, no invitation code.
   let open = false;
   try { const { data } = await sb.rpc('signup_is_open'); open = data === true; } catch { /* closed: invitation only */ }
@@ -283,7 +303,7 @@ async function signInView() {
   }
 
   // Members get a link only if their account already exists; nobody new is created that way.
-  async function sendLink(emailIn, asMember, msg, code) {
+  async function sendLink(emailIn, asMember, msg, code, human) {
     const email = emailIn.value.trim();
     if (!emailIn.reportValidity()) return;
     const captchaToken = await human.token();
@@ -304,11 +324,12 @@ async function signInView() {
   // and covers every form on the page.
   function memberPanel(main) {
     const msg = h('div');
+    const human = humanCheck(); // its own widget, right above the buttons, so it is always in view when you press Sign in
     const emailIn = h('input', { type: 'email', name: 'email', required: true, autocomplete: 'username', placeholder: 'you@example.org' });
     const passIn = h('input', { type: 'password', name: 'password', autocomplete: 'current-password', placeholder: 'Password' });
     const code = codeEntry(emailIn, msg);
     const form = h('form', { class: 'signin', onsubmit: action(async (ev) => {
-      if (ev.submitter && ev.submitter.value === 'link') return sendLink(emailIn, true, msg, code);
+      if (ev.submitter && ev.submitter.value === 'link') return sendLink(emailIn, true, msg, code, human);
       if (!passIn.value) { passIn.focus(); throw new Error('Type your password, or choose "' + T.linkInstead + '".'); }
       const { error } = await sb.auth.signInWithPassword({ email: emailIn.value.trim(), password: passIn.value, options: { captchaToken: await human.token() } });
       if (error) throw new Error(/invalid login/i.test(error.message || '') ? T.badPassword : error.message);
@@ -316,6 +337,7 @@ async function signInView() {
     }, msg) },
       h('label', {}, 'Email', emailIn),
       h('label', {}, 'Password', passIn),
+      human.el,
       h('div', { class: 'btns' },
         h('button', { class: main ? 'primary' : '', value: 'member' }, T.memberBtn),
         h('button', { value: 'link' }, T.linkInstead)));
@@ -326,7 +348,7 @@ async function signInView() {
     }, msg), text: T.forgot }));
     return h('div', { class: main ? 'panel signin-panel' : 'panel' },
       main ? null : h('h2', { text: T.memberTitle }),
-      h('p', { class: 'muted', text: T.member }), msg, form, forgot, code.form, main ? human.el : null);
+      h('p', { class: 'muted', text: T.member }), msg, form, forgot, code.form);
   }
 
   // Invite only: people with an invitation code, plus a quiet "tell me when it's public" note.
@@ -335,6 +357,7 @@ async function signInView() {
     const emailIn = h('input', { type: 'email', name: 'new-email', required: true, autocomplete: 'email', placeholder: 'you@example.org' });
     const code = codeEntry(emailIn, msg);
     const age = ageQuestion();
+    const human = humanCheck();
     const stopped = ageStopped();
     age.note.hidden = !stopped;
     const form = h('form', { hidden: stopped, onsubmit: action(async (ev) => {
@@ -345,10 +368,11 @@ async function signInView() {
         msg.append(notice(T.thanks, 'ok'));
         return;
       }
-      await sendLink(emailIn, false, msg, code);
+      await sendLink(emailIn, false, msg, code, human);
     }, msg) },
       age.el,
       h('label', {}, 'Email', emailIn),
+      human.el,
       h('div', { class: 'btns' },
         h('button', { class: invited || open ? 'primary' : '', value: 'code' }, invited ? T.invitedBtn : open ? T.openBtn : T.codeBtn)),
       invited || open ? null : h('div', { class: 'notify-public' },
@@ -357,7 +381,46 @@ async function signInView() {
     return h('div', { class: invited ? 'panel signin-panel' : 'panel' },
       invited ? null : h('h2', { text: open ? T.openTitle : T.newTitle }),
       h('p', { class: 'muted', text: invited ? T.invited : open ? T.openText : T.code }),
-      msg, age.note, form, code.form, invited ? human.el : null);
+      msg, age.note, form, code.form);
+  }
+
+  // Create an account, open sign-up: a button first, then "Are you 18 or older?", then (on Yes) the teacher question and email.
+  function createPanel(invited) {
+    const msg = h('div');
+    const emailIn = h('input', { type: 'email', name: 'new-email', required: true, autocomplete: 'email', placeholder: 'you@example.org' });
+    const code = codeEntry(emailIn, msg);
+    const age = ageQuestion();
+    const teacher = teacherQuestion();
+    const stopped = ageStopped();
+    // The human check is made when the form is revealed and sits right above the button, so it is in view.
+    let human = null;
+    const humanSlot = h('div');
+    const form = h('form', { hidden: true, onsubmit: action(async () => {
+      if (!age.check(form)) return;
+      keepAnswers(teacher.value());
+      await sendLink(emailIn, false, msg, code, human || { token: async () => undefined });
+    }, msg) },
+      teacher.el,
+      h('label', {}, 'Email', emailIn),
+      humanSlot,
+      h('div', { class: 'btns' }, h('button', { class: 'primary', value: 'code' }, invited ? T.invitedBtn : T.openBtn)));
+    const step1 = h('div', { hidden: !invited || stopped }, age.el);
+    age.el.addEventListener('change', () => {
+      if (age.value() === 'yes') {
+        age.note.hidden = true; form.hidden = false;
+        if (!human) { human = humanCheck(); if (human.el) humanSlot.append(human.el); }
+        return;
+      }
+      age.check(form); // No: remembers it in this browser, hides the form, shows the note
+      age.el.querySelectorAll('input').forEach((i) => { i.disabled = true; });
+    });
+    const start = h('button', { type: 'button', class: 'primary', 'data-create-start': '', onclick: () => { start.hidden = true; step1.hidden = false; } }, 'Create an account');
+    start.hidden = invited || stopped;
+    age.note.hidden = !stopped;
+    return h('div', { class: invited ? 'panel signin-panel' : 'panel' },
+      h('h2', { text: invited ? T.invitedTitle : 'New here?' }),
+      h('p', { class: 'muted', text: invited ? T.invited : T.openText }),
+      msg, h('div', { class: 'btns' }, start), step1, age.note, form, code.form);
   }
 
   // Sign-in comes first. Someone who arrived on an invitation link sees their invitation first
@@ -366,10 +429,11 @@ async function signInView() {
   render(
     h('p', { class: 'overline', text: 'The Way · Members' }),
     h('h1', { text: invited ? T.invitedTitle : T.title }),
-    ...(invited || open ? [newcomerPanel(invited), memberPanel(false)] : [memberPanel(true), newcomerPanel(false)]),
+    ...(invited ? [createPanel(true), memberPanel(false)] : open ? [memberPanel(true), createPanel(false)] : [memberPanel(true), newcomerPanel(false)]),
   );
+  app.dataset.view = 'signin';
   // The bar's "Sign up" link (#/signup) lands on the create-account box.
-  if (location.hash === '#/signup') { const f = app.querySelector('[name=new-email]'); if (f) { f.scrollIntoView({ block: 'center' }); f.focus({ preventScroll: true }); } }
+  if (location.hash === '#/signup') { const b = app.querySelector('[data-create-start]'); const f = app.querySelector('[name=new-email]'); const t = (b && !b.hidden) ? b : f; if (t) { t.scrollIntoView({ block: 'center' }); if (b && !b.hidden) b.click(); } }
 }
 
 // Choose a new password: from the account page, or after a "Forgot password" email.
@@ -407,13 +471,14 @@ async function joinView() {
   const name = h('input', { name: 'name', required: true, minlength: 2, maxlength: 40, placeholder: 'How other members will see you' });
   const age = ageQuestion();
   const teacher = teacherQuestion();
+  const knownAdult = keptAdult(), knownTeacher = keptTeacher();
   render(
     h('h1', { text: 'Welcome' }),
     h('p', { class: 'lede', text: carried ? 'You are signed in. Your invitation code is filled in from your link. Pick a display name to accept it.' : open ? 'You are signed in. Pick a display name to finish creating your account. Got an invitation code? You can leave it in the box, but you do not need one.' : 'You are signed in. Enter your invitation code (it starts with WAY-) to accept it.' }),
     h('div', { class: 'panel' }, msg,
       age.note,
       h('form', { id: 'join-form', onsubmit: action(async (ev) => {
-        if (!age.check(ev.target)) {
+        if (!knownAdult && !age.check(ev.target)) {
           // Under 18: no account is made. Sign out so the half-made sign-in does not linger.
           await sb.auth.signOut();
           return;
@@ -421,13 +486,15 @@ async function joinView() {
         if (code.value.trim()) await q(sb.rpc('redeem_invitation', { code: code.value.trim(), display_name: name.value }));
         else await q(sb.rpc('join_open', { display_name: name.value }));
         try { await sb.rpc('confirm_adult'); } catch { /* migration 0041 not run yet: do not block joining */ }
-        if (teacher.value()) { try { await sb.rpc('set_teacher', { p_teacher: teacher.value() === 'yes', p_public: false }); } catch { /* migration 0042 not run yet: do not block joining */ } }
+        const said = knownTeacher || teacher.value();
+        forgetAnswers();
+        if (said) { try { await sb.rpc('set_teacher', { p_teacher: said === 'yes', p_public: false }); } catch { /* migration 0042 not run yet: do not block joining */ } }
         forgetInvite();
         await loadMe(); drawNav();
         passwordView(false, true);
       }, msg) },
-        age.el,
-        teacher.el,
+        knownAdult ? null : age.el,
+        knownTeacher ? null : teacher.el,
         h('label', {}, open ? 'Invitation code (optional)' : 'Invitation code', code),
         h('label', {}, 'Display name', name),
         h('p', { class: 'small dim', text: 'Your email stays private. Members only see your display name. Choose it carefully: after this, only an admin can change it.' }),
@@ -2688,6 +2755,7 @@ function takeTarget() {
 }
 
 async function boot() {
+  delete app.dataset.view;
   keepTarget();
   takeInviteFromLink();
   let linkProblem = null;
@@ -2718,6 +2786,11 @@ async function boot() {
 
 window.addEventListener('hashchange', () => {
   if (state.me && state.me.status === 'active') route();
+  else if (!state.user && app.dataset.view === 'signin') {
+    // Already showing the sign-in page: redrawing it would delete the human-check widget mid-challenge (the page's own skip links
+    // change the hash). Only the bar's Sign up link (#/signup) does something: open the Create an account step.
+    if (location.hash === '#/signup') { const b = app.querySelector('[data-create-start]'); if (b && !b.hidden) b.click(); }
+  }
   else boot(); // signed out: every address shows the sign-in page
 });
 boot();
