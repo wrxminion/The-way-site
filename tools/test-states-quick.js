@@ -50,6 +50,9 @@ const CASES = [['ok', 'OK', 35.47, -97.52], ['nc', 'NC', 35.78, -78.64], ['me', 
       const k = Object.keys(stored.contests || {}).find((x) => x.startsWith('measure:'));
       ok(k && stored.contests[k].picks[0] === 'yes', ST + ': Yes saved to the shared store (' + k + ')');
       ok(await m.getByRole('button', { name: 'Yes', exact: true }).first().getAttribute('aria-pressed') === 'true', ST + ': Yes shows pressed');
+      await m.getByRole('button', { name: 'Not sure yet', exact: true }).click();
+      const st3 = await page.evaluate((s) => JSON.parse(localStorage.getItem('theway.ballot.v1.' + s) || '{}'), ST);
+      ok(st3.contests[k].undecided === true && st3.contests[k].picks.length === 0, ST + ': Not sure yet is saved and clears the Yes');
     }
     const nbt = page.locator('#ballot .q-note').first();
     await nbt.getByRole('button').click();

@@ -143,7 +143,7 @@
     try {
       var j = JSON.parse(sessionStorage.getItem(MARKS) || 'null');
       if (!j || j.state !== ST || !Array.isArray(j.items)) return [];
-      return j.items.filter(function (i) { return i && /^\/preview\/pages\/guide(-[a-z]{2})?\/(races|measures)\/[a-z0-9-]+\.html$/.test(i.p); }).slice(0, 80);
+      return j.items.filter(function (i) { return i && /^\/preview\/pages\/guide(-[a-z]{2})?\/(races|measures|local\/m)\/[a-z0-9-]+\.html$/.test(i.p); }).slice(0, 80);
     } catch (e) { return []; }
   }
   function slugOf(p) { return (/\/([a-z0-9-]+)\.html$/.exec(p) || [])[1] || ''; }
@@ -152,7 +152,7 @@
     if (e === undefined) {
       ui.defs[path] = 'loading';
       fetch(path, { credentials: 'omit' }).then(function (r) { if (!r.ok) throw 0; return r.text(); }).then(function (t) {
-        var doc = new DOMParser().parseFromString(t, 'text/html'), kind = /\/measures\//.test(path) ? 'measure' : 'race';
+        var doc = new DOMParser().parseFromString(t, 'text/html'), kind = /\/(measures|local\/m)\//.test(path) ? 'measure' : 'race';
         var defs = kind === 'measure' ? [WB.parseMeasure(doc, slugOf(path), path)] : WB.parseRace(doc, location.origin + path, slugOf(path));
         defs.forEach(function (x) { delete x.ul; });
         ui.defs[path] = defs.filter(function (x) { return x.options.length; });
@@ -225,11 +225,17 @@
       note);
   }
   // What is already saved for a race or measure page, in a few words, so a collapsed row shows it without opening.
-  function glance(d, it) {
-    var slug = (/\/([a-z0-9-]+)\.html$/.exec(it.p) || [])[1], out = [], noted = false, why = false;
-    Object.keys(d.contests).forEach(function (k) {
+  // the saved contests that belong to one race or measure page
+  function contestsOf(d, it) {
+    var slug = (/\/([a-z0-9-]+)\.html$/.exec(it.p) || [])[1];
+    return Object.keys(d.contests).filter(function (k) {
       var c = d.contests[k];
-      if (c.url !== it.p && !(slug && (k === 'race:' + slug || k === 'measure:' + slug || k.indexOf('race:' + slug + ':') === 0))) return;
+      return c.url === it.p || (slug && (k === 'race:' + slug || k === 'measure:' + slug || k.indexOf('race:' + slug + ':') === 0));
+    }).map(function (k) { return d.contests[k]; });
+  }
+  function glance(d, it) {
+    var out = [], noted = false, why = false;
+    contestsOf(d, it).forEach(function (c) {
       if (c.picks.length) out.push('Your pick: ' + c.picks.map(function (id) { return optLabel(c, id); }).join(', '));
       else {
         var L = Object.keys(c.leans || {}).map(function (id) { return optLabel(c, id) + ' ' + ({ yes: 'Yes', maybe: 'Maybe', no: 'No' })[c.leans[id]]; });
@@ -243,6 +249,16 @@
     if (noted) out.push('Notes');
     return out.join(' · ');
   }
+  // Clear my choice / Remove from my ballot, for whatever is saved on this race or measure
+  function rowActions(d, it) {
+    var cs = contestsOf(d, it);
+    if (!cs.length) return null;
+    var picked = cs.some(function (c) { return c.picks.length || c.undecided || Object.keys(c.leans || {}).length || Object.keys(c.ranks || {}).length; });
+    function each(fn) { update(function (x) { contestsOf(x, it).forEach(fn); }); }
+    return h('div', { class: 'btns' },
+      picked ? h('button', { class: 'quiet', type: 'button', text: 'Clear my choice', onclick: function () { each(function (k) { k.picks = []; k.undecided = false; k.leans = {}; k.ranks = {}; }); } }) : null,
+      h('button', { class: 'quiet', type: 'button', text: 'Remove from my ballot', onclick: function () { update(function (x) { contestsOf(x, it).forEach(function (k) { delete x.contests[k.key]; }); }); } }));
+  }
   function markRow(d, it) {
     var open = !!ui.open[it.p], defs = open ? defsFor(it.p) : (Array.isArray(ui.defs[it.p]) ? ui.defs[it.p] : null);
     var chosen = Array.isArray(defs) && defs.length ? defs.map(function (x) { var c = d.contests[x.key]; return c ? choiceText(c) : 'Not chosen yet'; }).join(' · ') : null;
@@ -254,7 +270,8 @@
       h('div', { class: 'row' }, h('strong', { class: 'mk-race', text: it.t }), chosen ? h('span', { class: 'tag', text: chosen }) : null, b),
       open ? (defs === 'loading' || defs === undefined ? h('p', { class: 'muted small', text: 'Loading…' })
         : defs === 'error' ? h('p', { class: 'muted small' }, 'Could not load this page. ', link(it.p, 'Open it in the guide'), ' and use the My Ballot buttons there.')
-        : defs.map(function (x) { return markForm(d, x); })) : null);
+        : defs.map(function (x) { return markForm(d, x); })) : null,
+      open ? rowActions(d, it) : null);
   }
   function loadAll() {
     ui.all = 'loading'; draw();
@@ -274,13 +291,22 @@
     Promise.all([parse(b + 'measures/index.html', 'measure'), parse(b + 'races/index.html', 'race')]).then(function () { ui.all = items; }).catch(function () { ui.all = items.length ? items : 'error'; }).then(draw);
   }
   function markPanel(d) {
-    var mine = handoff(), kids = [];
+    var mine = handoff(), kids = [], seen = {};
+    mine.forEach(function (i) { seen[i.p] = true; });
+    var extra = touched(d).filter(function (c) { return c.url && !seen[c.url] && !mine.some(function (i) { return contestsOf(d, i).indexOf(c) >= 0; }); })
+      .filter(function (c) { if (seen[c.url]) return false; seen[c.url] = true; return true; })
+      .map(function (c) { return { p: c.url, t: c.title }; });
     kids.push(h('h2', { text: 'Mark your ballot' }),
       h('p', { class: 'muted' }, 'This is where you choose, and keep a note for each race and measure. Open one, pick, write a note if you like. Your Yes, Maybe, No and ranking numbers are private notes to yourself: nothing is totaled, scored or shown to anyone. Everything saves in this browser as you go. Nothing is sent to us.'));
     if (mine.length) {
       kids.push(h('h3', { text: 'Your ballot (from the spot you picked on the map)' }),
         h('ul', { class: 'list' }, mine.map(function (i) { return markRow(d, { p: i.p, t: i.t || slugOf(i.p) }); })));
-    } else {
+    }
+    if (extra.length) {
+      kids.push(h('h3', { text: mine.length ? 'Also on your plan' : 'Your plan so far' }),
+        h('ul', { class: 'list' }, extra.map(function (i) { return markRow(d, i); })));
+    }
+    if (!mine.length && !extra.length) {
       kids.push(h('p', { class: 'notice warn' }, 'Not sure which races are yours? ', link('/preview/pages/states/', 'Pick your state or enter your address'), ' on the map and press "Open my ballot". Your own races will be listed here. Until then you can open any race below.'));
     }
     kids.push(h('h3', { text: 'Every race and measure in ' + WB.STATES[ST] }));
@@ -289,22 +315,6 @@
     else if (Array.isArray(ui.all)) kids.push(h('ul', { class: 'list' }, ui.all.map(function (i) { return markRow(d, i); })));
     else kids.push(h('div', { class: 'btns' }, h('button', { type: 'button', id: 'mk-all', onclick: loadAll, text: 'Show every race and measure' })));
     return h('section', { class: 'panel noprint', id: 'mark' }, kids);
-  }
-
-  function choicesPanel(d) {
-    var cs = touched(d);
-    return h('section', { class: 'panel noprint' },
-      h('h2', { text: 'Your choices so far' }),
-      cs.length ? h('ul', { class: 'list' }, cs.map(function (c) {
-        return h('li', {},
-          h('div', { class: 'row' },
-            h('strong', {}, c.url ? link(c.url, c.title) : c.title),
-            h('span', { class: 'tag ' + (c.picks.length ? 'ok' : 'warn'), text: choiceText(c) })),
-          h('div', { class: 'btns' },
-            c.picks.length || c.undecided ? h('button', { class: 'quiet', type: 'button', onclick: function () { update(function (x) { var k = x.contests[c.key]; k.picks = []; k.undecided = false; }); } , text: 'Clear my choice' }) : null,
-            h('button', { class: 'quiet', type: 'button', onclick: function () { update(function (x) { delete x.contests[c.key]; }); }, text: 'Remove from my ballot' })));
-      }))
-        : h('p', { class: 'muted' }, 'You have not picked anything for ' + WB.STATES[ST] + ' yet. Open a race or a ballot measure in the voter guide and use the My Ballot buttons.'));
   }
 
   function factCard(d, f) {
@@ -546,7 +556,7 @@
       }
     }
     var d = WB.read(ST);
-    kids.push(statePicker(have), markPanel(d), choicesPanel(d), factsPanel(d), comparePanel(d), sheet(d), keepPanel(d), accountPanel(d), sharePanel(d));
+    kids.push(statePicker(have), markPanel(d), factsPanel(d), comparePanel(d), sheet(d), keepPanel(d), accountPanel(d), sharePanel(d));
     app.replaceChildren.apply(app, kids);
     if (focus) { var f = app.querySelector('[data-k="' + focus.replace(/"/g, '') + '"]'); if (f) f.focus(); }
   }

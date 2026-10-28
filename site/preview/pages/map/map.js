@@ -262,8 +262,8 @@ function measure(m,tag){
   const card=el('div',{cls:'measure'},[titleEl]);
   if(rel)card.append(el('div',{cls:'m-see'},[gLink(rel,'See details: official analysis, arguments for and against, and who is paying →')]));
   card.append(el('p',{cls:'m-what',text:m.what}));
-  const q=quickRow(def,{text:'How would you vote?',aria:'Your private answer for '+m.code},[['Yes','yes'],['No','no']],c=>c.picks[0]||'',
-    (c,v,on)=>{c.picks=on?[]:[v];if(c.picks.length)c.undecided=false;});
+  const q=quickRow(def,{text:'How would you vote?',aria:'Your private answer for '+m.code},[['Yes','yes'],['No','no'],['Not sure yet','unsure']],c=>c.undecided?'unsure':(c.picks[0]||''),
+    (c,v,on)=>{if(v==='unsure'){c.undecided=!on;c.picks=[];}else{c.picks=on?[]:[v];if(c.picks.length)c.undecided=false;}});
   if(q)card.append(q);
   const nb=noteBox(def,'Your private reason for '+m.code,c=>c.why||'',(c,t)=>{c.why=t.slice(0,WB.LIMITS.note);},c=>c.picks.length>0);
   if(nb)card.append(nb);
@@ -298,7 +298,16 @@ function localBlock(at){
     const j=m.juris.toLowerCase(),nj=norm(m.juris);
     if(j===cty+' county'||j==='city and county of '+cty||(plc&&nj===plc))sure.push(m);else maybe.push(m);
   }
-  const item=m=>el('li',{},[gLink(m.page,m.title&&m.title.indexOf(m.code)>=0?m.title:m.code+(m.title?': '+m.title:'')),m.title&&m.title.indexOf(m.juris)>=0?null:el('span',{cls:'what',text:' · '+m.juris})]);
+  // quick Yes / No / Not sure yet for a local measure, saved like the statewide ones (key measure:<page slug>)
+  const voteRow=m=>{
+    const path=pathOf(m.page),slug=slugOf(path);
+    if(!slug)return null;
+    const title=m.code+(m.title?': '+m.title:'');
+    const def={key:'measure:'+slug,kind:'measure',title,url:path,seats:1,options:[{id:'yes',label:'Yes',sub:'',url:''},{id:'no',label:'No',sub:'',url:''}]};
+    return quickRow(def,{text:'How would you vote?',aria:'Your private answer for '+title},[['Yes','yes'],['No','no'],['Not sure yet','unsure']],c=>c.undecided?'unsure':(c.picks[0]||''),
+      (c,v,on)=>{if(v==='unsure'){c.undecided=!on;c.picks=[];}else{c.picks=on?[]:[v];if(c.picks.length)c.undecided=false;}});
+  };
+  const item=m=>el('li',{},[gLink(m.page,m.title&&m.title.indexOf(m.code)>=0?m.title:m.code+(m.title?': '+m.title:'')),m.title&&m.title.indexOf(m.juris)>=0?null:el('span',{cls:'what',text:' · '+m.juris}),voteRow(m)]);
   if(sure.length){
     wrap.append(el('div',{cls:'note',text:'On every ballot in '+(plc?at.place+' and ':'')+at.county+' County:'}));
     wrap.append(el('ul',{cls:'locallist'},sure.map(item)));

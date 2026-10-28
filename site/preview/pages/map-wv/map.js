@@ -226,8 +226,8 @@ function measure(m,tag){
   const card=el('div',{cls:'measure'},[el('div',{cls:'m-title'},[rel?gLink(rel,m.code+' '+m.title):el('span',{text:m.code+' '+m.title}),tag?el('span',{cls:'tag',text:tag}):null])]);
   if(rel)card.append(el('div',{cls:'m-see'},[gLink(rel,'See details: official ballot title, full text, and what each vote means →')]));
   if(m.what)card.append(el('p',{cls:'m-what',text:m.what}));
-  const q=quickRow(def,{text:'How would you vote?',aria:'Your private answer for '+m.code},[['Yes','yes'],['No','no']],c=>c.picks[0]||'',
-    (c,v,on)=>{c.picks=on?[]:[v];if(c.picks.length)c.undecided=false;});
+  const q=quickRow(def,{text:'How would you vote?',aria:'Your private answer for '+m.code},[['Yes','yes'],['No','no'],['Not sure yet','unsure']],c=>c.undecided?'unsure':(c.picks[0]||''),
+    (c,v,on)=>{if(v==='unsure'){c.undecided=!on;c.picks=[];}else{c.picks=on?[]:[v];if(c.picks.length)c.undecided=false;}});
   if(q)card.append(q);
   const nb=noteBox(def,'Your private reason for '+m.code,c=>c.why||'',(c,t)=>{c.why=t.slice(0,WB.LIMITS.note);},c=>c.picks.length>0);
   if(nb)card.append(nb);

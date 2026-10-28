@@ -22,7 +22,7 @@
     var items = [], seen = {};
     spot.querySelectorAll('a[href]').forEach(function (a) {
       var u; try { u = new URL(a.getAttribute('href'), location.href); } catch (e) { return; }
-      if (u.origin !== location.origin || !/^\/preview\/pages\/guide(-[a-z]{2})?\/(races|measures)\/[a-z0-9-]+\.html$/.test(u.pathname) || seen[u.pathname]) return;
+      if (u.origin !== location.origin || !/^\/preview\/pages\/guide(-[a-z]{2})?\/(races|measures|local\/m)\/[a-z0-9-]+\.html$/.test(u.pathname) || seen[u.pathname]) return;
       seen[u.pathname] = true;
       items.push({ p: u.pathname, t: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 120) });
     });
