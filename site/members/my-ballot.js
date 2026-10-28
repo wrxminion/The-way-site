@@ -280,7 +280,7 @@
     var chosen = Array.isArray(defs) && defs.length ? defs.map(function (x) { var c = d.contests[x.key]; return c ? choiceText(c) : 'Not chosen yet'; }).join(' · ') : null;
     var saved = glance(d, it);
     if (saved) chosen = saved;
-    var b = h('button', { type: 'button', class: 'quiet', 'aria-expanded': open ? 'true' : 'false', 'data-k': 'mk' + it.p, text: open ? 'Close' : 'Mark' });
+    var b = h('button', { type: 'button', class: 'quiet', 'aria-expanded': open ? 'true' : 'false', 'data-k': 'mk' + it.p, 'aria-label': (open ? 'Close ' : 'Choose for ') + it.t, text: open ? 'Close' : 'Choose' });
     b.addEventListener('click', function () { ui.open[it.p] = !ui.open[it.p]; draw(); });
     return h('li', {},
       h('div', { class: 'row' }, h('strong', { class: 'mk-race', text: it.t }), chosen ? h('span', { class: 'tag', text: chosen }) : null, b),
