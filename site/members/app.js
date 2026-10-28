@@ -29,7 +29,7 @@ function h(tag, attrs, ...kids) {
     else if (k === 'style') el.style.cssText = v;   // the page CSP blocks a style attribute, but allows setting it through the style object
     else el.setAttribute(k, v === true ? '' : v);
   }
-  for (const kid of kids.flat()) {
+  for (const kid of kids.flat(Infinity)) {
     if (kid == null || kid === false) continue;
     el.append(kid instanceof Node ? kid : document.createTextNode(String(kid)));
   }
