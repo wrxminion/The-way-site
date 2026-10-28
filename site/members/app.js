@@ -2197,7 +2197,7 @@ function claimContext(cl, c, doc) {
   const level = { n: 0 };
   const draw = () => {
     if (level.n === 0) return slot.replaceChildren(h('div', { class: 'btns' }, h('button', { class: 'quiet', type: 'button', onclick: () => { level.n = 1; draw(); } }, 'Expand context')));
-    if (!hit) return slot.replaceChildren(h('p', { class: 'small muted', text: 'This claim’s wording was not found on the case page, so there is no paragraph to show. ' }, ''),
+    if (!hit) return slot.replaceChildren(h('p', { class: 'small muted', text: 'No paragraph on the case page matches this claim closely (it may come from a table or a number list). ' }, ''),
       h('a', { class: 'small', href: caseUrl(c), target: '_blank', rel: 'noopener noreferrer', text: 'Open the case page ↗' }));
     const el = hit.el;
     const box = h('div', { class: 'panel small' });
