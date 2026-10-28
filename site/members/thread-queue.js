@@ -63,6 +63,30 @@ function prelimBox(r) {
   return wrap;
 }
 
+// Web leads found by our own computer. Unchecked until a reviewer who picked the item says verified or rejected (reason required, logged).
+function leadsBox(r) {
+  const holder = h('div', { class: 'pt-excerpt' });
+  const paint = async () => {
+    let d; try { d = await call('thread_leads_for_review', { p_intake: r.id }); } catch (e) { holder.replaceChildren(); return; }
+    const list = (d && d.leads) || [];
+    if (!list.length) { holder.replaceChildren(h('p', { class: 'muted small', text: d && (d.status === 'pending' || d.status === 'running') ? 'Web leads: still being looked for.' : 'Web leads: none found.' })); return; }
+    holder.replaceChildren(h('strong', { text: 'Web leads (AI-found, not checked until you decide):' }), ...list.map((l) => {
+      const row = h('div', { class: 'small' }, safeLink(l.url), h('span', { class: 'muted', text: ` ${l.state}${l.archived ? ', copy kept' : ''}` }), h('div', { class: 'pt-excerpt', text: l.excerpt }));
+      if (r.claimed_by_me && l.state === 'unchecked') {
+        for (const [v, label] of [['verified', 'Verified'], ['rejected', 'Reject']]) {
+          row.append(h('button', { type: 'button', class: 'quiet', text: label, onclick: async () => {
+            const reason = window.prompt(`Why ${v === 'verified' ? 'verified' : 'rejected'}? (5 to 300 characters. This is logged with your name.)`); if (reason === null) return;
+            try { await call('thread_lead_review', { p_lead: l.id, p_verdict: v, p_reason: reason }); note.textContent = v === 'verified' ? 'Lead verified.' : 'Lead rejected.'; await paint(); } catch (e) { note.textContent = e.message || 'That did not work.'; }
+          } }), ' ');
+        }
+      }
+      return row;
+    }));
+  };
+  paint();
+  return holder;
+}
+
 // The picture is hidden by default. Opening it needs the item picked by you, the sender allowing it, and a written reason; it is logged.
 async function openImage(r, holder, btn) {
   const reason = window.prompt('Why is the picture absolutely needed for this review? (8 to 300 characters)\nThis is logged with your name.');
@@ -103,6 +127,7 @@ function item(r, mineId) {
       : r.image_state === 'text_only' ? h('p', { class: 'muted small', text: 'The sender chose to send only the text. There is no picture.' })
       : r.image_state === 'deleted' ? h('p', { class: 'muted small', text: 'The picture has been deleted. Use the text.' }) : null,
     prelimBox(r),
+    leadsBox(r),
     r.matches && r.matches.length ? h('div', {}, h('strong', { class: 'small', text: 'We may already have:' }), r.matches.map((m) => h('div', { class: 'pt-match small', text: `${m.title} (${m.kind}, ${m.strength === 'source' ? 'cites this link' : m.why})` }))) : null,
     h('details', {}, h('summary', { text: 'Why this score' }), parts(r.parts)));
   const acts = h('div', { class: 'pt-actions' });
