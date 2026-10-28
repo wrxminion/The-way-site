@@ -800,6 +800,16 @@
       "why": "Added automatically when the change was merged.",
       "status_as_of_2026_10_25": "Merged in PR #78; live appearance and behavior not yet verified.",
       "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live page."
+    },
+    {
+      "id": "D083",
+      "decision_date_or_range": "2026-10-28",
+      "title": "The development ledger now keeps its own pending update pull requests current, so several ",
+      "origin": "Maintainer (PR #82)",
+      "decision_or_proposal": "The development ledger now keeps its own pending update pull requests current, so several changes can merge in any order without clashes.",
+      "why": "Added automatically when the change was merged.",
+      "status_as_of_2026_10_25": "Merged in PR #82; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live page."
     }
   ]
 }
