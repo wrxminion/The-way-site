@@ -12,6 +12,7 @@
 .essay-body em{color:#ebffff}
 .cases-hub{padding:0 16px 40px}
 .cases-hub .hub{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cases-hub .hub-lead{margin:0 0 16px}
 .cases-hub .more{text-align:center;color:var(--muted)}
 @media(max-width:700px){.cases-hub .hub{grid-template-columns:1fr}}
 @media(max-width:700px){
