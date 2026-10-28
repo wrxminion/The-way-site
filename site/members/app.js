@@ -171,18 +171,32 @@ function humanCheck() {
   if (!TS_KEY) return { el: null, token: async () => undefined };
   const el = h('div', { class: 'human-check' });
   const status = h('p', { class: 'small dim', role: 'status' });
+  const wrap = h('div', {}, el, status);
   let id = null, ready = null, problem = null, waiting = [];
   const settle = (fn) => waiting.splice(0).forEach(fn);
-  loadTurnstile().then((ts) => {
+  // Draw the widget only once its box is really on the page (the view is drawn after this runs), and drop it if the view is drawn
+  // again, which would otherwise delete the box in the middle of the challenge ("Cannot find Widget").
+  const onPage = () => new Promise((res, rej) => {
+    let n = 0;
+    (function look() { if (wrap.isConnected) return res(); if (++n > 100) return rej(new Error(TS_FAILED)); setTimeout(look, 100); })();
+  });
+  Promise.all([loadTurnstile(), onPage()]).then(([ts]) => {
     id = ts.render(el, {
       sitekey: TS_KEY,
       callback: (t) => { ready = t; problem = null; status.textContent = ''; settle((w) => w.ok(t)); },
       'expired-callback': () => { ready = null; },
       'error-callback': () => { problem = TS_FAILED; status.textContent = TS_FAILED; settle((w) => w.no(new Error(TS_FAILED))); return true; },
     });
+    const watch = setInterval(() => {
+      if (wrap.isConnected) return;
+      clearInterval(watch);
+      try { ts.remove(id); } catch { /* already gone */ }
+      id = null; ready = null;
+      settle((w) => w.no(new Error('The page was redrawn during the human check. Press the button again.')));
+    }, 500);
   }).catch((err) => { problem = err.message; status.textContent = err.message; settle((w) => w.no(err)); });
   return {
-    el: h('div', {}, el, status),
+    el: wrap,
     // one token per call; the widget then makes a fresh one for the next
     token: () => new Promise((ok, no) => {
       if (problem) return no(new Error(problem));
@@ -417,6 +431,7 @@ async function signInView() {
     h('h1', { text: invited ? T.invitedTitle : T.title }),
     ...(invited ? [createPanel(true), memberPanel(false)] : open ? [memberPanel(true), createPanel(false)] : [memberPanel(true), newcomerPanel(false)]),
   );
+  app.dataset.view = 'signin';
   // The bar's "Sign up" link (#/signup) lands on the create-account box.
   if (location.hash === '#/signup') { const b = app.querySelector('[data-create-start]'); const f = app.querySelector('[name=new-email]'); const t = (b && !b.hidden) ? b : f; if (t) { t.scrollIntoView({ block: 'center' }); if (b && !b.hidden) b.click(); } }
 }
@@ -2740,6 +2755,7 @@ function takeTarget() {
 }
 
 async function boot() {
+  delete app.dataset.view;
   keepTarget();
   takeInviteFromLink();
   let linkProblem = null;
@@ -2770,6 +2786,11 @@ async function boot() {
 
 window.addEventListener('hashchange', () => {
   if (state.me && state.me.status === 'active') route();
+  else if (!state.user && app.dataset.view === 'signin') {
+    // Already showing the sign-in page: redrawing it would delete the human-check widget mid-challenge (the page's own skip links
+    // change the hash). Only the bar's Sign up link (#/signup) does something: open the Create an account step.
+    if (location.hash === '#/signup') { const b = app.querySelector('[data-create-start]'); if (b && !b.hidden) b.click(); }
+  }
   else boot(); // signed out: every address shows the sign-in page
 });
 boot();
