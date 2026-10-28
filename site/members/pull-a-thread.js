@@ -57,6 +57,7 @@ function matchList(matches) {
     h('strong', {}, m.path ? h('a', { href: m.path, text: m.title }) : m.title),
     h('span', { class: 'muted small', text: ` ${m.kind === 'finding' ? 'A member-checked finding (members can read it)' : m.kind === 'case' ? 'A history case' : 'Already on the site'} · ${m.strength === 'source' ? 'cites the link you sent' : 'shares key words with what you sent'}` }))));
 }
+const lead = () => h('p', { class: 'pt-lead' }, 'Here\u2019s what our records show so far. Follow this thread as we learn more ', h('strong', {}, h('em', { text: 'together!' })));
 function card(kind, title, ...kids) {
   const f = { reviewed: 'pat-reviewed-evidence.svg', related: 'pat-related-evidence.svg', closer: 'pat-needs-review.svg' }[kind];
   return h('section', { class: `pt-outcome pt-${kind}` }, h('h2', {}, icon(f), title), ...kids);
@@ -71,10 +72,10 @@ function outcome(t, receipt) {
     return parts;
   }
   if (t.code === 'answered' || (t.status === 'Answered')) {
-    parts.push(card('reviewed', 'Reviewed evidence', h('p', { text: t.note || 'A reviewer answered this with what we already have.' }), matchList(m),
+    parts.push(card('reviewed', 'Reviewed evidence', lead(), h('p', { text: t.note || 'A reviewer answered this with what we already have.' }), matchList(m),
       h('p', { class: 'muted small', text: 'Status: answered by a reviewer.' })));
   } else if (m.length) {
-    parts.push(card('related', 'Related evidence', h('p', { text: 'We already have something related to what you sent. It does not by itself answer your question, and it is not a review of your item.' }), matchList(m),
+    parts.push(card('related', 'Related evidence', lead(), h('p', { text: 'We already have something related to what you sent. It does not by itself answer your question, and it is not a review of your item.' }), matchList(m),
       receipt ? h('div', { class: 'btns' }, h('button', { type: 'button', onclick: async (ev) => {
         ev.currentTarget.disabled = true;
         const { error } = await sb.rpc('thread_dispute', { p_receipt: receipt });
@@ -97,7 +98,8 @@ function followUp(receipt, box) {
   if (box.querySelector('.pt-still')) return;
   const err = h('p', { class: 'pt-err', role: 'alert' });
   const wrap = h('section', { class: 'pt-still' }, h('h2', {}, icon('pat-progress-static.svg'), 'Still checking...'),
-    h('p', { text: 'You can leave this page. Choose how to hear back.' }));
+    h('p', { text: 'You can leave this page. Choose how to hear back.' }),
+    h('p', {}, 'Follow this thread as we learn more ', h('strong', {}, h('em', { text: 'together!' }))));
   let busy = false;
   const save = async (btn, p, okText) => {
     if (busy) return; busy = true; btn.disabled = true; err.textContent = '';

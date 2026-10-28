@@ -47,6 +47,7 @@ const XSS = '<img src=x onerror="window.__pwned=1">';
   ok((await page.locator('.pt-matches a').first().innerText()) === XSS, 'markup in a title appears literally');
   ok(await page.locator('text=abc123').count() >= 1, 'receipt code is shown');
   ok(await page.locator('.pt-related').count() === 1, 'word-match shows as Related evidence, not as an answer');
+  ok(await page.locator('.pt-related .pt-lead em').innerText() === 'together!', 'the reply leads with Frank\'s line, together in bold italics');
   // a link typed in the question box is sent as a link
   sent = null;
   await page.click('input[name=mode][value=question]', { force: true });
