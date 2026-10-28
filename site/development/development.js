@@ -27,7 +27,11 @@
   const checked = (r) => !unticked.has(r.id) && (r.checked_by_person === true || ticked.has(r.id));
   const STALE = /(a person|anyone|someone|no one)[^.]*\bnot\b[^.]*\b(checked|compared|tried|tested|followed|verified|opened)|not (yet |independently )?verified|not yet checked|live (appearance|behavior)[^.]*not yet/i;
   const evidence = (r) => { const t = r.evidence_and_limits || ''; if (!checked(r)) return t; const keep = t.split(/(?<=[.!?])\s+/).filter((x) => x && !STALE.test(x)); keep.push('Checked on the live site by a person.'); return keep.join(' '); };
-  note.textContent = data.note;
+  const det = el('details', 'notice notice-warn'), sm = el('summary'), more = el('span', 'notice-more');
+  more.append(el('span', 'on-closed', 'Details'), el('span', 'on-open', 'Hide details'));
+  sm.append(el('span', 'notice-tag', 'Warning'), el('span', 'notice-sum', 'Dates up to 2026-10-25 were reconstructed from project discussions; only LIVE_VERIFIED rows were checked on the live site.'), more);
+  det.append(sm, el('div', 'notice-body', data.note));
+  note.replaceChildren(det);
   const draw = () => {
     f.replaceChildren(...['all', 'live', 'in progress', 'planned', 'deferred', 'declined'].map((k) => { const b = el('button', null, k); b.type = 'button'; b.setAttribute('aria-pressed', String(k === sel)); b.onclick = () => { sel = k; draw(); }; return b; }));
     sorts.replaceChildren(...[['new', 'Newest first'], ['old', 'Oldest first']].map(([k, l]) => { const b = el('button', null, l); b.type = 'button'; b.setAttribute('aria-pressed', String(k === order)); b.onclick = () => { order = k; draw(); }; return b; }));
