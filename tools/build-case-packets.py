@@ -144,14 +144,14 @@ def build(slug, extra):
     checked = (re.search(r"Sources checked (\d{4}-\d{2}-\d{2})", meta) or [None, ""])[1]
     start = src.index('<div class="essay-body">') + len('<div class="essay-body">')
     body = src[start:src.index("</div></article>", start)]
-    body = re.sub(r'<aside class="review-banner[^>]*>.*?</aside>', "", body, flags=re.S)
+    body = re.sub(r'<(aside|details) class="[^"]*review-banner[^"]*"[^>]*>.*?</\1>', "", body, flags=re.S)
     body = re.sub(r'<div class="meta">.*?</div>', "", body, count=1, flags=re.S)
     body = re.sub(r'<div class="report-box">.*?</div>', "", body, flags=re.S)
     body = re.sub(r'<nav class="toc".*?</nav>', "", body, flags=re.S)
 
     # review status and verifier
     review = extra.get("reviews", {}).get(slug)
-    page_says_reviewed = bool(re.search(r'class="review-banner reviewed"', src))
+    page_says_reviewed = bool(re.search(r'class="[^"]*review-banner reviewed[^"]*"', src))
     if review and review.get("reviewed_by"):
         status = "Reviewed by a person."
         verifier = "Verified by %s on %s." % (review["reviewed_by"], review.get("reviewed_at", "a date not recorded"))
