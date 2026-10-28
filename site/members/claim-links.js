@@ -11,8 +11,10 @@ const RELATION_HELP = {
   related: 'Connected, but it neither supports nor cuts against it.',
 };
 const AI_LABEL = 'AI draft, unchecked';
-const POLL_MS = 6000;
-const POLL_MAX = 100;   // about 10 minutes, then it keeps waiting in the queue and the box says so
+const NONE_TEXT = 'None given in the sources.';
+const OPTIONAL = ['counterargument', 'counter_response', 'methods', 'limitations'];
+const FIELD_LABEL = { claim: 'The claim', summary: 'Short answer', body: 'Evidence', counterargument: 'The case against', counter_response: 'Our answer', methods: 'How we checked', limitations: 'Limits' };
+const POLL_MS = 4000;   // about 30 minutes of polling at most; the request stays in line after that
 
 const slugify = (s) => s.toLowerCase().normalize('NFKD').replace(/[^a-z0-9\s-]/g, '').trim()
   .replace(/\s+/g, '-').replace(/-+/g, '-').slice(0, 70).replace(/^-|-$/g, '');
@@ -152,71 +154,216 @@ function make(ctx) {
       admin ? h('div', { class: 'panel' }, h('h2', { text: 'Add or edit a project' }), h('p', { class: 'muted small', text: 'Admins only. Changes are recorded in the moderation log. Retiring a project keeps its links but stops new ones.' }), form) : null);
   }
 
+  // ---------------------------------------------------------------- shared pieces for the AI helpers
+  // A box under a field: tick "None given in the sources" instead of writing. The ticked box stores the sentence itself,
+  // so reviewers read it plainly and the database sees an ordinary value. Claim and evidence have no such box.
+  function noneBoxes(formEl) {
+    const api = { tick() {} };
+    const boxes = {};
+    for (const name of OPTIONAL) {
+      const el = formEl.elements[name]; const lab = el && el.closest('label');
+      if (!el || !lab) continue;
+      const cb = h('input', { type: 'checkbox', id: `cl-none-${name}` });
+      const set = (on) => {
+        cb.checked = on;
+        if (on) { if (el.value.trim() !== NONE_TEXT) el.dataset.prev = el.value; el.value = NONE_TEXT; el.readOnly = true; el.classList.add('cl-none-on'); }
+        else { el.readOnly = false; el.classList.remove('cl-none-on'); if (el.value.trim() === NONE_TEXT) el.value = el.dataset.prev || ''; }
+      };
+      cb.addEventListener('change', () => set(cb.checked));
+      lab.after(h('label', { class: 'cl-none', for: cb.id }, cb, ' None given in the sources'));
+      boxes[name] = set;
+      if (el.value.trim() === NONE_TEXT) set(true);
+    }
+    api.tick = (name, on) => { if (boxes[name]) boxes[name](on); };
+    return api;
+  }
+  function tagField(formEl, name, text) {
+    const el = formEl.elements[name]; const lab = el && el.closest('label');
+    if (lab && !lab.querySelector('.cl-field-tag')) lab.prepend(h('span', { class: 'tag warn cl-field-tag', text: text || AI_LABEL }), ' ');
+  }
+
+  // Live status for a queued AI job: elapsed time, place in line, a plain reason from the worker, the worker heartbeat,
+  // and Cancel. It polls draft_progress; the clock ticks on its own between polls.
+  function tracker() {
+    const line = h('p', { class: 'cl-live', role: 'status', 'aria-live': 'polite' }); const sub = h('p', { class: 'muted small' });
+    const cancel = h('button', { type: 'button', class: 'quiet', text: 'Cancel' });
+    const node = h('div', { class: 'cl-tracker' }, line, sub, h('div', { class: 'btns' }, cancel)); node.hidden = true;
+    let st = null; let id = null; let polls = 0; let handlers = {}; let pollTimer = null; let clockTimer = null;
+    const mmss = (n) => `${Math.floor(n / 60)}:${String(n % 60).padStart(2, '0')}`;
+    const ago = (n) => n < 90 ? `${n} seconds` : n < 5400 ? `${Math.round(n / 60)} minutes` : `${Math.round(n / 3600)} hours`;
+    function paint() {
+      if (!st) return;
+      const add = Math.max(0, Math.round((Date.now() - st.at) / 1000)); const p = st.p;
+      const clock = p.status === 'running' ? `Working ${mmss((p.run_secs || 0) + add)}` : `Waiting ${mmss((p.age_secs || 0) + add)}`;
+      let msg;
+      if (!p.online) msg = 'The AI computer is offline right now. Your request is saved and will run when it is back.';
+      else if (p.status === 'running') msg = `${p.note || 'Working on your request'}…`;
+      else msg = `${p.worker_state && p.worker_note ? p.worker_note : 'In line for the AI computer.'} ${p.position > 0 ? `You are number ${p.position + 1} in line.` : 'You are next.'}`;
+      line.textContent = `${clock} · ${msg}`;
+      sub.textContent = p.last_seen_secs == null ? 'The AI computer has not checked in yet.'
+        : p.online ? `The AI computer checked in ${ago(p.last_seen_secs + add)} ago, so this is not frozen.` : `Last heard from the AI computer ${ago(p.last_seen_secs + add)} ago.`;
+    }
+    function stop() { clearInterval(pollTimer); clearInterval(clockTimer); pollTimer = clockTimer = null; }
+    async function poll() {
+      if (!node.isConnected) { stop(); return; }
+      const p = await q(sb.rpc('draft_progress', { p_draft: id }));
+      if (!p) { stop(); node.hidden = true; return; }
+      if (p.status === 'queued' || p.status === 'running') { st = { p, at: Date.now() }; paint(); if (++polls > 450) stop(); return; }
+      stop(); node.hidden = true;
+      if (p.status === 'done') handlers.done((await q(sb.from('claim_drafts').select('id,kind,draft,model').eq('id', id)))[0]);
+      else if (p.status === 'failed') handlers.failed(p.error || 'The AI could not finish this time. Please try again later.');
+      else handlers.cancelled();
+    }
+    cancel.addEventListener('click', async () => {
+      cancel.disabled = true;
+      try { await q(sb.rpc('cancel_claim_draft', { p_draft: id })); await poll(); } catch (e) { line.textContent = e.message; } finally { cancel.disabled = false; }
+    });
+    return { node, stop,
+      watch(newId, hs) {
+        stop(); id = newId; handlers = hs; polls = 0; st = null; node.hidden = false; line.textContent = 'Sending your request…'; sub.textContent = '';
+        poll().catch(() => {}); pollTimer = setInterval(() => poll().catch(() => {}), POLL_MS); clockTimer = setInterval(paint, 1000);
+      } };
+  }
+
   // ---------------------------------------------------------------- 4. "AI help write my claim"
-  // draftBox(formEl): returns { node, used(): the draft id when the author applied it, else null }.
-  // The draft only fills the form; the author edits it and must tick the box before the form can be saved.
+  // draftBox(formEl): returns { node, used(), sources(), none }.
+  // The draft only fills the form (never the verdict); each filled box gets its own "AI draft, unchecked" tag; the author
+  // edits it and must tick the box below before the form can be saved.
+  const FILL = [['claim', 'claim'], ['summary', 'summary'], ['body', 'evidence'], ['counterargument', 'counterargument'],
+    ['counter_response', 'counter_response'], ['methods', 'methods'], ['limitations', 'limitations']];
   function draftBox(formEl) {
-    const msg = h('div'); const out = h('div'); const status = h('p', { class: 'muted small' });
+    const msg = h('div'); const out = h('div'); const none = noneBoxes(formEl);
     const notes = h('textarea', { form: 'cl-detached', rows: 5, minlength: 20, maxlength: 6000, placeholder: 'Your notes: what you found, in your own words. Numbers and names you mention can be used in the draft; nothing else will be.' });
     const urls = h('textarea', { form: 'cl-detached', rows: 3, placeholder: 'One source link per line (1 to 5). Web pages only; PDFs cannot be read yet.' });
     const confirmBox = h('input', { type: 'checkbox', id: 'cl-confirm' });
-    const confirmRow = h('label', { class: 'cl-confirm', for: 'cl-confirm' }, confirmBox, ' I rewrote or checked this against the sources. These are my words now, and I stand behind them.');
+    const confirmRow = h('label', { class: 'cl-confirm', for: 'cl-confirm' }, confirmBox, ' I rewrote or checked every box the AI filled against the sources. These are my words now, and I stand behind them.');
     confirmRow.hidden = true;
-    let used = null; let timer = null; let polls = 0;
+    let used = null; let picks = [];
     const btn = h('button', { type: 'button', class: 'primary', text: 'Ask the AI for a draft' });
-    const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+    const live = tracker();
+    const done = () => { btn.disabled = false; };
 
     function showDraft(d) {
       const dr = d.draft || {};
       const field = (label, text) => text ? h('div', { class: 'ex-part' }, h('span', { class: 'why-label', text: label }), h('p', { text })) : null;
+      picks = (dr.passages || []).map((p) => ({ p, cb: h('input', { type: 'checkbox', checked: true }) }));
       out.replaceChildren(h('div', { class: 'panel cl-draft' },
         h('div', { class: 'row' }, h('span', { class: 'tag warn', text: AI_LABEL }), h('span', { class: 'muted small', text: d.model ? `made on our own computer with ${d.model}` : '' })),
-        field('Claim', dr.claim), field('Short answer', dr.summary), field('Strongest case against', dr.counterargument),
-        (dr.passages || []).length ? h('div', { class: 'ex-part' }, h('span', { class: 'why-label', text: 'Passages copied word for word from your sources' }),
-          h('ul', { class: 'small list' }, dr.passages.map((p) => h('li', {}, h('span', { text: `"${p.text}"` }), ' ', h('a', { href: p.url, target: '_blank', rel: 'noopener noreferrer', text: 'source' })))),
-          h('p', { class: 'muted small', text: 'Use these as the quote when you add each source. They are checked against the page.' })) : null,
-        h('p', { class: 'muted small', text: 'The AI can be wrong or miss a side. It only had your notes and links. Edit everything before you save.' }),
+        field('Claim', dr.claim), field('Short answer', dr.summary), field('Evidence', dr.evidence), field('Strongest case against', dr.counterargument),
+        field('Our answer', dr.counter_response), field('How we checked', dr.methods), field('Limits', dr.limitations),
+        picks.length ? h('div', { class: 'ex-part' }, h('span', { class: 'why-label', text: 'Passages copied word for word from your sources' }),
+          h('ul', { class: 'small list' }, picks.map(({ p, cb }) => h('li', {}, h('label', {}, cb, ` "${p.text}" `), h('a', { href: p.url, target: '_blank', rel: 'noopener noreferrer', text: 'source' })))),
+          h('p', { class: 'muted small', text: 'Ticked passages are added as sources, with that quote, when you save the version. The AI check opens each page and confirms the words are there. You mark which source is primary.' })) : null,
+        (dr.notes || []).length ? h('div', { class: 'notice warn', role: 'note' }, h('ul', { class: 'small list' }, dr.notes.map((n) => h('li', { text: n })))) : null,
+        h('p', { class: 'muted small', text: 'The verdict is always your choice; the AI never fills it. The AI can be wrong or miss a side. It only had your notes and links. Edit everything before you save.' }),
         h('div', { class: 'btns' }, h('button', { type: 'button', class: 'primary', text: 'Put this draft in the form', onclick: () => {
-          const set = (name, v) => { const el = formEl.elements[name]; if (el && v) el.value = v; };
-          set('claim', dr.claim); set('summary', dr.summary); set('counterargument', dr.counterargument);
+          for (const [name, key] of FILL) {
+            const v = dr[key]; const el = formEl.elements[name];
+            if (!v || !el) continue;
+            if (OPTIONAL.includes(name) && v.trim() === NONE_TEXT) none.tick(name, true);
+            else { none.tick(name, false); el.value = v; }
+            tagField(formEl, name);
+          }
           used = d.id; confirmBox.required = true; confirmRow.hidden = false;
-          status.textContent = 'The draft is in the form below, labelled AI draft, unchecked. Edit it, then tick the box before you save.';
           if (formEl.elements.claim) formEl.elements.claim.focus();
         } }))));
     }
-    async function poll(id) {
-      const d = (await q(sb.from('claim_drafts').select('id,status,draft,model,error').eq('id', id)))[0];
-      if (!d) return;
-      if (d.status === 'done') { stop(); status.textContent = ''; btn.disabled = false; showDraft(d); }
-      else if (d.status === 'failed') { stop(); btn.disabled = false; status.textContent = ''; out.replaceChildren(notice(d.error || 'The AI could not make a draft this time. Write the claim by hand.')); }
-      else {
-        const st = await q(sb.rpc('checker_status')).catch(() => null);
-        status.textContent = d.status === 'running' ? 'The AI is writing a draft now…'
-          : st && st.online ? 'In line for the AI computer…' : 'The AI computer is busy or switched off. Your request waits in line; you can keep writing and come back.';
-        if (++polls > POLL_MAX) stop();
-      }
-    }
-    function watch(id) { stop(); polls = 0; btn.disabled = true; poll(id).catch(() => {}); timer = setInterval(() => poll(id).catch(() => {}), POLL_MS); }
+    const hs = {
+      done: (row) => { done(); showDraft(row); },
+      failed: (m) => { done(); out.replaceChildren(notice(m)); },
+      cancelled: () => { done(); out.replaceChildren(h('p', { class: 'muted small', text: 'Cancelled. Nothing was changed.' })); },
+    };
     btn.addEventListener('click', action(async () => {
       out.replaceChildren();
       const list = urls.value.split(/\n+/).map((x) => x.trim()).filter(Boolean);
       const id = await q(sb.rpc('request_claim_draft', { p_notes: notes.value, p_urls: list }));
-      watch(id);
+      btn.disabled = true; live.watch(id, hs);
     }, msg));
     // pick up a request made before a page reload
     const since = new Date(Date.now() - 2 * 864e5).toISOString();
-    q(sb.from('claim_drafts').select('id,status').is('used_in_version_id', null).gte('created_at', since).order('id', { ascending: false }).limit(1)).then((r) => {
-      if (r[0] && r[0].status !== 'failed') watch(r[0].id);
+    q(sb.from('claim_drafts').select('id,status').eq('kind', 'draft').is('used_in_version_id', null).gte('created_at', since).order('id', { ascending: false }).limit(1)).then((r) => {
+      if (r[0] && (r[0].status === 'queued' || r[0].status === 'running' || r[0].status === 'done')) { btn.disabled = r[0].status !== 'done'; live.watch(r[0].id, hs); }
     }).catch(() => {});
     const node = h('details', { class: 'panel cl-ai' }, h('summary', { text: 'AI help write my claim' }),
-      h('p', { class: 'muted small', text: 'Paste your notes and the links to your sources. Our own AI, running on our own computer, drafts neutral wording that you then edit. It uses only what you give it, never writes about a candidate or party, and never decides your verdict. A person always reviews the finished finding.' }),
+      h('p', { class: 'muted small', text: 'Paste your notes and the links to your sources. Our own AI, running on our own computer, fills in as much of the form as the sources allow: claim, short answer, evidence (word-for-word passages), the case against and our answer, how we checked, and limits. Anything the sources do not cover says "None given in the sources." It uses only what you give it, never writes about a candidate or party, and never chooses your verdict. A person always reviews the finished finding.' }),
       h('label', {}, 'Your notes', notes), h('label', {}, 'Source links', urls), msg,
-      h('div', { class: 'btns' }, btn), status, out, confirmRow);
-    return { node, used: () => used };
+      h('div', { class: 'btns' }, btn), live.node, out, confirmRow);
+    return { node, none, used: () => used, sources: () => picks.filter((x) => x.cb.checked).map((x) => x.p) };
   }
+  // After the version is saved: record the draft and add the ticked passages as sources (skipping any already there).
   async function draftUsed(box, versionId) {
     const id = box && box.used();
-    if (id) await q(sb.rpc('mark_claim_draft_used', { p_draft: id, p_version: versionId }));
+    if (!id) return;
+    await q(sb.rpc('mark_claim_draft_used', { p_draft: id, p_version: versionId }));
+    const have = await q(sb.from('research_sources').select('url,quote').eq('version_id', versionId));
+    const rows = box.sources().filter((p) => !have.some((x) => x.url === p.url && (x.quote || '').trim() === p.text.trim()))
+      .map((p) => ({ version_id: versionId, url: p.url, title: '', source_type: 'secondary', publisher: null, quote: p.text, locator: null }));
+    if (rows.length) await q(sb.from('research_sources').insert(rows));
+  }
+
+  // ---------------------------------------------------------------- 4b. "Check spelling and grammar" (suggestions only)
+  const PROOF = ['claim', 'summary', 'body', 'counterargument', 'counter_response', 'methods', 'limitations'];
+  const guarded = (t) => JSON.stringify([(t.match(/"[^"\n]{3,}"|“[^”\n]{3,}”|https?:\/\/[^\s)\]>]+/g) || []), (t.match(/\d[\d,.]*\d|\d/g) || [])]);
+  function wordDiff(a, b) {
+    const x = a.split(/(\s+)/); const y = b.split(/(\s+)/);
+    if (x.length * y.length > 4e6) return [h('span', { class: 'cl-del', text: a }), ' ', h('span', { class: 'cl-ins', text: b })];
+    const dp = Array.from({ length: x.length + 1 }, () => new Uint16Array(y.length + 1));
+    for (let i = x.length - 1; i >= 0; i--) for (let j = y.length - 1; j >= 0; j--) dp[i][j] = x[i] === y[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+    const out = []; let i = 0; let j = 0;
+    const push = (cls, t) => { if (t) out.push(cls ? h('span', { class: cls, text: t }) : document.createTextNode(t)); };
+    while (i < x.length && j < y.length) {
+      if (x[i] === y[j]) { push('', x[i]); i++; j++; }
+      else if (dp[i + 1][j] >= dp[i][j + 1]) { push('cl-del', x[i]); i++; } else { push('cl-ins', y[j]); j++; }
+    }
+    while (i < x.length) push('cl-del', x[i++]);
+    while (j < y.length) push('cl-ins', y[j++]);
+    return out;
+  }
+  function proofreadBox(formEl) {
+    const msg = h('div'); const out = h('div'); const live = tracker();
+    const btn = h('button', { type: 'button', text: 'Check spelling and grammar (AI)' });
+    const hs = {
+      done: (row) => {
+        btn.disabled = false;
+        const d = row.draft || {}; const fixes = d.fixes || [];
+        const accept = [];
+        const items = fixes.map((f) => {
+          const state = h('span', { class: 'muted small' });
+          const a = h('button', { type: 'button', class: 'primary', text: 'Accept' }); const r = h('button', { type: 'button', text: 'Reject' });
+          const doAccept = () => {
+            const el = formEl.elements[f.field];
+            if (!el || el.readOnly) { state.textContent = 'That box is not editable now.'; return false; }
+            if (el.value.trim() !== f.original.trim()) { state.textContent = 'You changed this box since the check, so the fix was skipped.'; a.disabled = r.disabled = true; return false; }
+            if (guarded(f.original) !== guarded(f.suggested)) { state.textContent = 'Refused: this fix touches a quote, a link or a number.'; a.disabled = r.disabled = true; return false; }
+            el.value = f.suggested; state.textContent = 'Accepted.'; a.disabled = r.disabled = true; return true;
+          };
+          accept.push(() => (a.disabled ? null : doAccept()));
+          a.addEventListener('click', doAccept); r.addEventListener('click', () => { state.textContent = 'Rejected. Nothing changed.'; a.disabled = r.disabled = true; });
+          return h('li', {}, h('strong', { text: FIELD_LABEL[f.field] || f.field }), h('p', { class: 'cl-diff post' }, wordDiff(f.original, f.suggested)),
+            h('div', { class: 'btns' }, a, r, state));
+        });
+        out.replaceChildren(h('div', { class: 'panel cl-draft' },
+          h('div', { class: 'row' }, h('span', { class: 'tag warn', text: 'AI suggestions, unchecked' }), h('span', { class: 'muted small', text: row.model ? `made on our own computer with ${row.model}` : '' })),
+          fixes.length ? h('div', {}, h('p', { class: 'muted small', text: 'Struck-out words are replaced by the underlined ones. Quotes, links, numbers and names are never changed. You decide each fix.' }),
+            h('ul', { class: 'list' }, items),
+            fixes.length > 1 ? h('div', { class: 'btns' }, h('button', { type: 'button', text: 'Accept all', onclick: () => accept.forEach((fn) => fn()) })) : null)
+            : h('p', { text: 'No spelling or grammar fixes to suggest.' }),
+          (d.notes || []).length ? h('ul', { class: 'small list' }, d.notes.map((n) => h('li', { text: n }))) : null));
+      },
+      failed: (m) => { btn.disabled = false; out.replaceChildren(notice(m)); },
+      cancelled: () => { btn.disabled = false; out.replaceChildren(h('p', { class: 'muted small', text: 'Cancelled. Nothing was changed.' })); },
+    };
+    btn.addEventListener('click', action(async () => {
+      out.replaceChildren();
+      const fields = {};
+      for (const name of PROOF) { const el = formEl.elements[name]; if (el && el.value.trim() && el.value.trim() !== NONE_TEXT) fields[name] = el.value; }
+      const id = await q(sb.rpc('request_proofread', { p_fields: fields }));
+      btn.disabled = true; live.watch(id, hs);
+    }, msg));
+    const node = h('div', { class: 'panel cl-proof' }, h('h3', { text: 'Spelling and grammar' }),
+      h('p', { class: 'muted small', text: 'Our AI suggests fixes for typos, punctuation and grammar in the boxes above. It only suggests: you accept or reject each one. It does not change facts, names, numbers or quotes, and never touches the verdict.' }),
+      msg, h('div', { class: 'btns' }, btn), live.node, out);
+    return { node };
   }
 
   // ---------------------------------------------------------------- 5. what a reviewer sees on a version
@@ -227,7 +374,7 @@ function make(ctx) {
       n.claim_changed ? 'The author changed the claim wording.' : 'The author kept the claim wording as drafted; check it carefully.');
   }
 
-  return { startPicker, itemLinks, projectsView, draftBox, draftUsed, versionNote, RELATIONS };
+  return { startPicker, itemLinks, projectsView, draftBox, draftUsed, proofreadBox, noneBoxes, versionNote, RELATIONS };
 }
 
 window.TheWayClaim = { make };

@@ -1355,7 +1355,6 @@ async function researchItemView(id) {
         const [nv] = await q(sb.from('research_versions').insert({ item_id: item.id, claim: fd.get('claim').trim(), verdict: fd.get('verdict'),
           summary: fd.get('summary'), body: fd.get('body') || '', counterargument: fd.get('counterargument'), counter_response: fd.get('counter_response'),
           methods: fd.get('methods'), limitations: fd.get('limitations'), reason_for_change: reason.value }).select('id'));
-        if (aiBox && nv) { try { await CL.draftUsed(aiBox, nv.id); } catch { /* the version is saved; only the AI note is missing */ } }
         // carry the sources over as new rows (the old version keeps its own, frozen); a quote the AI
         // could not find on its page is left behind, so it has to be added again with the real words
         const carry = latest ? carrySources(latest) : [];
@@ -1364,6 +1363,7 @@ async function researchItemView(id) {
           await q(sb.from('research_sources').insert(carry.map((x) => ({ version_id: nv.id, url: x.url, title: srcTitle(x), publisher: clean(x.publisher),
             published_at_claimed: okDate(x.published_at_claimed), quote: clean(x.quote), locator: clean(x.locator), source_type: x.source_type }))));
         }
+        if (aiBox && nv) { try { await CL.draftUsed(aiBox, nv.id); } catch { /* the version is saved; only the AI note and drafted sources are missing */ } }
         await reload();
       }, msg) },
         h('label', {}, 'The claim', claim), h('p', { class: 'muted small', text: CLAIM_RULE }),
@@ -1378,6 +1378,8 @@ async function researchItemView(id) {
         h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Save version')));
     const aiBox = CL ? CL.draftBox(form) : null;
     if (aiBox) form.prepend(aiBox.node);
+    const proof = CL ? CL.proofreadBox(form) : null;
+    if (proof) form.insertBefore(proof.node, form.lastElementChild);
     const carry = latest ? carrySources(latest) : [];
     const left = latest ? srcs.filter((x) => x.version_id === latest.id).length - carry.length : 0;
     if (latest) form.prepend(h('p', { class: 'muted small', text: `Everything below starts from version ${latest.version_no}. `

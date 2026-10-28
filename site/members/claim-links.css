@@ -5,3 +5,12 @@
 .cl-draft{margin:12px 0}
 .cl-confirm{display:flex;gap:8px;align-items:flex-start;margin:12px 0}
 .cl-confirm input{margin-top:4px}
+.cl-tracker{margin:10px 0}
+.cl-live{margin:0;font-weight:600}
+.cl-field-tag{margin-right:4px}
+.cl-none{display:flex;gap:8px;align-items:center;margin:-4px 0 12px;font-size:14px;color:var(--muted)}
+.cl-none-on{opacity:.75;font-style:italic}
+.cl-diff{white-space:pre-wrap}
+.cl-del{background:#5a1f1f66;color:#ffb4a8;text-decoration:line-through}
+.cl-ins{background:#1f5a2f66;color:#b5f5c9;text-decoration:underline}
+.cl-proof h3{margin:0 0 6px}
