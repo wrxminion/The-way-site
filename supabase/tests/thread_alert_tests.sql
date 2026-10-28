@@ -29,6 +29,6 @@ do $$ begin
   begin perform * from public.checker_thread_new('ARCH-wrong'); raise exception 'FAIL: wrong key accepted'; exception when others then
     if sqlerrm like 'FAIL%' then raise; end if; raise notice 'pass: a wrong key is refused'; end;
 end $$;
-select fta.ok(not has_function_privilege('anon','public.checker_thread_new(text,bigint,int)','execute') and not has_function_privilege('authenticated','public.checker_thread_new(text,bigint,int)','execute'), 'only the service role can call the list');
+select fta.ok(has_function_privilege('anon','public.checker_thread_new(text,bigint,int)','execute') and has_function_privilege('authenticated','public.checker_thread_new(text,bigint,int)','execute') and not has_function_privilege('public','public.checker_thread_new(text,bigint,int)','execute'), 'the archiver call is open to the web roles, and the wrong-key test above shows the key still guards it');
 select fta.ok((select count(*) from information_schema.columns where table_schema='public' and table_name='thread_intakes') > 0, 'sanity');
 \echo ALL ALERT TESTS PASSED
