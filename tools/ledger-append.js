@@ -1,9 +1,15 @@
 // Appends one row to site/development/data/ledger.json and ledger.js.
 // Usage: node tools/ledger-append.js <pr-number> <yyyy-mm-dd> <origin> <public-text>
+//    or: node tools/ledger-append.js --json '{"pr":1,"date":"2026-10-28","origin":"Maintainer","text":"..."}'
 // The text comes only from an opt-in "ledger:" line, never from a PR title.
 const fs = require('fs');
 const path = require('path');
-const [num, date, origin, rawText] = process.argv.slice(2);
+let [num, date, origin, rawText] = process.argv.slice(2);
+if (num === '--json') {
+  // Used by the refresh workflow: the row's source data is stored in the row PR body.
+  const j = JSON.parse(date || '{}');
+  [num, date, origin, rawText] = [String(j.pr), j.date, j.origin, j.text];
+}
 if (!/^\d+$/.test(num || '') || !/^\d{4}-\d{2}-\d{2}$/.test(date || '') || !rawText) {
   console.error('usage: node tools/ledger-append.js <pr> <date> <origin> <text>');
   process.exit(2);
