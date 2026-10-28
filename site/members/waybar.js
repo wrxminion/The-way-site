@@ -162,7 +162,7 @@
     var explore = [
       { href: '/preview/pages/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
       { href: '/preview/pages/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
-      { href: GOV, label: 'How government works', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
+      { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
       { href: '/preview/pages/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
       { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
       { href: route('map'), label: 'Map', desc: 'Every state at a glance', icon: 'map', key: 'map' }
@@ -190,7 +190,7 @@
         { href: STATES, label: 'Voter Guide', icon: 'ballot', key: 'ballot' },
         { href: '/preview/pages/news/', label: 'News', icon: 'news', key: 'news' },
         { href: '/preview/pages/cases/', label: 'Civics & History', icon: 'cases', key: 'cases' },
-        { href: GOV, label: 'How government works', icon: 'govworks', key: 'govworks' },
+        { href: GOV, label: 'Government', icon: 'govworks', key: 'govworks' },
         { href: '/preview/pages/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
         { href: '/research/', label: 'Research', icon: 'research-lib', key: 'research-lib' },
         { href: '/preview/pages/deeper.html', label: 'Why?', icon: 'about', key: 'about' }
@@ -384,7 +384,7 @@
       pub.appendChild(link(STATES, 'Voter Guide', 'ballot', cur));
       pub.appendChild(link('/preview/pages/news/', 'News', 'news', cur));
       pub.appendChild(link('/preview/pages/cases/', 'Civics & History', 'cases', cur));
-      pub.appendChild(link(GOV, 'How government works', 'govworks', cur));
+      pub.appendChild(link(GOV, 'Government', 'govworks', cur));
       pub.appendChild(link('/preview/pages/case-studies/', 'Case Studies', 'casestudies', cur));
       pub.appendChild(link('/research/', 'Research', 'research-lib', cur));
       var menuBtn = panelButton('menu', 'Menu', 'wb-menu-btn', 'menu');
