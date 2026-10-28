@@ -1,0 +1,57 @@
+name: Ledger row refresh
+
+# Every open "Ledger: add row" PR (branch ledger-row/pr-N) is rebuilt from the
+# new main each time main changes. So its D-number is always the next free one,
+# it never conflicts, and if main already has its row the PR is closed.
+# The row's source (PR number, date, origin, public text) is stored in the row
+# PR body as a ledger-src comment written by the ledger-auto workflow.
+# Uses only the built-in GITHUB_TOKEN.
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: ledger-row
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Rebuild open ledger row PRs on the new main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -u
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          gh pr list --state open --limit 50 --json number,headRefName \
+            --jq '.[] | select(.headRefName | startswith("ledger-row/")) | "\(.number) \(.headRefName)"' > /tmp/rows.txt
+          while read -r N BR; do
+            [ -n "$N" ] || continue
+            echo "== PR #$N ($BR)"
+            git checkout -q -f -B work origin/main && git clean -qfd
+            SRC=$(gh pr view "$N" --json body --jq .body | tr -d '\r' | grep -m1 -o '<!-- ledger-src .* -->' | sed -E 's/^<!-- ledger-src //; s/ -->$//' || true)
+            if [ -z "$SRC" ]; then echo "no ledger-src in PR #$N, leaving it"; continue; fi
+            OUT=$(node tools/ledger-append.js --json "$SRC" 2>&1) || { echo "append failed: $OUT"; continue; }
+            echo "$OUT"
+            case "$OUT" in
+              "already in ledger"*)
+                gh pr close "$N" --delete-branch --comment "Main already has this row, so this PR is closed by the bot." || true
+                continue;;
+            esac
+            git add site/development
+            git commit -q -m "Ledger: add row for PR #$(printf '%s' "$BR" | sed 's#.*pr-##')" || continue
+            git fetch -q --depth=1 origin "$BR" || true
+            if [ "$(git rev-parse 'HEAD^{tree}')" = "$(git rev-parse 'FETCH_HEAD^{tree}' 2>/dev/null || echo none)" ]; then echo "already current"; continue; fi
+            git push -q --force origin "HEAD:refs/heads/$BR" || echo "push failed for $BR"
+          done < /tmp/rows.txt

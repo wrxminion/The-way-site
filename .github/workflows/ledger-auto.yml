@@ -10,6 +10,10 @@ name: Ledger auto-post
 # Main is protected, so this opens a PR for the maintainer to merge; it uses
 # only the built-in GITHUB_TOKEN.
 
+concurrency:
+  group: ledger-row
+  cancel-in-progress: false
+
 on:
   pull_request:
     types: [closed]
@@ -56,4 +60,6 @@ jobs:
           git add site/development
           OUT=$(git commit -m "Ledger: add row for PR #$PR_NUMBER" 2>&1) || { echo "::error::commit failed: $(echo "$OUT" | tr '\n' ' ' | cut -c1-400)"; exit 1; }
           OUT=$(git push origin "$BR" 2>&1) || { echo "::error::push failed: $(echo "$OUT" | tr '\n' ' ' | cut -c1-400)"; exit 1; }
-          OUT=$(gh pr create --base main --head "$BR" --title "Ledger: add row for PR #$PR_NUMBER" --body "Adds one public ledger row for #$PR_NUMBER, from its ledger: line. Check the wording, then merge. The site updates on the next quarter-hour deploy." 2>&1) || { echo "::error::pr create failed: $(echo "$OUT" | tr '\n' ' ' | cut -c1-400)"; exit 1; }
+          SRC=$(node -e 'process.stdout.write(JSON.stringify({pr:+process.argv[1],date:process.argv[2],origin:process.argv[3],text:process.argv[4]}))' "$PR_NUMBER" "${PR_DATE%%T*}" "$ORIGIN" "$LINE")
+          BODY=$(printf 'Adds one public ledger row for #%s, from its ledger: line. Check the wording, then merge. The site updates on the next quarter-hour deploy.\n\nIf main changes first, a bot refreshes this branch so it never conflicts. Do not edit it by hand.\n\n<!-- ledger-src %s -->' "$PR_NUMBER" "$SRC")
+          OUT=$(gh pr create --base main --head "$BR" --title "Ledger: add row for PR #$PR_NUMBER" --body "$BODY" 2>&1) || { echo "::error::pr create failed: $(echo "$OUT" | tr '\n' ' ' | cut -c1-400)"; exit 1; }
