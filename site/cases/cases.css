@@ -74,3 +74,8 @@ html,body,.ocean,.essay-ocean{background:#fff!important;color:#111!important;min
 
 /* phones: less empty water above the title, so the title shows on the first screen */
 @media (max-width:700px){.essay-top{padding-top:150px;padding-bottom:40px}}
+/* Case banners (4:1 art under the title, and on the cards in /cases/) */
+.case-banner{max-width:950px;margin:-30px auto 26px;padding:0 27px}
+.case-banner-img{display:block;width:100%;height:auto;aspect-ratio:4/1;object-fit:cover;border-radius:14px;border:1px solid #c7ffff26}
+.cases-hub .hub-card .card-banner{display:block;width:100%;height:auto;aspect-ratio:4/1;object-fit:cover;border-radius:12px 12px 0 0;margin:0 0 12px}
+@media(max-width:700px){.case-banner{padding:0 16px;margin-top:-20px}}
