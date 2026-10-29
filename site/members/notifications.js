@@ -25,7 +25,7 @@ const status = h('p', { class: 'small', role: 'status', 'aria-live': 'polite' })
 let unreadOnly = false;
 
 async function load() {
-  const { data: { session } } = await sb.auth.getSession();
+  const { data: { session } } = await window.WaySession.getSession(sb);
   if (!session) { app.replaceChildren(h('h1', { text: 'Notifications' }), h('p', {}, 'Please ', h('a', { href: '/members/', text: 'sign in' }), ' to see yours.')); return; }
   const { data, error } = await sb.rpc('my_notifications', { p_unread_only: unreadOnly, p_limit: 100 });
   if (error) { app.replaceChildren(h('h1', { text: 'Notifications' }), h('p', { class: 'muted', text: 'Could not load them right now.' })); return; }
