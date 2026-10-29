@@ -12,10 +12,11 @@
 /* wide screens: sticky sidebar on the right edge */
 .otp-side{display:none}
 @media (min-width:1480px){
-  .otp-side{display:block;position:fixed;top:88px;right:20px;width:230px;max-height:calc(100vh - 112px);overflow:auto;
+  .otp-side{display:block;position:fixed;top:88px;right:20px;width:230px;max-height:max(180px,calc(100vh - 88px - 430px));overflow:auto;overscroll-behavior:contain;
     padding:14px 10px;background:#052b3cf2;border:1px solid #c7ffff33;border-radius:14px;z-index:40}
   .otp-jump{display:none}
 }
+/* The list stops above the floating bubbles (about 420 px tall at the bottom right) so the last lines are never covered; it scrolls inside. */
 
 /* narrow screens: a button that opens a jump menu */
 .otp-jump{position:fixed;right:14px;bottom:14px;z-index:60}

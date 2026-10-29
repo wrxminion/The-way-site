@@ -105,11 +105,11 @@
     var still = function (n) { return ART + n + '-240.webp?v=2 1x, ' + ART + n + '-480.webp?v=2 2x'; };
     var img = el('img', { class: 'wb-pat-img', src: ART + (reduce ? 'taut' : 'slack') + '-240.webp?v=2', srcset: still(reduce ? 'taut' : 'slack'), alt: 'Pull a Thread', width: '136', height: '43', decoding: 'async' });
     if (!reduce) {
-      var pull = function () { img.removeAttribute('srcset'); img.src = ''; void img.offsetWidth; img.src = ART + 'pull-480.webp?v=2'; };
+      var pull = function () { img.removeAttribute('srcset'); img.src = ''; void img.offsetWidth; img.src = ART + 'pull-480.webp?v=3'; };
       var rest = function () { img.src = ART + 'slack-240.webp?v=2'; img.srcset = still('slack'); };
       a.addEventListener('mouseenter', pull); a.addEventListener('focus', pull);
       a.addEventListener('mouseleave', rest); a.addEventListener('blur', rest);
-      if (!(navigator.connection && navigator.connection.saveData)) setTimeout(function () { new Image().src = ART + 'pull-480.webp?v=2'; }, 2500);   // so the first hover does not wait
+      if (!(navigator.connection && navigator.connection.saveData)) setTimeout(function () { new Image().src = ART + 'pull-480.webp?v=3'; }, 2500);   // so the first hover does not wait
     }
     a.appendChild(img);
     return a;

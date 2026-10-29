@@ -23,7 +23,9 @@ const row = document.createElement('div'); row.className = 'cf-row';
 row.append(field('Search', q), field('Topic', st), field('Time period', sd));
 const count = document.createElement('p'); count.className = 'cf-count'; count.setAttribute('role', 'status'); count.setAttribute('aria-live', 'polite');
 bar.append(row, count);
-const anchor = document.getElementById('read') || hub; anchor.parentElement.insertBefore(bar, anchor);
+const slot = document.querySelector('.cf-slot');
+if (slot) slot.appendChild(bar);
+else { const anchor = document.getElementById('read') || hub; anchor.parentElement.insertBefore(bar, anchor); }
 function run() {
   const t = q.value.trim().toLowerCase(), tp = st.value, dc = sd.value;
   let n = 0;
