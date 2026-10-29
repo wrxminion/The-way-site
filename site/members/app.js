@@ -253,12 +253,27 @@ function teacherQuestion() {
   return { el, value: () => { const r = el.querySelector('input:checked'); return r ? r.value : ''; } };
 }
 
+// "Do you make art?" and "a relevant field or skill we didn't think of?" (migration 0046). Private; self-reported.
+function artQuestion() {
+  const id = 'art-' + Math.random().toString(36).slice(2, 8);
+  const opt = (value, label) => h('label', { class: 'age-opt' }, h('input', { type: 'radio', name: id, value }), ' ' + label);
+  const other = h('input', { type: 'text', name: 'other-field', maxlength: 300, autocomplete: 'off', placeholder: 'Optional' });
+  const fs = h('fieldset', { class: 'age-q' },
+    h('legend', { text: 'Do you make art?' }),
+    opt('yes', 'Yes'), opt('no', 'No'),
+    h('p', { class: 'small dim', text: 'We would like to replace our AI-made graphics with real art. Artists can donate work and we credit them by name. Only the team sees your answer.' }));
+  const el = h('div', {}, fs, h('label', {}, 'A relevant field or skill we did not think of? (optional)', other,
+    h('span', { class: 'small dim', text: 'Please do not put private details here.' })));
+  return { el, art: () => { const r = fs.querySelector('input:checked'); return r ? r.value : ''; }, other: () => other.value.trim() };
+}
+
 // The answers given on the create-account steps, kept in this browser until the join screen, so nobody is asked twice.
-const ADULT_KEY = 'theway.age18', TEACH_KEY = 'theway.teacher';
+const ADULT_KEY = 'theway.age18', TEACH_KEY = 'theway.teacher', ART_KEY = 'theway.art', FIELD_KEY = 'theway.field';
 const keptAdult = () => { try { return localStorage.getItem(ADULT_KEY) === 'yes'; } catch { return false; } };
 const keptTeacher = () => { try { return localStorage.getItem(TEACH_KEY) || ''; } catch { return ''; } };
-const keepAnswers = (teacher) => { try { localStorage.setItem(ADULT_KEY, 'yes'); if (teacher) localStorage.setItem(TEACH_KEY, teacher); else localStorage.removeItem(TEACH_KEY); } catch { /* private mode: asked again on the join screen */ } };
-const forgetAnswers = () => { try { localStorage.removeItem(ADULT_KEY); localStorage.removeItem(TEACH_KEY); } catch { /* ignore */ } };
+const keptArt = () => { try { return { art: localStorage.getItem(ART_KEY) || '', other: localStorage.getItem(FIELD_KEY) || '' }; } catch { return { art: '', other: '' }; } };
+const keepAnswers = (teacher, art, other) => { try { localStorage.setItem(ADULT_KEY, 'yes'); if (teacher) localStorage.setItem(TEACH_KEY, teacher); else localStorage.removeItem(TEACH_KEY); if (art) localStorage.setItem(ART_KEY, art); else localStorage.removeItem(ART_KEY); if (other) localStorage.setItem(FIELD_KEY, other); else localStorage.removeItem(FIELD_KEY); } catch { /* private mode: asked again on the join screen */ } };
+const forgetAnswers = () => { try { localStorage.removeItem(ADULT_KEY); localStorage.removeItem(TEACH_KEY); localStorage.removeItem(ART_KEY); localStorage.removeItem(FIELD_KEY); } catch { /* ignore */ } };
 
 async function signInView() {
   // Open sign-up (migration 0018): anyone can make an account with their email, no invitation code.
@@ -391,16 +406,18 @@ async function signInView() {
     const code = codeEntry(emailIn, msg);
     const age = ageQuestion();
     const teacher = teacherQuestion();
+    const art = artQuestion();
     const stopped = ageStopped();
     // The human check is made when the form is revealed and sits right above the button, so it is in view.
     let human = null;
     const humanSlot = h('div');
     const form = h('form', { hidden: true, onsubmit: action(async () => {
       if (!age.check(form)) return;
-      keepAnswers(teacher.value());
+      keepAnswers(teacher.value(), art.art(), art.other());
       await sendLink(emailIn, false, msg, code, human || { token: async () => undefined });
     }, msg) },
       teacher.el,
+      art.el,
       h('label', {}, 'Email', emailIn),
       humanSlot,
       h('div', { class: 'btns' }, h('button', { class: 'primary', value: 'code' }, invited ? T.invitedBtn : T.openBtn)));
@@ -471,7 +488,8 @@ async function joinView() {
   const name = h('input', { name: 'name', required: true, minlength: 2, maxlength: 40, placeholder: 'How other members will see you' });
   const age = ageQuestion();
   const teacher = teacherQuestion();
-  const knownAdult = keptAdult(), knownTeacher = keptTeacher();
+  const art = artQuestion();
+  const knownAdult = keptAdult(), knownTeacher = keptTeacher(), knownArt = keptArt();
   render(
     h('h1', { text: 'Welcome' }),
     h('p', { class: 'lede', text: carried ? 'You are signed in. Your invitation code is filled in from your link. Pick a display name to accept it.' : open ? 'You are signed in. Pick a display name to finish creating your account. Got an invitation code? You can leave it in the box, but you do not need one.' : 'You are signed in. Enter your invitation code (it starts with WAY-) to accept it.' }),
@@ -487,7 +505,9 @@ async function joinView() {
         else await q(sb.rpc('join_open', { display_name: name.value }));
         try { await sb.rpc('confirm_adult'); } catch { /* migration 0041 not run yet: do not block joining */ }
         const said = knownTeacher || teacher.value();
+        const artSaid = knownArt.art || art.art(), otherSaid = knownArt.other || art.other();
         forgetAnswers();
+        if (artSaid || otherSaid) { try { await sb.rpc('set_skills', { p_art: artSaid === 'yes', p_other: otherSaid || null }); } catch { /* migration 0046 not run yet: do not block joining */ } }
         if (said) { try { await sb.rpc('set_teacher', { p_teacher: said === 'yes', p_public: false }); } catch { /* migration 0042 not run yet: do not block joining */ } }
         forgetInvite();
         await loadMe(); drawNav();
@@ -495,6 +515,7 @@ async function joinView() {
       }, msg) },
         knownAdult ? null : age.el,
         knownTeacher ? null : teacher.el,
+        knownArt.art || knownArt.other ? null : art.el,
         h('label', {}, open ? 'Invitation code (optional)' : 'Invitation code', code),
         h('label', {}, 'Display name', name),
         h('p', { class: 'small dim', text: 'Your email stays private. Members only see your display name. Choose it carefully: after this, only an admin can change it.' }),
@@ -2254,6 +2275,27 @@ function teacherPanel() {
   return box;
 }
 
+// Art and skills on the account page: owner-only (and the team). Nothing here is shown to other members.
+function skillsPanel() {
+  const box = h('div', { class: 'panel' }, h('h2', { text: 'Art and skills' }), h('p', { class: 'small dim', text: 'Loading…' }));
+  (async () => {
+    let row = null;
+    try { row = (await q(sb.from('member_skills').select('makes_art,other_field').eq('member_id', state.user.id)))[0] || null; }
+    catch { box.replaceChildren(h('h2', { text: 'Art and skills' }), h('p', { class: 'small dim', text: 'Not available yet.' })); return; }
+    const msg = h('div');
+    const art = h('input', { type: 'checkbox', checked: !!(row && row.makes_art) });
+    const other = h('input', { type: 'text', maxlength: 300, autocomplete: 'off', value: (row && row.other_field) || '' });
+    box.replaceChildren(
+      h('h2', { text: 'Art and skills' }),
+      h('p', { class: 'small muted', text: 'Only you and the team see this. Artists can donate work to replace our AI-made graphics, and we credit them by name.' }),
+      msg,
+      h('label', { class: 'small' }, art, ' I make art'),
+      h('label', {}, 'A relevant field or skill we did not think of?', other),
+      h('div', { class: 'btns' }, h('button', { onclick: action(async () => { await q(sb.rpc('set_skills', { p_art: art.checked, p_other: other.value.trim() || null })); msg.append(notice('Saved.', 'ok')); }, msg) }, 'Save')));
+  })();
+  return box;
+}
+
 function accountView() {
   render(
     h('p', { class: 'overline', text: 'Your account' }),
@@ -2265,6 +2307,7 @@ function accountView() {
       h('p', { class: 'small', text: `Roles: ${state.roles.size ? [...state.roles].map(roleName).join(', ') : 'member'}` })),
     placePanel(),
     teacherPanel(),
+    skillsPanel(),
     roleCodePanel(),
     h('div', { class: 'panel' },
       h('h2', { text: 'Signing in' }),
