@@ -103,6 +103,7 @@ function make(ctx) {
         const m = meta[0];
         status.textContent = !m ? 'No data yet. Press "Refresh now" once the Edge Function is set up.'
           : `${m.ok ? 'Last refreshed' : 'Last attempt failed'} ${when(m.refreshed_at)}${m.note ? `. ${m.note}` : ''}`;
+        if (!m) { body.replaceChildren(h('p', { class: 'muted', text: 'Nothing to show yet. The numbers appear after the first successful refresh.' })); return; }
         draw(totals, pages, refs, countries, states);
       } catch (e) {
         status.textContent = `Could not load: ${e.message || e}`;
@@ -126,7 +127,7 @@ function make(ctx) {
       const usa = window.US_STATES && states.length
         ? choropleth(window.US_STATES, '0 0 975 610', sMap, (k, s) => s[0]) : null;
 
-      body.replaceChildren(
+      body.replaceChildren(...[
         h('div', { class: 'as-tiles' },
           h('div', { class: 'as-tile' }, h('strong', { text: num(sum('visits')) }), h('span', { class: 'small muted', text: `visits, last ${days} days` })),
           h('div', { class: 'as-tile' }, h('strong', { text: num(sum('page_views')) }), h('span', { class: 'small muted', text: 'page views' }))),
@@ -143,7 +144,8 @@ function make(ctx) {
         h('div', { class: 'panel' }, h('h3', { text: 'Interest by state (which state guides were viewed)' }),
           h('p', { class: 'muted small', text: 'This is NOT where visitors live. It counts views of each state\'s guide and map pages. No location of any visitor is used.' }),
           usa || h('p', { class: 'muted', text: 'No state guide views yet.' }), usa ? legend() : null,
-          states.length ? table(['State', 'Visits', 'Views'], states.slice(0, 15).map((c) => row((window.US_STATES && window.US_STATES[c.label] ? window.US_STATES[c.label][0] : c.label), c.visits, c.page_views))) : null));
+          states.length ? table(['State', 'Visits', 'Views'], states.slice(0, 15).map((c) => row((window.US_STATES && window.US_STATES[c.label] ? window.US_STATES[c.label][0] : c.label), c.visits, c.page_views))) : null)
+      ].filter(Boolean));   // replaceChildren would print a null as the word "null"
     }
 
     const range = (n) => h('button', { class: 'quiet', 'aria-pressed': String(n === days), onclick: () => { days = n; root.querySelectorAll('.as-range button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.d === String(days)))); load(); }, 'data-d': n }, `${n} days`);
