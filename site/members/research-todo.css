@@ -1,0 +1,7 @@
+/* Admin > Research to-do */
+.todo-h{display:inline;font-size:1.15rem}
+.todo-list{margin:6px 0}
+.todo-row{display:flex;gap:12px;align-items:flex-start;padding:6px 0;border-top:1px solid var(--line)}
+.todo-score{flex:0 0 2.2em;text-align:center;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:2px 0}
+.todo-state{border-top:1px solid var(--line);padding:8px 0}
+.todo-state summary{cursor:pointer}
