@@ -43,3 +43,7 @@
 .cf-bar :focus-visible{outline:3px solid #f0c36a;outline-offset:2px}
 
 [hidden]{display:none!important}
+
+/* room held for the filter bar (added by cases-filter.js) so the page below does not jump when it appears */
+.cf-slot{min-height:131px}
+@media (max-width:700px){.cf-slot{min-height:279px}}

@@ -387,3 +387,8 @@ html.wb-bubbles-off .wb-rise{display:none}
   .wb-panel .wb-glass{display:block;width:14px;height:14px;border:2px solid #e9ffff;border-radius:50%;position:relative}
   .wb-panel .wb-glass:after{content:"";position:absolute;width:7px;height:2px;background:#e9ffff;right:-7px;bottom:-3px;transform:rotate(45deg)}
 }
+
+/* Before waybar.js runs, the plain Sign in header was 84 px tall (20 px taller than the finished bar), so the page jumped when the script ran.
+   Hold it at the finished height so nothing below moves. */
+@media (min-width:761px){.waybar:has(.wb-pill){height:64px;overflow:hidden}}
+@media (max-width:760px){.waybar:has(.wb-pill){min-height:62px}}

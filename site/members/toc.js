@@ -1,5 +1,5 @@
 // The Way: "On this page" menu for long pages (voter guides, district maps, case pages).
-// Drop-in: <link rel="stylesheet" href="/members/toc.css?v=1"> in <head>,
+// Drop-in: <link rel="stylesheet" href="/members/toc.css?v=2"> in <head>,
 //          <script src="/members/toc.js?v=1" defer></script>.
 // Reads the page's own h2/h3 headings (inside <main>, or the whole body when there is no <main>),
 // gives any heading without an id one, and draws: a sticky sidebar on wide screens, a jump menu button on narrow ones.
