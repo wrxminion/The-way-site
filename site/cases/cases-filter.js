@@ -21,6 +21,15 @@ const st = document.createElement('select'); st.id = 'cf-topic'; st.innerHTML = 
 const sd = document.createElement('select'); sd.id = 'cf-decade'; sd.innerHTML = '<option value="">All time periods</option>' + decades.map((d) => '<option value="' + d + '">' + d + 's</option>').join('');
 const row = document.createElement('div'); row.className = 'cf-row';
 row.append(field('Search', q), field('Topic', st), field('Time period', sd));
+const rnd = document.createElement('button'); rnd.type = 'button'; rnd.className = 'cf-random'; rnd.textContent = 'Read a random record';
+rnd.addEventListener('click', () => {
+  const shown = info.filter((i) => !i.a.hidden);
+  const pool = shown.length ? shown : info;
+  const pick = pool[Math.floor(Math.random() * pool.length)];
+  count.textContent = 'Opening ' + ((pick.a.querySelector('h2,h3,strong') || pick.a).textContent || '').trim().slice(0, 90) + '\u2026';
+  location.href = pick.a.href;
+});
+row.append(rnd);
 const count = document.createElement('p'); count.className = 'cf-count'; count.setAttribute('role', 'status'); count.setAttribute('aria-live', 'polite');
 bar.append(row, count);
 const slot = document.querySelector('.cf-slot');

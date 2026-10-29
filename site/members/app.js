@@ -2350,6 +2350,7 @@ async function reviewView(slug) {
     h('h1', { text: 'Review sources' }),
     h('p', { class: 'lede', text: 'Open a case, check its key claims against the sources one by one, flag anything wrong, and mark the case reviewed when every claim is checked. What you write in a note is public.' }),
     h('p', { class: 'small' }, h('a', { href: REVIEW_PUBLIC, target: '_blank', rel: 'noopener', text: 'The public review history' })),
+    randomClaimBox(),
     CASES.length ? h('ul', { class: 'list panel cases' }, CASES.map((c) => {
       const r = by[c.slug];
       const tag = !r ? ['not started', ''] : r.status === 'reviewed' ? ['reviewed', 'ok'] : r.claims_flagged ? [`${r.claims_flagged} flagged`, 'warn'] : ['in review', ''];
@@ -2358,6 +2359,56 @@ async function reviewView(slug) {
           h('span', { class: `tag ${tag[1]}`, text: tag[0] })),
         r ? h('p', { class: 'muted small', text: `${r.claims_checked} claim(s) checked · last activity ${day(r.last_activity)}` }) : null);
     })) : h('p', { class: 'muted', text: 'No cases yet.' }));
+}
+
+// "Review a random claim": picks one claim that still needs a look and opens it inside its case. Chosen in the browser
+// from the claims list plus what this moderator can already read (case_review_events, own claim_reviews), so row-level
+// security decides what is visible. Order of preference: not checked or flagged and not yet reviewed by this person,
+// in a case not marked reviewed; then any claim this person has not reviewed; then nothing.
+function randomClaimBox() {
+  const status = h('p', { class: 'rand-status', role: 'status', 'aria-live': 'polite' });
+  const btn = h('button', { type: 'button', class: 'primary rand-btn' }, 'Review a random claim');
+  btn.addEventListener('click', async () => {
+    btn.disabled = true; status.textContent = 'Looking for a claim that needs a check\u2026';
+    try {
+      const [claimsAll, events, mine] = await Promise.all([
+        loadClaims(),
+        q(sb.from('case_review_events').select('case_slug,claim_key,event_type,id').order('id')),
+        q(sb.from('claim_reviews').select('case_slug,claim_key')),
+      ]);
+      const latest = new Map(), done = new Set();
+      for (const e of events) {
+        if (e.claim_key) latest.set(`${e.case_slug}|${e.claim_key}`, e.event_type);
+        if (e.event_type === 'marked_reviewed') done.add(e.case_slug);
+        if (e.event_type === 'reopened') done.delete(e.case_slug);
+      }
+      const mineSet = new Set(mine.map((m) => `${m.case_slug}|${m.claim_key}`));
+      const all = [];
+      for (const c of CASES) for (const cl of claimsAll[c.slug] || []) {
+        const key = `${c.slug}|${cl.k}`;
+        if (mineSet.has(key)) continue;
+        const ev = latest.get(key);
+        all.push({ slug: c.slug, k: cl.k, open: !done.has(c.slug) && ev !== 'claim_checked' && ev !== 'claim_cleared' });
+      }
+      const open = all.filter((x) => x.open);
+      const pool = open.length ? open : all;
+      if (!pool.length) { status.textContent = 'You have reviewed every claim on the list. Thank you.'; return; }
+      const pick = pool[Math.floor(Math.random() * pool.length)];
+      const c = caseBySlug(pick.slug);
+      status.textContent = `Opening a claim in Case ${c.num}: ${c.title}`;
+      const target = `#/review/${pick.slug}`;
+      const focusClaim = async () => {
+        for (let i = 0; i < 40; i++) {
+          const el = document.getElementById(`claim-${pick.k}`);
+          if (el) { el.setAttribute('tabindex', '-1'); el.scrollIntoView({ block: 'start' }); el.focus({ preventScroll: true }); el.classList.add('rand-hit'); return; }
+          await new Promise((r) => setTimeout(r, 150));
+        }
+      };
+      if (location.hash === target) await reviewCaseView(pick.slug); else location.hash = target;
+      await focusClaim();
+    } catch (err) { status.textContent = friendly(err); } finally { btn.disabled = false; }
+  });
+  return h('div', { class: 'rand-box' }, btn, status);
 }
 
 async function reviewCaseView(slug) {

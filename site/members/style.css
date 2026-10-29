@@ -263,3 +263,11 @@ details.example ul{padding-left:18px;display:grid;gap:6px}
 .age-q legend { font-weight: 600; padding: 0 .3rem; }
 .age-opt { display: block; padding: .25rem 0; cursor: pointer; }
 .age-opt input { width: auto; margin-right: .4rem; }
+
+/* random claim button on the Review sources page (text kept at 15px or larger) */
+.rand-box{margin:14px 0 18px}
+button.primary.rand-btn{font-size:16px;letter-spacing:.01em;text-transform:none;min-height:44px;padding:10px 24px}
+button.primary.rand-btn:focus-visible{outline:3px solid #f0c36a;outline-offset:2px}
+.rand-status{font-size:15px;color:var(--muted);margin:8px 0 0;min-height:1.5em}
+li.rand-hit{outline:2px solid #7fe3d9;outline-offset:4px;border-radius:10px}
+li.rand-hit:focus{outline:2px solid #7fe3d9}
