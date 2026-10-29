@@ -221,11 +221,11 @@ function outcome(t, receipt) {
 }
 
 // ---------------------------------------------------------------- after sending: watch, then offer a follow-up
-function followUp(receipt, box) {
+function followUp(receipt, box, slow) {
   if (box.querySelector('.pt-still')) return;
   const err = h('p', { class: 'pt-err', role: 'alert' });
-  const wrap = h('section', { class: 'pt-still' }, h('h2', {}, icon('pat-progress-static.svg'), 'Still checking...'),
-    h('p', { text: 'You can leave this page. Choose how to hear back.' }),
+  const wrap = h('section', { class: 'pt-still' }, h('h2', {}, icon('pat-progress-static.svg'), slow ? 'Our AI is still working' : 'Still checking...'),
+    h('p', { text: slow ? 'Sorry for the delay. We can notify you when it is ready. You can leave this page.' : 'You can leave this page. Choose how to hear back.' }),
     h('p', {}, 'Follow this thread as we learn more ', h('strong', {}, h('em', { text: 'together!' }))));
   let busy = false;
   const save = async (btn, p, okText) => {
@@ -249,11 +249,26 @@ function followUp(receipt, box) {
   wrap.append(err);
   box.append(wrap);
 }
+// Plain stages for a draft. thread_reader_state (0048) says if our reader is online and whether this one is waiting or running;
+// if that call is not there yet, we still say "Text is being checked" and never claim the reader is paused.
+const PAUSED_TEXT = 'Our reader is paused right now. Your request is saved and will be read when it comes back. You can leave this page.';
+async function readerState(receipt) {
+  try { const { data, error } = await sb.rpc('thread_reader_state', { p_receipt: receipt }); return error ? null : data; } catch (e) { return null; }
+}
+function stageText(t, rs) {
+  const shot = t.kind === 'screenshot';
+  if (t.code !== 'draft') return null;
+  if (!t.ocr_reading) return 'Your text is ready: check it below and send it.';
+  if (rs && rs.online === false) return PAUSED_TEXT;
+  if (rs && rs.stage === 'line') return shot ? 'Your screenshot is in line to be read.' : 'Your text is in line to have the poster names hidden.';
+  return shot ? 'Text is being checked (read from your screenshot).' : 'Text is being checked (the poster names are being hidden).';
+}
 // A screenshot (or a pasted text with "Hide names") is a DRAFT: the sender checks the text, then sends it, or it is all deleted.
 function draftPanel(receipt, t, box, shot) {
   box.querySelector('.pt-ocr')?.remove();
   const wrap = h('section', { class: 'pt-ocr' }, h('h2', {}, shot ? 'Check the text from your screenshot' : 'Check the text before it is sent'));
-  if (t.ocr_reading) { wrap.append(h('p', { text: shot ? 'Reading your screenshot…' : 'Hiding the names of the posters…' })); box.append(wrap); return; }
+  if (t.ocr_reading) { wrap.append(h('p', { text: stageText(Object.assign({ code: 'draft', kind: shot ? 'screenshot' : 'text' }, t), null) })); box.append(wrap); return; }
+  wrap.append(h('p', { class: 'pt-stage', role: 'status', text: 'Your text is ready: check it below and send it.' }));
   const ta = h('textarea', { id: 'pt-ocr-text', maxlength: shot ? '3000' : '1500', rows: '8' }); ta.value = t.ocr_text || '';
   const out = h('p', { class: 'pt-err', role: 'status' });
   const send = h('button', { type: 'button', class: 'primary', text: 'Send this to the reviewers' });
@@ -300,8 +315,11 @@ function watch(receipt, box, draft) {
     const { data } = await sb.rpc('thread_status', { p_receipt: receipt });
     if (token !== watching) return;
     if (data && draft) {
+      const st = box.querySelector('.pt-stage');
+      if (st && data.ocr_reading) { const rs = await readerState(receipt); if (token !== watching) return; const tx = stageText(data, rs); if (st.textContent !== tx) { st.textContent = tx; live.textContent = tx; }
+        if (!askedFollow && (rs?.online === false || Date.now() - t0 >= WAIT_MS)) { askedFollow = true; followUp(receipt, box, true); } }
       if (data.code === 'expired' || data.code === 'discarded') { box.querySelector('.pt-ocr')?.remove(); box.querySelector('.pt-dynamic')?.replaceChildren(...outcome(data, null)); return; }
-      if (!data.ocr_reading && !shown) { shown = true; draftPanel(receipt, data, box, data.kind === 'screenshot'); }
+      if (!data.ocr_reading && !shown) { shown = true; box.querySelector('.pt-still')?.remove(); box.querySelector('.pt-stage')?.remove(); live.textContent = 'Your text is ready: check it below and send it.'; draftPanel(receipt, data, box, data.kind === 'screenshot'); }
       if (!shown || data.ocr_reading) setTimeout(tick, 4000);
       return;
     }
@@ -344,13 +362,13 @@ function leadsSection(receipt, box) {
   paint();
 }
 function showSent(receipt, status, matches, draft) {
-  const first = draft ? h('p', { class: 'muted', text: 'Nothing is sent to the reviewers yet. First you check the text.' })
+  const first = draft ? [h('p', { class: 'pt-stage', role: 'status', text: 'Text is being checked.' }), h('p', { class: 'muted', text: 'Nothing is sent to the reviewers yet. First you check the text.' })]
     : outcome({ status: status === 'matched' ? 'We already have something on this' : 'Waiting for a reviewer', code: status, matches }, receipt);
   const box = h('div', { class: 'pt-sent' },
     h('p', { class: 'pt-code' }, 'Your code: ', h('code', { text: receipt }), h('span', { class: 'muted small', text: '  Keep it to check on this later. Nobody sees who sent it.' })),
     h('div', { class: 'pt-dynamic' }, ...(Array.isArray(first) ? first : [first])));
   results.replaceChildren(box);
-  live.textContent = draft ? 'Received. Reading it now.' : status === 'matched' ? 'We found related evidence.' : 'Sent. It is waiting for a reviewer.';
+  live.textContent = draft ? 'Text is being checked.' : status === 'matched' ? 'We found related evidence.' : 'Sent. It is waiting for a reviewer.';
   if (draft || status === 'queued') watch(receipt, box, draft);
   if (!draft) leadsSection(receipt, box);
   box.scrollIntoView?.({ block: 'nearest' });
@@ -514,7 +532,11 @@ function sessionList() {
       open.setAttribute('aria-expanded', 'true'); open.textContent = 'Close';
     });
     list.append(h('li', {}, h('span', { class: 'pt-session-q', text: it.l || 'Something you sent' }), ' ', stat, ' ', open, where));
-    sb.rpc('thread_status', { p_receipt: it.r }).then(({ data }) => { stat.textContent = data ? '· ' + (data.status || 'Sent') : '· Not found'; }, () => { stat.textContent = ''; });
+    sb.rpc('thread_status', { p_receipt: it.r }).then(async ({ data }) => {
+      if (!data) { stat.textContent = '· Not found'; return; }
+      const rs = data.code === 'draft' && data.ocr_reading ? await readerState(it.r) : null;
+      stat.textContent = '· ' + (stageText(data, rs) || data.status || 'Sent');
+    }, () => { stat.textContent = ''; });
   }
   const clear = h('button', { type: 'button', class: 'quiet', text: 'Clear this list', onclick: () => { forgetAll(); sec.replaceWith(h('p', { class: 'muted small', role: 'status', text: 'Cleared. Your codes are gone from this browser.' })); } });
   sec.append(h('h2', { id: 'pt-session-h', text: 'Your requests this session' }), list,
