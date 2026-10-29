@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="robots" content="noindex">
 <title>Research library | The Way</title><meta name="description" content="The development ledger and reusable research packages with sources, schema, version history and checksums.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/members/waybar.css?v=16"><link rel="stylesheet" href="/site-shared.css?v=1">
-<link rel="stylesheet" href="/research/research.css?v=vf1"><link rel="stylesheet" href="/banner.css?v=1"><link rel="stylesheet" href="/water-depth.css?v=1">
+<link rel="stylesheet" href="/research/research.css?v=vf1"><link rel="stylesheet" href="/ai/ai.css?v=1"><link rel="stylesheet" href="/research/flow.css?v=1"><link rel="stylesheet" href="/banner.css?v=1"><link rel="stylesheet" href="/water-depth.css?v=1">
 </head><body class="water-depth">
 <header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
 <div class="page-banner"><img src="/img/cards/banner-research-1200.webp" srcset="/img/cards/banner-research-640.webp 640w, /img/cards/banner-research-1200.webp 1200w" sizes="100vw" width="1200" height="260" alt="" decoding="async"></div>
@@ -16,6 +16,18 @@
 <div class="routes"><div class="card"><h3>Explore the evidence</h3><a class="big" href="/development/">How this site has changed: the development ledger</a></div>
 <div class="card"><h3>Download the research <span class="soon">Coming soon</span></h3><p>Reusable packages: CSV and JSON, a data dictionary, a source registry, version history and SHA-256 checksums. The first package is a draft and is listed below. The full set of downloads is coming soon.</p><p>This will be a resource for scholars, journalists and anyone looking to go deeper into The Way.</p><span class="soon">Coming soon</span></div></div>
 <div class="routes"><div class="card"><h3>Teacher resources <span class="soon">Coming soon</span></h3><p>Lesson-ready pages, printable packets and class codes so students can join without giving any personal information. Built from the How Government Works guide, the history cases and Pull a Thread.</p><p>Teachers can say so when they sign up and get a private Teacher tag, shown publicly only if they choose.</p><span class="soon">Coming soon</span></div></div>
+<h2 id="flow">How a piece of research gets made</h2>
+<p>Yes, AI is used here. It never creates facts. It finds sources and suggests where to dig, and a person decides what is checked. Here is the path, step by step.</p>
+<ol class="flow" aria-label="How research moves from an idea to a research package">
+<li><span class="who person">A person</span><h3>A person has an idea</h3><p>A member asks a question or spots a claim worth looking into. It is about a policy or a record, never about whether a candidate or party is good or bad.</p></li>
+<li><span class="who ai">AI helps</span><h3>AI refines it and finds sources</h3><p>AI sharpens the question, looks for documents that bear on it, and suggests deeper dives. It does not write facts. A fact is what a source says, and the source stays exactly as it is.</p></li>
+<li><span class="who ai">AI helps</span><h3>A second AI runs a challenge check</h3><p>A different AI argues the other side. It hunts for weak or missing sources and flags counterarguments the first pass left out. It writes no facts and gives no verdict. Its flags are leads for the reviewer, and the reviewer decides which ones matter.</p></li>
+<li><span class="who ai">AI helps</span><h3>It is posted as "needs review"</h3><p>The sources are organized and saved with their dates, so anyone can open them. The page carries the label <span class="tag">AI written, unchecked</span> until a person works on it.</p></li>
+<li><span class="who person">A person</span><h3>A person reviews it</h3><p>A member compares each claim with its sources. Each claim needs at least two sources, one of them a primary record, and we look at the strongest case on both sides. The label moves up the ladder as the work is done.</p></li>
+<li><span class="who person">A person</span><h3>Posted as human reviewed, added to the research packages</h3><p>Only when a person has checked every source does the page say <span class="tag">Confirmed accurate by a human</span>. Then it joins the research packages below. Readers also get the source check record for each package: which sources a person checked, when, and a saved copy of each source as it looked that day. If no person has finished, the page says so plainly.</p></li>
+</ol>
+<ol class="ladder" aria-label="Label levels, weakest to strongest"><li>Unchecked</li><li>Skimmed</li><li>Read</li><li>Under review</li><li>Confirmed by human</li></ol>
+<p class="flow-cta">Want to help review? Join us! <a class="btn" href="/research/become-a-researcher.html">Become a researcher</a></p>
 <h2 id="packages">Packages</h2>
 <label for="f" class="sr">Search packages</label><input id="f" type="search" placeholder="Filter by topic, state, institution, year…" class="search">
 <div id="list" aria-live="polite"></div>
