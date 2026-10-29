@@ -92,3 +92,11 @@
 .pt-save-panel :focus-visible,.pt-save-btn:focus-visible{outline:3px solid #a7f0e9;outline-offset:2px}
 .pt-flag{border-left:3px solid #d9a441;padding-left:10px;margin:0}
 .pt-modes-print{border:0;padding:0;margin:0;display:grid;gap:6px}
+
+.pt-session{border:2px solid var(--line-strong);border-radius:16px;padding:12px 16px;margin:14px 0;background:var(--panel)}
+.pt-session h2{margin:0 0 6px;font-size:20px}
+.pt-session-list{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:8px}
+.pt-session-list li{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.pt-session-q{font-weight:600;overflow-wrap:anywhere}
+.pt-session-open{flex-basis:100%}
+.pt-session :focus-visible{outline:3px solid #a7f0e9;outline-offset:2px}

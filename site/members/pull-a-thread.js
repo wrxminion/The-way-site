@@ -11,7 +11,8 @@ if (!cfg || /YOUR-PROJECT/.test(cfg.supabaseUrl)) { app.textContent = 'Setup nee
 const sb = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey, { auth: { persistSession: true, autoRefreshToken: false } });
 const FN = `${cfg.supabaseUrl}/functions/v1/pull-thread`;
 const TS_KEY = cfg.turnstileSiteKey || '';
-const RECEIPT_KEY = 'theway.thread.receipts';
+const RECEIPT_KEY = 'theway.thread.receipts';   // old key: receipts used to be kept on the device; it is cleared now
+const SESSION_KEY = 'theway.thread.session';    // this tab only (sessionStorage): gone when the browser is closed; nothing is stored on the server
 const MAX_SHOT = 4 * 1024 * 1024;
 const ART = '/members/art/pat/';
 const WAIT_MS = 35000;                       // after this long, offer a follow-up
@@ -42,8 +43,12 @@ const loadTs = () => new Promise((ok, no) => {
   s.onerror = () => no(new Error('blocked'));
   document.head.append(s);
 });
-function remembered() { try { return JSON.parse(localStorage.getItem(RECEIPT_KEY) || '[]'); } catch { return []; } }
-function remember(r) { try { localStorage.setItem(RECEIPT_KEY, JSON.stringify([r, ...remembered().filter((x) => x !== r)].slice(0, 5))); } catch { /* no storage: fine */ } }
+try { localStorage.removeItem(RECEIPT_KEY); } catch { /* no storage: fine */ }
+// What you sent this session: receipt plus a short label, kept in sessionStorage only. No cookie, no server copy, no sender identity.
+function sessionItems() { try { const v = JSON.parse(sessionStorage.getItem(SESSION_KEY) || '[]'); return Array.isArray(v) ? v.filter((x) => x && typeof x.r === 'string') : []; } catch { return []; } }
+function remembered() { return sessionItems().map((x) => x.r); }
+function remember(r, label) { try { sessionStorage.setItem(SESSION_KEY, JSON.stringify([{ r, l: String(label || '').slice(0, 80) }, ...sessionItems().filter((x) => x.r !== r)].slice(0, 20))); } catch { /* no storage: fine */ } }
+function forgetAll() { try { sessionStorage.removeItem(SESSION_KEY); } catch { /* ignore */ } }
 const kb = (n) => (n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB');
 
 let session = null, mode = 'question', tsToken = null, tsId = null, watching = 0, sending = false, shotFile = null;
@@ -410,8 +415,8 @@ async function send(form, summary) {
   if (tsId !== null) { tsToken = null; try { window.turnstile.reset(tsId); } catch { /* ignore */ } }
   if (!res) return;
   if (!res.ok) { live.textContent = body && body.error ? body.error : 'Something went wrong. Please try again.'; return; }
-  remember(body.receipt);
   asked = (kind === 'url' ? `Link: ${hostOf(fd.get('url'))}` : kind === 'screenshot' ? (form.elements.note.value.trim() || 'Screenshot') : q).replace(/\s+/g, ' ').slice(0, 160);
+  remember(body.receipt, asked);
   form.reset(); shotFile = null; view();
   showSent(body.receipt, body.status, body.matches, kind === 'screenshot' || body.status === 'draft');
 }
@@ -494,6 +499,29 @@ function view() {
   } else if (!session) ts.append(h('p', { class: 'muted small', text: 'The human check is not switched on yet, so sending without an account is paused. Members can sign in and send.' }));
 }
 
+// "Your requests this session": status and a way to open each answer. Rebuilt from sessionStorage; the status comes from the same receipt lookup as the check box.
+function sessionList() {
+  const items = sessionItems(); if (!items.length) return null;
+  const sec = h('section', { class: 'pt-session', 'aria-labelledby': 'pt-session-h' });
+  const list = h('ul', { class: 'pt-session-list' });
+  for (const it of items) {
+    const stat = h('span', { class: 'muted small', text: 'Checking…' }), where = h('div', { class: 'pt-session-open' });
+    const open = h('button', { type: 'button', class: 'quiet', text: 'Open', 'aria-expanded': 'false' });
+    open.addEventListener('click', async () => {
+      if (open.getAttribute('aria-expanded') === 'true') { where.replaceChildren(); open.setAttribute('aria-expanded', 'false'); open.textContent = 'Open'; return; }
+      const { data } = await sb.rpc('thread_status', { p_receipt: it.r });
+      where.replaceChildren(...(data ? outcome(data, it.r) : [h('p', { class: 'muted', text: 'No match for that code.' })]));
+      open.setAttribute('aria-expanded', 'true'); open.textContent = 'Close';
+    });
+    list.append(h('li', {}, h('span', { class: 'pt-session-q', text: it.l || 'Something you sent' }), ' ', stat, ' ', open, where));
+    sb.rpc('thread_status', { p_receipt: it.r }).then(({ data }) => { stat.textContent = data ? '· ' + (data.status || 'Sent') : '· Not found'; }, () => { stat.textContent = ''; });
+  }
+  const clear = h('button', { type: 'button', class: 'quiet', text: 'Clear this list', onclick: () => { forgetAll(); sec.replaceWith(h('p', { class: 'muted small', role: 'status', text: 'Cleared. Your codes are gone from this browser.' })); } });
+  sec.append(h('h2', { id: 'pt-session-h', text: 'Your requests this session' }), list,
+    h('p', { class: 'muted small', text: 'Kept only in this browser tab until you close the browser. We do not store this list, and nobody can see who sent what.' }), clear);
+  return sec;
+}
+
 function otherPanels() {
   const out = h('div'), inp = h('input', { id: 'pt-receipt', name: 'receipt', maxlength: '40', autocomplete: 'off' });
   const saved = remembered()[0]; if (saved) inp.value = saved;
@@ -504,7 +532,7 @@ function otherPanels() {
     out.replaceChildren(...outcome(data, inp.value.trim()));
     leadsSection(inp.value.trim(), out);
   } });
-  return h('details', { class: 'pt-check' }, h('summary', { text: 'Check on something you sent' }), h('label', { for: 'pt-receipt', text: 'Your code' }), inp, btn, out);
+  return h('div', {}, sessionList(), h('details', { class: 'pt-check' }, h('summary', { text: 'Check on something you sent' }), h('label', { for: 'pt-receipt', text: 'Your code' }), inp, btn, out));
 }
 
 // a member opens one of their threads from a notification: ?thread=<id>
