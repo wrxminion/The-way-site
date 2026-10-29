@@ -452,7 +452,7 @@ function view() {
     h('span', { class: 'pt-mode-box' }, icon(m.icon), h('span', { text: m.label })))));
   const field = modeField(form);
   const framed = h('div', { class: 'pt-framed' }, h('span', { class: 'pt-thread-corner', 'aria-hidden': 'true' }),
-    h('img', { class: 'pt-hand', src: '/members/art/pull-a-thread-hand-120.webp', srcset: '/members/art/pull-a-thread-hand-120.webp 1x, /members/art/pull-a-thread-hand-240.webp 2x', alt: '', 'aria-hidden': 'true', width: '120', height: '102' }), field);
+    h('img', { class: 'pt-hand', src: '/members/art/pull-a-thread-hand-120.webp?v=2', srcset: '/members/art/pull-a-thread-hand-120.webp?v=2 1x, /members/art/pull-a-thread-hand-240.webp?v=2 2x', alt: '', 'aria-hidden': 'true', width: '120', height: '102' }), field);
   const noteLabel = mode === 'screenshot' ? 'What should we check in it?' : 'Anything we should know? (optional)';
   const note = h('div', { class: 'pt-field' }, h('label', { for: 'pt-note', text: noteLabel }), h('textarea', { id: 'pt-note', name: 'note', maxlength: '500', rows: '2' }));
   const checks = [];
@@ -473,11 +473,11 @@ function view() {
   }
   const trap = h('div', { class: 'pt-hp', 'aria-hidden': 'true' }, h('input', { name: 'website', tabindex: '-1', autocomplete: 'off' }));
   const ts = h('div', { class: 'pt-ts' });
-  const BA = '/members/art/', still = BA + 'thread-slack-480.webp', pulled = BA + 'thread-pull-480.webp';
+  const BA = '/members/art/', still = BA + 'thread-slack-480.webp?v=2', pulled = BA + 'thread-pull-480.webp';
   const goImg = h('img', { src: still, alt: '', width: '480', height: '153', class: 'pt-go-art', 'aria-hidden': 'true' });
   const go = h('button', { type: 'submit', class: 'pt-go' }, goImg, h('span', { class: 'pt-go-text', text: 'Submit' }));   // real text under the picture is the button's name
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
-  go.addEventListener('click', () => { if (reduce && reduce.matches) { goImg.src = BA + 'thread-taut-480.webp'; return; } goImg.src = pulled + '?t=' + Date.now(); });   // plays once per press; still for reduced motion
+  go.addEventListener('click', () => { if (reduce && reduce.matches) { goImg.src = BA + 'thread-taut-480.webp?v=2'; return; } goImg.src = pulled + '?v=2&t=' + Date.now(); });   // plays once per press; still for reduced motion
   form.append(modes, summary, framed, note, ...checks, trap, ts, h('div', { class: 'pt-gorow' }, go, session ? null : h('span', { class: 'muted', text: 'No account needed' })),
     h('p', { class: 'pt-privacy', text: 'Reviewers see what you send, never who you are. Your screenshot and email stay private. Questions and evidence can become public after review, reworded without names or private details. Email addresses stay private.' }));
   form.addEventListener('submit', (ev) => { ev.preventDefault(); send(form, summary); });
