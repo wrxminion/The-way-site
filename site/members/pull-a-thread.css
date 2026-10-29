@@ -107,3 +107,24 @@
 #app .muted{color:#d6e9ee}
 .pt-stage{font-size:18px;line-height:1.4}
 .pt-sent .pt-code .muted{display:block;margin-top:4px}
+
+/* Phase checklist (Frank Oct 29). Every line is at least 16px. State is a word and a mark, never colour alone. */
+.pt-progress h2,.pt-yousent h2{font-size:20px;margin:14px 0 8px}
+.pt-steps{list-style:none;margin:0;padding:0}
+.pt-step{border-left:4px solid var(--line-strong);padding:6px 0 8px 14px;margin:0 0 6px}
+.pt-step[hidden]{display:none}
+.pt-step[data-state=done]{border-left-color:#7fe3a8}
+.pt-step[data-state=current]{border-left-color:#a7f0e9;background:rgba(167,240,233,.08)}
+.pt-step[data-state=problem]{border-left-color:#ffe3a3}
+.pt-step-head{display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline}
+.pt-step-name{font-size:18px;flex:1 1 8em}
+.pt-step-mark{font-size:16px;font-weight:700;white-space:nowrap}
+.pt-step-time{font-size:16px;color:#d6e9ee;margin-left:auto}
+.pt-step-note{margin:4px 0 0;font-size:16px;line-height:1.45}
+.pt-step-note:empty{display:none}
+.pt-step-body{margin-top:6px}
+.pt-step-body:empty{display:none}
+.pt-yousent{border:2px solid var(--line-strong);border-radius:16px;padding:6px 16px 12px;margin:14px 0;background:var(--panel)}
+.pt-thumb{display:block;max-width:100%;max-height:200px;border-radius:10px;border:1px solid var(--line-strong);margin:6px 0}
+.pt-sent-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:16px;line-height:1.5;border:1px dashed var(--line);border-radius:10px;padding:8px 10px;margin:6px 0}
+.pt-sent-link{overflow-wrap:anywhere;font-size:16px;font-weight:600;margin:6px 0}
