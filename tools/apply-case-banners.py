@@ -3,7 +3,8 @@
 
 Reads site/img/case-banners/banners.json ({"<slug>": {"alt": ""}}). For every slug it
 needs site/img/case-banners/<slug>-1600.webp and <slug>-800.webp (4:1). It adds
-  - a <figure class="case-banner"> right after the page header (under the title) in site/cases/<slug>.html
+  - a <figure class="case-banner"> right after the page header (under the title) in site/cases/<slug>.html,
+    with a small AI-generated note under the image ("Submit your art" links to the members sign-up art question)
   - an <img class="card-banner"> at the top of the case's card in site/cases/index.html
 and sets the cases.css stamp on the pages it touches. Safe to run again: existing
 banner markup is replaced, never duplicated.
@@ -21,7 +22,11 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 CASES = SITE / "cases"
 IMG = SITE / "img" / "case-banners"
-CSS_STAMP = "cases.css?v=vf5"
+CSS_STAMP = "cases.css?v=vf6"
+
+
+NOTE = ('<figcaption class="case-banner-note">Yes, this image was AI generated. Don\'t like it? '
+        '<a href="/members/#/signup">Submit your art</a> and we\'ll use it with credit.</figcaption>')
 
 
 def img_tag(slug, alt, cls, sizes, lazy):
@@ -50,7 +55,7 @@ def main():
         s = re.sub(r'<figure class="case-banner">.*?</figure>\n?', "", s, flags=re.S)
         fig = ('<figure class="case-banner">'
                + img_tag(slug, alt, "case-banner-img", "(max-width:1000px) 100vw, 950px", True)
-               + "</figure>\n")
+               + NOTE + "</figure>\n")
         s, n = re.subn(r'(<header class="essay-top">.*?</header>\n?)', lambda m: m.group(1) + fig, s, count=1, flags=re.S)
         if n != 1:
             problems.append(f"{slug}: no essay-top header")
