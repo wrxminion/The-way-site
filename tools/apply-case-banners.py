@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 CASES = SITE / "cases"
 IMG = SITE / "img" / "case-banners"
-CSS_STAMP = "cases.css?v=vf4"
+CSS_STAMP = "cases.css?v=vf5"
 
 
 def img_tag(slug, alt, cls, sizes, lazy):
