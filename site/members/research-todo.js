@@ -46,7 +46,7 @@ function make(ctx) {
       const stateOrder = Object.entries(states).sort((a, b) => a[1].order - b[1].order);
       const first = stateOrder.map(([ab, s]) => {
         const mine = items.filter((i) => i.group === 'ballot-people' && i.state === ab && keep(i));
-        if (!mine.length) return null;
+        if (!mine.length) return needle ? null : h('div', { class: 'todo-state' }, h('strong', { text: `${s.order}. ${s.name}` }), h('span', { class: 'small dim', text: ' no ballot measures or races listed yet' }));
         const bal = mine.filter((i) => i.list === 'Ballot measures').sort(byScore), ppl = mine.filter((i) => i.list === 'People running').sort(byScore);
         const det = h('details', { class: 'todo-state' }, h('summary', {}, h('strong', { text: `${s.order}. ${s.name}` }),
           h('span', { class: 'small dim', text: ` ${bal.length} ballot measures, ${ppl.length} races` })));
