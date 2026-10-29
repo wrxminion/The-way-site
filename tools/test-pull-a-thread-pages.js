@@ -95,7 +95,7 @@ const XSS = '<img src=x onerror="window.__pwned=1">';
   await page.click('form.pt-form button[type=submit]');
   await page.waitForSelector('.pt-ocr textarea', { timeout: 8000 });
   ok(sent.includes('name="image_mode"\r\n\r\ntext_only') && sent.includes('name="hide_names"\r\n\r\n1'), 'the choices are sent with the screenshot');
-  ok(await page.locator('.pt-sent').innerText().then((t) => /Nothing is sent to the reviewers yet/.test(t)), 'nothing is shown as sent before the sender checks the text');
+  ok(await page.locator('.pt-sent').innerText().then((t) => /Not sent yet/.test(t)), 'nothing is shown as sent before the sender checks the text');
   ok(/55 minutes/.test(await page.locator('.pt-ocr').innerText()), 'the sender is told how long the draft lasts');
   ok(await page.locator('.pt-ocr textarea').inputValue() === 'text from [poster 1] about Elon Musk', 'the sender sees the redacted text');
   await page.fill('.pt-ocr textarea', 'text from [poster 1] about Elon Musk, edited');
@@ -199,6 +199,28 @@ const XSS = '<img src=x onerror="window.__pwned=1">';
   await p2.route('**/rest/v1/rpc/**', (route) => route.fulfill({ status: 200, headers: { 'access-control-allow-origin': '*' }, contentType: 'application/json', body: 'null' }));
   await p2.goto(base + '/members/pull-a-thread.html'); await p2.waitForSelector('form.pt-form');
   ok(await p2.locator('.pt-session').count() === 0, 'a new browser session starts with an empty list');
+  // signed out with the human check blocked (VPN or ad blocker): a clear reason shows, and Submit does not replace it
+  const ctx3 = await b.newContext(); const p3 = await ctx3.newPage();
+  await p3.route('https://challenges.cloudflare.com/**', (route) => route.abort());
+  await p3.route('**/rest/v1/**', (route) => route.fulfill({ status: 200, headers: { 'access-control-allow-origin': '*' }, contentType: 'application/json', body: 'null' }));
+  await p3.goto(base + '/members/pull-a-thread.html'); await p3.waitForSelector('form.pt-form');
+  await p3.waitForFunction(() => /human check didn't load/.test(document.querySelector('.pt-live')?.textContent || ''), null, { timeout: 8000 }).catch(() => {});
+  await p3.fill('textarea[name=question]', 'Is there anything about the budget bill being true?');
+  await p3.click('form.pt-form button[type=submit]');
+  ok(/VPN or ad blocker/.test(await p3.locator('.pt-live').innerText()), 'blocked human check: the reason stays on screen after Submit');
+  // a saved sign-in that cannot be refreshed is reported on the page; one that can be refreshed counts as signed in
+  for (const works of [false, true]) {
+    const c4 = await b.newContext(); const p4 = await c4.newPage();
+    const old = { access_token: 'x.y.z', refresh_token: 'r', expires_at: 1000, expires_in: 3600, token_type: 'bearer', user: { id: 'u1', aud: 'authenticated', email: 'a@b.c' } };
+    await p4.addInitScript((s) => localStorage.setItem('sb-tiuhyulxdiiiqspysfci-auth-token', JSON.stringify(s)), old);
+    await p4.route('https://challenges.cloudflare.com/**', (route) => route.abort());
+    await p4.route('**/rest/v1/**', (route) => route.fulfill({ status: 200, headers: { 'access-control-allow-origin': '*' }, contentType: 'application/json', body: 'null' }));
+    await p4.route('**/auth/v1/token**', (route) => route.fulfill({ status: works ? 200 : 400, headers: { 'access-control-allow-origin': '*' }, contentType: 'application/json',
+      body: JSON.stringify(works ? { access_token: 'n.e.w', refresh_token: 'r2', expires_in: 3600, expires_at: 4102444800, token_type: 'bearer', user: old.user } : { error: 'invalid_grant', error_description: 'Invalid Refresh Token' }) }));
+    await p4.goto(base + '/members/pull-a-thread.html'); await p4.waitForSelector('form.pt-form'); await p4.waitForTimeout(500);
+    if (works) ok(await p4.locator('.pt-signin-note').count() === 0 && await p4.locator('.pt-gorow >> text=No account needed').count() === 0, 'an old saved sign-in is refreshed and treated as signed in (no human check)');
+    else ok(/could not use your sign-in/.test(await p4.locator('.pt-signin-note').innerText()), 'a saved sign-in that cannot be refreshed is explained on the page, not silently treated as a visitor');
+  }
   ok(errs.length === 0, 'no script errors' + (errs.length ? ': ' + errs[0] : ''));
   await b.close(); srv.close(); process.exit(fail);
 })();

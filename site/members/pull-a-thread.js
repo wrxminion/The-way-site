@@ -51,7 +51,7 @@ function remember(r, label) { try { sessionStorage.setItem(SESSION_KEY, JSON.str
 function forgetAll() { try { sessionStorage.removeItem(SESSION_KEY); } catch { /* ignore */ } }
 const kb = (n) => (n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB');
 
-let session = null, mode = 'question', tsToken = null, tsId = null, watching = 0, sending = false, shotFile = null;
+let session = null, mode = 'question', tsToken = null, tsId = null, tsFailed = '', watching = 0, sending = false, shotFile = null;
 const live = h('p', { class: 'pt-live', role: 'status', 'aria-live': 'polite' });     // short announcements only
 const results = h('div', { class: 'pt-results' });
 
@@ -509,7 +509,7 @@ async function send(form, summary) {
   fd.append('note', form.elements.note ? form.elements.note.value.trim() : '');
   const headers = {};
   if (session) headers.Authorization = `Bearer ${session.access_token}`;
-  else { if (!tsToken) { live.textContent = 'Please complete the human check first.'; return; } fd.append('turnstile', tsToken); }
+  else { if (!tsToken) { live.textContent = tsFailed || 'Please complete the human check first.'; return; } fd.append('turnstile', tsToken); }
   sending = true; form.querySelector('button[type=submit]').disabled = true; live.textContent = 'Sending…';
   let res, body;
   try { res = await fetch(FN, { method: 'POST', body: fd, headers }); body = await res.json(); }
@@ -597,10 +597,16 @@ function view() {
     h('p', { class: 'overline', text: 'FOLLOW THE EVIDENCE' }),
     h('h1', { text: 'Pull a thread' }),
     h('p', { class: 'lede', text: 'Bring a question. See what the evidence says.' }),
+    signInNote ? h('p', { class: 'pt-signin-note', role: 'status' }, signInNote + ' ', h('a', { href: '/members/', text: 'Sign in' })) : null,
     form, live, results, otherPanels());
   if (!session && TS_KEY) {
-    loadTs().then((t) => { tsId = t.render(ts, { sitekey: TS_KEY, callback: (tok) => { tsToken = tok; }, 'expired-callback': () => { tsToken = null; } }); })
-      .catch(() => { live.textContent = 'The human check could not load. If a blocker is on, allow challenges.cloudflare.com for this page.'; });
+    const tsBad = () => { tsFailed = "The human check didn't load. A VPN or ad blocker can block it; try turning it off, or sign in."; live.textContent = tsFailed; };   // stays on screen: Submit does not overwrite it
+    loadTs().then((t) => {
+      tsId = t.render(ts, { sitekey: TS_KEY, callback: (tok) => { tsToken = tok; tsFailed = ''; live.textContent = ''; }, 'expired-callback': () => { tsToken = null; },
+        'error-callback': () => { tsToken = null; tsBad(); return true; }, 'timeout-callback': () => { tsToken = null; } });
+      setTimeout(() => { if (!tsToken && !ts.querySelector('iframe')) tsBad(); }, 10000);   // script loaded but no box drew (VPN or blocker)
+    })
+      .catch(() => { tsBad();  });
   } else if (!session) ts.append(h('p', { class: 'muted small', text: 'The human check is not switched on yet, so sending without an account is paused. Members can sign in and send.' }));
 }
 
@@ -652,8 +658,24 @@ async function openThread(id) {
     h('p', {}, h('a', { href: '/members/pull-a-thread.html', text: 'Pull another thread' })));
 }
 
-sb.auth.getSession().then(({ data }) => {
-  session = data && data.session;
+// Who is signed in. getSession() gives up quietly when the saved token is old and the refresh fails, and the page then treats a signed-in member as a visitor.
+// So: try getSession, then one explicit refresh with the saved refresh token, and if a saved sign-in exists but cannot be used, say so on the page.
+let signInNote = '';
+function savedLogin() {
+  try { for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (/^sb-.+-auth-token$/.test(k)) { const v = JSON.parse(localStorage.getItem(k) || 'null'); if (v && v.refresh_token) return v; } } } catch { /* ignore */ }
+  return null;
+}
+async function findSession() {
+  let why = '';
+  const saved = savedLogin();      // read first: a failed refresh makes the library erase the saved sign-in
+  try { const { data, error } = await sb.auth.getSession(); if (data && data.session) return data.session; why = (error && error.message) || ''; } catch (e) { why = (e && e.message) || 'could not read the sign-in'; }
+  if (!saved) return null;
+  try { const { data, error } = await sb.auth.refreshSession({ refresh_token: saved.refresh_token }); if (data && data.session) return data.session; why = (error && error.message) || why; } catch (e) { why = (e && e.message) || why; }
+  signInNote = 'You look signed in on this device, but this page could not use your sign-in' + (why ? ' (' + why + ')' : '') + '. Please sign in again, then come back.';
+  return null;
+}
+findSession().then((s) => {
+  session = s;
   const m = /[?&]thread=(\d{1,12})\b/.exec(location.search);
   if (m && session) openThread(Number(m[1])); else view();
 }, () => view());
