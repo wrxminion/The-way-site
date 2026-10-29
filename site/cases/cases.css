@@ -78,4 +78,6 @@ html,body,.ocean,.essay-ocean{background:#fff!important;color:#111!important;min
 .case-banner{max-width:950px;margin:-30px auto 26px;padding:0 27px}
 .case-banner-img{display:block;width:100%;height:auto;aspect-ratio:4/1;object-fit:cover;border-radius:14px;border:1px solid #c7ffff26}
 .cases-hub .hub-card .card-banner{display:block;width:100%;height:auto;aspect-ratio:4/1;object-fit:cover;border-radius:12px 12px 0 0;margin:0 0 12px}
+.case-banner-note{margin:8px 2px 0;font-size:.8rem;line-height:1.4;opacity:.85}
+.case-banner-note a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 @media(max-width:700px){.case-banner{padding:0 16px;margin-top:-20px}}
