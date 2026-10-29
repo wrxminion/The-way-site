@@ -1,0 +1,21 @@
+.defs dt{font-weight:700;margin-top:1em}
+.defs dd{margin:.2em 0 0;color:var(--muted)}
+.promise{border:1px solid var(--line);border-left:5px solid var(--ok);background:var(--card);border-radius:10px;padding:14px 18px;margin:18px 0;font:normal 1.25rem/1.4 Georgia,serif}
+.ladder{list-style:none;margin:12px 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ladder li{border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:.9rem;background:var(--card)}
+.ladder li+li::before{content:"\203A";margin-right:12px;color:var(--muted)}
+.ladder li:last-child{border-color:#2f7a5c;color:var(--ok)}
+.call{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:16px 20px;margin:18px 0}
+.call h2{margin-top:.2em}
+.btn{display:inline-block;border:1px solid var(--aqua);border-radius:999px;padding:8px 20px;text-decoration:none;font-weight:700;color:var(--deep);background:var(--aqua)}
+.soon-link{display:inline-block;border:1px dashed var(--line);border-radius:999px;padding:6px 14px;color:var(--muted);cursor:not-allowed}
+.quote{margin:.6em 0;padding:.2em 0 .2em 14px;border-left:3px solid var(--line)}
+.quote p{margin:.2em 0}
+.quote cite{display:block;color:var(--muted);font-size:.9rem;font-style:normal}
+.tblwrap{overflow-x:auto}
+.tbl{border-collapse:collapse;width:100%;min-width:640px;font-size:.95rem}
+.tbl th,.tbl td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.tbl th{background:var(--card)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:700px){.two{grid-template-columns:1fr}}
+.who{border-top:1px solid var(--line);padding-top:6px;margin-top:1.4em}

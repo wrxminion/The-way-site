@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex">
+<title>AI Deep Dive | The Way</title>
+<meta name="description" content="Plain-language AI terms, who owns the major AI companies, and what the people who build AI have said in public, hopes and warnings side by side.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/members/waybar.css?v=16"><link rel="stylesheet" href="/notice.css?v=2">
+<link rel="stylesheet" href="/site-shared.css?v=1">
+<link rel="stylesheet" href="/ai/ai.css?v=1">
+</head>
+<body>
+<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+<main class="wrap" id="main">
+<p class="overline">Methods</p>
+<h1>AI deep dive</h1>
+<details class="notice notice-warn"><summary><span class="notice-tag">Warning</span><span class="notice-sum">AI written, unchecked. A person has not yet verified every quote and date here.</span><span class="notice-more"><span class="on-closed">Details</span><span class="on-open">Hide details</span></span></summary><div class="notice-body"><p>Draft, 2026-10-28. Written with AI. Quotes were read from the linked pages, but a person has not yet compared each one with its source. Ownership of AI companies changes quickly, so every "as of" date matters. Where a source is a news report and not the company's own record, we say so.</p></div></details>
+<p class="lede">You should know what this technology is, who owns it and what its builders say about it. We put hopes and warnings from the same people side by side and do not rank them. This page is part of <a href="/ai/">why and where we use AI</a>.</p>
+<nav class="entry" aria-label="On this page"><a href="#terms">Plain terms</a><a href="#owners">Who owns it</a><a href="#voices">What builders say</a><a href="#bias">A note on our own bias</a></nav>
+
+<h2 id="terms">Plain terms</h2>
+<p>Where a definition comes from a source, the source is linked. Where it is our own plain wording, we say so.</p>
+<dl class="defs">
+<dt>Artificial intelligence (AI)</dt>
+<dd>A machine-based system that takes in information and produces outputs such as predictions, content, recommendations or decisions. Source: <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf" rel="noopener">NIST AI Risk Management Framework 1.0 (NIST AI 100-1)</a>.</dd>
+<dt>Model</dt>
+<dd>The finished program that does the work. Think of it as a very large set of numbers that, together, turn an input (your question) into an output (an answer). Our wording.</dd>
+<dt>Large language model (LLM)</dt>
+<dd>A model trained on huge amounts of text to predict and produce language. Most are built on the "transformer" design. Sources: <a href="https://arxiv.org/abs/1706.03762" rel="noopener">Vaswani et al., 2017</a>; <a href="https://arxiv.org/abs/2005.14165" rel="noopener">Brown et al., 2020</a>.</dd>
+<dt>Training</dt>
+<dd>The long, costly process where a model reads a very large amount of text and adjusts its numbers until it gets better at predicting what comes next. After training, the model does not look things up. It answers from the patterns it kept. Source for the method: <a href="https://arxiv.org/abs/2005.14165" rel="noopener">Brown et al., 2020</a>.</dd>
+<dt>Prompt</dt>
+<dd>What you type or feed in. The answer depends heavily on it. Our wording.</dd>
+<dt>Hallucination, or confabulation</dt>
+<dd>A confident statement that is false or invented. NIST uses "confabulation." This is the main reason a person must check what a model says against a real source. Sources: <a href="https://arxiv.org/abs/2202.03629" rel="noopener">Ji et al., 2022</a>; <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" rel="noopener">NIST AI 600-1</a>.</dd>
+<dt>Retrieval-augmented generation (RAG)</dt>
+<dd>Handing the model real documents first and telling it to answer from them. It reduces made-up answers but does not remove them. Source: <a href="https://arxiv.org/abs/2005.11401" rel="noopener">Lewis et al., 2020</a>.</dd>
+<dt>Cloud AI and local AI</dt>
+<dd>A <b>cloud</b> model runs on the company's computers, and your text is sent to them. A <b>local</b> model runs on a computer you control, so the text stays there. Cloud models are usually bigger and stronger. Local models give more control over where information goes. Our wording.</dd>
+<dt>Open-weight and closed models</dt>
+<dd>A model's "weights" are its trained numbers. If a company publishes them, anyone can download and run the model, and that is called open-weight. If not, the model is closed and can only be used through the company. Open-weight is not always the same as open source, because the training data and code may not be shared. Our wording.</dd>
+<dt>Foundation model</dt>
+<dd>A large model trained on broad data that can be adapted to many tasks. Source: <a href="https://arxiv.org/abs/2108.07258" rel="noopener">Bommasani et al., 2021</a>.</dd>
+<dt>Bias</dt>
+<dd>A model learns from human writing, so it can repeat the slants, gaps and mistakes in that writing. See the risk list in <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" rel="noopener">NIST AI 600-1</a>.</dd>
+<dt>AGI (artificial general intelligence)</dt>
+<dd>There is no single agreed meaning. It usually points to AI that can do most thinking tasks at human level or better. Several companies below name it as their goal, and people disagree about whether, when or how it could happen. Our wording.</dd>
+</dl>
+
+<h2 id="owners">Who owns the major AI companies</h2>
+<p>As of 2026-10-28, from the sources linked. Structures and stakes change often, so check the source for today's picture. We give no ownership percentages we could not read in a company's own words.</p>
+<div class="tblwrap">
+<table class="tbl">
+<thead><tr><th scope="col">Company</th><th scope="col">Who controls it</th><th scope="col">Source</th></tr></thead>
+<tbody>
+<tr><th scope="row">OpenAI (ChatGPT)</th><td>A nonprofit, the OpenAI Foundation, controls a for-profit public benefit corporation, OpenAI Group PBC. The Foundation holds equity the company valued at about $130 billion. Microsoft is a large investor and partner. News reports put its stake near 27 percent.</td><td><a href="https://openai.com/index/built-to-benefit-everyone/" rel="noopener">OpenAI, Oct 28, 2025</a> (company). Microsoft figure: <a href="https://www.thurrott.com/a-i/openai-a-i/328925/openai-goes-for-profit-and-microsoft-owns-27-percent" rel="noopener">Thurrott</a> (news report).</td></tr>
+<tr><th scope="row">Anthropic (Claude)</th><td>A public benefit corporation. Its board is elected by stockholders. A separate five-member body, the Long-Term Benefit Trust, has no financial stake and is set up to elect a majority of the board over time.</td><td><a href="https://www.anthropic.com/company" rel="noopener">Anthropic, company page</a>; <a href="https://www.anthropic.com/news/the-long-term-benefit-trust" rel="noopener">Long-Term Benefit Trust, Sept 19, 2023</a>.</td></tr>
+<tr><th scope="row">Google DeepMind (Gemini)</th><td>Part of Google, which is led by Sundar Pichai. Google is a publicly traded company.</td><td><a href="https://blog.google/technology/ai/ai-principles/" rel="noopener">Google, AI Principles, June 7, 2018</a>. Primary ownership filing to be added.</td></tr>
+<tr><th scope="row">Meta (Llama)</th><td>A publicly traded company founded and led by Mark Zuckerberg. Publishes some models as open-weight.</td><td><a href="https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/" rel="noopener">Zuckerberg, July 23, 2024</a>. Primary ownership filing to be added.</td></tr>
+<tr><th scope="row">xAI (Grok)</th><td>Acquired by SpaceX in February 2026. X (the social network) had already been merged into xAI, so both now sit under SpaceX, which Elon Musk leads.</td><td><a href="https://builtin.com/articles/elon-musk-consolidates-xai-spacex-20260203" rel="noopener">Built In, Feb 3, 2026</a> (news report). Company statement to be added.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Not on the table: Microsoft (which also builds its own models), Alibaba (maker of the Qwen models) and other makers. We will add them with primary sources.</p>
+
+<h2 id="voices">What the builders have said in public</h2>
+<p>Short quotes, each linked to where it was said. Hopes first, then warnings, then the people who think the warnings are overblown.</p>
+
+<h3>Hopes</h3>
+<div class="quote"><p>"AGI has the potential to give everyone incredible new capabilities."</p><cite>Sam Altman, OpenAI, "Planning for AGI and beyond," Feb 24, 2023. <a href="https://openai.com/index/planning-for-agi-and-beyond/" rel="noopener">Source</a></cite></div>
+<div class="quote"><p>"Fear is one kind of motivator, but it's not enough: we need hope as well."</p><cite>Dario Amodei, Anthropic, "Machines of Loving Grace," Oct 2024. <a href="https://www.darioamodei.com/essay/machines-of-loving-grace" rel="noopener">Source</a></cite></div>
+<div class="quote"><p>"its potential to improve our lives is profound"</p><cite>Sundar Pichai, Google, "AI at Google: our principles," June 7, 2018. <a href="https://blog.google/technology/ai/ai-principles/" rel="noopener">Source</a></cite></div>
+<div class="quote"><p>"I believe that open source is necessary for a positive AI future."</p><cite>Mark Zuckerberg, Meta, "Open Source AI Is the Path Forward," July 23, 2024. <a href="https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/" rel="noopener">Source</a></cite></div>
+<div class="quote"><p>AI can "create highly intelligent and knowledgeable assistants who will increase productivity in almost all industries."</p><cite>Geoffrey Hinton, Nobel Prize in Physics 2024 speech. <a href="https://www.nobelprize.org/prizes/physics/2024/hinton/speech/" rel="noopener">Source</a></cite></div>
+
+<h3>Warnings</h3>
+<div class="quote"><p>"AGI would also come with serious risk of misuse, drastic accidents, and societal disruption."</p><cite>Sam Altman, OpenAI, Feb 24, 2023. <a href="https://openai.com/index/planning-for-agi-and-beyond/" rel="noopener">Source</a></cite></div>
+<div class="quote"><p>Development of superhuman machine intelligence "is probably the greatest threat to the continued existence of humanity."</p><cite>Sam Altman, personal blog, "Machine Intelligence, Part 1," 2015. <a href="https://blog.samaltman.com/machine-intelligence-part-1" rel="noopener">Source</a></cite></div>
+<div class="quote"><p>"Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war."</p><cite>Statement on AI Risk, May 2023. The Center for AI Safety lists Geoffrey Hinton, Yoshua Bengio, Demis Hassabis (Google DeepMind), Sam Altman (OpenAI) and Dario Amodei (Anthropic) among the signers. <a href="https://aistatement.com/work/statement-on-ai-extinction-risk" rel="noopener">Source</a></cite></div>
+<div class="quote"><p>"We have no idea whether we can stay in control." He also warned that "our safety will not be the top priority" when companies are "motivated by short-term profits."</p><cite>Geoffrey Hinton, Nobel Prize in Physics 2024 speech. <a href="https://www.nobelprize.org/prizes/physics/2024/hinton/speech/" rel="noopener">Source</a></cite></div>
+<div class="quote"><p>"we call on all AI labs to immediately pause for at least 6 months the training of AI systems more powerful than GPT-4."</p><cite>Future of Life Institute open letter, Mar 22, 2023. Elon Musk was publicly reported as a signer. <a href="https://futureoflife.org/open-letter/pause-giant-ai-experiments/" rel="noopener">Source</a></cite></div>
+
+<h3>Those who disagree with the warnings</h3>
+<p>Yann LeCun, a pioneer of the field who long led AI research at Meta, has said in public that he does not expect AI to threaten humanity and has called some of the fears exaggerated. Our only sources so far are news reports (for example <a href="https://cointelegraph.com/news/meta-chief-ai-scientist-ai-wont-threaten-humans" rel="noopener">Cointelegraph</a>), so we are not quoting him until we find his own words.</p>
+
+<h2 id="bias">A note on our own bias</h2>
+<p>We use a variety of large language models, including several in-house ones that run only on our own computers. Some of the others come from companies on the list above, and parts of this site, including this page, were drafted with them. That is a conflict worth saying out loud. We gave each company the same treatment, and we ask you to follow the links and judge for yourself. If we got something wrong or unfair, tell us and we will fix it in the open, with a date.</p>
+<p><a href="/ai/">Back to why and where we use AI</a> · <a href="/members/">Join and help check our work</a></p>
+</main>
+<script src="/members/waybar.js?v=30" defer></script>
+</body>
+</html>
