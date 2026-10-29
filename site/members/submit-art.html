@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Submit your art · The Way</title>
+<meta name="description" content="Our banner pictures are AI generated. If you make art, send it and we will use it with credit.">
+<link rel="stylesheet" href="style.css?v=42">
+<link rel="stylesheet" href="waybar.css?v=16">
+<link rel="stylesheet" href="pull-a-thread.css?v=10">
+<link rel="stylesheet" href="submit-art.css?v=1">
+</head>
+<body>
+<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+<main id="app" tabindex="-1">
+<h1>Submit your art</h1>
+<p>Our case and research banners are AI generated. If you make art and like the idea, send yours. If we use it, your name goes in the credit.</p>
+<h2 class="sa-h" id="why">Why our pictures are AI generated for now</h2>
+<p>The Way is a new nonprofit and we have no art budget. We still want every history case and every research article to have a picture, so the pages look finished and feel alike. For now, we fill that space with AI generated images.</p>
+<ul class="sa-rules">
+<li><strong>They are fillers, not the plan.</strong> Each one is labeled on its page as AI generated. We would rather show an artist&rsquo;s work.</li>
+<li><strong>They carry no facts.</strong> A banner is a mood and a few plain objects. It never shows a real person, a flag, a logo or any words, and it never says who was right. The facts on a page come from sources, not from the picture.</li>
+<li><strong>A person checks each one</strong> against fixed rules: the size, no text or faces, calm colors, nothing that leans one way.</li>
+<li><strong>Real art replaces them.</strong> When we accept a piece, it replaces the AI image on that page. If more than one artist makes art for the same page, each accepted piece joins a rotation, so visitors see a different artist&rsquo;s work from one visit to the next. Once a page has real art, the AI image is dropped from it.</li>
+<li><strong>Every artist is credited.</strong> Your name goes under your picture, linked to your portfolio if you give one, and on our <a href="/artists/">All artists on our site</a> page, with the pages your art is on.</li>
+<li><strong>Yes, a lot of it is AI slop, and we say so.</strong> We use a variety of language and image models, including several that run in house only. Whatever tool made a picture, a person checks it before it goes up.</li>
+<li><strong>We cannot pay for art right now.</strong> We say so plainly. You decide if the credit and the exposure are worth it to you, and you can ask us to take your art down at any time.</li>
+</ul>
+<h2 class="sa-h" id="terms">Terms for art you give us</h2>
+<ul class="sa-rules">
+<li>Your art is freely given. We may show it on this site, and researchers and schools may use it under fair use, and in any publication or research document they produce by or through their use of the website.</li>
+<li>You keep full rights to your art. You may keep using it and selling it yourself, wherever you like.</li>
+<li>We will never sell, lease, rent or license any image, and nobody else may do so through us.</li>
+<li>No political party and no politician may use your work in their ads.</li>
+<li>If your image becomes tied to one political party, or to hate or extremist imagery, we stop using it on our site.</li>
+<li>You are credited by the name you give, linked to your portfolio if you add one.</li>
+<li>You can ask us to take your art down at any time.</li>
+</ul>
+<h2 class="sa-h">What we are looking for</h2>
+<ul class="sa-rules">
+<li>A wide picture, 1600 by 400 pixels (four times as wide as tall). We can crop a close size.</li>
+<li>Your own work only. No text, no faces or likenesses of real people, no flags, no logos, no party colors.</li>
+<li>Calm and neutral. The banner never says who was right.</li>
+<li>PNG, JPEG or WebP, up to 8 MB. Or send a link to where it is shown.</li>
+</ul>
+<form id="sa-form" class="pt-form sa-form" novalidate>
+<p id="sa-err" class="pt-err" role="alert"></p>
+<div class="pt-field"><label for="sa-name">Name for the credit</label><input id="sa-name" name="name" type="text" maxlength="80" autocomplete="name" required><p class="pt-help">This is how your name appears if we use your art.</p></div>
+<div class="pt-field"><label for="sa-email">Email, for the review only</label><input id="sa-email" name="email" type="email" maxlength="200" autocomplete="email" required><p class="pt-help">Only used to reply about this art. Never added to any list.</p></div>
+<div class="pt-field"><label for="sa-target">Which page or banner is it for?</label><input id="sa-target" name="target" type="text" maxlength="200" required><p class="pt-help">For example a case title such as Watergate, or &ldquo;any&rdquo;.</p></div>
+<div class="pt-field"><label for="sa-portfolio">Link to your portfolio (optional)</label><input id="sa-portfolio" name="portfolio" type="url" maxlength="500" inputmode="url"><p class="pt-help">If we use your art, your name in the credit links here. It also appears on our <a href="/artists/">All artists on our site</a> page.</p></div>
+<div class="pt-field"><label for="sa-file">Image file</label><input id="sa-file" name="file" type="file" accept="image/png,image/jpeg,image/webp" class="pt-file"></div>
+<div class="pt-field"><label for="sa-link">Or a link to your art (https)</label><input id="sa-link" name="link" type="url" maxlength="500" inputmode="url"></div>
+<div class="pt-field"><label for="sa-note">Anything else (optional)</label><textarea id="sa-note" name="note" maxlength="500" rows="3"></textarea></div>
+<p class="sa-trap" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></p>
+<label class="pt-check-row"><input type="checkbox" id="sa-consent" name="consent" value="1" required><span>This is my own work. I give it freely to The Way for use on this site with my name (and portfolio link, if I gave one) in the credit, for fair use, and for publications and research documents that researchers or schools make through the website. I keep my rights and may use and sell my own art. I understand The Way will never sell, lease, rent or license it, that no political party or politician may use it in their ads, and that The Way will stop using it if it becomes tied to one party or to hate or extremist imagery. I can ask to have it removed.</span></label>
+<div id="sa-ts"></div>
+<div class="pt-gorow"><button type="submit" class="primary" id="sa-go">Send my art</button></div>
+</form>
+<p id="sa-live" class="pt-live" role="status" aria-live="polite"></p>
+<p class="pt-privacy">We do not use your email for mail or lists. Only the team sees what you send.</p>
+</main>
+<p class="foot">Not left. Not right. We are The Way. · A nonpartisan project, not a political party.</p>
+<script src="waybar.js?v=30" defer></script>
+<script src="config.js?v=40"></script>
+<script src="submit-art.js?v=1"></script>
+</body>
+</html>
