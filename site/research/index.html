@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="robots" content="noindex">
 <title>Research library | The Way</title><meta name="description" content="The development ledger and reusable research packages with sources, schema, version history and checksums.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/members/waybar.css?v=16"><link rel="stylesheet" href="/site-shared.css?v=1">
-<link rel="stylesheet" href="/research/research.css?v=vf1"><link rel="stylesheet" href="/banner.css?v=1"><link rel="stylesheet" href="/water-depth.css?v=1">
+<link rel="stylesheet" href="/research/research.css?v=vf1"><link rel="stylesheet" href="/research/news-snapshots.css?v=1"><link rel="stylesheet" href="/banner.css?v=1"><link rel="stylesheet" href="/water-depth.css?v=1">
 </head><body class="water-depth">
 <header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
 <div class="page-banner"><img src="/img/cards/banner-research-1200.webp" srcset="/img/cards/banner-research-640.webp 640w, /img/cards/banner-research-1200.webp 1200w" sizes="100vw" width="1200" height="260" alt="" decoding="async"></div>
@@ -16,10 +16,16 @@
 <div class="routes"><div class="card"><h3>Explore the evidence</h3><a class="big" href="/development/">How this site has changed: the development ledger</a></div>
 <div class="card"><h3>Download the research <span class="soon">Coming soon</span></h3><p>Reusable packages: CSV and JSON, a data dictionary, a source registry, version history and SHA-256 checksums. The first package is a draft and is listed below. The full set of downloads is coming soon.</p><p>This will be a resource for scholars, journalists and anyone looking to go deeper into The Way.</p><span class="soon">Coming soon</span></div></div>
 <div class="routes"><div class="card"><h3>Teacher resources <span class="soon">Coming soon</span></h3><p>Lesson-ready pages, printable packets and class codes so students can join without giving any personal information. Built from the How Government Works guide, the history cases and Pull a Thread.</p><p>Teachers can say so when they sign up and get a private Teacher tag, shown publicly only if they choose.</p><span class="soon">Coming soon</span></div></div>
+<section class="card" id="news-snaps" aria-labelledby="ns-h"><h3 id="ns-h">News snapshots</h3><p>Pick a day, or a short range, and download the news feed as it stood then: headlines, publishers, links, tags, AI labels and whether a person has checked the item. Headlines and links only, no article text. Times show when we first saw an item.</p><p>Each day shows up to 200 items, with the ones tied to ballot measures and candidates first. Full-day downloads for researchers (an academic or journalist login) are coming soon. <a href="/members/#/signup">Join The Way</a> and we will tell you inside the site when they open.</p>
+<div class="ns-row"><div><label for="ns-from">From</label><input type="date" id="ns-from" disabled></div><div><label for="ns-to">To (optional, up to 14 days)</label><input type="date" id="ns-to" disabled></div></div>
+<div class="ns-row"><div><label for="ns-state">State (optional)</label><select id="ns-state" disabled><option value="">All states</option></select></div><div><label for="ns-find">Measure, candidate or word (optional)</label><input type="text" id="ns-find" maxlength="60" placeholder="for example Amendment 80 or a name" disabled></div></div>
+<p class="ns-help">Filters narrow the up to 200 items each day holds. They run in your browser before the file is saved.</p>
+<div class="ns-row"><button type="button" data-fmt="html" disabled>Readable page (.html)</button><button type="button" data-fmt="csv" disabled>Spreadsheet (.csv)</button><button type="button" data-fmt="json" disabled>Data (.json)</button></div>
+<p id="ns-msg" role="status" aria-live="polite">Loading the list of days…</p></section>
 <h2 id="packages">Packages</h2>
 <label for="f" class="sr">Search packages</label><input id="f" type="search" placeholder="Filter by topic, state, institution, year…" class="search">
 <div id="list" aria-live="polite"></div>
 <p class="banner" role="note">One package so far. More are added only after a person has compared each claim with its sources.</p>
 <section id="numbers" aria-live="polite"></section><script src="/members/usmap-data.js?v=1" defer></script><script src="/research/by-the-numbers-data.js?v=1" defer></script><script src="/research/by-the-numbers.js?v=1" defer></script>
-<script src="/research/packages.js?v=1" defer></script><script src="/research/research.js?v=2" defer></script>
+<script src="/research/packages.js?v=1" defer></script><script src="/research/research.js?v=2" defer></script><script src="/research/news-snapshots.js?v=1" defer></script>
 </main><script src="/members/waybar.js?v=30" defer></script></body></html>
