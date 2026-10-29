@@ -71,6 +71,7 @@ async function q(promise) { const { data, error } = await promise; if (error) th
 // Research projects, finding links and "AI help write my claim" live in claim-links.js (migration 0026).
 const STATS = window.TheWayStats ? window.TheWayStats.make({ sb, h, q, when }) : null;
 const LEDGER = window.TheWayLedger ? window.TheWayLedger.make({ sb, h, q }) : null;
+const TODO = window.TheWayTodo ? window.TheWayTodo.make({ sb, h, q, render, notice }) : null;
 const CSTAT = window.TheWayContentStatus ? window.TheWayContentStatus.make({ sb, h, q, render, notice, when }) : null;
 const CL = window.TheWayClaim ? window.TheWayClaim.make({ sb, h, q, notice, action, render, can }) : null;
 
@@ -2167,6 +2168,7 @@ async function adminView() {
     state.roles.has('super_admin') && STATS ? STATS.panel() : null,
     can('admin') && LEDGER ? LEDGER.panel() : null,
     can('admin') && CSTAT ? CSTAT.panel() : null,
+    state.roles.has('super_admin') && TODO ? h('div', { class: 'panel' }, h('h2', { text: 'Research to-do' }), h('p', { class: 'muted small', text: 'Every research list in one place, highest priority first. Super admins only.' }), h('a', { class: 'button primary', href: '#/todo', text: 'Open the research to-do' })) : null,
     h('div', { class: 'panel' }, h('h2', { text: 'Invite someone to The Way' }),
       h('p', { class: 'muted', text: 'Admins invite people the same way every member does, from the Invite page in the top bar. Every invitation shows in the list below.' }),
       h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Go to Invite' }))),
@@ -2799,6 +2801,7 @@ async function route() {
         ? (parts[1] ? await researchItemView(+parts[1]) : await researchView()) : render(notice('Research desk members only.'));
       case 'private': return parts[1] === 'team' ? await teamFileView(decodeURIComponent(parts[2] || '')) : (parts[1] ? await privateNoteView(+parts[1]) : await privateResearchView());
       case 'projects': return CL && (can('researcher') || can('reviewer')) ? await CL.projectsView() : render(notice('Research desk members only.'));
+      case 'todo': return isSuper() && TODO ? await TODO.view() : render(notice('Super admins only.'));
       case 'admin': return can('admin') ? await adminView() : render(notice('Admins only.'));
       case 'account': return accountView();
       case 'password': return passwordView(false);
