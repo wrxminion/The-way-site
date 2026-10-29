@@ -267,8 +267,7 @@ function stageText(t, rs) {
 function draftPanel(receipt, t, box, shot) {
   box.querySelector('.pt-ocr')?.remove();
   const wrap = h('section', { class: 'pt-ocr' }, h('h2', {}, shot ? 'Check the text from your screenshot' : 'Check the text before it is sent'));
-  if (t.ocr_reading) { wrap.append(h('p', { text: stageText(Object.assign({ code: 'draft', kind: shot ? 'screenshot' : 'text' }, t), null) })); box.append(wrap); return; }
-  wrap.append(h('p', { class: 'pt-stage', role: 'status', text: 'Your text is ready: check it below and send it.' }));
+  if (t.ocr_reading) { wrap.append(h('p', { text: stageText(Object.assign({ code: 'draft', kind: shot ? 'screenshot' : 'text' }, t), null) })); (box.querySelector('[data-k="send"] .pt-step-body') || box).append(wrap); return; }
   const ta = h('textarea', { id: 'pt-ocr-text', maxlength: shot ? '3000' : '1500', rows: '8' }); ta.value = t.ocr_text || '';
   const out = h('p', { class: 'pt-err', role: 'status' });
   const send = h('button', { type: 'button', class: 'primary', text: 'Send this to the reviewers' });
@@ -287,13 +286,13 @@ function draftPanel(receipt, t, box, shot) {
     const { data } = await sb.rpc('thread_status', { p_receipt: receipt });
     if (data) box.querySelector('.pt-dynamic')?.replaceChildren(...outcome(Object.assign({ code: data.code }, data), receipt));
     watch(receipt, box, false);
-    leadsSection(receipt, box.closest('.pt-sent') || box);
+    leadsSection(receipt, (box.closest('.pt-sent') || box).querySelector('[data-k="leads"] .pt-step-body') || box);
   });
   del.addEventListener('click', async () => {
     busy(true);
     const r = await sb.rpc('thread_discard', { p_receipt: receipt });
     if (r.error) { busy(false); out.textContent = r.error.message || 'Could not delete it. Please try again.'; return; }
-    box.replaceChildren(h('p', { role: 'status', text: 'Deleted. The text and your note are gone, and the picture is removed.' }));
+    wrap.replaceChildren(h('p', { role: 'status', text: 'Deleted. The text and your note are gone, and the picture is removed.' }));
     live.textContent = 'Deleted.';
   });
   wrap.append(...[
@@ -305,7 +304,7 @@ function draftPanel(receipt, t, box, shot) {
     h('label', { for: 'pt-ocr-text', text: shot ? 'What the screenshot says' : 'Your text' }), ta,
     h('p', { class: 'muted small', text: `Not sent yet. If you do not press Send within about ${Math.max(1, t.draft_minutes_left || 60)} minutes, we delete ${shot ? 'the picture and ' : ''}this text for good.` }),
     h('div', { class: 'btns' }, send, del), out].filter(Boolean));   // DOM append() would print "null"
-  box.append(wrap);
+  (box.querySelector('[data-k="send"] .pt-step-body') || box).append(wrap);
 }
 function watch(receipt, box, draft) {
   const token = ++watching, t0 = Date.now();
@@ -361,16 +360,102 @@ function leadsSection(receipt, box) {
   };
   paint();
 }
+// ---------------------------------------------------------------- the phase checklist (SQL 0050: thread_progress)
+// One list, one line per phase: done, now or waiting, with the time, and what we have so far under it. "What you sent" sits on top.
+// The picture is never fetched back from the server: the preview is made from the file in THIS browser tab and is gone on reload.
+let localShot = null;                                    // { url, name } for the screenshot just sent from this tab
+const STEP_MARK = { done: '✓ Done', current: '● Now', waiting: '○ Waiting', problem: '! Needs a person', none: '' };
+const fmtTime = (v) => { if (!v) return ''; const d = new Date(v); return isNaN(d.getTime()) ? '' : d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }); };
+const PHASES = [['recv', 'Received'], ['line', 'In line to be read'], ['read', 'Reading the text'], ['send', 'You check the text and send it'],
+  ['leads', 'Looking for outside sources'], ['prelim', 'Preliminary answer'], ['rev', 'With reviewers']];
+function progressPanel(receipt, dynamic, stage) {
+  const youSent = h('div', { class: 'pt-yousent' });
+  const rows = {};
+  const ol = h('ol', { class: 'pt-steps' });
+  for (const [k, label] of PHASES) {
+    const mark = h('span', { class: 'pt-step-mark' }), time = h('span', { class: 'pt-step-time' });
+    const note = h('p', { class: 'pt-step-note' }), body = h('div', { class: 'pt-step-body' });
+    if (k === 'prelim') body.append(dynamic);
+    const li = h('li', { class: 'pt-step', 'data-k': k }, h('div', { class: 'pt-step-head' }, mark, h('strong', { class: 'pt-step-name', text: label }), time), note, body);
+    rows[k] = { li, mark, time, note, body }; ol.append(li);
+  }
+  const sec = h('section', { class: 'pt-progress', 'aria-labelledby': 'pt-prog-h' }, h('h2', { id: 'pt-prog-h', text: 'Where your request is' }), stage, ol);
+  const set = (k, state, time, note) => {
+    const r = rows[k]; if (!r) return;
+    r.li.hidden = state === 'hide'; r.li.dataset.state = state;
+    r.mark.textContent = STEP_MARK[state] || ''; r.time.textContent = time ? fmtTime(time) : ''; r.note.textContent = note || '';
+  };
+  const paintSent = (p) => {
+    const kids = [h('h2', { text: 'What you sent' })];
+    if (p.kind === 'screenshot') {
+      if (localShot) kids.push(h('img', { class: 'pt-thumb', src: localShot.url, alt: 'Your screenshot (a preview from your own browser)' }));
+      kids.push(h('p', { class: 'pt-help', text: p.image_gone ? 'Your picture is already deleted from our computers. Only the text is kept.'
+        : p.image_mode === 'review' ? 'We keep the picture up to 3 days so a reviewer can open it only if truly needed.' + (localShot ? ' The preview above stays in this browser tab only.' : '')
+        : 'We delete the picture as soon as the text is read.' + (localShot ? ' The preview above stays in this browser tab only.' : '') }));
+    }
+    if (p.url) kids.push(h('p', { class: 'pt-sent-link', text: p.url }), h('p', { class: 'pt-help', text: 'Shown as plain text. Our website never opens your link.' }));
+    if (p.text) kids.push(h('p', { class: 'pt-sent-text', text: p.text }));
+    else if (p.reader === 'line' || p.reader === 'running') kids.push(h('p', { class: 'pt-help', text: p.hide_names ? 'The text appears here once the poster names are hidden.' : 'The text appears here once it is read.' }));
+    if (p.hide_names) kids.push(h('p', { class: 'pt-help', text: 'Names of the people who wrote the posts are hidden.' }));
+    if (p.note) kids.push(h('p', { class: 'pt-help', text: 'Your note: ' + p.note }));
+    youSent.replaceChildren(...kids);
+  };
+  const paint = (p) => {
+    const t = p.times || {}, gone = p.code === 'expired' || p.code === 'discarded', needs = p.reader && p.reader !== 'none', off = p.online === false;
+    paintSent(p);
+    set('recv', 'done', t.received, '');
+    if (gone) {
+      for (const k of ['line', 'read', 'leads', 'prelim', 'rev']) set(k, 'hide');
+      set('send', 'problem', null, p.code === 'expired' ? 'Not sent in time. The picture and the text were deleted.' : 'Deleted at your request.');
+      return true;
+    }
+    const sent = !needs || !!t.sent;
+    if (!needs) { set('line', 'hide'); set('read', 'hide'); set('send', 'hide'); }
+    else {
+      set('line', p.reader === 'line' ? (off ? 'waiting' : 'current') : 'done', t.read_start || t.read_done,
+        p.reader === 'line' ? (off ? PAUSED_TEXT : p.kind === 'screenshot' ? 'Your screenshot is in line to be read.' : 'Your text is in line to have the poster names hidden.') : '');
+      set('read', p.reader === 'running' ? 'current' : p.reader === 'line' ? 'waiting' : p.reader === 'failed' ? 'problem' : 'done', t.read_done,
+        p.reader === 'running' ? (p.kind === 'screenshot' ? 'Text is being checked (read from your screenshot).' : 'Text is being checked (the poster names are being hidden).')
+        : p.reader === 'failed' ? 'Our reader could not finish. Type or paste the text yourself below.' : '');
+      set('send', t.sent ? 'done' : (p.reader === 'done' || p.reader === 'failed') ? 'current' : 'waiting', t.sent,
+        t.sent ? '' : (p.reader === 'done' || p.reader === 'failed') ? 'Your text is ready: check it below and send it. Nothing goes to the reviewers until you do.' : 'Nothing goes to the reviewers until you send it.');
+    }
+    const pend = (st) => st === 'pending' || st === 'running';
+    set('leads', !sent ? 'waiting' : pend(p.leads) ? 'current' : p.leads === 'done' ? 'done' : p.leads === 'failed' ? 'problem' : 'waiting', t.leads_done,
+      !sent ? '' : p.leads === 'running' ? 'Searching the web now.' : p.leads === 'pending' ? (off ? PAUSED_TEXT : 'In line for the search.')
+      : p.leads === 'done' ? (p.leads_count ? `${p.leads_count} lead${p.leads_count === 1 ? '' : 's'} found, not yet checked by a person.` : 'Nothing we could use yet.')
+      : p.leads === 'failed' ? 'The search did not finish. A reviewer will look further.' : '');
+    set('prelim', !sent ? 'waiting' : pend(p.prelim) ? 'current' : p.prelim === 'done' ? 'done' : p.prelim === 'failed' ? 'problem' : 'waiting', t.prelim_done,
+      !sent ? '' : pend(p.prelim) ? (off ? PAUSED_TEXT : 'Comparing what you sent with our records.') : p.prelim === 'failed' ? 'We could not make one this time. A reviewer will still look.' : '');
+    const closed = ['accepted', 'needs_evidence', 'duplicate', 'declined', 'answered'].includes(p.code);
+    set('rev', !sent ? 'waiting' : closed ? 'done' : 'current', closed ? t.resolved : t.picked,
+      !sent ? '' : p.code === 'in_review' ? 'A reviewer is looking at it now.' : closed ? 'A reviewer has answered. See the answer above.' : 'Waiting for a reviewer.');
+    return sent && closed && !pend(p.leads) && !pend(p.prelim);
+  };
+  let n = 0;
+  const tick = async () => {
+    if (!sec.isConnected) return;
+    let p = null;
+    try { const r = await sb.rpc('thread_progress', { p_receipt: receipt }); p = r.error ? null : r.data; } catch { p = null; }
+    if (!sec.isConnected) return;
+    if (!p) { for (const [k] of PHASES) set(k, 'none'); rows.recv.note.textContent = 'The step-by-step list is not switched on yet.'; return; }
+    if (!paint(p) && ++n < 240) setTimeout(tick, n < 15 ? 4000 : 10000);
+  };
+  setTimeout(tick, 0);                                  // after showSent has put the list on the page
+  return { sec, youSent, rows };
+}
 function showSent(receipt, status, matches, draft) {
-  const first = draft ? [h('p', { class: 'pt-stage', role: 'status', text: 'Text is being checked.' }), h('p', { class: 'muted', text: 'Nothing is sent to the reviewers yet. First you check the text.' })]
-    : outcome({ status: status === 'matched' ? 'We already have something on this' : 'Waiting for a reviewer', code: status, matches }, receipt);
+  const first = draft ? [] : outcome({ status: status === 'matched' ? 'We already have something on this' : 'Waiting for a reviewer', code: status, matches }, receipt);
+  const dynamic = h('div', { class: 'pt-dynamic' }, ...first);
+  const stage = draft ? h('p', { class: 'pt-stage', role: 'status', text: 'Text is being checked.' }) : null;
+  const pp = progressPanel(receipt, dynamic, stage);
   const box = h('div', { class: 'pt-sent' },
     h('p', { class: 'pt-code' }, 'Your code: ', h('code', { text: receipt }), h('span', { class: 'muted small', text: '  Keep it to check on this later. Nobody sees who sent it.' })),
-    h('div', { class: 'pt-dynamic' }, ...(Array.isArray(first) ? first : [first])));
+    pp.youSent, pp.sec);
   results.replaceChildren(box);
   live.textContent = draft ? 'Text is being checked.' : status === 'matched' ? 'We found related evidence.' : 'Sent. It is waiting for a reviewer.';
   if (draft || status === 'queued') watch(receipt, box, draft);
-  if (!draft) leadsSection(receipt, box);
+  if (!draft) leadsSection(receipt, pp.rows.leads.body);
   box.scrollIntoView?.({ block: 'nearest' });
 }
 
@@ -434,6 +519,8 @@ async function send(form, summary) {
   if (!res) return;
   if (!res.ok) { live.textContent = body && body.error ? body.error : 'Something went wrong. Please try again.'; return; }
   asked = (kind === 'url' ? `Link: ${hostOf(fd.get('url'))}` : kind === 'screenshot' ? (form.elements.note.value.trim() || 'Screenshot') : q).replace(/\s+/g, ' ').slice(0, 160);
+  if (localShot) { try { URL.revokeObjectURL(localShot.url); } catch { /* ignore */ } localShot = null; }
+  if (kind === 'screenshot' && shotFile) { try { localShot = { url: URL.createObjectURL(shotFile) }; } catch { localShot = null; } }
   remember(body.receipt, asked);
   form.reset(); shotFile = null; view();
   showSent(body.receipt, body.status, body.matches, kind === 'screenshot' || body.status === 'draft');
