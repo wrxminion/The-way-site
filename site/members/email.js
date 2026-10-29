@@ -41,7 +41,7 @@ async function join(topic, title) {
     if (error) { out.textContent = /valid email/.test(error.message) ? 'Please enter a valid email address.' : 'Something went wrong. Please try again later.'; return; }
     form.replaceChildren(el('p', {}, 'You are signed up. Emails start soon; we will send one confirmation email first, and nothing else until you click it.'));
   });
-  const { data: sess } = await sb.auth.getSession();
+  const { data: sess } = await window.WaySession.getSession(sb);
   const signed = sess && sess.session;
   const nodes = [el('h1', {}, 'Email me updates'), el('p', {}, topic ? 'About: ' + (title || label(topic)) : 'Choose what you want, then confirm your email.'),
     el('p', {}, 'Coming soon: emails start shortly. You can sign up now; we will send one confirmation email when they begin, and nothing else until you click it.'), el('p', { class: 'muted' }, 'Free. Separate from membership. We send only when there is news on what you follow, and every email has a one-click unsubscribe.')];

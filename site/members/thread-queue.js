@@ -153,7 +153,7 @@ function item(r, mineId) {
 }
 
 async function load() {
-  const { data: { session } } = await sb.auth.getSession();
+  const { data: { session } } = await window.WaySession.getSession(sb);
   if (!session) { app.replaceChildren(h('h1', { text: 'Thread queue' }), h('p', {}, 'Please ', h('a', { href: '/members/', text: 'sign in' }), ' first.')); return; }
   let rows;
   try { rows = await call('list_thread_queue', { p_include: include, p_limit: 100 }); }

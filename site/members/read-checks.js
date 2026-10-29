@@ -24,7 +24,7 @@ const head = [h('p', { class: 'overline', text: 'Reviewers' }), h('h1', { text: 
   h('p', { class: 'lede', text: 'A member says they read a news article and what was interesting. Does the note sound like someone who read it? Does the screenshot, if there is one, match the article? Accept it and they earn points. Decline it (with a reason) and they earn nothing. You cannot sign off your own.' })];
 
 async function load() {
-  const { data: sess } = await sb.auth.getSession();
+  const { data: sess } = await window.WaySession.getSession(sb);
   if (!sess.session) { app.replaceChildren(...head, h('p', {}, h('a', { href: '/members/', text: 'Sign in' }), ' to see the queue.')); return; }
   const { data, error } = await sb.rpc('read_check_queue', { max_rows: 30 });
   if (error) { app.replaceChildren(...head, h('p', { class: 'notice', text: /reviewer/.test(error.message) ? 'The queue is for reviewers and moderators.' : error.message })); return; }

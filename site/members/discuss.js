@@ -86,7 +86,7 @@ async function mount(root) {
   if (on.error || on.data !== true) return;                       // off (or setup not run): show nothing
   root.classList.add('wd');
   const title = root.getAttribute('data-way-title');
-  const { data: sess } = await sb.auth.getSession();
+  const { data: sess } = await window.WaySession.getSession(sb);
   const user = sess && sess.session && sess.session.user;
   if (!user) {
     put(root, h('h2', { text: 'Member discussion' }),

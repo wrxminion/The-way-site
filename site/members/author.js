@@ -138,7 +138,7 @@ async function requestsPanel() {
 }
 
 async function render() {
-  const { data: sess } = await sb.auth.getSession();
+  const { data: sess } = await window.WaySession.getSession(sb);
   if (!sess.session) { app.replaceChildren(...head(), h('p', {}, h('a', { href: '/members/', text: 'Sign in' }), ' to use the Author desk.')); return; }
   const { data: rows, error } = await sb.from('member_roles').select('role').eq('member_id', sess.session.user.id);
   if (error) { app.replaceChildren(...head(), notice(error.message)); return; }
