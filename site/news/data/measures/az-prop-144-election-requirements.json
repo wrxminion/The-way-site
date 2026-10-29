@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "eea01a1a811cd8c5",
+   "kind": "news",
+   "title": "Arizona Proposition 144: What to know about the proposed election changes",
+   "source": "Yahoo",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPLUZHUk9qb0w0MXpBYzRFeUk2dkdWaDhMeG1fYVdGLXJqLVhWTG5PMnlRSkV3RXU5ajRQTk5QVWpSZlY5U1JMa0dBa1BjbHNPb0daV2x3aGlCaVRiSm5iVnZLSDhlcTdXRkZsd0ZoTU0tb21YeXFMUzQ0NFpMaDhwazEyYmhNbFRwZkJjYVhWRQ?oc=5",
+   "published_at": "2026-10-29",
+   "first_seen_at": "2026-10-29T08:50:27Z",
+   "states": [
+    "az"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "az-prop-144-election-requirements",
+     "kind": "measure",
+     "label": "Proposition 144: Government-issued proof of identity for every voter, including by mail, and other election rules, Arizona",
+     "page": "guide-az/measures/prop-144-election-requirements.html"
+    }
+   ]
+  },
+  {
    "id": "0c3b75adc613bbfd",
    "kind": "news",
    "title": "Arizona Proposition 144: What to know about the proposed election changes",
@@ -1109,5 +1136,5 @@
    ]
   }
  ],
- "generated_at": "2026-10-29T07:02:44Z"
+ "generated_at": "2026-10-29T08:59:39Z"
 }
