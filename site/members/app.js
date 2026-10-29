@@ -2022,7 +2022,10 @@ async function privateResearchView() {
   let team = [], teamErr = null;
   if (isSuper()) {
     const { data, error } = await sb.storage.from('team-research').download('index.json');
-    if (error) teamErr = 'The team research is not uploaded yet.';
+    if (error) {   // a folder with only research-todo.json has no index.json: not an error
+      const have = await sb.storage.from('team-research').list('');
+      if (!(have.data || []).some((f) => f.name === 'research-todo.json')) teamErr = 'The team research is not uploaded yet.';
+    }
     else { try { team = JSON.parse(await data.text()); } catch { teamErr = 'The team research index could not be read.'; } }
   }
   const title = h('input', { maxlength: 200, required: true, placeholder: 'Title' });
