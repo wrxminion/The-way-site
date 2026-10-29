@@ -4,7 +4,8 @@
 // the browser or the repo. No IP addresses and no per-visitor data are requested: only counts by day, page path,
 // referrer host and country. "Interest by state" is worked out here from which state guide or map pages were viewed.
 //
-// Secrets (Edge Functions > Secrets): CF_API_TOKEN, CF_ACCOUNT_ID, CF_SITE_TAG, and optionally STATS_CRON_SECRET.
+// Secrets (Edge Functions > Secrets): CF_API_TOKEN, CF_ACCOUNT_ID, optionally CF_SITE_TAG (else the michiinstitute.com
+// hostname is used) and STATS_CRON_SECRET.
 // SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are provided by Supabase.
 // Who may call it: a signed-in super admin (the Refresh button), or a caller with header x-cron-secret = STATS_CRON_SECRET.
 import { createClient } from 'npm:@supabase/supabase-js@2.45.4';
@@ -25,11 +26,16 @@ function stateOf(path: string): string | null {
 }
 
 const CF = 'https://api.cloudflare.com/client/v4/graphql';
-async function cfQuery(token: string, account: string, site: string, from: string, to: string, dim: string, limit: number) {
-  const query = `query($acc: String!, $site: String!, $from: Time!, $to: Time!) {
+// Which site to read: by Cloudflare's site tag, or (fallback) by hostname.
+type Scope = { site?: string; hosts?: string[] };
+const HOSTS = ['michiinstitute.com', 'www.michiinstitute.com'];
+async function cfQuery(token: string, account: string, scope: Scope, from: string, to: string, dim: string, limit: number) {
+  // the hostnames are fixed constants above, so they are written into the query; only the site tag is a variable
+  const siteFilter = scope.site ? '{ OR: [{ siteTag: $site }] }' : `{ requestHost_in: ${JSON.stringify(scope.hosts ?? HOSTS)} }`;
+  const query = `query($acc: String!, ${scope.site ? '$site: String!, ' : ''}$from: Time!, $to: Time!) {
     viewer { accounts(filter: { accountTag: $acc }) {
       rumPageloadEventsAdaptiveGroups(
-        filter: { AND: [{ datetime_geq: $from, datetime_leq: $to }, { OR: [{ siteTag: $site }] }] }
+        filter: { AND: [{ datetime_geq: $from, datetime_leq: $to }, ${siteFilter}] }
         limit: ${limit}, orderBy: [count_DESC]) {
         count
         sum { visits }
@@ -38,7 +44,7 @@ async function cfQuery(token: string, account: string, site: string, from: strin
   const res = await fetch(CF, {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ query, variables: { acc: account, site, from, to } }),
+    body: JSON.stringify({ query, variables: scope.site ? { acc: account, site: scope.site, from, to } : { acc: account, from, to } }),
   });
   const body = await res.json();
   if (!res.ok || body.errors?.length) throw new Error(`Cloudflare ${dim || 'total'}: ${body.errors?.[0]?.message || res.status}`);
@@ -78,12 +84,12 @@ Deno.serve(async (req) => {
   }
   if (!allowed) return json({ ok: false, error: 'Super admins only.' }, 403);
 
-  const token = env('CF_API_TOKEN'), account = env('CF_ACCOUNT_ID'), site = env('CF_SITE_TAG');
+  const token = env('CF_API_TOKEN'), account = env('CF_ACCOUNT_ID'), site = env('CF_SITE_TAG');   // CF_SITE_TAG is optional
   const fail = async (note: string) => {
     await admin.from('site_stats_meta').upsert({ id: 1, refreshed_at: new Date().toISOString(), ok: false, note: note.slice(0, 500) });
     return json({ ok: false, error: note });
   };
-  if (!token || !account || !site) return fail('Not set up yet: add CF_API_TOKEN, CF_ACCOUNT_ID and CF_SITE_TAG in Edge Functions > Secrets.');
+  if (!token || !account) return fail('Not set up yet: add CF_API_TOKEN and CF_ACCOUNT_ID (and CF_SITE_TAG if you have it) in Edge Functions > Secrets.');
 
   try {
     let days = 30;
@@ -94,18 +100,26 @@ Deno.serve(async (req) => {
 
     // Cloudflare limits how long one query may span, so ask in slices of at most 28 days.
     type G = Awaited<ReturnType<typeof cfQuery>>;
-    const totals: G = [], paths: G = [], refs: G = [], countries: G = [];
-    for (let a = start.getTime(); a < end.getTime(); a += 28 * 86400000) {
-      const from = new Date(a).toISOString().slice(0, 10) + 'T00:00:00Z';
-      const to = new Date(Math.min(a + 28 * 86400000 - 1000, end.getTime())).toISOString();
-      const [t, p, r, c] = await Promise.all([
-        cfQuery(token, account, site, from, to, '', 1000),
-        cfQuery(token, account, site, from, to, 'requestPath', 5000),
-        cfQuery(token, account, site, from, to, 'refererHost', 1000),
-        cfQuery(token, account, site, from, to, 'countryName', 1000),
-      ]);
-      totals.push(...t); paths.push(...p); refs.push(...r); countries.push(...c);
-    }
+    const pull = async (scope: Scope) => {
+      const out = { totals: [] as G, paths: [] as G, refs: [] as G, countries: [] as G };
+      for (let a = start.getTime(); a < end.getTime(); a += 28 * 86400000) {
+        const from = new Date(a).toISOString().slice(0, 10) + 'T00:00:00Z';
+        const to = new Date(Math.min(a + 28 * 86400000 - 1000, end.getTime())).toISOString();
+        const [t, p, r, c] = await Promise.all([
+          cfQuery(token, account, scope, from, to, '', 1000),
+          cfQuery(token, account, scope, from, to, 'requestPath', 5000),
+          cfQuery(token, account, scope, from, to, 'refererHost', 1000),
+          cfQuery(token, account, scope, from, to, 'countryName', 1000),
+        ]);
+        out.totals.push(...t); out.paths.push(...p); out.refs.push(...r); out.countries.push(...c);
+      }
+      return out;
+    };
+    // A wrong site tag does not error, it just returns nothing, so fall back to the hostname.
+    let got = site ? await pull({ site }) : null;
+    let via = 'site tag';
+    if (!got || !got.totals.length) { got = await pull({ hosts: HOSTS }); via = 'hostname'; }
+    const { totals, paths, refs, countries } = got;
 
     const m = new Map<string, Row>();
     for (const g of totals) add(m, g.dimensions.date, 'total', 'all', g.sum?.visits ?? 0, g.count);
@@ -130,7 +144,7 @@ Deno.serve(async (req) => {
       if (ins.error) throw new Error(ins.error.message);
     }
     await admin.from('site_stats_daily').delete().lt('day', new Date(end.getTime() - 400 * 86400000).toISOString().slice(0, 10));
-    await admin.from('site_stats_meta').upsert({ id: 1, refreshed_at: new Date().toISOString(), ok: true, window_from: first, note: `${rows.length} rows for ${days} days` });
+    await admin.from('site_stats_meta').upsert({ id: 1, refreshed_at: new Date().toISOString(), ok: true, window_from: first, note: `${rows.length} rows for ${days} days (matched by ${via})` });
     return json({ ok: true, rows: rows.length, days });
   } catch (e) {
     return await fail(String((e as Error).message || e));
