@@ -5,9 +5,9 @@
 .pt-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .pt-match{border-left:3px solid #7fe3d9;padding:6px 12px;margin:8px 0}
 .pt-score{font-variant-numeric:tabular-nums}
-.pt-parts{margin:6px 0 0;padding-left:18px;font-size:13px}
+.pt-parts{margin:6px 0 0;padding-left:18px;font-size:15px}
 .pt-parts .neg{color:var(--warn)}
-.pt-excerpt{white-space:pre-wrap;overflow-wrap:anywhere;border:1px dashed var(--line);border-radius:10px;padding:8px 10px;font-size:13px;margin:8px 0}
+.pt-excerpt{white-space:pre-wrap;overflow-wrap:anywhere;border:1px dashed var(--line);border-radius:10px;padding:8px 10px;font-size:15px;margin:8px 0}
 .pt-item[data-top="1"]{outline:1px solid #7fe3d9;outline-offset:4px;border-radius:6px}
 .pt-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .pt-actions input{width:auto;min-width:200px;flex:1}
@@ -36,9 +36,9 @@
 .pt-field{display:grid;gap:8px}
 .pt-field label{font-size:17px;font-weight:600}
 .pt-field textarea,.pt-field input[type=url],.pt-field input[type=text]{width:100%;min-height:48px;font-size:17px}
-.pt-help{margin:0;font-size:14px;color:var(--muted)}
+.pt-help{margin:0;font-size:16px;color:var(--muted)}
 .pt-file{min-height:48px}
-.pt-fileinfo{margin:0;font-size:14px}
+.pt-fileinfo{margin:0;font-size:16px}
 .pt-summary{border:2px solid var(--danger);border-radius:12px;padding:10px 14px;margin:0 0 12px;color:var(--danger)}
 .pt-summary ul{margin:6px 0 0;padding-left:20px}
 .pt-summary a{color:var(--foam)}
@@ -50,8 +50,8 @@
 .pt-go-art{grid-area:1/1;width:100%;height:auto;object-fit:contain;display:block}
 .pt-go-text{grid-area:1/1;align-self:end;justify-self:center;font-size:18px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;line-height:1;padding-bottom:2px;text-shadow:0 1px 6px #021a26,0 0 2px #021a26}
 .pt-gorow .pt-go:disabled{opacity:.6;cursor:default}
-.pt-privacy{font-size:14px;color:var(--muted);margin:4px 0 0}
-.pt-live{min-height:1.2em;margin:6px 0;font-size:15px}
+.pt-privacy{font-size:16px;color:var(--muted);margin:4px 0 0}
+.pt-live{min-height:1.2em;margin:6px 0;font-size:17px}
 .pt-outcome,.pt-still,.pt-ocr{border:2px solid var(--line-strong);border-radius:16px;padding:14px 16px;margin:14px 0;background:var(--panel)}
 .pt-outcome h2,.pt-still h2,.pt-ocr h2{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:20px}
 .pt-reviewed{border-color:#b5f5c9}
@@ -102,3 +102,8 @@
 .pt-session :focus-visible{outline:3px solid #a7f0e9;outline-offset:2px}
 
 .pt-stage{font-weight:600;margin:0 0 8px}
+/* Phone readability (Frank Oct 29): the shared .small was 13px. Status and helper lines are at least 16px here, lighter grey is brightened. */
+#app .small{font-size:16px;line-height:1.45}
+#app .muted{color:#d6e9ee}
+.pt-stage{font-size:18px;line-height:1.4}
+.pt-sent .pt-code .muted{display:block;margin-top:4px}
