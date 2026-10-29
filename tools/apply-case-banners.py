@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 CASES = SITE / "cases"
 IMG = SITE / "img" / "case-banners"
-CSS_STAMP = "cases.css?v=8"
+CSS_STAMP = "cases.css?v=vf4"
 
 
 def img_tag(slug, alt, cls, sizes, lazy):
@@ -55,7 +55,7 @@ def main():
         if n != 1:
             problems.append(f"{slug}: no essay-top header")
             continue
-        s = re.sub(r"cases\.css\?v=\d+", CSS_STAMP, s)
+        s = re.sub(r"cases\.css\?v=[A-Za-z0-9]+", CSS_STAMP, s)
         page.write_text(s, encoding="utf8")
         # card on the index
         index = re.sub(r'(<a class="hub-card[^"]*" href="%s\.html">)<img class="card-banner"[^>]*>' % re.escape(slug), r"\1", index)
@@ -63,7 +63,7 @@ def main():
         index, n = re.subn(r'(<a class="hub-card" href="%s\.html">)' % re.escape(slug), lambda m: m.group(1) + card, index, count=1)
         if n != 1:
             problems.append(f"{slug}: no card on index")
-    index = re.sub(r"cases\.css\?v=\d+", CSS_STAMP, index)
+    index = re.sub(r"cases\.css\?v=[A-Za-z0-9]+", CSS_STAMP, index)
     index_path.write_text(index, encoding="utf8")
     for p in problems:
         print("PROBLEM:", p)
