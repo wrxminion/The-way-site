@@ -47,3 +47,6 @@
 /* room held for the filter bar (added by cases-filter.js) so the page below does not jump when it appears */
 .cf-slot{min-height:131px}
 @media (max-width:700px){.cf-slot{min-height:279px}}
+
+.cf-random{font:inherit;font-size:1rem;font-weight:700;color:#052b3b;background:#b9f6ed;border:1px solid #b9f6ed;border-radius:999px;padding:10px 22px;min-height:44px;cursor:pointer;align-self:flex-end}
+.cf-random:hover{background:#e4fffb}
