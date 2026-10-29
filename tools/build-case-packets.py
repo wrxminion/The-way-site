@@ -67,7 +67,7 @@ def git_log(slug):
     """(date, subject) for each non-merge commit that changed the page, newest first."""
     try:
         out = subprocess.run(
-            ["git", "-C", str(ROOT), "log", "--no-merges", "--format=%as|%s", "--",
+            ["git", "-C", str(ROOT), "log", "--follow", "--no-merges", "--format=%as|%s", "--",
              "site/cases/%s.html" % slug],
             capture_output=True, text=True, check=True).stdout
     except Exception:
