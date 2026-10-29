@@ -370,3 +370,20 @@ html{--wb-bubble-size:116px;--wb-bubble-size-mobile:104px}
 html.wb-bubbles-off .wb-rise{display:none}
 @media (prefers-reduced-motion:reduce){.wb-rise{display:none}}
 @media print,(forced-colors:active){.wb-rise{display:none}}
+
+/* Phones: the floating bubbles (Log in, Pull a thread, the hide arrow) are off, because they covered real buttons such as Find on the map.
+   Pull a Thread, Log in and Sign up are in the Menu. Only the small Back to surface bubble stays, smaller and at the corner. */
+@media (max-width:760px){
+  .wb-dock .wb-dock-auth,.wb-dock .wb-thread-fab,.wb-dock .wb-bubbles-toggle,.wb-rise{display:none!important}
+  .wb-dock .wb-floating .wb-art{width:64px}
+  .wb-dock{gap:0}
+  /* signed out: one header row (logo and Menu); search, Log in and Sign up are in the Menu */
+  .waybar:not(.wb-in) .wb-tools{display:none}
+  .wb-panel .wb-search{display:flex;align-items:center;margin:0 0 14px;border:1px solid #a7f0e980;border-radius:999px;overflow:hidden;background:#04202f}
+  .wb-panel .wb-search input{all:unset;box-sizing:border-box;flex:1;min-width:0;min-height:44px;padding:0 4px 0 16px;font-size:16px;color:#fff}
+  .wb-panel .wb-search input::placeholder{color:#e9ffffb0}
+  .wb-panel .wb-search button{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;width:48px;height:44px;cursor:pointer}
+  .wb-panel .wb-search button:focus-visible{outline:2px solid #a7f0e9;outline-offset:-3px}
+  .wb-panel .wb-glass{display:block;width:14px;height:14px;border:2px solid #e9ffff;border-radius:50%;position:relative}
+  .wb-panel .wb-glass:after{content:"";position:absolute;width:7px;height:2px;background:#e9ffff;right:-7px;bottom:-3px;transform:rotate(45deg)}
+}

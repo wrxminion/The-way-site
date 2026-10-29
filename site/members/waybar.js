@@ -248,10 +248,11 @@
     };
   }
   function publicPanel() {
-    return { title: 'Menu', groups: [
+    return { title: 'Menu', search: true, groups: [
       { heading: 'Explore', items: [
         { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread', art: true },
         { href: STATES, label: 'Voter Guide', desc: 'Your state, your ballot', icon: 'ballot', key: 'ballot' },
+        { href: '/members/my-ballot.html', label: 'My ballot', desc: 'Your picks and notes, saved in this browser', icon: 'myballot', key: 'myballot' },
         { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
         { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
         { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
@@ -301,6 +302,7 @@
     close.addEventListener('click', function () { closePanel(true); });
     head.appendChild(close);
     var kids = [head];
+    if (spec.search) { var sf = searchForm('wb-menu-q'); sf.className += ' wb-menu-search'; kids.push(sf); }
     spec.groups.forEach(function (g) {
       var sec = el('section', { class: 'wb-group' });
       if (g.heading) sec.appendChild(el('h3', null, g.heading));

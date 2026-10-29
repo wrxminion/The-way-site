@@ -38,8 +38,8 @@
 .cf-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .cf-bar input[type=search],.cf-bar select{font:inherit;color:#eaf8fa;background:#06212f;border:1px solid #31606f;border-radius:999px;padding:10px 16px;min-height:44px}
 .cf-bar input[type=search]{flex:1 1 280px}
-.cf-bar label{font-size:.82rem;color:#b6cdd3;display:block;margin:0 0 3px 6px}
-.cf-count{margin:10px 6px 0;color:#b6cdd3;font-size:.9rem}
+.cf-bar label{font-size:.88rem;font-weight:600;color:#f2ffff;text-shadow:0 1px 6px #021520cc;display:block;margin:0 0 3px 6px}
+.cf-count{display:inline-block;margin:12px 6px 0;padding:5px 14px;border-radius:999px;background:#052b3ce6;border:1px solid #a7f0e955;color:#f2ffff;font-size:.95rem;font-weight:600}
 .cf-bar :focus-visible{outline:3px solid #f0c36a;outline-offset:2px}
 
 [hidden]{display:none!important}
