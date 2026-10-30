@@ -1,0 +1,65 @@
+/* The two bubble menus: WHERE things go and HOW they open. Colours, glass, icon motion and badges are in bubbles-look.css.
+   Right side = the dock in waybar.css (diver, hide arrow, Pull a thread) plus Home, News and Tools. Left side = .wb-bubs-l.
+   Sizes: one variable, --wb-bubble-size (waybar.css), is used by every bubble so they match. */
+html{--wb-bubble-size:104px;--wb-bubble-size-mobile:104px}
+@media (max-height:760px){html{--wb-bubble-size:88px}}
+@media (max-height:640px){html{--wb-bubble-size:72px}}
+
+/* right: the dock stacks top to bottom, so Tools is above Pull a thread, then News, then Home at the bottom */
+.wb-dock .wb-bub-wrap{position:relative;flex:none;display:block}
+.wb-dock .wb-bub-tools{order:2}
+.wb-dock .wb-bub-news{order:4}
+.wb-dock .wb-bub-home{order:5}
+.wb-dock .wb-bub-hidden{order:6}
+.wb-dock .wb-bub-explore{order:7}
+/* left: first child is the bottom bubble */
+.wb-bubs-l{position:fixed;z-index:48;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;flex-direction:column-reverse;align-items:flex-start;gap:12px}
+.wb-bubs-l .wb-bub-wrap{position:relative;flex:none}
+.wb-dock .wb-phone,.wb-bubs-l .wb-phone{display:none}
+html.wb-bubbles-off .wb-bubs-l{display:none}
+/* the old My Ballot link inside the voter-guide note controls is gone (VOTE! has it); keep the note controls clear of the left column */
+.bp-dock{left:calc(var(--wb-bubble-size) + 28px)}
+
+/* the pop-up list (desktop): its position is set by script next to the bubble that opened it */
+.wb-pop{position:fixed;z-index:60;width:min(280px,calc(100vw - 24px));overflow:auto;box-sizing:border-box;padding:8px}
+.wb-pop[hidden],.wb-fan[hidden]{display:none}
+.wb-pop-list,.wb-fan-list{list-style:none;margin:0;padding:0}
+.wb-pop-list a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:0 14px;box-sizing:border-box;text-decoration:none;border-radius:12px}
+.wb-pop-h{padding:10px 14px 4px;font:700 12px/1.2 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.wb-small{width:48px;height:48px;padding:0;display:grid;place-items:center;border-radius:50%;cursor:pointer;font:700 20px/1 system-ui,sans-serif}
+.wb-bell-badge{position:static}
+
+/* the visitor Log in / Sign up bubble (existing artwork), also used inside My side on a phone */
+.wb-bub-auth{position:relative;display:block;padding:0;border:0;background:none;box-shadow:none;min-height:0;border-radius:0}
+.wb-bub-auth::before,.wb-bub-auth::after{display:none}
+.wb-bub-auth .wb-art{display:block;width:var(--wb-bubble-size);height:auto;pointer-events:none}
+.wb-bub-auth a{position:absolute;left:12%;right:12%;display:flex;align-items:center;justify-content:center;min-height:44px;padding:0;overflow:hidden;color:transparent;font-size:0}
+.wb-bub-auth a.wb-dock-login{top:12%;height:41%}
+.wb-bub-auth a.wb-dock-signup{top:56%;height:41%}
+.wb-bub-auth>span[aria-hidden]{display:none}
+.wb-bub-auth a:focus-visible{outline:3px solid #a7f0e9;outline-offset:2px;border-radius:999px}
+
+/* phones: each side is ONE bubble (Explore right, My side left) that opens a labelled list above it */
+@media (max-width:760px){
+  .wb-desk{display:none!important}
+  .wb-dock .wb-phone,.wb-bubs-l .wb-phone{display:block}
+  .wb-dock{gap:8px}
+  .wb-bubs-l{gap:8px}
+  .wb-fan{position:fixed;z-index:60;bottom:calc(12px + env(safe-area-inset-bottom) + 64px + 10px);width:min(300px,calc(100vw - 24px));max-height:calc(100vh - 150px);overflow:auto;box-sizing:border-box;padding:8px}
+  .wb-fan-right{right:12px}.wb-fan-left{left:12px}
+  .wb-fan-row{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:0 14px;box-sizing:border-box;border:0;background:none;text-align:left;text-decoration:none;cursor:pointer;border-radius:12px;font:600 17px/1.2 system-ui,sans-serif}
+  .wb-fan-row svg{width:28px;height:28px;flex:none}
+  .wb-fan-go{margin-left:auto}
+  .wb-fan-extra{display:flex;justify-content:center;padding:6px 0 2px}
+  .wb-fan-auth{position:relative}
+  .wb-dock .wb-bub-explore{order:7}
+  /* a phone keeps the dock to the diver and Explore; Log in / Sign up lives in My side */
+  html.wb-typing .wb-dock,html.wb-typing .wb-bubs-l{display:none}
+}
+/* short screens (a phone on its side, or a tall keyboard): the bubbles sit in the page after the content, not on top of it */
+@media (max-height:520px){
+  .wb-dock,.wb-bubs-l{position:static;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;max-width:none;padding:12px}
+  .wb-rise{display:none}
+}
+@media print{.wb-bubs-l{display:none}}
+@media (max-width:760px){.bp-dock{left:88px}}

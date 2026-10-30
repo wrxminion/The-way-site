@@ -275,7 +275,7 @@
   // ---- dock: link to the planner, status line, and "save highlighted text"
   var dock = el('div', 'bp-dock');
   dock.setAttribute('role', 'region'); dock.setAttribute('aria-label', 'My Ballot');
-  var dockLink = el('a', 'bp-open', 'My Ballot'); dockLink.href = '/members/my-ballot.html?state=' + ST;
+  var dockLink = null;   // the My Ballot link moved to the VOTE! bubble
   var hl = btn('bp-hl', 'Save to my ballot notes'); hl.hidden = true;
   msgEl = el('span', 'bp-msg'); msgEl.setAttribute('role', 'status');
   // a quick typed note, saved like a highlight (with this page's link) under this person or measure
@@ -294,7 +294,7 @@
     });
   }
   if (noteForm) dock.appendChild(noteForm);
-  dock.appendChild(msgEl); if (noteBtn) dock.appendChild(noteBtn); dock.appendChild(hl); dock.appendChild(dockLink);
+  dock.appendChild(msgEl); if (noteBtn) dock.appendChild(noteBtn); dock.appendChild(hl);
   document.body.appendChild(dock);
 
   var pending = null;
