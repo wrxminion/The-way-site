@@ -2,7 +2,7 @@
 // Loaded by waybar.js, which hands over what it knows (signed in or out, roles, links) through WayBubbles.render(ctx).
 // Structure and behaviour live here and in bubbles.css. The LOOK (glass, icon colour, motion, badges) lives only in
 // bubbles-look.css, so the artwork can be swapped without touching this file. Icons are small inline SVG, kept in ICON below.
-// Phones: each side collapses into one bubble (Explore on the right, My side on the left) that opens a labelled list.
+// Phones: each side collapses into one bubble (Explore on the right, Your Way on the left) that opens a labelled list.
 // No inline scripts or styles anywhere; positions are set with the CSS object model, which the page security policy allows.
 (function () {
   'use strict';
@@ -166,7 +166,7 @@
   }
   // phone: one collapsed bubble per side; it opens a labelled list, and a group (Tools, Commons) replaces the list with a Back row
   function phoneSide(side, specs, current, extra) {
-    var key = side === 'right' ? 'explore' : 'my-side', label = side === 'right' ? 'Explore' : 'My side';
+    var key = side === 'right' ? 'explore' : 'my-side', label = side === 'right' ? 'Explore' : 'Your Way';
     var id = 'wb-fan-' + (++uid);
     var wrap = el('div', { class: 'wb-bub-wrap wb-bub-gen wb-phone wb-bub-' + key });
     var b = el('button', { type: 'button', class: 'way-bubble', 'data-icon': key, 'aria-expanded': 'false', 'aria-haspopup': 'true', 'aria-controls': id });
