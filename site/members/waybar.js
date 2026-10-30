@@ -223,26 +223,27 @@
     contribute.push({ href: '/members/author.html', label: 'Author tools', desc: 'Send an article or a source, and see your rank', icon: 'author', key: 'author' });
     contribute.push({ href: route('private'), label: 'Private research', desc: 'Your own notes and team files, never published', icon: 'private', key: 'private' });
     var explore = [
+      { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
       { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread', art: true },
       { href: '/results/', label: 'Election results', desc: 'Unofficial, auto-fed, updated as counts come in', icon: 'ballot', key: 'results' },
-      { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
+      { href: route('map'), label: 'Map', desc: 'Every state at a glance', icon: 'map', key: 'map' },
       { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
       { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
       { href: '/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
-      { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
-      { href: route('map'), label: 'Map', desc: 'Every state at a glance', icon: 'map', key: 'map' }
+      { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' }
     ];
     if (d.findings) explore.push({ href: '/members/findings.html', label: 'Findings', desc: 'What members checked, with the verdict', icon: 'findings', key: 'findings' });
     var community = [
-      { href: route('invite'), label: 'Invite someone', icon: 'invite', key: 'invite' },
       { href: NOTES, label: 'Notifications', desc: 'Replies and updates for you', icon: 'bell', key: 'notes' },
-      { href: route('roles'), label: 'Ranks & awards', desc: 'Author, Deshi and Renshi, and points', icon: 'roles', key: 'roles' }
+      { href: route('commons'), label: 'Commons', desc: 'Threads and comments from members', icon: 'commons', key: 'commons' },
+      { href: route('roles'), label: 'Ranks & awards', desc: 'Author, Deshi and Renshi, and points', icon: 'roles', key: 'roles' },
+      { href: route('invite'), label: 'Invite someone', icon: 'invite', key: 'invite' }
     ];
     var manage = [];
     if (can(d, 'moderator')) manage.push({ href: route('reports'), label: 'Reports', icon: 'reports', key: 'reports' });
     if (d.modlog) manage.push({ href: route('log'), label: 'Moderation log', icon: 'log', key: 'log' });
     if (can(d, 'admin')) manage.push({ href: route('admin'), label: 'Admin', icon: 'admin', key: 'admin' });
-    var more = [{ heading: 'Explore', items: explore }, { heading: 'Community', items: community }];
+    var more = [{ heading: 'Community', items: community }, { heading: 'Explore', items: explore }];
     if (manage.length) more.push({ heading: 'Manage', items: manage });
     return {
       vote: { title: 'Vote', groups: vote, home: true },

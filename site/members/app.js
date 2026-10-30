@@ -819,6 +819,34 @@ function roleLabelFor() {
   return 'Member';
 }
 
+// "Waiting for you" on Home: unread notifications (latest three) and the review queues this member can act on.
+// Every part loads on its own and quietly stays out of the way if it fails or the member has nothing there.
+function homeInbox(wantsMod) {
+  const noteList = h('ul', { class: 'list home-inbox-list' });
+  const notes = h('section', { class: 'panel home-inbox', 'aria-labelledby': 'hi-notes' },
+    h('div', { class: 'row' }, h('h2', { id: 'hi-notes', text: 'Notifications' }), h('a', { href: 'notifications.html', text: 'All notifications' })), noteList);
+  const queues = h('ul', { class: 'list home-inbox-list' });
+  const pending = h('section', { class: 'panel home-inbox', 'aria-labelledby': 'hi-rev', hidden: true },
+    h('div', { class: 'row' }, h('h2', { id: 'hi-rev', text: 'Pending reviews' })), queues);
+  noteList.append(h('li', { class: 'muted small', text: 'Loading…' }));
+  (async () => {
+    try {
+      const rows = await q(sb.rpc('my_notifications', { p_unread_only: true, p_limit: 3 }));
+      noteList.replaceChildren(...(rows.length ? rows.map((n) => h('li', {},
+        h('div', { class: 'row' }, h('strong', {}, n.link ? h('a', { href: n.link, text: n.title }) : n.title), h('span', { class: 'meta', text: when(n.created_at) })),
+        n.body ? h('div', { class: 'small', text: n.body.length > 160 ? n.body.slice(0, 160) + '…' : n.body }) : null))
+        : [h('li', { class: 'muted small', text: 'Nothing new.' })]));
+    } catch { noteList.replaceChildren(h('li', { class: 'muted small', text: 'Could not load them just now.' })); }
+  })();
+  const line = (href, label, n) => h('li', {}, h('div', { class: 'row' }, h('a', { href, text: label }), h('span', { class: n ? 'tag warn' : 'tag', text: n ? `${n} waiting` : 'none waiting' })));
+  const tasks = [];
+  if (wantsMod) tasks.push(q(sb.rpc('my_review_summary')).then((r) => line('#/review', 'Review sources (your checks waiting for a second review)', r[0].waiting_second)).catch(() => null));
+  if (can('reviewer') || can('moderator')) tasks.push(q(sb.rpc('read_check_queue', { max_rows: 30 })).then((r) => line('read-checks.html', 'Read checks to sign off', r.length)).catch(() => null));
+  if (can('reviewer') || can('editor')) tasks.push(q(sb.rpc('author_queue', { p_max: 50 })).then((r) => line('author.html', 'Submitted articles and sources to check', r.length)).catch(() => null));
+  Promise.all(tasks).then((ls) => { const ok = ls.filter(Boolean); if (ok.length) { queues.replaceChildren(...ok); pending.hidden = false; } });
+  return h('div', { class: 'home-inbox-wrap' }, notes, pending);
+}
+
 async function homeView() {
   const wantsAdmin = can('admin'), wantsMod = can('moderator');
   const [cats, posts, openReports, notifyCount] = await Promise.all([
@@ -855,6 +883,7 @@ async function homeView() {
   const hasTools = wantsAdmin || wantsMod || can('researcher') || can('reviewer');
 
   const feedBox = h('div', { class: 'home-news' });
+  const inbox = homeInbox(wantsMod);
   render(
     scoreBar(wantsMod),
     h('div', { class: 'home-head' },
@@ -872,21 +901,24 @@ async function homeView() {
         wantsAdmin ? h('a', { class: 'button quiet', href: '#/admin', text: `Notify list (${notifyCount})` }) : null,
         wantsMod ? h('a', { class: 'button quiet', href: '#/reports', text: `Reports (${openReports} open)` }) : null,
         wantsMod && state.hasModLog ? h('a', { class: 'button quiet', href: '#/log', text: 'Moderation log' }) : null)),
+    inbox,
     h('div', { class: 'btns home-quick' },
       h('a', { class: 'button', href: 'my-ballot.html', text: 'My ballot picks' }),
       h('a', { class: 'button', href: '#/map', text: 'Map' }),
       h('a', { class: 'button primary', href: '#/invite', text: 'Invite someone' })),
+    h('h2', { text: 'Recent in the Commons' }),
+    feed.length ? h('ul', { class: 'list panel home-feed' }, feed.map((e) => h('li', {},
+      h('div', { class: 'row' }, h('a', { href: `#/t/${e.id}`, text: e.title }), h('span', { class: 'meta', text: when(e.at) })),
+      h('div', { class: 'meta', text: [e.who, e.cat ? e.cat.title : null].filter(Boolean).join(' · ') }),
+      e.body ? h('div', { class: 'small post', text: e.body.length > 220 ? e.body.slice(0, 220) + '…' : e.body }) : null,
+      // Quick Reply: for now it opens the thread; the in-thread reply (tagging a comment) is built in its own change and plugs in here.
+      h('div', { class: 'btns home-reply' }, h('a', { class: 'button quiet', href: `#/t/${e.id}`, 'data-reply-thread': e.id, text: 'Reply' })))))
+      : h('p', { class: 'muted', text: 'Nothing posted yet. Start the first thread in the Commons.' }),
+    h('p', {}, h('a', { class: 'button quiet', href: '#/commons', text: 'Open the Commons' })),
     feedBox,
     h('div', { class: 'home-actions' },
       ballotCard,
       review ? review.action : authorCard),
-    h('h2', { text: 'Latest activity' }),
-    feed.length ? h('ul', { class: 'list panel home-feed' }, feed.map((e) => h('li', {},
-      h('div', { class: 'row' }, h('a', { href: `#/t/${e.id}`, text: e.title }), h('span', { class: 'meta', text: when(e.at) })),
-      h('div', { class: 'meta', text: [e.who, e.cat ? e.cat.title : null].filter(Boolean).join(' · ') }),
-      e.body ? h('div', { class: 'small post', text: e.body.length > 220 ? e.body.slice(0, 220) + '…' : e.body }) : null)))
-      : h('p', { class: 'muted', text: 'Nothing posted yet. Start the first thread in the Commons.' }),
-    h('p', {}, h('a', { class: 'button quiet', href: '#/commons', text: 'Open the Commons' })),
     h('h2', { text: 'Rooms' }),
     h('p', { class: 'small muted', text: 'Members may talk about anything, candidates included. The Way itself never takes sides.' }),
     h('ul', { class: 'list panel' }, cats.map((c) => h('li', {},
