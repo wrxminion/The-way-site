@@ -1,40 +1,54 @@
-/* THE LOOK of the bubble menus. Everything that can change when the artwork changes is in this one file:
-   the glass shell, label type, icon colour and motion, badges, and the pop-up and list panels.
-   Structure and placement are in bubbles.css; icons are in bubbles.js (ICON). Swap this file and the glass picture to restyle. */
-.way-bubble{width:var(--wb-bubble-size);height:var(--wb-bubble-size);position:relative;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;box-sizing:border-box;border:0;padding:0;background:transparent url('/members/art/bubble-glass.svg') center/contain no-repeat;color:#ecffff;text-decoration:none;font:600 13px/1.1 system-ui,Arial,sans-serif;cursor:pointer;flex-shrink:0}
-.way-bubble svg{width:calc(var(--wb-bubble-size) * .31);height:calc(var(--wb-bubble-size) * .31);color:#b3f4e8;overflow:visible}
-.way-bubble:hover{filter:brightness(1.12)}
-.way-bubble:focus-visible{outline:3px solid #a7f0e9;outline-offset:3px;border-radius:50%}
-.way-bubble[aria-current="page"]{filter:drop-shadow(0 0 8px #a7f0e9cc)}
-.way-bubble[aria-expanded="true"]{filter:brightness(1.12)}
-@media (max-height:640px){.way-bubble{font-size:11px}}
-/* icon motion: once, short, only on hover or keyboard focus */
-.way-bubble .gear{transform-origin:24px 25px}
-.way-bubble:is(:hover,:focus-visible) .gear{animation:gear-turn 280ms ease-out both}
-.way-bubble[aria-expanded="true"][data-icon="tools"]{animation:tools-pop 280ms ease-out}
-.way-bubble:is(:hover,:focus-visible) .roof{stroke-dasharray:44;animation:trace 260ms ease-out}
-.way-bubble:is(:hover,:focus-visible) .lines{animation:lines-in 260ms ease-out}
-.way-bubble:is(:hover,:focus-visible) .ballot{animation:vote-drop 280ms ease-out}
-.way-bubble:is(:hover,:focus-visible) .check{stroke-dasharray:25;animation:check-in 260ms ease-out}
-.way-bubble:is(:hover,:focus-visible) .reply{animation:reply-rise 260ms ease-out}
-.way-bubble:is(:hover,:focus-visible) .ring{transform-origin:center;animation:ring-in 280ms ease-out}
-.way-bubble[aria-expanded="true"] .fan{transform-origin:center;animation:fan-in 280ms ease-out}
-@keyframes gear-turn{from{transform:rotate(-22deg)}to{transform:rotate(0)}}
-@keyframes tools-pop{0%{scale:1}50%{scale:1.04;filter:brightness(1.2)}100%{scale:1}}
-@keyframes trace{from{stroke-dashoffset:44;opacity:.4}to{stroke-dashoffset:0;opacity:1}}
-@keyframes check-in{from{stroke-dashoffset:25;opacity:.4}to{stroke-dashoffset:0;opacity:1}}
-@keyframes lines-in{from{opacity:.25;transform:translateY(2px)}to{opacity:1;transform:translateY(0)}}
-@keyframes vote-drop{from{transform:translateY(-3px)}to{transform:translateY(0)}}
-@keyframes reply-rise{from{opacity:.3;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
-@keyframes ring-in{from{opacity:.4;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
-@keyframes fan-in{from{transform:scale(.9)}to{transform:scale(1)}}
-@media (prefers-reduced-motion:reduce){.way-bubble,.way-bubble *{animation:none!important;transition:none!important}}
-/* collapsed phone bubbles */
-@media (max-width:760px){
-  .way-bubble{font-size:12px}
-  .way-bubble[data-icon="my-side"],.way-bubble[data-icon="explore"]{width:64px;height:64px;font-size:10px;gap:2px}
-  .way-bubble[data-icon="my-side"] svg,.way-bubble[data-icon="explore"] svg{width:22px;height:22px}
-}
+/* THE LOOK of the bubble menus: v6 artwork and motion from ChatGPT (30 Oct), as plain CSS. Everything that changes when the artwork changes is
+   in this one file plus the ICON table in bubbles.js and art/bubble-glass.svg. Placement and opening are in bubbles.css.
+   Motion plays once per hover, focus or open; nothing loops. Tools: the glass shell bursts and stays gone while the list is open;
+   the gear and the "Close tools" label stay as the close control. Reduced motion: no animation, shell hidden at once. */
+.way-bubble{width:var(--wb-bubble-size);height:var(--wb-bubble-size);position:relative;display:inline-block;padding:0;box-sizing:border-box;border:0;background:none;color:#efffff;text-decoration:none;font:700 13px/1.1 Arial,sans-serif;cursor:pointer;isolation:isolate;overflow:visible;flex-shrink:0}
+.way-bubble::before{content:"";position:absolute;inset:0;background:url('/members/art/bubble-glass.svg') center/contain no-repeat;z-index:-1;pointer-events:none;transform-origin:center}
+.way-bubble svg{position:absolute;width:72%;height:72%;left:14%;top:10%;overflow:visible;transform-origin:center}
+.way-bubble>span{position:absolute;left:0;right:0;bottom:24%;z-index:2;text-align:center;text-shadow:0 2px 2px #062535,2px 0 2px #062535,-2px 0 2px #062535,0 -1px 2px #062535}
+.way-bubble:focus-visible{outline:3px solid #a7f0e9;outline-offset:4px;border-radius:50%}
+.way-bubble:hover::before{filter:brightness(1.12)}
+/* Separate hover and click animation names ensure clicking after hover restarts motion. */
+@keyframes house-hop{0%,100%{transform:translateY(0) rotate(0)}20%{transform:translateY(-9px) rotate(-8deg)}45%{transform:translateY(4px) rotate(6deg)}70%{transform:translateY(-4px) rotate(-3deg)}}
+@keyframes house-hop-open{0%,100%{transform:translateY(0) rotate(0)}20%{transform:translateY(-9px) rotate(-8deg)}45%{transform:translateY(4px) rotate(6deg)}70%{transform:translateY(-4px) rotate(-3deg)}}
+@keyframes paper-flip{0%,100%{transform:rotate(0) scaleX(1)}25%{transform:rotate(-14deg) scaleX(.65)}55%{transform:rotate(12deg) scaleX(1.08)}78%{transform:rotate(-5deg) scaleX(.96)}}
+@keyframes paper-flip-open{0%,100%{transform:rotate(0) scaleX(1)}25%{transform:rotate(-14deg) scaleX(.65)}55%{transform:rotate(12deg) scaleX(1.08)}78%{transform:rotate(-5deg) scaleX(.96)}}
+@keyframes waves-flow{0%,100%{transform:translateX(0)}30%{transform:translateX(4px)}70%{transform:translateX(-4px)}}
+@keyframes waves-flow-open{0%,100%{transform:translateX(0)}30%{transform:translateX(4px)}70%{transform:translateX(-4px)}}
+@keyframes path-trace{0%{stroke-dashoffset:65;opacity:.25}100%{stroke-dashoffset:0;opacity:1}}
+@keyframes path-trace-open{0%{stroke-dashoffset:65;opacity:.25}100%{stroke-dashoffset:0;opacity:1}}
+@keyframes gear-turn{0%{transform:rotate(0)}25%{transform:rotate(-25deg)}75%{transform:rotate(105deg)}100%{transform:rotate(90deg)}}
+@keyframes shell-burst{0%{transform:scale(1);opacity:1}25%{transform:scale(.55);opacity:1}60%{transform:scale(.82);opacity:.85}100%{transform:scale(1);opacity:0}}
+@keyframes droplets-out{0%,30%{transform:scale(.5);opacity:0}45%{opacity:1}100%{transform:scale(1);opacity:0}}
+@keyframes ballot-drop{0%,100%{transform:translateY(0)}25%{transform:translateY(-8px)}65%{transform:translateY(4px)}}
+@keyframes stamp{0%,100%{transform:translateY(0) scale(1)}25%{transform:translateY(-6px) scale(1.1)}65%{transform:translateY(2px) scale(.9)}}
+@keyframes reply{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-6px) rotate(-8deg)}65%{transform:translateY(2px) rotate(4deg)}}
+@keyframes buoy{0%,100%{transform:rotate(0)}30%{transform:rotate(-15deg)}65%{transform:rotate(12deg)}}
+@keyframes list-fan{0%,100%{transform:scaleY(1)}30%{transform:scaleY(.7)}65%{transform:scaleY(1.1)}}
+.gear,.ring,.reply,.fan{transform-origin:24px 24px}.path-light{stroke-dasharray:65;stroke-dashoffset:0}
+.way-bubble[data-icon="home"]:is(:hover,:focus-visible) svg{animation:house-hop 1000ms ease-in-out}
+.way-bubble[data-icon="home"][aria-expanded="true"] svg{animation:house-hop-open 1000ms ease-in-out}
+.way-bubble[data-icon="news"]:is(:hover,:focus-visible) svg{animation:paper-flip 1100ms ease-in-out}
+.way-bubble[data-icon="news"][aria-expanded="true"] svg{animation:paper-flip-open 1100ms ease-in-out}
+.way-bubble[data-icon="my-side"]:is(:hover,:focus-visible) .water-waves{animation:waves-flow 1400ms ease-in-out}
+.way-bubble[data-icon="my-side"]:is(:hover,:focus-visible) .path-light{animation:path-trace 1400ms ease-out}
+.way-bubble[data-icon="my-side"][aria-expanded="true"] .water-waves{animation:waves-flow-open 1400ms ease-in-out}
+.way-bubble[data-icon="my-side"][aria-expanded="true"] .path-light{animation:path-trace-open 1400ms ease-out}
+.way-bubble[data-icon="tools"]:is(:hover,:focus-visible) .gear{animation:gear-turn 650ms ease-out}
+.way-bubble[data-icon="tools"][aria-expanded="true"]::before{animation:shell-burst 650ms ease-out forwards}
+.way-bubble[data-icon="tools"][aria-expanded="true"]::after{content:"";position:absolute;inset:8%;pointer-events:none;background:radial-gradient(circle at 50% 4%,#c9fff0 0 2px,transparent 3px),radial-gradient(circle at 84% 16%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 96% 50%,#c9fff0 0 2px,transparent 3px),radial-gradient(circle at 80% 85%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 50% 96%,#c9fff0 0 2px,transparent 3px),radial-gradient(circle at 15% 80%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 4% 50%,#c9fff0 0 2px,transparent 3px),radial-gradient(circle at 16% 16%,#c9fff0 0 3px,transparent 4px);animation:droplets-out 650ms ease-out forwards}
+.way-bubble[data-icon="tools"][aria-expanded="true"] .gear{animation:gear-turn 650ms ease-out}
+.way-bubble[data-icon="vote"]:is(:hover,:focus-visible) .ballot{animation:ballot-drop 750ms ease-in-out}
+.way-bubble[data-icon="review"]:is(:hover,:focus-visible) .reply{animation:stamp 750ms ease-in-out}
+.way-bubble[data-icon="commons"]:is(:hover,:focus-visible) .reply{animation:reply 750ms ease-in-out}
+.way-bubble[data-icon="help"]:is(:hover,:focus-visible) .ring{animation:buoy 850ms ease-in-out}
+.way-bubble[data-icon="explore"]:is(:hover,:focus-visible) .fan{animation:list-fan 750ms ease-in-out}
+@media(max-width:760px){.way-bubble{font-size:12px}.way-bubble[data-icon="my-side"],.way-bubble[data-icon="explore"]{width:64px;height:64px;font-size:10px}}
+@media(max-height:640px){.way-bubble{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.way-bubble,.way-bubble *,.way-bubble::before,.way-bubble::after{animation:none!important;transition:none!important}.way-bubble[data-icon="tools"][aria-expanded="true"]::before{opacity:0}.way-bubble[data-icon="tools"][aria-expanded="true"]::after{display:none}}
+
+.way-bubble[aria-current="page"]::before{filter:drop-shadow(0 0 8px #a7f0e9cc)}
+.way-bubble[data-icon="my-side"] .water-path,.way-bubble[data-icon="my-side"] .path-light{transform-origin:center}
 /* count badges (Notifications). Zero counts stay hidden. */
 .wb-bell-badge{min-width:23px;min-height:23px;padding:3px;box-sizing:border-box;display:grid;place-items:center;border-radius:99px;background:#a7f0e9;color:#052b3c;font:700 12px system-ui,sans-serif}
 .wb-bell-badge[hidden]{display:none}
@@ -45,6 +59,6 @@
 .wb-pop-list a:focus-visible,.wb-fan-row:focus-visible,.wb-small:focus-visible{outline:3px solid #a7f0e9;outline-offset:-3px}
 .wb-pop-list a[aria-current="page"],.wb-fan-row[aria-current="page"]{background:#0a4258;box-shadow:inset 3px 0 0 #a7f0e9}
 .wb-pop-h{color:#a7f0e9}
-.wb-fan-row svg{color:#b3f4e8}
+.wb-fan-row svg{position:static;width:28px;height:28px;flex:none}
 .wb-small{background:#062137f5;border:2px solid #a7f0e9cc;color:#ecffff}
-@media (forced-colors:active){.way-bubble{background:Canvas;border:2px solid CanvasText}.wb-pop,.wb-fan{background:Canvas;border:2px solid CanvasText}}
+@media (forced-colors:active){.way-bubble::before{display:none}.way-bubble{border:2px solid CanvasText;border-radius:50%;background:Canvas}.wb-pop,.wb-fan{background:Canvas;border:2px solid CanvasText}}

@@ -6,17 +6,18 @@
 // No inline scripts or styles anywhere; positions are set with the CSS object model, which the page security policy allows.
 (function () {
   'use strict';
+  // v6 artwork (ChatGPT, 30 Oct). Gradient and filter ids are made unique per copy in icon(), because an icon can appear twice on a page.
   var ICON = {
-      "home": "<svg aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 48 48\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"roof\" d=\"M7 21 24 7l17 14\"/><path d=\"M12 20v22h24V20M21 42V29h7v13\"/></g></svg>",
-      "news": "<svg aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 48 48\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"9\" y=\"8\" width=\"29\" height=\"33\" rx=\"3\"/><path d=\"M38 16h4v22a3 3 0 0 1-3 3M15 15h17\"/><g class=\"lines\"><path d=\"M15 23h17M15 29h17M15 35h11\"/></g></g></svg>",
-      "vote": "<svg aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 48 48\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><g class=\"ballot\"><path d=\"M17 5h17v20H17zM21 14l3 3 6-7\"/></g><path d=\"M10 28h30l3 14H7zM17 29h16\"/></g></svg>",
-      "review": "<svg aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 48 48\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 6h20l7 7v29H12zM31 6v9h8M18 21h13\"/><path class=\"check\" d=\"m18 31 6 5 10-11\"/></g></svg>",
-      "commons": "<svg aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 48 48\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 9h28v20H18l-8 7v-7H6z\"/><g class=\"reply\"><path d=\"M35 19h8v20h-6v6l-8-6H20v-7\"/></g></g></svg>",
-      "help": "<svg aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 48 48\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle class=\"ring\" cx=\"24\" cy=\"24\" r=\"19\"/><path d=\"M18 17c0-8 14-8 14 0 0 5-8 5-8 11M24 35h.1\"/></g></svg>",
-      "tools": "<svg aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 48 48\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><g class=\"gear\"><path d=\"m20 5h8l1 6 4 2 6-2 4 7-5 4v5l5 4-4 7-6-2-4 2-1 6h-8l-1-6-4-2-6 2-4-7 5-4v-5l-5-4 4-7 6 2 4-2z\"/><circle cx=\"24\" cy=\"25\" r=\"7\"/></g></g></svg>",
-      "my-side": "<svg aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 48 48\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13 31c-6-12 23-6 22-16\"/><g class=\"fan\"><circle cx=\"12\" cy=\"34\" r=\"7\"/><circle cx=\"28\" cy=\"25\" r=\"5\"/><circle cx=\"35\" cy=\"12\" r=\"6\"/></g></g></svg>",
-      "hidden": "<svg aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 48 48\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M10 24h.1M24 24h.1M38 24h.1\"/></g></svg>",
-    "explore": "<svg aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 48 48\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><g class=\"fan\"><path d=\"M19 12h23M19 24h23M19 36h23\"/><circle cx=\"8\" cy=\"12\" r=\"2\"/><circle cx=\"8\" cy=\"24\" r=\"2\"/><circle cx=\"8\" cy=\"36\" r=\"2\"/></g></g></svg>"
+    "home": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-home\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#f3d8a2\"/><stop offset=\".45\" stop-color=\"#f3d8a2\"/><stop offset=\"1\" stop-color=\"#a96838\"/></linearGradient><filter id=\"shadow-home\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-home)\" stroke=\"#f3d8a2\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-home)\"><g class=\"roof\"><path d=\"M6 23 24 7l18 16-4 4L24 15 10 27z\"/></g><path d=\"M12 24 24 14l12 10v18H12z\"/><path fill=\"#173a49\" stroke=\"#efd59e\" d=\"M21 42V29h8v13M15 26h3v5h-3\"/></g></svg>",
+    "news": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-news\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#fff0c9\"/><stop offset=\".45\" stop-color=\"#fff0c9\"/><stop offset=\"1\" stop-color=\"#9e8a66\"/></linearGradient><filter id=\"shadow-news\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-news)\" stroke=\"#fff0c9\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-news)\"><path d=\"m10 7 27 3v31L10 38z\"/><path d=\"m37 14 6 1v25l-6 1z\"/><path fill=\"#288b9b\" d=\"m15 13 16 2v7l-16-2z\"/><g class=\"lines\" stroke=\"#554b42\"><path d=\"m15 25 16 2m-16 4 16 2m-16 3 10 1\"/></g></g></svg>",
+    "tools": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-tools\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#f2c469\"/><stop offset=\".45\" stop-color=\"#f2c469\"/><stop offset=\"1\" stop-color=\"#8b6429\"/></linearGradient><filter id=\"shadow-tools\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-tools)\" stroke=\"#f2c469\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-tools)\"><g class=\"gear\"><path d=\"m20 5h8l1 6 4 2 6-2 4 7-5 4v5l5 4-4 7-6-2-4 2-1 6h-8l-1-6-4-2-6 2-4-7 5-4v-5l-5-4 4-7 6 2 4-2z\"/><circle fill=\"#183744\" stroke=\"#f8de9d\" cx=\"24\" cy=\"25\" r=\"8\"/><circle fill=\"#92c6d2\" cx=\"24\" cy=\"25\" r=\"4\"/></g></g></svg>",
+    "vote": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-vote\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#d7c1f0\"/><stop offset=\".45\" stop-color=\"#d7c1f0\"/><stop offset=\"1\" stop-color=\"#8263a6\"/></linearGradient><filter id=\"shadow-vote\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-vote)\" stroke=\"#d7c1f0\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-vote)\"><path d=\"m8 28 15-6 18 6-15 7z\"/><path d=\"m8 28 18 7v10L8 38zM26 35l15-7v10l-15 7z\"/><g class=\"ballot\"><path fill=\"#fff3d8\" stroke=\"#d6c398\" d=\"m18 4 16 2-2 22-16-2z\"/><path class=\"check\" fill=\"none\" stroke=\"#d52e35\" stroke-width=\"3\" d=\"m20 16 4 4 6-8\"/></g></g></svg>",
+    "review": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-review\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#9ed6ad\"/><stop offset=\".45\" stop-color=\"#9ed6ad\"/><stop offset=\"1\" stop-color=\"#34785e\"/></linearGradient><filter id=\"shadow-review\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-review)\" stroke=\"#9ed6ad\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-review)\"><path fill=\"#f4e6c8\" stroke=\"#d3c19b\" d=\"M9 6h23l6 7v29H9z\"/><path fill=\"#d4c3a0\" d=\"M32 6v9h6\"/><path fill=\"none\" stroke=\"#a28c69\" d=\"M14 15h11M14 21h12M14 27h8\"/><g class=\"reply\"><circle cx=\"32\" cy=\"33\" r=\"12\"/><path class=\"check\" fill=\"none\" stroke=\"#efffda\" stroke-width=\"3\" d=\"m25 33 5 5 9-11\"/></g></g></svg>",
+    "commons": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-commons\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#99d9f0\"/><stop offset=\".45\" stop-color=\"#99d9f0\"/><stop offset=\"1\" stop-color=\"#397999\"/></linearGradient><filter id=\"shadow-commons\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-commons)\" stroke=\"#99d9f0\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-commons)\"><path d=\"M5 8h28v21H18l-9 7v-7H5z\"/><g class=\"reply\"><path fill=\"#d5a985\" stroke=\"#f3d5b7\" d=\"M21 23h23v18h-6v5l-7-5H21z\"/></g><path fill=\"none\" stroke=\"#edfcff\" d=\"M11 15h16M11 21h10\"/></g></svg>",
+    "help": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-help\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#f24b4b\"/><stop offset=\".45\" stop-color=\"#f24b4b\"/><stop offset=\"1\" stop-color=\"#a31525\"/></linearGradient><filter id=\"shadow-help\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-help)\" stroke=\"#f24b4b\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-help)\"><g class=\"ring\"><circle cx=\"24\" cy=\"24\" r=\"19\"/><circle fill=\"#153e4c\" stroke=\"#fff8ec\" cx=\"24\" cy=\"24\" r=\"12\"/><path fill=\"none\" stroke=\"#fff8ec\" stroke-width=\"5\" d=\"M11 11l5 5M32 32l5 5M11 37l5-5M32 16l5-5\"/></g><path fill=\"none\" stroke=\"#fff7d9\" d=\"M20 20c0-6 9-6 9 0 0 3-5 3-5 7M24 31h.1\"/></g></svg>",
+    "my-side": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"water-way\" x2=\".7\" y2=\"1\"><stop stop-color=\"#77ccdc\"/><stop offset=\".5\" stop-color=\"#238fa9\"/><stop offset=\"1\" stop-color=\"#10566f\"/></linearGradient><linearGradient id=\"path-way\" x2=\".7\" y2=\"1\"><stop stop-color=\"#fff0b8\"/><stop offset=\"1\" stop-color=\"#d1a568\"/></linearGradient></defs><path fill=\"url(#water-way)\" stroke=\"#a2e0e0\" stroke-width=\".8\" d=\"M4 9Q24 1 44 9v32Q24 47 4 41z\"/><g class=\"water-waves\" fill=\"none\" stroke=\"#b2ebed\" stroke-width=\"1.3\" opacity=\".8\"><path d=\"M6 13q5-3 10 0t10 0t10 0t7 0M5 23q5-3 10 0t10 0t10 0t8 0M5 34q5-3 10 0t10 0t10 0t8 0\"/></g><path class=\"water-path\" fill=\"url(#path-way)\" stroke=\"#fff0c3\" stroke-width=\".7\" d=\"M17 44c-4-9 4-11 10-17s-7-10-7-15 5-5 5-7h3c0 4-5 5-4 8s15 8 9 16-10 9-7 16z\"/><path class=\"path-light\" fill=\"none\" stroke=\"#fff9d8\" stroke-width=\"1.7\" stroke-linecap=\"round\" d=\"M22 41c-1-7 8-10 8-14s-9-9-8-14 5-5 5-7\"/></svg>",
+    "explore": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-explore\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#b7dca3\"/><stop offset=\".45\" stop-color=\"#b7dca3\"/><stop offset=\"1\" stop-color=\"#668b56\"/></linearGradient><filter id=\"shadow-explore\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-explore)\" stroke=\"#b7dca3\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-explore)\"><g class=\"fan\"><rect x=\"16\" y=\"7\" width=\"27\" height=\"8\" rx=\"3\"/><rect fill=\"#8bbaca\" x=\"16\" y=\"20\" width=\"27\" height=\"8\" rx=\"3\"/><rect fill=\"#d4b38a\" x=\"16\" y=\"33\" width=\"27\" height=\"8\" rx=\"3\"/><circle cx=\"7\" cy=\"11\" r=\"3\"/><circle fill=\"#8bbaca\" cx=\"7\" cy=\"24\" r=\"3\"/><circle fill=\"#d4b38a\" cx=\"7\" cy=\"37\" r=\"3\"/></g></g></svg>",
+    "hidden": "<svg aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 48 48\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M10 24h.1M24 24h.1M38 24h.1\"/></g></svg>"
   };
 
   var HIDE_KEY = 'theway.bubbles-hide';   // bubble keys the member chose to hide (Account > Bubble settings)
@@ -35,7 +36,11 @@
     if (text != null) n.textContent = text;
     return n;
   }
-  function icon(name) { var s = document.createElement('span'); s.innerHTML = ICON[name] || ''; return s.firstChild || document.createElement('span'); }
+  var iconN = 0;
+  function icon(name) {
+    var n = ++iconN, h = (ICON[name] || '').replace(/\bid="([^"]+)"/g, 'id="$1-' + n + '"').replace(/url\(#([^)]+)\)/g, 'url(#$1-' + n + ')');
+    var s = document.createElement('span'); s.innerHTML = h; return s.firstChild || document.createElement('span');
+  }
   function hidden() { try { var a = JSON.parse(localStorage.getItem(HIDE_KEY) || '[]'); return Array.isArray(a) ? a.filter(function (k) { return KEYS.indexOf(k) >= 0; }) : []; } catch (e) { return []; } }
   function reduced() { return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
 
@@ -135,9 +140,18 @@
     if (side === 'right') { pop.style.right = Math.max(8, window.innerWidth - r.left + gap) + 'px'; pop.style.left = 'auto'; }
     else { pop.style.left = Math.max(8, r.right + gap) + 'px'; pop.style.right = 'auto'; }
   }
+  // Phones: the list sits over the bottom of the screen, so the page gets room below its content while a list is open and can be
+  // scrolled up past it. Wide screens: the pop-up sits in the empty strip beside the bubbles and does not move the page.
+  function reserve(pop, side) {
+    unreserve();
+    if (!side) document.body.style.paddingBottom = (pop.offsetHeight + 110) + 'px';
+  }
+  function unreserve() { var b = document.body; b.style.paddingRight = ''; b.style.paddingLeft = ''; b.style.paddingBottom = ''; }
   function closeAll(returnFocus) {
     if (!openId) return;
+    unreserve();
     var b = openBtn;
+    var cl = b && b.querySelector('[data-closed-label]'); if (cl) cl.textContent = cl.getAttribute('data-closed-label');
     document.querySelectorAll('.wb-bub-gen [aria-expanded="true"]').forEach(function (x) { x.setAttribute('aria-expanded', 'false'); });
     document.querySelectorAll('.wb-bub-gen .wb-pop:not([hidden]), .wb-bub-gen .wb-fan:not([hidden])').forEach(function (x) { x.hidden = true; });
     openId = null; openBtn = null; nested = null;
@@ -150,6 +164,8 @@
     btn.setAttribute('aria-expanded', 'true');
     pop.hidden = false;
     if (side) placePop(btn, pop, side);
+    reserve(pop, side);
+    var cl = btn.querySelector('[data-closed-label]'); if (cl) cl.textContent = 'Close tools';
     var first = pop.querySelector('a,button'); if (first && !btn.getAttribute('data-nofocus')) first.focus();
   }
   function menuBubble(s, side, current) {
@@ -157,7 +173,7 @@
     var wrap = el('div', { class: 'wb-bub-wrap wb-bub-gen wb-desk wb-bub-' + s.key });
     var b = el('button', { type: 'button', class: 'way-bubble', 'data-icon': s.key, 'aria-expanded': 'false', 'aria-haspopup': 'true', 'aria-controls': id });
     if (current === s.key) b.setAttribute('aria-current', 'page');
-    b.appendChild(icon(s.key)); b.appendChild(el('span', null, s.label));
+    b.appendChild(icon(s.key)); b.appendChild(el('span', s.key === 'tools' ? { 'data-closed-label': s.label } : null, s.label));
     var pop = el('div', { class: 'wb-pop', id: id, role: 'group', 'aria-label': s.label, hidden: '' });
     pop.appendChild(list(s.groups, function () { closeAll(false); }));
     b.addEventListener('click', function () { toggle(b, pop, id, side); });
@@ -262,7 +278,7 @@
     });
     if (hl.length) nav.appendChild(hiddenBubble('left', hl));
     if (!ctx.data) { var aw = el('div', { class: 'wb-bub-wrap wb-desk wb-bub-auth-wrap' }); aw.appendChild(authBubble()); nav.appendChild(aw); }
-    // phone: Explore (right) and My side (left)
+    // phone: Explore (right) and Your Way (left)
     var pr = vr.slice(); pr.splice(2, 0, { key: 'thread', label: 'Pull a thread', kind: 'link', href: ctx.thread });
     var thr = pr.filter(function (x) { return x.key !== 'thread' || !/^\/members\/(pull-a-thread|thread-queue)/.test(location.pathname); });
     var order = ['home', 'news', 'thread', 'tools'];   // top of the list is Home on a phone too

@@ -7,7 +7,7 @@
 // Signed in, phone: a compact header (logo, search, account). The bottom bar is gone: the two bubble menus replace it.
 // Signed out phone: a Menu panel holds the sections, search, "Log in" and "Sign up".
 // The two bubble menus (right: Home, News, Pull a thread, Tools; left: VOTE!, Review, Commons, Help; on a phone Explore and
-// My side) are drawn by bubbles.js, which this file loads and feeds (see WayBubbles.render below).
+// Your Way) are drawn by bubbles.js, which this file loads and feeds (see WayBubbles.render below).
 // The header Menu button and the signed-out Menu open the side panel (from the right, next to its trigger).
 // The member area writes what the bar needs to localStorage ("theway.bar": display name, roles, which tabs exist,
 // your ballot link). That is only for drawing links; every page and the database still check the real sign-in themselves.
@@ -517,8 +517,8 @@
   }
   function loadBubbles() {
     if (window.WayBubbles || document.querySelector('script[src^="/members/bubbles.js"]')) return;
-    ['bubbles.css?v=1', 'bubbles-look.css?v=1'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=1'; sc.onload = syncBubbles; document.head.appendChild(sc);
+    ['bubbles.css?v=2', 'bubbles-look.css?v=2'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=2'; sc.onload = syncBubbles; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
