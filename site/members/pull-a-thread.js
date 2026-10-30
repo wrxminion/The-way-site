@@ -590,15 +590,15 @@ function view() {
   (window.requestIdleCallback || ((f) => setTimeout(f, 1500)))(() => { new Image().src = pulled; });
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
   go.addEventListener('click', () => { if (reduce && reduce.matches) { goImg.src = BA + 'thread-taut-480.webp?v=2'; return; } goImg.src = pulled + '#' + Date.now(); });   // plays once per press; still for reduced motion
-  form.append(modes, summary, framed, note, ...checks, trap, ts, h('div', { class: 'pt-gorow' }, go, session ? null : h('span', { class: 'muted', text: 'No account needed' })),
+  form.append(modes, summary, framed, note, ...checks, trap, ts, h('div', { class: 'pt-gorow' }, go, session ? '' : h('span', { class: 'muted', text: 'No account needed' })),
     h('p', { class: 'pt-privacy', text: 'Reviewers see what you send, never who you are. Your screenshot and email stay private. Questions and evidence can become public after review, reworded without names or private details. Email addresses stay private.' }));
   form.addEventListener('submit', (ev) => { ev.preventDefault(); send(form, summary); });
-  app.replaceChildren(
+  app.replaceChildren(...[
     h('p', { class: 'overline', text: 'FOLLOW THE EVIDENCE' }),
     h('h1', { text: 'Pull a thread' }),
     h('p', { class: 'lede', text: 'Bring a question. See what the evidence says.' }),
     signInNote ? h('p', { class: 'pt-signin-note', role: 'status' }, signInNote + ' ', h('a', { href: '/members/', text: 'Sign in' })) : null,
-    form, live, results, otherPanels());
+    form, live, results, otherPanels()].filter(Boolean));
   if (!session && TS_KEY) {
     const tsBad = () => { tsFailed = "The human check didn't load. A VPN or ad blocker can block it; try turning it off, or sign in."; live.textContent = tsFailed; };   // stays on screen: Submit does not overwrite it
     loadTs().then((t) => {
