@@ -5,6 +5,8 @@ window.THE_WAY_CONFIG = {
   supabaseAnonKey: 'sb_publishable_AOufwXBzXDvMaMfh2uWUMw_iGKe2q9l',
   // true once custom SMTP sends the {{ .Token }} code in sign-in emails
   emailCodes: true,
+  // Members home news: seconds a member must wait after opening a story before "Mark read" works (the database refuses under 20).
+  newsReadSeconds: 60,
   // Cloudflare Turnstile site key (public). Leave '' to switch the human check off.
   // The matching SECRET key goes only into Supabase (Authentication > Bot and Abuse Protection).
   turnstileSiteKey: '0x4AAAAAAFp1RfMi01UJ0Kff',

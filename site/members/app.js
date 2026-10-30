@@ -788,6 +788,37 @@ function activityFeed(threads, posts, catById) {
   return [...byThread.values()].sort((a, b) => (b.at || '').localeCompare(a.at || '')).slice(0, 8);
 }
 
+// The narrow bar at the very top of Home: the member's score first, then rank and what is next. Figures come from 0017
+// (my_karma) and rank_progress; if either is missing the bar still shows, with dashes.
+function scoreBar(wantsMod) {
+  const points = h('strong', { class: 'sb-num', text: '…' }), recent = h('span', { class: 'sb-note' });
+  const rank = h('strong', { class: 'sb-rank', text: roleLabelFor() }), next = h('span', { class: 'sb-note' });
+  const waiting = h('strong', { class: 'sb-num', text: '…' });
+  const bar = h('div', { class: 'score-bar', role: 'group', 'aria-label': 'Your score and rank' },
+    h('div', { class: 'sb-cell' }, h('span', { class: 'sb-label', text: 'Your score' }), h('span', {}, points, recent)),
+    h('div', { class: 'sb-cell' }, h('span', { class: 'sb-label', text: 'Rank' }), h('span', {}, rank, next)),
+    wantsMod ? h('div', { class: 'sb-cell' }, h('span', { class: 'sb-label', text: 'Waiting for a 2nd review' }), waiting) : null,
+    h('a', { class: 'sb-link', href: '#/roles', text: 'Ranks & awards' }));
+  (async () => {
+    try {
+      const k = (await q(sb.rpc('my_karma')))[0];
+      points.textContent = String(k.total);
+      recent.textContent = ` · ${k.last_30_days >= 0 ? '+' : ''}${k.last_30_days} in 30 days`;
+    } catch { points.textContent = '–'; }
+    if (wantsMod) { try { waiting.textContent = String((await q(sb.rpc('my_review_summary')))[0].waiting_second); } catch { waiting.textContent = '–'; } }
+    try {
+      const rows = await q(sb.rpc('rank_progress'));
+      const todo = rows.find((p) => !p.have_it && !p.open_request);
+      if (todo) next.textContent = ` · next: ${todo.label}, ${todo.events} of ${todo.need_events} accepted`;
+    } catch { /* the rank name still shows */ }
+  })();
+  return bar;
+}
+function roleLabelFor() {
+  for (const r of ['admin', 'moderator', 'editor', 'reviewer', 'researcher']) if (state.roles.has(r)) return { admin: 'Admin', moderator: 'Moderator' }[r] || roleName(r);
+  return 'Member';
+}
+
 async function homeView() {
   const wantsAdmin = can('admin'), wantsMod = can('moderator');
   const [cats, posts, openReports, notifyCount] = await Promise.all([
@@ -823,19 +854,32 @@ async function homeView() {
     h('span', { class: 'home-cta', text: 'Open author tools' }));
   const hasTools = wantsAdmin || wantsMod || can('researcher') || can('reviewer');
 
+  const feedBox = h('div', { class: 'home-news' });
   render(
+    scoreBar(wantsMod),
     h('div', { class: 'home-head' },
       h('h1', { class: 'home-hello', text: `Welcome back, ${state.me.display_name}` }),
       h('p', { class: 'small place-line' }, ...(place
         ? ['Your state: ', h('strong', { text: place.state }), ' · ', h('a', { href: '#/account', text: 'Change' })]
         : [h('a', { href: '#/account', text: 'Save your state in your account' }), ' to open the map and your ballot on it.']))),
-    h('div', { class: 'home-actions' },
-      ballotCard,
-      review ? review.action : authorCard),
+    h('div', { class: 'panel home-tools' },
+      h('h3', { text: 'Your tools' }),
+      h('div', { class: 'btns' },
+        h('a', { class: 'button quiet', href: 'author.html', text: 'Author desk and ranks' }),
+        h('a', { class: 'button quiet', href: '#/private', text: 'Private research' }),
+        wantsMod ? h('a', { class: 'button quiet', href: '#/review', text: 'Review sources' }) : null,
+        (can('researcher') || can('reviewer')) ? h('a', { class: 'button quiet', href: '#/research', text: 'Research desk' }) : null,
+        wantsAdmin ? h('a', { class: 'button quiet', href: '#/admin', text: `Notify list (${notifyCount})` }) : null,
+        wantsMod ? h('a', { class: 'button quiet', href: '#/reports', text: `Reports (${openReports} open)` }) : null,
+        wantsMod && state.hasModLog ? h('a', { class: 'button quiet', href: '#/log', text: 'Moderation log' }) : null)),
     h('div', { class: 'btns home-quick' },
       h('a', { class: 'button', href: 'my-ballot.html', text: 'My ballot picks' }),
       h('a', { class: 'button', href: '#/map', text: 'Map' }),
       h('a', { class: 'button primary', href: '#/invite', text: 'Invite someone' })),
+    feedBox,
+    h('div', { class: 'home-actions' },
+      ballotCard,
+      review ? review.action : authorCard),
     h('h2', { text: 'Latest activity' }),
     feed.length ? h('ul', { class: 'list panel home-feed' }, feed.map((e) => h('li', {},
       h('div', { class: 'row' }, h('a', { href: `#/t/${e.id}`, text: e.title }), h('span', { class: 'meta', text: when(e.at) })),
@@ -850,16 +894,6 @@ async function homeView() {
       h('div', { class: 'muted small', text: c.description })))),
     h('h2', { text: 'Your contribution' }),
     review ? review.progress : null,
-    h('div', { class: 'panel' },
-      h('h3', { text: 'Your tools' }),
-      h('div', { class: 'btns' },
-        h('a', { class: 'button quiet', href: 'author.html', text: 'Author desk and ranks' }),
-        h('a', { class: 'button quiet', href: '#/private', text: 'Private research' }),
-        wantsMod ? h('a', { class: 'button quiet', href: '#/review', text: 'Review sources' }) : null,
-        (can('researcher') || can('reviewer')) ? h('a', { class: 'button quiet', href: '#/research', text: 'Research desk' }) : null,
-        wantsAdmin ? h('a', { class: 'button quiet', href: '#/admin', text: `Notify list (${notifyCount})` }) : null,
-        wantsMod ? h('a', { class: 'button quiet', href: '#/reports', text: `Reports (${openReports} open)` }) : null,
-        wantsMod && state.hasModLog ? h('a', { class: 'button quiet', href: '#/log', text: 'Moderation log' }) : null)),
     h('h2', { text: 'Explore' }),
     h('div', { class: 'tiles' },
       mapTile(),
@@ -867,6 +901,7 @@ async function homeView() {
       state.hasRecord ? tile('findings.html', 'Findings', 'What we checked, the verdict, and every change since') : null,
       tile(LINKS.cases, 'Civics & History', 'The history cases we wrote, with every source')),
   );
+  if (window.WayHomeFeed) { try { window.WayHomeFeed.mount(feedBox, { sb, abbr: a0 || '' }); } catch { /* Home still works without the feed */ } }
   if (a0) available(a0).then((v) => { if (v.guide) ballotCard.href = v.guide; });
 }
 

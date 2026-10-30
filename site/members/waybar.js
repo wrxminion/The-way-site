@@ -82,6 +82,7 @@
     user: 'M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M4 21a8 8 0 0 1 16 0',
     close: 'M6 6l12 12 M18 6L6 18',
     menu: 'M4 7h16 M4 12h16 M4 17h16',
+    home: 'M4 11l8-7 8 7 M6 10v10h12V10 M10 20v-6h4v6',
     login: 'M14 4h5v16h-5 M4 12h11 M11 8l4 4-4 4',
     about: 'M12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18z M12 11v6 M12 7.5h.01'
   };
@@ -244,9 +245,9 @@
     var more = [{ heading: 'Explore', items: explore }, { heading: 'Community', items: community }];
     if (manage.length) more.push({ heading: 'Manage', items: manage });
     return {
-      vote: { title: 'Vote', groups: vote },
-      contribute: { title: 'Contribute', groups: [{ items: contribute }] },
-      more: { title: 'Menu', groups: more }
+      vote: { title: 'Vote', groups: vote, home: true },
+      contribute: { title: 'Contribute', groups: [{ items: contribute }], home: true },
+      more: { title: 'Menu', groups: more, home: true }
     };
   }
   function publicPanel() {
@@ -328,6 +329,14 @@
       });
       sec.appendChild(ul); kids.push(sec);
     });
+    // Members: a big Home button stuck to the bottom of the panel, so it is easy to reach with a thumb however long the list is.
+    if (spec.home) {
+      var foot = el('div', { class: 'wb-panel-foot' });
+      var home = el('a', { class: 'wb-home', href: route(''), 'aria-current': cur === 'home' ? 'page' : null });
+      home.appendChild(icon('home')); home.appendChild(el('span', null, 'Home'));
+      home.addEventListener('click', function () { closePanel(false); });
+      foot.appendChild(home); kids.push(foot);
+    }
     panel.replaceChildren.apply(panel, kids);
     return true;
   }

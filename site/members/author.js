@@ -70,18 +70,28 @@ function submitPanel() {
   const kind = h('select', { id: 'a-kind' }, h('option', { value: 'article', text: 'Article' }), h('option', { value: 'source', text: 'Source' }));
   const title = h('input', { id: 'a-title', minlength: 5, maxlength: 200, required: true });
   const url = h('input', { id: 'a-url', type: 'url', required: true, placeholder: 'https://…' });
+  // "Where did you see it?" has no default on purpose. The link is cleaned before it is saved; what trackers it carried, and the
+  // answer here, go to the admin-only provenance table (0060), never to reviewers.
+  const WHERE = ['Google or another search', 'Social media', 'A friend or family member sent it', 'The news site or app directly', 'A newsletter or email', 'Somewhere else'];
+  const where = h('select', { id: 'a-where', required: true }, h('option', { value: '', text: 'Choose one…' }), WHERE.map((w) => h('option', { value: w, text: w })));
   const sum = h('textarea', { id: 'a-sum', rows: 5, minlength: 20, maxlength: 2000, required: true, placeholder: 'What is it, and why does it matter? Say what the source actually says. No opinions about candidates or parties.' });
   return h('div', { class: 'panel' }, h('h2', { text: 'Send an article or a source' }),
     h('p', { class: 'muted small', text: 'There is no daily limit. Up to 20 can be waiting for a check at once. You earn points only after a different Deshi or Renshi accepts it. A made-up quote or source costs you points and blocks rank requests for 180 days.' }),
     msg,
     h('form', { onsubmit: async (e) => {
       e.preventDefault(); msg.replaceChildren();
-      const r = await sb.rpc('submit_author_item', { p_kind: kind.value, p_title: title.value, p_url: url.value, p_summary: sum.value });
+      const link = window.WayLink.analyze(url.value);
+      if (link.googleNews) { msg.replaceChildren(notice('That is a Google News link. Open the article and paste the news site\'s own address.')); return; }
+      if (!link.clean) { msg.replaceChildren(notice('That does not look like a web address.')); return; }
+      if (!where.value) { msg.replaceChildren(notice('Say where you saw it.')); return; }
+      const r = await sb.rpc('submit_author_item', { p_kind: kind.value, p_title: title.value, p_url: link.clean, p_summary: sum.value });
       if (r.error) { msg.replaceChildren(notice(r.error.message)); return; }
-      title.value = url.value = sum.value = ''; msg.replaceChildren(notice('Sent. A Deshi or Renshi will check it.', 'ok')); render();
+      // Best effort: the item is already saved, so a failure here never blocks the member.
+      sb.rpc('record_link_provenance', { p_kind: 'author_submission', p_ref: String(r.data), p_clean_url: link.clean, p_types: link.types, p_params: link.params, p_where: where.value }).then(() => {}, () => {});
+      title.value = url.value = sum.value = ''; where.value = ''; msg.replaceChildren(notice('Sent. A Deshi or Renshi will check it.', 'ok')); render();
     } },
       h('label', { for: 'a-kind' }, 'Kind', kind), h('label', { for: 'a-title' }, 'Title', title),
-      h('label', { for: 'a-url' }, 'Link to the original', url), h('label', { for: 'a-sum' }, 'Summary', sum),
+      h('label', { for: 'a-url' }, 'Link to the original', url), h('label', { for: 'a-where' }, 'Where did you see it?', where), h('label', { for: 'a-sum' }, 'Summary', sum),
       h('div', { class: 'btns' }, h('button', { class: 'primary', text: 'Send for checking' }))));
 }
 
