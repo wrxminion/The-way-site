@@ -745,7 +745,7 @@ function scoreBar(wantsMod) {
     h('div', { class: 'sb-cell' }, h('span', { class: 'sb-label', text: 'Rank' }), h('span', {}, rank, next)),
     wantsMod ? h('div', { class: 'sb-cell' }, h('span', { class: 'sb-label', text: 'Your reviews' }), waiting) : null,
     wantsMod ? reviewLink : null,
-    h('a', { class: 'sb-link', href: '#/roles' }, h('img', { src: 'art/ranks.svg?v=1', alt: '', width: 64, height: 36 }), 'Ranks & awards'));
+    h('a', { class: 'sb-link', href: '#/roles' }, h('img', { src: 'art/ranks.svg?v=1', alt: '', width: 120, height: 68 }), 'Ranks & awards'));
   (async () => {
     try {
       const k = (await q(sb.rpc('my_karma')))[0];

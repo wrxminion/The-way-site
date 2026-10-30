@@ -111,10 +111,10 @@
         try { d = WB.read(abbr); } catch (e) { return null; }
         var list = Object.keys(d.contests).map(function (k) { return d.contests[k]; }).filter(function (c) { return c.title; })
           .sort(function (a, b) { return (a.kind === b.kind ? 0 : a.kind === 'race' ? -1 : 1) || (a.title < b.title ? -1 : 1); });
-        var box = el('div', 'season-picks'), ul = el('ul', 'season-picklist');
+        var box = el('div', 'season-picks'), ul = el('ul', 'season-picklist'); ul.tabIndex = 0; ul.setAttribute('aria-label', 'Your top questions, scrollable');
         if (!list.length) { box.append(el('p', 'season-fine', 'Mark races and measures in your voter guide and your top questions show up here.')); return box; }
         box.append(el('p', 'season-picks-head', 'Your top questions'));
-        list.slice(0, 5).forEach(function (c) {
+        list.slice(0, 12).forEach(function (c) {
           var name = c.picks.map(function (id) { var o = c.options.filter(function (x) { return x.id === id; })[0]; return o ? o.label : ''; }).filter(Boolean).join(', ');
           var li = el('li', null), a = el('a', 'season-q', c.title);
           a.href = '/members/my-ballot.html?state=' + encodeURIComponent(abbr);
@@ -122,7 +122,7 @@
           ul.append(li);
         });
         box.append(ul);
-        if (list.length > 5) box.append(el('p', 'season-fine', '+' + (list.length - 5) + ' more in My ballot'));
+        if (list.length > 12) box.append(el('p', 'season-fine', '+' + (list.length - 12) + ' more in My ballot'));
         return box;
       }
 
