@@ -1,5 +1,5 @@
 {
- "note": "Poll-close table for election day (season.js). EVERY ENTRY IS UNVERIFIED: written from general knowledge, not checked against any state election office. A person must confirm each state before this ships. For states split across zones the LATER zone is shown (county-level times are not here). tz is an IANA zone, close is the local clock time on election day.",
+ "note": "Poll-close table for election day (season.js). 18 of 51 entries were read against a state election office page: CA, CO, CT, DE, ID, KS, KY, MD, MI, NC, ND, NE, NJ, NM, NY, OK, TX, VA. The other entries are still unconfirmed, so the card tells members to confirm with their state election office. For states split across zones the LATER zone is shown (county-level times are not here). tz is an IANA zone, close is the local clock time on election day.",
  "election_date": "2026-11-03",
  "verified": false,
  "states": {
@@ -65,8 +65,8 @@
   },
   "IA": {
    "tz": "America/Chicago",
-   "close": "21:00",
-   "note": ""
+   "close": "20:00",
+   "note": "Polls close at 8 p.m. (7 a.m. to 8 p.m.), per Iowa election pages."
   },
   "ID": {
    "tz": "America/Los_Angeles",
