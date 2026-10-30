@@ -1,7 +1,7 @@
 // The Way: one top bar for every page (member area, Findings, guides, maps, case pages, splash).
 // Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=19"> in <head>,
 //          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
-//          <script src="/members/waybar.js?v=34" defer></script>.
+//          <script src="/members/waybar.js?v=39" defer></script>.
 // Signed in, desktop: logo centered · section links, a "Menu" button and Invite · search · your name (account menu).
 // Signed in, phone: a compact header (logo, search, account) and a bottom bar with Vote, Commons, Contribute, Menu.
 // Signed out: logo and public sections, search, "Log in" and "Sign up"; on a phone the sections sit in a Menu panel.
@@ -738,6 +738,17 @@
     labelScript.src = '/ai-label.js?v=3';
     labelScript.defer = true;
     document.head.appendChild(labelScript);
+  }
+  // "We need humans" banner for logged-out visitors (the script decides; see /humanbanner.js)
+  if (!inMembers && !document.querySelector('script[src^="/humanbanner.js"]')) {
+    var hbCss = document.createElement('link');
+    hbCss.rel = 'stylesheet';
+    hbCss.href = '/humanbanner.css?v=1';
+    document.head.appendChild(hbCss);
+    var hbScript = document.createElement('script');
+    hbScript.src = '/humanbanner.js?v=1';
+    hbScript.defer = true;
+    document.head.appendChild(hbScript);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
