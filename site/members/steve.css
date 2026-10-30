@@ -1,0 +1,11 @@
+/* Bubble Steve: the diver in the Back to surface bubble (art/bubble-back-diver). See steve.js. */
+.wb-floating-return{--steve-f:0}
+/* fades from the head down: --steve-f runs 0 (whole) to 1 (gone), set by steve.js from the scroll position */
+.wb-dock .wb-art-stack .wb-diver{-webkit-mask-image:linear-gradient(to bottom,transparent calc(var(--steve-f) * 118% - 18%),#000 calc(var(--steve-f) * 118%));mask-image:linear-gradient(to bottom,transparent calc(var(--steve-f) * 118% - 18%),#000 calc(var(--steve-f) * 118%))}
+/* the empty bubble goes last, so Steve surfaces first and the glass pops out after him */
+.wb-dock .wb-art-stack .wb-art:not(.wb-diver){opacity:clamp(0,calc(1 - (var(--steve-f) - .6) * 2.5),1)}
+@keyframes steve-kick{0%{transform:translate(0,1px) rotate(-4deg)}50%{transform:translate(2px,-5px) rotate(4deg)}100%{transform:translate(-1px,1px) rotate(-4deg)}}
+/* swimming: a quick kick, repeated, while the page is moving up */
+.wb-dock .wb-floating-return.wb-steve-swim .wb-diver{animation:steve-kick 520ms ease-in-out infinite}
+.wb-dock .wb-floating-return.wb-steve-go{animation:wb-pop 700ms ease-out}
+@media (prefers-reduced-motion:reduce){.wb-dock .wb-floating-return.wb-steve-swim .wb-diver,.wb-dock .wb-floating-return.wb-steve-go{animation:none!important}}
