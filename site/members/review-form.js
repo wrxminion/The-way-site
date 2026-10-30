@@ -126,7 +126,8 @@ function build({ sb, user, itemId, title, url, onDone }) {
     h('label', { class: 'wrf-label', text: 'What did you not like?' }), disliked,
     gTitle, gStance, gEvid, kindsBox,
     h('label', { class: 'wrf-label', text: 'Screenshot (you can skip this)' }), file,
-    h('p', { class: 'wrf-muted wrf-small', text: 'Only you and our reviewers can see a screenshot. Hide names, addresses and emails first. We save it as a plain picture and make it smaller.' }),
+    h('p', { class: 'wrf-muted wrf-small' }, 'Only you and our reviewers can see a screenshot. Hide names, addresses and emails first. We save it as a plain picture and make it smaller. ',
+      h('a', { href: '/members/screenshot-help.html', target: '_blank', rel: 'noopener', text: 'How to take a clean screenshot' })),
     h('p', { class: 'wrf-muted wrf-small', text: 'You earn points only after a reviewer says yes. We look at honesty and evidence. Spelling and grammar do not matter.' }),
     h('div', { class: 'wrf-row' }, go), msg);
 }

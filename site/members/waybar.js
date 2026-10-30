@@ -677,7 +677,7 @@
   // "What do I do here?" help panel for signed-in members, on every page that carries the bar (help-panel.js).
   if (stored() && !document.getElementById('way-help-btn') && !/\/members\/help\.html$/.test(path)) {
     var hcss = document.createElement('link'); hcss.rel = 'stylesheet'; hcss.href = '/members/help-panel.css?v=3'; document.head.appendChild(hcss);
-    var hc = document.createElement('script'); hc.src = '/members/help-content.js?v=1'; hc.onload = function () { var hs = document.createElement('script'); hs.src = '/members/help-panel.js?v=2'; document.body.appendChild(hs); }; document.body.appendChild(hc);
+    var hc = document.createElement('script'); hc.src = '/members/help-content.js?v=2'; hc.onload = function () { var hs = document.createElement('script'); hs.src = '/members/help-panel.js?v=2'; document.body.appendChild(hs); }; document.body.appendChild(hc);
   }
 
   // Cloudflare Web Analytics on every public page that carries the bar (not the member area).
