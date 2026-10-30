@@ -12,3 +12,8 @@ id_*
 
 # Database SQL is reference material in the repository (see supabase/README.md)
 !supabase/**/*.sql
+
+# results collector: local config and bookkeeping
+tools/results/config.json
+tools/results/.state/
+__pycache__/
