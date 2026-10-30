@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "dac3b9c01dd436ce",
+   "kind": "news",
+   "title": "While Prop. 40 flounders, another wealth tax in California is looking likely",
+   "source": "SFGATE",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOV21zb3BlSWRJdEp2R3haMDBaX2dDbkhGR0NGbDl5N1pkSDh6d0Vnd3FkeEZtN01TYXc4azRuS3RZY2RpaHYtQUVvdHBITmtMeEpDNHV1Ykk5Mm5mWDlaLUhZeW1PVW1DQUNYc2xiWmNPUmRTQ3QwMW8wUTNkRUt5b1F3?oc=5",
+   "published_at": "2026-10-30",
+   "first_seen_at": "2026-10-30T20:51:09Z",
+   "states": [
+    "ca"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "ca-prop-40",
+     "kind": "measure",
+     "label": "Proposition 40: Billionaire tax: One-time 5% tax on the wealth of California billionaires, mainly for health care",
+     "page": "guide-ca/measures/prop-40.html"
+    }
+   ]
+  },
+  {
    "id": "d17b9306c2775a8e",
    "kind": "news",
    "title": "California Prop. 40, DOJ voter dispute: What's at stake before Election Day?",
@@ -2162,5 +2189,5 @@
    ]
   }
  ],
- "generated_at": "2026-10-30T20:23:18Z"
+ "generated_at": "2026-10-30T21:02:20Z"
 }
