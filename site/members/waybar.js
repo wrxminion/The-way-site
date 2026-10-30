@@ -1,10 +1,11 @@
 // The Way: one top bar for every page (member area, Findings, guides, maps, case pages, splash).
-// Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=19"> in <head>,
+// Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=22"> in <head>,
 //          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
-//          <script src="/members/waybar.js?v=40" defer></script>.
-// Signed in, desktop: logo centered · section links, a "Menu" button and Invite · search · your name (account menu).
+//          <script src="/members/waybar.js?v=42" defer></script>.
+// Desktop, signed in or out: the same header. Voter Guide, News, Civics & History | THE WAY | Government, Election Studies, Research,
+//   then Pull a thread, search and the account (Log in and Sign up, or a small Menu button, the bell and your name).
 // Signed in, phone: a compact header (logo, search, account) and a bottom bar with Vote, Commons, Contribute, Menu.
-// Signed out: logo and public sections, search, "Log in" and "Sign up"; on a phone the sections sit in a Menu panel.
+// Signed out phone: a Menu panel holds the sections, search, "Log in" and "Sign up".
 // Vote, Contribute, Menu and the signed-out Menu all open the SAME side panel (from the right, next to its trigger).
 // The member area writes what the bar needs to localStorage ("theway.bar": display name, roles, which tabs exist,
 // your ballot link). That is only for drawing links; every page and the database still check the real sign-in themselves.
@@ -234,16 +235,16 @@
     if (d.findings) explore.push({ href: '/members/findings.html', label: 'Findings', desc: 'What members checked, with the verdict', icon: 'findings', key: 'findings' });
     var community = [
       { href: NOTES, label: 'Notifications', desc: 'Replies and updates for you', icon: 'bell', key: 'notes', dup: true },
-      { href: route('commons'), label: 'Commons', desc: 'Threads and comments from members', icon: 'commons', key: 'commons', dup: true },
-      { href: '/members/help.html', label: 'What do I do here?', desc: 'A short guide, in plain words', icon: 'roles', key: 'help', dup: true },
-      { href: route('roles'), label: 'Ranks & awards', desc: 'Author, Deshi and Renshi, and points', icon: 'roles', key: 'roles', dup: true },
+      { href: route('commons'), label: 'Commons', desc: 'Threads and comments from members', icon: 'commons', key: 'commons' },
+      { href: '/members/help.html', label: 'What do I do here?', desc: 'A short guide, in plain words', icon: 'roles', key: 'help' },
+      { href: route('roles'), label: 'Ranks & awards', desc: 'Author, Deshi and Renshi, and points', icon: 'roles', key: 'roles' },
       { href: route('invite'), label: 'Invite someone', icon: 'invite', key: 'invite' }
     ];
     var manage = [];
     if (can(d, 'moderator')) manage.push({ href: route('reports'), label: 'Reports', icon: 'reports', key: 'reports', dup: true });
     if (d.modlog) manage.push({ href: route('log'), label: 'Moderation log', icon: 'log', key: 'log', dup: true });
     if (can(d, 'admin')) manage.push({ href: route('admin'), label: 'Admin', icon: 'admin', key: 'admin', dup: true });
-    // "My tools" (desktop header drop-down): the buttons that used to sit in the "Your tools" box on Home, same role rules.
+    // "My tools" (a group at the top of the desktop Menu): the buttons that used to sit in the "Your tools" box on Home, same role rules.
     var tools = [];
     tools.push({ href: '/members/author.html', label: 'Author desk and ranks', desc: 'Send an article or a source, and see your rank', icon: 'author', key: 'author' });
     tools.push({ href: route('private'), label: 'Private research', desc: 'Your own notes and team files, never published', icon: 'private', key: 'private' });
@@ -252,12 +253,11 @@
     if (can(d, 'admin')) tools.push({ href: route('admin'), label: 'Notify list', icon: 'admin', key: 'admin' });
     if (can(d, 'moderator')) tools.push({ href: route('reports'), label: 'Reports', icon: 'reports', key: 'reports' });
     if (can(d, 'moderator') && d.modlog) tools.push({ href: route('log'), label: 'Moderation log', icon: 'log', key: 'log' });
-    var more = [{ heading: 'Community', items: community }, { heading: 'Explore', items: explore }];
+    var more = [{ heading: 'My tools', items: tools, desk: true }, { heading: 'Community', items: community }, { heading: 'Explore', items: explore }];
     if (manage.length) more.push({ heading: 'Manage', items: manage });
     return {
       vote: { title: 'Vote', groups: vote, home: true },
       contribute: { title: 'Contribute', groups: [{ items: contribute }], home: true },
-      tools: { title: 'My tools', groups: [{ items: tools }], home: true },
       more: { title: 'Menu', groups: more, home: true }
     };
   }
@@ -318,9 +318,10 @@
     head.appendChild(close);
     var kids = [head];
     if (spec.search) { var sf = searchForm('wb-menu-q'); sf.className += ' wb-menu-search'; kids.push(sf); }
-    // Items marked dup are already in the desktop header, My tools, the bell or a pill; they show only on a phone.
+    // Items marked dup are already in the desktop header, the My tools group, the bell or a pill; they show only on a phone.
     var wide = window.matchMedia && window.matchMedia('(min-width:761px)').matches;
     spec.groups.forEach(function (g) {
+      if (g.desk && !wide) return;
       if (wide && g.items.every(function (it) { return it.dup; })) return;
       var sec = el('section', { class: 'wb-group' });
       if (g.heading) sec.appendChild(el('h3', null, g.heading));
@@ -412,6 +413,22 @@
     return b;
   }
 
+  // The one top header for everyone: left links, THE WAY, right links (the same for signed-in and signed-out visitors).
+  // On a wide screen they sit in one row; on a narrower desktop the two groups sit in one line under the name.
+  function sectionNav(cur, guide) {
+    var pub = el('nav', { class: 'wb-pub', 'aria-label': 'Sections' });
+    var pubL = el('div', { class: 'wb-pub-l' }), pubR = el('div', { class: 'wb-pub-r' });
+    pubL.appendChild(link(guide, 'Voter Guide', 'ballot', cur));
+    pubL.appendChild(link('/news/', 'News', 'news', cur));
+    pubL.appendChild(link('/cases/', 'Civics & History', 'cases', cur));
+    pubR.appendChild(link(GOV, 'Government', 'govworks', cur));
+    pubR.appendChild(link('/case-studies/', 'Election Studies', 'casestudies', cur));
+    pubR.appendChild(link('/research/', 'Research', 'research-lib', cur));
+    threadArt(pubR.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur))).className = 'wb-pat-row';
+    pub.appendChild(pubL); pub.appendChild(pubR);
+    return pub;
+  }
+
   var data = null, pending = false, searchOpen = false;
   function render(d, opts) {
     var bar = document.getElementById('waybar');
@@ -429,16 +446,10 @@
     panels = {};
     if (data) {
       panels = memberPanels(data);
-      // Desktop section links (a phone shows the bottom bar instead).
-      var mid = el('nav', { class: 'wb-mid', 'aria-label': 'Sections' });
-      mid.appendChild(link(data.ballot || STATES, 'Voter Guide', 'ballot', cur));
-      mid.appendChild(link('/news/', 'News', 'news', cur));
-      mid.appendChild(link(route('commons'), 'Commons', 'commons', cur));
-      // Research desk and Review sources now live in the "My tools" drop-down with the rest of the member's tools.
-      mid.appendChild(panelButton('tools', 'My tools', 'wb-more-link wb-tools-link'));
-      var moreBtn = panelButton('more', 'Menu', 'wb-more-link');
-      mid.appendChild(moreBtn);
+      // Desktop: the same section links as the signed-out header (a phone shows the bottom bar instead).
+      var mid = sectionNav(cur, data.ballot || STATES);
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
+      threadArt(right.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur))).className = 'wb-pat-tools';
       // The Invite pill moved to the bottom-left stack (help-panel.js); it is still in the Menu under Community.
       var sb = el('button', { type: 'button', class: 'wb-search-toggle', 'aria-label': 'Search', 'aria-expanded': searchOpen ? 'true' : 'false', 'aria-controls': 'wb-q' });
       sb.appendChild(icon('search'));
@@ -452,6 +463,8 @@
       right.appendChild(sb);
       right.appendChild(searchForm());
       right.appendChild(bellLink(cur));
+      // A small Menu button (desktop): Community, My tools and the rest of the sections. A phone has the bottom bar.
+      right.appendChild(panelButton('more', 'Menu', 'wb-more-link', 'menu'));
       // Account menu: only personal things (your account, sign out). Everything else is in the menus above.
       var who = el('div', { class: 'wb-who' });
       var btn = el('button', { type: 'button', class: 'wb-name', 'aria-haspopup': 'true', 'aria-expanded': 'false',
@@ -471,17 +484,7 @@
       renderBottom(cur);
     } else if (!pending) {
       panels = { menu: publicPanel() };
-      var pub = el('nav', { class: 'wb-pub', 'aria-label': 'Sections' });
-      // Two groups with the logo between them on a wide screen (Voter Guide, News, Civics & History | logo | the rest).
-      var pubL = el('div', { class: 'wb-pub-l' }), pubR = el('div', { class: 'wb-pub-r' });
-      pubL.appendChild(link(STATES, 'Voter Guide', 'ballot', cur));
-      pubL.appendChild(link('/news/', 'News', 'news', cur));
-      pubL.appendChild(link('/cases/', 'Civics & History', 'cases', cur));
-      pubR.appendChild(link(GOV, 'Government', 'govworks', cur));
-      pubR.appendChild(link('/case-studies/', 'Election Studies', 'casestudies', cur));
-      pubR.appendChild(link('/research/', 'Research', 'research-lib', cur));
-      threadArt(pubR.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur))).className = 'wb-pat-row';
-      pub.appendChild(pubL); pub.appendChild(pubR);
+      var pub = sectionNav(cur, STATES);
       var menuBtn = panelButton('menu', 'Menu', 'wb-menu-btn', 'menu');
       var tools = el('div', { class: 'wb-tools' });
       threadArt(tools.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur))).className = 'wb-pat-tools';
