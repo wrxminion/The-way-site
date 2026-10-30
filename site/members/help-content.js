@@ -1,0 +1,10 @@
+// "What do I do here?" in plain words (about 6th grade reading level). Used by the help panel and by help.html.
+window.WayHelpContent = [
+  { q: 'What is The Way?', a: ['The Way is a group of people who read the news and check the facts together. We are not a political party. We do not tell you what to think.', 'Facts are facts, said by AI, a 6th grader, or a professor. We look at the evidence.'] },
+  { q: 'How do I review an article?', a: ['1. Open an article from Home or the News page and read it as best you can.', '2. Tell us what you liked and what you did not like.', '3. Say if the title matches the article, if it backs up the title, and if it shows evidence.', '4. You can add a screenshot. It is optional and private.', '5. A reviewer reads your review. You earn points after they say yes.', 'Spelling and grammar do not matter. We care about honesty and evidence.'] },
+  { q: 'How do points and ranks work?', a: ['You earn points when another person checks your work and says yes. Ranks are Member, Author, Deshi, Renshi and Researcher. Your title shows next to your name and you can choose which one.'], link: ['/members/ranks.html', 'How the ranking works'] },
+  { q: 'Where do I talk with other members?', a: ['The Commons is where members talk about news, cases and ideas. Be kind. No private messages here. Everything is in the open.'], link: ['/members/#/commons', 'Go to the Commons'] },
+  { q: 'What is Pull a Thread?', a: ['If you saw something and want us to look into it, send it in. We keep your name private. A reviewer will look at it.'], link: ['/members/pull-a-thread.html', 'Go to Pull a Thread'] },
+  { q: 'Where is the election information?', a: ['My Ballot lets you build your own ballot. Election results show the counts as they come in. They are unofficial.'], link: ['/members/my-ballot.html', 'Build My Ballot'] },
+  { q: 'I am stuck. What now?', a: ['Go to Home from the menu. Nothing you try here can break anything. If something looks wrong, tell a reviewer or an admin in the Commons.'] }
+];

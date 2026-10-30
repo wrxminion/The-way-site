@@ -712,14 +712,8 @@ async function mapView() {
   if (picked || mine) show(picked || mine);
 }
 
-// Roles, points and role applications arrive with migration 0017. Until that screen ships, this page explains it.
-function rolesView() {
-  render(
-    h('p', { class: 'overline', text: 'Members' }),
-    h('h1', { text: 'Roles and points' }),
-    h('p', { class: 'lede', text: 'Members can take on roles (Author, Deshi (student, reviewer), Renshi (editor), moderator) and earn points for checked work. Applying for a role and seeing your points will live here and on your profile. It is coming soon.' }),
-    h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/', text: 'Back to Home' }), h('a', { class: 'button quiet', href: '#/account', text: 'Your account' })));
-}
+// The Ranks page lives in ranks.html (how ranks and points work, plus the title picker).
+function rolesView() { location.replace('/members/ranks.html'); }
 
 // "Review sources" on the home page (moderators and admins). Two parts share one load: an action card near the top
 // (leads with what to do next) and a progress panel lower down (points, awards, claims waiting for a second reviewer).
