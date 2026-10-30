@@ -1,7 +1,7 @@
 // The Way: one top bar for every page (member area, Findings, guides, maps, case pages, splash).
-// Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=23"> in <head>,
+// Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=24"> in <head>,
 //          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
-//          <script src="/members/waybar.js?v=46" defer></script>.
+//          <script src="/members/waybar.js?v=47" defer></script>.
 // Desktop, signed in or out: the same header. Voter Guide, News, Civics & History | THE WAY | Government, Election Studies, Research,
 //   then Pull a thread, search and the account (Log in and Sign up, or a small Menu button, the bell and your name).
 // Signed in, phone: a compact header (logo, search, account). The bottom bar is gone: the two bubble menus replace it.
