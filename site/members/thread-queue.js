@@ -24,6 +24,7 @@ function h(tag, attrs, ...kids) {
 const when = (iso) => new Date(iso).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
 const note = h('p', { class: 'small', role: 'status', 'aria-live': 'polite' });
 let include = 'open';
+let canChange = false;   // admins may change a closed decision (can_change_thread_decision)
 let projects = [];   // active research projects, for the Close button and the Researching tab
 async function call(name, args) { const { data, error } = await sb.rpc(name, args); if (error) throw error; return data; }
 async function act(p, okText) { try { await p; note.textContent = okText; await load(); } catch (e) { note.textContent = e.message || 'That did not work.'; } }
@@ -145,6 +146,7 @@ function item(r, mineId) {
         p_dup_of: dup.value ? Number(dup.value) : null, p_project: disp.value === 'accepted' && proj.value ? Number(proj.value) : null }),
         disp.value === 'accepted' ? 'Accepted. It is now on the Researching tab.' : 'Closed.'), text: 'Close it' }));
   }
+  { const cb = changeBox(r); if (cb) acts.append(cb); }
   const hist = h('div');
   acts.append(h('button', { type: 'button', class: 'quiet', onclick: async () => {
     try {
@@ -160,6 +162,7 @@ async function load() {
   const { data: { session } } = await window.WaySession.getSession(sb);
   if (!session) { app.replaceChildren(h('h1', { text: 'Thread queue' }), h('p', {}, 'Please ', h('a', { href: '/members/', text: 'sign in' }), ' first.')); return; }
   let rows;
+  try { canChange = !!(await call('can_change_thread_decision', {})); } catch { canChange = false; }
   if (!projects.length) { const { data } = await sb.from('research_projects').select('id,title').eq('active', true).order('title'); projects = data || []; }
   try { rows = include === 'researching' ? await call('list_accepted_threads', { p_include: 'researching' }) : await call('list_thread_queue', { p_include: include, p_limit: 100 }); }
   catch (e) { app.replaceChildren(h('h1', { text: 'Thread queue' }), h('p', { class: 'muted', text: /Not allowed/.test(e.message) ? 'This page is for reviewers.' : (e.message || 'Could not load.') })); return; }
@@ -172,6 +175,18 @@ async function load() {
     tabs, note,
     rows.length ? h('ul', { class: 'list panel' }, rows.map((r) => (include === 'researching' ? researchItem(r) : item(r)))) : h('p', { class: 'muted', text: 'Nothing here right now.' }),
     await memberChecks());
+}
+// Admin only: switch a closed item to another decision or put it back in the queue. The old decision stays in History.
+function changeBox(r) {
+  if (!canChange || !['accepted', 'needs_evidence', 'answered', 'declined'].includes(r.status)) return null;
+  const to = h('select', { 'aria-label': 'New decision' }, [['declined', 'Decline'], ['needs_evidence', 'Needs more evidence'], ['answered', 'Answered with what we have'],
+    ['accepted', 'Accept: we will research it'], ['queued', 'Put back in the waiting queue']].filter(([v]) => v !== r.status).map(([v, l]) => h('option', { value: v, text: l })));
+  const why = h('input', { placeholder: 'Why (needed, goes in History)', maxlength: '900' });
+  const pn = h('input', { placeholder: 'Note for the sender (optional)', maxlength: '500' });
+  const tell = h('input', { type: 'checkbox', id: `tell-${r.id}` });
+  return h('details', { class: 'pt-change' }, h('summary', { text: 'Change decision (admin)' }), h('div', { class: 'pt-actions' }, to, why, pn,
+    h('label', { for: `tell-${r.id}`, class: 'small' }, tell, ' Tell the sender'),
+    h('button', { type: 'button', text: 'Change it', onclick: () => act(call('change_thread_decision', { p_id: r.id, p_to: to.value, p_reason: why.value, p_public_note: pn.value || null, p_tell_sender: tell.checked }), 'Changed. The old decision is kept in History.') })));
 }
 // Accepted items: attach a project, then finish with a short note. Finishing sends the sender a notice.
 function researchItem(r) {
@@ -186,6 +201,7 @@ function researchItem(r) {
     r.url ? h('p', {}, safeLink(r.url)) : null, r.question ? h('p', { text: r.question }) : null, r.note ? h('p', { class: 'muted small', text: r.note }) : null,
     r.project_title ? h('p', { class: 'small', text: `Project: ${r.project_title}` }) : null,
     r.research_note ? h('p', { class: 'small', text: `Result: ${r.research_note}` }) : null);
+  { const cb = changeBox(r); if (cb) li.append(cb); }
   if (r.research_state === 'researching') li.append(h('div', { class: 'pt-actions' }, proj, reason,
     h('button', { type: 'button', class: 'quiet', text: 'Save project', onclick: () => act(call('set_thread_project', { p_id: r.id, p_project: Number(proj.value), p_reason: reason.value }), 'Project saved.') }),
     summary, link,
