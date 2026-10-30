@@ -429,8 +429,6 @@
     panels = {};
     if (data) {
       panels = memberPanels(data);
-      var home = link(route(''), 'Home', 'home', cur);
-      home.className = 'wb-home';
       // Desktop section links (a phone shows the bottom bar instead).
       var mid = el('nav', { class: 'wb-mid', 'aria-label': 'Sections' });
       mid.appendChild(link(data.ballot || STATES, 'Voter Guide', 'ballot', cur));
@@ -469,7 +467,7 @@
       item(route('signout'), 'Sign out');
       btn.addEventListener('click', function (ev) { ev.stopPropagation(); toggleMenu(btn, menu); });
       who.appendChild(btn); who.appendChild(menu); right.appendChild(who);
-      kids.push(home, mid, right);
+      kids.push(mid, right); // no Home pill: the name at the top is the Home link
       renderBottom(cur);
     } else if (!pending) {
       panels = { menu: publicPanel() };
