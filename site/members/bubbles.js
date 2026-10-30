@@ -152,6 +152,7 @@
     unreserve();
     var b = openBtn;
     var cl = b && b.querySelector('[data-closed-label]'); if (cl) cl.textContent = cl.getAttribute('data-closed-label');
+    document.querySelectorAll('.wb-bub-wrap.wb-open').forEach(function (x) { x.classList.remove('wb-open'); });
     document.querySelectorAll('.wb-bub-gen [aria-expanded="true"]').forEach(function (x) { x.setAttribute('aria-expanded', 'false'); });
     // effect hook: the bubble that just closed gets .wb-fx-close for 0.6 s (bubbles-look.css plays the re-form from it)
     if (b && !reduced()) { b.classList.add('wb-fx-close'); setTimeout(function () { b.classList.remove('wb-fx-close'); }, 600); }
@@ -164,6 +165,8 @@
     closeAll(false);
     openId = id; openBtn = btn;
     btn.setAttribute('aria-expanded', 'true');
+    // a moving (transformed) parent would make the fixed list measure from the bubble instead of the window: stop the idle float while open
+    if (btn.parentNode && btn.parentNode.classList) btn.parentNode.classList.add('wb-open');
     pop.hidden = false;
     if (side) placePop(btn, pop, side);
     reserve(pop, side);

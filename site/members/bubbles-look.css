@@ -95,3 +95,6 @@ html.wb-rising .wb-bubs-l>:nth-child(4){animation-delay:210ms}
 .wb-dock .wb-bub-wrap:nth-of-type(3n),.wb-bubs-l .wb-bub-wrap:nth-of-type(3n){animation-duration:7.5s;animation-delay:-4s}
 .wb-dock .wb-bub-wrap:is(:hover,:focus-within),.wb-bubs-l .wb-bub-wrap:is(:hover,:focus-within){animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.wb-dock .wb-bub-wrap,.wb-bubs-l .wb-bub-wrap{animation:none!important}}
+/* The open list is position:fixed inside the bubble's wrapper. A wrapper that is mid-float (transform) becomes its containing block, which pushed the list
+   off the bottom of the window. While a list is open the wrapper holds still (bubbles.js adds .wb-open). */
+.wb-dock .wb-bub-wrap.wb-open,.wb-bubs-l .wb-bub-wrap.wb-open{animation:none}
