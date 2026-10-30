@@ -1,7 +1,7 @@
 // The Way: one top bar for every page (member area, Findings, guides, maps, case pages, splash).
-// Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=23"> in <head>,
+// Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=24"> in <head>,
 //          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
-//          <script src="/members/waybar.js?v=46" defer></script>.
+//          <script src="/members/waybar.js?v=47" defer></script>.
 // Desktop, signed in or out: the same header. Voter Guide, News, Civics & History | THE WAY | Government, Election Studies, Research,
 //   then Pull a thread, search and the account (Log in and Sign up, or a small Menu button, the bell and your name).
 // Signed in, phone: a compact header (logo, search, account). The bottom bar is gone: the two bubble menus replace it.
@@ -430,7 +430,6 @@
     pubR.appendChild(link(GOV, 'Government', 'govworks', cur));
     pubR.appendChild(link('/case-studies/', 'Election Studies', 'casestudies', cur));
     pubR.appendChild(link('/research/', 'Research', 'research-lib', cur));
-    threadArt(pubR.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur))).className = 'wb-pat-row';
     pub.appendChild(pubL); pub.appendChild(pubR);
     return pub;
   }
@@ -449,13 +448,18 @@
     var logo = link(data ? route('') : '/', 'The Way'); // signed in: member Home; signed out: the public front page
     logo.className = 'wb-logo';
     var kids = [logo];
+    // Pull a Thread sits left of THE WAY on the top row (desktop), the search and account sit to its right, so the name is dead centre.
+    if (data || !pending) {
+      var pat = threadArt(link(THREAD, 'Pull a Thread', 'thread', cur));
+      pat.className = 'wb-pat-left';
+      kids.push(pat);
+    }
     panels = {};
     if (data) {
       panels = memberPanels(data);
       // Desktop: the same section links as the signed-out header (a phone shows the bottom bar instead).
       var mid = sectionNav(cur, data.ballot || STATES);
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
-      threadArt(right.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur))).className = 'wb-pat-tools';
       // The Invite pill moved to the bottom-left stack (help-panel.js); it is still in the Menu under Community.
       var sb = el('button', { type: 'button', class: 'wb-search-toggle', 'aria-label': 'Search', 'aria-expanded': searchOpen ? 'true' : 'false', 'aria-controls': 'wb-q' });
       sb.appendChild(icon('search'));
@@ -492,7 +496,6 @@
       var pub = sectionNav(cur, STATES);
       var menuBtn = panelButton('menu', 'Menu', 'wb-menu-btn', 'menu');
       var tools = el('div', { class: 'wb-tools' });
-      threadArt(tools.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur))).className = 'wb-pat-tools';
       tools.appendChild(searchForm('wb-top-q'));
       var auth = el('nav', { class: 'wb-auth', 'aria-label': 'Account' });
       auth.appendChild(link('/members/', 'Log in', 'login', cur)).className = 'wb-login';
@@ -518,8 +521,8 @@
   }
   function loadBubbles() {
     if (window.WayBubbles || document.querySelector('script[src^="/members/bubbles.js"]')) return;
-    ['bubbles.css?v=3', 'bubbles-look.css?v=4'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=3'; sc.onload = syncBubbles; document.head.appendChild(sc);
+    ['bubbles.css?v=4', 'bubbles-look.css?v=4'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=4'; sc.onload = syncBubbles; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -736,10 +739,10 @@
   if (!inMembers && !document.querySelector('script[src^="/humanbanner.js"]')) {
     var hbCss = document.createElement('link');
     hbCss.rel = 'stylesheet';
-    hbCss.href = '/humanbanner.css?v=2';
+    hbCss.href = '/humanbanner.css?v=3';
     document.head.appendChild(hbCss);
     var hbScript = document.createElement('script');
-    hbScript.src = '/humanbanner.js?v=2';
+    hbScript.src = '/humanbanner.js?v=3';
     hbScript.defer = true;
     document.head.appendChild(hbScript);
   }

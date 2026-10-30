@@ -3,7 +3,7 @@
 // "theway.humanbanner" in this visitor's own browser, so the X stays closed.
 (function () {
   'use strict';
-  var TEXT = 'A lot of the site is reviewed and written by AI (LLMs). We need humans to make sure it\'s not hallucinating.';
+  var TEXT = ['A lot of the site is reviewed and written by AI (LLMs).', 'We need humans to make sure it\'s not hallucinating.'];
   var BUTTON = 'Register to be a reviewer and help';
   var JOIN = '/members/join.html';
   var KEY = 'theway.humanbanner';
@@ -23,7 +23,9 @@
 
   var p = document.createElement('p');
   p.className = 'hb-text';
-  p.textContent = TEXT;
+  p.appendChild(document.createTextNode(TEXT[0] + ' ')); // the space keeps it readable if the break is ever dropped
+  p.appendChild(document.createElement('br'));
+  p.appendChild(document.createTextNode(TEXT[1]));
 
   var a = document.createElement('a');
   a.className = 'hb-join';

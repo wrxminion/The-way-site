@@ -77,9 +77,9 @@
     var d = c.data, can = c.can;
     var right = [
       { key: 'home', label: 'Home', kind: 'link', href: d ? c.route('') : '/', top: true },
-      { key: 'news', label: 'News', kind: 'link', href: '/news/' },
-      { key: 'tools', label: 'Tools', kind: 'menu', groups: toolsGroups(c) }
+      { key: 'news', label: 'News', kind: 'link', href: '/news/' }
     ];
+    if (d) right.push({ key: 'tools', label: 'Tools', kind: 'menu', groups: toolsGroups(c) }); // Tools is for members; visitors have the header links
     var left = [{ key: 'vote', label: 'VOTE!', kind: 'link', href: '/vote/' }];
     if (d) {
       if (can(d, 'moderator')) left.push({ key: 'review', label: 'Review', kind: 'link', href: c.route('review') });
