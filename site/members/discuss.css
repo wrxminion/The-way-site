@@ -32,3 +32,8 @@
 .wd-link p{margin:0}
 .wd-page-title{font:italic 20px/1.4 Georgia,serif;color:#daeff1;margin:6px 0 4px;overflow-wrap:anywhere}
 .rc-shot{max-width:240px;max-height:180px;border-radius:8px;border:1px solid #d4ffff26;display:block;margin:6px 0}
+
+/* report form (0062) */
+.wd .wd-reportbox{margin-top:10px;padding:12px;border:1px solid var(--wd-line);border-radius:10px}
+.wd .wd-choice{display:flex;gap:8px;align-items:center;padding:8px 2px;font-size:15px}
+.wd .wd-choice input{width:auto}
