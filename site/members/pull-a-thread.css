@@ -39,6 +39,7 @@
 .pt-help{margin:0;font-size:16px;color:var(--muted)}
 .pt-file{min-height:48px}
 .pt-fileinfo{margin:0;font-size:16px}
+.pt-bar{display:block;width:100%;max-width:420px;height:10px;margin:6px 0}
 .pt-summary{border:2px solid var(--danger);border-radius:12px;padding:10px 14px;margin:0 0 12px;color:var(--danger)}
 .pt-summary ul{margin:6px 0 0;padding-left:20px}
 .pt-summary a{color:var(--foam)}

@@ -59,7 +59,7 @@ const XSS = '<img src=x onerror="window.__pwned=1">';
   await page.click('input[name=mode][value=screenshot]', { force: true });
   sent = null;
   await page.click('form.pt-form button[type=submit]');
-  ok(await page.locator('.pt-summary li').count() === 2 && sent === null, 'screenshot mode asks for a file and a note');
+  ok(await page.locator('.pt-summary li').count() === 2 && sent === null, 'screenshot mode asks for text (from a picture or typed) and a note');
   // honeypot
   await page.click('input[name=mode][value=question]', { force: true });
   ok(await page.locator('input[name=hide_names]').count() === 0, 'Ask a question has no Hide names option');
@@ -76,10 +76,10 @@ const XSS = '<img src=x onerror="window.__pwned=1">';
   // screenshot privacy: notice, text-only box, hide names box, draft flow
   await page.click('input[name=mode][value=screenshot]', { force: true });
   const bodyText = await page.locator('form.pt-form').innerText();
-  ok(/read only by our own AI program/.test(bodyText) && /does not learn from or train/.test(bodyText) && /absolutely needed/.test(bodyText), 'screenshot notice: own AI, no training, no person sees it unless needed');
-  ok(await page.locator('input[name=text_only]').isChecked(), 'send only the text is ticked by default');
+  ok(/never leaves your device/.test(bodyText) && /not uploaded, not stored/.test(bodyText) && /Only the text goes to us/.test(bodyText) && !/audit|peer review/i.test(bodyText), 'screenshot notice: the picture never leaves the device, only text is sent');
+  ok(await page.locator('input[name=text_only]').count() === 0, 'no keep-the-picture choice any more');
   ok(/public official/.test(bodyText) && /harder for us to check/.test(bodyText), 'hide names has the public official warning');
-  const rpcs = []; let statusReply = { kind: 'screenshot', code: 'draft', status: 'Waiting for you to check the text and send it', ocr_reading: false, ocr_text: 'text from [poster 1] about Elon Musk', hide_names: true, draft_minutes_left: 55, matches: [] };
+  const rpcs = []; let statusReply = { kind: 'question', code: 'draft', status: 'Waiting for you to check the text and send it', ocr_reading: false, ocr_text: 'text from [poster 1] about Elon Musk', hide_names: true, draft_minutes_left: 55, matches: [] };
   await page.route('**/rest/v1/rpc/thread_status', (route) => route.fulfill({ status: 200, headers: { 'access-control-allow-origin': '*' }, contentType: 'application/json', body: JSON.stringify(statusReply) }));
   for (const n of ['thread_correct_text', 'thread_confirm', 'thread_discard']) {
     await page.route('**/rest/v1/rpc/' + n, (route) => { rpcs.push([n, route.request().postData()]); route.fulfill({ status: 200, headers: { 'access-control-allow-origin': '*' }, contentType: 'application/json', body: n === 'thread_confirm' ? '{"status":"queued"}' : 'null' }); });
@@ -89,12 +89,12 @@ const XSS = '<img src=x onerror="window.__pwned=1">';
     sent = route.request().postData();
     route.fulfill({ status: 200, headers: { 'access-control-allow-origin': '*' }, contentType: 'application/json', body: JSON.stringify({ receipt: 'shot9', status: 'draft', matches: [] }) });
   });
-  await page.setInputFiles('input[name=shot]', { name: 'a.png', mimeType: 'image/png', buffer: Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 1, 2, 3]) });
+  await page.fill('#pt-shottext', 'text from a screenshot about the budget');
   await page.fill('textarea[name=note]', 'is this claim about the budget true');
   await page.check('input[name=hide_names]');
   await page.click('form.pt-form button[type=submit]');
   await page.waitForSelector('.pt-ocr textarea', { timeout: 8000 });
-  ok(sent.includes('name="image_mode"\r\n\r\ntext_only') && sent.includes('name="hide_names"\r\n\r\n1'), 'the choices are sent with the screenshot');
+  ok(sent.includes('name="kind"\r\n\r\nquestion') && sent.includes('text from a screenshot') && sent.includes('name="hide_names"\r\n\r\n1') && !/filename=|image_mode|name="shot"/.test(sent), 'a screenshot request is sent as text only, with the hide names choice');
   ok(await page.locator('.pt-sent').innerText().then((t) => /Not sent yet/.test(t)), 'nothing is shown as sent before the sender checks the text');
   ok(/55 minutes/.test(await page.locator('.pt-ocr').innerText()), 'the sender is told how long the draft lasts');
   ok(await page.locator('.pt-ocr textarea').inputValue() === 'text from [poster 1] about Elon Musk', 'the sender sees the redacted text');
@@ -105,20 +105,22 @@ const XSS = '<img src=x onerror="window.__pwned=1">';
   rpcs.length = 0;
   // delete now
   await page.fill('textarea[name=note]', 'second screenshot check here');
-  await page.setInputFiles('input[name=shot]', { name: 'a.png', mimeType: 'image/png', buffer: Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 1, 2, 3]) });
+  await page.fill('#pt-shottext', 'second text from a screenshot');
   await page.click('form.pt-form button[type=submit]');
   await page.waitForSelector('.pt-ocr textarea');
   await page.click('button:has-text("Delete it now")');
   await page.waitForSelector('text=Deleted. The text and your note are gone');
   ok(rpcs.map((r) => r[0]).join() === 'thread_discard', 'delete now discards the draft');
-  // unticking text only sends review
+  // a picture the browser cannot read (not a real image): we say so, the text box stays usable, and no file is ever sent
   await page.click('input[name=mode][value=screenshot]', { force: true });
-  await page.uncheck('input[name=text_only]');
-  await page.setInputFiles('input[name=shot]', { name: 'a.png', mimeType: 'image/png', buffer: Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 1, 2, 3]) });
+  await page.setInputFiles('#pt-shot', { name: 'a.png', mimeType: 'image/png', buffer: Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 1, 2, 3]) });
+  await page.waitForFunction(() => /could not read|could not be/.test(document.querySelector('.pt-fileinfo').textContent), null, { timeout: 30000 });
+  await page.fill('#pt-shottext', 'third text typed by hand');
   await page.fill('textarea[name=note]', 'third screenshot check here');
+  sent = null;
   await page.click('form.pt-form button[type=submit]');
   await page.waitForSelector('.pt-ocr textarea');
-  ok(sent.includes('name="image_mode"\r\n\r\nreview') && !sent.includes('name="hide_names"'), 'unticking send only the text lets a reviewer open the picture; hide names off sends no flag');
+  ok(sent && sent.includes('third text typed by hand') && !/filename=|name="shot"|image_mode/.test(sent), 'an unreadable picture falls back to typing; no file is sent');
   // preliminary answer card
   await page.route('**/rest/v1/rpc/thread_status', (route) => route.fulfill({ status: 200, headers: { 'access-control-allow-origin': '*' }, contentType: 'application/json',
     body: JSON.stringify({ kind: 'question', code: 'matched', status: 'We already have something on this', reading: false, prelim_reading: false, matches: [],

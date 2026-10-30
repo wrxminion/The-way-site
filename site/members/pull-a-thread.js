@@ -13,13 +13,14 @@ const FN = `${cfg.supabaseUrl}/functions/v1/pull-thread`;
 const TS_KEY = cfg.turnstileSiteKey || '';
 const RECEIPT_KEY = 'theway.thread.receipts';   // old key: receipts used to be kept on the device; it is cleared now
 const SESSION_KEY = 'theway.thread.session';    // this tab only (sessionStorage): gone when the browser is closed; nothing is stored on the server
-const MAX_SHOT = 4 * 1024 * 1024;
+const MAX_SHOT = 15 * 1024 * 1024;              // the picture is read in this browser tab and never sent, so this only guards the tab's memory
+const MAX_TEXT = 1500;                          // the longest text the server takes
 const ART = '/members/art/pat/';
 const WAIT_MS = 35000;                       // after this long, offer a follow-up
 const MODES = [
   { id: 'question', label: 'Ask a question', icon: 'pat-ask-question.svg' },
   { id: 'url', label: 'Paste a link', icon: 'pat-paste-link.svg' },
-  { id: 'screenshot', label: 'Upload a screenshot', icon: 'pat-upload-screenshot.svg' },
+  { id: 'screenshot', label: 'Add a screenshot', icon: 'pat-upload-screenshot.svg' },
   { id: 'text', label: 'Add text', icon: 'pat-add-text.svg' },
 ];
 
@@ -51,7 +52,7 @@ function remember(r, label) { try { sessionStorage.setItem(SESSION_KEY, JSON.str
 function forgetAll() { try { sessionStorage.removeItem(SESSION_KEY); } catch { /* ignore */ } }
 const kb = (n) => (n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB');
 
-let session = null, mode = 'question', tsToken = null, tsId = null, tsFailed = '', watching = 0, sending = false, shotFile = null;
+let session = null, mode = 'question', tsToken = null, tsId = null, tsFailed = '', watching = 0, sending = false, shotFile = null, shotReading = false, shotRun = 0;
 const live = h('p', { class: 'pt-live', role: 'status', 'aria-live': 'polite' });     // short announcements only
 const results = h('div', { class: 'pt-results' });
 
@@ -470,8 +471,10 @@ function errorsFor(form) {
   } else if (mode === 'url') {
     if (!/^https?:\/\/\S{4,}$/i.test(v('url'))) errs.push(['url', 'Paste a full link that starts with http:// or https://']);
   } else if (mode === 'screenshot') {
-    if (!shotFile) errs.push(['shot', 'Choose a screenshot (PNG, JPEG or WebP).']);
-    else if (shotFile.size > MAX_SHOT) errs.push(['shot', 'That image is over 4 MB. Try a smaller one.']);
+    const t = v('shottext');
+    if (shotReading) errs.push(['shot', 'Wait until your device has finished reading the picture.']);
+    else if (t.length < 10) errs.push(['shottext', 'Choose a picture so it can be read, or type what it says (at least 10 characters).']);
+    else if (t.length > MAX_TEXT) errs.push(['shottext', `That is ${t.length} characters. Please cut it to ${MAX_TEXT} or fewer: keep the part you want checked.`]);
     if (v('note').length < 3) errs.push(['note', 'Say in a few words what we should check in it.']);
   }
   return errs;
@@ -497,14 +500,12 @@ async function send(form, summary) {
   }
   if (form.elements.website && form.elements.website.value) return;   // bot trap
   const fd = new FormData();
-  const q = form.elements.question ? form.elements.question.value.trim() : '';
-  let kind = mode === 'text' ? 'question' : mode;
-  if (kind === 'question' && /^https?:\/\/\S+$/i.test(q)) { kind = 'url'; fd.append('url', q); }
+  const q = form.elements.question ? form.elements.question.value.trim() : mode === 'screenshot' ? form.elements.shottext.value.trim() : '';
+  let kind = mode === 'text' || mode === 'screenshot' ? 'question' : mode;   // a picture is read in this browser; only its text is sent, as an ordinary text request
+  if (kind === 'question' && mode !== 'screenshot' && /^https?:\/\/\S+$/i.test(q)) { kind = 'url'; fd.append('url', q); }
   else if (kind === 'url') fd.append('url', form.elements.url.value.trim());
   else if (kind === 'question') fd.append('question', q);
-  else if (kind === 'screenshot') fd.append('shot', shotFile);
   fd.append('kind', kind);
-  if (kind === 'screenshot') fd.append('image_mode', 'text_only');
   if (kind !== 'url' && form.elements.hide_names && form.elements.hide_names.checked) fd.append('hide_names', '1');
   fd.append('note', form.elements.note ? form.elements.note.value.trim() : '');
   const headers = {};
@@ -518,12 +519,11 @@ async function send(form, summary) {
   if (tsId !== null) { tsToken = null; try { window.turnstile.reset(tsId); } catch { /* ignore */ } }
   if (!res) return;
   if (!res.ok) { live.textContent = body && body.error ? body.error : 'Something went wrong. Please try again.'; return; }
-  asked = (kind === 'url' ? `Link: ${hostOf(fd.get('url'))}` : kind === 'screenshot' ? (form.elements.note.value.trim() || 'Screenshot') : q).replace(/\s+/g, ' ').slice(0, 160);
+  asked = (kind === 'url' ? `Link: ${hostOf(fd.get('url'))}` : mode === 'screenshot' ? (form.elements.note.value.trim() || 'Screenshot') : q).replace(/\s+/g, ' ').slice(0, 160);
   if (localShot) { try { URL.revokeObjectURL(localShot.url); } catch { /* ignore */ } localShot = null; }
-  if (kind === 'screenshot' && shotFile) { try { localShot = { url: URL.createObjectURL(shotFile) }; } catch { localShot = null; } }
   remember(body.receipt, asked);
-  form.reset(); shotFile = null; view();
-  showSent(body.receipt, body.status, body.matches, kind === 'screenshot' || body.status === 'draft');
+  form.reset(); shotFile = null; shotRun++; shotReading = false; view();
+  showSent(body.receipt, body.status, body.matches, body.status === 'draft');
 }
 
 function modeField(form) {
@@ -537,17 +537,42 @@ function modeField(form) {
       h('input', { id: 'pt-url', name: 'url', type: 'url', maxlength: '1000', placeholder: 'https://', autocomplete: 'off', inputmode: 'url' }),
       h('p', { class: 'pt-help', text: 'We do not open the link from this page. If a post cannot be read, use Add text or Upload a screenshot instead.' }));
   } else {
-    const file = h('input', { id: 'pt-shot', name: 'shot', type: 'file', accept: 'image/png,image/jpeg,image/webp', class: 'pt-file' });
+    const file = h('input', { id: 'pt-shot', type: 'file', accept: 'image/png,image/jpeg,image/webp', class: 'pt-file' });
     const info = h('p', { class: 'pt-fileinfo', role: 'status', 'aria-live': 'polite' });
-    const remove = h('button', { type: 'button', class: 'quiet', hidden: true, text: 'Remove file' });
-    file.addEventListener('change', () => {
+    const bar = h('progress', { class: 'pt-bar', max: '100', value: '0', hidden: true, 'aria-label': 'Reading progress' });
+    const remove = h('button', { type: 'button', class: 'quiet', hidden: true, text: 'Remove picture' });
+    const ta = h('textarea', { id: 'pt-shottext', name: 'shottext', maxlength: String(MAX_TEXT), rows: '8', placeholder: 'The text from your picture appears here. You can also type or paste it.' });
+    // The file input has no name that reaches the server: send() builds the request from the text box only, so the picture cannot be uploaded.
+    file.addEventListener('change', async () => {
+      const run = ++shotRun;
       shotFile = file.files[0] || null;
-      info.textContent = shotFile ? `${shotFile.name} (${kb(shotFile.size)})` : '';
       remove.hidden = !shotFile;
+      if (!shotFile) { shotReading = false; info.textContent = ''; return; }
+      bar.hidden = true;
+      if (!/^image\/(png|jpeg|webp)$/.test(shotFile.type)) { info.textContent = 'That file is not a PNG, JPEG or WebP picture.'; shotFile = null; shotReading = false; file.value = ''; remove.hidden = true; return; }
+      if (shotFile.size > MAX_SHOT) { info.textContent = 'That picture is over 15 MB. Try a smaller one.'; shotFile = null; shotReading = false; file.value = ''; remove.hidden = true; return; }
+      const f0 = shotFile;
+      shotReading = true; ta.disabled = true; bar.value = 0; bar.hidden = false;
+      info.textContent = 'Getting the reading program (first time only)…';
+      try {
+        if (!window.ThreadOCR) await new Promise((ok, no) => { const s = h('script', { src: '/members/pull-a-thread-ocr.js?v=1' }); s.onload = ok; s.onerror = () => no(new Error('The reading program could not be loaded.')); document.head.append(s); });
+        const text = await window.ThreadOCR.read(f0, (p, t) => { if (run !== shotRun) return; bar.value = Math.round(p * 100); if (info.textContent !== t) info.textContent = t; });   // the bar is not a live region: only the wording changes are announced
+        if (run !== shotRun) return;
+        ta.value = text.slice(0, MAX_TEXT);
+        info.textContent = !text ? 'We could not read any text in this picture. Type or paste what it says.'
+          : text.length > MAX_TEXT ? `Done. The picture had more than ${MAX_TEXT} characters of text; the rest was cut. Check it and fix anything wrong.`
+          : 'Done. Read on your device: the picture was not sent anywhere. Check the text and fix anything wrong.';
+      } catch (e) {
+        if (run !== shotRun) return;
+        info.textContent = 'This device could not read the picture. Type or paste what it says instead.';
+      }
+      if (run === shotRun) { shotReading = false; bar.hidden = true; ta.disabled = false; if (ta.value) ta.focus(); }
     });
-    remove.addEventListener('click', () => { file.value = ''; shotFile = null; info.textContent = 'File removed.'; remove.hidden = true; file.focus(); });
-    f.append(h('label', { for: 'pt-shot', text: 'Choose a screenshot' }), file, info, remove,
-      h('p', { class: 'pt-help', text: 'PNG, JPEG or WebP, up to 4 MB. Remove names and private details from screenshots.' }));
+    remove.addEventListener('click', () => { shotRun++; file.value = ''; shotFile = null; shotReading = false; bar.hidden = true; ta.disabled = false; ta.value = ''; info.textContent = 'Picture removed.'; remove.hidden = true; file.focus(); });
+    f.append(h('label', { for: 'pt-shot', text: 'Choose a screenshot' }), file, info, bar, remove,
+      h('p', { class: 'pt-help', text: 'PNG, JPEG or WebP, up to 15 MB. Remove names and private details from screenshots.' }),
+      h('label', { for: 'pt-shottext', text: 'What the screenshot says (check it and fix mistakes)' }), ta,
+      h('p', { class: 'pt-help', text: `Up to ${MAX_TEXT} characters. This text is all that is sent.` }));
   }
   return f;
 }
@@ -558,7 +583,7 @@ function view() {
   const summary = h('div', { class: 'pt-summary', role: 'alert', tabindex: '-1', hidden: true });
   const legend = h('legend', { class: 'pt-sr', text: 'How do you want to start?' });
   const modes = h('fieldset', { class: 'pt-modes' }, legend, MODES.map((m) => h('label', { class: 'pt-mode' },
-    h('input', { type: 'radio', name: 'mode', value: m.id, checked: m.id === prior, onchange: () => { mode = m.id; shotFile = null; view(); document.querySelector(`input[name=mode][value=${m.id}]`)?.focus(); } }),
+    h('input', { type: 'radio', name: 'mode', value: m.id, checked: m.id === prior, onchange: () => { mode = m.id; shotFile = null; shotRun++; shotReading = false; view(); document.querySelector(`input[name=mode][value=${m.id}]`)?.focus(); } }),
     h('span', { class: 'pt-mode-box' }, icon(m.icon), h('span', { text: m.label })))));
   const field = modeField(form);
   const framed = h('div', { class: 'pt-framed' }, h('span', { class: 'pt-thread-corner', 'aria-hidden': 'true' }),
@@ -568,9 +593,9 @@ function view() {
   const checks = [];
   if (mode === 'screenshot') {
     checks.push(h('div', { class: 'pt-notice' },
-      h('p', {}, h('strong', { text: 'Your screenshot is private. ' }), 'It is read only by our own AI program, running on our own computer. No outside AI service is used. The program does not learn from or train on what you send: its models are fixed and nothing is retrained.'),
-      h('p', { text: 'Your picture waits in private storage with our database provider only until our program has read it, then it is deleted. You check the text before anything goes to reviewers. If you do not send it within about an hour, we delete the picture and the text.' })));
-    checks.push(h('p', { class: 'pt-help', text: 'We read the text, then delete the picture right away. It is not kept, and nobody sees it. You check and correct the text before anything is sent.' }));
+      h('p', {}, h('strong', { text: 'Your picture never leaves your device. ' }), 'It is read for text right here in your browser. It is not uploaded, not stored, and not put in a database. Nobody at The Way, no reviewer and no administrator, ever receives it.'),
+      h('p', { text: 'Only the text goes to us, and only when you press Submit. You can read it and fix it first. The first time, your browser downloads a reading program from our own site (about 7 MB); no outside company is contacted.' }),
+      h('p', { text: 'The program that reads the text is not AI and learns nothing from your picture.' })));
   } else if (mode === 'question' || mode === 'text') {
     checks.push(h('p', { class: 'pt-help', text: 'Our AI runs on our own computer. No outside AI service is used, and it does not learn from or train on what you send. Your first answer comes from everything public on our site, all our data points. After you send, our program also looks for outside sources on the web: only a short search phrase about the subject is used, never your name, email, picture or full text. Those leads stay marked as not checked until a person verifies them.' }));
   }
@@ -589,7 +614,7 @@ function view() {
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
   go.addEventListener('click', () => { if (reduce && reduce.matches) { goImg.src = BA + 'thread-taut-480.webp?v=2'; return; } goImg.src = pulled + '#' + Date.now(); });   // plays once per press; still for reduced motion
   form.append(modes, summary, framed, note, ...checks, trap, ts, h('div', { class: 'pt-gorow' }, go, session ? '' : h('span', { class: 'pt-noacct', text: 'No account needed' })),
-    h('p', { class: 'pt-privacy', text: 'Reviewers see what you send, never who you are. Your screenshot and email stay private. Questions and evidence can become public after review, reworded without names or private details. Email addresses stay private.' }));
+    h('p', { class: 'pt-privacy', text: 'Reviewers see what you send, never who you are. Your email stays private, and a screenshot is never sent: only its text is. Questions and evidence can become public after review, reworded without names or private details. Email addresses stay private.' }));
   form.addEventListener('submit', (ev) => { ev.preventDefault(); send(form, summary); });
   app.replaceChildren(...[
     h('p', { class: 'overline', text: 'FOLLOW THE EVIDENCE' }),
