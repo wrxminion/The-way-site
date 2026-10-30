@@ -68,24 +68,19 @@
 .waybar .wb-pub a{white-space:nowrap}
 .waybar:not(.wb-in) .wb-menu-btn{display:none}
 .waybar .wb-tools,.waybar.wb-in .wb-right{grid-column:3;grid-row:1;justify-self:end;display:flex;align-items:center;gap:10px}
-/* Wide desktop: one row. Three links, THE WAY, three links, then (to the far right) Pull a thread, search and the account. */
-.waybar .wb-pat-tools{display:none}
+/* Desktop, always two rows so THE WAY is at the true centre of the page: row 1 is Pull a thread | THE WAY | search and account
+   (the outer columns are equal 1fr, so the name cannot drift), row 2 is the six section links in one centred line. */
+.waybar .wb-pat-left{display:none}
 .waybar .wb-pat-img{display:block;height:44px;width:auto}
-.waybar .wb-pat-row,.waybar .wb-pat-tools{opacity:1}
-@media (min-width:1400px){
-  .waybar{grid-template-columns:minmax(12px,1fr) auto auto auto minmax(12px,1fr) auto;column-gap:28px}
-  .waybar .wb-pub{display:contents}
-  .waybar .wb-pub-l{grid-column:2;grid-row:1;flex-wrap:nowrap;justify-content:flex-start}
-  .waybar .wb-logo{grid-column:3;grid-row:1}
-  .waybar .wb-pub-r{grid-column:4;grid-row:1;flex-wrap:nowrap;justify-content:flex-start}
-  .waybar .wb-pub-l,.waybar .wb-pub-r{gap:6px 16px}
-  .waybar .wb-pub a,.waybar .wb-pat-tools{letter-spacing:.08em;font-size:11.5px}
-  .waybar .wb-tools,.waybar.wb-in .wb-right{grid-column:6;grid-row:1;gap:8px;flex-wrap:nowrap}
-  .waybar .wb-login,.waybar .wb-signup{padding:0 12px}
-  .waybar .wb-pat-row{display:none}
-  .waybar .wb-tools .wb-pat-tools,.waybar.wb-in .wb-right .wb-pat-tools{display:inline-flex;align-items:center;white-space:nowrap}
+@media (min-width:761px){
+  .waybar .wb-pat-left{display:inline-flex;align-items:center;grid-column:1;grid-row:1;justify-self:start;opacity:1}
   .waybar .wb-search input{display:none}
   .waybar .wb-search button{width:36px}
+}
+@media (min-width:1100px){
+  .waybar .wb-pub{gap:6px 40px}
+  .waybar .wb-pub a{letter-spacing:.1em;font-size:12.5px}
+  .waybar .wb-login,.waybar .wb-signup{padding:0 14px}
   .waybar.wb-in .wb-name-text{max-width:9em}
 }
 @media (min-width:1700px){.waybar .wb-search input{display:block;width:7em}.waybar.wb-in .wb-name-text{max-width:14em}}
@@ -100,7 +95,6 @@
 /* Older per-page nav bars are hidden wherever the shared bar is present. */
 body:has(#waybar) nav.topbar{display:none}
 
-@media (max-width:1239px) and (min-width:761px){.waybar .wb-search input{width:7em}}
 
 /* ---------- phone: compact header; bottom bar and side panel carry the navigation ---------- */
 @media (max-width:760px){
