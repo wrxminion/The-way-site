@@ -5,7 +5,8 @@
 .sb-num{font:normal 24px/1 var(--serif);color:#fff}
 .sb-rank{font:700 15px var(--sans);color:#fff}
 .sb-note{font-size:13px;color:#c9e1e5}
-.sb-link{margin-left:auto;font-size:13px;color:#a7f0e9}
+.sb-link{margin-left:auto;display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#a7f0e9}
+.sb-link img{width:64px;height:auto;border-radius:6px;display:block}
 .hf{margin:6px 0 18px}
 .hf-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px}
 .hf-head h2{margin:0}
@@ -47,3 +48,13 @@
 .season-ups{margin:6px 0 0;padding-left:18px}
 .home-season:empty{display:none}
 .season-fine{margin:0 0 10px;font-size:13px;color:#c9e1e5}.season-fine:empty{display:none}
+
+/* My ballot card: top questions from the member's plan */
+.season-picks{margin:0 0 12px}
+.season-picks-head{margin:0 0 4px;font:700 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#a7f0e9}
+.season-picklist{list-style:none;margin:0;padding:0}
+.season-picklist li{display:flex;flex-direction:column;gap:1px;padding:6px 0;border-top:1px solid #a7f0e922}
+.season-picklist li:first-child{border-top:0}
+.season-q{color:#fff;font-weight:600;text-decoration:none}
+.season-q:hover{text-decoration:underline}
+.season-a{font-size:13px;color:#c9e1e5}

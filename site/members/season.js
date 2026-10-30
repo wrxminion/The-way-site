@@ -103,8 +103,32 @@
       function paint() { count.textContent = line(); }
       paint(); setInterval(paint, 60000);
 
+      // The top of this member's ballot plan for their state (kept in this browser by ballot-store.js): up to 5 contests
+      // with the pick, "Undecided", or "Not picked yet". Nothing here leaves the browser.
+      function picksBox() {
+        var WB = window.WayBallot, d;
+        if (!WB || !abbr) return null;
+        try { d = WB.read(abbr); } catch (e) { return null; }
+        var list = Object.keys(d.contests).map(function (k) { return d.contests[k]; }).filter(function (c) { return c.title; })
+          .sort(function (a, b) { return (a.kind === b.kind ? 0 : a.kind === 'race' ? -1 : 1) || (a.title < b.title ? -1 : 1); });
+        var box = el('div', 'season-picks'), ul = el('ul', 'season-picklist');
+        if (!list.length) { box.append(el('p', 'season-fine', 'Mark races and measures in your voter guide and your top questions show up here.')); return box; }
+        box.append(el('p', 'season-picks-head', 'Your top questions'));
+        list.slice(0, 5).forEach(function (c) {
+          var name = c.picks.map(function (id) { var o = c.options.filter(function (x) { return x.id === id; })[0]; return o ? o.label : ''; }).filter(Boolean).join(', ');
+          var li = el('li', null), a = el('a', 'season-q', c.title);
+          a.href = '/members/my-ballot.html?state=' + encodeURIComponent(abbr);
+          li.append(a, el('span', 'season-a', name || (c.undecided ? 'Undecided' : 'Not picked yet')));
+          ul.append(li);
+        });
+        box.append(ul);
+        if (list.length > 5) box.append(el('p', 'season-fine', '+' + (list.length - 5) + ' more in My ballot'));
+        return box;
+      }
+
       var fine = el('p', 'season-fine', which === 'election_day' ? (pollsOwn && row.note ? row.note + ' ' : '') + 'Confirm your polling place and closing time with your state election office.' : '');
-      card.append(title, sub, count, fine, btns);
+      var picks = which === 'accountability' ? null : picksBox();
+      card.append(title, sub, count, fine); if (picks) card.append(picks); card.append(btns);
       var ups = upcoming(clock());
       if (ups.length) {
         var ul = el('ul', 'season-ups');
