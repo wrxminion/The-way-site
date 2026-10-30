@@ -46,7 +46,7 @@ for (const file of walk(PAGES)) {
     year = 2026;
   } else if (/^map(-|$)/.test(first)) { section = 'Voter Guide'; type = 'District map'; year = 2026; }
   else if (first === 'cases') { section = 'Civics & History'; type = rel === 'cases/index.html' ? 'Collection' : 'Case study'; year = yearOf(title) || yearOf(desc); const v = html.match(/Sources checked (\d{4}-\d{2}-\d{2})/); if (v) verified = v[1]; }
-  else if (first === 'case-studies') { section = 'Ballot Case Studies'; type = 'Ballot case study'; year = 2026; place = 'Colorado'; extra = 'initial draft not independently reviewed'; }
+  else if (first === 'case-studies') { section = 'Election Studies'; type = 'Election study'; year = 2026; place = 'Colorado'; extra = 'initial draft not independently reviewed'; }
   else if (first === 'news') { section = 'News'; type = 'News'; }
   else if (first === 'states') { section = 'Voter Guide'; type = 'State voting rules'; const nm = title.replace(/^Voting in\s+/, ''); if (Object.values(STATES).includes(nm)) place = nm; }
   else continue;

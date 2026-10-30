@@ -1,7 +1,7 @@
 // The Way: one top bar for every page (member area, Findings, guides, maps, case pages, splash).
 // Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=19"> in <head>,
 //          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
-//          <script src="/members/waybar.js?v=39" defer></script>.
+//          <script src="/members/waybar.js?v=40" defer></script>.
 // Signed in, desktop: logo centered · section links, a "Menu" button and Invite · search · your name (account menu).
 // Signed in, phone: a compact header (logo, search, account) and a bottom bar with Vote, Commons, Contribute, Menu.
 // Signed out: logo and public sections, search, "Log in" and "Sign up"; on a phone the sections sit in a Menu panel.
@@ -228,7 +228,7 @@
       { href: STATES + '#pick', label: 'Map', desc: 'Every state at a glance', icon: 'map', key: 'map' },
       { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
       { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
-      { href: '/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
+      { href: '/case-studies/', label: 'Election Studies', icon: 'casestudies', key: 'casestudies' },
       { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' }
     ];
     if (d.findings) explore.push({ href: '/members/findings.html', label: 'Findings', desc: 'What members checked, with the verdict', icon: 'findings', key: 'findings' });
@@ -271,7 +271,7 @@
       { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
         { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
         { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
-        { href: '/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
+        { href: '/case-studies/', label: 'Election Studies', icon: 'casestudies', key: 'casestudies' },
         { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' }
       ] },
       { heading: 'Your account', items: [
@@ -478,7 +478,7 @@
       pubL.appendChild(link('/news/', 'News', 'news', cur));
       pubL.appendChild(link('/cases/', 'Civics & History', 'cases', cur));
       pubR.appendChild(link(GOV, 'Government', 'govworks', cur));
-      pubR.appendChild(link('/case-studies/', 'Case Studies', 'casestudies', cur));
+      pubR.appendChild(link('/case-studies/', 'Election Studies', 'casestudies', cur));
       pubR.appendChild(link('/research/', 'Research', 'research-lib', cur));
       threadArt(pubR.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur))).className = 'wb-pat-row';
       pub.appendChild(pubL); pub.appendChild(pubR);

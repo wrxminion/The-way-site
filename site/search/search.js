@@ -12,7 +12,7 @@ const recs = D.recs.map((r) => ({
 }));
 const uniq = (key) => [...new Set(D.recs.map((r) => r[key]).filter(Boolean))].sort();
 const fill = (sel, vals) => vals.forEach((v) => { const o = document.createElement('option'); o.value = v; o.textContent = v; sel.append(o); });
-fill(fs, ['Voter Guide', 'Research', 'Civics & History', 'Ballot Case Studies', 'News'].filter((s) => D.recs.some((r) => r.s === s)));
+fill(fs, ['Voter Guide', 'Research', 'Civics & History', 'Election Studies', 'News'].filter((s) => D.recs.some((r) => r.s === s)));
 fill(ft, uniq('y')); fill(fp, uniq('p'));
 let shown = 0, hits = [];
 const PAGE = 25;

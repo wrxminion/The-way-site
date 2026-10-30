@@ -1,4 +1,4 @@
-// Reusable interactive timeline for ballot case studies. Data: window.TIMELINES[id] (see tabor-timeline.js).
+// Reusable interactive timeline for election studies. Data: window.TIMELINES[id] (see tabor-timeline.js).
 // Mount: <div data-timeline="tabor"></div>. Every event also appears in a plain chronological list, so nothing
 // depends on swiping, hovering or precise gestures. Standard library of the browser only; no inline script.
 (() => {
