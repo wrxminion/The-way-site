@@ -135,3 +135,7 @@
 .pt-queue-title{margin:8px 0 6px;line-height:0}
 .pt-queue-title img{display:block;width:min(480px,100%);height:auto}
 .pt-vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.pt-steps{list-style:none;margin:0 0 10px;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.pt-steps li{padding:4px 10px;border:1px solid #6b6b6b;border-radius:999px;font-size:14px;color:#b8b8b8}
+.pt-steps li.done{border-color:#7fd08b;color:#7fd08b}
+.pt-steps li.now{border:2px solid #ffe3a3;color:#ffe3a3;font-weight:600}
