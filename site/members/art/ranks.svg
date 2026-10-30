@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="A gold medal on a ribbon beside a small podium with three steps">
+<defs>
+<linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d98a"/><stop offset="1" stop-color="#d4a94c"/></linearGradient>
+<linearGradient id="rib" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a9aa0"/><stop offset="1" stop-color="#2d6f78"/></linearGradient>
+<linearGradient id="step" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9dbe6"/><stop offset="1" stop-color="#6fb0bf"/></linearGradient>
+</defs>
+<ellipse cx="160" cy="166" rx="120" ry="8" fill="#000" opacity=".35"/>
+<path d="M118 14h30l14 56h-30zM206 14h-30l-14 56h30z" fill="url(#rib)"/>
+<circle cx="162" cy="92" r="40" fill="url(#gold)" stroke="#b98a2e" stroke-width="3"/>
+<circle cx="162" cy="92" r="30" fill="none" stroke="#b98a2e" stroke-width="2" opacity=".7"/>
+<path d="M162 70l6.5 14 15 1.8-11 10.4 2.9 15-13.4-7.5-13.4 7.5 2.9-15-11-10.4 15-1.8z" fill="#fff6d6"/>
+<rect x="36" y="128" width="64" height="34" rx="4" fill="url(#step)"/>
+<rect x="236" y="138" width="64" height="24" rx="4" fill="url(#step)"/>
+<rect x="100" y="146" width="136" height="16" rx="4" fill="#cfeef2"/>
+<g fill="#2d6f78" font-family="Georgia,serif" font-size="16" font-weight="700" text-anchor="middle"><text x="68" y="151">2</text><text x="168" y="159">1</text><text x="268" y="156">3</text></g>
+</svg>
