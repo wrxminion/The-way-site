@@ -62,3 +62,15 @@
 .wb-fan-row svg{position:static;width:28px;height:28px;flex:none}
 .wb-small{background:#062137f5;border:2px solid #a7f0e9cc;color:#ecffff}
 @media (forced-colors:active){.way-bubble::before{display:none}.way-bubble{border:2px solid CanvasText;border-radius:50%;background:Canvas}.wb-pop,.wb-fan{background:Canvas;border:2px solid CanvasText}}
+
+/* Floating back up after the up arrow: each bubble rises about 28 px and fades in, bottom one first, 70 ms apart (about 0.7 s in all). */
+@keyframes wb-float-in{0%{opacity:0;transform:translateY(28px)}100%{opacity:1;transform:translateY(0)}}
+html.wb-rising .wb-dock>:not(.wb-bubbles-toggle),html.wb-rising .wb-bubs-l>*{animation:wb-float-in 450ms cubic-bezier(.2,.7,.3,1) both;animation-delay:140ms}
+html.wb-rising .wb-dock>.wb-bub-home{animation-delay:0ms}
+html.wb-rising .wb-dock>.wb-bub-news{animation-delay:70ms}
+html.wb-rising .wb-dock>.wb-bub-tools{animation-delay:210ms}
+html.wb-rising .wb-bubs-l>:nth-child(1){animation-delay:0ms}
+html.wb-rising .wb-bubs-l>:nth-child(2){animation-delay:70ms}
+html.wb-rising .wb-bubs-l>:nth-child(3){animation-delay:140ms}
+html.wb-rising .wb-bubs-l>:nth-child(4){animation-delay:210ms}
+@media(prefers-reduced-motion:reduce){html.wb-rising .wb-dock>*,html.wb-rising .wb-bubs-l>*{animation:none!important}}

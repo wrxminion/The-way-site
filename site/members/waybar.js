@@ -591,6 +591,11 @@
     btn.setAttribute('aria-label', off ? 'Show the floating buttons' : 'Hide the floating buttons');
     btn.title = off ? 'Show the floating buttons' : 'Hide the floating buttons';
   }
+  // Bringing the buttons back: they float up one after another (about 0.7 s in all). The CSS holds the motion and respects reduced motion.
+  function floatUp() {
+    var h = document.documentElement; h.classList.add('wb-rising');
+    setTimeout(function () { h.classList.remove('wb-rising'); }, 1100);
+  }
   function syncToggle() {
     var btn = document.querySelector('.wb-bubbles-toggle');
     if (!btn) {
@@ -604,7 +609,7 @@
         var off = !document.documentElement.classList.contains('wb-bubbles-off');
         try { off ? localStorage.setItem(BUBBLES, 'off') : localStorage.removeItem(BUBBLES); } catch (e) { /* private mode: it just will not be remembered */ }
         paintToggle(btn, off);
-        if (!off) riseBurst();
+        if (!off) { riseBurst(); floatUp(); }
       });
       var d = document.querySelector('.wb-dock'); (d || document.body).appendChild(btn);
     }
