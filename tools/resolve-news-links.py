@@ -3,7 +3,7 @@
 
 Run it between two builds (it only needs the network for Google, and runs on the news machine, not in the cloud):
     python3 tools/build-election-news.py && python3 tools/resolve-news-links.py && python3 tools/build-election-news.py
-It reads site/news/data/election/*.json, resolves up to --max (default 60) links that are not in the cache yet, and writes
+It reads site/news/data/election/*.json, resolves up to --max (default 150, newest stories first) links that are not in the cache yet, and writes
 site/news/data/direct-links.json ({"ok": {google id: publisher link}, "failed": {google id: date}}). A failed link is tried again after a day.
 Links are stripped of trackers on the way in (news_links.strip_trackers). Nothing but the Google redirect page is fetched.
 
@@ -61,28 +61,40 @@ def online(gid):
 
 def main():
     d = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'site', 'news', 'data')
-    mx = int(sys.argv[sys.argv.index('--max') + 1]) if '--max' in sys.argv else 60
+    mx = int(sys.argv[sys.argv.index('--max') + 1]) if '--max' in sys.argv else 150
     cache = news_links.load_cache(d); today = datetime.date.today().isoformat()
-    ids = []
+    found = {}
     for f in sorted(glob.glob(os.path.join(d, 'election', '*.json'))):
         with open(f, encoding='utf-8') as fh:
             for i in json.load(fh).get('items', []):
                 g = news_links.google_news_id(i.get('url'))
-                if g and g not in cache['ok'] and cache['failed'].get(g) != today and g not in ids:
-                    ids.append(g)
-    done = 0
+                if g and g not in cache['ok'] and cache['failed'].get(g) != today:
+                    found[g] = max(found.get(g, ''), i.get('first_seen_at') or i.get('published_at') or '')
+    ids = sorted(found, key=lambda g: found[g], reverse=True)
+    done = misses = tried = 0
     for g in ids[:mx]:
         u = offline(g) or online(g)
         u = news_links.strip_trackers(u) if u else ''
+        tried += 1
         if u and not news_links.google_news_id(u) and 'news.google.com' not in u:
-            cache['ok'][g] = u; cache['failed'].pop(g, None); done += 1
+            cache['ok'][g] = u; cache['failed'].pop(g, None); done += 1; misses = 0
         else:
-            cache['failed'][g] = today
+            cache['failed'][g] = today; misses += 1
+        if tried % 20 == 0:
+            save(d, cache)
+        if misses >= 10:
+            print('10 failures in a row: Google is refusing or has changed. Stopping so nothing is marked failed for nothing.')
+            for x in ids[max(tried - 10, 0):tried]:
+                cache['failed'].pop(x, None)
+            break
         time.sleep(1.0)
+    save(d, cache)
+    print('resolved %d of %d tried (%d waiting)' % (done, tried, max(len(ids) - tried, 0)))
+
+def save(d, cache):
     tmp = news_links.cache_path(d) + '.tmp'
     with open(tmp, 'w', encoding='utf-8') as f:
         json.dump(cache, f, ensure_ascii=False, separators=(',', ':'), sort_keys=True)
     os.replace(tmp, news_links.cache_path(d))
-    print('resolved %d of %d tried (%d waiting)' % (done, min(len(ids), mx), max(len(ids) - mx, 0)))
 
 main()
