@@ -517,7 +517,7 @@
   }
   function loadBubbles() {
     if (window.WayBubbles || document.querySelector('script[src^="/members/bubbles.js"]')) return;
-    ['bubbles.css?v=2', 'bubbles-look.css?v=2'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
+    ['bubbles.css?v=3', 'bubbles-look.css?v=3'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
     var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=2'; sc.onload = syncBubbles; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).

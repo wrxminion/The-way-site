@@ -1,9 +1,8 @@
 /* The two bubble menus: WHERE things go and HOW they open. Colours, glass, icon motion and badges are in bubbles-look.css.
    Right side = the dock in waybar.css (diver, hide arrow, Pull a thread) plus Home, News and Tools. Left side = .wb-bubs-l.
    Sizes: one variable, --wb-bubble-size (waybar.css), is used by every bubble so they match. */
-html{--wb-bubble-size:104px;--wb-bubble-size-mobile:104px}
-@media (max-height:760px){html{--wb-bubble-size:88px}}
-@media (max-height:640px){html{--wb-bubble-size:72px}}
+html{--wb-bubble-size:84px;--wb-bubble-size-mobile:68px}
+@media (max-height:640px){html{--wb-bubble-size:68px}}
 
 /* right: the dock stacks top to bottom, so Tools is above Pull a thread, then News, then Home at the bottom */
 .wb-dock .wb-bub-wrap{position:relative;flex:none;display:block}
@@ -13,7 +12,7 @@ html{--wb-bubble-size:104px;--wb-bubble-size-mobile:104px}
 .wb-dock .wb-bub-hidden{order:6}
 .wb-dock .wb-bub-explore{order:7}
 /* left: first child is the bottom bubble */
-.wb-bubs-l{position:fixed;z-index:48;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;flex-direction:column-reverse;align-items:flex-start;gap:12px}
+.wb-bubs-l{position:fixed;z-index:48;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;flex-direction:column-reverse;align-items:flex-start;gap:8px}
 .wb-bubs-l .wb-bub-wrap{position:relative;flex:none}
 .wb-dock .wb-phone,.wb-bubs-l .wb-phone{display:none}
 html.wb-bubbles-off .wb-bubs-l{display:none}
