@@ -8,11 +8,10 @@
   var sel = document.getElementById('enews-sel');
   var list = document.getElementById('enews-list');
   var note = document.getElementById('enews-note');
-  var DATA = '/news/data/';
+  var DATA = '/news/data/election/';   // small files from tools/build-election-news.py, not the 2 MB latest.json
   var SHOW = 40;
   var STATES = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
   var ELECTION = /\b(elections?|ballots?|voters?|voting|votes?|candidates?|primary|primaries|runoff|polls?|polling|campaigns?|midterms?|amendment|proposition|referendum|congressional|secretary of state|redistricting)\b/i;
-  var NATIONAL = /\b(congress|senate|house|midterms?|president|presidential|national|nationwide|federal|supreme court|redistricting)\b/i;
   var cache = {};
 
   function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
@@ -31,7 +30,7 @@
   function load(path) {
     if (cache[path]) return cache[path];
     cache[path] = fetch(DATA + path, { credentials: 'omit' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) {
-      return (Array.isArray(d && d.items) ? d.items : []).slice(0, 3000).map(clean).filter(Boolean);
+      return (Array.isArray(d && d.items) ? d.items : []).slice(0, 100).map(clean).filter(Boolean);
     });
     return cache[path];
   }
@@ -95,7 +94,7 @@
       var b = ballots(), sts = Object.keys(b);
       if (!sts.length) { done([], 'No saved ballot in this browser yet. Build one in My Ballot and its stories show up here.'); return; }
       Promise.all(sts.map(function (s) {
-        return load('states/' + s.toLowerCase() + '.json').then(function (items) {
+        return load(s.toLowerCase() + '.json').then(function (items) {
           var names = b[s].names.filter(function (x, i, a) { return a.indexOf(x) === i; }).slice(0, 80);
           var re = names.length ? new RegExp('\\b(' + names.map(esc).join('|') + ')\\b', 'i') : null;
           return items.filter(function (i) { return b[s].measures.some(function (m) { return i.measures.indexOf(m) >= 0; }) || (re && re.test(i.title)); });
@@ -104,11 +103,11 @@
       return;
     }
     if (choice === 'national') {
-      load('latest.json').then(function (items) { done(tidy(items.filter(function (i) { return NATIONAL.test(i.title); })), 'No national election stories right now.'); }, fail);
+      load('national.json').then(function (items) { done(tidy(items), 'No national election stories right now.'); }, fail);
       return;
     }
     if (STATES[choice]) {
-      load('states/' + choice.toLowerCase() + '.json').then(function (items) { done(tidy(items), 'No election stories for ' + STATES[choice] + ' right now.'); }, fail);
+      load(choice.toLowerCase() + '.json').then(function (items) { done(tidy(items), 'No election stories for ' + STATES[choice] + ' right now.'); }, fail);
     }
   }
 
