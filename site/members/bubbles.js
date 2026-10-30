@@ -153,6 +153,8 @@
     var b = openBtn;
     var cl = b && b.querySelector('[data-closed-label]'); if (cl) cl.textContent = cl.getAttribute('data-closed-label');
     document.querySelectorAll('.wb-bub-gen [aria-expanded="true"]').forEach(function (x) { x.setAttribute('aria-expanded', 'false'); });
+    // effect hook: the bubble that just closed gets .wb-fx-close for 0.6 s (bubbles-look.css plays the re-form from it)
+    if (b && !reduced()) { b.classList.add('wb-fx-close'); setTimeout(function () { b.classList.remove('wb-fx-close'); }, 600); }
     document.querySelectorAll('.wb-bub-gen .wb-pop:not([hidden]), .wb-bub-gen .wb-fan:not([hidden])').forEach(function (x) { x.hidden = true; });
     openId = null; openBtn = null; nested = null;
     if (returnFocus && b && document.body.contains(b)) b.focus();
@@ -248,6 +250,20 @@
     return out;
   }
 
+  // The small decorative air bubbles that rise behind the right column (waybar.js) also rise behind the left one. Not links, not read out.
+  var burstL = 0;
+  function riseLeft() {
+    var r = document.querySelector('.wb-rise-l');
+    if (!r) {
+      r = el('div', { class: 'wb-rise wb-rise-l', 'aria-hidden': 'true' });
+      for (var i = 0; i < 9; i++) r.appendChild(el('i'));
+      for (var k = 0; k < 6; k++) r.appendChild(el('i', { class: 'wb-b' }));
+      document.body.appendChild(r);
+    }
+    r.classList.remove('wb-burst'); void r.offsetWidth; r.classList.add('wb-burst');
+    clearTimeout(burstL); burstL = setTimeout(function () { r.classList.remove('wb-burst'); }, 5500);
+  }
+
   // ---- build everything ----
   function build() {
     document.querySelectorAll('.wb-bub-gen').forEach(function (n) { n.remove(); });
@@ -288,6 +304,7 @@
     dock.appendChild(phoneSide('right', thr, cur));
     nav.appendChild(phoneSide('left', lpl, cur, ctx.data ? null : function () { var w = el('div', { class: 'wb-fan-auth' }); w.appendChild(authBubble()); return w; }));
     document.body.appendChild(nav);
+    riseLeft();
     document.documentElement.classList.add('wb-has-bubs');
   }
 

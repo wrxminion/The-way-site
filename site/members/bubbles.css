@@ -16,6 +16,8 @@ html{--wb-bubble-size:84px;--wb-bubble-size-mobile:68px}
 .wb-bubs-l .wb-bub-wrap{position:relative;flex:none}
 .wb-dock .wb-phone,.wb-bubs-l .wb-phone{display:none}
 html.wb-bubbles-off .wb-bubs-l{display:none}
+/* small air bubbles behind the left column: same artwork and motion as the right (waybar.css .wb-rise), mirrored to the left edge */
+.wb-rise.wb-rise-l{right:auto;left:6px}
 /* the old My Ballot link inside the voter-guide note controls is gone (VOTE! has it); keep the note controls clear of the left column */
 .bp-dock{left:calc(var(--wb-bubble-size) + 28px)}
 
