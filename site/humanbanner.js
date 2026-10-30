@@ -4,9 +4,9 @@
 // "Help us review" tab stays on the page after the X and brings the banner back.
 (function () {
   'use strict';
-  var TEXT = ['A lot of the site is reviewed and written by AI (LLMs).', 'We need humans to make sure it\'s not hallucinating.'];
-  var BUTTON = 'Register to be a reviewer and help';
-  var JOIN = '/members/join.html';
+  var TEXT = ['WE NEED HELP! THE HALLUCINATION SHARK ATE THE FACTS!!!', 'A lot of the site is written and checked by AI. We need humans to make sure it is not hallucinating.'];
+  var BUTTON = 'Register to hunt him!';
+  var JOIN = '/members/#/reviewer';   // the reviewer sign up page (reviewer-signup patch)
   var KEY = 'theway.humanbanner';
 
   try { localStorage.removeItem(KEY); } catch (e) { /* the old permanent close is cleared so nobody stays hidden */ }
@@ -26,9 +26,20 @@
 
   var p = document.createElement('p');
   p.className = 'hb-text';
-  p.appendChild(document.createTextNode(TEXT[0] + ' ')); // the space keeps it readable if the break is ever dropped
-  p.appendChild(document.createElement('br'));
-  p.appendChild(document.createTextNode(TEXT[1]));
+  var big = document.createElement('strong');
+  big.className = 'hb-big';
+  big.textContent = TEXT[0];
+  var small = document.createElement('span');
+  small.className = 'hb-small';
+  small.textContent = TEXT[1];
+  p.appendChild(big); // block lines, so the call is big and the plain explanation sits under it
+  p.appendChild(small);
+
+  var shark = document.createElement('img');
+  shark.className = 'hb-shark';
+  shark.src = '/members/art/hallucination-shark.svg';
+  shark.alt = '';
+  shark.width = 96; shark.height = 48;
 
   var a = document.createElement('a');
   a.className = 'hb-join';
@@ -47,7 +58,7 @@
   });
   bar.addEventListener('keydown', function (e) { if (e.key === 'Escape') x.click(); });
 
-  bar.appendChild(p); bar.appendChild(a); bar.appendChild(x);
+  bar.appendChild(shark); bar.appendChild(p); bar.appendChild(a); bar.appendChild(x);
 
   var tab = null;
   function showBar() {

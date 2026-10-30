@@ -523,8 +523,10 @@
   }
   function loadBubbles() {
     if (window.WayBubbles || document.querySelector('script[src^="/members/bubbles.js"]')) return;
-    ['bubbles.css?v=6', 'bubbles-look.css?v=6'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=6'; sc.onload = syncBubbles; document.head.appendChild(sc);
+    // draw the bubbles only when the styles AND the script are in, so neither side shows up bare and then jumps into place
+    var waiting = 3, ready = function () { if (--waiting === 0) syncBubbles(); };
+    ['bubbles.css?v=7', 'bubbles-look.css?v=7'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=7'; sc.onload = sc.onerror = ready; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -741,10 +743,10 @@
   if (!inMembers && !document.querySelector('script[src^="/humanbanner.js"]')) {
     var hbCss = document.createElement('link');
     hbCss.rel = 'stylesheet';
-    hbCss.href = '/humanbanner.css?v=4';
+    hbCss.href = '/humanbanner.css?v=5';
     document.head.appendChild(hbCss);
     var hbScript = document.createElement('script');
-    hbScript.src = '/humanbanner.js?v=4';
+    hbScript.src = '/humanbanner.js?v=5';
     hbScript.defer = true;
     document.head.appendChild(hbScript);
   }

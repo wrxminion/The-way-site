@@ -98,3 +98,61 @@ html.wb-rising .wb-bubs-l>:nth-child(4){animation-delay:210ms}
 /* The open list is position:fixed inside the bubble's wrapper. A wrapper that is mid-float (transform) becomes its containing block, which pushed the list
    off the bottom of the window. While a list is open the wrapper holds still (bubbles.js adds .wb-open). */
 .wb-dock .wb-bub-wrap.wb-open,.wb-bubs-l .wb-bub-wrap.wb-open{animation:none}
+
+/* CLICK POP for every bubble except Pull a thread (it is not a .way-bubble): bubbles.js adds .wb-fx-go for 0.75 s on click (or on opening a list).
+   The glass swells, snaps small and comes back; droplets fly out. Tools keeps its longer burst while its list is open (rules above).
+   HOVER WIGGLE for every bubble: the whole bubble pops and wiggles once, left side and right side alike. */
+html{--wb-drops:radial-gradient(circle at 50% 4%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 84% 16%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 96% 50%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 80% 85%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 50% 96%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 15% 80%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 4% 50%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 16% 16%,#c9fff0 0 3px,transparent 4px)}
+@keyframes shell-pop{0%{transform:scale(1)}12%{transform:scale(1.14)}32%{transform:scale(.5)}62%{transform:scale(.86)}100%{transform:scale(1)}}
+@keyframes bubble-wiggle{0%,100%{transform:scale(1) rotate(0)}25%{transform:scale(1.08) rotate(-5deg)}55%{transform:scale(1.06) rotate(4deg)}80%{transform:scale(1.03) rotate(-2deg)}}
+.way-bubble.wb-fx-go::before{animation:shell-pop 700ms ease-out}
+.way-bubble.wb-fx-go::after{content:"";position:absolute;inset:8%;pointer-events:none;background:var(--wb-drops);animation:droplets-out 700ms ease-out forwards}
+.way-bubble:is(:hover,:focus-visible){animation:bubble-wiggle 650ms ease-in-out}
+
+/* NEWS gets wet: on hover or click the page darkens with water, drips fall off its bottom edge and a few drops splash up from the top. Plays once. */
+.way-bubble[data-icon="news"] .drips path,.way-bubble[data-icon="news"] .splash circle,.way-bubble[data-icon="news"] .wet{opacity:0}
+.way-bubble[data-icon="news"] .drips path,.way-bubble[data-icon="news"] .splash circle{transform-box:fill-box;transform-origin:center}
+@keyframes wet-in{0%{opacity:0}100%{opacity:.38}}
+@keyframes drip-fall{0%{transform:translateY(-6px) scale(.4);opacity:0}25%{opacity:1;transform:translateY(0) scale(1)}100%{transform:translateY(8px) scale(.9);opacity:0}}
+@keyframes splash-out{0%{transform:translate(0,3px) scale(.3);opacity:0}25%{opacity:1}100%{transform:translate(var(--sx,0),-9px) scale(1);opacity:0}}
+.way-bubble[data-icon="news"]:is(:hover,:focus-visible,.wb-fx-go) .wet{animation:wet-in 1200ms ease-out forwards}
+.way-bubble[data-icon="news"]:is(:hover,:focus-visible,.wb-fx-go) .drips path{animation:drip-fall 1000ms ease-in both}
+.way-bubble[data-icon="news"]:is(:hover,:focus-visible,.wb-fx-go) .drips path:nth-child(2){animation-delay:200ms}
+.way-bubble[data-icon="news"]:is(:hover,:focus-visible,.wb-fx-go) .drips path:nth-child(3){animation-delay:420ms}
+.way-bubble[data-icon="news"]:is(:hover,:focus-visible,.wb-fx-go) .splash circle{animation:splash-out 800ms ease-out both}
+.way-bubble[data-icon="news"] .splash circle:nth-child(1){--sx:-6px}.way-bubble[data-icon="news"] .splash circle:nth-child(2){--sx:-1px;animation-delay:80ms!important}
+.way-bubble[data-icon="news"] .splash circle:nth-child(3){--sx:5px;animation-delay:40ms!important}.way-bubble[data-icon="news"] .splash circle:nth-child(4){--sx:8px;animation-delay:120ms!important}
+
+/* HOME rides the wave: the water scrolls sideways under the houseboat, which rocks and climbs the crest. Replaces the little hop. Plays once. */
+@keyframes swell-roll{0%{transform:translateX(0)}100%{transform:translateX(-19px)}}
+@keyframes boat-ride{0%{transform:translateY(0) rotate(0)}25%{transform:translateY(-4px) rotate(-7deg)}50%{transform:translateY(1px) rotate(5deg)}75%{transform:translateY(-3px) rotate(-5deg)}100%{transform:translateY(0) rotate(0)}}
+.way-bubble[data-icon="home"] .boat{transform-box:view-box;transform-origin:24px 40px}
+.way-bubble[data-icon="home"]:is(:hover,:focus-visible,.wb-fx-go) .swell{animation:swell-roll 1100ms linear 2}
+.way-bubble[data-icon="home"]:is(:hover,:focus-visible,.wb-fx-go) .boat{animation:boat-ride 1100ms ease-in-out 2}
+.way-bubble[data-icon="home"]:is(:hover,:focus-visible) svg,.way-bubble[data-icon="home"][aria-expanded="true"] svg{animation:none}
+
+/* HELP: on hover or click a hand pops up in the middle of the lifesaver (the question mark steps aside). The wrist fades out softly, no hard cut line. Stays up while pointed at. */
+.way-bubble[data-icon="help"] .hand{opacity:0;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes hand-pop{0%{transform:translateY(9px) scale(.3);opacity:0}45%{transform:translateY(-2px) scale(1.18);opacity:1}70%{transform:translateY(1px) scale(.95)}100%{transform:translateY(0) scale(1);opacity:1}}
+.way-bubble[data-icon="help"]:is(:hover,:focus-visible,.wb-fx-go) .hand{animation:hand-pop 650ms ease-out forwards}
+.way-bubble[data-icon="help"] .qmark{transition:opacity .2s}
+.way-bubble[data-icon="help"]:is(:hover,:focus-visible,.wb-fx-go) .qmark{opacity:0}
+@media(prefers-reduced-motion:reduce){.way-bubble[data-icon="help"] .hand{animation:none!important;transition:none}.way-bubble[data-icon="help"]:is(:hover,:focus-visible) .hand{opacity:1}}
+
+/* COMMONS: a pirate and a captain talk. On hover or click the two speech bubbles take turns popping (left first, then right). Plays once. */
+.way-bubble[data-icon="commons"] .talk-l,.way-bubble[data-icon="commons"] .talk-r{transform-box:fill-box;transform-origin:50% 100%}
+@keyframes talk-pop{0%,100%{transform:scale(1) translateY(0)}35%{transform:scale(1.22) translateY(-2px)}65%{transform:scale(.94)}}
+.way-bubble[data-icon="commons"]:is(:hover,:focus-visible,.wb-fx-go) .talk-l{animation:talk-pop 600ms ease-out}
+.way-bubble[data-icon="commons"]:is(:hover,:focus-visible,.wb-fx-go) .talk-r{animation:talk-pop 600ms ease-out 350ms}
+.way-bubble[data-icon="commons"]:is(:hover,:focus-visible) .pirate{animation:bubble-wiggle 700ms ease-in-out}
+
+/* REVIEW, in the Pull a thread spirit: a bigger picture that fills the glass, a loose stitched thread trailing out, a stamp that slams down on hover or click,
+   and an italic label that looks written by hand (the Pull a thread lettering is a picture; this is real text, so it stays readable and translatable). */
+.way-bubble[data-icon="review"] svg{width:62%;height:62%;left:19%;top:4%}
+.way-bubble[data-icon="review"]>span{font:italic 700 14px/1 Georgia,'Times New Roman',serif;letter-spacing:.01em;bottom:15%}
+.way-bubble[data-icon="review"] .stamp{transform-box:fill-box;transform-origin:50% 50%}
+@keyframes stamp-slam{0%{transform:scale(1.9) rotate(-18deg);opacity:.2}55%{transform:scale(.88) rotate(4deg);opacity:1}75%{transform:scale(1.08) rotate(-2deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes thread-tug{0%{stroke-dashoffset:0;transform:translateX(0)}40%{stroke-dashoffset:-10;transform:translateX(3px)}100%{stroke-dashoffset:0;transform:translateX(0)}}
+.way-bubble[data-icon="review"]:is(:hover,:focus-visible,.wb-fx-go) .stamp{animation:stamp-slam 650ms cubic-bezier(.3,1.4,.5,1)}
+.way-bubble[data-icon="review"]:is(:hover,:focus-visible,.wb-fx-go) .thread{animation:thread-tug 900ms ease-in-out}
+.way-bubble[data-icon="review"]:is(:hover,:focus-visible) .reply{animation:none}
