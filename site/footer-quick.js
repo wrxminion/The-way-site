@@ -12,9 +12,12 @@
     var methods = document.createElement('a');
     methods.href = '/development/methods/';
     methods.textContent = 'Methodology';
+    var art = document.createElement('a');
+    art.href = '/members/submit-art.html';
+    art.textContent = 'Submit your art';
     var legal = document.createElement('span');
     legal.textContent = 'Legal (coming soon)';
-    nav.appendChild(about); nav.appendChild(methods); nav.appendChild(legal);
+    nav.appendChild(about); nav.appendChild(methods); nav.appendChild(art); nav.appendChild(legal);
     footer.appendChild(nav);
   }
   function signedIn() {
