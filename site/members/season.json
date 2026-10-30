@@ -1,0 +1,15 @@
+{
+  "note": "Dates that switch the top card on the members home. Edit dates here, never the code. ISO times in UTC. Polls close come from poll-close.json (per state, UNVERIFIED), falling back to /results/config.json election_ends_at; the Monday-noon results release (release_at) is read from /results/config.json too, so it is changed in one place only.",
+  "election_day_starts_at": "2026-11-03T07:00:00Z",
+  "election_day_note": "Tuesday Nov 3 2026, 12:00 am Mountain (07:00 UTC).",
+  "results_ends_at": "2026-11-24T07:00:00Z",
+  "results_ends_is_placeholder": true,
+  "upcoming": [
+    {
+      "name": "2026 General Election",
+      "date": "2026-11-03",
+      "state": "all",
+      "kind": "general"
+    }
+  ]
+}

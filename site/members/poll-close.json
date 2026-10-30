@@ -1,0 +1,262 @@
+{
+ "note": "Poll-close table for election day (season.js). EVERY ENTRY IS UNVERIFIED: written from general knowledge, not checked against any state election office. A person must confirm each state before this ships. For states split across zones the LATER zone is shown (county-level times are not here). tz is an IANA zone, close is the local clock time on election day.",
+ "election_date": "2026-11-03",
+ "verified": false,
+ "states": {
+  "AK": {
+   "tz": "America/Anchorage",
+   "close": "20:00",
+   "note": "Aleutian Islands (Hawaii-Aleutian time) close at 8 pm their time, one hour later."
+  },
+  "AL": {
+   "tz": "America/Chicago",
+   "close": "19:00",
+   "note": ""
+  },
+  "AR": {
+   "tz": "America/Chicago",
+   "close": "19:30",
+   "note": ""
+  },
+  "AZ": {
+   "tz": "America/Phoenix",
+   "close": "19:00",
+   "note": "Arizona does not change clocks."
+  },
+  "CA": {
+   "tz": "America/Los_Angeles",
+   "close": "20:00",
+   "note": ""
+  },
+  "CO": {
+   "tz": "America/Denver",
+   "close": "19:00",
+   "note": ""
+  },
+  "CT": {
+   "tz": "America/New_York",
+   "close": "20:00",
+   "note": ""
+  },
+  "DC": {
+   "tz": "America/New_York",
+   "close": "20:00",
+   "note": ""
+  },
+  "DE": {
+   "tz": "America/New_York",
+   "close": "20:00",
+   "note": ""
+  },
+  "FL": {
+   "tz": "America/Chicago",
+   "close": "19:00",
+   "note": "Split zone: most of the state closes 7 pm Eastern; the western Panhandle closes 7 pm Central. Later zone shown."
+  },
+  "GA": {
+   "tz": "America/New_York",
+   "close": "19:00",
+   "note": ""
+  },
+  "HI": {
+   "tz": "Pacific/Honolulu",
+   "close": "19:00",
+   "note": ""
+  },
+  "IA": {
+   "tz": "America/Chicago",
+   "close": "21:00",
+   "note": ""
+  },
+  "ID": {
+   "tz": "America/Los_Angeles",
+   "close": "20:00",
+   "note": "Split zone: most of the state closes 8 pm Mountain; the northern Panhandle closes 8 pm Pacific. Later zone shown."
+  },
+  "IL": {
+   "tz": "America/Chicago",
+   "close": "19:00",
+   "note": ""
+  },
+  "IN": {
+   "tz": "America/Chicago",
+   "close": "18:00",
+   "note": "Split zone: most of the state closes 6 pm Eastern; northwest and southwest counties close 6 pm Central. Later zone shown."
+  },
+  "KS": {
+   "tz": "America/Denver",
+   "close": "19:00",
+   "note": "Split zone: most of the state closes 7 pm Central; a few western counties close 7 pm Mountain. Later zone shown."
+  },
+  "KY": {
+   "tz": "America/Chicago",
+   "close": "18:00",
+   "note": "Split zone: eastern part closes 6 pm Eastern; western part closes 6 pm Central. Later zone shown."
+  },
+  "LA": {
+   "tz": "America/Chicago",
+   "close": "20:00",
+   "note": ""
+  },
+  "MA": {
+   "tz": "America/New_York",
+   "close": "20:00",
+   "note": ""
+  },
+  "MD": {
+   "tz": "America/New_York",
+   "close": "20:00",
+   "note": ""
+  },
+  "ME": {
+   "tz": "America/New_York",
+   "close": "20:00",
+   "note": ""
+  },
+  "MI": {
+   "tz": "America/Chicago",
+   "close": "20:00",
+   "note": "Split zone: most of the state closes 8 pm Eastern; four Upper Peninsula counties close 8 pm Central. Later zone shown."
+  },
+  "MN": {
+   "tz": "America/Chicago",
+   "close": "20:00",
+   "note": ""
+  },
+  "MO": {
+   "tz": "America/Chicago",
+   "close": "19:00",
+   "note": ""
+  },
+  "MS": {
+   "tz": "America/Chicago",
+   "close": "19:00",
+   "note": ""
+  },
+  "MT": {
+   "tz": "America/Denver",
+   "close": "20:00",
+   "note": ""
+  },
+  "NC": {
+   "tz": "America/New_York",
+   "close": "19:30",
+   "note": ""
+  },
+  "ND": {
+   "tz": "America/Denver",
+   "close": "19:00",
+   "note": "Split zone: most of the state closes 7 pm Central; southwest closes 7 pm Mountain. Later zone shown."
+  },
+  "NE": {
+   "tz": "America/Denver",
+   "close": "20:00",
+   "note": "Split zone: eastern part closes 8 pm Central; western part closes 8 pm Mountain. Later zone shown."
+  },
+  "NH": {
+   "tz": "America/New_York",
+   "close": "19:00",
+   "note": "Some towns close later (up to 8 pm). Check your town clerk."
+  },
+  "NJ": {
+   "tz": "America/New_York",
+   "close": "20:00",
+   "note": ""
+  },
+  "NM": {
+   "tz": "America/Denver",
+   "close": "19:00",
+   "note": ""
+  },
+  "NV": {
+   "tz": "America/Los_Angeles",
+   "close": "19:00",
+   "note": ""
+  },
+  "NY": {
+   "tz": "America/New_York",
+   "close": "21:00",
+   "note": ""
+  },
+  "OH": {
+   "tz": "America/New_York",
+   "close": "19:30",
+   "note": ""
+  },
+  "OK": {
+   "tz": "America/Chicago",
+   "close": "19:00",
+   "note": ""
+  },
+  "OR": {
+   "tz": "America/Los_Angeles",
+   "close": "20:00",
+   "note": "Split zone: Malheur County (east) closes 8 pm Mountain. Pacific time shown."
+  },
+  "PA": {
+   "tz": "America/New_York",
+   "close": "20:00",
+   "note": ""
+  },
+  "RI": {
+   "tz": "America/New_York",
+   "close": "20:00",
+   "note": ""
+  },
+  "SC": {
+   "tz": "America/New_York",
+   "close": "19:00",
+   "note": ""
+  },
+  "SD": {
+   "tz": "America/Denver",
+   "close": "19:00",
+   "note": "Split zone: eastern part closes 7 pm Central; western part closes 7 pm Mountain. Later zone shown."
+  },
+  "TN": {
+   "tz": "America/Chicago",
+   "close": "19:00",
+   "note": "Split zone: eastern part closes 7 pm Eastern; the rest closes 7 pm Central. Later zone shown."
+  },
+  "TX": {
+   "tz": "America/Denver",
+   "close": "19:00",
+   "note": "Split zone: most of the state closes 7 pm Central; El Paso and Hudspeth counties close 7 pm Mountain. Later zone shown."
+  },
+  "UT": {
+   "tz": "America/Denver",
+   "close": "20:00",
+   "note": ""
+  },
+  "VA": {
+   "tz": "America/New_York",
+   "close": "19:00",
+   "note": ""
+  },
+  "VT": {
+   "tz": "America/New_York",
+   "close": "19:00",
+   "note": ""
+  },
+  "WA": {
+   "tz": "America/Los_Angeles",
+   "close": "20:00",
+   "note": ""
+  },
+  "WI": {
+   "tz": "America/Chicago",
+   "close": "20:00",
+   "note": ""
+  },
+  "WV": {
+   "tz": "America/New_York",
+   "close": "19:30",
+   "note": ""
+  },
+  "WY": {
+   "tz": "America/Denver",
+   "close": "19:00",
+   "note": ""
+  }
+ }
+}
