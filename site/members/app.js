@@ -907,7 +907,9 @@ async function homeView() {
 
   const feedBox = h('div', { class: 'home-news' });
   const inbox = homeInbox(wantsMod);
+  const seasonBox = h('div', { class: 'home-season' });
   render(
+    seasonBox,
     scoreBar(wantsMod),
     h('div', { class: 'home-head' },
       h('h1', { class: 'home-hello', text: `Welcome back, ${state.me.display_name}` }),
@@ -957,6 +959,7 @@ async function homeView() {
       state.hasRecord ? tile('findings.html', 'Findings', 'What we checked, the verdict, and every change since') : null,
       tile(LINKS.cases, 'Civics & History', 'The history cases we wrote, with every source')),
   );
+  if (window.WaySeason) { try { window.WaySeason.mount(seasonBox, { abbr: a0 || '', stateName: a0 ? US[a0][0] : '', guideHref: () => ballotCard.href }); } catch { /* the card is optional */ } }
   if (window.WayHomeFeed) { try { window.WayHomeFeed.mount(feedBox, { sb, abbr: a0 || '' }); } catch { /* Home still works without the feed */ } }
   if (a0) available(a0).then((v) => { if (v.guide) ballotCard.href = v.guide; });
 }

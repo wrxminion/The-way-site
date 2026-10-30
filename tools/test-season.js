@@ -1,0 +1,13 @@
+global.window={}; global.document={}; require('../site/members/season.js');
+const z=window.WaySeason.zoned; const iso=(ms)=>new Date(ms).toISOString();
+const chk=(a,b,m)=>{ if(a!==b){console.log('FAIL',m,a,b);process.exitCode=1} };
+chk(iso(z('2026-11-03','19:00','America/Denver')),'2026-11-04T02:00:00.000Z','CO MST');
+chk(iso(z('2026-11-03','20:00','America/New_York')),'2026-11-04T01:00:00.000Z','CT EST');
+chk(iso(z('2026-11-03','19:00','America/Phoenix')),'2026-11-04T02:00:00.000Z','AZ');
+chk(iso(z('2026-11-03','20:00','America/Los_Angeles')),'2026-11-04T04:00:00.000Z','CA PST');
+chk(iso(z('2026-11-03','20:00','America/Anchorage')),'2026-11-04T05:00:00.000Z','AK');
+chk(iso(z('2026-11-03','19:00','Pacific/Honolulu')),'2026-11-04T05:00:00.000Z','HI');
+const P=window.WaySeason.phase, s={election_day_starts_at:'2026-11-03T07:00:00Z',results_ends_at:'2026-11-24T07:00:00Z'}, close=Date.parse('2026-11-04T02:00:00Z');
+chk(P(Date.parse('2026-11-02T20:00:00Z'),s,close),'ballot','p1'); chk(P(Date.parse('2026-11-03T07:00:00Z'),s,close),'election_day','p2');
+chk(P(Date.parse('2026-11-04T02:00:00Z'),s,close),'results','p3'); chk(P(Date.parse('2026-11-25T00:00:00Z'),s,close),'accountability','p4');
+console.log('season ok');
