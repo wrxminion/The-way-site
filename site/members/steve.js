@@ -5,7 +5,8 @@
   'use strict';
   var FADE_FROM = 400, FADE_TO = 80;   // Steve is whole below 400 px and gone at 80 px (the bubble itself hides at 80)
   var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
-  var lastY = window.scrollY || 0, calm = 0, raf = 0;
+  var lastY = window.scrollY || 0, calm = 0, raf = 0, wait = 0;
+  var POP_MS = 450;   // the bubble pops first; Bubble Steve starts swimming (and the page starts moving) after this
   function reduced() { return !!(mq && mq.matches); }
   function link() { return document.querySelector('.wb-floating-return'); }
   function fade() {
@@ -24,6 +25,7 @@
   function ease(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
   function stop() {
     if (raf) { cancelAnimationFrame(raf); raf = 0; }
+    if (wait) { clearTimeout(wait); wait = 0; }
     swim(false);
     var a = link(); if (a) a.classList.remove('wb-steve-go');
     window.removeEventListener('wheel', stop); window.removeEventListener('touchstart', stop); window.removeEventListener('keydown', stop);
@@ -34,16 +36,19 @@
     var from = window.scrollY || 0; if (from < 5) return;
     ev.preventDefault();
     stop();
-    var dur = Math.min(2500, Math.max(1500, 900 + from * 0.5)), t0 = performance.now();
+    var dur = Math.min(2500, Math.max(1500, 900 + from * 0.5));
     a.classList.add('wb-steve-go'); setTimeout(function () { a.classList.remove('wb-steve-go'); }, 750);
-    swim(true);
     window.addEventListener('wheel', stop, { passive: true }); window.addEventListener('touchstart', stop, { passive: true }); window.addEventListener('keydown', stop);
-    (function step(now) {
-      var t = Math.min(1, (now - t0) / dur);
-      window.scrollTo(0, Math.round(from * (1 - ease(t))));
-      if (t < 1) raf = requestAnimationFrame(step);
-      else { raf = 0; stop(); var bar = document.getElementById('waybar'); if (bar && bar.focus) { bar.setAttribute('tabindex', '-1'); bar.focus({ preventScroll: true }); } }
-    })(t0);
+    wait = setTimeout(function () {
+      wait = 0; swim(true);
+      var t0 = performance.now();
+      (function step(now) {
+        var t = Math.min(1, (now - t0) / dur);
+        window.scrollTo(0, Math.round(from * (1 - ease(t))));
+        if (t < 1) raf = requestAnimationFrame(step);
+        else { raf = 0; stop(); var bar = document.getElementById('waybar'); if (bar && bar.focus) { bar.setAttribute('tabindex', '-1'); bar.focus({ preventScroll: true }); } }
+      })(t0);
+    }, POP_MS);
   });
   fade();
 })();
