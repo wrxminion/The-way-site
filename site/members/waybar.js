@@ -244,11 +244,21 @@
     if (can(d, 'moderator')) manage.push({ href: route('reports'), label: 'Reports', icon: 'reports', key: 'reports' });
     if (d.modlog) manage.push({ href: route('log'), label: 'Moderation log', icon: 'log', key: 'log' });
     if (can(d, 'admin')) manage.push({ href: route('admin'), label: 'Admin', icon: 'admin', key: 'admin' });
+    // "My tools" (desktop header drop-down): the buttons that used to sit in the "Your tools" box on Home, same role rules.
+    var tools = [];
+    tools.push({ href: '/members/author.html', label: 'Author desk and ranks', desc: 'Send an article or a source, and see your rank', icon: 'author', key: 'author' });
+    tools.push({ href: route('private'), label: 'Private research', desc: 'Your own notes and team files, never published', icon: 'private', key: 'private' });
+    if (can(d, 'moderator')) tools.push({ href: route('review'), label: 'Review sources', desc: 'Check each claim in a case against its sources', icon: 'review', key: 'review' });
+    if (can(d, 'researcher') || can(d, 'reviewer')) tools.push({ href: route('research'), label: 'Research desk', desc: 'Write and check findings with the member team', icon: 'research', key: 'research' });
+    if (can(d, 'admin')) tools.push({ href: route('admin'), label: 'Notify list', icon: 'admin', key: 'admin' });
+    if (can(d, 'moderator')) tools.push({ href: route('reports'), label: 'Reports', icon: 'reports', key: 'reports' });
+    if (can(d, 'moderator') && d.modlog) tools.push({ href: route('log'), label: 'Moderation log', icon: 'log', key: 'log' });
     var more = [{ heading: 'Community', items: community }, { heading: 'Explore', items: explore }];
     if (manage.length) more.push({ heading: 'Manage', items: manage });
     return {
       vote: { title: 'Vote', groups: vote, home: true },
       contribute: { title: 'Contribute', groups: [{ items: contribute }], home: true },
+      tools: { title: 'My tools', groups: [{ items: tools }], home: true },
       more: { title: 'Menu', groups: more, home: true }
     };
   }
@@ -428,8 +438,8 @@
       mid.appendChild(link('/research/', 'Research', 'research-lib', cur));
       mid.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur));
       mid.appendChild(link(route('commons'), 'Commons', 'commons', cur));
-      if (can(data, 'researcher') || can(data, 'reviewer')) mid.appendChild(link(route('research'), 'Research desk', 'research', cur));
-      if (can(data, 'moderator')) mid.appendChild(link(route('review'), 'Review sources', 'review', cur));
+      // Research desk and Review sources now live in the "My tools" drop-down with the rest of the member's tools.
+      mid.appendChild(panelButton('tools', 'My tools', 'wb-more-link wb-tools-link'));
       var moreBtn = panelButton('more', 'Menu', 'wb-more-link');
       mid.appendChild(moreBtn);
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
@@ -671,7 +681,7 @@
 
   // "What do I do here?" help panel for signed-in members, on every page that carries the bar (help-panel.js).
   if (stored() && !document.getElementById('way-help-btn') && !/\/members\/help\.html$/.test(path)) {
-    var hcss = document.createElement('link'); hcss.rel = 'stylesheet'; hcss.href = '/members/help-panel.css?v=1'; document.head.appendChild(hcss);
+    var hcss = document.createElement('link'); hcss.rel = 'stylesheet'; hcss.href = '/members/help-panel.css?v=2'; document.head.appendChild(hcss);
     var hc = document.createElement('script'); hc.src = '/members/help-content.js?v=1'; hc.onload = function () { var hs = document.createElement('script'); hs.src = '/members/help-panel.js?v=1'; document.body.appendChild(hs); }; document.body.appendChild(hc);
   }
 
@@ -698,7 +708,7 @@
   }
   // My Ballot: on voter-guide pages, load the pick/save controls (browser-only; see ballot-store.js).
   if (/^\/guide(-[a-z]{2})?\//.test(path) && !inMembers) {
-    var bcss = document.createElement('link'); bcss.rel = 'stylesheet'; bcss.href = '/members/ballot-pick.css?v=5'; document.head.appendChild(bcss);
+    var bcss = document.createElement('link'); bcss.rel = 'stylesheet'; bcss.href = '/members/ballot-pick.css?v=6'; document.head.appendChild(bcss);
     var bstore = document.createElement('script'); bstore.src = '/members/ballot-store.js?v=6';
     bstore.onload = function () { var bp = document.createElement('script'); bp.src = '/members/ballot-pick.js?v=7'; document.body.appendChild(bp); };
     document.body.appendChild(bstore);
