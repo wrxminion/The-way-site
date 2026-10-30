@@ -34,3 +34,14 @@ main h2{overflow-wrap:anywhere}
 .home-trio .review-card.home-review{height:100%;box-sizing:border-box}
 .home-trio .home-card{height:100%;box-sizing:border-box}
 @media (max-width:1000px){.home-trio{grid-template-columns:1fr}}
+/* Round 2: two cards (My ballot, clickable Map), review link in the score bar */
+.home-trio{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:1000px){.home-trio{grid-template-columns:1fr}}
+.home-map .usmap{margin:4px 0 2px}
+.home-map .usmap svg{max-height:260px}
+.home-map .usmap path{cursor:pointer}
+.home-map .usmap path:hover,.home-map .usmap path:focus-visible{fill:#2a9bb0;outline:none}
+.home-map .button{justify-self:start}
+.sb-review{min-height:36px;padding:0 16px;font-size:14px}
+.sb-review[hidden]{display:none}
+.season-sub:empty{display:none}

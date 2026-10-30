@@ -715,55 +715,6 @@ async function mapView() {
 // The Ranks page lives in ranks.html (how ranks and points work, plus the title picker).
 function rolesView() { location.replace('/members/ranks.html'); }
 
-// "Review sources" on the home page (moderators and admins). Two parts share one load: an action card near the top
-// (leads with what to do next) and a progress panel lower down (points, awards, claims waiting for a second reviewer).
-// The numbers come from 0017 (my_karma, karma_events) and 0023 (my_review_summary); until those are run the
-// card still works as a link and the figures show dashes.
-const AWARD_NAMES = { source_accepted: 'Source accepted', source_verified: 'Source verified', claim_review_agreed: 'Review confirmed',
-  correction_accepted: 'Correction accepted', revision_published: 'Revision published', thread_accepted: 'Thread accepted' };
-function reviewParts() {
-  const stat = (label, node) => h('div', { class: 'rv-stat' }, h('span', { class: 'rv-label', text: label }), node);
-  const points = h('strong', { class: 'rv-num', text: '…' }), pointsNote = h('span', { class: 'rv-note' });
-  const awards = h('div', { class: 'rv-awards' }, h('span', { class: 'rv-note', text: '…' }));
-  const waiting = h('strong', { class: 'rv-num', text: '…' }), waitingNote = h('span', { class: 'rv-note' });
-  const cta = h('span', { class: 'home-cta', text: 'Review sources' });
-  const sub = h('span', { class: 'rv-sub', text: 'Check each claim against its sources, flag problems, mark a case reviewed' });
-  const action = h('a', { class: 'review-card home-review', href: '#/review' },
-    h('img', { class: 'rv-art', src: 'art/review.svg?v=1', alt: '', width: 320, height: 180 }),
-    h('div', { class: 'rv-body' }, h('strong', { class: 'rv-title', text: 'Review sources' }), sub, cta));
-  const progress = h('div', { class: 'review-card home-progress' },
-    h('div', { class: 'rv-body' },
-      h('strong', { class: 'rv-title', text: 'Your review progress' }),
-      h('div', { class: 'rv-stats' },
-        stat('Your points', h('div', {}, points, pointsNote)),
-        stat('Awards', awards),
-        stat('Waiting for a 2nd review', h('div', {}, waiting, waitingNote)))));
-  (async () => {
-    const dash = (n, note) => { n.textContent = '–'; if (note) note.textContent = ''; };
-    try {
-      const k = (await q(sb.rpc('my_karma')))[0];
-      points.textContent = String(k.total);
-      pointsNote.textContent = ` · ${k.last_30_days >= 0 ? '+' : ''}${k.last_30_days} in 30 days`;
-    } catch { dash(points, pointsNote); }
-    try {
-      const rows = await q(sb.from('karma_events').select('kind').eq('member_id', state.me.id).order('id', { ascending: false }).limit(200));
-      const n = {}; rows.forEach((r) => { n[r.kind] = (n[r.kind] || 0) + 1; });
-      const kinds = Object.keys(n).filter((x) => AWARD_NAMES[x]).sort((a, b) => n[b] - n[a]).slice(0, 3);
-      awards.replaceChildren(...(kinds.length ? kinds.map((x) => h('span', { class: 'rv-chip', text: `${AWARD_NAMES[x]} × ${n[x]}` }))
-        : [h('span', { class: 'rv-note', text: 'None yet' })]));
-    } catch { awards.replaceChildren(h('span', { class: 'rv-note', text: '–' })); }
-    try {
-      const r = (await q(sb.rpc('my_review_summary')))[0];
-      waiting.textContent = String(r.waiting_second);
-      waitingNote.textContent = ` of ${r.reviewed} you checked${r.differ ? ` · ${r.differ} differ` : ''}`;
-      // A new reviewer is told what to do first; someone who has reviewed is told what is waiting.
-      if (!r.reviewed) { cta.textContent = 'Start your first review'; sub.textContent = 'Pick a case, check one claim against its sources, and earn your first points.'; }
-      else { cta.textContent = r.waiting_second ? `Continue reviewing (${r.waiting_second} waiting)` : 'Continue reviewing'; }
-    } catch { dash(waiting, waitingNote); }
-  })();
-  return { action, progress };
-}
-
 // One list for the home page: threads and the newest posts together, one line per thread (a thread's first post is the
 // same text as the thread, so it is shown once, with the newest post under it).
 function activityFeed(threads, posts, catById) {
@@ -787,11 +738,13 @@ function activityFeed(threads, posts, catById) {
 function scoreBar(wantsMod) {
   const points = h('strong', { class: 'sb-num', text: '…' }), recent = h('span', { class: 'sb-note' });
   const rank = h('strong', { class: 'sb-rank', text: roleLabelFor() }), next = h('span', { class: 'sb-note' });
-  const waiting = h('strong', { class: 'sb-num', text: '…' });
+  const waiting = h('span', { class: 'sb-note', text: '…' });
+  const reviewLink = h('a', { class: 'button quiet sb-review', href: '#/review', text: 'Continue reviewing', hidden: true });
   const bar = h('div', { class: 'score-bar', role: 'group', 'aria-label': 'Your score and rank' },
     h('div', { class: 'sb-cell' }, h('span', { class: 'sb-label', text: 'Your score' }), h('span', {}, points, recent)),
     h('div', { class: 'sb-cell' }, h('span', { class: 'sb-label', text: 'Rank' }), h('span', {}, rank, next)),
-    wantsMod ? h('div', { class: 'sb-cell' }, h('span', { class: 'sb-label', text: 'Waiting for a 2nd review' }), waiting) : null,
+    wantsMod ? h('div', { class: 'sb-cell' }, h('span', { class: 'sb-label', text: 'Your reviews' }), waiting) : null,
+    wantsMod ? reviewLink : null,
     h('a', { class: 'sb-link', href: '#/roles', text: 'Ranks & awards' }));
   (async () => {
     try {
@@ -799,7 +752,17 @@ function scoreBar(wantsMod) {
       points.textContent = String(k.total);
       recent.textContent = ` · ${k.last_30_days >= 0 ? '+' : ''}${k.last_30_days} in 30 days`;
     } catch { points.textContent = '–'; }
-    if (wantsMod) { try { waiting.textContent = String((await q(sb.rpc('my_review_summary')))[0].waiting_second); } catch { waiting.textContent = '–'; } }
+    // my_review_summary (0023): reviewed = claims you have judged, waiting_second = how many of those still have no second reviewer.
+    if (wantsMod) {
+      try {
+        const r = (await q(sb.rpc('my_review_summary')))[0];
+        waiting.textContent = r.reviewed
+          ? `${r.waiting_second} of your ${r.reviewed} checked ${r.reviewed === 1 ? 'claim is' : 'claims are'} waiting for a 2nd reviewer`
+          : 'none yet';
+        reviewLink.textContent = r.reviewed ? 'Continue reviewing' : 'Start your first review';
+        reviewLink.hidden = false;
+      } catch { waiting.textContent = '–'; reviewLink.hidden = false; }
+    }
     try {
       const rows = await q(sb.rpc('rank_progress'));
       const todo = rows.find((p) => !p.have_it && !p.open_request);
@@ -834,7 +797,6 @@ function homeInbox(wantsMod) {
   })();
   const line = (href, label, n) => h('li', {}, h('div', { class: 'row' }, h('a', { href, text: label }), h('span', { class: n ? 'tag warn' : 'tag', text: n ? `${n} waiting` : 'none waiting' })));
   const tasks = [];
-  if (wantsMod) tasks.push(q(sb.rpc('my_review_summary')).then((r) => line('#/review', 'Review sources (your checks waiting for a second review)', r[0].waiting_second)).catch(() => null));
   if (can('reviewer') || can('moderator')) tasks.push(q(sb.rpc('read_check_queue', { max_rows: 30 })).then((r) => line('read-checks.html', 'Read checks to sign off', r.length)).catch(() => null));
   if (can('reviewer') || can('editor')) tasks.push(q(sb.rpc('author_queue', { p_max: 50 })).then((r) => line('author.html', 'Submitted articles and sources to check', r.length)).catch(() => null));
   Promise.all(tasks).then((ls) => { const ok = ls.filter(Boolean); if (ok.length) { queues.replaceChildren(...ok); pending.hidden = false; } });
@@ -880,7 +842,6 @@ async function homeView() {
     recent = ts.filter((t) => !t.pinned_at).slice(0, 6);
   } catch { /* the feed still has the posts */ }
   const feed = activityFeed(recent, posts, catById);
-  const tile = (href, title, sub) => h('a', { class: 'tile', href }, h('strong', { text: title }), h('span', { text: sub }));
   const a0 = focusAbbr();
   const place = loadPlace();
   const ballotCard = h('a', { class: 'home-card home-ballot', href: LINKS.guide },
@@ -888,17 +849,19 @@ async function homeView() {
     h('span', { class: 'home-card-sub', text: a0 ? `${US[a0][0]}: what is on your ballot, from official sources` : 'Save your state to see what is on your ballot' }),
     h('span', { class: 'home-cta', text: a0 ? 'Open your voter guide' : 'Choose your state' }));
   if (!a0) ballotCard.href = '#/account';
-  const mapCard = h('a', { class: 'home-card home-map', href: '/states/#pick' },
+  // A small map of the whole country: click a state to open its voter guide (its state page if there is no guide yet).
+  const homeMap = usSvg({});
+  const goState = async (a) => { setPick(a); const v = await available(a); location.href = v.guide || v.page; };
+  homeMap.addEventListener('click', (ev) => { const p = ev.target.closest('path'); if (p && p.dataset.st) goState(p.dataset.st); });
+  homeMap.addEventListener('keydown', (ev) => {
+    if (ev.key !== 'Enter' && ev.key !== ' ') return;
+    const a = ev.target.dataset && ev.target.dataset.st; if (a) { ev.preventDefault(); goState(a); }
+  });
+  const mapCard = h('div', { class: 'home-card home-map' },
     h('strong', { class: 'home-card-title', text: 'Map' }),
-    h('span', { class: 'home-card-sub', text: 'Explore the voter guides and ballots of other states' }),
-    h('span', { class: 'home-cta', text: 'Open the map' }));
-  const mapTile = () => h('a', { class: 'tile us-tile', href: '#/map' }, usSvg({ small: true }),
-    h('strong', { text: 'The map' }), h('span', { text: 'Every state at a glance' }));
-  const review = wantsMod ? reviewParts() : null;
-  const authorCard = h('a', { class: 'home-card', href: 'author.html' },
-    h('strong', { class: 'home-card-title', text: 'Contribute' }),
-    h('span', { class: 'home-card-sub', text: 'Send an article or a source, and see how close you are to the next rank' }),
-    h('span', { class: 'home-cta', text: 'Open author tools' }));
+    h('span', { class: 'home-card-sub', text: 'Click a state to open its voter guide' }),
+    homeMap,
+    h('a', { class: 'button', href: '#/map', text: 'Open the map' }));
 
   const feedBox = h('div', { class: 'home-news' });
   const inbox = homeInbox(wantsMod);
@@ -910,12 +873,10 @@ async function homeView() {
         ? ['Your state: ', h('strong', { text: place.state }), ' · ', h('a', { href: '#/account', text: 'Change' })]
         : [h('a', { href: '#/account', text: 'Save your state in your account' }), ' to open the map and your ballot on it.']))),
     scoreBar(wantsMod),
-    // Three cards in a row: My ballot (the season card: voter guide link and upcoming votes), Review sources, Map.
-    // "Your tools" moved to the "My tools" drop-down in the header (waybar.js).
-    h('div', { class: 'home-trio' }, seasonBox, review ? review.action : authorCard, mapCard),
+    // Two cards side by side: My ballot (the season card: voter guide link and upcoming votes) and the clickable Map.
+    // "Your tools" is the "My tools" drop-down in the header (waybar.js); the Review link lives in the score bar.
+    h('div', { class: 'home-trio' }, seasonBox, mapCard),
     inbox,
-    h('div', { class: 'btns home-quick' },
-      h('a', { class: 'button primary', href: '#/invite', text: 'Invite someone' })),
     h('h2', { text: 'Recent in the Commons' }),
     feed.length ? h('ul', { class: 'list panel home-feed' }, feed.map((e) => h('li', {},
       h('div', { class: 'row' }, h('a', { href: `#/t/${e.id}`, text: e.title }), h('span', { class: 'meta', text: when(e.at) })),
@@ -925,21 +886,7 @@ async function homeView() {
       h('div', { class: 'btns home-reply' }, h('a', { class: 'button quiet', href: `#/t/${e.id}`, 'data-reply-thread': e.id, text: 'Reply' })))))
       : h('p', { class: 'muted', text: 'Nothing posted yet. Start the first thread in the Commons.' }),
     homeComments(),
-    h('p', {}, h('a', { class: 'button quiet', href: '#/commons', text: 'Open the Commons' })),
     feedBox,
-    h('h2', { text: 'Rooms' }),
-    h('p', { class: 'small muted', text: 'Members may talk about anything, candidates included. The Way itself never takes sides.' }),
-    h('ul', { class: 'list panel' }, cats.map((c) => h('li', {},
-      h('div', { class: 'row' }, h('h3', {}, h('a', { href: `#/c/${c.slug}`, text: c.title })), c.locked ? h('span', { class: 'tag', text: 'read only' }) : null),
-      h('div', { class: 'muted small', text: c.description })))),
-    h('h2', { text: 'Your contribution' }),
-    review ? review.progress : null,
-    h('h2', { text: 'Explore' }),
-    h('div', { class: 'tiles' },
-      mapTile(),
-      tile(LINKS.news, 'News', 'The time machine and the feed'),
-      state.hasRecord ? tile('findings.html', 'Findings', 'What we checked, the verdict, and every change since') : null,
-      tile(LINKS.cases, 'Civics & History', 'The history cases we wrote, with every source')),
   );
   if (window.WaySeason) { try { window.WaySeason.mount(seasonBox, { abbr: a0 || '', stateName: a0 ? US[a0][0] : '', guideHref: () => ballotCard.href }); } catch { /* the card is optional */ } }
   if (window.WayHomeFeed) { try { window.WayHomeFeed.mount(feedBox, { sb, abbr: a0 || '' }); } catch { /* Home still works without the feed */ } }

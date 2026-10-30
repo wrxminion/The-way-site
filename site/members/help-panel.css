@@ -1,10 +1,21 @@
-.wh-btn{position:fixed;left:12px;bottom:12px;z-index:900;font:600 14px/1 Inter,system-ui,sans-serif;color:#02202c;background:#a7f0e9;border:0;border-radius:999px;padding:12px 16px;min-height:44px;box-shadow:0 2px 10px #0008;cursor:pointer}
-.wh-panel{position:fixed;left:12px;bottom:66px;z-index:901;width:min(380px,calc(100vw - 24px));max-height:70vh;overflow:auto;box-sizing:border-box;padding:14px 16px;color:#e9ffff;background:#062137f2;border:1px solid #d4ffff55;border-radius:14px;font:15px/1.5 Inter,system-ui,sans-serif}
+.wh-stack{position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:900;display:flex;flex-direction:column;align-items:flex-start;gap:8px;max-width:calc(100vw - 24px)}
+.wh-btn{position:static;font:600 14px/1 Inter,system-ui,sans-serif;color:#02202c;background:#a7f0e9;border:0;border-radius:999px;padding:12px 16px;min-height:44px;box-shadow:0 2px 10px #0008;cursor:pointer}
+.wh-panel{position:static;z-index:901;width:min(380px,calc(100vw - 24px));max-height:70vh;overflow:auto;box-sizing:border-box;padding:14px 16px;color:#e9ffff;background:#062137f2;border:1px solid #d4ffff55;border-radius:14px;font:15px/1.5 Inter,system-ui,sans-serif}
 .wh-panel[hidden]{display:none}
 .wh-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;font-size:17px}
 .wh-x{background:none;border:0;color:#e9ffff;font-size:26px;line-height:1;min-width:44px;min-height:44px;cursor:pointer}
 .wh-q{border-top:1px solid #d4ffff26;padding:6px 0}.wh-q summary{cursor:pointer;font-weight:600;min-height:32px}
 .wh-q p{margin:6px 0}.wh-panel a,.wh-inline a{color:#a7f0e9}.wh-muted{color:#bcd7df}
 .wh-way{font-weight:700}
-/* On voter-guide pages the My Ballot pill sits at the very bottom left, so the help pill and its panel move up one pill height. */
-@media (min-width:761px){body:has(.bp-dock) .wh-btn{bottom:66px}body:has(.bp-dock) .wh-panel{bottom:120px}}
+/* pills in the stack */
+.wh-pill{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;box-sizing:border-box;font:600 14px/1 Inter,system-ui,sans-serif;color:#02202c;background:#a7f0e9;border-radius:999px;text-decoration:none;box-shadow:0 2px 10px #0008}
+.wh-pill:hover{background:#d2fff9}
+.wh-invite{display:inline-flex;align-items:center;gap:4px}
+.wh-hide{width:32px;height:32px;padding:0;font-size:20px;line-height:1;color:#e9ffff;background:#062137f2;border:1px solid #d4ffff55;border-radius:999px;cursor:pointer}
+.wh-pill:focus-visible,.wh-hide:focus-visible,.wh-btn:focus-visible{outline:3px solid #fff;outline-offset:2px}
+/* voter-guide pages: the My Ballot pill from ballot-pick.js sits at the very bottom, so this stack lifts above it and skips its own */
+body:has(.bp-dock) .wh-stack{bottom:calc(66px + env(safe-area-inset-bottom))}
+body:has(.bp-dock) .wh-mybal{display:none}
+/* phones keep just the help pill (the bottom bar and My ballot are in the menus there) */
+@media (max-width:760px){.wh-invite,.wh-mybal{display:none}}
+@media print{.wh-stack{display:none}}

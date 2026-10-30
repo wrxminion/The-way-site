@@ -31,5 +31,17 @@ const btn = h('button', { type: 'button', id: 'way-help-btn', class: 'wh-btn', '
 function open() { panel.hidden = false; btn.setAttribute('aria-expanded', 'true'); }
 function close() { panel.hidden = true; btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) close(); });
-document.body.append(btn, panel);
+// The bottom-left stack, top to bottom: Invite someone (with a hide button, remembered in this browser), this help pill, My Ballot.
+// Voter-guide pages already carry their own My Ballot pill (ballot-pick.js), so the stack skips its own there and sits above it.
+const HIDE_KEY = 'theway.invite-hidden';
+let hidden = false;
+try { hidden = localStorage.getItem(HIDE_KEY) === '1'; } catch { /* no storage: the pill just stays */ }
+const invite = hidden ? null : h('div', { class: 'wh-invite' },
+  h('a', { class: 'wh-pill', href: '/members/#/invite', text: 'Invite someone' }),
+  h('button', { type: 'button', class: 'wh-hide', 'aria-label': 'Hide the Invite pill (it stays in the Menu)', text: '×', onclick: () => {
+    try { localStorage.setItem(HIDE_KEY, '1'); } catch { /* ignore */ }
+    invite.remove();
+  } }));
+const mybal = /\/members\/my-ballot\.html$/.test(location.pathname) ? null : h('a', { class: 'wh-pill wh-mybal', href: '/members/my-ballot.html', text: 'My ballot' });
+document.body.append(h('div', { class: 'wh-stack' }, panel, invite, btn, mybal));
 })();

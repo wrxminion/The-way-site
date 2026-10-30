@@ -223,8 +223,7 @@
     contribute.push({ href: '/members/author.html', label: 'Author tools', desc: 'Send an article or a source, and see your rank', icon: 'author', key: 'author' });
     contribute.push({ href: route('private'), label: 'Private research', desc: 'Your own notes and team files, never published', icon: 'private', key: 'private' });
     var explore = [
-      { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
-      { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread', art: true },
+      { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news', dup: true },
       { href: '/results/', label: 'Election results', desc: 'Unofficial, auto-fed, updated as counts come in', icon: 'ballot', key: 'results' },
       { href: STATES + '#pick', label: 'Map', desc: 'Every state at a glance', icon: 'map', key: 'map' },
       { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
@@ -234,16 +233,16 @@
     ];
     if (d.findings) explore.push({ href: '/members/findings.html', label: 'Findings', desc: 'What members checked, with the verdict', icon: 'findings', key: 'findings' });
     var community = [
-      { href: NOTES, label: 'Notifications', desc: 'Replies and updates for you', icon: 'bell', key: 'notes' },
-      { href: route('commons'), label: 'Commons', desc: 'Threads and comments from members', icon: 'commons', key: 'commons' },
-      { href: '/members/help.html', label: 'What do I do here?', desc: 'A short guide, in plain words', icon: 'roles', key: 'help' },
-      { href: route('roles'), label: 'Ranks & awards', desc: 'Author, Deshi and Renshi, and points', icon: 'roles', key: 'roles' },
+      { href: NOTES, label: 'Notifications', desc: 'Replies and updates for you', icon: 'bell', key: 'notes', dup: true },
+      { href: route('commons'), label: 'Commons', desc: 'Threads and comments from members', icon: 'commons', key: 'commons', dup: true },
+      { href: '/members/help.html', label: 'What do I do here?', desc: 'A short guide, in plain words', icon: 'roles', key: 'help', dup: true },
+      { href: route('roles'), label: 'Ranks & awards', desc: 'Author, Deshi and Renshi, and points', icon: 'roles', key: 'roles', dup: true },
       { href: route('invite'), label: 'Invite someone', icon: 'invite', key: 'invite' }
     ];
     var manage = [];
-    if (can(d, 'moderator')) manage.push({ href: route('reports'), label: 'Reports', icon: 'reports', key: 'reports' });
-    if (d.modlog) manage.push({ href: route('log'), label: 'Moderation log', icon: 'log', key: 'log' });
-    if (can(d, 'admin')) manage.push({ href: route('admin'), label: 'Admin', icon: 'admin', key: 'admin' });
+    if (can(d, 'moderator')) manage.push({ href: route('reports'), label: 'Reports', icon: 'reports', key: 'reports', dup: true });
+    if (d.modlog) manage.push({ href: route('log'), label: 'Moderation log', icon: 'log', key: 'log', dup: true });
+    if (can(d, 'admin')) manage.push({ href: route('admin'), label: 'Admin', icon: 'admin', key: 'admin', dup: true });
     // "My tools" (desktop header drop-down): the buttons that used to sit in the "Your tools" box on Home, same role rules.
     var tools = [];
     tools.push({ href: '/members/author.html', label: 'Author desk and ranks', desc: 'Send an article or a source, and see your rank', icon: 'author', key: 'author' });
@@ -319,11 +318,15 @@
     head.appendChild(close);
     var kids = [head];
     if (spec.search) { var sf = searchForm('wb-menu-q'); sf.className += ' wb-menu-search'; kids.push(sf); }
+    // Items marked dup are already in the desktop header, My tools, the bell or a pill; they show only on a phone.
+    var wide = window.matchMedia && window.matchMedia('(min-width:761px)').matches;
     spec.groups.forEach(function (g) {
+      if (wide && g.items.every(function (it) { return it.dup; })) return;
       var sec = el('section', { class: 'wb-group' });
       if (g.heading) sec.appendChild(el('h3', null, g.heading));
       var ul = el('ul');
       g.items.forEach(function (it) {
+        if (wide && it.dup) return;
         var li = el('li');
         var a = el('a', { href: it.href, 'aria-current': it.key === cur ? 'page' : null });
         if (it.art) {
@@ -431,21 +434,14 @@
       // Desktop section links (a phone shows the bottom bar instead).
       var mid = el('nav', { class: 'wb-mid', 'aria-label': 'Sections' });
       mid.appendChild(link(data.ballot || STATES, 'Voter Guide', 'ballot', cur));
-      mid.appendChild(link('/members/my-ballot.html', 'My ballot', 'myballot', cur));
       mid.appendChild(link('/news/', 'News', 'news', cur));
-      mid.appendChild(link('/cases/', 'Civics & History', 'cases', cur));
-      mid.appendChild(link('/case-studies/', 'Case Studies', 'casestudies', cur));
-      mid.appendChild(link('/research/', 'Research', 'research-lib', cur));
-      mid.appendChild(link(THREAD, 'Pull a Thread', 'thread', cur));
       mid.appendChild(link(route('commons'), 'Commons', 'commons', cur));
       // Research desk and Review sources now live in the "My tools" drop-down with the rest of the member's tools.
       mid.appendChild(panelButton('tools', 'My tools', 'wb-more-link wb-tools-link'));
       var moreBtn = panelButton('more', 'Menu', 'wb-more-link');
       mid.appendChild(moreBtn);
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
-      var inv = link(route('invite'), 'Invite', 'invite', cur);
-      inv.className = 'wb-invite';
-      right.appendChild(inv);
+      // The Invite pill moved to the bottom-left stack (help-panel.js); it is still in the Menu under Community.
       var sb = el('button', { type: 'button', class: 'wb-search-toggle', 'aria-label': 'Search', 'aria-expanded': searchOpen ? 'true' : 'false', 'aria-controls': 'wb-q' });
       sb.appendChild(icon('search'));
       sb.addEventListener('click', function () {
@@ -469,7 +465,6 @@
       var item = function (href, label) { var li = el('li'); li.appendChild(link(href, label)); menu.appendChild(li); };
       menu.appendChild(el('li', { class: 'wb-menu-name' }, data.name));
       item(route('account'), 'Your account');
-      item(NOTES, 'Notifications');
       menu.appendChild(el('li', { class: 'wb-sep', role: 'separator' }));
       item(route('signout'), 'Sign out');
       btn.addEventListener('click', function (ev) { ev.stopPropagation(); toggleMenu(btn, menu); });
@@ -681,8 +676,8 @@
 
   // "What do I do here?" help panel for signed-in members, on every page that carries the bar (help-panel.js).
   if (stored() && !document.getElementById('way-help-btn') && !/\/members\/help\.html$/.test(path)) {
-    var hcss = document.createElement('link'); hcss.rel = 'stylesheet'; hcss.href = '/members/help-panel.css?v=2'; document.head.appendChild(hcss);
-    var hc = document.createElement('script'); hc.src = '/members/help-content.js?v=1'; hc.onload = function () { var hs = document.createElement('script'); hs.src = '/members/help-panel.js?v=1'; document.body.appendChild(hs); }; document.body.appendChild(hc);
+    var hcss = document.createElement('link'); hcss.rel = 'stylesheet'; hcss.href = '/members/help-panel.css?v=3'; document.head.appendChild(hcss);
+    var hc = document.createElement('script'); hc.src = '/members/help-content.js?v=1'; hc.onload = function () { var hs = document.createElement('script'); hs.src = '/members/help-panel.js?v=2'; document.body.appendChild(hs); }; document.body.appendChild(hc);
   }
 
   // Cloudflare Web Analytics on every public page that carries the bar (not the member area).
