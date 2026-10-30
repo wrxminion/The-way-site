@@ -162,7 +162,7 @@ async function load() {
     h('button', { type: 'button', 'aria-pressed': String(k === include), onclick: () => { include = k; load(); }, text: l })));
   app.replaceChildren(
     h('p', { class: 'overline', text: 'Reviewers' }),
-    h('h1', { text: 'Pull a Thread queue' }),
+    h('h1', { class: 'pt-queue-title' }, [h('img', { src: '/members/art/thread-pull-480.webp?v=3', width: '480', height: '153', alt: '' }), h('span', { class: 'pt-vh', text: 'Pull a Thread queue' })]),
     h('p', { class: 'lede', text: 'Ranked by our score, highest first. The top item is a suggestion: pick any item you want, and say why when you move or close one.' }),
     tabs, note,
     rows.length ? h('ul', { class: 'list panel' }, rows.map((r) => item(r))) : h('p', { class: 'muted', text: 'Nothing here right now.' }),
