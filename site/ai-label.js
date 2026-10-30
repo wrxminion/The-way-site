@@ -25,7 +25,7 @@
     try { var d = window.WayBar && window.WayBar.read && window.WayBar.read(); var r = (d && d.roles) || []; return ['admin', 'editor', 'reviewer', 'moderator'].some(function (x) { return r.indexOf(x) >= 0; }); } catch (e) { return false; }
   }
 
-  function draw(key) {
+  function build(key, picker) {
     var s = STATUS[key] || STATUS.skimmed;
     var d = el('details', 'notice ai-label notice-' + s.level);
     d.setAttribute('data-status', STATUS[key] ? key : 'skimmed');
@@ -35,15 +35,21 @@
     var body = el('div', 'notice-body'), p = el('p', null, s.more + ' ');
     var a = el('a', null, 'How we use AI and what these labels mean'); a.href = '/ai/#labels'; p.append(a, '.');
     body.append(p);
-    if (canChange()) {
+    if (picker) {
       var row = el('div', 'ai-label-pick'), sel = el('select'), go = el('a', null, 'Change status');
       sel.setAttribute('aria-label', 'Review status for this page');
       ORDER.forEach(function (k) { var o = el('option', null, STATUS[k].tag); o.value = k; if (k === d.getAttribute('data-status')) o.selected = true; sel.append(o); });
       var upd = function () { go.href = '/members/#/status/' + b64(path) + '/' + sel.value; go.setAttribute('aria-disabled', String(sel.value === d.getAttribute('data-status'))); };
-      sel.onchange = upd; upd();
+      sel.onchange = function () { upd(); if (d.onpick) d.onpick(sel.value); }; upd();
+      d.setPick = function (v) { sel.value = v; upd(); };
       row.append(el('span', null, 'Reviewer:'), sel, go); body.append(row);
     }
     d.append(sm, body);
+    return d;
+  }
+
+  function draw(key) {
+    var pick = canChange(), d = build(key, pick);
     var host = document.querySelector('.essay-body') || document.querySelector('main');
     var h1 = host && host.querySelector('h1') || document.querySelector('main h1');
     var cs = host && getComputedStyle(host);
@@ -51,10 +57,22 @@
     else if (document.querySelector('.essay-body')) host.prepend(d);
     else if (h1) { var top = h1.parentNode.tagName === 'HEADER' ? h1.parentNode : h1; top.insertAdjacentElement('afterend', d); }
     else if (host) host.prepend(d);
+    if (pick && host) addBottom(key, d, host);
+  }
+
+  // Reviewers get a second copy at the end of the page so they do not have to scroll back up. The two pickers stay in sync.
+  function addBottom(key, top, host) {
+    var bot = build(key, true);
+    bot.classList.add('ai-label-bottom');
+    bot.open = true;
+    top.onpick = function (v) { bot.setPick(v); };
+    bot.onpick = function (v) { top.setPick(v); };
+    if (/flex/.test(getComputedStyle(host).display)) host.insertAdjacentElement('afterend', bot);
+    else host.append(bot);
   }
 
   function start() {
-    ['/notice.css?v=2', '/ai-label.css?v=2'].forEach(function (h) {
+    ['/notice.css?v=2', '/ai-label.css?v=3'].forEach(function (h) {
       if (document.querySelector('link[href^="' + h.split('?')[0] + '"]')) return;
       var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = h; document.head.appendChild(l);
     });
