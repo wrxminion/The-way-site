@@ -393,3 +393,13 @@ html.wb-bubbles-off .wb-rise{display:none}
 @media (min-width:761px){.waybar:has(.wb-pill){height:64px;overflow:hidden}}
 @media (max-width:760px){.waybar:has(.wb-pill){min-height:62px}}
 
+
+/* Section links, desktop: two equal halves so the gap between the groups sits exactly under THE WAY.
+   Left group is pushed right, right group is pushed left, toward the centre gap. */
+@media (min-width:761px){
+  .waybar .wb-pub{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:28px;justify-content:stretch}
+  .waybar .wb-pub-l{justify-content:flex-end}
+  .waybar .wb-pub-r{justify-content:flex-start}
+  .waybar .wb-pub a{padding-bottom:3px}
+}
+@media (min-width:1100px){.waybar .wb-pub{column-gap:40px}}
