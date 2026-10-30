@@ -2166,19 +2166,28 @@ async function adminView() {
   const nameOf = (id) => (members.find((m) => m.id === id) || {}).display_name || (id ? 'a former member' : 'setup');
   const ALL = ['moderator', 'researcher', 'reviewer', 'editor', 'admin'];
 
+  const AT = window.TheWayAdminTools;
+  let nSec = 0;
+  const sec = (id, title, ...nodes) => AT.section(id, title, nodes, { open: nSec++ === 0 });
+  const memberBar = AT.filterBar({ placeholder: 'Filter members by name', facets: [
+    { key: 'status', label: 'Status', options: [['active', 'Active'], ['suspended', 'Suspended']] },
+    { key: 'role', label: 'Role', options: [['none', 'No role'], ...ALL.map((r) => [r, roleName(r)])] }] });
+  const inviteBar = AT.filterBar({ placeholder: 'Filter invitations by note, email or number', facets: [
+    { key: 'state', label: 'Status', options: [['open', 'Open'], ['used', 'Used'], ['expired', 'Expired'], ['revoked', 'Revoked']] }] });
+  const notifySources = [...new Set(notify.map((n) => n.source).filter(Boolean))].sort();
+  const notifyBar = AT.filterBar({ placeholder: 'Filter notify list by email', facets: [
+    { key: 'source', label: 'Source', options: notifySources.map((x) => [x, x]) }] });
   render(
     h('h1', { text: 'Admin' }), msg,
-    state.roles.has('super_admin') && STATS ? STATS.panel() : null,
-    can('admin') && LEDGER ? LEDGER.panel() : null,
-    can('admin') && CSTAT ? CSTAT.panel() : null,
-    state.roles.has('super_admin') && TODO ? h('div', { class: 'panel' }, h('h2', { text: 'Research to-do' }), h('p', { class: 'muted small', text: 'Every research list in one place, highest priority first. Super admins only.' }), h('a', { class: 'button primary', href: '#/todo', text: 'Open the research to-do' })) : null,
-    h('div', { class: 'panel' }, h('h2', { text: 'Invite someone to The Way' }),
+    state.roles.has('super_admin') && STATS ? sec('analytics', 'Site analytics and SEO', STATS.panel()) : null,
+    can('admin') && LEDGER ? sec('ledger', 'Ledger checks', LEDGER.panel()) : null,
+    can('admin') && CSTAT ? sec('review-status', 'Review status of AI-written pages', CSTAT.panel()) : null,
+    state.roles.has('super_admin') && TODO ? sec('todo', 'Research to-do', h('div', { class: 'panel' }, h('p', { class: 'muted small', text: 'Every research list in one place, highest priority first. Super admins only.' }), h('a', { class: 'button primary', href: '#/todo', text: 'Open the research to-do' }))) : null,
+    sec('invite', 'Invite someone to The Way', h('div', { class: 'panel' },
       h('p', { class: 'muted', text: 'Admins invite people the same way every member does, from the Invite page in the top bar. Every invitation shows in the list below.' }),
-      h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Go to Invite' }))),
-    h('h2', { text: 'Invitations' }),
-    h('ul', { class: 'list panel', id: 'invites' }),
-    h('h2', { text: 'Members' }),
-    h('ul', { class: 'list panel' }, members.map((m) => {
+      h('div', { class: 'btns' }, h('a', { class: 'button primary', href: '#/invite', text: 'Go to Invite' })))),
+    sec('invitations', 'Invitations', inviteBar.el, h('ul', { class: 'list panel', id: 'invites' })),
+    sec('members', 'Members', memberBar.el, h('ul', { class: 'list panel', id: 'members-list' }, members.map((m) => {
       const mine = rolesOf(m.id);
       return h('li', {},
         h('div', { class: 'row' }, h('strong', { text: m.display_name }),
@@ -2207,20 +2216,24 @@ async function adminView() {
             await q(sb.rpc('set_member_status', { member_id: m.id, new_status: next, reason }));
             await adminView();
           }, msg) }, m.status === 'active' ? 'Suspend' : 'Reinstate')));
-    })),
-    aiPanel(msg),
-    languagePanel(msg),
-    h('h2', { text: `Notify list (${notify.length})` }),
-    h('p', { class: 'muted small', text: 'People who left their email on the public page to hear when The Way launches. Only admins see this.' }),
+    }))),
+    sec('ai', 'AI fact-checker', aiPanel(msg)),
+    sec('language', 'Language filter', languagePanel(msg)),
+    sec('notify', `Notify list (${notify.length})`, h('p', { class: 'muted small', text: 'People who left their email on the public page to hear when The Way launches. Only admins see this.' }),
     notify.length ? h('div', { class: 'btns' }, h('button', { class: 'quiet', onclick: () => navigator.clipboard.writeText(notify.map((n) => n.email).join('\n')) }, 'Copy all addresses')) : null,
-    h('ul', { class: 'list panel' }, notify.length ? notify.map((n) => h('li', {},
+    notifyBar.el,
+    h('ul', { class: 'list panel', id: 'notify-list' }, notify.length ? notify.map((n) => h('li', {},
       h('div', { class: 'row' }, h('span', { text: n.email }), h('span', { class: 'meta', text: `${n.source} · ${day(n.created_at)}` })),
       h('div', { class: 'btns' }, h('button', { class: 'quiet danger', onclick: action(async () => {
         if (!confirm(`Remove ${n.email} from the notify list?`)) return;
         await q(sb.from('notify_signups').delete().eq('id', n.id));
         await adminView();
-      }, msg) }, 'Remove')))) : [h('li', { class: 'muted', text: 'Nobody yet.' })]),
+      }, msg) }, 'Remove')))) : [h('li', { class: 'muted', text: 'Nobody yet.' })])),
   );
+  const mItems = [...document.querySelectorAll("#members-list > li")];
+  memberBar.set(mItems.map((li, i) => ({ el: li, text: members[i].display_name, facets: { status: members[i].status, role: rolesOf(members[i].id).length ? rolesOf(members[i].id) : ['none'] } })));
+  const nItems = [...document.querySelectorAll('#notify-list > li')];
+  if (notify.length) notifyBar.set(nItems.map((li, i) => ({ el: li, text: notify[i].email, facets: { source: notify[i].source } })));
 
   async function refreshInvites() {
     const list = await q(sb.from('invitations').select('*').order('id', { ascending: false }).limit(100));
@@ -2236,6 +2249,8 @@ async function adminView() {
         await q(sb.rpc('revoke_invitation', { invitation_id: i.id, reason }));
         await refreshInvites();
       }, msg) }, 'Revoke')) : null)) : [h('li', { class: 'muted', text: 'No invitations yet.' })]));
+    if (list.length) inviteBar.set([...document.querySelectorAll('#invites > li')].map((li, k) => ({ el: li, text: `${list[k].note || ''} ${list[k].recipient_email || ''} #${list[k].id}`,
+      facets: { state: list[k].revoked_at ? 'revoked' : list[k].use_count >= list[k].max_uses ? 'used' : new Date(list[k].expires_at) < new Date() ? 'expired' : 'open' } })));
   }
   drawInvites(invites);
 }
