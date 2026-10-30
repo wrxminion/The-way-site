@@ -114,13 +114,15 @@ body:has(#waybar) nav.topbar{display:none}
   .waybar{gap:8px;padding:8px 16px;letter-spacing:.1em;min-height:56px}
   .waybar .wb-logo{font-size:14px;display:inline-flex;align-items:center;min-height:44px}
   /* signed in: logo | search | account, search field opens as its own row */
-  .waybar.wb-in{grid-template-columns:minmax(0,1fr) auto auto}
-  .waybar.wb-in .wb-home,.waybar.wb-in .wb-pub,.waybar.wb-in .wb-more-link,.waybar.wb-in .wb-pat-tools,.waybar.wb-in .wb-invite{display:none}
+  .waybar.wb-in{grid-template-columns:minmax(0,1fr) auto auto auto auto}
+  .waybar.wb-in .wb-home,.waybar.wb-in .wb-pub,.waybar.wb-in .wb-pat-tools,.waybar.wb-in .wb-invite{display:none}
   .waybar.wb-in .wb-logo{grid-column:1;grid-row:1;justify-self:start;font-size:14px}
   .waybar.wb-in .wb-right{display:contents}
   .waybar.wb-in .wb-search-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;opacity:1;grid-column:2;grid-row:1}
   .waybar.wb-in .wb-search-toggle[aria-expanded=true]{background:#0a3a50}
-  .waybar.wb-in .wb-who{grid-column:3;grid-row:1}
+  .waybar.wb-in .wb-bell{grid-column:3;grid-row:1}
+  .waybar.wb-in .wb-more-link{grid-column:4;grid-row:1;min-height:44px;padding:0 12px 0 10px;gap:6px;font-size:14px;font-weight:700;letter-spacing:.02em;text-transform:none}
+  .waybar.wb-in .wb-who{grid-column:5;grid-row:1}
   .waybar.wb-in .wb-search{display:none}
   .waybar.wb-in.wb-search-open .wb-search{display:flex;grid-column:1/-1;grid-row:2;width:100%}
   .waybar.wb-in .wb-name{width:44px;height:44px;padding:0;justify-content:center;border-radius:50%}
@@ -138,6 +140,11 @@ body:has(#waybar) nav.topbar{display:none}
   .waybar:not(.wb-in) .wb-search{flex:1 1 0;min-width:0}
   .waybar .wb-login,.waybar .wb-signup{min-height:44px;padding:0 12px;font-size:14px}
   .waybar .wb-auth{flex:none;gap:6px}
+}
+@media (max-width:420px){
+  /* narrow phones: the Menu button keeps its icon; the word is kept for screen readers */
+  .waybar.wb-in .wb-more-link{width:44px;padding:0;justify-content:center}
+  .waybar.wb-in .wb-more-link .wb-label{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 }
 @media (max-width:359px){
   .waybar:not(.wb-in) .wb-login,.waybar:not(.wb-in) .wb-signup{padding:0 9px;font-size:13px}
