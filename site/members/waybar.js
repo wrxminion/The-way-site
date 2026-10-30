@@ -236,6 +236,7 @@
     var community = [
       { href: NOTES, label: 'Notifications', desc: 'Replies and updates for you', icon: 'bell', key: 'notes' },
       { href: route('commons'), label: 'Commons', desc: 'Threads and comments from members', icon: 'commons', key: 'commons' },
+      { href: '/members/help.html', label: 'What do I do here?', desc: 'A short guide, in plain words', icon: 'roles', key: 'help' },
       { href: route('roles'), label: 'Ranks & awards', desc: 'Author, Deshi and Renshi, and points', icon: 'roles', key: 'roles' },
       { href: route('invite'), label: 'Invite someone', icon: 'invite', key: 'invite' }
     ];
@@ -665,6 +666,12 @@
   if (!inMembers && /^\/(guide(-[a-z]{2})?|cases)\//.test(path)) {
     var dcss = document.createElement('link'); dcss.rel = 'stylesheet'; dcss.href = '/members/discuss.css?v=1'; document.head.appendChild(dcss);
     var dl = document.createElement('script'); dl.src = '/members/discuss-link.js?v=1'; document.body.appendChild(dl);
+  }
+
+  // "What do I do here?" help panel for signed-in members, on every page that carries the bar (help-panel.js).
+  if (stored() && !document.getElementById('way-help-btn') && !/\/members\/help\.html$/.test(path)) {
+    var hcss = document.createElement('link'); hcss.rel = 'stylesheet'; hcss.href = '/members/help-panel.css?v=1'; document.head.appendChild(hcss);
+    var hc = document.createElement('script'); hc.src = '/members/help-content.js?v=1'; hc.onload = function () { var hs = document.createElement('script'); hs.src = '/members/help-panel.js?v=1'; document.body.appendChild(hs); }; document.body.appendChild(hc);
   }
 
   // Cloudflare Web Analytics on every public page that carries the bar (not the member area).

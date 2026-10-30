@@ -175,6 +175,10 @@ async function mount(root) {
         done.decision === 'declined' && done.reason ? h('p', { class: 'wd-small', text: `Reviewer note: ${done.reason}` }) : null, tally);
       return;
     }
+    if (window.WayReviewForm && user && user.id) {   // 0061 form: plain-language questions, saves answers too
+      put(readSlot, head, window.WayReviewForm.build({ sb, user, itemId: k.id, title, onDone: () => readCheck() }), tally);
+      return;
+    }
     const note = h('textarea', { maxlength: 1000, placeholder: 'What was interesting to you? A sentence or two in your own words.', 'aria-label': 'What was interesting' });
     const file = h('input', { type: 'file', accept: 'image/png,image/jpeg,image/webp', 'aria-label': 'Screenshot (optional)' });
     const m = h('div'); const go = h('button', { type: 'button', text: 'Record that I read it' });
