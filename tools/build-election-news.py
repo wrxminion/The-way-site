@@ -7,6 +7,8 @@ duplicates removed, headline/source/date/link only. Run it after the news cycle 
 Usage: python3 tools/build-election-news.py [site/news/data]
 """
 import json, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import news_links
 
 D = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), '..', 'site', 'news', 'data')
 ELECTION = re.compile(r"\b(elections?|ballots?|voters?|voting|votes?|candidates?|primary|primaries|runoff|polls?|polling|campaigns?|midterms?|amendment|proposition|referendum|congressional|secretary of state|redistricting)\b", re.I)
@@ -23,7 +25,7 @@ CELEB = re.compile(r"\b(celebrity|celebrities|hollywood|red carpet|kardashian|bo
 # archive (the day files) and is left out of the box. A keyword check cannot read the research, so a person still checks.
 HEALTH = re.compile(r"\b(vaccines?|vaccinations?|vaccinated|anti-vax|raw milk|crystals?|crystal healing|homeopath\w*|detox\w*|essential oils?|ivermectin|miracle cure|cure for cancer|alternative medicine|holistic|natural remedy|natural remedies|supplements?|chiropract\w*|autism|fluoride|5g)\b", re.I)
 EVIDENCE = re.compile(r"\b(study|studies|researchers?|journal|published|peer[- ]reviewed|clinical trial|trial|meta-analysis|cdc|fda|nih|who|lancet|nejm|jama|science|scientists?|health officials?|department of health)\b", re.I)
-KEEP = ('title', 'url', 'source', 'published_at', 'first_seen_at', 'states', 'measures', 'image')
+KEEP = ('id', 'title', 'url', 'source', 'published_at', 'first_seen_at', 'states', 'measures', 'image')
 
 def norm(t):
     t = re.sub(r"\s+[-|–—]\s+[^-|–—]{2,40}$", '', t.lower())
@@ -38,6 +40,7 @@ def allowed():
         return set()
 
 ALLOW = allowed()
+CACHE = news_links.load_cache(D)
 
 def excluded(i):
     if i.get('url') in ALLOW:
@@ -60,7 +63,11 @@ def pick(items, n, extra=None):
         if k in seen:
             continue
         seen.add(k)
-        out.append({f: i[f] for f in KEEP if f in i})
+        row = {f: i[f] for f in KEEP if f in i}
+        # Trackers are stripped from every link. A Google News redirect link is swapped for the publisher's own address when
+        # resolve-news-links.py has found it; until then it stays as it was and the members feed leaves the story out.
+        row['url'] = news_links.direct_url(row.get('url', ''), CACHE) or row.get('url', '')
+        out.append(row)
         if len(out) >= n:
             break
     return out

@@ -174,6 +174,11 @@ body:has(#waybar) nav.topbar{display:none}
 .wb-close{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:.4rem;min-height:2.75rem;padding:0 .9rem 0 .7rem;border:1px solid #c7ffff66;border-radius:100px;cursor:pointer;color:#e9ffff;font:700 .9rem/1 Inter,system-ui,sans-serif}
 .wb-close .wb-ico{width:20px;height:20px}
 .wb-close:hover{background:#0c3d55}
+.wb-panel-foot{position:sticky;bottom:0;margin:0 -1rem calc(-1.25rem - env(safe-area-inset-bottom));padding:.6rem 1rem calc(.75rem + env(safe-area-inset-bottom));background:#06283a;border-top:1px solid #c7ffff33;z-index:1}
+.wb-home{display:flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.25rem;border-radius:100px;background:#a7f0e9;color:#052b3c;font:800 1.05rem/1 Inter,system-ui,sans-serif;text-decoration:none}
+.wb-home .wb-ico{width:22px;height:22px;stroke:currentColor}
+.wb-home:hover{background:#d2fff9}
+.wb-home:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .wb-group{margin:.5rem 0 1rem}
 .wb-group h3{margin:0 0 .35rem;padding:0 .25rem;font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#a7f0e9}
 .wb-group ul{list-style:none;margin:0;padding:0}
