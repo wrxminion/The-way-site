@@ -13,3 +13,7 @@
 .enews-note{font-size:13px;line-height:1.5;color:#bcd7df;margin:12px 0 0}
 .enews-note a{color:#a7f0e9}
 .enews-item.has-thumb{display:flex;gap:12px;align-items:flex-start}.enews-text{min-width:0;flex:1}.enews-thumb{flex:none;width:96px;height:64px;object-fit:cover;border-radius:8px;background:#06202d}
+.enews .news-headline{display:block;margin:0 0 22px;border-radius:6px;box-shadow:0 10px 28px #0007;transition:transform .2s,box-shadow .2s}
+.enews .news-headline img{display:block;width:100%;height:auto;border-radius:6px}
+.enews .news-headline:hover,.enews .news-headline:focus-visible{transform:translateY(-2px);box-shadow:0 14px 32px #000a}
+.enews .news-headline:focus-visible{outline:3px solid #a7f0e9;outline-offset:3px}
