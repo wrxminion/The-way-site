@@ -1,0 +1,50 @@
+/* THE LOOK of the bubble menus. Everything that can change when the artwork changes is in this one file:
+   the glass shell, label type, icon colour and motion, badges, and the pop-up and list panels.
+   Structure and placement are in bubbles.css; icons are in bubbles.js (ICON). Swap this file and the glass picture to restyle. */
+.way-bubble{width:var(--wb-bubble-size);height:var(--wb-bubble-size);position:relative;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;box-sizing:border-box;border:0;padding:0;background:transparent url('/members/art/bubble-glass.svg') center/contain no-repeat;color:#ecffff;text-decoration:none;font:600 13px/1.1 system-ui,Arial,sans-serif;cursor:pointer;flex-shrink:0}
+.way-bubble svg{width:calc(var(--wb-bubble-size) * .31);height:calc(var(--wb-bubble-size) * .31);color:#b3f4e8;overflow:visible}
+.way-bubble:hover{filter:brightness(1.12)}
+.way-bubble:focus-visible{outline:3px solid #a7f0e9;outline-offset:3px;border-radius:50%}
+.way-bubble[aria-current="page"]{filter:drop-shadow(0 0 8px #a7f0e9cc)}
+.way-bubble[aria-expanded="true"]{filter:brightness(1.12)}
+@media (max-height:640px){.way-bubble{font-size:11px}}
+/* icon motion: once, short, only on hover or keyboard focus */
+.way-bubble .gear{transform-origin:24px 25px}
+.way-bubble:is(:hover,:focus-visible) .gear{animation:gear-turn 280ms ease-out both}
+.way-bubble[aria-expanded="true"][data-icon="tools"]{animation:tools-pop 280ms ease-out}
+.way-bubble:is(:hover,:focus-visible) .roof{stroke-dasharray:44;animation:trace 260ms ease-out}
+.way-bubble:is(:hover,:focus-visible) .lines{animation:lines-in 260ms ease-out}
+.way-bubble:is(:hover,:focus-visible) .ballot{animation:vote-drop 280ms ease-out}
+.way-bubble:is(:hover,:focus-visible) .check{stroke-dasharray:25;animation:check-in 260ms ease-out}
+.way-bubble:is(:hover,:focus-visible) .reply{animation:reply-rise 260ms ease-out}
+.way-bubble:is(:hover,:focus-visible) .ring{transform-origin:center;animation:ring-in 280ms ease-out}
+.way-bubble[aria-expanded="true"] .fan{transform-origin:center;animation:fan-in 280ms ease-out}
+@keyframes gear-turn{from{transform:rotate(-22deg)}to{transform:rotate(0)}}
+@keyframes tools-pop{0%{scale:1}50%{scale:1.04;filter:brightness(1.2)}100%{scale:1}}
+@keyframes trace{from{stroke-dashoffset:44;opacity:.4}to{stroke-dashoffset:0;opacity:1}}
+@keyframes check-in{from{stroke-dashoffset:25;opacity:.4}to{stroke-dashoffset:0;opacity:1}}
+@keyframes lines-in{from{opacity:.25;transform:translateY(2px)}to{opacity:1;transform:translateY(0)}}
+@keyframes vote-drop{from{transform:translateY(-3px)}to{transform:translateY(0)}}
+@keyframes reply-rise{from{opacity:.3;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ring-in{from{opacity:.4;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@keyframes fan-in{from{transform:scale(.9)}to{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.way-bubble,.way-bubble *{animation:none!important;transition:none!important}}
+/* collapsed phone bubbles */
+@media (max-width:760px){
+  .way-bubble{font-size:12px}
+  .way-bubble[data-icon="my-side"],.way-bubble[data-icon="explore"]{width:64px;height:64px;font-size:10px;gap:2px}
+  .way-bubble[data-icon="my-side"] svg,.way-bubble[data-icon="explore"] svg{width:22px;height:22px}
+}
+/* count badges (Notifications). Zero counts stay hidden. */
+.wb-bell-badge{min-width:23px;min-height:23px;padding:3px;box-sizing:border-box;display:grid;place-items:center;border-radius:99px;background:#a7f0e9;color:#052b3c;font:700 12px system-ui,sans-serif}
+.wb-bell-badge[hidden]{display:none}
+/* pop-up (desktop) and list (phone) panels */
+.wb-pop,.wb-fan{background:#062137f5;border:1px solid #a7f0e980;border-radius:16px;box-shadow:0 8px 28px #000a;color:#ecffff;font:600 16px/1.3 system-ui,sans-serif}
+.wb-pop-list a,.wb-fan-row{color:#ecffff}
+.wb-pop-list a:hover,.wb-fan-row:hover{background:#0a4258}
+.wb-pop-list a:focus-visible,.wb-fan-row:focus-visible,.wb-small:focus-visible{outline:3px solid #a7f0e9;outline-offset:-3px}
+.wb-pop-list a[aria-current="page"],.wb-fan-row[aria-current="page"]{background:#0a4258;box-shadow:inset 3px 0 0 #a7f0e9}
+.wb-pop-h{color:#a7f0e9}
+.wb-fan-row svg{color:#b3f4e8}
+.wb-small{background:#062137f5;border:2px solid #a7f0e9cc;color:#ecffff}
+@media (forced-colors:active){.way-bubble{background:Canvas;border:2px solid CanvasText}.wb-pop,.wb-fan{background:Canvas;border:2px solid CanvasText}}

@@ -2396,6 +2396,28 @@ function skillsPanel() {
   return box;
 }
 
+// Bubble settings on the account page: hide a bubble you do not use. Its links move to a small "Hidden links" list on the same side.
+// Nothing is removed from the site; Restore defaults brings every bubble back. Saved in this browser only.
+function bubblePanel() {
+  const KEY = 'theway.bubbles-hide';
+  const ALL = [['home', 'Home (right)'], ['news', 'News (right)'], ['tools', 'Tools (right)'], ['vote', 'VOTE! (left)'], ['review', 'Review (left)'], ['commons', 'Commons (left)'], ['help', 'Help (left)']];
+  let hid = [];
+  try { hid = JSON.parse(localStorage.getItem(KEY) || '[]'); if (!Array.isArray(hid)) hid = []; } catch { hid = []; }
+  const msg = h('div');
+  const boxes = ALL.map(([k, label]) => [k, h('input', { type: 'checkbox', checked: !hid.includes(k) }), label]);
+  const apply = () => { if (window.WayBar && window.WayBar.render) window.WayBar.render(); };
+  const save = (list) => { try { list.length ? localStorage.setItem(KEY, JSON.stringify(list)) : localStorage.removeItem(KEY); } catch { /* no storage */ } apply(); };
+  return h('div', { class: 'panel' },
+    h('h2', { text: 'Bubble settings' }),
+    h('p', { class: 'small muted', text: 'The round buttons at the edges of the page. Untick one to hide it. Its links move to a small "Hidden links" list on the same side, so nothing is lost. Saved in this browser.' }),
+    msg,
+    h('form', { onsubmit: (e) => { e.preventDefault(); save(boxes.filter(([, b]) => !b.checked).map(([k]) => k)); msg.replaceChildren(notice('Saved.', 'ok')); } },
+      ...boxes.map(([, b, label]) => h('label', { class: 'small' }, b, ` ${label}`)),
+      h('div', { class: 'btns' },
+        h('button', { class: 'primary', type: 'submit' }, 'Save'),
+        h('button', { class: 'quiet', type: 'button', onclick: () => { boxes.forEach(([, b]) => { b.checked = true; }); save([]); msg.replaceChildren(notice('Every bubble is back.', 'ok')); } }, 'Restore defaults'))));
+}
+
 function accountView() {
   render(
     h('p', { class: 'overline', text: 'Your account' }),
@@ -2408,6 +2430,7 @@ function accountView() {
     placePanel(),
     teacherPanel(),
     skillsPanel(),
+    bubblePanel(),
     roleCodePanel(),
     h('div', { class: 'panel' },
       h('h2', { text: 'Signing in' }),

@@ -4,9 +4,11 @@
 //          <script src="/members/waybar.js?v=42" defer></script>.
 // Desktop, signed in or out: the same header. Voter Guide, News, Civics & History | THE WAY | Government, Election Studies, Research,
 //   then Pull a thread, search and the account (Log in and Sign up, or a small Menu button, the bell and your name).
-// Signed in, phone: a compact header (logo, search, account) and a bottom bar with Vote, Commons, Contribute, Menu.
+// Signed in, phone: a compact header (logo, search, account). The bottom bar is gone: the two bubble menus replace it.
 // Signed out phone: a Menu panel holds the sections, search, "Log in" and "Sign up".
-// Vote, Contribute, Menu and the signed-out Menu all open the SAME side panel (from the right, next to its trigger).
+// The two bubble menus (right: Home, News, Pull a thread, Tools; left: VOTE!, Review, Commons, Help; on a phone Explore and
+// My side) are drawn by bubbles.js, which this file loads and feeds (see WayBubbles.render below).
+// The header Menu button and the signed-out Menu open the side panel (from the right, next to its trigger).
 // The member area writes what the bar needs to localStorage ("theway.bar": display name, roles, which tabs exist,
 // your ballot link). That is only for drawing links; every page and the database still check the real sign-in themselves.
 (function () {
@@ -149,6 +151,9 @@
     if (/^\/results/.test(path)) return 'results';
     if (/^\/news/.test(path)) return 'news';
     if (/^\/(foundation|founder|deeper)/.test(path)) return 'about';
+    if (/^\/vote\//.test(path)) return 'vote';
+    if (/^\/members\/help/.test(path)) return 'help';
+    if (/^\/members\/notifications/.test(path)) return 'notes';
     if (/^\/members\/my-ballot/.test(path)) return 'myballot';
     if (/^\/members\/author/.test(path)) return 'author';
     if (/^\/members\/findings/.test(path)) return 'findings';
@@ -481,7 +486,6 @@
       btn.addEventListener('click', function (ev) { ev.stopPropagation(); toggleMenu(btn, menu); });
       who.appendChild(btn); who.appendChild(menu); right.appendChild(who);
       kids.push(mid, right); // no Home pill: the name at the top is the Home link
-      renderBottom(cur);
     } else if (!pending) {
       panels = { menu: publicPanel() };
       var pub = sectionNav(cur, STATES);
@@ -495,35 +499,26 @@
       tools.appendChild(auth);
       kids.push(pub, menuBtn, tools);
     }
-    if (!data) renderBottom(cur);
     bar.replaceChildren.apply(bar, kids);
-    document.documentElement.classList.toggle('wb-has-bottom', !!data);
+    if (bottom) { bottom.remove(); bottom = null; }
     signedOutNow = !data && !pending;
     syncFloating();
+    syncBubbles();
     syncWave();
     if (wasOpen && panels[wasOpen]) {
       var again = document.querySelector('[data-wb-panel="' + wasOpen + '"]');
       openPanel(wasOpen, again);
     }
   }
-  // Phone bottom bar for members: Vote, Commons, Contribute, More. No Home item (the logo is Home).
-  function renderBottom(cur) {
-    if (!data) { if (bottom) { bottom.remove(); bottom = null; } return; }
-    if (!bottom) {
-      bottom = el('nav', { class: 'wb-bottom', 'aria-label': 'Main' });
-      document.body.appendChild(bottom);
-    }
-    var active = groupOf(cur);
-    var tab = function (kind, label, iconName) {
-      var b = panelButton(kind, label, 'wb-tab', iconName);
-      if (active === kind) b.setAttribute('aria-current', 'page');
-      return b;
-    };
-    var commons = link(route('commons'), 'Commons', 'commons', cur);
-    commons.className = 'wb-tab';
-    commons.textContent = '';
-    commons.appendChild(icon('commons')); commons.appendChild(el('span', { class: 'wb-label' }, 'Commons'));
-    bottom.replaceChildren(tab('vote', 'Vote', 'vote'), commons, tab('contribute', 'Contribute', 'contribute'), tab('more', 'Menu', 'more'));
+  // Hand the bubble menus what they need; they draw both sides (Home, News, Tools; VOTE!, Review, Commons, Help).
+  function syncBubbles() {
+    if (!window.WayBubbles) return;
+    window.WayBubbles.render({ data: data, pending: pending, cur: here(), route: route, thread: THREAD, can: can, refreshUnread: refreshUnread });
+  }
+  function loadBubbles() {
+    if (window.WayBubbles || document.querySelector('script[src^="/members/bubbles.js"]')) return;
+    ['bubbles.css?v=1', 'bubbles-look.css?v=1'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=1'; sc.onload = syncBubbles; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -575,15 +570,8 @@
     var onThread = /^\/members\/(pull-a-thread|thread-queue|notifications)/.test(path);
     document.documentElement.classList.toggle('wb-signed-out', signedOutNow);
     if (!dock) { dock = el('nav', { class: 'wb-dock', 'aria-label': 'Quick links' }); document.body.appendChild(dock); }
-    var auth = dock.querySelector('.wb-dock-auth');
-    if (signedOutNow && !auth) {
-      auth = el('span', { class: 'wb-dock-auth wb-bubble' });
-      auth.appendChild(bubbleArt('login', 120, 120));
-      auth.appendChild(el('a', { href: '/members/', class: 'wb-dock-login' }, 'Log in'));
-      auth.appendChild(el('span', { 'aria-hidden': 'true' }, '/'));
-      auth.appendChild(el('a', { href: route('signup'), class: 'wb-dock-signup' }, 'Sign up'));
-      dock.insertBefore(auth, dock.firstChild);
-    } else if (!signedOutNow && auth) auth.remove();
+    // Log in / Sign up now lives with the left bubbles (bubbles.js)
+    var oldAuth = dock.querySelector('.wb-dock-auth'); if (oldAuth) oldAuth.remove();
     if (onThread) { if (fab) fab.remove(); return; }
     if (fab) return;
     fab = el('a', { class: 'wb-thread-fab', href: THREAD });
@@ -675,11 +663,7 @@
     var dl = document.createElement('script'); dl.src = '/members/discuss-link.js?v=1'; document.body.appendChild(dl);
   }
 
-  // "What do I do here?" help panel for signed-in members, on every page that carries the bar (help-panel.js).
-  if (stored() && !document.getElementById('way-help-btn') && !/\/members\/help\.html$/.test(path)) {
-    var hcss = document.createElement('link'); hcss.rel = 'stylesheet'; hcss.href = '/members/help-panel.css?v=3'; document.head.appendChild(hcss);
-    var hc = document.createElement('script'); hc.src = '/members/help-content.js?v=2'; hc.onload = function () { var hs = document.createElement('script'); hs.src = '/members/help-panel.js?v=2'; document.body.appendChild(hs); }; document.body.appendChild(hc);
-  }
+  // Help is now a bubble on the left (bubbles.js); the old floating "What do I do here?" button and the Invite and My ballot pills are gone.
 
   // Cloudflare Web Analytics on every public page that carries the bar (not the member area).
   if (!inMembers && !document.querySelector('script[data-cf-beacon]')) {
@@ -706,11 +690,11 @@
   if (/^\/guide(-[a-z]{2})?\//.test(path) && !inMembers) {
     var bcss = document.createElement('link'); bcss.rel = 'stylesheet'; bcss.href = '/members/ballot-pick.css?v=6'; document.head.appendChild(bcss);
     var bstore = document.createElement('script'); bstore.src = '/members/ballot-store.js?v=6';
-    bstore.onload = function () { var bp = document.createElement('script'); bp.src = '/members/ballot-pick.js?v=7'; document.body.appendChild(bp); };
+    bstore.onload = function () { var bp = document.createElement('script'); bp.src = '/members/ballot-pick.js?v=8'; document.body.appendChild(bp); };
     document.body.appendChild(bstore);
   }
   var start = function () {
-    addOriginalOcean(); render(stored());
+    addOriginalOcean(); loadBubbles(); render(stored());
     // One document-anchored whale on each page, sharing the cached asset.
     if (!document.querySelector('link[href^="/whale.css"]')) {
       var whaleCss = document.createElement('link');
