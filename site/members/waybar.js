@@ -1,5 +1,5 @@
 // The Way: one top bar for every page (member area, Findings, guides, maps, case pages, splash).
-// Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=18"> in <head>,
+// Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=19"> in <head>,
 //          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
 //          <script src="/members/waybar.js?v=34" defer></script>.
 // Signed in, desktop: logo centered · section links, a "Menu" button and Invite · search · your name (account menu).
