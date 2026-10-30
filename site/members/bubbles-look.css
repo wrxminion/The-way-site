@@ -17,7 +17,7 @@
 @keyframes waves-flow-open{0%,100%{transform:translateX(0)}30%{transform:translateX(4px)}70%{transform:translateX(-4px)}}
 @keyframes path-trace{0%{stroke-dashoffset:65;opacity:.25}100%{stroke-dashoffset:0;opacity:1}}
 @keyframes path-trace-open{0%{stroke-dashoffset:65;opacity:.25}100%{stroke-dashoffset:0;opacity:1}}
-@keyframes gear-turn{0%{transform:rotate(0)}25%{transform:rotate(-25deg)}75%{transform:rotate(105deg)}100%{transform:rotate(90deg)}}
+@keyframes gear-turn{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-4px) rotate(-8deg)}65%{transform:translateY(2px) rotate(6deg)}}
 @keyframes shell-burst{0%{transform:scale(1);opacity:1}25%{transform:scale(.55);opacity:1}60%{transform:scale(.82);opacity:.85}100%{transform:scale(1);opacity:0}}
 @keyframes droplets-out{0%,30%{transform:scale(.5);opacity:0}45%{opacity:1}100%{transform:scale(1);opacity:0}}
 @keyframes ballot-drop{0%,100%{transform:translateY(0)}25%{transform:translateY(-8px)}65%{transform:translateY(4px)}}
