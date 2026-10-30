@@ -518,7 +518,7 @@
   }
   function loadBubbles() {
     if (window.WayBubbles || document.querySelector('script[src^="/members/bubbles.js"]')) return;
-    ['bubbles.css?v=3', 'bubbles-look.css?v=3'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
+    ['bubbles.css?v=3', 'bubbles-look.css?v=4'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
     var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=3'; sc.onload = syncBubbles; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
@@ -568,7 +568,7 @@
   function syncDock() {
     var dock = document.querySelector('.wb-dock');
     var fab = document.querySelector('.wb-thread-fab');
-    var onThread = /^\/members\/(pull-a-thread|thread-queue|notifications)/.test(path);
+    var onThread = /^\/members\/(pull-a-thread|thread-queue)/.test(path);
     document.documentElement.classList.toggle('wb-signed-out', signedOutNow);
     if (!dock) { dock = el('nav', { class: 'wb-dock', 'aria-label': 'Quick links' }); document.body.appendChild(dock); }
     // Log in / Sign up now lives with the left bubbles (bubbles.js)
