@@ -1,0 +1,14 @@
+.enews{position:relative;z-index:3;max-width:820px;margin:0 auto;padding:10px clamp(20px,5vw,60px) 90px}
+.enews h2{font:normal clamp(30px,3.6vw,46px)/1.1 Georgia,serif;letter-spacing:-.04em;margin:14px 0 12px}
+.enews .enews-lead{font-size:16px;line-height:1.6;color:#d1e5e8;margin:0 0 18px}
+.enews label{display:block;font-size:14px;color:#bcd7df;margin:0 0 6px}
+.enews select{width:100%;max-width:320px;padding:11px 12px;font:inherit;font-size:16px;color:#e9ffff;background:#06202d;border:1px solid #a7f0e966;border-radius:10px}
+.enews-list{list-style:none;margin:16px 0 0;padding:0;max-height:370px;overflow-y:auto;overscroll-behavior:contain;border:1px solid #a7f0e94d;border-radius:14px;background:#04141d99}
+.enews-item{box-sizing:border-box;min-height:74px;padding:12px 16px;border-bottom:1px solid #a7f0e922}
+.enews-item:last-child{border-bottom:0}
+.enews-title{color:#e9ffff;font-size:16px;line-height:1.4;text-decoration:none}
+.enews-title:hover,.enews-title:focus{text-decoration:underline}
+.enews-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px;font-size:13px;color:#bcd7df}
+.enews-empty{padding:18px 16px;color:#d1e5e8}
+.enews-note{font-size:13px;line-height:1.5;color:#bcd7df;margin:12px 0 0}
+.enews-note a{color:#a7f0e9}
