@@ -390,7 +390,7 @@ function progressPanel(receipt, dynamic, stage) {
     if (p.kind === 'screenshot') {
       if (localShot) kids.push(h('img', { class: 'pt-thumb', src: localShot.url, alt: 'Your screenshot (a preview from your own browser)' }));
       kids.push(h('p', { class: 'pt-help', text: p.image_gone ? 'Your picture is already deleted from our computers. Only the text is kept.'
-        : p.image_mode === 'review' ? 'We keep the picture up to 3 days so a reviewer can open it only if truly needed.' + (localShot ? ' The preview above stays in this browser tab only.' : '')
+        : p.image_mode === 'review' ? 'The picture is not kept and nobody sees it. Only the text is kept.' + (localShot ? ' The preview above stays in this browser tab only.' : '')
         : 'We delete the picture as soon as the text is read.' + (localShot ? ' The preview above stays in this browser tab only.' : '') }));
     }
     if (p.url) kids.push(h('p', { class: 'pt-sent-link', text: p.url }), h('p', { class: 'pt-help', text: 'Shown as plain text. Our website never opens your link.' }));
@@ -504,7 +504,7 @@ async function send(form, summary) {
   else if (kind === 'question') fd.append('question', q);
   else if (kind === 'screenshot') fd.append('shot', shotFile);
   fd.append('kind', kind);
-  if (kind === 'screenshot') fd.append('image_mode', form.elements.text_only && !form.elements.text_only.checked ? 'review' : 'text_only');
+  if (kind === 'screenshot') fd.append('image_mode', 'text_only');
   if (kind !== 'url' && form.elements.hide_names && form.elements.hide_names.checked) fd.append('hide_names', '1');
   fd.append('note', form.elements.note ? form.elements.note.value.trim() : '');
   const headers = {};
@@ -569,10 +569,8 @@ function view() {
   if (mode === 'screenshot') {
     checks.push(h('div', { class: 'pt-notice' },
       h('p', {}, h('strong', { text: 'Your screenshot is private. ' }), 'It is read only by our own AI program, running on our own computer. No outside AI service is used. The program does not learn from or train on what you send: its models are fixed and nothing is retrained.'),
-      h('p', { text: 'No person sees your picture unless your request goes to review and the picture is absolutely needed. Then a reviewer must give a reason, and it is logged.' }),
-      h('p', { text: 'Pictures are stored with our database provider only until they are read and deleted. You check the text before anything goes to reviewers. If you do not send it within about an hour, we delete the picture and the text.' })));
-    checks.push(h('label', { class: 'pt-check-row' }, h('input', { type: 'checkbox', name: 'text_only', checked: true }),
-      h('span', {}, h('strong', { text: 'Send only the text. ' }), 'We read the text, then delete the picture right away. A reviewer never sees it.')));
+      h('p', { text: 'Your picture waits in private storage with our database provider only until our program has read it, then it is deleted. You check the text before anything goes to reviewers. If you do not send it within about an hour, we delete the picture and the text.' })));
+    checks.push(h('p', { class: 'pt-help', text: 'We read the text, then delete the picture right away. It is not kept, and nobody sees it. You check and correct the text before anything is sent.' }));
   } else if (mode === 'question' || mode === 'text') {
     checks.push(h('p', { class: 'pt-help', text: 'Our AI runs on our own computer. No outside AI service is used, and it does not learn from or train on what you send. Your first answer comes from everything public on our site, all our data points. After you send, our program also looks for outside sources on the web: only a short search phrase about the subject is used, never your name, email, picture or full text. Those leads stay marked as not checked until a person verifies them.' }));
   }
@@ -584,18 +582,18 @@ function view() {
   const trap = h('div', { class: 'pt-hp', 'aria-hidden': 'true' }, h('input', { name: 'website', tabindex: '-1', autocomplete: 'off' }));
   const ts = h('div', { class: 'pt-ts' });
   const BA = '/members/art/', still = BA + 'thread-slack-480.webp?v=2', pulled = BA + 'thread-pull-480.webp?v=3';
-  const goImg = h('img', { src: still, alt: '', width: '480', height: '153', class: 'pt-go-art', 'aria-hidden': 'true' });
-  const go = h('button', { type: 'submit', class: 'pt-go' }, goImg, h('span', { class: 'pt-go-text', text: 'Submit' }));   // real text under the picture is the button's name
+  const goImg = h('img', { src: still, alt: 'Pull a thread', width: '480', height: '153', class: 'pt-title-art' });   // the heading: the words drawn as the thread, the hand pulling it
+  const go = h('button', { type: 'submit', class: 'pt-go' }, h('span', { class: 'pt-go-text', text: 'Submit' }));   // the text is the button's name
   // Warm the browser cache for the pull animation once the page is idle, so pressing Submit never waits on it (and a cache buster is no longer needed).
   (window.requestIdleCallback || ((f) => setTimeout(f, 1500)))(() => { new Image().src = pulled; });
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
   go.addEventListener('click', () => { if (reduce && reduce.matches) { goImg.src = BA + 'thread-taut-480.webp?v=2'; return; } goImg.src = pulled + '#' + Date.now(); });   // plays once per press; still for reduced motion
-  form.append(modes, summary, framed, note, ...checks, trap, ts, h('div', { class: 'pt-gorow' }, go, session ? '' : h('span', { class: 'muted', text: 'No account needed' })),
+  form.append(modes, summary, framed, note, ...checks, trap, ts, h('div', { class: 'pt-gorow' }, go, session ? '' : h('span', { class: 'pt-noacct', text: 'No account needed' })),
     h('p', { class: 'pt-privacy', text: 'Reviewers see what you send, never who you are. Your screenshot and email stay private. Questions and evidence can become public after review, reworded without names or private details. Email addresses stay private.' }));
   form.addEventListener('submit', (ev) => { ev.preventDefault(); send(form, summary); });
   app.replaceChildren(...[
     h('p', { class: 'overline', text: 'FOLLOW THE EVIDENCE' }),
-    h('h1', { text: 'Pull a thread' }),
+    h('h1', { class: 'pt-title' }, goImg),
     h('p', { class: 'lede', text: 'Bring a question. See what the evidence says.' }),
     signInNote ? h('p', { class: 'pt-signin-note', role: 'status' }, signInNote + ' ', h('a', { href: '/members/', text: 'Sign in' })) : null,
     form, live, results, otherPanels()].filter(Boolean));

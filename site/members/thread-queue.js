@@ -91,7 +91,7 @@ function leadsBox(r) {
 
 // The picture is hidden by default. Opening it needs the item picked by you, the sender allowing it, and a written reason; it is logged.
 async function openImage(r, holder, btn) {
-  const reason = window.prompt('Why is the picture absolutely needed for this review? (8 to 300 characters)\nThis is logged with your name.');
+  const reason = window.prompt('Why is the picture needed? (8 to 300 characters)\nThis is logged with your name.');
   if (reason === null) return;
   btn.disabled = true;
   const asked = await sb.rpc('thread_image_request', { p_intake: r.id, p_reason: reason });
@@ -125,9 +125,13 @@ function item(r, mineId) {
     r.ocr_text ? h('div', { class: 'pt-excerpt' }, h('strong', { text: r.ocr_fixed ? 'Text from the screenshot (corrected by the sender):' : 'Text read from the screenshot (by machine, may be wrong):' }), h('div', { text: r.ocr_text })) : null,
     r.kind === 'screenshot' && r.ocr_status === 'failed' ? h('p', { class: 'muted small', text: 'The text reader could not read this picture. Please read it yourself.' }) : null,
     r.fetch_note ? h('p', { class: 'muted small', text: r.fetch_note }) : null,
-    r.image_state === 'available' ? (r.claimed_by_me
-      ? h('div', {}, (() => { const b = h('button', { type: 'button', class: 'quiet', text: 'View image (needed for review)' }); b.addEventListener('click', () => openImage(r, shotBox, b)); return b; })(), shotBox)
-      : h('p', { class: 'muted small', text: 'A picture was kept for review. Pick this item to open it if the text is not enough.' }))
+    r.image_state === 'available'
+      ? h('div', {}, (() => { const b = h('button', { type: 'button', class: 'quiet', text: 'View image (admin, logged)' }); b.addEventListener('click', () => openImage(r, shotBox, b)); return b; })(), ' ',
+          (() => { const d = h('button', { type: 'button', class: 'quiet', text: 'Delete picture now' }); d.addEventListener('click', async () => {
+            if (!window.confirm('Delete this picture now? The text stays.')) return;
+            const x = await sb.rpc('thread_image_purge', { p_intake: r.id });
+            shotBox.replaceChildren(h('p', { class: x.error ? 'pt-err' : 'muted small', role: 'status', text: x.error ? x.error.message : 'Marked for deletion. It is removed on the next pass.' })); }); return d; })(), shotBox)
+      : r.image_state === 'admin_only' ? h('p', { class: 'muted small', text: 'A picture was sent. Reviewers do not see pictures. Admin will review, then if necessary. Use the text.' })
       : r.image_state === 'text_only' ? h('p', { class: 'muted small', text: 'The sender chose to send only the text. There is no picture.' })
       : r.image_state === 'deleted' ? h('p', { class: 'muted small', text: 'The picture has been deleted. Use the text.' }) : null,
     prelimBox(r),
