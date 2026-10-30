@@ -24,6 +24,7 @@ function h(tag, attrs, ...kids) {
 const when = (iso) => new Date(iso).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
 const note = h('p', { class: 'small', role: 'status', 'aria-live': 'polite' });
 let include = 'open';
+let projects = [];   // active research projects, for the Close button and the Researching tab
 async function call(name, args) { const { data, error } = await sb.rpc(name, args); if (error) throw error; return data; }
 async function act(p, okText) { try { await p; note.textContent = okText; await load(); } catch (e) { note.textContent = e.message || 'That did not work.'; } }
 
@@ -107,6 +108,8 @@ function item(r, mineId) {
   const dup = h('input', { placeholder: 'Repeats item #', inputmode: 'numeric', style: 'max-width:140px' });
   const disp = h('select', {}, [['accepted', 'Accept: we will research it'], ['needs_evidence', 'Needs more evidence'], ['answered', 'Answered with what we have'],
     ['duplicate', 'Repeat of another item'], ['declined', 'Decline']].map(([v, l]) => h('option', { value: v, text: l })));
+  const proj = h('select', { 'aria-label': 'Research project (for accepted items)' }, [h('option', { value: '', text: 'Research project (optional)' }),
+    ...projects.map((p) => h('option', { value: String(p.id), text: p.title }))]);
   const shotBox = h('div');
   li.append(...[   // empty parts are null; append(null) would print the word null, so they are dropped
     h('div', { class: 'row' },
@@ -137,9 +140,10 @@ function item(r, mineId) {
     acts.append(reason,
       h('button', { type: 'button', class: 'quiet', onclick: () => act(call('adjust_thread_priority', { p_id: r.id, p_delta: 20, p_reason: reason.value }), 'Moved up.'), text: 'Move up' }),
       h('button', { type: 'button', class: 'quiet', onclick: () => act(call('adjust_thread_priority', { p_id: r.id, p_delta: -20, p_reason: reason.value }), 'Moved down.'), text: 'Move down' }));
-    if (r.status === 'in_review') acts.append(disp, dup, pub,
+    if (r.status === 'in_review') acts.append(disp, proj, dup, pub,
       h('button', { type: 'button', onclick: () => act(call('resolve_thread', { p_id: r.id, p_disposition: disp.value, p_reason: reason.value, p_public_note: pub.value || null,
-        p_dup_of: dup.value ? Number(dup.value) : null }), 'Closed.'), text: 'Close it' }));
+        p_dup_of: dup.value ? Number(dup.value) : null, p_project: disp.value === 'accepted' && proj.value ? Number(proj.value) : null }),
+        disp.value === 'accepted' ? 'Accepted. It is now on the Researching tab.' : 'Closed.'), text: 'Close it' }));
   }
   const hist = h('div');
   acts.append(h('button', { type: 'button', class: 'quiet', onclick: async () => {
@@ -156,17 +160,37 @@ async function load() {
   const { data: { session } } = await window.WaySession.getSession(sb);
   if (!session) { app.replaceChildren(h('h1', { text: 'Thread queue' }), h('p', {}, 'Please ', h('a', { href: '/members/', text: 'sign in' }), ' first.')); return; }
   let rows;
-  try { rows = await call('list_thread_queue', { p_include: include, p_limit: 100 }); }
+  if (!projects.length) { const { data } = await sb.from('research_projects').select('id,title').eq('active', true).order('title'); projects = data || []; }
+  try { rows = include === 'researching' ? await call('list_accepted_threads', { p_include: 'researching' }) : await call('list_thread_queue', { p_include: include, p_limit: 100 }); }
   catch (e) { app.replaceChildren(h('h1', { text: 'Thread queue' }), h('p', { class: 'muted', text: /Not allowed/.test(e.message) ? 'This page is for reviewers.' : (e.message || 'Could not load.') })); return; }
-  const tabs = h('div', { class: 'pt-kinds' }, [['open', 'Waiting'], ['matched', 'Already answered'], ['all', 'Everything']].map(([k, l]) =>
+  const tabs = h('div', { class: 'pt-kinds' }, [['open', 'Waiting'], ['matched', 'Already answered'], ['researching', 'Researching'], ['all', 'Everything']].map(([k, l]) =>
     h('button', { type: 'button', 'aria-pressed': String(k === include), onclick: () => { include = k; load(); }, text: l })));
   app.replaceChildren(
     h('p', { class: 'overline', text: 'Reviewers' }),
     h('h1', { class: 'pt-queue-title' }, [h('img', { src: '/members/art/thread-pull-480.webp?v=3', width: '480', height: '153', alt: '' }), h('span', { class: 'pt-vh', text: 'Pull a Thread queue' })]),
     h('p', { class: 'lede', text: 'Ranked by our score, highest first. The top item is a suggestion: pick any item you want, and say why when you move or close one.' }),
     tabs, note,
-    rows.length ? h('ul', { class: 'list panel' }, rows.map((r) => item(r))) : h('p', { class: 'muted', text: 'Nothing here right now.' }),
+    rows.length ? h('ul', { class: 'list panel' }, rows.map((r) => (include === 'researching' ? researchItem(r) : item(r)))) : h('p', { class: 'muted', text: 'Nothing here right now.' }),
     await memberChecks());
+}
+// Accepted items: attach a project, then finish with a short note. Finishing sends the sender a notice.
+function researchItem(r) {
+  const li = h('li', { class: 'pt-item' });
+  const reason = h('input', { placeholder: 'Reason for changing the project', maxlength: '1000' });
+  const proj = h('select', { 'aria-label': 'Research project' }, [h('option', { value: '', text: 'No project yet' }),
+    ...projects.map((p) => h('option', { value: String(p.id), text: p.title, selected: p.id === r.project_id ? '' : null }))]);
+  const summary = h('input', { placeholder: 'What we found (shown to the sender, up to 500 characters)', maxlength: '500' });
+  const link = h('input', { placeholder: 'Page on this site with the result, like /research/ (optional)', maxlength: '250' });
+  li.append(h('div', { class: 'row' }, h('strong', { text: `#${r.id} ${r.kind}` }),
+      h('span', { class: 'tag', text: r.research_state === 'finished' ? `finished ${when(r.research_done_at)}` : `accepted ${when(r.resolved_at)}` })),
+    r.url ? h('p', {}, safeLink(r.url)) : null, r.question ? h('p', { text: r.question }) : null, r.note ? h('p', { class: 'muted small', text: r.note }) : null,
+    r.project_title ? h('p', { class: 'small', text: `Project: ${r.project_title}` }) : null,
+    r.research_note ? h('p', { class: 'small', text: `Result: ${r.research_note}` }) : null);
+  if (r.research_state === 'researching') li.append(h('div', { class: 'pt-actions' }, proj, reason,
+    h('button', { type: 'button', class: 'quiet', text: 'Save project', onclick: () => act(call('set_thread_project', { p_id: r.id, p_project: Number(proj.value), p_reason: reason.value }), 'Project saved.') }),
+    summary, link,
+    h('button', { type: 'button', class: 'primary', text: 'Research finished: tell the sender', onclick: () => act(call('finish_thread_research', { p_id: r.id, p_summary: summary.value, p_link: link.value || null }), 'Done. The sender gets a notice.') })));
+  return li;
 }
 // Sources that members read for themselves and chose to send us: the link, their answer and their reason. No names.
 async function memberChecks() {
