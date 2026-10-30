@@ -4,7 +4,7 @@
 (function () {
   'use strict';
   var TEXT = 'A lot of the site is reviewed and written by AI (LLMs). We need humans to make sure it\'s not hallucinating.';
-  var BUTTON = 'Register';
+  var BUTTON = 'Register to be a reviewer and help';
   var JOIN = '/members/join.html';
   var KEY = 'theway.humanbanner';
 

@@ -84,8 +84,8 @@
     if (d) {
       if (can(d, 'moderator')) left.push({ key: 'review', label: 'Review', kind: 'link', href: c.route('review') });
       left.push({ key: 'commons', label: 'Commons', kind: 'menu', groups: commonsGroups(c) });
-      left.push({ key: 'help', label: 'Help', kind: 'link', href: '/members/help.html' });
     }
+    left.push({ key: 'help', label: 'Help', kind: 'link', href: '/members/help.html' });
     return { right: right, left: left };
   }
 

@@ -109,11 +109,12 @@
     var still = function (n) { return ART + n + '-240.webp?v=2 1x, ' + ART + n + '-480.webp?v=2 2x'; };
     var img = el('img', { class: 'wb-pat-img', src: ART + (reduce ? 'taut' : 'slack') + '-240.webp?v=2', srcset: still(reduce ? 'taut' : 'slack'), alt: 'Pull a Thread', width: '136', height: '43', decoding: 'async' });
     if (!reduce) {
-      var pull = function () { img.removeAttribute('srcset'); img.src = ''; void img.offsetWidth; img.src = ART + 'pull-480.webp?v=3'; };
+      var PULL = ART + 'pull-480.webp?v=3', pre = new Image();
+      var pull = function () { img.removeAttribute('srcset'); img.src = PULL; };   // no blank step: the picture is already loaded, so nothing flashes
       var rest = function () { img.src = ART + 'slack-240.webp?v=2'; img.srcset = still('slack'); };
       a.addEventListener('mouseenter', pull); a.addEventListener('focus', pull);
       a.addEventListener('mouseleave', rest); a.addEventListener('blur', rest);
-      if (!(navigator.connection && navigator.connection.saveData)) setTimeout(function () { new Image().src = ART + 'pull-480.webp?v=3'; }, 2500);   // so the first hover does not wait
+      if (!(navigator.connection && navigator.connection.saveData)) { pre.decoding = 'async'; pre.src = PULL; }   // load it now so the first hover does not wait
     }
     a.appendChild(img);
     return a;
@@ -518,7 +519,7 @@
   function loadBubbles() {
     if (window.WayBubbles || document.querySelector('script[src^="/members/bubbles.js"]')) return;
     ['bubbles.css?v=3', 'bubbles-look.css?v=3'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=2'; sc.onload = syncBubbles; document.head.appendChild(sc);
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=3'; sc.onload = syncBubbles; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -730,10 +731,10 @@
   if (!inMembers && !document.querySelector('script[src^="/humanbanner.js"]')) {
     var hbCss = document.createElement('link');
     hbCss.rel = 'stylesheet';
-    hbCss.href = '/humanbanner.css?v=1';
+    hbCss.href = '/humanbanner.css?v=2';
     document.head.appendChild(hbCss);
     var hbScript = document.createElement('script');
-    hbScript.src = '/humanbanner.js?v=1';
+    hbScript.src = '/humanbanner.js?v=2';
     hbScript.defer = true;
     document.head.appendChild(hbScript);
   }

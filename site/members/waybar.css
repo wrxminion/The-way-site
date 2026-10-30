@@ -73,14 +73,14 @@
 .waybar .wb-pat-img{display:block;height:44px;width:auto}
 .waybar .wb-pat-row,.waybar .wb-pat-tools{opacity:1}
 @media (min-width:1400px){
-  .waybar{grid-template-columns:auto auto auto minmax(12px,1fr) auto;column-gap:28px}
+  .waybar{grid-template-columns:minmax(12px,1fr) auto auto auto minmax(12px,1fr) auto;column-gap:28px}
   .waybar .wb-pub{display:contents}
-  .waybar .wb-pub-l{grid-column:1;grid-row:1;flex-wrap:nowrap;justify-content:flex-start}
-  .waybar .wb-logo{grid-column:2;grid-row:1}
-  .waybar .wb-pub-r{grid-column:3;grid-row:1;flex-wrap:nowrap;justify-content:flex-start}
+  .waybar .wb-pub-l{grid-column:2;grid-row:1;flex-wrap:nowrap;justify-content:flex-start}
+  .waybar .wb-logo{grid-column:3;grid-row:1}
+  .waybar .wb-pub-r{grid-column:4;grid-row:1;flex-wrap:nowrap;justify-content:flex-start}
   .waybar .wb-pub-l,.waybar .wb-pub-r{gap:6px 16px}
   .waybar .wb-pub a,.waybar .wb-pat-tools{letter-spacing:.08em;font-size:11.5px}
-  .waybar .wb-tools,.waybar.wb-in .wb-right{grid-column:5;grid-row:1;gap:8px;flex-wrap:nowrap}
+  .waybar .wb-tools,.waybar.wb-in .wb-right{grid-column:6;grid-row:1;gap:8px;flex-wrap:nowrap}
   .waybar .wb-login,.waybar .wb-signup{padding:0 12px}
   .waybar .wb-pat-row{display:none}
   .waybar .wb-tools .wb-pat-tools,.waybar.wb-in .wb-right .wb-pat-tools{display:inline-flex;align-items:center;white-space:nowrap}
