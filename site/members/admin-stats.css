@@ -19,3 +19,18 @@
 .as-seo li{padding:6px 0;border-top:1px solid var(--line)}
 .room .tag{margin-left:6px}
 .as-swatch.as-l1{background:#1b6a73} .as-swatch.as-l2{background:#259a94} .as-swatch.as-l3{background:#52c9b6} .as-swatch.as-l4{background:#8fe8d4} .as-swatch.as-l5{background:#d4fff4}
+
+/* Admin collapsible sections and list filters (admin-tools.js). */
+.adm-sec{margin:14px 0}
+.adm-h{margin:0;font:inherit}
+.adm-toggle{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:var(--panel);border:1px solid var(--line-strong);border-radius:14px;padding:12px 18px;color:#ddffff;font:normal clamp(20px,3vw,26px)/1.2 var(--serif);cursor:pointer}
+.adm-toggle[aria-expanded=true]{border-radius:14px 14px 0 0}
+.adm-toggle:focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
+.adm-arrow{width:1em;color:var(--aqua)}
+.adm-body{border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;padding:0 14px 8px}
+.adm-body[hidden],.adm-body [hidden]{display:none!important}
+.adm-body>.panel,.adm-body>.as-root{border:0;background:none;padding:12px 4px 4px;margin:0}
+.adm-body>.panel>h2:first-child,.adm-body>.as-root>h2:first-child{display:none}
+.adm-filter{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0}
+.adm-filter input{flex:2 1 200px;width:auto}
+.adm-filter select{flex:1 1 150px;width:auto}

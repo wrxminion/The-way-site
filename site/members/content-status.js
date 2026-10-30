@@ -52,16 +52,23 @@ function make(ctx) {
     const status = h('p', { class: 'muted small', text: 'Loading...' });
     const list = h('div');
     const rolesLine = h('p', { class: 'muted small' });
+    const AT = window.TheWayAdminTools;
+    const bar = AT ? AT.filterBar({ placeholder: 'Filter by page, person or note', facets: [
+      { key: 'verified', label: 'Verified', options: [['yes', 'Verified (all sources)'], ['part', 'Partly verified'], ['no', 'Not verified']] },
+      { key: 'status', label: 'Status', options: Object.keys(STATUS).map((k) => [k, STATUS[k]]) }] }) : null;
     root.append(h('h2', { text: 'Review status of AI-written pages' }),
       h('p', { class: 'muted small', text: 'Every AI-written page shows "AI written, human skimmed" until its status is changed. Admins (and later reviewers and editors) change a page from the dropdown on the page itself. Recent changes:' }),
-      rolesLine, status, list);
+      rolesLine, status, bar ? bar.el : null, list);
     (async () => {
       try {
         const [rows, roles] = await Promise.all([q(sb.rpc('content_review_log_recent', { p_limit: 30 })), q(sb.rpc('content_review_roles'))]);
         if (roles) rolesLine.textContent = 'Roles that can change a status (besides admin): ' + (roles.filter((r) => r !== 'admin').join(', ') || 'none') + '. Widen with content_review_set_roles.';
         status.textContent = rows.length ? '' : 'No changes yet. Everything shows the default.';
-        list.replaceChildren(...rows.map((r) => h('div', { style: 'padding:4px 0;border-top:1px solid var(--line)', class: 'small' },
-          h('a', { href: r.path, target: '_blank', rel: 'noopener', text: r.path }), ` ${STATUS[r.old_status] || r.old_status} to ${STATUS[r.new_status] || r.new_status}, by ${r.changed_by_name}, ${when ? when(r.changed_at) : r.changed_at}` + (r.note ? ': ' + r.note : ''))));
+        const rowEls = rows.map((r) => h('div', { style: 'padding:4px 0;border-top:1px solid var(--line)', class: 'small' },
+          h('a', { href: r.path, target: '_blank', rel: 'noopener', text: r.path }), ` ${STATUS[r.old_status] || r.old_status} to ${STATUS[r.new_status] || r.new_status}, by ${r.changed_by_name}, ${when ? when(r.changed_at) : r.changed_at}` + (r.note ? ': ' + r.note : '')));
+        list.replaceChildren(...rowEls);
+        if (bar) bar.set(rows.map((r, i) => ({ el: rowEls[i], text: `${r.path} ${r.changed_by_name} ${r.note || ''}`,
+          facets: { verified: r.new_status === 'confirmed' ? 'yes' : r.new_status === 'under_review' ? 'part' : 'no', status: r.new_status } })));
       } catch (e) { status.textContent = 'Could not load. If this says the function does not exist, migration 0044 has not been run yet. ' + (e.message || ''); }
     })();
     return root;

@@ -13,9 +13,12 @@ function make(ctx) {
     const root = h('div', { class: 'panel' });
     const status = h('p', { class: 'muted small', text: 'Loading...' });
     const list = h('div');
+    const AT = window.TheWayAdminTools;
+    const bar = AT ? AT.filterBar({ placeholder: 'Filter ledger rows by id or title', facets: [
+      { key: 'checked', label: 'Checked by a person', options: [['yes', 'Checked by a person'], ['no', 'Not checked']] }] }) : null;
     root.append(h('h2', { text: 'Ledger checks' }),
       h('p', { class: 'muted small', text: 'Tick a row once a person has looked at it on the live site. The public ledger then shows "Live, checked by a person" for it, within about 15 minutes. Un-tick to take the mark off.' }),
-      status, list);
+      status, bar ? bar.el : null, list);
 
     async function load() {
       try {
@@ -26,6 +29,7 @@ function make(ctx) {
         const on = new Set(marks.checked || []), off = new Set(marks.unchecked || []);
         const rows = (rowsRes.rows || []).slice().reverse();
         status.textContent = `${rows.length} rows. Saved ticks: ${on.size}. Saved un-ticks: ${off.size}.`;
+        const items = [];
         list.replaceChildren(...rows.map((r) => {
           const base = r.checked_by_person === true;
           const state = off.has(r.id) ? false : on.has(r.id) ? true : base;
@@ -37,10 +41,14 @@ function make(ctx) {
             try { await q(sb.rpc('ledger_check_set', { p_row: r.id, p_checked: box.checked })); note.textContent = ' saved'; }
             catch (e) { box.checked = !box.checked; note.textContent = ' could not save: ' + (e.message || e); }
             box.disabled = false;
+            if (bar) bar.apply();
           };
-          return h('label', { style: 'display:block;padding:4px 0;border-top:1px solid var(--line)' }, box, ' ',
+          const row = h('label', { style: 'display:block;padding:4px 0;border-top:1px solid var(--line)' }, box, ' ',
             h('strong', { text: r.id }), ' ' + String(r.title || '').slice(0, 90), note);
+          items.push({ el: row, text: `${r.id} ${r.title || ''}`, facets: { checked: () => (box.checked ? 'yes' : 'no') } });
+          return row;
         }));
+        if (bar) bar.set(items);
       } catch (e) {
         status.textContent = 'Could not load. If this says the function does not exist, migration 0040 has not been run yet. ' + (e.message || '');
       }
