@@ -1,0 +1,8 @@
+/* In the page flow under the top bar: not fixed, so it never covers the My Ballot dock or the bottom bar. */
+.hb-bar{display:flex;align-items:center;gap:.75rem;padding:.5rem clamp(12px,4vw,64px);background:#0a3d4f;color:#e9ffff;border-bottom:1px solid #a7f0e955;font:500 .95rem/1.35 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.hb-text{margin:0;flex:1 1 auto}
+.hb-join{flex:0 0 auto;padding:.4rem .9rem;border-radius:999px;background:#a7f0e9;color:#04101a;font-weight:700;text-decoration:none}
+.hb-join:hover,.hb-join:focus-visible{background:#fff}
+.hb-close{flex:0 0 auto;min-width:44px;min-height:44px;border:0;background:transparent;color:#e9ffff;font-size:1.6rem;line-height:1;cursor:pointer}
+.hb-close:focus-visible,.hb-join:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media (max-width:560px){.hb-bar{flex-wrap:wrap;gap:.4rem}.hb-text{flex-basis:calc(100% - 52px)}}
