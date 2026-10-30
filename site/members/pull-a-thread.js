@@ -653,8 +653,10 @@ function otherPanels() {
 // a member opens one of their threads from a notification: ?thread=<id>
 async function openThread(id) {
   const { data } = await sb.rpc('my_thread_status', { p_intake: id });
+  const { data: rs } = data ? await sb.rpc('my_thread_research', { p_intake: id }) : { data: null };
   app.replaceChildren(h('p', { class: 'overline', text: 'FOLLOW THE EVIDENCE' }), h('h1', { text: 'Your thread' }),
     data ? h('div', {}, outcome(data, null)) : h('p', { class: 'muted', text: 'We could not find that thread under your account.' }),
+    rs ? h('p', { class: 'pt-research', text: rs.state === 'finished' ? `Our research is finished${rs.note ? ': ' + rs.note : '.'}` : 'We are researching this now. You will get a notice here when it is finished.' }) : null,
     h('p', {}, h('a', { href: '/members/pull-a-thread.html', text: 'Pull another thread' })));
 }
 
