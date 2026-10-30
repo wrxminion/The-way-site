@@ -188,21 +188,43 @@ function changeBox(r) {
     h('label', { for: `tell-${r.id}`, class: 'small' }, tell, ' Tell the sender'),
     h('button', { type: 'button', text: 'Change it', onclick: () => act(call('change_thread_decision', { p_id: r.id, p_to: to.value, p_reason: why.value, p_public_note: pn.value || null, p_tell_sender: tell.checked }), 'Changed. The old decision is kept in History.') })));
 }
-// Accepted items: attach a project, then finish with a short note. Finishing sends the sender a notice.
+// Accepted items: the six steps are Accepted, Sent to research, AI dive running, Dive done, With a researcher, Finished.
+const STEP = { researching: 'Accepted', sent: 'Sent to research', diving: 'AI dive running', dive_done: 'Dive done', with_researcher: 'With a researcher', finished: 'Finished' };
+function diveDraft(r) {
+  const box = h('div', { class: 'small' });
+  const d = h('details', { class: 'panel' }, h('summary', { text: 'AI draft (Unchecked)' }), box);
+  d.addEventListener('toggle', async () => {
+    if (!d.open || box.childNodes.length) return;
+    try {
+      const v = await call('get_thread_dive', { p_id: r.id });
+      box.replaceChildren(v && v.draft ? h('div', {}, h('p', { class: 'pt-badge', text: `${v.label}: written by ${v.model || 'a local model'}, not checked by a person` }), h('pre', { text: v.draft })) : h('p', { class: 'muted', text: 'No draft yet.' }));
+    } catch { box.replaceChildren(h('p', { class: 'muted', text: 'Could not load the draft.' })); }
+  });
+  return d;
+}
 function researchItem(r) {
   const li = h('li', { class: 'pt-item' });
+  const st = r.research_state;
   const reason = h('input', { placeholder: 'Reason for changing the project', maxlength: '1000' });
+  const why = h('input', { placeholder: 'Why send it to research (3 to 1000 characters)', maxlength: '1000' });
   const proj = h('select', { 'aria-label': 'Research project' }, [h('option', { value: '', text: 'No project yet' }),
     ...projects.map((p) => h('option', { value: String(p.id), text: p.title, selected: p.id === r.project_id ? '' : null }))]);
   const summary = h('input', { placeholder: 'What we found (shown to the sender, up to 500 characters)', maxlength: '500' });
   const link = h('input', { placeholder: 'Page on this site with the result, like /research/ (optional)', maxlength: '250' });
   li.append(h('div', { class: 'row' }, h('strong', { text: `#${r.id} ${r.kind}` }),
-      h('span', { class: 'tag', text: r.research_state === 'finished' ? `finished ${when(r.research_done_at)}` : `accepted ${when(r.resolved_at)}` })),
+      h('span', { class: 'tag', text: st === 'finished' ? `finished ${when(r.research_done_at)}` : `${STEP[st] || 'Accepted'} · accepted ${when(r.resolved_at)}` })),
     r.url ? h('p', {}, safeLink(r.url)) : null, r.question ? h('p', { text: r.question }) : null, r.note ? h('p', { class: 'muted small', text: r.note }) : null,
     r.project_title ? h('p', { class: 'small', text: `Project: ${r.project_title}` }) : null,
     r.research_note ? h('p', { class: 'small', text: `Result: ${r.research_note}` }) : null);
   { const cb = changeBox(r); if (cb) li.append(cb); }
-  if (r.research_state === 'researching') li.append(h('div', { class: 'pt-actions' }, proj, reason,
+  if (r.dive_label) li.append(diveDraft(r));
+  if (st === 'diving') li.append(h('p', { class: 'muted small', text: 'The AI dive is running on a local model. This page does not need to stay open.' }));
+  if (st === 'researching' || (st === 'sent' && r.dive_status === 'failed')) li.append(h('div', { class: 'pt-actions' }, why,
+    h('button', { type: 'button', class: 'primary', text: st === 'sent' ? 'Send to the AI dive again' : 'Send to research (AI dive first)', onclick: () => act(call('send_thread_to_research', { p_id: r.id, p_reason: why.value }), 'Sent. A local AI model will write a draft for a researcher.') })));
+  if (st === 'sent') li.append(h('p', { class: 'muted small', text: r.dive_status === 'failed' ? 'The AI dive failed three times. Send it again, or take it yourself.' : 'Waiting for the AI dive.' }));
+  if (st === 'sent' || st === 'dive_done') li.append(h('div', { class: 'pt-actions' },
+    h('button', { type: 'button', class: 'quiet', text: st === 'dive_done' ? 'I will research this (use the draft)' : 'Skip the dive: I will research this', onclick: () => act(call('take_thread_research', { p_id: r.id }), 'It is with you now.') })));
+  if (st === 'researching' || st === 'with_researcher') li.append(h('div', { class: 'pt-actions' }, proj, reason,
     h('button', { type: 'button', class: 'quiet', text: 'Save project', onclick: () => act(call('set_thread_project', { p_id: r.id, p_project: Number(proj.value), p_reason: reason.value }), 'Project saved.') }),
     summary, link,
     h('button', { type: 'button', class: 'primary', text: 'Research finished: tell the sender', onclick: () => act(call('finish_thread_research', { p_id: r.id, p_summary: summary.value, p_link: link.value || null }), 'Done. The sender gets a notice.') })));
