@@ -363,7 +363,7 @@
   // Bubble Steve (the Back to surface diver): slow eased scroll up, swim wiggle, fade at the top. Own files so they can be swapped.
   (function () {
     var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/steve.css?v=1'; document.head.appendChild(l);
-    var sc = document.createElement('script'); sc.src = '/members/steve.js?v=1'; sc.defer = true; document.head.appendChild(sc);
+    var sc = document.createElement('script'); sc.src = '/members/steve.js?v=2'; sc.defer = true; document.head.appendChild(sc);
   })();
 
   window.WayBubbles = { render: function (c) { ctx = c; build(); }, keys: KEYS };
