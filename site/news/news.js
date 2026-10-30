@@ -48,6 +48,19 @@
       places:list(raw.places), states:list(raw.states), topics:list(raw.topics), snap:snapOf(raw.snapshot), measures:list(raw.measures).filter(m => /^[a-z0-9-]{1,80}$/.test(m)).slice(0, 5), about:aboutOf(raw.about), hay:(title + ' ' + str(raw.source, 120)).toLowerCase()};
   }
 
+  // "(N) comments" links. Counts come from a small static file the news cycle rebuilds (this page may not call the database).
+  let COUNTS = {};
+  function commentLabel(n){ return n > 0 ? '(' + n + ') comments' : 'comments'; }
+  async function loadCounts(){
+    try {
+      const doc = await getJSON('comment-counts.json');
+      const c = doc && typeof doc.counts === 'object' && doc.counts ? doc.counts : {};
+      COUNTS = {};
+      for (const k of Object.keys(c).slice(0, 20000)) { const n = c[k]; if (/^[a-z0-9][a-z0-9._-]{0,119}$/.test(k) && Number.isInteger(n) && n > 0) COUNTS[k] = n; }
+      document.querySelectorAll('a.ccount').forEach(a => { a.textContent = commentLabel(COUNTS[a.dataset.cid]); });
+    } catch (e) { /* no file yet: links just say "comments" */ }
+  }
+
   async function getJSON(path){
     const r = await fetch(DATA + path, {cache:'no-cache', credentials:'same-origin'});
     if (!r.ok) throw new Error(r.status === 404 ? 'missing' : 'http ' + r.status);
@@ -174,9 +187,13 @@
       li.append(p);
     }
     // Members: say you read it, and discuss it (lives in the member area, which is allowed to talk to the database)
-    const dd = el('div', 'discuss'); const da = el('a', null, 'Did you read it? Tell us what you found, and discuss (members)');
-    da.href = '/members/discuss.html?item=news:' + encodeURIComponent(it.id.toLowerCase().replace(/[^a-z0-9._-]+/g, '-').replace(/^[^a-z0-9]+/, '').slice(0, 120)) + '&title=' + encodeURIComponent(it.title.slice(0, 200));
-    dd.append(da); li.append(dd);
+    const cid = it.id.toLowerCase().replace(/[^a-z0-9._-]+/g, '-').replace(/^[^a-z0-9]+/, '').slice(0, 120);
+    const dhref = '/members/discuss.html?item=news:' + encodeURIComponent(cid) + '&title=' + encodeURIComponent(it.title.slice(0, 200))
+      + '&src=' + encodeURIComponent(it.source.slice(0, 80)) + (it.pub != null ? '&d=' + new Date(it.pub).toISOString().slice(0, 10) : '') + '&u=' + encodeURIComponent(it.url);
+    const dd = el('div', 'discuss');
+    const ca = el('a', 'ccount', commentLabel(COUNTS[cid])); ca.href = dhref; ca.dataset.cid = cid;
+    const da = el('a', null, 'Did you read it? Tell us what you found (members)'); da.href = dhref;
+    dd.append(ca, document.createTextNode(' \u00b7 '), da); li.append(dd);
     // Follow-ups by email: the first measure it may be about, else its first state. Opens the sign-up page (this page may not call out).
     let ft = '';
     for (const x of about){ const mm = String(x.page).match(/^guide(?:-([a-z]{2}))?\/measures\/([a-z0-9-]+)\.html$/); if (mm){ ft = 'measure:' + (mm[1] ? mm[1] + '-' : '') + mm[2]; break; } }
@@ -298,6 +315,7 @@
   let t; $('q').addEventListener('input', e => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value; applyFilters(); }, 150); });
   $('more').addEventListener('click', renderMore);
 
+  loadCounts();
   const m = /^#then=(\d{4}-\d{2}-\d{2})$/.exec(location.hash);
   if (m) showThen(m[1]); else showNow();
 })();

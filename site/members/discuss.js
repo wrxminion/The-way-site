@@ -1,4 +1,4 @@
-// The Way: members-only comments, and "Did you actually read it?" checks, for ANY page.
+// The Way: comments, and "Did you actually read it?" checks, for ANY page. News comments are public to read (0072).
 //
 // Drop-in:
 //   <link rel="stylesheet" href="/members/discuss.css">
@@ -8,7 +8,9 @@
 //   <script src="/members/discuss.js"></script>
 // The key is <kind>:<id>, kind = news | case | measure | candidate, id = lowercase letters, digits, . _ -
 // (anything else in the id is turned into "-"). News pages also get the read check (data-way-readcheck="off" hides it).
-// Signed-out visitors see only a sign-in link. A kind switched off in the database (candidate, for now) shows nothing.
+// Signed-out visitors can read comments on kinds the database marks public (news); they cannot post. Other kinds show a sign-in link.
+// A kind switched off in the database (candidate, for now) shows nothing. News comments are checked by an AI first, then
+// published, held for a reviewer (new members) or declined (the writer can appeal). Nothing here counts likes or scores.
 // All text is placed with textContent. Rules (length, rate limits, one level of replies, hide, log) live in the database (0021).
 (() => {
 'use strict';
@@ -79,6 +81,61 @@ function guarded(btn, msg, fn) {
   };
 }
 
+// ---- shared by the public (signed-out) view and the members view
+const ORDERS = [['oldest', 'Oldest first'], ['newest', 'Newest first']];
+function orderBar(current, onPick) {
+  return h('div', { class: 'wd-order', role: 'group', 'aria-label': 'Sort comments' }, 'Sort: ',
+    ORDERS.map(([v, label]) => h('button', { class: 'wd-quiet', type: 'button', text: label, 'aria-pressed': String(v === current), disabled: v === current, onclick: () => onPick(v) })));
+}
+// top-level comments in the chosen order; replies always oldest first under their parent
+function arrange(data, order) {
+  const top = data.filter((c) => c.parent_id == null);
+  if (order === 'newest') top.reverse();
+  return top.map((c) => ({ c, kids: data.filter((r) => r.parent_id === c.id) }));
+}
+const countShown = (data) => data.filter((c) => !c.hidden && (c.state == null || c.state === 'published')).length;
+async function pageSettings() {
+  try {
+    const r = await sb.rpc('comment_page_settings');
+    const row = !r.error && r.data && r.data[0];
+    return { order: row && row.default_order === 'newest' ? 'newest' : 'oldest', appeals: !row || row.appeal_allowed !== false };
+  } catch { return { order: 'oldest', appeals: true }; }
+}
+const NEWS_RULES = 'Anyone can read. Members can comment. An AI check looks at every comment before it appears (language, on topic, and "alleged" for anything unproven about a named person). The AI only checks; it never writes or changes a comment. New members’ comments are also read by a person first. If the check declines your comment you can appeal to a reviewer. No scores, no likes. Stick to the facts and the sources, and do not ask for votes for or against anyone. Moderators can hide comments; every hide is logged.';
+
+// Signed-out visitors: read-only view of a public kind. Returns false when the kind is not public (caller shows the sign-in blurb).
+async function publicView(root, k, title) {
+  const first = await sb.rpc('public_comments_for', { p_item: k.key });
+  if (first.error) return false;
+  const cfg = await pageSettings();
+  let order = cfg.order, data = first.data || [];
+  const listSlot = h('div', { class: 'wd-box' });
+  const status = h('div');
+  const draw = () => {
+    const n = countShown(data);
+    const rows = arrange(data, order);
+    const item = (c, isReply) => h('li', { class: isReply ? 'wd-c wd-reply' : 'wd-c' },
+      h('div', { class: 'wd-meta', text: `${c.author_name} · ${when(c.created_at)}` }, c.tag === 'read_note' ? '  ' : null,
+        c.tag === 'read_note' ? h('span', { class: 'wd-tag', text: 'Read the article' }) : null),
+      c.hidden ? h('p', { class: 'wd-hidden', text: 'Hidden by a moderator.' }) : null,
+      c.body ? h('p', { class: 'wd-body', text: c.body }) : null);
+    put(listSlot, h('h3', { text: n ? `${n} comment${n === 1 ? '' : 's'}` : 'Comments' }),
+      rows.length ? orderBar(order, (v) => { order = v; draw(); }) : null,
+      rows.length ? h('ul', {}, rows.map(({ c, kids }) => h('div', {}, item(c, false), kids.map((r) => item(r, true)))))
+                  : h('p', { class: 'wd-muted', text: 'No comments yet.' }));
+  };
+  root.classList.add('wd');
+  put(root, h('h2', { text: 'Comments' }), h('p', { class: 'wd-rules', text: NEWS_RULES }), listSlot, status);
+  draw();
+  let open = true;
+  try { const t = await sb.rpc('thread_status', { p_item: k.key }); open = !t.error && t.data && t.data[0] ? t.data[0].open : true; } catch { /* show the plain prompt */ }
+  put(status, h('div', { class: 'wd-box' },
+    open ? h('p', { class: 'wd-muted', text: 'Want to join in?' })
+         : h('p', { class: 'wd-muted', text: 'Comments open once a member has read this article and recorded what they found. Be the first: your note can be the opening comment.' }),
+    h('p', {}, h('a', { href: SIGN_IN, text: 'Sign in or join' }), ' to comment.')));
+  return true;
+}
+
 async function mount(root) {
   const k = normKey(root.getAttribute('data-way-discuss'));
   if (!k) return;
@@ -89,22 +146,27 @@ async function mount(root) {
   const { data: sess } = await window.WaySession.getSession(sb);
   const user = sess && sess.session && sess.session.user;
   if (!user) {
+    if (await publicView(root, k, title)) return;
     put(root, h('h2', { text: 'Member discussion' }),
       h('p', { class: 'wd-muted', text: `Members can read and join the discussion on ${KINDS[k.kind]}${k.kind === 'news' ? ' and record that they read it' : ''}.` }),
       h('p', {}, h('a', { href: SIGN_IN, text: 'Sign in or join' })));
     return;
   }
-  let isMod = false;
+  let isMod = false, isReviewer = false;
   try {
     const r = await sb.from('member_roles').select('role').eq('member_id', user.id);
     isMod = !r.error && r.data.some((x) => ['moderator', 'admin', 'super_admin'].includes(x.role));
+    isReviewer = isMod || (!r.error && r.data.some((x) => x.role === 'reviewer'));
   } catch { /* the database still enforces everything */ }
+  const cfg = await pageSettings();
+  let order = cfg.order, myReadNote = false;
 
   const readSlot = h('div');
   const listSlot = h('div', { class: 'wd-box' });
   const formSlot = h('div', { class: 'wd-box' });
   put(root, h('h2', { text: 'Member discussion' }),
-    h('p', { class: 'wd-rules', text: 'Members only. Stick to the facts and the sources. The site does not endorse candidates or parties, so no asking for votes for or against anyone. Moderators can hide comments; every hide is logged and visible to members.' }),
+    h('p', { class: 'wd-rules', text: k.kind === 'news' ? NEWS_RULES : 'Members only. Stick to the facts and the sources. The site does not endorse candidates or parties, so no asking for votes for or against anyone. Moderators can hide comments; every hide is logged and visible to members.' }),
+    isReviewer && k.kind === 'news' ? h('p', { class: 'wd-small' }, h('a', { href: '/members/comment-review.html', text: 'Comment review queue (reviewers)' })) : null,
     k.kind === 'news' && root.getAttribute('data-way-readcheck') !== 'off' ? readSlot : null, listSlot, formSlot);
 
   // ---------------------------------------------------------- comments
@@ -139,32 +201,57 @@ async function mount(root) {
       put(listSlot, h('p', { class: 'wd-err', text: /Members only/.test(error.message) ? 'Only active members can read the discussion.' : niceError(error) })); return false; }
     const mine = await sb.rpc('my_reported', { p_kind: 'comment', p_ids: data.map((c) => c.id) });
     reportedIds = new Set(mine.error ? [] : mine.data);
-    const top = data.filter((c) => c.parent_id == null);
-    const kids = (id) => data.filter((c) => c.parent_id === id);
+    myReadNote = data.some((c) => c.mine && c.tag === 'read_note');
+    const STATUS = {
+      queued: 'Being checked by the AI. It will appear in a moment.',
+      held: 'Waiting for a reviewer to approve it. Nothing is wrong; new comments from new members are read by a person first.',
+      appealed: 'Appeal sent. A reviewer will look at it.',
+    };
     const item = (c, isReply) => {
       const flagMsg = h('span', { class: 'wd-small' });
       const acts = h('div', { class: 'wd-row' });
-      if (!isReply) acts.append(h('button', { class: 'wd-quiet', type: 'button', text: 'Reply', onclick: () => replyBox(c, li) }));
-      if (!c.mine) acts.append(h('button', { class: 'wd-quiet', type: 'button', text: reportedIds.has(c.id) ? 'Reported' : 'Report', disabled: reportedIds.has(c.id),
+      const published = !c.state || c.state === 'published';
+      if (!isReply && published) acts.append(h('button', { class: 'wd-quiet', type: 'button', text: 'Reply', onclick: () => replyBox(c, li) }));
+      if (!c.mine && published) acts.append(h('button', { class: 'wd-quiet', type: 'button', text: reportedIds.has(c.id) ? 'Reported' : 'Report', disabled: reportedIds.has(c.id),
         onclick: () => reportBox(c, li, flagMsg) }));
-      if (isMod) acts.append(h('button', { class: 'wd-quiet', type: 'button', text: c.hidden ? 'Restore' : 'Hide', onclick: async () => {
+      if (c.mine && c.state === 'ai_rejected' && cfg.appeals) acts.append(h('button', { class: 'wd-quiet', type: 'button', text: 'Appeal to a reviewer', onclick: () => appealBox(c, li) }));
+      if (isMod && published) acts.append(h('button', { class: 'wd-quiet', type: 'button', text: c.hidden ? 'Restore' : 'Hide', onclick: async () => {
         const reason = window.prompt(c.hidden ? 'Why restore this comment?' : 'Why hide this comment? (logged and visible to members)');
         if (!reason) return;
         const r = await sb.rpc('moderate_comment', { p_id: c.id, p_hide: !c.hidden, p_reason: reason });
         if (r.error) flagMsg.textContent = niceError(r.error); else loadComments(); } }));
       acts.append(flagMsg);
+      const stateLine = c.mine && !published
+        ? (c.state === 'ai_rejected' ? `Not posted. ${c.state_reason || 'The automatic check declined it.'} You can appeal to a reviewer; nothing is deleted.`
+          : c.state === 'rejected' ? `Not posted. A reviewer said: ${c.state_reason || 'it does not fit the rules.'}`
+          : STATUS[c.state] || '') : '';
       const li = h('li', { class: isReply ? 'wd-c wd-reply' : 'wd-c' },
-        h('div', { class: 'wd-meta', text: `${c.author_name} · ${when(c.created_at)}${isMod && c.flags ? ` · ${c.flags} flag${c.flags === 1 ? '' : 's'}` : ''}` }),
+        h('div', { class: 'wd-meta', text: `${c.author_name} · ${when(c.created_at)}${isMod && c.flags ? ` · ${c.flags} flag${c.flags === 1 ? '' : 's'}` : ''}` },
+          c.tag === 'read_note' ? ' ' : null, c.tag === 'read_note' ? h('span', { class: 'wd-tag', text: 'Read the article' }) : null),
+        stateLine ? h('p', { class: 'wd-status', text: stateLine }) : null,
         c.hidden ? h('p', { class: 'wd-hidden', text: isMod ? 'Hidden by a moderator. Text shown to moderators only.' : 'Hidden by a moderator.' }) : null,
         c.body ? h('p', { class: 'wd-body', text: c.body }) : null,
         c.hidden && isMod && c.hidden_reason ? h('p', { class: 'wd-meta', text: `Reason: ${c.hidden_reason}` }) : null,
         acts);
       return li;
     };
-    put(listSlot, h('h3', { text: `Comments (${data.length})` }),
-      top.length ? h('ul', {}, top.map((c) => h('div', {}, item(c, false), kids(c.id).map((r) => item(r, true)))))
-                 : h('p', { class: 'wd-muted', text: 'No comments yet.' }));
+    const rows = arrange(data, order);
+    const shown = countShown(data);
+    put(listSlot, h('h3', { text: shown ? `${shown} comment${shown === 1 ? '' : 's'}` : 'Comments' }),
+      rows.length > 1 ? orderBar(order, (v) => { order = v; loadComments(); }) : null,
+      rows.length ? h('ul', {}, rows.map(({ c, kids }) => h('div', {}, item(c, false), kids.map((r) => item(r, true)))))
+                  : h('p', { class: 'wd-muted', text: 'No comments yet.' }));
     return true;
+  }
+  function appealBox(c, li) {
+    if (li.querySelector('.wd-replybox')) return;
+    const ta2 = h('textarea', { maxlength: 500, 'aria-label': 'Why should a reviewer approve it? (optional)', placeholder: 'Why should a reviewer approve it? (optional, up to 500 characters)' });
+    ta2.style.minHeight = '60px';
+    const m = h('div'); const send = h('button', { type: 'button', text: 'Send appeal' });
+    send.addEventListener('click', guarded(send, m, async () => {
+      const r = await sb.rpc('appeal_comment', { p_id: c.id, p_note: ta2.value });
+      if (r.error) throw r.error; await loadComments(); }));
+    li.append(h('div', { class: 'wd-replybox' }, ta2, h('div', { class: 'wd-row' }, send), m));
   }
   function replyBox(parent, li) {
     if (li.querySelector('.wd-replybox')) return;
@@ -179,12 +266,40 @@ async function mount(root) {
   const post = h('button', { type: 'button', text: 'Post comment' });
   post.addEventListener('click', guarded(post, msg, async () => {
     const r = await sb.rpc('post_comment', { p_item: k.key, p_body: ta.value });
-    if (r.error) throw r.error; ta.value = ''; await loadComments(); }));
-  formSlot.append(h('h3', { text: 'Join in' }), ta, h('div', { class: 'wd-row' }, post, h('span', { class: 'wd-small wd-muted', text: 'Comments cannot be edited or deleted once posted.' })), msg);
-  if (!(await loadComments())) put(formSlot);
+    if (r.error) throw r.error; ta.value = ''; await loadComments();
+    if (k.kind === 'news') { msg.className = 'wd-ok'; msg.textContent = 'Sent. It appears once the AI check (and, for new members, a reviewer) is done. You can see its status above.'; } }));
+  // News threads open once a member has read the article (setting open_rule). Until then the box is replaced by a prompt.
+  async function renderForm() {
+    let open = true;
+    if (k.kind === 'news') {
+      try { const t = await sb.rpc('thread_status', { p_item: k.key }); open = !t.error && t.data && t.data[0] ? t.data[0].open : true; } catch { /* the database still enforces it */ }
+    }
+    if (!open) {
+      put(formSlot, h('h3', { text: 'Join in' }),
+        h('p', { class: 'wd-muted', text: 'Comments open once a member has read this article and recorded what they found. Do that above, and your note can be the opening comment.' }));
+      return;
+    }
+    put(formSlot, h('h3', { text: 'Join in' }), ta, h('div', { class: 'wd-row' }, post, h('span', { class: 'wd-small wd-muted', text: 'Comments cannot be edited or deleted once posted. An AI check runs before a comment appears.' })), msg);
+  }
+  if (!(await loadComments())) put(formSlot); else await renderForm();
 
   // ---------------------------------------------------------- read check (news only)
   if (k.kind === 'news' && root.getAttribute('data-way-readcheck') !== 'off') readCheck();
+  // Your read note is private unless you choose to share it as a comment. Once per article; the AI check and review rules still apply.
+  function shareNote(done) {
+    if (k.kind !== 'news' || myReadNote || !done || done.decision === 'declined') return null;
+    const box = h('textarea', { maxlength: 2000, 'aria-label': 'Your read note as a comment' });
+    box.value = String(done.note || '').slice(0, 2000);
+    const m = h('div'); const go = h('button', { type: 'button', text: 'Share as a comment' });
+    go.addEventListener('click', guarded(go, m, async () => {
+      const r = await sb.rpc('post_read_note', { p_item: k.key, p_body: box.value });
+      if (r.error) throw r.error;
+      await loadComments(); await readCheck(); await renderForm();
+    }));
+    return h('div', { class: 'wd-box' }, h('h3', { text: 'Share your note as a comment?' }),
+      h('p', { class: 'wd-small wd-muted', text: 'Optional. Your read note is private today. If you share it, it becomes a public comment tagged "Read the article". Edit it first if you like, and leave out anything private.' }),
+      box, h('div', { class: 'wd-row' }, go), m);
+  }
   async function readCheck() {
     const [mine, count] = await Promise.all([sb.rpc('my_read_check', { p_item: k.key }), sb.rpc('item_read_count', { p_item: k.key })]);
     if (mine.error) return;                                        // 0021 not run yet, or not a member: skip quietly
@@ -197,11 +312,12 @@ async function mount(root) {
         : done.decision === 'declined' ? h('span', { class: 'wd-tag', text: 'Not confirmed' }) : h('span', { class: 'wd-tag', text: 'Waiting for a reviewer' });
       put(readSlot, head, h('p', { class: 'wd-muted', text: `You recorded this on ${when(done.created_at)}.` }), status,
         h('p', { class: 'wd-body', text: done.note }), done.has_screenshot ? h('p', { class: 'wd-small wd-muted', text: 'Your screenshot is on file (private).' }) : null,
-        done.decision === 'declined' && done.reason ? h('p', { class: 'wd-small', text: `Reviewer note: ${done.reason}` }) : null, tally);
+        done.decision === 'declined' && done.reason ? h('p', { class: 'wd-small', text: `Reviewer note: ${done.reason}` }) : null, tally,
+        shareNote(done));
       return;
     }
     if (window.WayReviewForm && user && user.id) {   // 0061 form: plain-language questions, saves answers too
-      put(readSlot, head, window.WayReviewForm.build({ sb, user, itemId: k.id, title, onDone: () => readCheck() }), tally);
+      put(readSlot, head, window.WayReviewForm.build({ sb, user, itemId: k.id, title, onDone: async () => { await readCheck(); await renderForm(); } }), tally);
       return;
     }
     const note = h('textarea', { maxlength: 1000, placeholder: 'What was interesting to you? A sentence or two in your own words.', 'aria-label': 'What was interesting' });
@@ -220,7 +336,7 @@ async function mount(root) {
       }
       const r = await sb.rpc('submit_read_check', { p_item: k.key, p_note: note.value, p_path: path });
       if (r.error) throw r.error;
-      await readCheck();
+      await readCheck(); await renderForm();
     }));
     put(readSlot, head,
       h('p', { class: 'wd-muted', text: `${title ? `“${title}”. ` : ''}Tell us what you found interesting and, if you like, add a screenshot of the page for our records. A reviewer confirms it, and only then do you earn points.` }),
