@@ -1,7 +1,7 @@
 // The Way: one top bar for every page (member area, Findings, guides, maps, case pages, splash).
-// Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=22"> in <head>,
+// Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=23"> in <head>,
 //          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
-//          <script src="/members/waybar.js?v=44" defer></script>.
+//          <script src="/members/waybar.js?v=46" defer></script>.
 // Desktop, signed in or out: the same header. Voter Guide, News, Civics & History | THE WAY | Government, Election Studies, Research,
 //   then Pull a thread, search and the account (Log in and Sign up, or a small Menu button, the bell and your name).
 // Signed in, phone: a compact header (logo, search, account). The bottom bar is gone: the two bubble menus replace it.
@@ -109,11 +109,12 @@
     var still = function (n) { return ART + n + '-240.webp?v=2 1x, ' + ART + n + '-480.webp?v=2 2x'; };
     var img = el('img', { class: 'wb-pat-img', src: ART + (reduce ? 'taut' : 'slack') + '-240.webp?v=2', srcset: still(reduce ? 'taut' : 'slack'), alt: 'Pull a Thread', width: '136', height: '43', decoding: 'async' });
     if (!reduce) {
-      var pull = function () { img.removeAttribute('srcset'); img.src = ''; void img.offsetWidth; img.src = ART + 'pull-480.webp?v=3'; };
+      var PULL = ART + 'pull-480.webp?v=3', pre = new Image();
+      var pull = function () { img.removeAttribute('srcset'); img.src = PULL; };   // no blank step: the picture is already loaded, so nothing flashes
       var rest = function () { img.src = ART + 'slack-240.webp?v=2'; img.srcset = still('slack'); };
       a.addEventListener('mouseenter', pull); a.addEventListener('focus', pull);
       a.addEventListener('mouseleave', rest); a.addEventListener('blur', rest);
-      if (!(navigator.connection && navigator.connection.saveData)) setTimeout(function () { new Image().src = ART + 'pull-480.webp?v=3'; }, 2500);   // so the first hover does not wait
+      if (!(navigator.connection && navigator.connection.saveData)) { pre.decoding = 'async'; pre.src = PULL; }   // load it now so the first hover does not wait
     }
     a.appendChild(img);
     return a;
@@ -517,8 +518,8 @@
   }
   function loadBubbles() {
     if (window.WayBubbles || document.querySelector('script[src^="/members/bubbles.js"]')) return;
-    ['bubbles.css?v=2', 'bubbles-look.css?v=2'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=2'; sc.onload = syncBubbles; document.head.appendChild(sc);
+    ['bubbles.css?v=3', 'bubbles-look.css?v=4'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=3'; sc.onload = syncBubbles; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -567,7 +568,7 @@
   function syncDock() {
     var dock = document.querySelector('.wb-dock');
     var fab = document.querySelector('.wb-thread-fab');
-    var onThread = /^\/members\/(pull-a-thread|thread-queue|notifications)/.test(path);
+    var onThread = /^\/members\/(pull-a-thread|thread-queue)/.test(path);
     document.documentElement.classList.toggle('wb-signed-out', signedOutNow);
     if (!dock) { dock = el('nav', { class: 'wb-dock', 'aria-label': 'Quick links' }); document.body.appendChild(dock); }
     // Log in / Sign up now lives with the left bubbles (bubbles.js)
@@ -590,6 +591,11 @@
     btn.setAttribute('aria-label', off ? 'Show the floating buttons' : 'Hide the floating buttons');
     btn.title = off ? 'Show the floating buttons' : 'Hide the floating buttons';
   }
+  // Bringing the buttons back: they float up one after another (about 0.7 s in all). The CSS holds the motion and respects reduced motion.
+  function floatUp() {
+    var h = document.documentElement; h.classList.add('wb-rising');
+    setTimeout(function () { h.classList.remove('wb-rising'); }, 1100);
+  }
   function syncToggle() {
     var btn = document.querySelector('.wb-bubbles-toggle');
     if (!btn) {
@@ -603,7 +609,7 @@
         var off = !document.documentElement.classList.contains('wb-bubbles-off');
         try { off ? localStorage.setItem(BUBBLES, 'off') : localStorage.removeItem(BUBBLES); } catch (e) { /* private mode: it just will not be remembered */ }
         paintToggle(btn, off);
-        if (!off) riseBurst();
+        if (!off) { riseBurst(); floatUp(); }
       });
       var d = document.querySelector('.wb-dock'); (d || document.body).appendChild(btn);
     }
@@ -730,10 +736,10 @@
   if (!inMembers && !document.querySelector('script[src^="/humanbanner.js"]')) {
     var hbCss = document.createElement('link');
     hbCss.rel = 'stylesheet';
-    hbCss.href = '/humanbanner.css?v=1';
+    hbCss.href = '/humanbanner.css?v=2';
     document.head.appendChild(hbCss);
     var hbScript = document.createElement('script');
-    hbScript.src = '/humanbanner.js?v=1';
+    hbScript.src = '/humanbanner.js?v=2';
     hbScript.defer = true;
     document.head.appendChild(hbScript);
   }

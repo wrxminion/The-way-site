@@ -26,6 +26,7 @@ const srv = http.createServer((q, s) => {
       await pg.goto(`http://localhost:${srv.address().port}/members/_t.html`);
       await pg.waitForTimeout(500); await pg.evaluate(() => window.scrollTo(0, 600)); await pg.waitForTimeout(300);
       const r = await pg.evaluate(() => {
+        document.getAnimations().forEach((a) => a.cancel()); // measure the layout, not the idle float
         const vis = (e) => e && !e.hidden && getComputedStyle(e).display !== 'none' && e.getClientRects().length;
         const nodes = [...document.querySelectorAll('.wb-dock .way-bubble, .wb-bubs-l .way-bubble, .wb-thread-fab, .wb-floating, .wb-bubbles-toggle, .wb-bub-auth')].filter(vis);
         const box = nodes.map((e) => { const x = e.getBoundingClientRect(); return { n: e.getAttribute('data-icon') || e.className.split(' ')[0], l: x.left - 4, r: x.right + 4, t: x.top - 4, b: x.bottom + 4 }; });
