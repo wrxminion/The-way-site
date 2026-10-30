@@ -16,7 +16,7 @@ const STATUS = {
 function make(ctx) {
   const { sb, h, q, render, notice, when } = ctx;
   const fromB64 = (s) => { try { return atob(String(s).replace(/-/g, '+').replace(/_/g, '/')); } catch { return ''; } };
-  const OK = /^\/(preview\/pages|research)\/[A-Za-z0-9_./-]{1,300}$/;
+  const OK = /^\/((preview\/pages|research|guide|guide-[a-z]{2}|news|cases)(\/[A-Za-z0-9_./-]{0,300})?|how-government-works\.html)$/;
 
   async function view(code, pick) {
     const path = fromB64(code);
