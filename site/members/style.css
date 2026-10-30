@@ -271,3 +271,12 @@ button.primary.rand-btn:focus-visible{outline:3px solid #f0c36a;outline-offset:2
 .rand-status{font-size:15px;color:var(--muted);margin:8px 0 0;min-height:1.5em}
 li.rand-hit{outline:2px solid #7fe3d9;outline-offset:4px;border-radius:10px}
 li.rand-hit:focus{outline:2px solid #7fe3d9}
+
+/* Commons: reply tag, reply box, report form (0062) */
+a.replying{display:block;font-size:13px;color:var(--aqua);text-decoration:none;border-left:3px solid var(--line-strong);padding:2px 0 2px 10px;margin:4px 0;overflow-wrap:anywhere}
+a.replying:hover{text-decoration:underline}
+li.jumped{outline:2px solid var(--aqua);outline-offset:4px;border-radius:6px}
+.replybox,.reportbox{margin-top:10px;padding:12px;border:1px solid var(--line);border-radius:10px}
+.reportbox label.choice{display:flex;gap:8px;align-items:center;padding:8px 2px;font-size:15px;color:var(--foam)}
+.reportbox label.choice input{width:auto}
+@media (max-width:600px){.list .btns button{padding:9px 14px}}

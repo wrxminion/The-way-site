@@ -109,19 +109,44 @@ async function mount(root) {
 
   // ---------------------------------------------------------- comments
   const msg = h('div');
+  let reportedIds = new Set();
+  const REASONS = [['attack', 'Attacks or insults a person'], ['hate', 'Hate toward a group'], ['false_claim', 'States something false as fact'],
+    ['politics', 'Asks for votes or backs a party or candidate'], ['private_info', 'Shares private information'], ['spam', 'Spam or an ad'],
+    ['other', 'Something else (tell us below)']];
+  // Report a comment: pick a reason, optional note. Only moderators see who reported.
+  function reportBox(c, li, out) {
+    const old = li.querySelector('.wd-reportbox'); if (old) { old.remove(); return; }
+    const name = 'wr' + c.id;
+    const note = h('textarea', { maxlength: 500, 'aria-label': 'Note (optional)', placeholder: 'Add a note (optional)' }); note.style.minHeight = '60px';
+    const radios = REASONS.map(([code, label]) => h('label', { class: 'wd-choice' }, h('input', { type: 'radio', name, value: code }), ' ' + label));
+    const m = h('div'); const send = h('button', { type: 'button', text: 'Send report' });
+    const box = h('div', { class: 'wd-reportbox' }, h('p', { class: 'wd-small', text: 'What is wrong with this?' }), ...radios, note, m,
+      h('p', { class: 'wd-small wd-muted', text: 'Only moderators see your report and your name. One report per comment.' }), h('div', { class: 'wd-row' }, send));
+    send.addEventListener('click', guarded(send, m, async () => {
+      const pick = radios.map((l) => l.firstChild).find((i) => i.checked);
+      if (!pick) throw new Error('Pick a reason first.');
+      const r = await sb.rpc('report_item', { p_kind: 'comment', p_id: c.id, p_code: pick.value, p_note: note.value });
+      if (r.error) throw r.error;
+      box.replaceChildren(h('p', { class: 'wd-ok', text: 'Thanks. A moderator will look at it. The writer will not be told who reported.' }));
+      reportedIds.add(c.id);
+    }));
+    li.append(box);
+  }
   async function loadComments() {
     const { data, error } = await sb.rpc('comments_for', { p_item: k.key });
     if (error) {
       if (/higher role/.test(error.message)) { root.replaceChildren(); root.classList.remove('wd'); return false; }   // limited to a higher role: show nothing
       put(listSlot, h('p', { class: 'wd-err', text: /Members only/.test(error.message) ? 'Only active members can read the discussion.' : niceError(error) })); return false; }
+    const mine = await sb.rpc('my_reported', { p_kind: 'comment', p_ids: data.map((c) => c.id) });
+    reportedIds = new Set(mine.error ? [] : mine.data);
     const top = data.filter((c) => c.parent_id == null);
     const kids = (id) => data.filter((c) => c.parent_id === id);
     const item = (c, isReply) => {
       const flagMsg = h('span', { class: 'wd-small' });
       const acts = h('div', { class: 'wd-row' });
       if (!isReply) acts.append(h('button', { class: 'wd-quiet', type: 'button', text: 'Reply', onclick: () => replyBox(c, li) }));
-      if (!c.mine) acts.append(h('button', { class: 'wd-quiet', type: 'button', text: 'Flag', onclick: async (e) => {
-        e.target.disabled = true; const r = await sb.rpc('flag_comment', { p_id: c.id }); flagMsg.textContent = r.error ? niceError(r.error) : 'Flagged for the moderators.'; } }));
+      if (!c.mine) acts.append(h('button', { class: 'wd-quiet', type: 'button', text: reportedIds.has(c.id) ? 'Reported' : 'Report', disabled: reportedIds.has(c.id),
+        onclick: () => reportBox(c, li, flagMsg) }));
       if (isMod) acts.append(h('button', { class: 'wd-quiet', type: 'button', text: c.hidden ? 'Restore' : 'Hide', onclick: async () => {
         const reason = window.prompt(c.hidden ? 'Why restore this comment?' : 'Why hide this comment? (logged and visible to members)');
         if (!reason) return;

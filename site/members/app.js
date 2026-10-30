@@ -1056,7 +1056,7 @@ async function categoryView(slug) {
   );
 }
 
-async function threadView(id) {
+async function threadView(id, jump) {
   if (can('moderator')) await langTerms();
   const thread = (await q(sb.from('threads')
     .select('*,category:categories(slug,title),author:members!threads_author_id_fkey(display_name)').eq('id', id)))[0];
@@ -1065,6 +1065,9 @@ async function threadView(id) {
     .select('*,author:members!posts_author_id_fkey(display_name)').eq('thread_id', id).order('id'));
   const msg = h('div');
   const reload = () => threadView(id);
+  const byId = new Map(posts.map((p) => [p.id, p]));
+  const reported = new Set(await q(sb.rpc('my_reported', { p_kind: 'post', p_ids: posts.map((p) => p.id) })).catch(() => []));
+  const ctx = { thread, byId, reported, canReply: thread.status === 'open' };
 
   const modTools = can('moderator') ? h('div', { class: 'btns' },
     thread.status === 'open'
@@ -1080,7 +1083,7 @@ async function threadView(id) {
     h('div', { class: 'row' }, h('h1', { text: thread.title }), h('span', {}, pinTag(thread), ' ', statusTag(thread.status))),
     h('p', { class: 'meta', text: `Started by ${thread.author ? thread.author.display_name : 'a member'} · ${when(thread.created_at)}` }),
     modTools, msg,
-    h('ul', { class: 'list panel' }, posts.map((p) => postItem(p, msg, reload))),
+    h('ul', { class: 'list panel' }, posts.map((p) => postItem(p, msg, reload, ctx))),
     thread.status === 'open'
       ? h('div', { class: 'panel' }, h('form', { onsubmit: action(async () => {
           if (!(await okToPost(reply.value))) return;
@@ -1089,9 +1092,19 @@ async function threadView(id) {
         }, msg) }, h('label', {}, 'Reply', reply), h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Post reply'))))
       : h('p', { class: 'muted', text: 'This thread is closed to new replies.' }),
   );
+  // #/t/12/p5 jumps to post 5; #/t/12/r5 jumps to post 5 and opens the reply box under it.
+  const m = /^([pr])(\d+)$/.exec(jump || '');
+  if (m) {
+    const li = document.getElementById(`p${m[2]}`);
+    if (li) {
+      li.scrollIntoView({ block: 'center' });
+      li.classList.add('jumped');
+      if (m[1] === 'r') { const b = li.querySelector('[data-reply]'); if (b) b.click(); }
+    }
+  }
 }
 
-function postItem(p, msg, reload) {
+function postItem(p, msg, reload, ctx) {
   const mine = state.user && p.author_id === state.user.id;
   const bodyEl = h('div', { class: `post${p.hidden_at ? ' hidden' : ''}`, text: p.body });
   const extra = h('div');
@@ -1099,6 +1112,12 @@ function postItem(p, msg, reload) {
     h('div', { class: 'meta' }, [h('strong', { text: p.author ? p.author.display_name : 'a member' }), ' · ', when(p.created_at),
       p.edited_at ? ` · edited ${when(p.edited_at)}` : '', p.hidden_at ? ' · hidden by a moderator' : '']),
     bodyEl, extra);
+  if (p.parent_post_id && ctx) {
+    const par = ctx.byId.get(p.parent_post_id);
+    const gone = !par || par.hidden_at;
+    li.insertBefore(h('a', { class: 'replying', href: `#/t/${p.thread_id}/p${p.parent_post_id}`, title: 'Jump to the post this answers',
+      text: gone ? 'Replying to a hidden post' : `Replying to ${par.author ? par.author.display_name : 'a member'}: ${par.body.replace(/\s+/g, ' ').slice(0, 80)}${par.body.length > 80 ? '...' : ''}` }), bodyEl);
+  }
   const hits = can('moderator') ? strongWords(p.body, TERMS) : [];
   if (hits.length) li.firstChild.append(' ', h('span', { class: 'tag warn', title: hits.join(', '), text: 'strong language' }));
 
@@ -1117,17 +1136,50 @@ function postItem(p, msg, reload) {
     extra.replaceChildren(h('div', { class: 'small' }, h('p', { class: 'dim', text: 'Earlier wording, oldest first:' }),
       revs.map((r) => h('div', {}, h('div', { class: 'meta', text: `replaced ${when(r.created_at)}` }), h('blockquote', { text: r.prior_body })))));
   }, msg) }, 'History'));
-  if (!mine) tools.append(h('button', { class: 'quiet', onclick: action(async () => {
-    const reason = await ask('What is wrong with this post? Moderators will see your report.');
-    if (!reason) return;
-    await q(sb.from('reports').insert({ post_id: p.id, reason }));
-    msg.append(notice('Thanks. A moderator will look at it.', 'ok'));
-  }, msg) }, 'Report'));
+  if (ctx && ctx.canReply && !p.hidden_at) tools.append(h('button', { class: 'quiet', 'data-reply': '1', onclick: () => {
+    if (extra.querySelector('.replybox')) return extra.replaceChildren();
+    const ta = h('textarea', { required: true, maxlength: 20000, 'aria-label': 'Your reply' });
+    const rm = h('div');
+    extra.replaceChildren(h('form', { class: 'replybox', onsubmit: action(async () => {
+      if (!(await okToPost(ta.value))) return;
+      await q(sb.from('posts').insert({ thread_id: p.thread_id, body: ta.value, parent_post_id: p.id }));
+      await reload();
+    }, rm) }, h('p', { class: 'small dim', text: `Your reply will say it answers ${p.author ? p.author.display_name : 'a member'}.` }), ta, rm,
+      h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Post reply'), h('button', { type: 'button', onclick: () => extra.replaceChildren() }, 'Cancel'))));
+    ta.focus();
+  } }, 'Reply'));
+  if (!mine) tools.append(ctx && ctx.reported.has(p.id)
+    ? h('button', { class: 'quiet', disabled: true }, 'Reported')
+    : h('button', { class: 'quiet', onclick: () => {
+        if (extra.querySelector('.reportbox')) return extra.replaceChildren();
+        extra.replaceChildren(reportForm('post', p.id, extra, () => { if (ctx) ctx.reported.add(p.id); }));
+      } }, 'Report'));
   if (can('moderator')) tools.append(p.hidden_at
     ? h('button', { class: 'quiet', onclick: action(() => moderate('unhide_post', p.id, reload), msg) }, 'Unhide')
     : h('button', { class: 'quiet danger', onclick: action(() => moderate('hide_post', p.id, reload), msg) }, 'Hide'));
   li.insertBefore(tools, extra);
   return li;
+}
+
+// Report form for a post or comment: pick a reason, add an optional note. The poster never sees who reported.
+const REPORT_REASONS = [
+  ['attack', 'Attacks or insults a person'], ['hate', 'Hate toward a group'], ['false_claim', 'States something false as fact'],
+  ['politics', 'Asks for votes or backs a party or candidate'], ['private_info', 'Shares private information'],
+  ['spam', 'Spam or an ad'], ['other', 'Something else (tell us below)'],
+];
+function reportForm(kind, id, slot, done) {
+  const msg = h('div');
+  const note = h('textarea', { maxlength: 500, 'aria-label': 'Note (optional)', placeholder: 'Add a note (optional)' }); note.style.minHeight = '70px';
+  const radios = REPORT_REASONS.map(([code, label]) => h('label', { class: 'choice' }, h('input', { type: 'radio', name: `rr-${kind}-${id}`, value: code }), ' ', label));
+  return h('form', { class: 'reportbox', onsubmit: action(async () => {
+    const pick = radios.map((l) => l.firstChild).find((i) => i.checked);
+    if (!pick) throw new Error('Pick a reason first.');
+    await q(sb.rpc('report_item', { p_kind: kind, p_id: id, p_code: pick.value, p_note: note.value }));
+    if (done) done();
+    slot.replaceChildren(notice('Thanks. A moderator will look at it. The person who wrote it will not be told who reported.', 'ok'));
+  }, msg) }, h('p', { class: 'small', text: 'What is wrong with this?' }), ...radios, note, msg,
+    h('p', { class: 'small dim', text: 'Only moderators see your report and your name. One report per item.' }),
+    h('div', { class: 'btns' }, h('button', { class: 'primary' }, 'Send report'), h('button', { type: 'button', onclick: () => slot.replaceChildren() }, 'Cancel')));
 }
 
 async function moderate(act, id, after) {
@@ -1271,9 +1323,7 @@ async function casesView(openSlug) {
 }
 
 async function reportsView() {
-  const rows = await q(sb.from('reports')
-    .select('*,reporter:members!reports_reporter_id_fkey(display_name),post:posts(id,body,thread_id,hidden_at)')
-    .is('resolved_at', null).order('id'));
+  const rows = await q(sb.rpc('report_queue'));
   const msg = h('div');
   const terms = await langTerms();
   const recent = await q(sb.from('posts').select('id,body,thread_id,created_at,hidden_at,author:members!posts_author_id_fkey(display_name)')
@@ -1286,16 +1336,23 @@ async function reportsView() {
       flagged.length ? h('ul', { class: 'list' }, flagged.map(({ p, hits }) => h('li', {},
         h('div', { class: 'meta', text: `${p.author ? p.author.display_name : 'a member'} · ${when(p.created_at)} · ${hits.join(', ')}` }),
         h('blockquote', { text: p.body.slice(0, 400) }),
-        h('div', { class: 'btns' }, h('a', { class: 'button quiet', href: `#/t/${p.thread_id}#p${p.id}`, text: 'Open thread' }),
+        h('div', { class: 'btns' }, h('a', { class: 'button quiet', href: `#/t/${p.thread_id}/p${p.id}`, text: 'Open thread' }),
           h('button', { class: 'quiet danger', onclick: action(() => moderate('hide_post', p.id, reportsView), msg) }, 'Hide post'))))) : h('p', { class: 'muted small', text: 'None.' })),
     h('h2', { text: 'Open reports' }),
     rows.length ? h('ul', { class: 'list panel' }, rows.map((r) => h('li', {},
-      h('div', { class: 'meta', text: `Reported by ${r.reporter ? r.reporter.display_name : '?'} · ${when(r.created_at)}` }),
+      h('div', { class: 'meta', text: `${r.kind === 'comment' ? 'Article comment' : 'Commons post'} by ${r.author_name || 'a member'} · reported by ${r.reporter_name || '?'} · ${when(r.created_at)}${r.hidden ? ' · already hidden' : ''}` }),
       h('div', { class: 'post', text: r.reason }),
-      r.post ? h('blockquote', { text: r.post.body.slice(0, 600) }) : null,
+      r.body ? h('blockquote', { text: r.body.slice(0, 600) }) : null,
       h('div', { class: 'btns' },
-        r.post ? h('a', { class: 'button quiet', href: `#/t/${r.post.thread_id}`, text: 'Open thread' }) : null,
-        r.post && !r.post.hidden_at ? h('button', { class: 'quiet danger', onclick: action(() => moderate('hide_post', r.post.id, reportsView), msg) }, 'Hide post') : null,
+        r.kind === 'post' ? h('a', { class: 'button quiet', href: `#/t/${r.thread_id}/p${r.post_id}`, text: 'Open thread' }) : null,
+        r.kind === 'comment' && r.item_key ? h('a', { class: 'button quiet', href: `/members/discuss.html?item=${encodeURIComponent(r.item_key)}`, text: 'Open discussion' }) : null,
+        !r.hidden ? h('button', { class: 'quiet danger', onclick: action(async () => {
+          if (r.kind === 'post') return moderate('hide_post', r.post_id, reportsView);
+          const why = await ask('Reason (every member can read the moderation log):');
+          if (!why) return;
+          await q(sb.rpc('moderate_comment', { p_id: r.comment_id, p_hide: true, p_reason: why }));
+          await reportsView();
+        }, msg) }, r.kind === 'post' ? 'Hide post' : 'Hide comment') : null,
         h('button', { class: 'quiet', onclick: action(async () => {
           const res = await ask('How was this resolved?');
           if (!res) return;
@@ -2900,7 +2957,7 @@ async function route() {
       case 'cases': return await casesView(decodeURIComponent(parts[1] || ''));
       case 'review': return await reviewView(decodeURIComponent(parts[1] || ''));
       case 'c': return await categoryView(decodeURIComponent(parts[1] || ''));
-      case 't': return await threadView(+parts[1]);
+      case 't': return await threadView(parseInt(parts[1], 10), parts[2] || (/#/.test(parts[1]) ? parts[1].split('#')[1] : ''));
       case 'log': return state.hasModLog ? await logView() : await homeView();
       case 'reports': return can('moderator') ? await reportsView() : render(notice('Moderators only.'));
       case 'research': return (can('researcher') || can('reviewer'))

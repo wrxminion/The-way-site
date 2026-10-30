@@ -664,7 +664,7 @@
 
   // "Member discussion" link under guide measures/candidates and history cases (discuss-link.js decides which pages).
   if (!inMembers && /^\/(guide(-[a-z]{2})?|cases)\//.test(path)) {
-    var dcss = document.createElement('link'); dcss.rel = 'stylesheet'; dcss.href = '/members/discuss.css?v=1'; document.head.appendChild(dcss);
+    var dcss = document.createElement('link'); dcss.rel = 'stylesheet'; dcss.href = '/members/discuss.css?v=2'; document.head.appendChild(dcss);
     var dl = document.createElement('script'); dl.src = '/members/discuss-link.js?v=1'; document.body.appendChild(dl);
   }
 
