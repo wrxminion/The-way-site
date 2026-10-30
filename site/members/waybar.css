@@ -68,19 +68,32 @@
 .waybar .wb-pub a{white-space:nowrap}
 .waybar:not(.wb-in) .wb-menu-btn{display:none}
 .waybar .wb-tools,.waybar.wb-in .wb-right{grid-column:3;grid-row:1;justify-self:end;display:flex;align-items:center;gap:10px}
-/* Desktop, always two rows so THE WAY is at the true centre of the page: row 1 is Pull a thread | THE WAY | search and account
+/* Desktop, always two rows so THE WAY is at the true centre of the page: row 1 is (empty) | THE WAY | Pull a thread, search and account
    (the outer columns are equal 1fr, so the name cannot drift), row 2 is the six section links in one centred line. */
-.waybar .wb-pat-left{display:none}
+.waybar .wb-pat-right{display:none}
 .waybar .wb-pat-img{display:block;height:44px;width:auto}
 @media (min-width:761px){
-  .waybar .wb-pat-left{display:inline-flex;align-items:center;grid-column:1;grid-row:1;justify-self:start;opacity:1}
+  .waybar .wb-pat-right{display:inline-flex;align-items:center;flex:none;opacity:1;padding:3px 12px;border:1px solid #c7ffff77;border-radius:100px}
+  .waybar .wb-pat-right:hover,.waybar .wb-pat-right:focus-visible{border-color:#a7f0e9;background:#0a3a50}
+  .waybar .wb-pat-right[aria-current=page]{border-color:#a7f0e9}
+  .waybar .wb-pat-right .wb-pat-img{height:36px}
+  .waybar .wb-tools,.waybar.wb-in .wb-right{justify-content:flex-end}
+  .waybar.wb-in .wb-name-text,.waybar.wb-in .wb-caret{display:none}
   .waybar .wb-search input{display:none}
   .waybar .wb-search button{width:36px}
 }
+@media (min-width:761px) and (max-width:899px){
+  .waybar .wb-pat-right .wb-pat-img{height:26px}
+  .waybar .wb-pat-right{padding:2px 8px}
+  .waybar .wb-tools,.waybar.wb-in .wb-right{gap:6px}
+  .waybar:not(.wb-in) .wb-login,.waybar:not(.wb-in) .wb-signup{padding:0 10px;font-size:13px}
+}
 @media (min-width:1100px){
+  .waybar .wb-pat-right .wb-pat-img{height:44px}
   .waybar .wb-pub{gap:6px 40px}
   .waybar .wb-pub a{letter-spacing:.1em;font-size:12.5px}
   .waybar .wb-login,.waybar .wb-signup{padding:0 14px}
+  .waybar.wb-in .wb-name-text,.waybar.wb-in .wb-caret{display:inline}
   .waybar.wb-in .wb-name-text{max-width:9em}
 }
 @media (min-width:1700px){.waybar .wb-search input{display:block;width:7em}.waybar.wb-in .wb-name-text{max-width:14em}}
@@ -393,3 +406,13 @@ html.wb-bubbles-off .wb-rise{display:none}
 @media (min-width:761px){.waybar:has(.wb-pill){height:64px;overflow:hidden}}
 @media (max-width:760px){.waybar:has(.wb-pill){min-height:62px}}
 
+
+/* Section links, desktop: two equal halves so the gap between the groups sits exactly under THE WAY.
+   Left group is pushed right, right group is pushed left, toward the centre gap. */
+@media (min-width:761px){
+  .waybar .wb-pub{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:28px;justify-content:stretch}
+  .waybar .wb-pub-l{justify-content:flex-end}
+  .waybar .wb-pub-r{justify-content:flex-start}
+  .waybar .wb-pub a{padding-bottom:3px}
+}
+@media (min-width:1100px){.waybar .wb-pub{column-gap:40px}}

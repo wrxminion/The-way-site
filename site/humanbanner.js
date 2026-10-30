@@ -1,6 +1,7 @@
 // The Way: slim "we need humans" banner for logged-out visitors.
 // One file. Change the words on the TEXT line below. Nothing is tracked: the only thing stored is
-// "theway.humanbanner" in this visitor's own browser, so the X stays closed.
+// "theway.humanbanner" in this tab's own session storage, so the X lasts until the tab closes. A small
+// "Help us review" tab stays on the page after the X and brings the banner back.
 (function () {
   'use strict';
   var TEXT = ['A lot of the site is reviewed and written by AI (LLMs).', 'We need humans to make sure it\'s not hallucinating.'];
@@ -8,7 +9,9 @@
   var JOIN = '/members/join.html';
   var KEY = 'theway.humanbanner';
 
-  try { if (localStorage.getItem(KEY)) return; } catch (e) { /* private mode: show it */ }
+  try { localStorage.removeItem(KEY); } catch (e) { /* the old permanent close is cleared so nobody stays hidden */ }
+  var closed = false;
+  try { closed = !!sessionStorage.getItem(KEY); } catch (e) { /* storage blocked: show it */ }
   try {
     for (var i = 0; i < localStorage.length; i++) {
       if (/^sb-.+-auth-token$/.test(localStorage.key(i) || '')) return; // signed in
@@ -38,13 +41,29 @@
   x.setAttribute('aria-label', 'Close this message');
   x.textContent = '×';
   x.addEventListener('click', function () {
-    try { localStorage.setItem(KEY, '1'); } catch (e) { /* private mode */ }
+    try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* storage blocked */ }
     bar.remove();
+    showTab();
   });
   bar.addEventListener('keydown', function (e) { if (e.key === 'Escape') x.click(); });
 
   bar.appendChild(p); bar.appendChild(a); bar.appendChild(x);
-  var top = document.getElementById('waybar');
-  if (top && top.parentNode) top.parentNode.insertBefore(bar, top.nextSibling);
-  else document.body.insertBefore(bar, document.body.firstChild);
+
+  var tab = null;
+  function showBar() {
+    if (tab) { tab.remove(); tab = null; }
+    try { sessionStorage.removeItem(KEY); } catch (e) { /* storage blocked */ }
+    var top = document.getElementById('waybar');
+    if (top && top.parentNode) top.parentNode.insertBefore(bar, top.nextSibling);
+    else document.body.insertBefore(bar, document.body.firstChild);
+  }
+  function showTab() {
+    tab = document.createElement('button');
+    tab.type = 'button';
+    tab.className = 'hb-tab';
+    tab.textContent = 'Help us review';
+    tab.addEventListener('click', showBar);
+    document.body.appendChild(tab);
+  }
+  if (closed) showTab(); else showBar();
 })();

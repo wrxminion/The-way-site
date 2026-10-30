@@ -448,11 +448,11 @@
     var logo = link(data ? route('') : '/', 'The Way'); // signed in: member Home; signed out: the public front page
     logo.className = 'wb-logo';
     var kids = [logo];
-    // Pull a Thread sits left of THE WAY on the top row (desktop), the search and account sit to its right, so the name is dead centre.
+    // Pull a Thread sits on the right of the top row (desktop), first in the group with the search and account, so THE WAY stays dead centre.
+    var pat = null;
     if (data || !pending) {
-      var pat = threadArt(link(THREAD, 'Pull a Thread', 'thread', cur));
-      pat.className = 'wb-pat-left';
-      kids.push(pat);
+      pat = threadArt(link(THREAD, 'Pull a Thread', 'thread', cur));
+      pat.className = 'wb-pat-right';
     }
     panels = {};
     if (data) {
@@ -490,6 +490,7 @@
       item(route('signout'), 'Sign out');
       btn.addEventListener('click', function (ev) { ev.stopPropagation(); toggleMenu(btn, menu); });
       who.appendChild(btn); who.appendChild(menu); right.appendChild(who);
+      if (pat) right.insertBefore(pat, right.firstChild);
       kids.push(mid, right); // no Home pill: the name at the top is the Home link
     } else if (!pending) {
       panels = { menu: publicPanel() };
@@ -501,6 +502,7 @@
       auth.appendChild(link('/members/', 'Log in', 'login', cur)).className = 'wb-login';
       auth.appendChild(link(route('signup'), 'Sign up', 'signup', cur)).className = 'wb-signup';
       tools.appendChild(auth);
+      if (pat) tools.insertBefore(pat, tools.firstChild);
       kids.push(pub, menuBtn, tools);
     }
     bar.replaceChildren.apply(bar, kids);
@@ -521,8 +523,8 @@
   }
   function loadBubbles() {
     if (window.WayBubbles || document.querySelector('script[src^="/members/bubbles.js"]')) return;
-    ['bubbles.css?v=4', 'bubbles-look.css?v=4'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=4'; sc.onload = syncBubbles; document.head.appendChild(sc);
+    ['bubbles.css?v=5', 'bubbles-look.css?v=5'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; document.head.appendChild(l); });
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=5'; sc.onload = syncBubbles; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -739,10 +741,10 @@
   if (!inMembers && !document.querySelector('script[src^="/humanbanner.js"]')) {
     var hbCss = document.createElement('link');
     hbCss.rel = 'stylesheet';
-    hbCss.href = '/humanbanner.css?v=3';
+    hbCss.href = '/humanbanner.css?v=4';
     document.head.appendChild(hbCss);
     var hbScript = document.createElement('script');
-    hbScript.src = '/humanbanner.js?v=3';
+    hbScript.src = '/humanbanner.js?v=4';
     hbScript.defer = true;
     document.head.appendChild(hbScript);
   }
