@@ -12,7 +12,7 @@ deployment:
     - /bin/mkdir -p ${DEPLOYPATH}members
     - /bin/cp -R site/members/. ${DEPLOYPATH}members/
     # Public pages: guides, maps, cases, case studies, states, news and images (moved out of /preview/pages/)
-    - /bin/cp -R site/guide site/guide-* site/map site/map-* site/cases site/case-studies site/states site/news site/results site/img $DEPLOYPATH
+    - /bin/cp -R site/guide site/guide-* site/map site/map-* site/cases site/case-studies site/states site/news site/results site/vote site/img $DEPLOYPATH
     # Timeline, development, ai pages (noindex) at the docroot
     - /bin/mkdir -p ${DEPLOYPATH}timeline ${DEPLOYPATH}development ${DEPLOYPATH}ai
     - /bin/cp -R site/timeline/. ${DEPLOYPATH}timeline/
@@ -28,8 +28,8 @@ deployment:
     - /bin/mkdir -p ${DEPLOYPATH}search
     - /bin/cp -R site/search/. ${DEPLOYPATH}search/
     # Permissions: files 0644, folders 0755, only inside the paths above
-    - /usr/bin/find ${DEPLOYPATH}members ${DEPLOYPATH}guide ${DEPLOYPATH}guide-* ${DEPLOYPATH}map ${DEPLOYPATH}map-* ${DEPLOYPATH}cases ${DEPLOYPATH}case-studies ${DEPLOYPATH}states ${DEPLOYPATH}news ${DEPLOYPATH}results ${DEPLOYPATH}img -type f ! -name .htaccess -exec /bin/chmod 0644 {} +
-    - /usr/bin/find ${DEPLOYPATH}members ${DEPLOYPATH}guide ${DEPLOYPATH}guide-* ${DEPLOYPATH}map ${DEPLOYPATH}map-* ${DEPLOYPATH}cases ${DEPLOYPATH}case-studies ${DEPLOYPATH}states ${DEPLOYPATH}news ${DEPLOYPATH}results ${DEPLOYPATH}img -type d -exec /bin/chmod 0755 {} +
+    - /usr/bin/find ${DEPLOYPATH}members ${DEPLOYPATH}guide ${DEPLOYPATH}guide-* ${DEPLOYPATH}map ${DEPLOYPATH}map-* ${DEPLOYPATH}cases ${DEPLOYPATH}case-studies ${DEPLOYPATH}states ${DEPLOYPATH}news ${DEPLOYPATH}results ${DEPLOYPATH}vote ${DEPLOYPATH}img -type f ! -name .htaccess -exec /bin/chmod 0644 {} +
+    - /usr/bin/find ${DEPLOYPATH}members ${DEPLOYPATH}guide ${DEPLOYPATH}guide-* ${DEPLOYPATH}map ${DEPLOYPATH}map-* ${DEPLOYPATH}cases ${DEPLOYPATH}case-studies ${DEPLOYPATH}states ${DEPLOYPATH}news ${DEPLOYPATH}results ${DEPLOYPATH}vote ${DEPLOYPATH}img -type d -exec /bin/chmod 0755 {} +
     # Live ledger rows and checks: copied from the ledger-data branch (public raw files) so the ledger page stays same-origin.
     # A failure here never stops a deploy (the page works without these two files).
     - /bin/sh -c 'DEPLOYPATH=/home3/minion/public_html/thewayparty.com/; for f in live-rows checks; do /usr/bin/curl -fsS --max-time 20 -o ${DEPLOYPATH}development/data/$f.tmp https://raw.githubusercontent.com/wrxminion/The-way-site/ledger-data/$f.json && /bin/mv -f ${DEPLOYPATH}development/data/$f.tmp ${DEPLOYPATH}development/data/$f.json || /bin/rm -f ${DEPLOYPATH}development/data/$f.tmp; done; true'
