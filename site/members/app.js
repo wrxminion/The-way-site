@@ -847,6 +847,29 @@ function homeInbox(wantsMod) {
   return h('div', { class: 'home-inbox-wrap' }, notes, pending);
 }
 
+// Newest member comments on articles, cases and measures (0070 recent_comments). Reply opens that page's discussion.
+// Stays out of the way (empty) if 0070 is not run yet or there is nothing to show.
+const KIND_LABEL = { news: 'Article', case: 'Case', measure: 'Measure', candidate: 'Candidate' };
+function homeComments() {
+  const box = h('div', { class: 'home-comments', hidden: true }, h('h3', { text: 'New comments on articles' }));
+  const ul = h('ul', { class: 'list panel home-feed' });
+  box.append(ul);
+  (async () => {
+    try {
+      const rows = await q(sb.rpc('recent_comments', { p_limit: 5 }));
+      if (!rows.length) return;
+      ul.replaceChildren(...rows.map((c) => h('li', {},
+        h('div', { class: 'row' }, h('span', { class: 'tag', text: KIND_LABEL[c.kind] || 'Page' }), h('span', { class: 'meta', text: when(c.created_at) })),
+        h('div', { class: 'meta', text: c.parent_id ? `${c.author_name} replied` : c.author_name }),
+        h('div', { class: 'small post', text: c.body }),
+        h('div', { class: 'btns home-reply' }, h('a', { class: 'button quiet', 'data-reply-comment': c.id,
+          href: `discuss.html?item=${encodeURIComponent(c.item_key)}`, text: 'Reply' })))));
+      box.hidden = false;
+    } catch { /* leave it hidden */ }
+  })();
+  return box;
+}
+
 async function homeView() {
   const wantsAdmin = can('admin'), wantsMod = can('moderator');
   const [cats, posts, openReports, notifyCount] = await Promise.all([
@@ -914,6 +937,7 @@ async function homeView() {
       // Quick Reply: for now it opens the thread; the in-thread reply (tagging a comment) is built in its own change and plugs in here.
       h('div', { class: 'btns home-reply' }, h('a', { class: 'button quiet', href: `#/t/${e.id}`, 'data-reply-thread': e.id, text: 'Reply' })))))
       : h('p', { class: 'muted', text: 'Nothing posted yet. Start the first thread in the Commons.' }),
+    homeComments(),
     h('p', {}, h('a', { class: 'button quiet', href: '#/commons', text: 'Open the Commons' })),
     feedBox,
     h('div', { class: 'home-actions' },
