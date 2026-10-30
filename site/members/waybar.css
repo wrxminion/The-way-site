@@ -22,6 +22,7 @@
   font-size:16px;font-weight:800;letter-spacing:.16em;padding:11px 24px;border:2px solid #a7f0e9;border-radius:100px;background:#0a3a50}
 .waybar.wb-in .wb-home:hover,.waybar.wb-in .wb-home[aria-current=page]{background:#0f4d6a}
 .waybar.wb-in .wb-logo{grid-column:2;grid-row:1;justify-self:center}
+@media (min-width:761px){.waybar.wb-in .wb-logo{font-size:clamp(26px,2.8vw,36px);line-height:1.1;letter-spacing:.2em}}
 .waybar.wb-in .wb-mid{grid-column:1/-1;grid-row:2;justify-content:center}
 .waybar.wb-in .wb-mid a,.waybar.wb-in .wb-mid button{font-weight:700;opacity:1}
 .waybar.wb-in .wb-more-link{display:inline-flex;align-items:center;gap:6px;border:1px solid #c7ffff55;border-radius:100px;padding:5px 14px}
