@@ -390,7 +390,7 @@ function progressPanel(receipt, dynamic, stage) {
     if (p.kind === 'screenshot') {
       if (localShot) kids.push(h('img', { class: 'pt-thumb', src: localShot.url, alt: 'Your screenshot (a preview from your own browser)' }));
       kids.push(h('p', { class: 'pt-help', text: p.image_gone ? 'Your picture is already deleted from our computers. Only the text is kept.'
-        : p.image_mode === 'review' ? 'Reviewers never see the picture. Admin will review, then if necessary. It is deleted as soon as that review is done, and never kept longer than 3 days. Only the text is kept.' + (localShot ? ' The preview above stays in this browser tab only.' : '')
+        : p.image_mode === 'review' ? 'The picture is not kept and nobody sees it. Only the text is kept.' + (localShot ? ' The preview above stays in this browser tab only.' : '')
         : 'We delete the picture as soon as the text is read.' + (localShot ? ' The preview above stays in this browser tab only.' : '') }));
     }
     if (p.url) kids.push(h('p', { class: 'pt-sent-link', text: p.url }), h('p', { class: 'pt-help', text: 'Shown as plain text. Our website never opens your link.' }));
@@ -504,7 +504,7 @@ async function send(form, summary) {
   else if (kind === 'question') fd.append('question', q);
   else if (kind === 'screenshot') fd.append('shot', shotFile);
   fd.append('kind', kind);
-  if (kind === 'screenshot') fd.append('image_mode', form.elements.text_only && !form.elements.text_only.checked ? 'review' : 'text_only');
+  if (kind === 'screenshot') fd.append('image_mode', 'text_only');
   if (kind !== 'url' && form.elements.hide_names && form.elements.hide_names.checked) fd.append('hide_names', '1');
   fd.append('note', form.elements.note ? form.elements.note.value.trim() : '');
   const headers = {};
@@ -569,11 +569,8 @@ function view() {
   if (mode === 'screenshot') {
     checks.push(h('div', { class: 'pt-notice' },
       h('p', {}, h('strong', { text: 'Your screenshot is private. ' }), 'It is read only by our own AI program, running on our own computer. No outside AI service is used. The program does not learn from or train on what you send: its models are fixed and nothing is retrained.'),
-      h('p', { text: 'Pictures are stored with our database provider only until they are read and deleted. You check the text before anything goes to reviewers. If you do not send it within about an hour, we delete the picture and the text.' })));
-    const withPic = h('p', { class: 'pt-help', hidden: true, role: 'status', text: 'If you send the picture too: reviewers never see it. Admin will review, then if necessary. The picture is deleted as soon as that review is done (never kept longer than 3 days). We keep only the text. Every time an admin opens it, it is logged.' });
-    const only = h('input', { type: 'checkbox', name: 'text_only', checked: true, onchange: () => { withPic.hidden = only.checked; } });
-    checks.push(h('label', { class: 'pt-check-row' }, only,
-      h('span', {}, h('strong', { text: 'Send only the text. ' }), 'We read the text, then delete the picture right away. Nobody sees it.')), withPic);
+      h('p', { text: 'Your picture waits in private storage with our database provider only until our program has read it, then it is deleted. You check the text before anything goes to reviewers. If you do not send it within about an hour, we delete the picture and the text.' })));
+    checks.push(h('p', { class: 'pt-help', text: 'We read the text, then delete the picture right away. It is not kept, and nobody sees it. You check and correct the text before anything is sent.' }));
   } else if (mode === 'question' || mode === 'text') {
     checks.push(h('p', { class: 'pt-help', text: 'Our AI runs on our own computer. No outside AI service is used, and it does not learn from or train on what you send. Your first answer comes from everything public on our site, all our data points. After you send, our program also looks for outside sources on the web: only a short search phrase about the subject is used, never your name, email, picture or full text. Those leads stay marked as not checked until a person verifies them.' }));
   }
