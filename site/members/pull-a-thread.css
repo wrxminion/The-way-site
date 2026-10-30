@@ -29,10 +29,10 @@
 .pt-mode input:focus-visible+.pt-mode-box{outline:3px solid #a7f0e9;outline-offset:3px}
 .pt-icon{width:24px;height:24px;flex:none}
 .pt-framed{position:relative;border:3px solid #8cddd0;border-radius:23px;padding:16px 16px 12px;background:var(--panel)}
-.pt-thread-corner{position:absolute;top:-3px;right:-3px;width:120px;height:40px;pointer-events:none;background:url(art/pat/pat-thread-input-frame.svg) right top/340px auto no-repeat}
+.pt-thread-corner{position:absolute;bottom:-3px;right:-3px;transform:scaleY(-1);width:120px;height:40px;pointer-events:none;background:url(art/pat/pat-thread-input-frame.svg) right top/340px auto no-repeat}
 /* the fingertips (left edge of the picture, a quarter of the way down) pinch the border line itself; the hand hangs over the border, inside the box width, so it never reaches the cards above */
-.pt-hand{position:absolute;top:calc(var(--pt-hand-w) * -.29 - 1px);right:8px;width:var(--pt-hand-w);height:auto;pointer-events:none}
-.pt-framed{--pt-hand-w:84px}
+.pt-hand{position:absolute;top:calc(100% - var(--pt-hand-w) * .29 - 1px);right:8px;width:var(--pt-hand-w);height:auto;pointer-events:none}
+.pt-framed{--pt-hand-w:84px;margin-bottom:calc(var(--pt-hand-w) * .6)}
 .pt-field{display:grid;gap:8px}
 .pt-field label{font-size:17px;font-weight:600}
 .pt-field textarea,.pt-field input[type=url],.pt-field input[type=text]{width:100%;min-height:48px;font-size:17px}
@@ -47,9 +47,18 @@
 .pt-gorow button{min-height:48px;padding:0 24px;font-size:17px}
 .pt-gorow{gap:6px 18px}
 .pt-gorow .pt-go{display:grid;background:none;border:0;padding:0;min-height:48px;width:min(340px,100%);color:var(--foam);cursor:pointer}
-.pt-go-art{grid-area:1/1;width:100%;height:auto;object-fit:contain;display:block}
-.pt-go-text{grid-area:1/1;align-self:end;justify-self:center;font-size:18px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;line-height:1;padding-bottom:2px;text-shadow:0 1px 6px #021a26,0 0 2px #021a26}
+.pt-go-text{grid-area:1/1;font-size:18px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;line-height:1;text-shadow:0 1px 6px #021a26,0 0 2px #021a26}
 .pt-gorow .pt-go:disabled{opacity:.6;cursor:default}
+/* Submit is a plain outlined button (same soft look as the header pills) with no picture. */
+.pt-gorow .pt-go{position:relative;display:flex;align-items:center;justify-content:center;width:min(260px,100%);min-height:56px;padding:12px 28px;border:1px solid #c7ffff77;border-radius:22px;background:#073b5066;overflow:hidden}
+.pt-gorow .pt-go:hover:not(:disabled),.pt-gorow .pt-go:focus-visible{border-color:#a7f0e9;background:#0a3a50}
+/* Selling point beside Submit (signed-out only): the same italic serif as the lede, larger, in the accent colour. */
+.pt-noacct{font:italic clamp(22px,3vw,30px)/1.2 var(--serif);color:#a7f0e9;align-self:center}
+/* The page heading is the words-and-hand picture. */
+.pt-title{margin:0 0 6px;line-height:0}
+.pt-title-art{display:block;width:min(420px,100%);height:auto}
+/* No Pull a Thread link in the header on this page: it is the page. */
+.waybar .wb-pat-right[aria-current=page],.waybar .wb-pat-left[aria-current=page]{display:none}
 .pt-privacy{font-size:16px;color:var(--muted);margin:4px 0 0}
 .pt-live{min-height:1.2em;margin:6px 0;font-size:17px}
 .pt-outcome,.pt-still,.pt-ocr{border:2px solid var(--line-strong);border-radius:16px;padding:14px 16px;margin:14px 0;background:var(--panel)}

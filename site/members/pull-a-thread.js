@@ -584,18 +584,18 @@ function view() {
   const trap = h('div', { class: 'pt-hp', 'aria-hidden': 'true' }, h('input', { name: 'website', tabindex: '-1', autocomplete: 'off' }));
   const ts = h('div', { class: 'pt-ts' });
   const BA = '/members/art/', still = BA + 'thread-slack-480.webp?v=2', pulled = BA + 'thread-pull-480.webp?v=3';
-  const goImg = h('img', { src: still, alt: '', width: '480', height: '153', class: 'pt-go-art', 'aria-hidden': 'true' });
-  const go = h('button', { type: 'submit', class: 'pt-go' }, goImg, h('span', { class: 'pt-go-text', text: 'Submit' }));   // real text under the picture is the button's name
+  const goImg = h('img', { src: still, alt: 'Pull a thread', width: '480', height: '153', class: 'pt-title-art' });   // the heading: the words drawn as the thread, the hand pulling it
+  const go = h('button', { type: 'submit', class: 'pt-go' }, h('span', { class: 'pt-go-text', text: 'Submit' }));   // the text is the button's name
   // Warm the browser cache for the pull animation once the page is idle, so pressing Submit never waits on it (and a cache buster is no longer needed).
   (window.requestIdleCallback || ((f) => setTimeout(f, 1500)))(() => { new Image().src = pulled; });
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
   go.addEventListener('click', () => { if (reduce && reduce.matches) { goImg.src = BA + 'thread-taut-480.webp?v=2'; return; } goImg.src = pulled + '#' + Date.now(); });   // plays once per press; still for reduced motion
-  form.append(modes, summary, framed, note, ...checks, trap, ts, h('div', { class: 'pt-gorow' }, go, session ? '' : h('span', { class: 'muted', text: 'No account needed' })),
+  form.append(modes, summary, framed, note, ...checks, trap, ts, h('div', { class: 'pt-gorow' }, go, session ? '' : h('span', { class: 'pt-noacct', text: 'No account needed' })),
     h('p', { class: 'pt-privacy', text: 'Reviewers see what you send, never who you are. Your screenshot and email stay private. Questions and evidence can become public after review, reworded without names or private details. Email addresses stay private.' }));
   form.addEventListener('submit', (ev) => { ev.preventDefault(); send(form, summary); });
   app.replaceChildren(...[
     h('p', { class: 'overline', text: 'FOLLOW THE EVIDENCE' }),
-    h('h1', { text: 'Pull a thread' }),
+    h('h1', { class: 'pt-title' }, goImg),
     h('p', { class: 'lede', text: 'Bring a question. See what the evidence says.' }),
     signInNote ? h('p', { class: 'pt-signin-note', role: 'status' }, signInNote + ' ', h('a', { href: '/members/', text: 'Sign in' })) : null,
     form, live, results, otherPanels()].filter(Boolean));
