@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "c38cb37adcc55fac",
+   "kind": "news",
+   "title": "Iowa election results: Secretary of Ag race between Mike Naig and Chris Jones",
+   "source": "KCCI",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSkRueDQzR3pvSGFtN3BuV2tkWmxBdDJYemFCTEhzQnFuY3ozVHpFNFF2MHlfLVI1ZnZVTUJmWDE2amc4TGNvcy1SdDBvaDNwNDNjWXpjcGFabm5YZUdKOTlGalJvOG1nVERJbmpCX2xmNURqaktqNzBnYlJnemk4ZFJkUk51UGo2TzFKM0JHWU9Od05tU2RXOTBGUG1WZ2liLTktalVHaHZVVGlhbmhvMA?oc=5",
+   "published_at": "2026-10-30",
+   "first_seen_at": "2026-10-30T18:52:31Z",
+   "states": [
+    "ia"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "ia-mike-naig",
+     "kind": "candidate",
+     "label": "Mike Naig, Secretary of Agriculture, Iowa",
+     "page": "guide-ia/candidates/mike-naig.html"
+    }
+   ]
+  },
+  {
    "id": "c239e92627d5a52e",
    "kind": "news",
    "title": "Mike Naig, Chris Jones clash over how to clean up Iowa's water",
@@ -272,5 +299,5 @@
    ]
   }
  ],
- "generated_at": "2026-10-27T16:59:24Z"
+ "generated_at": "2026-10-30T19:02:22Z"
 }
