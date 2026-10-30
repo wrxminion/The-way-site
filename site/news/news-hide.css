@@ -1,0 +1,7 @@
+.panel-toggle{display:inline-block;margin:0 0 12px;padding:8px 16px;border-radius:99px;border:1px solid #86d4d35a;background:#061b28;color:#c6f3ee;font:inherit;font-size:13px;letter-spacing:.04em;cursor:pointer}
+.panel-toggle:hover{background:#0b2a3b;color:#fff}
+.panel-toggle:focus-visible{outline:2px solid #91dfdc;outline-offset:2px}
+.panel-toggle[hidden]{display:none}
+.layout.wide{grid-template-columns:minmax(0,1fr);max-width:none}
+.layout.wide .sidebar{display:none}
+@media(max-width:860px){.panel-toggle{display:none}}

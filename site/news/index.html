@@ -10,6 +10,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="news.css?v=d0cc3cf8">
+<link rel="stylesheet" href="news-hide.css?v=1">
 <link rel="stylesheet" href="/members/waybar.css?v=24">
 <link rel="stylesheet" href="/banner.css?v=1"><link rel="stylesheet" href="/redesign.css?v=vf4"><link rel="stylesheet" href="/water-depth.css?v=1">
 <link rel="canonical" href="https://michiinstitute.com/news/">
@@ -59,6 +60,7 @@
 
 <main class="layout" id="panel" role="tabpanel" aria-labelledby="tab-now">
   <section class="feed" aria-live="polite" aria-busy="true">
+    <button type="button" class="panel-toggle" id="panel-toggle" aria-pressed="false" aria-controls="panel" hidden>Hide side panel</button>
     <div class="banner" id="banner" hidden></div>
     <p class="status" id="status">Loading the current…</p>
     <ol class="cards" id="cards"></ol>
@@ -87,6 +89,7 @@
 </footer>
 <script src="/members/ballot-store.js?v=6"></script>
 <script src="news.js?v=save-notes-1"></script>
+<script src="news-hide.js?v=1"></script>
 <script src="/members/waybar.js?v=47" defer></script>
 </body>
 </html>
