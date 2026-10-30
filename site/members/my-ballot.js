@@ -649,6 +649,53 @@
       ui.shareMsg ? h('p', { class: 'notice ' + ui.shareMsg.cls, role: 'status', text: ui.shareMsg.text }) : null);
   }
 
+  // ---- collapsible cards: each major card folds to its one-line title; the choice is kept on this device only
+  var FOLD = 'theway.ballot.folded.v1';
+  function folded() { try { return JSON.parse(localStorage.getItem(FOLD)) || {}; } catch (e) { return {}; } }
+  function saveFolded(m) { try { localStorage.setItem(FOLD, JSON.stringify(m)); } catch (e) { /* ignore */ } }
+  function setFold(sec, shut) {
+    var b = sec.querySelector('.mb-fold'), body = sec.querySelector('.mb-body');
+    if (!b || !body) return;
+    body.hidden = shut; sec.classList.toggle('mb-shut', shut);
+    b.setAttribute('aria-expanded', shut ? 'false' : 'true');
+  }
+  function foldable(sec, idx) {
+    var old = sec.querySelector('h2:not(.mb-sheet-title)');
+    if (!old) return sec;
+    var title = old.textContent, key = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    var bid = 'mb-body-' + idx, shut = !!folded()[key];
+    var btn = h('button', { type: 'button', class: 'mb-fold', 'aria-controls': bid, 'aria-expanded': 'true', 'data-fold': key }, h('span', { text: title }), h('span', { class: 'mb-chev', 'aria-hidden': 'true', text: '▾' }));
+    btn.addEventListener('click', function () {
+      var m = folded(), now = !sec.classList.contains('mb-shut');
+      if (now) m[key] = 1; else delete m[key];
+      saveFolded(m); setFold(sec, now);
+    });
+    var head = h('h2', { class: 'mb-foldhead' }, btn);
+    var wrapper = old.parentNode !== sec ? old.parentNode : null;
+    var body = h('div', { class: 'mb-body', id: bid });
+    old.remove();
+    while (sec.firstChild) body.appendChild(sec.firstChild);
+    sec.appendChild(wrapper ? h('div', { class: 'noprint' }, head) : head);
+    sec.appendChild(body);
+    sec.classList.add('mb-foldable');
+    setFold(sec, shut);
+    return sec;
+  }
+  function foldAll(shut) {
+    var m = {};
+    app.querySelectorAll('.mb-foldable').forEach(function (sec) {
+      var k = sec.querySelector('.mb-fold').getAttribute('data-fold');
+      if (shut) m[k] = 1;
+      setFold(sec, shut);
+    });
+    saveFolded(m);
+  }
+  function foldBar() {
+    return h('div', { class: 'mb-foldbar noprint' },
+      h('button', { type: 'button', onclick: function () { foldAll(true); }, text: 'Collapse all cards' }),
+      h('button', { type: 'button', onclick: function () { foldAll(false); }, text: 'Expand all cards' }));
+  }
+
   // ---- page
   function draw() {
     var focus = document.activeElement && document.activeElement.getAttribute && document.activeElement.getAttribute('data-k');
@@ -668,6 +715,9 @@
     }
     var d = WB.read(ST);
     kids.push(statePicker(have), markPanel(d), factsPanel(d), comparePanel(d), sheet(d), keepPanel(d), accountPanel(d), sharePanel(d));
+    var fi = 0;
+    kids = kids.map(function (k) { return k && k.nodeName === 'SECTION' && (k.classList.contains('panel') || k.classList.contains('mb-sheet-wrap')) ? foldable(k, ++fi) : k; });
+    kids.splice(3, 0, foldBar());
     app.replaceChildren.apply(app, kids);
     if (focus) { var f = app.querySelector('[data-k="' + focus.replace(/"/g, '') + '"]'); if (f) f.focus(); }
   }
