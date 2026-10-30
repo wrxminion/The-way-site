@@ -12,8 +12,8 @@
 .bp-save{font-size:11px;padding:2px 9px;margin-left:6px;vertical-align:baseline;opacity:.85}
 .bp-save:hover,.bp-save[aria-pressed=true]{opacity:1}
 .bp-dock{position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:calc(100vw - 190px)}
-/* bottom middle on a wide screen; on a narrow one it stays left of the bubble column (Pull a Thread, Log in, Back to surface) at bottom right */
-@media (min-width:900px){.bp-dock{left:50%;transform:translateX(-50%);max-width:calc(100vw - 400px)}}
+/* bottom left, directly below the "What do I do here?" pill (help-panel.css lifts that pill above this one); it stays left of the bubble column (Pull a Thread, Log in, Back to surface) at bottom right */
+@media (min-width:900px){.bp-dock{justify-content:flex-start;max-width:calc(100vw - 400px)}}
 html.wb-has-bottom .bp-dock{bottom:calc(4.5rem + env(safe-area-inset-bottom) + 8px)}
 .bp-open{display:inline-block;background:#a6f0e7;color:#052230;font-weight:700;font-size:14px;text-decoration:none;border-radius:99px;padding:9px 16px;box-shadow:0 8px 28px #0008}
 .bp-open:hover{background:#fff;color:#052230}

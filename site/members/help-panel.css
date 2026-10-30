@@ -6,3 +6,5 @@
 .wh-q{border-top:1px solid #d4ffff26;padding:6px 0}.wh-q summary{cursor:pointer;font-weight:600;min-height:32px}
 .wh-q p{margin:6px 0}.wh-panel a,.wh-inline a{color:#a7f0e9}.wh-muted{color:#bcd7df}
 .wh-way{font-weight:700}
+/* On voter-guide pages the My Ballot pill sits at the very bottom left, so the help pill and its panel move up one pill height. */
+@media (min-width:761px){body:has(.bp-dock) .wh-btn{bottom:66px}body:has(.bp-dock) .wh-panel{bottom:120px}}

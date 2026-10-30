@@ -866,12 +866,10 @@ function homeComments() {
 
 async function homeView() {
   const wantsAdmin = can('admin'), wantsMod = can('moderator');
-  const [cats, posts, openReports, notifyCount] = await Promise.all([
+  const [cats, posts] = await Promise.all([
     q(sb.from('categories').select('*').order('sort_order')),
     q(sb.from('posts').select('id,body,created_at,thread_id,author:members!posts_author_id_fkey(display_name),thread:threads(title)')
       .is('hidden_at', null).order('id', { ascending: false }).limit(12)),
-    wantsMod ? sb.from('reports').select('id', { count: 'exact', head: true }).is('resolved_at', null).then((r) => r.count || 0) : 0,
-    wantsAdmin ? sb.from('notify_signups').select('id', { count: 'exact', head: true }).then((r) => r.count || 0) : 0,
   ]);
   // Latest threads: a failure here must never break Home, so it is loaded on its own; the feed then shows posts only.
   let recent = [];
@@ -890,6 +888,10 @@ async function homeView() {
     h('span', { class: 'home-card-sub', text: a0 ? `${US[a0][0]}: what is on your ballot, from official sources` : 'Save your state to see what is on your ballot' }),
     h('span', { class: 'home-cta', text: a0 ? 'Open your voter guide' : 'Choose your state' }));
   if (!a0) ballotCard.href = '#/account';
+  const mapCard = h('a', { class: 'home-card home-map', href: '/states/#pick' },
+    h('strong', { class: 'home-card-title', text: 'Map' }),
+    h('span', { class: 'home-card-sub', text: 'Explore the voter guides and ballots of other states' }),
+    h('span', { class: 'home-cta', text: 'Open the map' }));
   const mapTile = () => h('a', { class: 'tile us-tile', href: '#/map' }, usSvg({ small: true }),
     h('strong', { text: 'The map' }), h('span', { text: 'Every state at a glance' }));
   const review = wantsMod ? reviewParts() : null;
@@ -897,33 +899,22 @@ async function homeView() {
     h('strong', { class: 'home-card-title', text: 'Contribute' }),
     h('span', { class: 'home-card-sub', text: 'Send an article or a source, and see how close you are to the next rank' }),
     h('span', { class: 'home-cta', text: 'Open author tools' }));
-  const hasTools = wantsAdmin || wantsMod || can('researcher') || can('reviewer');
 
   const feedBox = h('div', { class: 'home-news' });
   const inbox = homeInbox(wantsMod);
   const seasonBox = h('div', { class: 'home-season' });
   render(
-    seasonBox,
-    scoreBar(wantsMod),
     h('div', { class: 'home-head' },
       h('h1', { class: 'home-hello', text: `Welcome back, ${state.me.display_name}` }),
       h('p', { class: 'small place-line' }, ...(place
         ? ['Your state: ', h('strong', { text: place.state }), ' · ', h('a', { href: '#/account', text: 'Change' })]
         : [h('a', { href: '#/account', text: 'Save your state in your account' }), ' to open the map and your ballot on it.']))),
-    h('div', { class: 'panel home-tools' },
-      h('h3', { text: 'Your tools' }),
-      h('div', { class: 'btns' },
-        h('a', { class: 'button quiet', href: 'author.html', text: 'Author desk and ranks' }),
-        h('a', { class: 'button quiet', href: '#/private', text: 'Private research' }),
-        wantsMod ? h('a', { class: 'button quiet', href: '#/review', text: 'Review sources' }) : null,
-        (can('researcher') || can('reviewer')) ? h('a', { class: 'button quiet', href: '#/research', text: 'Research desk' }) : null,
-        wantsAdmin ? h('a', { class: 'button quiet', href: '#/admin', text: `Notify list (${notifyCount})` }) : null,
-        wantsMod ? h('a', { class: 'button quiet', href: '#/reports', text: `Reports (${openReports} open)` }) : null,
-        wantsMod && state.hasModLog ? h('a', { class: 'button quiet', href: '#/log', text: 'Moderation log' }) : null)),
+    scoreBar(wantsMod),
+    // Three cards in a row: My ballot (the season card: voter guide link and upcoming votes), Review sources, Map.
+    // "Your tools" moved to the "My tools" drop-down in the header (waybar.js).
+    h('div', { class: 'home-trio' }, seasonBox, review ? review.action : authorCard, mapCard),
     inbox,
     h('div', { class: 'btns home-quick' },
-      h('a', { class: 'button', href: 'my-ballot.html', text: 'My ballot picks' }),
-      h('a', { class: 'button', href: '#/map', text: 'Map' }),
       h('a', { class: 'button primary', href: '#/invite', text: 'Invite someone' })),
     h('h2', { text: 'Recent in the Commons' }),
     feed.length ? h('ul', { class: 'list panel home-feed' }, feed.map((e) => h('li', {},
@@ -936,9 +927,6 @@ async function homeView() {
     homeComments(),
     h('p', {}, h('a', { class: 'button quiet', href: '#/commons', text: 'Open the Commons' })),
     feedBox,
-    h('div', { class: 'home-actions' },
-      ballotCard,
-      review ? review.action : authorCard),
     h('h2', { text: 'Rooms' }),
     h('p', { class: 'small muted', text: 'Members may talk about anything, candidates included. The Way itself never takes sides.' }),
     h('ul', { class: 'list panel' }, cats.map((c) => h('li', {},
