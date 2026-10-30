@@ -8,3 +8,9 @@
 @media (max-width:560px){.hb-bar{padding:.5rem 48px .6rem 14px;gap:.35rem;font-size:.92rem}}
 .hb-tab{position:fixed;left:12px;bottom:12px;z-index:49;min-height:44px;padding:.4rem 1rem;border:1px solid #a7f0e955;border-radius:999px;background:#0a3d4f;color:#ffe45c;font:700 .9rem/1.2 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;box-shadow:0 3px 12px #0006;cursor:pointer}
 .hb-tab:hover,.hb-tab:focus-visible{background:#0d4e65;outline:2px solid #fff;outline-offset:2px}
+.hb-big{display:block;font-size:1.05em;letter-spacing:.01em}
+.hb-small{display:block;margin-top:.15rem;font-size:.72em;font-weight:600;color:#ffeea0}
+.hb-shark{width:96px;height:auto;flex:none}
+@media (prefers-reduced-motion:no-preference){.hb-shark{animation:hb-shark-bob 3.2s ease-in-out infinite}}
+@keyframes hb-shark-bob{0%,100%{transform:translateX(0) rotate(0)}50%{transform:translateX(6px) rotate(-3deg)}}
+@media (max-width:560px){.hb-shark{width:64px}}

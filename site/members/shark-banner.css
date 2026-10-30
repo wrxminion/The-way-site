@@ -1,0 +1,10 @@
+/* "The Hallucination Shark ate the facts": the call for reviewers at the top of the Help page. Plain words, one button. */
+.shark-banner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.4rem 1.2rem;margin:0 auto 1rem;padding:.8rem 1rem;max-width:56rem;box-sizing:border-box;text-align:center;background:#0a3d4f;color:#ffe45c;border:1px solid #a7f0e966;border-radius:14px;box-shadow:0 3px 12px #0006;font:800 clamp(1rem,2.2vw,1.35rem)/1.25 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.shark-banner img{width:96px;height:auto;flex:none}
+.shark-banner p{margin:0;max-width:30rem}
+.shark-banner-go{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 1.3rem;border-radius:999px;background:#a7f0e9;color:#04101a;font-size:1rem;font-weight:700;text-decoration:none}
+.shark-banner-go:hover,.shark-banner-go:focus-visible{background:#fff;outline:2px solid #fff;outline-offset:2px}
+@keyframes shark-bob{0%,100%{transform:translateX(0) rotate(0)}50%{transform:translateX(6px) rotate(-3deg)}}
+.shark-banner img{animation:shark-bob 3.2s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.shark-banner img{animation:none}}
+@media (max-width:560px){.shark-banner img{width:72px}}
