@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#176b85">
+<title>Election results by email — The Way</title>
+<meta name="description" content="Choose which election results you want by email.">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="/news/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="results.css?v=1">
+<link rel="stylesheet" href="/members/waybar.css?v=16">
+<link rel="canonical" href="https://michiinstitute.com/results/notify.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Election results by email — The Way">
+<meta property="og:description" content="Unofficial, automatically collected results for the November 3, 2026 election. Not checked by a person, and not final until certified.">
+<meta property="og:url" content="https://michiinstitute.com/results/notify.html">
+<meta property="og:site_name" content="The Way | Michi Institute">
+<meta property="og:image" content="https://michiinstitute.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-mid wb-pub" aria-label="Sections"><a href="/states/">Ballot</a><a href="/news/">News</a><a href="/cases/">Civics &amp; History</a><a href="/foundation.html">Why?</a></nav><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+<header class="top">
+  <div class="eyebrow">The Way / Ballot / Election night</div>
+  <h1>Election results by email</h1>
+  <p>Choose the results you want. We will send a confirmation email first, and nothing else until you click it. Emails are not being sent yet; your choices are saved for when they start. You can change them or stop with the link in every email.</p>
+</header>
+<div class="wrap">
+  <div class="notice" role="note"><p><b>Unofficial until certified.</b> Results in these emails are copied automatically from official sources and are not checked by a person.</p></div>
+  <form id="f" class="form" novalidate>
+    <label for="email">Your email</label>
+    <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <fieldset><legend>Your own election</legend>
+      <label for="own_state">Your state</label>
+      <select id="own_state" name="own_state"><option value="">Choose a state</option><option value="al">Alabama</option><option value="ak">Alaska</option><option value="az">Arizona</option><option value="ar">Arkansas</option><option value="ca">California</option><option value="co">Colorado</option><option value="ct">Connecticut</option><option value="de">Delaware</option><option value="dc">District of Columbia</option><option value="fl">Florida</option><option value="ga">Georgia</option><option value="hi">Hawaii</option><option value="id">Idaho</option><option value="il">Illinois</option><option value="in">Indiana</option><option value="ia">Iowa</option><option value="ks">Kansas</option><option value="ky">Kentucky</option><option value="la">Louisiana</option><option value="me">Maine</option><option value="md">Maryland</option><option value="ma">Massachusetts</option><option value="mi">Michigan</option><option value="mn">Minnesota</option><option value="ms">Mississippi</option><option value="mo">Missouri</option><option value="mt">Montana</option><option value="ne">Nebraska</option><option value="nv">Nevada</option><option value="nh">New Hampshire</option><option value="nj">New Jersey</option><option value="nm">New Mexico</option><option value="ny">New York</option><option value="nc">North Carolina</option><option value="nd">North Dakota</option><option value="oh">Ohio</option><option value="ok">Oklahoma</option><option value="or">Oregon</option><option value="pa">Pennsylvania</option><option value="ri">Rhode Island</option><option value="sc">South Carolina</option><option value="sd">South Dakota</option><option value="tn">Tennessee</option><option value="tx">Texas</option><option value="ut">Utah</option><option value="vt">Vermont</option><option value="va">Virginia</option><option value="wa">Washington</option><option value="wv">West Virginia</option><option value="wi">Wisconsin</option><option value="wy">Wyoming</option></select>
+      <label for="own_county">Your county (optional)</label>
+      <input id="own_county" name="own_county" type="text" maxlength="60" autocomplete="off" placeholder="For example: Boulder">
+      <label for="own_district">Your U.S. House district number (optional)</label>
+      <input id="own_district" name="own_district" type="text" maxlength="8" autocomplete="off" placeholder="For example: 8, or at-large">
+      <p class="muted">We keep only a state, county and district number. Never a street address.</p>
+      <label class="chk"><input type="checkbox" name="own_measures" checked> Ballot measures in my state</label>
+      <label class="chk"><input type="checkbox" name="own_races" checked> Races in my state and district</label>
+    </fieldset>
+    <fieldset><legend>Extras</legend>
+      <label class="chk"><input type="checkbox" name="all_house"> Every U.S. House race</label>
+      <label class="chk"><input type="checkbox" name="all_senate"> Every U.S. Senate race</label>
+      <p class="muted">Other states (pick any):</p>
+      <div class="statesgrid"><label class="chk"><input type="checkbox" name="extra_state" value="al"> Alabama</label><label class="chk"><input type="checkbox" name="extra_state" value="ak"> Alaska</label><label class="chk"><input type="checkbox" name="extra_state" value="az"> Arizona</label><label class="chk"><input type="checkbox" name="extra_state" value="ar"> Arkansas</label><label class="chk"><input type="checkbox" name="extra_state" value="ca"> California</label><label class="chk"><input type="checkbox" name="extra_state" value="co"> Colorado</label><label class="chk"><input type="checkbox" name="extra_state" value="ct"> Connecticut</label><label class="chk"><input type="checkbox" name="extra_state" value="de"> Delaware</label><label class="chk"><input type="checkbox" name="extra_state" value="dc"> District of Columbia</label><label class="chk"><input type="checkbox" name="extra_state" value="fl"> Florida</label><label class="chk"><input type="checkbox" name="extra_state" value="ga"> Georgia</label><label class="chk"><input type="checkbox" name="extra_state" value="hi"> Hawaii</label><label class="chk"><input type="checkbox" name="extra_state" value="id"> Idaho</label><label class="chk"><input type="checkbox" name="extra_state" value="il"> Illinois</label><label class="chk"><input type="checkbox" name="extra_state" value="in"> Indiana</label><label class="chk"><input type="checkbox" name="extra_state" value="ia"> Iowa</label><label class="chk"><input type="checkbox" name="extra_state" value="ks"> Kansas</label><label class="chk"><input type="checkbox" name="extra_state" value="ky"> Kentucky</label><label class="chk"><input type="checkbox" name="extra_state" value="la"> Louisiana</label><label class="chk"><input type="checkbox" name="extra_state" value="me"> Maine</label><label class="chk"><input type="checkbox" name="extra_state" value="md"> Maryland</label><label class="chk"><input type="checkbox" name="extra_state" value="ma"> Massachusetts</label><label class="chk"><input type="checkbox" name="extra_state" value="mi"> Michigan</label><label class="chk"><input type="checkbox" name="extra_state" value="mn"> Minnesota</label><label class="chk"><input type="checkbox" name="extra_state" value="ms"> Mississippi</label><label class="chk"><input type="checkbox" name="extra_state" value="mo"> Missouri</label><label class="chk"><input type="checkbox" name="extra_state" value="mt"> Montana</label><label class="chk"><input type="checkbox" name="extra_state" value="ne"> Nebraska</label><label class="chk"><input type="checkbox" name="extra_state" value="nv"> Nevada</label><label class="chk"><input type="checkbox" name="extra_state" value="nh"> New Hampshire</label><label class="chk"><input type="checkbox" name="extra_state" value="nj"> New Jersey</label><label class="chk"><input type="checkbox" name="extra_state" value="nm"> New Mexico</label><label class="chk"><input type="checkbox" name="extra_state" value="ny"> New York</label><label class="chk"><input type="checkbox" name="extra_state" value="nc"> North Carolina</label><label class="chk"><input type="checkbox" name="extra_state" value="nd"> North Dakota</label><label class="chk"><input type="checkbox" name="extra_state" value="oh"> Ohio</label><label class="chk"><input type="checkbox" name="extra_state" value="ok"> Oklahoma</label><label class="chk"><input type="checkbox" name="extra_state" value="or"> Oregon</label><label class="chk"><input type="checkbox" name="extra_state" value="pa"> Pennsylvania</label><label class="chk"><input type="checkbox" name="extra_state" value="ri"> Rhode Island</label><label class="chk"><input type="checkbox" name="extra_state" value="sc"> South Carolina</label><label class="chk"><input type="checkbox" name="extra_state" value="sd"> South Dakota</label><label class="chk"><input type="checkbox" name="extra_state" value="tn"> Tennessee</label><label class="chk"><input type="checkbox" name="extra_state" value="tx"> Texas</label><label class="chk"><input type="checkbox" name="extra_state" value="ut"> Utah</label><label class="chk"><input type="checkbox" name="extra_state" value="vt"> Vermont</label><label class="chk"><input type="checkbox" name="extra_state" value="va"> Virginia</label><label class="chk"><input type="checkbox" name="extra_state" value="wa"> Washington</label><label class="chk"><input type="checkbox" name="extra_state" value="wv"> West Virginia</label><label class="chk"><input type="checkbox" name="extra_state" value="wi"> Wisconsin</label><label class="chk"><input type="checkbox" name="extra_state" value="wy"> Wyoming</label></div>
+      <label for="extra_cities">Cities (optional, up to 10, separated by commas)</label>
+      <input id="extra_cities" name="extra_cities" type="text" maxlength="300" autocomplete="off" placeholder="For example: Denver CO, Tulsa OK">
+    </fieldset>
+    <fieldset><legend>How often</legend>
+      <label class="chk"><input type="radio" name="timing" value="each_call" checked> When a race I picked is called by the official source</label>
+      <label class="chk"><input type="radio" name="timing" value="daily_wrap"> One summary each day while counting</label>
+      <label class="chk"><input type="radio" name="timing" value="final_only"> Only the final numbers</label>
+    </fieldset>
+    <button type="submit">Save my choices</button>
+    <p id="msg" class="status" aria-live="polite"></p>
+  </form>
+</div>
+<footer class="bottom"><p>Not left. Not right. We are The Way. · A nonpartisan project, not a political party.</p></footer>
+<script src="notify.js?v=1"></script>
+<script src="/members/waybar.js?v=31" defer></script>
+</body>
+</html>

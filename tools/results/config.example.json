@@ -1,0 +1,16 @@
+{
+  "election": {"name": "2026 General Election", "date": "2026-11-03", "timezone": "America/Denver"},
+  "mode": null,
+  "scopes": {"co": "Colorado", "house": "U.S. House", "senate": "U.S. Senate", "state-ca": "California"},
+  "seats_expected": {"house": 435, "senate": 35},
+  "sources": [
+    {"id": "co-sos", "name": "Colorado Secretary of State (sample)", "adapter": "clarity-xml", "scope": "co", "state": "co",
+     "url": "file:sample/raw/co-clarity.xml", "public_url": "https://www.coloradosos.gov/"},
+    {"id": "house-sample", "name": "U.S. House (sample)", "adapter": "csv", "scope": "house", "level": "federal",
+     "url": "file:sample/raw/house.csv", "public_url": "https://www.house.gov/"},
+    {"id": "senate-sample", "name": "U.S. Senate (sample)", "adapter": "csv", "scope": "senate", "level": "federal",
+     "url": "file:sample/raw/senate.csv", "public_url": "https://www.senate.gov/"},
+    {"id": "ca-sample", "name": "California (sample)", "adapter": "csv", "scope": "state-ca", "state": "ca",
+     "url": "file:sample/raw/state-ca.csv", "public_url": "https://www.sos.ca.gov/"}
+  ]
+}

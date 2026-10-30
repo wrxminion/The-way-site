@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SAMPLE ONLY. Invented names and numbers for testing the collector. Not a real election file. -->
+<ElectionResult>
+  <Contest key="101" text="Governor" voteFor="1" isQuestion="false" totalPrecincts="1000" precinctsReported="640">
+    <Choice key="1" text="Sample Candidate One" party="DEM" totalVotes="412000"/>
+    <Choice key="2" text="Sample Candidate Two" party="REP" totalVotes="389500"/>
+    <Choice key="3" text="Sample Candidate Three" party="LIB" totalVotes="21800"/>
+  </Contest>
+  <Contest key="201" text="Sample Measure A: Sample question about a fee" voteFor="1" isQuestion="true" totalPrecincts="1000" precinctsReported="640">
+    <Choice key="1" text="Yes" totalVotes="455000"/>
+    <Choice key="2" text="No" totalVotes="367000"/>
+  </Contest>
+  <Contest key="202" text="Sample Measure B: Sample question about a district" voteFor="1" isQuestion="true" totalPrecincts="1000" precinctsReported="640">
+    <Choice key="1" text="Yes" totalVotes="380100"/>
+    <Choice key="2" text="No" totalVotes="441200"/>
+  </Contest>
+</ElectionResult>

@@ -1,0 +1,9 @@
+/* Results on the ballot map: patterns and text only, no party colors. Loaded only on pages that carry the US map. */
+.rp-lab{font:700 11px Inter,system-ui,sans-serif;fill:#021018;text-anchor:middle;dominant-baseline:middle;pointer-events:none;paint-order:stroke;stroke:#ffffffcc;stroke-width:3px;stroke-linejoin:round}
+.rp-box{max-width:980px;margin:10px auto 0;padding:14px 18px;border:1px solid #abedf536;border-radius:14px;background:#061b2bb0;color:#c8e0e5;font-size:14px;line-height:1.55}
+.rp-box h2{font:normal 22px Georgia,serif;margin:0 0 6px;color:#eaf8fa}
+.rp-line{margin:2px 0;font-size:16px;color:#eaf8fa}
+.rp-note{font-size:13px;color:#a9cdd3;margin:8px 0}
+.rp-det summary{cursor:pointer;color:#a9f0e7;font-weight:600}
+.rp-list{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:4px 18px;font-size:13px}
+@media(max-width:600px){.rp-lab{font-size:14px}}

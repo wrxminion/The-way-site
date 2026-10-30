@@ -144,6 +144,7 @@
     if (/^\/research\//.test(path)) return 'research-lib';
     if (/^\/search\//.test(path)) return 'search';
     if (/^\/members\/pull-a-thread/.test(path)) return 'thread';
+    if (/^\/results/.test(path)) return 'results';
     if (/^\/news/.test(path)) return 'news';
     if (/^\/(foundation|founder|deeper)/.test(path)) return 'about';
     if (/^\/members\/my-ballot/.test(path)) return 'myballot';
@@ -222,6 +223,7 @@
     contribute.push({ href: route('private'), label: 'Private research', desc: 'Your own notes and team files, never published', icon: 'private', key: 'private' });
     var explore = [
       { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread', art: true },
+      { href: '/results/', label: 'Election results', desc: 'Unofficial, auto-fed, updated as counts come in', icon: 'ballot', key: 'results' },
       { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
       { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
       { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
@@ -253,7 +255,8 @@
         { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread', art: true },
         { href: STATES, label: 'Voter Guide', desc: 'Your state, your ballot', icon: 'ballot', key: 'ballot' },
         { href: '/members/my-ballot.html', label: 'My ballot', desc: 'Your picks and notes, saved in this browser', icon: 'myballot', key: 'myballot' },
-        { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
+        { href: '/results/', label: 'Election results', desc: 'Unofficial, auto-fed, updated as counts come in', icon: 'ballot', key: 'results' },
+      { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
         { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
         { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
         { href: '/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
