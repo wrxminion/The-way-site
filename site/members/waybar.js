@@ -712,7 +712,7 @@
     }
     if (!document.querySelector('script[src^="/whale.js"]')) {
       var whaleScript = document.createElement('script');
-      whaleScript.src = '/whale.js?v=4';
+      whaleScript.src = '/whale.js?v=5';
       document.head.appendChild(whaleScript);
     }
     if (!document.querySelector('script[src^="/footer-quick.js"]')) {

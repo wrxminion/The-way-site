@@ -28,6 +28,15 @@
     lane.style.top = Math.round(rnd(Math.min(180, height / 4), Math.max(180, height - 220))) + 'px';
   }
   chooseDepth();
+  // Inner pages: the host is a centered column, so widen the lane to the viewport or the whale gets clipped at the column edge.
+  function fit() {
+    if (document.body.classList.contains('home')) return;
+    lane.style.left = Math.round(-host.getBoundingClientRect().left) + 'px';
+    lane.style.right = 'auto';
+    lane.style.width = document.documentElement.clientWidth + 'px';
+  }
+  fit();
+  window.addEventListener('resize', fit);
   function swim() {
     if (!near || swimming || document.hidden) { schedule(rnd(6000, 15000)); return; }
     swimming = true;
