@@ -1,7 +1,7 @@
 // The Way: one top bar for every page (member area, Findings, guides, maps, case pages, splash).
-// Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=1"> in <head>,
+// Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=18"> in <head>,
 //          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
-//          <script src="/members/waybar.js?v=1" defer></script>.
+//          <script src="/members/waybar.js?v=34" defer></script>.
 // Signed in, desktop: logo centered · section links, a "Menu" button and Invite · search · your name (account menu).
 // Signed in, phone: a compact header (logo, search, account) and a bottom bar with Vote, Commons, Contribute, Menu.
 // Signed out: logo and public sections, search, "Log in" and "Sign up"; on a phone the sections sit in a Menu panel.
@@ -226,7 +226,7 @@
       { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
       { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread', art: true },
       { href: '/results/', label: 'Election results', desc: 'Unofficial, auto-fed, updated as counts come in', icon: 'ballot', key: 'results' },
-      { href: route('map'), label: 'Map', desc: 'Every state at a glance', icon: 'map', key: 'map' },
+      { href: STATES + '#pick', label: 'Map', desc: 'Every state at a glance', icon: 'map', key: 'map' },
       { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
       { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
       { href: '/case-studies/', label: 'Case Studies', icon: 'casestudies', key: 'casestudies' },
@@ -421,6 +421,7 @@
       // Desktop section links (a phone shows the bottom bar instead).
       var mid = el('nav', { class: 'wb-mid', 'aria-label': 'Sections' });
       mid.appendChild(link(data.ballot || STATES, 'Voter Guide', 'ballot', cur));
+      mid.appendChild(link('/members/my-ballot.html', 'My ballot', 'myballot', cur));
       mid.appendChild(link('/news/', 'News', 'news', cur));
       mid.appendChild(link('/cases/', 'Civics & History', 'cases', cur));
       mid.appendChild(link('/case-studies/', 'Case Studies', 'casestudies', cur));
@@ -697,7 +698,7 @@
   }
   // My Ballot: on voter-guide pages, load the pick/save controls (browser-only; see ballot-store.js).
   if (/^\/guide(-[a-z]{2})?\//.test(path) && !inMembers) {
-    var bcss = document.createElement('link'); bcss.rel = 'stylesheet'; bcss.href = '/members/ballot-pick.css?v=3'; document.head.appendChild(bcss);
+    var bcss = document.createElement('link'); bcss.rel = 'stylesheet'; bcss.href = '/members/ballot-pick.css?v=5'; document.head.appendChild(bcss);
     var bstore = document.createElement('script'); bstore.src = '/members/ballot-store.js?v=6';
     bstore.onload = function () { var bp = document.createElement('script'); bp.src = '/members/ballot-pick.js?v=7'; document.body.appendChild(bp); };
     document.body.appendChild(bstore);

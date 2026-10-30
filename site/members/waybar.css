@@ -397,3 +397,4 @@ html.wb-bubbles-off .wb-rise{display:none}
    Hold it at the finished height so nothing below moves. */
 @media (min-width:761px){.waybar:has(.wb-pill){height:64px;overflow:hidden}}
 @media (max-width:760px){.waybar:has(.wb-pill){min-height:62px}}
+
