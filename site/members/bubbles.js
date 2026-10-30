@@ -343,6 +343,7 @@
     riseLeft();
     document.documentElement.classList.add('wb-has-bubs');
     lastSig = sig;
+    if (window.WayCommonsNew) window.WayCommonsNew.apply();
     if (first) enter();
   }
 
@@ -364,6 +365,12 @@
   (function () {
     var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/steve.css?v=1'; document.head.appendChild(l);
     var sc = document.createElement('script'); sc.src = '/members/steve.js?v=2'; sc.defer = true; document.head.appendChild(sc);
+  })();
+
+  // New-in-the-Commons starfish (own files): commons-new.js puts a small starfish on the Commons bubble when others have posted since you last looked.
+  (function () {
+    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/commons-new.css?v=1'; document.head.appendChild(l);
+    var sc = document.createElement('script'); sc.src = '/members/commons-new.js?v=1'; sc.defer = true; document.head.appendChild(sc);
   })();
 
   window.WayBubbles = { render: function (c) { ctx = c; build(); }, keys: KEYS };
