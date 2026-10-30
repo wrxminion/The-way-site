@@ -66,7 +66,7 @@
 
       if (which === 'ballot') {
         title.textContent = 'My ballot';
-        sub.textContent = 'Your picks and notes for the November election, kept in this browser.';
+        sub.textContent = '';
         btn('Open My ballot', mine, true); btn(abbr ? 'Open your voter guide' : 'Choose your state', guide);
         if (released) btn('Election results', '/results/');
       } else if (which === 'election_day') {

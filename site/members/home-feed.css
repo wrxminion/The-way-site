@@ -1,5 +1,5 @@
 /* Members home: narrow score bar, news feed (home-feed.js). */
-.score-bar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;max-width:44rem;margin:6px 0 10px;padding:8px 16px;border:1px solid #c7ffff3a;border-radius:100px;background:#052b3cd8;color:var(--foam)}
+.score-bar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;max-width:54rem;margin:6px 0 10px;padding:8px 16px;border:1px solid #c7ffff3a;border-radius:100px;background:#052b3cd8;color:var(--foam)}
 .sb-cell{display:flex;align-items:baseline;gap:8px;min-width:0}
 .sb-label{font:700 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#a7f0e9}
 .sb-num{font:normal 24px/1 var(--serif);color:#fff}
