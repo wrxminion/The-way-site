@@ -1,4 +1,4 @@
--- 0075: Pull a Thread pictures are for admins only (Frank, Oct 30 2026). Needs 0035 and 0037. Safe to run twice.
+-- 0076: Pull a Thread pictures are for admins only (Frank, Oct 30 2026). Needs 0035 and 0037. Safe to run twice.
 -- Reviewers (and editors) see the text only. They cannot request a picture, cannot open one from storage, and the queue
 -- tells them "admin_only" instead of "available". Admins can still open a picture with a written reason; every open is logged.
 -- NEW PICTURES (Frank Oct 30): never kept for review. The choice "keep for review" is ignored: every new picture is text only and the
@@ -59,7 +59,7 @@ begin
   if t.image_mode <> 'review' then raise exception 'The sender chose to send only the text. There is no picture to open.' using errcode = '22023'; end if;
   if r is null or char_length(r) not between 8 and 300 then raise exception 'Say why the picture is needed (8 to 300 characters)' using errcode = '22023'; end if;
   insert into public.thread_image_views (intake_id, shot_path, member_id, reason) values (t.id, t.shot_path, auth.uid(), r);
-  -- 0075: opening a picture no longer extends how long it is kept
+  -- 0076: opening a picture no longer extends how long it is kept
   return t.shot_path;
 end $$;
 
@@ -81,7 +81,7 @@ begin
     if new.kind = 'screenshot' then
       new.status := 'draft';
       new.draft_expires_at := now() + interval '6 hours';
-      new.image_mode := 'text_only';   -- 0075: pictures are never kept for review any more
+      new.image_mode := 'text_only';   -- 0076: pictures are never kept for review any more
       new.image_delete_after := now() + interval '1 day';
     elsif new.kind = 'question' and coalesce(current_setting('thread.hide', true), '') = '1' then
       new.status := 'draft'; new.draft_expires_at := now() + interval '6 hours'; new.hide_names := true; new.redact_status := 'pending';
@@ -91,7 +91,7 @@ begin
   if new.kind = 'question' and new.status = 'draft' and new.redact_status in ('done','failed') and old.redact_status is distinct from new.redact_status then
     new.draft_expires_at := least(coalesce(new.draft_expires_at, now() + interval '1 hour'), now() + interval '1 hour');
   end if;
-  -- 0075: a new request to keep the picture for review is ignored: text only, picture gone as soon as the text is read
+  -- 0076: a new request to keep the picture for review is ignored: text only, picture gone as soon as the text is read
   if new.kind = 'screenshot' and new.image_mode = 'review' and old.image_mode is distinct from 'review' then
     new.image_mode := 'text_only'; new.image_delete_after := old.image_delete_after;
   end if;
@@ -101,7 +101,7 @@ begin
       if new.status = 'draft' then new.draft_expires_at := least(coalesce(new.draft_expires_at, now() + interval '1 hour'), now() + interval '1 hour'); end if;
     end if;
     if new.status in ('accepted','needs_evidence','duplicate','declined','answered') and old.status is distinct from new.status then
-      new.image_delete_after := now();   -- 0075: the picture goes at the decision, not a day later
+      new.image_delete_after := now();   -- 0076: the picture goes at the decision, not a day later
     end if;
     if new.status in ('expired','discarded') and old.status is distinct from new.status then new.image_delete_after := now(); end if;
   end if;
