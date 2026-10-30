@@ -22,8 +22,9 @@
   function clean(raw) {
     var title = str(raw && raw.title, 300), url = safeUrl(raw && raw.url);
     if (!title || !url) return null;
+    var img = safeUrl(raw && raw.image); if (!/^https:/.test(img)) img = '';
     var pub = Date.parse(raw.published_at), seen = Date.parse(raw.first_seen_at);
-    return { title: title, url: url, source: str(raw.source, 80), states: Array.isArray(raw.states) ? raw.states.filter(function (s) { return typeof s === 'string'; }).map(function (s) { return s.slice(0, 2).toUpperCase(); }) : [],
+    return { title: title, url: url, image: img, source: str(raw.source, 80), states: Array.isArray(raw.states) ? raw.states.filter(function (s) { return typeof s === 'string'; }).map(function (s) { return s.slice(0, 2).toUpperCase(); }) : [],
       measures: Array.isArray(raw.measures) ? raw.measures.filter(function (m) { return typeof m === 'string'; }) : [],
       dateOnly: typeof raw.published_at === 'string' && raw.published_at.length <= 10, pub: isFinite(pub) ? pub : null, sort: isFinite(pub) ? pub : (isFinite(seen) ? seen : 0) };
   }
@@ -81,7 +82,16 @@
         var d = new Date(i.pub);
         meta.appendChild(el('span', null, i.dateOnly ? d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', timeZone: 'UTC' }) : d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })));
       }
-      li.append(a, meta); list.appendChild(li);
+      var box = el('div', 'enews-text'); box.append(a, meta);
+      if (i.image) {
+        // Publisher's own preview image, linked not copied. Hidden if it fails to load or the CSP blocks it.
+        var im = document.createElement('img');
+        im.className = 'enews-thumb'; im.width = 96; im.height = 64; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async';
+        im.referrerPolicy = 'no-referrer'; im.src = i.image;
+        im.addEventListener('error', function () { im.remove(); });
+        li.classList.add('has-thumb'); li.appendChild(im);
+      }
+      li.appendChild(box); list.appendChild(li);
     });
   }
 

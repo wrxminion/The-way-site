@@ -11,7 +11,7 @@ import json, os, re, sys
 D = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), '..', 'site', 'news', 'data')
 ELECTION = re.compile(r"\b(elections?|ballots?|voters?|voting|votes?|candidates?|primary|primaries|runoff|polls?|polling|campaigns?|midterms?|amendment|proposition|referendum|congressional|secretary of state|redistricting)\b", re.I)
 NATIONAL = re.compile(r"\b(congress|senate|house|midterms?|president|presidential|national|nationwide|federal|supreme court|redistricting)\b", re.I)
-KEEP = ('title', 'url', 'source', 'published_at', 'first_seen_at', 'states', 'measures')
+KEEP = ('title', 'url', 'source', 'published_at', 'first_seen_at', 'states', 'measures', 'image')
 
 def norm(t):
     t = re.sub(r"\s+[-|–—]\s+[^-|–—]{2,40}$", '', t.lower())
