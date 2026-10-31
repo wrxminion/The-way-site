@@ -1,11 +1,11 @@
 /* Teacher? Parent? page. Builds on government-works.css (.gw) */
 .tp-hero{display:flex;align-items:center;justify-content:center;gap:clamp(12px,4vw,40px);margin:8px 0 4px}
-.tp-steve{width:104px;height:auto;flex:none}
-.tp-shark{width:160px;height:auto;flex:none}
+.tp-steve{width:min(300px,52vw);height:auto;flex:none}
+.tp-shark{width:min(192px,34vw);height:auto;flex:none}
 @media (prefers-reduced-motion:no-preference){.tp-shark{animation:tp-bob 3.2s ease-in-out infinite}.tp-steve{animation:tp-float 4s ease-in-out infinite}}
 @keyframes tp-bob{0%,100%{transform:translateX(0) rotate(0)}50%{transform:translateX(6px) rotate(-3deg)}}
 @keyframes tp-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-@media (max-width:520px){.tp-steve{width:72px}.tp-shark{width:104px}}
+@media (max-width:520px){.tp-hero{gap:8px}}
 .tp-tag{display:inline-block;margin:0 0 10px;padding:3px 12px;border-radius:999px;font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line)}
 .gw-card>p.tp-first{background:#a7f0e9;color:#04101a;border-color:#a7f0e9}
 .gw-card>p.tp-planned{background:#122f3c;color:#e7c98a;border-color:#6d5f3c}
