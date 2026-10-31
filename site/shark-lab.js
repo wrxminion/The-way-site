@@ -1,4 +1,4 @@
-// Shark lab (admin only, secret): press Alt+Shift+S on any page to open a tiny panel that plays the background papers, the shark, or the silhouette
+// Shark lab (admin only, secret): press Alt+Shift+S on any page to open a tiny panel that plays the background papers, the shark, the silhouette, or the Scuba Steve swim-by
 // on your own screen so you can see them go by. It shows only for a signed-in admin (the display flag the member bar already keeps in this browser);
 // it reads nothing, saves nothing and sends nothing. Esc closes it. Loaded on demand by shark-pass.js. No inline scripts or styles.
 (function () {
@@ -18,7 +18,8 @@
     btn('Papers, then the shark eats them', function () { if (!window.WayShark) return false; window.WayShark.stop(); window.WayShark.play({ shark: true, quiet: false, fast: true }); });
     btn('Quiet sneak-by shark', function () { if (!window.WayShark) return false; window.WayShark.stop(); window.WayShark.play({ shark: true, quiet: true, fast: true }); });
     btn('Silhouette now', function () { return window.WaySilhouette ? window.WaySilhouette.now() : false; });
-    btn('Stop', function () { if (window.WayShark) window.WayShark.stop(); });
+    btn('Scuba Steve swim-by (true fact papers)', function () { return window.WaySteve ? window.WaySteve.play({ papers: 3 }) : false; });
+    btn('Stop', function () { if (window.WayShark) window.WayShark.stop(); if (window.WaySteve) window.WaySteve.stop(); });
     btn('Close', function () { close(); });
     p.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') { ev.stopPropagation(); close(); } });
     var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/shark-lab.css?v=1'; document.head.appendChild(css);
