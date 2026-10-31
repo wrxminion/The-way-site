@@ -240,7 +240,7 @@
       { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
       { href: '/case-studies/', label: 'Election Studies', icon: 'casestudies', key: 'casestudies' },
       { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
-      { href: TEACH, label: 'Teacher? Parent? Like to have fun?', desc: 'Meet Bubble Steve, who hunts the hallucination shark', icon: 'teacherparent', key: 'teacherparent' }
+      { href: TEACH, label: 'Teacher? Parent? Like to have fun?', desc: 'Meet Scuba Steve, who hunts the hallucination shark', icon: 'teacherparent', key: 'teacherparent' }
     ];
     if (d.findings) explore.push({ href: '/members/findings.html', label: 'Findings', desc: 'What members checked, with the verdict', icon: 'findings', key: 'findings' });
     var community = [
@@ -283,7 +283,7 @@
         { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
         { href: '/case-studies/', label: 'Election Studies', icon: 'casestudies', key: 'casestudies' },
         { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
-        { href: TEACH, label: 'Teacher? Parent? Like to have fun?', desc: 'Meet Bubble Steve, who hunts the hallucination shark', icon: 'teacherparent', key: 'teacherparent' }
+        { href: TEACH, label: 'Teacher? Parent? Like to have fun?', desc: 'Meet Scuba Steve, who hunts the hallucination shark', icon: 'teacherparent', key: 'teacherparent' }
       ] },
       { heading: 'Your account', items: [
         { href: '/members/', label: 'Log in', icon: 'login', key: 'login' },
@@ -782,10 +782,10 @@
   if (!inMembers && !document.querySelector('script[src^="/humanbanner.js"]')) {
     var hbCss = document.createElement('link');
     hbCss.rel = 'stylesheet';
-    hbCss.href = '/humanbanner.css?v=6';
+    hbCss.href = '/humanbanner.css?v=7';
     document.head.appendChild(hbCss);
     var hbScript = document.createElement('script');
-    hbScript.src = '/humanbanner.js?v=5';
+    hbScript.src = '/humanbanner.js?v=6';
     hbScript.defer = true;
     document.head.appendChild(hbScript);
   }

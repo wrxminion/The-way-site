@@ -398,7 +398,7 @@
     if (!(a && a.matches && a.matches('input,textarea,select,[contenteditable]'))) document.documentElement.classList.remove('wb-typing');
   }, 50); });
 
-  // Bubble Steve (the Back to surface diver): slow eased scroll up, swim wiggle, fade at the top. Own files so they can be swapped.
+  // Scuba Steve (the Back to surface diver): slow eased scroll up, swim wiggle, fade at the top. Own files so they can be swapped.
   (function () {
     var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/steve.css?v=2'; document.head.appendChild(l);
     var sc = document.createElement('script'); sc.src = '/members/steve.js?v=3'; sc.defer = true; document.head.appendChild(sc);

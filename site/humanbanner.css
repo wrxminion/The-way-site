@@ -14,3 +14,10 @@
 @media (prefers-reduced-motion:no-preference){.hb-shark{animation:hb-shark-bob 3.2s ease-in-out infinite}}
 @keyframes hb-shark-bob{0%,100%{transform:translateX(0) rotate(0)}50%{transform:translateX(6px) rotate(-3deg)}}
 @media (max-width:560px){.hb-shark{width:64px}}
+
+.hb-teach{flex:0 0 auto;padding:.3rem 1rem;border:1px solid #a7f0e980;border-radius:999px;color:#a7f0e9;font-size:.9rem;font-weight:700;text-decoration:none}
+.hb-teach:hover,.hb-teach:focus-visible{background:#a7f0e9;color:#04101a;outline:2px solid #fff;outline-offset:2px}
+.hb-menu{position:fixed;top:calc(var(--hb-tab-top,72px) + 56px);right:max(12px,env(safe-area-inset-right));z-index:49;display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;max-width:calc(100vw - 24px)}
+.hb-bub{display:block;padding:.6rem 1.1rem;border:1px solid #a7f0e980;border-radius:999px;background:#0a3d4f;color:#ffe45c;font:700 .92rem/1.25 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;text-align:center;text-decoration:none;box-shadow:0 3px 12px #0006;cursor:pointer;min-height:44px}
+.hb-bub:hover,.hb-bub:focus-visible{background:#0d4e65;outline:2px solid #fff;outline-offset:2px}
+@media (min-width:561px){.hb-tab{top:var(--hb-tab-top,112px)}.hb-menu{top:calc(var(--hb-tab-top,112px) + 56px)}}

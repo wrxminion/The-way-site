@@ -1,4 +1,4 @@
-/* Bubble Steve: the diver in the Back to surface bubble (art/bubble-back-diver). See steve.js. */
+/* Scuba Steve: the diver in the Back to surface bubble (art/bubble-back-diver). See steve.js. */
 .wb-floating-return{--steve-f:0}
 /* fades from the head down: --steve-f runs 0 (whole) to 1 (gone), set by steve.js from the scroll position */
 .wb-dock .wb-art-stack .wb-diver{-webkit-mask-image:linear-gradient(to bottom,transparent calc(var(--steve-f) * 118% - 18%),#000 calc(var(--steve-f) * 118%));mask-image:linear-gradient(to bottom,transparent calc(var(--steve-f) * 118% - 18%),#000 calc(var(--steve-f) * 118%))}
