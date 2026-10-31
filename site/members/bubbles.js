@@ -10,7 +10,7 @@
   var ICON = {
     "home": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-home\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#f3d8a2\"/><stop offset=\".45\" stop-color=\"#f3d8a2\"/><stop offset=\"1\" stop-color=\"#a96838\"/></linearGradient><filter id=\"shadow-home\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-home)\" stroke=\"#f3d8a2\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-home)\"><g class=\"boat\"><path d=\"M5 31h38l-5 9H10z\"/><g class=\"roof\"><path d=\"M9 21 24 9l15 12z\"/></g><path d=\"M12 21h24v10H12z\"/><path fill=\"#173a49\" stroke=\"#efd59e\" d=\"M16 24h6v4h-6zM26 24h6v4h-6z\"/></g><clipPath id=\"clip-home\"><rect x=\"2\" y=\"30\" width=\"44\" height=\"17\" rx=\"5\"/></clipPath><g clip-path=\"url(#clip-home)\"><g class=\"swell\"><path fill=\"#2f93b0\" stroke=\"#9fe3ee\" stroke-width=\"1.4\" d=\"M-17 39q4.75-6 9.5 0t9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0V50H-17z\"/><path fill=\"none\" stroke=\"#e4fbff\" stroke-width=\"1\" d=\"M-17 44q4.75-4 9.5 0t9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0 9.5 0\"/></g></g></g></svg>",
     "news": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-news\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#fff0c9\"/><stop offset=\".45\" stop-color=\"#fff0c9\"/><stop offset=\"1\" stop-color=\"#9e8a66\"/></linearGradient><filter id=\"shadow-news\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-news)\" stroke=\"#fff0c9\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-news)\"><path d=\"m10 7 27 3v31L10 38z\"/><path d=\"m37 14 6 1v25l-6 1z\"/><path fill=\"#288b9b\" d=\"m15 13 16 2v7l-16-2z\"/><g class=\"lines\" stroke=\"#554b42\"><path d=\"m15 25 16 2m-16 4 16 2m-16 3 10 1\"/></g><path class=\"wet\" fill=\"#58c8e6\" stroke=\"none\" d=\"m10 7 27 3v31L10 38z\"/><g class=\"drips\" fill=\"#9fe8f5\" stroke=\"#e4fbff\" stroke-width=\".6\"><path d=\"M14 38q-2.6 4 0 5.5 2.6-1.5 0-5.500z\"/><path d=\"M24 40q-2.200 3.600 0 5 2.200-1.400 0-5z\"/><path d=\"M33 41q-2.400 3.800 0 5.200 2.400-1.400 0-5.200z\"/></g><g class=\"splash\" fill=\"#d5f8ff\" stroke=\"none\"><circle cx=\"16\" cy=\"7\" r=\"1.600\"/><circle cx=\"24\" cy=\"5\" r=\"1.300\"/><circle cx=\"32\" cy=\"8\" r=\"1.600\"/><circle cx=\"38\" cy=\"12\" r=\"1.200\"/></g></g></svg>",
-    "tools": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-tools\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#f2c469\"/><stop offset=\".45\" stop-color=\"#f2c469\"/><stop offset=\"1\" stop-color=\"#8b6429\"/></linearGradient><linearGradient id=\"glass-tools\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#bff4fb\"/><stop offset=\".55\" stop-color=\"#4fb3c8\"/><stop offset=\"1\" stop-color=\"#1c6f86\"/></linearGradient><filter id=\"shadow-tools\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-tools)\" stroke=\"#f2c469\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-tools)\"><g class=\"gear\"><g transform=\"translate(-1 6) scale(.98)\"><path d=\"M5 12h30a3 3 0 0 1 3 3v9a8 8 0 0 1-8 8h-3.5l-2-3.5-2 3.5H13a8 8 0 0 1-8-8z\"/><path fill=\"url(#glass-tools)\" stroke=\"#f8de9d\" d=\"M9 16h22a1.5 1.5 0 0 1 1.5 1.5v5A5.5 5.5 0 0 1 27 28h-3.5l-1.5-2.5L20.5 28H14a5.5 5.5 0 0 1-5.5-5.5v-5A1.500 1.500 0 0 1 9 16z\"/><path fill=\"none\" stroke=\"#e9ffff\" stroke-width=\"1.6\" d=\"M12 19.5h6\"/></g><path d=\"M40 8.5a2.5 2.5 0 0 1 5 0v17a5 5 0 0 1-5 5h-3\" fill=\"none\" stroke=\"#f2c469\" stroke-width=\"4.2\"/><path d=\"M40 8.5a2.5 2.5 0 0 1 5 0v17a5 5 0 0 1-5 5h-3\" fill=\"none\" stroke=\"#a7731f\" stroke-width=\"1.2\"/><path fill=\"#e86a4d\" stroke=\"#ffd0c4\" d=\"M34 28.5h5v4h-5z\" /></g></g></svg>",
+    "tools": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><g filter=\"drop-shadow(1px 2px 1px rgba(0,20,32,.85))\"><g class=\"gear\"><g transform=\"rotate(-12 24 26)\"><path d=\"M6 24h31v5H6z\" fill=\"#72543d\" stroke=\"#c1a37c\" stroke-width=\".8\"/><path d=\"M10 24h27v2H10z\" fill=\"#aebcb6\"/><path d=\"m16 29-2 10h5l4-10\" fill=\"#3d4b50\" stroke=\"#b9c6ba\" stroke-width=\".8\"/><path d=\"M24 29q-1 6-5 5\" fill=\"none\" stroke=\"#e1c47e\"/><path d=\"M6 23q17-10 31 0M6 24q17-7 31 0\" fill=\"none\" stroke=\"#afc9ba\" stroke-width=\"1.2\"/><circle cx=\"9\" cy=\"27\" r=\"3\" fill=\"#264956\" stroke=\"#b4d4c6\"/></g></g><g class=\"spear\"><path d=\"M8 21h34\" fill=\"none\" stroke=\"#dce6de\" stroke-width=\"1.4\"/><path d=\"m39 18 7 3-7 3 2-3z\" fill=\"#dce6de\"/><path d=\"M8 21l5 3\" stroke=\"#97b6ad\" stroke-width=\".7\"/></g></g></svg>",
     "vote": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-vote\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#d7c1f0\"/><stop offset=\".45\" stop-color=\"#d7c1f0\"/><stop offset=\"1\" stop-color=\"#8263a6\"/></linearGradient><filter id=\"shadow-vote\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-vote)\" stroke=\"#d7c1f0\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-vote)\"><path d=\"m8 28 15-6 18 6-15 7z\"/><path d=\"m8 28 18 7v10L8 38zM26 35l15-7v10l-15 7z\"/><g class=\"ballot\"><path fill=\"#fff3d8\" stroke=\"#d6c398\" d=\"m18 4 16 2-2 22-16-2z\"/><path class=\"check\" fill=\"none\" stroke=\"#d52e35\" stroke-width=\"3\" d=\"m20 16 4 4 6-8\"/></g></g></svg>",
     "review": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-review\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#9ed6ad\"/><stop offset=\".45\" stop-color=\"#9ed6ad\"/><stop offset=\"1\" stop-color=\"#34785e\"/></linearGradient><filter id=\"shadow-review\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-review)\" stroke=\"#9ed6ad\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-review)\"><g class=\"paper\" transform=\"rotate(-7 24 24)\"><path fill=\"#f4e6c8\" stroke=\"#d3c19b\" d=\"M8 4h24l7 8v30H8z\"/><path fill=\"#d4c3a0\" d=\"M32 4v9h7\"/><path fill=\"none\" stroke=\"#a28c69\" d=\"M13 16h11M13 22h14M13 28h9\"/></g><path class=\"thread\" fill=\"none\" stroke=\"#ffe9a8\" stroke-width=\"1.600\" stroke-dasharray=\"3 2.500\" d=\"M6 33c6 6 16 3 24 4s9 1 13-3\"/><g class=\"stamp\"><circle cx=\"31\" cy=\"32\" r=\"12\" stroke=\"#efffda\"/><circle cx=\"31\" cy=\"32\" r=\"8.500\" fill=\"none\" stroke=\"#efffda\" stroke-width=\".9\"/><path class=\"check\" fill=\"none\" stroke=\"#efffda\" stroke-width=\"3\" d=\"m25.500 32.500 4 4 7.500-9\"/></g></g></svg>",
     "commons": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"paint-commons\" x1=\"0\" y1=\"0\" x2=\".8\" y2=\"1\"><stop stop-color=\"#99d9f0\"/><stop offset=\".45\" stop-color=\"#99d9f0\"/><stop offset=\"1\" stop-color=\"#397999\"/></linearGradient><filter id=\"shadow-commons\" x=\"-50%\" y=\"-50%\" width=\"200%\" height=\"220%\"><feDropShadow dx=\"1\" dy=\"2\" stdDeviation=\"1.2\" flood-color=\"#001420\" flood-opacity=\".85\"/></filter></defs><g fill=\"url(#paint-commons)\" stroke=\"#99d9f0\" stroke-width=\"1.1\" stroke-linejoin=\"round\" stroke-linecap=\"round\" filter=\"url(#shadow-commons)\"><g class=\"talk-l\"><path fill=\"#fff\" stroke=\"#bfe6f2\" d=\"M3 3h18a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-8l-3 3.500v-3.500H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z\"/><path fill=\"none\" stroke=\"#397999\" stroke-width=\"1.600\" d=\"M7 7h12M7 10.500h7\"/></g><g class=\"talk-r\"><path fill=\"#fff\" stroke=\"#bfe6f2\" d=\"M27 6h18a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H37l-3 3.500V16h-7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z\"/><path fill=\"none\" stroke=\"#397999\" stroke-width=\"1.600\" d=\"M30 10h12M30 13h6\"/></g><g class=\"pirate\"><circle cx=\"12.500\" cy=\"31\" r=\"9\" fill=\"#f1c79b\" stroke=\"#c98f5f\" stroke-width=\".9\"/><path fill=\"#d8342f\" stroke=\"#8c1d1a\" d=\"M3.500 29c0-8 18-8 18 0z\"/><path fill=\"#d8342f\" stroke=\"#8c1d1a\" d=\"M20 25l5 3-5 1z\"/><path fill=\"#1b1b22\" stroke=\"#1b1b22\" d=\"M13.500 28.500a2.800 2.800 0 1 1 0 5.600 2.800 2.800 0 0 1 0-5.600z\"/><path fill=\"none\" stroke=\"#1b1b22\" stroke-width=\"1\" d=\"M3.800 27l8 4M13.800 29l7 -3\"/><circle cx=\"8.500\" cy=\"31\" r=\"1.100\" fill=\"#2a2a30\" stroke=\"none\"/><path fill=\"none\" stroke=\"#7b3a2a\" stroke-width=\"1.200\" d=\"M8.500 37q4 2.500 8 0\"/><circle cx=\"4\" cy=\"35\" r=\"1.300\" fill=\"#f2c469\" stroke=\"#b8862f\" stroke-width=\".5\"/></g><g class=\"captain\"><circle cx=\"35.500\" cy=\"32\" r=\"9\" fill=\"#f1c79b\" stroke=\"#c98f5f\" stroke-width=\".9\"/><path fill=\"#fff\" stroke=\"#c9d3da\" stroke-width=\"1\" d=\"M26.500 38.500c0 8 18 8 18 0q-9 5-18 0z\"/><path fill=\"#f6fbff\" stroke=\"#9fb0bb\" stroke-width=\"1\" d=\"M27 28.500c0-8.500 17-8.500 17 0z\"/><path fill=\"#16335a\" stroke=\"#0e2340\" d=\"M25.500 28.500h20a1 1 0 0 1 1 1.200 4 4 0 0 1-3 1.300H27.500a4 4 0 0 1-3-1.300 1 1 0 0 1 1-1.200z\"/><circle cx=\"35.500\" cy=\"24.500\" r=\"2\" fill=\"#f2c469\" stroke=\"#b8862f\" stroke-width=\".6\"/><circle cx=\"32\" cy=\"33\" r=\"1.100\" fill=\"#2a2a30\" stroke=\"none\"/><circle cx=\"39\" cy=\"33\" r=\"1.100\" fill=\"#2a2a30\" stroke=\"none\"/><path fill=\"none\" stroke=\"#7b3a2a\" stroke-width=\"1.100\" d=\"M33 37.500q2.500 1.500 5 0\"/></g></g></svg>",
@@ -289,13 +289,31 @@
   // ---- build everything ----
   // Both sides come up the same way, once: the bubbles float up one after another (the same motion as the up arrow brings them back).
   // Later renders that change nothing leave the bubbles alone, so they never blink out and back in.
-  var lastSig = '';
+  var lastSig = '', riseTimer = 0;
+  function prepareRise() {
+    ['.wb-bubs-l', '.wb-dock'].forEach(function (selector) {
+      var parent = document.querySelector(selector); if (!parent) return;
+      var children = Array.prototype.filter.call(parent.children, function (n) {
+        return !n.classList.contains('wb-bubbles-toggle') && !n.hidden && getComputedStyle(n).display !== 'none';
+      });
+      children.sort(function (a, b) { return b.getBoundingClientRect().top - a.getBoundingClientRect().top; });
+      children.forEach(function (n, i) { n.style.setProperty('--wb-enter-delay', (Math.min(i, 5) * 110) + 'ms'); });
+    });
+  }
   function enter() {
-    if (reduced()) return;
-    var h = document.documentElement; h.classList.add('wb-rising');
-    setTimeout(function () { h.classList.remove('wb-rising'); }, 1100);
+    var h = document.documentElement;
+    clearTimeout(riseTimer);
+    h.classList.remove('wb-rising');
+    if (reduced()) { h.classList.remove('wb-bubs-building'); return; }
+    prepareRise();
+    void h.offsetWidth;
+    h.classList.add('wb-rising');
+    h.classList.remove('wb-bubs-building');
+    riseTimer = setTimeout(function () { h.classList.remove('wb-rising'); }, 1600);
   }
   function build() {
+    // Keep the mounted navigation while account data refreshes.
+    if ((!ctx || ctx.pending) && document.querySelector('.wb-bubs-l')) return;
     var cur, hide, s, sig, first;
     if (ctx && !ctx.pending) {
       cur = OWNER[ctx.cur] || ''; hide = hidden(); s = spec(ctx);
@@ -303,6 +321,7 @@
       if (sig === lastSig && document.querySelector('.wb-bubs-l')) return;   // nothing changed: keep them (and any open list) as they are
     }
     first = !document.querySelector('.wb-bubs-l');
+    if (first) document.documentElement.classList.add('wb-bubs-building');
     document.querySelectorAll('.wb-bub-gen').forEach(function (n) { n.remove(); });
     openId = null; openBtn = null; nested = null; lastSig = '';
     if (!ctx || ctx.pending) { document.documentElement.classList.remove('wb-has-bubs'); return; }
@@ -345,6 +364,7 @@
     lastSig = sig;
     if (window.WayCommonsNew) window.WayCommonsNew.apply();
     if (first) enter();
+    else document.documentElement.classList.remove('wb-bubs-building');
   }
 
   document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && openId) { ev.stopImmediatePropagation(); closeAll(true); } }, true);
@@ -369,9 +389,9 @@
 
   // New-in-the-Commons starfish (own files): commons-new.js puts a small starfish on the Commons bubble when others have posted since you last looked.
   (function () {
-    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/commons-new.css?v=1'; document.head.appendChild(l);
-    var sc = document.createElement('script'); sc.src = '/members/commons-new.js?v=1'; sc.defer = true; document.head.appendChild(sc);
+    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/commons-new.css?v=2'; document.head.appendChild(l);
+    var sc = document.createElement('script'); sc.src = '/members/commons-new.js?v=2'; sc.defer = true; document.head.appendChild(sc);
   })();
 
-  window.WayBubbles = { render: function (c) { ctx = c; build(); }, keys: KEYS };
+  window.WayBubbles = { rise: enter, render: function (c) { ctx = c; build(); }, keys: KEYS };
 })();

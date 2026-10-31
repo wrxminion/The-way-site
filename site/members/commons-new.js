@@ -5,7 +5,8 @@
 (function () {
   'use strict';
   var SEEN = 'theway.commons-seen', CACHE = 'theway.commons-new';
-  var FISH = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 1.5l2.600 6.800 7.200.4-5.600 4.600 1.900 7-6.100-4-6.100 4 1.900-7L2.200 8.700l7.200-.4z" fill="#ff9d5c" stroke="#b8501f" stroke-width="1.200" stroke-linejoin="round"/><g fill="#ffd9b0"><circle cx="12" cy="9" r=".9"/><circle cx="12" cy="13" r=".9"/><circle cx="8.500" cy="10.600" r=".7"/><circle cx="15.500" cy="10.600" r=".7"/></g></svg>';
+  // Coral starfish (ChatGPT artwork, flat fills so several can sit on one page). The spin-once is in commons-new.css.
+  var FISH = '<svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M24 4C27 4 28 14 31 15C34 17 43 12 45 16C47 20 37 25 36 28C35 31 42 38 39 41C36 44 28 35 24 35C20 35 12 44 9 41C6 38 13 31 12 28C11 25 1 20 3 16C5 12 14 17 17 15C20 13 21 4 24 4Z" fill="#dc805b" stroke="#e6a77b" stroke-width=".8" stroke-linejoin="round"/><g fill="#8e5147" opacity=".6"><circle cx="24" cy="21" r="1.1"/><circle cx="24" cy="18" r="1"/><circle cx="24" cy="15" r=".9"/><circle cx="24" cy="12" r=".8"/><circle cx="24" cy="9" r=".7"/><circle cx="15" cy="21" r=".8"/><circle cx="33" cy="21" r=".8"/><circle cx="19" cy="31" r=".8"/><circle cx="29" cy="31" r=".8"/></g><circle cx="22.500" cy="17" r="4" fill="#ffd7b4" opacity=".3"/></svg>';
   var fresh = false, busy = false, watcher = null;
 
   function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }

@@ -525,8 +525,8 @@
     if (window.WayBubbles || document.querySelector('script[src^="/members/bubbles.js"]')) return;
     // draw the bubbles only when the styles AND the script are in, so neither side shows up bare and then jumps into place
     var waiting = 3, ready = function () { if (--waiting === 0) syncBubbles(); };
-    ['bubbles.css?v=7', 'bubbles-look.css?v=7'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=10'; sc.onload = sc.onerror = ready; document.head.appendChild(sc);
+    ['bubbles.css?v=7', 'bubbles-look.css?v=9'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=12'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -573,6 +573,11 @@
     clearTimeout(burstTimer); burstTimer = setTimeout(function () { r.classList.remove('wb-burst'); }, 5500);
   }
   function syncDock() {
+    if (!window.WayBubbles) {
+      document.documentElement.classList.add('wb-bubs-building');
+      // Fail open: the hold must never block navigation, so it lifts by itself if the bubbles never report in.
+      setTimeout(function () { document.documentElement.classList.remove('wb-bubs-building'); }, 4000);
+    }
     var dock = document.querySelector('.wb-dock');
     var fab = document.querySelector('.wb-thread-fab');
     var onThread = /^\/members\/(pull-a-thread|thread-queue)/.test(path);
@@ -600,8 +605,7 @@
   }
   // Bringing the buttons back: they float up one after another (about 0.7 s in all). The CSS holds the motion and respects reduced motion.
   function floatUp() {
-    var h = document.documentElement; h.classList.add('wb-rising');
-    setTimeout(function () { h.classList.remove('wb-rising'); }, 1100);
+    if (window.WayBubbles && window.WayBubbles.rise) window.WayBubbles.rise();
   }
   function syncToggle() {
     var btn = document.querySelector('.wb-bubbles-toggle');
@@ -723,6 +727,26 @@
       var footerScript = document.createElement('script');
       footerScript.src = '/footer-quick.js?v=1';
       document.head.appendChild(footerScript);
+    }
+    if (!document.querySelector('script[src^="/footer-tentacles.js"]')) {
+      var tentScript = document.createElement('script');
+      tentScript.src = '/footer-tentacles.js?v=2';
+      tentScript.defer = true;
+      document.head.appendChild(tentScript);
+    }
+    // Background shark pieces (shark-pass.js: rare papers, rarer shark, hourly roll; shark-silhouette.js: a small dark shark swimming by). Both are decorative and off for reduced motion.
+    if (!document.querySelector('script[src^="/shark-pass.js"]')) {
+      var sharkScript = document.createElement('script');
+      sharkScript.src = '/shark-pass.js?v=2';
+      sharkScript.defer = true;
+      sharkScript.setAttribute('data-auto', '');
+      document.head.appendChild(sharkScript);
+    }
+    if (!document.querySelector('script[src^="/shark-silhouette.js"]')) {
+      var silScript = document.createElement('script');
+      silScript.src = '/shark-silhouette.js?v=1';
+      silScript.defer = true;
+      document.head.appendChild(silScript);
     }
   };
   // "Follow / email me updates" link at the foot of measure, candidate, case, research and state pages

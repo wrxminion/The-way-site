@@ -1,0 +1,11 @@
+/* Shark pass (shark-pass.js): a decorative background swim. Never catches clicks, never in front of the bar or the bubbles. */
+.wb-shark-pass{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.wb-shark-pass .sp-shark{position:absolute;left:0}
+.wb-shark-pass .sp-shark svg{display:block;width:100%;height:100%;overflow:visible}
+.wb-shark-pass .sp-tail,.wb-shark-pass .sp-jaw{transform-box:fill-box}
+.wb-shark-pass .sp-tail{transform-origin:0 50%}
+.wb-shark-pass .sp-jaw{transform-origin:100% 0}
+.wb-shark-pass .sp-mouth{transform-box:fill-box;transform-origin:50% 0}
+.wb-shark-pass .sp-p{position:absolute}
+.wb-shark-pass .sp-p svg{display:block;width:100%;height:100%}
+@media(prefers-reduced-motion:reduce){.wb-shark-pass{display:none}}
