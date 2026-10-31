@@ -6,7 +6,7 @@
   var FADE_FROM = 400, FADE_TO = 80;   // Steve is whole below 400 px and gone at 80 px (the bubble itself hides at 80)
   var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
   var lastY = window.scrollY || 0, calm = 0, raf = 0, wait = 0;
-  var POP_MS = 450;   // the bubble pops first; Bubble Steve starts swimming (and the page starts moving) after this
+  var POP_MS = 700;   // the glass bursts first (600 ms, steve.css); Bubble Steve starts swimming and the page starts moving only after this
   function reduced() { return !!(mq && mq.matches); }
   function link() { return document.querySelector('.wb-floating-return'); }
   function fade() {
@@ -27,7 +27,11 @@
     if (raf) { cancelAnimationFrame(raf); raf = 0; }
     if (wait) { clearTimeout(wait); wait = 0; }
     swim(false);
-    var a = link(); if (a) a.classList.remove('wb-steve-go');
+    var a = link();
+    if (a && a.classList.contains('wb-steve-pop')) {
+      a.classList.remove('wb-steve-pop');
+      if ((window.scrollY || 0) > 80 && !reduced()) { a.classList.add('wb-steve-reform'); setTimeout(function () { a.classList.remove('wb-steve-reform'); }, 500); }   // stopped part way: the glass re-forms
+    }
     window.removeEventListener('wheel', stop); window.removeEventListener('touchstart', stop); window.removeEventListener('keydown', stop);
   }
   document.addEventListener('click', function (ev) {
@@ -37,7 +41,7 @@
     ev.preventDefault();
     stop();
     var dur = Math.min(2500, Math.max(1500, 900 + from * 0.5));
-    a.classList.add('wb-steve-go'); setTimeout(function () { a.classList.remove('wb-steve-go'); }, 750);
+    a.classList.add('wb-steve-pop');
     window.addEventListener('wheel', stop, { passive: true }); window.addEventListener('touchstart', stop, { passive: true }); window.addEventListener('keydown', stop);
     wait = setTimeout(function () {
       wait = 0; swim(true);

@@ -149,3 +149,11 @@ html{--wb-drops:radial-gradient(circle at 50% 4%,#c9fff0 0 3px,transparent 4px),
 .way-bubble[data-icon="tools"][aria-expanded="false"].wb-fx-close .spear{animation:spear-back 450ms ease-out}
 @keyframes spear-back{from{transform:translate(8px,-4px);opacity:0}to{transform:none;opacity:1}}
 @media(prefers-reduced-motion:reduce){.way-bubble[data-icon="tools"] .spear{animation:none!important;opacity:1!important}}
+
+/* HIDING THE BUBBLES (the down arrow): bubbles.js popAway() adds .wb-bubs-popping to the page and gives each bubble a --wb-pop-delay (top first).
+   Every bubble swells, snaps small and fades with the same droplets as the click pop; the small rising air bubbles fade out; then the hidden state applies. */
+@keyframes wb-pop-away{0%{transform:scale(1);opacity:1}18%{transform:scale(1.14);opacity:1}40%{transform:scale(.5);opacity:1}70%{transform:scale(.82);opacity:.4}100%{transform:scale(1.05);opacity:0}}
+html.wb-bubs-popping .wb-dock>:not(.wb-bubbles-toggle),html.wb-bubs-popping .wb-bubs-l>*{animation:wb-pop-away 560ms ease-out var(--wb-pop-delay,0ms) both;pointer-events:none}
+html.wb-bubs-popping .wb-rise{opacity:0;transition:opacity 500ms ease-out}
+.wb-pop-drops{position:fixed;z-index:61;pointer-events:none;background:var(--wb-drops);opacity:0;animation:droplets-out 480ms ease-out var(--wb-pop-delay,0ms) forwards}
+@media(prefers-reduced-motion:reduce){html.wb-bubs-popping .wb-dock>:not(.wb-bubbles-toggle),html.wb-bubs-popping .wb-bubs-l>*,.wb-pop-drops{animation:none!important}}
