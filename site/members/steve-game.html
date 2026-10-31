@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex,nofollow">
+<title>Steve's Fact Dive (admin) · The Way</title>
+<link rel="stylesheet" href="style.css?v=52">
+<link rel="stylesheet" href="waybar.css?v=28">
+<link rel="stylesheet" href="steve-game.css?v=1">
+</head>
+<body>
+<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+<main id="app" class="sg-wrap" tabindex="-1">
+<h1>Steve's Fact Dive <span class="sg-tag">admin preview</span></h1>
+<p id="sg-gate" class="muted">Checking your sign-in…</p>
+<div id="sg-game" hidden>
+<p class="sg-lede">Scuba Steve is a marine biologist who collects facts. Each bubble holds a fact. <b>Pop the made-up ones</b> by firing the spear. <b>Catch the true ones</b> by swimming Steve into them. A true fact always names its source.</p>
+<section class="sg-hud" aria-label="Score">
+<span>Score <b id="sg-score">0</b></span>
+<span>Time <b id="sg-time">60</b></span>
+<span>Papers <b id="sg-papers">3</b></span>
+<button type="button" id="sg-pause" class="sg-small" disabled>Pause</button>
+<label class="sg-calm"><input type="checkbox" id="sg-calm"> Calm mode</label>
+</section>
+<div id="sg-field" class="sg-field" tabindex="0" aria-label="Game water. Arrow keys move Steve, space fires.">
+<img id="sg-shark" class="sg-shark" src="art/steve-game-shark.svg" alt="" draggable="false">
+<img id="sg-steve" class="sg-steve" src="art/steve-game-swim.png" alt="" draggable="false">
+<div id="sg-spear" class="sg-spear" hidden></div>
+<div id="sg-start" class="sg-panel">
+<h2>How to play</h2>
+<ul>
+<li><b>Made-up bubble</b> (silly, with a shaky source like "trust me"): <b>shoot it</b> to pop it.</li>
+<li><b>True bubble</b> (names a real place like NOAA): <b>swim Steve into it</b> to catch it. Do not shoot it.</li>
+<li>If a made-up bubble reaches Steve, a paper is lost. Three papers, 60 seconds.</li>
+</ul>
+<p class="sg-keys">On a phone: drag your finger up or down to move Steve, and lift to fire. A tap moves and fires. The Fire button works too. On a keyboard: Up and Down arrows, space fires.</p>
+<button type="button" id="sg-go" class="sg-big">Start diving</button>
+</div>
+<div id="sg-end" class="sg-panel" hidden>
+<h2 id="sg-endh">Nice diving!</h2>
+<p id="sg-summary"></p>
+<div id="sg-log"></div>
+<button type="button" id="sg-again" class="sg-big">Dive again</button>
+</div>
+</div>
+<div class="sg-pad" aria-label="Touch controls">
+<button type="button" id="sg-up" class="sg-pbtn" aria-label="Move up">Up</button>
+<button type="button" id="sg-fire" class="sg-pbtn sg-fireb">Fire</button>
+<button type="button" id="sg-down" class="sg-pbtn" aria-label="Move down">Down</button>
+</div>
+<p id="sg-msg" class="sg-msg" role="status" aria-live="polite">Ready when you are.</p>
+<p class="sg-note">The shark is a cartoon. It never goes near Steve, and the spear has a soft rubber tip. The made-up facts are silly on purpose. The true facts come from the sources named in each one.</p>
+</div>
+</main>
+<footer class="foot">Not left. Not right. We are The Way. · A nonpartisan project, not a political party.</footer>
+<script src="waybar.js?v=67" defer></script>
+<script src="/steve-facts.js?v=1"></script>
+<script src="steve-game.js?v=1"></script>
+</body>
+</html>
