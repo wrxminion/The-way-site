@@ -1,0 +1,16 @@
+/* Scuba Steve swim-by (steve-swim.js). The layer never catches clicks; only the fact papers and the card do. Plain placeholder look: ChatGPT restyles later. */
+.wb-steve{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.wb-steve .st-fig{position:absolute;left:0;top:0}
+.wb-steve .st-fig svg{display:block;width:100%;height:100%;overflow:visible}
+.wb-steve .st-paper{position:absolute;left:0;top:0;width:34px;height:44px;margin:0;padding:0;border:0;background:none;cursor:pointer;pointer-events:auto}
+.wb-steve .st-paper svg{display:block;width:100%;height:100%}
+.wb-steve .st-paper:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:6px}
+.wb-steve-card{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:2147482000;box-sizing:border-box;width:min(92vw,400px);padding:12px 14px 12px;border-radius:14px;border:2px solid #2f7f86;background:#f3fffd;color:#12333a;font:16px/1.35 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;box-shadow:0 6px 24px #0008}
+.wb-steve-card p{margin:0 0 8px}
+.wb-steve-card .st-l{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#1d6a72}
+.wb-steve-card .st-s{font-size:14px}
+.wb-steve-card a{color:#0b5560;text-decoration:underline}
+.wb-steve-card button{min-height:44px;padding:4px 16px;border-radius:10px;border:1px solid #2f7f86;background:#d9f4f1;color:#12333a;font:inherit;cursor:pointer}
+.wb-steve-card button:focus-visible,.wb-steve-card a:focus-visible{outline:2px solid #12333a;outline-offset:2px}
+html.wb-motion-off .wb-steve{display:none!important}
+@media(prefers-reduced-motion:reduce){.wb-steve{display:none}}

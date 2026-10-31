@@ -757,10 +757,21 @@
     // Background shark pieces (shark-pass.js: rare papers, rarer shark, hourly roll; shark-silhouette.js: a small dark shark swimming by). Both are decorative and off for reduced motion.
     if (!document.querySelector('script[src^="/shark-pass.js"]')) {
       var sharkScript = document.createElement('script');
-      sharkScript.src = '/shark-pass.js?v=4';
+      sharkScript.src = '/shark-pass.js?v=5';
       sharkScript.defer = true;
       sharkScript.setAttribute('data-auto', '');
       document.head.appendChild(sharkScript);
+    }
+    // Scuba Steve swim-by: rare, true marine facts with named sources on little paper drops (steve-facts.js is the list, steve-swim.js the timer and the drop).
+    if (!document.querySelector('script[src^="/steve-swim.js"]')) {
+      var stFacts = document.createElement('script');
+      stFacts.src = '/steve-facts.js?v=1';
+      document.head.appendChild(stFacts);
+      var stScript = document.createElement('script');
+      stScript.src = '/steve-swim.js?v=1';
+      stScript.defer = true;
+      stScript.setAttribute('data-auto', '');
+      document.head.appendChild(stScript);
     }
     if (!document.querySelector('script[src^="/shark-silhouette.js"]')) {
       var silScript = document.createElement('script');
