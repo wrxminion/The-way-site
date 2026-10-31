@@ -1,0 +1,12 @@
+/* Shark silhouette (see shark-silhouette.js): a small dark shape that swims by behind the page, about half the whale's size. Same lane idea as whale.css. */
+.shark-host{position:relative;isolation:isolate}
+.shark-lane{position:absolute;left:0;right:0;top:0;height:200px;overflow:hidden;z-index:-1;pointer-events:none}
+.shark-sil{position:absolute;left:0;top:40%;width:clamp(120px,15vw,230px);opacity:0;visibility:hidden;pointer-events:none;animation-timing-function:linear;animation-fill-mode:both;animation-iteration-count:1;will-change:transform}
+.shark-sil.swim{visibility:visible}
+.shark-sil svg{display:block;width:100%;height:auto;transform:scaleX(var(--shark-flip,1)) scale(var(--shark-scale,1))}
+.shark-sil .ss-tail{transform-box:fill-box;transform-origin:0 50%;animation:shark-tail 700ms ease-in-out infinite alternate}
+@keyframes shark-tail{from{transform:rotate(-6deg)}to{transform:rotate(7deg)}}
+@keyframes shark-ltr{0%{transform:translate(-120%,0);opacity:0}12%{opacity:.5}88%{opacity:.5}100%{transform:translate(100vw,0);opacity:0}}
+@keyframes shark-rtl{0%{transform:translate(100vw,0);opacity:0}12%{opacity:.5}88%{opacity:.5}100%{transform:translate(-120%,0);opacity:0}}
+@media(max-width:700px){.shark-sil{width:30vw}}
+@media(prefers-reduced-motion:reduce){.shark-lane{display:none}}

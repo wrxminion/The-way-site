@@ -29,8 +29,8 @@
 @keyframes path-trace{0%{stroke-dashoffset:65;opacity:.25}100%{stroke-dashoffset:0;opacity:1}}
 @keyframes path-trace-open{0%{stroke-dashoffset:65;opacity:.25}100%{stroke-dashoffset:0;opacity:1}}
 @keyframes gear-turn{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-4px) rotate(-8deg)}65%{transform:translateY(2px) rotate(6deg)}}
-@keyframes shell-burst{0%{transform:scale(1);opacity:1}12%{transform:scale(1.14);opacity:1}32%{transform:scale(.5);opacity:1}62%{transform:scale(.84);opacity:.8}100%{transform:scale(1.25);opacity:0}}
-@keyframes droplets-out{0%,25%{transform:scale(.5);opacity:0}40%{opacity:1}100%{transform:scale(1.6);opacity:0}}
+@keyframes shell-burst{0%{transform:scale(1);opacity:1}28%{transform:scale(.56);opacity:1}58%{transform:scale(.88);opacity:.9}78%{transform:scale(.96);opacity:.3}100%{transform:scale(1);opacity:0}}
+@keyframes droplets-out{0%,45%{transform:scale(.45);opacity:0}60%{transform:scale(.64);opacity:.9}100%{transform:scale(1);opacity:0}}
 @keyframes shell-reform{0%{transform:scale(.55);opacity:0}55%{transform:scale(1.1);opacity:1}100%{transform:scale(1);opacity:1}}
 @keyframes ballot-drop{0%,100%{transform:translateY(0)}25%{transform:translateY(-8px)}65%{transform:translateY(4px)}}
 @keyframes stamp{0%,100%{transform:translateY(0) scale(1)}25%{transform:translateY(-6px) scale(1.1)}65%{transform:translateY(2px) scale(.9)}}
@@ -47,9 +47,9 @@
 .way-bubble[data-icon="my-side"][aria-expanded="true"] .water-waves{animation:waves-flow-open 1400ms ease-in-out}
 .way-bubble[data-icon="my-side"][aria-expanded="true"] .path-light{animation:path-trace-open 1400ms ease-out}
 .way-bubble[data-icon="tools"]:is(:hover,:focus-visible) .gear{animation:gear-turn 650ms ease-out}
-.way-bubble[data-icon="tools"][aria-expanded="true"]::before{animation:shell-burst 700ms ease-out forwards}
+.way-bubble[data-icon="tools"][aria-expanded="true"]::before{animation:shell-burst 480ms ease-out forwards}
 .way-bubble[data-icon="tools"][aria-expanded="false"].wb-fx-close::before{animation:shell-reform 450ms ease-out}
-.way-bubble[data-icon="tools"][aria-expanded="true"]::after{content:"";position:absolute;inset:8%;pointer-events:none;background:radial-gradient(circle at 50% 4%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 84% 16%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 96% 50%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 80% 85%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 50% 96%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 15% 80%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 4% 50%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 16% 16%,#c9fff0 0 3px,transparent 4px);animation:droplets-out 700ms ease-out forwards}
+.way-bubble[data-icon="tools"][aria-expanded="true"]::after{content:"";position:absolute;inset:8%;pointer-events:none;background:radial-gradient(circle at 50% 4%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 84% 16%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 96% 50%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 80% 85%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 50% 96%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 15% 80%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 4% 50%,#c9fff0 0 3px,transparent 4px),radial-gradient(circle at 16% 16%,#c9fff0 0 3px,transparent 4px);animation:droplets-out 480ms ease-out forwards}
 .way-bubble[data-icon="tools"][aria-expanded="true"] .gear{animation:gear-turn 650ms ease-out}
 .way-bubble[data-icon="vote"]:is(:hover,:focus-visible) .ballot{animation:ballot-drop 750ms ease-in-out}
 .way-bubble[data-icon="review"]:is(:hover,:focus-visible) .reply{animation:stamp 750ms ease-in-out}
@@ -76,28 +76,11 @@
 .wb-small{background:#062137f5;border:2px solid #a7f0e9cc;color:#ecffff}
 @media (forced-colors:active){.way-bubble::before{display:none}.way-bubble{border:2px solid CanvasText;border-radius:50%;background:Canvas}.wb-pop,.wb-fan{background:Canvas;border:2px solid CanvasText}}
 
-/* Floating back up after the up arrow: each bubble rises about 28 px and fades in, bottom one first, 70 ms apart (about 0.7 s in all). */
-@keyframes wb-float-in{0%{opacity:0;transform:translateY(28px)}100%{opacity:1;transform:translateY(0)}}
-html.wb-rising .wb-dock>:not(.wb-bubbles-toggle),html.wb-rising .wb-bubs-l>*{animation:wb-float-in 450ms cubic-bezier(.2,.7,.3,1) both;animation-delay:140ms}
-html.wb-rising .wb-dock>.wb-bub-home{animation-delay:0ms}
-html.wb-rising .wb-dock>.wb-bub-news{animation-delay:70ms}
-html.wb-rising .wb-dock>.wb-bub-tools{animation-delay:210ms}
-html.wb-rising .wb-bubs-l>:nth-child(1){animation-delay:0ms}
-html.wb-rising .wb-bubs-l>:nth-child(2){animation-delay:70ms}
-html.wb-rising .wb-bubs-l>:nth-child(3){animation-delay:140ms}
-html.wb-rising .wb-bubs-l>:nth-child(4){animation-delay:210ms}
+/* Shared 900ms entrance, bottom-up on both sides. Delays are set by visual position. */
+@keyframes wb-float-in{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
+.wb-dock .wb-bub-wrap,.wb-bubs-l .wb-bub-wrap{animation:none}
+html.wb-rising .wb-dock>:not(.wb-bubbles-toggle),html.wb-rising .wb-bubs-l>*{animation:wb-float-in 900ms cubic-bezier(.22,.61,.36,1) both;animation-delay:var(--wb-enter-delay,0ms)}
 @media(prefers-reduced-motion:reduce){html.wb-rising .wb-dock>*,html.wb-rising .wb-bubs-l>*{animation:none!important}}
-
-/* Idle float: each bubble drifts a few pixels up and down, slowly, and not in step with its neighbours. Paused while pointed at, focused or open. */
-@keyframes wb-idle-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-.wb-dock .wb-bub-wrap,.wb-bubs-l .wb-bub-wrap{animation:wb-idle-bob 5.5s ease-in-out infinite}
-.wb-dock .wb-bub-wrap:nth-of-type(2n),.wb-bubs-l .wb-bub-wrap:nth-of-type(2n){animation-duration:6.5s;animation-delay:-2s}
-.wb-dock .wb-bub-wrap:nth-of-type(3n),.wb-bubs-l .wb-bub-wrap:nth-of-type(3n){animation-duration:7.5s;animation-delay:-4s}
-.wb-dock .wb-bub-wrap:is(:hover,:focus-within),.wb-bubs-l .wb-bub-wrap:is(:hover,:focus-within){animation-play-state:paused}
-@media(prefers-reduced-motion:reduce){.wb-dock .wb-bub-wrap,.wb-bubs-l .wb-bub-wrap{animation:none!important}}
-/* The open list is position:fixed inside the bubble's wrapper. A wrapper that is mid-float (transform) becomes its containing block, which pushed the list
-   off the bottom of the window. While a list is open the wrapper holds still (bubbles.js adds .wb-open). */
-.wb-dock .wb-bub-wrap.wb-open,.wb-bubs-l .wb-bub-wrap.wb-open{animation:none}
 
 /* CLICK POP for every bubble except Pull a thread (it is not a .way-bubble): bubbles.js adds .wb-fx-go for 0.75 s on click (or on opening a list).
    The glass swells, snaps small and comes back; droplets fly out. Tools keeps its longer burst while its list is open (rules above).
@@ -106,7 +89,7 @@ html{--wb-drops:radial-gradient(circle at 50% 4%,#c9fff0 0 3px,transparent 4px),
 @keyframes shell-pop{0%{transform:scale(1)}12%{transform:scale(1.14)}32%{transform:scale(.5)}62%{transform:scale(.86)}100%{transform:scale(1)}}
 @keyframes bubble-wiggle{0%,100%{transform:scale(1) rotate(0)}25%{transform:scale(1.08) rotate(-5deg)}55%{transform:scale(1.06) rotate(4deg)}80%{transform:scale(1.03) rotate(-2deg)}}
 .way-bubble.wb-fx-go::before{animation:shell-pop 700ms ease-out}
-.way-bubble.wb-fx-go::after{content:"";position:absolute;inset:8%;pointer-events:none;background:var(--wb-drops);animation:droplets-out 700ms ease-out forwards}
+.way-bubble.wb-fx-go::after{content:"";position:absolute;inset:8%;pointer-events:none;background:var(--wb-drops);animation:droplets-out 480ms ease-out forwards}
 .way-bubble:is(:hover,:focus-visible){animation:bubble-wiggle 650ms ease-in-out}
 
 /* NEWS gets wet: on hover or click the page darkens with water, drips fall off its bottom edge and a few drops splash up from the top. Plays once. */
@@ -156,3 +139,13 @@ html{--wb-drops:radial-gradient(circle at 50% 4%,#c9fff0 0 3px,transparent 4px),
 .way-bubble[data-icon="review"]:is(:hover,:focus-visible,.wb-fx-go) .stamp{animation:stamp-slam 650ms cubic-bezier(.3,1.4,.5,1)}
 .way-bubble[data-icon="review"]:is(:hover,:focus-visible,.wb-fx-go) .thread{animation:thread-tug 900ms ease-in-out}
 .way-bubble[data-icon="review"]:is(:hover,:focus-visible) .reply{animation:none}
+
+/* TOOLS speargun (replaces the snorkel): the gun recoils on hover. When the list opens, the spear shoots up and away while the bubble pops (480 ms);
+   the gun stays as the close control. The spear is decorative and ends invisible; reduced motion keeps it still. */
+.way-bubble[data-icon="tools"] svg{overflow:visible}
+@keyframes spear-fly{0%{transform:translate(0,0);opacity:1}70%{opacity:1}100%{transform:translate(70px,-34px);opacity:0}}
+.way-bubble[data-icon="tools"][aria-expanded="true"] .spear{animation:spear-fly 480ms ease-in forwards}
+.way-bubble[data-icon="tools"][aria-expanded="true"]:not(.wb-fx-close) .spear{opacity:0}
+.way-bubble[data-icon="tools"][aria-expanded="false"].wb-fx-close .spear{animation:spear-back 450ms ease-out}
+@keyframes spear-back{from{transform:translate(8px,-4px);opacity:0}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.way-bubble[data-icon="tools"] .spear{animation:none!important;opacity:1!important}}

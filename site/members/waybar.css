@@ -423,3 +423,9 @@ html.wb-bubbles-off .wb-rise{display:none}
   .waybar .wb-pub a{padding-bottom:3px}
 }
 @media (min-width:1100px){.waybar .wb-pub{column-gap:40px}}
+
+/* Hold both columns until WayBubbles has built them; no visible left-side flash. Fail-open: bubbles.js and waybar.js remove the class on load or error. */
+html.wb-bubs-building .wb-dock > :not(.wb-bubbles-toggle),html.wb-bubs-building .wb-bubs-l{visibility:hidden}
+/* The entrance owns wrapper transforms. No competing continuous drift. */
+.wb-dock .wb-dock-auth,.wb-dock .wb-thread-fab,.wb-dock .wb-floating{animation:none}
+@media(prefers-reduced-motion:reduce){html.wb-bubs-building .wb-dock > :not(.wb-bubbles-toggle),html.wb-bubs-building .wb-bubs-l{visibility:visible}}
