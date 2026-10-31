@@ -767,7 +767,7 @@
   if (!inMembers && !document.querySelector('script[src^="/humanbanner.js"]')) {
     var hbCss = document.createElement('link');
     hbCss.rel = 'stylesheet';
-    hbCss.href = '/humanbanner.css?v=5';
+    hbCss.href = '/humanbanner.css?v=6';
     document.head.appendChild(hbCss);
     var hbScript = document.createElement('script');
     hbScript.src = '/humanbanner.js?v=5';
