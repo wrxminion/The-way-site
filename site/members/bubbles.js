@@ -63,13 +63,14 @@
       { href: '/research/', label: 'Research' }
     ] }];
     if (d) {
-      var mine = [{ href: '/members/author.html', label: 'Author desk and ranks' }, { href: r('private'), label: 'Private research' }];
+      var mine = [];
+      if (can(d, 'admin') || (d.roles || []).indexOf('super_admin') >= 0) mine.push({ href: r('admin'), label: 'Admin' });   // admins only, always the first item
+      mine.push({ href: '/members/author.html', label: 'Author desk and ranks' }, { href: r('private'), label: 'Private research' });
       if (can(d, 'researcher') || can(d, 'reviewer')) mine.push({ href: r('research'), label: 'Research desk' });
       if (d.findings) mine.push({ href: '/members/findings.html', label: 'Findings' });
       mine.push({ href: r('roles'), label: 'Ranks and awards' });
       if (can(d, 'moderator')) mine.push({ href: r('reports'), label: 'Reports' });
       if (can(d, 'moderator') && d.modlog) mine.push({ href: r('log'), label: 'Moderation log' });
-      if (can(d, 'admin')) mine.push({ href: r('admin'), label: 'Notify list' });
       g.push({ heading: 'My tools', items: mine });
     }
     return g;
