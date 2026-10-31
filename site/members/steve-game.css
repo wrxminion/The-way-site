@@ -1,4 +1,4 @@
-/* Steve's Fact Dive (admin preview). Static CSS, no inline styles. Honors Pause motion (html.wb-motion-off) and reduced motion. */
+/* Steve's Fact Dive (tester demo). Static CSS, no inline styles. Honors Pause motion (html.wb-motion-off) and reduced motion. */
 .sg-wrap{max-width:980px;margin:0 auto;padding:16px}
 .sg-wrap h1{font-size:clamp(1.4rem,5vw,2.1rem);margin:.2em 0}
 .sg-tag{font-size:.5em;vertical-align:middle;border:1px solid #8bb3bd;border-radius:12px;padding:2px 10px;color:#8bb3bd}
@@ -42,3 +42,4 @@
 html.wb-motion-off .sg-pop{opacity:0}
 @media (prefers-reduced-motion:reduce){.sg-steve.sg-grab{animation:none}}
 body.sg-calm .sg-pop{animation:none;opacity:0}
+.sg-demo{margin:.2em 0 .6em;color:#c9dde3}.sg-demo a{color:#a7f0e9}

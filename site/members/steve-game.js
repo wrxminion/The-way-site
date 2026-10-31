@@ -1,7 +1,7 @@
-// Steve's Fact Dive (admin preview). Scuba Steve, a marine biologist, practices on bubbles that each hold a fact.
+// Steve's Fact Dive (tester demo). Scuba Steve, a marine biologist, practices on bubbles that each hold a fact.
 // Made-up (silly) facts: shoot them to pop them. True facts (named source, from /steve-facts.js): swim Steve into them to catch them.
 // The shark is the factarian: it only eats papers, so here it just floats at the right edge and the made-up bubbles come from it. It never goes near Steve.
-// Admin only for now: it checks the display flag the member bar keeps in this browser (same check as the Shark lab). Touch: drag to aim, lift to fire, tap = aim and fire.
+// Public tester demo, no sign-in needed. Touch: drag to aim, lift to fire, tap = aim and fire.
 // Pause motion (WayMotion) freezes the game. No network calls, nothing stored, no inline scripts.
 (function () {
   'use strict';
@@ -210,14 +210,5 @@
   document.addEventListener('visibilitychange', function () { if (document.hidden && st && st.running && !st.paused) togglePause(); });
   window.addEventListener('resize', size);
 
-  // admin gate: same display flag the Shark lab uses. Waits a few seconds for the member bar to write it.
-  function isAdmin() {
-    try { var d = JSON.parse(localStorage.getItem('theway.bar') || 'null'); return !!(d && d.roles && (d.roles.indexOf('admin') >= 0 || d.roles.indexOf('super_admin') >= 0)); } catch (e) { return false; }
-  }
-  var tries = 0, gate = $('sg-gate');
-  (function check() {
-    if (isAdmin()) { gate.hidden = true; $('sg-game').hidden = false; size(); return; }
-    if (tries++ < 20) { setTimeout(check, 300); return; }
-    gate.textContent = 'This page is for admins only for now. Sign in with an admin account.';
-  })();
+  size();
 })();
