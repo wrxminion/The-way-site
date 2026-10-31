@@ -8,4 +8,10 @@
 .wb-shark-pass .sp-mouth{transform-box:fill-box;transform-origin:50% 0}
 .wb-shark-pass .sp-p{position:absolute}
 .wb-shark-pass .sp-p svg{display:block;width:100%;height:100%}
+/* the puff and the bad fact */
+.wb-shark-pass .sp-puff{position:absolute}
+.wb-shark-pass .sp-puff svg{display:block;width:100%;height:100%}
+.wb-shark-pass .sp-fact{position:absolute;max-width:min(240px,calc(100vw - 16px));box-sizing:border-box;padding:6px 11px 7px;text-align:center;background:#fff4d6;border:2px solid #8a5a2b;border-radius:14px;color:#4a2f17;font:600 15px/1.25 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;box-shadow:0 3px 10px #0005}
+.wb-shark-pass .sp-fact-q{font-size:13px}
+.wb-shark-pass .sp-fact-l{display:block;margin-bottom:2px;color:#9b4a1c;font-size:.72em;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
 @media(prefers-reduced-motion:reduce){.wb-shark-pass{display:none}}
