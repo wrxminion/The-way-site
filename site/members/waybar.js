@@ -552,8 +552,8 @@
   // One bubble picture: a decorative image (the words inside it are repeated as real text, hidden or laid over it).
   function bubbleArt(name, w, h) {
     var mk = function (file, cls) {
-      var base = '/members/art/bubble-' + file;
-      return el('img', { class: cls, src: base + '-1x.webp', srcset: base + '-1x.webp 1x, ' + base + '-2x.webp 2x', alt: '', 'aria-hidden': 'true', width: String(w), height: String(h), decoding: 'async' });
+      var base = '/members/art/bubble-' + file, ver = file === 'back-diver' ? '?v=2' : '';   // v=2: the diver picture lost its faint bubble ring
+      return el('img', { class: cls, src: base + '-1x.webp' + ver, srcset: base + '-1x.webp' + ver + ' 1x, ' + base + '-2x.webp' + ver + ' 2x', alt: '', 'aria-hidden': 'true', width: String(w), height: String(h), decoding: 'async' });
     };
     // sizes come from the stylesheet (the page security policy blocks inline style attributes)
     if (name !== 'back') return mk(name, 'wb-art');
@@ -759,18 +759,24 @@
     // Background shark pieces (shark-pass.js: rare papers, rarer shark, hourly roll; shark-silhouette.js: a small dark shark swimming by). Both are decorative and off for reduced motion.
     if (!document.querySelector('script[src^="/shark-pass.js"]')) {
       var sharkScript = document.createElement('script');
-      sharkScript.src = '/shark-pass.js?v=6';
+      sharkScript.src = '/shark-pass.js?v=7';
       sharkScript.defer = true;
       sharkScript.setAttribute('data-auto', '');
       document.head.appendChild(sharkScript);
     }
     // Scuba Steve swim-by: rare, true marine facts with named sources on little paper drops (steve-facts.js is the list, steve-swim.js the timer and the drop).
+    // Fact pop: clicking a sinking fact where it shows on empty background pops it up (the swimmers sit behind the text and never take clicks themselves).
+    if (!document.querySelector('script[src^="/fact-pop.js"]')) {
+      var popScript = document.createElement('script');
+      popScript.src = '/fact-pop.js?v=1';
+      document.head.appendChild(popScript);
+    }
     if (!document.querySelector('script[src^="/steve-swim.js"]')) {
       var stFacts = document.createElement('script');
       stFacts.src = '/steve-facts.js?v=1';
       document.head.appendChild(stFacts);
       var stScript = document.createElement('script');
-      stScript.src = '/steve-swim.js?v=1';
+      stScript.src = '/steve-swim.js?v=2';
       stScript.defer = true;
       stScript.setAttribute('data-auto', '');
       document.head.appendChild(stScript);
@@ -803,7 +809,7 @@
     hbCss.href = '/humanbanner.css?v=7';
     document.head.appendChild(hbCss);
     var hbScript = document.createElement('script');
-    hbScript.src = '/humanbanner.js?v=6';
+    hbScript.src = '/humanbanner.js?v=7';
     hbScript.defer = true;
     document.head.appendChild(hbScript);
   }

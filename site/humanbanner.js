@@ -40,9 +40,9 @@
 
   var shark = document.createElement('img');
   shark.className = 'hb-shark';
-  shark.src = '/members/art/hallucination-shark.svg';
+  shark.src = '/art/shark-banner.webp';
   shark.alt = '';
-  shark.width = 96; shark.height = 48;
+  shark.width = 96; shark.height = 37;
 
   var a = document.createElement('a');
   a.className = 'hb-join';
