@@ -120,13 +120,17 @@
       }, Math.round(rnd(MIN_MS, MAX_MS)));
     })();
   }
-  // secret admin shortcut: Alt+Shift+S loads the shark lab (shark-lab.js), which only opens for a signed-in admin
-  document.addEventListener('keydown', function (ev) {
-    if (!(ev.altKey && ev.shiftKey && (ev.key === 'S' || ev.key === 's' || ev.code === 'KeyS'))) return;
+  // secret admin shortcut: Alt+Shift+S (or the Shark lab entry on a phone) loads the shark lab (shark-lab.js), which only opens for a signed-in admin
+  // (a phone has no keyboard: the admin-only Shark lab entry in the Tools bubble and the Menu calls WayShark.lab() the same way)
+  function lab() {
     if (window.WaySharkLab) { window.WaySharkLab.open(); return; }
     var sc = document.createElement('script'); sc.src = '/shark-lab.js?v=2'; document.head.appendChild(sc);
+  }
+  document.addEventListener('keydown', function (ev) {
+    if (!(ev.altKey && ev.shiftKey && (ev.key === 'S' || ev.key === 's' || ev.code === 'KeyS'))) return;
+    lab();
   });
   document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); });
-  window.WayShark = { watch: watch, maybe: watch, play: play, stop: stop, busy: function () { return !!cur; } };
+  window.WayShark = { watch: watch, maybe: watch, play: play, stop: stop, lab: lab, busy: function () { return !!cur; } };
   if (document.currentScript && document.currentScript.hasAttribute('data-auto')) watch();
 })();

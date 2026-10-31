@@ -254,6 +254,8 @@
     if (can(d, 'moderator')) manage.push({ href: route('reports'), label: 'Reports', icon: 'reports', key: 'reports', dup: true });
     if (d.modlog) manage.push({ href: route('log'), label: 'Moderation log', icon: 'log', key: 'log', dup: true });
     if (can(d, 'admin')) manage.push({ href: route('admin'), label: 'Admin', icon: 'admin', key: 'admin', dup: true });
+    // a phone has no Alt+Shift+S, so admins open the shark lab from here (same check as Admin; the lab itself still checks the role)
+    if (can(d, 'admin') || d.roles.indexOf('super_admin') >= 0) manage.push({ href: '#shark-lab', label: 'Shark lab', icon: 'admin', key: 'sharklab', lab: true });
     // "My tools" (a group at the top of the desktop Menu): the buttons that used to sit in the "Your tools" box on Home, same role rules.
     var tools = [];
     if (can(d, 'admin') || d.roles.indexOf('super_admin') >= 0) tools.push({ href: route('admin'), label: 'Admin', desc: 'Members, invitations, ledger checks, analytics, notify list', icon: 'admin', key: 'admin' });
@@ -351,7 +353,7 @@
           if (it.desc) t.appendChild(el('span', { class: 'wb-item-desc' }, it.desc));
           a.appendChild(t);
         }
-        a.addEventListener('click', function () { closePanel(false); });
+        a.addEventListener('click', function (ev) { closePanel(false); if (it.lab) { ev.preventDefault(); if (window.WayShark && window.WayShark.lab) setTimeout(window.WayShark.lab, 0); } });
         li.appendChild(a); ul.appendChild(li);
       });
       sec.appendChild(ul); kids.push(sec);
@@ -531,7 +533,7 @@
     // draw the bubbles only when the styles AND the script are in, so neither side shows up bare and then jumps into place
     var waiting = 3, ready = function () { if (--waiting === 0) syncBubbles(); };
     ['bubbles.css?v=7', 'bubbles-look.css?v=11'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=15'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=16'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -757,7 +759,7 @@
     // Background shark pieces (shark-pass.js: rare papers, rarer shark, hourly roll; shark-silhouette.js: a small dark shark swimming by). Both are decorative and off for reduced motion.
     if (!document.querySelector('script[src^="/shark-pass.js"]')) {
       var sharkScript = document.createElement('script');
-      sharkScript.src = '/shark-pass.js?v=5';
+      sharkScript.src = '/shark-pass.js?v=6';
       sharkScript.defer = true;
       sharkScript.setAttribute('data-auto', '');
       document.head.appendChild(sharkScript);
