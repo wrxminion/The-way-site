@@ -533,7 +533,7 @@
     // draw the bubbles only when the styles AND the script are in, so neither side shows up bare and then jumps into place
     var waiting = 3, ready = function () { if (--waiting === 0) syncBubbles(); };
     ['bubbles.css?v=7', 'bubbles-look.css?v=11'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=16'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=17'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -561,6 +561,7 @@
     var stack = el('span', { class: 'wb-art-stack' });
     stack.appendChild(mk('back-base', 'wb-art'));
     stack.appendChild(mk('back-diver', 'wb-art wb-diver'));
+    stack.appendChild(mk('back-diver', 'wb-art wb-diver wb-diver-legs'));   // lower legs on their own layer so they can kick while he swims up (hidden at rest)
     return stack;
   }
   // A few small decorative air bubbles rise behind the buttons. Not links, not read out, no pointer events; hidden for reduced motion.
@@ -776,7 +777,7 @@
       stFacts.src = '/steve-facts.js?v=1';
       document.head.appendChild(stFacts);
       var stScript = document.createElement('script');
-      stScript.src = '/steve-swim.js?v=2';
+      stScript.src = '/steve-swim.js?v=3';
       stScript.defer = true;
       stScript.setAttribute('data-auto', '');
       document.head.appendChild(stScript);

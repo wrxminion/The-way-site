@@ -1,4 +1,4 @@
-// Scuba Steve swim-by (ChatGPT art: /art/steve-swim.webp, faces left). Every once in a while Scuba Steve, a marine biologist who collects facts, swims across the page and drops a few
+// Scuba Steve swim-by (ChatGPT art: /art/steve-swim-kick.webp, faces left; his legs kick: ChatGPT's Steve B leg frames joined to the launcher body). Every once in a while Scuba Steve, a marine biologist who collects facts, swims across the page and drops a few
 // paper facts. Unlike the shark's papers (made up, labeled BAD FACT), Steve's papers are TRUE: each one opens a small card with the fact and a named source
 // with a link to the page it came from (the list is in steve-facts.js, window.WaySteveFacts).
 // Timer: a random wait of 30 to 60 minutes, then one swim-by; never on page load; hidden tabs skip it. It never starts while the shark pass or the shark
@@ -16,7 +16,7 @@
   var cur = null, rollTimer = 0, art = { swimMs: 16000, facesLeft: true };
   var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
   // Steve swims with the suction-cup tracker launcher; the picture faces left, so the code flips him for right-hand swims. Raster art, local file (the page policy allows only 'self' images).
-  var STEVE = '<img class="st-img" src="/art/steve-swim.webp" alt="" width="640" height="195" decoding="async" draggable="false">';
+  var STEVE = '<img class="st-img" src="/art/steve-swim-kick.webp" alt="" width="640" height="249" decoding="async" draggable="false">';
   var PAPER = '<svg viewBox="-24 -30 48 64" aria-hidden="true" focusable="false"><path d="M-20-27h30l11 10v43h-41z" fill="#e6fbf8" stroke="#2f7f86" stroke-width="1.4"/><path d="M10-27v11h11" fill="#b9e4e0"/><text x="0" y="-2" text-anchor="middle" fill="#1d6a72" font-family="Arial,sans-serif" font-size="11" font-weight="700">TRUE</text><path d="M-13 8h26m-26 7h19" stroke="#2f7f86" stroke-width="1.1"/></svg>';
   function rnd(a, b) { return a + Math.random() * (b - a); }
   function facts() { return window.WaySteveFacts || []; }
@@ -52,7 +52,7 @@
     var size = Math.round(Math.max(150, Math.min(280, w * .22))), y = Math.round(h * rnd(.28, .55));
     var el = document.createElement('div'); el.className = 'wb-steve';
     var fig = document.createElement('div'); fig.className = 'st-fig'; fig.setAttribute('aria-hidden', 'true'); fig.innerHTML = art.steve || STEVE;
-    fig.style.width = size + 'px'; fig.style.height = Math.round(size * 195 / 640) + 'px'; fig.style.top = y + 'px';
+    fig.style.width = size + 'px'; fig.style.height = Math.round(size * 249 / 640) + 'px'; fig.style.top = y + 'px';
     el.appendChild(fig); host().appendChild(el);
     var anims = [], timers = [], x0 = dir === 1 ? -size * 1.2 : w + size * .2, x1 = dir === 1 ? w + size * .2 : -size * 1.2;
     cur = { el: el, anims: anims, timers: timers };
