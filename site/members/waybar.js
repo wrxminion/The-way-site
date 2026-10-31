@@ -531,7 +531,7 @@
     // draw the bubbles only when the styles AND the script are in, so neither side shows up bare and then jumps into place
     var waiting = 3, ready = function () { if (--waiting === 0) syncBubbles(); };
     ['bubbles.css?v=7', 'bubbles-look.css?v=10'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=13'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=14'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -743,23 +743,28 @@
       footerScript.src = '/footer-quick.js?v=1';
       document.head.appendChild(footerScript);
     }
+    if (!document.querySelector('script[src^="/motion-pause.js"]')) {
+      var motionScript = document.createElement('script');
+      motionScript.src = '/motion-pause.js?v=1';
+      document.head.appendChild(motionScript);
+    }
     if (!document.querySelector('script[src^="/footer-tentacles.js"]')) {
       var tentScript = document.createElement('script');
-      tentScript.src = '/footer-tentacles.js?v=4';
+      tentScript.src = '/footer-tentacles.js?v=6';
       tentScript.defer = true;
       document.head.appendChild(tentScript);
     }
     // Background shark pieces (shark-pass.js: rare papers, rarer shark, hourly roll; shark-silhouette.js: a small dark shark swimming by). Both are decorative and off for reduced motion.
     if (!document.querySelector('script[src^="/shark-pass.js"]')) {
       var sharkScript = document.createElement('script');
-      sharkScript.src = '/shark-pass.js?v=2';
+      sharkScript.src = '/shark-pass.js?v=3';
       sharkScript.defer = true;
       sharkScript.setAttribute('data-auto', '');
       document.head.appendChild(sharkScript);
     }
     if (!document.querySelector('script[src^="/shark-silhouette.js"]')) {
       var silScript = document.createElement('script');
-      silScript.src = '/shark-silhouette.js?v=1';
+      silScript.src = '/shark-silhouette.js?v=2';
       silScript.defer = true;
       document.head.appendChild(silScript);
     }

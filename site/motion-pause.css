@@ -1,0 +1,7 @@
+/* Pause motion (motion-pause.js): html.wb-motion-off stops every animation and transition and hides the drifting extras. */
+html.wb-motion-off *,html.wb-motion-off *::before,html.wb-motion-off *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html.wb-motion-off .wb-rise,html.wb-motion-off .wb-rise-l,html.wb-motion-off .whale-lane,html.wb-motion-off .shark-lane,html.wb-motion-off .wb-shark-pass{display:none!important}
+html.wb-motion-off .wb-bubs-building .wb-dock>*,html.wb-motion-off.wb-bubs-building .wb-dock>*,html.wb-motion-off.wb-bubs-building .wb-bubs-l{visibility:visible!important}
+.wb-motion-btn{display:block;margin:12px auto 0;min-height:44px;background:none;border:1px solid #8bb3bd;color:#8bb3bd;border-radius:22px;padding:3px 18px;font:inherit;cursor:pointer}
+.wb-motion-btn:hover{color:#eafffb;border-color:#eafffb}
+.wb-motion-btn:focus-visible{outline:2px solid #a7f0e9;outline-offset:2px}

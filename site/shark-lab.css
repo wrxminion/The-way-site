@@ -1,0 +1,6 @@
+.wb-lab{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:2147483000;max-width:min(92vw,420px);padding:12px 14px;border-radius:14px;border:1px solid #a7f0e9;background:#062137f2;color:#ecffff;font:14px/1.3 system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:8px;box-shadow:0 6px 24px #000a}
+.wb-lab p{margin:0;flex-basis:100%}
+.wb-lab-h{font-weight:700}
+.wb-lab-n{color:#ffd9a0;min-height:1em}
+.wb-lab button{min-height:44px;padding:4px 12px;border-radius:10px;border:1px solid #a7f0e9;background:#0a4258;color:#ecffff;font:inherit;cursor:pointer}
+.wb-lab button:focus-visible{outline:2px solid #fff;outline-offset:2px}

@@ -6,25 +6,23 @@
   'use strict';
   var foot = document.querySelector('footer.foot');
   if (!foot || foot.querySelector('.wb-tent-wrap')) return;
-  var link = document.createElement('link'); link.rel = 'stylesheet'; link.href = '/footer-tentacles.css?v=5'; document.head.appendChild(link);
+  var link = document.createElement('link'); link.rel = 'stylesheet'; link.href = '/footer-tentacles.css?v=7'; document.head.appendChild(link);
   var wrap = document.createElement('div'); wrap.className = 'wb-tent-wrap';
   var strip = document.createElement('div'); strip.className = 'wb-tent'; strip.setAttribute('aria-hidden', 'true');
   // The sign wording lives inside the artwork (footer-tentacles.svg) so it scales with the boards at every width; this hidden copy is the real text for screen readers and search.
   // The sign is not clickable and has no link.
   var sign = document.createElement('p'); sign.className = 'wb-tent-sr'; sign.textContent = 'What lurks below?';
-  var pause = document.createElement('button'); pause.type = 'button'; pause.className = 'wb-tent-pause'; pause.textContent = 'Pause motion'; pause.setAttribute('aria-pressed', 'false');
-  pause.addEventListener('click', function () {
-    var on = wrap.classList.toggle('is-paused'); pause.setAttribute('aria-pressed', on ? 'true' : 'false'); pause.textContent = on ? 'Play motion' : 'Pause motion';
-  });
-  wrap.appendChild(strip); wrap.appendChild(sign); wrap.appendChild(pause);
-  foot.appendChild(wrap);
+  wrap.appendChild(strip); wrap.appendChild(sign);
+  // The scene is the last thing on the page, after the footer (and anything added to the footer later), so nothing sits under the tentacles.
+  // Pausing is the site-wide Pause motion button (motion-pause.js), which also stops these arms.
+  if (foot.nextSibling) foot.parentNode.insertBefore(wrap, foot.nextSibling); else foot.parentNode.appendChild(wrap);
   var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)'), still = !!(mq && mq.matches), loaded = false;
   function load() {
     if (loaded) return; loaded = true;
-    fetch('/footer-tentacles.svg?v=3').then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
+    fetch('/footer-tentacles.svg?v=4').then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
       if (!/^\s*<svg/.test(t)) return;
       strip.innerHTML = t;
-      if (!still) { strip.classList.add('is-rising'); setTimeout(function () { strip.classList.remove('is-rising'); }, 1600); }
+      if (!still) { strip.classList.add('is-rising'); setTimeout(function () { strip.classList.remove('is-rising'); }, 12000); }
       wrap.classList.add('is-ready');
     }).catch(function () { wrap.hidden = true; });
   }
