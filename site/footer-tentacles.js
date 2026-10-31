@@ -6,12 +6,12 @@
   'use strict';
   var foot = document.querySelector('footer.foot');
   if (!foot || foot.querySelector('.wb-tent-wrap')) return;
-  var link = document.createElement('link'); link.rel = 'stylesheet'; link.href = '/footer-tentacles.css?v=2'; document.head.appendChild(link);
+  var link = document.createElement('link'); link.rel = 'stylesheet'; link.href = '/footer-tentacles.css?v=5'; document.head.appendChild(link);
   var wrap = document.createElement('div'); wrap.className = 'wb-tent-wrap';
   var strip = document.createElement('div'); strip.className = 'wb-tent'; strip.setAttribute('aria-hidden', 'true');
-  var sign = document.createElement('p'); sign.className = 'wb-tent-sign';
-  var a = document.createElement('span'); a.textContent = 'What lurks'; var b = document.createElement('span'); b.textContent = 'below?';
-  sign.appendChild(a); sign.appendChild(b);
+  // The sign wording lives inside the artwork (footer-tentacles.svg) so it scales with the boards at every width; this hidden copy is the real text for screen readers and search.
+  // The sign is not clickable and has no link.
+  var sign = document.createElement('p'); sign.className = 'wb-tent-sr'; sign.textContent = 'What lurks below?';
   var pause = document.createElement('button'); pause.type = 'button'; pause.className = 'wb-tent-pause'; pause.textContent = 'Pause motion'; pause.setAttribute('aria-pressed', 'false');
   pause.addEventListener('click', function () {
     var on = wrap.classList.toggle('is-paused'); pause.setAttribute('aria-pressed', on ? 'true' : 'false'); pause.textContent = on ? 'Play motion' : 'Pause motion';
@@ -21,7 +21,7 @@
   var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)'), still = !!(mq && mq.matches), loaded = false;
   function load() {
     if (loaded) return; loaded = true;
-    fetch('/footer-tentacles.svg?v=2').then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
+    fetch('/footer-tentacles.svg?v=3').then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
       if (!/^\s*<svg/.test(t)) return;
       strip.innerHTML = t;
       if (!still) { strip.classList.add('is-rising'); setTimeout(function () { strip.classList.remove('is-rising'); }, 1600); }
