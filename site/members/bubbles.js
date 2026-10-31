@@ -64,7 +64,7 @@
     ] }];
     if (d) {
       var mine = [];
-      if (can(d, 'admin') || (d.roles || []).indexOf('super_admin') >= 0) mine.push({ href: r('admin'), label: 'Admin' });   // admins only, always the first item
+      if (can(d, 'admin') || (d.roles || []).indexOf('super_admin') >= 0) mine.push({ href: r('admin'), label: 'Admin' }, { href: '#shark-lab', label: 'Shark lab', lab: true });   // admins only, always the first item; the lab has no phone shortcut otherwise
       mine.push({ href: '/members/author.html', label: 'Author desk and ranks' }, { href: r('private'), label: 'Private research' });
       if (can(d, 'researcher') || can(d, 'reviewer')) mine.push({ href: r('research'), label: 'Research desk' });
       if (d.findings) mine.push({ href: '/members/findings.html', label: 'Findings' });
@@ -142,6 +142,7 @@
       setTimeout(function () { a.classList.remove('wb-fx-go'); }, 750);   // a same-page (hash) address does not unload the page
     }, POP_PAUSE);
   }
+  function openLab(ev) { ev.preventDefault(); if (window.WayShark && window.WayShark.lab) setTimeout(window.WayShark.lab, 0); }
   function list(groups, onGo) {
     var ul = el('ul', { class: 'wb-pop-list' });
     groups.forEach(function (g) {
@@ -150,6 +151,7 @@
         var li = el('li'), a = el('a', { href: it.href, 'aria-current': it.cur ? 'page' : null }, it.label);
         if (it.bell) { a.textContent = ''; a.appendChild(el('span', null, it.label)); a.appendChild(el('span', { class: 'wb-bell-badge', hidden: '' })); setTimeout(function () { ctx.refreshUnread(a); }, 0); }
         a.addEventListener('click', onGo);
+        if (it.lab) a.addEventListener('click', openLab);
         li.appendChild(a); ul.appendChild(li);
       });
     });
@@ -245,6 +247,7 @@
             var a = el('a', { class: 'wb-fan-row', href: it.href }, it.label);
             if (it.bell) { a.textContent = ''; a.appendChild(el('span', null, it.label)); a.appendChild(el('span', { class: 'wb-bell-badge', hidden: '' })); setTimeout(function () { ctx.refreshUnread(a); }, 0); }
             a.addEventListener('click', function () { closeAll(false); });
+            if (it.lab) a.addEventListener('click', openLab);
             row(0, a);
           });
         });
