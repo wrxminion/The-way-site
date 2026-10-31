@@ -530,7 +530,7 @@
     if (window.WayBubbles || document.querySelector('script[src^="/members/bubbles.js"]')) return;
     // draw the bubbles only when the styles AND the script are in, so neither side shows up bare and then jumps into place
     var waiting = 3, ready = function () { if (--waiting === 0) syncBubbles(); };
-    ['bubbles.css?v=7', 'bubbles-look.css?v=10'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
+    ['bubbles.css?v=7', 'bubbles-look.css?v=11'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
     var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=15'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).

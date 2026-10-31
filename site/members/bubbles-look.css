@@ -157,3 +157,13 @@ html.wb-bubs-popping .wb-dock>:not(.wb-bubbles-toggle),html.wb-bubs-popping .wb-
 html.wb-bubs-popping .wb-rise{opacity:0;transition:opacity 500ms ease-out}
 .wb-pop-drops{position:fixed;z-index:61;pointer-events:none;background:var(--wb-drops);opacity:0;animation:droplets-out 480ms ease-out var(--wb-pop-delay,0ms) forwards}
 @media(prefers-reduced-motion:reduce){html.wb-bubs-popping .wb-dock>:not(.wb-bubbles-toggle),html.wb-bubs-popping .wb-bubs-l>*,.wb-pop-drops{animation:none!important}}
+
+/* Idle bob: each bubble drifts a few pixels up and down, slowly, not in step with its neighbours. It uses the separate "translate" property so it never fights the rise-in or the pop (both use transform).
+   Holds still while the rise-in plays, while pointed at, focused or open (an open list is fixed inside the wrapper, and a moving wrapper would shift it). Off for reduced motion and for Pause motion (motion-pause.css). */
+@keyframes wb-idle-bob{0%,100%{translate:0 0}50%{translate:0 -4px}}
+html:not(.wb-rising) .wb-dock .wb-bub-wrap,html:not(.wb-rising) .wb-bubs-l .wb-bub-wrap{animation:wb-idle-bob 5.5s ease-in-out infinite}
+html:not(.wb-rising) .wb-dock .wb-bub-wrap:nth-of-type(2n),html:not(.wb-rising) .wb-bubs-l .wb-bub-wrap:nth-of-type(2n){animation-duration:6.5s;animation-delay:-2s}
+html:not(.wb-rising) .wb-dock .wb-bub-wrap:nth-of-type(3n),html:not(.wb-rising) .wb-bubs-l .wb-bub-wrap:nth-of-type(3n){animation-duration:7.5s;animation-delay:-4s}
+html:not(.wb-rising) .wb-dock .wb-bub-wrap:is(:hover,:focus-within,.wb-open),html:not(.wb-rising) .wb-bubs-l .wb-bub-wrap:is(:hover,:focus-within,.wb-open){animation-play-state:paused}
+html:not(.wb-rising) .wb-dock .wb-bub-wrap.wb-open,html:not(.wb-rising) .wb-bubs-l .wb-bub-wrap.wb-open{animation:none}
+@media(prefers-reduced-motion:reduce){.wb-dock .wb-bub-wrap,.wb-bubs-l .wb-bub-wrap{animation:none!important}}
