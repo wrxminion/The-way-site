@@ -256,11 +256,11 @@
     if (can(d, 'admin')) manage.push({ href: route('admin'), label: 'Admin', icon: 'admin', key: 'admin', dup: true });
     // "My tools" (a group at the top of the desktop Menu): the buttons that used to sit in the "Your tools" box on Home, same role rules.
     var tools = [];
+    if (can(d, 'admin') || d.roles.indexOf('super_admin') >= 0) tools.push({ href: route('admin'), label: 'Admin', desc: 'Members, invitations, ledger checks, analytics, notify list', icon: 'admin', key: 'admin' });
     tools.push({ href: '/members/author.html', label: 'Author desk and ranks', desc: 'Send an article or a source, and see your rank', icon: 'author', key: 'author' });
     tools.push({ href: route('private'), label: 'Private research', desc: 'Your own notes and team files, never published', icon: 'private', key: 'private' });
     if (can(d, 'moderator')) tools.push({ href: route('review'), label: 'Review sources', desc: 'Check each claim in a case against its sources', icon: 'review', key: 'review' });
     if (can(d, 'researcher') || can(d, 'reviewer')) tools.push({ href: route('research'), label: 'Research desk', desc: 'Write and check findings with the member team', icon: 'research', key: 'research' });
-    if (can(d, 'admin')) tools.push({ href: route('admin'), label: 'Notify list', icon: 'admin', key: 'admin' });
     if (can(d, 'moderator')) tools.push({ href: route('reports'), label: 'Reports', icon: 'reports', key: 'reports' });
     if (can(d, 'moderator') && d.modlog) tools.push({ href: route('log'), label: 'Moderation log', icon: 'log', key: 'log' });
     var more = [{ heading: 'My tools', items: tools, desk: true }, { heading: 'Community', items: community }, { heading: 'Explore', items: explore }];
@@ -531,7 +531,7 @@
     // draw the bubbles only when the styles AND the script are in, so neither side shows up bare and then jumps into place
     var waiting = 3, ready = function () { if (--waiting === 0) syncBubbles(); };
     ['bubbles.css?v=7', 'bubbles-look.css?v=10'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=14'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=15'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {

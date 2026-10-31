@@ -63,13 +63,14 @@
       { href: '/research/', label: 'Research' }
     ] }];
     if (d) {
-      var mine = [{ href: '/members/author.html', label: 'Author desk and ranks' }, { href: r('private'), label: 'Private research' }];
+      var mine = [];
+      if (can(d, 'admin') || (d.roles || []).indexOf('super_admin') >= 0) mine.push({ href: r('admin'), label: 'Admin' });   // admins only, always the first item
+      mine.push({ href: '/members/author.html', label: 'Author desk and ranks' }, { href: r('private'), label: 'Private research' });
       if (can(d, 'researcher') || can(d, 'reviewer')) mine.push({ href: r('research'), label: 'Research desk' });
       if (d.findings) mine.push({ href: '/members/findings.html', label: 'Findings' });
       mine.push({ href: r('roles'), label: 'Ranks and awards' });
       if (can(d, 'moderator')) mine.push({ href: r('reports'), label: 'Reports' });
       if (can(d, 'moderator') && d.modlog) mine.push({ href: r('log'), label: 'Moderation log' });
-      if (can(d, 'admin')) mine.push({ href: r('admin'), label: 'Notify list' });
       g.push({ heading: 'My tools', items: mine });
     }
     return g;
@@ -385,7 +386,14 @@
   }
 
   document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && openId) { ev.stopImmediatePropagation(); closeAll(true); } }, true);
-  document.addEventListener('click', function (ev) { if (openId && !(ev.target.closest && ev.target.closest('.wb-bub-wrap'))) closeAll(false); });
+  // The phone list redraws itself when a group (Tools, Commons) opens, which detaches the tapped row, so the click path is read from the event, not from the row.
+  document.addEventListener('click', function (ev) {
+    if (!openId) return;
+    var path = ev.composedPath ? ev.composedPath() : [], inside = false, i;
+    for (i = 0; i < path.length; i++) if (path[i].classList && path[i].classList.contains('wb-bub-wrap')) { inside = true; break; }
+    if (!path.length) inside = !!(ev.target.closest && ev.target.closest('.wb-bub-wrap'));
+    if (!inside) closeAll(false);
+  });
   window.addEventListener('resize', function () { if (openId) closeAll(false); });
   window.addEventListener('pageshow', function (ev) { if (ev.persisted) { closeAll(false); going = false; document.querySelectorAll('.wb-fx-go').forEach(function (n) { n.classList.remove('wb-fx-go'); }); } });
   // While someone types on a phone, the bubbles step aside, so they never sit on the keyboard or on the field.
