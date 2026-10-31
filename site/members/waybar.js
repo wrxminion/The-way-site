@@ -18,6 +18,7 @@
   var GUIDE = /^\/guide(-[a-z]{2})?\/$/;
   var STATES = '/states/';
   var GOV = '/how-government-works.html';
+  var TEACH = '/teacher-parent.html';
   var path = location.pathname;
   var inMembers = path.indexOf('/members/') === 0;
   var appPage = /^\/members\/(index\.html)?$/.test(path); // the member app itself (hash routes)
@@ -76,6 +77,7 @@
     reports: 'M5 21V4 M5 5h12l-2 4 2 4H5',
     log: 'M5 5h14 M5 10h14 M5 15h14 M5 20h9',
     govworks: 'M12 3l9 4v2H3V7z M5 10v8 M9 10v8 M15 10v8 M19 10v8 M3 21h18',
+    teacherparent: 'M12 4l10 5-10 5-10-5z M6 12v4c0 2 3 3 6 3s6-1 6-3v-4',
     admin: 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z',
     review: 'M12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18z M8 12l3 3 5-6',
     research: 'M4 20l4-1 11-11a2.1 2.1 0 0 0-3-3L5 16z M14 7l3 3',
@@ -145,6 +147,7 @@
     var h = appPage ? (location.hash || '#/') : '';
     if (/^#\/cases/.test(h) || /^\/cases/.test(path)) return 'cases';
     if (/^\/how-government-works/.test(path)) return 'govworks';
+    if (/^\/teacher-parent/.test(path)) return 'teacherparent';
     if (/^\/case-studies/.test(path)) return 'casestudies';
     if (/^\/research\//.test(path)) return 'research-lib';
     if (/^\/search\//.test(path)) return 'search';
@@ -236,7 +239,8 @@
       { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
       { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
       { href: '/case-studies/', label: 'Election Studies', icon: 'casestudies', key: 'casestudies' },
-      { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' }
+      { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
+      { href: TEACH, label: 'Teacher? Parent? Like to have fun?', desc: 'Meet Bubble Steve, who hunts the hallucination shark', icon: 'teacherparent', key: 'teacherparent' }
     ];
     if (d.findings) explore.push({ href: '/members/findings.html', label: 'Findings', desc: 'What members checked, with the verdict', icon: 'findings', key: 'findings' });
     var community = [
@@ -278,7 +282,8 @@
         { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
         { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
         { href: '/case-studies/', label: 'Election Studies', icon: 'casestudies', key: 'casestudies' },
-        { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' }
+        { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
+        { href: TEACH, label: 'Teacher? Parent? Like to have fun?', desc: 'Meet Bubble Steve, who hunts the hallucination shark', icon: 'teacherparent', key: 'teacherparent' }
       ] },
       { heading: 'Your account', items: [
         { href: '/members/', label: 'Log in', icon: 'login', key: 'login' },
