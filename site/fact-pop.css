@@ -1,0 +1,13 @@
+/* Fact pop (fact-pop.js): the pop-up card for a clicked bad fact, and the pointer hint while the pointer is on a fact. */
+html.wb-fact-over,html.wb-fact-over *{cursor:pointer!important}
+.wb-fact-card{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:2147482000;box-sizing:border-box;width:min(92vw,400px);padding:12px 14px;border-radius:14px;font:16px/1.35 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;box-shadow:0 6px 24px #0008}
+.wb-fact-card p{margin:0 0 8px}
+.wb-fact-card .fc-l{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.wb-fact-card .fc-n{font-size:14px}
+.wb-fact-card button{min-height:44px;padding:4px 16px;border-radius:10px;font:inherit;cursor:pointer}
+.wb-fact-card.wb-fact-bad{border:2px solid #8a5a2b;background:#fff4d6;color:#4a2f17}
+.wb-fact-card.wb-fact-bad .fc-l{color:#9b4a1c}
+.wb-fact-card.wb-fact-bad button{border:1px solid #8a5a2b;background:#f6dfae;color:#4a2f17}
+.wb-fact-card button:focus-visible{outline:2px solid #12333a;outline-offset:2px}
+.wb-fact-card .fc-pts{font-size:14px;font-weight:700}
+html.wb-motion-off .wb-fact-card{transition:none}
