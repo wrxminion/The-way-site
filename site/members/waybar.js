@@ -757,7 +757,7 @@
     // Background shark pieces (shark-pass.js: rare papers, rarer shark, hourly roll; shark-silhouette.js: a small dark shark swimming by). Both are decorative and off for reduced motion.
     if (!document.querySelector('script[src^="/shark-pass.js"]')) {
       var sharkScript = document.createElement('script');
-      sharkScript.src = '/shark-pass.js?v=3';
+      sharkScript.src = '/shark-pass.js?v=4';
       sharkScript.defer = true;
       sharkScript.setAttribute('data-auto', '');
       document.head.appendChild(sharkScript);
