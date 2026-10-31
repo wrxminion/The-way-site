@@ -753,7 +753,7 @@
     }
     if (!document.querySelector('script[src^="/footer-tentacles.js"]')) {
       var tentScript = document.createElement('script');
-      tentScript.src = '/footer-tentacles.js?v=6';
+      tentScript.src = '/footer-tentacles.js?v=7';
       tentScript.defer = true;
       document.head.appendChild(tentScript);
     }

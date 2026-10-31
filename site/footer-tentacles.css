@@ -21,5 +21,6 @@ main:has(.wb-tent-wrap.is-ready),body:has(.wb-tent-wrap.is-ready){padding-bottom
 .wb-tent.is-rising .rise4{animation-delay:4000ms}
 .wb-tent.is-rising .rise3{animation-delay:6000ms}
 .wb-tent.is-rising .rise2{animation-delay:8000ms}
-.wb-tent-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wb-tent-link{position:absolute;inset:0;z-index:2;display:block;overflow:hidden;white-space:nowrap;text-indent:-9999px;cursor:pointer;border-radius:12px}
+.wb-tent-link:focus-visible{outline:3px solid #f4d78f;outline-offset:-3px}
 @media(prefers-reduced-motion:reduce){.wb-tent .arm,.wb-tent.is-rising .rise{animation:none}}
