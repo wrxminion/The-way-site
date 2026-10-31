@@ -1,4 +1,4 @@
-// "Bubble Steve": the diver in the Back to surface bubble swims up while the page scrolls up and fades out from the head down as he nears the top.
+// "Scuba Steve": the diver in the Back to surface bubble swims up while the page scrolls up and fades out from the head down as he nears the top.
 // Also slows the Back to surface scroll (about 1.5 to 2.5 s, eased) instead of jumping. Loaded by bubbles.js. Style is in steve.css.
 // Reduced motion: the link jumps at once as before, and Steve does not wiggle. No inline scripts or styles (properties are set through the CSS object model).
 (function () {
@@ -6,7 +6,7 @@
   var FADE_FROM = 400, FADE_TO = 80;   // Steve is whole below 400 px and gone at 80 px (the bubble itself hides at 80)
   var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
   var lastY = window.scrollY || 0, calm = 0, raf = 0, wait = 0;
-  var POP_MS = 700;   // the glass bursts first (600 ms, steve.css); Bubble Steve starts swimming and the page starts moving only after this
+  var POP_MS = 700;   // the glass bursts first (600 ms, steve.css); Scuba Steve starts swimming and the page starts moving only after this
   function reduced() { return !!(mq && mq.matches); }
   function link() { return document.querySelector('.wb-floating-return'); }
   function fade() {
