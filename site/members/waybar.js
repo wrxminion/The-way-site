@@ -530,8 +530,8 @@
     if (window.WayBubbles || document.querySelector('script[src^="/members/bubbles.js"]')) return;
     // draw the bubbles only when the styles AND the script are in, so neither side shows up bare and then jumps into place
     var waiting = 3, ready = function () { if (--waiting === 0) syncBubbles(); };
-    ['bubbles.css?v=7', 'bubbles-look.css?v=9'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=12'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
+    ['bubbles.css?v=7', 'bubbles-look.css?v=10'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=13'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -602,8 +602,8 @@
   // A small down-arrow bubble hides the floating buttons; the same bubble (arrow up) brings them back. The choice is remembered.
   var BUBBLES = 'theway.bubbles';
   function bubblesOff() { try { return localStorage.getItem(BUBBLES) === 'off'; } catch (e) { return false; } }
-  function paintToggle(btn, off) {
-    document.documentElement.classList.toggle('wb-bubbles-off', off);
+  function paintToggle(btn, off, hold) {
+    if (!hold) document.documentElement.classList.toggle('wb-bubbles-off', off);
     btn.setAttribute('aria-expanded', off ? 'false' : 'true');
     btn.setAttribute('aria-label', off ? 'Show the floating buttons' : 'Hide the floating buttons');
     btn.title = off ? 'Show the floating buttons' : 'Hide the floating buttons';
@@ -621,9 +621,19 @@
       pth.setAttribute('d', 'M6 9l6 6 6-6'); pth.setAttribute('fill', 'none'); pth.setAttribute('stroke', 'currentColor'); pth.setAttribute('stroke-width', '2.5');
       pth.setAttribute('stroke-linecap', 'round'); pth.setAttribute('stroke-linejoin', 'round');
       svg.appendChild(pth); btn.appendChild(svg);
+      var popping = false;
       btn.addEventListener('click', function () {
+        if (popping) return;
         var off = !document.documentElement.classList.contains('wb-bubbles-off');
         try { off ? localStorage.setItem(BUBBLES, 'off') : localStorage.removeItem(BUBBLES); } catch (e) { /* private mode: it just will not be remembered */ }
+        if (off && window.WayBubbles && window.WayBubbles.popAway) {
+          // every bubble pops first, then they are gone (the choice is already saved)
+          popping = true;
+          paintToggle(btn, true, true);
+          var finish = function () { popping = false; paintToggle(btn, true); };
+          try { window.WayBubbles.popAway(finish); } catch (e) { finish(); }
+          return;
+        }
         paintToggle(btn, off);
         if (!off) { riseBurst(); floatUp(); }
       });

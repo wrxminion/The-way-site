@@ -7,5 +7,12 @@
 @keyframes steve-kick{0%{transform:translate(0,1px) rotate(-4deg)}50%{transform:translate(2px,-5px) rotate(4deg)}100%{transform:translate(-1px,1px) rotate(-4deg)}}
 /* swimming: a quick kick, repeated, while the page is moving up */
 .wb-dock .wb-floating-return.wb-steve-swim .wb-diver{animation:steve-kick 520ms ease-in-out infinite}
-.wb-dock .wb-floating-return.wb-steve-go{animation:wb-pop 700ms ease-out}
-@media (prefers-reduced-motion:reduce){.wb-dock .wb-floating-return.wb-steve-swim .wb-diver,.wb-dock .wb-floating-return.wb-steve-go{animation:none!important}}
+/* the click: the glass bursts FIRST (it swells, snaps small, sheds droplets and is gone) while Steve holds still; steve.js starts the swim and the scroll only after the burst */
+@keyframes steve-shell-burst{0%{transform:scale(1);opacity:1}18%{transform:scale(1.12);opacity:1}40%{transform:scale(.55);opacity:1}70%{transform:scale(.85);opacity:.35}100%{transform:scale(1.05);opacity:0}}
+.wb-floating-return{position:relative;display:block}
+.wb-dock .wb-floating-return.wb-steve-pop .wb-art-stack .wb-art:not(.wb-diver){animation:steve-shell-burst 600ms ease-out forwards}
+.wb-dock .wb-floating-return.wb-steve-pop:not(.wb-steve-swim) .wb-diver{animation:none}
+.wb-floating-return.wb-steve-pop::after{content:"";position:absolute;inset:8%;pointer-events:none;background:var(--wb-drops);opacity:0;animation:droplets-out 480ms ease-out forwards}
+/* if the swim is stopped part way (wheel, touch, key) the glass forms again */
+.wb-dock .wb-floating-return.wb-steve-reform .wb-art-stack .wb-art:not(.wb-diver){animation:shell-reform 450ms ease-out}
+@media (prefers-reduced-motion:reduce){.wb-dock .wb-floating-return.wb-steve-swim .wb-diver,.wb-dock .wb-floating-return.wb-steve-pop .wb-art,.wb-floating-return.wb-steve-pop::after,.wb-dock .wb-floating-return.wb-steve-reform .wb-art{animation:none!important}}

@@ -41,6 +41,15 @@
     var n = ++iconN, h = (ICON[name] || '').replace(/\bid="([^"]+)"/g, 'id="$1-' + n + '"').replace(/url\(#([^)]+)\)/g, 'url(#$1-' + n + ')');
     var s = document.createElement('span'); s.innerHTML = h; return s.firstChild || document.createElement('span');
   }
+  // The page you are on does not need its own bubble: a plain link bubble that points at this very page is left out (Tools and Commons stay, they hold other pages).
+  function samePage(href) {
+    var u, flat = function (p) { return p.replace(/index\.html$/, '').replace(/\/+$/, ''); };
+    try { u = new URL(href, location.href); } catch (e) { return false; }
+    if (u.origin !== location.origin || flat(u.pathname) !== flat(location.pathname)) return false;
+    var h = function (x) { return x === '#' || x === '#/' ? '' : x; };
+    return !/^#\//.test(u.hash) || h(u.hash) === h(location.hash);
+  }
+  function isHere(x) { return x.kind === 'link' && samePage(x.href); }
   function hidden() { try { var a = JSON.parse(localStorage.getItem(HIDE_KEY) || '[]'); return Array.isArray(a) ? a.filter(function (k) { return KEYS.indexOf(k) >= 0; }) : []; } catch (e) { return []; } }
   function reduced() { return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
 
@@ -107,22 +116,30 @@
       window.scrollTo({ top: 0, behavior: reduced() ? 'auto' : 'smooth' });
     }
   }
-  // Click pop (every bubble but Pull a thread): the glass swells, snaps small and sheds droplets (bubbles-look.css, .wb-fx-go), then the page opens.
-  // Modified clicks (new tab, new window) and reduced motion skip the wait. Home on its own page only pops (toTop already scrolled).
-  function popFx(b) {
+  // Click pop (every bubble but Pull a thread): the glass swells, snaps small and sheds droplets (bubbles-look.css, .wb-fx-go), a short pause lets the
+  // whole pop show (POP_PAUSE, Frank's request Oct 31), then the page opens. Fail open: modified clicks (new tab, new window) and reduced motion open
+  // the page at once, and the timer below always opens it. Home on its own page only pops (toTop already scrolled).
+  var POP_PAUSE = 1000, going = false;
+  function popFx(b, keep) {
     if (reduced()) return false;
-    b.classList.add('wb-fx-go'); setTimeout(function () { b.classList.remove('wb-fx-go'); }, 750);
+    b.classList.add('wb-fx-go');
+    if (!keep) setTimeout(function () { b.classList.remove('wb-fx-go'); }, 750);
     return true;
   }
   function goPop(ev) {
     var a = ev.currentTarget;
     if (reduced() || ev.button || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || a.target) return;
-    if (a.classList.contains('wb-fx-go')) { ev.preventDefault(); return; }
+    if (going) { ev.preventDefault(); return; }
     var stay = ev.defaultPrevented;
-    popFx(a);
+    popFx(a, !stay);
     if (stay) return;
     ev.preventDefault();
-    setTimeout(function () { location.assign(a.href); }, 380);
+    going = true;
+    setTimeout(function () {
+      going = false;
+      location.assign(a.href);
+      setTimeout(function () { a.classList.remove('wb-fx-go'); }, 750);   // a same-page (hash) address does not unload the page
+    }, POP_PAUSE);
   }
   function list(groups, onGo) {
     var ul = el('ul', { class: 'wb-pop-list' });
@@ -317,7 +334,7 @@
     var cur, hide, s, sig, first;
     if (ctx && !ctx.pending) {
       cur = OWNER[ctx.cur] || ''; hide = hidden(); s = spec(ctx);
-      sig = JSON.stringify([cur, hide, s, ctx.thread, !ctx.data]);
+      sig = JSON.stringify([cur, hide, s, ctx.thread, !ctx.data, location.pathname + location.hash]);
       if (sig === lastSig && document.querySelector('.wb-bubs-l')) return;   // nothing changed: keep them (and any open list) as they are
     }
     first = !document.querySelector('.wb-bubs-l');
@@ -327,7 +344,7 @@
     if (!ctx || ctx.pending) { document.documentElement.classList.remove('wb-has-bubs'); return; }
     var dock = document.querySelector('.wb-dock');
     if (!dock) return;
-    var vr = s.right.filter(function (x) { return hide.indexOf(x.key) < 0; }), vl = s.left.filter(function (x) { return hide.indexOf(x.key) < 0; });
+    var vr = s.right.filter(function (x) { return hide.indexOf(x.key) < 0 && !isHere(x); }), vl = s.left.filter(function (x) { return hide.indexOf(x.key) < 0 && !isHere(x); });
     var hr = [], hl = [];
     s.right.forEach(function (x) { if (hide.indexOf(x.key) >= 0) hr = hr.concat(flat(x)); });
     s.left.forEach(function (x) { if (hide.indexOf(x.key) >= 0) hl = hl.concat(flat(x)); });
@@ -370,7 +387,7 @@
   document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && openId) { ev.stopImmediatePropagation(); closeAll(true); } }, true);
   document.addEventListener('click', function (ev) { if (openId && !(ev.target.closest && ev.target.closest('.wb-bub-wrap'))) closeAll(false); });
   window.addEventListener('resize', function () { if (openId) closeAll(false); });
-  window.addEventListener('pageshow', function (ev) { if (ev.persisted) closeAll(false); });
+  window.addEventListener('pageshow', function (ev) { if (ev.persisted) { closeAll(false); going = false; document.querySelectorAll('.wb-fx-go').forEach(function (n) { n.classList.remove('wb-fx-go'); }); } });
   // While someone types on a phone, the bubbles step aside, so they never sit on the keyboard or on the field.
   document.addEventListener('focusin', function (ev) {
     var t = ev.target;
@@ -383,8 +400,8 @@
 
   // Bubble Steve (the Back to surface diver): slow eased scroll up, swim wiggle, fade at the top. Own files so they can be swapped.
   (function () {
-    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/steve.css?v=1'; document.head.appendChild(l);
-    var sc = document.createElement('script'); sc.src = '/members/steve.js?v=2'; sc.defer = true; document.head.appendChild(sc);
+    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/steve.css?v=2'; document.head.appendChild(l);
+    var sc = document.createElement('script'); sc.src = '/members/steve.js?v=3'; sc.defer = true; document.head.appendChild(sc);
   })();
 
   // New-in-the-Commons starfish (own files): commons-new.js puts a small starfish on the Commons bubble when others have posted since you last looked.
@@ -393,5 +410,37 @@
     var sc = document.createElement('script'); sc.src = '/members/commons-new.js?v=2'; sc.defer = true; document.head.appendChild(sc);
   })();
 
-  window.WayBubbles = { rise: enter, render: function (c) { ctx = c; build(); }, keys: KEYS };
+  // The down arrow hides the bubbles: each one pops with its droplets, top of the screen first, and the small rising air bubbles fade, then done() runs
+  // and the hidden state is applied (waybar.js). Fail open: done() always runs, from the timer, even if an animation never plays.
+  var awayTimer = 0;
+  function popAway(done) {
+    if (reduced()) { done(); return; }
+    clearTimeout(awayTimer);
+    closeAll(false);
+    var h = document.documentElement, fx = [];
+    var nodes = Array.prototype.filter.call(document.querySelectorAll('.wb-dock>:not(.wb-bubbles-toggle),.wb-bubs-l>*'), function (n) {
+      var r = n.getBoundingClientRect();
+      return getComputedStyle(n).display !== 'none' && r.width > 0 && r.height > 0;
+    });
+    nodes.sort(function (a, b) { return a.getBoundingClientRect().top - b.getBoundingClientRect().top; });
+    nodes.forEach(function (n, i) {
+      var r = n.getBoundingClientRect(), d = el('span', { class: 'wb-pop-drops', 'aria-hidden': 'true' }), delay = Math.min(i, 8) * 70 + 'ms';
+      n.style.setProperty('--wb-pop-delay', delay);
+      d.style.setProperty('--wb-pop-delay', delay);
+      d.style.left = (r.left + r.width * .08) + 'px'; d.style.top = (r.top + r.height * .08) + 'px';
+      d.style.width = (r.width * .84) + 'px'; d.style.height = (r.height * .84) + 'px';
+      document.body.appendChild(d); fx.push(d);
+    });
+    h.classList.remove('wb-rising');
+    h.classList.add('wb-bubs-popping');
+    awayTimer = setTimeout(function () {
+      try { done(); } finally {
+        h.classList.remove('wb-bubs-popping');
+        fx.forEach(function (d) { d.remove(); });
+        nodes.forEach(function (n) { n.style.removeProperty('--wb-pop-delay'); });
+      }
+    }, 640 + Math.min(Math.max(nodes.length - 1, 0), 8) * 70);
+  }
+
+  window.WayBubbles = { rise: enter, popAway: popAway, render: function (c) { ctx = c; build(); }, keys: KEYS };
 })();
