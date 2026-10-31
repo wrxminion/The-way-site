@@ -1,5 +1,8 @@
 /* Footer tentacles (decorative) and the "What lurks below?" sign. A reserved strip inside the footer; never over text or controls. */
-.wb-tent-wrap{position:relative;max-width:760px;margin:18px auto 0;container-type:inline-size}
+.wb-tent-wrap{position:relative;width:min(100%,520px);margin:18px auto 0}
+/* the scene is the end of the page: no empty space under the tentacles, scrolling stops there */
+.foot:has(.wb-tent-wrap.is-ready){padding-bottom:0}
+body:has(.wb-tent-wrap.is-ready){padding-bottom:0}
 .wb-tent-wrap:not(.is-ready){height:0;overflow:hidden;margin:0}
 .wb-tent{position:relative;aspect-ratio:1000/560;overflow:hidden;pointer-events:none}
 .wb-tent svg{position:absolute;left:0;bottom:0;width:100%;height:100%;overflow:hidden}
@@ -11,12 +14,8 @@
 @keyframes wb-tent-rise{from{transform:translateY(45%)}to{transform:none}}
 @keyframes wb-tent-sway{0%,100%{transform:rotate(-1.800deg)}50%{transform:rotate(2.200deg)}}
 .wb-tent.is-rising svg{animation:wb-tent-rise 1400ms cubic-bezier(.22,.61,.36,1) 1}
-/* the sign wording is real text laid over the two boards */
-.wb-tent-sign{position:absolute;left:0;right:0;top:56%;margin:0;transform:rotate(-2deg);text-align:center;pointer-events:none;color:#322115;font-weight:700;line-height:1.12;font-family:Georgia,serif;text-shadow:.6px .8px 0 #e3bd7b99}
-.wb-tent-sign span{display:block}
-.wb-tent-sign span:first-child{font-size:4.2cqw;margin-left:2%}
-.wb-tent-sign span:last-child{font-size:5cqw;margin-left:2%;margin-top:.1em}
-.wb-tent-pause{display:block;margin:6px auto 0;min-height:44px;background:none;border:1px solid #8bb3bd;color:#8bb3bd;border-radius:22px;padding:3px 16px;font:inherit;cursor:pointer}
+.wb-tent-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wb-tent-pause{position:absolute;top:6px;right:6px;margin:0;min-height:44px;background:none;border:1px solid #8bb3bd;color:#8bb3bd;border-radius:22px;padding:3px 16px;font:inherit;cursor:pointer}
 .wb-tent-pause:focus-visible{outline:2px solid #a7f0e9;outline-offset:2px}
 .wb-tent-wrap.is-paused .arm,.wb-tent-wrap.is-paused .wb-tent svg{animation:none}
 @media(prefers-reduced-motion:reduce){.wb-tent .arm,.wb-tent.is-rising svg{animation:none}.wb-tent-pause{display:none}}

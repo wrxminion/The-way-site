@@ -745,7 +745,7 @@
     }
     if (!document.querySelector('script[src^="/footer-tentacles.js"]')) {
       var tentScript = document.createElement('script');
-      tentScript.src = '/footer-tentacles.js?v=2';
+      tentScript.src = '/footer-tentacles.js?v=4';
       tentScript.defer = true;
       document.head.appendChild(tentScript);
     }
