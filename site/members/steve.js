@@ -7,7 +7,7 @@
   var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
   var lastY = window.scrollY || 0, calm = 0, raf = 0, wait = 0;
   var POP_MS = 700;   // the glass bursts first (600 ms, steve.css); Scuba Steve starts swimming and the page starts moving only after this
-  function reduced() { return !!(mq && mq.matches); }
+  function reduced() { return !!(mq && mq.matches) || document.documentElement.classList.contains('wb-motion-off'); }
   function link() { return document.querySelector('.wb-floating-return'); }
   function fade() {
     var a = link(); if (!a) return;

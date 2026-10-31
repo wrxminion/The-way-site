@@ -1,8 +1,8 @@
 /* Footer tentacles (decorative) and the "What lurks below?" sign. A reserved strip inside the footer; never over text or controls. */
-.wb-tent-wrap{position:relative;width:min(100%,520px);margin:18px auto 0}
+.wb-tent-wrap{position:relative;width:min(100%,520px);margin:18px auto 0;overflow:hidden}
 /* the scene is the end of the page: no empty space under the tentacles, scrolling stops there */
-.foot:has(.wb-tent-wrap.is-ready){padding-bottom:0}
-body:has(.wb-tent-wrap.is-ready){padding-bottom:0}
+.foot:has(+ .wb-tent-wrap.is-ready){padding-bottom:0;margin-bottom:0}
+main:has(.wb-tent-wrap.is-ready),body:has(.wb-tent-wrap.is-ready){padding-bottom:0;margin-bottom:0}
 .wb-tent-wrap:not(.is-ready){height:0;overflow:hidden;margin:0}
 .wb-tent{position:relative;aspect-ratio:1000/560;overflow:hidden;pointer-events:none}
 .wb-tent svg{position:absolute;left:0;bottom:0;width:100%;height:100%;overflow:hidden}
@@ -11,11 +11,15 @@ body:has(.wb-tent-wrap.is-ready){padding-bottom:0}
 .wb-tent .arm2{animation-duration:6.600s;animation-delay:-4s}
 .wb-tent .arm3{animation-duration:9s;animation-delay:-1s}
 .wb-tent .arm4{animation-duration:7.600s;animation-delay:-5s}
-@keyframes wb-tent-rise{from{transform:translateY(45%)}to{transform:none}}
+@keyframes wb-tent-up{from{transform:translateY(110%)}to{transform:none}}
 @keyframes wb-tent-sway{0%,100%{transform:rotate(-1.800deg)}50%{transform:rotate(2.200deg)}}
-.wb-tent.is-rising svg{animation:wb-tent-rise 1400ms cubic-bezier(.22,.61,.36,1) 1}
+/* one arm at a time, slowly, from the deep: left to right order 0, 1, 4, 3, 2, each takes 3.6 s and the next starts 2 s later */
+.wb-tent .rise{transform-box:fill-box}
+.wb-tent.is-rising .rise{animation:wb-tent-up 3600ms cubic-bezier(.22,.61,.36,1) both}
+.wb-tent.is-rising .rise0{animation-delay:0ms}
+.wb-tent.is-rising .rise1{animation-delay:2000ms}
+.wb-tent.is-rising .rise4{animation-delay:4000ms}
+.wb-tent.is-rising .rise3{animation-delay:6000ms}
+.wb-tent.is-rising .rise2{animation-delay:8000ms}
 .wb-tent-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.wb-tent-pause{position:absolute;top:6px;right:6px;margin:0;min-height:44px;background:none;border:1px solid #8bb3bd;color:#8bb3bd;border-radius:22px;padding:3px 16px;font:inherit;cursor:pointer}
-.wb-tent-pause:focus-visible{outline:2px solid #a7f0e9;outline-offset:2px}
-.wb-tent-wrap.is-paused .arm,.wb-tent-wrap.is-paused .wb-tent svg{animation:none}
-@media(prefers-reduced-motion:reduce){.wb-tent .arm,.wb-tent.is-rising svg{animation:none}.wb-tent-pause{display:none}}
+@media(prefers-reduced-motion:reduce){.wb-tent .arm,.wb-tent.is-rising .rise{animation:none}}

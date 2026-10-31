@@ -51,7 +51,7 @@
   }
   function isHere(x) { return x.kind === 'link' && samePage(x.href); }
   function hidden() { try { var a = JSON.parse(localStorage.getItem(HIDE_KEY) || '[]'); return Array.isArray(a) ? a.filter(function (k) { return KEYS.indexOf(k) >= 0; }) : []; } catch (e) { return []; } }
-  function reduced() { return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  function reduced() { return (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || document.documentElement.classList.contains('wb-motion-off'); }
 
   // ---- what each bubble holds: the one list used by the desktop pop-ups and the phone lists ----
   function toolsGroups(c) {
@@ -401,7 +401,7 @@
   // Scuba Steve (the Back to surface diver): slow eased scroll up, swim wiggle, fade at the top. Own files so they can be swapped.
   (function () {
     var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/steve.css?v=2'; document.head.appendChild(l);
-    var sc = document.createElement('script'); sc.src = '/members/steve.js?v=3'; sc.defer = true; document.head.appendChild(sc);
+    var sc = document.createElement('script'); sc.src = '/members/steve.js?v=4'; sc.defer = true; document.head.appendChild(sc);
   })();
 
   // New-in-the-Commons starfish (own files): commons-new.js puts a small starfish on the Commons bubble when others have posted since you last looked.

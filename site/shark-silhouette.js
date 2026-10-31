@@ -32,6 +32,13 @@
   }
   function schedule(ms) { clearTimeout(timer); timer = setTimeout(swim, ms); }
   sil.addEventListener('animationend', function (e) { if (e.target !== sil) return; sil.classList.remove('swim'); swimming = false; schedule(rnd(12000, 30000)); });
+  // WaySilhouette.now(): swim by right now at the middle of the screen (used by the admin shark lab). Respects reduced motion and Pause motion.
+  window.WaySilhouette = { now: function () {
+    if (swimming || document.documentElement.classList.contains('wb-motion-off')) return false;
+    var top = window.scrollY + window.innerHeight * .45 - (host.getBoundingClientRect().top + window.scrollY);
+    lane.style.top = Math.round(Math.max(0, Math.min(top, host.scrollHeight - 200))) + 'px';
+    near = true; clearTimeout(timer); swim(); return true;
+  } };
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { var was = near; near = es[0].isIntersecting; if (near && !was && !swimming) schedule(rnd(1500, 4000)); if (!near) clearTimeout(timer); }).observe(lane);
   }

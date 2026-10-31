@@ -19,7 +19,7 @@
   function rnd(a, b) { return a + Math.random() * (b - a); }
   function play(o) {
     o = o || {};
-    if (cur || (mq && mq.matches) || document.hidden || !document.body || !document.documentElement.animate) return;
+    if (cur || (mq && mq.matches) || document.documentElement.classList.contains('wb-motion-off') || document.hidden || !document.body || !document.documentElement.animate) return;
     var withShark = o.shark !== false, quiet = o.quiet == null ? Math.random() < QUIET : !!o.quiet;
     var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/shark-pass.css?v=2'; document.head.appendChild(css);
     var el = document.createElement('div'); el.className = 'wb-shark-pass'; el.setAttribute('aria-hidden', 'true');
@@ -79,6 +79,12 @@
       }, Math.round(rnd(MIN_MS, MAX_MS)));
     })();
   }
+  // secret admin shortcut: Alt+Shift+S loads the shark lab (shark-lab.js), which only opens for a signed-in admin
+  document.addEventListener('keydown', function (ev) {
+    if (!(ev.altKey && ev.shiftKey && (ev.key === 'S' || ev.key === 's' || ev.code === 'KeyS'))) return;
+    if (window.WaySharkLab) { window.WaySharkLab.open(); return; }
+    var sc = document.createElement('script'); sc.src = '/shark-lab.js?v=1'; document.head.appendChild(sc);
+  });
   document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); });
   window.WayShark = { watch: watch, maybe: watch, play: play, stop: stop };
   if (document.currentScript && document.currentScript.hasAttribute('data-auto')) watch();
