@@ -756,14 +756,14 @@
     }
     if (!document.querySelector('script[src^="/footer-tentacles.js"]')) {
       var tentScript = document.createElement('script');
-      tentScript.src = '/footer-tentacles.js?v=9';
+      tentScript.src = '/footer-tentacles.js?v=11';
       tentScript.defer = true;
       document.head.appendChild(tentScript);
     }
     // Background shark pieces (shark-pass.js: rare papers, rarer shark, hourly roll; shark-silhouette.js: a small dark shark swimming by). Both are decorative and off for reduced motion.
     if (!document.querySelector('script[src^="/shark-pass.js"]')) {
       var sharkScript = document.createElement('script');
-      sharkScript.src = '/shark-pass.js?v=8';
+      sharkScript.src = '/shark-pass.js?v=9';
       sharkScript.defer = true;
       sharkScript.setAttribute('data-auto', '');
       document.head.appendChild(sharkScript);
@@ -810,7 +810,7 @@
   if (!inMembers && !document.querySelector('script[src^="/humanbanner.js"]')) {
     var hbCss = document.createElement('link');
     hbCss.rel = 'stylesheet';
-    hbCss.href = '/humanbanner.css?v=9';
+    hbCss.href = '/humanbanner.css?v=11';
     document.head.appendChild(hbCss);
     var hbScript = document.createElement('script');
     hbScript.src = '/humanbanner.js?v=9';
