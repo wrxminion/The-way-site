@@ -1,14 +1,17 @@
 /* Footer tentacles (decorative) and the "What lurks below?" sign. A reserved strip inside the footer; never over text or controls. */
 .wb-tent-wrap{position:relative;width:min(100%,520px);margin:18px auto 0;overflow:hidden}
 /* the scene is the end of the page: no empty space under the tentacles, scrolling stops there */
-.foot:has(+ .wb-tent-wrap.is-ready){padding-bottom:0;margin-bottom:0}
+.foot:has(+ .wb-tent-sea .wb-tent-wrap.is-ready){padding-bottom:0;margin-bottom:0}
 main:has(.wb-tent-wrap.is-ready),body:has(.wb-tent-wrap.is-ready){padding-bottom:0;margin-bottom:0}
 .wb-tent-wrap:not(.is-ready){height:0;overflow:hidden;margin:0}
 .wb-tent{position:relative;aspect-ratio:1000/560;overflow:hidden;pointer-events:none}
 .wb-tent svg{position:absolute;left:0;bottom:0;width:100%;height:100%;overflow:hidden}
 /* the kraken and Bruce are two separate layers; delete .wb-tent-bruce (and its lines in footer-tentacles.js) to remove Bruce */
-.wb-tent-kraken,.wb-tent-bruce{position:absolute;inset:0;pointer-events:none}
-.wb-tent-bruce{z-index:1}
+.wb-tent-kraken{position:absolute;inset:0;pointer-events:none}
+/* the sea is as wide as the page and clips at its edges; Bruce's layer spans all of it */
+.wb-tent-sea{position:relative;width:100%;overflow:hidden}
+.wb-tent-bruce{position:absolute;left:0;right:0;top:0;height:0;z-index:1;pointer-events:none}
+.wb-tent-bruce svg{display:block;width:100%;height:100%;overflow:hidden}
 .wb-tent .arm{transform-box:fill-box;transform-origin:50% 100%;animation:wb-tent-sway 7s ease-in-out infinite}
 .wb-tent .arm1{animation-duration:8.200s;animation-delay:-2s}
 .wb-tent .arm2{animation-duration:6.600s;animation-delay:-4s}

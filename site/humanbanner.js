@@ -61,11 +61,18 @@
   x.className = 'hb-close';
   x.setAttribute('aria-label', 'Close this message');
   x.textContent = '×';
+  // the bar rolls up (its height shrinks to nothing, so the page below moves up with it) while the scene keeps playing
+  function slideUp() {
+    bar.style.maxHeight = bar.offsetHeight + 'px';
+    void bar.offsetHeight;
+    bar.classList.add('hb-closing');
+    bar.style.maxHeight = '0px';
+  }
   function reallyClose() {
     try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* storage blocked */ }
     stopScene();
     bar.remove();
-    bar.classList.remove('hb-closing');
+    bar.classList.remove('hb-closing'); bar.style.maxHeight = '';
     showTab();
   }
   x.addEventListener('click', function () {
@@ -156,7 +163,7 @@
     sign.innerHTML = '<g transform="translate(5 8) rotate(-5)"><rect width="110" height="57" rx="3" fill="#695139" stroke="#c6b187" stroke-width="2"/><rect x="6" y="6" width="98" height="45" fill="#263c3e"/><text x="55" y="38" text-anchor="middle" fill="#f0efda" font-family="Georgia,serif" font-style="italic" font-size="27">Missed.</text></g>';
     stage.textContent = '';
     stage.appendChild(bruceEl); stage.appendChild(steveEl); stage.appendChild(sign); stage.appendChild(kick);
-    var T_SHOT = 1.4, REACT = .9, SIGN_IN = 1.2, SWAP = 3.0, CHASE = 2.4, CLOSE = 4.6;
+    var T_SHOT = 1.4, REACT = .9, SIGN_IN = 1.2, SWAP = 3.0, CHASE = 2.4, CLOSE = SIGN_IN;
     var idleT = 0, T = 0, mode = 'idle', atClick = 0, departAt = 0, raf = 0, last = 0, aligned = null, signP = null, done = null, closing = false;
     function sm(v) { v = Math.max(0, Math.min(1, v)); return v * v * (3 - 2 * v); }
     function bodyUse() { return steveEl.querySelector('g[clip-path="url(#hbs-body)"] > use'); }
@@ -177,7 +184,7 @@
       if (mode === 'run' && T >= SIGN_IN && T < SWAP) {
         if (!signP) signP = measure(); if (!signP) { sign.style.display = 'none'; return; }
         var a = sm((T - SIGN_IN) / .38), b = sm((T - (SWAP - .3)) / .3), s = a * (1 - b), k = signP.k;
-        var fx = signP.px + (470 - 647) * k, fy = signP.py + (0 - 398) * k, cx = signP.px + (fx - signP.px) * a, cy = signP.py + (fy - signP.py) * a, w = 76;
+        var fx = signP.px + (470 - 647) * k, fy = signP.py + (0 - 398) * k, cx = signP.px + (fx - signP.px) * a, cy = signP.py + (fy - signP.py) * a, w = 44;
         sign.style.display = 'block'; sign.style.left = (cx - w / 2) + 'px'; sign.style.top = (cy - w * .3) + 'px';
         sign.style.transform = 'scale(' + s.toFixed(3) + ') rotate(' + ((1 - a) * -40).toFixed(1) + 'deg)'; sign.style.opacity = s > .02 ? '1' : '0';
       } else sign.style.display = 'none';
@@ -203,7 +210,7 @@
       else if (mode === 'run') {
         T += dt;
         if (T >= REACT && !departAt) departAt = atClick + REACT;
-        if (T >= CLOSE && !closing) { closing = true; bar.classList.add('hb-closing'); setTimeout(finish, 800); }
+        if (T >= CLOSE && !closing) { closing = true; slideUp(); setTimeout(finish, 1200); }
       }
       draw();
       if (mode !== 'done') raf = requestAnimationFrame(frame);

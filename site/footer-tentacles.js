@@ -6,33 +6,51 @@
   'use strict';
   var foot = document.querySelector('footer.foot');
   if (!foot || foot.querySelector('.wb-tent-wrap')) return;
-  var link = document.createElement('link'); link.rel = 'stylesheet'; link.href = '/footer-tentacles.css?v=9'; document.head.appendChild(link);
+  var link = document.createElement('link'); link.rel = 'stylesheet'; link.href = '/footer-tentacles.css?v=10'; document.head.appendChild(link);
   var wrap = document.createElement('div'); wrap.className = 'wb-tent-wrap';
   var strip = document.createElement('div'); strip.className = 'wb-tent'; strip.setAttribute('aria-hidden', 'true');
   var krakenEl = document.createElement('div'); krakenEl.className = 'wb-tent-kraken';
   var bruceEl = document.createElement('div'); bruceEl.className = 'wb-tent-bruce';
-  strip.appendChild(krakenEl); strip.appendChild(bruceEl);
+  strip.appendChild(krakenEl);
   // The sign wording lives inside the artwork so it scales with the boards at every width; this hidden copy is the real text for screen readers and search.
   // The scene is a link to the game (/members/steve-game.html, tester demo). The link text is hidden visually and read by screen readers.
   var sign = document.createElement('a'); sign.className = 'wb-tent-link'; sign.href = '/members/steve-game.html'; sign.textContent = 'What lurks below? Play Steve\'s Fact Dive (tester demo)';
   wrap.appendChild(strip); wrap.appendChild(sign);
   // The scene is the last thing on the page, after the footer (and anything added to the footer later), so nothing sits under the tentacles.
-  if (foot.nextSibling) foot.parentNode.insertBefore(wrap, foot.nextSibling); else foot.parentNode.appendChild(wrap);
+  // Bruce has his own layer as wide as the page (inside .wb-tent-sea, clipped at the page edges), so he swims across the whole screen and not just the 520 px kraken strip.
+  var sea = document.createElement('div'); sea.className = 'wb-tent-sea'; sea.appendChild(wrap); sea.appendChild(bruceEl);
+  if (foot.nextSibling) foot.parentNode.insertBefore(sea, foot.nextSibling); else foot.parentNode.appendChild(sea);
   var KRAKEN_SPEED = 0.75;        // kraken seconds per real second (slowed, approved)
   var BRUCE_START = 9.5;          // real seconds on screen before MORE COMING! starts to grow (the arms are up by then)
+  var PACE = 225;                 // Bruce's speed in scene units per second (same as the scene)
+  var extra = 0, preroll = 0;     // scene units of sea on each side of the strip, and the extra seconds Bruce needs to swim in from the far right edge
+  function layout() {
+    var w = strip.clientWidth, sw = sea.clientWidth;
+    if (!w || !sw) return;
+    var s = w / 1000;
+    extra = Math.max(0, (sw / s - 1000) / 2);
+    preroll = Math.max(0, (1000 + extra - 1150) / PACE);
+    bruceEl.style.top = wrap.offsetTop + 'px'; bruceEl.style.height = strip.clientHeight + 'px';
+  }
   var loaded = false, started = false, visible = false, t = 0, last = 0, raf = 0, still = false, bruceDone = false;
   function need(cb) {
     if (window.ScubaArt) { cb(); return; }
     var s = document.createElement('script'); s.src = '/scuba/scuba.js?v=1'; s.onload = cb; s.onerror = function () { wrap.hidden = true; }; document.head.appendChild(s);
   }
+  // draw a 1000 x 560 scene on the wide layer: same scale as the strip, with the extra sea on both sides
+  function wide(s) { return s.replace('viewBox="0 0 1000 560"', 'viewBox="' + (-extra) + ' 0 ' + (1000 + 2 * extra) + ' 560"').replace('width="1000" height="560"', 'width="100%" height="100%"'); }
   function draw() {
     var A = window.ScubaArt;
     krakenEl.innerHTML = A.pre(window.KrakenScene.scene(t), 'kr-');
     var u = t / KRAKEN_SPEED - BRUCE_START, M = window.MoreComing, B = window.BruceTextGulp;
     if (still || bruceDone || u < 0) { bruceEl.innerHTML = ''; return; }
-    if (u < M.DURATION) bruceEl.innerHTML = A.pre(M.scene(u), 'mc-');
-    else if (u < M.DURATION + B.DURATION) bruceEl.innerHTML = A.pre(B.scene(u - M.DURATION, true), 'br-');
-    else { bruceEl.innerHTML = ''; bruceDone = true; }
+    if (u < M.DURATION) bruceEl.innerHTML = A.pre(wide(M.scene(u)), 'mc-');
+    else if (u < M.DURATION + preroll + B.DURATION) {
+      // Bruce first swims in from the far right edge of the page (before the scene's own start), then the scene plays as drawn and he leaves past the left edge
+      var v = u - M.DURATION - preroll, s = B.scene(v, true);
+      if (v < .8) s = s.replace(/translate\(1150 /, 'translate(' + (1150 + PACE * (.8 - v)) + ' ');
+      bruceEl.innerHTML = A.pre(wide(s), 'br-');
+    } else { bruceEl.innerHTML = ''; bruceDone = true; }
   }
   function frame(ts) {
     raf = 0;
@@ -50,7 +68,8 @@
       window.ScubaArt.load(['/scuba/kraken-scene.js?v=1', '/scuba/revision-scenes.js?v=1', '/scuba/more-coming.js?v=1', '/scuba/bruce-scene.js?v=1'], function () {
         if (!window.KrakenScene || !window.BruceTextGulp || !window.MoreComing) { wrap.hidden = true; return; }
         still = window.ScubaArt.reduced(); t = still ? 5 : 0; started = true;
-        draw(); wrap.classList.add('is-ready'); run();
+        layout(); draw(); wrap.classList.add('is-ready'); layout(); run();
+        window.addEventListener('resize', layout);
       });
     });
   }
