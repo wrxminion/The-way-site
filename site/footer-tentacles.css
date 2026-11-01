@@ -30,3 +30,19 @@ main:has(.wb-tent-wrap.is-ready),body:has(.wb-tent-wrap.is-ready){padding-bottom
 .wb-tent-link{position:absolute;inset:0;z-index:2;display:block;overflow:hidden;white-space:nowrap;text-indent:-9999px;cursor:pointer;border-radius:12px}
 .wb-tent-link:focus-visible{outline:3px solid #f4d78f;outline-offset:-3px}
 @media(prefers-reduced-motion:reduce){.wb-tent .arm,.wb-tent.is-rising .rise{animation:none}}
+
+/* the fart becomes a bad fact: poop animation, brown bubble, pop, then a "Bad fact" note (same look as the shark pass note) */
+.wb-tent-poop{position:absolute;left:0;right:0;top:0;height:0;z-index:3;pointer-events:none}
+.wb-tent-puff{position:absolute}
+.wb-tent-puff img{display:block;width:100%;height:100%}
+.wb-tent-puff.pop img{animation:wb-pop-burst 600ms ease-out forwards}
+.wb-tent-puff.pop::after{content:"";position:absolute;inset:8%;opacity:0;background:radial-gradient(circle at 50% 4%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 84% 16%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 96% 50%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 80% 85%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 50% 96%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 15% 80%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 4% 50%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 16% 16%,#e8c9a0 0 3px,transparent 4px);animation:wb-pop-drops 480ms ease-out forwards}
+@keyframes wb-pop-burst{0%{transform:scale(1);opacity:1}18%{transform:scale(1.12);opacity:1}40%{transform:scale(.55);opacity:1}70%{transform:scale(.85);opacity:.35}100%{transform:scale(1.05);opacity:0}}
+@keyframes wb-pop-drops{0%,45%{transform:scale(.45);opacity:0}60%{transform:scale(.64);opacity:.9}100%{transform:scale(1);opacity:0}}
+.wb-tent-fact{position:absolute;max-width:min(240px,calc(100% - 16px));box-sizing:border-box;margin:0;padding:6px 11px 7px;text-align:center;background:#fff4d6;border:2px solid #8a5a2b;border-radius:14px;color:#4a2f17;font:600 15px/1.25 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;box-shadow:0 3px 10px #0005;cursor:pointer;pointer-events:auto;animation:wb-fact-sink 9s ease-out forwards}
+.wb-tent-fact:focus-visible{outline:3px solid #f4d78f;outline-offset:2px}
+.wb-tent-fact-l{display:block;margin-bottom:2px;color:#9b4a1c;font-size:.72em;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+@keyframes wb-fact-sink{0%{opacity:0;transform:translateY(0) scale(.4)}6%{opacity:1;transform:translateY(0) scale(1.08)}10%{opacity:1;transform:translateY(4px) scale(1)}90%{opacity:1;transform:translateY(40px) scale(1)}100%{opacity:0;transform:translateY(46px) scale(1)}}
+@media (max-width:520px){.wb-tent-fact{font-size:13px}}
+html.wb-motion-off .wb-tent-puff.pop{display:none}
+@media(prefers-reduced-motion:reduce){.wb-tent-puff,.wb-tent-fact{display:none}}

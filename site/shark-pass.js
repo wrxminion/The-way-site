@@ -147,6 +147,6 @@
     lab();
   });
   document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); });
-  window.WayShark = { watch: watch, maybe: watch, play: play, stop: stop, lab: lab, busy: function () { return !!cur; } };
+  window.WayShark = { badFacts: BAD_FACTS, openBad: openBad, watch: watch, maybe: watch, play: play, stop: stop, lab: lab, busy: function () { return !!cur; } };
   if (document.currentScript && document.currentScript.hasAttribute('data-auto')) watch();
 })();
