@@ -149,7 +149,7 @@
     var s = document.createElement('script'); s.src = '/scuba/scuba.js?v=1';
     s.onerror = function () { artState = 3; stage.hidden = true; };
     s.onload = function () {
-      window.ScubaArt.load(['/scuba/steve-speargun.js?v=1', '/scuba/revision-scenes.js?v=1', '/scuba/more-coming.js?v=1', '/scuba/bruce-scene.js?v=1', '/scuba/facts-scene.js?v=1'], function () {
+      window.ScubaArt.load(['/scuba/steve-speargun.js?v=2', '/scuba/revision-scenes.js?v=1', '/scuba/more-coming.js?v=1', '/scuba/bruce-scene.js?v=1', '/scuba/facts-scene.js?v=1'], function () {
         if (!window.SteveSpearGun || !window.BruceFacts) { artState = 3; stage.hidden = true; return; }
         artState = 2;
         if (bar.isConnected) buildScene();
@@ -169,7 +169,9 @@
     if (visHandler) document.removeEventListener('visibilitychange', visHandler);
     stage.textContent = '';
     stage.appendChild(bruceEl); stage.appendChild(steveEl); stage.appendChild(sign); stage.appendChild(kick);
-    var T_SHOT = 1.4, REACT = .9, SIGN_IN = 1.2, SWAP = 3.0, CHASE = 2.4, CLOSE = SIGN_IN;
+    // Timing (seconds after the click): the shot fires at 0 and flies over Bruce's head (a miss); Bruce spins off at REACT;
+    // the "Missed." sign is up by SIGN_IN and stays full size until CLOSE (about 1.8 s to read); only then does the bar roll up.
+    var T_SHOT = 1.4, REACT = .3, SIGN_IN = .7, SWAP = 3.2, CHASE = 2.4, CLOSE = 2.9, SHOT = { speed: 2.4, climb: .85 };
     var idleT = 0, T = 0, mode = 'idle', atClick = 0, departAt = 0, raf = 0, last = 0, aligned = null, signP = null, done = null, closing = false, closeT = 0, hardT = 0;
     function sm(v) { v = Math.max(0, Math.min(1, v)); return v * v * (3 - 2 * v); }
     function bodyUse() { return steveEl.querySelector('g[clip-path="url(#hbs-body)"] > use'); }
@@ -178,7 +180,7 @@
       var m = u.getScreenCTM(), sr = stage.getBoundingClientRect(); if (!m) return null;
       return { k: Math.hypot(m.a, m.b), px: m.a * 647 + m.c * 398 + m.e - sr.left, py: m.b * 647 + m.d * 398 + m.f - sr.top };
     }
-    function steveSvg(t, fire) { return A.pre(SteveSpearGun.scene(t, GUN, fire, true), 'hbs-'); }
+    function steveSvg(t, fire) { return A.pre(SteveSpearGun.scene(t, GUN, fire, true, fire ? SHOT : null), 'hbs-'); }
     function align() {
       steveEl.innerHTML = steveSvg(T_SHOT + SWAP, true);
       var u = bodyUse(); if (!u) return;
@@ -202,7 +204,10 @@
       } else kick.style.display = 'none';
     }
     function draw() {
-      bruceEl.innerHTML = (mode === 'idle' || T < REACT) ? A.pre(BruceFacts.idle(mode === 'idle' ? idleT : atClick + T), 'hbb-') : A.pre(BruceFacts.depart(Math.min(2.8, T - REACT), departAt), 'hbb-');
+      var spin = (mode === 'run' && T >= REACT) ? T - REACT : 0;   // Bruce tumbles wildly as he is thrown off
+      bruceEl.innerHTML = (mode === 'idle' || T < REACT) ? A.pre(BruceFacts.idle(mode === 'idle' ? idleT : atClick + T), 'hbb-') : A.pre(BruceFacts.depart(Math.min(2.8, spin * 1.6), departAt), 'hbb-');
+      bruceEl.style.transformOrigin = '45% 50%';
+      bruceEl.style.transform = spin ? 'rotate(' + (-spin * 1300).toFixed(0) + 'deg)' : '';
       if (mode === 'idle') steveEl.innerHTML = steveSvg(idleT, false);
       else if (T < SWAP) steveEl.innerHTML = steveSvg(T_SHOT + T, true);
       else { if (!aligned) align(); steveEl.innerHTML = ''; }

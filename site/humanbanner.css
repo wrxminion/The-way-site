@@ -35,4 +35,5 @@ html.wb-motion-off .hb-bar.hb-closing{transition:none}
 /* shorter bar when the hunt scene is in it: scene on top, words under it, the two buttons side by side */
 .hb-bar{flex-direction:row;flex-wrap:wrap;gap:.3rem .8rem;padding-top:.3rem;padding-bottom:.6rem}
 .hb-bar .hb-stage{flex:0 0 auto;margin:0 calc(50% - 180px)}
-.hb-bar .hb-text{flex:0 0 100%}
+.hb-bar .hb-text{flex:0 0 100%;max-width:none;text-align:center}
+.hb-bar{justify-content:center}
