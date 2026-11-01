@@ -17,7 +17,7 @@
 .gw a.tp-btn-alt:hover,.gw a.tp-btn-alt:focus-visible{background:#173846;color:#fff}
 
 .tp-meet-fig{margin:22px auto 6px;text-align:center}
-.tp-steve-still svg{display:block;margin:0 auto;width:124px;height:auto}
+.tp-steve-still img{display:block;margin:0 auto;width:min(230px,60vw);height:auto}
 .tp-stage{position:relative;width:min(720px,100%);aspect-ratio:900/600;margin:0 auto 64px;overflow:visible}
 .tp-stage svg{display:block;width:100%;height:100%}
 .tp-puff{position:absolute;left:80%;top:56%;width:5.5%;aspect-ratio:1;opacity:0;pointer-events:none}
@@ -25,3 +25,9 @@
 .tp-fact{position:absolute;left:50%;top:76%;max-width:min(240px,86%);box-sizing:border-box;padding:6px 11px 7px;text-align:center;background:#fff4d6;border:2px solid #8a5a2b;border-radius:14px;color:#4a2f17;font:600 15px/1.25 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;box-shadow:0 3px 10px #0005;opacity:0;pointer-events:none}
 .tp-fact-l{display:block;margin-bottom:2px;color:#9b4a1c;font-size:.72em;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
 @media (max-width:520px){.tp-fact{font-size:13px}}
+
+/* Steve (right) drops fact papers; Bruce (left) bobs bare */
+.tp-diver{position:relative;flex:none}
+.tp-drops{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+.tp-drops .tp-paper{position:absolute;width:26px;height:auto;left:46%;top:58%;opacity:0}
+.tp-drops .tp-paper.still{opacity:1}
