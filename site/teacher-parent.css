@@ -1,8 +1,9 @@
 /* Teacher? Parent? page. Builds on government-works.css (.gw) */
 .tp-hero{display:flex;align-items:center;justify-content:center;gap:clamp(12px,4vw,40px);margin:8px 0 4px}
 .tp-steve{width:min(300px,52vw);height:auto;flex:none}
-.tp-shark{width:min(192px,34vw);height:auto;flex:none}
-@media (prefers-reduced-motion:no-preference){.tp-shark{animation:tp-bob 3.2s ease-in-out infinite}.tp-steve{animation:tp-float 4s ease-in-out infinite}}
+.tp-shark{width:min(300px,46vw);flex:none}
+.tp-shark svg{display:block;width:100%;height:auto}
+@media (prefers-reduced-motion:no-preference){.tp-steve{animation:tp-float 4s ease-in-out infinite}}
 @keyframes tp-bob{0%,100%{transform:translateX(0) rotate(0)}50%{transform:translateX(6px) rotate(-3deg)}}
 @keyframes tp-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @media (max-width:520px){.tp-hero{gap:8px}}
@@ -14,3 +15,13 @@
 .gw a.tp-btn:hover,.gw a.tp-btn:focus-visible{background:#fff;color:#04101a}
 .gw a.tp-btn-alt{background:transparent;color:#a7f0e9;border:1px solid #a7f0e9}
 .gw a.tp-btn-alt:hover,.gw a.tp-btn-alt:focus-visible{background:#173846;color:#fff}
+
+.tp-meet-fig{margin:22px auto 6px;text-align:center}
+.tp-steve-still svg{display:block;margin:0 auto;width:124px;height:auto}
+.tp-stage{position:relative;width:min(720px,100%);aspect-ratio:900/600;margin:0 auto 64px;overflow:visible}
+.tp-stage svg{display:block;width:100%;height:100%}
+.tp-puff{position:absolute;left:80%;top:56%;width:5.5%;aspect-ratio:1;opacity:0;pointer-events:none}
+.tp-puff svg{width:100%;height:100%}
+.tp-fact{position:absolute;left:50%;top:76%;max-width:min(240px,86%);box-sizing:border-box;padding:6px 11px 7px;text-align:center;background:#fff4d6;border:2px solid #8a5a2b;border-radius:14px;color:#4a2f17;font:600 15px/1.25 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;box-shadow:0 3px 10px #0005;opacity:0;pointer-events:none}
+.tp-fact-l{display:block;margin-bottom:2px;color:#9b4a1c;font-size:.72em;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+@media (max-width:520px){.tp-fact{font-size:13px}}

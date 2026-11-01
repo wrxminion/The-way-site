@@ -21,3 +21,17 @@
 .hb-bub{display:block;padding:.6rem 1.1rem;border:1px solid #a7f0e980;border-radius:999px;background:#0a3d4f;color:#ffe45c;font:700 .92rem/1.25 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;text-align:center;text-decoration:none;box-shadow:0 3px 12px #0006;cursor:pointer;min-height:44px}
 .hb-bub:hover,.hb-bub:focus-visible{background:#0d4e65;outline:2px solid #fff;outline-offset:2px}
 @media (min-width:561px){.hb-tab{top:var(--hb-tab-top,112px)}.hb-menu{top:calc(var(--hb-tab-top,112px) + 56px)}}
+/* hunt scene (humanbanner.js): Bruce bobs at the left, Steve at the right; closing plays the "Missed." chase and slides the bar up */
+.hb-stage{position:relative;flex:none}
+.hb-stage:has(.hb-bruce){width:min(100%,640px);height:200px;overflow:hidden}
+.hb-stage .hb-bruce,.hb-stage .hb-steve{position:absolute;pointer-events:none}
+.hb-stage .hb-bruce{left:34px;top:-14px;width:330px}
+.hb-stage .hb-steve{right:44px;top:72px;width:250px}
+.hb-stage svg{display:block;width:100%;height:auto;overflow:visible}
+.hb-stage .hb-sign{position:absolute;display:none;width:76px;height:auto;pointer-events:none;z-index:2;overflow:visible}
+.hb-stage .hb-kick{position:absolute;display:none;clip-path:inset(0 0 0 5.6%);width:200px;height:auto;pointer-events:none}
+.hb-bar{transition:transform .7s ease}
+.hb-bar.hb-closing{transform:translateY(-105%)}
+@media (max-width:640px){.hb-stage:has(.hb-bruce){height:170px}.hb-stage .hb-bruce{left:0;width:250px;top:-8px}.hb-stage .hb-steve{right:30px;width:190px;top:62px}}
+@media (prefers-reduced-motion:reduce){.hb-bar{transition:none}}
+html.wb-motion-off .hb-bar{transition:none}

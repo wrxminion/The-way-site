@@ -533,7 +533,7 @@
     // draw the bubbles only when the styles AND the script are in, so neither side shows up bare and then jumps into place
     var waiting = 3, ready = function () { if (--waiting === 0) syncBubbles(); };
     ['bubbles.css?v=7', 'bubbles-look.css?v=11'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=17'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=18'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -552,7 +552,7 @@
   // One bubble picture: a decorative image (the words inside it are repeated as real text, hidden or laid over it).
   function bubbleArt(name, w, h) {
     var mk = function (file, cls) {
-      var base = '/members/art/bubble-' + file, ver = file === 'back-diver' ? '?v=2' : '';   // v=2: the diver picture lost its faint bubble ring
+      var base = '/members/art/bubble-' + file, ver = '';
       return el('img', { class: cls, src: base + '-1x.webp' + ver, srcset: base + '-1x.webp' + ver + ' 1x, ' + base + '-2x.webp' + ver + ' 2x', alt: '', 'aria-hidden': 'true', width: String(w), height: String(h), decoding: 'async' });
     };
     // sizes come from the stylesheet (the page security policy blocks inline style attributes)
@@ -560,8 +560,11 @@
     // the diver is its own layer so it can swim up a little on hover; at rest the two layers look like one picture
     var stack = el('span', { class: 'wb-art-stack' });
     stack.appendChild(mk('back-base', 'wb-art'));
-    stack.appendChild(mk('back-diver', 'wb-art wb-diver'));
-    stack.appendChild(mk('back-diver', 'wb-art wb-diver wb-diver-legs'));   // lower legs on their own layer so they can kick while he swims up (hidden at rest)
+    // Scuba Steve is ChatGPT's swimming picture turned head up (steve.css): his first frame at rest, the animated kick while he swims up. Own layer, so it can be changed or removed on its own.
+    var diver = el('span', { class: 'wb-diver', 'aria-hidden': 'true' });
+    diver.appendChild(el('img', { class: 'wb-steve-rest', src: '/art/steve-swim-rest.webp?v=1', alt: '', width: '640', height: '249', decoding: 'async' }));
+    diver.appendChild(el('img', { class: 'wb-steve-kick', src: '/art/steve-swim-kick.webp', alt: '', width: '640', height: '249', decoding: 'async' }));
+    stack.appendChild(diver);
     return stack;
   }
   // A few small decorative air bubbles rise behind the buttons. Not links, not read out, no pointer events; hidden for reduced motion.
@@ -753,14 +756,14 @@
     }
     if (!document.querySelector('script[src^="/footer-tentacles.js"]')) {
       var tentScript = document.createElement('script');
-      tentScript.src = '/footer-tentacles.js?v=7';
+      tentScript.src = '/footer-tentacles.js?v=8';
       tentScript.defer = true;
       document.head.appendChild(tentScript);
     }
     // Background shark pieces (shark-pass.js: rare papers, rarer shark, hourly roll; shark-silhouette.js: a small dark shark swimming by). Both are decorative and off for reduced motion.
     if (!document.querySelector('script[src^="/shark-pass.js"]')) {
       var sharkScript = document.createElement('script');
-      sharkScript.src = '/shark-pass.js?v=7';
+      sharkScript.src = '/shark-pass.js?v=8';
       sharkScript.defer = true;
       sharkScript.setAttribute('data-auto', '');
       document.head.appendChild(sharkScript);
@@ -777,7 +780,7 @@
       stFacts.src = '/steve-facts.js?v=1';
       document.head.appendChild(stFacts);
       var stScript = document.createElement('script');
-      stScript.src = '/steve-swim.js?v=3';
+      stScript.src = '/steve-swim.js?v=4';
       stScript.defer = true;
       stScript.setAttribute('data-auto', '');
       document.head.appendChild(stScript);
@@ -807,10 +810,10 @@
   if (!inMembers && !document.querySelector('script[src^="/humanbanner.js"]')) {
     var hbCss = document.createElement('link');
     hbCss.rel = 'stylesheet';
-    hbCss.href = '/humanbanner.css?v=7';
+    hbCss.href = '/humanbanner.css?v=8';
     document.head.appendChild(hbCss);
     var hbScript = document.createElement('script');
-    hbScript.src = '/humanbanner.js?v=7';
+    hbScript.src = '/humanbanner.js?v=8';
     hbScript.defer = true;
     document.head.appendChild(hbScript);
   }

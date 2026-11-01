@@ -6,6 +6,9 @@ main:has(.wb-tent-wrap.is-ready),body:has(.wb-tent-wrap.is-ready){padding-bottom
 .wb-tent-wrap:not(.is-ready){height:0;overflow:hidden;margin:0}
 .wb-tent{position:relative;aspect-ratio:1000/560;overflow:hidden;pointer-events:none}
 .wb-tent svg{position:absolute;left:0;bottom:0;width:100%;height:100%;overflow:hidden}
+/* the kraken and Bruce are two separate layers; delete .wb-tent-bruce (and its lines in footer-tentacles.js) to remove Bruce */
+.wb-tent-kraken,.wb-tent-bruce{position:absolute;inset:0;pointer-events:none}
+.wb-tent-bruce{z-index:1}
 .wb-tent .arm{transform-box:fill-box;transform-origin:50% 100%;animation:wb-tent-sway 7s ease-in-out infinite}
 .wb-tent .arm1{animation-duration:8.200s;animation-delay:-2s}
 .wb-tent .arm2{animation-duration:6.600s;animation-delay:-4s}
