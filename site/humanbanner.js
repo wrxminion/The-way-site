@@ -40,16 +40,11 @@
 
   // The hunt scene (ChatGPT art, drawn by /scuba/*.js): Bruce bobs at the left and Steve with the suction-cup tracker launcher at the right.
   // Closing the banner plays it once: Steve fires and misses, holds up a "Missed." sign, Bruce swims off, Steve kicks after him, the banner slides away.
-  // If the art cannot load, or motion is off (reduced motion or Pause motion), the old small shark picture shows and the X just closes.
+  // Every time the banner is shown (page load, or "Show the message again") the whole scene is built again, so it always starts fresh. Reduced motion or Pause motion: a still picture and the X just closes.
+  // The old small shark picture is never shown, not even while the page loads: the stage keeps its size and stays empty until the scene is drawn.
   var stage = document.createElement('div');
   stage.className = 'hb-stage';
   stage.setAttribute('aria-hidden', 'true');
-  var shark = document.createElement('img');
-  shark.className = 'hb-shark';
-  shark.src = '/art/shark-banner.webp';
-  shark.alt = '';
-  shark.width = 96; shark.height = 37;
-  stage.appendChild(shark);
 
   var a = document.createElement('a');
   a.className = 'hb-join';
@@ -62,21 +57,23 @@
   x.setAttribute('aria-label', 'Close this message');
   x.textContent = '×';
   // the bar rolls up (its height shrinks to nothing, so the page below moves up with it) while the scene keeps playing
+  var ROLL_MS = 2200;   // how long the roll up takes (css transition in humanbanner.css uses the same time)
   function slideUp() {
     bar.style.maxHeight = bar.offsetHeight + 'px';
     void bar.offsetHeight;
     bar.classList.add('hb-closing');
     bar.style.maxHeight = '0px';
   }
+  function resetBar() { bar.classList.remove('hb-closing'); bar.style.maxHeight = ''; }
   function reallyClose() {
     try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* storage blocked */ }
     stopScene();
     bar.remove();
-    bar.classList.remove('hb-closing'); bar.style.maxHeight = '';
+    resetBar();
     showTab();
   }
   x.addEventListener('click', function () {
-    if (scene && scene.ready && !scene.running && !window.ScubaArt.off() && !window.ScubaArt.reduced()) { scene.go(reallyClose); return; }
+    if (scene && scene.ready && !scene.running && window.ScubaArt && !window.ScubaArt.off() && !window.ScubaArt.reduced()) { scene.go(reallyClose); return; }
     if (scene && scene.running) return;
     reallyClose();
   });
@@ -102,9 +99,11 @@
     closeMenu();
     if (tab) { tab.remove(); tab = null; }
     try { sessionStorage.removeItem(KEY); } catch (e) { /* storage blocked */ }
+    resetBar();
     var top = document.getElementById('waybar');
     if (top && top.parentNode) top.parentNode.insertBefore(bar, top.nextSibling);
     else document.body.insertBefore(bar, document.body.firstChild);
+    ensureScene();   // a new, full scene every time the banner is shown
   }
   function bubble(tag, label, href) {
     var el = document.createElement(tag);
@@ -141,14 +140,19 @@
   }
 
   // ---- the hunt scene ----
-  var scene = null;
+  var scene = null, artState = 0, visHandler = null;   // artState: 0 not loaded, 1 loading, 2 ready, 3 failed
   function stopScene() { if (scene) scene.stop(); }
-  function startScene() {
+  function ensureScene() {
+    if (artState === 2) { buildScene(); return; }
+    if (artState === 1 || artState === 3) return;
+    artState = 1;
     var s = document.createElement('script'); s.src = '/scuba/scuba.js?v=1';
+    s.onerror = function () { artState = 3; stage.hidden = true; };
     s.onload = function () {
       window.ScubaArt.load(['/scuba/steve-speargun.js?v=1', '/scuba/revision-scenes.js?v=1', '/scuba/more-coming.js?v=1', '/scuba/bruce-scene.js?v=1', '/scuba/facts-scene.js?v=1'], function () {
-        if (!window.SteveSpearGun || !window.BruceFacts) return;
-        buildScene();
+        if (!window.SteveSpearGun || !window.BruceFacts) { artState = 3; stage.hidden = true; return; }
+        artState = 2;
+        if (bar.isConnected) buildScene();
       });
     };
     document.head.appendChild(s);
@@ -161,10 +165,12 @@
     var NS = 'http://www.w3.org/2000/svg', sign = document.createElementNS(NS, 'svg');
     sign.setAttribute('class', 'hb-sign'); sign.setAttribute('viewBox', '0 0 120 72'); sign.setAttribute('aria-hidden', 'true');
     sign.innerHTML = '<g transform="translate(5 8) rotate(-5)"><rect width="110" height="57" rx="3" fill="#695139" stroke="#c6b187" stroke-width="2"/><rect x="6" y="6" width="98" height="45" fill="#263c3e"/><text x="55" y="38" text-anchor="middle" fill="#f0efda" font-family="Georgia,serif" font-style="italic" font-size="27">Missed.</text></g>';
+    if (scene) scene.stop();
+    if (visHandler) document.removeEventListener('visibilitychange', visHandler);
     stage.textContent = '';
     stage.appendChild(bruceEl); stage.appendChild(steveEl); stage.appendChild(sign); stage.appendChild(kick);
     var T_SHOT = 1.4, REACT = .9, SIGN_IN = 1.2, SWAP = 3.0, CHASE = 2.4, CLOSE = SIGN_IN;
-    var idleT = 0, T = 0, mode = 'idle', atClick = 0, departAt = 0, raf = 0, last = 0, aligned = null, signP = null, done = null, closing = false;
+    var idleT = 0, T = 0, mode = 'idle', atClick = 0, departAt = 0, raf = 0, last = 0, aligned = null, signP = null, done = null, closing = false, closeT = 0, hardT = 0;
     function sm(v) { v = Math.max(0, Math.min(1, v)); return v * v * (3 - 2 * v); }
     function bodyUse() { return steveEl.querySelector('g[clip-path="url(#hbs-body)"] > use'); }
     function measure() {
@@ -210,23 +216,26 @@
       else if (mode === 'run') {
         T += dt;
         if (T >= REACT && !departAt) departAt = atClick + REACT;
-        if (T >= CLOSE && !closing) { closing = true; slideUp(); setTimeout(finish, 1200); }
+        if (T >= CLOSE && !closing) { closing = true; slideUp(); closeT = setTimeout(finish, ROLL_MS + 200); }
       }
       draw();
       if (mode !== 'done') raf = requestAnimationFrame(frame);
     }
     function start() { last = 0; if (!raf && !document.hidden) raf = requestAnimationFrame(frame); }
-    function finish() { if (mode === 'done') return; mode = 'done'; if (raf) cancelAnimationFrame(raf); raf = 0; scene.running = false; if (done) done(); }
-    scene = {
+    function finish() { if (mode === 'done') return; mode = 'done'; clearTimeout(closeT); clearTimeout(hardT); if (raf) cancelAnimationFrame(raf); raf = 0; me.running = false; if (done) done(); }
+    var me = scene = {
       ready: true, running: false,
-      go: function (cb) { if (mode !== 'idle') return; done = cb; mode = 'run'; scene.running = true; atClick = idleT; T = 0; departAt = 0; draw(); start(); },
-      stop: function () { if (raf) cancelAnimationFrame(raf); raf = 0; mode = 'done'; scene.running = false; }
+      // a hard stop so a hidden tab or a stalled frame can never leave the bar half rolled up
+      go: function (cb) { if (mode !== 'idle') return; done = cb; mode = 'run'; me.running = true; atClick = idleT; T = 0; departAt = 0; hardT = setTimeout(function () { if (mode === 'run') finish(); }, 12000); draw(); start(); },
+      stop: function () { clearTimeout(closeT); clearTimeout(hardT); if (raf) cancelAnimationFrame(raf); raf = 0; mode = 'done'; me.running = false; }
     };
     // reduced motion / Pause motion: one still picture (Steve and Bruce at rest) and no timer
     if (A.reduced() || A.off()) { idleT = 3; draw(); return; }
     draw(); start();
-    document.addEventListener('visibilitychange', function () { if (!document.hidden && mode === 'idle') start(); });
+    visHandler = function () { if (!document.hidden && (mode === 'idle' || mode === 'run')) start(); };
+    document.addEventListener('visibilitychange', visHandler);
   }
-  if (!closed) startScene();
+  // coming back to the page from the back/forward cache must never show a half rolled up bar
+  window.addEventListener('pageshow', function (e) { if (e.persisted && bar.isConnected) { resetBar(); ensureScene(); } });
   if (closed) showTab(); else showBar();
 })();

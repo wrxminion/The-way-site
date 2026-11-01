@@ -810,10 +810,10 @@
   if (!inMembers && !document.querySelector('script[src^="/humanbanner.js"]')) {
     var hbCss = document.createElement('link');
     hbCss.rel = 'stylesheet';
-    hbCss.href = '/humanbanner.css?v=11';
+    hbCss.href = '/humanbanner.css?v=13';
     document.head.appendChild(hbCss);
     var hbScript = document.createElement('script');
-    hbScript.src = '/humanbanner.js?v=9';
+    hbScript.src = '/humanbanner.js?v=10';
     hbScript.defer = true;
     document.head.appendChild(hbScript);
   }
