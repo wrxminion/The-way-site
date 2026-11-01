@@ -204,10 +204,8 @@
       } else kick.style.display = 'none';
     }
     function draw() {
-      var spin = (mode === 'run' && T >= REACT) ? T - REACT : 0;   // Bruce tumbles wildly as he is thrown off
+      var spin = (mode === 'run' && T >= REACT) ? T - REACT : 0;   // seconds since Bruce reacted (no extra rotation)
       bruceEl.innerHTML = (mode === 'idle' || T < REACT) ? A.pre(BruceFacts.idle(mode === 'idle' ? idleT : atClick + T), 'hbb-') : A.pre(BruceFacts.depart(Math.min(2.8, spin * 1.6), departAt), 'hbb-');
-      bruceEl.style.transformOrigin = '45% 50%';
-      bruceEl.style.transform = spin ? 'rotate(' + (-spin * 1300).toFixed(0) + 'deg)' : '';
       if (mode === 'idle') steveEl.innerHTML = steveSvg(idleT, false);
       else if (T < SWAP) steveEl.innerHTML = steveSvg(T_SHOT + T, true);
       else { if (!aligned) align(); steveEl.innerHTML = ''; }
