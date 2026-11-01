@@ -10,7 +10,11 @@
 .wb-shark-pass .sp-p svg{display:block;width:100%;height:100%}
 /* the puff and the bad fact */
 .wb-shark-pass .sp-puff{position:absolute}
-.wb-shark-pass .sp-puff svg{display:block;width:100%;height:100%}
+.wb-shark-pass .sp-puff img{display:block;width:100%;height:100%}
+.wb-shark-pass .sp-puff.sp-pop img{animation:sp-burst 600ms ease-out forwards}
+.wb-shark-pass .sp-puff.sp-pop::after{content:"";position:absolute;inset:8%;opacity:0;background:radial-gradient(circle at 50% 4%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 84% 16%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 96% 50%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 80% 85%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 50% 96%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 15% 80%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 4% 50%,#e8c9a0 0 3px,transparent 4px),radial-gradient(circle at 16% 16%,#e8c9a0 0 3px,transparent 4px);animation:sp-drops 480ms ease-out forwards}
+@keyframes sp-burst{0%{transform:scale(1);opacity:1}18%{transform:scale(1.12);opacity:1}40%{transform:scale(.55);opacity:1}70%{transform:scale(.85);opacity:.35}100%{transform:scale(1.05);opacity:0}}
+@keyframes sp-drops{0%,45%{transform:scale(.45);opacity:0}60%{transform:scale(.64);opacity:.9}100%{transform:scale(1);opacity:0}}
 .wb-shark-pass .sp-fact{position:absolute;max-width:min(240px,calc(100vw - 16px));box-sizing:border-box;padding:6px 11px 7px;text-align:center;background:#fff4d6;border:2px solid #8a5a2b;border-radius:14px;color:#4a2f17;font:600 15px/1.25 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;box-shadow:0 3px 10px #0005}
 .wb-shark-pass .sp-fact-q{font-size:13px}
 .wb-shark-pass .sp-fact-l{display:block;margin-bottom:2px;color:#9b4a1c;font-size:.72em;font-weight:800;letter-spacing:.12em;text-transform:uppercase}

@@ -411,7 +411,7 @@
 
   // Scuba Steve (the Back to surface diver): slow eased scroll up, swim wiggle, fade at the top. Own files so they can be swapped.
   (function () {
-    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/steve.css?v=3'; document.head.appendChild(l);
+    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/steve.css?v=4'; document.head.appendChild(l);
     var sc = document.createElement('script'); sc.src = '/members/steve.js?v=4'; sc.defer = true; document.head.appendChild(sc);
   })();
 

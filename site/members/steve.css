@@ -1,14 +1,13 @@
-/* Scuba Steve: the diver in the Back to surface bubble (art/bubble-back-diver). See steve.js. */
+/* Scuba Steve in the Back to surface bubble: ChatGPT's swimming art (art/steve-swim-rest.webp, art/steve-swim-kick.webp). See steve.js. */
 .wb-floating-return{--steve-f:0}
-/* fades from the head down: --steve-f runs 0 (whole) to 1 (gone), set by steve.js from the scroll position */
-.wb-dock .wb-art-stack .wb-diver{-webkit-mask-image:linear-gradient(to bottom,transparent calc(var(--steve-f) * 118% - 18%),#000 calc(var(--steve-f) * 118%));mask-image:linear-gradient(to bottom,transparent calc(var(--steve-f) * 118% - 18%),#000 calc(var(--steve-f) * 118%))}
+/* Scuba Steve: ChatGPT's horizontal swimming picture (art/steve-swim-rest.webp at rest, art/steve-swim-kick.webp while he swims), turned head up inside the bubble. --steve-f runs 0 (whole) to 1 (gone), set by steve.js from the scroll position; he fades from the head down. */
+.wb-dock .wb-art-stack .wb-diver{display:block;width:100%;height:100%}
+.wb-dock .wb-art-stack .wb-diver img{position:absolute;left:36%;top:51.7%;width:76.9%;height:auto;transform-origin:50% 50%;transform:translate(-50%,-50%) rotate(65deg);-webkit-mask-image:linear-gradient(to right,transparent calc(var(--steve-f) * 118% - 18%),#000 calc(var(--steve-f) * 118%));mask-image:linear-gradient(to right,transparent calc(var(--steve-f) * 118% - 18%),#000 calc(var(--steve-f) * 118%))}
+.wb-dock .wb-art-stack .wb-steve-kick{display:none}
+.wb-dock .wb-floating-return.wb-steve-swim .wb-steve-rest{display:none}
+.wb-dock .wb-floating-return.wb-steve-swim .wb-steve-kick{display:block}
 /* the empty bubble goes last, so Steve surfaces first and the glass pops out after him */
 .wb-dock .wb-art-stack .wb-art:not(.wb-diver){opacity:clamp(0,calc(1 - (var(--steve-f) - .6) * 2.5),1)}
-/* legs: below the knee, on their own layer (waybar.js). At rest it is hidden and the whole diver shows. While he swims up the body layer is cut off at the knee and the legs layer flutters about the knee. */
-.wb-dock .wb-art-stack .wb-diver-legs{display:none;clip-path:inset(66.5% 0 0 0);transform-origin:38% 67%}
-.wb-dock .wb-floating-return.wb-steve-swim .wb-diver:not(.wb-diver-legs){clip-path:inset(0 0 31% 0)}
-.wb-dock .wb-floating-return.wb-steve-swim .wb-diver.wb-diver-legs{display:block;animation:steve-kick 520ms ease-in-out infinite,steve-legs 520ms ease-in-out infinite}
-@keyframes steve-legs{0%,100%{rotate:-7deg}50%{rotate:8deg}}
 @keyframes steve-kick{0%{transform:translate(0,1px) rotate(-4deg)}50%{transform:translate(2px,-5px) rotate(4deg)}100%{transform:translate(-1px,1px) rotate(-4deg)}}
 /* swimming: a quick kick, repeated, while the page is moving up */
 .wb-dock .wb-floating-return.wb-steve-swim .wb-diver{animation:steve-kick 520ms ease-in-out infinite}
@@ -20,4 +19,4 @@
 .wb-floating-return.wb-steve-pop::after{content:"";position:absolute;inset:8%;pointer-events:none;background:var(--wb-drops);opacity:0;animation:droplets-out 480ms ease-out forwards}
 /* if the swim is stopped part way (wheel, touch, key) the glass forms again */
 .wb-dock .wb-floating-return.wb-steve-reform .wb-art-stack .wb-art:not(.wb-diver){animation:shell-reform 450ms ease-out}
-@media (prefers-reduced-motion:reduce){.wb-dock .wb-floating-return.wb-steve-swim .wb-diver,.wb-dock .wb-floating-return.wb-steve-swim .wb-diver.wb-diver-legs,.wb-dock .wb-floating-return.wb-steve-pop .wb-art,.wb-floating-return.wb-steve-pop::after,.wb-dock .wb-floating-return.wb-steve-reform .wb-art{animation:none!important}}
+@media (prefers-reduced-motion:reduce){.wb-dock .wb-floating-return.wb-steve-swim .wb-diver,.wb-dock .wb-floating-return.wb-steve-pop .wb-art,.wb-floating-return.wb-steve-pop::after,.wb-dock .wb-floating-return.wb-steve-reform .wb-art{animation:none!important}}

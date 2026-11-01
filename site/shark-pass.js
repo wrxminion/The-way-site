@@ -20,7 +20,6 @@
   }
   // short, silly, obviously wrong, kid-safe. Each one is labeled BAD FACT when it shows.
   var BAD_FACTS = ['Cats have ten legs. They move so fast it looks like four.', 'Fish get thirsty. They just hide it well.', 'The moon is made of old library cards.', 'Sharks invented the handshake.', 'Bananas are yellow boomerangs that gave up.', 'Penguins can fly, but only on Tuesdays.', 'A group of crabs is called a sandwich.', 'The ocean is salty because the fish cry.', 'Clouds are just sky sheep.', 'Dolphins pay their taxes in fish.', 'Octopuses wear eight tiny socks.', 'Seahorses ride other seahorses to work.'];
-  var PUFF = '<svg viewBox="-20 -20 40 40" aria-hidden="true" focusable="false"><circle cx="-6" cy="5" r="9" fill="#6b4023"/><circle cx="7" cy="6" r="8" fill="#7a4b2a"/><circle cx="0" cy="-3" r="10" fill="#8f5c35"/><circle cx="-3" cy="-6" r="3" fill="#b07a4c" opacity=".7"/></svg>';
   function stop() { if (cur) { try { cur.timers.forEach(clearTimeout); cur.anims.forEach(function (a) { a.cancel(); }); cur.el.remove(); if (cur.fx) cur.fx.remove(); } catch (e) { /* gone */ } cur = null; } }
   function rnd(a, b) { return a + Math.random() * (b - a); }
   // the host the whale and the shark silhouette use: layers inside it sit above the page's ocean background but behind its text
@@ -29,7 +28,7 @@
     o = o || {};
     if (cur || (mq && mq.matches) || document.documentElement.classList.contains('wb-motion-off') || document.hidden || !document.body || !document.documentElement.animate || (window.WaySteve && window.WaySteve.busy && window.WaySteve.busy())) return;
     var withShark = o.shark !== false, quiet = o.quiet == null ? Math.random() < QUIET : !!o.quiet;
-    var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/shark-pass.css?v=4'; document.head.appendChild(css);
+    var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/shark-pass.css?v=5'; document.head.appendChild(css);
     var el = document.createElement('div'); el.className = 'wb-shark-pass'; el.setAttribute('aria-hidden', 'true');
     var w = Math.max(window.innerWidth, 360), h = window.innerHeight;
     var size = Math.max(quiet ? 90 : 150, Math.min(quiet ? 150 : 260, w * (quiet ? .13 : .22)));
@@ -76,7 +75,7 @@
       var lastEnd = dur + 600;
       [1, eatAt.length - 1].forEach(function (k) {
         var ms = eatAt[k].ms + 900;
-        lastEnd = Math.max(lastEnd, ms + 7000);
+        lastEnd = Math.max(lastEnd, ms + 17500);
         timers.push(setTimeout(function () { if (cur) poop(fx, timers, anims, startX - T * ms / dur + size * .62, mouthY + size * .08, w, quiet, size); }, ms));
       });
       anims.push(shark.animate([{ transform: 'translateX(' + startX + 'px)' }, { transform: 'translateX(' + (-size * 1.4) + 'px)' }], { duration: dur, fill: 'forwards', easing: 'linear' }));
@@ -93,25 +92,31 @@
   }
   // one puff: a small brown cloud swells and drifts, then turns into a label and a silly wrong fact that hangs there a few seconds and fades
   function poop(fx, timers, anims, x, y, w, quiet, size) {
-    var pf = document.createElement('div'); pf.className = 'sp-puff'; pf.innerHTML = PUFF;
-    var ps = Math.round(Math.max(28, Math.min(46, size * .22)));
+    // ChatGPT's art (art/hallucination-poop.webp, 5.65 s): the poop turns into a brown cloud and then a brown bubble. The bubble then pops (droplets) and the BAD FACT note appears.
+    var ps = Math.round(Math.max(44, Math.min(78, size * .34)));
+    var pf = document.createElement('div'); pf.className = 'sp-puff';
+    var im = document.createElement('img'); im.alt = ''; im.width = 480; im.height = 480; im.draggable = false; im.src = '/art/hallucination-poop.webp?v=1'; pf.appendChild(im);
     pf.style.width = ps + 'px'; pf.style.height = ps + 'px'; pf.style.left = Math.round(x - ps / 2) + 'px'; pf.style.top = Math.round(y) + 'px'; fx.appendChild(pf);
-    anims.push(pf.animate([{ opacity: 0, transform: 'translate(0,0) scale(.2)' }, { opacity: 1, transform: 'translate(8px,10px) scale(1)', offset: .35 }, { opacity: 1, transform: 'translate(14px,22px) scale(1.15)' }], { duration: 900, fill: 'forwards', easing: 'ease-out' }));
+    anims.push(pf.animate([{ transform: 'translate(0,0)' }, { transform: 'translate(10px,16px)' }], { duration: 5650, fill: 'forwards', easing: 'ease-out' }));
+    // when the animation reaches the bubble, hold it as a still picture of that last frame (no looping), then pop
+    timers.push(setTimeout(function () { if (cur) im.src = '/art/bad-fact-bubble.webp?v=1'; }, 5600));
     timers.push(setTimeout(function () {
-      anims.push(pf.animate([{ opacity: 1, transform: 'translate(14px,22px) scale(1.15)' }, { opacity: 0, transform: 'translate(14px,22px) scale(1.9)' }], { duration: 350, fill: 'forwards', easing: 'ease-in' }));
+      if (!cur) return;
+      pf.classList.add('sp-pop');
       var f = document.createElement('div'); f.className = 'sp-fact' + (quiet ? ' sp-fact-q' : '');
       var lab = document.createElement('span'); lab.className = 'sp-fact-l'; lab.textContent = 'Bad fact';
       var bi = Math.floor(Math.random() * BAD_FACTS.length), txt = document.createElement('span'); txt.textContent = BAD_FACTS[bi];
       f.appendChild(lab); f.appendChild(txt); f.style.opacity = '0'; fx.appendChild(f);
-      var fw = f.offsetWidth, fh = f.offsetHeight, cx = x + 14 + ps / 2;
-      f.style.left = Math.round(Math.max(8, Math.min(w - fw - 8, cx - fw / 2))) + 'px'; f.style.top = Math.round(Math.max(8, Math.min(window.innerHeight - fh - 8, y + 22 + ps / 2 - fh / 2))) + 'px';
-      // the note pops in, then sinks slowly while it hangs there (a click pops it up as a card, see fact-pop.js), then fades
-      anims.push(f.animate([{ opacity: 0, transform: 'translateY(0) scale(.4)' }, { opacity: 1, transform: 'translateY(0) scale(1.08)', offset: .06 }, { opacity: 1, transform: 'translateY(4px) scale(1)', offset: .1 }, { opacity: 1, transform: 'translateY(46px) scale(1)', offset: .9 }, { opacity: 0, transform: 'translateY(52px) scale(1)' }], { duration: 9000, fill: 'forwards', easing: 'ease-out' }));
-      if (window.WayFactPop) window.WayFactPop.add(f, { kind: 'bad', key: 'bad:' + bi, host: fx.parentNode, open: function () { openBad(bi); } });
+      var fw = f.offsetWidth, fh = f.offsetHeight, cx = x + 10 + ps / 2;
+      f.style.left = Math.round(Math.max(8, Math.min(w - fw - 8, cx - fw / 2))) + 'px'; f.style.top = Math.round(Math.max(8, Math.min(window.innerHeight - fh - 8, y + 16 + ps / 2 - fh / 2))) + 'px';
       timers.push(setTimeout(function () {
-        anims.push(pf.animate([{ opacity: 0 }, { opacity: 0 }], { duration: 700, fill: 'forwards' }));
-      }, 5200));
-    }, 900));
+        if (!cur) return;
+        // the note pops in, then sinks slowly while it hangs there (a click pops it up as a card, see fact-pop.js), then fades
+        anims.push(f.animate([{ opacity: 0, transform: 'translateY(0) scale(.4)' }, { opacity: 1, transform: 'translateY(0) scale(1.08)', offset: .06 }, { opacity: 1, transform: 'translateY(4px) scale(1)', offset: .1 }, { opacity: 1, transform: 'translateY(46px) scale(1)', offset: .9 }, { opacity: 0, transform: 'translateY(52px) scale(1)' }], { duration: 9000, fill: 'forwards', easing: 'ease-out' }));
+        if (window.WayFactPop) window.WayFactPop.add(f, { kind: 'bad', key: 'bad:' + bi, host: fx.parentNode, open: function () { openBad(bi); } });
+      }, 450));
+      timers.push(setTimeout(function () { pf.remove(); }, 800));
+    }, 7100));
   }
   // a clicked bad fact: a small card that says plainly it is made up
   function openBad(i) {

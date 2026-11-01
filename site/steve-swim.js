@@ -17,7 +17,23 @@
   var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
   // Steve swims with the suction-cup tracker launcher; the picture faces left, so the code flips him for right-hand swims. Raster art, local file (the page policy allows only 'self' images).
   var STEVE = '<img class="st-img" src="/art/steve-swim-kick.webp" alt="" width="640" height="249" decoding="async" draggable="false">';
-  var PAPER = '<svg viewBox="-24 -30 48 64" aria-hidden="true" focusable="false"><path d="M-20-27h30l11 10v43h-41z" fill="#e6fbf8" stroke="#2f7f86" stroke-width="1.4"/><path d="M10-27v11h11" fill="#b9e4e0"/><text x="0" y="-2" text-anchor="middle" fill="#1d6a72" font-family="Arial,sans-serif" font-size="11" font-weight="700">TRUE</text><path d="M-13 8h26m-26 7h19" stroke="#2f7f86" stroke-width="1.1"/></svg>';
+  // The real swim-by art: ChatGPT's Steve B rig (scuba/steve-swim-rig.js, SteveBSwim) draws the papers Steve with independently kicking legs from /art/steve-b.png.
+  // It is an inline SVG redrawn each animation frame; if the rig cannot load, the single picture above is used instead.
+  var RIG_URLS = ['/scuba/scuba.js?v=1', '/scuba/steve-swim-rig.js?v=1'], RIG_PNG = '/art/steve-b.png?v=1', RIG_VB = '0 40 1774 880', rigState = 0;
+  function loadRig(then) {
+    if (window.SteveBSwim) { then(); return; }
+    if (rigState === 1) return;
+    rigState = 1;
+    var i = 0;
+    (function next() {
+      if (i >= RIG_URLS.length) { rigState = 2; then(); return; }
+      var s = document.createElement('script'); s.src = RIG_URLS[i++]; s.onload = next; s.onerror = function () { rigState = 2; then(); };
+      document.head.appendChild(s);
+    })();
+  }
+  var rigSeq = 0;
+  // the floating file is ChatGPT's art (STEVE_FLOATING_FILES_V1): a paper with a clip; it floats the way the old paper did, and a click still opens the true-fact card
+  var PAPER = '<img src="/art/steve-file.webp?v=1" alt="" width="116" height="145" decoding="async" draggable="false">';
   function rnd(a, b) { return a + Math.random() * (b - a); }
   function facts() { return window.WaySteveFacts || []; }
   // same host the whale and the shark silhouette use, so the layer sits above the page's ocean background but behind its content
@@ -40,22 +56,35 @@
   }
   function stop() {
     if (!cur) return;
-    try { cur.timers.forEach(clearTimeout); cur.anims.forEach(function (x) { x.cancel(); }); cur.el.remove(); } catch (e) { /* gone */ }
+    try { if (cur.raf) cancelAnimationFrame(cur.raf); cur.timers.forEach(clearTimeout); cur.anims.forEach(function (x) { x.cancel(); }); cur.el.remove(); } catch (e) { /* gone */ }
     cur = null;
   }
   function play(o) {
     o = o || {};
     var list = facts();
     if (cur || !list.length || off() || document.hidden || !document.body || !document.documentElement.animate || sharkOut()) return false;
-    var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/steve-swim.css?v=2'; document.head.appendChild(css);
+    if (!window.SteveBSwim && rigState === 0 && !art.steve) { loadRig(function () { play(o); }); return true; }
+    var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/steve-swim.css?v=3'; document.head.appendChild(css);
     var w = Math.max(window.innerWidth, 360), h = window.innerHeight, dir = Math.random() < .5 ? 1 : -1, dur = art.swimMs || 16000;
     var size = Math.round(Math.max(150, Math.min(280, w * .22))), y = Math.round(h * rnd(.28, .55));
     var el = document.createElement('div'); el.className = 'wb-steve';
-    var fig = document.createElement('div'); fig.className = 'st-fig'; fig.setAttribute('aria-hidden', 'true'); fig.innerHTML = art.steve || STEVE;
-    fig.style.width = size + 'px'; fig.style.height = Math.round(size * 249 / 640) + 'px'; fig.style.top = y + 'px';
+    var fig = document.createElement('div'); fig.className = 'st-fig'; fig.setAttribute('aria-hidden', 'true');
+    var useRig = !art.steve && !!window.SteveBSwim, rigId = 'sb' + (++rigSeq) + '-';
+    fig.innerHTML = art.steve || (useRig ? '<svg class="st-img" viewBox="' + RIG_VB + '" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"></svg>' : STEVE);
+    fig.style.width = size + 'px'; fig.style.height = Math.round(size * (useRig ? 880 / 1774 : 249 / 640)) + 'px'; fig.style.top = y + 'px';
     el.appendChild(fig); host().appendChild(el);
     var anims = [], timers = [], x0 = dir === 1 ? -size * 1.2 : w + size * .2, x1 = dir === 1 ? w + size * .2 : -size * 1.2;
-    cur = { el: el, anims: anims, timers: timers };
+    cur = { el: el, anims: anims, timers: timers, raf: 0 };
+    if (useRig) {
+      // the legs kick while he swims: redraw the rig from the clock every frame (it stops with the layer, with Pause motion and in a hidden tab)
+      var svg = fig.firstChild, t0 = 0, last = 0, me = cur;
+      (function frame(ts) {
+        if (cur !== me) return;
+        var dt = last ? Math.min((ts - last) / 1000, .1) : 0; last = ts; t0 += dt;
+        if (!document.hidden) svg.innerHTML = window.SteveBSwim.rig(t0, RIG_PNG, rigId);
+        me.raf = requestAnimationFrame(frame);
+      })(0);
+    }
     fig.firstChild.style.transform = (dir === 1) === art.facesLeft ? 'scaleX(-1)' : 'none';
     anims.push(fig.animate([{ transform: 'translateX(' + x0 + 'px)' }, { transform: 'translateX(' + x1 + 'px)' }], { duration: dur, fill: 'forwards', easing: 'linear' }));
     anims.push(fig.animate([{ translate: '0 0' }, { translate: '0 -10px', offset: .3 }, { translate: '0 6px', offset: .65 }, { translate: '0 0' }], { duration: dur, easing: 'ease-in-out' }));

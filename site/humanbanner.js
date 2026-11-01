@@ -38,11 +38,18 @@
   p.appendChild(big); // block lines, so the call is big and the plain explanation sits under it
   p.appendChild(small);
 
+  // The hunt scene (ChatGPT art, drawn by /scuba/*.js): Bruce bobs at the left and Steve with the suction-cup tracker launcher at the right.
+  // Closing the banner plays it once: Steve fires and misses, holds up a "Missed." sign, Bruce swims off, Steve kicks after him, the banner slides away.
+  // If the art cannot load, or motion is off (reduced motion or Pause motion), the old small shark picture shows and the X just closes.
+  var stage = document.createElement('div');
+  stage.className = 'hb-stage';
+  stage.setAttribute('aria-hidden', 'true');
   var shark = document.createElement('img');
   shark.className = 'hb-shark';
   shark.src = '/art/shark-banner.webp';
   shark.alt = '';
   shark.width = 96; shark.height = 37;
+  stage.appendChild(shark);
 
   var a = document.createElement('a');
   a.className = 'hb-join';
@@ -54,10 +61,17 @@
   x.className = 'hb-close';
   x.setAttribute('aria-label', 'Close this message');
   x.textContent = '×';
-  x.addEventListener('click', function () {
+  function reallyClose() {
     try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* storage blocked */ }
+    stopScene();
     bar.remove();
+    bar.classList.remove('hb-closing');
     showTab();
+  }
+  x.addEventListener('click', function () {
+    if (scene && scene.ready && !scene.running && !window.ScubaArt.off() && !window.ScubaArt.reduced()) { scene.go(reallyClose); return; }
+    if (scene && scene.running) return;
+    reallyClose();
   });
   bar.addEventListener('keydown', function (e) { if (e.key === 'Escape') x.click(); });
 
@@ -66,7 +80,7 @@
   t.href = TEACH;
   t.textContent = TEACH_LABEL;
 
-  bar.appendChild(shark); bar.appendChild(p); bar.appendChild(a); bar.appendChild(t); bar.appendChild(x);
+  bar.appendChild(stage); bar.appendChild(p); bar.appendChild(a); bar.appendChild(t); bar.appendChild(x);
 
   var tab = null, menu = null;
   function closeMenu() {
@@ -118,5 +132,94 @@
     tab.addEventListener('click', function () { if (menu) closeMenu(); else openMenu(); });
     document.body.appendChild(tab);
   }
+
+  // ---- the hunt scene ----
+  var scene = null;
+  function stopScene() { if (scene) scene.stop(); }
+  function startScene() {
+    var s = document.createElement('script'); s.src = '/scuba/scuba.js?v=1';
+    s.onload = function () {
+      window.ScubaArt.load(['/scuba/steve-speargun.js?v=1', '/scuba/revision-scenes.js?v=1', '/scuba/more-coming.js?v=1', '/scuba/bruce-scene.js?v=1', '/scuba/facts-scene.js?v=1'], function () {
+        if (!window.SteveSpearGun || !window.BruceFacts) return;
+        buildScene();
+      });
+    };
+    document.head.appendChild(s);
+  }
+  function buildScene() {
+    var A = window.ScubaArt, GUN = '/art/steve-holding-speargun.png?v=1', KICK = '/art/steve-swim-kick.webp';
+    var bruceEl = document.createElement('div'), steveEl = document.createElement('div'), kick = document.createElement('img');
+    bruceEl.className = 'hb-bruce'; steveEl.className = 'hb-steve';
+    kick.className = 'hb-kick'; kick.alt = ''; kick.src = KICK; kick.draggable = false;
+    var NS = 'http://www.w3.org/2000/svg', sign = document.createElementNS(NS, 'svg');
+    sign.setAttribute('class', 'hb-sign'); sign.setAttribute('viewBox', '0 0 120 72'); sign.setAttribute('aria-hidden', 'true');
+    sign.innerHTML = '<g transform="translate(5 8) rotate(-5)"><rect width="110" height="57" rx="3" fill="#695139" stroke="#c6b187" stroke-width="2"/><rect x="6" y="6" width="98" height="45" fill="#263c3e"/><text x="55" y="38" text-anchor="middle" fill="#f0efda" font-family="Georgia,serif" font-style="italic" font-size="27">Missed.</text></g>';
+    stage.textContent = '';
+    stage.appendChild(bruceEl); stage.appendChild(steveEl); stage.appendChild(sign); stage.appendChild(kick);
+    var T_SHOT = 1.4, REACT = .9, SIGN_IN = 1.2, SWAP = 3.0, CHASE = 2.4, CLOSE = 4.6;
+    var idleT = 0, T = 0, mode = 'idle', atClick = 0, departAt = 0, raf = 0, last = 0, aligned = null, signP = null, done = null, closing = false;
+    function sm(v) { v = Math.max(0, Math.min(1, v)); return v * v * (3 - 2 * v); }
+    function bodyUse() { return steveEl.querySelector('g[clip-path="url(#hbs-body)"] > use'); }
+    function measure() {
+      var u = bodyUse(); if (!u) return null;
+      var m = u.getScreenCTM(), sr = stage.getBoundingClientRect(); if (!m) return null;
+      return { k: Math.hypot(m.a, m.b), px: m.a * 647 + m.c * 398 + m.e - sr.left, py: m.b * 647 + m.d * 398 + m.f - sr.top };
+    }
+    function steveSvg(t, fire) { return A.pre(SteveSpearGun.scene(t, GUN, fire, true), 'hbs-'); }
+    function align() {
+      steveEl.innerHTML = steveSvg(T_SHOT + SWAP, true);
+      var u = bodyUse(); if (!u) return;
+      var m = u.getScreenCTM(), sr = stage.getBoundingClientRect(), k = Math.hypot(m.a, m.b);
+      var px = m.a * 647 + m.c * 398 + m.e, py = m.b * 647 + m.d * 398 + m.f, sk = k * 2.644;
+      aligned = { x: px - sr.left - 229 * sk, y: py - sr.top - 63.25 * sk, w: 640 * sk, px: px - sr.left, py: py - sr.top };
+    }
+    function drawSign() {
+      if (mode === 'run' && T >= SIGN_IN && T < SWAP) {
+        if (!signP) signP = measure(); if (!signP) { sign.style.display = 'none'; return; }
+        var a = sm((T - SIGN_IN) / .38), b = sm((T - (SWAP - .3)) / .3), s = a * (1 - b), k = signP.k;
+        var fx = signP.px + (470 - 647) * k, fy = signP.py + (0 - 398) * k, cx = signP.px + (fx - signP.px) * a, cy = signP.py + (fy - signP.py) * a, w = 76;
+        sign.style.display = 'block'; sign.style.left = (cx - w / 2) + 'px'; sign.style.top = (cy - w * .3) + 'px';
+        sign.style.transform = 'scale(' + s.toFixed(3) + ') rotate(' + ((1 - a) * -40).toFixed(1) + 'deg)'; sign.style.opacity = s > .02 ? '1' : '0';
+      } else sign.style.display = 'none';
+    }
+    function drawKick() {
+      if (mode === 'run' && T >= SWAP && aligned) {
+        var pp = Math.min(1, Math.max(0, (T - SWAP) / CHASE)), e = pp * pp * (3 - 2 * pp), w = aligned.w, x1 = -w - 30;
+        kick.style.display = 'block'; kick.style.width = w + 'px'; kick.style.left = (aligned.x + (x1 - aligned.x) * e) + 'px'; kick.style.top = aligned.y + 'px';
+      } else kick.style.display = 'none';
+    }
+    function draw() {
+      bruceEl.innerHTML = (mode === 'idle' || T < REACT) ? A.pre(BruceFacts.idle(mode === 'idle' ? idleT : atClick + T), 'hbb-') : A.pre(BruceFacts.depart(Math.min(2.8, T - REACT), departAt), 'hbb-');
+      if (mode === 'idle') steveEl.innerHTML = steveSvg(idleT, false);
+      else if (T < SWAP) steveEl.innerHTML = steveSvg(T_SHOT + T, true);
+      else { if (!aligned) align(); steveEl.innerHTML = ''; }
+      drawSign(); drawKick();
+    }
+    function frame(ts) {
+      raf = 0;
+      var dt = last ? Math.min((ts - last) / 1000, .1) : 0; last = ts;
+      if (A.off() || document.hidden) { if (mode === 'run' && A.off()) { finish(); return; } if (!document.hidden) raf = requestAnimationFrame(frame); return; }
+      if (mode === 'idle') idleT += dt;
+      else if (mode === 'run') {
+        T += dt;
+        if (T >= REACT && !departAt) departAt = atClick + REACT;
+        if (T >= CLOSE && !closing) { closing = true; bar.classList.add('hb-closing'); setTimeout(finish, 800); }
+      }
+      draw();
+      if (mode !== 'done') raf = requestAnimationFrame(frame);
+    }
+    function start() { last = 0; if (!raf && !document.hidden) raf = requestAnimationFrame(frame); }
+    function finish() { if (mode === 'done') return; mode = 'done'; if (raf) cancelAnimationFrame(raf); raf = 0; scene.running = false; if (done) done(); }
+    scene = {
+      ready: true, running: false,
+      go: function (cb) { if (mode !== 'idle') return; done = cb; mode = 'run'; scene.running = true; atClick = idleT; T = 0; departAt = 0; draw(); start(); },
+      stop: function () { if (raf) cancelAnimationFrame(raf); raf = 0; mode = 'done'; scene.running = false; }
+    };
+    // reduced motion / Pause motion: one still picture (Steve and Bruce at rest) and no timer
+    if (A.reduced() || A.off()) { idleT = 3; draw(); return; }
+    draw(); start();
+    document.addEventListener('visibilitychange', function () { if (!document.hidden && mode === 'idle') start(); });
+  }
+  if (!closed) startScene();
   if (closed) showTab(); else showBar();
 })();
