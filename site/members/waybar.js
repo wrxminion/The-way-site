@@ -756,7 +756,7 @@
     }
     if (!document.querySelector('script[src^="/footer-tentacles.js"]')) {
       var tentScript = document.createElement('script');
-      tentScript.src = '/footer-tentacles.js?v=8';
+      tentScript.src = '/footer-tentacles.js?v=9';
       tentScript.defer = true;
       document.head.appendChild(tentScript);
     }
@@ -810,10 +810,10 @@
   if (!inMembers && !document.querySelector('script[src^="/humanbanner.js"]')) {
     var hbCss = document.createElement('link');
     hbCss.rel = 'stylesheet';
-    hbCss.href = '/humanbanner.css?v=8';
+    hbCss.href = '/humanbanner.css?v=9';
     document.head.appendChild(hbCss);
     var hbScript = document.createElement('script');
-    hbScript.src = '/humanbanner.js?v=8';
+    hbScript.src = '/humanbanner.js?v=9';
     hbScript.defer = true;
     document.head.appendChild(hbScript);
   }

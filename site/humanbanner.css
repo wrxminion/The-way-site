@@ -21,17 +21,21 @@
 .hb-bub{display:block;padding:.6rem 1.1rem;border:1px solid #a7f0e980;border-radius:999px;background:#0a3d4f;color:#ffe45c;font:700 .92rem/1.25 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;text-align:center;text-decoration:none;box-shadow:0 3px 12px #0006;cursor:pointer;min-height:44px}
 .hb-bub:hover,.hb-bub:focus-visible{background:#0d4e65;outline:2px solid #fff;outline-offset:2px}
 @media (min-width:561px){.hb-tab{top:var(--hb-tab-top,112px)}.hb-menu{top:calc(var(--hb-tab-top,112px) + 56px)}}
-/* hunt scene (humanbanner.js): Bruce bobs at the left, Steve at the right; closing plays the "Missed." chase and slides the bar up */
+/* hunt scene (humanbanner.js): Bruce bobs at the left, Steve at the right; closing plays the "Missed." chase while the bar rolls up */
 .hb-stage{position:relative;flex:none}
-.hb-stage:has(.hb-bruce){width:min(100%,640px);height:200px;overflow:hidden}
+.hb-stage:has(.hb-bruce){width:360px;max-width:100%;height:112px;overflow:hidden}
 .hb-stage .hb-bruce,.hb-stage .hb-steve{position:absolute;pointer-events:none}
-.hb-stage .hb-bruce{left:34px;top:-14px;width:330px}
-.hb-stage .hb-steve{right:44px;top:72px;width:250px}
+.hb-stage .hb-bruce{left:19px;top:-8px;width:185px}
+.hb-stage .hb-steve{right:25px;top:40px;width:140px}
 .hb-stage svg{display:block;width:100%;height:auto;overflow:visible}
-.hb-stage .hb-sign{position:absolute;display:none;width:76px;height:auto;pointer-events:none;z-index:2;overflow:visible}
-.hb-stage .hb-kick{position:absolute;display:none;clip-path:inset(0 0 0 5.6%);width:200px;height:auto;pointer-events:none}
-.hb-bar{transition:transform .7s ease}
-.hb-bar.hb-closing{transform:translateY(-105%)}
-@media (max-width:640px){.hb-stage:has(.hb-bruce){height:170px}.hb-stage .hb-bruce{left:0;width:250px;top:-8px}.hb-stage .hb-steve{right:30px;width:190px;top:62px}}
-@media (prefers-reduced-motion:reduce){.hb-bar{transition:none}}
-html.wb-motion-off .hb-bar{transition:none}
+.hb-stage .hb-sign{position:absolute;display:none;width:44px;height:auto;pointer-events:none;z-index:2;overflow:visible}
+.hb-stage .hb-kick{position:absolute;display:none;clip-path:inset(0 0 0 5.6%);width:112px;height:auto;pointer-events:none}
+.hb-bar{overflow:hidden}
+.hb-bar.hb-closing{transition:max-height 1.1s ease,padding .9s ease,opacity .9s ease;padding-top:0;padding-bottom:0;opacity:0;border-bottom-width:0;box-shadow:none}
+@media (max-width:560px){.hb-stage:has(.hb-bruce){width:300px;max-width:100%;height:96px;margin:0 auto!important}.hb-stage .hb-bruce{left:0;width:158px;top:-6px}.hb-stage .hb-steve{right:12px;top:34px;width:120px}}
+@media (prefers-reduced-motion:reduce){.hb-bar.hb-closing{transition:none}}
+html.wb-motion-off .hb-bar.hb-closing{transition:none}
+/* shorter bar when the hunt scene is in it: scene on top, words under it, the two buttons side by side */
+.hb-bar:has(.hb-bruce){flex-direction:row;flex-wrap:wrap;gap:.3rem .8rem;padding-top:.3rem;padding-bottom:.6rem}
+.hb-bar:has(.hb-bruce) .hb-stage{flex:0 0 auto;margin:0 calc(50% - 180px)}
+.hb-bar:has(.hb-bruce) .hb-text{flex:0 0 100%}
