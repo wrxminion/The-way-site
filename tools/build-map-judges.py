@@ -90,6 +90,28 @@ MI_DISTRICTS = {
 }
 
 
+# Missouri Court of Appeals districts by county (RSMo 477.050 eastern, 477.060 southern, 477.070 western = every other county)
+MO_EASTERN = ['Monroe', 'Shelby', 'Knox', 'Scotland', 'Clark', 'Lewis', 'Marion', 'Ralls', 'Pike', 'Lincoln', 'Montgomery', 'Warren',
+              'St. Charles', 'St. Louis', 'Jefferson', 'Ste. Genevieve', 'Perry', 'Cape Girardeau', 'Madison', 'St. Francois',
+              'Washington', 'Franklin', 'Audrain', 'Gasconade', 'Osage']
+MO_SOUTHERN = ['Barry', 'Barton', 'Bollinger', 'Butler', 'Camden', 'Carter', 'Cedar', 'Christian', 'Crawford', 'Dade', 'Dallas', 'Dent',
+               'Douglas', 'Dunklin', 'Greene', 'Hickory', 'Howell', 'Iron', 'Jasper', 'Laclede', 'Lawrence', 'Maries', 'McDonald',
+               'Mississippi', 'New Madrid', 'Newton', 'Oregon', 'Ozark', 'Pemiscot', 'Phelps', 'Polk', 'Pulaski', 'Reynolds', 'Ripley',
+               'Scott', 'Shannon', 'St. Clair', 'Stoddard', 'Stone', 'Taney', 'Texas', 'Wayne', 'Webster', 'Wright']
+# county names as the live Missouri map writes them (the city of St. Louis is also labeled "St. Louis")
+MO_COUNTIES = ['Adair', 'Andrew', 'Atchison', 'Audrain', 'Barry', 'Barton', 'Bates', 'Benton', 'Bollinger', 'Boone', 'Buchanan', 'Butler',
+               'Caldwell', 'Callaway', 'Camden', 'Cape Girardeau', 'Carroll', 'Carter', 'Cass', 'Cedar', 'Chariton', 'Christian', 'Clark',
+               'Clay', 'Clinton', 'Cole', 'Cooper', 'Crawford', 'Dade', 'Dallas', 'Daviess', 'DeKalb', 'Dent', 'Douglas', 'Dunklin',
+               'Franklin', 'Gasconade', 'Gentry', 'Greene', 'Grundy', 'Harrison', 'Henry', 'Hickory', 'Holt', 'Howard', 'Howell', 'Iron',
+               'Jackson', 'Jasper', 'Jefferson', 'Johnson', 'Knox', 'Laclede', 'Lafayette', 'Lawrence', 'Lewis', 'Lincoln', 'Linn',
+               'Livingston', 'McDonald', 'Macon', 'Madison', 'Maries', 'Marion', 'Mercer', 'Miller', 'Mississippi', 'Moniteau', 'Monroe',
+               'Montgomery', 'Morgan', 'New Madrid', 'Newton', 'Nodaway', 'Oregon', 'Osage', 'Ozark', 'Pemiscot', 'Perry', 'Pettis', 'Phelps',
+               'Pike', 'Platte', 'Polk', 'Pulaski', 'Putnam', 'Ralls', 'Randolph', 'Ray', 'Reynolds', 'Ripley', 'St. Charles', 'St. Clair',
+               'Ste. Genevieve', 'St. Francois', 'St. Louis', 'Saline', 'Schuyler', 'Scotland', 'Scott', 'Shannon', 'Shelby', 'Stoddard',
+               'Stone', 'Sullivan', 'Taney', 'Texas', 'Vernon', 'Warren', 'Washington', 'Wayne', 'Webster', 'Worth', 'Wright']
+MO_WESTERN = [c for c in MO_COUNTIES if c not in MO_EASTERN and c not in MO_SOUTHERN]
+
+
 def build_ny():
     page = open(os.path.join(SITE, 'guide-ny', 'races', 'judges.html'), encoding='utf8').read()
     counties, notes = {}, {}
@@ -143,6 +165,17 @@ def build_state(st):
                 keep.append(e)
         depends = keep
         intro = 'Michigan Supreme Court candidates are on every ballot. Your county is in one of four Court of Appeals districts.'
+    if st == 'mo':
+        keep = []
+        for e in depends:
+            m = re.search(r'(Eastern|Southern|Western) District', e['court'])
+            if m:
+                tbl = {'Eastern': MO_EASTERN, 'Southern': MO_SOUTHERN, 'Western': MO_WESTERN}[m.group(1)]
+                for c in tbl:
+                    counties.setdefault(c, []).append({'court': 'Court of Appeals, ' + m.group(1) + ' District', 'name': e['name']})
+            else:
+                keep.append(e)
+        depends = keep
     if st == 'md':
         keep = []
         for e in depends:
