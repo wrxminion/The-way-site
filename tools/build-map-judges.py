@@ -29,9 +29,13 @@ def clean(s):
     return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', '', s))).strip()
 
 
+def first_sentence(what):
+    return re.split(r'(?<!St)(?<!Ste)\.\s', what)[0]
+
+
 def parse_counties(what):
     """Return a list of county names if the sentence lists counties, else None."""
-    first = what.split('. ')[0]
+    first = first_sentence(what)
     t = LEAD.sub('', first)
     t = re.sub(r'^\d+ counties:\s*', '', t)
     t = re.sub(r'\s+voters?$', '', t)
@@ -192,7 +196,7 @@ def build_state(st):
     statewide, counties, depends = [], {}, []
     for court, name, what in entries:
         court = re.sub(r', Judge [A-Z]$', '', court)
-        if st in ALL_STATEWIDE or STATEWIDE.search(what.split('. ')[0]):
+        if st in ALL_STATEWIDE or STATEWIDE.search(first_sentence(what)):
             statewide.append({'court': court, 'name': name})
             continue
         cl = parse_counties(what)
@@ -220,9 +224,13 @@ def build_state(st):
                 keep.append(e)
         depends = keep
         intro = 'Michigan Supreme Court candidates are on every ballot. Your county is in one of four Court of Appeals districts.'
+    notes = {}
     if st == 'mo':
         keep = []
         for e in depends:
+            if 'City of St. Louis' in e['court']:
+                counties.setdefault('St. Louis', []).append(e)
+                continue
             m = re.search(r'(Eastern|Southern|Western) District', e['court'])
             if m:
                 tbl = {'Eastern': MO_EASTERN, 'Southern': MO_SOUTHERN, 'Western': MO_WESTERN}[m.group(1)]
@@ -231,6 +239,7 @@ def build_state(st):
             else:
                 keep.append(e)
         depends = keep
+        notes['St. Louis'] = 'St. Louis County and the city of St. Louis are separate: St. Louis County voters see the 21st Circuit judges, and voters in the city of St. Louis see the 22nd Circuit judges.'
     if st == 'md':
         keep = []
         for e in depends:
@@ -239,7 +248,8 @@ def build_state(st):
             else:
                 keep.append(e)
         depends = keep
-    return {
+    extra = {'countyNote': notes} if notes else {}
+    return {**extra,
         'state': st.upper(), 'page': 'races/judges.html', 'intro': intro,
         'statewide': statewide, 'counties': counties, 'dependsCount': len(depends), 'others': depends,
     }
