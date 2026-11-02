@@ -51,7 +51,7 @@ def parse_counties(what):
 def read_entries(path):
     s = open(path, encoding='utf8').read()
     out = []
-    for m in re.finditer(r'<li><span><b>(.*?)</b><br><b>(.*?)</b>(.*?)</span><span class="what">(.*?)</span></li>', s, re.S):
+    for m in re.finditer(r'<li><span><b>([^<]*)</b><br><b>([^<]*)</b>(.*?)</span><span class="what">(.*?)</span></li>', s, re.S):
         court, name, _, what = (clean(m.group(i)) for i in range(1, 5))
         out.append((court, name, what))
     return out
@@ -73,6 +73,21 @@ NY_DISTRICTS = {
 
 def ordinal(n):
     return '%d%s' % (n, 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th'))
+
+
+# Michigan: Court of Appeals districts and their counties (MCL 600.302, Michigan Legislature)
+MI_DISTRICTS = {
+    1: ['Branch', 'Hillsdale', 'Kalamazoo', 'Lenawee', 'Monroe', 'St. Joseph', 'Wayne'],
+    2: ['Genesee', 'Macomb', 'Oakland'],
+    3: ['Allegan', 'Barry', 'Berrien', 'Calhoun', 'Cass', 'Eaton', 'Ionia', 'Jackson', 'Kent', 'Mason', 'Montcalm', 'Muskegon',
+        'Newaygo', 'Oceana', 'Ottawa', 'Van Buren', 'Washtenaw'],
+    4: ['Alcona', 'Alger', 'Alpena', 'Antrim', 'Arenac', 'Baraga', 'Bay', 'Benzie', 'Charlevoix', 'Cheboygan', 'Chippewa', 'Clare',
+        'Clinton', 'Crawford', 'Delta', 'Dickinson', 'Emmet', 'Gladwin', 'Gogebic', 'Grand Traverse', 'Gratiot', 'Houghton', 'Huron',
+        'Ingham', 'Iosco', 'Iron', 'Isabella', 'Kalkaska', 'Keweenaw', 'Lake', 'Lapeer', 'Leelanau', 'Livingston', 'Luce', 'Mackinac',
+        'Manistee', 'Marquette', 'Mecosta', 'Menominee', 'Midland', 'Missaukee', 'Montmorency', 'Ogemaw', 'Ontonagon', 'Osceola',
+        'Oscoda', 'Otsego', 'Presque Isle', 'Roscommon', 'Saginaw', 'Sanilac', 'Schoolcraft', 'Shiawassee', 'St. Clair', 'Tuscola',
+        'Wexford'],
+}
 
 
 def build_ny():
@@ -117,6 +132,25 @@ def build_state(st):
     if st == 'ny':
         depends = [{'court': 'Supreme Court', 'name': clean(n)} for n in re.findall(r'<li><span><b>([^<]*\([^<)]*\))</b>', page)]
         intro = 'New York Supreme Court justices are elected by judicial district, so the seats on your ballot depend on your district.'
+    if st == 'mi':
+        keep = []
+        for e in depends:
+            m = re.match(r'District (\d)', e['court'])
+            if m:
+                for c in MI_DISTRICTS[int(m.group(1))]:
+                    counties.setdefault(c, []).append({'court': 'Court of Appeals, District ' + m.group(1), 'name': e['name']})
+            else:
+                keep.append(e)
+        depends = keep
+        intro = 'Michigan Supreme Court candidates are on every ballot. Your county is in one of four Court of Appeals districts.'
+    if st == 'md':
+        keep = []
+        for e in depends:
+            if 'Appellate Circuit 4' in e['court']:
+                counties.setdefault("Prince George's", []).append({'court': 'Supreme Court of Maryland, 4th Appellate Circuit', 'name': e['name']})
+            else:
+                keep.append(e)
+        depends = keep
     return {
         'state': st.upper(), 'page': 'races/judges.html', 'intro': intro,
         'statewide': statewide, 'counties': counties, 'dependsCount': len(depends),
