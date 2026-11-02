@@ -17,7 +17,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, 'site')
-STATES = ['ak', 'az', 'ca', 'fl', 'in', 'ks', 'md', 'mi', 'mo', 'ne', 'nm', 'ny', 'ok', 'ut', 'wy']
+STATES = ['ak', 'az', 'ca', 'fl', 'ia', 'il', 'in', 'ks', 'md', 'mi', 'mo', 'ne', 'nm', 'ny', 'ok', 'sd', 'ut', 'wy']
 # states where every judge on the judges page is on every voter's ballot
 ALL_STATEWIDE = {'ks'}
 
@@ -207,6 +207,10 @@ def build_state(st):
             depends.append({'court': court, 'name': name})
     page = open(os.path.join(SITE, f'guide-{st}', 'races', 'judges.html'), encoding='utf8').read()
     intro = ''
+    if st == 'il':
+        intro = 'This block lists the Cook County judges and Illinois Appellate Court seats we could confirm. Judges in other counties are not mapped here yet; check your sample ballot.'
+    if st == 'sd':
+        intro = 'We found no judges on the official South Dakota 2026 lists. Check your sample ballot.'
     if st == 'mi':
         for nm in re.findall(r'<b>([^<]+)</b> \((?:[^)]*nominee[^)]*)\)', page):
             statewide.append({'court': 'Michigan Supreme Court (vote for 2)', 'name': clean(nm)})
