@@ -275,6 +275,7 @@ function renderBallot(at){
   const r=(c&&c.races)||{},names=(c&&c.raceNames)||{};
   quick.length=0;
   const box=[el('h3',{text:'On your ballot'}),el('div',{cls:'note',text:b.election+'. '+b.status})];
+  box.push(el('div',{cls:'note'},['Your answers below stay in this browser. To keep a copy in your account or use another device, open ',el('a',{href:'/members/my-ballot.html',text:'My Ballot'}),', sign in and press Save to my account.']));
   box.push(el('div',{cls:'note'},['Races, from the ',link(C.officialList.url,C.officialList.label+' ↗'),':']));
   if(data.guide)box.push(el('div',{cls:'note'},['Click any name or measure for its page in the ',gLink(data.guide.home,'voter guide'),'.']));
   for(const k of (c&&c.statewideOrder)||[])if(r[k])box.push(raceBlock(names[k]||k,r[k],null,k));
@@ -360,6 +361,31 @@ function wire(){
   });
 }
 
+/* County picker: a way in that needs no address lookup. Address search depends on outside geocoders, and a rural or
+   unincorporated address often has no city to fall back on. Picking the county loads that county's ballot, including its judges. */
+function countyPicker(){
+  const fc=data.counties,form=$('search');
+  if(!fc||!fc.features||!fc.features.length||!form||$('countypick'))return;
+  const names=fc.features.map(f=>String(f.properties&&f.properties.n||'')).filter(Boolean).sort((a,b)=>a.localeCompare(b));
+  const sel=el('select',{id:'countysel','aria-label':'Pick your county'},[el('option',{value:'',text:'Pick your county'})].concat(names.map(n=>el('option',{value:n,text:n+' County'}))));
+  sel.addEventListener('change',()=>{
+    const f=fc.features.find(x=>x.properties&&x.properties.n===sel.value);
+    if(!f)return;
+    let b=[1e9,1e9,-1e9,-1e9];
+    (function walk(x){if(typeof x[0]==='number'){b=[Math.min(b[0],x[0]),Math.min(b[1],x[1]),Math.max(b[2],x[0]),Math.max(b[3],x[1])];}else x.forEach(walk);})(f.geometry.coordinates);
+    const cx=(b[0]+b[2])/2,cy=(b[1]+b[3])/2;
+    let best=contains(f,cx,cy)?[cx,cy]:null;
+    for(let i=1;i<=24&&!best;i++)for(let j=1;j<=24&&!best;j++){
+      const x=b[0]+(b[2]-b[0])*i/25,y=b[1]+(b[3]-b[1])*j/25;
+      if(contains(f,x,y))best=[x,y];
+    }
+    if(!best)return;
+    map.fitBounds([[b[1],b[0]],[b[3],b[2]]],{padding:[20,20]});
+    lookup(best[1],best[0],f.properties.n+' County');
+    status.textContent='Showing '+f.properties.n+' County. Judges and county questions are for the whole county. Districts and town questions depend on your exact spot, so click your spot on the map to be exact.';
+  });
+  form.after(el('div',{cls:'note',id:'countypick'},[el('div',{text:'Address search not working, or you live outside a city? Pick your county:'}),sel]));
+}
 /* ---------- load data ---------- */
 async function getJSON(p){const r=await fetch(p,{cache:'no-cache'});if(!r.ok)throw new Error(p+' '+r.status);return r.json();}
 getJSON('data/config.json').then(cfg=>{
@@ -379,6 +405,7 @@ getJSON('data/config.json').then(cfg=>{
   Object.assign(data,{us_house:h,state_senate:s,state_house:l,counties:co,places:pl,officials:off,candidates:cand,ballot:bal,guide:gd});
   countiesLayer=L.geoJSON(co,{interactive:false,style:{color:'#cfefff',weight:.6,opacity:.35,fill:false,dashArray:'2 4'}}).addTo(map);
   drawLayer('us_house');
+  countyPicker();
   status.textContent='Click anywhere in '+C.name+' to get started.';
 }).catch(()=>{status.textContent='The district files did not load. Please reload the page.';});
 
