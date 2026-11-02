@@ -17,7 +17,9 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, 'site')
-STATES = ['ak', 'az', 'ca', 'fl', 'in', 'md', 'mi', 'mo', 'ne', 'nm', 'ny', 'ok', 'ut', 'wy']
+STATES = ['ak', 'az', 'ca', 'fl', 'in', 'ks', 'md', 'mi', 'mo', 'ne', 'nm', 'ny', 'ok', 'ut', 'wy']
+# states where every judge on the judges page is on every voter's ballot
+ALL_STATEWIDE = {'ks'}
 
 STATEWIDE = re.compile(r'every county|every district|statewide|every ballot|every voter|On every', re.I)
 LEAD = re.compile(r'^(?:On the ballot in|Decided by(?: voters in)?|Decided by)\s*', re.I)
@@ -60,7 +62,7 @@ def build_state(st):
     statewide, counties, depends = [], {}, []
     for court, name, what in entries:
         court = re.sub(r', Judge [A-Z]$', '', court)
-        if STATEWIDE.search(what.split('. ')[0]):
+        if st in ALL_STATEWIDE or STATEWIDE.search(what.split('. ')[0]):
             statewide.append({'court': court, 'name': name})
             continue
         cl = parse_counties(what)
