@@ -2,6 +2,7 @@
 """Build site/news/feed.xml (RSS 2.0) from site/news/data/latest.json.
 
 Only items of kind "news" are used (no opinion). Newest first by first_seen_at.
+Each item links to /news/go.html?id=<id> (our page, with the source link on it).
 Every item says plainly that the headline is unchecked, because the data is.
 Usage: python3 tools/build-news-feed.py [--limit 25]
 """
@@ -44,7 +45,7 @@ for i in items:
     src = i.get("source") or "unknown source"
     desc = "Source: %s. Status: %s. Collected by The Way, not reviewed by a person." % (src, i.get("status", "Unchecked"))
     out.append("<item><title>%s</title><link>%s</link><guid isPermaLink=\"false\">%s</guid><pubDate>%s</pubDate><description>%s</description></item>" % (
-        escape(i["title"]), escape(i["url"]), escape(str(i["id"])), format_datetime(when(i)), escape(desc)))
+        escape(i["title"]), escape("%s/news/go.html?id=%s" % (SITE, i["id"])), escape(str(i["id"])), format_datetime(when(i)), escape(desc)))
 out.append("</channel></rss>")
 open(OUT, "w", encoding="utf-8").write("\n".join(out) + "\n")
 print("wrote %s with %d items" % (OUT, len(items)))
