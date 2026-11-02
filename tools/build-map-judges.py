@@ -241,7 +241,7 @@ def build_state(st):
         depends = keep
     return {
         'state': st.upper(), 'page': 'races/judges.html', 'intro': intro,
-        'statewide': statewide, 'counties': counties, 'dependsCount': len(depends),
+        'statewide': statewide, 'counties': counties, 'dependsCount': len(depends), 'others': depends,
     }
 
 
