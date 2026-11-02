@@ -101,17 +101,18 @@ Deno.serve(async (req) => {
     // Cloudflare limits how long one query may span, so ask in slices of at most 28 days.
     type G = Awaited<ReturnType<typeof cfQuery>>;
     const pull = async (scope: Scope) => {
-      const out = { totals: [] as G, paths: [] as G, refs: [] as G, countries: [] as G };
+      const out = { totals: [] as G, paths: [] as G, refs: [] as G, countries: [] as G, landings: [] as G };
       for (let a = start.getTime(); a < end.getTime(); a += 28 * 86400000) {
         const from = new Date(a).toISOString().slice(0, 10) + 'T00:00:00Z';
         const to = new Date(Math.min(a + 28 * 86400000 - 1000, end.getTime())).toISOString();
-        const [t, p, r, c] = await Promise.all([
+        const [t, p, r, c, l] = await Promise.all([
           cfQuery(token, account, scope, from, to, '', 1000),
           cfQuery(token, account, scope, from, to, 'requestPath', 5000),
           cfQuery(token, account, scope, from, to, 'refererHost', 1000),
           cfQuery(token, account, scope, from, to, 'countryName', 1000),
+          cfQuery(token, account, scope, from, to, 'requestPath refererHost', 5000),
         ]);
-        out.totals.push(...t); out.paths.push(...p); out.refs.push(...r); out.countries.push(...c);
+        out.totals.push(...t); out.paths.push(...p); out.refs.push(...r); out.countries.push(...c); out.landings.push(...l);
       }
       return out;
     };
@@ -119,7 +120,7 @@ Deno.serve(async (req) => {
     let got = site ? await pull({ site }) : null;
     let via = 'site tag';
     if (!got || !got.totals.length) { got = await pull({ hosts: HOSTS }); via = 'hostname'; }
-    const { totals, paths, refs, countries } = got;
+    const { totals, paths, refs, countries, landings } = got;
 
     const m = new Map<string, Row>();
     for (const g of totals) add(m, g.dimensions.date, 'total', 'all', g.sum?.visits ?? 0, g.count);
@@ -132,9 +133,16 @@ Deno.serve(async (req) => {
     for (const g of refs) if (g.dimensions.refererHost) add(m, g.dimensions.date, 'referrer', g.dimensions.refererHost, g.sum?.visits ?? 0, g.count);
     for (const g of countries) if (g.dimensions.countryName) add(m, g.dimensions.date, 'country', g.dimensions.countryName, g.sum?.visits ?? 0, g.count);
 
+    // Pages Google sent people to: page loads whose referrer host is a Google domain (google.com, google.co.uk...).
+    // Page paths only. Google does not pass on the search words, and no per-visitor data is read.
+    for (const g of landings) {
+      if (!/(^|\.)google\.[a-z.]+$/i.test(g.dimensions.refererHost || '')) continue;
+      add(m, g.dimensions.date, 'google_landing', (g.dimensions.requestPath || '/').slice(0, 200), g.sum?.visits ?? 0, g.count);
+    }
+
     const all = [...m.values()];
     const rows = [...all.filter((r) => ['total', 'state', 'country'].includes(r.kind)),
-      ...topPerDay(all, 'page', 25), ...topPerDay(all, 'referrer', 25)];
+      ...topPerDay(all, 'page', 25), ...topPerDay(all, 'referrer', 25), ...topPerDay(all, 'google_landing', 40)];
 
     // replace the window, then drop anything older than a year
     const del = await admin.from('site_stats_daily').delete().gte('day', first);

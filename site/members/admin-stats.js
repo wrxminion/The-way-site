@@ -86,31 +86,36 @@ function make(ctx) {
     const root = h('div', { class: 'as-root' });
     const body = h('div');
     const status = h('p', { class: 'muted small' });
-    let days = 30, busy = false;
+    let days = 30, busy = false, autoTried = false;
 
     async function load() {
       status.textContent = 'Loading...';
       const since = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
       try {
-        const [meta, totals, pages, refs, countries, states] = await Promise.all([
+        const [meta, totals, pages, refs, countries, states, gToday, gWeek] = await Promise.all([
           q(sb.from('site_stats_meta').select('*').eq('id', 1)),
           q(sb.from('site_stats_daily').select('day,visits,page_views').eq('kind', 'total').gte('day', since).order('day')),
           q(sb.rpc('site_stats_top', { p_kind: 'page', p_days: days, p_limit: 15 })),
           q(sb.rpc('site_stats_top', { p_kind: 'referrer', p_days: days, p_limit: 15 })),
           q(sb.rpc('site_stats_top', { p_kind: 'country', p_days: days, p_limit: 300 })),
           q(sb.rpc('site_stats_top', { p_kind: 'state', p_days: days, p_limit: 60 })),
+          q(sb.rpc('site_stats_top', { p_kind: 'google_landing', p_days: 1, p_limit: 25 })),
+          q(sb.rpc('site_stats_top', { p_kind: 'google_landing', p_days: 7, p_limit: 25 })),
         ]);
         const m = meta[0];
         status.textContent = !m ? 'No data yet. Press "Refresh now" once the Edge Function is set up.'
           : `${m.ok ? 'Last refreshed' : 'Last attempt failed'} ${when(m.refreshed_at)}${m.note ? `. ${m.note}` : ''}`;
         if (!m) { body.replaceChildren(h('p', { class: 'muted', text: 'Nothing to show yet. The numbers appear after the first successful refresh.' })); return; }
-        draw(totals, pages, refs, countries, states);
+        draw(totals, pages, refs, countries, states, gToday, gWeek);
+        // The numbers only change when the Edge Function runs, so a panel opened hours later showed old counts.
+        // Refresh quietly once if the last run is over an hour old (a short 3-day pull, so it is quick).
+        if (!autoTried && (!m.ok || Date.now() - new Date(m.refreshed_at).getTime() > 3600000)) { autoTried = true; refreshNow(3, true); }
       } catch (e) {
         status.textContent = `Could not load: ${e.message || e}`;
       }
     }
 
-    function draw(totals, pages, refs, countries, states) {
+    function draw(totals, pages, refs, countries, states, gToday, gWeek) {
       const sum = (k) => totals.reduce((a, t) => a + (t[k] || 0), 0);
       const biggest = Math.max(1, ...totals.map((t) => t.page_views));
       const bars = svg('svg', { viewBox: `0 0 ${Math.max(totals.length, 1) * 10} 40`, class: 'as-bars', role: 'img', preserveAspectRatio: 'none' });
@@ -131,6 +136,13 @@ function make(ctx) {
         h('div', { class: 'as-tiles' },
           h('div', { class: 'as-tile' }, h('strong', { text: num(sum('visits')) }), h('span', { class: 'small muted', text: `visits, last ${days} days` })),
           h('div', { class: 'as-tile' }, h('strong', { text: num(sum('page_views')) }), h('span', { class: 'small muted', text: 'page views' }))),
+        h('div', { class: 'panel' }, h('h3', { text: 'Pages Google sends people to' }),
+          h('p', { class: 'muted small', text: 'Visits that arrived from a Google search, by the page they landed on. Google does not tell us the words searched; those are only in Search Console. Counts are by calendar day (UTC), so "Today and yesterday" is about the last 24 to 48 hours.' }),
+          h('div', { class: 'as-cols' },
+            h('div', {}, h('h4', { text: 'Today and yesterday' }),
+              table(['Page', 'Visits', 'Views'], gToday.map((p) => row(p.label, p.visits, p.page_views)))),
+            h('div', {}, h('h4', { text: 'Last 7 days' }),
+              table(['Page', 'Visits', 'Views'], gWeek.map((p) => row(p.label, p.visits, p.page_views)))))),
         totals.length ? h('div', { class: 'panel' }, h('h3', { text: 'Page views per day' }), bars) : null,
         h('div', { class: 'as-cols' },
           h('div', { class: 'panel' }, h('h3', { text: 'Top pages' }),
@@ -149,15 +161,16 @@ function make(ctx) {
     }
 
     const range = (n) => h('button', { class: 'quiet', 'aria-pressed': String(n === days), onclick: () => { days = n; root.querySelectorAll('.as-range button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.d === String(days)))); load(); }, 'data-d': n }, `${n} days`);
-    const refresh = h('button', { class: 'primary', onclick: async () => {
+    async function refreshNow(n, quiet) {
       if (busy) return; busy = true; refresh.disabled = true; status.textContent = 'Asking Cloudflare...';
       try {
-        const { data, error } = await sb.functions.invoke('site-stats', { body: { days: 62 } });
+        const { data, error } = await sb.functions.invoke('site-stats', { body: { days: n } });
         if (error) throw error;
         if (data && data.ok === false) throw new Error(data.error);
-      } catch (e) { status.textContent = `Refresh failed: ${e.message || e}`; busy = false; refresh.disabled = false; return; }
+      } catch (e) { status.textContent = `${quiet ? 'Automatic refresh' : 'Refresh'} failed: ${e.message || e}`; busy = false; refresh.disabled = false; return; }
       busy = false; refresh.disabled = false; load();
-    } }, 'Refresh now');
+    }
+    const refresh = h('button', { class: 'primary', onclick: () => refreshNow(62, false) }, 'Refresh now');
 
     root.append(
       h('h2', { text: 'Site analytics and SEO' }),
