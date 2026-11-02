@@ -262,7 +262,8 @@ function judgesBlock(at){
     lists('On every ballot in the state:',J.statewide);
     const local=(at.county&&J.counties&&J.counties[at.county])||[];
     lists(local.length?'On ballots in '+at.county+' County:':'',local);
-    if(at.county&&J.counties&&!local.length&&Object.keys(J.counties).length)wrap.append(el('div',{cls:'note',text:'We have no judges listed for '+at.county+' County besides the statewide ones above.'}));
+    const cn=J.countyNote&&at.county&&J.countyNote[at.county];if(cn)wrap.append(el('div',{cls:'note',text:cn}));
+    if(at.county&&J.counties&&!local.length&&!cn&&Object.keys(J.counties).length)wrap.append(el('div',{cls:'note',text:'We have no judges listed for '+at.county+' County besides the statewide ones above.'}));
     if(J.dependsCount>0)wrap.append(el('div',{cls:'note',text:J.dependsCount+' more judge'+(J.dependsCount===1?'':'s')+' are on ballots that depend on your exact court district or circuit, which this map does not place. They are all on the judges page.'}));
     wrap.append(el('div',{cls:'note'},[gLink(J.page,'Every judge on the ballot, with sources →')]));
   });

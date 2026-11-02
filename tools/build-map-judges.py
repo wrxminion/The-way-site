@@ -57,6 +57,44 @@ def read_entries(path):
     return out
 
 
+# New York: the 13 judicial districts and the 62 counties in each (NY Unified Court System, nycourts.gov)
+NY_DISTRICTS = {
+    1: ['New York'], 2: ['Kings'],
+    3: ['Albany', 'Columbia', 'Greene', 'Rensselaer', 'Schoharie', 'Sullivan', 'Ulster'],
+    4: ['Clinton', 'Essex', 'Franklin', 'Fulton', 'Hamilton', 'Montgomery', 'St. Lawrence', 'Saratoga', 'Schenectady', 'Warren', 'Washington'],
+    5: ['Herkimer', 'Jefferson', 'Lewis', 'Oneida', 'Onondaga', 'Oswego'],
+    6: ['Broome', 'Chemung', 'Chenango', 'Cortland', 'Delaware', 'Madison', 'Otsego', 'Schuyler', 'Tioga', 'Tompkins'],
+    7: ['Cayuga', 'Livingston', 'Monroe', 'Ontario', 'Seneca', 'Steuben', 'Wayne', 'Yates'],
+    8: ['Allegany', 'Cattaraugus', 'Chautauqua', 'Erie', 'Genesee', 'Niagara', 'Orleans', 'Wyoming'],
+    9: ['Dutchess', 'Orange', 'Putnam', 'Rockland', 'Westchester'],
+    10: ['Nassau', 'Suffolk'], 11: ['Queens'], 12: ['Bronx'], 13: ['Richmond'],
+}
+
+
+def ordinal(n):
+    return '%d%s' % (n, 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th'))
+
+
+def build_ny():
+    page = open(os.path.join(SITE, 'guide-ny', 'races', 'judges.html'), encoding='utf8').read()
+    counties, notes = {}, {}
+    seen = set()
+    for m in re.finditer(r'<h3 id="d(\d+)">[^<]*vote for (\d+)</h3>(.*?)(?=<h3 id="d|<!-- chatgpt-slot)', page, re.S):
+        d, vf = int(m.group(1)), int(m.group(2))
+        names = [clean(n) for n in re.findall(r'<li><span><b>([^<]*\([^<)]*\))</b>', m.group(3))]
+        seen.add(d)
+        court = 'Supreme Court, %s Judicial District (vote for %d)' % (ordinal(d), vf)
+        for c in NY_DISTRICTS[d]:
+            counties[c] = [{'court': court, 'name': n} for n in names]
+    for d, cl in NY_DISTRICTS.items():
+        if d not in seen:
+            for c in cl:
+                notes[c] = 'No Supreme Court seats are up in the %s Judicial District this year.' % ordinal(d)
+    return {'state': 'NY', 'page': 'races/judges.html', 'statewide': [], 'counties': counties, 'countyNote': notes,
+            'intro': 'New York Supreme Court justices are elected by judicial district. Your county is listed under its district.',
+            'dependsCount': 0}
+
+
 def build_state(st):
     entries = read_entries(os.path.join(SITE, f'guide-{st}', 'races', 'judges.html'))
     statewide, counties, depends = [], {}, []
@@ -149,7 +187,7 @@ def main():
     json.dump(co, open(path, 'w', encoding='utf8'), indent=1, ensure_ascii=False)
     wrote.append(('co', len(co['statewide']), sum(len(v) for v in co['counties'].values()), 0))
     for st in STATES:
-        d = build_state(st)
+        d = build_ny() if st == 'ny' else build_state(st)
         folder = os.path.join(SITE, f'map-{st}', 'data')
         os.makedirs(folder, exist_ok=True)
         json.dump(d, open(os.path.join(folder, 'judges.json'), 'w', encoding='utf8'), indent=1, ensure_ascii=False)
