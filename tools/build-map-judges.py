@@ -112,6 +112,61 @@ MO_COUNTIES = ['Adair', 'Andrew', 'Atchison', 'Audrain', 'Barry', 'Barton', 'Bat
 MO_WESTERN = [c for c in MO_COUNTIES if c not in MO_EASTERN and c not in MO_SOUTHERN]
 
 
+# Nebraska: judicial districts and their counties, as listed on the judges' own Nebraska Judicial Branch profile pages.
+# The profiles disagree on two counties (Fillmore: 1st vs 10th; Otoe: 1st vs 2nd); both districts are shown for them.
+NE_DISTRICTS = {
+    1: ['Gage', 'Jefferson', 'Johnson', 'Nemaha', 'Pawnee', 'Richardson', 'Saline', 'Thayer', 'Fillmore', 'Otoe'],
+    2: ['Cass', 'Otoe', 'Sarpy'],
+    3: ['Lancaster'],
+    4: ['Douglas'],
+    5: ['Boone', 'Butler', 'Colfax', 'Hamilton', 'Merrick', 'Nance', 'Platte', 'Polk', 'Saunders', 'Seward', 'York'],
+    6: ['Burt', 'Cedar', 'Dakota', 'Dixon', 'Dodge', 'Thurston', 'Washington'],
+    8: ['Blaine', 'Boyd', 'Brown', 'Cherry', 'Custer', 'Garfield', 'Greeley', 'Holt', 'Howard', 'Keya Paha', 'Loup', 'Rock', 'Sherman', 'Valley', 'Wheeler'],
+    9: ['Buffalo', 'Hall'],
+    10: ['Adams', 'Clay', 'Fillmore', 'Franklin', 'Harlan', 'Kearney', 'Nuckolls', 'Phelps', 'Webster'],
+    11: ['Arthur', 'Chase', 'Dawson', 'Dundy', 'Frontier', 'Furnas', 'Gosper', 'Hayes', 'Hitchcock', 'Hooker', 'Keith', 'Lincoln', 'Logan',
+         'McPherson', 'Perkins', 'Red Willow', 'Thomas'],
+    12: ['Banner', 'Box Butte', 'Cheyenne', 'Dawes', 'Deuel', 'Garden', 'Grant', 'Kimball', 'Morrill', 'Scotts Bluff', 'Sheridan', 'Sioux'],
+}
+NE_DISTRICT_COURT = {
+    1: ['David J. A. Bargen', 'Rick A. Schreiner', 'Julie D. Smith'], 2: ['Stefanie A. Martinez', 'Michael A. Smith', 'George A. Thompson'],
+    3: ['Darla S. Ideus', 'Andrew R. Jacobsen', 'Kevin R. McManaman', 'Matthew O. Mellor'],
+    4: ['Katie L. Benson', 'Duane C. Dougherty', 'Molly B. Keane', 'Marlon A. Polk', 'LeAnne M. Srb'],
+    6: ['Geoffrey C. Hall'], 9: ['Patrick M. Lee', 'John H. Marsh'], 10: ['Morgan R. Farquhar'],
+    11: ['Patrick M. Heng', 'Cindy R. Volkmer'], 12: ['Andrea D. Miller', 'Travis P. O’Gorman'],
+}
+NE_COUNTY_COURT = {
+    1: ['Richard R. Smith'], 2: ['Todd J. Hutton', 'S. Colin Palm'], 3: ['Rodney D. Reuter'],
+    4: ['Marcena M. Hendrix', 'John E. Huber', 'Marcela A. Keim', 'Sheryl L. Lohaus', 'Craig Q. McDermott', 'Stephanie S. Shearer'],
+    5: ['Denise J. Kracl'], 6: ['Sara E. Bauer', 'Thomas J. Klein'], 8: ['Kale B. Burdick'], 9: ['Alfred E. Corey III', 'Bryan S. McQuay'],
+    10: ['Michael P. Burns'], 11: ['Tanya K. Roberts-Connick'], 12: ['Aaron J. Conn', 'Kristen D. Mickey'],
+}
+
+
+def ordinal_ne(n):
+    return '%d%s' % (n, 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th'))
+
+
+def build_ne():
+    counties = {}
+    def add(county, court, name):
+        counties.setdefault(county, []).append({'court': court, 'name': name})
+    for d, cl in NE_DISTRICTS.items():
+        for c in cl:
+            for n in NE_DISTRICT_COURT.get(d, []):
+                add(c, 'District Court, %s Judicial District' % ordinal_ne(d), n)
+            for n in NE_COUNTY_COURT.get(d, []):
+                add(c, 'County Court, %s Judicial District' % ordinal_ne(d), n)
+    add('Douglas', 'Separate Juvenile Court of Douglas County', 'Matthew R. Kahler')
+    add('Sarpy', 'Separate Juvenile Court of Sarpy County', 'Sarah M. Moore')
+    add('Douglas', 'Court of Appeals', 'Michael W. Pirtle')
+    return {'state': 'NE', 'page': 'races/judges.html', 'intro': 'Which Nebraska judges you vote on depends on your county. Counties are listed with their judicial district, as shown on the Nebraska Judicial Branch judge profiles.',
+            'statewide': [{'court': 'Workers’ Compensation Court', 'name': 'Dirk V. Block'}, {'court': 'Workers’ Compensation Court', 'name': 'Thomas E. Stine'}],
+            'counties': counties, 'dependsCount': 0,
+            'countyNote': {'Otoe': 'The Nebraska Judicial Branch profiles list Otoe County under both the 1st and 2nd Judicial Districts, so judges from both are shown; check your sample ballot.',
+                           'Fillmore': 'The Nebraska Judicial Branch profiles list Fillmore County under both the 1st and 10th Judicial Districts, so judges from both are shown; check your sample ballot.'}}
+
+
 def build_ny():
     page = open(os.path.join(SITE, 'guide-ny', 'races', 'judges.html'), encoding='utf8').read()
     counties, notes = {}, {}
@@ -254,7 +309,7 @@ def main():
     json.dump(co, open(path, 'w', encoding='utf8'), indent=1, ensure_ascii=False)
     wrote.append(('co', len(co['statewide']), sum(len(v) for v in co['counties'].values()), 0))
     for st in STATES:
-        d = build_ny() if st == 'ny' else build_state(st)
+        d = build_ny() if st == 'ny' else build_ne() if st == 'ne' else build_state(st)
         folder = os.path.join(SITE, f'map-{st}', 'data')
         os.makedirs(folder, exist_ok=True)
         json.dump(d, open(os.path.join(folder, 'judges.json'), 'w', encoding='utf8'), indent=1, ensure_ascii=False)
