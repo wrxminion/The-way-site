@@ -240,6 +240,34 @@ function measure(m,tag){
 }
 document.addEventListener('theway-ballot',syncQuick);window.addEventListener('storage',syncQuick);
 
+/* Judges on the ballot. data/judges.json is built from the guide's judges page by tools/build-map-judges.py.
+   Statewide judges are listed for everyone; judges tied to certain counties are listed when the clicked spot is in one of them. */
+let judgesP=null;
+function getJudges(){if(!judgesP)judgesP=getJSON('data/judges.json').catch(()=>null);return judgesP;}
+function judgesBlock(at){
+  const wrap=el('div',{cls:'judges'});
+  getJudges().then(J=>{
+    wrap.append(el('h3',{text:'Judges on your ballot'}));
+    if(!J){wrap.append(el('div',{cls:'note',text:'Judges may also be on your ballot. They are not mapped here yet; check your sample ballot.'}));return;}
+    const lists=(label,list)=>{
+      if(!list||!list.length)return;
+      const by=new Map();
+      for(const e of list){if(!by.has(e.court))by.set(e.court,[]);by.get(e.court).push(e);}
+      wrap.append(el('div',{cls:'note',text:label}));
+      for(const [court,es] of by){
+        wrap.append(el('div',{cls:'race'},[el('b',{text:court}),el('ul',{},es.map(e=>el('li',{},[gLink(J.page,e.name),e.tag?el('span',{cls:'note',text:' · '+e.tag}):null])))]));
+      }
+    };
+    if(J.intro)wrap.append(el('div',{cls:'note',text:J.intro}));
+    lists('On every ballot in the state:',J.statewide);
+    const local=(at.county&&J.counties&&J.counties[at.county])||[];
+    lists(local.length?'On ballots in '+at.county+' County:':'',local);
+    if(at.county&&J.counties&&!local.length&&Object.keys(J.counties).length)wrap.append(el('div',{cls:'note',text:'We have no judges listed for '+at.county+' County besides the statewide ones above.'}));
+    if(J.dependsCount>0)wrap.append(el('div',{cls:'note',text:J.dependsCount+' more judge'+(J.dependsCount===1?'':'s')+' are on ballots that depend on your exact court district or circuit, which this map does not place. They are all on the judges page.'}));
+    wrap.append(el('div',{cls:'note'},[gLink(J.page,'Every judge on the ballot, with sources →')]));
+  });
+  return wrap;
+}
 function renderBallot(at){
   const b=data.ballot,c=data.candidates;
   if(!b){return;}
@@ -263,6 +291,7 @@ function renderBallot(at){
     if(loc&&loc.count)box.push(el('div',{cls:'note'},['All local measures we have for ',gLink(loc.page,at.county+' County ('+loc.count+') →'),' Which ones you see depends on exactly where you live.']));
     else box.push(el('div',{cls:'note',text:'Local measures for '+at.county+' County are not in this guide yet.'}));
   }
+  box.push(judgesBlock(at));
   box.push(el('div',{cls:'note'},['See your exact ballot: ',link(C.sampleBallot.url,C.sampleBallot.label+' ↗')]));
   ballotBox.replaceChildren(...box);
   syncQuick();

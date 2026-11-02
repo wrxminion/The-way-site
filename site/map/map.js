@@ -320,6 +320,34 @@ function localBlock(at){
   wrap.append(el('div',{cls:'note'},[gLink(G.local[at.county]&&G.local[at.county].page,'All '+list.length+' local measures in '+at.county+' County →')]));
   return wrap;
 }
+/* Judges on the ballot. data/judges.json is built from the guide's judges page by tools/build-map-judges.py.
+   Statewide judges are listed for everyone; judges tied to certain counties are listed when the clicked spot is in one of them. */
+let judgesP=null;
+function getJudges(){if(!judgesP)judgesP=getJSON('data/judges.json').catch(()=>null);return judgesP;}
+function judgesBlock(at){
+  const wrap=el('div',{cls:'judges'});
+  getJudges().then(J=>{
+    wrap.append(el('h3',{text:'Judges on your ballot'}));
+    if(!J){wrap.append(el('div',{cls:'note',text:'Judges may also be on your ballot. They are not mapped here yet; check your sample ballot.'}));return;}
+    const lists=(label,list)=>{
+      if(!list||!list.length)return;
+      const by=new Map();
+      for(const e of list){if(!by.has(e.court))by.set(e.court,[]);by.get(e.court).push(e);}
+      wrap.append(el('div',{cls:'note',text:label}));
+      for(const [court,es] of by){
+        wrap.append(el('div',{cls:'race'},[el('b',{text:court}),el('ul',{},es.map(e=>el('li',{},[gLink(J.page,e.name),e.tag?el('span',{cls:'note',text:' · '+e.tag}):null])))]));
+      }
+    };
+    if(J.intro)wrap.append(el('div',{cls:'note',text:J.intro}));
+    lists('On every ballot in the state:',J.statewide);
+    const local=(at.county&&J.counties&&J.counties[at.county])||[];
+    lists(local.length?'On ballots in '+at.county+' County:':'',local);
+    if(at.county&&J.counties&&!local.length&&Object.keys(J.counties).length)wrap.append(el('div',{cls:'note',text:'We have no judges listed for '+at.county+' County besides the statewide ones above.'}));
+    if(J.dependsCount>0)wrap.append(el('div',{cls:'note',text:J.dependsCount+' more judge'+(J.dependsCount===1?'':'s')+' are on ballots that depend on your exact court district or circuit, which this map does not place. They are all on the judges page.'}));
+    wrap.append(el('div',{cls:'note'},[gLink(J.page,'Every judge on the ballot, with sources →')]));
+  });
+  return wrap;
+}
 function renderBallot(at){
   const b=data.ballot,c=data.candidates;
   if(!b){return;}
@@ -347,7 +375,8 @@ function renderBallot(at){
   }
   if(at.sdn)box.push(r['state_senate:'+at.sdn]?raceBlock('State Senate, District '+at.sdn,r['state_senate:'+at.sdn],null,'state_senate:'+at.sdn):el('div',{cls:'race'},[el('b',{text:'State Senate, District '+at.sdn}),el('div',{cls:'note',text:'Not up this year. Senators serve four-year terms, and about half the seats are elected each cycle.'})]));
   if(at.hdn)box.push(raceBlock('State House, District '+at.hdn,r['state_house:'+at.hdn],null,'state_house:'+at.hdn));
-  box.push(el('div',{cls:'note',text:'Judges up for retention, RTD directors, district attorneys and county offices may also be on your ballot. They are not mapped here yet.'}));
+  box.push(el('div',{cls:'note',text:'RTD directors, district attorneys and county offices may also be on your ballot. They are not mapped here yet.'}));
+  box.push(judgesBlock(at));
 
   box.push(el('h3',{text:'Measures'}));
   box.push(el('div',{cls:'note'},['Every Colorado voter decides these 14. Details in the ',link(b.bluebook,'Blue Book ↗'),'.']));
