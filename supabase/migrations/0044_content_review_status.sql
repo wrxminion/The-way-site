@@ -3,6 +3,7 @@
 -- Statuses, in order: ai_unchecked ("AI written, unchecked"), skimmed ("AI written, human skimmed"), read ("AI written, human read"),
 -- under_review ("Under review, some sources verified"), confirmed ("Confirmed accurate by a human", all sources verified).
 -- A page with no row shows the default (skimmed, per Frank Oct 28: everything published so far has been skimmed).
+-- (Superseded by 0085: the default is now ai_unchecked.)
 -- Who may change a status is a setting (content_review_settings.allowed_roles, default admin only); widen it later with
 -- content_review_set_roles, no rebuild. Every change is logged with who, when and the old and new status.
 -- Public pages cannot call the database, so a scheduled Action copies content_review_public() to the ledger-data branch

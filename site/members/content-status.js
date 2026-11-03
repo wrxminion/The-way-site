@@ -57,7 +57,7 @@ function make(ctx) {
       { key: 'verified', label: 'Verified', options: [['yes', 'Verified (all sources)'], ['part', 'Partly verified'], ['no', 'Not verified']] },
       { key: 'status', label: 'Status', options: Object.keys(STATUS).map((k) => [k, STATUS[k]]) }] }) : null;
     root.append(h('h2', { text: 'Review status of AI-written pages' }),
-      h('p', { class: 'muted small', text: 'Every AI-written page shows "AI written, human skimmed" until its status is changed. Admins (and later reviewers and editors) change a page from the dropdown on the page itself. Recent changes:' }),
+      h('p', { class: 'muted small', text: 'Every AI-written page shows "AI written, unchecked" until a person changes it. Only a real person can raise a label. Admins (and later reviewers and editors) change a page from the dropdown on the page itself. Recent changes:' }),
       rolesLine, status, bar ? bar.el : null, list);
     (async () => {
       try {

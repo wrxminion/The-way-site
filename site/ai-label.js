@@ -26,9 +26,9 @@
   }
 
   function build(key, picker) {
-    var s = STATUS[key] || STATUS.skimmed;
+    var s = STATUS[key] || STATUS.ai_unchecked;
     var d = el('details', 'notice ai-label notice-' + s.level);
-    d.setAttribute('data-status', STATUS[key] ? key : 'skimmed');
+    d.setAttribute('data-status', STATUS[key] ? key : 'ai_unchecked');
     var sm = el('summary'), more = el('span', 'notice-more');
     more.append(el('span', 'on-closed', 'Details'), el('span', 'on-open', 'Hide details'));
     sm.append(el('span', 'notice-tag', s.tag), el('span', 'notice-sum', s.sum), more);
@@ -79,9 +79,9 @@
     var done = false, finish = function (k) { if (!done) { done = true; draw(k); } };
     try {
       fetch('/content-status.json', { cache: 'no-cache' }).then(function (r) { return r.json(); })
-        .then(function (j) { finish((j.items && STATUS[j.items[path]] ? j.items[path] : (STATUS[j.default] ? j.default : 'skimmed'))); })
-        .catch(function () { finish('skimmed'); });
-    } catch (e) { finish('skimmed'); }
+        .then(function (j) { finish((j.items && STATUS[j.items[path]] ? j.items[path] : (STATUS[j.default] ? j.default : 'ai_unchecked'))); })
+        .catch(function () { finish('ai_unchecked'); });
+    } catch (e) { finish('ai_unchecked'); }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
