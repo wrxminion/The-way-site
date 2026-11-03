@@ -9,6 +9,13 @@
   var file = box.getAttribute('data-file');
   if (!file || !/^[a-z0-9-]+\.json$/.test(file)) return;
   var JUDGE = /court|judge|justice|retain|retention/i;
+  // A measure page names its measure with data-match (for example "amendment-81"); the block then shows the contest
+  // whose id, title or text names that measure, in place of the judge contests.
+  var match = box.getAttribute('data-match');
+  var MEASURE = null;
+  if (match && /^[a-z0-9-]+$/.test(match)) {
+    MEASURE = new RegExp('(^|[^a-z0-9])' + match.split('-').join('[^a-z0-9]*') + '(?![a-z0-9])', 'i');
+  }
 
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -23,10 +30,12 @@
     return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
   }
   function isJudge(c) {
+    if (MEASURE) return !!c && MEASURE.test(String(c.id || '') + ' ' + String(c.title || '') + ' ' + String(c.office || '') + ' ' + String(c.text || ''));
     return c && (c.kind === 'judicial' || JUDGE.test(String(c.office || '') + ' ' + String(c.title || '')));
   }
   function render(d) {
     var list = (d.contests || []).filter(isJudge);
+    if (MEASURE) list = list.slice(0, 3);
     var total = 0;
     list.forEach(function (c) { (c.choices || []).forEach(function (x) { total += x.votes || 0; }); });
     if (!list.length || !total) return;       // nothing counted yet: show nothing
