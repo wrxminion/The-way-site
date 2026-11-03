@@ -72,6 +72,7 @@ function action(fn, slot) {
 async function q(promise) { const { data, error } = await promise; if (error) throw error; return data; }
 // Research projects, finding links and "AI help write my claim" live in claim-links.js (migration 0026).
 const STATS = window.TheWayStats ? window.TheWayStats.make({ sb, h, q, when, hideStudy: () => !state.roles.has('super_admin') }) : null;
+const FB = window.TheWayFb ? window.TheWayFb.make({ sb, h, q, when, action }) : null;
 const LEDGER = window.TheWayLedger ? window.TheWayLedger.make({ sb, h, q }) : null;
 const TODO = window.TheWayTodo ? window.TheWayTodo.make({ sb, h, q, render, notice }) : null;
 const CSTAT = window.TheWayContentStatus ? window.TheWayContentStatus.make({ sb, h, q, render, notice, when }) : null;
@@ -2272,6 +2273,7 @@ async function adminView() {
   render(
     h('h1', { text: 'Admin' }), msg,
     canStats() && STATS ? sec('analytics', 'Site analytics and SEO', STATS.panel()) : null,
+    state.roles.has('super_admin') && FB ? sec('facebook', 'Facebook (Michi Institute Page)', FB.panel()) : null,
     can('admin') ? sec('media', 'Media', h('div', { class: 'panel' }, h('p', { class: 'muted small', text: 'Media relations: site analytics, suggested marketing ideas, and The Way / Not The Way.' }), h('a', { class: 'button primary', href: '#/media', text: 'Open Media' }))) : null,
     can('admin') && ROLETREE ? sec('roles', 'Admin roles', ROLETREE.panel()) : null,
     can('admin') && LEDGER ? sec('ledger', 'Ledger checks', LEDGER.panel()) : null,
@@ -2324,6 +2326,7 @@ async function adminView() {
         await adminView();
       }, msg) }, 'Remove')))) : [h('li', { class: 'muted', text: 'Nobody yet.' })])),
   );
+  if (FB && state.roles.has('super_admin')) FB.badge(app);
   const mItems = [...document.querySelectorAll("#members-list > li")];
   memberBar.set(mItems.map((li, i) => ({ el: li, text: members[i].display_name, facets: { status: members[i].status, role: rolesOf(members[i].id).length ? rolesOf(members[i].id) : ['none'] } })));
   const nItems = [...document.querySelectorAll('#notify-list > li')];
