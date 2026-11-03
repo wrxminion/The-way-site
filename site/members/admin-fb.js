@@ -133,12 +133,20 @@ function make(ctx) {
     async function refreshNow() {
       if (busy) return; busy = true; refresh.disabled = true; status.textContent = 'Asking Facebook...';
       try { await sb.functions.invoke('bsky-inbox', { body: { action: 'pull' } }); } catch { /* Bluesky not set up yet */ }
+      let notSetUp = false;
       try {
         const { data, error } = await sb.functions.invoke('fb-insights', { body: { action: 'pull', days: 30 } });
         if (error) throw error;
         if (data && data.ok === false) throw new Error(data.error);
-      } catch (e) { status.textContent = `Refresh failed: ${e.message || e}`; busy = false; refresh.disabled = false; return; }
-      busy = false; refresh.disabled = false; load();
+      } catch (e) {
+        // The function not being deployed, or its secrets not being added yet, is a setup state, not a failure.
+        const m = String((e && e.message) || e);
+        if (!/Failed to send a request|Not set up yet|not found/i.test(m)) { status.textContent = `Refresh failed: ${m}`; busy = false; refresh.disabled = false; return; }
+        notSetUp = true;
+      }
+      busy = false; refresh.disabled = false;
+      await load();
+      if (notSetUp) status.textContent = `Facebook is not set up yet. ${status.textContent}`;
     }
     const refresh = h('button', { class: 'primary', onclick: refreshNow }, 'Refresh now');
 
