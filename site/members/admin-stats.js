@@ -151,6 +151,22 @@ function make(ctx) {
     return out;
   }
 
+  // My Ballot and ballot study use. Counts only; the SQL function never returns anyone's picks, names or ids.
+  function studyCard(s) {
+    const when2 = (t) => (t ? String(t).slice(0, 10) : 'none yet');
+    if (!s) return h('div', { class: 'panel' }, h('h3', { text: 'Ballot study use (totals only)' }),
+      h('p', { class: 'muted small', text: 'Not available yet. Run supabase/migrations/0087_study_usage_totals.sql in the Supabase SQL editor, then reload.' }));
+    const b = s.ballot_plans || {}, r = s.research_submissions || {}, f = s.forecast_shares || {};
+    const tile = (n, label) => h('div', { class: 'as-tile' }, h('strong', { text: num(n) }), h('span', { class: 'small muted', text: label }));
+    return h('div', { class: 'panel' }, h('h3', { text: 'Ballot study use (totals only)' }),
+      h('p', { class: 'muted small', text: 'How many people use My Ballot and the study, never what they picked. These are counts of saved plans, submissions and anonymous shares; no choices, names or accounts are read or shown. "Not you" means other than the signed-in admin.' }),
+      h('div', { class: 'as-tiles' },
+        tile(b.saved, 'saved ballot plans'), tile(b.members, 'members who saved one'), tile(b.members_not_me, 'of them, not you'),
+        tile(r.submitted, 'research submissions'), tile(r.people, 'people who submitted'), tile(r.people_not_me, 'of them, not you'),
+        tile(f.shares, 'anonymous forecast shares'), tile(s.members, 'members in total')),
+      h('p', { class: 'muted small', text: `Newest saved plan: ${when2(b.last_saved)}. Newest submission: ${when2(r.last_submitted)}. Newest share: ${when2(f.last_shared)}.` }));
+  }
+
   function panel() {
     const root = h('div', { class: 'as-root' });
     const body = h('div');
@@ -162,18 +178,20 @@ function make(ctx) {
       status.textContent = 'Loading...';
       const from = range.days ? iso(new Date(Date.now() - (range.days - 1) * DAY)) : null;
       try {
-        const [meta, rows, gToday, gWeek] = await Promise.all([
+        const [meta, rows, gToday, gWeek, study] = await Promise.all([
           q(sb.from('site_stats_meta').select('*').eq('id', 1)),
           fetchRows(from),
           q(sb.rpc('site_stats_top', { p_kind: 'google_landing', p_days: 1, p_limit: 25 })),
           q(sb.rpc('site_stats_top', { p_kind: 'google_landing', p_days: 7, p_limit: 25 })),
+          // Totals only (migration 0087). If it is not installed yet the card says so instead of breaking the page.
+          q(sb.rpc('study_usage_totals')).catch(() => null),
         ]);
         if (mine !== loadId) return;
         const m = meta[0];
         status.textContent = !m ? 'No data yet. Press "Refresh now" once the Edge Function is set up.'
           : `${m.ok ? 'Last refreshed' : 'Last attempt failed'} ${when(m.refreshed_at)}${m.note ? `. ${m.note}` : ''}`;
         if (!m) { body.replaceChildren(h('p', { class: 'muted', text: 'Nothing to show yet. The numbers appear after the first successful refresh.' })); return; }
-        draw(rows, from, gToday, gWeek);
+        draw(rows, from, gToday, gWeek, study);
         // The numbers only change when the Edge Function runs, so a panel opened hours later showed old counts.
         // Refresh quietly once if the last run is over an hour old (a short 3-day pull, so it is quick).
         if (!autoTried && (!m.ok || Date.now() - new Date(m.refreshed_at).getTime() > 3600000)) { autoTried = true; refreshNow(3, true); }
@@ -182,7 +200,7 @@ function make(ctx) {
       }
     }
 
-    function draw(rows, from, gToday, gWeek) {
+    function draw(rows, from, gToday, gWeek, study) {
       const totals = rows.filter((r) => r.kind === 'total');   // already in day order
       const pages = tally(rows, 'page').slice(0, 15), refs = tally(rows, 'referrer').slice(0, 15);
       const countries = tally(rows, 'country'), states = tally(rows, 'state');
@@ -226,6 +244,7 @@ function make(ctx) {
           h('p', { class: 'muted small', text: 'Cloudflare reports country only. No IP addresses and no individual visitors are stored or shown.' }),
           world, world ? legend() : null,
           table(['Country', 'Visits', 'Views'], countries.slice(0, 15).map((c) => row(SPECIAL[c.label] || regionName(c.label), c.visits, c.page_views)))),
+        studyCard(study),
         h('div', { class: 'panel' }, h('h3', { text: 'Interest by state (which state guides were viewed)' }),
           h('p', { class: 'muted small', text: 'This is NOT where visitors live. It counts views of each state\'s guide and map pages. No location of any visitor is used.' }),
           usa || h('p', { class: 'muted', text: 'No state guide views yet.' }), usa ? legend() : null,
