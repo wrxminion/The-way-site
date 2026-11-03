@@ -87,9 +87,11 @@ export async function handler(req: Request, env = Deno.env, mk = createClient): 
   }
 
   const sellOk = ["1", "on", "yes", "true"].includes(str("sell_ok").toLowerCase());   // separate optional box, default no
+  const sellShare = sellOk ? str("sell_share").toLowerCase() : "";   // share or donate, only when the box is ticked
+  if (sellOk && !["share", "donate"].includes(sellShare)) return reply(origin, 400, { error: "Please choose whether you would like a share of what your art earns or donate it to the wildlife fund" });
   const { data, error } = await sb.rpc("submit_art", {
     p_name: name, p_email: email, p_target: target, p_link: link || null, p_portfolio: portfolio || null, p_file_path: path, p_file_bytes: bytes,
-    p_note: note || null, p_rate_key: rateKey, p_sell_ok: sellOk,
+    p_note: note || null, p_rate_key: rateKey, p_sell_ok: sellOk, p_sell_share: sellOk ? sellShare : null,
   });
   if (error) {
     if (path) await sb.storage.from("art-submissions").remove([path]);
