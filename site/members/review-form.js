@@ -3,7 +3,6 @@
 // Usage: WayReviewForm.build({ sb, user, itemId, title, url, onDone })  ->  element
 (() => {
 'use strict';
-const SHOT_MAX_PICK = 12 * 1024 * 1024, SHOT_MAX_OUT = 1500 * 1024, SHOT_MAX_SIDE = 1800;
 function h(tag, attrs, ...kids) {
   const el = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs || {})) {
@@ -15,23 +14,6 @@ function h(tag, attrs, ...kids) {
   }
   for (const kid of kids.flat()) if (kid != null && kid !== false) el.append(kid instanceof Node ? kid : document.createTextNode(String(kid)));
   return el;
-}
-async function cleanShot(file) {
-  if (!/^image\/(png|jpeg|webp)$/.test(file.type)) throw new Error('Please pick a PNG, JPEG or WebP picture.');
-  if (file.size > SHOT_MAX_PICK) throw new Error('That picture is over 12 MB. Please crop it or pick a smaller one.');
-  let bmp;
-  try { bmp = await createImageBitmap(file); } catch { throw new Error('We could not open that file as a picture.'); }
-  const k = Math.min(1, SHOT_MAX_SIDE / Math.max(bmp.width, bmp.height));
-  const cv = document.createElement('canvas');
-  cv.width = Math.max(1, Math.round(bmp.width * k)); cv.height = Math.max(1, Math.round(bmp.height * k));
-  const cx = cv.getContext('2d');
-  cx.fillStyle = '#fff'; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(bmp, 0, 0, cv.width, cv.height);
-  if (bmp.close) bmp.close();
-  for (const q of [0.85, 0.7, 0.55]) {
-    const blob = await new Promise((res) => cv.toBlob(res, 'image/jpeg', q));
-    if (blob && blob.size <= SHOT_MAX_OUT) return blob;
-  }
-  throw new Error('That picture is still too big after shrinking. Please crop it.');
 }
 const TITLE = [['yes', 'Yes'], ['mostly', 'Mostly'], ['no', 'No'], ['unsure', 'I am not sure']];
 const STANCE = [['supports', 'It backs up what the title says'], ['argues_against', 'It argues against what the title says'], ['mixed', 'Some of both'], ['no_claim', 'It does not make a clear claim'], ['unsure', 'I am not sure']];
@@ -73,7 +55,6 @@ function build({ sb, user, itemId, title, url, onDone }) {
     if (none) kindsBox.querySelectorAll('input').forEach((i) => { i.checked = false; });
   };
   const gEvid = radioGroup('evid', 'Does the article show evidence for what it says?', EVID, syncKinds);
-  const file = h('input', { type: 'file', accept: 'image/png,image/jpeg,image/webp', 'aria-label': 'Screenshot (optional)' });
   const msg = h('p', { class: 'wrf-msg', role: 'status' });
   const go = h('button', { type: 'button', class: 'primary', text: 'Send my review' });
 
@@ -98,19 +79,10 @@ function build({ sb, user, itemId, title, url, onDone }) {
     if (ev !== 'no' && !kinds.length) return fail('Please pick the kind of evidence you saw, or choose "No evidence shown".');
     go.disabled = true;
     try {
-      let path = null;
-      const f = file.files && file.files[0];
-      if (f) {
-        const blob = await cleanShot(f);
-        const rid = crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2);
-        path = `${user.id}/${itemId}/${rid}.jpg`;
-        const up = await sb.storage.from('read-screenshots').upload(path, blob, { contentType: 'image/jpeg', upsert: false });
-        if (up.error) throw up.error;
-      }
       const r = await sb.rpc('submit_read_check_v2', { p_item: `news:${itemId}`, p_liked: liked.value, p_disliked: disliked.value,
-        p_title_accurate: gTitle.value(), p_stance: gStance.value(), p_evidence_given: ev, p_evidence_kinds: kinds, p_path: path });
+        p_title_accurate: gTitle.value(), p_stance: gStance.value(), p_evidence_given: ev, p_evidence_kinds: kinds, p_path: null });
       if (r.error && /submit_read_check_v2|PGRST202|schema cache/i.test(r.error.message || '')) {   // 0061 not run yet: save the older way
-        const o = await sb.rpc('submit_read_check', { p_item: `news:${itemId}`, p_note: `Liked: ${liked.value.trim()}\nDid not like: ${disliked.value.trim()}`, p_path: path });
+        const o = await sb.rpc('submit_read_check', { p_item: `news:${itemId}`, p_note: `Liked: ${liked.value.trim()}\nDid not like: ${disliked.value.trim()}`, p_path: null });
         if (o.error) throw o.error;
       } else if (r.error) throw r.error;
       try { localStorage.removeItem(draftKey); } catch { /* ignore */ }
@@ -125,9 +97,6 @@ function build({ sb, user, itemId, title, url, onDone }) {
     h('label', { class: 'wrf-label', text: 'What did you like about the article?' }), liked,
     h('label', { class: 'wrf-label', text: 'What did you not like?' }), disliked,
     gTitle, gStance, gEvid, kindsBox,
-    h('label', { class: 'wrf-label', text: 'Screenshot (you can skip this)' }), file,
-    h('p', { class: 'wrf-muted wrf-small' }, 'Only you and our reviewers can see a screenshot. Hide names, addresses and emails first. We save it as a plain picture and make it smaller. ',
-      h('a', { href: '/members/screenshot-help.html', target: '_blank', rel: 'noopener', text: 'How to take a clean screenshot' })),
     h('p', { class: 'wrf-muted wrf-small', text: 'You earn points only after a reviewer says yes. We look at honesty and evidence. Spelling and grammar do not matter.' }),
     h('div', { class: 'wrf-row' }, go), msg);
 }
