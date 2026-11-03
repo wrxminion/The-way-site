@@ -1,6 +1,6 @@
 -- RUN THIS in the Supabase SQL editor (one paste, safe to run twice). Needs 0028, 0049 and 0087.
 -- 0088: a "marketing" role. It can read the site analytics numbers and nothing else.
---   * member_roles accepts 'marketing' (the existing role list is read and widened, nothing is dropped).
+--   * member_roles accepts 'marketing' (the role check is replaced by an explicit list of every role in use, plus marketing).
 --   * set_role accepts 'marketing' (its role list is read and widened; the admin checks in it stay as they are).
 --   * the two site stats tables are readable by marketing as well as super admins (daily counts only: no IP
 --     addresses, no visitor rows, no member data). site_stats_top is security invoker, so it follows.
@@ -10,7 +10,7 @@
 -- Nobody is given the role here. Assign it later from Admin > Members.
 
 do $$
-declare v_def text; v_new text; v_fn text; v_fn_new text;
+declare v_def text; v_fn text; v_fn_new text;
 begin
   select pg_get_constraintdef(c.oid) into v_def
     from pg_constraint c where c.conrelid = 'public.member_roles'::regclass and c.conname = 'member_roles_role_check';
@@ -18,12 +18,9 @@ begin
   if v_def like '%marketing%' then
     raise notice 'role check already allows marketing';
   else
-    v_new := regexp_replace(v_def, '\)\)\s*$', ', ''marketing''::text]))');
-    if v_new = v_def then
-      v_new := regexp_replace(v_def, '\)\s*$', ' or role = ''marketing'')');
-    end if;
     alter table public.member_roles drop constraint member_roles_role_check;
-    execute 'alter table public.member_roles add constraint member_roles_role_check ' || v_new;
+    alter table public.member_roles add constraint member_roles_role_check check (role in
+      ('moderator','researcher','reviewer','admin','scholar','journalist','super_admin','editor','source_checker','marketing'));
   end if;
 
   v_fn := pg_get_functiondef('public.set_role(uuid,text,boolean,text)'::regprocedure);
