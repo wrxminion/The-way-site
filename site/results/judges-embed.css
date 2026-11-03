@@ -1,0 +1,8 @@
+#judges-results:empty { display: none; }
+#judges-results { margin: 24px 0; }
+#judges-results .jr-note, #judges-results .jr-sub { font-size: 14px; opacity: .85; }
+#judges-results .jr-race { margin: 18px 0; }
+#judges-results .jr-table { border-collapse: collapse; width: 100%; max-width: 640px; }
+#judges-results .jr-table th, #judges-results .jr-table td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #abedf51f; }
+#judges-results .jr-table .jr-num, #judges-results .jr-table th:nth-child(n+2) { text-align: right; font-variant-numeric: tabular-nums; }
+#judges-results .jr-called { font-weight: 600; }
