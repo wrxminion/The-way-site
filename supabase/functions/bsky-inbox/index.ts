@@ -34,6 +34,18 @@ const link = (uri: string) => {
   return m ? `https://bsky.app/profile/${m[1]}/post/${m[2]}` : null;
 };
 
+// A plain web address in a post is not clickable on Bluesky unless it is marked up. Offsets are UTF-8 byte positions.
+function facets(text: string) {
+  const enc = new TextEncoder(), out: Json[] = [];
+  for (const m of text.matchAll(/https?:\/\/[^\s]+/g)) {
+    const url = m[0].replace(/[.,;:!?)\]]+$/, '');
+    const start = enc.encode(text.slice(0, m.index)).length;
+    out.push({ index: { byteStart: start, byteEnd: start + enc.encode(url).length },
+      features: [{ $type: 'app.bsky.richtext.facet#link', uri: url }] });
+  }
+  return out;
+}
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS });
   const env = (k: string) => Deno.env.get(k) ?? '';
@@ -68,7 +80,7 @@ Deno.serve(async (req) => {
       if (!message || [...message].length > 300) return json({ ok: false, error: 'A Bluesky post must be 1 to 300 characters.' }, 400);
       const r = await xrpc('POST', 'com.atproto.repo.createRecord', jwt, {
         repo: did, collection: 'app.bsky.feed.post',
-        record: { $type: 'app.bsky.feed.post', text: message, createdAt: new Date().toISOString() },
+        record: { $type: 'app.bsky.feed.post', text: message, createdAt: new Date().toISOString(), facets: facets(message) },
       });
       return json({ ok: true, uri: r.uri });
     }
@@ -81,7 +93,7 @@ Deno.serve(async (req) => {
       const now = new Date().toISOString();
       await xrpc('POST', 'com.atproto.repo.createRecord', jwt, {
         repo: did, collection: 'app.bsky.feed.post',
-        record: { $type: 'app.bsky.feed.post', text: message, createdAt: now,
+        record: { $type: 'app.bsky.feed.post', text: message, createdAt: now, facets: facets(message),
           reply: { root: { uri: row.root_uri || row.id, cid: row.root_cid || row.ref_cid }, parent: { uri: row.id, cid: row.ref_cid } } },
       });
       await admin.from('fb_inbox').update({ replied_at: now, reply_text: message, read_at: now }).eq('id', id);
