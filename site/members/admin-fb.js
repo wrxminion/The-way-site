@@ -7,8 +7,8 @@
 'use strict';
 
 const num = (n) => Number(n || 0).toLocaleString();
-// Only a Facebook address becomes a link.
-const fbHref = (u) => (/^https:\/\/(www\.|m\.)?facebook\.com\/[^\s]*$/i.test(u || '') ? u : null);
+// Only a Facebook or Bluesky address becomes a link.
+const fbHref = (u) => (/^https:\/\/((www\.|m\.)?facebook\.com|bsky\.app)\/[^\s]*$/i.test(u || '') ? u : null);
 const DAY = 86400000;
 const iso = (d) => d.toISOString().slice(0, 10);
 const LABELS = {
@@ -95,14 +95,15 @@ function make(ctx) {
       const sendBtn = h('button', { class: 'primary', onclick: action(async () => {
         const message = box.value.trim();
         if (!message) throw new Error('Write a reply first.');
-        const { data, error } = await sb.functions.invoke('fb-insights', { body: { action: 'reply', comment_id: r.id, message } });
+        const bsky = r.platform === 'bluesky';
+        const { data, error } = await sb.functions.invoke(bsky ? 'bsky-inbox' : 'fb-insights', { body: bsky ? { action: 'reply', id: r.id, message } : { action: 'reply', comment_id: r.id, message } });
         if (error) throw error;
         if (data && data.ok === false) throw new Error(data.error);
         load();
       }, slot) }, 'Send reply');
       return h('li', { class: r.read_at ? 'fb-item' : 'fb-item fb-new' },
         h('div', { class: 'row' },
-          h('strong', { text: r.author_name || 'Someone' }),
+          h('strong', { text: r.author_name || 'Someone' }), r.platform === 'bluesky' ? h('span', { class: 'tag', text: 'Bluesky' }) : null,
           h('span', {}, r.kind === 'visitor_post' ? h('span', { class: 'tag', text: 'post on the Page' }) : r.parent_id ? h('span', { class: 'tag', text: 'reply' }) : h('span', { class: 'tag', text: 'comment' }), ' ',
             r.replied_at ? h('span', { class: 'tag ok', text: 'answered' }) : null, ' ',
             !r.read_at ? h('span', { class: 'tag warn', text: 'new' }) : null)),
@@ -112,7 +113,7 @@ function make(ctx) {
         h('div', { class: 'btns' },
           link ? h('a', { class: 'button quiet', href: link, target: '_blank', rel: 'noopener noreferrer', text: 'Open on Facebook' }) : null,
           h('button', { class: 'quiet', onclick: action(() => mark([r.id], !r.read_at), slot) }, r.read_at ? 'Mark unread' : 'Mark read')),
-        r.kind === 'comment' && /^\d+_\d+$/.test(r.id) ? h('details', {}, h('summary', { text: r.replied_at ? 'Reply again' : 'Reply' }), box, h('div', { class: 'btns' }, sendBtn)) : null,
+        r.kind === 'comment' && (r.platform === 'bluesky' ? !!r.ref_cid : /^\d+_\d+$/.test(r.id)) ? h('details', {}, h('summary', { text: r.replied_at ? 'Reply again' : 'Reply' }), box, h('div', { class: 'btns' }, sendBtn)) : null,
         slot);
     }
 
@@ -131,6 +132,7 @@ function make(ctx) {
 
     async function refreshNow() {
       if (busy) return; busy = true; refresh.disabled = true; status.textContent = 'Asking Facebook...';
+      try { await sb.functions.invoke('bsky-inbox', { body: { action: 'pull' } }); } catch { /* Bluesky not set up yet */ }
       try {
         const { data, error } = await sb.functions.invoke('fb-insights', { body: { action: 'pull', days: 30 } });
         if (error) throw error;
