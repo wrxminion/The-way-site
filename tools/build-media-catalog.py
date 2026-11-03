@@ -147,12 +147,12 @@ if len(sys.argv) > 1:
     debate = [
         # A: bad faith or trolls. Drop the sources once, then disengage.
         ('Here is some good sauce, may you find peace on your path.', 'Use for bad faith or trolls. Drop the link once, then go quiet. Do not reply again.', by('/how-government-works.html')),
-        ('The sources are below if you ever want them. I will leave it here. Take care.', 'Use for someone who only wants a fight. Drop the link once, then go quiet. Do not reply again.', by('/cases/')),
-        ('The sources are here for anyone who wants to read them. I am done here, and I wish you a good day.', 'Use when the replies turn to insults. Drop the link once for other readers, then go quiet. Do not reply again.', by('/research/')),
+        ('The sources are below if you ever want them. I will leave it here. You take care now.', 'Use for someone who only wants a fight. Drop the link once, then go quiet. Do not reply again.', by('/cases/')),
+        ('Well now, I will leave the sources here for anyone who wants to read them. I wish you a good day.', 'Use when the replies turn to insults. Drop the link once for other readers, then go quiet. Do not reply again.', by('/research/')),
         # B: people who engage with the sources. Offer more research.
         ('Good point. Here is a second source and the primary document that bears on it. If it disproves our claim, we will correct it.', 'Use when someone reads the sources and answers calmly. Offer more research.'),
-        ('Thank you for reading it. Which part of the source do you read differently? Show me the line and I will look at it with you.', 'Use when someone engages with a source but disagrees on one part. Ask for the exact line.'),
-        ('That is a fair challenge. Here is more research that tests the claim from the other side, with its sources.', 'Use when someone brings a real counter point. Reply with more research that supports or disproves the claim.'),
+        ('Thank you kindly for reading it. Which part of the source do you read differently? Show me the line and I will look at it with you.', 'Use when someone engages with a source but disagrees on one part. Ask for the exact line.'),
+        ('Well now, that is a fair challenge. Here is more research that tests the claim from the other side, with its sources.', 'Use when someone brings a real counter point. Reply with more research that supports or disproves the claim.'),
         # C: corrections. Plain and direct, no apology.
         ('Correction: we had this wrong. Here is the updated claim and the source. What changed: [fill in what changed].', 'Use when we find our claim was wrong. Say it plainly, no apology, and show what changed.'),
         ('Correction: you are right on this point. The claim now reads: [fill in the new claim]. Source: [fill in the source].', 'Use when a reader shows us a mistake. Fix it in public and name the new source.'),
