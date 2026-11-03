@@ -1,5 +1,5 @@
 // Admin > Media ("Media relations"). Three parts: the site analytics panel, a short list of suggested marketing ideas
-// (read by marketing and admins, written by admins and super admins: the database enforces that), and the
+// (marketing and admins add drafts, admins approve: the database enforces that), and the
 // "The Way / Not The Way" guide. Client-side only, no build step. Text goes in through textContent only.
 (() => {
 'use strict';
@@ -26,7 +26,7 @@ const NOT_THE_WAY = [
   'Do not argue with trolls. Let the sources talk.',
 ];
 
-function make({ sb, h, q, notice, action, ask, STATS, canWrite }) {
+function make({ sb, h, q, notice, action, ask, STATS, canWrite, uid }) {
   const list = (items) => h('ul', { class: 'md-list' }, items.map((t) => h('li', { text: t })));
 
   function guide() {
@@ -38,42 +38,77 @@ function make({ sb, h, q, notice, action, ask, STATS, canWrite }) {
   }
 
   function ideas() {
-    const writable = typeof canWrite === 'function' ? canWrite() : !!canWrite;
+    const isAdmin = typeof canWrite === 'function' ? canWrite() : !!canWrite;   // admins and super admins: approve, edit and delete anything
+    const me = typeof uid === 'function' ? uid() : uid;
     const msg = h('div');
-    const ul = h('ul', { class: 'list panel md-ideas' });
+    const approvedList = h('ul', { class: 'list panel md-ideas' });
+    const draftList = h('ul', { class: 'list panel md-ideas' });
+    const tabApproved = h('button', { type: 'button', class: 'quiet md-tab', 'aria-pressed': 'true' });
+    const tabDrafts = h('button', { type: 'button', class: 'quiet md-tab', 'aria-pressed': 'false' });
     const body = h('textarea', { maxlength: 500, rows: 2, placeholder: 'One idea, in a sentence or two', 'aria-label': 'New idea' });
+    const why = h('input', { maxlength: 300, placeholder: 'Why it could work (optional, up to 300 characters)', 'aria-label': 'Reason' });
+
+    function showTab(which) {
+      approvedList.hidden = which !== 'approved';
+      draftList.hidden = which !== 'drafts';
+      tabApproved.setAttribute('aria-pressed', String(which === 'approved'));
+      tabDrafts.setAttribute('aria-pressed', String(which === 'drafts'));
+    }
+    tabApproved.onclick = () => showTab('approved');
+    tabDrafts.onclick = () => showTab('drafts');
 
     async function load() {
-      const rows = await q(sb.from('marketing_ideas').select('id,body,created_at,updated_at').order('id', { ascending: false }).limit(200));
-      ul.replaceChildren(...(rows.length ? rows.map(row) : [h('li', { class: 'muted', text: 'No ideas yet.' })]));
+      const rows = await q(sb.from('marketing_ideas').select('id,body,reason,status,source,created_by,created_at').order('id', { ascending: false }).limit(300));
+      const ok = rows.filter((r) => r.status === 'approved'), dr = rows.filter((r) => r.status !== 'approved');
+      tabApproved.textContent = `Approved (${ok.length})`;
+      tabDrafts.textContent = `Drafts waiting (${dr.length})`;
+      approvedList.replaceChildren(...(ok.length ? ok.map(row) : [h('li', { class: 'muted', text: 'No approved ideas yet.' })]));
+      draftList.replaceChildren(...(dr.length ? dr.map(row) : [h('li', { class: 'muted', text: 'No drafts waiting.' })]));
     }
-    const row = (r) => h('li', {},
-      h('div', { text: r.body }),
-      h('div', { class: 'meta', text: `added ${new Date(r.created_at).toLocaleDateString(undefined, { dateStyle: 'medium' })}` }),
-      writable ? h('div', { class: 'btns' },
-        h('button', { class: 'quiet', onclick: action(async () => {
-          const t = await ask('Edit the idea (3 to 500 characters):', r.body);
-          if (!t) return;
-          await q(sb.from('marketing_ideas').update({ body: t.trim() }).eq('id', r.id));
-          await load();
-        }, msg) }, 'Edit'),
-        h('button', { class: 'quiet', onclick: action(async () => {
-          if ((await ask('Type DELETE to remove this idea:')) !== 'DELETE') return;
-          await q(sb.from('marketing_ideas').delete().eq('id', r.id));
-          await load();
-        }, msg) }, 'Delete')) : null);
+    const row = (r) => {
+      const mineDraft = r.status !== 'approved' && r.source === 'human' && r.created_by === me;
+      return h('li', {},
+        h('div', { text: r.body }),
+        r.reason ? h('div', { class: 'small muted', text: `Why: ${r.reason}` }) : null,
+        h('div', { class: 'meta' }, `added ${new Date(r.created_at).toLocaleDateString(undefined, { dateStyle: 'medium' })} `,
+          r.status !== 'approved' ? h('span', { class: 'tag warn', text: 'draft' }) : null, ' ',
+          r.source === 'llm' ? h('span', { class: 'tag', text: 'suggested by the assistant' }) : null),
+        isAdmin || mineDraft ? h('div', { class: 'btns' },
+          isAdmin && r.status !== 'approved' ? h('button', { class: 'quiet', onclick: action(async () => {
+            await q(sb.from('marketing_ideas').update({ status: 'approved' }).eq('id', r.id));
+            await load();
+          }, msg) }, 'Approve') : null,
+          h('button', { class: 'quiet', onclick: action(async () => {
+            const t = await ask('Edit the idea (3 to 500 characters):', r.body);
+            if (!t) return;
+            await q(sb.from('marketing_ideas').update({ body: t.trim() }).eq('id', r.id));
+            await load();
+          }, msg) }, 'Edit'),
+          isAdmin ? h('button', { class: 'quiet', onclick: action(async () => {
+            if ((await ask('Type DELETE to remove this idea:')) !== 'DELETE') return;
+            await q(sb.from('marketing_ideas').delete().eq('id', r.id));
+            await load();
+          }, msg) }, 'Delete') : null) : null);
+    };
 
-    const add = writable ? h('form', { class: 'panel', onsubmit: action(async () => {
+    // Marketing and admins add ideas. A marketing idea is a draft until an admin approves it; an admin's own idea is approved at once.
+    const add = h('form', { class: 'panel', onsubmit: action(async () => {
       const t = body.value.trim();
       if (t.length < 3) throw new Error('Write at least a few words.');
-      await q(sb.from('marketing_ideas').insert({ body: t }));
-      body.value = '';
+      const row = { body: t, status: isAdmin ? 'approved' : 'draft', source: 'human' };
+      if (why.value.trim()) row.reason = why.value.trim();
+      await q(sb.from('marketing_ideas').insert(row));
+      body.value = ''; why.value = '';
       await load();
-    }, msg) }, h('label', {}, 'Add an idea', body), h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit' }, 'Add idea'))) : null;
+      showTab(isAdmin ? 'approved' : 'drafts');
+    }, msg) }, h('label', {}, 'Add an idea', body), h('label', {}, 'Reason', why),
+      h('p', { class: 'small dim', text: isAdmin ? 'Ideas you add are approved right away.' : 'Your idea waits as a draft until an admin approves it.' }),
+      h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit' }, 'Add idea')));
 
-    load().catch((e) => ul.replaceChildren(h('li', {}, notice(e.message || 'Could not load the ideas. Has migration 0088 been run?'))));
-    return h('div', {}, msg, add, ul,
-      h('p', { class: 'small dim', text: writable ? 'Admins and super admins can add, edit and delete ideas. Marketing can read them.' : 'Admins add and edit these ideas. You can read them here.' }));
+    load().catch((e) => approvedList.replaceChildren(h('li', {}, notice(e.message || 'Could not load the ideas. Has migration 0089 been run?'))));
+    showTab('approved');
+    return h('div', {}, msg, add, h('div', { class: 'btns md-tabs' }, tabApproved, tabDrafts), approvedList, draftList,
+      h('p', { class: 'small dim', text: 'Only approved ideas are shown by default. Admins approve drafts. Nothing here is posted anywhere by itself.' }));
   }
 
   function view(section, render) {
