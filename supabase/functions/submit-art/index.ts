@@ -86,9 +86,10 @@ export async function handler(req: Request, env = Deno.env, mk = createClient): 
     if (up.error) return reply(origin, 500, { error: "Could not save the image. Please try again." });
   }
 
+  const sellOk = ["1", "on", "yes", "true"].includes(str("sell_ok").toLowerCase());   // separate optional box, default no
   const { data, error } = await sb.rpc("submit_art", {
     p_name: name, p_email: email, p_target: target, p_link: link || null, p_portfolio: portfolio || null, p_file_path: path, p_file_bytes: bytes,
-    p_note: note || null, p_rate_key: rateKey,
+    p_note: note || null, p_rate_key: rateKey, p_sell_ok: sellOk,
   });
   if (error) {
     if (path) await sb.storage.from("art-submissions").remove([path]);
