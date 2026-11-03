@@ -13,6 +13,7 @@ const svg = (tag, attrs, ...kids) => {
   for (const kid of kids) if (kid) el.append(kid);
   return el;
 };
+const SITE = 'https://michiinstitute.com';
 const num = (n) => Number(n || 0).toLocaleString();
 const LEVELS = 5;
 const level = (v, max) => (v > 0 && max > 0 ? Math.max(1, Math.ceil(LEVELS * Math.sqrt(v / max))) : 0);
@@ -30,7 +31,14 @@ function make(ctx) {
       h('thead', {}, h('tr', {}, head.map((t, i) => h('th', { class: i ? 'num' : '', text: t })))),
       h('tbody', {}, rows.length ? rows : h('tr', {}, h('td', { colspan: head.length, class: 'muted', text: 'Nothing yet.' }))));
   }
-  const row = (label, a, b) => h('tr', {}, h('td', { text: label }), h('td', { class: 'num', text: num(a) }), h('td', { class: 'num', text: num(b) }));
+  const row = (label, a, b, href) => h('tr', {},
+    h('td', {}, href ? h('a', { class: 'as-link', href, target: '_blank', rel: 'noopener noreferrer', text: label }) : label),
+    h('td', { class: 'num', text: num(a) }), h('td', { class: 'num', text: num(b) }));
+  // A page label is a path such as /guide-ny/races/judges.html; only a plain path becomes a link.
+  const pageHref = (label) => (/^\/[^\s?#]*$/.test(label) ? SITE + label : null);
+  // A referrer label is a host name. "None (direct)" and app ids such as com.reddit.frontpage are not sites.
+  const refHref = (label) => (/^[a-z0-9-]+(\.[a-z0-9-]+)+$/i.test(label) && !/^(com|org|net|android-app)\./i.test(label) ? `https://${label}/` : null);
+  const pageRow = (p) => row(p.label, p.visits, p.page_views, pageHref(p.label));
 
   function legend() {
     return h('div', { class: 'as-legend small dim' }, 'Fewer ',
@@ -140,15 +148,15 @@ function make(ctx) {
           h('p', { class: 'muted small', text: 'Visits that arrived from a Google search, by the page they landed on. Google does not tell us the words searched; those are only in Search Console. Counts are by calendar day (UTC), so "Today and yesterday" is about the last 24 to 48 hours.' }),
           h('div', { class: 'as-cols' },
             h('div', {}, h('h4', { text: 'Today and yesterday' }),
-              table(['Page', 'Visits', 'Views'], gToday.map((p) => row(p.label, p.visits, p.page_views)))),
+              table(['Page', 'Visits', 'Views'], gToday.map(pageRow))),
             h('div', {}, h('h4', { text: 'Last 7 days' }),
-              table(['Page', 'Visits', 'Views'], gWeek.map((p) => row(p.label, p.visits, p.page_views)))))),
+              table(['Page', 'Visits', 'Views'], gWeek.map(pageRow))))),
         totals.length ? h('div', { class: 'panel' }, h('h3', { text: 'Page views per day' }), bars) : null,
         h('div', { class: 'as-cols' },
           h('div', { class: 'panel' }, h('h3', { text: 'Top pages' }),
-            table(['Page', 'Visits', 'Views'], pages.map((p) => row(p.label, p.visits, p.page_views)))),
+            table(['Page', 'Visits', 'Views'], pages.map(pageRow))),
           h('div', { class: 'panel' }, h('h3', { text: 'Top referrers' }),
-            table(['Site', 'Visits', 'Views'], refs.map((p) => row(p.label, p.visits, p.page_views))))),
+            table(['Site', 'Visits', 'Views'], refs.map((p) => row(p.label, p.visits, p.page_views, refHref(p.label)))))),
         h('div', { class: 'panel' }, h('h3', { text: 'Where visits come from (country)' }),
           h('p', { class: 'muted small', text: 'Cloudflare reports country only. No IP addresses and no individual visitors are stored or shown.' }),
           world, world ? legend() : null,
