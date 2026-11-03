@@ -20,11 +20,11 @@
   function norm(t) { return t.toLowerCase().replace(/\s+[-|–—]\s+[^-|–—]{2,40}$/, '').replace(/[^a-z0-9 ]/g, '').trim(); }
 
   function clean(raw) {
-    var title = str(raw && raw.title, 300), url = safeUrl(raw && raw.url);
+    var title = str(raw && raw.title, 300), url = safeUrl(raw && raw.url), id = str(raw && raw.id, 120);
     if (!title || !url) return null;
     var img = safeUrl(raw && raw.image); if (!/^https:/.test(img)) img = '';
     var pub = Date.parse(raw.published_at), seen = Date.parse(raw.first_seen_at);
-    return { title: title, url: url, image: img, source: str(raw.source, 80), states: Array.isArray(raw.states) ? raw.states.filter(function (s) { return typeof s === 'string'; }).map(function (s) { return s.slice(0, 2).toUpperCase(); }) : [],
+    return { id: id, title: title, url: url, image: img, source: str(raw.source, 80), states: Array.isArray(raw.states) ? raw.states.filter(function (s) { return typeof s === 'string'; }).map(function (s) { return s.slice(0, 2).toUpperCase(); }) : [],
       measures: Array.isArray(raw.measures) ? raw.measures.filter(function (m) { return typeof m === 'string'; }) : [],
       dateOnly: typeof raw.published_at === 'string' && raw.published_at.length <= 10, pub: isFinite(pub) ? pub : null, sort: isFinite(pub) ? pub : (isFinite(seen) ? seen : 0) };
   }
@@ -91,6 +91,7 @@
         im.addEventListener('error', function () { im.remove(); });
         li.classList.add('has-thumb'); li.appendChild(im);
       }
+      if (i.id && window.WayArticleActions) window.WayArticleActions.attach(box, { id: i.id, title: i.title, url: i.url, link: a });
       li.appendChild(box); list.appendChild(li);
     });
   }
