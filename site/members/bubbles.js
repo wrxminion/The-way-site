@@ -27,7 +27,7 @@
   var OWNER = { home: 'home', news: 'news', results: 'vote', ballot: 'vote', myballot: 'vote', states: 'vote', map: 'vote', vote: 'vote',
     review: 'review', commons: 'commons', invite: 'commons', notes: 'commons', help: 'help',
     cases: 'tools', govworks: 'tools', casestudies: 'tools', 'research-lib': 'tools', research: 'tools', private: 'tools', author: 'tools',
-    findings: 'tools', admin: 'tools', reports: 'tools', log: 'tools', roles: 'tools' };
+    findings: 'tools', admin: 'tools', media: 'tools', reports: 'tools', log: 'tools', roles: 'tools' };
   var ctx = null, openId = null, openBtn = null, nested = null, uid = 0;
 
   function el(tag, attrs, text) {
@@ -65,6 +65,7 @@
     if (d) {
       var mine = [];
       if (can(d, 'admin') || (d.roles || []).indexOf('super_admin') >= 0) mine.push({ href: r('admin'), label: 'Admin' }, { href: '#shark-lab', label: 'Shark lab', lab: true });   // admins only, always the first item; the lab has no phone shortcut otherwise
+      if (can(d, 'admin') || (d.roles || []).indexOf('super_admin') >= 0 || (d.roles || []).indexOf('marketing') >= 0) mine.push({ href: r('media'), label: 'Media' });   // marketing, admins and super admins; the Media page checks the role again
       mine.push({ href: '/members/author.html', label: 'Author desk and ranks' }, { href: r('private'), label: 'Private research' });
       if (can(d, 'researcher') || can(d, 'reviewer')) mine.push({ href: r('research'), label: 'Research desk' });
       if (d.findings) mine.push({ href: '/members/findings.html', label: 'Findings' });
