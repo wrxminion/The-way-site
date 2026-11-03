@@ -10,3 +10,13 @@
 .md-tab[aria-pressed=true]{border-color:var(--aqua);color:#fff}
 .md-ideas+.md-ideas{margin-top:0}
 .md-ideas[hidden]{display:none}
+.md-warn{color:var(--warn)}
+.md-badge{margin-left:6px;font-size:11px}
+.md-inline{align-items:center}
+.md-inline input{flex:1 1 220px;min-width:0}
+.md-tab{max-width:100%}
+.md-pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0 10px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;font:13px/1.45 var(--sans)}
+.md-link{overflow-wrap:anywhere}
+.md-change summary{cursor:pointer;color:var(--aqua);font-size:13px;margin-top:6px}
+.md-change>*{margin-top:6px}
+.md-preview{margin:6px 0}
