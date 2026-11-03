@@ -434,3 +434,10 @@ html.wb-bubs-building .wb-dock > :not(.wb-bubbles-toggle),html.wb-bubs-building 
 .waybar .wb-logo{display:inline-flex;align-items:center;gap:10px}
 .waybar .wb-logo:before{content:"";width:38px;height:38px;flex:none;border-radius:9px;background:url(/the-way-logo-76.png) center/cover no-repeat}
 .tw-mark{display:block;width:40px;height:40px;border-radius:9px;margin:0 auto 10px}
+
+/* HEADER C (logo panel). To go back to the small logo beside THE WAY, delete from here to END HEADER C. */
+#waybar.waybar{min-height:150px;background:linear-gradient(rgba(5,43,60,.82),rgba(5,43,60,.9)),url(/the-way-logo-360.png) center 40%/cover no-repeat}
+#waybar.waybar .wb-logo{flex-direction:column;gap:6px;justify-self:center;font-size:15px}
+#waybar.waybar .wb-logo:before{width:92px;height:92px;border-radius:20px;box-shadow:0 6px 26px #0008}
+@media(max-width:600px){#waybar.waybar{min-height:96px}#waybar.waybar .wb-logo:before{width:56px;height:56px;border-radius:13px}}
+/* END HEADER C */
