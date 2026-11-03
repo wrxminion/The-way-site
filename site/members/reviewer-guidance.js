@@ -15,7 +15,6 @@ window.WayReviewerGuidance = {
     { label: 'Not about this article', text: 'Thank you. Your note seems to be about something else. Please say what this article says, in your own words, and try again.' },
     { label: 'Copied from the article', text: 'Thank you. It looks like the words came from the article. Please say it in your own words. Short and simple is fine.' },
     { label: 'Evidence answer does not match', text: 'Thank you. You said the article shows evidence, but we could not find it. Please look again for names, documents, numbers or records. If there are none, choose "No evidence shown". That is a good answer too.' },
-    { label: 'Screenshot does not match', text: 'Thank you. The screenshot looks like a different page. A screenshot is optional. You can try again with the right page, or leave it out.' }
   ],
   acceptTemplates: [
     { label: 'Well done', text: 'Thank you. You read it and told us clearly what you saw.' }
