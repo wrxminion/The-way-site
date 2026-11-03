@@ -53,7 +53,7 @@ Deno.serve(async (req) => {
 
   let body: Json = {};
   try { body = await req.json(); } catch { /* no body */ }
-  const act = body?.action === 'reply' ? 'reply' : 'pull';
+  const act = body?.action === 'reply' ? 'reply' : body?.action === 'post' ? 'post' : 'pull';
 
   // ---- who is asking
   const cron = env('STATS_CRON_SECRET');
@@ -76,6 +76,16 @@ Deno.serve(async (req) => {
   };
   if (!pageId || !token) return fail('Not set up yet: add FB_PAGE_ID and FB_PAGE_TOKEN in Edge Functions > Secrets.');
   if (!/^\d{5,25}$/.test(pageId)) return fail('FB_PAGE_ID should be the numeric Page id.');
+
+  // ---- publish a new post on the Page (needs the pages_manage_posts permission on the token)
+  if (act === 'post') {
+    const message = String(body.message ?? '').trim();
+    if (!message || message.length > 5000) return json({ ok: false, error: 'A post must be 1 to 5000 characters.' }, 400);
+    try {
+      const r = await graph(`${pageId}/feed`, token, ver, { message }, true);
+      return json({ ok: true, id: r.id });
+    } catch (e) { return json({ ok: false, error: String((e as Error).message || e) }); }
+  }
 
   // ---- reply to a comment
   if (act === 'reply') {

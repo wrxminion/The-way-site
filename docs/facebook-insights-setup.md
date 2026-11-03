@@ -7,7 +7,7 @@ The Facebook token and Page id are secrets that live only in the Supabase dashbo
 ## One-time setup
 
 1. **Make a Meta app.** Go to [Meta for Developers, My Apps](https://developers.facebook.com/apps/) and press Create App. Pick the "Other" / business option, name it anything, and finish. Leave it in Development mode. While you are an admin of the app, your own Page works without app review.
-2. **Get a Page token.** Open the [Graph API Explorer](https://developers.facebook.com/tools/explorer/). Pick your app, press "Get Page Access Token", choose the Michi Institute Page, and tick these permissions: `read_insights`, `pages_read_engagement`, `pages_show_list`, `pages_read_user_content`, `pages_manage_engagement`. Approve the pop-up.
+2. **Get a Page token.** Open the [Graph API Explorer](https://developers.facebook.com/tools/explorer/). Pick your app, press "Get Page Access Token", choose the Michi Institute Page, and tick these permissions: `read_insights`, `pages_read_engagement`, `pages_show_list`, `pages_read_user_content`, `pages_manage_engagement`, `pages_manage_posts`. Approve the pop-up.
 3. **Make the token last.** Paste it into the [Access Token Debugger](https://developers.facebook.com/tools/debug/accesstoken/) and press Extend Access Token. A Page token made from a long-lived user token does not expire. The debugger shows "Expires: Never" when it is right.
 4. **Find the Page id.** In the Graph API Explorer, run `me?fields=id,name` with the Page token selected. The `id` is the number you need.
 5. **Add the two secrets** at [Edge Function secrets](https://supabase.com/dashboard/project/tiuhyulxdiiiqspysfci/functions/secrets): `FB_PAGE_ID` and `FB_PAGE_TOKEN`. `STATS_CRON_SECRET` is already there from the analytics function.

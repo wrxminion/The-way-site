@@ -142,10 +142,46 @@ function make(ctx) {
     }
     const refresh = h('button', { class: 'primary', onclick: refreshNow }, 'Refresh now');
 
+    // New post. Kept out of `body` so a refresh never wipes what is being typed. Publishing is outward-facing, so it asks first.
+    function composer() {
+      const slot = h('div');
+      const box = h('textarea', { rows: '4', maxlength: '5000', 'aria-label': 'New post', placeholder: 'Write a post' });
+      const count = h('span', { class: 'muted small' });
+      const onFb = h('input', { type: 'checkbox', id: 'fb-post-fb', checked: 'checked' });
+      const onBs = h('input', { type: 'checkbox', id: 'fb-post-bs', checked: 'checked' });
+      const chars = (s) => [...s].length;
+      const upd = () => { count.textContent = `${chars(box.value)} characters. Bluesky allows 300.`; };
+      box.addEventListener('input', upd); upd();
+      const send = h('button', { class: 'primary', onclick: action(async () => {
+        const message = box.value.trim();
+        if (!message) throw new Error('Write something first.');
+        const targets = [onFb.checked ? 'Facebook' : null, onBs.checked ? 'Bluesky' : null].filter(Boolean);
+        if (!targets.length) throw new Error('Pick Facebook, Bluesky, or both.');
+        if (onBs.checked && chars(message) > 300) throw new Error('Bluesky posts are 300 characters at most. Shorten it or untick Bluesky.');
+        if (!confirm(`Publish this now on ${targets.join(' and ')}? It goes live right away.`)) return;
+        const done = [], failed = [];
+        for (const t of targets) {
+          try {
+            const { data, error } = await sb.functions.invoke(t === 'Facebook' ? 'fb-insights' : 'bsky-inbox', { body: { action: 'post', message } });
+            if (error) throw error;
+            if (data && data.ok === false) throw new Error(data.error);
+            done.push(t);
+          } catch (e) { failed.push(`${t}: ${e.message || e}`); }
+        }
+        if (!failed.length) box.value = '';
+        upd();
+        slot.replaceChildren(h('p', { class: failed.length ? 'muted' : 'tag ok', text: `${done.length ? `Posted on ${done.join(' and ')}. ` : ''}${failed.length ? `Failed: ${failed.join(' | ')}` : ''}` }));
+      }, slot) }, 'Post');
+      return h('div', { class: 'panel' }, h('h3', { text: 'New post' }),
+        h('p', { class: 'muted small', text: 'Publishes right away, as the Michi Institute account. Facebook needs the pages_manage_posts permission on the Page token.' }),
+        box, count,
+        h('div', { class: 'btns' }, h('label', {}, onFb, ' Facebook'), ' ', h('label', {}, onBs, ' Bluesky'), ' ', send), slot);
+    }
+
     root.append(
       h('h2', { text: 'Facebook' }),
-      h('p', { class: 'muted small', text: 'Super admins only. The Michi Institute Page: follower and view numbers, plus new comments you can answer from here. Numbers are pulled from Facebook on a schedule and when you press Refresh.' }),
-      h('div', { class: 'btns' }, refresh), status, body);
+      h('p', { class: 'muted small', text: 'Super admins only. The Michi Institute Page: follower and view numbers, plus new comments you can answer from here, and a box to post new updates. Numbers are pulled from Facebook on a schedule and when you press Refresh.' }),
+      h('div', { class: 'btns' }, refresh), status, composer(), body);
     load();
     return root;
   }
