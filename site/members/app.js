@@ -83,7 +83,7 @@ function mediaView() {
   if (!MEDIA) return render(notice('Media is not available.'));
   const AT = window.TheWayAdminTools;
   let n = 0;
-  MEDIA.view((id, title, node) => AT.section('media-' + id, title, [node], { open: n++ < 3 }), render);
+  MEDIA.view((id, title, node) => AT.section('media-' + id, title, [node], { open: n++ < 3 || id === 'images' }), render);   // Image copy opens by default; it is the last section
 }
 const CL = window.TheWayClaim ? window.TheWayClaim.make({ sb, h, q, notice, action, render, can }) : null;
 
