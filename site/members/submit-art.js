@@ -21,6 +21,13 @@ if (cfg.turnstileSiteKey) {
   document.head.append(s);
 }
 
+// The share-or-donate choice shows only when the sell box is ticked.
+const share = document.getElementById('sa-share');
+document.getElementById('sa-sell').addEventListener('change', (e) => {
+  share.hidden = !e.target.checked;
+  if (!e.target.checked) for (const r of form.elements.sell_share) r.checked = false;
+});
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   err.textContent = '';
@@ -33,6 +40,7 @@ form.addEventListener('submit', async (e) => {
     : (file && file.size > MAX) ? ['sa-file', 'The image can be up to 8 MB.']
     : (v('link') && !/^https:\/\//i.test(v('link'))) ? ['sa-link', 'The link must start with https://']
     : (v('portfolio') && !/^https:\/\//i.test(v('portfolio'))) ? ['sa-portfolio', 'The portfolio link must start with https://']
+    : (form.elements.sell_ok.checked && !form.elements.sell_share.value) ? ['sa-sell', 'Please choose whether you would like a share of what your art earns or donate it to the wildlife fund.']
     : !form.elements.consent.checked ? ['sa-consent', 'Please tick the box that lets us use your art with credit.'] : null;
   if (bad) { err.textContent = bad[1]; document.getElementById(bad[0]).focus(); return; }
   if (cfg.turnstileSiteKey && !tsToken) { err.textContent = 'Please complete the human check first.'; return; }

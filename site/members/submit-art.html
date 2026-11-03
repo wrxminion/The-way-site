@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="style.css?v=42">
 <link rel="stylesheet" href="waybar.css?v=28">
 <link rel="stylesheet" href="pull-a-thread.css?v=13">
-<link rel="stylesheet" href="submit-art.css?v=1">
+<link rel="stylesheet" href="submit-art.css?v=2">
 </head>
 <body>
 <header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
@@ -25,7 +25,7 @@
 <li><strong>Real art replaces them.</strong> When we accept a piece, it replaces the AI image on that page. If more than one artist makes art for the same page, each accepted piece joins a rotation, so visitors see a different artist&rsquo;s work from one visit to the next. Once a page has real art, the AI image is dropped from it.</li>
 <li><strong>Every artist is credited.</strong> Your name goes under your picture, linked to your portfolio if you give one, and on our <a href="/artists/">All artists on our site</a> page, with the pages your art is on.</li>
 <li><strong>Yes, a lot of it is AI slop, and we say so.</strong> We use a variety of language and image models, including several that run in house only. Whatever tool made a picture, a person checks it before it goes up.</li>
-<li><strong>We cannot pay for art right now.</strong> We say so plainly. You decide if the credit and the exposure are worth it to you, and you can ask us to take your art down at any time.</li>
+<li><strong>We cannot pay for art itself right now.</strong> We say so plainly. The only exception is the optional sales box below, where you can ask for a share of what your art earns. You decide if the credit and the exposure are worth it to you, and you can ask us to take your art down at any time.</li>
 </ul>
 <h2 class="sa-h" id="terms">Terms for art you give us</h2>
 <ul class="sa-rules">
@@ -41,6 +41,7 @@
 <ul class="sa-rules">
 <li><strong>This is a separate choice, and it is off unless you tick it.</strong> Saying no changes nothing about whether we use your art on the site.</li>
 <li><strong>If you say yes,</strong> The Way may put your art on products such as shirts, and show those products in places such as a billboard or an article, to raise funds for The Way.</li>
+<li><strong>You choose what happens to your share.</strong> You can ask for a share of what your art earns, with the amount agreed with you in writing before anything is sold. Or you can donate your share to a wildlife fund. The fund rotates, and we will say on this site which one is featured at the time.</li>
 <li><strong>You approve the final layout first.</strong> Nothing is made, shown or sold until you have seen and approved the exact design and where it will appear. If you say no to a layout, we do not use it.</li>
 <li><strong>You can take your yes back at any time.</strong> We stop using your art on new products. Items already sold cannot be taken back.</li>
 <li><strong>The other rules still hold.</strong> You keep your rights. We never lease, rent or license your art to anyone else. No political party or politician may use it in their ads.</li>
@@ -64,6 +65,11 @@
 <p class="sa-trap" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></p>
 <label class="pt-check-row"><input type="checkbox" id="sa-consent" name="consent" value="1" required><span>This is my own work. I give it freely to The Way for use on this site with my name (and portfolio link, if I gave one) in the credit, for fair use, and for publications and research documents that researchers or schools make through the website. I keep my rights and may use and sell my own art. I understand The Way will never sell, lease, rent or license it unless I tick the separate optional box below, that no political party or politician may use it in their ads, and that The Way will stop using it if it becomes tied to one party or to hate or extremist imagery. I can ask to have it removed.</span></label>
 <label class="pt-check-row"><input type="checkbox" id="sa-sell" name="sell_ok" value="1"><span>Optional. I also say yes to The Way putting my art on shirts and other products, and showing them in places such as a billboard or an article, to raise funds for The Way. Nothing is made, shown or sold until I approve the final layout, I can say no to any layout, and I can take back this yes at any time for new products.</span></label>
+<fieldset class="sa-share" id="sa-share" hidden>
+<legend>You said yes to selling. What should happen to your share?</legend>
+<label class="pt-check-row"><input type="radio" name="sell_share" value="share"><span>I would like a share of what my art earns. The amount is agreed with me in writing before anything is sold.</span></label>
+<label class="pt-check-row"><input type="radio" name="sell_share" value="donate"><span>I donate my share to a wildlife fund. The fund rotates, and The Way will say which one is currently featured.</span></label>
+</fieldset>
 <div id="sa-ts"></div>
 <div class="pt-gorow"><button type="submit" class="primary" id="sa-go">Send my art</button></div>
 </form>
@@ -73,6 +79,6 @@
 <p class="foot">Not left. Not right. We are The Way. · A nonpartisan project, not a political party.</p>
 <script src="waybar.js?v=75" defer></script>
 <script src="config.js?v=40"></script>
-<script src="submit-art.js?v=1"></script>
+<script src="submit-art.js?v=2"></script>
 </body>
 </html>
