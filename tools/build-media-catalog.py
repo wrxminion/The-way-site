@@ -150,6 +150,13 @@ if len(sys.argv) > 1:
         ('The sources are below if you ever want them. I will leave it here. You take care now.', 'Use for someone who only wants a fight. Drop the link once, then go quiet. Do not reply again.', by('/cases/')),
         ("Ohh that's cute, here is some sauce.", 'Light and teasing. Can read as a dig, so use only when the tone is already playful.', by('/research/')),
         ("Ohhh my sweet summer child, here is some sauce.", 'Playful and teasing. Can read as condescending, so use only when the tone is already light.', by('/vote/')),
+        ("I will leave the paper on the porch for you. Here is the source.", 'Warm and calm. Drop the link once, then go quiet.', by("/how-government-works.html")),
+        ("That is a lot of weather for one claim. Here is the source for when it clears.", 'Warm and calm. Drop the link once, then go quiet.', by("/cases/")),
+        ("No rush at all. The source will keep until you are ready.", 'Warm and calm. Drop the link once, then go quiet.', by("/research/")),
+        ("Pull up a chair whenever you like. The source is right here.", 'Warm and calm. Drop the link once, then go quiet.', by("/map/")),
+        ("Take your time with it. The paper will still be here.", 'Warm and calm. Drop the link once, then go quiet.', by("/news/")),
+        ("Bless your heart, here is some sauce.", 'Only when someone is being flagrantly fatuous. Can read as a dig otherwise.', by("/guide/")),
+        ("Well, aren't you something. Here is the source.", 'Only when someone is being flagrantly fatuous. Can read as a dig otherwise.', by("/cases/")),
         # B: people who engage with the sources. Offer more research.
         ('Good point. Here is a second source and the primary document that bears on it. If it disproves our claim, we will correct it.', 'Use when someone reads the sources and answers calmly. Offer more research.'),
         ('Thank you kindly for reading it. Which part of the source do you read differently? Show me the line and I will look at it with you.', 'Use when someone engages with a source but disagrees on one part. Ask for the exact line.'),
