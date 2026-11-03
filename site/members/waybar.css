@@ -429,3 +429,8 @@ html.wb-bubs-building .wb-dock > :not(.wb-bubbles-toggle),html.wb-bubs-building 
 /* The entrance owns wrapper transforms. No competing continuous drift. */
 .wb-dock .wb-dock-auth,.wb-dock .wb-thread-fab,.wb-dock .wb-floating{animation:none}
 @media(prefers-reduced-motion:reduce){html.wb-bubs-building .wb-dock > :not(.wb-bubbles-toggle),html.wb-bubs-building .wb-bubs-l{visibility:visible}}
+
+/* Logo mark beside THE WAY, and small marks on guide and map headers */
+.waybar .wb-logo{display:inline-flex;align-items:center;gap:10px}
+.waybar .wb-logo:before{content:"";width:38px;height:38px;flex:none;border-radius:9px;background:url(/the-way-logo-76.png) center/cover no-repeat}
+.tw-mark{display:block;width:40px;height:40px;border-radius:9px;margin:0 auto 10px}
