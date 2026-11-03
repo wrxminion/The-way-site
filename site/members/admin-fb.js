@@ -149,12 +149,17 @@ function make(ctx) {
       const count = h('span', { class: 'muted small' });
       const onFb = h('input', { type: 'checkbox', id: 'fb-post-fb', checked: 'checked' });
       const onBs = h('input', { type: 'checkbox', id: 'fb-post-bs', checked: 'checked' });
+      const onAi = h('input', { type: 'checkbox', id: 'fb-post-ai' });
+      const AI = '\n\n(AI-written)';   // the label our rules require on a post an AI wrote
       const chars = (s) => [...s].length;
-      const upd = () => { count.textContent = `${chars(box.value)} characters. Bluesky allows 300.`; };
+      const withLabel = (s) => (onAi.checked ? s + AI : s);
+      const upd = () => { count.textContent = `${chars(withLabel(box.value.trim()))} characters. Bluesky allows 300.`; };
+      onAi.addEventListener('change', upd);
       box.addEventListener('input', upd); upd();
       const send = h('button', { class: 'primary', onclick: action(async () => {
-        const message = box.value.trim();
-        if (!message) throw new Error('Write something first.');
+        const text = box.value.trim();
+        if (!text) throw new Error('Write something first.');
+        const message = withLabel(text);
         const targets = [onFb.checked ? 'Facebook' : null, onBs.checked ? 'Bluesky' : null].filter(Boolean);
         if (!targets.length) throw new Error('Pick Facebook, Bluesky, or both.');
         if (onBs.checked && chars(message) > 300) throw new Error('Bluesky posts are 300 characters at most. Shorten it or untick Bluesky.');
@@ -175,7 +180,7 @@ function make(ctx) {
       return h('div', { class: 'panel' }, h('h3', { text: 'New post' }),
         h('p', { class: 'muted small', text: 'Publishes right away, as the Michi Institute account. Facebook needs the pages_manage_posts permission on the Page token.' }),
         box, count,
-        h('div', { class: 'btns' }, h('label', {}, onFb, ' Facebook'), ' ', h('label', {}, onBs, ' Bluesky'), ' ', send), slot);
+        h('div', { class: 'btns' }, h('label', {}, onFb, ' Facebook'), ' ', h('label', {}, onBs, ' Bluesky'), ' ', h('label', {}, onAi, ' AI-written (adds the AI label)'), ' ', send), slot);
     }
 
     root.append(
