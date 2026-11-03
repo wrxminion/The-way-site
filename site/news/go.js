@@ -47,11 +47,13 @@ async function run() {
   let qc = null;
   try {
     const r = await fetch('data/quickcheck/' + id + '.json', { cache: 'no-cache' });
-    if (r.ok) { const j = await r.json(); if (j && typeof j.summary === 'string') qc = j; }
+    if (r.ok) { const j = await r.json(); if (j && Array.isArray(j.claims)) qc = j; }
   } catch { /* none yet: fine */ }
-  const qcBox = qc
-    ? h('div', { class: 'go-qc' }, h('h2', { text: qc.checked_by_person === true ? 'Checked by a person' : 'AI quick check (not yet reviewed by a person)' }), h('p', { text: qc.summary }),
-        (qc.sources || []).length ? h('ul', {}, qc.sources.filter((x) => safe(x.url)).map((x) => h('li', {}, h('a', { href: safe(x.url), rel: 'noopener noreferrer', text: x.label || x.url })))) : null,
+  // Every claim must carry a source link. A claim without a usable link is dropped, never shown.
+  const claims = qc && Array.isArray(qc.claims) ? qc.claims.filter((c) => c && typeof c.text === 'string' && c.text && safe(c.url)) : [];
+  const qcBox = claims.length
+    ? h('div', { class: 'go-qc' }, h('h2', { text: qc.checked_by_person === true ? 'Checked by a person' : 'AI quick check (not yet reviewed by a person)' }),
+        h('ul', {}, claims.map((c) => h('li', {}, c.text + ' ', h('a', { href: safe(c.url), rel: 'noopener noreferrer', text: '(' + (c.label || 'source') + ')' })))),
         h('p', { class: 'go-small', text: qc.checked_by_person === true ? 'The AI wrote this fast check and a person has looked at it.' : 'Written by AI as a fast check. It is not a confirmed review. Anything unproven is called alleged.' }))
     : null;
   const me = await signedIn();
