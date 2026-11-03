@@ -6,3 +6,7 @@
 .md-not{border-color:#ffb4a855}
 .md-ideas>li{overflow-wrap:anywhere}
 .md-ideas textarea,form .md-add textarea{width:100%}
+.md-tabs{margin:8px 0;display:flex;flex-wrap:wrap;gap:8px}
+.md-tab[aria-pressed=true]{border-color:var(--aqua);color:#fff}
+.md-ideas+.md-ideas{margin-top:0}
+.md-ideas[hidden]{display:none}

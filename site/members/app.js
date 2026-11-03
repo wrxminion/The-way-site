@@ -76,7 +76,7 @@ const LEDGER = window.TheWayLedger ? window.TheWayLedger.make({ sb, h, q }) : nu
 const TODO = window.TheWayTodo ? window.TheWayTodo.make({ sb, h, q, render, notice }) : null;
 const CSTAT = window.TheWayContentStatus ? window.TheWayContentStatus.make({ sb, h, q, render, notice, when }) : null;
 const ROLETREE = window.TheWayRoles ? window.TheWayRoles.make({ h }) : null;
-const MEDIA = window.TheWayMedia ? window.TheWayMedia.make({ sb, h, q, notice, action, ask, STATS, canWrite: () => can('admin') || state.roles.has('super_admin') }) : null;
+const MEDIA = window.TheWayMedia ? window.TheWayMedia.make({ sb, h, q, notice, action, ask, STATS, canWrite: () => can('admin') || state.roles.has('super_admin'), uid: () => state.user && state.user.id }) : null;
 // Media page for the marketing role, admins and super admins. Marketing sees this and nothing else in Admin.
 const canMedia = () => can('admin') || canStats();
 function mediaView() {
