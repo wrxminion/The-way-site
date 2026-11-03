@@ -48,25 +48,6 @@ const niceError = (e) => {
   return m;
 };
 
-// ---- Screenshot cleaning (same safe pattern as the review screen, 0020): re-draw as plain JPEG, cap the size.
-const SHOT_MAX_PICK = 12 * 1024 * 1024, SHOT_MAX_OUT = 1500 * 1024, SHOT_MAX_SIDE = 1800;
-async function cleanShot(file) {
-  if (!/^image\/(png|jpeg|webp)$/.test(file.type)) throw new Error('Only PNG, JPEG or WebP pictures can be attached.');
-  if (file.size > SHOT_MAX_PICK) throw new Error('That picture is over 12 MB. Crop it or save it smaller.');
-  let bmp;
-  try { bmp = await createImageBitmap(file); } catch { throw new Error('That file is not a readable picture.'); }
-  const k = Math.min(1, SHOT_MAX_SIDE / Math.max(bmp.width, bmp.height));
-  const cv = document.createElement('canvas');
-  cv.width = Math.max(1, Math.round(bmp.width * k)); cv.height = Math.max(1, Math.round(bmp.height * k));
-  const cx = cv.getContext('2d');
-  cx.fillStyle = '#fff'; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(bmp, 0, 0, cv.width, cv.height);
-  if (bmp.close) bmp.close();
-  for (const qual of [0.85, 0.7, 0.55]) {
-    const blob = await new Promise((res) => cv.toBlob(res, 'image/jpeg', qual));
-    if (blob && blob.size <= SHOT_MAX_OUT) return blob;
-  }
-  throw new Error('Even after shrinking, that picture is too big. Crop it.');
-}
 
 // run an async click/submit handler, show its error in `msg`, disable `btn` while it runs
 function guarded(btn, msg, fn) {
@@ -205,27 +186,16 @@ async function mount(root) {
       return;
     }
     const note = h('textarea', { maxlength: 1000, placeholder: 'What was interesting to you? A sentence or two in your own words.', 'aria-label': 'What was interesting' });
-    const file = h('input', { type: 'file', accept: 'image/png,image/jpeg,image/webp', 'aria-label': 'Screenshot (optional)' });
     const m = h('div'); const go = h('button', { type: 'button', text: 'Record that I read it' });
     go.addEventListener('click', guarded(go, m, async () => {
       if (note.value.trim().length < 20) throw new Error('Tell us a bit more about what was interesting (at least 20 characters).');
-      let path = null;
-      const f = file.files && file.files[0];
-      if (f) {
-        const blob = await cleanShot(f);
-        const rid = crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2);
-        path = `${user.id}/${k.id}/${rid}.jpg`;
-        const up = await sb.storage.from('read-screenshots').upload(path, blob, { contentType: 'image/jpeg', upsert: false });
-        if (up.error) throw up.error;
-      }
-      const r = await sb.rpc('submit_read_check', { p_item: k.key, p_note: note.value, p_path: path });
+      const r = await sb.rpc('submit_read_check', { p_item: k.key, p_note: note.value, p_path: null });
       if (r.error) throw r.error;
       await readCheck();
     }));
     put(readSlot, head,
-      h('p', { class: 'wd-muted', text: `${title ? `“${title}”. ` : ''}Tell us what you found interesting and, if you like, add a screenshot of the page for our records. A reviewer confirms it, and only then do you earn points.` }),
-      note, h('div', { class: 'wd-row' }, file),
-      h('p', { class: 'wd-small wd-muted', text: 'Screenshots are private (you, reviewers and moderators only). Blur names, addresses and emails first. Pictures are re-saved as plain JPEG and capped in size.' }),
+      h('p', { class: 'wd-muted', text: `${title ? `“${title}”. ` : ''}Tell us what you found interesting. A reviewer confirms it, and only then do you earn points.` }),
+      note,
       h('div', { class: 'wd-row' }, go), m, tally);
   }
 }
