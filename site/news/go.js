@@ -50,9 +50,9 @@ async function run() {
     if (r.ok) { const j = await r.json(); if (j && typeof j.summary === 'string') qc = j; }
   } catch { /* none yet: fine */ }
   const qcBox = qc
-    ? h('div', { class: 'go-qc' }, h('h2', { text: 'AI quick check (not yet reviewed by a person)' }), h('p', { text: qc.summary }),
+    ? h('div', { class: 'go-qc' }, h('h2', { text: qc.checked_by_person === true ? 'Checked by a person' : 'AI quick check (not yet reviewed by a person)' }), h('p', { text: qc.summary }),
         (qc.sources || []).length ? h('ul', {}, qc.sources.filter((x) => safe(x.url)).map((x) => h('li', {}, h('a', { href: safe(x.url), rel: 'noopener noreferrer', text: x.label || x.url })))) : null,
-        h('p', { class: 'go-small', text: 'Written by AI as a fast check. It is not a confirmed review. Anything unproven is called alleged.' }))
+        h('p', { class: 'go-small', text: qc.checked_by_person === true ? 'The AI wrote this fast check and a person has looked at it.' : 'Written by AI as a fast check. It is not a confirmed review. Anything unproven is called alleged.' }))
     : null;
   const me = await signedIn();
   const box = me
