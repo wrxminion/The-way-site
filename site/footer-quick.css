@@ -8,4 +8,4 @@
 .essay-search input{width:125px;min-width:0;padding:7px;border:0;background:transparent;color:#fff;font:14px system-ui,sans-serif}
 .essay-search input::placeholder{color:#d7ecec}.essay-search button{border:0;padding:6px 9px;background:transparent;color:#fff;cursor:pointer}
 @media(max-width:480px){.essay-search{flex:1}.essay-search input{width:100%;font-size:16px}.essay-quick-links .essay-access{font-size:11px}.essay-quick-links a{font-size:11px;padding:7px 4px}}
-.michi-footer-mark{width:28px;height:28px;border-radius:7px;align-self:center}
+.michi-footer-art{display:flex;flex-direction:column;align-items:center;gap:6px;opacity:1!important}.michi-footer-mark-link{display:inline-flex}.michi-footer-mark{width:28px;height:28px;border-radius:7px}

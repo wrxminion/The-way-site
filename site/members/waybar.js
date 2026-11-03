@@ -748,7 +748,7 @@
     }
     if (!document.querySelector('script[src^="/footer-quick.js"]')) {
       var footerScript = document.createElement('script');
-      footerScript.src = '/footer-quick.js?v=2';
+      footerScript.src = '/footer-quick.js?v=3';
       document.head.appendChild(footerScript);
     }
     if (!document.querySelector('script[src^="/motion-pause.js"]')) {
