@@ -498,7 +498,7 @@ async function joinView() {
   const code = h('input', { name: 'code', required: !open, autocomplete: 'off', spellcheck: 'false', placeholder: 'WAY-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx' });
   const carried = savedInvite();
   if (carried) code.value = carried;
-  const name = h('input', { name: 'name', required: true, minlength: 2, maxlength: 40, placeholder: 'How other members will see you' });
+  const name = h('input', { name: 'way-display-name', required: true, minlength: 2, maxlength: 40, autocomplete: 'off', autocapitalize: 'words', spellcheck: 'false', 'data-lpignore': 'true', placeholder: 'How other members will see you' });
   const age = ageQuestion();
   const teacher = teacherQuestion();
   const art = artQuestion();
