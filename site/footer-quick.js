@@ -7,11 +7,11 @@
     var nav = document.createElement('nav');
     nav.className = 'michi-footer-nav';
     nav.setAttribute('aria-label', 'About and policies');
+    var about = document.createElement('a');
+    about.href = '/deeper.html'; about.className = 'michi-footer-mark-link'; about.setAttribute('aria-label', 'Why? The Way');
     var mark = document.createElement('img');
     mark.src = '/the-way-logo-76.png'; mark.alt = ''; mark.width = 28; mark.height = 28; mark.className = 'michi-footer-mark';
-    nav.appendChild(mark);
-    var about = document.createElement('a');
-    about.href = '/deeper.html'; about.textContent = 'Why?';
+    about.appendChild(mark);
     var methods = document.createElement('a');
     methods.href = '/development/methods/';
     methods.textContent = 'Methodology';
@@ -20,7 +20,10 @@
     art.textContent = 'Submit your art';
     var legal = document.createElement('span');
     legal.textContent = 'Legal (coming soon)';
-    nav.appendChild(about); nav.appendChild(methods); nav.appendChild(art); nav.appendChild(legal);
+    var artBox = document.createElement('span');
+    artBox.className = 'michi-footer-art';
+    artBox.appendChild(about); artBox.appendChild(art);
+    nav.appendChild(methods); nav.appendChild(artBox); nav.appendChild(legal);
     footer.appendChild(nav);
   }
   function signedIn() {
@@ -56,6 +59,6 @@
     function visibility() { bar.hidden = window.scrollY <= 80; }
     window.addEventListener('scroll', visibility, { passive: true }); visibility();
   }
-  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=2'; document.head.appendChild(css);
+  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=3'; document.head.appendChild(css);
   appendFooter(); updateEssayBar();
 })();
