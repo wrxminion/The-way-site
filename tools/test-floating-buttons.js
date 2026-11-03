@@ -1,5 +1,5 @@
 // The bubble menus never overlap and stay on screen:  node tools/test-floating-buttons.js   (uses the pre-installed Playwright)
-// Desktop: right = Tools, Pull a thread, News, Home (plus the diver and hide arrow); left = VOTE! (and, signed in, Commons, Help, and Review for reviewers; signed out, Log in / Sign up).
+// Desktop: right = Pull a thread, News, Home, Tools (plus the diver and hide arrow); left = VOTE! (and, signed in, Commons, Help, and Review for reviewers; signed out, Log in / Sign up).
 // Phones (760 px and under): one bubble per side (Explore, My side) plus the diver. Escape closes a list and returns focus to its bubble.
 const { chromium } = require('playwright');
 const http = require('http'), fs = require('fs'), path = require('path');

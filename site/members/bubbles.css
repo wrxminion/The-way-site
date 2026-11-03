@@ -4,13 +4,13 @@
 html{--wb-bubble-size:84px;--wb-bubble-size-mobile:68px}
 @media (max-height:640px){html{--wb-bubble-size:68px}}
 
-/* right: the dock stacks top to bottom, so Tools is above Pull a thread, then News, then Home at the bottom */
+/* right: the dock stacks top to bottom: Pull a thread, News, Home, then Tools at the very bottom (members use Tools most) */
 .wb-dock .wb-bub-wrap{position:relative;flex:none;display:block}
-.wb-dock .wb-bub-tools{order:2}
 .wb-dock .wb-bub-news{order:4}
 .wb-dock .wb-bub-home{order:5}
-.wb-dock .wb-bub-hidden{order:6}
-.wb-dock .wb-bub-explore{order:7}
+.wb-dock .wb-bub-tools{order:6}
+.wb-dock .wb-bub-hidden{order:7}
+.wb-dock .wb-bub-explore{order:8}
 /* left: first child is the bottom bubble */
 .wb-bubs-l{position:fixed;z-index:48;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;flex-direction:column-reverse;align-items:flex-start;gap:8px}
 .wb-bubs-l .wb-bub-wrap{position:relative;flex:none}
@@ -53,7 +53,7 @@ html.wb-bubbles-off .wb-bubs-l{display:none}
   .wb-fan-go{margin-left:auto}
   .wb-fan-extra{display:flex;justify-content:center;padding:6px 0 2px}
   .wb-fan-auth{position:relative}
-  .wb-dock .wb-bub-explore{order:7}
+  .wb-dock .wb-bub-explore{order:8}
   /* a phone keeps the dock to the diver and Explore; Log in / Sign up lives in My side */
   html.wb-typing .wb-dock,html.wb-typing .wb-bubs-l{display:none}
 }
