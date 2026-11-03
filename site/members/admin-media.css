@@ -1,0 +1,8 @@
+/* Admin > Media (admin-media.js). */
+.md-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 14px}
+.md-list{margin:0;padding-left:20px}
+.md-list li{margin:6px 0;overflow-wrap:anywhere}
+.md-way{border-color:#b5f5c955}
+.md-not{border-color:#ffb4a855}
+.md-ideas>li{overflow-wrap:anywhere}
+.md-ideas textarea,form .md-add textarea{width:100%}

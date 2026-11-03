@@ -14,7 +14,7 @@
 (function () {
   'use strict';
   var KEY = 'theway.bar';
-  var ROLES = ['admin', 'super_admin', 'moderator', 'researcher', 'reviewer', 'editor'];
+  var ROLES = ['admin', 'super_admin', 'marketing', 'moderator', 'researcher', 'reviewer', 'editor'];
   var GUIDE = /^\/guide(-[a-z]{2})?\/$/;
   var STATES = '/states/';
   var GOV = '/how-government-works.html';
@@ -254,11 +254,13 @@
     if (can(d, 'moderator')) manage.push({ href: route('reports'), label: 'Reports', icon: 'reports', key: 'reports', dup: true });
     if (d.modlog) manage.push({ href: route('log'), label: 'Moderation log', icon: 'log', key: 'log', dup: true });
     if (can(d, 'admin')) manage.push({ href: route('admin'), label: 'Admin', icon: 'admin', key: 'admin', dup: true });
+    else if (d.roles.indexOf('marketing') >= 0) manage.push({ href: route('media'), label: 'Media', icon: 'admin', key: 'media', dup: true });
     // a phone has no Alt+Shift+S, so admins open the shark lab from here (same check as Admin; the lab itself still checks the role)
     if (can(d, 'admin') || d.roles.indexOf('super_admin') >= 0) manage.push({ href: '#shark-lab', label: 'Shark lab', icon: 'admin', key: 'sharklab', lab: true });
     // "My tools" (a group at the top of the desktop Menu): the buttons that used to sit in the "Your tools" box on Home, same role rules.
     var tools = [];
     if (can(d, 'admin') || d.roles.indexOf('super_admin') >= 0) tools.push({ href: route('admin'), label: 'Admin', desc: 'Members, invitations, ledger checks, analytics, notify list', icon: 'admin', key: 'admin' });
+    else if (d.roles.indexOf('marketing') >= 0) tools.push({ href: route('media'), label: 'Media', desc: 'Media relations: site analytics, ideas, The Way / Not The Way', icon: 'admin', key: 'media' });
     tools.push({ href: '/members/author.html', label: 'Author desk and ranks', desc: 'Send an article or a source, and see your rank', icon: 'author', key: 'author' });
     tools.push({ href: route('private'), label: 'Private research', desc: 'Your own notes and team files, never published', icon: 'private', key: 'private' });
     if (can(d, 'moderator')) tools.push({ href: route('review'), label: 'Review sources', desc: 'Check each claim in a case against its sources', icon: 'review', key: 'review' });

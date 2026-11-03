@@ -184,7 +184,7 @@ function make(ctx) {
           q(sb.rpc('site_stats_top', { p_kind: 'google_landing', p_days: 1, p_limit: 25 })),
           q(sb.rpc('site_stats_top', { p_kind: 'google_landing', p_days: 7, p_limit: 25 })),
           // Totals only (migration 0087). If it is not installed yet the card says so instead of breaking the page.
-          q(sb.rpc('study_usage_totals')).catch(() => null),
+          ctx.hideStudy && ctx.hideStudy() ? Promise.resolve(null) : q(sb.rpc('study_usage_totals')).catch(() => null),
         ]);
         if (mine !== loadId) return;
         const m = meta[0];
@@ -244,7 +244,7 @@ function make(ctx) {
           h('p', { class: 'muted small', text: 'Cloudflare reports country only. No IP addresses and no individual visitors are stored or shown.' }),
           world, world ? legend() : null,
           table(['Country', 'Visits', 'Views'], countries.slice(0, 15).map((c) => row(SPECIAL[c.label] || regionName(c.label), c.visits, c.page_views)))),
-        studyCard(study),
+        ctx.hideStudy && ctx.hideStudy() ? null : studyCard(study),
         h('div', { class: 'panel' }, h('h3', { text: 'Interest by state (which state guides were viewed)' }),
           h('p', { class: 'muted small', text: 'This is NOT where visitors live. It counts views of each state\'s guide and map pages. No location of any visitor is used.' }),
           usa || h('p', { class: 'muted', text: 'No state guide views yet.' }), usa ? legend() : null,

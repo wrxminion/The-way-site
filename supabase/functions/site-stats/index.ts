@@ -77,12 +77,12 @@ Deno.serve(async (req) => {
     const jwt = (req.headers.get('authorization') ?? '').replace(/^Bearer /i, '');
     const { data } = await admin.auth.getUser(jwt);
     if (data?.user) {
-      const { data: roles } = await admin.from('member_roles').select('role').eq('member_id', data.user.id).eq('role', 'super_admin');
+      const { data: roles } = await admin.from('member_roles').select('role').eq('member_id', data.user.id).in('role', ['super_admin', 'marketing']);
       const { data: m } = await admin.from('members').select('status').eq('id', data.user.id).maybeSingle();
       allowed = !!roles?.length && m?.status === 'active';
     }
   }
-  if (!allowed) return json({ ok: false, error: 'Super admins only.' }, 403);
+  if (!allowed) return json({ ok: false, error: 'Super admins and marketing only.' }, 403);
 
   const token = env('CF_API_TOKEN'), account = env('CF_ACCOUNT_ID'), site = env('CF_SITE_TAG');   // CF_SITE_TAG is optional
   const fail = async (note: string) => {

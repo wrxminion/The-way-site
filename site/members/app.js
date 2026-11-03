@@ -42,9 +42,11 @@ const when = (iso) => iso ? new Date(iso).toLocaleString(undefined, { dateStyle:
 const day = (iso) => iso ? new Date(iso).toLocaleDateString(undefined, { dateStyle: 'medium' }) : '';
 // What members see for a role. The stored value stays 'reviewer' / 'researcher'.
 // Deshi is Japanese for student; both words are shown so people learn it (Frank, Oct 27 2026).
-const ROLE_LABEL = { reviewer: 'Deshi (student, reviewer)', researcher: 'Author (Submitter)', editor: 'Renshi (editor)' };
+const ROLE_LABEL = { reviewer: 'Deshi (student, reviewer)', researcher: 'Author (Submitter)', editor: 'Renshi (editor)', marketing: 'Marketing (analytics only)' };
 const roleName = (r) => ROLE_LABEL[r] || r;
 const can = (role) => state.roles.has(role) || state.roles.has('admin');
+// Site analytics: super admins and the marketing role (the database policies on the stats tables say the same).
+const canStats = () => state.roles.has('super_admin') || state.roles.has('marketing');
 
 function render(...nodes) { app.replaceChildren(...nodes.flat().filter((n) => n != null && n !== false)); app.focus({ preventScroll: true }); window.scrollTo(0, 0); }
 function notice(msg, kind = 'error') { return h('div', { class: `notice ${kind}`, role: kind === 'error' ? 'alert' : 'status', text: msg }); }
@@ -69,18 +71,28 @@ function action(fn, slot) {
 }
 async function q(promise) { const { data, error } = await promise; if (error) throw error; return data; }
 // Research projects, finding links and "AI help write my claim" live in claim-links.js (migration 0026).
-const STATS = window.TheWayStats ? window.TheWayStats.make({ sb, h, q, when }) : null;
+const STATS = window.TheWayStats ? window.TheWayStats.make({ sb, h, q, when, hideStudy: () => !state.roles.has('super_admin') }) : null;
 const LEDGER = window.TheWayLedger ? window.TheWayLedger.make({ sb, h, q }) : null;
 const TODO = window.TheWayTodo ? window.TheWayTodo.make({ sb, h, q, render, notice }) : null;
 const CSTAT = window.TheWayContentStatus ? window.TheWayContentStatus.make({ sb, h, q, render, notice, when }) : null;
+const ROLETREE = window.TheWayRoles ? window.TheWayRoles.make({ h }) : null;
+const MEDIA = window.TheWayMedia ? window.TheWayMedia.make({ sb, h, q, notice, action, ask, STATS, canWrite: () => can('admin') || state.roles.has('super_admin') }) : null;
+// Media page for the marketing role, admins and super admins. Marketing sees this and nothing else in Admin.
+const canMedia = () => can('admin') || canStats();
+function mediaView() {
+  if (!MEDIA) return render(notice('Media is not available.'));
+  const AT = window.TheWayAdminTools;
+  let n = 0;
+  MEDIA.view((id, title, node) => AT.section('media-' + id, title, [node], { open: n++ < 3 }), render);
+}
 const CL = window.TheWayClaim ? window.TheWayClaim.make({ sb, h, q, notice, action, render, can }) : null;
 
 const askDialog = document.getElementById('ask');
-function ask(label) {
+function ask(label, initial = '') {
   return new Promise((resolve) => {
     document.getElementById('ask-label').textContent = label;
     const input = document.getElementById('ask-input');
-    input.value = '';
+    input.value = initial;
     askDialog.onclose = () => resolve(askDialog.returnValue === 'ok' ? input.value.trim() : null);
     askDialog.showModal();
   });
@@ -2244,7 +2256,7 @@ async function adminView() {
 
   const rolesOf = (id) => roles.filter((r) => r.member_id === id).map((r) => r.role);
   const nameOf = (id) => (members.find((m) => m.id === id) || {}).display_name || (id ? 'a former member' : 'setup');
-  const ALL = ['moderator', 'researcher', 'reviewer', 'editor', 'admin'];
+  const ALL = ['moderator', 'researcher', 'reviewer', 'editor', 'marketing', 'admin'];
 
   const AT = window.TheWayAdminTools;
   let nSec = 0;
@@ -2259,7 +2271,9 @@ async function adminView() {
     { key: 'source', label: 'Source', options: notifySources.map((x) => [x, x]) }] });
   render(
     h('h1', { text: 'Admin' }), msg,
-    state.roles.has('super_admin') && STATS ? sec('analytics', 'Site analytics and SEO', STATS.panel()) : null,
+    canStats() && STATS ? sec('analytics', 'Site analytics and SEO', STATS.panel()) : null,
+    can('admin') ? sec('media', 'Media', h('div', { class: 'panel' }, h('p', { class: 'muted small', text: 'Media relations: site analytics, suggested marketing ideas, and The Way / Not The Way.' }), h('a', { class: 'button primary', href: '#/media', text: 'Open Media' }))) : null,
+    can('admin') && ROLETREE ? sec('roles', 'Admin roles', ROLETREE.panel()) : null,
     can('admin') && LEDGER ? sec('ledger', 'Ledger checks', LEDGER.panel()) : null,
     can('admin') && CSTAT ? sec('review-status', 'Review status of AI-written pages', CSTAT.panel()) : null,
     state.roles.has('super_admin') && TODO ? sec('todo', 'Research to-do', h('div', { class: 'panel' }, h('p', { class: 'muted small', text: 'Every research list in one place, highest priority first. Super admins only.' }), h('a', { class: 'button primary', href: '#/todo', text: 'Open the research to-do' }))) : null,
@@ -2922,8 +2936,9 @@ async function route() {
         ? (parts[1] ? await researchItemView(+parts[1]) : await researchView()) : render(notice('Research desk members only.'));
       case 'private': return parts[1] === 'team' ? await teamFileView(decodeURIComponent(parts[2] || '')) : (parts[1] ? await privateNoteView(+parts[1]) : await privateResearchView());
       case 'projects': return CL && (can('researcher') || can('reviewer')) ? await CL.projectsView() : render(notice('Research desk members only.'));
+      case 'media': return canMedia() ? mediaView() : render(notice('Not available.'));
       case 'todo': return isSuper() && TODO ? await TODO.view() : render(notice('Super admins only.'));
-      case 'admin': return can('admin') ? await adminView() : render(notice('Admins only.'));
+      case 'admin': return can('admin') ? await adminView() : state.roles.has('marketing') ? mediaView() : render(notice('Admins only.'));
       case 'account': return accountView();
       case 'password': return passwordView(false);
       case 'signup': return await homeView();
