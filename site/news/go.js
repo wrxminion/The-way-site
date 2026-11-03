@@ -43,6 +43,17 @@ async function run() {
   const related = about.length
     ? h('div', { class: 'go-rel' }, h('h2', { text: 'Related research' }), h('ul', {}, about.map((a) => h('li', {}, h('a', { href: '/' + a.page, text: a.label || a.id })))))
     : null;
+  // AI quick check (written by the local AI, not yet reviewed by a person). Shown only if a file exists for this item.
+  let qc = null;
+  try {
+    const r = await fetch('data/quickcheck/' + id + '.json', { cache: 'no-cache' });
+    if (r.ok) { const j = await r.json(); if (j && typeof j.summary === 'string') qc = j; }
+  } catch { /* none yet: fine */ }
+  const qcBox = qc
+    ? h('div', { class: 'go-qc' }, h('h2', { text: 'AI quick check (not yet reviewed by a person)' }), h('p', { text: qc.summary }),
+        (qc.sources || []).length ? h('ul', {}, qc.sources.filter((x) => safe(x.url)).map((x) => h('li', {}, h('a', { href: safe(x.url), rel: 'noopener noreferrer', text: x.label || x.url })))) : null,
+        h('p', { class: 'go-small', text: 'Written by AI as a fast check. It is not a confirmed review. Anything unproven is called alleged.' }))
+    : null;
   const me = await signedIn();
   const box = me
     ? h('div', { class: 'go-join' }, h('p', { text: 'You are signed in. Review this article and give your opinion in the member area.' }), h('a', { class: 'button', href: '/members/', text: 'Open the member area' }))
@@ -52,6 +63,7 @@ async function run() {
     h('a', { class: 'go-src', href: url, rel: 'noopener noreferrer', text: 'Go to ' + (item.source || 'the news source') + ' now' }),
     h('p', { text: item.title }),
     h('p', { class: 'go-small', text: 'Source: ' + (item.source || 'unknown') + '. Headline collected by The Way, not reviewed by a person.' }),
+    qcBox,
     box,
     related,
     // Comments slot: stays hidden until the news comments table exists (SQL 0072 is on hold). Nothing fills it yet.
