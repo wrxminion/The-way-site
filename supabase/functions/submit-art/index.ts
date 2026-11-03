@@ -75,6 +75,10 @@ export async function handler(req: Request, env = Deno.env, mk = createClient): 
   const sb = mk(env.get("SUPABASE_URL")!, env.get("SUPABASE_SERVICE_ROLE_KEY")!, { auth: { persistSession: false } });
   const rateKey = await sha256hex(`${salt}|art|${ip}`);
 
+  const sellOk = ["1", "on", "yes", "true"].includes(str("sell_ok").toLowerCase());   // separate optional box, default no
+  const sellShare = sellOk ? str("sell_share").toLowerCase() : "";   // share or donate, only when the box is ticked
+  if (sellOk && !["share", "donate"].includes(sellShare)) return reply(origin, 400, { error: "Please choose whether you would like a share of what your art earns or donate it to the wildlife fund" });
+
   let path: string | null = null, bytes: number | null = null;
   if (hasFile) {
     const buf = new Uint8Array(await (f as File).arrayBuffer());
@@ -86,9 +90,6 @@ export async function handler(req: Request, env = Deno.env, mk = createClient): 
     if (up.error) return reply(origin, 500, { error: "Could not save the image. Please try again." });
   }
 
-  const sellOk = ["1", "on", "yes", "true"].includes(str("sell_ok").toLowerCase());   // separate optional box, default no
-  const sellShare = sellOk ? str("sell_share").toLowerCase() : "";   // share or donate, only when the box is ticked
-  if (sellOk && !["share", "donate"].includes(sellShare)) return reply(origin, 400, { error: "Please choose whether you would like a share of what your art earns or donate it to the wildlife fund" });
   const { data, error } = await sb.rpc("submit_art", {
     p_name: name, p_email: email, p_target: target, p_link: link || null, p_portfolio: portfolio || null, p_file_path: path, p_file_bytes: bytes,
     p_note: note || null, p_rate_key: rateKey, p_sell_ok: sellOk, p_sell_share: sellOk ? sellShare : null,
