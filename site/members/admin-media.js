@@ -66,6 +66,84 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
   const copyBtn = (text) => { const b = h('button', { type: 'button', class: 'quiet', text: 'Copy' }); b.onclick = () => copyText(text, b); return b; };
   const dateOf = (iso) => new Date(iso).toLocaleDateString(undefined, { dateStyle: 'medium' });
 
+  // ---- links to real pages of this site: chosen from a picker, never typed ----
+  const CAT = window.TheWayCatalog || { origin: 'https://michiinstitute.com', pages: [], topics: [] };
+  const KIND_LABEL = { judges: 'Judges pages', guide: 'State guides', case: 'Civics and history', site: 'Site pages', research: 'Research' };
+  const KIND_ORDER = ['judges', 'guide', 'case', 'site', 'research'];
+  // text, then the page title, then the link. The title is always there when there is a link.
+  const assemble = (body, path, title) => (path && title ? `${body}\n${title}\n${CAT.origin}${path}` : body);
+  const linkLine = (path, title) => (path && title
+    ? h('div', { class: 'small md-link' }, 'Link: ', h('strong', { text: title }), ` ${CAT.origin}${path}`) : null);
+
+  function picker(initial, onPick) {
+    const pages = CAT.pages || [];
+    if (!pages.length) return { el: h('p', { class: 'small dim', text: 'The page list is not available, so a link cannot be added.' }), get: () => null, set() {} };
+    let cur = initial ? (pages.find((p) => p.path === initial.path) || null) : null;
+    const filter = h('input', { type: 'search', placeholder: 'Find a page to link (type part of its title)', 'aria-label': 'Find a page' });
+    const sel = h('select', { 'aria-label': 'Page to link' });
+    const el = h('label', {}, 'Link to a page on this site (optional)', filter, sel);
+    function fill() {
+      const needle = filter.value.trim().toLowerCase();
+      const opts = [h('option', { value: '', text: 'No link' })];
+      for (const k of KIND_ORDER) {
+        const items = pages.filter((p) => p.kind === k && (!needle || p.title.toLowerCase().includes(needle)
+          || p.path.toLowerCase().includes(needle) || (cur && cur.path === p.path)));
+        if (!items.length) continue;
+        const g = h('optgroup', { label: KIND_LABEL[k] || k });
+        for (const p of items) g.append(h('option', { value: p.path, text: p.title }));
+        opts.push(g);
+      }
+      sel.replaceChildren(...opts);
+      sel.value = cur ? cur.path : '';
+    }
+    filter.addEventListener('input', fill);
+    sel.addEventListener('change', () => { cur = sel.value ? (pages.find((p) => p.path === sel.value) || null) : null; if (onPick) onPick(cur); });
+    fill();
+    return {
+      el,
+      get: () => (cur ? { path: cur.path, title: cur.title } : null),
+      set(v) { cur = v ? (pages.find((p) => p.path === v.path) || null) : null; filter.value = ''; fill(); if (onPick) onPick(cur); },
+    };
+  }
+
+  // The link part of an add form: picker, the count lines, and a live preview of what will be copied.
+  function composer(ta) {
+    const pre = h('pre', { class: 'md-pre' });
+    const pk = picker(null, refresh);
+    const topics = (CAT.topics || []).filter((t) => t.count > 0);
+    const tsel = h('select', { 'aria-label': 'Count line' });
+    tsel.append(h('option', { value: '', text: 'Pick a count line' }), ...topics.map((t, i) => h('option', { value: String(i), text: `${t.count} articles about ${t.label.toLowerCase()}` })));
+    tsel.addEventListener('change', () => {
+      if (tsel.value === '') return;
+      const t = topics[+tsel.value];
+      ta.value = `We have ${t.count} articles about ${t.label.toLowerCase()}, come see our research on it.`;
+      pk.set({ path: t.path, title: t.title });
+      tsel.value = '';
+    });
+    function refresh() { const l = pk.get(); pre.textContent = assemble(ta.value.trim() || '(your text)', l && l.path, l && l.title); }
+    ta.addEventListener('input', refresh);
+    refresh();
+    return {
+      els: [pk.el,
+        topics.length ? h('label', {}, 'Count line (the number comes from the real article list)', tsel) : null,
+        h('div', { class: 'md-preview' }, h('div', { class: 'small dim', text: 'As it will be copied:' }), pre)],
+      fields() { const l = pk.get(); return l ? { link_path: l.path, link_title: l.title } : {}; },
+      reset() { pk.set(null); refresh(); },
+    };
+  }
+
+  // Admins change a link on an existing row only through the picker.
+  function changeLink(table, row, reload, msg) {
+    const pk = picker(row.link_path ? { path: row.link_path, title: row.link_title } : null);
+    const save = h('button', { type: 'button', class: 'quiet', text: 'Save link' });
+    save.onclick = action(async () => {
+      const l = pk.get();
+      await q(sb.from(table).update({ link_path: l ? l.path : null, link_title: l ? l.title : null }).eq('id', row.id));
+      await reload();
+    }, msg);
+    return h('details', { class: 'md-change' }, h('summary', { text: 'Change link' }), pk.el, save);
+  }
+
   function guide() {
     return h('div', { class: 'md-guide' },
       h('p', { class: 'muted', text: 'We are not another algorithm pushing news at people. We let our work spread on its own, the way a good book or a good tip does. If something is already blowing up, a light nudge is fine.' }),
@@ -74,8 +152,24 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
         h('div', { class: 'panel md-not' }, h('h3', { text: 'Not The Way' }), list(NOT_THE_WAY))));
   }
 
-  // The ideas table holds four kinds of short text: idea, opener, closer, copy. Same review rules for all.
-  function ideaBlock(kind, cfg) {
+  // The ideas table holds short texts. A category groups them (copy, posts, canned responses, debate replies,
+  // conversation lines, ideas). Same review rules for all: drafts wait for an admin, and nothing posts by itself.
+  const CATEGORIES = [
+    { id: 'copy', label: 'Copy', kind: 'copy', addLabel: 'Add copy', addButton: 'Add copy', placeholder: 'A tagline, short description or explainer',
+      lead: 'Taglines, short descriptions and explainers. No results or outcome claims. Copy and paste by hand.', copy: true },
+    { id: 'posts', label: 'Posts', kind: 'idea', addLabel: 'Add a post idea', addButton: 'Add post idea', placeholder: 'An idea for a post, in a sentence or two', links: true, copy: true, showReason: true, postsLink: true,
+      lead: 'Ideas for posts. The planned and approved posts themselves are in Social media posts below.' },
+    { id: 'canned_response', label: 'Canned responses', kind: 'copy', showReason: true, reasonLabel: 'Note', addLabel: 'Add a canned response', addButton: 'Add response', placeholder: 'A short reply to a common question', copy: true,
+      lead: 'Short replies to questions people ask often. Copy one and use it by hand.' },
+    { id: 'debate_reply', label: 'They want a debate', kind: 'copy', showReason: true, reasonLabel: 'When to use', links: true, addLabel: 'Add a debate reply', addButton: 'Add reply', placeholder: 'A calm, short reply that moves the talk to sources', copy: true,
+      lead: 'Do not feed bad faith. Drop the sources once, then disengage. Drop the link once, then go quiet. Do not reply again. Engage only with people who engage with the sources. The reason on each reply says when to use it. Copy one and use it by hand.' },
+    { id: 'conversation', label: 'Openers and closers', kind: 'opener', kinds: ['opener', 'closer'], addLabel: 'Add an opener or closer', addButton: 'Add', placeholder: 'A kind line to start or end a talk', copy: true,
+      lead: 'Short, kind lines to start or end a conversation. Copy one and use it by hand.' },
+    { id: 'idea', label: 'Ideas', kind: 'idea', addLabel: 'Add an idea', addButton: 'Add idea', placeholder: 'One idea, in a sentence or two', links: true, copy: true, showReason: true },
+  ];
+  const CAT_LABEL = Object.fromEntries(CATEGORIES.map((c) => [c.id, c.label]));
+
+  function ideaBlock(cfg) {
     const admin = isAdmin();
     const me = typeof uid === 'function' ? uid() : uid;
     const msg = h('div');
@@ -85,6 +179,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
     const tabDrafts = h('button', { type: 'button', class: 'quiet md-tab', 'aria-pressed': 'false' });
     const body = h('textarea', { maxlength: 500, rows: 2, placeholder: cfg.placeholder, 'aria-label': cfg.addLabel });
     const why = h('input', { maxlength: 300, placeholder: 'Why it could work (optional, up to 300 characters)', 'aria-label': 'Reason' });
+    const kindSel = cfg.kinds ? h('select', { 'aria-label': 'Opener or closer' }, h('option', { value: 'opener', text: 'Opener (starts a talk)' }), h('option', { value: 'closer', text: 'Closer (ends a talk)' })) : null;
 
     function showTab(which) {
       approvedList.hidden = which !== 'approved';
@@ -96,7 +191,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
     tabDrafts.onclick = () => showTab('drafts');
 
     async function load() {
-      const rows = await q(sb.from('marketing_ideas').select('id,body,reason,status,source,created_by,created_at').eq('kind', kind).order('id', { ascending: true }).limit(300));
+      const rows = await q(sb.from('marketing_ideas').select('id,body,reason,kind,category,status,source,created_by,created_at,link_path,link_title').eq('category', cfg.id).order('id', { ascending: true }).limit(300));
       const ok = rows.filter((r) => r.status === 'approved'), dr = rows.filter((r) => r.status !== 'approved');
       tabApproved.textContent = `Approved (${ok.length})`;
       tabDrafts.textContent = `Drafts waiting (${dr.length})`;
@@ -105,14 +200,23 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
     }
     const row = (r) => {
       const mineDraft = r.status !== 'approved' && r.source === 'human' && r.created_by === me;
+      const mover = admin ? h('select', { 'aria-label': 'Move to another category' }, h('option', { value: '', text: 'Move to...' }),
+        ...CATEGORIES.filter((c) => c.id !== r.category).map((c) => h('option', { value: c.id, text: c.label }))) : null;
+      if (mover) mover.addEventListener('change', action(async () => {
+        if (!mover.value) return;
+        await q(sb.from('marketing_ideas').update({ category: mover.value }).eq('id', r.id));
+        await load();
+      }, msg));
       return h('li', {},
         h('div', { text: r.body }),
-        r.reason && cfg.showReason ? h('div', { class: 'small muted', text: `Why: ${r.reason}` }) : null,
+        r.reason && cfg.showReason ? h('div', { class: 'small muted', text: `${cfg.reasonLabel || 'Why'}: ${r.reason}` }) : null,
+        cfg.links ? linkLine(r.link_path, r.link_title) : null,
         h('div', { class: 'meta' }, `added ${dateOf(r.created_at)} `,
           r.status !== 'approved' ? h('span', { class: 'tag warn', text: 'draft' }) : null, ' ',
+          cfg.kinds ? h('span', { class: 'tag', text: r.kind }) : null, ' ',
           r.source === 'llm' ? h('span', { class: 'tag', text: 'suggested by the assistant' }) : null),
         h('div', { class: 'btns' },
-          cfg.copy ? copyBtn(r.body) : null,
+          cfg.copy ? copyBtn(assemble(r.body, r.link_path, r.link_title)) : null,
           admin && r.status !== 'approved' ? h('button', { class: 'quiet', onclick: action(async () => {
             await q(sb.from('marketing_ideas').update({ status: 'approved' }).eq('id', r.id));
             await load();
@@ -123,32 +227,66 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
             await q(sb.from('marketing_ideas').update({ body: t.trim() }).eq('id', r.id));
             await load();
           }, msg) }, 'Edit') : null,
+          mover,
           admin ? h('button', { class: 'quiet', onclick: action(async () => {
             if ((await ask('Type DELETE to remove this one:')) !== 'DELETE') return;
             await q(sb.from('marketing_ideas').delete().eq('id', r.id));
             await load();
-          }, msg) }, 'Delete') : null));
+          }, msg) }, 'Delete') : null),
+        admin && cfg.links ? changeLink('marketing_ideas', r, load, msg) : null);
     };
 
     // Marketing and admins add. A marketing entry is a draft until an admin approves it; an admin's own entry is approved at once.
+    const comp = cfg.links ? composer(body) : null;
     const add = h('form', { class: 'panel', onsubmit: action(async () => {
       const t = body.value.trim();
       if (t.length < 3) throw new Error('Write at least a few words.');
-      const r = { body: t, kind, status: admin ? 'approved' : 'draft', source: 'human' };
+      const r = { body: t, kind: kindSel ? kindSel.value : cfg.kind, category: cfg.id, status: admin ? 'approved' : 'draft', source: 'human' };
       if (why.value.trim()) r.reason = why.value.trim();
+      if (comp) Object.assign(r, comp.fields());
       await q(sb.from('marketing_ideas').insert(r));
       body.value = ''; why.value = '';
+      if (comp) comp.reset();
       await load();
       showTab(admin ? 'approved' : 'drafts');
-    }, msg) }, h('label', {}, cfg.addLabel, body), cfg.showReason ? h('label', {}, 'Reason', why) : null,
+    }, msg) }, h('label', {}, cfg.addLabel, body), kindSel ? h('label', {}, 'Type', kindSel) : null, comp ? comp.els : null,
+      cfg.showReason ? h('label', {}, 'Reason', why) : null,
       h('p', { class: 'small dim', text: admin ? 'What you add is approved right away.' : 'What you add waits as a draft until an admin approves it.' }),
       h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit' }, cfg.addButton)));
 
-    load().catch((e) => approvedList.replaceChildren(h('li', {}, notice(e.message || 'Could not load this list. Has migration 0091 been run?'))));
+    const toSocial = cfg.postsLink ? h('div', { class: 'btns' }, h('button', { type: 'button', class: 'quiet', onclick: () => {
+      const el = document.getElementById('md-social');
+      const sec = el && el.closest('.adm-sec');
+      if (!sec) return;
+      const bodyEl = sec.querySelector('.adm-body');
+      if (bodyEl && bodyEl.hidden) { const t = sec.querySelector('.adm-toggle'); if (t) t.click(); }
+      sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } }, 'Open Social media posts')) : null;
+
+    load().catch((e) => approvedList.replaceChildren(h('li', {}, notice(e.message || 'Could not load this list. Has migration 0094 been run?'))));
     showTab('approved');
-    return h('div', {}, cfg.lead ? h('p', { class: 'muted small', text: cfg.lead }) : null, msg, add,
+    return h('div', {}, cfg.lead ? h('p', { class: 'muted small', text: cfg.lead }) : null, toSocial, msg, add,
       h('div', { class: 'btns md-tabs' }, tabApproved, tabDrafts), approvedList, draftList,
       h('p', { class: 'small dim', text: 'Only approved items are shown by default. Admins approve drafts. Nothing here is posted anywhere by itself.' }));
+  }
+
+  // The six groups, one tab each. A group is built the first time its tab is opened.
+  function ideasHub() {
+    let current = CATEGORIES[0].id;
+    const built = new Map();
+    const tabs = h('div', { class: 'btns md-tabs', role: 'tablist', 'aria-label': 'Ideas by group' });
+    const panel = h('div');
+    function draw() {
+      tabs.replaceChildren(...CATEGORIES.map((c) => {
+        const b = h('button', { type: 'button', class: 'quiet md-tab', role: 'tab', 'aria-pressed': String(c.id === current), text: c.label });
+        b.onclick = () => { current = c.id; draw(); };
+        return b;
+      }));
+      if (!built.has(current)) built.set(current, ideaBlock(CATEGORIES.find((c) => c.id === current)));
+      panel.replaceChildren(built.get(current));
+    }
+    draw();
+    return h('div', {}, tabs, panel);
   }
 
   // Planned social media posts. Drafts are visible only to admins (the database hides them from marketing).
@@ -165,7 +303,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
     async function load() {
       const [accs, rows] = await Promise.all([
         q(sb.from('social_accounts').select('platform,handle,active')),
-        q(sb.from('social_posts').select('id,platform,body,planned_slot,handle,status,source,created_at').order('id', { ascending: true }).limit(500)),
+        q(sb.from('social_posts').select('id,platform,body,planned_slot,handle,status,source,created_at,link_path,link_title').order('id', { ascending: true }).limit(500)),
       ]);
       accounts.clear(); for (const a of accs) accounts.set(a.platform, a);
       posts = rows;
@@ -214,14 +352,16 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
       if (admin) {
         const pb = h('textarea', { maxlength: 500, rows: 2, placeholder: 'Post text (up to 500 characters)', 'aria-label': 'New post' });
         const slot = h('input', { maxlength: 20, placeholder: 'Planned time, for example 07:00 MT', 'aria-label': 'Planned time' });
+        const comp = composer(pb);
         kids.push(h('form', { class: 'panel', onsubmit: action(async () => {
           const t = pb.value.trim();
           if (t.length < 3) throw new Error('Write at least a few words.');
           const r = { platform: p.id, body: t, status: 'draft', source: 'human' };
           if (slot.value.trim()) r.planned_slot = slot.value.trim();
+          Object.assign(r, comp.fields());
           await q(sb.from('social_posts').insert(r));
           sub = 'draft'; await load();
-        }, msg) }, h('label', {}, `New ${p.label} post (saved as a draft)`, pb), h('label', {}, 'Planned time', slot),
+        }, msg) }, h('label', {}, `New ${p.label} post (saved as a draft)`, pb), comp.els, h('label', {}, 'Planned time', slot),
           h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit' }, 'Add draft'))));
       }
 
@@ -245,9 +385,10 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
           h('span', { class: `tag ${x.status === 'draft' ? 'warn' : 'ok'}`, text: x.status }), ' ',
           x.source === 'llm' ? h('span', { class: 'tag', text: 'AI-made: needs the AI label' }) : null),
         h('div', { text: x.body }),
+        linkLine(x.link_path, x.link_title),
         h('div', { class: 'small muted' }, 'Posts as: ', as ? h('strong', { text: as }) : h('strong', { class: 'md-warn', text: 'Handle not set' })),
         h('div', { class: 'btns' },
-          copyBtn(x.body),
+          copyBtn(assemble(x.body, x.link_path, x.link_title)),
           admin && x.status === 'draft' ? h('button', { class: 'quiet', onclick: action(async () => {
             await q(sb.from('social_posts').update({ status: 'approved' }).eq('id', x.id)); await load();
           }, msg) }, 'Approve') : null,
@@ -266,11 +407,12 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
           admin ? h('button', { class: 'quiet', onclick: action(async () => {
             if ((await ask('Type DELETE to remove this post:')) !== 'DELETE') return;
             await q(sb.from('social_posts').delete().eq('id', x.id)); await load();
-          }, msg) }, 'Delete') : null));
+          }, msg) }, 'Delete') : null),
+        admin ? changeLink('social_posts', x, load, msg) : null);
     }
 
     load().catch((e) => bodyEl.replaceChildren(notice(e.message || 'Could not load social posts. Has migration 0091 been run?')));
-    return h('div', {},
+    return h('div', { id: 'md-social' },
       h('p', { class: 'muted small', text: 'Nothing is posted by this site. A person posts by hand after approval, and a post made by an AI must carry the AI label. Our audiences are voters, teachers and researchers or journalists. Posts are aimed at adults and teachers, not at children, and accounts follow each platform\'s own age rules.' }),
       admin ? null : h('p', { class: 'small dim', text: 'You see approved and posted posts. Drafts are seen by admins only.' }),
       msg, tabsEl, bodyEl);
@@ -279,13 +421,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
   function view(section, render) {
     render(h('h1', { text: 'Media' }), h('p', { class: 'lede', text: 'Media relations' }),
       section('guide', 'The Way / Not The Way', guide()),
-      section('ideas', 'Suggested marketing ideas', ideaBlock('idea', { addLabel: 'Add an idea', addButton: 'Add idea', placeholder: 'One idea, in a sentence or two', showReason: true })),
-      section('openers', 'Conversation openers', ideaBlock('opener', { addLabel: 'Add an opener', addButton: 'Add opener', placeholder: 'A calm first line to start a talk', showReason: false, copy: true,
-        lead: 'Short, kind lines to start a conversation. Copy one and use it by hand.' })),
-      section('closers', 'Conversation closers', ideaBlock('closer', { addLabel: 'Add a closer', addButton: 'Add closer', placeholder: 'A kind line to end a talk', showReason: false, copy: true,
-        lead: 'Short, kind lines to end a conversation. Copy one and use it by hand.' })),
-      section('copy', 'Ready-made copy', ideaBlock('copy', { addLabel: 'Add copy', addButton: 'Add copy', placeholder: 'A tagline, short description or explainer', showReason: false, copy: true,
-        lead: 'Taglines, short descriptions and explainers. No results or outcome claims. Copy and paste by hand.' })),
+      section('ideas', 'Marketing ideas and copy', ideasHub()),
       section('social', 'Social media posts', social()),
       STATS ? section('analytics', 'Site analytics and SEO', STATS.panel()) : null,
       IMAGES ? section('images', 'Image copy', IMAGES.panel()) : null);
