@@ -133,12 +133,20 @@ function make(ctx) {
     async function refreshNow() {
       if (busy) return; busy = true; refresh.disabled = true; status.textContent = 'Asking Facebook...';
       try { await sb.functions.invoke('bsky-inbox', { body: { action: 'pull' } }); } catch { /* Bluesky not set up yet */ }
+      let notSetUp = false;
       try {
         const { data, error } = await sb.functions.invoke('fb-insights', { body: { action: 'pull', days: 30 } });
         if (error) throw error;
         if (data && data.ok === false) throw new Error(data.error);
-      } catch (e) { status.textContent = `Refresh failed: ${e.message || e}`; busy = false; refresh.disabled = false; return; }
-      busy = false; refresh.disabled = false; load();
+      } catch (e) {
+        // The function not being deployed, or its secrets not being added yet, is a setup state, not a failure.
+        const m = String((e && e.message) || e);
+        if (!/Failed to send a request|Not set up yet|not found/i.test(m)) { status.textContent = `Refresh failed: ${m}`; busy = false; refresh.disabled = false; return; }
+        notSetUp = true;
+      }
+      busy = false; refresh.disabled = false;
+      await load();
+      if (notSetUp) status.textContent = `Facebook is not set up yet. ${status.textContent}`;
     }
     const refresh = h('button', { class: 'primary', onclick: refreshNow }, 'Refresh now');
 
@@ -149,17 +157,12 @@ function make(ctx) {
       const count = h('span', { class: 'muted small' });
       const onFb = h('input', { type: 'checkbox', id: 'fb-post-fb', checked: 'checked' });
       const onBs = h('input', { type: 'checkbox', id: 'fb-post-bs', checked: 'checked' });
-      const onAi = h('input', { type: 'checkbox', id: 'fb-post-ai' });
-      const AI = '\n\n(AI-written)';   // the label our rules require on a post an AI wrote
       const chars = (s) => [...s].length;
-      const withLabel = (s) => (onAi.checked ? s + AI : s);
-      const upd = () => { count.textContent = `${chars(withLabel(box.value.trim()))} characters. Bluesky allows 300.`; };
-      onAi.addEventListener('change', upd);
+      const upd = () => { count.textContent = `${chars(box.value)} characters. Bluesky allows 300.`; };
       box.addEventListener('input', upd); upd();
       const send = h('button', { class: 'primary', onclick: action(async () => {
-        const text = box.value.trim();
-        if (!text) throw new Error('Write something first.');
-        const message = withLabel(text);
+        const message = box.value.trim();
+        if (!message) throw new Error('Write something first.');
         const targets = [onFb.checked ? 'Facebook' : null, onBs.checked ? 'Bluesky' : null].filter(Boolean);
         if (!targets.length) throw new Error('Pick Facebook, Bluesky, or both.');
         if (onBs.checked && chars(message) > 300) throw new Error('Bluesky posts are 300 characters at most. Shorten it or untick Bluesky.');
@@ -180,7 +183,7 @@ function make(ctx) {
       return h('div', { class: 'panel' }, h('h3', { text: 'New post' }),
         h('p', { class: 'muted small', text: 'Publishes right away, as the Michi Institute account. Facebook needs the pages_manage_posts permission on the Page token.' }),
         box, count,
-        h('div', { class: 'btns' }, h('label', {}, onFb, ' Facebook'), ' ', h('label', {}, onBs, ' Bluesky'), ' ', h('label', {}, onAi, ' AI-written (adds the AI label)'), ' ', send), slot);
+        h('div', { class: 'btns' }, h('label', {}, onFb, ' Facebook'), ' ', h('label', {}, onBs, ' Bluesky'), ' ', send), slot);
     }
 
     root.append(
