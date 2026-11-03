@@ -1,6 +1,6 @@
 // The Way: one top bar for every page (member area, Findings, guides, maps, case pages, splash).
 // Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=25"> in <head>,
-//          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
+//          <header id="waybar" class="waybar">â€¦fallback linksâ€¦</header> first in <body>,
 //          <script src="/members/waybar.js?v=48" defer></script>.
 // Desktop, signed in or out: the same header. Voter Guide, News, Civics & History | THE WAY | Government, Election Studies, Research,
 //   then Pull a thread, search and the account (Log in and Sign up, or a small Menu button, the bell and your name).
@@ -488,7 +488,7 @@
         'aria-label': 'Account: ' + data.name, 'aria-current': cur === 'me' ? 'page' : null, title: 'Your account' });
       btn.appendChild(el('span', { class: 'wb-avatar', 'aria-hidden': 'true' }, Array.from(data.name)[0].toUpperCase()));
       btn.appendChild(el('span', { class: 'wb-name-text' }, data.name));
-      btn.appendChild(el('span', { class: 'wb-caret', 'aria-hidden': 'true' }, '▾'));
+      btn.appendChild(el('span', { class: 'wb-caret', 'aria-hidden': 'true' }, 'â–¾'));
       var menu = el('ul', { class: 'wb-menu', hidden: '' });
       var item = function (href, label) { var li = el('li'); li.appendChild(link(href, label)); menu.appendChild(li); };
       menu.appendChild(el('li', { class: 'wb-menu-name' }, data.name));
@@ -746,7 +746,7 @@
     }
     if (!document.querySelector('script[src^="/footer-quick.js"]')) {
       var footerScript = document.createElement('script');
-      footerScript.src = '/footer-quick.js?v=1';
+      footerScript.src = '/footer-quick.js?v=2';
       document.head.appendChild(footerScript);
     }
     if (!document.querySelector('script[src^="/motion-pause.js"]')) {

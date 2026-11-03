@@ -165,3 +165,4 @@
 .judges-bubble b{font:normal clamp(28px,3.6vw,40px)/1.15 Georgia,serif;letter-spacing:-.03em}
 .judges-bubble>span:not(.depth):not(.jb-go){font-size:clamp(16px,1.6vw,18px);line-height:1.55;color:#d1e5e8}
 .judges-bubble .jb-go{margin-top:6px;font-size:13px;font-weight:650;color:#bcf2ea}
+.hero-logo{display:block;width:180px;height:180px;margin:0 auto 22px;border-radius:36px}@media(max-width:600px){.hero-logo{width:110px;height:110px;border-radius:22px}}

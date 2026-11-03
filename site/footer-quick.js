@@ -7,6 +7,9 @@
     var nav = document.createElement('nav');
     nav.className = 'michi-footer-nav';
     nav.setAttribute('aria-label', 'About and policies');
+    var mark = document.createElement('img');
+    mark.src = '/the-way-logo-76.png'; mark.alt = ''; mark.width = 28; mark.height = 28; mark.className = 'michi-footer-mark';
+    nav.appendChild(mark);
     var about = document.createElement('a');
     about.href = '/deeper.html'; about.textContent = 'Why?';
     var methods = document.createElement('a');
@@ -53,6 +56,6 @@
     function visibility() { bar.hidden = window.scrollY <= 80; }
     window.addEventListener('scroll', visibility, { passive: true }); visibility();
   }
-  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=1'; document.head.appendChild(css);
+  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=2'; document.head.appendChild(css);
   appendFooter(); updateEssayBar();
 })();
