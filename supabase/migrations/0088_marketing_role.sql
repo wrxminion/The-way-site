@@ -1,6 +1,6 @@
 -- RUN THIS in the Supabase SQL editor (one paste, safe to run twice). Needs 0028, 0049 and 0087.
 -- 0088: a "marketing" role. It can read the site analytics numbers and nothing else.
---   * member_roles accepts 'marketing' (the role check is replaced by an explicit list of every role in use, plus marketing).
+--   * member_roles accepts 'marketing' (the role check is replaced by an explicit list of the live roles plus marketing).
 --   * set_role accepts 'marketing' (its role list is read and widened; the admin checks in it stay as they are).
 --   * the two site stats tables are readable by marketing as well as super admins (daily counts only: no IP
 --     addresses, no visitor rows, no member data). site_stats_top is security invoker, so it follows.
@@ -20,7 +20,7 @@ begin
   else
     alter table public.member_roles drop constraint member_roles_role_check;
     alter table public.member_roles add constraint member_roles_role_check check (role in
-      ('moderator','researcher','reviewer','admin','scholar','journalist','super_admin','editor','source_checker','marketing'));
+      ('moderator','researcher','reviewer','admin','scholar','journalist','super_admin','editor','marketing'));
   end if;
 
   v_fn := pg_get_functiondef('public.set_role(uuid,text,boolean,text)'::regprocedure);
