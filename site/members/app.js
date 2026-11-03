@@ -2552,7 +2552,7 @@ async function reviewCaseView(slug) {
   const c = caseBySlug(slug);
   if (!c) return render(notice('Unknown case.'), h('p', {}, h('a', { href: '#/review', text: 'Back to the list' })));
   const y = window.scrollY;
-  const [claimsAll, events, mineAll, summaryAll, shotRows, page] = await Promise.all([
+  const [claimsAll, events, mineAll, summaryAll, page] = await Promise.all([
     loadClaims(),
     q(sb.from('case_review_events')
       .select('id,claim_key,claim_text,event_type,note,created_at,actor:members!case_review_events_actor_id_fkey(display_name)')
@@ -2560,13 +2560,9 @@ async function reviewCaseView(slug) {
     // Phase A (0014). If the migration has not been run yet these fail quietly and the screen works as before.
     q(sb.rpc('my_claim_reviews', { p_case_slug: slug })).catch(() => null),
     q(sb.rpc('claim_review_summary', { p_case_slug: slug })).catch(() => null),
-    // Screenshots (0020). Null until that migration has been run: the upload button then stays hidden.
-    q(sb.from('review_screenshots').select('claim_key').eq('case_slug', slug)).catch(() => null),
     // The case page itself, for the source link and the "expand context" buttons. Not essential.
     loadCasePage(c).catch(() => null),
   ]);
-  const shotCount = new Map();
-  for (const r of shotRows || []) shotCount.set(r.claim_key, (shotCount.get(r.claim_key) || 0) + 1);
   const phaseA = mineAll !== null && summaryAll !== null;
   const mineBy = new Map();
   for (const m of mineAll || []) { if (!mineBy.has(m.claim_key)) mineBy.set(m.claim_key, []); mineBy.get(m.claim_key).push(m); }
@@ -2614,7 +2610,6 @@ async function reviewCaseView(slug) {
       claimContext(cl, c, page),
       e && e.note ? h('p', { class: 'small', text: `Last note: ${e.note}` }) : null,
       phaseA ? claimReviewPanel(cl, mineBy.get(cl.k) || [], sumBy.get(cl.k), slug, msg, refresh) : null,
-      shotRows !== null ? screenshotPanel(cl, slug, shotCount.get(cl.k) || 0) : null,
       reviewed ? null : h('div', { class: 'btns' },
         !e || e.event_type !== 'claim_flagged' ? h('button', { class: 'quiet', disabled: isOk(cl.k) && e.event_type === 'claim_checked', onclick: claimStep(cl, 'claim_checked') }, 'Mark checked') : null,
         !e || e.event_type !== 'claim_flagged' ? h('button', { class: 'quiet danger', onclick: claimStep(cl, 'claim_flagged', null, true) }, 'Flag') : null,
@@ -2840,76 +2835,6 @@ function claimContext(cl, c, doc) {
     slot.replaceChildren(box, acts);
   };
   slot.append(h('div', { class: 'btns' }, h('button', { class: 'quiet', type: 'button', onclick: () => { level.n = 1; draw(); } }, 'Expand context')));
-  return slot;
-}
-
-// ---- Screenshots (0020). A reviewer can attach a screenshot of the source to a claim. Safe by design:
-// the browser re-draws the picture (which drops all hidden data such as location and device info), rejects
-// anything that is not a real image, caps size, and the file goes to a PRIVATE bucket that only moderators and
-// the uploader can read. Screenshots are never shown on the public review history.
-const SHOT_MAX_PICK = 12 * 1024 * 1024, SHOT_MAX_OUT = 1500 * 1024, SHOT_MAX_SIDE = 1800;
-async function cleanShot(file) {
-  if (!/^image\/(png|jpeg|webp)$/.test(file.type)) throw new Error('Only PNG, JPEG or WebP pictures can be attached.');
-  if (file.size > SHOT_MAX_PICK) throw new Error('That picture is over 12 MB. Crop it or save it smaller.');
-  let bmp;
-  try { bmp = await createImageBitmap(file); } catch { throw new Error('That file is not a readable picture.'); }
-  const k = Math.min(1, SHOT_MAX_SIDE / Math.max(bmp.width, bmp.height));
-  const cv = document.createElement('canvas');
-  cv.width = Math.max(1, Math.round(bmp.width * k)); cv.height = Math.max(1, Math.round(bmp.height * k));
-  const cx = cv.getContext('2d');
-  cx.fillStyle = '#fff'; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(bmp, 0, 0, cv.width, cv.height);
-  if (bmp.close) bmp.close();
-  for (const qual of [0.85, 0.7, 0.55]) {
-    const blob = await new Promise((res) => cv.toBlob(res, 'image/jpeg', qual));
-    if (blob && blob.size <= SHOT_MAX_OUT) return blob;
-  }
-  throw new Error('Even after shrinking, that picture is too big. Crop it.');
-}
-function screenshotPanel(cl, slug, count) {
-  const slot = h('div', { class: 'shots' });
-  const list = h('div');
-  const msg = h('div');
-  let n = count;
-  const status = h('p', { class: 'small muted' });
-  const label = () => { status.textContent = n ? `${n} screenshot${n === 1 ? '' : 's'} attached (private: moderators only).` : 'No screenshots attached.'; };
-  label();
-  const show = action(async () => {
-    const rows = await q(sb.from('review_screenshots').select('id,path,note,created_at').eq('case_slug', slug).eq('claim_key', cl.k).order('id'));
-    // The page's CSP allows images only from this site or data: URLs, so download each file and show it as a data: URL.
-    const toData = (blob) => new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.onerror = rej; fr.readAsDataURL(blob); });
-    const imgs = await Promise.all(rows.map(async (r) => {
-      const { data, error } = await sb.storage.from('review-screenshots').download(r.path);
-      return error || !data ? null : toData(data);
-    }));
-    list.replaceChildren(rows.length ? h('div', { class: 'btns' }, rows.map((r, i) => {
-      if (!imgs[i]) return h('span', { class: 'small muted', text: 'A screenshot could not be loaded.' });
-      const img = h('img', { src: imgs[i], alt: r.note || 'Screenshot', title: (r.note ? r.note + ' \u00b7 ' : '') + 'click to enlarge', style: 'max-width:160px;max-height:120px;border-radius:8px;border:1px solid var(--line);cursor:zoom-in' });
-      img.addEventListener('click', () => {
-        const big = img.dataset.big === '1';
-        img.dataset.big = big ? '0' : '1';
-        img.style.maxWidth = big ? '160px' : '100%'; img.style.maxHeight = big ? '120px' : 'none'; img.style.cursor = big ? 'zoom-in' : 'zoom-out';
-      });
-      return img;
-    })) : h('p', { class: 'small muted', text: 'Nothing attached yet.' }));
-  }, msg);
-  const input = h('input', { type: 'file', accept: 'image/png,image/jpeg,image/webp', hidden: true });
-  const note = h('input', { type: 'text', maxlength: 200, placeholder: 'What this shows (optional, public-safe, no names)', style: 'min-width:240px' });
-  input.addEventListener('change', action(async () => {
-    const f = input.files && input.files[0];
-    if (!f) return;
-    const blob = await cleanShot(f);
-    const id = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2));
-    const path = `${state.user.id}/${slug}/${cl.k}/${id}.jpg`;
-    const up = await sb.storage.from('review-screenshots').upload(path, blob, { contentType: 'image/jpeg', upsert: false });
-    if (up.error) throw up.error;
-    await q(sb.from('review_screenshots').insert({ case_slug: slug, claim_key: cl.k, path, note: note.value.trim() || null }));
-    input.value = ''; note.value = ''; n += 1; label();
-    await show();
-  }, msg));
-  slot.append(status, h('div', { class: 'btns' },
-    h('button', { class: 'quiet', type: 'button', onclick: () => input.click() }, 'Attach a screenshot'),
-    n ? h('button', { class: 'quiet', type: 'button', onclick: show }, 'Show screenshots') : null, note, input),
-    h('p', { class: 'small muted', text: 'Private to moderators; never shown on the public history. Blur names, addresses and emails first. Pictures are re-saved as plain JPEG and capped in size.' }), msg, list);
   return slot;
 }
 
