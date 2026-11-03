@@ -34,3 +34,8 @@
 .adm-filter{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0}
 .adm-filter input{flex:2 1 200px;width:auto}
 .adm-filter select{flex:1 1 150px;width:auto}
+.as-table a.as-link{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px}
+.as-table a.as-link:hover,.as-table a.as-link:focus-visible{text-decoration-color:currentColor}
+.as-scroll{overflow-x:auto;max-width:100%}
+.as-byday th,.as-byday td{white-space:nowrap}
+.as-byday th:first-child,.as-byday td:first-child{position:sticky;left:0;background:var(--panel)}
