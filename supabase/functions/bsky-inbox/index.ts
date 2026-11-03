@@ -41,7 +41,7 @@ Deno.serve(async (req) => {
 
   let body: Json = {};
   try { body = await req.json(); } catch { /* no body */ }
-  const act = body?.action === 'reply' ? 'reply' : 'pull';
+  const act = body?.action === 'reply' ? 'reply' : body?.action === 'post' ? 'post' : 'pull';
 
   const cron = env('STATS_CRON_SECRET');
   let allowed = act === 'pull' && !!cron && req.headers.get('x-cron-secret') === cron;
@@ -62,6 +62,16 @@ Deno.serve(async (req) => {
   try {
     const s = await xrpc('POST', 'com.atproto.server.createSession', null, { identifier: handle, password: pass });
     const jwt = s.accessJwt as string, did = s.did as string;
+
+    if (act === 'post') {
+      const message = String(body.message ?? '').trim();
+      if (!message || [...message].length > 300) return json({ ok: false, error: 'A Bluesky post must be 1 to 300 characters.' }, 400);
+      const r = await xrpc('POST', 'com.atproto.repo.createRecord', jwt, {
+        repo: did, collection: 'app.bsky.feed.post',
+        record: { $type: 'app.bsky.feed.post', text: message, createdAt: new Date().toISOString() },
+      });
+      return json({ ok: true, uri: r.uri });
+    }
 
     if (act === 'reply') {
       const id = String(body.id ?? ''), message = String(body.message ?? '').trim();
