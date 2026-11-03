@@ -1,0 +1,5 @@
+/* Admin > Facebook (admin-fb.js). Reuses the .as-tile, .as-table and .list styles from admin-stats.css. */
+.fb-item{padding:10px 0;border-top:1px solid var(--line)}
+.fb-new{border-left:3px solid var(--aqua);padding-left:10px}
+.fb-item textarea{width:100%;margin:8px 0}
+.fb-item details{margin:8px 0}
