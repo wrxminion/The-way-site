@@ -38,6 +38,9 @@ tsOk = false; r = await m.handler(await post(good), env({}), mk()); ok(r.status 
 r = await m.handler(await post({ ...good, website: 'spam' }), env({}), mk()); ok(r.status === 200 && !calls.some((c) => c[0] === 'rpc'), 'trap field gets a quiet ok and stores nothing');
 r = await m.handler(await post(good), env({}), mk()); ok(r.status === 200 && (await r.json()).receipt === 'abc123', 'link submission accepted');
 const rp = calls.find((c) => c[0] === 'rpc'); ok(rp[1] === 'submit_art' && rp[2].p_link === good.link && rp[2].p_portfolio === null && rp[2].p_rate_key.length === 64, 'rpc called with a hashed rate key');
+ok(rp[2].p_sell_ok === false, 'selling is off unless the separate box is ticked');
+calls.length = 0;
+r = await m.handler(await post({ ...good, sell_ok: '1' }), env({}), mk()); ok(r.status === 200 && calls.find((c) => c[0] === 'rpc')[2].p_sell_ok === true, 'sell_ok ticked is passed through');
 calls.length = 0;
 r = await m.handler(await post({ ...good, link: '', file: new File([PNG], 'a.png', { type: 'image/png' }) }), env({}), mk()); ok(r.status === 200 && calls[0][0] === 'upload', 'png upload stored');
 calls.length = 0;
