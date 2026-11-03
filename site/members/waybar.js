@@ -173,6 +173,7 @@
     if (/^#\/reports/.test(h)) return 'reports';
     if (/^#\/log/.test(h)) return 'log';
     if (/^#\/admin/.test(h)) return 'admin';
+    if (/^#\/media/.test(h)) return 'media';
     if (/^#\/roles/.test(h)) return 'roles';
     if (/^#\/?$/.test(h) && appPage) return 'home';
     if (/^#\/(account|password)/.test(h)) return 'me';
