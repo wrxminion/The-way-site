@@ -26,7 +26,7 @@ const NOT_THE_WAY = [
   'Do not argue with trolls. Let the sources talk.',
 ];
 
-function make({ sb, h, q, notice, action, ask, STATS, canWrite, uid }) {
+function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
   const list = (items) => h('ul', { class: 'md-list' }, items.map((t) => h('li', { text: t })));
 
   function guide() {
@@ -115,7 +115,8 @@ function make({ sb, h, q, notice, action, ask, STATS, canWrite, uid }) {
     render(h('h1', { text: 'Media' }), h('p', { class: 'lede', text: 'Media relations' }),
       section('guide', 'The Way / Not The Way', guide()),
       section('ideas', 'Suggested marketing ideas', ideas()),
-      STATS ? section('analytics', 'Site analytics and SEO', STATS.panel()) : null);
+      STATS ? section('analytics', 'Site analytics and SEO', STATS.panel()) : null,
+      IMAGES ? section('images', 'Image copy', IMAGES.panel()) : null);
   }
   return { view };
 }
