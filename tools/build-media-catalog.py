@@ -148,7 +148,7 @@ if len(sys.argv) > 1:
         # A: bad faith or trolls. Drop the sources once, then disengage.
         ('Here is some good sauce, may you find peace on your path.', 'Use for bad faith or trolls. Drop the link once, then go quiet. Do not reply again.', by('/how-government-works.html')),
         ('The sources are below if you ever want them. I will leave it here. You take care now.', 'Use for someone who only wants a fight. Drop the link once, then go quiet. Do not reply again.', by('/cases/')),
-        ('Well now, I will leave the sources here for anyone who wants to read them. I wish you a good day.', 'Use when the replies turn to insults. Drop the link once for other readers, then go quiet. Do not reply again.', by('/research/')),
+        ("Ohh that's cute, here is some sauce.", 'Light and teasing. Can read as a dig, so use only when the tone is already playful.', by('/research/')),
         # B: people who engage with the sources. Offer more research.
         ('Good point. Here is a second source and the primary document that bears on it. If it disproves our claim, we will correct it.', 'Use when someone reads the sources and answers calmly. Offer more research.'),
         ('Thank you kindly for reading it. Which part of the source do you read differently? Show me the line and I will look at it with you.', 'Use when someone engages with a source but disagrees on one part. Ask for the exact line.'),
