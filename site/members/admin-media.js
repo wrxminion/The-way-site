@@ -413,7 +413,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
 
     load().catch((e) => bodyEl.replaceChildren(notice(e.message || 'Could not load social posts. Has migration 0091 been run?')));
     return h('div', { id: 'md-social' },
-      h('p', { class: 'muted small', text: 'Nothing is posted automatically. A person posts after approval, by hand or from the New post box on the Admin page, and a post made by an AI must carry the AI label (tick the AI-written box there). Our audiences are voters, teachers and researchers or journalists. Posts are aimed at adults and teachers, not at children, and accounts follow each platform\'s own age rules.' }),
+      h('p', { class: 'muted small', text: 'Nothing is posted automatically. A person posts after approval, by hand or from Post online on the Admin page, and a post made by an AI must carry the AI label (tick the AI-written box there). Our audiences are voters, teachers and researchers or journalists. Posts are aimed at adults and teachers, not at children, and accounts follow each platform\'s own age rules.' }),
       admin ? null : h('p', { class: 'small dim', text: 'You see approved and posted posts. Drafts are seen by admins only.' }),
       msg, tabsEl, bodyEl);
   }

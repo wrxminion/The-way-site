@@ -2273,7 +2273,7 @@ async function adminView() {
   render(
     h('h1', { text: 'Admin' }), msg,
     canStats() && STATS ? sec('analytics', 'Site analytics and SEO', STATS.panel()) : null,
-    state.roles.has('super_admin') && FB ? sec('facebook', 'Facebook (Michi Institute Page)', FB.panel()) : null,
+    state.roles.has('super_admin') && FB ? sec('facebook', 'Post online', FB.panel()) : null,
     can('admin') ? sec('media', 'Media', h('div', { class: 'panel' }, h('p', { class: 'muted small', text: 'Media relations: site analytics, suggested marketing ideas, and The Way / Not The Way.' }), h('a', { class: 'button primary', href: '#/media', text: 'Open Media' }))) : null,
     can('admin') && ROLETREE ? sec('roles', 'Admin roles', ROLETREE.panel()) : null,
     can('admin') && LEDGER ? sec('ledger', 'Ledger checks', LEDGER.panel()) : null,

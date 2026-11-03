@@ -36,7 +36,7 @@ function make(ctx) {
       const n = await unread();
       if (!n) return;
       for (const t of (root || document).querySelectorAll('.adm-toggle span:not(.adm-arrow)')) {
-        if (/^Facebook/.test(t.textContent) && !/new\)$/.test(t.textContent)) t.textContent += ` (${n} new)`;
+        if (/^Post online/.test(t.textContent) && !/new\)$/.test(t.textContent)) t.textContent += ` (${n} new)`;
       }
     } catch { /* not installed yet */ }
   }
@@ -150,6 +150,60 @@ function make(ctx) {
     }
     const refresh = h('button', { class: 'primary', onclick: refreshNow }, 'Refresh now');
 
+    // Ready to post. The queue is the Media page "Social media posts" list (social_posts): only APPROVED posts for Bluesky or
+    // Facebook are shown, each with a Post button. Posting is outward-facing, so it still asks first; then the post is marked
+    // posted (the database records the time and who). An AI-made post gets the AI label added, as the Media page rule says.
+    const SITE = 'https://michiinstitute.com';
+    const REVIEW = { checked: 'Checked by a person', ai_unreviewed: 'AI quick check, not yet reviewed by a person' };
+    const AI_LABEL = '\n\n(AI-written)';
+    const charsOf = (s) => [...s].length;
+    const textOf = (x) => {
+      let t = x.body;
+      if (x.link_path && x.link_title) t += `\n${x.link_title}\n${SITE}${x.link_path}`;
+      else if (x.source_url) t += `\n${x.source_url}`;
+      return x.source === 'llm' ? t + AI_LABEL : t;
+    };
+    function ready() {
+      const list = h('div'), slot = h('div');
+      async function loadReady() {
+        try {
+          const rows = await q(sb.from('social_posts')
+            .select('id,platform,body,source,link_path,link_title,source_name,source_url,review_status')
+            .eq('status', 'approved').in('platform', ['bluesky', 'facebook']).order('id', { ascending: true }).limit(100));
+          list.replaceChildren(rows.length ? h('ul', { class: 'list' }, rows.map(one))
+            : h('p', { class: 'muted', text: 'Nothing approved and waiting. Approve a post on the Media page (Social media posts) and it shows up here.' }));
+        } catch (e) {
+          list.replaceChildren(h('p', { class: 'muted', text: `Could not load the list: ${e.message || e}. Has migration 0100 been run?` }));
+        }
+      }
+      function one(x) {
+        const text = textOf(x), n = charsOf(text), bsky = x.platform === 'bluesky';
+        const tooLong = bsky && n > 300;
+        const res = h('div');
+        const go = h('button', { class: 'primary', disabled: tooLong ? 'disabled' : null, onclick: action(async () => {
+          if (!confirm(`Publish this now on ${bsky ? 'Bluesky' : 'Facebook'}? It goes live right away.\n\n${text}`)) return;
+          const { data, error } = await sb.functions.invoke(bsky ? 'bsky-inbox' : 'fb-insights', { body: { action: 'post', message: text } });
+          if (error) throw error;
+          if (data && data.ok === false) throw new Error(data.error);
+          try { await q(sb.from('social_posts').update({ status: 'posted' }).eq('id', x.id)); }
+          catch (e) { throw new Error(`It was posted, but could not be marked posted: ${e.message || e}`); }
+          await loadReady();
+        }, res) }, `Post to ${bsky ? 'Bluesky' : 'Facebook'}`);
+        return h('li', { class: 'fb-item' },
+          h('div', { class: 'row' }, h('strong', { text: bsky ? 'Bluesky' : 'Facebook' }), h('span', {},
+            x.review_status ? h('span', { class: x.review_status === 'checked' ? 'tag ok' : 'tag warn', text: REVIEW[x.review_status] }) : null, ' ',
+            x.source === 'llm' ? h('span', { class: 'tag', text: 'AI-made: label added' }) : null)),
+          h('p', { class: 'fb-text', text: text }),
+          x.source_name ? h('p', { class: 'muted small', text: `Source: ${x.source_name}` }) : null,
+          h('p', { class: tooLong ? 'small md-warn' : 'muted small', text: bsky ? `${n} of 300 characters${tooLong ? '. Too long for Bluesky: shorten it on the Media page.' : '.'}` : `${n} characters.` }),
+          h('div', { class: 'btns' }, go), res);
+      }
+      loadReady();
+      return h('div', { class: 'panel' }, h('h3', { text: 'Ready to post' }),
+        h('p', { class: 'muted small', text: 'Approved posts from the Media page. One click publishes, after a quick confirm. The post is then marked posted with the time and who did it.' }),
+        list, slot);
+    }
+
     // New post. Kept out of `body` so a refresh never wipes what is being typed. Publishing is outward-facing, so it asks first.
     function composer() {
       const slot = h('div');
@@ -192,9 +246,9 @@ function make(ctx) {
     }
 
     root.append(
-      h('h2', { text: 'Facebook' }),
-      h('p', { class: 'muted small', text: 'Super admins only. The Michi Institute Page: follower and view numbers, plus new comments you can answer from here, and a box to post new updates. Numbers are pulled from Facebook on a schedule and when you press Refresh.' }),
-      h('div', { class: 'btns' }, refresh), status, composer(), body);
+      h('h2', { text: 'Post online' }),
+      h('p', { class: 'muted small', text: 'Super admins only. Publish to Bluesky and Facebook, and answer what comes back: approved posts ready to send, a box for a new post, replies and comments in one inbox, and the Facebook Page numbers. Inbox and numbers are pulled on a schedule and when you press Refresh.' }),
+      h('div', { class: 'btns' }, refresh), status, ready(), composer(), body);
     load();
     return root;
   }
