@@ -10,3 +10,8 @@
 .md-tab[aria-pressed=true]{border-color:var(--aqua);color:#fff}
 .md-ideas+.md-ideas{margin-top:0}
 .md-ideas[hidden]{display:none}
+.md-warn{color:var(--warn)}
+.md-badge{margin-left:6px;font-size:11px}
+.md-inline{align-items:center}
+.md-inline input{flex:1 1 220px;min-width:0}
+.md-tab{max-width:100%}
