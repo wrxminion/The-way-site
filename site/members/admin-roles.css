@@ -1,0 +1,7 @@
+/* Admin > Roles tree (admin-roles.js). Each level is indented under its parent with a guide line. */
+.rt-tree,.rt-kids{list-style:none;margin:0;padding:0}
+.rt-kids{margin:8px 0 0 14px;padding-left:16px;border-left:1px solid var(--line-strong)}
+.rt-node{margin:8px 0}
+.rt-card{background:var(--panel-solid);border:1px solid var(--line);border-radius:12px;padding:10px 14px;overflow-wrap:anywhere}
+.rt-card .tag{margin-left:2px}
+@media (max-width:480px){.rt-kids{margin-left:6px;padding-left:10px}}
