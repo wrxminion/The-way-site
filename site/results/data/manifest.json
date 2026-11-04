@@ -5,7 +5,7 @@
   "date": "2026-11-03",
   "timezone": "America/Denver"
  },
- "generated_at": "2026-11-04T01:55:42Z",
+ "generated_at": "2026-11-04T01:57:50Z",
  "mode": "live",
  "certified": false,
  "sources": [
@@ -13,7 +13,7 @@
    "id": "co-sos",
    "name": "Colorado Secretary of State (Clarity)",
    "url": "https://results.enr.clarityelections.com/CO/127407/",
-   "checked_at": "2026-11-04T01:55:41Z",
+   "checked_at": "2026-11-04T01:57:47Z",
    "status": "error",
    "note": "Last attempt failed; showing the last good copy."
   },
@@ -21,19 +21,19 @@
    "id": "ga-scytl",
    "name": "Georgia Secretary of State",
    "url": "https://results.sos.ga.gov/results/public/Georgia/elections/11032026GeneralAndSpecialElection",
-   "checked_at": "2026-11-04T01:55:41Z",
+   "checked_at": "2026-11-04T01:57:48Z",
    "status": "ok",
    "note": "",
-   "data_updated_at": "2026-11-04T01:55:42Z"
+   "data_updated_at": "2026-11-04T01:57:49Z"
   },
   {
    "id": "va-scytl",
    "name": "Virginia Department of Elections",
    "url": "https://enr.elections.virginia.gov/results/public/Virginia/elections/2026-November-General",
-   "checked_at": "2026-11-04T01:55:42Z",
+   "checked_at": "2026-11-04T01:57:49Z",
    "status": "ok",
    "note": "",
-   "data_updated_at": "2026-11-04T01:55:42Z"
+   "data_updated_at": "2026-11-04T01:57:50Z"
   }
  ],
  "files": [
@@ -42,28 +42,28 @@
    "label": "U.S. House",
    "path": "house.json",
    "contests": 25,
-   "updated_at": "2026-11-04T01:55:42Z"
+   "updated_at": "2026-11-04T01:57:50Z"
   },
   {
    "scope": "senate",
    "label": "U.S. Senate",
    "path": "senate.json",
    "contests": 2,
-   "updated_at": "2026-11-04T01:55:42Z"
+   "updated_at": "2026-11-04T01:57:50Z"
   },
   {
    "scope": "state-ga",
    "label": "Georgia",
    "path": "state-ga.json",
    "contests": 273,
-   "updated_at": "2026-11-04T01:55:42Z"
+   "updated_at": "2026-11-04T01:57:50Z"
   },
   {
    "scope": "state-va",
    "label": "Virginia",
    "path": "state-va.json",
    "contests": 32,
-   "updated_at": "2026-11-04T01:55:42Z"
+   "updated_at": "2026-11-04T01:57:50Z"
   }
  ],
  "balance": {
