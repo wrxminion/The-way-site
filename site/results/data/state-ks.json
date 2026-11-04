@@ -3,9 +3,10 @@
  "scope": "state-ks",
  "label": "Kansas",
  "source_ids": [
+  "ks-leg",
   "ks-sos"
  ],
- "updated_at": "2026-11-04T14:03:28Z",
+ "updated_at": "2026-11-04T14:09:24Z",
  "certified": false,
  "contests": [
   {
@@ -43,7 +44,7 @@
    "precincts": {
     "reporting": 4168,
     "total": 4168,
-    "unit": "counties"
+    "unit": "precincts"
    }
   },
   {
@@ -81,7 +82,7 @@
    "precincts": {
     "reporting": 1403,
     "total": 1403,
-    "unit": "counties"
+    "unit": "precincts"
    }
   },
   {
@@ -119,7 +120,7 @@
    "precincts": {
     "reporting": 1089,
     "total": 1089,
-    "unit": "counties"
+    "unit": "precincts"
    }
   },
   {
@@ -157,7 +158,7 @@
    "precincts": {
     "reporting": 735,
     "total": 735,
-    "unit": "counties"
+    "unit": "precincts"
    }
   },
   {
@@ -195,7 +196,7 @@
    "precincts": {
     "reporting": 942,
     "total": 942,
-    "unit": "counties"
+    "unit": "precincts"
    }
   },
   {
@@ -226,7 +227,7 @@
    "precincts": {
     "reporting": 4168,
     "total": 4168,
-    "unit": "counties"
+    "unit": "precincts"
    }
   },
   {
@@ -264,7 +265,7 @@
    "precincts": {
     "reporting": 4168,
     "total": 4168,
-    "unit": "counties"
+    "unit": "precincts"
    }
   },
   {
@@ -295,7 +296,7 @@
    "precincts": {
     "reporting": 4168,
     "total": 4168,
-    "unit": "counties"
+    "unit": "precincts"
    }
   },
   {
@@ -333,7 +334,7 @@
    "precincts": {
     "reporting": 4168,
     "total": 4168,
-    "unit": "counties"
+    "unit": "precincts"
    }
   },
   {
@@ -371,7 +372,7 @@
    "precincts": {
     "reporting": 4168,
     "total": 4168,
-    "unit": "counties"
+    "unit": "precincts"
    }
   },
   {
@@ -402,7 +403,7 @@
    "precincts": {
     "reporting": 4168,
     "total": 4168,
-    "unit": "counties"
+    "unit": "precincts"
    }
   },
   {
@@ -433,7 +434,7 @@
    "precincts": {
     "reporting": 4168,
     "total": 4168,
-    "unit": "counties"
+    "unit": "precincts"
    }
   },
   {
@@ -464,7 +465,2942 @@
    "precincts": {
     "reporting": 4168,
     "total": 4168,
-    "unit": "counties"
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-senate-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas Senate District 25",
+   "district": null,
+   "title": "Kansas Senate District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "silas-j-miller",
+     "name": "Silas J. Miller",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12208
+    },
+    {
+     "id": "christopher-parisho",
+     "name": "Christopher Parisho",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5887
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 2",
+   "district": null,
+   "title": "Kansas House of Representatives District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "avery-rowland",
+     "name": "Avery Rowland",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2728
+    },
+    {
+     "id": "dan-muter",
+     "name": "Dan Muter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5268
+    }
+   ],
+   "precincts": {
+    "reporting": 65,
+    "total": 65,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 3",
+   "district": null,
+   "title": "Kansas House of Representatives District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "isaiah-harris",
+     "name": "Isaiah Harris",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3267
+    },
+    {
+     "id": "d-j-perry",
+     "name": "D J Perry",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3485
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 4",
+   "district": null,
+   "title": "Kansas House of Representatives District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rick-james",
+     "name": "Rick James",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5674
+    },
+    {
+     "id": "rob-hodgkinson",
+     "name": "Rob Hodgkinson",
+     "party": "L",
+     "party_code": "O",
+     "votes": 1907
+    }
+   ],
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 5",
+   "district": null,
+   "title": "Kansas House of Representatives District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "henry-johns",
+     "name": "Henry Johns",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3990
+    },
+    {
+     "id": "courtney-sappington",
+     "name": "Courtney Sappington",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6007
+    }
+   ],
+   "precincts": {
+    "reporting": 58,
+    "total": 58,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 6",
+   "district": null,
+   "title": "Kansas House of Representatives District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "frank-henderson",
+     "name": "Frank Henderson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3507
+    },
+    {
+     "id": "samantha-m-poetter-parshall",
+     "name": "Samantha M. Poetter Parshall",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5942
+    }
+   ],
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 7",
+   "district": null,
+   "title": "Kansas House of Representatives District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "taylor-moreland",
+     "name": "Taylor Moreland",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2671
+    },
+    {
+     "id": "thomas-douglas-allen",
+     "name": "Thomas Douglas Allen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4089
+    }
+   ],
+   "precincts": {
+    "reporting": 40,
+    "total": 40,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 8",
+   "district": null,
+   "title": "Kansas House of Representatives District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "megan-phillips",
+     "name": "Megan Phillips",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5795
+    },
+    {
+     "id": "chris-croft",
+     "name": "Chris Croft",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5555
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 11",
+   "district": null,
+   "title": "Kansas House of Representatives District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-kendall",
+     "name": "William Kendall",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2043
+    },
+    {
+     "id": "ron-bryce",
+     "name": "Ron Bryce",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4448
+    }
+   ],
+   "precincts": {
+    "reporting": 57,
+    "total": 57,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 12",
+   "district": null,
+   "title": "Kansas House of Representatives District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pete-ferrell",
+     "name": "Pete Ferrell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1949
+    },
+    {
+     "id": "marci-laffen",
+     "name": "Marci Laffen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6392
+    }
+   ],
+   "precincts": {
+    "reporting": 89,
+    "total": 89,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 13",
+   "district": null,
+   "title": "Kansas House of Representatives District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-remmert",
+     "name": "Mark Remmert",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2191
+    },
+    {
+     "id": "duane-droge",
+     "name": "Duane Droge",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5869
+    }
+   ],
+   "precincts": {
+    "reporting": 71,
+    "total": 71,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 14",
+   "district": null,
+   "title": "Kansas House of Representatives District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sherry-giebler",
+     "name": "Sherry Giebler",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7392
+    },
+    {
+     "id": "charlotte-esau",
+     "name": "Charlotte Esau",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5923
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 15",
+   "district": null,
+   "title": "Kansas House of Representatives District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "allison-hougland",
+     "name": "Allison Hougland",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3794
+    },
+    {
+     "id": "lauren-n-bohi",
+     "name": "Lauren N. Bohi",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2811
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 17",
+   "district": null,
+   "title": "Kansas House of Representatives District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jo-ella-hoye",
+     "name": "Jo Ella Hoye",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7642
+    },
+    {
+     "id": "jim-eschrich",
+     "name": "Jim Eschrich",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4685
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 18",
+   "district": null,
+   "title": "Kansas House of Representatives District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cindy-neighbor",
+     "name": "Cindy Neighbor",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6965
+    },
+    {
+     "id": "robert-whitman",
+     "name": "Robert Whitman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3912
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 19",
+   "district": null,
+   "title": "Kansas House of Representatives District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-sawyer-clayton",
+     "name": "Stephanie Sawyer Clayton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9346
+    },
+    {
+     "id": "mark-hermes",
+     "name": "Mark Hermes",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4572
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 24",
+   "district": null,
+   "title": "Kansas House of Representatives District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jarrod-ousley",
+     "name": "Jarrod Ousley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6987
+    },
+    {
+     "id": "scott-speicker",
+     "name": "Scott Speicker",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2676
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 26",
+   "district": null,
+   "title": "Kansas House of Representatives District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "laura-johnson",
+     "name": "Laura Johnson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6293
+    },
+    {
+     "id": "chip-vanhouden",
+     "name": "Chip VanHouden",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6435
+    }
+   ],
+   "precincts": {
+    "reporting": 41,
+    "total": 41,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 27",
+   "district": null,
+   "title": "Kansas House of Representatives District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sara-kiewiet",
+     "name": "Sara Kiewiet",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6863
+    },
+    {
+     "id": "sean-e-tarwater",
+     "name": "Sean E. Tarwater",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6822
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 28",
+   "district": null,
+   "title": "Kansas House of Representatives District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bryan-mouber",
+     "name": "Bryan Mouber",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6157
+    },
+    {
+     "id": "alex-n-bergman",
+     "name": "Alex. N Bergman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5089
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 30",
+   "district": null,
+   "title": "Kansas House of Representatives District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amelia-wiederaenders",
+     "name": "Amelia Wiederaenders",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5550
+    },
+    {
+     "id": "laura-williams",
+     "name": "Laura Williams",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4874
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 31",
+   "district": null,
+   "title": "Kansas House of Representatives District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emily-hane",
+     "name": "Emily Hane",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4448
+    },
+    {
+     "id": "dennis-grindel",
+     "name": "Dennis Grindel",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1053
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 33",
+   "district": null,
+   "title": "Kansas House of Representatives District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emily-blanks",
+     "name": "Emily Blanks",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4333
+    },
+    {
+     "id": "carolyn-caiharr",
+     "name": "Carolyn Caiharr",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3353
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 34",
+   "district": null,
+   "title": "Kansas House of Representatives District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "valdenia-c-winn",
+     "name": "Valdenia C. Winn",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3615
+    },
+    {
+     "id": "cece-harlin",
+     "name": "CeCe Harlin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 715
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 35",
+   "district": null,
+   "title": "Kansas House of Representatives District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wanda-brownlee-paige",
+     "name": "Wanda Brownlee Paige",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4354
+    },
+    {
+     "id": "alex-sanchez",
+     "name": "Alex Sanchez",
+     "party": "R",
+     "party_code": "R",
+     "votes": 861
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 36",
+   "district": null,
+   "title": "Kansas House of Representatives District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lynn-melton",
+     "name": "Lynn Melton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6447
+    },
+    {
+     "id": "brian-dickason",
+     "name": "Brian Dickason",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2862
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 37",
+   "district": null,
+   "title": "Kansas House of Representatives District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-m-oropeza",
+     "name": "Melissa M Oropeza",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4301
+    },
+    {
+     "id": "connie-jo-henry",
+     "name": "Connie Jo Henry",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1678
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 38",
+   "district": null,
+   "title": "Kansas House of Representatives District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-paz",
+     "name": "Richard Paz",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4559
+    },
+    {
+     "id": "timothy-h-johnson",
+     "name": "Timothy H. Johnson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6517
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 39",
+   "district": null,
+   "title": "Kansas House of Representatives District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zach-maier",
+     "name": "Zach Maier",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6206
+    },
+    {
+     "id": "angela-stiens",
+     "name": "Angela Stiens",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5255
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 40",
+   "district": null,
+   "title": "Kansas House of Representatives District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mika-stilwell",
+     "name": "Mika Stilwell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3739
+    },
+    {
+     "id": "david-buehler",
+     "name": "David Buehler",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3806
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 41",
+   "district": null,
+   "title": "Kansas House of Representatives District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-pittman",
+     "name": "Jeff Pittman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2661
+    },
+    {
+     "id": "ann-reinhart",
+     "name": "Ann Reinhart",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2079
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 42",
+   "district": null,
+   "title": "Kansas House of Representatives District 42",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-wendt",
+     "name": "Brandon Wendt",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4361
+    },
+    {
+     "id": "lance-w-neelly",
+     "name": "Lance W. Neelly",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5052
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 43",
+   "district": null,
+   "title": "Kansas House of Representatives District 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristen-schultz",
+     "name": "Kristen Schultz",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4365
+    },
+    {
+     "id": "william-bill-sutton",
+     "name": "William (Bill) Sutton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4189
+    }
+   ],
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 47",
+   "district": null,
+   "title": "Kansas House of Representatives District 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mary-t-williams",
+     "name": "Mary T. Williams",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4115
+    },
+    {
+     "id": "paula-newell-ellis",
+     "name": "Paula Newell Ellis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6198
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 49",
+   "district": null,
+   "title": "Kansas House of Representatives District 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nikki-mcdonald",
+     "name": "Nikki McDonald",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6255
+    },
+    {
+     "id": "tricia-sinclair",
+     "name": "Tricia Sinclair",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4430
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-52",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 52",
+   "district": null,
+   "title": "Kansas House of Representatives District 52",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "toni-scalia",
+     "name": "Toni Scalia",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5776
+    },
+    {
+     "id": "jesse-borjon",
+     "name": "Jesse Borjon",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6125
+    }
+   ],
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-54",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 54",
+   "district": null,
+   "title": "Kansas House of Representatives District 54",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-tanner",
+     "name": "Chris Tanner",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3695
+    },
+    {
+     "id": "ken-corbet",
+     "name": "Ken Corbet",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6071
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-55",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 55",
+   "district": null,
+   "title": "Kansas House of Representatives District 55",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tobias-schlingensiepen",
+     "name": "Tobias Schlingensiepen",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5307
+    },
+    {
+     "id": "lanell-griffith",
+     "name": "Lanell Griffith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2189
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-56",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 56",
+   "district": null,
+   "title": "Kansas House of Representatives District 56",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "virgil-weigel",
+     "name": "Virgil Weigel",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5853
+    },
+    {
+     "id": "elvin-fajardo",
+     "name": "Elvin Fajardo",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3408
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-58",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 58",
+   "district": null,
+   "title": "Kansas House of Representatives District 58",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alexis-simmons",
+     "name": "Alexis Simmons",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4403
+    },
+    {
+     "id": "michael-h-mathewson",
+     "name": "Michael H Mathewson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1877
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-59",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 59",
+   "district": null,
+   "title": "Kansas House of Representatives District 59",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-lewis",
+     "name": "Michael Lewis",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2991
+    },
+    {
+     "id": "rebecca-schmoe",
+     "name": "Rebecca Schmoe",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5642
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-60",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 60",
+   "district": null,
+   "title": "Kansas House of Representatives District 60",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maddison-d-glover",
+     "name": "Maddison D. Glover",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3624
+    },
+    {
+     "id": "mark-schreiber",
+     "name": "Mark Schreiber",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3810
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-62",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 62",
+   "district": null,
+   "title": "Kansas House of Representatives District 62",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sean-m-willcott",
+     "name": "Sean M. Willcott",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5971
+    },
+    {
+     "id": "jack-e-geiger",
+     "name": "Jack E. Geiger",
+     "party": "I",
+     "party_code": "O",
+     "votes": 3224
+    }
+   ],
+   "precincts": {
+    "reporting": 64,
+    "total": 64,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-63",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 63",
+   "district": null,
+   "title": "Kansas House of Representatives District 63",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-booth",
+     "name": "Adam Booth",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2359
+    },
+    {
+     "id": "allen-reavis",
+     "name": "Allen Reavis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5247
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-66",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 66",
+   "district": null,
+   "title": "Kansas House of Representatives District 66",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sydney-carlin",
+     "name": "Sydney Carlin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3256
+    },
+    {
+     "id": "noah-perry",
+     "name": "Noah Perry",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1092
+    },
+    {
+     "id": "andrew-frey",
+     "name": "Andrew Frey",
+     "party": "L",
+     "party_code": "O",
+     "votes": 139
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-67",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 67",
+   "district": null,
+   "title": "Kansas House of Representatives District 67",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brenda-bandy",
+     "name": "Brenda Bandy",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4943
+    },
+    {
+     "id": "stacy-kohlmeier",
+     "name": "Stacy Kohlmeier",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4429
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-69",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 69",
+   "district": null,
+   "title": "Kansas House of Representatives District 69",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "miranda-bachman",
+     "name": "Miranda Bachman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2911
+    },
+    {
+     "id": "luci-larson",
+     "name": "Luci Larson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5151
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-70",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 70",
+   "district": null,
+   "title": "Kansas House of Representatives District 70",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kylie-christine-kilmer",
+     "name": "Kylie Christine Kilmer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2857
+    },
+    {
+     "id": "greg-h-wilson",
+     "name": "Greg H Wilson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6139
+    }
+   ],
+   "precincts": {
+    "reporting": 50,
+    "total": 50,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-71",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 71",
+   "district": null,
+   "title": "Kansas House of Representatives District 71",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jerry-lonergan",
+     "name": "Jerry Lonergan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3492
+    },
+    {
+     "id": "steven-k-howe",
+     "name": "Steven K. Howe",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6043
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-72",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 72",
+   "district": null,
+   "title": "Kansas House of Representatives District 72",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-l-smith",
+     "name": "Matthew L Smith",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4112
+    },
+    {
+     "id": "avery-anderson",
+     "name": "Avery Anderson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4761
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-73",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 73",
+   "district": null,
+   "title": "Kansas House of Representatives District 73",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bobby-joe-robertson-jr",
+     "name": "Bobby Joe Robertson Jr",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2784
+    },
+    {
+     "id": "lori-shultz",
+     "name": "Lori Shultz",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5665
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-74",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 74",
+   "district": null,
+   "title": "Kansas House of Representatives District 74",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michele-l-ediger",
+     "name": "Michele L. Ediger",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3166
+    },
+    {
+     "id": "mike-king",
+     "name": "Mike King",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6104
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-75",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 75",
+   "district": null,
+   "title": "Kansas House of Representatives District 75",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "randy-quinn",
+     "name": "Randy Quinn",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2727
+    },
+    {
+     "id": "tyler-coats",
+     "name": "Tyler Coats",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5676
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-76",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 76",
+   "district": null,
+   "title": "Kansas House of Representatives District 76",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-a-claridge",
+     "name": "David A. Claridge",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2432
+    },
+    {
+     "id": "russel-stukey",
+     "name": "Russel Stukey",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6529
+    }
+   ],
+   "precincts": {
+    "reporting": 49,
+    "total": 49,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-77",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 77",
+   "district": null,
+   "title": "Kansas House of Representatives District 77",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "troy-nicks",
+     "name": "Troy Nicks",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3161
+    },
+    {
+     "id": "kristey-s-williams",
+     "name": "Kristey S. Williams",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5949
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-78",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 78",
+   "district": null,
+   "title": "Kansas House of Representatives District 78",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-lundberg",
+     "name": "Tim Lundberg",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5744
+    },
+    {
+     "id": "robyn-r-essex",
+     "name": "Robyn R. Essex",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4993
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-79",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 79",
+   "district": null,
+   "title": "Kansas House of Representatives District 79",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "siobhan-mcintyre",
+     "name": "Siobhan McIntyre",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2764
+    },
+    {
+     "id": "webster-t-roth",
+     "name": "Webster T Roth",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5353
+    }
+   ],
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-80",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 80",
+   "district": null,
+   "title": "Kansas House of Representatives District 80",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-rhiley",
+     "name": "Bill Rhiley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3671
+    },
+    {
+     "id": "lex-goff",
+     "name": "Lex Goff",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2913
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-81",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 81",
+   "district": null,
+   "title": "Kansas House of Representatives District 81",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kayden-bennett",
+     "name": "Kayden Bennett",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2669
+    },
+    {
+     "id": "blake-carpenter",
+     "name": "Blake Carpenter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3860
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-82",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 82",
+   "district": null,
+   "title": "Kansas House of Representatives District 82",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kyle-beauchamp",
+     "name": "Kyle Beauchamp",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3490
+    },
+    {
+     "id": "leah-howell",
+     "name": "Leah Howell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5214
+    },
+    {
+     "id": "dean-hayse",
+     "name": "Dean Hayse",
+     "party": "L",
+     "party_code": "O",
+     "votes": 357
+    }
+   ],
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-83",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 83",
+   "district": null,
+   "title": "Kansas House of Representatives District 83",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-j-whipple",
+     "name": "Brandon J. Whipple",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4021
+    },
+    {
+     "id": "zachary-werhan",
+     "name": "Zachary Werhan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2316
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-85",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 85",
+   "district": null,
+   "title": "Kansas House of Representatives District 85",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mackenzi-truelove",
+     "name": "Mackenzi Truelove",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5391
+    },
+    {
+     "id": "steven-brunk",
+     "name": "Steven Brunk",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5263
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-86",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 86",
+   "district": null,
+   "title": "Kansas House of Representatives District 86",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "abi-boatman",
+     "name": "Abi Boatman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3627
+    },
+    {
+     "id": "kevin-thompson",
+     "name": "Kevin Thompson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1811
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-88",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 88",
+   "district": null,
+   "title": "Kansas House of Representatives District 88",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "candace-landers",
+     "name": "Candace Landers",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4384
+    },
+    {
+     "id": "sandy-pickert",
+     "name": "Sandy Pickert",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3418
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-90",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 90",
+   "district": null,
+   "title": "Kansas House of Representatives District 90",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-warhurst",
+     "name": "Amy Warhurst",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3776
+    },
+    {
+     "id": "steve-huebert",
+     "name": "Steve Huebert",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6757
+    }
+   ],
+   "precincts": {
+    "reporting": 47,
+    "total": 47,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-91",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 91",
+   "district": null,
+   "title": "Kansas House of Representatives District 91",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "velma-davis",
+     "name": "Velma Davis",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4718
+    },
+    {
+     "id": "emil-m-bergquist",
+     "name": "Emil M. Bergquist",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6352
+    }
+   ],
+   "precincts": {
+    "reporting": 58,
+    "total": 58,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-92",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 92",
+   "district": null,
+   "title": "Kansas House of Representatives District 92",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-carmichael",
+     "name": "John Carmichael",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5611
+    },
+    {
+     "id": "vail-fruechting",
+     "name": "Vail Fruechting",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2600
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-93",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 93",
+   "district": null,
+   "title": "Kansas House of Representatives District 93",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eli-rueda-vega",
+     "name": "Eli Rueda-Vega",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2623
+    },
+    {
+     "id": "brian-bergkamp",
+     "name": "Brian Bergkamp",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6448
+    }
+   ],
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-96",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 96",
+   "district": null,
+   "title": "Kansas House of Representatives District 96",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jessica-maldonado",
+     "name": "Jessica Maldonado",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2573
+    },
+    {
+     "id": "tom-kessler",
+     "name": "Tom Kessler",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2023
+    },
+    {
+     "id": "josef-trotter",
+     "name": "Josef Trotter",
+     "party": "L",
+     "party_code": "O",
+     "votes": 146
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-97",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 97",
+   "district": null,
+   "title": "Kansas House of Representatives District 97",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rhashanna-grant",
+     "name": "Rhashanna Grant",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3436
+    },
+    {
+     "id": "nick-hoheisel",
+     "name": "Nick Hoheisel",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3863
+    }
+   ],
+   "precincts": {
+    "reporting": 40,
+    "total": 40,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-98",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 98",
+   "district": null,
+   "title": "Kansas House of Representatives District 98",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "erika-l-lewis",
+     "name": "Erika L. Lewis",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2703
+    },
+    {
+     "id": "cyndi-howerton",
+     "name": "Cyndi Howerton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2968
+    }
+   ],
+   "precincts": {
+    "reporting": 43,
+    "total": 43,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-99",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 99",
+   "district": null,
+   "title": "Kansas House of Representatives District 99",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-b-barlow",
+     "name": "Mark B Barlow",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4363
+    },
+    {
+     "id": "susan-humphries",
+     "name": "Susan Humphries",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6489
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 100",
+   "district": null,
+   "title": "Kansas House of Representatives District 100",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amanda-mogoi",
+     "name": "Amanda Mogoi",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4705
+    },
+    {
+     "id": "al-jirak",
+     "name": "Al Jirak",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5710
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-101",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 101",
+   "district": null,
+   "title": "Kansas House of Representatives District 101",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mary-ann-harmon",
+     "name": "Mary Ann Harmon",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3311
+    },
+    {
+     "id": "kevin-d-o-brien",
+     "name": "Kevin D. O'Brien",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7165
+    }
+   ],
+   "precincts": {
+    "reporting": 46,
+    "total": 46,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-102",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 102",
+   "district": null,
+   "title": "Kansas House of Representatives District 102",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-probst",
+     "name": "Jason Probst",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3033
+    },
+    {
+     "id": "kyler-sweely",
+     "name": "Kyler Sweely",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2681
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-103",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 103",
+   "district": null,
+   "title": "Kansas House of Representatives District 103",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "angela-martinez",
+     "name": "Angela Martinez",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2820
+    },
+    {
+     "id": "jordan-chessher",
+     "name": "Jordan Chessher",
+     "party": "R",
+     "party_code": "R",
+     "votes": 880
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-104",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 104",
+   "district": null,
+   "title": "Kansas House of Representatives District 104",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lynnette-krieger-zook",
+     "name": "Lynnette Krieger-Zook",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3995
+    },
+    {
+     "id": "randy-parks",
+     "name": "Randy Parks",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6249
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-105",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 105",
+   "district": null,
+   "title": "Kansas House of Representatives District 105",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-burke",
+     "name": "John Burke",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3816
+    },
+    {
+     "id": "jill-ann-ward",
+     "name": "Jill Ann Ward",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3662
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-107",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 107",
+   "district": null,
+   "title": "Kansas House of Representatives District 107",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cheri-koochel",
+     "name": "Cheri Koochel",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2208
+    },
+    {
+     "id": "dawn-wolf",
+     "name": "Dawn Wolf",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6647
+    }
+   ],
+   "precincts": {
+    "reporting": 77,
+    "total": 77,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-110",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 110",
+   "district": null,
+   "title": "Kansas House of Representatives District 110",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-schaukowitch",
+     "name": "Mark Schaukowitch",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1700
+    },
+    {
+     "id": "ken-rahjes",
+     "name": "Ken Rahjes",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6826
+    }
+   ],
+   "precincts": {
+    "reporting": 93,
+    "total": 93,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-111",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 111",
+   "district": null,
+   "title": "Kansas House of Representatives District 111",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melanie-mcmillan",
+     "name": "Melanie McMillan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3057
+    },
+    {
+     "id": "barb-wasinger",
+     "name": "Barb Wasinger",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5349
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-112",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 112",
+   "district": null,
+   "title": "Kansas House of Representatives District 112",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rhys-froetschner",
+     "name": "Rhys Froetschner",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1816
+    },
+    {
+     "id": "sherri-brantley",
+     "name": "Sherri Brantley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5433
+    }
+   ],
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-113",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 113",
+   "district": null,
+   "title": "Kansas House of Representatives District 113",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jo-ann-roth",
+     "name": "Jo Ann Roth",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2104
+    },
+    {
+     "id": "brett-fairchild",
+     "name": "Brett Fairchild",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6426
+    }
+   ],
+   "precincts": {
+    "reporting": 87,
+    "total": 87,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-114",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 114",
+   "district": null,
+   "title": "Kansas House of Representatives District 114",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alan-albers",
+     "name": "Alan Albers",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2419
+    },
+    {
+     "id": "kevin-d-schwertfeger",
+     "name": "Kevin D. Schwertfeger",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6774
+    }
+   ],
+   "precincts": {
+    "reporting": 68,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-116",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 116",
+   "district": null,
+   "title": "Kansas House of Representatives District 116",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nathan-bales",
+     "name": "Nathan Bales",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2143
+    },
+    {
+     "id": "kyle-d-hoffman",
+     "name": "Kyle D. Hoffman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6444
+    }
+   ],
+   "precincts": {
+    "reporting": 71,
+    "total": 71,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-117",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 117",
+   "district": null,
+   "title": "Kansas House of Representatives District 117",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-holland",
+     "name": "Brandon Holland",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6566
+    },
+    {
+     "id": "adam-turk",
+     "name": "Adam Turk",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6433
+    }
+   ],
+   "precincts": {
+    "reporting": 28,
+    "total": 28,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-121",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 121",
+   "district": null,
+   "title": "Kansas House of Representatives District 121",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelsey-stock",
+     "name": "Kelsey Stock",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5895
+    },
+    {
+     "id": "thomas-palenske",
+     "name": "Thomas Palenske",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4959
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-kansas-house-of-representatives-district-123",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Kansas House of Representatives District 123",
+   "district": null,
+   "title": "Kansas House of Representatives District 123",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "becca-burnfin",
+     "name": "Becca Burnfin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2876
+    },
+    {
+     "id": "bob-lewis",
+     "name": "Bob Lewis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2784
+    }
+   ],
+   "precincts": {
+    "reporting": 45,
+    "total": 45,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-state-board-of-education-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "State Board of Education District 1",
+   "district": null,
+   "title": "State Board of Education District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-lloyd",
+     "name": "Jennifer Lloyd",
+     "party": "D",
+     "party_code": "D",
+     "votes": 46229
+    },
+    {
+     "id": "amy-cawvey",
+     "name": "Amy Cawvey",
+     "party": "R",
+     "party_code": "R",
+     "votes": 55735
+    }
+   ],
+   "precincts": {
+    "reporting": 346,
+    "total": 346,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-state-board-of-education-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "State Board of Education District 3",
+   "district": null,
+   "title": "State Board of Education District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-diediker",
+     "name": "Amy Diediker",
+     "party": "D",
+     "party_code": "D",
+     "votes": 74482
+    },
+    {
+     "id": "jim-mcmullen",
+     "name": "Jim McMullen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 60568
+    }
+   ],
+   "precincts": {
+    "reporting": 319,
+    "total": 319,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-state-board-of-education-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "State Board of Education District 5",
+   "district": null,
+   "title": "State Board of Education District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lorie-wood",
+     "name": "Lorie Wood",
+     "party": "D",
+     "party_code": "D",
+     "votes": 23896
+    },
+    {
+     "id": "jean-clifford",
+     "name": "Jean Clifford",
+     "party": "R",
+     "party_code": "R",
+     "votes": 65127
+    }
+   ],
+   "precincts": {
+    "reporting": 834,
+    "total": 834,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-state-board-of-education-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "State Board of Education District 7",
+   "district": null,
+   "title": "State Board of Education District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ann-zimmerman",
+     "name": "Ann Zimmerman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 39918
+    },
+    {
+     "id": "alana-mcwilliams",
+     "name": "Alana McWilliams",
+     "party": "R",
+     "party_code": "R",
+     "votes": 67316
+    }
+   ],
+   "precincts": {
+    "reporting": 586,
+    "total": 586,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-state-board-of-education-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "State Board of Education District 9",
+   "district": null,
+   "title": "State Board of Education District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "heather-guernsey",
+     "name": "Heather Guernsey",
+     "party": "D",
+     "party_code": "D",
+     "votes": 30851
+    },
+    {
+     "id": "destry-brown",
+     "name": "Destry Brown",
+     "party": "R",
+     "party_code": "R",
+     "votes": 67516
+    }
+   ],
+   "precincts": {
+    "reporting": 576,
+    "total": 576,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-district-magistrate-judge-23-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "District Magistrate Judge 23-3",
+   "district": null,
+   "title": "District Magistrate Judge 23-3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-hanks",
+     "name": "Richard Hanks",
+     "party": "D",
+     "party_code": "D",
+     "votes": 588
+    },
+    {
+     "id": "travis-phillips",
+     "name": "Travis Phillips",
+     "party": "R",
+     "party_code": "R",
+     "votes": 781
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
    }
   }
  ]
