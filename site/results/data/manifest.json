@@ -5,7 +5,7 @@
   "date": "2026-11-03",
   "timezone": "America/Denver"
  },
- "generated_at": "2026-11-04T08:17:20Z",
+ "generated_at": "2026-11-04T08:21:25Z",
  "mode": "live",
  "certified": false,
  "sources": [
@@ -13,34 +13,34 @@
    "id": "co-sos",
    "name": "Colorado Secretary of State (Clarity)",
    "url": "https://results.enr.clarityelections.com/CO/127407/",
-   "checked_at": "2026-11-04T08:15:25Z",
+   "checked_at": "2026-11-04T08:19:24Z",
    "status": "ok",
    "note": "",
-   "data_updated_at": "2026-11-04T08:13:35Z"
+   "data_updated_at": "2026-11-04T08:17:18Z"
   },
   {
    "id": "ga-scytl",
    "name": "Georgia Secretary of State",
    "url": "https://results.sos.ga.gov/results/public/Georgia/elections/11032026GeneralAndSpecialElection",
-   "checked_at": "2026-11-04T08:15:26Z",
+   "checked_at": "2026-11-04T08:19:25Z",
    "status": "ok",
    "note": "",
-   "data_updated_at": "2026-11-04T08:15:26Z"
+   "data_updated_at": "2026-11-04T08:19:25Z"
   },
   {
    "id": "va-scytl",
    "name": "Virginia Department of Elections",
    "url": "https://enr.elections.virginia.gov/results/public/Virginia/elections/2026-November-General",
-   "checked_at": "2026-11-04T08:15:26Z",
+   "checked_at": "2026-11-04T08:19:25Z",
    "status": "ok",
    "note": "",
-   "data_updated_at": "2026-11-04T08:15:26Z"
+   "data_updated_at": "2026-11-04T08:19:25Z"
   },
   {
    "id": "ia-clarity",
    "name": "Iowa Secretary of State (Clarity)",
    "url": "https://results.enr.clarityelections.com/IA/127077/",
-   "checked_at": "2026-11-04T08:15:26Z",
+   "checked_at": "2026-11-04T08:19:25Z",
    "status": "ok",
    "note": "",
    "data_updated_at": "2026-11-04T08:11:05Z"
@@ -49,16 +49,16 @@
    "id": "ca-sos",
    "name": "California Secretary of State",
    "url": "https://electionresults.sos.ca.gov/",
-   "checked_at": "2026-11-04T08:15:27Z",
+   "checked_at": "2026-11-04T08:19:25Z",
    "status": "ok",
    "note": "",
-   "data_updated_at": "2026-11-04T08:17:18Z"
+   "data_updated_at": "2026-11-04T08:21:23Z"
   },
   {
    "id": "nc-sbe",
    "name": "North Carolina State Board of Elections",
    "url": "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=0&office=FED&contest=0",
-   "checked_at": "2026-11-04T08:17:18Z",
+   "checked_at": "2026-11-04T08:21:23Z",
    "status": "ok",
    "note": "",
    "data_updated_at": "2026-11-04T07:30:37Z"
@@ -67,7 +67,7 @@
    "id": "fl-dos",
    "name": "Florida Division of Elections",
    "url": "https://floridaelectionwatch.gov/",
-   "checked_at": "2026-11-04T08:17:18Z",
+   "checked_at": "2026-11-04T08:21:24Z",
    "status": "ok",
    "note": "",
    "data_updated_at": "2026-11-02T07:09:03Z"
@@ -76,28 +76,28 @@
    "id": "oh-sos",
    "name": "Ohio Secretary of State",
    "url": "https://liveresults.ohiosos.gov/",
-   "checked_at": "2026-11-04T08:17:19Z",
+   "checked_at": "2026-11-04T08:21:24Z",
    "status": "ok",
    "note": "",
-   "data_updated_at": "2026-11-04T08:17:08Z"
+   "data_updated_at": "2026-11-04T08:21:24Z"
   },
   {
    "id": "wa-scytl",
    "name": "Washington Secretary of State",
    "url": "https://results.votewa.gov/results/public/washington/20261103",
-   "checked_at": "2026-11-04T08:17:19Z",
+   "checked_at": "2026-11-04T08:21:24Z",
    "status": "ok",
    "note": "",
-   "data_updated_at": "2026-11-04T08:17:19Z"
+   "data_updated_at": "2026-11-04T08:21:25Z"
   },
   {
    "id": "ut-scytl",
    "name": "Utah Lieutenant Governor",
    "url": "https://electionresults.utah.gov/results/public/Utah/General11032026",
-   "checked_at": "2026-11-04T08:17:19Z",
+   "checked_at": "2026-11-04T08:21:25Z",
    "status": "ok",
    "note": "",
-   "data_updated_at": "2026-11-04T08:17:20Z"
+   "data_updated_at": "2026-11-04T08:21:25Z"
   }
  ],
  "files": [
@@ -106,35 +106,35 @@
    "label": "Colorado",
    "path": "co.json",
    "contests": 302,
-   "updated_at": "2026-11-04T08:17:20Z"
+   "updated_at": "2026-11-04T08:21:25Z"
   },
   {
    "scope": "house",
    "label": "U.S. House",
    "path": "house.json",
    "contests": 137,
-   "updated_at": "2026-11-04T08:17:20Z"
+   "updated_at": "2026-11-04T08:21:25Z"
   },
   {
    "scope": "senate",
    "label": "U.S. Senate",
    "path": "senate.json",
    "contests": 5,
-   "updated_at": "2026-11-04T08:17:20Z"
+   "updated_at": "2026-11-04T08:21:25Z"
   },
   {
    "scope": "state-ga",
    "label": "Georgia",
    "path": "state-ga.json",
    "contests": 273,
-   "updated_at": "2026-11-04T08:17:20Z"
+   "updated_at": "2026-11-04T08:21:25Z"
   },
   {
    "scope": "state-va",
    "label": "Virginia",
    "path": "state-va.json",
    "contests": 32,
-   "updated_at": "2026-11-04T08:17:20Z"
+   "updated_at": "2026-11-04T08:21:25Z"
   },
   {
    "scope": "state-ia",
@@ -148,7 +148,7 @@
    "label": "California",
    "path": "state-ca.json",
    "contests": 180,
-   "updated_at": "2026-11-04T08:17:20Z"
+   "updated_at": "2026-11-04T08:21:25Z"
   },
   {
    "scope": "state-nc",
@@ -169,21 +169,21 @@
    "label": "Ohio",
    "path": "state-oh.json",
    "contests": 162,
-   "updated_at": "2026-11-04T08:17:20Z"
+   "updated_at": "2026-11-04T08:21:25Z"
   },
   {
    "scope": "state-wa",
    "label": "Washington",
    "path": "state-wa.json",
    "contests": 173,
-   "updated_at": "2026-11-04T08:17:20Z"
+   "updated_at": "2026-11-04T08:21:25Z"
   },
   {
    "scope": "state-ut",
    "label": "Utah",
    "path": "state-ut.json",
    "contests": 135,
-   "updated_at": "2026-11-04T08:17:20Z"
+   "updated_at": "2026-11-04T08:21:25Z"
   }
  ],
  "balance": {
