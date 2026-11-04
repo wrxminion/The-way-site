@@ -1,0 +1,4041 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-ar",
+ "label": "Arkansas",
+ "source_ids": [
+  "ar-tally"
+ ],
+ "updated_at": "2026-11-04T13:41:11Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ar-u-s-congress-district-04",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ar",
+   "office": "U.S. Congress District 04",
+   "district": "04",
+   "title": "U.S. Congress District 04",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-rus-russell-iii",
+     "name": "James \"Rus\" Russell, III",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 69153
+    },
+    {
+     "id": "bruce-westerman",
+     "name": "Bruce Westerman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 131253
+    }
+   ],
+   "precincts": {
+    "reporting": 820,
+    "total": 820,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-u-s-congress-district-01",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ar",
+   "office": "U.S. Congress District 01",
+   "district": "01",
+   "title": "U.S. Congress District 01",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "terri-yarbrough-green",
+     "name": "Terri Yarbrough Green",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 60047
+    },
+    {
+     "id": "rick-crawford",
+     "name": "Rick Crawford",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 126902
+    },
+    {
+     "id": "steve-g-parsons",
+     "name": "Steve G. Parsons",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 6936
+    }
+   ],
+   "precincts": {
+    "reporting": 712,
+    "total": 712,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-u-s-congress-district-03",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ar",
+   "office": "U.S. Congress District 03",
+   "district": "03",
+   "title": "U.S. Congress District 03",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bobby-wilson",
+     "name": "Bobby Wilson",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 8413
+    },
+    {
+     "id": "robb-ryerse",
+     "name": "Robb Ryerse",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 96189
+    },
+    {
+     "id": "steve-womack",
+     "name": "Steve Womack",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 127303
+    }
+   ],
+   "precincts": {
+    "reporting": 833,
+    "total": 833,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-u-s-congress-district-02",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ar",
+   "office": "U.S. Congress District 02",
+   "district": "02",
+   "title": "U.S. Congress District 02",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "french-hill",
+     "name": "French Hill",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 127427
+    },
+    {
+     "id": "chris-jones",
+     "name": "Chris Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 123025
+    }
+   ],
+   "precincts": {
+    "reporting": 404,
+    "total": 404,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-u-s-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ar",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-cotton",
+     "name": "Tom Cotton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 480526
+    },
+    {
+     "id": "jeff-wadlin",
+     "name": "Jeff Wadlin",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 29478
+    },
+    {
+     "id": "hallie-shoffner",
+     "name": "Hallie Shoffner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 375596
+    }
+   ],
+   "precincts": {
+    "reporting": 2768,
+    "total": 2768,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Treasurer",
+   "district": null,
+   "title": "State Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-thurston",
+     "name": "John Thurston",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 679798
+    }
+   ],
+   "precincts": {
+    "reporting": 2768,
+    "total": 2768,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-issue-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "ISSUE NO. 3",
+   "district": null,
+   "title": "ISSUE NO. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "for-issue-no-3",
+     "name": "FOR ISSUE NO. 3",
+     "party": null,
+     "party_code": "O",
+     "votes": 419186
+    },
+    {
+     "id": "against-issue-no-3",
+     "name": "AGAINST ISSUE NO. 3",
+     "party": null,
+     "party_code": "O",
+     "votes": 431003
+    }
+   ],
+   "precincts": {
+    "reporting": 2768,
+    "total": 2768,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-issue-no-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "ISSUE NO. 4",
+   "district": null,
+   "title": "ISSUE NO. 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "for-issue-no-4",
+     "name": "FOR ISSUE NO. 4",
+     "party": null,
+     "party_code": "O",
+     "votes": 475773
+    },
+    {
+     "id": "against-issue-no-4",
+     "name": "AGAINST ISSUE NO. 4",
+     "party": null,
+     "party_code": "O",
+     "votes": 367837
+    }
+   ],
+   "precincts": {
+    "reporting": 2768,
+    "total": 2768,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-auditor-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "Auditor of State",
+   "district": null,
+   "title": "Auditor of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dennis-milligan",
+     "name": "Dennis Milligan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 671672
+    }
+   ],
+   "precincts": {
+    "reporting": 2768,
+    "total": 2768,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "fred-love",
+     "name": "Fred Love",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 341621
+    },
+    {
+     "id": "colt-shelby",
+     "name": "Colt Shelby",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 66877
+    },
+    {
+     "id": "sarah-huckabee-sanders",
+     "name": "Sarah Huckabee Sanders",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 477040
+    }
+   ],
+   "precincts": {
+    "reporting": 2768,
+    "total": 2768,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-commissioner-of-state-lands",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "Commissioner of State Lands",
+   "district": null,
+   "title": "Commissioner of State Lands",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cole-jester",
+     "name": "Cole Jester",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 527010
+    },
+    {
+     "id": "christopher-olson",
+     "name": "Christopher Olson",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 295471
+    }
+   ],
+   "precincts": {
+    "reporting": 2768,
+    "total": 2768,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-griffin",
+     "name": "Tim Griffin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 682733
+    }
+   ],
+   "precincts": {
+    "reporting": 2768,
+    "total": 2768,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "Lieutenant Governor",
+   "district": null,
+   "title": "Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leslie-rutledge",
+     "name": "Leslie Rutledge",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 535988
+    },
+    {
+     "id": "michael-kalagias",
+     "name": "Michael Kalagias",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 302968
+    }
+   ],
+   "precincts": {
+    "reporting": 2768,
+    "total": 2768,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelly-grappe",
+     "name": "Kelly Grappe",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 347409
+    },
+    {
+     "id": "michael-pakko",
+     "name": "Michael Pakko",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 40162
+    },
+    {
+     "id": "kim-hammer",
+     "name": "Kim Hammer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 490330
+    }
+   ],
+   "precincts": {
+    "reporting": 2768,
+    "total": 2768,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-issue-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "ISSUE NO. 2",
+   "district": null,
+   "title": "ISSUE NO. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "for-issue-no-2",
+     "name": "FOR ISSUE NO. 2",
+     "party": null,
+     "party_code": "O",
+     "votes": 612343
+    },
+    {
+     "id": "against-issue-no-2",
+     "name": "AGAINST ISSUE NO. 2",
+     "party": null,
+     "party_code": "O",
+     "votes": 252638
+    }
+   ],
+   "precincts": {
+    "reporting": 2761,
+    "total": 2761,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-issue-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "ISSUE NO. 1",
+   "district": null,
+   "title": "ISSUE NO. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "for-issue-no-1",
+     "name": "FOR ISSUE NO. 1",
+     "party": null,
+     "party_code": "O",
+     "votes": 595916
+    },
+    {
+     "id": "against-issue-no-1",
+     "name": "AGAINST ISSUE NO. 1",
+     "party": null,
+     "party_code": "O",
+     "votes": 266871
+    }
+   ],
+   "precincts": {
+    "reporting": 2762,
+    "total": 2762,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 35",
+   "district": null,
+   "title": "State Representative District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-thorne-jr",
+     "name": "Robert Thorne, Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3098
+    },
+    {
+     "id": "audrey-p-willis",
+     "name": "Audrey P. Willis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4218
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-04",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 04",
+   "district": null,
+   "title": "State Representative District 04",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-nazarenko",
+     "name": "Jason Nazarenko",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8558
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-66",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 66",
+   "district": null,
+   "title": "State Representative District 66",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "representative-mark-w-perry",
+     "name": "Representative Mark W. Perry",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6287
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-92",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 92",
+   "district": null,
+   "title": "State Representative District 92",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dawn-creekmore",
+     "name": "Dawn Creekmore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8295
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-83",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 83",
+   "district": null,
+   "title": "State Representative District 83",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-childress",
+     "name": "Paul Childress",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12159
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-95",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 95",
+   "district": null,
+   "title": "State Representative District 95",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "howard-m-beaty-jr",
+     "name": "Howard M. Beaty Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6592
+    }
+   ],
+   "precincts": {
+    "reporting": 45,
+    "total": 45,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-03",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 03",
+   "district": null,
+   "title": "State Representative District 03",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stetson-painter",
+     "name": "Stetson Painter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7913
+    },
+    {
+     "id": "carrie-huddleston",
+     "name": "Carrie Huddleston",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2479
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative, District 7",
+   "district": null,
+   "title": "State Representative, District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-brit-mckenzie",
+     "name": "State Representative Brit McKenzie",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6117
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 33",
+   "district": null,
+   "title": "State Representative District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jon-milligan",
+     "name": "Jon Milligan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6208
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-63",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 63",
+   "district": null,
+   "title": "State Representative District 63",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lincoln-barnett",
+     "name": "Lincoln Barnett",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4706
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-86",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 86",
+   "district": null,
+   "title": "State Representative District 86",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-maddox",
+     "name": "John Maddox",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7741
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-96",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 96",
+   "district": null,
+   "title": "State Representative District 96",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sonia-e-barker",
+     "name": "Sonia E Barker",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6021
+    }
+   ],
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-56",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 56",
+   "district": null,
+   "title": "State Representative District 56",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-brannan",
+     "name": "Mark Brannan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3316
+    },
+    {
+     "id": "steve-magie",
+     "name": "Steve Magie",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5140
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-78",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 78",
+   "district": null,
+   "title": "State Representative District 78",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "keith-brooks",
+     "name": "Keith Brooks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10268
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-01",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 01",
+   "district": null,
+   "title": "State Representative District 01",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-a-nichols",
+     "name": "Mark A. Nichols",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6368
+    }
+   ],
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-61",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 61",
+   "district": null,
+   "title": "State Representative District 61",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "garrett-sheeks",
+     "name": "Garrett Sheeks",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 2142
+    },
+    {
+     "id": "jeremiah-moore",
+     "name": "Jeremiah Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5429
+    }
+   ],
+   "precincts": {
+    "reporting": 68,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-51",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 51",
+   "district": null,
+   "title": "State Representative District 51",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-cindy-crawford",
+     "name": "State Representative Cindy Crawford",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6161
+    },
+    {
+     "id": "jane-ellen-udouj-kutchka",
+     "name": "Jane-Ellen Udouj-Kutchka",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3720
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 34",
+   "district": null,
+   "title": "State Representative District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joey-l-carr",
+     "name": "Joey L. Carr",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2948
+    },
+    {
+     "id": "michael-middlebrook",
+     "name": "Michael Middlebrook",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2718
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative, District 10",
+   "district": null,
+   "title": "State Representative, District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-mindy-mcalindon",
+     "name": "State Representative Mindy McAlindon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5726
+    },
+    {
+     "id": "jacob-allen",
+     "name": "Jacob Allen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5923
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-67",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 67",
+   "district": null,
+   "title": "State Representative District 67",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-cade-eberly",
+     "name": "Andrew Cade Eberly",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5873
+    },
+    {
+     "id": "representative-karilyn-brown",
+     "name": "Representative Karilyn Brown",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4687
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-69",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 69",
+   "district": null,
+   "title": "State Representative District 69",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-ray",
+     "name": "David Ray",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5466
+    },
+    {
+     "id": "dean-hunter",
+     "name": "Dean Hunter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3417
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 42",
+   "district": null,
+   "title": "State Representative District 42",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeremy-riddle",
+     "name": "Jeremy Riddle",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9746
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative, District 18",
+   "district": null,
+   "title": "State Representative, District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-robin-lundstrum",
+     "name": "State Representative Robin Lundstrum",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7994
+    }
+   ],
+   "precincts": {
+    "reporting": 41,
+    "total": 41,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 31",
+   "district": null,
+   "title": "State Representative District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jimmy-gazaway",
+     "name": "Jimmy Gazaway",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6176
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 40",
+   "district": null,
+   "title": "State Representative District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-shad-pearce",
+     "name": "State Representative Shad Pearce",
+     "party": null,
+     "party_code": "O",
+     "votes": 6566
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-65",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 65",
+   "district": null,
+   "title": "State Representative District 65",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "glenn-barnes",
+     "name": "Glenn Barnes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5350
+    }
+   ],
+   "precincts": {
+    "reporting": 84,
+    "total": 84,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-53",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 53",
+   "district": null,
+   "title": "State Representative District 53",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-duffield",
+     "name": "Matt Duffield",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4012
+    },
+    {
+     "id": "jennifer-lewter",
+     "name": "Jennifer Lewter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2566
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-82",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 82",
+   "district": null,
+   "title": "State Representative District 82",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tony-furman",
+     "name": "Tony Furman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6429
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative, District 15",
+   "district": null,
+   "title": "State Representative, District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-john-p-carr",
+     "name": "State Representative John P. Carr",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3676
+    },
+    {
+     "id": "daniel-holtmeyer",
+     "name": "Daniel Holtmeyer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4280
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-80",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 80",
+   "district": null,
+   "title": "State Representative District 80",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-rep-denise-ennett",
+     "name": "State Rep Denise Ennett",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6144
+    },
+    {
+     "id": "daniel-stuckey",
+     "name": "Daniel Stuckey",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 956
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative, District 16",
+   "district": null,
+   "title": "State Representative, District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-kendon-underwood",
+     "name": "State Representative Kendon Underwood",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7304
+    },
+    {
+     "id": "letisha-hinds",
+     "name": "Letisha Hinds",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5233
+    }
+   ],
+   "precincts": {
+    "reporting": 62,
+    "total": 62,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative, District 12",
+   "district": null,
+   "title": "State Representative, District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-hope-hendren-duke",
+     "name": "State Representative Hope Hendren Duke",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11147
+    }
+   ],
+   "precincts": {
+    "reporting": 63,
+    "total": 63,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 30",
+   "district": null,
+   "title": "State Representative District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-longmire",
+     "name": "Josh Longmire",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6504
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-55",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 55",
+   "district": null,
+   "title": "State Representative District 55",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cynthia-nations",
+     "name": "Cynthia Nations",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4773
+    },
+    {
+     "id": "matt-brown",
+     "name": "Matt Brown",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4496
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "STATE REPRESENTATIVE DISTRICT 21",
+   "district": null,
+   "title": "STATE REPRESENTATIVE DISTRICT 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "representative-nicole-clowney",
+     "name": "Representative Nicole Clowney",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5313
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 100",
+   "district": null,
+   "title": "State Representative District 100",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carol-dalby",
+     "name": "Carol Dalby",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5638
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 28",
+   "district": null,
+   "title": "State Representative District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bart-schulz",
+     "name": "Bart Schulz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7633
+    }
+   ],
+   "precincts": {
+    "reporting": 47,
+    "total": 47,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-dist-85",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "STATE REPRESENTATIVE DIST 85",
+   "district": null,
+   "title": "STATE REPRESENTATIVE DIST 85",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "r-rep-richard-mcgrew",
+     "name": "R REP RICHARD MCGREW",
+     "party": null,
+     "party_code": "O",
+     "votes": 8005
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-62",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 62",
+   "district": null,
+   "title": "State Representative District 62",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-d-mcelroy",
+     "name": "Mark D. McElroy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3425
+    },
+    {
+     "id": "dexter-r-miller",
+     "name": "Dexter R. Miller",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4031
+    }
+   ],
+   "precincts": {
+    "reporting": 88,
+    "total": 88,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-79",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 79",
+   "district": null,
+   "title": "State Representative District 79",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-d-mason",
+     "name": "Michael D. Mason",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5679
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 37",
+   "district": null,
+   "title": "State Representative District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-hollowell",
+     "name": "Steve Hollowell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6244
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-dist-91",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "STATE REPRESENTATIVE DIST 91",
+   "district": null,
+   "title": "STATE REPRESENTATIVE DIST 91",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "r-rep-bruce-cozart",
+     "name": "R REP BRUCE COZART",
+     "party": null,
+     "party_code": "O",
+     "votes": 6439
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 24",
+   "district": null,
+   "title": "State Representative District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-intchauspe",
+     "name": "Ryan Intchauspe",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1919
+    },
+    {
+     "id": "charlene-fite",
+     "name": "Charlene Fite",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6767
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-93",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 93",
+   "district": null,
+   "title": "State Representative District 93",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-holcomb",
+     "name": "Mike Holcomb",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7632
+    }
+   ],
+   "precincts": {
+    "reporting": 63,
+    "total": 63,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-59",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 59",
+   "district": null,
+   "title": "State Representative District 59",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "representative-jim-wooten",
+     "name": "Representative Jim Wooten",
+     "party": null,
+     "party_code": "O",
+     "votes": 7368
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-88",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 88",
+   "district": null,
+   "title": "State Representative District 88",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dolly-henley",
+     "name": "Dolly Henley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5254
+    }
+   ],
+   "precincts": {
+    "reporting": 35,
+    "total": 35,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 38",
+   "district": null,
+   "title": "State Representative District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dwight-tosh",
+     "name": "Dwight Tosh",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7036
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-71",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 71",
+   "district": null,
+   "title": "State Representative District 71",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cassandra-mayes",
+     "name": "Cassandra Mayes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6023
+    },
+    {
+     "id": "stephen-bright",
+     "name": "Stephen Bright",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4845
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "STATE REPRESENTATIVE DISTRICT 19",
+   "district": null,
+   "title": "STATE REPRESENTATIVE DISTRICT 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jamie-atkinson",
+     "name": "Jamie Atkinson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5092
+    },
+    {
+     "id": "representative-steve-unger",
+     "name": "Representative Steve Unger",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4029
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-54",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 54",
+   "district": null,
+   "title": "State Representative District 54",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mary-bentley",
+     "name": "Mary Bentley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6321
+    },
+    {
+     "id": "doug-corbitt",
+     "name": "Doug Corbitt",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3628
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-64",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 64",
+   "district": null,
+   "title": "State Representative District 64",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kenneth-b-ferguson",
+     "name": "Kenneth B. Ferguson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6619
+    }
+   ],
+   "precincts": {
+    "reporting": 72,
+    "total": 72,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-77",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 77",
+   "district": null,
+   "title": "State Representative District 77",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jp-steven-person",
+     "name": "JP Steven Person",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7487
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative, District 14",
+   "district": null,
+   "title": "State Representative, District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-nick-burkes",
+     "name": "State Representative Nick Burkes",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5288
+    },
+    {
+     "id": "timothy-j-heron-jr",
+     "name": "Timothy J. Heron, Jr",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4923
+    }
+   ],
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-50",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 50",
+   "district": null,
+   "title": "State Representative District 50",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-zack-gramlich",
+     "name": "State Representative Zack Gramlich",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4274
+    },
+    {
+     "id": "wendy-peer",
+     "name": "Wendy Peer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3283
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-75",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 75",
+   "district": null,
+   "title": "State Representative District 75",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hunter-sadler",
+     "name": "Hunter Sadler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4725
+    },
+    {
+     "id": "representative-ashley-hudson",
+     "name": "Representative Ashley Hudson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7582
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-09",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "STATE REPRESENTATIVE DISTRICT 09",
+   "district": null,
+   "title": "STATE REPRESENTATIVE DISTRICT 09",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-goff",
+     "name": "Matt Goff",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1287
+    },
+    {
+     "id": "representative-diana-gonzales-worthen",
+     "name": "Representative Diana Gonzales Worthen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2937
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-81",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 81",
+   "district": null,
+   "title": "State Representative District 81",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rj-hawk",
+     "name": "RJ Hawk",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4588
+    },
+    {
+     "id": "gina-thomas-littlejohn",
+     "name": "Gina Thomas-Littlejohn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4492
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-57",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 57",
+   "district": null,
+   "title": "State Representative District 57",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cameron-cooper",
+     "name": "Cameron Cooper",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9083
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-89",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 89",
+   "district": null,
+   "title": "State Representative District 89",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "justin-gonzales",
+     "name": "Justin Gonzales",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7056
+    }
+   ],
+   "precincts": {
+    "reporting": 49,
+    "total": 49,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-06",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 06",
+   "district": null,
+   "title": "State Representative District 06",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cody-rogers",
+     "name": "Cody Rogers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7244
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative, District 11",
+   "district": null,
+   "title": "State Representative, District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-rebecca-burkes",
+     "name": "State Representative Rebecca Burkes",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3041
+    },
+    {
+     "id": "rey-hernandez",
+     "name": "Rey Hernandez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3331
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 43",
+   "district": null,
+   "title": "State Representative District 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rick-beck",
+     "name": "Rick Beck",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8127
+    }
+   ],
+   "precincts": {
+    "reporting": 43,
+    "total": 43,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-98",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 98",
+   "district": null,
+   "title": "State Representative District 98",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wade-andrews",
+     "name": "Wade Andrews",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6358
+    }
+   ],
+   "precincts": {
+    "reporting": 35,
+    "total": 35,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-74",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 74",
+   "district": null,
+   "title": "State Representative District 74",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "representative-tippi-mccullough",
+     "name": "Representative Tippi McCullough",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10005
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 26",
+   "district": null,
+   "title": "State Representative District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-eaton",
+     "name": "James Eaton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7451
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-08-special-election-unexpired-term",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 08 Special Election (Unexpired Term)",
+   "district": null,
+   "title": "State Representative District 08 Special Election (Unexpired Term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "parker-john-stohlton",
+     "name": "Parker John Stohlton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4764
+    },
+    {
+     "id": "kara-armas",
+     "name": "Kara Armas",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7063
+    }
+   ],
+   "precincts": {
+    "reporting": 69,
+    "total": 69,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 29",
+   "district": null,
+   "title": "State Representative District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rick-mcclure",
+     "name": "Rick McClure",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5289
+    },
+    {
+     "id": "deonna-morgan",
+     "name": "Deonna Morgan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2218
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-87",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 87",
+   "district": null,
+   "title": "State Representative District 87",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deann-vaught",
+     "name": "DeAnn Vaught",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6251
+    }
+   ],
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-48",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 48",
+   "district": null,
+   "title": "State Representative District 48",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "orion-jackson",
+     "name": "Orion Jackson",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 1913
+    },
+    {
+     "id": "ryan-a-rose",
+     "name": "Ryan A. Rose",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4409
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative, District 17",
+   "district": null,
+   "title": "State Representative, District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "representative-randy-torres",
+     "name": "Representative Randy Torres",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6829
+    }
+   ],
+   "precincts": {
+    "reporting": 63,
+    "total": 63,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-44",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 44",
+   "district": null,
+   "title": "State Representative District 44",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-teeter",
+     "name": "Bill Teeter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7585
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-70",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 70",
+   "district": null,
+   "title": "State Representative District 70",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bo-renshaw",
+     "name": "Bo Renshaw",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5772
+    },
+    {
+     "id": "alex-holladay",
+     "name": "Alex Holladay",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6944
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 27",
+   "district": null,
+   "title": "State Representative District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-walker",
+     "name": "Steven Walker",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9122
+    }
+   ],
+   "precincts": {
+    "reporting": 76,
+    "total": 76,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "STATE REPRESENTATIVE DISTRICT 20",
+   "district": null,
+   "title": "STATE REPRESENTATIVE DISTRICT 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "max-deitchler",
+     "name": "Max Deitchler",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8937
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-76",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 76",
+   "district": null,
+   "title": "State Representative District 76",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "representative-joy-springer",
+     "name": "Representative Joy Springer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6104
+    },
+    {
+     "id": "isbac-ceja",
+     "name": "Isbac Ceja",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 507
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 49",
+   "district": null,
+   "title": "State Representative District 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rep-jay-richardson",
+     "name": "Rep. Jay Richardson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2898
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "STATE REPRESENTATIVE DISTRICT 22",
+   "district": null,
+   "title": "STATE REPRESENTATIVE DISTRICT 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-david-whitaker",
+     "name": "State Representative David Whitaker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6604
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 39",
+   "district": null,
+   "title": "State Representative District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wayne-long",
+     "name": "Wayne Long",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5946
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-73",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 73",
+   "district": null,
+   "title": "State Representative District 73",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "representative-andrew-collins",
+     "name": "Representative Andrew Collins",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10325
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-58",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 58",
+   "district": null,
+   "title": "State Representative District 58",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jocelyn-fry",
+     "name": "Jocelyn Fry",
+     "party": null,
+     "party_code": "O",
+     "votes": 2214
+    },
+    {
+     "id": "state-representative-les-eaves",
+     "name": "State Representative Les Eaves",
+     "party": null,
+     "party_code": "O",
+     "votes": 6436
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative, District 13",
+   "district": null,
+   "title": "State Representative, District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-scott-richardson",
+     "name": "State Representative Scott Richardson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3641
+    },
+    {
+     "id": "mitchell-smith",
+     "name": "Mitchell Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4446
+    }
+   ],
+   "precincts": {
+    "reporting": 41,
+    "total": 41,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-02",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 02",
+   "district": null,
+   "title": "State Representative District 02",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "trey-steimel",
+     "name": "Trey Steimel",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7478
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 45",
+   "district": null,
+   "title": "State Representative District 45",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "aaron-m-pilkington",
+     "name": "Aaron M. Pilkington",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5254
+    },
+    {
+     "id": "debra-hobbs",
+     "name": "Debra Hobbs",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 2980
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-99",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 99",
+   "district": null,
+   "title": "State Representative District 99",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "beth-anne-rankin-baker",
+     "name": "Beth Anne Rankin Baker",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7191
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "STATE REPRESENTATIVE DISTRICT 23",
+   "district": null,
+   "title": "STATE REPRESENTATIVE DISTRICT 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "laura-marsh",
+     "name": "Laura Marsh",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 4557
+    },
+    {
+     "id": "state-representative-kendra-moore",
+     "name": "State Representative Kendra Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6035
+    }
+   ],
+   "precincts": {
+    "reporting": 46,
+    "total": 46,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 47",
+   "district": null,
+   "title": "State Representative District 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-representative-lee-johnson",
+     "name": "State Representative Lee Johnson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8454
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-97",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 97",
+   "district": null,
+   "title": "State Representative District 97",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-andrews",
+     "name": "Jim Andrews",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6856
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 41",
+   "district": null,
+   "title": "State Representative District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alyssa-brown",
+     "name": "Alyssa Brown",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10162
+    }
+   ],
+   "precincts": {
+    "reporting": 42,
+    "total": 42,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-05",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 05",
+   "district": null,
+   "title": "State Representative District 05",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-bishop",
+     "name": "Mike Bishop",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8158
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-08",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 08",
+   "district": null,
+   "title": "State Representative District 08",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-armas",
+     "name": "Brian Armas",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8694
+    }
+   ],
+   "precincts": {
+    "reporting": 69,
+    "total": 69,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 32",
+   "district": null,
+   "title": "State Representative District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jack-ladyman",
+     "name": "Jack Ladyman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3435
+    },
+    {
+     "id": "erika-askeland",
+     "name": "Erika Askeland",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3537
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-72",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 72",
+   "district": null,
+   "title": "State Representative District 72",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "talesha-dokes",
+     "name": "Talesha Dokes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5314
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-90",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 90",
+   "district": null,
+   "title": "State Representative District 90",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-womack",
+     "name": "Richard Womack",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7018
+    }
+   ],
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-68",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 68",
+   "district": null,
+   "title": "State Representative District 68",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-s-evans",
+     "name": "Brian S. Evans",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8114
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-52",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 52",
+   "district": null,
+   "title": "State Representative District 52",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brent-montgomery",
+     "name": "Brent Montgomery",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6714
+    }
+   ],
+   "precincts": {
+    "reporting": 54,
+    "total": 54,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 25",
+   "district": null,
+   "title": "State Representative District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chad-puryear",
+     "name": "Chad Puryear",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7119
+    },
+    {
+     "id": "courtney-king",
+     "name": "Courtney King",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3956
+    }
+   ],
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-94",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 94",
+   "district": null,
+   "title": "State Representative District 94",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-kyle-day",
+     "name": "John Kyle Day",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6127
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 36",
+   "district": null,
+   "title": "State Representative District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "johnny-rye",
+     "name": "Johnny Rye",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3400
+    },
+    {
+     "id": "shamal-c-carter",
+     "name": "Shamal C. Carter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2369
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 46",
+   "district": null,
+   "title": "State Representative District 46",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tonya-fletcher",
+     "name": "Tonya Fletcher",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7519
+    }
+   ],
+   "precincts": {
+    "reporting": 56,
+    "total": 56,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-dist-84",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "STATE REPRESENTATIVE DIST 84",
+   "district": null,
+   "title": "STATE REPRESENTATIVE DIST 84",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "r-rep-les-warren",
+     "name": "R REP LES WARREN",
+     "party": null,
+     "party_code": "O",
+     "votes": 5975
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-representative-district-60",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Representative District 60",
+   "district": null,
+   "title": "State Representative District 60",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "beverly-coleman-keown",
+     "name": "Beverly Coleman-Keown",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2172
+    },
+    {
+     "id": "quendy-gibbins-medlin",
+     "name": "Quendy Gibbins Medlin",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 946
+    },
+    {
+     "id": "roger-dale-lynch",
+     "name": "Roger Dale Lynch",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6285
+    }
+   ],
+   "precincts": {
+    "reporting": 47,
+    "total": 47,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate, District 32",
+   "district": null,
+   "title": "State Senate, District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-senator-joshua-p-bryant",
+     "name": "State Senator Joshua P. Bryant",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17740
+    }
+   ],
+   "precincts": {
+    "reporting": 129,
+    "total": 129,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 16",
+   "district": null,
+   "title": "State Senate District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rodney-wright",
+     "name": "Rodney Wright",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17095
+    },
+    {
+     "id": "joshua-irby",
+     "name": "Joshua Irby",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12098
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "STATE SENATE DISTRICT 30",
+   "district": null,
+   "title": "STATE SENATE DISTRICT 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "representative-denise-garner",
+     "name": "Representative Denise Garner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 19946
+    }
+   ],
+   "precincts": {
+    "reporting": 59,
+    "total": 59,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 15",
+   "district": null,
+   "title": "State Senate District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "state-rep-tara-shephard",
+     "name": "State Rep Tara Shephard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 19192
+    }
+   ],
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-07",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 07",
+   "district": null,
+   "title": "State Senate District 07",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alan-clark",
+     "name": "Alan Clark",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 22058
+    }
+   ],
+   "precincts": {
+    "reporting": 67,
+    "total": 67,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 10",
+   "district": null,
+   "title": "State Senate District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ronald-caldwell",
+     "name": "Ronald Caldwell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17658
+    }
+   ],
+   "precincts": {
+    "reporting": 124,
+    "total": 124,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-09",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 09",
+   "district": null,
+   "title": "State Senate District 09",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kenny-phillips",
+     "name": "Kenny Phillips",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6807
+    },
+    {
+     "id": "jessie-mcgruder",
+     "name": "Jessie McGruder",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12078
+    }
+   ],
+   "precincts": {
+    "reporting": 89,
+    "total": 89,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 13",
+   "district": null,
+   "title": "State Senate District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "allison-grigsby-sweatman",
+     "name": "Allison Grigsby Sweatman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 18101
+    },
+    {
+     "id": "state-rep-brandon-achor",
+     "name": "State Rep Brandon Achor",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16039
+    }
+   ],
+   "precincts": {
+    "reporting": 35,
+    "total": 35,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-01",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 01",
+   "district": null,
+   "title": "State Senate District 01",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tomeka-butler",
+     "name": "Tomeka Butler",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7235
+    },
+    {
+     "id": "harrell-wilson",
+     "name": "Harrell Wilson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15646
+    }
+   ],
+   "precincts": {
+    "reporting": 130,
+    "total": 130,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 11",
+   "district": null,
+   "title": "State Senate District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ricky-hill",
+     "name": "Ricky Hill",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21148
+    }
+   ],
+   "precincts": {
+    "reporting": 67,
+    "total": 67,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 27",
+   "district": null,
+   "title": "State Senate District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eduardo-guzman",
+     "name": "Eduardo Guzman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8669
+    },
+    {
+     "id": "state-senator-justin-boyd",
+     "name": "State Senator Justin Boyd",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10015
+    }
+   ],
+   "precincts": {
+    "reporting": 61,
+    "total": 61,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 24",
+   "district": null,
+   "title": "State Senate District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "missy-thomas-irvin",
+     "name": "Missy Thomas Irvin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 25896
+    }
+   ],
+   "precincts": {
+    "reporting": 75,
+    "total": 75,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 14",
+   "district": null,
+   "title": "State Senate District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-s-foster",
+     "name": "Mark S. Foster",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 7897
+    },
+    {
+     "id": "senator-clarke-tucker",
+     "name": "Senator Clarke Tucker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 26113
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 28",
+   "district": null,
+   "title": "State Senate District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bryan-b-king",
+     "name": "Bryan B. King",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 22267
+    }
+   ],
+   "precincts": {
+    "reporting": 61,
+    "total": 61,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 21",
+   "district": null,
+   "title": "State Senate District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeremy-wooldridge",
+     "name": "Jeremy Wooldridge",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17779
+    }
+   ],
+   "precincts": {
+    "reporting": 66,
+    "total": 66,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate, District 35",
+   "district": null,
+   "title": "State Senate, District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "senator-tyler-dees",
+     "name": "Senator Tyler Dees",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 20831
+    }
+   ],
+   "precincts": {
+    "reporting": 149,
+    "total": 149,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "STATE SENATE DISTRICT 31",
+   "district": null,
+   "title": "STATE SENATE DISTRICT 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "senator-clint-penzo",
+     "name": "Senator Clint Penzo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12960
+    }
+   ],
+   "precincts": {
+    "reporting": 57,
+    "total": 57,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-state-senate-district-02",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "State Senate District 02",
+   "district": null,
+   "title": "State Senate District 02",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-stone",
+     "name": "Matt Stone",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 18304
+    }
+   ],
+   "precincts": {
+    "reporting": 67,
+    "total": 67,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-circuit-judge-district-04-division-02",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "Circuit Judge, District 04, Division 02",
+   "district": null,
+   "title": "Circuit Judge, District 04, Division 02",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wendy-howerton",
+     "name": "Wendy Howerton",
+     "party": null,
+     "party_code": "O",
+     "votes": 37267
+    },
+    {
+     "id": "kristin-pawlik",
+     "name": "Kristin Pawlik",
+     "party": null,
+     "party_code": "O",
+     "votes": 34319
+    }
+   ],
+   "precincts": {
+    "reporting": 243,
+    "total": 243,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-circuit-judge-dist-16-division-02",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "Circuit Judge, Dist 16, Division 02",
+   "district": null,
+   "title": "Circuit Judge, Dist 16, Division 02",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kara-byars",
+     "name": "Kara Byars",
+     "party": null,
+     "party_code": "O",
+     "votes": 17907
+    },
+    {
+     "id": "scott-davidson",
+     "name": "Scott Davidson",
+     "party": null,
+     "party_code": "O",
+     "votes": 10617
+    }
+   ],
+   "precincts": {
+    "reporting": 118,
+    "total": 118,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-circuit-judge-district-02-division-04-at-large",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "Circuit Judge, District 02, Division 04, At Large",
+   "district": null,
+   "title": "Circuit Judge, District 02, Division 04, At Large",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-nadzam",
+     "name": "Andrew Nadzam",
+     "party": null,
+     "party_code": "O",
+     "votes": 21260
+    },
+    {
+     "id": "curtis-hitt",
+     "name": "Curtis Hitt",
+     "party": null,
+     "party_code": "O",
+     "votes": 35961
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 154,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-prosecuting-attorney-district-11-west",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ar",
+   "office": "Prosecuting Attorney, District 11-West",
+   "district": null,
+   "title": "Prosecuting Attorney, District 11-West",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "evelyn-moorehead",
+     "name": "Evelyn Moorehead",
+     "party": null,
+     "party_code": "O",
+     "votes": 9287
+    },
+    {
+     "id": "karres-manning-center",
+     "name": "Karres Manning-Center",
+     "party": null,
+     "party_code": "O",
+     "votes": 8117
+    }
+   ],
+   "precincts": {
+    "reporting": 196,
+    "total": 196,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-pleasant-plains-terms",
+   "kind": "candidate",
+   "level": "local",
+   "state": "ar",
+   "office": "Pleasant Plains Terms",
+   "district": null,
+   "title": "Pleasant Plains Terms",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "for-adoption",
+     "name": "FOR ADOPTION",
+     "party": null,
+     "party_code": "O",
+     "votes": 61
+    },
+    {
+     "id": "against-adoption",
+     "name": "AGAINST ADOPTION",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-ngcwd-position-1-at-large",
+   "kind": "candidate",
+   "level": "local",
+   "state": "ar",
+   "office": "NGCWD POSITION 1 AT LARGE",
+   "district": null,
+   "title": "NGCWD POSITION 1 AT LARGE",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-d-harper",
+     "name": "MICHAEL D. HARPER",
+     "party": null,
+     "party_code": "O",
+     "votes": 2168
+    },
+    {
+     "id": "jerry-vaughn",
+     "name": "JERRY VAUGHN",
+     "party": null,
+     "party_code": "O",
+     "votes": 1892
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-board-of-directors-position-4-water-district",
+   "kind": "candidate",
+   "level": "local",
+   "state": "ar",
+   "office": "Board of Directors Position 4 Water District",
+   "district": null,
+   "title": "Board of Directors Position 4 Water District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ginny-murray",
+     "name": "Ginny Murray",
+     "party": null,
+     "party_code": "O",
+     "votes": 2098
+    },
+    {
+     "id": "gus-biggers",
+     "name": "Gus Biggers",
+     "party": null,
+     "party_code": "O",
+     "votes": 3865
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-tax-for-a-public-hospital",
+   "kind": "measure",
+   "level": "local",
+   "state": "ar",
+   "office": "TAX FOR A PUBLIC HOSPITAL",
+   "district": null,
+   "title": "TAX FOR A PUBLIC HOSPITAL",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "for",
+     "name": "FOR",
+     "party": null,
+     "party_code": "O",
+     "votes": 2630
+    },
+    {
+     "id": "against",
+     "name": "AGAINST",
+     "party": null,
+     "party_code": "O",
+     "votes": 1498
+    }
+   ],
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-nebco-ems",
+   "kind": "measure",
+   "level": "local",
+   "state": "ar",
+   "office": "NEBCO-EMS",
+   "district": null,
+   "title": "NEBCO-EMS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "for",
+     "name": "FOR",
+     "party": null,
+     "party_code": "O",
+     "votes": 1257
+    },
+    {
+     "id": "against",
+     "name": "AGAINST",
+     "party": null,
+     "party_code": "O",
+     "votes": 1633
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-south-east-arkansas-levee-district-commissioner",
+   "kind": "candidate",
+   "level": "local",
+   "state": "ar",
+   "office": "South East Arkansas Levee District Commissioner",
+   "district": null,
+   "title": "South East Arkansas Levee District Commissioner",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-smith",
+     "name": "Jason Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1840
+    },
+    {
+     "id": "billy-walters-jr",
+     "name": "Billy Walters, Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 967
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-board-of-directors-position-5-water-district",
+   "kind": "candidate",
+   "level": "local",
+   "state": "ar",
+   "office": "Board of Directors Position 5 Water District",
+   "district": null,
+   "title": "Board of Directors Position 5 Water District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-gordon",
+     "name": "Bob Gordon",
+     "party": null,
+     "party_code": "O",
+     "votes": 789
+    },
+    {
+     "id": "robert-l-stobaugh",
+     "name": "Robert L. Stobaugh",
+     "party": null,
+     "party_code": "O",
+     "votes": 3574
+    },
+    {
+     "id": "don-depriest",
+     "name": "Don DePriest",
+     "party": null,
+     "party_code": "O",
+     "votes": 1661
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  }
+ ]
+}

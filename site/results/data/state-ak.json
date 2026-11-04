@@ -1,0 +1,2499 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-ak",
+ "label": "Alaska",
+ "source_ids": [
+  "ak-doe"
+ ],
+ "updated_at": "2026-11-04T13:18:36Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ak-6-u-s-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ak",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "heikes-gerald-l",
+     "name": "Gerald L. Heikes",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4821
+    },
+    {
+     "id": "peltola-mary",
+     "name": "Mary Peltola",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 102701
+    },
+    {
+     "id": "sullivan-daniel-j-jr",
+     "name": "Daniel J. Jr. Sullivan",
+     "party": null,
+     "party_code": "O",
+     "votes": 3583
+    },
+    {
+     "id": "sullivan-dan-s",
+     "name": "Dan S. Sullivan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 102075
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-7-u-s-representative",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ak",
+   "office": "U.S. Representative",
+   "district": null,
+   "title": "U.S. Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "begich-nick",
+     "name": "Nick Begich",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 105353
+    },
+    {
+     "id": "hafner-eric",
+     "name": "Eric Hafner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15501
+    },
+    {
+     "id": "hill-bill",
+     "name": "Bill Hill",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 85838
+    },
+    {
+     "id": "mcdermott-james-c-jim",
+     "name": "James C. \"Jim\" McDermott",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 5763
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-5-governor-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "Governor / Lieutenant Governor",
+   "district": null,
+   "title": "Governor / Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bronson-church",
+     "name": "Bronson/Church",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29900
+    },
+    {
+     "id": "kreiss-tomkins-johnson",
+     "name": "Kreiss-Tomkins/Johnson",
+     "party": "DEM/NON",
+     "party_code": "O",
+     "votes": 103610
+    },
+    {
+     "id": "taylor-english",
+     "name": "Taylor/English",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15713
+    },
+    {
+     "id": "wilson-shower",
+     "name": "Wilson/Shower",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 61566
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-8-senate-district-a",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "Senate District A",
+   "district": null,
+   "title": "Senate District A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stedman-bert-k",
+     "name": "Bert K. Stedman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7023
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-28-house-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 1",
+   "district": null,
+   "title": "House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bynum-jeremy-t",
+     "name": "Jeremy T. Bynum",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2800
+    },
+    {
+     "id": "echohawk-grant",
+     "name": "Grant EchoHawk",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1778
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-68-bm-2-24eseg",
+   "kind": "measure",
+   "level": "state",
+   "state": "ak",
+   "office": "BM#2 24ESEG",
+   "district": null,
+   "title": "BM#2 24ESEG",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 98218
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 105774
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-69-bm-3-25uscv",
+   "kind": "measure",
+   "level": "state",
+   "state": "ak",
+   "office": "BM#3 25USCV",
+   "district": null,
+   "title": "BM#3 25USCV",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 142616
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 62175
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-71-supreme-court-pate",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Supreme Court - Pate",
+   "district": null,
+   "title": "Supreme Court - Pate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 103949
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 73647
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-80-superior-court-jd1-carpeneti",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD1 - Carpeneti",
+   "district": null,
+   "title": "Superior Court JD1 - Carpeneti",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 11919
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5982
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-81-superior-court-jd1-doty",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD1 - Doty",
+   "district": null,
+   "title": "Superior Court JD1 - Doty",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 12186
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5187
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-82-superior-court-jd1-lybrand",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD1 - Lybrand",
+   "district": null,
+   "title": "Superior Court JD1 - Lybrand",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 12673
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4750
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-29-house-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 2",
+   "district": null,
+   "title": "House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "evans-alston-c",
+     "name": "Alston C. Evans",
+     "party": "UND",
+     "party_code": "O",
+     "votes": 246
+    },
+    {
+     "id": "skaflestad-kenny-kenny-karl",
+     "name": "Kenny \"Kenny Karl\" Skaflestad",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1603
+    },
+    {
+     "id": "himschoot-rebecca",
+     "name": "Rebecca Himschoot",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2313
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-30-house-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 3",
+   "district": null,
+   "title": "House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "story-andrea-andi",
+     "name": "Andrea \"Andi\" Story",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4004
+    },
+    {
+     "id": "kreitzer-annette",
+     "name": "Annette Kreitzer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2134
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-31-house-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 4",
+   "district": null,
+   "title": "House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hannan-sara",
+     "name": "Sara Hannan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4599
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-10-senate-district-c",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "Senate District C",
+   "district": null,
+   "title": "Senate District C",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "harris-carrie-l",
+     "name": "Carrie L. Harris",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1242
+    },
+    {
+     "id": "smith-heath",
+     "name": "Heath Smith",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4198
+    },
+    {
+     "id": "stutes-louise-b",
+     "name": "Louise B. Stutes",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5136
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-32-house-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 5",
+   "district": null,
+   "title": "House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "prout-sheldon-r-j",
+     "name": "Sheldon R.J. Prout",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1729
+    },
+    {
+     "id": "simpler-kathy-c",
+     "name": "Kathy C. Simpler",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2160
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-91-superior-court-jd3-hartz",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD3 - Hartz",
+   "district": null,
+   "title": "Superior Court JD3 - Hartz",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 71122
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 52021
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-92-superior-court-jd3-lamoureux",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD3 - Lamoureux",
+   "district": null,
+   "title": "Superior Court JD3 - Lamoureux",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 68379
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 54208
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-93-superior-court-jd3-lawson",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD3 - Lawson",
+   "district": null,
+   "title": "Superior Court JD3 - Lawson",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 51207
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 71146
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-94-superior-court-jd3-mckenna",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD3 - McKenna",
+   "district": null,
+   "title": "Superior Court JD3 - McKenna",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 69274
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 53164
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-95-superior-court-jd3-nesbett",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD3 - Nesbett",
+   "district": null,
+   "title": "Superior Court JD3 - Nesbett",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 72523
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 49852
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-96-superior-court-jd3-rankin",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD3 - Rankin",
+   "district": null,
+   "title": "Superior Court JD3 - Rankin",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 72367
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 49824
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-97-superior-court-jd3-reigh",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD3 - Reigh",
+   "district": null,
+   "title": "Superior Court JD3 - Reigh",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 69455
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 52160
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-98-superior-court-jd3-wheeles",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD3 - Wheeles",
+   "district": null,
+   "title": "Superior Court JD3 - Wheeles",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 68784
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 52521
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-99-superior-court-jd3-woodman",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD3 - Woodman",
+   "district": null,
+   "title": "Superior Court JD3 - Woodman",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 72332
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 49259
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-116-district-court-jd3-darnall",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "District Court JD3 - Darnall",
+   "district": null,
+   "title": "District Court JD3 - Darnall",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 72085
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 48944
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-117-district-court-jd3-fallon",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "District Court JD3 - Fallon",
+   "district": null,
+   "title": "District Court JD3 - Fallon",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 49354
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 71212
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-118-district-court-jd3-traini",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "District Court JD3 - Traini",
+   "district": null,
+   "title": "District Court JD3 - Traini",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 70477
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 48462
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-33-house-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 6",
+   "district": null,
+   "title": "House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vance-sarah-l",
+     "name": "Sarah L. Vance",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4000
+    },
+    {
+     "id": "johnson-brent",
+     "name": "Brent Johnson",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3790
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-34-house-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 7",
+   "district": null,
+   "title": "House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "veh-kate",
+     "name": "Kate Veh",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1532
+    },
+    {
+     "id": "ruffridge-justin-m",
+     "name": "Justin M. Ruffridge",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4729
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-35-house-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 8",
+   "district": null,
+   "title": "House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "elam-william-h-bill",
+     "name": "William H. \"Bill\" Elam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5084
+    },
+    {
+     "id": "savage-nissa",
+     "name": "Nissa Savage",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1177
+    },
+    {
+     "id": "quinn-frank",
+     "name": "Frank Quinn",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 395
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-12-senate-district-e",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "Senate District E",
+   "district": null,
+   "title": "Senate District E",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "giessel-cathy",
+     "name": "Cathy Giessel",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7082
+    },
+    {
+     "id": "stoddard-gretchen-w",
+     "name": "Gretchen W. Stoddard",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2946
+    },
+    {
+     "id": "white-jason-jace",
+     "name": "Jason \"Jace\" White",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1577
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-36-house-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 9",
+   "district": null,
+   "title": "House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "boyle-john-c",
+     "name": "John C. Boyle",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3421
+    },
+    {
+     "id": "holland-ky",
+     "name": "Ky Holland",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3952
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-37-house-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 10",
+   "district": null,
+   "title": "House District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kopp-charles-m-chuck",
+     "name": "Charles M. \"Chuck\" Kopp",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4406
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-38-house-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 11",
+   "district": null,
+   "title": "House District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hall-danni-m",
+     "name": "Danni M. Hall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2871
+    },
+    {
+     "id": "coulombe-julie",
+     "name": "Julie Coulombe",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3300
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-39-house-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 12",
+   "district": null,
+   "title": "House District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "schrage-calvin-r",
+     "name": "Calvin R. Schrage",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3381
+    },
+    {
+     "id": "mcdonald-jieun-c-jini",
+     "name": "Jieun C. \"Jini\" McDonald",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1706
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-14-senate-district-g",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "Senate District G",
+   "district": null,
+   "title": "Senate District G",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gray-jackson-elvi",
+     "name": "Elvi Gray-Jackson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5442
+    },
+    {
+     "id": "danger-nicholas",
+     "name": "Nicholas Danger",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2965
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-40-house-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 13",
+   "district": null,
+   "title": "House District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "keller-lisa-m",
+     "name": "Lisa M. Keller",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3240
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-41-house-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 14",
+   "district": null,
+   "title": "House District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "galvin-alyse-s",
+     "name": "Alyse S. Galvin",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3360
+    },
+    {
+     "id": "wyatt-russell-o",
+     "name": "Russell O. Wyatt",
+     "party": "UND",
+     "party_code": "O",
+     "votes": 731
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-42-house-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 15",
+   "district": null,
+   "title": "House District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "costello-mia",
+     "name": "Mia Costello",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2900
+    },
+    {
+     "id": "wells-denny",
+     "name": "Denny Wells",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3206
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-43-house-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 16",
+   "district": null,
+   "title": "House District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vazquez-liz",
+     "name": "Liz Vazquez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2391
+    },
+    {
+     "id": "hall-carolyn",
+     "name": "Carolyn Hall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3458
+    },
+    {
+     "id": "isley-phil",
+     "name": "Phil Isley",
+     "party": "UND",
+     "party_code": "O",
+     "votes": 277
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-16-senate-district-i",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "Senate District I",
+   "district": null,
+   "title": "Senate District I",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tobin-l-ki-gale",
+     "name": "Löki Gale Tobin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4968
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-44-house-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 17",
+   "district": null,
+   "title": "House District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bradley-daniel-l",
+     "name": "Daniel L. Bradley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1255
+    },
+    {
+     "id": "fields-william-z-zack",
+     "name": "William Z. \"Zack\" Fields",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3554
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-45-house-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 18",
+   "district": null,
+   "title": "House District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "groh-cliff",
+     "name": "Cliff Groh",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 993
+    },
+    {
+     "id": "sager-dan",
+     "name": "Dan Sager",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 595
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-46-house-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 19",
+   "district": null,
+   "title": "House District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mina-genevieve-g",
+     "name": "Genevieve G. Mina",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2522
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-47-house-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 20",
+   "district": null,
+   "title": "House District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bauer-paul-a-jr",
+     "name": "Paul A. Jr. Bauer",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1621
+    },
+    {
+     "id": "gray-andrew-t",
+     "name": "Andrew T. Gray",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2663
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-18-senate-district-k",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "Senate District K",
+   "district": null,
+   "title": "Senate District K",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wielechowski-bill",
+     "name": "Bill Wielechowski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7252
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-48-house-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 21",
+   "district": null,
+   "title": "House District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sims-aime",
+     "name": "Aimeé Sims",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2547
+    },
+    {
+     "id": "mears-donna",
+     "name": "Donna Mears",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3494
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-49-house-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 22",
+   "district": null,
+   "title": "House District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tagle-jose-roel-a",
+     "name": "Jose Roel A. Tagle",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1305
+    },
+    {
+     "id": "eischeid-ted-j",
+     "name": "Ted J. Eischeid",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2158
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-50-house-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 23",
+   "district": null,
+   "title": "House District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hammermeister-lee-e",
+     "name": "Lee E. Hammermeister",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 454
+    },
+    {
+     "id": "allard-jamie",
+     "name": "Jamie Allard",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2564
+    },
+    {
+     "id": "arlington-jim",
+     "name": "Jim Arlington",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1916
+    },
+    {
+     "id": "jones-ruby",
+     "name": "Ruby Jones",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1779
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-51-house-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 24",
+   "district": null,
+   "title": "House District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wall-gina-t",
+     "name": "Gina T. Wall",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2995
+    },
+    {
+     "id": "mccarty-ken",
+     "name": "Ken McCarty",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3011
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-20-senate-district-m",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "Senate District M",
+   "district": null,
+   "title": "Senate District M",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vrvilo-zane",
+     "name": "Zane Vrvilo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 752
+    },
+    {
+     "id": "berry-ryan",
+     "name": "Ryan Berry",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4452
+    },
+    {
+     "id": "tilton-cathy-l",
+     "name": "Cathy L. Tilton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4577
+    },
+    {
+     "id": "chesbro-patricia-r",
+     "name": "Patricia R. Chesbro",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3878
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-52-house-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 25",
+   "district": null,
+   "title": "House District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bowles-michael",
+     "name": "Michael Bowles",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2354
+    },
+    {
+     "id": "johnson-delena-m",
+     "name": "DeLena M. Johnson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2621
+    },
+    {
+     "id": "merritt-steven-l",
+     "name": "Steven L. Merritt",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2256
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-53-house-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 26",
+   "district": null,
+   "title": "House District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "troshynski-jeanne",
+     "name": "Jeanne Troshynski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1709
+    },
+    {
+     "id": "st-clair-steve-j",
+     "name": "Steve J. St. Clair",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4695
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-54-house-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 27",
+   "district": null,
+   "title": "House District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "underwood-jubilee-l",
+     "name": "Jubilee L. Underwood",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2701
+    },
+    {
+     "id": "eastman-david",
+     "name": "David Eastman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2566
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-55-house-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 28",
+   "district": null,
+   "title": "House District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kennedy-kathleen-m-kit",
+     "name": "Kathleen M. \"Kit\" Kennedy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1624
+    },
+    {
+     "id": "wright-stephen",
+     "name": "Stephen Wright",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2257
+    },
+    {
+     "id": "moore-elexie-b",
+     "name": "Elexie B. Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2122
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-22-senate-district-o",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "Senate District O",
+   "district": null,
+   "title": "Senate District O",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bauer-peter",
+     "name": "Peter Bauer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3036
+    },
+    {
+     "id": "rauscher-george",
+     "name": "George Rauscher",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5030
+    },
+    {
+     "id": "sheldon-ryan-w",
+     "name": "Ryan W. Sheldon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3592
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-56-house-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 29",
+   "district": null,
+   "title": "House District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nelson-gerald-garret",
+     "name": "Gerald \"Garret\" Nelson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2294
+    },
+    {
+     "id": "slone-kimberly",
+     "name": "Kimberly Slone",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1207
+    },
+    {
+     "id": "kusner-kalarchik-jessica-i",
+     "name": "Jessica I. Kusner-Kalarchik",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 752
+    },
+    {
+     "id": "menard-steve",
+     "name": "Steve Menard",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2166
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-57-house-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 30",
+   "district": null,
+   "title": "House District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "loomis-sandra-d",
+     "name": "Sandra D. Loomis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1375
+    },
+    {
+     "id": "massie-doug",
+     "name": "Doug Massie",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1940
+    },
+    {
+     "id": "mccabe-kevin-j",
+     "name": "Kevin J. McCabe",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2079
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-129-superior-court-jd4-peters",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD4 - Peters",
+   "district": null,
+   "title": "Superior Court JD4 - Peters",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 20211
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 11962
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-130-superior-court-jd4-schwalm",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD4 - Schwalm",
+   "district": null,
+   "title": "Superior Court JD4 - Schwalm",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 20578
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 11519
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-131-superior-court-jd4-welch",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD4 - Welch",
+   "district": null,
+   "title": "Superior Court JD4 - Welch",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 19999
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 12112
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-140-district-court-jd4-seekins",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "District Court JD4 - Seekins",
+   "district": null,
+   "title": "District Court JD4 - Seekins",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 21701
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 10989
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-58-house-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 31",
+   "district": null,
+   "title": "House District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "powell-mark-jonathan",
+     "name": "Jonathan Powell-Mark",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 227
+    },
+    {
+     "id": "dibert-maxine-l",
+     "name": "Maxine L. Dibert",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2646
+    },
+    {
+     "id": "moore-aim-e",
+     "name": "Aimée Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1641
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-59-house-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 32",
+   "district": null,
+   "title": "House District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stapp-will",
+     "name": "Will Stapp",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2381
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-24-senate-district-q",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "Senate District Q",
+   "district": null,
+   "title": "Senate District Q",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tomaszewski-frank",
+     "name": "Frank Tomaszewski",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7922
+    },
+    {
+     "id": "hunt-william",
+     "name": "William Hunt",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4306
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-60-house-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 33",
+   "district": null,
+   "title": "House District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "prax-glenn-m-mike",
+     "name": "Glenn M. \"Mike\" Prax",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2442
+    },
+    {
+     "id": "haney-barbara",
+     "name": "Barbara Haney",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1692
+    },
+    {
+     "id": "mcfarland-pepper",
+     "name": "Pepper McFarland",
+     "party": "UND",
+     "party_code": "O",
+     "votes": 1720
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-61-house-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 34",
+   "district": null,
+   "title": "House District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tomaszewski-harmony",
+     "name": "Harmony Tomaszewski",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3212
+    },
+    {
+     "id": "cottle-joy-e-joy-beth",
+     "name": "Joy E. \"Joy Beth\" Cottle",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3255
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-62-house-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 35",
+   "district": null,
+   "title": "House District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rentzel-jeffrey-l-jeff",
+     "name": "Jeffrey L. \"Jeff\" Rentzel",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2775
+    },
+    {
+     "id": "carrick-ashley-e",
+     "name": "Ashley E. Carrick",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4049
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-63-house-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 36",
+   "district": null,
+   "title": "House District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "schwanke-rebecca-a",
+     "name": "Rebecca A. Schwanke",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3169
+    },
+    {
+     "id": "jones-crystal",
+     "name": "Crystal Jones",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2308
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-26-senate-district-s",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "Senate District S",
+   "district": null,
+   "title": "Senate District S",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robb-richard-rick",
+     "name": "Richard \"Rick\" Robb",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 673
+    },
+    {
+     "id": "guy-wassilie-p-wg",
+     "name": "Wassilie P. \"WG\" Guy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1365
+    },
+    {
+     "id": "edgmon-bryce",
+     "name": "Bryce Edgmon",
+     "party": "UND",
+     "party_code": "O",
+     "votes": 1979
+    },
+    {
+     "id": "deacon-darren-morgan",
+     "name": "Darren Morgan Deacon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1484
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-64-house-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 37",
+   "district": null,
+   "title": "House District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "trefon-evelynn-m",
+     "name": "Evelynn M. Trefon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1054
+    },
+    {
+     "id": "smith-mark",
+     "name": "Mark Smith",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 701
+    },
+    {
+     "id": "wilson-brenda-l",
+     "name": "Brenda L. Wilson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 779
+    },
+    {
+     "id": "woods-cade-j",
+     "name": "Cade J. Woods",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 220
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-65-house-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 38",
+   "district": null,
+   "title": "House District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amik-joseph-r",
+     "name": "Joseph R. Amik",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 277
+    },
+    {
+     "id": "jimmie-nellie-unangiq",
+     "name": "Nellie \"Unangiq\" Jimmie",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1079
+    },
+    {
+     "id": "keppel-willy",
+     "name": "Willy Keppel",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 619
+    },
+    {
+     "id": "mccormick-cj",
+     "name": "CJ McCormick",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 779
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-66-house-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 39",
+   "district": null,
+   "title": "House District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "okitkun-reynold-d-papa-joe",
+     "name": "Reynold D. \"Papa Joe\" Okitkun",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 504
+    },
+    {
+     "id": "foster-neal-w-quannaq",
+     "name": "Neal W. \"Quannaq\" Foster",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1607
+    },
+    {
+     "id": "ivanoff-tyler",
+     "name": "Tyler Ivanoff",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1183
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ak-88-superior-court-jd2-roghair",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ak",
+   "office": "Superior Court JD2 - Roghair",
+   "district": null,
+   "title": "Superior Court JD2 - Roghair",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 2802
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1795
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-67-house-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ak",
+   "office": "House District 40",
+   "district": null,
+   "title": "House District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "frier-robyn-niayuq-burke",
+     "name": "Robyn Niayuq Burke Frier",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1396
+    },
+    {
+     "id": "chase-saima",
+     "name": "Saima Chase",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 908
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  }
+ ]
+}

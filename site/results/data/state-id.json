@@ -1,0 +1,4514 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-id",
+ "label": "Idaho",
+ "source_ids": [
+  "id-scytl"
+ ],
+ "updated_at": "2026-11-04T13:41:11Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "id-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "id",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-risch",
+     "name": "Jim Risch",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 391395
+    },
+    {
+     "id": "todd-achilles",
+     "name": "Todd Achilles",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 232525
+    },
+    {
+     "id": "natalie-m-fleming",
+     "name": "Natalie M Fleming",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 48189
+    },
+    {
+     "id": "matt-loesby",
+     "name": "Matt Loesby",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 20137
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-united-states-representative-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "id",
+   "office": "U.S. House",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "russ-fulcher",
+     "name": "Russ Fulcher",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 235535
+    },
+    {
+     "id": "kaylee-peterson",
+     "name": "Kaylee Peterson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 104452
+    },
+    {
+     "id": "sarah-zabel",
+     "name": "Sarah Zabel",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 22050
+    },
+    {
+     "id": "brendan-j-gomez",
+     "name": "Brendan J. Gomez",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 3318
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-united-states-representative-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "id",
+   "office": "U.S. House",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-simpson",
+     "name": "Mike Simpson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 168203
+    },
+    {
+     "id": "ellie-gilbreath",
+     "name": "Ellie Gilbreath",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 131242
+    },
+    {
+     "id": "tripp-charles-hutchinson",
+     "name": "Tripp Charles Hutchinson",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 11405
+    },
+    {
+     "id": "emre-houser",
+     "name": "Emre Houser",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 7728
+    },
+    {
+     "id": "will-johanson",
+     "name": "Will Johanson",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 7005
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "id",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brad-little",
+     "name": "Brad Little",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 396809
+    },
+    {
+     "id": "terri-pickens",
+     "name": "Terri Pickens",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 224380
+    },
+    {
+     "id": "john-r-stegner",
+     "name": "John R. Stegner",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 52945
+    },
+    {
+     "id": "paul-sand",
+     "name": "Paul Sand",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 11279
+    },
+    {
+     "id": "pro-life",
+     "name": "Pro-Life",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 9291
+    },
+    {
+     "id": "jacob-burnett",
+     "name": "Jacob Burnett",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 270
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "id",
+   "office": "Lieutenant Governor",
+   "district": null,
+   "title": "Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-bedke",
+     "name": "Scott Bedke",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 434451
+    },
+    {
+     "id": "eric-myricks",
+     "name": "Eric Myricks",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 249226
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "id",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phil-mcgrane",
+     "name": "Phil McGrane",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 460042
+    },
+    {
+     "id": "shawn-keenan",
+     "name": "Shawn Keenan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 222571
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-controller",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Controller",
+   "district": null,
+   "title": "State Controller",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-d-woolf",
+     "name": "Brandon D Woolf",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 449847
+    },
+    {
+     "id": "rakesh-mohan",
+     "name": "Rakesh Mohan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 229335
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "id",
+   "office": "State Treasurer",
+   "district": null,
+   "title": "State Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julie-a-ellsworth",
+     "name": "Julie A. Ellsworth",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 443882
+    },
+    {
+     "id": "kevin-a-jones",
+     "name": "Kevin A Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 233815
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "id",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "raul-r-labrador",
+     "name": "Raul R. Labrador",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 410868
+    },
+    {
+     "id": "lori-hickman",
+     "name": "Lori Hickman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 275325
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-superintendent-of-public-instruction",
+   "kind": "candidate",
+   "level": "state",
+   "state": "id",
+   "office": "Superintendent of Public Instruction",
+   "district": null,
+   "title": "Superintendent of Public Instruction",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "debbie-critchfield",
+     "name": "Debbie Critchfield",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 418424
+    },
+    {
+     "id": "becky-sundin-mitchell",
+     "name": "Becky Sundin Mitchell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 236640
+    },
+    {
+     "id": "teresa-roundy",
+     "name": "Teresa Roundy",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 24176
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-1",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 1",
+   "district": null,
+   "title": "State Senator District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-herndon",
+     "name": "Scott Herndon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14838
+    },
+    {
+     "id": "steve-johnson",
+     "name": "Steve Johnson",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 11069
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-1-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 1 Seat A",
+   "district": null,
+   "title": "State Representative District 1 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jane-sauter",
+     "name": "Jane Sauter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17307
+    },
+    {
+     "id": "karen-matthee",
+     "name": "Karen Matthee",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8445
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-1-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 1 Seat B",
+   "district": null,
+   "title": "State Representative District 1 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cornel-rasor",
+     "name": "Cornel Rasor",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16545
+    },
+    {
+     "id": "kathryn-larson",
+     "name": "Kathryn Larson",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 9327
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-2",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 2",
+   "district": null,
+   "title": "State Senator District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phil-hart",
+     "name": "Phil Hart",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16084
+    },
+    {
+     "id": "valerie-wade",
+     "name": "Valerie Wade",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4737
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-2-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 2 Seat A",
+   "district": null,
+   "title": "State Representative District 2 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "heather-scott",
+     "name": "Heather Scott",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16474
+    },
+    {
+     "id": "birgid-niedenzu",
+     "name": "Birgid Niedenzu",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4273
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-2-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 2 Seat B",
+   "district": null,
+   "title": "State Representative District 2 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dale-hawkins",
+     "name": "Dale Hawkins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16154
+    },
+    {
+     "id": "sabine-krier",
+     "name": "Sabine Krier",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4506
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-3",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 3",
+   "district": null,
+   "title": "State Senator District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "doug-doug-o-okuniewicz",
+     "name": "Doug \"Doug O\" Okuniewicz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19374
+    },
+    {
+     "id": "brian-seguin",
+     "name": "Brian Seguin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5720
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-3-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 3 Seat A",
+   "district": null,
+   "title": "State Representative District 3 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vito-barbieri",
+     "name": "Vito Barbieri",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19129
+    },
+    {
+     "id": "melissa-mateer",
+     "name": "Melissa Mateer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5956
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-3-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 3 Seat B",
+   "district": null,
+   "title": "State Representative District 3 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jordan-redman",
+     "name": "Jordan Redman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19450
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-4",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 4",
+   "district": null,
+   "title": "State Senator District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-toews",
+     "name": "Ben Toews",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11413
+    },
+    {
+     "id": "carissa-brewer",
+     "name": "Carissa Brewer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7422
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-4-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 4 Seat A",
+   "district": null,
+   "title": "State Representative District 4 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joe-alfieri",
+     "name": "Joe Alfieri",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11272
+    },
+    {
+     "id": "maxwell-mcswain",
+     "name": "Maxwell McSwain",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7379
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-4-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 4 Seat B",
+   "district": null,
+   "title": "State Representative District 4 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "elaine-price",
+     "name": "Elaine Price",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11230
+    },
+    {
+     "id": "aaron-hayes",
+     "name": "Aaron Hayes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7520
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-5",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 5",
+   "district": null,
+   "title": "State Senator District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carl-j-bjerke",
+     "name": "Carl J Bjerke",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15920
+    },
+    {
+     "id": "adam-chapman",
+     "name": "Adam Chapman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5038
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-5-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 5 Seat A",
+   "district": null,
+   "title": "State Representative District 5 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ron-mendive",
+     "name": "Ron Mendive",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15756
+    },
+    {
+     "id": "mirna-pleines",
+     "name": "Mirna Pleines",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5195
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-5-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 5 Seat B",
+   "district": null,
+   "title": "State Representative District 5 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tony-wisniewski",
+     "name": "Tony Wisniewski",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15739
+    },
+    {
+     "id": "lee-wallace",
+     "name": "Lee Wallace",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5138
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-6",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 6",
+   "district": null,
+   "title": "State Senator District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dan-foreman",
+     "name": "Dan Foreman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11172
+    },
+    {
+     "id": "robin-weldy",
+     "name": "Robin Weldy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10021
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-6-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 6 Seat A",
+   "district": null,
+   "title": "State Representative District 6 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "colton-bennett",
+     "name": "Colton Bennett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11388
+    },
+    {
+     "id": "trish-carter-goodheart",
+     "name": "Trish Carter-Goodheart",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9713
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-6-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 6 Seat B",
+   "district": null,
+   "title": "State Representative District 6 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-mitchell",
+     "name": "Brandon Mitchell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11631
+    },
+    {
+     "id": "kathy-dawes",
+     "name": "Kathy Dawes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9647
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-7",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 7",
+   "district": null,
+   "title": "State Senator District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cindy-carlson",
+     "name": "Cindy Carlson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14518
+    },
+    {
+     "id": "patrice-yeatter",
+     "name": "Patrice Yeatter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5755
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-7-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 7 Seat A",
+   "district": null,
+   "title": "State Representative District 7 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kyle-harris",
+     "name": "Kyle Harris",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14544
+    },
+    {
+     "id": "larry-nostrant",
+     "name": "Larry Nostrant",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5695
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-7-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 7 Seat B",
+   "district": null,
+   "title": "State Representative District 7 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charlie-shepherd",
+     "name": "Charlie Shepherd",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14412
+    },
+    {
+     "id": "pete-gertonson",
+     "name": "Pete Gertonson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5880
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-8",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 8",
+   "district": null,
+   "title": "State Senator District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christy-zito",
+     "name": "Christy Zito",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14970
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-8-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 8 Seat A",
+   "district": null,
+   "title": "State Representative District 8 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rob-beiswenger",
+     "name": "Rob Beiswenger",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11636
+    },
+    {
+     "id": "heather-s-lewis",
+     "name": "Heather S. Lewis",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 7523
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-8-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 8 Seat B",
+   "district": null,
+   "title": "State Representative District 8 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-beckley",
+     "name": "Brian Beckley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12676
+    },
+    {
+     "id": "jared-dawson",
+     "name": "Jared Dawson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6552
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-9",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 9",
+   "district": null,
+   "title": "State Senator District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-shippy",
+     "name": "Brandon Shippy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14917
+    },
+    {
+     "id": "janice-martell",
+     "name": "Janice Martell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4085
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-9-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 9 Seat A",
+   "district": null,
+   "title": "State Representative District 9 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-c-shirts",
+     "name": "John C. Shirts",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16308
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-9-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 9 Seat B",
+   "district": null,
+   "title": "State Representative District 9 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "judy-boyle",
+     "name": "Judy Boyle",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14616
+    },
+    {
+     "id": "lupita-connor",
+     "name": "Lupita Connor",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4224
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-10",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 10",
+   "district": null,
+   "title": "State Senator District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tammy-nichols",
+     "name": "Tammy Nichols",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 20253
+    },
+    {
+     "id": "nancy-m-parker",
+     "name": "Nancy M Parker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6499
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-10-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 10 Seat A",
+   "district": null,
+   "title": "State Representative District 10 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-moyle",
+     "name": "Mike Moyle",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 20329
+    },
+    {
+     "id": "michael-hofferber",
+     "name": "Michael Hofferber",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6314
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-10-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 10 Seat B",
+   "district": null,
+   "title": "State Representative District 10 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bruce-d-skaug",
+     "name": "Bruce D. Skaug",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 20213
+    },
+    {
+     "id": "beth-ann-mcfalls",
+     "name": "Beth Ann McFalls",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6428
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-11",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 11",
+   "district": null,
+   "title": "State Senator District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "camille-blaylock",
+     "name": "Camille Blaylock",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6886
+    },
+    {
+     "id": "susan-counsil",
+     "name": "Susan Counsil",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5208
+    },
+    {
+     "id": "esther-ma",
+     "name": "Esther Ma",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 385
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-11-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 11 Seat A",
+   "district": null,
+   "title": "State Representative District 11 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kent-a-marmon",
+     "name": "Kent A. Marmon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8749
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-11-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 11 Seat B",
+   "district": null,
+   "title": "State Representative District 11 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "debbie-geyer",
+     "name": "Debbie Geyer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7206
+    },
+    {
+     "id": "joshua-preminger",
+     "name": "Joshua Preminger",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5172
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-12",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 12",
+   "district": null,
+   "title": "State Senator District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-adams",
+     "name": "Ben Adams",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8466
+    },
+    {
+     "id": "krystal-flippence",
+     "name": "Krystal Flippence",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4607
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-12-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 12 Seat A",
+   "district": null,
+   "title": "State Representative District 12 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-cornilles",
+     "name": "Jeff Cornilles",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8458
+    },
+    {
+     "id": "sterling-barnett",
+     "name": "Sterling Barnett",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4544
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-12-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 12 Seat B",
+   "district": null,
+   "title": "State Representative District 12 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jaron-crane",
+     "name": "Jaron Crane",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8356
+    },
+    {
+     "id": "curtis-james",
+     "name": "Curtis James",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4685
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-13",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 13",
+   "district": null,
+   "title": "State Senator District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-lenney",
+     "name": "Brian Lenney",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7490
+    },
+    {
+     "id": "letishia-silva",
+     "name": "Letishia Silva",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4391
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-13-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 13 Seat A",
+   "district": null,
+   "title": "State Representative District 13 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brent-j-crane",
+     "name": "Brent J Crane",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7563
+    },
+    {
+     "id": "cliff-hohman",
+     "name": "Cliff Hohman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4305
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-13-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 13 Seat B",
+   "district": null,
+   "title": "State Representative District 13 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-tanner",
+     "name": "Steven Tanner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7589
+    },
+    {
+     "id": "cody-gorman",
+     "name": "Cody Gorman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4252
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-14",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 14",
+   "district": null,
+   "title": "State Senator District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "c-scott-grow",
+     "name": "C. Scott Grow",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21595
+    },
+    {
+     "id": "kirsten-faith-richardson",
+     "name": "Kirsten Faith Richardson",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 4705
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-14-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 14 Seat A",
+   "district": null,
+   "title": "State Representative District 14 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ted-hill",
+     "name": "Ted Hill",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 20803
+    },
+    {
+     "id": "jo-daly",
+     "name": "Jo Daly",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7284
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-14-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 14 Seat B",
+   "district": null,
+   "title": "State Representative District 14 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-tanner",
+     "name": "Josh Tanner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 20552
+    },
+    {
+     "id": "valerie-ruxton",
+     "name": "Valerie Ruxton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7603
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-15",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 15",
+   "district": null,
+   "title": "State Senator District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nancy-gregory",
+     "name": "Nancy Gregory",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11365
+    },
+    {
+     "id": "desi-burbank",
+     "name": "Desi Burbank",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9479
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-15-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 15 Seat A",
+   "district": null,
+   "title": "State Representative District 15 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-berch",
+     "name": "Steve Berch",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12227
+    },
+    {
+     "id": "steve-keyser",
+     "name": "Steve Keyser",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8749
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-15-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 15 Seat B",
+   "district": null,
+   "title": "State Representative District 15 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jae-etchart",
+     "name": "Jae Etchart",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11070
+    },
+    {
+     "id": "dori-healey",
+     "name": "Dori Healey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9688
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-16",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 16",
+   "district": null,
+   "title": "State Senator District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "so-ia-galaviz",
+     "name": "Soñia Galaviz",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13819
+    },
+    {
+     "id": "geoffrey-surbeck",
+     "name": "Geoffrey Surbeck",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6855
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-16-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 16 Seat A",
+   "district": null,
+   "title": "State Representative District 16 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "megan-woller",
+     "name": "Megan Woller",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13778
+    },
+    {
+     "id": "jackie-davidson",
+     "name": "Jackie Davidson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6879
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-16-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 16 Seat B",
+   "district": null,
+   "title": "State Representative District 16 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "annie-haws",
+     "name": "Annie Haws",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 14121
+    },
+    {
+     "id": "chandler-stewart-hadraba",
+     "name": "Chandler Stewart Hadraba",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6460
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-17",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 17",
+   "district": null,
+   "title": "State Senator District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carrie-semmelroth",
+     "name": "Carrie Semmelroth",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13213
+    },
+    {
+     "id": "benjamin-chafetz",
+     "name": "Benjamin Chafetz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6703
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-17-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 17 Seat A",
+   "district": null,
+   "title": "State Representative District 17 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-gannon",
+     "name": "John Gannon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13548
+    },
+    {
+     "id": "james-r-nechwedowich",
+     "name": "James R Nechwedowich",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6423
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-17-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 17 Seat B",
+   "district": null,
+   "title": "State Representative District 17 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "megan-egbert",
+     "name": "Megan Egbert",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13288
+    },
+    {
+     "id": "justin-alexander-peter-hughes",
+     "name": "Justin Alexander Peter Hughes",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6629
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-18",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 18",
+   "district": null,
+   "title": "State Senator District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "janie-ward-engelking",
+     "name": "Janie Ward-Engelking",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15719
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-18-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 18 Seat A",
+   "district": null,
+   "title": "State Representative District 18 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ilana-rubel",
+     "name": "Ilana Rubel",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15570
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-18-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 18 Seat B",
+   "district": null,
+   "title": "State Representative District 18 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brooke-green",
+     "name": "Brooke Green",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 14902
+    },
+    {
+     "id": "joseph-bishop",
+     "name": "Joseph Bishop",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 3113
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-19",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 19",
+   "district": null,
+   "title": "State Senator District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-wintrow",
+     "name": "Melissa Wintrow",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 20742
+    },
+    {
+     "id": "melissa-j-christian",
+     "name": "Melissa J. Christian",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8635
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-19-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 19 Seat A",
+   "district": null,
+   "title": "State Representative District 19 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "monica-c-church",
+     "name": "Monica C. Church",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 20654
+    },
+    {
+     "id": "bryan-hopkins",
+     "name": "Bryan Hopkins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8628
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-19-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 19 Seat B",
+   "district": null,
+   "title": "State Representative District 19 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-mathias",
+     "name": "Chris Mathias",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 20701
+    },
+    {
+     "id": "stanley-roach",
+     "name": "Stanley Roach",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8497
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-20",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 20",
+   "district": null,
+   "title": "State Senator District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-keyser",
+     "name": "Josh Keyser",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13918
+    },
+    {
+     "id": "pamela-renee-wilson",
+     "name": "Pamela Renee Wilson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9043
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-20-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 20 Seat A",
+   "district": null,
+   "title": "State Representative District 20 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joe-a-palmer",
+     "name": "Joe A Palmer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14002
+    },
+    {
+     "id": "jennifer-stephens",
+     "name": "Jennifer Stephens",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8942
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-20-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 20 Seat B",
+   "district": null,
+   "title": "State Representative District 20 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-d-holtzclaw",
+     "name": "James D. Holtzclaw",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14099
+    },
+    {
+     "id": "mary-a-mosley",
+     "name": "Mary A Mosley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8769
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-21",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 21",
+   "district": null,
+   "title": "State Senator District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "treg-a-bernt",
+     "name": "Treg A. Bernt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15399
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-21-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 21 Seat A",
+   "district": null,
+   "title": "State Representative District 21 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-petzke",
+     "name": "James Petzke",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12548
+    },
+    {
+     "id": "camille-allan",
+     "name": "Camille Allan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8050
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-21-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 21 Seat B",
+   "district": null,
+   "title": "State Representative District 21 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-ehlers",
+     "name": "Jeff Ehlers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12293
+    },
+    {
+     "id": "casey-hess",
+     "name": "Casey Hess",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8361
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-22",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 22",
+   "district": null,
+   "title": "State Senator District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lori-den-hartog",
+     "name": "Lori Den Hartog",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14650
+    },
+    {
+     "id": "karlie-easley",
+     "name": "Karlie Easley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10459
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-22-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 22 Seat A",
+   "district": null,
+   "title": "State Representative District 22 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelly-walton",
+     "name": "Kelly Walton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14629
+    },
+    {
+     "id": "loren-petty",
+     "name": "Loren Petty",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10407
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-22-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 22 Seat B",
+   "district": null,
+   "title": "State Representative District 22 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-a-monks",
+     "name": "Jason A. Monks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14535
+    },
+    {
+     "id": "amanda-easley",
+     "name": "Amanda Easley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10544
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-23",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 23",
+   "district": null,
+   "title": "State Senator District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "todd-lakey",
+     "name": "Todd Lakey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13631
+    },
+    {
+     "id": "paul-morgan",
+     "name": "Paul Morgan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4760
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-23-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 23 Seat A",
+   "district": null,
+   "title": "State Representative District 23 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-bruce",
+     "name": "Chris Bruce",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14227
+    },
+    {
+     "id": "paul-m-smith",
+     "name": "Paul M Smith",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 3061
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-23-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 23 Seat B",
+   "district": null,
+   "title": "State Representative District 23 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shawn-r-dygert",
+     "name": "Shawn R Dygert",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13519
+    },
+    {
+     "id": "joe-fuller",
+     "name": "Joe Fuller",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4846
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-24",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 24",
+   "district": null,
+   "title": "State Senator District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brent-d-reinke",
+     "name": "Brent D Reinke",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13541
+    },
+    {
+     "id": "mary-jo-durfee",
+     "name": "Mary Jo Durfee",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4096
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-24-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 24 Seat A",
+   "district": null,
+   "title": "State Representative District 24 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clint-hostetler",
+     "name": "Clint Hostetler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12245
+    },
+    {
+     "id": "kevin-moxley",
+     "name": "Kevin Moxley",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 5384
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-24-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 24 Seat B",
+   "district": null,
+   "title": "State Representative District 24 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chance-requa",
+     "name": "Chance Requa",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14691
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-25",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 25",
+   "district": null,
+   "title": "State Senator District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "casey-swensen",
+     "name": "Casey Swensen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9207
+    },
+    {
+     "id": "w-lane-startin",
+     "name": "W. Lane Startin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5075
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-25-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 25 Seat A",
+   "district": null,
+   "title": "State Representative District 25 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "grayson-stone",
+     "name": "Grayson Stone",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9070
+    },
+    {
+     "id": "marla-palmer",
+     "name": "Marla Palmer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5304
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-25-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 25 Seat B",
+   "district": null,
+   "title": "State Representative District 25 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cherie-vollmer",
+     "name": "Cherie Vollmer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8851
+    },
+    {
+     "id": "liyah-babayan",
+     "name": "Liyah Babayan",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 5332
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-26",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 26",
+   "district": null,
+   "title": "State Senator District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ron-taylor",
+     "name": "Ron Taylor",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10426
+    },
+    {
+     "id": "bryan-hyde",
+     "name": "Bryan Hyde",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6931
+    },
+    {
+     "id": "shaila-tate",
+     "name": "Shaila Tate",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 890
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-26-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 26 Seat A",
+   "district": null,
+   "title": "State Representative District 26 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anita-janis",
+     "name": "Anita Janis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9455
+    },
+    {
+     "id": "mike-pohanka",
+     "name": "Mike Pohanka",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7872
+    },
+    {
+     "id": "bella-schiffler",
+     "name": "Bella Schiffler",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 941
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-26-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 26 Seat B",
+   "district": null,
+   "title": "State Representative District 26 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-marsh",
+     "name": "Kevin Marsh",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10794
+    },
+    {
+     "id": "lyle-johnstone",
+     "name": "Lyle Johnstone",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7299
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-27",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 27",
+   "district": null,
+   "title": "State Senator District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelly-arthur-anthon",
+     "name": "Kelly Arthur Anthon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11124
+    },
+    {
+     "id": "margo-saunders",
+     "name": "Margo Saunders",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3174
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-27-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 27 Seat A",
+   "district": null,
+   "title": "State Representative District 27 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "douglas-t-pickett",
+     "name": "Douglas T Pickett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12363
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-27-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 27 Seat B",
+   "district": null,
+   "title": "State Representative District 27 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clay-handy",
+     "name": "Clay Handy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12595
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-28",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 28",
+   "district": null,
+   "title": "State Senator District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-guthrie",
+     "name": "Jim Guthrie",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12246
+    },
+    {
+     "id": "mandy-peace",
+     "name": "Mandy Peace",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5608
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-28-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 28 Seat A",
+   "district": null,
+   "title": "State Representative District 28 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-rick-cheatum",
+     "name": "Richard (Rick) Cheatum",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11551
+    },
+    {
+     "id": "kim-jackman",
+     "name": "Kim Jackman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6184
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-28-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 28 Seat B",
+   "district": null,
+   "title": "State Representative District 28 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dan-garner",
+     "name": "Dan Garner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12188
+    },
+    {
+     "id": "jayson-meline",
+     "name": "Jayson Meline",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5544
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-29",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 29",
+   "district": null,
+   "title": "State Senator District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-d-ruchti",
+     "name": "James D. Ruchti",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8919
+    },
+    {
+     "id": "john-crowder",
+     "name": "John Crowder",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6089
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-29-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 29 Seat A",
+   "district": null,
+   "title": "State Representative District 29 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mary-shea",
+     "name": "Mary Shea",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8551
+    },
+    {
+     "id": "dustin-w-manwaring",
+     "name": "Dustin W. Manwaring",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6471
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-29-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 29 Seat B",
+   "district": null,
+   "title": "State Representative District 29 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nate-roberts",
+     "name": "Nate Roberts",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8477
+    },
+    {
+     "id": "jennifer-miles",
+     "name": "Jennifer Miles",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6516
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-30",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 30",
+   "district": null,
+   "title": "State Senator District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julie-vanorden",
+     "name": "Julie VanOrden",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12259
+    },
+    {
+     "id": "joni-lin-sorensen",
+     "name": "Joni Lin Sorensen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3865
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-30-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 30 Seat A",
+   "district": null,
+   "title": "State Representative District 30 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-cannon",
+     "name": "David Cannon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13612
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-30-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 30 Seat B",
+   "district": null,
+   "title": "State Representative District 30 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-g-fuhriman",
+     "name": "Ben G. Fuhriman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11867
+    },
+    {
+     "id": "bree-buckingham",
+     "name": "Bree Buckingham",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4110
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-31",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 31",
+   "district": null,
+   "title": "State Senator District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "van-t-burtenshaw",
+     "name": "Van T. Burtenshaw",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16285
+    },
+    {
+     "id": "kevin-gerrard",
+     "name": "Kevin Gerrard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3902
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-31-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 31 Seat A",
+   "district": null,
+   "title": "State Representative District 31 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jerald-dallas-raymond",
+     "name": "Jerald Dallas Raymond",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16116
+    },
+    {
+     "id": "kindsey-smith",
+     "name": "Kindsey Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3963
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-31-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 31 Seat B",
+   "district": null,
+   "title": "State Representative District 31 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rod-furniss",
+     "name": "Rod Furniss",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15864
+    },
+    {
+     "id": "wendy-norman",
+     "name": "Wendy Norman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4234
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-32",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 32",
+   "district": null,
+   "title": "State Senator District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-j-cook",
+     "name": "Kevin J Cook",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12679
+    },
+    {
+     "id": "konnor-whitfield",
+     "name": "Konnor Whitfield",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4814
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-32-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 32 Seat A",
+   "district": null,
+   "title": "State Representative District 32 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-mickelsen",
+     "name": "Stephanie Mickelsen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12274
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-32-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 32 Seat B",
+   "district": null,
+   "title": "State Representative District 32 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "erin-bingham",
+     "name": "Erin Bingham",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12261
+    },
+    {
+     "id": "kamber-weninger",
+     "name": "Kamber Weninger",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5031
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-33",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 33",
+   "district": null,
+   "title": "State Senator District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dave-lent",
+     "name": "Dave Lent",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8321
+    },
+    {
+     "id": "jan-brown",
+     "name": "Jan Brown",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6860
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-33-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 33 Seat A",
+   "district": null,
+   "title": "State Representative District 33 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "barbara-ehardt",
+     "name": "Barbara Ehardt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7955
+    },
+    {
+     "id": "chance-marshall",
+     "name": "Chance Marshall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7371
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-33-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 33 Seat B",
+   "district": null,
+   "title": "State Representative District 33 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marco-erickson",
+     "name": "Marco Erickson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8393
+    },
+    {
+     "id": "todd-devries",
+     "name": "Todd DeVries",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6700
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-34",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 34",
+   "district": null,
+   "title": "State Senator District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "doug-ricks",
+     "name": "Doug Ricks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9092
+    },
+    {
+     "id": "ethan-sanford",
+     "name": "Ethan Sanford",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2156
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-34-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 34 Seat A",
+   "district": null,
+   "title": "State Representative District 34 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jon-o-weber",
+     "name": "Jon O Weber",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10018
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-34-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 34 Seat B",
+   "district": null,
+   "title": "State Representative District 34 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "britt-raybould",
+     "name": "Britt Raybould",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9996
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-senator-district-35",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Senator District 35",
+   "district": null,
+   "title": "State Senator District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-harris",
+     "name": "Mark Harris",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14537
+    },
+    {
+     "id": "marty-rotz-kilhefner",
+     "name": "Marty Rotz Kilhefner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6347
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-35-seat-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 35 Seat A",
+   "district": null,
+   "title": "State Representative District 35 Seat A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-veile",
+     "name": "Mike Veile",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14349
+    },
+    {
+     "id": "walter-boyd",
+     "name": "Walter Boyd",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6441
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-state-representative-district-35-seat-b",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "State Representative District 35 Seat B",
+   "district": null,
+   "title": "State Representative District 35 Seat B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joshua-d-wheeler",
+     "name": "Joshua D. Wheeler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14371
+    },
+    {
+     "id": "mary-kaufman",
+     "name": "Mary Kaufman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6374
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-idaho-constitutional-amendment-house-joint-resolution-4",
+   "kind": "measure",
+   "level": "state",
+   "state": "id",
+   "office": "Idaho Constitutional Amendment: House Joint Resolution 4",
+   "district": null,
+   "title": "Idaho Constitutional Amendment: House Joint Resolution 4",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": "No",
+     "party_code": "O",
+     "votes": 458965
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 233878
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-idaho-constitutional-amendment-house-joint-resolution-6",
+   "kind": "measure",
+   "level": "state",
+   "state": "id",
+   "office": "Idaho Constitutional Amendment: House Joint Resolution 6",
+   "district": null,
+   "title": "Idaho Constitutional Amendment: House Joint Resolution 6",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 435972
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": "No",
+     "party_code": "O",
+     "votes": 254347
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-proposition-1-reproductive-freedom-privacy-act",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Proposition 1: Reproductive Freedom & Privacy Act",
+   "district": null,
+   "title": "Proposition 1: Reproductive Freedom & Privacy Act",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": "No",
+     "party_code": "O",
+     "votes": 394671
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 310243
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-advisory-question-house-bill-932",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Advisory Question: House Bill 932",
+   "district": null,
+   "title": "Advisory Question: House Bill 932",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "winchester-model-1873-gun-that-won-the-west-44-40",
+     "name": "Winchester Model 1873 “Gun that Won the West” (.44-40)",
+     "party": null,
+     "party_code": "O",
+     "votes": 159957
+    },
+    {
+     "id": "winchester-model-1894-30-30",
+     "name": "Winchester Model 1894 (.30-30)",
+     "party": null,
+     "party_code": "O",
+     "votes": 130231
+    },
+    {
+     "id": "1873-colt-single-action-army-revolver-peacemaker-45-colt",
+     "name": "1873 Colt Single Action Army Revolver “Peacemaker” (.45 Colt)",
+     "party": null,
+     "party_code": "O",
+     "votes": 78496
+    },
+    {
+     "id": "remington-model-700-bolt-action-rifle-30-06",
+     "name": "Remington Model 700 bolt-action rifle (.30-06)",
+     "party": null,
+     "party_code": "O",
+     "votes": 64149
+    },
+    {
+     "id": "colt-m1911-45-automatic-colt-pistol-45-acp",
+     "name": "Colt M1911 .45 automatic Colt pistol (.45 ACP)",
+     "party": null,
+     "party_code": "O",
+     "votes": 45172
+    },
+    {
+     "id": "m1-garand-rifle-30-06",
+     "name": "M1 Garand rifle (.30-06)",
+     "party": null,
+     "party_code": "O",
+     "votes": 36526
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-4th-judicial-district-judge-seat-ada-a",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "4th Judicial District Judge - Seat Ada A",
+   "district": null,
+   "title": "4th Judicial District Judge - Seat Ada A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-woodard",
+     "name": "Greg Woodard",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 84994
+    },
+    {
+     "id": "jeffrey-street-jr",
+     "name": "Jeffrey Street, Jr.",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 76510
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-college-of-southern-idaho-trustee-zone-1",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "College of Southern Idaho Trustee Zone 1",
+   "district": null,
+   "title": "College of Southern Idaho Trustee Zone 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chenele-dixon",
+     "name": "Chenele Dixon",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 23814
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-college-of-southern-idaho-trustee-zone-5",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "College of Southern Idaho Trustee Zone 5",
+   "district": null,
+   "title": "College of Southern Idaho Trustee Zone 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "j-d-gould",
+     "name": "J.D. Gould",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 23476
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-college-of-western-idaho-trustee-zone-2",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "College of Western Idaho Trustee Zone 2",
+   "district": null,
+   "title": "College of Western Idaho Trustee Zone 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-pe-a",
+     "name": "Mike Peña",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 174988
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-college-of-western-idaho-trustee-zone-4",
+   "kind": "local",
+   "level": "local",
+   "state": "id",
+   "office": "College of Western Idaho Trustee Zone 4",
+   "district": null,
+   "title": "College of Western Idaho Trustee Zone 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-bishop",
+     "name": "David Bishop",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 172874
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-american-falls-joint-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "American Falls Joint School District Supplemental Levy",
+   "district": null,
+   "title": "American Falls Joint School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-the-levy-in-the-amount-of-up-to-2-950-000-per-year-for-t",
+     "name": "IN FAVOR OF authorizing the levy in the amount of up to $2,950,000 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1300
+    },
+    {
+     "id": "against-authorizing-the-levy-in-the-amount-of-up-to-2-950-000-per-year-for-two-2",
+     "name": "AGAINST authorizing the levy in the amount of up to $2,950,000 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 853
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-buhl-joint-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Buhl Joint School District Supplemental Levy",
+   "district": null,
+   "title": "Buhl Joint School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-1-250-000-per-year-for-",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $1,250,000 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 1549
+    },
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-1-250-000-per-year-",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $1,250,000 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1441
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-butte-county-school-district-plant-facility-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Butte County School District Plant Facility Levy",
+   "district": null,
+   "title": "Butte County School District Plant Facility Levy",
+   "vote_for": 55,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-school-plant-facilities-reserve-fund-levy-in-the-amount-",
+     "name": "IN FAVOR OF authorizing School Plant Facilities Reserve Fund Levy in the amount of up to $103,000 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 709
+    },
+    {
+     "id": "against-authorizing-school-plant-facilities-reserve-fund-levy-in-the-amount-of-u",
+     "name": "AGAINST authorizing School Plant Facilities Reserve Fund Levy in the amount of up to $103,000 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 375
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-butte-county-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Butte County School District Supplemental Levy",
+   "district": null,
+   "title": "Butte County School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-160-000-per-year-fo",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $160,000 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 722
+    },
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-160-000-per-year-for-tw",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $160,000 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 386
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-challis-joint-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Challis Joint School District Supplemental Levy",
+   "district": null,
+   "title": "Challis Joint School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-800-000-per-year-fo",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $800,000 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 883
+    },
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-800-000-per-year-for-tw",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $800,000 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 528
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-fremont-joint-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Fremont Joint School District Supplemental Levy",
+   "district": null,
+   "title": "Fremont Joint School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-1-500-000-per-year-",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $1,500,000 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2340
+    },
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-1-500-000-per-year-for-",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $1,500,000 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 2062
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-genesee-joint-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Genesee Joint School District Supplemental Levy",
+   "district": null,
+   "title": "Genesee Joint School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-1-185-000-per-year-",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $1,185,000 per year for one (1) year",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 493
+    },
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-1-185-000-per-year-for-",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $1,185,000 per year for one (1) year",
+     "party": "No",
+     "party_code": "O",
+     "votes": 312
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-gooding-joint-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Gooding Joint School District Supplemental Levy",
+   "district": null,
+   "title": "Gooding Joint School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-903-000-per-year-fo",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $903,000 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1103
+    },
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-903-000-per-year-for-tw",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $903,000 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 880
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-grace-joint-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Grace Joint School District Supplemental Levy",
+   "district": null,
+   "title": "Grace Joint School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-450-000-per-year-fo",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $450,000 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 581
+    },
+    {
+     "id": "against-authorizing-a-supplement-levy-in-the-amount-of-450-000-per-year-for-two-",
+     "name": "AGAINST authorizing a supplement levy in the amount of $450,000 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 241
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-highland-joint-school-district-plant-facility-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Highland Joint School District Plant Facility Levy",
+   "district": null,
+   "title": "Highland Joint School District Plant Facility Levy",
+   "vote_for": 55,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-the-plant-facility-levy-in-the-amount-of-up-to-75-000-pe",
+     "name": "IN FAVOR OF authorizing the plant facility levy in the amount of up to $75,000 per year for five years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 386
+    },
+    {
+     "id": "against-authorizing-the-plant-facility-levy-in-the-amount-of-up-to-75-000-per-ye",
+     "name": "AGAINST authorizing the plant facility levy in the amount of up to $75,000 per year for five years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 257
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-jerome-joint-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Jerome Joint School District Supplemental Levy",
+   "district": null,
+   "title": "Jerome Joint School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-1-750-000-per-year-",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $1,750,000 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2405
+    },
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-1-750-000-per-year-for-",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $1,750,000 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 2171
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-kootenai-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Kootenai School District Supplemental Levy",
+   "district": null,
+   "title": "Kootenai School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-1-984-618-per-year-for-",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $1,984,618 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 605
+    },
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-1-984-618-per-year-",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $1,984,618 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 467
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-kuna-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Kuna School District Supplemental Levy",
+   "district": null,
+   "title": "Kuna School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-3-609-360-per-year-",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $3,609,360 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 8857
+    },
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-3-609-360-per-year-for-",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $3,609,360 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 5775
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-marsh-valley-joint-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Marsh Valley Joint School District Supplemental Levy",
+   "district": null,
+   "title": "Marsh Valley Joint School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-1-000-000-per-year-",
+     "name": "IN FAVOR of authorizing a supplemental levy in the amount of $1,000,000 per year for two years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1442
+    },
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-1-000-000-per-year-for-",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $1,000,000 per year for two years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 857
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-parma-rural-fire-protection-district-temporary-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Parma Rural Fire Protection District Temporary Levy",
+   "district": null,
+   "title": "Parma Rural Fire Protection District Temporary Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "yes-i-am-in-favor-of-authorizing-the-temporary-levy-increase-in-the-amount-of-1-",
+     "name": "YES, I AM IN FAVOR OF authorizing the temporary levy increase in the amount of $1,000,000",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 950
+    },
+    {
+     "id": "no-i-am-against-authorizing-the-temporary-levy-increase-in-the-amount-of-1-000-0",
+     "name": "NO, I AM AGAINST authorizing the temporary levy increase in the amount of $1,000,000",
+     "party": "No",
+     "party_code": "O",
+     "votes": 882
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-payette-joint-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Payette Joint School District Supplemental Levy",
+   "district": null,
+   "title": "Payette Joint School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-1-500-000-per-year-for-",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $1,500,000 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 1790
+    },
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-1-500-000-per-year-",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $1,500,000 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1631
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-plummer-worley-joint-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Plummer-Worley Joint School District Supplemental Levy",
+   "district": null,
+   "title": "Plummer-Worley Joint School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-893-860-00-per-year-for",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $893,860.00 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 620
+    },
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-893-860-00-per-year",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $893,860.00 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 570
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-rock-creek-rural-fire-protection-district-temporary-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Rock Creek Rural Fire Protection District Temporary Levy",
+   "district": null,
+   "title": "Rock Creek Rural Fire Protection District Temporary Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-the-temporary-override-levy-in-the-amount-of-1-300-000",
+     "name": "IN FAVOR OF authorizing the temporary override levy in the amount of $1,300,000",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2118
+    },
+    {
+     "id": "against-authorizing-the-temporary-override-levy-in-the-amount-of-1-300-000",
+     "name": "AGAINST authorizing the temporary override levy in the amount of $1,300,000",
+     "party": "No",
+     "party_code": "O",
+     "votes": 1956
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-spirit-lake-fire-protection-district-permanent-override-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Spirit Lake Fire Protection District Permanent Override Levy",
+   "district": null,
+   "title": "Spirit Lake Fire Protection District Permanent Override Levy",
+   "vote_for": 66,
+   "choices": [
+    {
+     "id": "yes-to-authorizing-an-annual-785-000-permanent-override-tax-levy-commencing-octo",
+     "name": "YES to authorizing an annual $785,000 permanent override tax levy commencing October 1, 2027",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2289
+    },
+    {
+     "id": "no-to-authorizing-an-annual-785-000-permanent-override-tax-levy-commencing-octob",
+     "name": "NO to authorizing an annual $785,000 permanent override tax levy commencing October 1, 2027",
+     "party": "No",
+     "party_code": "O",
+     "votes": 2028
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-soda-springs-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "Soda Springs School District Supplemental Levy",
+   "district": null,
+   "title": "Soda Springs School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-993-000-for-one-1-y",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $993,000 for one (1) year",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 994
+    },
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-993-000-for-one-1-year",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $993,000 for one (1) year",
+     "party": "No",
+     "party_code": "O",
+     "votes": 534
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-st-maries-joint-school-district-supplemental-levy",
+   "kind": "measure",
+   "level": "local",
+   "state": "id",
+   "office": "St. Maries Joint School District Supplemental Levy",
+   "district": null,
+   "title": "St. Maries Joint School District Supplemental Levy",
+   "vote_for": 50,
+   "choices": [
+    {
+     "id": "in-favor-of-authorizing-a-supplemental-levy-in-the-amount-of-2-488-000-per-year-",
+     "name": "IN FAVOR OF authorizing a supplemental levy in the amount of $2,488,000 per year for two (2) years",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 971
+    },
+    {
+     "id": "against-authorizing-a-supplemental-levy-in-the-amount-of-2-488-000-per-year-for-",
+     "name": "AGAINST authorizing a supplemental levy in the amount of $2,488,000 per year for two (2) years",
+     "party": "No",
+     "party_code": "O",
+     "votes": 862
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  }
+ ]
+}
