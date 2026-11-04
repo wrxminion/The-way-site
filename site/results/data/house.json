@@ -11,7 +11,7 @@
   "ut-scytl",
   "va-scytl"
  ],
- "updated_at": "2026-11-04T03:11:16Z",
+ "updated_at": "2026-11-04T03:15:31Z",
  "certified": false,
  "contests": [
   {
@@ -501,35 +501,35 @@
      "name": "Elaine G. Luria",
      "party": "D",
      "party_code": "D",
-     "votes": 123715
+     "votes": 136890
     },
     {
      "id": "jen-a-kiggans",
      "name": "Jen A. Kiggans",
      "party": "R",
      "party_code": "R",
-     "votes": 108887
+     "votes": 120425
     },
     {
      "id": "geral-d-bishop-staten",
      "name": "Geral D. \"Bishop\" Staten",
      "party": "I",
      "party_code": "O",
-     "votes": 1816
+     "votes": 1907
     },
     {
      "id": "j-matt-baker",
      "name": "J. Matt Baker",
      "party": "I",
      "party_code": "O",
-     "votes": 3535
+     "votes": 3715
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 308
+     "votes": 322
     }
    ],
    "precincts": {
@@ -553,35 +553,35 @@
      "name": "Robert C. \"Bobby\" Scott",
      "party": "D",
      "party_code": "D",
-     "votes": 83955
+     "votes": 96010
     },
     {
      "id": "edwin-rivera-jr",
      "name": "Edwin Rivera, Jr.",
      "party": "R",
      "party_code": "R",
-     "votes": 29277
+     "votes": 33524
     },
     {
      "id": "makiba-a-gaines",
      "name": "Makiba A. Gaines",
      "party": "I",
      "party_code": "O",
-     "votes": 2120
+     "votes": 2258
     },
     {
      "id": "stephen-c-woll",
      "name": "Stephen C. Woll",
      "party": "I",
      "party_code": "O",
-     "votes": 2119
+     "votes": 2241
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 233
+     "votes": 288
     }
    ],
    "precincts": {
@@ -605,28 +605,28 @@
      "name": "Jennifer L. McClellan",
      "party": "D",
      "party_code": "D",
-     "votes": 170918
+     "votes": 172667
     },
     {
      "id": "robert-p-family-man-murray-jr",
      "name": "Robert P. \"Family Man\" Murray, Jr.",
      "party": "R",
      "party_code": "R",
-     "votes": 74314
+     "votes": 74478
     },
     {
      "id": "joan-e-andrews-bell",
      "name": "Joan E. \"Andrews\" Bell",
      "party": "I",
      "party_code": "O",
-     "votes": 3465
+     "votes": 3495
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 588
+     "votes": 596
     }
    ],
    "precincts": {
@@ -695,21 +695,21 @@
      "name": "Beth A. Macy",
      "party": "D",
      "party_code": "D",
-     "votes": 113672
+     "votes": 114745
     },
     {
      "id": "ben-l-cline",
      "name": "Ben L. Cline",
      "party": "R",
      "party_code": "R",
-     "votes": 144542
+     "votes": 146055
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 522
+     "votes": 529
     }
    ],
    "precincts": {
@@ -851,14 +851,14 @@
      "name": "Joy A. Powers",
      "party": "D",
      "party_code": "D",
-     "votes": 87305
+     "votes": 87381
     },
     {
      "id": "h-morgan-griffith",
      "name": "H. Morgan Griffith",
      "party": "R",
      "party_code": "R",
-     "votes": 165085
+     "votes": 165478
     },
     {
      "id": "write-in",
@@ -2587,18 +2587,18 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "addison-mcdowell",
-     "name": "Addison McDowell",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 128092
-    },
-    {
      "id": "cyril-jefferson",
      "name": "Cyril Jefferson",
      "party": "DEM",
      "party_code": "D",
-     "votes": 129749
+     "votes": 130533
+    },
+    {
+     "id": "addison-mcdowell",
+     "name": "Addison McDowell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 128387
     }
    ],
    "precincts": {}
@@ -2614,6 +2614,13 @@
    "vote_for": 1,
    "choices": [
     {
+     "id": "colby-watson",
+     "name": "Colby Watson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 139955
+    },
+    {
      "id": "mark-harris",
      "name": "Mark Harris",
      "party": "REP",
@@ -2626,13 +2633,6 @@
      "party": "GRE",
      "party_code": "O",
      "votes": 2832
-    },
-    {
-     "id": "colby-watson",
-     "name": "Colby Watson",
-     "party": "DEM",
-     "party_code": "D",
-     "votes": 139955
     }
    ],
    "precincts": {}
@@ -2648,18 +2648,18 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "lakesha-womack",
-     "name": "Lakesha Womack",
-     "party": "DEM",
-     "party_code": "D",
-     "votes": 138226
-    },
-    {
      "id": "tim-moore",
      "name": "Tim Moore",
      "party": "REP",
      "party_code": "R",
      "votes": 134289
+    },
+    {
+     "id": "lakesha-womack",
+     "name": "Lakesha Womack",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 138226
     }
    ],
    "precincts": {}
@@ -2675,25 +2675,25 @@
    "vote_for": 1,
    "choices": [
     {
+     "id": "pat-harrigan",
+     "name": "Pat Harrigan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 139020
+    },
+    {
      "id": "ashley-bell",
      "name": "Ashley Bell",
      "party": "DEM",
      "party_code": "D",
-     "votes": 133575
+     "votes": 135357
     },
     {
      "id": "steven-feldman",
      "name": "Steven Feldman",
      "party": "LIB",
      "party_code": "O",
-     "votes": 4201
-    },
-    {
-     "id": "pat-harrigan",
-     "name": "Pat Harrigan",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 137738
+     "votes": 4259
     }
    ],
    "precincts": {}
@@ -2709,25 +2709,25 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "laurie-buckhout",
-     "name": "Laurie Buckhout",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 128709
-    },
-    {
      "id": "don-davis",
      "name": "Don Davis",
      "party": "DEM",
      "party_code": "D",
-     "votes": 136768
+     "votes": 140559
     },
     {
      "id": "tom-bailey",
      "name": "Tom Bailey",
      "party": "LIB",
      "party_code": "O",
-     "votes": 8471
+     "votes": 8841
+    },
+    {
+     "id": "laurie-buckhout",
+     "name": "Laurie Buckhout",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 132154
     }
    ],
    "precincts": {}
@@ -2750,18 +2750,18 @@
      "votes": 5269
     },
     {
-     "id": "jamie-ager",
-     "name": "Jamie Ager",
-     "party": "DEM",
-     "party_code": "D",
-     "votes": 190998
-    },
-    {
      "id": "jennifer-capps-balkcom",
      "name": "Jennifer Capps Balkcom",
      "party": "REP",
      "party_code": "R",
      "votes": 140121
+    },
+    {
+     "id": "jamie-ager",
+     "name": "Jamie Ager",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 190998
     }
    ],
    "precincts": {}
@@ -2777,25 +2777,25 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "steven-swinton",
-     "name": "Steven Swinton",
-     "party": "LIB",
-     "party_code": "O",
-     "votes": 3966
+     "id": "brad-knott",
+     "name": "Brad Knott",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 146216
     },
     {
      "id": "paul-barringer",
      "name": "Paul Barringer",
      "party": "DEM",
      "party_code": "D",
-     "votes": 148442
+     "votes": 154039
     },
     {
-     "id": "brad-knott",
-     "name": "Brad Knott",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 139092
+     "id": "steven-swinton",
+     "name": "Steven Swinton",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 4267
     }
    ],
    "precincts": {}
@@ -2811,25 +2811,25 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "raymond-smith",
-     "name": "Raymond Smith",
-     "party": "DEM",
-     "party_code": "D",
-     "votes": 98633
-    },
-    {
      "id": "greg-murphy",
      "name": "Greg Murphy",
      "party": "REP",
      "party_code": "R",
-     "votes": 101482
+     "votes": 103152
     },
     {
      "id": "daniel-cavender",
      "name": "Daniel Cavender",
      "party": "LIB",
      "party_code": "O",
-     "votes": 2522
+     "votes": 2587
+    },
+    {
+     "id": "raymond-smith",
+     "name": "Raymond Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 100191
     }
    ],
    "precincts": {}
@@ -2845,25 +2845,25 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "guy-meilleur",
-     "name": "Guy Meilleur",
-     "party": "LIB",
-     "party_code": "O",
-     "votes": 5714
-    },
-    {
      "id": "mahesh-max-ganorkar",
      "name": "Mahesh (Max) Ganorkar",
      "party": "REP",
      "party_code": "R",
-     "votes": 56106
+     "votes": 62811
+    },
+    {
+     "id": "guy-meilleur",
+     "name": "Guy Meilleur",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 6352
     },
     {
      "id": "valerie-p-foushee",
      "name": "Valerie P. Foushee",
      "party": "DEM",
      "party_code": "D",
-     "votes": 256446
+     "votes": 266024
     }
    ],
    "precincts": {}
@@ -2879,6 +2879,13 @@
    "vote_for": 1,
    "choices": [
     {
+     "id": "kimberly-hardy",
+     "name": "Kimberly Hardy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 147162
+    },
+    {
      "id": "david-rouzer",
      "name": "David Rouzer",
      "party": "REP",
@@ -2891,13 +2898,6 @@
      "party": "LIB",
      "party_code": "O",
      "votes": 2788
-    },
-    {
-     "id": "kimberly-hardy",
-     "name": "Kimberly Hardy",
-     "party": "DEM",
-     "party_code": "D",
-     "votes": 147162
     }
    ],
    "precincts": {}
@@ -2917,28 +2917,28 @@
      "name": "Deborah K. Ross",
      "party": "DEM",
      "party_code": "D",
-     "votes": 198136
+     "votes": 210253
     },
     {
      "id": "matthew-laszacs",
      "name": "Matthew Laszacs",
      "party": "LIB",
      "party_code": "O",
-     "votes": 2934
-    },
-    {
-     "id": "write-in-miscellaneous",
-     "name": "Write-In (Miscellaneous)",
-     "party": "\u0000",
-     "party_code": "O",
-     "votes": 366
+     "votes": 3345
     },
     {
      "id": "eugene-f-douglass",
      "name": "Eugene F. Douglass",
      "party": "REP",
      "party_code": "R",
-     "votes": 57720
+     "votes": 63967
+    },
+    {
+     "id": "write-in-miscellaneous",
+     "name": "Write-In (Miscellaneous)",
+     "party": "\u0000",
+     "party_code": "O",
+     "votes": 418
     }
    ],
    "precincts": {}
@@ -2954,18 +2954,18 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "richard-n-ojeda-ii",
-     "name": "Richard N. Ojeda II",
-     "party": "DEM",
-     "party_code": "D",
-     "votes": 129115
-    },
-    {
      "id": "richard-hudson",
      "name": "Richard Hudson",
      "party": "REP",
      "party_code": "R",
-     "votes": 122869
+     "votes": 125225
+    },
+    {
+     "id": "richard-n-ojeda-ii",
+     "name": "Richard N. Ojeda II",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 130599
     }
    ],
    "precincts": {}
@@ -2981,25 +2981,25 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "chuck-hubbard",
-     "name": "Chuck Hubbard",
-     "party": "DEM",
-     "party_code": "D",
-     "votes": 125939
+     "id": "robert-b-luffman",
+     "name": "Robert B. Luffman",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 7116
     },
     {
      "id": "virginia-foxx",
      "name": "Virginia Foxx",
      "party": "REP",
      "party_code": "R",
-     "votes": 132208
+     "votes": 133858
     },
     {
-     "id": "robert-b-luffman",
-     "name": "Robert B. Luffman",
-     "party": "LIB",
-     "party_code": "O",
-     "votes": 7004
+     "id": "chuck-hubbard",
+     "name": "Chuck Hubbard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 128639
     }
    ],
    "precincts": {}
@@ -4079,21 +4079,21 @@
      "name": "Eric Conroy",
      "party": "REP",
      "party_code": "R",
-     "votes": 92079
+     "votes": 97576
     },
     {
      "id": "greg-landsman",
      "name": "Greg Landsman",
      "party": "DEM",
      "party_code": "D",
-     "votes": 119981
+     "votes": 121531
     },
     {
      "id": "nathan-weise",
      "name": "Nathan Weise",
      "party": "LIB",
      "party_code": "O",
-     "votes": 5461
+     "votes": 5782
     }
    ],
    "precincts": {
@@ -4488,21 +4488,21 @@
      "name": "Carey Coleman",
      "party": "REP",
      "party_code": "R",
-     "votes": 75437
+     "votes": 93981
     },
     {
      "id": "sandeep-dixit",
      "name": "Sandeep Dixit",
      "party": "Nonprtycan",
      "party_code": "O",
-     "votes": 2878
+     "votes": 3526
     },
     {
      "id": "emilia-sykes",
      "name": "Emilia Sykes",
      "party": "DEM",
      "party_code": "D",
-     "votes": 121217
+     "votes": 139975
     }
    ],
    "precincts": {
@@ -4555,14 +4555,14 @@
      "name": "Brennan Barrington",
      "party": "LIB",
      "party_code": "O",
-     "votes": 5557
+     "votes": 5768
     },
     {
      "id": "mike-carey",
      "name": "Mike Carey",
      "party": "REP",
      "party_code": "R",
-     "votes": 93604
+     "votes": 98260
     },
     {
      "id": "gary-josephson",
@@ -4576,7 +4576,7 @@
      "name": "Don Leonard",
      "party": "DEM",
      "party_code": "D",
-     "votes": 99791
+     "votes": 100563
     },
     {
      "id": "samuel-ronan",
