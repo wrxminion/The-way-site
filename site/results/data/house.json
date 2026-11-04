@@ -1,0 +1,963 @@
+{
+ "schema": "theway-results/1",
+ "scope": "house",
+ "label": "U.S. House",
+ "source_ids": [
+  "ga-scytl",
+  "va-scytl"
+ ],
+ "updated_at": "2026-11-04T01:49:12Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ga-us-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-jim-kingston",
+     "name": "James \"Jim\" Kingston",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 87513
+    },
+    {
+     "id": "amanda-hollowell",
+     "name": "Amanda Hollowell",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 88832
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-day",
+     "name": "Matt Day",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 59538
+    },
+    {
+     "id": "sanford-bishop-i",
+     "name": "Sanford Bishop (I)",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 91969
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 30,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-jack-i",
+     "name": "Brian Jack (I)",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 101324
+    },
+    {
+     "id": "maura-keller",
+     "name": "Maura Keller",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 81579
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-duffie",
+     "name": "Jim Duffie",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 28771
+    },
+    {
+     "id": "henry-hank-johnson-jr-i",
+     "name": "Henry \"Hank\" Johnson Jr. (I)",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 161344
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-bongo-salvesen",
+     "name": "John \"Bongo\" Salvesen",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 17653
+    },
+    {
+     "id": "nikema-williams-i",
+     "name": "Nikema Williams (I)",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 207539
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-e-martin",
+     "name": "Kevin E. Martin",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 35680
+    },
+    {
+     "id": "lucy-mcbath-i",
+     "name": "Lucy McBath (I)",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 176395
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "7",
+   "title": "U.S. House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rich-mccormick-i",
+     "name": "Rich McCormick (I)",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 135317
+    },
+    {
+     "id": "tony-kozycki",
+     "name": "Tony Kozycki",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 113652
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "8",
+   "title": "U.S. House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "austin-scott-i",
+     "name": "Austin Scott (I)",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 124877
+    },
+    {
+     "id": "kelly-esti",
+     "name": "Kelly Esti",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 84221
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 29,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-9",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "9",
+   "title": "U.S. House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-clyde-i",
+     "name": "Andrew Clyde (I)",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 138408
+    },
+    {
+     "id": "caitlyn-gegen",
+     "name": "Caitlyn Gegen",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 95580
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-10",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "10",
+   "title": "U.S. House District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "houston-gaines",
+     "name": "Houston Gaines",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 117394
+    },
+    {
+     "id": "pamela-pam-delancy",
+     "name": "Pamela \"Pam\" Delancy",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 90783
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 20,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-11",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "11",
+   "title": "U.S. House District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-cowan",
+     "name": "John Cowan",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 113325
+    },
+    {
+     "id": "chris-harden",
+     "name": "Chris Harden",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 104189
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-12",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "12",
+   "title": "U.S. House District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rick-w-allen-i",
+     "name": "Rick W. Allen (I)",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 84479
+    },
+    {
+     "id": "ceretta-smith",
+     "name": "Ceretta Smith",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 87942
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 24,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-13",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "13",
+   "title": "U.S. House District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jonathan-chavez",
+     "name": "Jonathan Chavez",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 41052
+    },
+    {
+     "id": "jasmine-clark",
+     "name": "Jasmine Clark",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 183514
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ga-us-house-of-representatives-district-14",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. House",
+   "district": "14",
+   "title": "U.S. House District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clay-fuller-i",
+     "name": "Clay Fuller (I)",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 118193
+    },
+    {
+     "id": "shawn-harris",
+     "name": "Shawn Harris",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 88397
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "va-member-house-of-representatives-1st-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "va",
+   "office": "U.S. House",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shannon-l-taylor",
+     "name": "Shannon L. Taylor",
+     "party": "D",
+     "party_code": "D",
+     "votes": 136969
+    },
+    {
+     "id": "robert-j-rob-wittman",
+     "name": "Robert J. \"Rob\" Wittman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 141722
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 748
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "localities"
+   }
+  },
+  {
+   "id": "va-member-house-of-representatives-2nd-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "va",
+   "office": "U.S. House",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "elaine-g-luria",
+     "name": "Elaine G. Luria",
+     "party": "D",
+     "party_code": "D",
+     "votes": 91931
+    },
+    {
+     "id": "jen-a-kiggans",
+     "name": "Jen A. Kiggans",
+     "party": "R",
+     "party_code": "R",
+     "votes": 84503
+    },
+    {
+     "id": "geral-d-bishop-staten",
+     "name": "Geral D. \"Bishop\" Staten",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1228
+    },
+    {
+     "id": "j-matt-baker",
+     "name": "J. Matt Baker",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2676
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 226
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 8,
+    "unit": "localities"
+   }
+  },
+  {
+   "id": "va-member-house-of-representatives-3rd-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "va",
+   "office": "U.S. House",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-c-bobby-scott",
+     "name": "Robert C. \"Bobby\" Scott",
+     "party": "D",
+     "party_code": "D",
+     "votes": 51773
+    },
+    {
+     "id": "edwin-rivera-jr",
+     "name": "Edwin Rivera, Jr.",
+     "party": "R",
+     "party_code": "R",
+     "votes": 17957
+    },
+    {
+     "id": "makiba-a-gaines",
+     "name": "Makiba A. Gaines",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1251
+    },
+    {
+     "id": "stephen-c-woll",
+     "name": "Stephen C. Woll",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1356
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 135
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "localities"
+   }
+  },
+  {
+   "id": "va-member-house-of-representatives-4th-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "va",
+   "office": "U.S. House",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-l-mcclellan",
+     "name": "Jennifer L. McClellan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 106774
+    },
+    {
+     "id": "robert-p-family-man-murray-jr",
+     "name": "Robert P. \"Family Man\" Murray, Jr.",
+     "party": "R",
+     "party_code": "R",
+     "votes": 50091
+    },
+    {
+     "id": "joan-e-andrews-bell",
+     "name": "Joan E. \"Andrews\" Bell",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2262
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 372
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 15,
+    "unit": "localities"
+   }
+  },
+  {
+   "id": "va-member-house-of-representatives-5th-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "va",
+   "office": "U.S. House",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-s-p-perriello",
+     "name": "Tom S. P. Perriello",
+     "party": "D",
+     "party_code": "D",
+     "votes": 100178
+    },
+    {
+     "id": "john-j-mcguire-iii",
+     "name": "John J. McGuire III",
+     "party": "R",
+     "party_code": "R",
+     "votes": 81892
+    },
+    {
+     "id": "cooke-c-harvey",
+     "name": "Cooke C. Harvey",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2934
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 366
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 24,
+    "unit": "localities"
+   }
+  },
+  {
+   "id": "va-member-house-of-representatives-6th-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "va",
+   "office": "U.S. House",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "beth-a-macy",
+     "name": "Beth A. Macy",
+     "party": "D",
+     "party_code": "D",
+     "votes": 75850
+    },
+    {
+     "id": "ben-l-cline",
+     "name": "Ben L. Cline",
+     "party": "R",
+     "party_code": "R",
+     "votes": 91600
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 377
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 23,
+    "unit": "localities"
+   }
+  },
+  {
+   "id": "va-member-house-of-representatives-7th-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "va",
+   "office": "U.S. House",
+   "district": "7",
+   "title": "U.S. House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eugene-s-vindman",
+     "name": "Eugene S. Vindman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 128300
+    },
+    {
+     "id": "doug-a-ollivant",
+     "name": "Doug A. Ollivant",
+     "party": "R",
+     "party_code": "R",
+     "votes": 77310
+    },
+    {
+     "id": "taner-e-demirci-lopez",
+     "name": "Taner E. Demirci Lopez",
+     "party": "L",
+     "party_code": "O",
+     "votes": 1862
+    },
+    {
+     "id": "alaha-ahrar",
+     "name": "Alaha Ahrar",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2464
+    },
+    {
+     "id": "joshua-e-ertle",
+     "name": "Joshua E. Ertle",
+     "party": "I",
+     "party_code": "O",
+     "votes": 559
+    },
+    {
+     "id": "randall-a-terry",
+     "name": "Randall A. Terry",
+     "party": "I",
+     "party_code": "O",
+     "votes": 835
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 382
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "localities"
+   }
+  },
+  {
+   "id": "va-member-house-of-representatives-8th-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "va",
+   "office": "U.S. House",
+   "district": "8",
+   "title": "U.S. House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "donald-s-beyer-jr",
+     "name": "Donald S. Beyer, Jr.",
+     "party": "D",
+     "party_code": "D",
+     "votes": 151471
+    },
+    {
+     "id": "tony-a-sabio",
+     "name": "Tony A. Sabio",
+     "party": "R",
+     "party_code": "R",
+     "votes": 30465
+    },
+    {
+     "id": "shelly-m-arnoldi",
+     "name": "Shelly M. Arnoldi",
+     "party": "L",
+     "party_code": "O",
+     "votes": 2165
+    },
+    {
+     "id": "tim-s-sharman",
+     "name": "Tim S. Sharman",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2512
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 507
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "localities"
+   }
+  },
+  {
+   "id": "va-member-house-of-representatives-9th-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "va",
+   "office": "U.S. House",
+   "district": "9",
+   "title": "U.S. House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joy-a-powers",
+     "name": "Joy A. Powers",
+     "party": "D",
+     "party_code": "D",
+     "votes": 59949
+    },
+    {
+     "id": "h-morgan-griffith",
+     "name": "H. Morgan Griffith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 125758
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 423
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 28,
+    "unit": "localities"
+   }
+  },
+  {
+   "id": "va-member-house-of-representatives-10th-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "va",
+   "office": "U.S. House",
+   "district": "10",
+   "title": "U.S. House District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "suhas-subramanyam",
+     "name": "Suhas Subramanyam",
+     "party": "D",
+     "party_code": "D",
+     "votes": 181080
+    },
+    {
+     "id": "dave-t-beckwith",
+     "name": "Dave T. Beckwith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 104760
+    },
+    {
+     "id": "ahsen-mujeeb-malik",
+     "name": "Ahsen Mujeeb Malik",
+     "party": "I",
+     "party_code": "O",
+     "votes": 5737
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 574
+    }
+   ],
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "localities"
+   }
+  },
+  {
+   "id": "va-member-house-of-representatives-11th-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "va",
+   "office": "U.S. House",
+   "district": "11",
+   "title": "U.S. House District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-r-walkinshaw",
+     "name": "James R. Walkinshaw",
+     "party": "D",
+     "party_code": "D",
+     "votes": 82293
+    },
+    {
+     "id": "arthur-g-purves",
+     "name": "Arthur G. Purves",
+     "party": "R",
+     "party_code": "R",
+     "votes": 31742
+    },
+    {
+     "id": "dianne-l-blais",
+     "name": "Dianne L. Blais",
+     "party": "G",
+     "party_code": "O",
+     "votes": 1673
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 467
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "localities"
+   }
+  }
+ ]
+}

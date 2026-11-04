@@ -1,0 +1,82 @@
+{
+ "schema": "theway-results/1",
+ "scope": "senate",
+ "label": "U.S. Senate",
+ "source_ids": [
+  "ga-scytl",
+  "va-scytl"
+ ],
+ "updated_at": "2026-11-04T01:49:12Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ga-us-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ga",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-collins",
+     "name": "Mike Collins",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 1132481
+    },
+    {
+     "id": "jon-ossoff-i",
+     "name": "Jon Ossoff (I)",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 1733537
+    }
+   ],
+   "precincts": {
+    "reporting": 130,
+    "total": 159,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "va-member-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "va",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-r-warner",
+     "name": "Mark R. Warner",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1223901
+    },
+    {
+     "id": "bert-mizusawa",
+     "name": "Bert Mizusawa",
+     "party": "R",
+     "party_code": "R",
+     "votes": 811857
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 5804
+    }
+   ],
+   "precincts": {
+    "reporting": 124,
+    "total": 133,
+    "unit": "localities"
+   }
+  }
+ ]
+}
