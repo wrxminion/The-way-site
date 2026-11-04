@@ -42,7 +42,7 @@ const when = (iso) => iso ? new Date(iso).toLocaleString(undefined, { dateStyle:
 const day = (iso) => iso ? new Date(iso).toLocaleDateString(undefined, { dateStyle: 'medium' }) : '';
 // What members see for a role. The stored value stays 'reviewer' / 'researcher'.
 // Deshi is Japanese for student; both words are shown so people learn it (Frank, Oct 27 2026).
-const ROLE_LABEL = { reviewer: 'Deshi (student, reviewer)', researcher: 'Author (Submitter)', editor: 'Renshi (editor)', marketing: 'Marketing (analytics only)' };
+const ROLE_LABEL = { reviewer: 'Deshi (student, reviewer)', researcher: 'Author (Submitter)', editor: 'Renshi (editor)', marketing: 'Marketing (analytics only)', drafter: 'Drafter (local AI drafts account)' };
 const roleName = (r) => ROLE_LABEL[r] || r;
 const can = (role) => state.roles.has(role) || state.roles.has('admin');
 // Site analytics: super admins and the marketing role (the database policies on the stats tables say the same).
@@ -82,11 +82,9 @@ const MEDIA = window.TheWayMedia ? window.TheWayMedia.make({ sb, h, IMAGES: wind
 const canMedia = () => can('admin') || canStats();
 function mediaView() {
   if (!MEDIA) return render(notice('Media is not available.'));
-  const AT = window.TheWayAdminTools;
-  let n = 0;
   const postNode = FB && (state.roles.has('super_admin') || state.roles.has('marketing')) ? FB.panel({ postOnly: !state.roles.has('super_admin') }) : null;   // super admins get the inbox too
-  MEDIA.view((id, title, node) => AT.section('media-' + id, title, [node], { open: n++ < 3 || id === 'images' }), render, postNode);
-  if (FB && state.roles.has('super_admin')) FB.badge(document);   // Image copy opens by default; it is the last section
+  MEDIA.view(render, { postNode });
+  if (FB && state.roles.has('super_admin')) FB.badge(document);   // adds "(n new)" to the Post online tab
 }
 const CL = window.TheWayClaim ? window.TheWayClaim.make({ sb, h, q, notice, action, render, can }) : null;
 
@@ -2259,7 +2257,7 @@ async function adminView() {
 
   const rolesOf = (id) => roles.filter((r) => r.member_id === id).map((r) => r.role);
   const nameOf = (id) => (members.find((m) => m.id === id) || {}).display_name || (id ? 'a former member' : 'setup');
-  const ALL = ['moderator', 'researcher', 'reviewer', 'editor', 'marketing', 'admin'];
+  const ALL = ['moderator', 'researcher', 'reviewer', 'editor', 'marketing', 'drafter', 'admin'];
 
   const AT = window.TheWayAdminTools;
   let nSec = 0;

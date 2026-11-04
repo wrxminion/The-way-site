@@ -7,6 +7,7 @@ const ROLE_NODES = [
   { id: 'super_admin', parent: null, label: 'Super admin', sees: 'Everything, including analytics, research to-do and who holds the admin roles.' },
   { id: 'admin', parent: 'super_admin', label: 'Admin', sees: 'Members, invitations, ledger checks, review status, notify list.' },
   { id: 'marketing', parent: 'admin', label: 'Marketing', sees: 'Site analytics and SEO numbers only. No member picks, member data, review queues or user management.' },
+  { id: 'drafter', parent: 'marketing', label: 'Drafter', sees: 'Only for the account the local drafter signs in as. Reads draft asks from the Media page and adds AI-made drafts. Cannot approve, post or delete.' },
 ];
 
 function make({ h }) {
