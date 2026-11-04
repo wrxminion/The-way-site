@@ -333,6 +333,7 @@ def a_ncsbe_pct(body, src):
     lines = body.decode("latin-1").split("\n")
     hdr = lines[0].rstrip("\r").split("\t")
     ix = {n: hdr.index(n) for n in ("Contest Type", "Contest Name", "Choice", "Choice Party", "Vote For", "Total Votes")}
+    cix = hdr.index("County") if "County" in hdr else None
     contests, order = {}, []
     for ln in lines[1:]:
         if not ln.strip():
@@ -361,10 +362,13 @@ def a_ncsbe_pct(body, src):
             party = r[ix["Choice Party"]].strip() or None
             ch = c["choices"][name] = {"id": slug(name) or "option", "name": name, "party": party, "party_code": party_code(party), "votes": 0}
         ch["votes"] += to_int(r[ix["Total Votes"]])
+        if cix is not None and r[cix].strip():
+            _cty_add(c, r[cix].strip().title(), ch["id"], to_int(r[ix["Total Votes"]]))
     out = []
     for t in order:
         c = contests[t]
         c["choices"] = list(c["choices"].values())
+        _cty_finish(c)
         names = {x["name"].strip().lower() for x in c["choices"]}
         if names <= {"for", "against", "yes", "no"}:
             c["kind"] = "measure"
@@ -381,6 +385,28 @@ def a_ncsbe_pct(body, src):
             f["_scope"] = "senate" if t.upper().startswith("US SENATE") else "house"
             out.append(f)
     return out
+
+
+def _cty_add(c, county, ch_id, votes, precincts=None):
+    """Per-county rows for the page: c["_cty"][county] = {"choices": {id: votes}, "precincts": {...}}; finished by _cty_finish."""
+    k = c.setdefault("_cty", {}).setdefault(county, {"choices": {}, "precincts": None})
+    if ch_id:
+        k["choices"][ch_id] = k["choices"].get(ch_id, 0) + votes
+    if precincts and not k["precincts"]:
+        k["precincts"] = precincts
+
+
+def _cty_finish(c):
+    d = c.pop("_cty", None)
+    if not d:
+        return
+    ids = [x["id"] for x in c["choices"]]
+    c["counties"] = []
+    for n, v in sorted(d.items()):
+        row = {"name": n, "choices": [{"id": i, "votes": v["choices"].get(i, 0)} for i in ids]}
+        if v["precincts"]:
+            row["precincts"] = v["precincts"]
+        c["counties"].append(row)
 
 
 def a_fl_dos_tab(body, src):
@@ -407,6 +433,7 @@ def a_fl_dos_tab(body, src):
                 c["district"] = m.group(1)
             contests[key] = c
             order.append(key)
+        cname = g("CountyName").title()
         ck = (key, g("CountyCode"))
         if ck not in seen_cty:
             seen_cty.add(ck)
@@ -422,10 +449,13 @@ def a_fl_dos_tab(body, src):
         if not ch:
             ch = c["choices"][name] = {"id": slug(name) or "option", "name": name, "party": party, "party_code": party_code(party), "votes": 0}
         ch["votes"] += to_int(g("CanVotes"))
+        if cname:
+            _cty_add(c, cname, ch["id"], to_int(g("CanVotes")), {"reporting": to_int(g("PrecinctsReporting")), "total": to_int(g("Precincts"))})
     out = []
     for k in order:
         c = contests[k]
         c["choices"] = list(c["choices"].values())
+        _cty_finish(c)
         if not c["choices"]:
             continue
         out.append(c)
