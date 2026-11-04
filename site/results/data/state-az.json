@@ -1,0 +1,4600 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-az",
+ "label": "Arizona",
+ "source_ids": [
+  "az-scytl"
+ ],
+ "updated_at": "2026-11-04T13:04:44Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "az-u-s-representative-in-congress-district-no-1",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "U.S. Representative in Congress - District No. 1",
+   "district": null,
+   "title": "U.S. Representative in Congress - District No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amish-shah",
+     "name": "Amish Shah",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 163584
+    },
+    {
+     "id": "thomas-jay-feely-iv",
+     "name": "Thomas \"Jay\" Feely IV",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 141196
+    },
+    {
+     "id": "monica-alponte",
+     "name": "Monica Alponte",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 6360
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 147
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 65
+    },
+    {
+     "id": "dev-gupta",
+     "name": "Dev Gupta",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 8
+    },
+    {
+     "id": "gage-dylan-thunder",
+     "name": "Gage Dylan Thunder",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-2",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "U.S. Representative in Congress - District No. 2",
+   "district": null,
+   "title": "U.S. Representative in Congress - District No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jonathan-nez",
+     "name": "Jonathan Nez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 136344
+    },
+    {
+     "id": "eli-crane",
+     "name": "Eli Crane",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 136258
+    },
+    {
+     "id": "curtis-goodwin",
+     "name": "Curtis Goodwin",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 4776
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 115
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 45
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-3",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "U.S. Representative in Congress - District No. 3",
+   "district": null,
+   "title": "U.S. Representative in Congress - District No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yassamin-ansari",
+     "name": "Yassamin Ansari",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 103137
+    },
+    {
+     "id": "alan-aversa",
+     "name": "Alan Aversa",
+     "party": "NOL",
+     "party_code": "O",
+     "votes": 7218
+    },
+    {
+     "id": "david-redkey",
+     "name": "David Redkey",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 6422
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1422
+    },
+    {
+     "id": "jacob-parkman",
+     "name": "Jacob Parkman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1211
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-4",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "U.S. Representative in Congress - District No. 4",
+   "district": null,
+   "title": "U.S. Representative in Congress - District No. 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-stanton",
+     "name": "Greg Stanton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 132395
+    },
+    {
+     "id": "zuhdi-jasser",
+     "name": "Zuhdi Jasser",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 75216
+    },
+    {
+     "id": "tisha-benoit",
+     "name": "Tisha Benoit",
+     "party": "NOL",
+     "party_code": "O",
+     "votes": 4643
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 392
+    },
+    {
+     "id": "steven-sanders",
+     "name": "Steven Sanders",
+     "party": "NOL",
+     "party_code": "O",
+     "votes": 35
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-5",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "U.S. Representative in Congress - District No. 5",
+   "district": null,
+   "title": "U.S. Representative in Congress - District No. 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-lamb",
+     "name": "Mark Lamb",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 137240
+    },
+    {
+     "id": "elizabeth-lee",
+     "name": "Elizabeth Lee",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 131226
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 435
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-6",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "U.S. Representative in Congress - District No. 6",
+   "district": null,
+   "title": "U.S. Representative in Congress - District No. 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joanna-mendoza",
+     "name": "JoAnna Mendoza",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 157269
+    },
+    {
+     "id": "juan-ciscomani",
+     "name": "Juan Ciscomani",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 133502
+    },
+    {
+     "id": "jereme-lance-peters",
+     "name": "Jereme Lance Peters",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 3605
+    },
+    {
+     "id": "gary-swing",
+     "name": "Gary Swing",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 2518
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 155
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 113
+    },
+    {
+     "id": "michael-dorland",
+     "name": "Michael Dorland",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 30
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-7",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "U.S. Representative in Congress - District No. 7",
+   "district": null,
+   "title": "U.S. Representative in Congress - District No. 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adelita-grijalva",
+     "name": "Adelita Grijalva",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 111192
+    },
+    {
+     "id": "daniel-francis-butierez-sr",
+     "name": "Daniel Francis Butierez Sr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 44298
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 231
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 42
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-8",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "U.S. Representative in Congress - District No. 8",
+   "district": null,
+   "title": "U.S. Representative in Congress - District No. 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "abraham-abe-hamadeh",
+     "name": "Abraham \"Abe\" Hamadeh",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 127063
+    },
+    {
+     "id": "bernadette-greene-placentia",
+     "name": "Bernadette Greene-Placentia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 121500
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 483
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-9",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "U.S. Representative in Congress - District No. 9",
+   "district": null,
+   "title": "U.S. Representative in Congress - District No. 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-gosar",
+     "name": "Paul Gosar",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 138732
+    },
+    {
+     "id": "danielle-dani-sterbinsky",
+     "name": "Danielle \"Dani\" Sterbinsky",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 101203
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 259
+    },
+    {
+     "id": "william-perry",
+     "name": "William Perry",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 24
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 24
+    },
+    {
+     "id": "g-seville-hatch",
+     "name": "G. Seville Hatch",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-governor-and-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "az",
+   "office": "Governor and Lieutenant Governor",
+   "district": null,
+   "title": "Governor and Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "katie-hobbs-dem-john-giles-pnd",
+     "name": "Katie Hobbs (DEM) / John Giles (PND)",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1193939
+    },
+    {
+     "id": "andy-biggs-rep-sine-kerr",
+     "name": "Andy Biggs (REP) / Sine Kerr",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 916236
+    },
+    {
+     "id": "risa-lombardo-grn-lisa-castillo",
+     "name": "Risa Lombardo (GRN) / Lisa Castillo",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 19122
+    },
+    {
+     "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+     "name": "Teri Ann Hourihan (NOL) / Angela Harrolle Mohan (PND)",
+     "party": "NOL",
+     "party_code": "O",
+     "votes": 17505
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1173
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 200
+    },
+    {
+     "id": "alice-novoa",
+     "name": "Alice Novoa",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6
+    },
+    {
+     "id": "gertritrude-gonzalez",
+     "name": "Gertritrude Gonzalez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "az",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adrian-fontes",
+     "name": "Adrian Fontes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1167801
+    },
+    {
+     "id": "alexander-kolodin",
+     "name": "Alexander Kolodin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 932274
+    },
+    {
+     "id": "duwayne-collier",
+     "name": "Duwayne Collier",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 29896
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 661
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 340
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "az",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kris-mayes",
+     "name": "Kris Mayes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1176461
+    },
+    {
+     "id": "warren-petersen",
+     "name": "Warren Petersen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 947588
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1008
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 510
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "az",
+   "office": "State Treasurer",
+   "district": null,
+   "title": "State Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nick-mansour",
+     "name": "Nick Mansour",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1130366
+    },
+    {
+     "id": "elijah-norton",
+     "name": "Elijah Norton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 974558
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1170
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 597
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-superintendent-of-public-instruction",
+   "kind": "candidate",
+   "level": "state",
+   "state": "az",
+   "office": "Superintendent of Public Instruction",
+   "district": null,
+   "title": "Superintendent of Public Instruction",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "teresa-leyba-ruiz",
+     "name": "Teresa Leyba Ruiz",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1118149
+    },
+    {
+     "id": "kimberly-yee",
+     "name": "Kimberly Yee",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 989179
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1656
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 347
+    },
+    {
+     "id": "stephen-neal-jr",
+     "name": "Stephen Neal Jr.",
+     "party": "NOL",
+     "party_code": "O",
+     "votes": 279
+    },
+    {
+     "id": "gerard-davis",
+     "name": "Gerard Davis",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 61
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-mine-inspector",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Mine Inspector",
+   "district": null,
+   "title": "State Mine Inspector",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-matlock",
+     "name": "Brian Matlock",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1094914
+    },
+    {
+     "id": "walter-les-presmyk",
+     "name": "Walter \"Les\" Presmyk",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 984481
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1452
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 669
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-corporation-commissioner",
+   "kind": "candidate",
+   "level": "state",
+   "state": "az",
+   "office": "Corporation Commissioner",
+   "district": null,
+   "title": "Corporation Commissioner",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "clara-pratte",
+     "name": "Clara Pratte",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1060521
+    },
+    {
+     "id": "jonathon-hill",
+     "name": "Jonathon Hill",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1020300
+    },
+    {
+     "id": "kevin-thompson",
+     "name": "Kevin Thompson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 915175
+    },
+    {
+     "id": "ralph-heap",
+     "name": "Ralph Heap",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 856988
+    },
+    {
+     "id": "mike-cease",
+     "name": "Mike Cease",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 56442
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1158
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 640
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-1",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No.  1",
+   "district": null,
+   "title": "State Senator - District No.  1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-finchem",
+     "name": "Mark Finchem",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 62701
+    },
+    {
+     "id": "christine-ellen-dargon",
+     "name": "Christine Ellen Dargon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 39470
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 94
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-2",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No.  2",
+   "district": null,
+   "title": "State Senator - District No.  2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amelia-gallitano",
+     "name": "Amelia Gallitano",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 37251
+    },
+    {
+     "id": "shawnna-bolick",
+     "name": "Shawnna Bolick",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29182
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 65
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-3",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No.  3",
+   "district": null,
+   "title": "State Senator - District No.  3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-kavanagh",
+     "name": "John Kavanagh",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 70293
+    },
+    {
+     "id": "jeffrey-fortney",
+     "name": "Jeffrey Fortney",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 46390
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 47
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 28
+    },
+    {
+     "id": "frank-bertone",
+     "name": "Frank Bertone",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-4",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No.  4",
+   "district": null,
+   "title": "State Senator - District No.  4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "aaron-lieberman",
+     "name": "Aaron Lieberman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 55256
+    },
+    {
+     "id": "carine-werner",
+     "name": "Carine Werner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 48949
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 86
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-5",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No.  5",
+   "district": null,
+   "title": "State Senator - District No.  5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christine-marsh",
+     "name": "Christine Marsh",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 51080
+    },
+    {
+     "id": "jason-laforest",
+     "name": "Jason LaForest",
+     "party": "NOL",
+     "party_code": "O",
+     "votes": 9042
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 388
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-6",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No.  6",
+   "district": null,
+   "title": "State Senator - District No.  6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jamescita-peshlakai",
+     "name": "Jamescita Peshlakai",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 50145
+    },
+    {
+     "id": "lloyd-johnson",
+     "name": "Lloyd Johnson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 18144
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 82
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 66
+    }
+   ],
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-7",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No.  7",
+   "district": null,
+   "title": "State Senator - District No.  7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wendy-rogers",
+     "name": "Wendy Rogers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 49166
+    },
+    {
+     "id": "michiel-mike-montiel",
+     "name": "Michiel \"Mike\" Montiel",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 32933
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 49
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 40
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-8",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No.  8",
+   "district": null,
+   "title": "State Senator - District No.  8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lauren-kuby",
+     "name": "Lauren Kuby",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 37879
+    },
+    {
+     "id": "bill-loughrige",
+     "name": "Bill Loughrige",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16390
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 55
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-9",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No.  9",
+   "district": null,
+   "title": "State Senator - District No.  9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kiana-maria-sears",
+     "name": "Kiana Maria Sears",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 29740
+    },
+    {
+     "id": "bridget-fitzgibbons",
+     "name": "Bridget Fitzgibbons",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19444
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 44
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-10",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 10",
+   "district": null,
+   "title": "State Senator - District No. 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-christian-farnsworth",
+     "name": "David Christian Farnsworth",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 40288
+    },
+    {
+     "id": "blair-moses",
+     "name": "Blair Moses",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 33384
+    },
+    {
+     "id": "nick-fierro",
+     "name": "Nick Fierro",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 2756
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 29
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-11",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 11",
+   "district": null,
+   "title": "State Senator - District No. 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "catherine-miranda",
+     "name": "Catherine Miranda",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 37041
+    },
+    {
+     "id": "joshua-ayala",
+     "name": "Joshua Ayala",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8828
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 48
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-12",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 12",
+   "district": null,
+   "title": "State Senator - District No. 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "patricia-patty-contreras",
+     "name": "Patricia \"Patty\" Contreras",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 52081
+    },
+    {
+     "id": "anthony-jason-ramirez",
+     "name": "Anthony Jason Ramirez",
+     "party": "NOL",
+     "party_code": "O",
+     "votes": 21545
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 401
+    },
+    {
+     "id": "gary-hatch",
+     "name": "Gary Hatch",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 142
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-13",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 13",
+   "district": null,
+   "title": "State Senator - District No. 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristie-o-brien",
+     "name": "Kristie O'Brien",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 43150
+    },
+    {
+     "id": "julie-willoughby",
+     "name": "Julie Willoughby",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 35309
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 49
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-14",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 14",
+   "district": null,
+   "title": "State Senator - District No. 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-walsh",
+     "name": "Stephanie Walsh",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 39937
+    },
+    {
+     "id": "mylie-biggs",
+     "name": "Mylie Biggs",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 37521
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 74
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-15",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 15",
+   "district": null,
+   "title": "State Senator - District No. 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jake-hoffman",
+     "name": "Jake Hoffman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 47358
+    },
+    {
+     "id": "jayme-accalia",
+     "name": "Jayme Accalia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 35361
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 85
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-16",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 16",
+   "district": null,
+   "title": "State Senator - District No. 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "elaine-aldrete",
+     "name": "Elaine Aldrete",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 33102
+    },
+    {
+     "id": "thomas-t-j-shope",
+     "name": "Thomas \"T.J.\" Shope",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 31864
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 80
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-17",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 17",
+   "district": null,
+   "title": "State Senator - District No. 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "edgar-soto",
+     "name": "Edgar Soto",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 58006
+    },
+    {
+     "id": "christopher-king",
+     "name": "Christopher King",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 48359
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 105
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-18",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 18",
+   "district": null,
+   "title": "State Senator - District No. 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "priya-sundareshan",
+     "name": "Priya Sundareshan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 56694
+    },
+    {
+     "id": "douglas-everett",
+     "name": "Douglas Everett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29134
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 94
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-19",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 19",
+   "district": null,
+   "title": "State Senator - District No. 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gail-griffin",
+     "name": "Gail Griffin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 45931
+    },
+    {
+     "id": "bob-karp",
+     "name": "Bob Karp",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 34267
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 62
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 41
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-20",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 20",
+   "district": null,
+   "title": "State Senator - District No. 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alma-hernandez",
+     "name": "Alma Hernandez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 36878
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1694
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-21",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 21",
+   "district": null,
+   "title": "State Senator - District No. 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rosanna-gabald-n",
+     "name": "Rosanna Gabaldón",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 36036
+    },
+    {
+     "id": "esteban-flores",
+     "name": "Esteban Flores",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16370
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 78
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-22",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 22",
+   "district": null,
+   "title": "State Senator - District No. 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eva-diaz",
+     "name": "Eva Diaz",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 31610
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 996
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-23",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 23",
+   "district": null,
+   "title": "State Senator - District No. 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-fernandez",
+     "name": "Brian Fernandez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 26818
+    },
+    {
+     "id": "michelle-altherr",
+     "name": "Michelle Altherr",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16299
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 22
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 17
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-24",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 24",
+   "district": null,
+   "title": "State Senator - District No. 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "analise-ortiz",
+     "name": "Analise Ortiz",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23423
+    },
+    {
+     "id": "frank-steele",
+     "name": "Frank Steele",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8276
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 37
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-25",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 25",
+   "district": null,
+   "title": "State Senator - District No. 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "timothy-tim-dunn",
+     "name": "Timothy \"Tim\" Dunn",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 39054
+    },
+    {
+     "id": "laura-huber",
+     "name": "Laura Huber",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 31230
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 40
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-26",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 26",
+   "district": null,
+   "title": "State Senator - District No. 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "flavio-bravo",
+     "name": "Flavio Bravo",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 22384
+    },
+    {
+     "id": "jim-bishop",
+     "name": "Jim Bishop",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6751
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 40
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-27",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 27",
+   "district": null,
+   "title": "State Senator - District No. 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kyle-clayton",
+     "name": "Kyle Clayton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 33891
+    },
+    {
+     "id": "kevin-payne",
+     "name": "Kevin Payne",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 30170
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 65
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-28",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 28",
+   "district": null,
+   "title": "State Senator - District No. 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "frank-carroll",
+     "name": "Frank Carroll",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 57208
+    },
+    {
+     "id": "michael-braun",
+     "name": "Michael Braun",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 42786
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 74
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-29",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 29",
+   "district": null,
+   "title": "State Senator - District No. 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "janae-shamp",
+     "name": "Janae Shamp",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 40097
+    },
+    {
+     "id": "eric-stafford",
+     "name": "Eric Stafford",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 37827
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 66
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-senator-district-no-30",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Senator - District No. 30",
+   "district": null,
+   "title": "State Senator - District No. 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leo-biasiucci",
+     "name": "Leo Biasiucci",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 61561
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1117
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 77
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-1",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No.  1",
+   "district": null,
+   "title": "State Representative - District No.  1",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "selina-bliss",
+     "name": "Selina Bliss",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 58843
+    },
+    {
+     "id": "quang-huu-nguyen",
+     "name": "Quang Huu Nguyen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 56063
+    },
+    {
+     "id": "sandy-zalecki",
+     "name": "Sandy Zalecki",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 37499
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 334
+    },
+    {
+     "id": "charles-charlie-eakins",
+     "name": "Charles \"Charlie\" Eakins",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 44
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-2",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No.  2",
+   "district": null,
+   "title": "State Representative - District No.  2",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "stephanie-simacek",
+     "name": "Stephanie Simacek",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 37642
+    },
+    {
+     "id": "justin-wilmeth",
+     "name": "Justin Wilmeth",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 27578
+    },
+    {
+     "id": "paul-carver",
+     "name": "Paul Carver",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 25440
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 315
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-3",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No.  3",
+   "district": null,
+   "title": "State Representative - District No.  3",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "cody-reim",
+     "name": "Cody Reim",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 64491
+    },
+    {
+     "id": "george-khalaf",
+     "name": "George Khalaf",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 62810
+    },
+    {
+     "id": "julie-gable",
+     "name": "Julie Gable",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 47048
+    },
+    {
+     "id": "richard-rick-robert-spargo",
+     "name": "Richard \"Rick\" Robert Spargo",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 42683
+    },
+    {
+     "id": "john-skirbst",
+     "name": "John Skirbst",
+     "party": "NOL",
+     "party_code": "O",
+     "votes": 1505
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 71
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-4",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No.  4",
+   "district": null,
+   "title": "State Representative - District No.  4",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "tammy-caputi",
+     "name": "Tammy Caputi",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 52475
+    },
+    {
+     "id": "karen-gresham",
+     "name": "Karen Gresham",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 52202
+    },
+    {
+     "id": "matt-gress",
+     "name": "Matt Gress",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 47915
+    },
+    {
+     "id": "pamela-carter",
+     "name": "Pamela Carter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 44191
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 83
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-5",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No.  5",
+   "district": null,
+   "title": "State Representative - District No.  5",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "sarah-liguori",
+     "name": "Sarah Liguori",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 45535
+    },
+    {
+     "id": "aaron-m-rquez",
+     "name": "Aaron Márquez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 43298
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1419
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-6",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No.  6",
+   "district": null,
+   "title": "State Representative - District No.  6",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "mae-peshlakai",
+     "name": "Mae Peshlakai",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 41968
+    },
+    {
+     "id": "ian-teller",
+     "name": "Ian Teller",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 38742
+    },
+    {
+     "id": "brendan-trachsel",
+     "name": "Brendan Trachsel",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 8498
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 693
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 486
+    },
+    {
+     "id": "royce-rj-mark-jenkins",
+     "name": "Royce \"Rj\" Mark Jenkins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 307
+    }
+   ],
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-7",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No.  7",
+   "district": null,
+   "title": "State Representative - District No.  7",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "walter-walt-blackman",
+     "name": "Walter \"Walt\" Blackman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 46154
+    },
+    {
+     "id": "david-cook-sr",
+     "name": "David Cook Sr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 44334
+    },
+    {
+     "id": "samuel-sam-martin",
+     "name": "Samuel \"Sam\" Martin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 31877
+    },
+    {
+     "id": "richard-grayson",
+     "name": "Richard Grayson",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 11213
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 82
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 37
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-8",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No.  8",
+   "district": null,
+   "title": "State Representative - District No.  8",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "janeen-connolly",
+     "name": "Janeen Connolly",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 34453
+    },
+    {
+     "id": "brian-garcia",
+     "name": "Brian Garcia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 33945
+    },
+    {
+     "id": "donald-hawker",
+     "name": "Donald Hawker",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16352
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 234
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-9",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No.  9",
+   "district": null,
+   "title": "State Representative - District No.  9",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "lorena-austin",
+     "name": "Lorena Austin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 27566
+    },
+    {
+     "id": "jacob-d-martinez",
+     "name": "Jacob D.  Martinez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 27495
+    },
+    {
+     "id": "bradley-d-bettencourt",
+     "name": "Bradley D. Bettencourt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19410
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 321
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-10",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 10",
+   "district": null,
+   "title": "State Representative - District No. 10",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "justin-olson",
+     "name": "Justin Olson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 38733
+    },
+    {
+     "id": "james-rogers",
+     "name": "James Rogers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 37894
+    },
+    {
+     "id": "helen-hunter",
+     "name": "Helen Hunter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 32713
+    },
+    {
+     "id": "brian-calaway",
+     "name": "Brian Calaway",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 30966
+    },
+    {
+     "id": "david-scott",
+     "name": "David Scott",
+     "party": "NOL",
+     "party_code": "O",
+     "votes": 2451
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 43
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-11",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 11",
+   "district": null,
+   "title": "State Representative - District No. 11",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "oscar-de-los-santos",
+     "name": "Oscar De Los Santos",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 34062
+    },
+    {
+     "id": "junelle-cavero",
+     "name": "Junelle Cavero",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 32831
+    },
+    {
+     "id": "joseph-charles-dailey",
+     "name": "Joseph Charles Dailey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8037
+    },
+    {
+     "id": "cesar-aleman",
+     "name": "Cesar Aleman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7868
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 59
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-12",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 12",
+   "district": null,
+   "title": "State Representative - District No. 12",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "stacey-travers",
+     "name": "Stacey Travers",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 48132
+    },
+    {
+     "id": "armando-montero",
+     "name": "Armando Montero",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 47154
+    },
+    {
+     "id": "david-richardson",
+     "name": "David Richardson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29262
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 332
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-13",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 13",
+   "district": null,
+   "title": "State Representative - District No. 13",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "racquel-rockee-armstrong",
+     "name": "Racquel \"Rockee\" Armstrong",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 40251
+    },
+    {
+     "id": "jacob-weinberg",
+     "name": "Jacob Weinberg",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 39864
+    },
+    {
+     "id": "kevin-hartke",
+     "name": "Kevin Hartke",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 34847
+    },
+    {
+     "id": "janet-weninger",
+     "name": "Janet Weninger",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 32372
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 67
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-14",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 14",
+   "district": null,
+   "title": "State Representative - District No. 14",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "mary-rose",
+     "name": "Mary Rose",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 38711
+    },
+    {
+     "id": "tyler-andrew-farnsworth",
+     "name": "Tyler Andrew Farnsworth",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 36634
+    },
+    {
+     "id": "laurin-hendrix",
+     "name": "Laurin Hendrix",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 35394
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 387
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-15",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 15",
+   "district": null,
+   "title": "State Representative - District No. 15",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "neal-carter",
+     "name": "Neal Carter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 46600
+    },
+    {
+     "id": "michael-way",
+     "name": "Michael Way",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 44425
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 2474
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-16",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 16",
+   "district": null,
+   "title": "State Representative - District No. 16",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "julia-romero-gusse",
+     "name": "Julia Romero Gusse",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 34164
+    },
+    {
+     "id": "teresa-martinez",
+     "name": "Teresa Martinez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29965
+    },
+    {
+     "id": "chris-lopez",
+     "name": "Chris Lopez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28423
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 355
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 67
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-17",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 17",
+   "district": null,
+   "title": "State Representative - District No. 17",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "kevin-volk",
+     "name": "Kevin Volk",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 54249
+    },
+    {
+     "id": "hollace-holly-lyon",
+     "name": "Hollace \"Holly\" Lyon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 54002
+    },
+    {
+     "id": "john-winchester",
+     "name": "John Winchester",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 46384
+    },
+    {
+     "id": "rachel-jones-keshel",
+     "name": "Rachel \"Jones\" Keshel",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 44308
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 107
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-18",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 18",
+   "district": null,
+   "title": "State Representative - District No. 18",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "nancy-gutierrez",
+     "name": "Nancy Gutierrez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 53780
+    },
+    {
+     "id": "chris-mathis",
+     "name": "Chris Mathis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 50510
+    },
+    {
+     "id": "bob-dohse",
+     "name": "Bob Dohse",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28832
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 408
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-19",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 19",
+   "district": null,
+   "title": "State Representative - District No. 19",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "david-gowan",
+     "name": "David Gowan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 42797
+    },
+    {
+     "id": "lupe-diaz",
+     "name": "Lupe Diaz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 39261
+    },
+    {
+     "id": "jackie-o-donnell-anderson",
+     "name": "Jackie O'Donnell Anderson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 32048
+    },
+    {
+     "id": "aiden-nicholette-swallow",
+     "name": "Aiden Nicholette Swallow",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 30349
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 80
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 41
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-20",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 20",
+   "district": null,
+   "title": "State Representative - District No. 20",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "sally-ann-gonzales",
+     "name": "Sally Ann Gonzales",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 32832
+    },
+    {
+     "id": "betty-villegas",
+     "name": "Betty Villegas",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 32262
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1351
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-21",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 21",
+   "district": null,
+   "title": "State Representative - District No. 21",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "miranda-lopez",
+     "name": "Miranda Lopez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 31413
+    },
+    {
+     "id": "consuelo-hernandez",
+     "name": "Consuelo Hernandez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 30238
+    },
+    {
+     "id": "christopher-kibbey",
+     "name": "Christopher Kibbey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16527
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 343
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-22",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 22",
+   "district": null,
+   "title": "State Representative - District No. 22",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "betsy-munoz",
+     "name": "Betsy Munoz",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 25932
+    },
+    {
+     "id": "elda-luna-n-jera",
+     "name": "Elda Luna-Nájera",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 25445
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1414
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-23",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 23",
+   "district": null,
+   "title": "State Representative - District No. 23",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "mariana-sandoval",
+     "name": "Mariana Sandoval",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 24051
+    },
+    {
+     "id": "emilia-cortez",
+     "name": "Emilia Cortez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 24006
+    },
+    {
+     "id": "michele-pe-a",
+     "name": "Michele Peña",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15015
+    },
+    {
+     "id": "gary-garcia-snyder",
+     "name": "Gary Garcia Snyder",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13593
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 32
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 27
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-24",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 24",
+   "district": null,
+   "title": "State Representative - District No. 24",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "alberto-flores",
+     "name": "Alberto Flores",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 20880
+    },
+    {
+     "id": "lisbeth-arescurenaga",
+     "name": "Lisbeth Arescurenaga",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 20073
+    },
+    {
+     "id": "delores-mclaughlin",
+     "name": "Delores McLaughlin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8466
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 134
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-25",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 25",
+   "district": null,
+   "title": "State Representative - District No. 25",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "michael-carbone",
+     "name": "Michael Carbone",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 35302
+    },
+    {
+     "id": "nickolas-nick-kupper",
+     "name": "Nickolas \"Nick\" Kupper",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 32971
+    },
+    {
+     "id": "tiffany-byrne",
+     "name": "Tiffany Byrne",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 31527
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 263
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 62
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-26",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 26",
+   "district": null,
+   "title": "State Representative - District No. 26",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "cesar-aguilar",
+     "name": "Cesar Aguilar",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 21093
+    },
+    {
+     "id": "quant-crews",
+     "name": "Quantá Crews",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 19193
+    },
+    {
+     "id": "frank-roberts",
+     "name": "Frank Roberts",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6203
+    },
+    {
+     "id": "jonathan-mckenna",
+     "name": "Jonathan McKenna",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5874
+    },
+    {
+     "id": "hector-gomez",
+     "name": "Hector Gomez",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 1011
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 31
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-27",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 27",
+   "district": null,
+   "title": "State Representative - District No. 27",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "deborah-howard",
+     "name": "Deborah Howard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 34025
+    },
+    {
+     "id": "lisa-fink",
+     "name": "Lisa Fink",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28829
+    },
+    {
+     "id": "tony-rivero",
+     "name": "Tony Rivero",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28504
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 320
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-28",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 28",
+   "district": null,
+   "title": "State Representative - District No. 28",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "david-livingston",
+     "name": "David Livingston",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 53937
+    },
+    {
+     "id": "beverly-pingerelli",
+     "name": "Beverly Pingerelli",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 53553
+    },
+    {
+     "id": "barbara-fike",
+     "name": "Barbara Fike",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 41185
+    },
+    {
+     "id": "marc-graham",
+     "name": "Marc Graham",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 39714
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 86
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-29",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 29",
+   "district": null,
+   "title": "State Representative - District No. 29",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "christine-marie-scianna",
+     "name": "Christine Marie Scianna",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 37764
+    },
+    {
+     "id": "steve-montenegro",
+     "name": "Steve Montenegro",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 37158
+    },
+    {
+     "id": "james-taylor",
+     "name": "James Taylor",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 36040
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 394
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-state-representative-district-no-30",
+   "kind": "local",
+   "level": "local",
+   "state": "az",
+   "office": "State Representative - District No. 30",
+   "district": null,
+   "title": "State Representative - District No. 30",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "mike-gannuscio",
+     "name": "Mike Gannuscio",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 48914
+    },
+    {
+     "id": "david-rose",
+     "name": "David Rose",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 46980
+    },
+    {
+     "id": "brian-mcmahan",
+     "name": "Brian McMahan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 20903
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 230
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-justice-john-lopez-iv-justice-of-the-supreme-court-be-retained-in-offic",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Justice John Lopez IV, Justice of the Supreme Court be retained in office?",
+   "district": null,
+   "title": "Shall Justice John Lopez IV, Justice of the Supreme Court be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 1001844
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 662154
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-michael-catlett-judge-of-the-court-of-appeals-division-i-be-retai",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge Michael Catlett, Judge of the Court of Appeals Division I, be retained in office?",
+   "district": null,
+   "title": "Shall Judge Michael Catlett, Judge of the Court of Appeals Division I, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 545270
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 321735
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-anni-hill-foster-judge-of-the-court-of-appeals-division-i-be-reta",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge Anni Hill Foster, Judge of the Court of Appeals Division I, be retained in office?",
+   "district": null,
+   "title": "Shall Judge Anni Hill Foster, Judge of the Court of Appeals Division I, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 453803
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 439990
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-randall-howe-judge-of-the-court-of-appeals-division-i-be-retained",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge Randall Howe, Judge of the Court of Appeals Division I, be retained in office?",
+   "district": null,
+   "title": "Shall Judge Randall Howe, Judge of the Court of Appeals Division I, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 592245
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 254023
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-andrew-jacobs-judge-of-the-court-of-appeals-division-i-be-retaine",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge Andrew Jacobs, Judge of the Court of Appeals Division I, be retained in office?",
+   "district": null,
+   "title": "Shall Judge Andrew Jacobs, Judge of the Court of Appeals Division I, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 549975
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 323067
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-daniel-kiley-judge-of-the-court-of-appeals-division-i-be-retained",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge Daniel  Kiley , Judge of the Court of Appeals Division I, be retained in office?",
+   "district": null,
+   "title": "Shall Judge Daniel  Kiley , Judge of the Court of Appeals Division I, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 541858
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 304306
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-james-morse-jr-judge-of-the-court-of-appeals-division-i-be-retain",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge James Morse Jr., Judge of the Court of Appeals Division I, be retained in office?",
+   "district": null,
+   "title": "Shall Judge James Morse Jr., Judge of the Court of Appeals Division I, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 521031
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 340052
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-jennifer-perkins-judge-of-the-court-of-appeals-division-i-be-reta",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge Jennifer Perkins, Judge of the Court of Appeals Division I, be retained in office?",
+   "district": null,
+   "title": "Shall Judge Jennifer Perkins, Judge of the Court of Appeals Division I, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 499660
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 393784
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-david-weinzweig-judge-of-the-court-of-appeals-division-i-be-retai",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge David Weinzweig, Judge of the Court of Appeals Division I, be retained in office?",
+   "district": null,
+   "title": "Shall Judge David Weinzweig, Judge of the Court of Appeals Division I, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 478751
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 409162
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-sean-brearcliffe-judge-of-the-court-of-appeals-division-ii-be-ret",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge Sean Brearcliffe, Judge of the Court of Appeals Division II, be retained in office?",
+   "district": null,
+   "title": "Shall Judge Sean Brearcliffe, Judge of the Court of Appeals Division II, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 148970
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 114525
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-karl-eppich-judge-of-the-court-of-appeals-division-ii-be-retained",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge Karl Eppich, Judge of the Court of Appeals Division II, be retained in office?",
+   "district": null,
+   "title": "Shall Judge Karl Eppich, Judge of the Court of Appeals Division II, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 128029
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 46223
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-lacey-stover-gard-judge-of-the-court-of-appeals-division-ii-be-re",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge Lacey Stover Gard, Judge of the Court of Appeals Division II, be retained in office?",
+   "district": null,
+   "title": "Shall Judge Lacey Stover Gard, Judge of the Court of Appeals Division II, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 128362
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 45241
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-michael-kelly-judge-of-the-court-of-appeals-division-ii-be-retain",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge Michael Kelly, Judge of the Court of Appeals Division II, be retained in office?",
+   "district": null,
+   "title": "Shall Judge Michael Kelly, Judge of the Court of Appeals Division II, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 170790
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 85681
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-christopher-o-neil-judge-of-the-court-of-appeals-division-ii-be-r",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge Christopher O’Neil, Judge of the Court of Appeals Division II, be retained in office?",
+   "district": null,
+   "title": "Shall Judge Christopher O’Neil, Judge of the Court of Appeals Division II, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 130730
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 42436
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-shall-judge-jeffrey-sklar-judge-of-the-court-of-appeals-division-ii-be-retain",
+   "kind": "judicial",
+   "level": "state",
+   "state": "az",
+   "office": "Shall Judge Jeffrey Sklar, Judge of the Court of Appeals Division II, be retained in office?",
+   "district": null,
+   "title": "Shall Judge Jeffrey Sklar, Judge of the Court of Appeals Division II, be retained in office?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "be-retained-yes",
+     "name": "Be retained YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 169923
+    },
+    {
+     "id": "be-retained-no",
+     "name": "Be retained NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 86964
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-proposition-141",
+   "kind": "measure",
+   "level": "local",
+   "state": "az",
+   "office": "PROPOSITION 141",
+   "district": null,
+   "title": "PROPOSITION 141",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 1031292
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 1002690
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-proposition-142",
+   "kind": "measure",
+   "level": "local",
+   "state": "az",
+   "office": "PROPOSITION 142",
+   "district": null,
+   "title": "PROPOSITION 142",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 1224913
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 818941
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-proposition-144",
+   "kind": "measure",
+   "level": "local",
+   "state": "az",
+   "office": "PROPOSITION 144",
+   "district": null,
+   "title": "PROPOSITION 144",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 1103008
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 970349
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-proposition-316",
+   "kind": "measure",
+   "level": "local",
+   "state": "az",
+   "office": "PROPOSITION 316",
+   "district": null,
+   "title": "PROPOSITION 316",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 1263335
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 794867
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-proposition-317",
+   "kind": "measure",
+   "level": "local",
+   "state": "az",
+   "office": "PROPOSITION 317",
+   "district": null,
+   "title": "PROPOSITION 317",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 1177681
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 887462
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-proposition-318",
+   "kind": "measure",
+   "level": "local",
+   "state": "az",
+   "office": "PROPOSITION 318",
+   "district": null,
+   "title": "PROPOSITION 318",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 1219360
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 851000
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-proposition-319",
+   "kind": "measure",
+   "level": "local",
+   "state": "az",
+   "office": "PROPOSITION 319",
+   "district": null,
+   "title": "PROPOSITION 319",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 1256857
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 801858
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-proposition-320",
+   "kind": "measure",
+   "level": "local",
+   "state": "az",
+   "office": "PROPOSITION 320",
+   "district": null,
+   "title": "PROPOSITION 320",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 1040978
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 984961
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  }
+ ]
+}
