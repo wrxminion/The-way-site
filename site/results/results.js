@@ -4,7 +4,7 @@
   'use strict';
   var BASE = '/results/';
   var $ = function (id) { return document.getElementById(id); };
-  var cfg = {}, manifest = null, cache = {}, tab = 'co', timer = null;
+  var cfg = {}, manifest = null, cache = {}, tab = 'senate', timer = null;
 
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -157,7 +157,7 @@
       $('panel').textContent = ''; $('panel').appendChild(el('p', 'empty', 'These results could not be loaded just now. Try again in a minute, or use the official sites listed below.'));
     });
   }
-  var TABS = [['co', 'Colorado'], ['house', 'U.S. House'], ['senate', 'U.S. Senate'], ['states', 'Other states'], ['cities', 'Cities']];
+  var TABS = [['senate', 'U.S. Senate'], ['house', 'U.S. House'], ['co', 'Colorado'], ['states', 'Other states'], ['cities', 'Cities']];
   function renderTabs() {
     var t = $('tabs'); t.textContent = '';
     TABS.forEach(function (x) {
