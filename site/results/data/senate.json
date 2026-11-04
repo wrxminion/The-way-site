@@ -3,11 +3,12 @@
  "scope": "senate",
  "label": "U.S. Senate",
  "source_ids": [
+  "fl-dos",
   "ga-scytl",
   "nc-sbe",
   "va-scytl"
  ],
- "updated_at": "2026-11-04T02:27:40Z",
+ "updated_at": "2026-11-04T02:32:09Z",
  "certified": false,
  "contests": [
   {
@@ -56,21 +57,21 @@
      "name": "Mark R. Warner",
      "party": "D",
      "party_code": "D",
-     "votes": 1547620
+     "votes": 1557852
     },
     {
      "id": "bert-mizusawa",
      "name": "Bert Mizusawa",
      "party": "R",
      "party_code": "R",
-     "votes": 1030731
+     "votes": 1038530
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 7354
+     "votes": 7403
     }
    ],
    "precincts": {
@@ -90,35 +91,73 @@
    "vote_for": 1,
    "choices": [
     {
+     "id": "roy-cooper",
+     "name": "Roy Cooper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2036286
+    },
+    {
      "id": "michael-dublin",
      "name": "Michael Dublin",
      "party": "GRE",
      "party_code": "O",
-     "votes": 27240
+     "votes": 27708
     },
     {
      "id": "michael-whatley",
      "name": "Michael Whatley",
      "party": "REP",
      "party_code": "R",
-     "votes": 1290791
-    },
-    {
-     "id": "roy-cooper",
-     "name": "Roy Cooper",
-     "party": "DEM",
-     "party_code": "D",
-     "votes": 2012643
+     "votes": 1314692
     },
     {
      "id": "shannon-w-bray",
      "name": "Shannon W. Bray",
      "party": "LIB",
      "party_code": "O",
-     "votes": 40165
+     "votes": 41105
     }
    ],
    "precincts": {}
+  },
+  {
+   "id": "fl-uss-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "fl",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ashley-moody",
+     "name": "Ashley Moody",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "angie-nixon",
+     "name": "Angie Nixon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "neil-j-gillespie",
+     "name": "Neil J. Gillespie",
+     "party": "NPA",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5626,
+    "unit": "precincts"
+   }
   }
  ]
 }
