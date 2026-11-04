@@ -25,6 +25,7 @@
   "nm-ersws",
   "nv-sos",
   "oh-sos",
+  "ok-seb",
   "or-ersws",
   "ri-scytl",
   "sc-clarity",
@@ -36,7 +37,7 @@
   "vt-sos",
   "wy-sos"
  ],
- "updated_at": "2026-11-04T13:46:29Z",
+ "updated_at": "2026-11-04T13:52:07Z",
  "certified": false,
  "contests": [
   {
@@ -5335,21 +5336,21 @@
      "name": "Aaron Flint",
      "party": "Republican",
      "party_code": "R",
-     "votes": 107770
+     "votes": 108060
     },
     {
      "id": "sam-forstag",
      "name": "Sam Forstag",
      "party": "Democrat",
      "party_code": "D",
-     "votes": 114230
+     "votes": 114284
     },
     {
      "id": "nick-sheedy",
      "name": "Nick Sheedy",
      "party": "Libertarian",
      "party_code": "O",
-     "votes": 6491
+     "votes": 6502
     }
    ],
    "precincts": {
@@ -11078,6 +11079,189 @@
     "reporting": 23,
     "total": 23,
     "unit": "counties"
+   }
+  },
+  {
+   "id": "ok-united-states-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ok",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-tedford",
+     "name": "Mark Tedford",
+     "party": "R",
+     "party_code": "R",
+     "votes": 121260
+    },
+    {
+     "id": "john-croisant",
+     "name": "John Croisant",
+     "party": "D",
+     "party_code": "D",
+     "votes": 110521
+    }
+   ],
+   "precincts": {
+    "reporting": 297,
+    "total": 297,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ok",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-brecheen",
+     "name": "Josh Brecheen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 143983
+    },
+    {
+     "id": "brandon-wade",
+     "name": "Brandon Wade",
+     "party": "D",
+     "party_code": "D",
+     "votes": 61378
+    },
+    {
+     "id": "ronnie-hopkins",
+     "name": "Ronnie Hopkins",
+     "party": "I",
+     "party_code": "O",
+     "votes": 6513
+    }
+   ],
+   "precincts": {
+    "reporting": 546,
+    "total": 546,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-united-states-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ok",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "frank-d-lucas",
+     "name": "Frank D. Lucas",
+     "party": "R",
+     "party_code": "R",
+     "votes": 122138
+    },
+    {
+     "id": "suzie-byrd",
+     "name": "Suzie Byrd",
+     "party": "D",
+     "party_code": "D",
+     "votes": 68787
+    }
+   ],
+   "precincts": {
+    "reporting": 461,
+    "total": 461,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-united-states-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ok",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-cole",
+     "name": "Tom Cole",
+     "party": "R",
+     "party_code": "R",
+     "votes": 118512
+    },
+    {
+     "id": "mitchell-jacob",
+     "name": "Mitchell Jacob",
+     "party": "D",
+     "party_code": "D",
+     "votes": 80799
+    },
+    {
+     "id": "rocco-bonacci",
+     "name": "Rocco Bonacci",
+     "party": "I",
+     "party_code": "O",
+     "votes": 5975
+    }
+   ],
+   "precincts": {
+    "reporting": 336,
+    "total": 360,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-united-states-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ok",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-bice",
+     "name": "Stephanie Bice",
+     "party": "R",
+     "party_code": "R",
+     "votes": 130972
+    },
+    {
+     "id": "jena-nelson",
+     "name": "Jena Nelson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 127608
+    },
+    {
+     "id": "robert-p-henri",
+     "name": "Robert P. Henri",
+     "party": "I",
+     "party_code": "O",
+     "votes": 4024
+    },
+    {
+     "id": "austin-nieves",
+     "name": "Austin Nieves",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2043
+    }
+   ],
+   "precincts": {
+    "reporting": 320,
+    "total": 320,
+    "unit": "precincts"
    }
   }
  ]

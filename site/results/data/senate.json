@@ -20,6 +20,7 @@
   "ne-ersws",
   "nm-ersws",
   "oh-sos",
+  "ok-seb",
   "or-ersws",
   "ri-scytl",
   "sc-clarity",
@@ -29,7 +30,7 @@
   "va-scytl",
   "wy-sos"
  ],
- "updated_at": "2026-11-04T13:46:29Z",
+ "updated_at": "2026-11-04T13:52:07Z",
  "certified": false,
  "contests": [
   {
@@ -260,28 +261,28 @@
      "name": "Kurt Alme",
      "party": "Republican",
      "party_code": "R",
-     "votes": 218034
+     "votes": 218196
     },
     {
      "id": "alani-bankhead",
      "name": "Alani Bankhead",
      "party": "Democrat",
      "party_code": "D",
-     "votes": 53240
+     "votes": 53275
     },
     {
      "id": "kyle-austin",
      "name": "Kyle Austin",
      "party": "Libertarian",
      "party_code": "O",
-     "votes": 8169
+     "votes": 8172
     },
     {
      "id": "seth-bodnar",
      "name": "Seth Bodnar",
      "party": "Independent",
      "party_code": "O",
-     "votes": 166637
+     "votes": 166668
     }
    ],
    "precincts": {
@@ -1159,6 +1160,58 @@
     "reporting": 23,
     "total": 23,
     "unit": "counties"
+   }
+  },
+  {
+   "id": "ok-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ok",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-hern",
+     "name": "Kevin Hern",
+     "party": "R",
+     "party_code": "R",
+     "votes": 632759
+    },
+    {
+     "id": "n-kiyla-jasmine-thomas",
+     "name": "N'Kiyla Jasmine Thomas",
+     "party": "D",
+     "party_code": "D",
+     "votes": 433639
+    },
+    {
+     "id": "sevier-white",
+     "name": "Sevier White",
+     "party": "L",
+     "party_code": "O",
+     "votes": 10092
+    },
+    {
+     "id": "ron-meinhardt",
+     "name": "Ron Meinhardt",
+     "party": "I",
+     "party_code": "O",
+     "votes": 14314
+    },
+    {
+     "id": "curtis-stinnett",
+     "name": "Curtis Stinnett",
+     "party": "I",
+     "party_code": "O",
+     "votes": 14406
+    }
+   ],
+   "precincts": {
+    "reporting": 1960,
+    "total": 1984,
+    "unit": "precincts"
    }
   }
  ]

@@ -1,0 +1,523 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-ok",
+ "label": "Oklahoma",
+ "source_ids": [
+  "ok-seb"
+ ],
+ "updated_at": "2026-11-04T13:52:07Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ok-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-mazzei",
+     "name": "Mike Mazzei",
+     "party": "R",
+     "party_code": "R",
+     "votes": 575412
+    },
+    {
+     "id": "cyndi-munson",
+     "name": "Cyndi Munson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 508146
+    },
+    {
+     "id": "orlando-lynn-bush",
+     "name": "Orlando Lynn Bush",
+     "party": "I",
+     "party_code": "O",
+     "votes": 4942
+    },
+    {
+     "id": "robert-e-brooks-sr",
+     "name": "Robert E Brooks Sr",
+     "party": "I",
+     "party_code": "O",
+     "votes": 11534
+    },
+    {
+     "id": "jerry-griffin",
+     "name": "Jerry Griffin",
+     "party": "I",
+     "party_code": "O",
+     "votes": 7353
+    }
+   ],
+   "precincts": {
+    "reporting": 1960,
+    "total": 1984,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "Lieutenant Governor",
+   "district": null,
+   "title": "Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "t-w-shannon",
+     "name": "T. W. Shannon",
+     "party": "R",
+     "party_code": "R",
+     "votes": 639197
+    },
+    {
+     "id": "kelly-forbes",
+     "name": "Kelly Forbes",
+     "party": "D",
+     "party_code": "D",
+     "votes": 466235
+    }
+   ],
+   "precincts": {
+    "reporting": 1960,
+    "total": 1984,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jon-echols",
+     "name": "Jon Echols",
+     "party": "R",
+     "party_code": "R",
+     "votes": 610563
+    },
+    {
+     "id": "nick-coffey",
+     "name": "Nick Coffey",
+     "party": "D",
+     "party_code": "D",
+     "votes": 492292
+    }
+   ],
+   "precincts": {
+    "reporting": 1960,
+    "total": 1984,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Treasurer",
+   "district": null,
+   "title": "State Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cindy-byrd",
+     "name": "Cindy Byrd",
+     "party": "R",
+     "party_code": "R",
+     "votes": 772507
+    },
+    {
+     "id": "kiefer-perry",
+     "name": "Kiefer Perry",
+     "party": "L",
+     "party_code": "O",
+     "votes": 251158
+    }
+   ],
+   "precincts": {
+    "reporting": 1960,
+    "total": 1984,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-superintendent-of-public-instruction",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "Superintendent of Public Instruction",
+   "district": null,
+   "title": "Superintendent of Public Instruction",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-franklin",
+     "name": "Robert Franklin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 724920
+    },
+    {
+     "id": "jennettie-marshall",
+     "name": "Jennettie Marshall",
+     "party": "D",
+     "party_code": "D",
+     "votes": 371238
+    }
+   ],
+   "precincts": {
+    "reporting": 1960,
+    "total": 1984,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-commissioner-of-labor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "Commissioner of Labor",
+   "district": null,
+   "title": "Commissioner of Labor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-west",
+     "name": "Kevin West",
+     "party": "R",
+     "party_code": "R",
+     "votes": 613832
+    },
+    {
+     "id": "kevin-dawson",
+     "name": "Kevin Dawson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 430868
+    },
+    {
+     "id": "mike-hall",
+     "name": "Mike Hall",
+     "party": "L",
+     "party_code": "O",
+     "votes": 52714
+    }
+   ],
+   "precincts": {
+    "reporting": 1960,
+    "total": 1984,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-insurance-commissioner",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "Insurance Commissioner",
+   "district": null,
+   "title": "Insurance Commissioner",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-sullivan",
+     "name": "Bob Sullivan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 648707
+    },
+    {
+     "id": "intyre",
+     "name": "Intyre",
+     "party": "D",
+     "party_code": "D",
+     "votes": 448492
+    }
+   ],
+   "precincts": {
+    "reporting": 1960,
+    "total": 1984,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-corporation-commissioner",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "Corporation Commissioner",
+   "district": null,
+   "title": "Corporation Commissioner",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brad-boles",
+     "name": "Brad Boles",
+     "party": "R",
+     "party_code": "R",
+     "votes": 640142
+    },
+    {
+     "id": "rhonda-eastman",
+     "name": "Rhonda Eastman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 454673
+    }
+   ],
+   "precincts": {
+    "reporting": 1960,
+    "total": 1984,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ok",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-hern",
+     "name": "Kevin Hern",
+     "party": "R",
+     "party_code": "R",
+     "votes": 632759
+    },
+    {
+     "id": "n-kiyla-jasmine-thomas",
+     "name": "N'Kiyla Jasmine Thomas",
+     "party": "D",
+     "party_code": "D",
+     "votes": 433639
+    },
+    {
+     "id": "sevier-white",
+     "name": "Sevier White",
+     "party": "L",
+     "party_code": "O",
+     "votes": 10092
+    },
+    {
+     "id": "ron-meinhardt",
+     "name": "Ron Meinhardt",
+     "party": "I",
+     "party_code": "O",
+     "votes": 14314
+    },
+    {
+     "id": "curtis-stinnett",
+     "name": "Curtis Stinnett",
+     "party": "I",
+     "party_code": "O",
+     "votes": 14406
+    }
+   ],
+   "precincts": {
+    "reporting": 1960,
+    "total": 1984,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-united-states-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ok",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-tedford",
+     "name": "Mark Tedford",
+     "party": "R",
+     "party_code": "R",
+     "votes": 121260
+    },
+    {
+     "id": "john-croisant",
+     "name": "John Croisant",
+     "party": "D",
+     "party_code": "D",
+     "votes": 110521
+    }
+   ],
+   "precincts": {
+    "reporting": 297,
+    "total": 297,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ok",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-brecheen",
+     "name": "Josh Brecheen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 143983
+    },
+    {
+     "id": "brandon-wade",
+     "name": "Brandon Wade",
+     "party": "D",
+     "party_code": "D",
+     "votes": 61378
+    },
+    {
+     "id": "ronnie-hopkins",
+     "name": "Ronnie Hopkins",
+     "party": "I",
+     "party_code": "O",
+     "votes": 6513
+    }
+   ],
+   "precincts": {
+    "reporting": 546,
+    "total": 546,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-united-states-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ok",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "frank-d-lucas",
+     "name": "Frank D. Lucas",
+     "party": "R",
+     "party_code": "R",
+     "votes": 122138
+    },
+    {
+     "id": "suzie-byrd",
+     "name": "Suzie Byrd",
+     "party": "D",
+     "party_code": "D",
+     "votes": 68787
+    }
+   ],
+   "precincts": {
+    "reporting": 461,
+    "total": 461,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-united-states-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ok",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-cole",
+     "name": "Tom Cole",
+     "party": "R",
+     "party_code": "R",
+     "votes": 118512
+    },
+    {
+     "id": "mitchell-jacob",
+     "name": "Mitchell Jacob",
+     "party": "D",
+     "party_code": "D",
+     "votes": 80799
+    },
+    {
+     "id": "rocco-bonacci",
+     "name": "Rocco Bonacci",
+     "party": "I",
+     "party_code": "O",
+     "votes": 5975
+    }
+   ],
+   "precincts": {
+    "reporting": 336,
+    "total": 360,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-united-states-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ok",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-bice",
+     "name": "Stephanie Bice",
+     "party": "R",
+     "party_code": "R",
+     "votes": 130972
+    },
+    {
+     "id": "jena-nelson",
+     "name": "Jena Nelson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 127608
+    },
+    {
+     "id": "robert-p-henri",
+     "name": "Robert P. Henri",
+     "party": "I",
+     "party_code": "O",
+     "votes": 4024
+    },
+    {
+     "id": "austin-nieves",
+     "name": "Austin Nieves",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2043
+    }
+   ],
+   "precincts": {
+    "reporting": 320,
+    "total": 320,
+    "unit": "precincts"
+   }
+  }
+ ]
+}
