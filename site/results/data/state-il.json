@@ -1,0 +1,2056 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-il",
+ "label": "Illinois (unofficial, partial: Kane County only; state totals not posted yet)",
+ "source_ids": [
+  "il-kane"
+ ],
+ "updated_at": "2026-11-04T21:21:19Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "il-kane-for-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "il",
+   "office": "FOR UNITED STATES SENATOR",
+   "district": null,
+   "title": "FOR UNITED STATES SENATOR",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "juliana-stratton",
+     "name": "Juliana Stratton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 104444
+    },
+    {
+     "id": "don-tracy",
+     "name": "Don Tracy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 59647
+    },
+    {
+     "id": "whitfield-harrington-jr",
+     "name": "Whitfield Harrington Jr",
+     "party": "AMC",
+     "party_code": "O",
+     "votes": 2432
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-governor-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR GOVERNOR & LIEUTENANT GOVERNOR",
+   "district": null,
+   "title": "FOR GOVERNOR & LIEUTENANT GOVERNOR",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jb-pritzker-christian-mitchell",
+     "name": "JB Pritzker Christian Mitchell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 102728
+    },
+    {
+     "id": "darren-bailey-aaron-b-del-mar",
+     "name": "Darren Bailey Aaron B. Del Mar",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 57425
+    },
+    {
+     "id": "collin-corbett-carolyn-schofield",
+     "name": "Collin Corbett Carolyn Schofield",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 6451
+    },
+    {
+     "id": "elizabeth-ann-sebesta",
+     "name": "Elizabeth Ann Sebesta",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "eyde-arndell",
+     "name": "Eyde Arndell",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "gary-pierce",
+     "name": "Gary Pierce",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "griselda-romero",
+     "name": "Griselda Romero",
+     "party": null,
+     "party_code": "O",
+     "votes": 35
+    },
+    {
+     "id": "joseph-l-mosley",
+     "name": "Joseph L. Mosley",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "mike-vick",
+     "name": "Mike Vick",
+     "party": null,
+     "party_code": "O",
+     "votes": 23
+    },
+    {
+     "id": "misty-metroz",
+     "name": "Misty Metroz",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "patricia-l-tilman",
+     "name": "Patricia L. Tilman",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "rafael-verala",
+     "name": "Rafael Verala",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "richard-benedict-mayers",
+     "name": "Richard Benedict Mayers",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "rejected-write-ins",
+     "name": "Rejected write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 117
+    },
+    {
+     "id": "unassigned-write-ins",
+     "name": "Unassigned write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR ATTORNEY GENERAL",
+   "district": null,
+   "title": "FOR ATTORNEY GENERAL",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kwame-raoul",
+     "name": "Kwame Raoul",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 105424
+    },
+    {
+     "id": "robert-w-fioretti",
+     "name": "Robert W. Fioretti",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 60859
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR SECRETARY OF STATE",
+   "district": null,
+   "title": "FOR SECRETARY OF STATE",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alexi-giannoulias",
+     "name": "Alexi Giannoulias",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 110675
+    },
+    {
+     "id": "diane-m-harris",
+     "name": "Diane M. Harris",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 56026
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-state-comptroller",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR STATE COMPTROLLER",
+   "district": null,
+   "title": "FOR STATE COMPTROLLER",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "margaret-croke",
+     "name": "Margaret Croke",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 102925
+    },
+    {
+     "id": "bryan-drew",
+     "name": "Bryan Drew",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 62274
+    },
+    {
+     "id": "anna-schiefelbein",
+     "name": "Anna Schiefelbein",
+     "party": null,
+     "party_code": "O",
+     "votes": 56
+    },
+    {
+     "id": "rejected-write-ins",
+     "name": "Rejected write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 85
+    },
+    {
+     "id": "unassigned-write-ins",
+     "name": "Unassigned write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-state-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR STATE TREASURER",
+   "district": null,
+   "title": "FOR STATE TREASURER",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-w-frerichs",
+     "name": "Michael W. Frerichs",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 104444
+    },
+    {
+     "id": "max-solomon",
+     "name": "Max Solomon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 60743
+    },
+    {
+     "id": "timothea-papas",
+     "name": "Timothea Papas",
+     "party": null,
+     "party_code": "O",
+     "votes": 68
+    },
+    {
+     "id": "rejected-write-ins",
+     "name": "Rejected write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 75
+    },
+    {
+     "id": "unassigned-write-ins",
+     "name": "Unassigned write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-the-8th-congressional-district-representative-in-congress",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "il",
+   "office": "FOR THE 8TH CONGRESSIONAL DISTRICT REPRESENTATIVE IN CONGRESS",
+   "district": null,
+   "title": "FOR THE 8TH CONGRESSIONAL DISTRICT REPRESENTATIVE IN CONGRESS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-l-bean",
+     "name": "Melissa L. Bean",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 44090
+    },
+    {
+     "id": "jennifer-davis",
+     "name": "Jennifer Davis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 25930
+    }
+   ],
+   "precincts": {
+    "reporting": 128,
+    "total": 128,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-the-11th-congressional-district-representative-in-congress",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "il",
+   "office": "FOR THE 11TH CONGRESSIONAL DISTRICT REPRESENTATIVE IN CONGRESS",
+   "district": null,
+   "title": "FOR THE 11TH CONGRESSIONAL DISTRICT REPRESENTATIVE IN CONGRESS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-foster",
+     "name": "Bill Foster",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 50428
+    },
+    {
+     "id": "jeff-walter",
+     "name": "Jeff Walter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28849
+    }
+   ],
+   "precincts": {
+    "reporting": 134,
+    "total": 134,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-the-14th-congressional-district-representative-in-congress",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "il",
+   "office": "FOR THE 14TH CONGRESSIONAL DISTRICT REPRESENTATIVE IN CONGRESS",
+   "district": null,
+   "title": "FOR THE 14TH CONGRESSIONAL DISTRICT REPRESENTATIVE IN CONGRESS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lauren-underwood",
+     "name": "Lauren Underwood",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11400
+    },
+    {
+     "id": "james-t-jim-marter",
+     "name": "James T. \"Jim\" Marter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5444
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-state-senator-26th-legislative-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR STATE SENATOR 26TH LEGISLATIVE DISTRICT",
+   "district": null,
+   "title": "FOR STATE SENATOR 26TH LEGISLATIVE DISTRICT",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nabeela-syed",
+     "name": "Nabeela Syed",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 24
+    },
+    {
+     "id": "darby-hills",
+     "name": "Darby Hills",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 27
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-state-senator-33rd-legislative-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR STATE SENATOR 33RD LEGISLATIVE DISTRICT",
+   "district": null,
+   "title": "FOR STATE SENATOR 33RD LEGISLATIVE DISTRICT",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michele-clark",
+     "name": "Michele Clark",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 37589
+    },
+    {
+     "id": "danielle-penman",
+     "name": "Danielle Penman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28134
+    }
+   ],
+   "precincts": {
+    "reporting": 110,
+    "total": 110,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-state-senator-35th-legislative-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR STATE SENATOR 35TH LEGISLATIVE DISTRICT",
+   "district": null,
+   "title": "FOR STATE SENATOR 35TH LEGISLATIVE DISTRICT",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sarah-b-mertens",
+     "name": "Sarah B. Mertens",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13467
+    },
+    {
+     "id": "dave-syverson",
+     "name": "Dave Syverson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13513
+    }
+   ],
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-state-senator-42nd-legislative-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR STATE SENATOR 42ND LEGISLATIVE DISTRICT",
+   "district": null,
+   "title": "FOR STATE SENATOR 42ND LEGISLATIVE DISTRICT",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jared-ploger",
+     "name": "Jared Ploger",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 21199
+    },
+    {
+     "id": "edgardo-eddie-perez",
+     "name": "Edgardo \"Eddie\" Perez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10639
+    }
+   ],
+   "precincts": {
+    "reporting": 60,
+    "total": 60,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-the-43rd-representative-district-in-the-general-assembly",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR THE 43RD REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "district": null,
+   "title": "FOR THE 43RD REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anna-moeller",
+     "name": "Anna Moeller",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11247
+    },
+    {
+     "id": "no-candidate",
+     "name": "No Candidate",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-the-49th-representative-district-in-the-general-assembly",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR THE 49TH REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "district": null,
+   "title": "FOR THE 49TH REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maura-hirschauer",
+     "name": "Maura Hirschauer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2869
+    },
+    {
+     "id": "john-paul-augustynowicz",
+     "name": "John Paul Augustynowicz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1238
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-the-50th-representative-district-in-the-general-assembly",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR THE 50TH REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "district": null,
+   "title": "FOR THE 50TH REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "barbara-hernandez",
+     "name": "Barbara Hernandez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 19619
+    },
+    {
+     "id": "no-candidate",
+     "name": "No Candidate",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 49,
+    "total": 49,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-the-52nd-representative-district-in-the-general-assembly",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR THE 52ND REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "district": null,
+   "title": "FOR THE 52ND REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maria-peterson",
+     "name": "Maria Peterson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23
+    },
+    {
+     "id": "martin-mclaughlin",
+     "name": "Martin McLaughlin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-the-65th-representative-district-in-the-general-assembly",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR THE 65TH REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "district": null,
+   "title": "FOR THE 65TH REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ricky-rivard",
+     "name": "Ricky Rivard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23043
+    },
+    {
+     "id": "dan-ugaste",
+     "name": "Dan Ugaste",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 20407
+    }
+   ],
+   "precincts": {
+    "reporting": 69,
+    "total": 69,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-the-66th-representative-district-in-the-general-assembly",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR THE 66TH REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "district": null,
+   "title": "FOR THE 66TH REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "suzanne-ness",
+     "name": "Suzanne Ness",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 14090
+    },
+    {
+     "id": "laurie-parman",
+     "name": "Laurie Parman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8214
+    }
+   ],
+   "precincts": {
+    "reporting": 41,
+    "total": 41,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-the-70th-representative-district-in-the-general-assembly",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR THE 70TH REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "district": null,
+   "title": "FOR THE 70TH REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "veronica-garcia-martinez",
+     "name": "Veronica Garcia-Martinez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13361
+    },
+    {
+     "id": "jeff-keicher",
+     "name": "Jeff Keicher",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13577
+    }
+   ],
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-the-83rd-representative-district-in-the-general-assembly",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR THE 83RD REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "district": null,
+   "title": "FOR THE 83RD REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-hanson",
+     "name": "Matt Hanson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 19241
+    },
+    {
+     "id": "jesse-rodriguez",
+     "name": "Jesse Rodriguez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9606
+    }
+   ],
+   "precincts": {
+    "reporting": 53,
+    "total": 53,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-the-84th-representative-district-in-the-general-assembly",
+   "kind": "candidate",
+   "level": "state",
+   "state": "il",
+   "office": "FOR THE 84TH REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "district": null,
+   "title": "FOR THE 84TH REPRESENTATIVE DISTRICT IN THE GENERAL ASSEMBLY",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "saba-haider",
+     "name": "Saba Haider",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2357
+    },
+    {
+     "id": "brian-scopa",
+     "name": "Brian Scopa",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 636
+    }
+   ],
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-grundy-kendall-counties-for-regional-superintendent-of-schools",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "GRUNDY & KENDALL COUNTIES FOR REGIONAL SUPERINTENDENT OF SCHOOLS",
+   "district": null,
+   "title": "GRUNDY & KENDALL COUNTIES FOR REGIONAL SUPERINTENDENT OF SCHOOLS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no-candidate",
+     "name": "No Candidate",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "meghan-martin",
+     "name": "Meghan Martin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 362
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-county-clerk",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR COUNTY CLERK",
+   "district": null,
+   "title": "FOR COUNTY CLERK",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brenda-rodgers",
+     "name": "Brenda Rodgers",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 97649
+    },
+    {
+     "id": "john-a-jack-cunningham",
+     "name": "John A. \"Jack\" Cunningham",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 67921
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-county-sheriff",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR COUNTY SHERIFF",
+   "district": null,
+   "title": "FOR COUNTY SHERIFF",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-johnson",
+     "name": "Amy Johnson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 103301
+    },
+    {
+     "id": "rob-russell",
+     "name": "Rob Russell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 62241
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-county-treasurer",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR COUNTY TREASURER",
+   "district": null,
+   "title": "FOR COUNTY TREASURER",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "penny-wegman",
+     "name": "Penny Wegman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 100548
+    },
+    {
+     "id": "chris-lauzen",
+     "name": "Chris Lauzen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 64937
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-1",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 1",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "myrna-molina",
+     "name": "Myrna Molina",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3361
+    },
+    {
+     "id": "no-candidate",
+     "name": "No Candidate",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-2-to-serve-an-unexpired-2-year-term",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 2- TO SERVE AN UNEXPIRED 2-YEAR TERM",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 2- TO SERVE AN UNEXPIRED 2-YEAR TERM",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ellen-nottke",
+     "name": "Ellen Nottke",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5256
+    },
+    {
+     "id": "no-candidate",
+     "name": "No Candidate",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "kelly-burke",
+     "name": "Kelly Burke",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 3283
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-3",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 3",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anita-marie-lewis",
+     "name": "Anita Marie Lewis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2839
+    },
+    {
+     "id": "no-candidate",
+     "name": "No Candidate",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "guy-david-bodie",
+     "name": "Guy David Bodie",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 873
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-5",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 5",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "philip-silagi",
+     "name": "Philip Silagi",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4365
+    },
+    {
+     "id": "bill-lenert",
+     "name": "Bill Lenert",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4354
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-7",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 7",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alex-arroyo",
+     "name": "Alex Arroyo",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3688
+    },
+    {
+     "id": "no-candidate",
+     "name": "No Candidate",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-9",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 9",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marc-a-guttke",
+     "name": "Marc A. Guttke",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5630
+    },
+    {
+     "id": "jennifer-abbatacola",
+     "name": "Jennifer Abbatacola",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5498
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-11",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 11",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julie-forbes",
+     "name": "Julie Forbes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6117
+    },
+    {
+     "id": "william-c-collins",
+     "name": "William C. Collins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3611
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-13",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 13",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nicolas-g-nico-jimenez",
+     "name": "Nicolas G. \"Nico\" Jimenez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4824
+    },
+    {
+     "id": "ryan-deniz",
+     "name": "Ryan Deniz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3515
+    },
+    {
+     "id": "carly-joi-jugenitz",
+     "name": "Carly Joi Jugenitz",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "rejected-write-ins",
+     "name": "Rejected write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    },
+    {
+     "id": "unassigned-write-ins",
+     "name": "Unassigned write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-15",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 15",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kate-monteleone",
+     "name": "Kate Monteleone",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4440
+    },
+    {
+     "id": "david-young",
+     "name": "David Young",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4327
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-17",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 17",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deborah-allan",
+     "name": "Deborah Allan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3127
+    },
+    {
+     "id": "no-candidate",
+     "name": "No Candidate",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-19",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 19",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mohammad-mo-iqbal",
+     "name": "Mohammad \"Mo\" Iqbal",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4141
+    },
+    {
+     "id": "steve-serafin",
+     "name": "Steve Serafin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2397
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-21",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 21",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deborah-chabi",
+     "name": "Deborah Chabi",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4347
+    },
+    {
+     "id": "clifford-surges",
+     "name": "Clifford Surges",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3367
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-member-of-the-county-board-district-23",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 23",
+   "district": null,
+   "title": "FOR MEMBER OF THE COUNTY BOARD DISTRICT 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-w-kious",
+     "name": "Christopher W. Kious",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3539
+    },
+    {
+     "id": "emmanuel-thomas",
+     "name": "Emmanuel Thomas",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2155
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-for-wasco-sanitary-trustee",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "FOR WASCO SANITARY TRUSTEE",
+   "district": null,
+   "title": "FOR WASCO SANITARY TRUSTEE",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no-candidate",
+     "name": "No Candidate",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "patricia-mccarthy",
+     "name": "Patricia McCarthy",
+     "party": null,
+     "party_code": "O",
+     "votes": 11
+    },
+    {
+     "id": "robert-leible",
+     "name": "Robert Leible",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    },
+    {
+     "id": "rejected-write-ins",
+     "name": "Rejected write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 92
+    },
+    {
+     "id": "unassigned-write-ins",
+     "name": "Unassigned write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-circuit-court-judge-joseph-m-grady-seeking-retention-in-office",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "CIRCUIT COURT JUDGE JOSEPH M. GRADY SEEKING RETENTION IN OFFICE",
+   "district": null,
+   "title": "CIRCUIT COURT JUDGE JOSEPH M. GRADY SEEKING RETENTION IN OFFICE",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 112684
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 35916
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-circuit-court-judge-donald-d-j-tegeler-seeking-retention-in-office",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "CIRCUIT COURT JUDGE DONALD (D.J.) TEGELER SEEKING RETENTION IN OFFICE",
+   "district": null,
+   "title": "CIRCUIT COURT JUDGE DONALD (D.J.) TEGELER SEEKING RETENTION IN OFFICE",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 106287
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 40757
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-circuit-court-judge-robert-k-villa-seeking-retention-in-office",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "CIRCUIT COURT JUDGE ROBERT K. VILLA SEEKING RETENTION IN OFFICE",
+   "district": null,
+   "title": "CIRCUIT COURT JUDGE ROBERT K. VILLA SEEKING RETENTION IN OFFICE",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 108368
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 37967
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-circuit-court-judge-elizabeth-flood-seeking-retention-in-office",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "CIRCUIT COURT JUDGE ELIZABETH FLOOD SEEKING RETENTION IN OFFICE",
+   "district": null,
+   "title": "CIRCUIT COURT JUDGE ELIZABETH FLOOD SEEKING RETENTION IN OFFICE",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 112463
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 34562
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 292,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-dekalb-county-for-regional-superintendent-of-schools",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "DEKALB COUNTY FOR REGIONAL SUPERINTENDENT OF SCHOOLS",
+   "district": null,
+   "title": "DEKALB COUNTY FOR REGIONAL SUPERINTENDENT OF SCHOOLS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no-candidate",
+     "name": "No Candidate",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "carmen-r-siragusa",
+     "name": "Carmen R. Siragusa",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 618
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-kane-county-for-regional-superintendent-of-schools",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "KANE COUNTY FOR REGIONAL SUPERINTENDENT OF SCHOOLS",
+   "district": null,
+   "title": "KANE COUNTY FOR REGIONAL SUPERINTENDENT OF SCHOOLS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jerry-cook",
+     "name": "Jerry Cook",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 95572
+    },
+    {
+     "id": "john-k-jonak",
+     "name": "John K Jonak",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 62517
+    }
+   ],
+   "precincts": {
+    "reporting": 284,
+    "total": 284,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-lake-county-for-regional-superintendent-of-schools",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "LAKE COUNTY FOR REGIONAL SUPERINTENDENT OF SCHOOLS",
+   "district": null,
+   "title": "LAKE COUNTY FOR REGIONAL SUPERINTENDENT OF SCHOOLS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-l-karner",
+     "name": "Michael L. Karner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 753
+    },
+    {
+     "id": "no-candidate",
+     "name": "No Candidate",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-mchenry-county-for-regional-superintendent-of-schools",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "MCHENRY COUNTY FOR REGIONAL SUPERINTENDENT OF SCHOOLS",
+   "district": null,
+   "title": "MCHENRY COUNTY FOR REGIONAL SUPERINTENDENT OF SCHOOLS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bridget-belcastro",
+     "name": "Bridget Belcastro",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2002
+    },
+    {
+     "id": "diana-hartmann",
+     "name": "Diana Hartmann",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1641
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-city-of-aurora-shall-name-of-mayor-be-recalled-and-removed-from-the-office-of-mayor-of-the-city-of-aurora",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "(CITY OF AURORA) SHALL (NAME OF MAYOR) BE RECALLED AND REMOVED FROM THE OFFICE OF MAYOR OF THE CITY OF AURORA",
+   "district": null,
+   "title": "(CITY OF AURORA) SHALL (NAME OF MAYOR) BE RECALLED AND REMOVED FROM THE OFFICE OF MAYOR OF THE CITY OF AURORA",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 13561
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 9413
+    }
+   ],
+   "precincts": {
+    "reporting": 64,
+    "total": 64,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-st-charles-twsp-proposition-to-authorize-enhanced-township-authority-for-regulation-of-refuse-collection-disposal",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "(ST CHARLES TWSP) PROPOSITION TO AUTHORIZE ENHANCED TOWNSHIP AUTHORITY FOR REGULATION OF REFUSE COLLECTION & DISPOSAL",
+   "district": null,
+   "title": "(ST CHARLES TWSP) PROPOSITION TO AUTHORIZE ENHANCED TOWNSHIP AUTHORITY FOR REGULATION OF REFUSE COLLECTION & DISPOSAL",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 12954
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6990
+    }
+   ],
+   "precincts": {
+    "reporting": 34,
+    "total": 34,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-community-300-proposition-to-issue-355-500-000-school-building-bonds",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "(COMMUNITY 300) PROPOSITION TO ISSUE $355,500,000 SCHOOL BUILDING BONDS",
+   "district": null,
+   "title": "(COMMUNITY 300) PROPOSITION TO ISSUE $355,500,000 SCHOOL BUILDING BONDS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 13924
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 13458
+    }
+   ],
+   "precincts": {
+    "reporting": 50,
+    "total": 50,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-oswego-308-proposition-to-issue-317-000-000-school-building-bonds",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "(OSWEGO 308) PROPOSITION TO ISSUE $317,000,000 SCHOOL BUILDING BONDS",
+   "district": null,
+   "title": "(OSWEGO 308) PROPOSITION TO ISSUE $317,000,000 SCHOOL BUILDING BONDS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 163
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 52
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-st-charles-303-proposition-to-issue-282-500-000-school-building-bonds",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "(ST CHARLES 303) PROPOSITION TO ISSUE $282,500,000 SCHOOL BUILDING BONDS",
+   "district": null,
+   "title": "(ST CHARLES 303) PROPOSITION TO ISSUE $282,500,000 SCHOOL BUILDING BONDS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 11723
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 15385
+    }
+   ],
+   "precincts": {
+    "reporting": 47,
+    "total": 47,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-yorkville-115-proposition-to-issue-159-000-000-school-building-bonds",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "(YORKVILLE 115) PROPOSITION TO ISSUE $159,000,000 SCHOOL BUILDING BONDS",
+   "district": null,
+   "title": "(YORKVILLE 115) PROPOSITION TO ISSUE $159,000,000 SCHOOL BUILDING BONDS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 260
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 182
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-east-dundee-cside-fire-proposition-to-issue-3-500-000-bonds",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "(EAST DUNDEE & CSIDE FIRE) PROPOSITION TO ISSUE $3,500,000 BONDS",
+   "district": null,
+   "title": "(EAST DUNDEE & CSIDE FIRE) PROPOSITION TO ISSUE $3,500,000 BONDS",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 852
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 552
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  },
+  {
+   "id": "il-kane-east-dundee-cside-fire-proposition-to-create-a-new-tax-rate-for-emergency-and-rescue-fund-purposes",
+   "kind": "candidate",
+   "level": "county",
+   "state": "il",
+   "office": "(EAST DUNDEE & CSIDE FIRE) PROPOSITION TO CREATE A NEW TAX RATE FOR EMERGENCY AND RESCUE FUND PURPOSES",
+   "district": null,
+   "title": "(EAST DUNDEE & CSIDE FIRE) PROPOSITION TO CREATE A NEW TAX RATE FOR EMERGENCY AND RESCUE FUND PURPOSES",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 673
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 740
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "precincts"
+   },
+   "county": "Kane",
+   "partial": true
+  }
+ ]
+}

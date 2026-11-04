@@ -1,0 +1,9841 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-wi",
+ "label": "Wisconsin (unofficial, partial: county clerks only, 11 of 72 counties so far)",
+ "source_ids": [
+  "wi-counties"
+ ],
+ "updated_at": "2026-11-04T21:21:17Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "wi-us-house-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wi",
+   "office": "U.S. House",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steil",
+     "name": "Bryan Steil",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 55949
+    },
+    {
+     "id": "berman",
+     "name": "Mitchell Berman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 52647
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 128
+    }
+   ],
+   "by_county": {
+    "Kenosha": {
+     "votes": {
+      "Mitchell Berman": 34843,
+      "Bryan Steil": 32156,
+      "Write-in": 73
+     },
+     "reporting": null,
+     "total": null
+    },
+    "Walworth": {
+     "votes": {
+      "Bryan Steil": 23793,
+      "Mitchell Berman": 17804,
+      "Write-in": 55
+     },
+     "reporting": 34,
+     "total": 34
+    }
+   },
+   "precincts": {
+    "reporting": 34,
+    "total": 34,
+    "unit": "precincts"
+   },
+   "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-us-house-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wi",
+   "office": "U.S. House",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cooke",
+     "name": "Rebecca Cooke",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 40190
+    },
+    {
+     "id": "orden",
+     "name": "Derrick Van Orden",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28828
+    },
+    {
+     "id": "kent",
+     "name": "Alexander Valiensi Kent",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 783
+    },
+    {
+     "id": "provance",
+     "name": "Rustin Provance",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 316
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 71
+    }
+   ],
+   "by_county": {
+    "Eau Claire": {
+     "votes": {
+      "Derrick Van Orden": 18489,
+      "Rebecca Cooke": 31706,
+      "Alexander Valiensi Kent": 544,
+      "Rustin Provance": 210,
+      "Write-in": 71
+     },
+     "reporting": 96,
+     "total": 96
+    },
+    "Wood": {
+     "votes": {
+      "Derrick Van Orden": 10339,
+      "Rebecca Cooke": 8484,
+      "Alexander Valiensi Kent": 239,
+      "Rustin Provance": 106
+     },
+     "reporting": 23,
+     "total": 23
+    }
+   },
+   "precincts": {
+    "reporting": 119,
+    "total": 119,
+    "unit": "precincts"
+   },
+   "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-us-house-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wi",
+   "office": "U.S. House",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "fitzgerald",
+     "name": "Scott Fitzgerald",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 150776
+    },
+    {
+     "id": "beck",
+     "name": "Andrew Beck",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 109832
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 209
+    }
+   ],
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Scott Fitzgerald": 20676,
+      "Andrew Beck": 17221,
+      "Write-in": 36
+     },
+     "reporting": 32,
+     "total": 32
+    },
+    "Walworth": {
+     "votes": {
+      "Scott Fitzgerald": 2793,
+      "Andrew Beck": 1612,
+      "Write-in": 2
+     },
+     "reporting": 4,
+     "total": 4
+    },
+    "Waukesha": {
+     "votes": {
+      "Scott Fitzgerald": 127307,
+      "Andrew Beck": 90999,
+      "Write-in": 171
+     },
+     "reporting": 184,
+     "total": 184
+    }
+   },
+   "precincts": {
+    "reporting": 220,
+    "total": 220,
+    "unit": "precincts"
+   },
+   "note": "Sum of 3 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-us-house-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wi",
+   "office": "U.S. House",
+   "district": "7",
+   "title": "U.S. House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alfonso",
+     "name": "Michael Alfonso",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 40755
+    },
+    {
+     "id": "clark",
+     "name": "Fred Clark",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 38549
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 62
+    }
+   ],
+   "by_county": {
+    "Douglas": {
+     "votes": {
+      "Michael Alfonso": 7744,
+      "Fred Clark": 11470,
+      "Write-in": 19
+     },
+     "reporting": 26,
+     "total": 26
+    },
+    "StCroix": {
+     "votes": {
+      "Michael Alfonso": 25964,
+      "Fred Clark": 21090,
+      "Write-in": 43
+     },
+     "reporting": null,
+     "total": null
+    },
+    "Wood": {
+     "votes": {
+      "Michael Alfonso": 7047,
+      "Fred Clark": 5989
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 53,
+    "total": 53,
+    "unit": "precincts"
+   },
+   "note": "Sum of 3 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-us-house-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wi",
+   "office": "U.S. House",
+   "district": "8",
+   "title": "U.S. House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crosson",
+     "name": "Rick Crosson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 57821
+    },
+    {
+     "id": "wied",
+     "name": "Tony Wied",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 55507
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 94
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Tony Wied": 55507,
+      "Rick Crosson": 57821,
+      "Write-in": 94
+     },
+     "reporting": 101,
+     "total": 101
+    }
+   },
+   "precincts": {
+    "reporting": 101,
+    "total": 101,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "1",
+   "title": "State Assembly District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kitchens",
+     "name": "Joel Kitchens",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3116
+    },
+    {
+     "id": "paplham",
+     "name": "Renee A. Paplham",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1637
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Joel Kitchens": 3116,
+      "Renee A. Paplham": 1637,
+      "Write-in": 0
+     },
+     "reporting": 5,
+     "total": 5
+    }
+   },
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "13",
+   "title": "State Assembly District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "morgan",
+     "name": "Mike Morgan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7584
+    },
+    {
+     "id": "zimmerman",
+     "name": "Amy Zimmerman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7226
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Mike Morgan": 7584,
+      "Amy Zimmerman": 7226,
+      "Write-in": 6
+     },
+     "reporting": 11,
+     "total": 11
+    }
+   },
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "15",
+   "title": "State Assembly District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "neylon",
+     "name": "Adam Neylon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17074
+    },
+    {
+     "id": "tryon",
+     "name": "Stephen Tryon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 14036
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 22
+    }
+   ],
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Adam Neylon": 17074,
+      "Stephen Tryon": 14036,
+      "Write-in": 22
+     },
+     "reporting": 26,
+     "total": 26
+    }
+   },
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "2",
+   "title": "State Assembly District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sortwell",
+     "name": "Shae Sortwell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6573
+    },
+    {
+     "id": "saunders",
+     "name": "Alicia Saunders",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3990
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Shae Sortwell": 6573,
+      "Alicia Saunders": 3990,
+      "Write-in": 7
+     },
+     "reporting": 12,
+     "total": 12
+    }
+   },
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "24",
+   "title": "State Assembly District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "knodl",
+     "name": "Dan Knodl",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12105
+    },
+    {
+     "id": "brown",
+     "name": "Matt Brown",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10991
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 20
+    }
+   ],
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Dan Knodl": 12105,
+      "Matt Brown": 10991,
+      "Write-in": 20
+     },
+     "reporting": 30,
+     "total": 30
+    }
+   },
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "28",
+   "title": "State Assembly District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kreibich",
+     "name": "Rob Kreibich",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14920
+    },
+    {
+     "id": "lillesve",
+     "name": "Robin Lillesve",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8819
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 14
+    }
+   ],
+   "by_county": {
+    "StCroix": {
+     "votes": {
+      "Rob Kreibich": 14920,
+      "Robin Lillesve": 8819,
+      "Write-in": 14
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "30",
+   "title": "State Assembly District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "knoke",
+     "name": "Kevin Knoke",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11867
+    },
+    {
+     "id": "zimmerman",
+     "name": "Shannon Zimmerman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11366
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 25
+    }
+   ],
+   "by_county": {
+    "StCroix": {
+     "votes": {
+      "Shannon Zimmerman": 11366,
+      "Kevin Knoke": 11867,
+      "Write-in": 25
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "31",
+   "title": "State Assembly District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "august",
+     "name": "Tyler August",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14181
+    },
+    {
+     "id": "perryman",
+     "name": "John Perryman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9958
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Tyler August": 14181,
+      "John Perryman": 9958,
+      "Write-in": 23
+     },
+     "reporting": 17,
+     "total": 17
+    }
+   },
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "32",
+   "title": "State Assembly District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nedweski",
+     "name": "Amanda Nedweski",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16364
+    },
+    {
+     "id": "miller",
+     "name": "Greg Miller",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10239
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "by_county": {
+    "Kenosha": {
+     "votes": {
+      "Amanda Nedweski": 14023,
+      "Greg Miller": 8649,
+      "Write-in": 10
+     },
+     "reporting": null,
+     "total": null
+    },
+    "Walworth": {
+     "votes": {
+      "Amanda Nedweski": 2341,
+      "Greg Miller": 1590,
+      "Write-in": 1
+     },
+     "reporting": 3,
+     "total": 3
+    }
+   },
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "33",
+   "title": "State Assembly District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wicklund",
+     "name": "Steve Wicklund",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7569
+    },
+    {
+     "id": "bisabarros",
+     "name": "Maria Elena Bisabarros",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4821
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Steve Wicklund": 7569,
+      "Maria Elena Bisabarros": 4821,
+      "Write-in": 15
+     },
+     "reporting": 13,
+     "total": 13
+    }
+   },
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "38",
+   "title": "State Assembly District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "penterman",
+     "name": "William Penterman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7536
+    },
+    {
+     "id": "wenkman",
+     "name": "Terri Wenkman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5605
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 14
+    }
+   ],
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "William Penterman": 7536,
+      "Terri Wenkman": 5605,
+      "Write-in": 14
+     },
+     "reporting": 10,
+     "total": 10
+    }
+   },
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "4",
+   "title": "State Assembly District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steffen",
+     "name": "David Steffen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10350
+    },
+    {
+     "id": "unertl",
+     "name": "Alexia Unertl",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7555
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 14
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "David Steffen": 10350,
+      "Alexia Unertl": 7555,
+      "Write-in": 14
+     },
+     "reporting": 8,
+     "total": 8
+    }
+   },
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "43",
+   "title": "State Assembly District 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brown",
+     "name": "Brienne Brown",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3983
+    },
+    {
+     "id": "mcgraw",
+     "name": "Paul McGraw",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2638
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Paul McGraw": 474,
+      "Brienne Brown": 807,
+      "Write-in": 4
+     },
+     "reporting": 3,
+     "total": 3
+    },
+    "Walworth": {
+     "votes": {
+      "Paul McGraw": 2164,
+      "Brienne Brown": 3176,
+      "Write-in": 8
+     },
+     "reporting": 4,
+     "total": 4
+    }
+   },
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "precincts"
+   },
+   "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "46",
+   "title": "State Assembly District 46",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "fitzgerald",
+     "name": "Joan Fitzgerald",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9084
+    },
+    {
+     "id": "donohue",
+     "name": "John Donohue",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7316
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "John Donohue": 7316,
+      "Joan Fitzgerald": 9084,
+      "Write-in": 6
+     },
+     "reporting": 11,
+     "total": 11
+    }
+   },
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "5",
+   "title": "State Assembly District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "goeben",
+     "name": "Joy Goeben",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4664
+    },
+    {
+     "id": "schumacher",
+     "name": "Justin Schumacher",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3855
+    },
+    {
+     "id": "schupbach",
+     "name": "David Schupbach",
+     "party": "WIG",
+     "party_code": "O",
+     "votes": 172
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Joy Goeben": 4664,
+      "Justin Schumacher": 3855,
+      "David Schupbach": 172,
+      "Write-in": 7
+     },
+     "reporting": 4,
+     "total": 4
+    }
+   },
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "6",
+   "title": "State Assembly District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "behnke",
+     "name": "Elijah Behnke",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1948
+    },
+    {
+     "id": "hinze",
+     "name": "Shirley Hinze",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1104
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Elijah Behnke": 1948,
+      "Shirley Hinze": 1104,
+      "Write-in": 3
+     },
+     "reporting": 3,
+     "total": 3
+    }
+   },
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-64",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "64",
+   "title": "State Assembly District 64",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mcguire",
+     "name": "Tip McGuire",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13561
+    },
+    {
+     "id": "hibsch",
+     "name": "Ed Hibsch",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8255
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "by_county": {
+    "Kenosha": {
+     "votes": {
+      "Tip McGuire": 13561,
+      "Ed Hibsch": 8255,
+      "Write-in": 13
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-65",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "65",
+   "title": "State Assembly District 65",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "desmidt",
+     "name": "Ben DeSmidt",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13336
+    },
+    {
+     "id": "kretchmer",
+     "name": "Valerie Kretchmer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8636
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "by_county": {
+    "Kenosha": {
+     "votes": {
+      "Ben DeSmidt": 13336,
+      "Valerie Kretchmer": 8636,
+      "Write-in": 16
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-72",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "72",
+   "title": "State Assembly District 72",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "krug",
+     "name": "Scott Krug",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9804
+    },
+    {
+     "id": "maltese",
+     "name": "Christine Maltese",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7146
+    }
+   ],
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Scott Krug": 9804,
+      "Christine Maltese": 7146
+     },
+     "reporting": 19,
+     "total": 19
+    }
+   },
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-73",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "73",
+   "title": "State Assembly District 73",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stroud",
+     "name": "Angela Stroud",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9693
+    },
+    {
+     "id": "kostka",
+     "name": "Frank Kostka",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5917
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "by_county": {
+    "Douglas": {
+     "votes": {
+      "Frank Kostka": 5917,
+      "Angela Stroud": 9693,
+      "Write-in": 12
+     },
+     "reporting": 26,
+     "total": 26
+    }
+   },
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-74",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "74",
+   "title": "State Assembly District 74",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "green",
+     "name": "Chanz Green",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1886
+    },
+    {
+     "id": "johnson",
+     "name": "Paul Johnson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1725
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "by_county": {
+    "Douglas": {
+     "votes": {
+      "Chanz Green": 1886,
+      "Paul Johnson": 1725,
+      "Write-in": 1
+     },
+     "reporting": 26,
+     "total": 26
+    }
+   },
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-82",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "82",
+   "title": "State Assembly District 82",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "reyes",
+     "name": "Bryson Reyes",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12603
+    },
+    {
+     "id": "camacho",
+     "name": "Rico Camacho",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12002
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 32
+    }
+   ],
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Bryson Reyes": 12603,
+      "Rico Camacho": 12002,
+      "Write-in": 32
+     },
+     "reporting": 39,
+     "total": 39
+    }
+   },
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-83",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "83",
+   "title": "State Assembly District 83",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maxey",
+     "name": "Dave Maxey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 22155
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 954
+    }
+   ],
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Dave Maxey": 22155,
+      "Write-in": 954
+     },
+     "reporting": 34,
+     "total": 34
+    }
+   },
+   "precincts": {
+    "reporting": 34,
+    "total": 34,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-84",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "84",
+   "title": "State Assembly District 84",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wichgers",
+     "name": "Chuck Wichgers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16599
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 428
+    }
+   ],
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Chuck Wichgers": 66,
+      "Write-in": 2
+     },
+     "reporting": 1,
+     "total": 1
+    },
+    "Waukesha": {
+     "votes": {
+      "Chuck Wichgers": 16533,
+      "Write-in": 426
+     },
+     "reporting": 12,
+     "total": 12
+    }
+   },
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   },
+   "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-86",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "86",
+   "title": "State Assembly District 86",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "spiros",
+     "name": "John Spiros",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8658
+    },
+    {
+     "id": "wuethrich",
+     "name": "Andy Wuethrich",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6317
+    }
+   ],
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "John Spiros": 8658,
+      "Andy Wuethrich": 6317
+     },
+     "reporting": 31,
+     "total": 31
+    }
+   },
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-88",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "88",
+   "title": "State Assembly District 88",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tollefson",
+     "name": "Brandy Tollefson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 14593
+    },
+    {
+     "id": "franklin",
+     "name": "Ben Franklin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12267
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Ben Franklin": 12267,
+      "Brandy Tollefson": 14593,
+      "Write-in": 15
+     },
+     "reporting": 16,
+     "total": 16
+    }
+   },
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-89",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "89",
+   "title": "State Assembly District 89",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "spaude",
+     "name": "Ryan Spaude",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12608
+    },
+    {
+     "id": "lindsey",
+     "name": "Bobby R. Lindsey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9717
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 34
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Bobby R. Lindsey": 9717,
+      "Ryan Spaude": 12608,
+      "Write-in": 34
+     },
+     "reporting": 26,
+     "total": 26
+    }
+   },
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-90",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "90",
+   "title": "State Assembly District 90",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rivera-wagner",
+     "name": "Amaad Rivera-Wagner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11320
+    },
+    {
+     "id": "henderson",
+     "name": "Jessica Henderson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7133
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Jessica Henderson": 7133,
+      "Amaad Rivera-Wagner": 11320,
+      "Write-in": 16
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-91",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "91",
+   "title": "State Assembly District 91",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emerson",
+     "name": "Jodi Emerson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15968
+    },
+    {
+     "id": "stabenow",
+     "name": "Bruce Stabenow",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10402
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 26
+    }
+   ],
+   "by_county": {
+    "Eau Claire": {
+     "votes": {
+      "Bruce Stabenow": 10402,
+      "Jodi Emerson": 15968,
+      "Write-in": 26
+     },
+     "reporting": 48,
+     "total": 48
+    }
+   },
+   "precincts": {
+    "reporting": 48,
+    "total": 48,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-93",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "93",
+   "title": "State Assembly District 93",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phelps",
+     "name": "Christian Phelps",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15564
+    },
+    {
+     "id": "ayala",
+     "name": "Michael Ayala",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8403
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "by_county": {
+    "Eau Claire": {
+     "votes": {
+      "Michael Ayala": 8403,
+      "Christian Phelps": 15564,
+      "Write-in": 23
+     },
+     "reporting": 48,
+     "total": 48
+    }
+   },
+   "precincts": {
+    "reporting": 48,
+    "total": 48,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-97",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "97",
+   "title": "State Assembly District 97",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "duchow",
+     "name": "Cindi Duchow",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 24860
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 664
+    }
+   ],
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Cindi Duchow": 3499,
+      "Write-in": 81
+     },
+     "reporting": 6,
+     "total": 6
+    },
+    "Waukesha": {
+     "votes": {
+      "Cindi Duchow": 21361,
+      "Write-in": 583
+     },
+     "reporting": 16,
+     "total": 16
+    }
+   },
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   },
+   "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-98",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "98",
+   "title": "State Assembly District 98",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "piwowarczyk",
+     "name": "Jim Piwowarczyk",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9141
+    },
+    {
+     "id": "philibert",
+     "name": "Matt Philibert",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5127
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Jim Piwowarczyk": 9141,
+      "Matt Philibert": 5127,
+      "Write-in": 8
+     },
+     "reporting": 5,
+     "total": 5
+    }
+   },
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-assembly-99",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Assembly",
+   "district": "99",
+   "title": "State Assembly District 99",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dittrich",
+     "name": "Barbara Dittrich",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 20748
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 752
+    }
+   ],
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Barbara Dittrich": 1925,
+      "Write-in": 71
+     },
+     "reporting": 2,
+     "total": 2
+    },
+    "Waukesha": {
+     "votes": {
+      "Barbara Dittrich": 18823,
+      "Write-in": 681
+     },
+     "reporting": 11,
+     "total": 11
+    }
+   },
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   },
+   "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "toney",
+     "name": "Eric Toney",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 313528
+    },
+    {
+     "id": "kaul",
+     "name": "Josh Kaul",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 287698
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 353
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Eric Toney": 55024,
+      "Josh Kaul": 58889,
+      "Write-in": 67
+     },
+     "reporting": 101,
+     "total": 101
+    },
+    "Douglas": {
+     "votes": {
+      "Eric Toney": 7878,
+      "Josh Kaul": 11286,
+      "Write-in": 10
+     },
+     "reporting": 26,
+     "total": 26
+    },
+    "Eau Claire": {
+     "votes": {
+      "Eric Toney": 19005,
+      "Josh Kaul": 31659,
+      "Write-in": 39
+     },
+     "reporting": 96,
+     "total": 96
+    },
+    "Kenosha": {
+     "votes": {
+      "Josh Kaul": 35743,
+      "Eric Toney": 30938,
+      "Write-in": 48
+     },
+     "reporting": null,
+     "total": null
+    },
+    "StCroix": {
+     "votes": {
+      "Eric Toney": 26527,
+      "Josh Kaul": 20490,
+      "Write-in": 27
+     },
+     "reporting": null,
+     "total": null
+    },
+    "Taylor": {
+     "votes": {
+      "Eric Toney": 5843,
+      "Josh Kaul": 2416,
+      "Write-in": 0
+     },
+     "reporting": 27,
+     "total": 27
+    },
+    "Walworth": {
+     "votes": {
+      "Eric Toney": 25980,
+      "Josh Kaul": 20053,
+      "Write-in": 33
+     },
+     "reporting": 38,
+     "total": 38
+    },
+    "Waukesha": {
+     "votes": {
+      "Eric Toney": 124661,
+      "Josh Kaul": 92848,
+      "Write-in": 129
+     },
+     "reporting": 184,
+     "total": 184
+    },
+    "Wood": {
+     "votes": {
+      "Eric Toney": 17672,
+      "Josh Kaul": 14314
+     },
+     "reporting": 50,
+     "total": 50
+    }
+   },
+   "precincts": {
+    "reporting": 522,
+    "total": 522,
+    "unit": "precincts"
+   },
+   "note": "Sum of 9 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tom Tiffany / David Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 363014
+    },
+    {
+     "id": "crowley",
+     "name": "David Crowley / Sarah Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 315843
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 1084
+    },
+    {
+     "id": "king",
+     "name": "David D King",
+     "party": "",
+     "party_code": "O",
+     "votes": 4
+    },
+    {
+     "id": "griffin",
+     "name": "Ieshuh Griffin",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "carothers",
+     "name": "Jamie Jo Carothers",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "muellenberg",
+     "name": "Chad Muellenberg",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "morgan",
+     "name": "Mary Morgan",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "grimek",
+     "name": "Mark Grimek",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "kirchmiller",
+     "name": "Christine Kirchmiller",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "woods",
+     "name": "Reese Woods / Daniel Wagner",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "donnelly",
+     "name": "Brayden Donnelly",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Tom Tiffany/David Varnam": 55947,
+      "David Crowley/S. Godlewski": 58410,
+      "Write-in": 188
+     },
+     "reporting": 101,
+     "total": 101
+    },
+    "Dodge": {
+     "votes": {
+      "Tiffany / Varnam": 23658,
+      "Crowley / Godlewski": 13314,
+      "Write-in": 71
+     },
+     "reporting": 55,
+     "total": 55
+    },
+    "Douglas": {
+     "votes": {
+      "Tiffany / Varnam": 8070,
+      "Crowley / Godlewski": 11181,
+      "Write-in": 35
+     },
+     "reporting": 26,
+     "total": 26
+    },
+    "Eau Claire": {
+     "votes": {
+      "Tom Tiffany / David Varnam": 19600,
+      "David Crowley / Sarah Godlewski": 31342,
+      "Write-in": 95
+     },
+     "reporting": 96,
+     "total": 96
+    },
+    "Kenosha": {
+     "votes": {
+      "David Crowley / Sarah Godlewski": 35393,
+      "Tom Tiffany / David Varnam": 31567,
+      "Write-in": 103
+     },
+     "reporting": null,
+     "total": null
+    },
+    "Jefferson": {
+     "votes": {
+      "Tiffany / Varnam": 20748,
+      "Crowley / Godlewski": 17338,
+      "Write-in": 70
+     },
+     "reporting": 32,
+     "total": 32
+    },
+    "StCroix": {
+     "votes": {
+      "Tiffany / Varnam": 26975,
+      "Crowley / Godlewski": 20212,
+      "Write-in": 73
+     },
+     "reporting": null,
+     "total": null
+    },
+    "Taylor": {
+     "votes": {
+      "Tom Tiffany / David Varnam": 6005,
+      "David Crowley / Sarah Godlewski": 2268,
+      "Ieshuh Griffin": 0,
+      "Jamie Jo Carothers": 0,
+      "David D King": 4,
+      "Chad Muellenberg": 0,
+      "Mary Morgan": 0,
+      "Mark Grimek": 0,
+      "Christine Kirchmiller": 0,
+      "Reese Woods / Daniel Wagner": 0,
+      "Brayden Donnelly": 0,
+      "Write-in": 0
+     },
+     "reporting": 27,
+     "total": 27
+    },
+    "Walworth": {
+     "votes": {
+      "Tom Tiffany / David Varnam": 26405,
+      "David Crowley / Sarah Godlewski": 19856,
+      "Write-in": 78
+     },
+     "reporting": 38,
+     "total": 38
+    },
+    "Waukesha": {
+     "votes": {
+      "Tom Tiffany / David Varnam": 125796,
+      "David Crowley / Sarah Godlewski": 92649,
+      "Write-in": 371
+     },
+     "reporting": 184,
+     "total": 184
+    },
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 18243,
+      "Crowley / Godlewski": 13880
+     },
+     "reporting": 50,
+     "total": 50
+    }
+   },
+   "precincts": {
+    "reporting": 609,
+    "total": 609,
+    "unit": "precincts"
+   },
+   "note": "Sum of 11 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "schroeder",
+     "name": "Jay Schroeder",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 313414
+    },
+    {
+     "id": "zamarripa",
+     "name": "JoCasta Zamarripa",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 263565
+    },
+    {
+     "id": "karas",
+     "name": "Pete Karas",
+     "party": "WIG",
+     "party_code": "O",
+     "votes": 21939
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 315
+    },
+    {
+     "id": "chianese",
+     "name": "Michael Chianese",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Jay Schroeder": 54925,
+      "JoCasta Zamarripa": 53788,
+      "Pete Karas": 4618,
+      "Write-in": 62
+     },
+     "reporting": 101,
+     "total": 101
+    },
+    "Douglas": {
+     "votes": {
+      "Jay Schroeder": 7793,
+      "JoCasta Zamarripa": 10561,
+      "Pete Karas": 823,
+      "Write-in": 6
+     },
+     "reporting": 26,
+     "total": 26
+    },
+    "Eau Claire": {
+     "votes": {
+      "Jay Schroeder": 19022,
+      "JoCasta Zamarripa": 29068,
+      "Pete Karas": 2227,
+      "Write-in": 33
+     },
+     "reporting": 96,
+     "total": 96
+    },
+    "Kenosha": {
+     "votes": {
+      "JoCasta Zamarripa": 33294,
+      "Jay Schroeder": 30782,
+      "Pete Karas": 2542,
+      "Write-in": 41
+     },
+     "reporting": null,
+     "total": null
+    },
+    "StCroix": {
+     "votes": {
+      "Jay Schroeder": 26185,
+      "JoCasta Zamarripa": 18926,
+      "Pete Karas": 1936,
+      "Write-in": 15
+     },
+     "reporting": null,
+     "total": null
+    },
+    "Taylor": {
+     "votes": {
+      "Jay Schroeder": 5902,
+      "JoCasta Zamarripa": 2071,
+      "Pete Karas": 261,
+      "Michael Chianese": 0,
+      "Write-in": 0
+     },
+     "reporting": 27,
+     "total": 27
+    },
+    "Walworth": {
+     "votes": {
+      "Jay Schroeder": 26043,
+      "JoCasta Zamarripa": 18349,
+      "Pete Karas": 1569,
+      "Write-in": 33
+     },
+     "reporting": 38,
+     "total": 38
+    },
+    "Waukesha": {
+     "votes": {
+      "Jay Schroeder": 124889,
+      "JoCasta Zamarripa": 84581,
+      "Pete Karas": 6854,
+      "Write-in": 125
+     },
+     "reporting": 184,
+     "total": 184
+    },
+    "Wood": {
+     "votes": {
+      "Jay Schroeder": 17873,
+      "JoCasta Zamarripa": 12927,
+      "Pete Karas": 1109
+     },
+     "reporting": 50,
+     "total": 50
+    }
+   },
+   "precincts": {
+    "reporting": 522,
+    "total": 522,
+    "unit": "precincts"
+   },
+   "note": "Sum of 9 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-question-1",
+   "kind": "measure",
+   "level": "state",
+   "state": "wi",
+   "office": "State Question 1",
+   "district": null,
+   "title": "State Question 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 295417
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 236879
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Yes": 58694,
+      "No": 51885
+     },
+     "reporting": 101,
+     "total": 101
+    },
+    "Douglas": {
+     "votes": {
+      "Yes": 8992,
+      "No": 9553
+     },
+     "reporting": 26,
+     "total": 26
+    },
+    "Eau Claire": {
+     "votes": {
+      "Yes": 21984,
+      "No": 27027
+     },
+     "reporting": 96,
+     "total": 96
+    },
+    "Kenosha": {
+     "votes": {
+      "Yes": 34405,
+      "No": 30663
+     },
+     "reporting": null,
+     "total": null
+    },
+    "StCroix": {
+     "votes": {
+      "Yes": 26421,
+      "No": 19471
+     },
+     "reporting": null,
+     "total": null
+    },
+    "Waukesha": {
+     "votes": {
+      "Yes": 126549,
+      "No": 85547
+     },
+     "reporting": 184,
+     "total": 184
+    },
+    "Wood": {
+     "votes": {
+      "Yes": 18372,
+      "No": 12733
+     },
+     "reporting": 50,
+     "total": 50
+    }
+   },
+   "precincts": {
+    "reporting": 457,
+    "total": 457,
+    "unit": "precincts"
+   },
+   "note": "Sum of 7 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-question-2",
+   "kind": "measure",
+   "level": "state",
+   "state": "wi",
+   "office": "State Question 2",
+   "district": null,
+   "title": "State Question 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 280562
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 254786
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Yes": 55601,
+      "No": 55833
+     },
+     "reporting": 101,
+     "total": 101
+    },
+    "Douglas": {
+     "votes": {
+      "Yes": 8610,
+      "No": 9956
+     },
+     "reporting": 26,
+     "total": 26
+    },
+    "Eau Claire": {
+     "votes": {
+      "Yes": 20932,
+      "No": 28391
+     },
+     "reporting": 96,
+     "total": 96
+    },
+    "Kenosha": {
+     "votes": {
+      "No": 33001,
+      "Yes": 32461
+     },
+     "reporting": null,
+     "total": null
+    },
+    "StCroix": {
+     "votes": {
+      "Yes": 25316,
+      "No": 20899
+     },
+     "reporting": null,
+     "total": null
+    },
+    "Waukesha": {
+     "votes": {
+      "Yes": 119585,
+      "No": 93510
+     },
+     "reporting": 184,
+     "total": 184
+    },
+    "Wood": {
+     "votes": {
+      "Yes": 18057,
+      "No": 13196
+     },
+     "reporting": 50,
+     "total": 50
+    }
+   },
+   "precincts": {
+    "reporting": 457,
+    "total": 457,
+    "unit": "precincts"
+   },
+   "note": "Sum of 7 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-question-3",
+   "kind": "measure",
+   "level": "state",
+   "state": "wi",
+   "office": "State Question 3",
+   "district": null,
+   "title": "State Question 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 327864
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 203209
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Yes": 65371,
+      "No": 45515
+     },
+     "reporting": 101,
+     "total": 101
+    },
+    "Douglas": {
+     "votes": {
+      "Yes": 10597,
+      "No": 7850
+     },
+     "reporting": 26,
+     "total": 26
+    },
+    "Eau Claire": {
+     "votes": {
+      "Yes": 25644,
+      "No": 23251
+     },
+     "reporting": 96,
+     "total": 96
+    },
+    "Kenosha": {
+     "votes": {
+      "Yes": 39282,
+      "No": 24996
+     },
+     "reporting": null,
+     "total": null
+    },
+    "StCroix": {
+     "votes": {
+      "Yes": 28863,
+      "No": 16559
+     },
+     "reporting": null,
+     "total": null
+    },
+    "Waukesha": {
+     "votes": {
+      "Yes": 138073,
+      "No": 74018
+     },
+     "reporting": 184,
+     "total": 184
+    },
+    "Wood": {
+     "votes": {
+      "Yes": 20034,
+      "No": 11020
+     },
+     "reporting": 50,
+     "total": 50
+    }
+   },
+   "precincts": {
+    "reporting": 457,
+    "total": 457,
+    "unit": "precincts"
+   },
+   "note": "Sum of 7 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-senate-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Senate",
+   "district": "1",
+   "title": "State Senate District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cravillion",
+     "name": "Nic Cravillion",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9696
+    },
+    {
+     "id": "becker",
+     "name": "Mark Becker",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 5327
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 10
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Nic Cravillion": 9696,
+      "Mark Becker": 5327,
+      "Write-in": 10
+     },
+     "reporting": 17,
+     "total": 17
+    }
+   },
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-senate-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Senate",
+   "district": "11",
+   "title": "State Senate District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "schutt",
+     "name": "Ellen Schutt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 38116
+    },
+    {
+     "id": "duda",
+     "name": "Adam Duda",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 25258
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 39
+    }
+   ],
+   "by_county": {
+    "Kenosha": {
+     "votes": {
+      "Ellen Schutt": 13888,
+      "Adam Duda": 8851,
+      "Write-in": 9
+     },
+     "reporting": null,
+     "total": null
+    },
+    "Walworth": {
+     "votes": {
+      "Ellen Schutt": 24228,
+      "Adam Duda": 16407,
+      "Write-in": 30
+     },
+     "reporting": 33,
+     "total": 33
+    }
+   },
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   },
+   "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-senate-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Senate",
+   "district": "13",
+   "title": "State Senate District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jagler",
+     "name": "John Jagler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7724
+    },
+    {
+     "id": "ripley",
+     "name": "Sasha Ripley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5349
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 14
+    }
+   ],
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "John Jagler": 7724,
+      "Sasha Ripley": 5349,
+      "Write-in": 14
+     },
+     "reporting": 10,
+     "total": 10
+    }
+   },
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-senate-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Senate",
+   "district": "15",
+   "title": "State Senate District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "spreitzer",
+     "name": "Mark Spreitzer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3794
+    },
+    {
+     "id": "fleming",
+     "name": "Scott Fleming",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2543
+    },
+    {
+     "id": "spnp",
+     "name": "Christopher Dean SPNP",
+     "party": "",
+     "party_code": "O",
+     "votes": 246
+    },
+    {
+     "id": "dean",
+     "name": "Christopher Dean",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 71
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Scott Fleming": 466,
+      "Mark Spreitzer": 751,
+      "Christopher Dean": 71,
+      "Write-in": 3
+     },
+     "reporting": 3,
+     "total": 3
+    },
+    "Walworth": {
+     "votes": {
+      "Scott Fleming": 2077,
+      "Mark Spreitzer": 3043,
+      "Christopher Dean SPNP": 246,
+      "Write-in": 9
+     },
+     "reporting": 4,
+     "total": 4
+    }
+   },
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "precincts"
+   },
+   "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-senate-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Senate",
+   "district": "25",
+   "title": "State Senate District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ray",
+     "name": "Charly Ray",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11247
+    },
+    {
+     "id": "severson",
+     "name": "Erik Severson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7915
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "by_county": {
+    "Douglas": {
+     "votes": {
+      "Erik Severson": 7915,
+      "Charly Ray": 11247,
+      "Write-in": 16
+     },
+     "reporting": 26,
+     "total": 26
+    }
+   },
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-senate-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Senate",
+   "district": "29",
+   "title": "State Senate District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tomczyk",
+     "name": "Cory Tomczyk",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8536
+    },
+    {
+     "id": "battino",
+     "name": "Gillian Battino",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6382
+    }
+   ],
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Cory Tomczyk": 8536,
+      "Gillian Battino": 6382
+     },
+     "reporting": 31,
+     "total": 31
+    }
+   },
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-senate-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Senate",
+   "district": "31",
+   "title": "State Senate District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "smith",
+     "name": "Jeff Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 31678
+    },
+    {
+     "id": "skinner",
+     "name": "Michele Magadance Skinner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 18934
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 75
+    }
+   ],
+   "by_county": {
+    "Eau Claire": {
+     "votes": {
+      "Michele Magadance Skinner": 18934,
+      "Jeff Smith": 31678,
+      "Write-in": 75
+     },
+     "reporting": 96,
+     "total": 96
+    }
+   },
+   "precincts": {
+    "reporting": 96,
+    "total": 96,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-senate-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Senate",
+   "district": "33",
+   "title": "State Senate District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kapenga",
+     "name": "Chris Kapenga",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 49682
+    },
+    {
+     "id": "someren",
+     "name": "Mike Van Someren",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 27173
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 53
+    }
+   ],
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Chris Kapenga": 4726,
+      "Mike Van Someren": 2139,
+      "Write-in": 1
+     },
+     "reporting": 8,
+     "total": 8
+    },
+    "Waukesha": {
+     "votes": {
+      "Chris Kapenga": 44956,
+      "Mike Van Someren": 25034,
+      "Write-in": 52
+     },
+     "reporting": 32,
+     "total": 32
+    }
+   },
+   "precincts": {
+    "reporting": 40,
+    "total": 40,
+    "unit": "precincts"
+   },
+   "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-senate-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Senate",
+   "district": "5",
+   "title": "State Senate District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "roberts",
+     "name": "Mike Roberts",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 24588
+    },
+    {
+     "id": "vining",
+     "name": "Robyn Vining",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 21746
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 27
+    }
+   ],
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Mike Roberts": 24588,
+      "Robyn Vining": 21746,
+      "Write-in": 27
+     },
+     "reporting": 37,
+     "total": 37
+    }
+   },
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   },
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-state-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wi",
+   "office": "State Treasurer",
+   "district": null,
+   "title": "State Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leiber",
+     "name": "John S. Leiber",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 328635
+    },
+    {
+     "id": "xiong",
+     "name": "Yee Leng Xiong",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 268017
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 457
+    },
+    {
+     "id": "kexel",
+     "name": "Joseph Kexel",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "John S. Leiber": 57977,
+      "Yee Leng Xiong": 54943,
+      "Write-in": 80
+     },
+     "reporting": 101,
+     "total": 101
+    },
+    "Douglas": {
+     "votes": {
+      "John S. Leiber": 8266,
+      "Yee Leng Xiong": 10826,
+      "Write-in": 13
+     },
+     "reporting": 26,
+     "total": 26
+    },
+    "Eau Claire": {
+     "votes": {
+      "John S. Leiber": 19958,
+      "Yee Leng Xiong": 30108,
+      "Write-in": 45
+     },
+     "reporting": 96,
+     "total": 96
+    },
+    "Kenosha": {
+     "votes": {
+      "Yee Leng Xiong": 33913,
+      "John S. Leiber": 32315,
+      "Write-in": 55
+     },
+     "reporting": null,
+     "total": null
+    },
+    "StCroix": {
+     "votes": {
+      "John S. Leiber": 27807,
+      "Yee Leng Xiong": 19104,
+      "Write-in": 34
+     },
+     "reporting": null,
+     "total": null
+    },
+    "Taylor": {
+     "votes": {
+      "John S Leiber": 6104,
+      "Yee Leng Xiong": 2116,
+      "Joseph Kexel": 0,
+      "Write-in": 0
+     },
+     "reporting": 27,
+     "total": 27
+    },
+    "Walworth": {
+     "votes": {
+      "John S. Leiber": 27105,
+      "Yee Leng Xiong": 18616,
+      "Write-in": 36
+     },
+     "reporting": 38,
+     "total": 38
+    },
+    "Waukesha": {
+     "votes": {
+      "John S. Leiber": 130427,
+      "Yee Leng Xiong": 85259,
+      "Write-in": 194
+     },
+     "reporting": 184,
+     "total": 184
+    },
+    "Wood": {
+     "votes": {
+      "John S. Leiber": 18676,
+      "Yee Leng Xiong": 13132
+     },
+     "reporting": 50,
+     "total": 50
+    }
+   },
+   "precincts": {
+    "reporting": 522,
+    "total": 522,
+    "unit": "precincts"
+   },
+   "note": "Sum of 9 county report(s) read so far; not every county is in.",
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-brown-brillion-school-district-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Brillion School District Referendum",
+   "district": null,
+   "title": "Brillion School District Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 28
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 25
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Yes": 28,
+      "No": 25
+     },
+     "reporting": 2,
+     "total": 2
+    }
+   },
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-brown-clerk-of-circuit-court",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Clerk of Circuit Court",
+   "district": null,
+   "title": "Clerk of Circuit Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leest",
+     "name": "John A. Vander Leest",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 79868
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 2717
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "John A. Vander Leest": 79868,
+      "Write-in": 2717
+     },
+     "reporting": 101,
+     "total": 101
+    }
+   },
+   "precincts": {
+    "reporting": 101,
+    "total": 101,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-brown-green-bay-school-district-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Green Bay School District Referendum",
+   "district": null,
+   "title": "Green Bay School District Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 26680
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 22671
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Yes": 26680,
+      "No": 22671
+     },
+     "reporting": 65,
+     "total": 65
+    }
+   },
+   "precincts": {
+    "reporting": 65,
+    "total": 65,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-brown-luxemburg-casco-school-district-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Luxemburg-Casco School District Referendum",
+   "district": null,
+   "title": "Luxemburg-Casco School District Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 848
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 701
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Yes": 848,
+      "No": 701
+     },
+     "reporting": 2,
+     "total": 2
+    }
+   },
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-brown-pulaski-school-district-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Pulaski School District Referendum",
+   "district": null,
+   "title": "Pulaski School District Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 3407
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 2973
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Yes": 3407,
+      "No": 2973
+     },
+     "reporting": 5,
+     "total": 5
+    }
+   },
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-brown-sheriff",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sheriff",
+   "district": null,
+   "title": "Sheriff",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "delain",
+     "name": "Todd J. Delain",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 82808
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 2975
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Todd J. Delain": 82808,
+      "Write-in": 2975
+     },
+     "reporting": 101,
+     "total": 101
+    }
+   },
+   "precincts": {
+    "reporting": 101,
+    "total": 101,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-brown-west-de-pere-school-district-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "West De Pere School District Referendum",
+   "district": null,
+   "title": "West De Pere School District Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 6087
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 4891
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Brown": {
+     "votes": {
+      "Yes": 6087,
+      "No": 4891
+     },
+     "reporting": 7,
+     "total": 7
+    }
+   },
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-attorney-gen",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Attorney Gen",
+   "district": null,
+   "title": "Attorney Gen",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "toney",
+     "name": "Eric Toney",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 23065
+    },
+    {
+     "id": "kaul",
+     "name": "Josh Kaul",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13670
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Eric Toney": 23065,
+      "Josh Kaul": 13670,
+      "Write-in": 23
+     },
+     "reporting": 55,
+     "total": 55
+    }
+   },
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-circuit-court-clerk-dodge-co",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Circuit Court Clerk - Dodge Co",
+   "district": null,
+   "title": "Circuit Court Clerk - Dodge Co",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "enright",
+     "name": "Kelly Enright",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28321
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 542
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Kelly Enright": 28321,
+      "Write-in": 542
+     },
+     "reporting": 55,
+     "total": 55
+    }
+   },
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-markesan-ref",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Markesan Ref",
+   "district": null,
+   "title": "Markesan Ref",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 7
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Yes": 1,
+      "No": 7
+     },
+     "reporting": 1,
+     "total": 1
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-mayville-sd-ref",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Mayville SD Ref",
+   "district": null,
+   "title": "Mayville SD Ref",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 2124
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 1474
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Yes": 2124,
+      "No": 1474
+     },
+     "reporting": 8,
+     "total": 8
+    }
+   },
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-ocon-sd-ref",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Ocon SD Ref",
+   "district": null,
+   "title": "Ocon SD Ref",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 637
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 385
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Yes": 385,
+      "No": 637
+     },
+     "reporting": 2,
+     "total": 2
+    }
+   },
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-rep-assem-37",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Rep Assem 37",
+   "district": null,
+   "title": "Rep Assem 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "born",
+     "name": "Mark Born",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11365
+    },
+    {
+     "id": "bates",
+     "name": "LaToya Bates",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7382
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 40
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Mark Born": 11365,
+      "LaToya Bates": 7382,
+      "Write-in": 40
+     },
+     "reporting": 26,
+     "total": 26
+    }
+   },
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-rep-assem-38",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Rep Assem 38",
+   "district": null,
+   "title": "Rep Assem 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "penterman",
+     "name": "William Penterman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7946
+    },
+    {
+     "id": "wenkman",
+     "name": "Terri Wenkman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3869
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "William Penterman": 7946,
+      "Terri Wenkman": 3869,
+      "Write-in": 7
+     },
+     "reporting": 17,
+     "total": 17
+    }
+   },
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-rep-assem-48",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Rep Assem 48",
+   "district": null,
+   "title": "Rep Assem 48",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kjorlie",
+     "name": "Mark Kjorlie",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 649
+    },
+    {
+     "id": "hysell",
+     "name": "Andrew Hysell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 399
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Mark Kjorlie": 649,
+      "Andrew Hysell": 399,
+      "Write-in": 0
+     },
+     "reporting": 2,
+     "total": 2
+    }
+   },
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-rep-assem-59",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Rep Assem 59",
+   "district": null,
+   "title": "Rep Assem 59",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "petersen",
+     "name": "Bradley Petersen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 903
+    },
+    {
+     "id": "holzman",
+     "name": "Jack Holzman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 305
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Bradley Petersen": 903,
+      "Jack Holzman": 305,
+      "Write-in": 1
+     },
+     "reporting": 4,
+     "total": 4
+    }
+   },
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-rep-assem-99",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Rep Assem 99",
+   "district": null,
+   "title": "Rep Assem 99",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dittrich",
+     "name": "Barbara Dittrich",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3150
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 50
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Barbara Dittrich": 3150,
+      "Write-in": 50
+     },
+     "reporting": 5,
+     "total": 5
+    }
+   },
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-rep-congress-dis-5",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Rep Congress Dis 5",
+   "district": null,
+   "title": "Rep Congress Dis 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "fitzgerald",
+     "name": "Scott Fitzgerald",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12805
+    },
+    {
+     "id": "beck",
+     "name": "Andrew Beck",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6075
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Scott Fitzgerald": 12805,
+      "Andrew Beck": 6075,
+      "Write-in": 13
+     },
+     "reporting": 32,
+     "total": 32
+    }
+   },
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-rep-congress-dis-6",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Rep Congress Dis 6",
+   "district": null,
+   "title": "Rep Congress Dis 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "grothman",
+     "name": "Glenn Grothman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10365
+    },
+    {
+     "id": "smith",
+     "name": "Brad Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6881
+    },
+    {
+     "id": "fitzgibbon",
+     "name": "Elizabeth Anne Fitzgibbon",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 262
+    },
+    {
+     "id": "arndt",
+     "name": "Matthew Arndt",
+     "party": "WGR",
+     "party_code": "O",
+     "votes": 203
+    },
+    {
+     "id": "thurow",
+     "name": "Mike Thurow",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 173
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Glenn Grothman": 10365,
+      "Brad Smith": 6881,
+      "Matthew Arndt": 203,
+      "Elizabeth Anne Fitzgibbon": 262,
+      "Mike Thurow": 173,
+      "Write-in": 15
+     },
+     "reporting": 23,
+     "total": 23
+    }
+   },
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-sec-state",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sec State",
+   "district": null,
+   "title": "Sec State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "schroeder",
+     "name": "Jay Schroeder",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 23328
+    },
+    {
+     "id": "zamarripa",
+     "name": "JoCasta Zamarripa",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12117
+    },
+    {
+     "id": "karas",
+     "name": "Pete Karas",
+     "party": "WGR",
+     "party_code": "O",
+     "votes": 1151
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 18
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Jay Schroeder": 23328,
+      "JoCasta Zamarripa": 12117,
+      "Pete Karas": 1151,
+      "Write-in": 18
+     },
+     "reporting": 55,
+     "total": 55
+    }
+   },
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-sheriff-dodge-co",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sheriff - Dodge Co",
+   "district": null,
+   "title": "Sheriff - Dodge Co",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "schmidt",
+     "name": "Dale J. Schmidt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28826
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 941
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Dale J. Schmidt": 28826,
+      "Write-in": 941
+     },
+     "reporting": 55,
+     "total": 55
+    }
+   },
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-state-q1",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "State Q1",
+   "district": null,
+   "title": "State Q1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 22657
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 12948
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Yes": 22657,
+      "No": 12948
+     },
+     "reporting": 55,
+     "total": 55
+    }
+   },
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-state-q2",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "State Q2",
+   "district": null,
+   "title": "State Q2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 21867
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 13827
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Yes": 21867,
+      "No": 13827
+     },
+     "reporting": 55,
+     "total": 55
+    }
+   },
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-state-q3",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "State Q3",
+   "district": null,
+   "title": "State Q3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 23986
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 11364
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Yes": 23986,
+      "No": 11364
+     },
+     "reporting": 55,
+     "total": 55
+    }
+   },
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-state-sen-dist-13",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "State Sen - Dist 13",
+   "district": null,
+   "title": "State Sen - Dist 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jagler",
+     "name": "John Jagler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19107
+    },
+    {
+     "id": "ripley",
+     "name": "Sasha Ripley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11456
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 17
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "John Jagler": 19107,
+      "Sasha Ripley": 11456,
+      "Write-in": 17
+     },
+     "reporting": 43,
+     "total": 43
+    }
+   },
+   "precincts": {
+    "reporting": 43,
+    "total": 43,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-state-sen-dist-33",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "State Sen - Dist 33",
+   "district": null,
+   "title": "State Sen - Dist 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kapenga",
+     "name": "Chris Kapenga",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2818
+    },
+    {
+     "id": "someren",
+     "name": "Mike Van Someren",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 852
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "Chris Kapenga": 2818,
+      "Mike Van Someren": 852,
+      "Write-in": 1
+     },
+     "reporting": 5,
+     "total": 5
+    }
+   },
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-dodge-state-treas",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "State Treas.",
+   "district": null,
+   "title": "State Treas.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leiber",
+     "name": "John S. Leiber",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 24194
+    },
+    {
+     "id": "xiong",
+     "name": "Yee Leng Xiong",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12213
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 21
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Dodge": {
+     "votes": {
+      "John S. Leiber": 24194,
+      "Yee Leng Xiong": 12213,
+      "Write-in": 21
+     },
+     "reporting": 55,
+     "total": 55
+    }
+   },
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-douglas-clerk-of-circuit-court",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Clerk of Circuit Court",
+   "district": null,
+   "title": "Clerk of Circuit Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wick",
+     "name": "Michele Wick",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15008
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 305
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Douglas": {
+     "votes": {
+      "Michele Wick": 15008,
+      "Write-in": 305
+     },
+     "reporting": 26,
+     "total": 26
+    }
+   },
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-douglas-sheriff",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sheriff",
+   "district": null,
+   "title": "Sheriff",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "izzard",
+     "name": "Matthew T. Izzard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15749
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 325
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Douglas": {
+     "votes": {
+      "Matthew T. Izzard": 15749,
+      "Write-in": 325
+     },
+     "reporting": 26,
+     "total": 26
+    }
+   },
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-eau-claire-city-ec-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "City EC Referendum",
+   "district": null,
+   "title": "City EC Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 16154
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 13031
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Eau Claire": {
+     "votes": {
+      "Yes": 16154,
+      "No": 13031
+     },
+     "reporting": 77,
+     "total": 77
+    }
+   },
+   "precincts": {
+    "reporting": 77,
+    "total": 77,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-eau-claire-clerk-of-courts-eau-claire-county",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Clerk of Courts Eau Claire County",
+   "district": null,
+   "title": "Clerk of Courts Eau Claire County",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "norberg",
+     "name": "Cherie Norberg",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 37903
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 910
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Eau Claire": {
+     "votes": {
+      "Cherie Norberg": 37903,
+      "Write-in": 910
+     },
+     "reporting": 96,
+     "total": 96
+    }
+   },
+   "precincts": {
+    "reporting": 96,
+    "total": 96,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-eau-claire-sheriff-eau-claire-county",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sheriff Eau Claire County",
+   "district": null,
+   "title": "Sheriff Eau Claire County",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "riewestahl",
+     "name": "Dave Riewestahl",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 38727
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 1112
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Eau Claire": {
+     "votes": {
+      "Dave Riewestahl": 38727,
+      "Write-in": 1112
+     },
+     "reporting": 96,
+     "total": 96
+    }
+   },
+   "precincts": {
+    "reporting": 96,
+    "total": 96,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-atty-general",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Atty General",
+   "district": null,
+   "title": "Atty General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "toney",
+     "name": "Eric Toney",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 20237
+    },
+    {
+     "id": "kaul",
+     "name": "Josh Kaul",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 17588
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 25
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Eric Toney": 20237,
+      "Josh Kaul": 17588,
+      "Write-in": 25
+     },
+     "reporting": 32,
+     "total": 32
+    }
+   },
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-c-jeff-judge",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C. Jeff Judge",
+   "district": null,
+   "title": "C. Jeff Judge",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "white",
+     "name": "Brandon White",
+     "party": "",
+     "party_code": "O",
+     "votes": 2241
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 36
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Brandon White": 2241,
+      "Write-in": 36
+     },
+     "reporting": 1,
+     "total": 1
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-clerk-of-court",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Clerk of Court",
+   "district": null,
+   "title": "Clerk of Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "incha",
+     "name": "Cindy R. Hamre Incha",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 26836
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 723
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Cindy R. Hamre Incha": 26836,
+      "Write-in": 723
+     },
+     "reporting": 32,
+     "total": 32
+    }
+   },
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-fort-atkinson-sd-ref",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Fort Atkinson SD Ref",
+   "district": null,
+   "title": "Fort Atkinson SD Ref",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 4596
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 3397
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Yes": 3397,
+      "No": 4596
+     },
+     "reporting": 9,
+     "total": 9
+    }
+   },
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-lake-mills-sd-ref",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Lake Mills SD Ref",
+   "district": null,
+   "title": "Lake Mills SD Ref",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 2655
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 2623
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Yes": 2655,
+      "No": 2623
+     },
+     "reporting": 7,
+     "total": 7
+    }
+   },
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-ocon-school-ref",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Ocon School Ref",
+   "district": null,
+   "title": "Ocon School Ref",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 1390
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 929
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Yes": 929,
+      "No": 1390
+     },
+     "reporting": 4,
+     "total": 4
+    }
+   },
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-palmyra-eag-school-ref",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Palmyra Eag School Ref",
+   "district": null,
+   "title": "Palmyra Eag School Ref",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 926
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 869
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Yes": 869,
+      "No": 926
+     },
+     "reporting": 4,
+     "total": 4
+    }
+   },
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-sec-of-state",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sec of State",
+   "district": null,
+   "title": "Sec of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "schroeder",
+     "name": "Jay Schroeder",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 20359
+    },
+    {
+     "id": "zamarripa",
+     "name": "JoCasta Zamarripa",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15981
+    },
+    {
+     "id": "karas",
+     "name": "Pete Karas",
+     "party": "WGR",
+     "party_code": "O",
+     "votes": 1332
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Jay Schroeder": 20359,
+      "JoCasta Zamarripa": 15981,
+      "Pete Karas": 1332,
+      "Write-in": 23
+     },
+     "reporting": 32,
+     "total": 32
+    }
+   },
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-sheriff",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sheriff",
+   "district": null,
+   "title": "Sheriff",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maze",
+     "name": "Travis Maze",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 27705
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 802
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Travis Maze": 27705,
+      "Write-in": 802
+     },
+     "reporting": 32,
+     "total": 32
+    }
+   },
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-st-treasurer",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "St Treasurer",
+   "district": null,
+   "title": "St Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leiber",
+     "name": "John S. Leiber",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21276
+    },
+    {
+     "id": "xiong",
+     "name": "Yee Leng Xiong",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 16194
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 29
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "John S. Leiber": 21276,
+      "Yee Leng Xiong": 16194,
+      "Write-in": 29
+     },
+     "reporting": 32,
+     "total": 32
+    }
+   },
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-state-ref-question-1",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "State Ref - Question #1",
+   "district": null,
+   "title": "State Ref - Question #1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 20711
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 16250
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Yes": 20711,
+      "No": 16250
+     },
+     "reporting": 32,
+     "total": 32
+    }
+   },
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-state-ref-question-2",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "State Ref - Question #2",
+   "district": null,
+   "title": "State Ref - Question #2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 20103
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 17001
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Yes": 20103,
+      "No": 17001
+     },
+     "reporting": 32,
+     "total": 32
+    }
+   },
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-state-ref-question-3",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "State Ref - Question #3",
+   "district": null,
+   "title": "State Ref - Question #3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 22633
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 14134
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Yes": 22633,
+      "No": 14134
+     },
+     "reporting": 32,
+     "total": 32
+    }
+   },
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-jefferson-whitewater-school-ref",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Whitewater School Ref",
+   "district": null,
+   "title": "Whitewater School Ref",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 635
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 593
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Jefferson": {
+     "votes": {
+      "Yes": 635,
+      "No": 593
+     },
+     "reporting": 4,
+     "total": 4
+    }
+   },
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-kenosha-clerk-of-circuit-court",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Clerk of Circuit Court",
+   "district": null,
+   "title": "Clerk of Circuit Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sheffler",
+     "name": "Brian M. Sheffler",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 35747
+    },
+    {
+     "id": "rodriguez",
+     "name": "Zach Rodriguez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 30257
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 64
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Kenosha": {
+     "votes": {
+      "Brian M. Sheffler": 35747,
+      "Zach Rodriguez": 30257,
+      "Write-in": 64
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-kenosha-sheriff",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sheriff",
+   "district": null,
+   "title": "Sheriff",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zoerner",
+     "name": "David W. Zoerner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 43538
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 5234
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Kenosha": {
+     "votes": {
+      "David W. Zoerner": 43538,
+      "Write-in": 5234
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-kenosha-trevor-wilmot-consolidated-grade-school-district-referendum-trevor-wilmot-consolidated",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Trevor-Wilmot Consolidated Grade School District Referendum Trevor-Wilmot Consolidated",
+   "district": null,
+   "title": "Trevor-Wilmot Consolidated Grade School District Referendum Trevor-Wilmot Consolidated",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 967
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 751
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Kenosha": {
+     "votes": {
+      "No": 967,
+      "Yes": 751
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-kenosha-twin-lakes-school-district-referendum-twin-lakes-wards-3-8",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Twin Lakes School District Referendum Twin Lakes Wards 3-8",
+   "district": null,
+   "title": "Twin Lakes School District Referendum Twin Lakes Wards 3-8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 721
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 676
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Kenosha": {
+     "votes": {
+      "No": 721,
+      "Yes": 676
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-stcroix-c-hudson-exceed-levy-limit",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "C. Hudson Exceed Levy Limit",
+   "district": null,
+   "title": "C. Hudson Exceed Levy Limit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 3983
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 3165
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "StCroix": {
+     "votes": {
+      "Yes": 3983,
+      "No": 3165
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-stcroix-clerk-of-circuit-court",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Clerk of Circuit Court",
+   "district": null,
+   "title": "Clerk of Circuit Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kittel",
+     "name": "Kathy A. Kittel",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 36641
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 843
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "StCroix": {
+     "votes": {
+      "Kathy A. Kittel": 36641,
+      "Write-in": 843
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-stcroix-glenwood-city-sd-exceed-revenue-limit",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Glenwood City SD Exceed Revenue Limit",
+   "district": null,
+   "title": "Glenwood City SD Exceed Revenue Limit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 762
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 619
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "StCroix": {
+     "votes": {
+      "Yes": 619,
+      "No": 762
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-stcroix-sheriff",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sheriff",
+   "district": null,
+   "title": "Sheriff",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "knudson",
+     "name": "Scott Knudson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 37537
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 955
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "StCroix": {
+     "votes": {
+      "Scott Knudson": 37537,
+      "Write-in": 955
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-stcroix-somerset-sd-exceed-revenue-limit",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Somerset SD Exceed Revenue Limit",
+   "district": null,
+   "title": "Somerset SD Exceed Revenue Limit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 2613
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 1862
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "StCroix": {
+     "votes": {
+      "Yes": 1862,
+      "No": 2613
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-stcroix-t-hudson-tax-levy-for-emergency-services",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "T. Hudson Tax Levy for Emergency Services",
+   "district": null,
+   "title": "T. Hudson Tax Levy for Emergency Services",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 2473
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 2148
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "StCroix": {
+     "votes": {
+      "Yes": 2473,
+      "No": 2148
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-taylor-athens-school-referendum",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Athens School Referendum",
+   "district": null,
+   "title": "Athens School Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Athens School Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "no",
+     "name": "Athens School No",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Taylor": {
+     "votes": {
+      "Athens School Yes": 2,
+      "Athens School No": 0
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-taylor-clerk-of-circuit-court",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Clerk Of Circuit Court",
+   "district": null,
+   "title": "Clerk Of Circuit Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scheithauer",
+     "name": "Jill Scheithauer",
+     "party": "",
+     "party_code": "O",
+     "votes": 7406
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Taylor": {
+     "votes": {
+      "Jill Scheithauer": 7406,
+      "Write-in": 0
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-taylor-d23-state-senator",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "D23 State Senator",
+   "district": null,
+   "title": "D23 State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "quinn",
+     "name": "Romaine Robert Quinn",
+     "party": "",
+     "party_code": "O",
+     "votes": 5814
+    },
+    {
+     "id": "foster",
+     "name": "Jeff Foster",
+     "party": "",
+     "party_code": "O",
+     "votes": 2393
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Taylor": {
+     "votes": {
+      "Romaine Robert Quinn": 5814,
+      "Jeff Foster": 2393,
+      "Write-in": 0
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-taylor-d68-assembly-representative",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "D68 Assembly Representative",
+   "district": null,
+   "title": "D68 Assembly Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "summerfield",
+     "name": "Rob Summerfield",
+     "party": "",
+     "party_code": "O",
+     "votes": 2966
+    },
+    {
+     "id": "king",
+     "name": "Elisha King",
+     "party": "",
+     "party_code": "O",
+     "votes": 943
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Taylor": {
+     "votes": {
+      "Rob Summerfield": 2966,
+      "Elisha King": 943,
+      "Write-in": 0
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-taylor-d69-assembly-representative",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "D69 Assembly Representative",
+   "district": null,
+   "title": "D69 Assembly Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hurd",
+     "name": "Karen Hurd",
+     "party": "",
+     "party_code": "O",
+     "votes": 2980
+    },
+    {
+     "id": "halls",
+     "name": "Roger Halls",
+     "party": "",
+     "party_code": "O",
+     "votes": 1157
+    },
+    {
+     "id": "kelley",
+     "name": "Josh Kelley",
+     "party": "",
+     "party_code": "O",
+     "votes": 196
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Taylor": {
+     "votes": {
+      "Karen Hurd": 2980,
+      "Roger Halls": 1157,
+      "Josh Kelley": 196,
+      "Write-in": 0
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-taylor-d7-representative-in-congress",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "D7 Representative In Congress",
+   "district": null,
+   "title": "D7 Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alfonso",
+     "name": "Michael Alfonso",
+     "party": "",
+     "party_code": "O",
+     "votes": 5787
+    },
+    {
+     "id": "clark",
+     "name": "Fred Clark",
+     "party": "",
+     "party_code": "O",
+     "votes": 2477
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Taylor": {
+     "votes": {
+      "Michael Alfonso": 5787,
+      "Fred Clark": 2477,
+      "Write-in": 0
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-taylor-freedom-to-gather",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Freedom To Gather",
+   "district": null,
+   "title": "Freedom To Gather",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Q2 Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 5361
+    },
+    {
+     "id": "no",
+     "name": "Q2 No",
+     "party": "",
+     "party_code": "O",
+     "votes": 2695
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Taylor": {
+     "votes": {
+      "Q2 Yes": 5361,
+      "Q2 No": 2695
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-taylor-governmental-entity-discrimination",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Governmental Entity Discrimination",
+   "district": null,
+   "title": "Governmental Entity Discrimination",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Q3 Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 5741
+    },
+    {
+     "id": "no",
+     "name": "Q3 No",
+     "party": "",
+     "party_code": "O",
+     "votes": 2248
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Taylor": {
+     "votes": {
+      "Q3 Yes": 5741,
+      "Q3 No": 2248
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-taylor-partial-veto",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Partial Veto",
+   "district": null,
+   "title": "Partial Veto",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Q1 Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 5592
+    },
+    {
+     "id": "no",
+     "name": "Q1 No",
+     "party": "",
+     "party_code": "O",
+     "votes": 2491
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Taylor": {
+     "votes": {
+      "Q1 Yes": 5592,
+      "Q1 No": 2491
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-taylor-sheriff",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sheriff",
+   "district": null,
+   "title": "Sheriff",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dassow",
+     "name": "Corey Dassow",
+     "party": "",
+     "party_code": "O",
+     "votes": 7595
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Taylor": {
+     "votes": {
+      "Corey Dassow": 7595,
+      "Write-in": 0
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-taylor-thorp-school-referendum",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Thorp School Referendum",
+   "district": null,
+   "title": "Thorp School Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Thorp School Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 33
+    },
+    {
+     "id": "no",
+     "name": "Thorp School No",
+     "party": "",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Taylor": {
+     "votes": {
+      "Thorp School Yes": 33,
+      "Thorp School No": 15
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-walworth-clerk-of-circuit-court",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Clerk of Circuit Court",
+   "district": null,
+   "title": "Clerk of Circuit Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jacobs",
+     "name": "Michele Jacobs",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 34717
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 1192
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Michele Jacobs": 34717,
+      "Write-in": 1192
+     },
+     "reporting": 38,
+     "total": 38
+    }
+   },
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-walworth-delavan-darien-school-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Delavan-Darien School Referendum",
+   "district": null,
+   "title": "Delavan-Darien School Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 3342
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 3206
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Yes": 3206,
+      "No": 3342
+     },
+     "reporting": 8,
+     "total": 8
+    }
+   },
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-walworth-geneva-jt4-woods-school-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Geneva Jt4 - Woods School Referendum",
+   "district": null,
+   "title": "Geneva Jt4 - Woods School Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 298
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 297
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Yes": 297,
+      "No": 298
+     },
+     "reporting": 3,
+     "total": 3
+    }
+   },
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-walworth-palmyra-eagle-school-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Palmyra-Eagle School Referendum",
+   "district": null,
+   "title": "Palmyra-Eagle School Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 71
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 30
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Yes": 30,
+      "No": 71
+     },
+     "reporting": 1,
+     "total": 1
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-walworth-sheriff",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sheriff",
+   "district": null,
+   "title": "Sheriff",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hausner",
+     "name": "Tom Hausner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 31019
+    },
+    {
+     "id": "keller",
+     "name": "Csaba Keller",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 10135
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 375
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Tom Hausner": 31019,
+      "Csaba Keller": 10135,
+      "Write-in": 375
+     },
+     "reporting": 38,
+     "total": 38
+    }
+   },
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-walworth-state-referendum-1",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "State Referendum 1",
+   "district": null,
+   "title": "State Referendum 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 26198
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 18438
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Yes": 26198,
+      "No": 18438
+     },
+     "reporting": 38,
+     "total": 38
+    }
+   },
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-walworth-state-referendum-2",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "State Referendum 2",
+   "district": null,
+   "title": "State Referendum 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 25017
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 19862
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Yes": 25017,
+      "No": 19862
+     },
+     "reporting": 38,
+     "total": 38
+    }
+   },
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-walworth-state-referendum-3",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "State Referendum 3",
+   "district": null,
+   "title": "State Referendum 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 28982
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 15672
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Yes": 28982,
+      "No": 15672
+     },
+     "reporting": 38,
+     "total": 38
+    }
+   },
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-walworth-whitewater-school-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Whitewater School Referendum",
+   "district": null,
+   "title": "Whitewater School Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 2842
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 2578
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Yes": 2578,
+      "No": 2842
+     },
+     "reporting": 6,
+     "total": 6
+    }
+   },
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-walworth-williams-bay-school-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Williams Bay School Referendum",
+   "district": null,
+   "title": "Williams Bay School Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 1273
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 964
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Walworth": {
+     "votes": {
+      "Yes": 1273,
+      "No": 964
+     },
+     "reporting": 5,
+     "total": 5
+    }
+   },
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-waukesha-city-of-muskego-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "City of Muskego Referendum",
+   "district": null,
+   "title": "City of Muskego Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 9023
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 4984
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Yes": 4984,
+      "No": 9023
+     },
+     "reporting": 10,
+     "total": 10
+    }
+   },
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-waukesha-city-of-new-berlin-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "City of New Berlin Referendum",
+   "district": null,
+   "title": "City of New Berlin Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 11908
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 9285
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Yes": 9285,
+      "No": 11908
+     },
+     "reporting": 21,
+     "total": 21
+    }
+   },
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-waukesha-clerk-of-circuit-court",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Clerk of Circuit Court",
+   "district": null,
+   "title": "Clerk of Circuit Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paz",
+     "name": "Monica Paz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 154292
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 4424
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Monica Paz": 154292,
+      "Write-in": 4424
+     },
+     "reporting": 184,
+     "total": 184
+    }
+   },
+   "precincts": {
+    "reporting": 184,
+    "total": 184,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-waukesha-elmbrook-school-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Elmbrook School Referendum",
+   "district": null,
+   "title": "Elmbrook School Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 16478
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 10444
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Yes": 16478,
+      "No": 10444
+     },
+     "reporting": 27,
+     "total": 27
+    }
+   },
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-waukesha-oconomowoc-area-school-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Oconomowoc Area School Referendum",
+   "district": null,
+   "title": "Oconomowoc Area School Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 9387
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 7606
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Yes": 7606,
+      "No": 9387
+     },
+     "reporting": 12,
+     "total": 12
+    }
+   },
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-waukesha-palmyra-eagle-school-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Palmyra-Eagle School Referendum",
+   "district": null,
+   "title": "Palmyra-Eagle School Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 1392
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 628
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Yes": 628,
+      "No": 1392
+     },
+     "reporting": 3,
+     "total": 3
+    }
+   },
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-waukesha-sheriff",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sheriff",
+   "district": null,
+   "title": "Sheriff",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ollinger",
+     "name": "Nick Ollinger",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 159200
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "",
+     "party_code": "O",
+     "votes": 5100
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Nick Ollinger": 159200,
+      "Write-in": 5100
+     },
+     "reporting": 184,
+     "total": 184
+    }
+   },
+   "precincts": {
+    "reporting": 184,
+    "total": 184,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-waukesha-swallow-school-referendum",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Swallow School Referendum",
+   "district": null,
+   "title": "Swallow School Referendum",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 970
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 904
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Waukesha": {
+     "votes": {
+      "Yes": 970,
+      "No": 904
+     },
+     "reporting": 4,
+     "total": 4
+    }
+   },
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-marshfield-ward-10",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Marshfield Ward 10",
+   "district": null,
+   "title": "C/Marshfield Ward 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 345
+    },
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 309
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 309,
+      "Crowley / Godlewski": 345
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-marshfield-ward-2",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Marshfield Ward 2",
+   "district": null,
+   "title": "C/Marshfield Ward 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 264
+    },
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 224
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 224,
+      "Crowley / Godlewski": 264
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-marshfield-ward-6",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Marshfield Ward 6",
+   "district": null,
+   "title": "C/Marshfield Ward 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 287
+    },
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 274
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 274,
+      "Crowley / Godlewski": 287
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-marshfield-wards-1-amp-11",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Marshfield Wards 1&amp;11",
+   "district": null,
+   "title": "C/Marshfield Wards 1&amp;11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 259
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 233
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 259,
+      "Crowley / Godlewski": 233
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-marshfield-wards-3-amp-13",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Marshfield Wards 3&amp;13",
+   "district": null,
+   "title": "C/Marshfield Wards 3&amp;13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 515
+    },
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 446
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 446,
+      "Crowley / Godlewski": 515
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-marshfield-wards-4-amp-14",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Marshfield Wards 4&amp;14",
+   "district": null,
+   "title": "C/Marshfield Wards 4&amp;14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 505
+    },
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 409
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 409,
+      "Crowley / Godlewski": 505
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-marshfield-wards-5-amp-15",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Marshfield Wards 5&amp;15",
+   "district": null,
+   "title": "C/Marshfield Wards 5&amp;15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 341
+    },
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 307
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 307,
+      "Crowley / Godlewski": 341
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-marshfield-wards-7-amp-17",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Marshfield Wards 7 &amp; 17",
+   "district": null,
+   "title": "C/Marshfield Wards 7 &amp; 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 544
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 488
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 544,
+      "Crowley / Godlewski": 488
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-marshfield-wards-8-18-21-22",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Marshfield Wards 8,18,21,22",
+   "district": null,
+   "title": "C/Marshfield Wards 8,18,21,22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 451
+    },
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 364
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 364,
+      "Crowley / Godlewski": 451
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-marshfield-wards-9-amp-20",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Marshfield Wards 9 &amp; 20",
+   "district": null,
+   "title": "C/Marshfield Wards 9 &amp; 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 301
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 294
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 301,
+      "Crowley / Godlewski": 294
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-nekoosa-wards-1-4",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Nekoosa Wards 1-4",
+   "district": null,
+   "title": "C/Nekoosa Wards 1-4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 511
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 373
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 511,
+      "Crowley / Godlewski": 373
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-pittsville",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Pittsville",
+   "district": null,
+   "title": "C/Pittsville",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 226
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 117
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 226,
+      "Crowley / Godlewski": 117
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-wisc-rapids-w1-4",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Wisc Rapids W1-4",
+   "district": null,
+   "title": "C/Wisc Rapids W1-4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 380
+    },
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 360
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 360,
+      "Crowley / Godlewski": 380
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-wisc-rapids-w11-13",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Wisc Rapids W11-13",
+   "district": null,
+   "title": "C/Wisc Rapids W11-13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 464
+    },
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 401
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 401,
+      "Crowley / Godlewski": 464
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-wisc-rapids-w14-16",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Wisc Rapids W14-16",
+   "district": null,
+   "title": "C/Wisc Rapids W14-16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 371
+    },
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 340
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 340,
+      "Crowley / Godlewski": 371
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-wisc-rapids-w17-20",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Wisc Rapids W17-20",
+   "district": null,
+   "title": "C/Wisc Rapids W17-20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 480
+    },
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 413
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 413,
+      "Crowley / Godlewski": 480
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-wisc-rapids-w21-24",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Wisc Rapids W21-24",
+   "district": null,
+   "title": "C/Wisc Rapids W21-24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 508
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 454
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 508,
+      "Crowley / Godlewski": 454
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-wisc-rapids-w25-27",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Wisc Rapids W25-27",
+   "district": null,
+   "title": "C/Wisc Rapids W25-27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 515
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 450
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 515,
+      "Crowley / Godlewski": 450
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-wisc-rapids-w5-7",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Wisc Rapids W5-7",
+   "district": null,
+   "title": "C/Wisc Rapids W5-7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 365
+    },
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 327
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 327,
+      "Crowley / Godlewski": 365
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-c-wisc-rapids-w8-10",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "C/Wisc Rapids W8-10",
+   "district": null,
+   "title": "C/Wisc Rapids W8-10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 474
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 462
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 474,
+      "Crowley / Godlewski": 462
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-clerk-of-circuit-court",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Clerk of Circuit Court",
+   "district": null,
+   "title": "Clerk of Circuit Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stimac",
+     "name": "Kimberly A. Stimac",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 25654
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Kimberly A. Stimac": 25654
+     },
+     "reporting": 50,
+     "total": 50
+    }
+   },
+   "precincts": {
+    "reporting": 50,
+    "total": 50,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-coroner",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Coroner",
+   "district": null,
+   "title": "Coroner",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "patton",
+     "name": "David A. Patton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23407
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "David A. Patton": 23407
+     },
+     "reporting": 50,
+     "total": 50
+    }
+   },
+   "precincts": {
+    "reporting": 50,
+    "total": 50,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-grand-rapids-exceed-levy-limit",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "Grand Rapids Exceed Levy Limit",
+   "district": null,
+   "title": "Grand Rapids Exceed Levy Limit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 2654
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 1350
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Yes": 1350,
+      "No": 2654
+     },
+     "reporting": 1,
+     "total": 1
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-marshfield-area-municipal-court-judge-marshfield-area-municipal-court-judge",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Marshfield Area Municipal Court Judge Marshfield Area Municipal Court Judge",
+   "district": null,
+   "title": "Marshfield Area Municipal Court Judge Marshfield Area Municipal Court Judge",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james",
+     "name": "Krista J. James",
+     "party": "",
+     "party_code": "O",
+     "votes": 3556
+    },
+    {
+     "id": "feddick-goodwin",
+     "name": "Alanna Feddick-Goodwin",
+     "party": "",
+     "party_code": "O",
+     "votes": 2604
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Krista J. James": 3556,
+      "Alanna Feddick-Goodwin": 2604
+     },
+     "reporting": 10,
+     "total": 10
+    }
+   },
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-sheriff",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Sheriff",
+   "district": null,
+   "title": "Sheriff",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "becker",
+     "name": "Shawn Becker",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 26189
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Shawn Becker": 26189
+     },
+     "reporting": 50,
+     "total": 50
+    }
+   },
+   "precincts": {
+    "reporting": 50,
+    "total": 50,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-t-auburndale-caucus-paper",
+   "kind": "measure",
+   "level": "county",
+   "state": "wi",
+   "office": "T Auburndale Caucus Paper",
+   "district": null,
+   "title": "T Auburndale Caucus Paper",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "",
+     "party_code": "O",
+     "votes": 269
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "",
+     "party_code": "O",
+     "votes": 85
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Yes": 269,
+      "No": 85
+     },
+     "reporting": 1,
+     "total": 1
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-t-grand-rapids-wards-1-11",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "T/Grand Rapids Wards 1-11",
+   "district": null,
+   "title": "T/Grand Rapids Wards 1-11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2393
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1729
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 2393,
+      "Crowley / Godlewski": 1729
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-arpin-wards-1-2",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Arpin Wards 1-2",
+   "district": null,
+   "title": "Town of Arpin Wards 1-2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 300
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 138
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 300,
+      "Crowley / Godlewski": 138
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-auburndale",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Auburndale",
+   "district": null,
+   "title": "Town of Auburndale",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 285
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 87
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 285,
+      "Crowley / Godlewski": 87
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-cameron",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Cameron",
+   "district": null,
+   "title": "Town of Cameron",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 156
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 89
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 156,
+      "Crowley / Godlewski": 89
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-cary",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Cary",
+   "district": null,
+   "title": "Town of Cary",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 141
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 66
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 141,
+      "Crowley / Godlewski": 66
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-cranmoor",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Cranmoor",
+   "district": null,
+   "title": "Town of Cranmoor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 45
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 27
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 45,
+      "Crowley / Godlewski": 27
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-dexter",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Dexter",
+   "district": null,
+   "title": "Town of Dexter",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 112
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 57
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 112,
+      "Crowley / Godlewski": 57
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-hansen",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Hansen",
+   "district": null,
+   "title": "Town of Hansen",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 276
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 109
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 276,
+      "Crowley / Godlewski": 109
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-hiles",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Hiles",
+   "district": null,
+   "title": "Town of Hiles",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 61
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 26
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 61,
+      "Crowley / Godlewski": 26
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-lincoln-wards-1-amp-2",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Lincoln Wards 1 &amp; 2",
+   "district": null,
+   "title": "Town of Lincoln Wards 1 &amp; 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 498
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 278
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 498,
+      "Crowley / Godlewski": 278
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-marshfield",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Marshfield",
+   "district": null,
+   "title": "Town of Marshfield",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 263
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 137
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 263,
+      "Crowley / Godlewski": 137
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-milladore",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Milladore",
+   "district": null,
+   "title": "Town of Milladore",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 216
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 110
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 216,
+      "Crowley / Godlewski": 110
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-port-edwards-wards-1-4",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Port Edwards Wards 1-4",
+   "district": null,
+   "title": "Town of Port Edwards Wards 1-4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 398
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 256
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 398,
+      "Crowley / Godlewski": 256
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-remington",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Remington",
+   "district": null,
+   "title": "Town of Remington",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 69
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 36
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 69,
+      "Crowley / Godlewski": 36
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-richfield-wards-1-3",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Richfield Wards 1-3",
+   "district": null,
+   "title": "Town of Richfield Wards 1-3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 511
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 229
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 511,
+      "Crowley / Godlewski": 229
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-rock",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Rock",
+   "district": null,
+   "title": "Town of Rock",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 288
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 129
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 288,
+      "Crowley / Godlewski": 129
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-rudolph-wards-1-amp-2",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Rudolph Wards 1 &amp; 2",
+   "district": null,
+   "title": "Town of Rudolph Wards 1 &amp; 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 348
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 189
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 348,
+      "Crowley / Godlewski": 189
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-saratoga-wards-1-8",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Saratoga Wards 1-8",
+   "district": null,
+   "title": "Town of Saratoga Wards 1-8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1650
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 857
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 1650,
+      "Crowley / Godlewski": 857
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-seneca-wards-1-4",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Seneca Wards 1-4",
+   "district": null,
+   "title": "Town of Seneca Wards 1-4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 323
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 213
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 323,
+      "Crowley / Godlewski": 213
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-sherry",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Sherry",
+   "district": null,
+   "title": "Town of Sherry",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 247
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 109
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 247,
+      "Crowley / Godlewski": 109
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-sigel-wards-1-2",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Sigel Wards 1-2",
+   "district": null,
+   "title": "Town of Sigel Wards 1-2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 342
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 190
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 342,
+      "Crowley / Godlewski": 190
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-town-of-wood",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Town of Wood",
+   "district": null,
+   "title": "Town of Wood",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 253
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 122
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 253,
+      "Crowley / Godlewski": 122
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-village-of-arpin",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Village of Arpin",
+   "district": null,
+   "title": "Village of Arpin",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 66
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 42
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 66,
+      "Crowley / Godlewski": 42
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-village-of-auburndale",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Village of Auburndale",
+   "district": null,
+   "title": "Village of Auburndale",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 197
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 100
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 197,
+      "Crowley / Godlewski": 100
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-village-of-biron",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Village of Biron",
+   "district": null,
+   "title": "Village of Biron",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 217
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 180
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 217,
+      "Crowley / Godlewski": 180
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-village-of-hewitt",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Village of Hewitt",
+   "district": null,
+   "title": "Village of Hewitt",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 243
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 165
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 243,
+      "Crowley / Godlewski": 165
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-village-of-milladore-ward-1",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Village of Milladore Ward 1",
+   "district": null,
+   "title": "Village of Milladore Ward 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 77
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 51
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 77,
+      "Crowley / Godlewski": 51
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-village-of-port-edwards-w1-3",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Village of Port Edwards W1-3",
+   "district": null,
+   "title": "Village of Port Edwards W1-3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 459
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 365
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 459,
+      "Crowley / Godlewski": 365
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-village-of-rudolph",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Village of Rudolph",
+   "district": null,
+   "title": "Village of Rudolph",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 125
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 83
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 125,
+      "Crowley / Godlewski": 83
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  },
+  {
+   "id": "wi-wood-village-of-vesper",
+   "kind": "candidate",
+   "level": "county",
+   "state": "wi",
+   "office": "Village of Vesper",
+   "district": null,
+   "title": "Village of Vesper",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany",
+     "name": "Tiffany / Varnam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 172
+    },
+    {
+     "id": "crowley",
+     "name": "Crowley / Godlewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 72
+    }
+   ],
+   "counties_in": 1,
+   "by_county": {
+    "Wood": {
+     "votes": {
+      "Tiffany / Varnam": 172,
+      "Crowley / Godlewski": 72
+     },
+     "reporting": null,
+     "total": null
+    }
+   },
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "precincts"
+   },
+   "called": null,
+   "partial": true
+  }
+ ]
+}
