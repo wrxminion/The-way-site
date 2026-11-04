@@ -50,6 +50,24 @@ def resolve_url(src, ua):
     return "%s%s/reports/%s" % (base, ver, src.get("report", "detail.xml"))
 
 
+def fetch_many(urls, ua):
+    """Fetch several small urls and return one JSON list of {"url", "body"}; a url that fails (404/500) is skipped."""
+    parts = []
+    for u in urls:
+        req = urllib.request.Request(u, headers={"User-Agent": ua or UA})
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                parts.append({"url": u, "body": r.read().decode("utf-8", "replace")})
+        except urllib.error.HTTPError as e:
+            if e.code >= 500 or e.code == 404:
+                continue
+            raise
+        time.sleep(0.15)
+    if not parts:
+        raise ValueError("no url answered")
+    return json.dumps(parts).encode("utf-8")
+
+
 def fetch(url, state, ua=None):
     """Return (bytes, source_last_modified or None, changed). Uses ETag / Last-Modified when offered."""
     req = urllib.request.Request(url, headers={"User-Agent": ua or UA, "Accept-Encoding": "gzip"})
@@ -260,7 +278,229 @@ def a_scytl_json(body, src):
     return out
 
 
-ADAPTERS = {"csv": a_csv, "clarity-xml": a_clarity_xml, "scytl-json": a_scytl_json}
+def a_ca_sos_json(body, src):
+    """California Secretary of State api.sos.ca.gov/returns/<race> JSON. The source lists many race urls ("urls");
+    the collector fetches each and hands this adapter a JSON list of {"url", "body"}. Nothing is called here:
+    this feed has no winner flag, so California contests are never marked called."""
+    out = []
+    for part in json.loads(body.decode("utf-8")):
+        try:
+            d = json.loads(part["body"])
+        except ValueError:
+            continue
+        url = part["url"]
+        title = str(d.get("raceTitle") or "").split(" - ")[0].strip()
+        m = re.search(r"\(([\d,]+) of ([\d,]+)\)", str(d.get("Reporting") or ""))
+        prec = {"reporting": to_int(m.group(1)) if m else 0, "total": to_int(m.group(2)) if m else 0, "unit": "precincts"}
+        base = slug("ca-" + url.split("/returns/")[-1])
+        house = bool(re.match(r"U\.S\. House", title))
+        if isinstance(d.get("candidates"), list):
+            ch = []
+            for x in d["candidates"]:
+                nm = str(x.get("Name") or "").strip()
+                if nm:
+                    ch.append({"id": slug(nm) or "option", "name": nm, "party": x.get("Party") or None,
+                               "party_code": party_code(x.get("Party")), "votes": to_int(x.get("Votes"))})
+            if ch:
+                c = {"id": base, "kind": "candidate", "level": "federal" if house else "state", "state": "ca",
+                     "office": "U.S. House" if house else title, "district": (re.search(r"District (\d+)", title) or [None, None])[1] if house else None,
+                     "title": title, "vote_for": 1, "choices": ch, "precincts": prec}
+                out.append(c)
+                if house:
+                    f = json.loads(json.dumps(c)); f["_scope"] = "house"; out.append(f)
+            continue
+        for key, items in d.items():
+            if not isinstance(items, list) or not items or "yesVotes" not in items[0]:
+                continue
+            judge = key in ("supreme-court", "court-of-appeal") or "Court" in title
+            for it in items:
+                nm = str(it.get("Name") or "").strip()
+                num = str(it.get("Number") or "").strip()
+                label = ("Proposition %s: %s" % (num.lstrip("0") or num, nm)) if num else (title + ": " + nm)
+                out.append({"id": slug(base + "-" + (num or nm)), "kind": "judicial" if judge else "measure", "level": "state",
+                            "state": "ca", "office": label, "district": None, "title": label, "text": nm, "vote_for": 1,
+                            "choices": [{"id": "yes", "name": "Yes", "party": None, "party_code": "O", "votes": to_int(it.get("yesVotes"))},
+                                        {"id": "no", "name": "No", "party": None, "party_code": "O", "votes": to_int(it.get("noVotes"))}],
+                            "precincts": prec})
+    return out
+
+
+def a_ncsbe_pct(body, src):
+    """North Carolina State Board of Elections results_pct zip: one tab-separated row per precinct, contest and choice.
+    Votes are summed over precincts by contest name and choice. The file has no winner flag, so nothing is called."""
+    if body[:2] == b"PK":
+        body = unzip_first(body, (".txt", ".csv"))
+    lines = body.decode("latin-1").split("\n")
+    hdr = lines[0].rstrip("\r").split("\t")
+    ix = {n: hdr.index(n) for n in ("Contest Type", "Contest Name", "Choice", "Choice Party", "Vote For", "Total Votes")}
+    contests, order = {}, []
+    for ln in lines[1:]:
+        if not ln.strip():
+            continue
+        r = ln.rstrip("\r").split("\t")
+        if len(r) < len(hdr) - 1:
+            continue
+        title = r[ix["Contest Name"]].strip()
+        name = r[ix["Choice"]].strip()
+        if not title or not name:
+            continue
+        c = contests.get(title)
+        if not c:
+            up = title.upper()
+            fed = up.startswith("US ")
+            c = {"id": slug("nc-" + title), "kind": "candidate", "level": "federal" if fed else ("state" if r[ix["Contest Type"]] == "S" else "county"),
+                 "state": "nc", "office": title.title() if title.isupper() else title, "district": None, "title": title.title() if title.isupper() else title,
+                 "vote_for": to_int(r[ix["Vote For"]]) or 1, "choices": {}, "precincts": {}}
+            m = re.search(r"DISTRICT (\d+)", up)
+            if fed and m:
+                c["district"] = str(int(m.group(1)))
+            contests[title] = c
+            order.append(title)
+        ch = c["choices"].get(name)
+        if not ch:
+            party = r[ix["Choice Party"]].strip() or None
+            ch = c["choices"][name] = {"id": slug(name) or "option", "name": name, "party": party, "party_code": party_code(party), "votes": 0}
+        ch["votes"] += to_int(r[ix["Total Votes"]])
+    out = []
+    for t in order:
+        c = contests[t]
+        c["choices"] = list(c["choices"].values())
+        names = {x["name"].strip().lower() for x in c["choices"]}
+        if names <= {"for", "against", "yes", "no"}:
+            c["kind"] = "measure"
+        elif c["level"] == "county":
+            c["kind"] = "local"
+        for x in c["choices"]:
+            if x["party"] in ("DEM", "REP", "LIB", "GRE", "CST", "UNA", "NLB"):
+                pass
+        for k in ("office", "title"):
+            c[k] = re.sub(r"^Us ", "U.S. ", c[k]).replace(" Id ", " ID ")
+        out.append(c)
+        if c["level"] == "federal":
+            f = json.loads(json.dumps(c))
+            f["_scope"] = "senate" if t.upper().startswith("US SENATE") else "house"
+            out.append(f)
+    return out
+
+
+def a_fl_dos_tab(body, src):
+    """Florida Division of Elections election-night tab file (one row per county, race and candidate).
+    Votes are summed over counties; precincts are summed from each county's own count. The file has no winner flag."""
+    rd = csv.DictReader(io.StringIO(body.decode("latin-1")), delimiter="\t")
+    contests, order, seen_cty = {}, [], set()
+    for r in rd:
+        g = lambda k: (r.get(k) or "").strip()
+        code, title = g("RaceCode"), g("RaceName")
+        if not code or not title:
+            continue
+        key = code + "|" + title
+        c = contests.get(key)
+        if not c:
+            fed = code in ("USS", "USR")
+            kind = "measure" if code == "AMD" else ("judicial" if code in ("SCJ", "DCJ") or re.match(r"Shall (Justice|Judge)", title) else "candidate")
+            c = {"id": slug("fl-" + code + "-" + title), "kind": kind,
+                 "level": "federal" if fed else ("local" if code not in ("GOV", "ATG", "CFO", "AGR", "SCJ", "DCJ", "AMD", "STS", "STR") and not re.match(r"(State|Governor|Attorney|Chief|Commissioner)", title) else "state"),
+                 "state": "fl", "office": title, "district": None, "title": title, "vote_for": 1, "choices": {},
+                 "precincts": {"reporting": 0, "total": 0, "unit": "precincts"}}
+            m = re.search(r"District (\d+)", title)
+            if code == "USR" and m:
+                c["district"] = m.group(1)
+            contests[key] = c
+            order.append(key)
+        ck = (key, g("CountyCode"))
+        if ck not in seen_cty:
+            seen_cty.add(ck)
+            c["precincts"]["total"] += to_int(g("Precincts"))
+            c["precincts"]["reporting"] += to_int(g("PrecinctsReporting"))
+        last, first, mid = g("CanNameLast"), g("CanNameFirst"), g("CanNameMiddle")
+        name = " ".join(x for x in (first, mid, last) if x)
+        if not name:
+            continue
+        party = g("PartyCode")
+        party = None if party in ("", "NOP") else party
+        ch = c["choices"].get(name)
+        if not ch:
+            ch = c["choices"][name] = {"id": slug(name) or "option", "name": name, "party": party, "party_code": party_code(party), "votes": 0}
+        ch["votes"] += to_int(g("CanVotes"))
+    out = []
+    for k in order:
+        c = contests[k]
+        c["choices"] = list(c["choices"].values())
+        if not c["choices"]:
+            continue
+        out.append(c)
+        if c["level"] == "federal":
+            f = json.loads(json.dumps(c))
+            f["_scope"] = "senate" if k.startswith("USS") else "house"
+            out.append(f)
+    return out
+
+
+def a_nist1622(body, src):
+    """NIST 1622 election-results XML as published by Ohio ("SummaryContest"). The first VoteCounts in each selection is
+    the statewide total (county totals follow). No winner flag is read, so nothing is called. Precincts are not given per contest."""
+    root = ET.fromstring(body)
+    loc = lambda e: e.tag.split("}")[-1]
+    def kids(e, n):
+        return [k for k in e if loc(k) == n]
+    def text_of(e):
+        for t in e.iter():
+            if loc(t) == "LanguageString" and (t.text or "").strip():
+                return t.text.strip()
+        return ""
+    parties, cands = {}, {}
+    for p in root.iter():
+        if loc(p) == "Party":
+            parties[p.get("ObjectId")] = (p.get("Abbreviation") or "").strip()
+    for c in root.iter():
+        if loc(c) == "Candidate" and c.get("ObjectId"):
+            pid = (kids(c, "PartyId") or [None])[0]
+            ab = parties.get(pid.text.strip()) if pid is not None and pid.text else ""
+            cands[c.get("ObjectId")] = (text_of(kids(c, "BallotName")[0]) if kids(c, "BallotName") else "", None if ab in ("", "None") else ab)
+    out = []
+    for ct in root.iter():
+        if loc(ct) != "Contest":
+            continue
+        title = (ct.get("Name") or "").strip()
+        measure = (ct.get("{http://www.w3.org/2001/XMLSchema-instance}type") or "").endswith("BallotMeasureContest")
+        ch = []
+        for bs in kids(ct, "BallotSelection"):
+            vc = None
+            for coll in kids(bs, "VoteCountsCollection"):
+                for v in kids(coll, "VoteCounts"):
+                    if v.get("Type") == "Total":
+                        vc = to_int(v.get("Count"))
+                        break
+                break
+            if vc is None:
+                continue
+            if measure:
+                nm = (bs.get("Selection") or "").title()
+                party = None
+            else:
+                ids = [i.text.strip() for i in kids(bs, "CandidateId") if i.text]
+                names = [cands.get(i, ("", None))[0] for i in ids if cands.get(i, ("", None))[0]]
+                nm = " / ".join(names) if names else ("Write-in" if bs.get("IsWriteIn") == "true" else "")
+                party = (cands.get(ids[0], ("", None))[1] if ids else None)
+            if not nm:
+                continue
+            ch.append({"id": slug(nm) or "option", "name": nm, "party": party, "party_code": party_code(party), "votes": vc})
+        if len(ch) < 1:
+            continue
+        up = title.upper()
+        fed = up.startswith("U.S.") or up.startswith("REPRESENTATIVE TO CONGRESS")
+        m = re.search(r"District (\d+)", title)
+        c = {"id": slug("oh-" + (ct.get("ObjectId") or title))[:60], "kind": "measure" if measure else ("judicial" if re.search(r"retain|retention", title, re.I) else "candidate"),
+             "level": "federal" if fed else "state", "state": "oh", "office": title, "district": m.group(1) if (fed and m) else None,
+             "title": title, "vote_for": to_int(ct.get("VotesAllowed")) or 1, "choices": ch, "precincts": {"reporting": 0, "total": 0}}
+        # ids from ObjectId are unique per contest; keep readable ones stable across passes
+        out.append(c)
+        if fed:
+            f = json.loads(json.dumps(c)); f["_scope"] = "senate" if up.startswith("U.S. SENATOR") else "house"; out.append(f)
+    return out
+
+
+ADAPTERS = {"csv": a_csv, "clarity-xml": a_clarity_xml, "scytl-json": a_scytl_json, "ca-sos-json": a_ca_sos_json, "ncsbe-pct": a_ncsbe_pct, "fl-dos-tab": a_fl_dos_tab, "nist1622": a_nist1622}
 
 
 # ---------------------------------------------------------------- validation and merge
@@ -362,7 +602,10 @@ def run_once(cfg, out_dir, state_dir):
         st = fstate.setdefault(sid, {})
         try:
             ua = cfg.get("user_agent") or UA
-            body, lm, changed = fetch(resolve_url(src, ua), st, ua)
+            if src.get("urls"):
+                body, lm, changed = fetch_many(src["urls"], ua), None, True
+            else:
+                body, lm, changed = fetch(resolve_url(src, ua), st, ua)
             if changed:
                 contests = ADAPTERS[src["adapter"]](body, src)
                 bad = [(c.get("id"), validate_contest(c)) for c in contests]
