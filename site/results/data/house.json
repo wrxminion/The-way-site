@@ -8,10 +8,12 @@
   "ar-tally",
   "az-scytl",
   "ca-sos",
+  "co-sos",
   "ct-sots",
   "fl-dos",
   "ga-scytl",
   "hi-oe",
+  "ia-clarity",
   "id-scytl",
   "in-enr",
   "ks-sos",
@@ -38,7 +40,7 @@
   "vt-sos",
   "wy-sos"
  ],
- "updated_at": "2026-11-04T15:11:21Z",
+ "updated_at": "2026-11-04T20:05:17Z",
  "certified": false,
  "contests": [
   {
@@ -389,14 +391,14 @@
      "name": "Houston Gaines",
      "party": "Rep",
      "party_code": "R",
-     "votes": 174269
+     "votes": 174274
     },
     {
      "id": "pamela-pam-delancy",
      "name": "Pamela \"Pam\" Delancy",
      "party": "Dem",
      "party_code": "D",
-     "votes": 150900
+     "votes": 150901
     }
    ],
    "precincts": {
@@ -470,7 +472,7 @@
      "name": "Ceretta Smith",
      "party": "Dem",
      "party_code": "D",
-     "votes": 129499
+     "votes": 129500
     }
    ],
    "precincts": {
@@ -574,21 +576,21 @@
      "name": "Shannon L. Taylor",
      "party": "D",
      "party_code": "D",
-     "votes": 207827
+     "votes": 207877
     },
     {
      "id": "robert-j-rob-wittman",
      "name": "Robert J. \"Rob\" Wittman",
      "party": "R",
      "party_code": "R",
-     "votes": 198416
+     "votes": 198417
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 983
+     "votes": 984
     }
    ],
    "precincts": {
@@ -612,14 +614,14 @@
      "name": "Elaine G. Luria",
      "party": "D",
      "party_code": "D",
-     "votes": 178696
+     "votes": 178697
     },
     {
      "id": "jen-a-kiggans",
      "name": "Jen A. Kiggans",
      "party": "R",
      "party_code": "R",
-     "votes": 150080
+     "votes": 150082
     },
     {
      "id": "geral-d-bishop-staten",
@@ -779,21 +781,21 @@
      "name": "Tom S. P. Perriello",
      "party": "D",
      "party_code": "D",
-     "votes": 173166
+     "votes": 173189
     },
     {
      "id": "john-j-mcguire-iii",
      "name": "John J. McGuire III",
      "party": "R",
      "party_code": "R",
-     "votes": 181191
+     "votes": 181248
     },
     {
      "id": "cooke-c-harvey",
      "name": "Cooke C. Harvey",
      "party": "I",
      "party_code": "O",
-     "votes": 5789
+     "votes": 5790
     },
     {
      "id": "write-in",
@@ -824,14 +826,14 @@
      "name": "Beth A. Macy",
      "party": "D",
      "party_code": "D",
-     "votes": 140201
+     "votes": 140209
     },
     {
      "id": "ben-l-cline",
      "name": "Ben L. Cline",
      "party": "R",
      "party_code": "R",
-     "votes": 175789
+     "votes": 175791
     },
     {
      "id": "write-in",
@@ -875,7 +877,7 @@
      "name": "Doug A. Ollivant",
      "party": "R",
      "party_code": "R",
-     "votes": 121013
+     "votes": 121014
     },
     {
      "id": "taner-e-demirci-lopez",
@@ -940,7 +942,7 @@
      "name": "Donald S. Beyer, Jr.",
      "party": "D",
      "party_code": "D",
-     "votes": 247773
+     "votes": 247775
     },
     {
      "id": "tony-a-sabio",
@@ -954,7 +956,7 @@
      "name": "Shelly M. Arnoldi",
      "party": "L",
      "party_code": "O",
-     "votes": 3647
+     "votes": 3648
     },
     {
      "id": "tim-s-sharman",
@@ -998,14 +1000,14 @@
      "name": "Joy A. Powers",
      "party": "D",
      "party_code": "D",
-     "votes": 99441
+     "votes": 99444
     },
     {
      "id": "h-morgan-griffith",
      "name": "H. Morgan Griffith",
      "party": "R",
      "party_code": "R",
-     "votes": 193790
+     "votes": 193785
     },
     {
      "id": "write-in",
@@ -1049,14 +1051,14 @@
      "name": "Dave T. Beckwith",
      "party": "R",
      "party_code": "R",
-     "votes": 120307
+     "votes": 120507
     },
     {
      "id": "ahsen-mujeeb-malik",
      "name": "Ahsen Mujeeb Malik",
      "party": "I",
      "party_code": "O",
-     "votes": 6098
+     "votes": 5898
     },
     {
      "id": "write-in",
@@ -1181,18 +1183,18 @@
      "name": "Jared Huffman",
      "party": "Dem",
      "party_code": "D",
-     "votes": 106520
+     "votes": 106795
     },
     {
      "id": "robin-littau",
      "name": "Robin Littau",
      "party": "Rep",
      "party_code": "R",
-     "votes": 52627
+     "votes": 53693
     }
    ],
    "precincts": {
-    "reporting": 572,
+    "reporting": 595,
     "total": 595,
     "unit": "precincts"
    },
@@ -1584,6 +1586,12 @@
     "reporting": 974,
     "total": 974,
     "unit": "precincts"
+   },
+   "called": {
+    "winner": "adam-gray",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T18:03:14.496Z",
+    "kind": "ap"
    }
   },
   {
@@ -1905,6 +1913,12 @@
     "reporting": 575,
     "total": 575,
     "unit": "precincts"
+   },
+   "called": {
+    "winner": "randy-villegas",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T18:17:49.897Z",
+    "kind": "ap"
    }
   },
   {
@@ -2331,6 +2345,12 @@
     "reporting": 116,
     "total": 116,
     "unit": "precincts"
+   },
+   "called": {
+    "winner": "angela-gonzales-torres",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T18:11:54.264Z",
+    "kind": "ap"
    }
   },
   {
@@ -5991,21 +6011,21 @@
      "name": "Aaron Flint",
      "party": "Republican",
      "party_code": "R",
-     "votes": 108366
+     "votes": 113022
     },
     {
      "id": "sam-forstag",
      "name": "Sam Forstag",
      "party": "Democrat",
      "party_code": "D",
-     "votes": 114332
+     "votes": 119434
     },
     {
      "id": "nick-sheedy",
      "name": "Nick Sheedy",
      "party": "Libertarian",
      "party_code": "O",
-     "votes": 6514
+     "votes": 6819
     }
    ],
    "precincts": {
@@ -6124,14 +6144,14 @@
      "name": "Chris Beck",
      "party": "Democrat, Independent",
      "party_code": "D",
-     "votes": 115706
+     "votes": 115716
     },
     {
      "id": "cliff-bentz",
      "name": "Cliff Bentz",
      "party": "Republican",
      "party_code": "R",
-     "votes": 185635
+     "votes": 185667
     },
     {
      "id": "write-in",
@@ -6358,32 +6378,32 @@
      "name": "Mike Flood",
      "party": "Republican",
      "party_code": "R",
-     "votes": 122874
+     "votes": 124881
     },
     {
      "id": "chris-backemeyer",
      "name": "Chris Backemeyer",
      "party": "Democratic",
      "party_code": "D",
-     "votes": 113806
+     "votes": 114664
     },
     {
      "id": "nik-sandman",
      "name": "Nik Sandman",
      "party": "Libertarian",
      "party_code": "O",
-     "votes": 4436
+     "votes": 4500
     },
     {
      "id": "dan-hartong",
      "name": "Dan Hartong",
      "party": "America First",
      "party_code": "O",
-     "votes": 4235
+     "votes": 4298
     }
    ],
    "precincts": {
-    "reporting": 429,
+    "reporting": 438,
     "total": 438,
     "unit": "precincts"
    }
@@ -6447,39 +6467,39 @@
      "name": "Adrian Smith",
      "party": "Republican",
      "party_code": "R",
-     "votes": 172321
+     "votes": 173220
     },
     {
      "id": "becky-kelly-stille",
      "name": "Becky Kelly Stille",
      "party": "Democratic",
      "party_code": "D",
-     "votes": 48495
+     "votes": 48842
     },
     {
      "id": "david-j-else",
      "name": "David J. Else",
      "party": "Legal Marijuana Now",
      "party_code": "O",
-     "votes": 7008
+     "votes": 7074
     },
     {
      "id": "macey-budke",
      "name": "Macey Budke",
      "party": "Nebraska Working People",
      "party_code": "O",
-     "votes": 6794
+     "votes": 6823
     },
     {
      "id": "mark-cohen",
      "name": "Mark Cohen",
      "party": "By Petition",
      "party_code": "O",
-     "votes": 7974
+     "votes": 8064
     }
    ],
    "precincts": {
-    "reporting": 635,
+    "reporting": 639,
     "total": 639,
     "unit": "precincts"
    },
@@ -6505,14 +6525,14 @@
      "name": "Marty Jackley",
      "party": "Republican",
      "party_code": "R",
-     "votes": 195570
+     "votes": 195572
     },
     {
      "id": "nicole-nikki-gronli",
      "name": "Nicole \"Nikki\" Gronli",
      "party": "Democratic",
      "party_code": "D",
-     "votes": 109967
+     "votes": 109973
     }
    ],
    "precincts": {
@@ -7011,6 +7031,12 @@
    "precincts": {
     "reporting": 0,
     "total": 0
+   },
+   "called": {
+    "winner": "sean-mccann",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T18:13:09.652Z",
+    "kind": "ap"
    }
   },
   {
@@ -7169,6 +7195,12 @@
    "precincts": {
     "reporting": 0,
     "total": 0
+   },
+   "called": {
+    "winner": "william-lawrence",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T19:05:49.862Z",
+    "kind": "ap"
    }
   },
   {
@@ -7341,6 +7373,12 @@
    "precincts": {
     "reporting": 0,
     "total": 0
+   },
+   "called": {
+    "winner": "christina-bertrand-hines",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T17:26:10.023Z",
+    "kind": "ap"
    }
   },
   {
@@ -7517,28 +7555,28 @@
      "name": "Gabriel Amo",
      "party": "DEM",
      "party_code": "D",
-     "votes": 108752
+     "votes": 110625
     },
     {
      "id": "kellie-keenan",
      "name": "Kellie Keenan",
      "party": "REP",
      "party_code": "R",
-     "votes": 43862
+     "votes": 44669
     },
     {
      "id": "pedro-desouza",
      "name": "Pedro DeSouza",
      "party": "Ind",
      "party_code": "O",
-     "votes": 6028
+     "votes": 6123
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 223
+     "votes": 228
     }
    ],
    "precincts": {
@@ -7568,21 +7606,21 @@
      "name": "Seth Magaziner",
      "party": "DEM",
      "party_code": "D",
-     "votes": 119134
+     "votes": 119683
     },
     {
      "id": "victor-mellor",
      "name": "Victor Mellor",
      "party": "REP",
      "party_code": "R",
-     "votes": 73353
+     "votes": 73471
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 506
+     "votes": 507
     }
    ],
    "precincts": {
@@ -8078,28 +8116,28 @@
      "name": "Russ Fulcher",
      "party": "REP",
      "party_code": "R",
-     "votes": 236432
+     "votes": 243591
     },
     {
      "id": "kaylee-peterson",
      "name": "Kaylee Peterson",
      "party": "DEM",
      "party_code": "D",
-     "votes": 104633
+     "votes": 108996
     },
     {
      "id": "sarah-zabel",
      "name": "Sarah Zabel",
      "party": "IND",
      "party_code": "O",
-     "votes": 22087
+     "votes": 23004
     },
     {
      "id": "brendan-j-gomez",
      "name": "Brendan J. Gomez",
      "party": "CON",
      "party_code": "O",
-     "votes": 3330
+     "votes": 3413
     }
    ],
    "precincts": {
@@ -8129,35 +8167,35 @@
      "name": "Mike Simpson",
      "party": "REP",
      "party_code": "R",
-     "votes": 168203
+     "votes": 170721
     },
     {
      "id": "ellie-gilbreath",
      "name": "Ellie Gilbreath",
      "party": "DEM",
      "party_code": "D",
-     "votes": 131242
+     "votes": 133062
     },
     {
      "id": "tripp-charles-hutchinson",
      "name": "Tripp Charles Hutchinson",
      "party": "IND",
      "party_code": "O",
-     "votes": 11405
+     "votes": 11628
     },
     {
      "id": "emre-houser",
      "name": "Emre Houser",
      "party": "IND",
      "party_code": "O",
-     "votes": 7728
+     "votes": 7848
     },
     {
      "id": "will-johanson",
      "name": "Will Johanson",
      "party": "LIB",
      "party_code": "O",
-     "votes": 7005
+     "votes": 7139
     }
    ],
    "precincts": {
@@ -8187,28 +8225,28 @@
      "name": "Ed Case",
      "party": "D",
      "party_code": "D",
-     "votes": 100096
+     "votes": 115188
     },
     {
      "id": "adriel-c-lam",
      "name": "Adriel C. Lam",
      "party": "R",
      "party_code": "R",
-     "votes": 28685
+     "votes": 34958
     },
     {
      "id": "jordan-s-conley",
      "name": "Jordan S. Conley",
      "party": "G",
      "party_code": "O",
-     "votes": 4528
+     "votes": 5792
     },
     {
      "id": "nathan-m-berning",
      "name": "Nathan M. Berning",
      "party": "N",
      "party_code": "O",
-     "votes": 1780
+     "votes": 2097
     }
    ],
    "precincts": {
@@ -8238,18 +8276,18 @@
      "name": "Jill N. Tokuda",
      "party": "D",
      "party_code": "D",
-     "votes": 108369
+     "votes": 126197
     },
     {
      "id": "brenton-awa",
      "name": "Brenton Awa",
      "party": "R",
      "party_code": "R",
-     "votes": 48764
+     "votes": 61839
     }
    ],
    "precincts": {
-    "reporting": 43,
+    "reporting": 137,
     "total": 273,
     "unit": "precincts"
    },
@@ -8361,14 +8399,14 @@
      "name": "Lee McInnis",
      "party": "DEM",
      "party_code": "D",
-     "votes": 79860
+     "votes": 79926
     },
     {
      "id": "mike-rogers",
      "name": "Mike Rogers",
      "party": "REP",
      "party_code": "R",
-     "votes": 141274
+     "votes": 141800
     },
     {
      "id": "write-in",
@@ -8576,14 +8614,14 @@
      "name": "Frank J. Mrvan",
      "party": "D",
      "party_code": "D",
-     "votes": 95632
+     "votes": 127573
     },
     {
      "id": "barb-regnitz",
      "name": "Barb Regnitz",
      "party": "R",
      "party_code": "R",
-     "votes": 48931
+     "votes": 73823
     },
     {
      "id": "alexander-r-alex-degman-w-i",
@@ -8626,21 +8664,21 @@
      "name": "Rudy Yakym",
      "party": "R",
      "party_code": "R",
-     "votes": 93633
+     "votes": 93698
     },
     {
      "id": "jamee-decio",
      "name": "Jamee Decio",
      "party": "D",
      "party_code": "D",
-     "votes": 84852
+     "votes": 84973
     },
     {
      "id": "william-eric-henry",
      "name": "William Eric Henry",
      "party": "L",
      "party_code": "O",
-     "votes": 4543
+     "votes": 4549
     }
    ],
    "precincts": {
@@ -8669,7 +8707,7 @@
      "name": "Kelly Thompson",
      "party": "D",
      "party_code": "D",
-     "votes": 90180
+     "votes": 90248
     },
     {
      "id": "marlin-a-stutzman",
@@ -8683,7 +8721,7 @@
      "name": "Phillip D. Beachy (Phil) (W/I)",
      "party": "I",
      "party_code": "O",
-     "votes": 6
+     "votes": 12
     }
    ],
    "precincts": {
@@ -8712,7 +8750,7 @@
      "name": "Jim Baird",
      "party": "R",
      "party_code": "R",
-     "votes": 112407
+     "votes": 112408
     },
     {
      "id": "drew-cox",
@@ -8726,7 +8764,7 @@
      "name": "David E. Bokash (W/I)",
      "party": "I",
      "party_code": "O",
-     "votes": 34
+     "votes": 30
     }
    ],
    "precincts": {
@@ -8755,14 +8793,14 @@
      "name": "J.D. Ford",
      "party": "D",
      "party_code": "D",
-     "votes": 116844
+     "votes": 134448
     },
     {
      "id": "victoria-spartz",
      "name": "Victoria Spartz",
      "party": "R",
      "party_code": "R",
-     "votes": 107239
+     "votes": 125870
     }
    ],
    "precincts": {
@@ -8870,14 +8908,14 @@
      "name": "Mark Messmer",
      "party": "R",
      "party_code": "R",
-     "votes": 101333
+     "votes": 104751
     },
     {
      "id": "mary-allen",
      "name": "Mary Allen",
      "party": "D",
      "party_code": "D",
-     "votes": 78349
+     "votes": 80049
     }
    ],
    "precincts": {
@@ -10143,14 +10181,14 @@
      "name": "Brian Babin",
      "party": "REP",
      "party_code": "R",
-     "votes": 137887
+     "votes": 138008
     },
     {
      "id": "rhonda-hart",
      "name": "Rhonda Hart",
      "party": "DEM",
      "party_code": "D",
-     "votes": 119489
+     "votes": 119681
     }
    ],
    "precincts": {
@@ -10215,21 +10253,21 @@
      "name": "Jon Bonck",
      "party": "REP",
      "party_code": "R",
-     "votes": 156834
+     "votes": 157261
     },
     {
      "id": "melissa-mcdonough",
      "name": "Melissa Mcdonough",
      "party": "DEM",
      "party_code": "D",
-     "votes": 143784
+     "votes": 144397
     },
     {
      "id": "alex-mcmenemy",
      "name": "Alex Mcmenemy",
      "party": "GRE",
      "party_code": "O",
-     "votes": 3430
+     "votes": 3443
     }
    ],
    "precincts": {
@@ -10390,21 +10428,21 @@
      "name": "Lizzie Pannill Fletcher",
      "party": "DEM",
      "party_code": "D",
-     "votes": 152650
+     "votes": 153329
     },
     {
      "id": "alexander-hale",
      "name": "Alexander Hale",
      "party": "REP",
      "party_code": "R",
-     "votes": 58993
+     "votes": 59161
     },
     {
      "id": "espoir-ngabo",
      "name": "Espoir Ngabo",
      "party": "GRE",
      "party_code": "O",
-     "votes": 3340
+     "votes": 3352
     }
    ],
    "precincts": {
@@ -10433,14 +10471,14 @@
      "name": "Laura Jones",
      "party": "DEM",
      "party_code": "D",
-     "votes": 124441
+     "votes": 124680
     },
     {
      "id": "jessica-hart-steinmann",
      "name": "Jessica Hart Steinmann",
      "party": "REP",
      "party_code": "R",
-     "votes": 141660
+     "votes": 141786
     }
    ],
    "precincts": {
@@ -10469,14 +10507,14 @@
      "name": "Shaun Finnie",
      "party": "DEM",
      "party_code": "D",
-     "votes": 138871
+     "votes": 139167
     },
     {
      "id": "steve-toth",
      "name": "Steve Toth",
      "party": "REP",
      "party_code": "R",
-     "votes": 144543
+     "votes": 144748
     }
    ],
    "precincts": {
@@ -10499,19 +10537,25 @@
      "name": "Leticia Gutierrez",
      "party": "DEM",
      "party_code": "D",
-     "votes": 97888
+     "votes": 98079
     },
     {
      "id": "alex-mealer",
      "name": "Alex Mealer",
      "party": "REP",
      "party_code": "R",
-     "votes": 72227
+     "votes": 72340
     }
    ],
    "precincts": {
     "reporting": 0,
     "total": 0
+   },
+   "called": {
+    "winner": "leticia-gutierrez",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T18:02:04.375Z",
+    "kind": "ap"
    }
   },
   {
@@ -10601,14 +10645,14 @@
      "name": "Marquette Greene-Scott",
      "party": "DEM",
      "party_code": "D",
-     "votes": 124886
+     "votes": 124995
     },
     {
      "id": "trever-nehls",
      "name": "Trever Nehls",
      "party": "REP",
      "party_code": "R",
-     "votes": 134110
+     "votes": 134197
     }
    ],
    "precincts": {
@@ -11099,14 +11143,14 @@
      "name": "Christian Dashaun Menefee",
      "party": "DEM",
      "party_code": "D",
-     "votes": 185485
+     "votes": 186092
     },
     {
      "id": "ronald-dwayne-whitfield",
      "name": "Ronald Dwayne Whitfield",
      "party": "REP",
      "party_code": "R",
-     "votes": 29265
+     "votes": 29335
     }
    ],
    "precincts": {
@@ -11135,14 +11179,14 @@
      "name": "Martha Fierro",
      "party": "REP",
      "party_code": "R",
-     "votes": 33541
+     "votes": 33619
     },
     {
      "id": "sylvia-garcia",
      "name": "Sylvia Garcia",
      "party": "DEM",
      "party_code": "D",
-     "votes": 133649
+     "votes": 133989
     }
    ],
    "precincts": {
@@ -11286,14 +11330,14 @@
      "name": "Becca Balint",
      "party": "Democratic (per AP)",
      "party_code": "D",
-     "votes": 198668
+     "votes": 198661
     },
     {
      "id": "gerald-malloy",
      "name": "Gerald Malloy",
      "party": null,
      "party_code": "O",
-     "votes": 94011
+     "votes": 94017
     },
     {
      "id": "suzanne-suz-seymour",
@@ -11329,14 +11373,14 @@
      "name": "Jake Johnson",
      "party": "DFL",
      "party_code": "D",
-     "votes": 163057
+     "votes": 163056
     },
     {
      "id": "brad-finstad",
      "name": "Brad Finstad",
      "party": "R",
      "party_code": "R",
-     "votes": 162734
+     "votes": 162733
     },
     {
      "id": "write-in",
@@ -11367,14 +11411,14 @@
      "name": "Matt Little",
      "party": "DFL",
      "party_code": "D",
-     "votes": 213653
+     "votes": 214255
     },
     {
      "id": "eric-pratt",
      "name": "Eric Pratt",
      "party": "R",
      "party_code": "R",
-     "votes": 159829
+     "votes": 160636
     },
     {
      "id": "write-in",
@@ -11557,7 +11601,7 @@
      "name": "Doug Chapin",
      "party": "DFL",
      "party_code": "D",
-     "votes": 162213
+     "votes": 162214
     },
     {
      "id": "write-in",
@@ -11594,14 +11638,14 @@
      "name": "Michelle Fischbach",
      "party": "R",
      "party_code": "R",
-     "votes": 214505
+     "votes": 214496
     },
     {
      "id": "erik-osberg",
      "name": "Erik Osberg",
      "party": "DFL",
      "party_code": "D",
-     "votes": 115805
+     "votes": 115802
     },
     {
      "id": "write-in",
@@ -11638,7 +11682,7 @@
      "name": "Pete Stauber",
      "party": "R",
      "party_code": "R",
-     "votes": 190743
+     "votes": 190744
     },
     {
      "id": "trina-swanson",
@@ -12999,14 +13043,14 @@
      "name": "Rachel Wallace",
      "party": "DEM",
      "party_code": "D",
-     "votes": 99924
+     "votes": 102462
     },
     {
      "id": "dan-meuser",
      "name": "Dan Meuser",
      "party": "REP",
      "party_code": "R",
-     "votes": 163850
+     "votes": 165216
     }
    ],
    "precincts": {
@@ -13073,14 +13117,14 @@
      "name": "Nancy Mannion",
      "party": "DEM",
      "party_code": "D",
-     "votes": 133726
+     "votes": 133833
     },
     {
      "id": "lloyd-k-smucker",
      "name": "Lloyd K Smucker",
      "party": "REP",
      "party_code": "R",
-     "votes": 166905
+     "votes": 167322
     }
    ],
    "precincts": {
@@ -13184,14 +13228,14 @@
      "name": "Alan Bradstock",
      "party": "DEM",
      "party_code": "D",
-     "votes": 116747
+     "votes": 117057
     },
     {
      "id": "guy-reschenthaler",
      "name": "Guy Reschenthaler",
      "party": "REP",
      "party_code": "R",
-     "votes": 158743
+     "votes": 158856
     }
    ],
    "precincts": {
@@ -13221,14 +13265,14 @@
      "name": "Ray Bilger",
      "party": "DEM",
      "party_code": "D",
-     "votes": 96404
+     "votes": 96502
     },
     {
      "id": "glenn-gt-thompson",
      "name": "Glenn Gt Thompson",
      "party": "REP",
      "party_code": "R",
-     "votes": 170953
+     "votes": 170981
     }
    ],
    "precincts": {
@@ -13313,6 +13357,576 @@
     "winner": "chris-deluzio",
     "by": "AP (not certified)",
     "at": "2026-11-04T02:01:11.790Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 1",
+   "district": "1",
+   "title": "Representative to the 120th United States Congress - District 1",
+   "choices": [
+    {
+     "id": "melat-kiros",
+     "name": "Melat Kiros",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 169159
+    },
+    {
+     "id": "christy-peterson",
+     "name": "Christy Peterson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 30046
+    },
+    {
+     "id": "critter-milton",
+     "name": "Critter Milton",
+     "party": "UNI",
+     "party_code": "O",
+     "votes": 748
+    },
+    {
+     "id": "chad-humphrey",
+     "name": "Chad Humphrey",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 3372
+    },
+    {
+     "id": "shimon-blau",
+     "name": "Shimon Blau",
+     "party": "UAF",
+     "party_code": "O",
+     "votes": 12764
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   },
+   "called": {
+    "winner": "melat-kiros",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:22:24.627Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 2",
+   "district": "2",
+   "title": "Representative to the 120th United States Congress - District 2",
+   "choices": [
+    {
+     "id": "joe-neguse",
+     "name": "Joe Neguse",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 218513
+    },
+    {
+     "id": "kelley-anne-dennison",
+     "name": "Kelley Anne Dennison",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 68396
+    },
+    {
+     "id": "gaylon-kent",
+     "name": "Gaylon Kent",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 4749
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11
+   },
+   "called": {
+    "winner": "joe-neguse",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:34:10.952Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 3",
+   "district": "3",
+   "title": "Representative to the 120th United States Congress - District 3",
+   "choices": [
+    {
+     "id": "dwayne-l-romero",
+     "name": "Dwayne L. Romero",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 145702
+    },
+    {
+     "id": "jeff-hurd",
+     "name": "Jeff Hurd",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 146913
+    },
+    {
+     "id": "cory-robertson",
+     "name": "Cory Robertson",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 4758
+    },
+    {
+     "id": "clifton-brown",
+     "name": "Clifton Brown",
+     "party": "UAF",
+     "party_code": "O",
+     "votes": 4735
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 27
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 4",
+   "district": "4",
+   "title": "Representative to the 120th United States Congress - District 4",
+   "choices": [
+    {
+     "id": "lauren-boebert",
+     "name": "Lauren Boebert",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 163835
+    },
+    {
+     "id": "eileen-laubacher",
+     "name": "Eileen Laubacher",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 168729
+    },
+    {
+     "id": "douglas-mangeris",
+     "name": "Douglas Mangeris",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 10717
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 21
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 5",
+   "district": "5",
+   "title": "Representative to the 120th United States Congress - District 5",
+   "choices": [
+    {
+     "id": "jeff-crank",
+     "name": "Jeff Crank",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 106966
+    },
+    {
+     "id": "jessica-killin",
+     "name": "Jessica Killin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 121772
+    },
+    {
+     "id": "christopher-mitchell",
+     "name": "Christopher Mitchell",
+     "party": "ACN",
+     "party_code": "O",
+     "votes": 3480
+    },
+    {
+     "id": "mark-marky-jr-elworth",
+     "name": "Mark \"Marky Jr\" Elworth",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 3788
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 6",
+   "district": "6",
+   "title": "Representative to the 120th United States Congress - District 6",
+   "choices": [
+    {
+     "id": "jason-crow",
+     "name": "Jason Crow",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 145611
+    },
+    {
+     "id": "jason-clark",
+     "name": "Jason Clark",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 69398
+    },
+    {
+     "id": "patty-mcmahon",
+     "name": "Patty McMahon",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 2918
+    },
+    {
+     "id": "meredith-ryan",
+     "name": "Meredith Ryan",
+     "party": "UNI",
+     "party_code": "O",
+     "votes": 1109
+    },
+    {
+     "id": "samir-witta",
+     "name": "Samir Witta",
+     "party": "UAF",
+     "party_code": "O",
+     "votes": 1607
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   },
+   "called": {
+    "winner": "jason-crow",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:32:27.790Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 7",
+   "district": "7",
+   "title": "Representative to the 120th United States Congress - District 7",
+   "choices": [
+    {
+     "id": "tim-bennett",
+     "name": "Tim Bennett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 120133
+    },
+    {
+     "id": "brittany-pettersen",
+     "name": "Brittany Pettersen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 200679
+    },
+    {
+     "id": "susan-hall",
+     "name": "Susan Hall",
+     "party": "UNI",
+     "party_code": "O",
+     "votes": 1416
+    },
+    {
+     "id": "lawrence-kyle-clark",
+     "name": "Lawrence Kyle Clark",
+     "party": "ACN",
+     "party_code": "O",
+     "votes": 1045
+    },
+    {
+     "id": "dan-kilo-sallis",
+     "name": "Dan ''Kilo'' Sallis",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 3218
+    },
+    {
+     "id": "joe-krzeczkowski",
+     "name": "Joe Krzeczkowski",
+     "party": "UAF",
+     "party_code": "O",
+     "votes": 3618
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11
+   },
+   "called": {
+    "winner": "brittany-pettersen",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:12:06.684Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 8",
+   "district": "8",
+   "title": "Representative to the 120th United States Congress - District 8",
+   "choices": [
+    {
+     "id": "gabe-evans",
+     "name": "Gabe Evans",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 91712
+    },
+    {
+     "id": "manny-rutinel",
+     "name": "Manny Rutinel",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 124631
+    },
+    {
+     "id": "dave-wood",
+     "name": "Dave Wood",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 8356
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   },
+   "called": {
+    "winner": "manny-rutinel",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:49:24.111Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ia-united-states-representative-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ia",
+   "office": "United States Representative District 1",
+   "district": "1",
+   "title": "United States Representative District 1",
+   "choices": [
+    {
+     "id": "mariannette-miller-meeks",
+     "name": "Mariannette Miller-Meeks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 150471
+    },
+    {
+     "id": "christina-bohannan",
+     "name": "Christina Bohannan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 182396
+    },
+    {
+     "id": "michael-bridgford",
+     "name": "Michael Bridgford",
+     "party": null,
+     "party_code": "O",
+     "votes": 12603
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 356
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20
+   },
+   "called": {
+    "winner": "christina-bohannan",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:08:30.903Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ia-united-states-representative-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ia",
+   "office": "United States Representative District 2",
+   "district": "2",
+   "title": "United States Representative District 2",
+   "choices": [
+    {
+     "id": "joe-mitchell",
+     "name": "Joe Mitchell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 157722
+    },
+    {
+     "id": "lindsay-james",
+     "name": "Lindsay James",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 171484
+    },
+    {
+     "id": "rick-stewart",
+     "name": "Rick Stewart",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 9500
+    },
+    {
+     "id": "dave-bushaw",
+     "name": "Dave Bushaw",
+     "party": null,
+     "party_code": "O",
+     "votes": 7469
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 226
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22
+   },
+   "called": {
+    "winner": "lindsay-james",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:19:55.506Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ia-united-states-representative-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ia",
+   "office": "United States Representative District 3",
+   "district": "3",
+   "title": "United States Representative District 3",
+   "choices": [
+    {
+     "id": "zach-nunn",
+     "name": "Zach Nunn",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 163441
+    },
+    {
+     "id": "sarah-trone-garriott",
+     "name": "Sarah Trone Garriott",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 189217
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 869
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21
+   },
+   "called": {
+    "winner": "sarah-trone-garriott",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:03:37.503Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ia-united-states-representative-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ia",
+   "office": "United States Representative District 4",
+   "district": "4",
+   "title": "United States Representative District 4",
+   "choices": [
+    {
+     "id": "chris-mcgowan",
+     "name": "Chris McGowan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 178845
+    },
+    {
+     "id": "dave-dawson",
+     "name": "Dave Dawson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 123940
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 352
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36
+   },
+   "called": {
+    "winner": "chris-mcgowan",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:33:34.046Z",
     "kind": "ap"
    }
   }

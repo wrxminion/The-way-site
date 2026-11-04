@@ -3,9 +3,10 @@
  "scope": "state-mo",
  "label": "Missouri",
  "source_ids": [
+  "mo-leg",
   "mo-sos"
  ],
- "updated_at": "2026-11-04T15:11:23Z",
+ "updated_at": "2026-11-04T20:05:18Z",
  "certified": false,
  "contests": [
   {
@@ -706,6 +707,5439 @@
     "reporting": 683,
     "total": 683,
     "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 2",
+   "district": null,
+   "title": "State Senate District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nick-schroer",
+     "name": "Nick Schroer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 40537
+    },
+    {
+     "id": "susan-shumway",
+     "name": "Susan Shumway",
+     "party": "D",
+     "party_code": "D",
+     "votes": 33213
+    }
+   ],
+   "precincts": {
+    "reporting": 101,
+    "total": 101,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 4",
+   "district": null,
+   "title": "State Senate District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gina-mitten",
+     "name": "Gina Mitten",
+     "party": "D",
+     "party_code": "D",
+     "votes": 61490
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 6",
+   "district": null,
+   "title": "State Senate District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jake-vogel",
+     "name": "Jake Vogel",
+     "party": "R",
+     "party_code": "R",
+     "votes": 43746
+    },
+    {
+     "id": "j-don-salcedo",
+     "name": "J. Don Salcedo",
+     "party": "D",
+     "party_code": "D",
+     "votes": 19812
+    }
+   ],
+   "precincts": {
+    "reporting": 82,
+    "total": 82,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 8",
+   "district": null,
+   "title": "State Senate District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jon-patterson",
+     "name": "Jon Patterson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 34401
+    },
+    {
+     "id": "keri-ingle",
+     "name": "Keri Ingle",
+     "party": "D",
+     "party_code": "D",
+     "votes": 42462
+    }
+   ],
+   "precincts": {
+    "reporting": 58,
+    "total": 58,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 10",
+   "district": null,
+   "title": "State Senate District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-deering",
+     "name": "Mike Deering",
+     "party": "R",
+     "party_code": "R",
+     "votes": 38949
+    },
+    {
+     "id": "john-wells",
+     "name": "John Wells",
+     "party": "D",
+     "party_code": "D",
+     "votes": 21149
+    }
+   ],
+   "precincts": {
+    "reporting": 109,
+    "total": 109,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 12",
+   "district": null,
+   "title": "State Senate District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rusty-black",
+     "name": "Rusty Black",
+     "party": "R",
+     "party_code": "R",
+     "votes": 40492
+    },
+    {
+     "id": "judy-mcneece",
+     "name": "Judy McNeece",
+     "party": "D",
+     "party_code": "D",
+     "votes": 17643
+    }
+   ],
+   "precincts": {
+    "reporting": 168,
+    "total": 168,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 14",
+   "district": null,
+   "title": "State Senate District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vernon-norman",
+     "name": "Vernon Norman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9485
+    },
+    {
+     "id": "raychel-proudie",
+     "name": "Raychel Proudie",
+     "party": "D",
+     "party_code": "D",
+     "votes": 45166
+    }
+   ],
+   "precincts": {
+    "reporting": 215,
+    "total": 215,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 16",
+   "district": null,
+   "title": "State Senate District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-hardwick",
+     "name": "Bill Hardwick",
+     "party": "R",
+     "party_code": "R",
+     "votes": 30826
+    },
+    {
+     "id": "virginia-staabs",
+     "name": "Virginia Staabs",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11444
+    }
+   ],
+   "precincts": {
+    "reporting": 73,
+    "total": 73,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 18",
+   "district": null,
+   "title": "State Senate District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-sharpe",
+     "name": "Greg Sharpe",
+     "party": "R",
+     "party_code": "R",
+     "votes": 36239
+    },
+    {
+     "id": "nick-miller",
+     "name": "Nick Miller",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14541
+    }
+   ],
+   "precincts": {
+    "reporting": 135,
+    "total": 135,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 20",
+   "district": null,
+   "title": "State Senate District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lori-rook",
+     "name": "Lori Rook",
+     "party": "R",
+     "party_code": "R",
+     "votes": 45553
+    },
+    {
+     "id": "sean-falconer",
+     "name": "Sean Falconer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 22056
+    }
+   ],
+   "precincts": {
+    "reporting": 65,
+    "total": 65,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 22",
+   "district": null,
+   "title": "State Senate District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-avery",
+     "name": "Jim Avery",
+     "party": "R",
+     "party_code": "R",
+     "votes": 35597
+    },
+    {
+     "id": "jeff-abney",
+     "name": "Jeff Abney",
+     "party": "D",
+     "party_code": "D",
+     "votes": 26193
+    }
+   ],
+   "precincts": {
+    "reporting": 42,
+    "total": 42,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 24",
+   "district": null,
+   "title": "State Senate District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lavanna-wrobley",
+     "name": "LaVanna Wrobley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 30228
+    },
+    {
+     "id": "tracy-mccreery",
+     "name": "Tracy McCreery",
+     "party": "D",
+     "party_code": "D",
+     "votes": 52453
+    }
+   ],
+   "precincts": {
+    "reporting": 199,
+    "total": 199,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 26",
+   "district": null,
+   "title": "State Senate District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-brown",
+     "name": "Ben Brown",
+     "party": "R",
+     "party_code": "R",
+     "votes": 44018
+    },
+    {
+     "id": "vicky-wors",
+     "name": "Vicky Wors",
+     "party": "D",
+     "party_code": "D",
+     "votes": 22834
+    }
+   ],
+   "precincts": {
+    "reporting": 107,
+    "total": 107,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 28",
+   "district": null,
+   "title": "State Senate District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sam-alexander",
+     "name": "Sam Alexander",
+     "party": "R",
+     "party_code": "R",
+     "votes": 41289
+    },
+    {
+     "id": "mike-mccaffree",
+     "name": "Mike McCaffree",
+     "party": "D",
+     "party_code": "D",
+     "votes": 16492
+    }
+   ],
+   "precincts": {
+    "reporting": 102,
+    "total": 102,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 30",
+   "district": null,
+   "title": "State Senate District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melanie-stinnett",
+     "name": "Melanie Stinnett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 21556
+    },
+    {
+     "id": "betsy-fogle",
+     "name": "Betsy Fogle",
+     "party": "D",
+     "party_code": "D",
+     "votes": 32356
+    },
+    {
+     "id": "cecil-ince",
+     "name": "Cecil Ince",
+     "party": "L",
+     "party_code": "O",
+     "votes": 1894
+    }
+   ],
+   "precincts": {
+    "reporting": 57,
+    "total": 57,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 32",
+   "district": null,
+   "title": "State Senate District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jill-carter",
+     "name": "Jill Carter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 35290
+    },
+    {
+     "id": "imma-j-curl",
+     "name": "Imma J Curl",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14958
+    }
+   ],
+   "precincts": {
+    "reporting": 76,
+    "total": 76,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-senate-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Senate District 34",
+   "district": null,
+   "title": "State Senate District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-jones",
+     "name": "Mike Jones",
+     "party": "R",
+     "party_code": "R",
+     "votes": 33284
+    },
+    {
+     "id": "shereka-barnes",
+     "name": "Shereka Barnes",
+     "party": "D",
+     "party_code": "D",
+     "votes": 32725
+    }
+   ],
+   "precincts": {
+    "reporting": 50,
+    "total": 50,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 1",
+   "district": null,
+   "title": "State House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-farnan",
+     "name": "Jeff Farnan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9768
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 2",
+   "district": null,
+   "title": "State House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phil-fox",
+     "name": "Phil Fox",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8586
+    },
+    {
+     "id": "casey-scott",
+     "name": "Casey Scott",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2635
+    },
+    {
+     "id": "shelby-dreier",
+     "name": "Shelby Dreier",
+     "party": "L",
+     "party_code": "O",
+     "votes": 290
+    }
+   ],
+   "precincts": {
+    "reporting": 48,
+    "total": 48,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 3",
+   "district": null,
+   "title": "State House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "p-jeremy-mosley",
+     "name": "P. Jeremy Mosley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6667
+    },
+    {
+     "id": "corey-luebbering",
+     "name": "Corey Luebbering",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3406
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 4",
+   "district": null,
+   "title": "State House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "keith-gudehus",
+     "name": "Keith Gudehus",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8233
+    },
+    {
+     "id": "tristan-sutton",
+     "name": "Tristan Sutton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2443
+    }
+   ],
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 5",
+   "district": null,
+   "title": "State House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "roth-mcelvain",
+     "name": "Roth Mcelvain",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8809
+    },
+    {
+     "id": "john-paul-tomko",
+     "name": "John Paul Tomko",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3208
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 6",
+   "district": null,
+   "title": "State House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelly-gatts",
+     "name": "Kelly Gatts",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7200
+    },
+    {
+     "id": "robert-johnson",
+     "name": "Robert Johnson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3063
+    },
+    {
+     "id": "john-davison",
+     "name": "John Davison",
+     "party": "L",
+     "party_code": "O",
+     "votes": 529
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 7",
+   "district": null,
+   "title": "State House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeremy-clevenger",
+     "name": "Jeremy Clevenger",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8561
+    },
+    {
+     "id": "adrian-cooper",
+     "name": "Adrian Cooper",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3378
+    }
+   ],
+   "precincts": {
+    "reporting": 40,
+    "total": 40,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 8",
+   "district": null,
+   "title": "State House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-hurlbert",
+     "name": "Josh Hurlbert",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9364
+    },
+    {
+     "id": "amy-minich",
+     "name": "Amy Minich",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6622
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 9",
+   "district": null,
+   "title": "State House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dean-vanschoiack",
+     "name": "Dean VanSchoiack",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8293
+    },
+    {
+     "id": "gena-puckett",
+     "name": "Gena Puckett",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3853
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 10",
+   "district": null,
+   "title": "State House District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-gatewood",
+     "name": "Paul Gatewood",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4956
+    },
+    {
+     "id": "latonya-t-williams",
+     "name": "LaTonya T. Williams",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4106
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 11",
+   "district": null,
+   "title": "State House District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "taylor-crouse",
+     "name": "Taylor Crouse",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6386
+    },
+    {
+     "id": "luke-rae",
+     "name": "Luke Rae",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5033
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 12",
+   "district": null,
+   "title": "State House District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jerry-hickey",
+     "name": "Jerry Hickey",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6569
+    },
+    {
+     "id": "tracey-steele",
+     "name": "Tracey Steele",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9268
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 13",
+   "district": null,
+   "title": "State House District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-elliott",
+     "name": "John Elliott",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9625
+    },
+    {
+     "id": "jacoby-wynkoop",
+     "name": "Jacoby Wynkoop",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6410
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 14",
+   "district": null,
+   "title": "State House District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "frank-pendleton",
+     "name": "Frank Pendleton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6172
+    },
+    {
+     "id": "ashley-aune",
+     "name": "Ashley Aune",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9801
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 15",
+   "district": null,
+   "title": "State House District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kenneth-jamison",
+     "name": "Kenneth Jamison",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10141
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 16",
+   "district": null,
+   "title": "State House District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-brown",
+     "name": "Chris Brown",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6979
+    },
+    {
+     "id": "dan-kinate",
+     "name": "Dan Kinate",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8324
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 17",
+   "district": null,
+   "title": "State House District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-allen",
+     "name": "Bill Allen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5270
+    },
+    {
+     "id": "susan-hoisington",
+     "name": "Susan Hoisington",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7642
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 18",
+   "district": null,
+   "title": "State House District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-woods",
+     "name": "Eric Woods",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9456
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 19",
+   "district": null,
+   "title": "State House District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "karen-irene-spalding",
+     "name": "Karen Irene Spalding",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1074
+    },
+    {
+     "id": "wick-thomas",
+     "name": "Wick Thomas",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5879
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 20",
+   "district": null,
+   "title": "State House District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-steinmeyer",
+     "name": "Mike Steinmeyer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5814
+    },
+    {
+     "id": "jeff-spicer",
+     "name": "Jeff Spicer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6150
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 21",
+   "district": null,
+   "title": "State House District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-young",
+     "name": "Michael Young",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3299
+    },
+    {
+     "id": "will-jobe",
+     "name": "Will Jobe",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5024
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 22",
+   "district": null,
+   "title": "State House District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yolanda-young",
+     "name": "Yolanda Young",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8013
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 23",
+   "district": null,
+   "title": "State House District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tony-l-van-trece",
+     "name": "Tony L. Van Trece",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5573
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 24",
+   "district": null,
+   "title": "State House District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-garner",
+     "name": "Kevin Garner",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13062
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 25",
+   "district": null,
+   "title": "State House District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pattie-mansur",
+     "name": "Pattie Mansur",
+     "party": "D",
+     "party_code": "D",
+     "votes": 16681
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 26",
+   "district": null,
+   "title": "State House District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany-price",
+     "name": "Tiffany Price",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9555
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 27",
+   "district": null,
+   "title": "State House District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-a-douglas",
+     "name": "Melissa A Douglas",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10173
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 28",
+   "district": null,
+   "title": "State House District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-w-hinton",
+     "name": "Steven W Hinton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2751
+    },
+    {
+     "id": "donna-barnes",
+     "name": "Donna Barnes",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8975
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 29",
+   "district": null,
+   "title": "State House District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-bruette",
+     "name": "Robert Bruette",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4964
+    },
+    {
+     "id": "tedi-h-rowland",
+     "name": "Tedi H. Rowland",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8050
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 30",
+   "district": null,
+   "title": "State House District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-martin",
+     "name": "Jeff Martin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7511
+    },
+    {
+     "id": "kevin-grover",
+     "name": "Kevin Grover",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10083
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 31",
+   "district": null,
+   "title": "State House District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ron-fowler",
+     "name": "Ron Fowler",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6779
+    },
+    {
+     "id": "justin-geiser",
+     "name": "Justin Geiser",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7688
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 32",
+   "district": null,
+   "title": "State House District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-todd",
+     "name": "Michael Todd",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7799
+    },
+    {
+     "id": "jennifer-cassidy",
+     "name": "Jennifer Cassidy",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5869
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 33",
+   "district": null,
+   "title": "State House District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carolyn-caton",
+     "name": "Carolyn Caton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8253
+    },
+    {
+     "id": "troy-latterell",
+     "name": "Troy Latterell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7621
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 34",
+   "district": null,
+   "title": "State House District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sean-smith",
+     "name": "Sean Smith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5994
+    },
+    {
+     "id": "kemp-strickler",
+     "name": "Kemp Strickler",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9371
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 35",
+   "district": null,
+   "title": "State House District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jacquie-aziere-stenger",
+     "name": "Jacquie Aziere Stenger",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6732
+    },
+    {
+     "id": "michael-scott",
+     "name": "Michael Scott",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10932
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 36",
+   "district": null,
+   "title": "State House District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dave-thomas",
+     "name": "Dave Thomas",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3686
+    },
+    {
+     "id": "anthony-t-ealy-jr",
+     "name": "Anthony T. Ealy Jr.",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7946
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 37",
+   "district": null,
+   "title": "State House District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "karissa-marie-varga",
+     "name": "Karissa Marie Varga",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8961
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 38",
+   "district": null,
+   "title": "State House District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mary-hill",
+     "name": "Mary Hill",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6150
+    },
+    {
+     "id": "martin-marty-jacobs",
+     "name": "Martin (Marty) Jacobs",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9405
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 39",
+   "district": null,
+   "title": "State House District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-meirath",
+     "name": "Mark Meirath",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8323
+    },
+    {
+     "id": "tanya-lakins",
+     "name": "Tanya Lakins",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6910
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 40",
+   "district": null,
+   "title": "State House District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chad-perkins",
+     "name": "Chad Perkins",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8359
+    },
+    {
+     "id": "thomas-d-mcbeth",
+     "name": "Thomas D McBeth",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3126
+    },
+    {
+     "id": "sheri-jay",
+     "name": "Sheri Jay",
+     "party": "L",
+     "party_code": "O",
+     "votes": 421
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 41",
+   "district": null,
+   "title": "State House District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "doyle-justus",
+     "name": "Doyle Justus",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8513
+    },
+    {
+     "id": "matthew-beger",
+     "name": "Matthew Beger",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3875
+    },
+    {
+     "id": "dalton-p-johnson",
+     "name": "Dalton P. Johnson",
+     "party": "L",
+     "party_code": "O",
+     "votes": 376
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 42",
+   "district": null,
+   "title": "State House District 42",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-myers",
+     "name": "Jeff Myers",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9700
+    },
+    {
+     "id": "amy-pritchard",
+     "name": "Amy Pritchard",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4810
+    }
+   ],
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 43",
+   "district": null,
+   "title": "State House District 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brendan-webber",
+     "name": "Brendan Webber",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7544
+    },
+    {
+     "id": "rich-gold",
+     "name": "Rich Gold",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3016
+    }
+   ],
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-44",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 44",
+   "district": null,
+   "title": "State House District 44",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-martin",
+     "name": "John Martin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7769
+    },
+    {
+     "id": "bekki-brewer",
+     "name": "Bekki Brewer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7038
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 45",
+   "district": null,
+   "title": "State House District 45",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kathy-steinhoff",
+     "name": "Kathy Steinhoff",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7018
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 46",
+   "district": null,
+   "title": "State House District 46",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-tyson-smith",
+     "name": "David Tyson Smith",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8834
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 47",
+   "district": null,
+   "title": "State House District 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adrian-plank",
+     "name": "Adrian Plank",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11588
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-48",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 48",
+   "district": null,
+   "title": "State House District 48",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-taylor",
+     "name": "Tim Taylor",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8233
+    },
+    {
+     "id": "hope-tinker",
+     "name": "Hope Tinker",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4368
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 49",
+   "district": null,
+   "title": "State House District 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-schulte",
+     "name": "Jim Schulte",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7616
+    },
+    {
+     "id": "jessica-o-neal-slisz",
+     "name": "Jessica O'Neal-Slisz",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4579
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-50",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 50",
+   "district": null,
+   "title": "State House District 50",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gregg-bush",
+     "name": "Gregg Bush",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10249
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-51",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 51",
+   "district": null,
+   "title": "State House District 51",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-gooden",
+     "name": "Stephanie Gooden",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7210
+    },
+    {
+     "id": "ron-fauss",
+     "name": "Ron Fauss",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3808
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-52",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 52",
+   "district": null,
+   "title": "State House District 52",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "israel-baeza",
+     "name": "Israel Baeza",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6037
+    },
+    {
+     "id": "rene-vance",
+     "name": "Rene Vance",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3410
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-53",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 53",
+   "district": null,
+   "title": "State House District 53",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "terry-thompson",
+     "name": "Terry Thompson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8212
+    },
+    {
+     "id": "beth-grubb",
+     "name": "Beth Grubb",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4619
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-54",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 54",
+   "district": null,
+   "title": "State House District 54",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-phelps",
+     "name": "Brandon Phelps",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6989
+    },
+    {
+     "id": "taigan-rayne-plummer",
+     "name": "Taigan Rayne Plummer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4567
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-55",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 55",
+   "district": null,
+   "title": "State House District 55",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-bill-irwin",
+     "name": "William (Bill) Irwin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9465
+    },
+    {
+     "id": "jon-pennell",
+     "name": "Jon Pennell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5886
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-56",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 56",
+   "district": null,
+   "title": "State House District 56",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-baker",
+     "name": "Steve Baker",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6244
+    },
+    {
+     "id": "staci-czar",
+     "name": "Staci Czar",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6956
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-57",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 57",
+   "district": null,
+   "title": "State House District 57",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-sergent",
+     "name": "Matt Sergent",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9024
+    },
+    {
+     "id": "michael-d-walbom",
+     "name": "Michael D. Walbom",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3331
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-58",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 58",
+   "district": null,
+   "title": "State House District 58",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "willard-haley",
+     "name": "Willard Haley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8206
+    },
+    {
+     "id": "roger-korenberg",
+     "name": "Roger Korenberg",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2653
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-59",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 59",
+   "district": null,
+   "title": "State House District 59",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carrie-tergin",
+     "name": "Carrie Tergin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10461
+    },
+    {
+     "id": "becky-kroll",
+     "name": "Becky Kroll",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5296
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-60",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 60",
+   "district": null,
+   "title": "State House District 60",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shane-kampeter",
+     "name": "Shane Kampeter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6140
+    },
+    {
+     "id": "suzanne-luther",
+     "name": "Suzanne Luther",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6329
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-61",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 61",
+   "district": null,
+   "title": "State House District 61",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bruce-sassmann",
+     "name": "Bruce Sassmann",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9673
+    },
+    {
+     "id": "stacy-bax",
+     "name": "Stacy Bax",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3494
+    }
+   ],
+   "precincts": {
+    "reporting": 51,
+    "total": 51,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-62",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 62",
+   "district": null,
+   "title": "State House District 62",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sherri-gallick",
+     "name": "Sherri Gallick",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9728
+    },
+    {
+     "id": "liz-davenport",
+     "name": "Liz Davenport",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5123
+    }
+   ],
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-63",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 63",
+   "district": null,
+   "title": "State House District 63",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tony-lovasco",
+     "name": "Tony Lovasco",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6975
+    },
+    {
+     "id": "donald-r-looney-jr",
+     "name": "Donald R Looney Jr",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6020
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-64",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 64",
+   "district": null,
+   "title": "State House District 64",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deanna-self",
+     "name": "Deanna Self",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8624
+    },
+    {
+     "id": "amber-teson",
+     "name": "Amber Teson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6578
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-65",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 65",
+   "district": null,
+   "title": "State House District 65",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wendy-l-hausman",
+     "name": "Wendy L. Hausman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7323
+    },
+    {
+     "id": "dale-conoyer",
+     "name": "Dale Conoyer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6971
+    }
+   ],
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-66",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 66",
+   "district": null,
+   "title": "State House District 66",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "laura-mitchell-riley",
+     "name": "Laura Mitchell-Riley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 681
+    },
+    {
+     "id": "marlene-terry",
+     "name": "Marlene Terry",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6922
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-67",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 67",
+   "district": null,
+   "title": "State House District 67",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tonya-rush",
+     "name": "Tonya Rush",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13306
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-68",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 68",
+   "district": null,
+   "title": "State House District 68",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kem-smith",
+     "name": "Kem Smith",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9589
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-69",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 69",
+   "district": null,
+   "title": "State House District 69",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-miller",
+     "name": "Scott Miller",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8406
+    },
+    {
+     "id": "chris-chapman",
+     "name": "Chris Chapman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8339
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-70",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 70",
+   "district": null,
+   "title": "State House District 70",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-boykin",
+     "name": "Stephanie Boykin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9158
+    }
+   ],
+   "precincts": {
+    "reporting": 47,
+    "total": 47,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-71",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 71",
+   "district": null,
+   "title": "State House District 71",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nicole-greer",
+     "name": "Nicole Greer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12704
+    }
+   ],
+   "precincts": {
+    "reporting": 40,
+    "total": 40,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-72",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 72",
+   "district": null,
+   "title": "State House District 72",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeffrey-jacks",
+     "name": "Jeffrey Jacks",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2725
+    },
+    {
+     "id": "patrick-james-wroblewski",
+     "name": "Patrick James Wroblewski",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7788
+    }
+   ],
+   "precincts": {
+    "reporting": 34,
+    "total": 34,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-73",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 73",
+   "district": null,
+   "title": "State House District 73",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kennedy-moore",
+     "name": "Kennedy Moore",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7408
+    },
+    {
+     "id": "joy-denise-dabney",
+     "name": "Joy Denise Dabney",
+     "party": "L",
+     "party_code": "O",
+     "votes": 1063
+    }
+   ],
+   "precincts": {
+    "reporting": 40,
+    "total": 40,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-74",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 74",
+   "district": null,
+   "title": "State House District 74",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jack-howard",
+     "name": "Jack Howard",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1018
+    },
+    {
+     "id": "marla-smith",
+     "name": "Marla Smith",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8021
+    }
+   ],
+   "precincts": {
+    "reporting": 74,
+    "total": 74,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-75",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 75",
+   "district": null,
+   "title": "State House District 75",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-wilke",
+     "name": "Brandon Wilke",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2142
+    },
+    {
+     "id": "chanel-mosley",
+     "name": "Chanel Mosley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9329
+    }
+   ],
+   "precincts": {
+    "reporting": 35,
+    "total": 35,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-76",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 76",
+   "district": null,
+   "title": "State House District 76",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marlon-anderson",
+     "name": "Marlon Anderson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8348
+    }
+   ],
+   "precincts": {
+    "reporting": 28,
+    "total": 28,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-77",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 77",
+   "district": null,
+   "title": "State House District 77",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kimberly-ann-collins",
+     "name": "Kimberly-Ann Collins",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9260
+    },
+    {
+     "id": "michael-corey",
+     "name": "Michael Corey",
+     "party": "L",
+     "party_code": "O",
+     "votes": 621
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-78",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 78",
+   "district": null,
+   "title": "State House District 78",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marty-joe-murray",
+     "name": "Marty Joe Murray",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8018
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-79",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 79",
+   "district": null,
+   "title": "State House District 79",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-hebron",
+     "name": "Mike Hebron",
+     "party": "R",
+     "party_code": "R",
+     "votes": 608
+    },
+    {
+     "id": "rachel-d-souza",
+     "name": "Rachel D'Souza",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8893
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-80",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 80",
+   "district": null,
+   "title": "State House District 80",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennie-drag",
+     "name": "Jennie Drag",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1201
+    },
+    {
+     "id": "elizabeth-lilly-fuchs",
+     "name": "Elizabeth (Lilly) Fuchs",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10634
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-81",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 81",
+   "district": null,
+   "title": "State House District 81",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-jimmy-lappe",
+     "name": "James (Jimmy) Lappe",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8991
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-82",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 82",
+   "district": null,
+   "title": "State House District 82",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nick-kimble",
+     "name": "Nick Kimble",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14933
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-83",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 83",
+   "district": null,
+   "title": "State House District 83",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ray-reed",
+     "name": "Ray Reed",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12937
+    },
+    {
+     "id": "andrew-bolin",
+     "name": "Andrew Bolin",
+     "party": "L",
+     "party_code": "O",
+     "votes": 2419
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-84",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 84",
+   "district": null,
+   "title": "State House District 84",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-vroman",
+     "name": "Robert Vroman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 907
+    },
+    {
+     "id": "del-taylor",
+     "name": "Del Taylor",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8901
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-85",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 85",
+   "district": null,
+   "title": "State House District 85",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jerron-j-sutton",
+     "name": "Jerron J Sutton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 409
+    },
+    {
+     "id": "yolonda-fountain-henderson",
+     "name": "Yolonda Fountain Henderson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7906
+    }
+   ],
+   "precincts": {
+    "reporting": 45,
+    "total": 45,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-86",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 86",
+   "district": null,
+   "title": "State House District 86",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-hales",
+     "name": "Jeff Hales",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12557
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-87",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 87",
+   "district": null,
+   "title": "State House District 87",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dan-hyatt",
+     "name": "Dan Hyatt",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3949
+    },
+    {
+     "id": "connie-steinmetz",
+     "name": "Connie Steinmetz",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9344
+    }
+   ],
+   "precincts": {
+    "reporting": 40,
+    "total": 40,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-88",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 88",
+   "district": null,
+   "title": "State House District 88",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "holly-jones",
+     "name": "Holly Jones",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8551
+    },
+    {
+     "id": "jennifer-trickey",
+     "name": "Jennifer Trickey",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8005
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-89",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 89",
+   "district": null,
+   "title": "State House District 89",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "george-hruza",
+     "name": "George Hruza",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9329
+    },
+    {
+     "id": "bryan-troop",
+     "name": "Bryan Troop",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8553
+    }
+   ],
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-90",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 90",
+   "district": null,
+   "title": "State House District 90",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-boyko",
+     "name": "Mark Boyko",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14049
+    }
+   ],
+   "precincts": {
+    "reporting": 28,
+    "total": 28,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-91",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 91",
+   "district": null,
+   "title": "State House District 91",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jo-doll",
+     "name": "Jo Doll",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14735
+    }
+   ],
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-92",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 92",
+   "district": null,
+   "title": "State House District 92",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kenneth-abram",
+     "name": "Kenneth Abram",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5596
+    },
+    {
+     "id": "michael-burton",
+     "name": "Michael Burton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9347
+    }
+   ],
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-93",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 93",
+   "district": null,
+   "title": "State House District 93",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bridget-walsh-moore",
+     "name": "Bridget Walsh Moore",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7647
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-94",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 94",
+   "district": null,
+   "title": "State House District 94",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maryellen-murphy",
+     "name": "Maryellen Murphy",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6518
+    },
+    {
+     "id": "cathy-a-summers",
+     "name": "Cathy A Summers",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7683
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-95",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 95",
+   "district": null,
+   "title": "State House District 95",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-mahacek",
+     "name": "Bob Mahacek",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8714
+    },
+    {
+     "id": "meredith-sumenek",
+     "name": "Meredith Sumenek",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8209
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-96",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 96",
+   "district": null,
+   "title": "State House District 96",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brad-christ",
+     "name": "Brad Christ",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8362
+    },
+    {
+     "id": "matt-vitale",
+     "name": "Matt Vitale",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9809
+    },
+    {
+     "id": "shane-ferguson",
+     "name": "Shane Ferguson",
+     "party": "L",
+     "party_code": "O",
+     "votes": 255
+    }
+   ],
+   "precincts": {
+    "reporting": 43,
+    "total": 43,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-97",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 97",
+   "district": null,
+   "title": "State House District 97",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-robertson",
+     "name": "David Robertson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6496
+    },
+    {
+     "id": "dan-schaefer",
+     "name": "Dan Schaefer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5621
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-98",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 98",
+   "district": null,
+   "title": "State House District 98",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "timothy-bosch",
+     "name": "Timothy Bosch",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6520
+    },
+    {
+     "id": "jaclyn-zimmermann",
+     "name": "Jaclyn Zimmermann",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10061
+    }
+   ],
+   "precincts": {
+    "reporting": 39,
+    "total": 39,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-99",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 99",
+   "district": null,
+   "title": "State House District 99",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tori-schafer",
+     "name": "Tori Schafer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11469
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 100",
+   "district": null,
+   "title": "State House District 100",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "philip-oehlerking",
+     "name": "Philip Oehlerking",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7158
+    },
+    {
+     "id": "mary-ann-perkins",
+     "name": "Mary Ann Perkins",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9770
+    },
+    {
+     "id": "ken-newhouse",
+     "name": "Ken Newhouse",
+     "party": "L",
+     "party_code": "O",
+     "votes": 319
+    }
+   ],
+   "precincts": {
+    "reporting": 34,
+    "total": 34,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-101",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 101",
+   "district": null,
+   "title": "State House District 101",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-keathley",
+     "name": "Ben Keathley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8873
+    },
+    {
+     "id": "paul-lentz",
+     "name": "Paul Lentz",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9540
+    },
+    {
+     "id": "jeff-coleman",
+     "name": "Jeff Coleman",
+     "party": "L",
+     "party_code": "O",
+     "votes": 252
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-102",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 102",
+   "district": null,
+   "title": "State House District 102",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-w-west",
+     "name": "Richard W West",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9997
+    },
+    {
+     "id": "david-rogers",
+     "name": "David Rogers",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7508
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-103",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 103",
+   "district": null,
+   "title": "State House District 103",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dave-hinman",
+     "name": "Dave Hinman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6611
+    },
+    {
+     "id": "don-crozier",
+     "name": "Don Crozier",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6335
+    }
+   ],
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-104",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 104",
+   "district": null,
+   "title": "State House District 104",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "terri-violet",
+     "name": "Terri Violet",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6981
+    },
+    {
+     "id": "tara-murray",
+     "name": "Tara Murray",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8580
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-105",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 105",
+   "district": null,
+   "title": "State House District 105",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "colin-wellenkamp",
+     "name": "Colin Wellenkamp",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5289
+    },
+    {
+     "id": "cat-clayton",
+     "name": "Cat Clayton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6616
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-106",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 106",
+   "district": null,
+   "title": "State House District 106",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "travis-wilson",
+     "name": "Travis Wilson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6968
+    },
+    {
+     "id": "jewel-kelly",
+     "name": "Jewel Kelly",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8746
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-107",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 107",
+   "district": null,
+   "title": "State House District 107",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-matthiesen",
+     "name": "Mark Matthiesen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7541
+    },
+    {
+     "id": "gary-wester",
+     "name": "Gary Wester",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7416
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-108",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 108",
+   "district": null,
+   "title": "State House District 108",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-costlow",
+     "name": "Mike Costlow",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8215
+    },
+    {
+     "id": "stephen-scott",
+     "name": "Stephen Scott",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7068
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-109",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 109",
+   "district": null,
+   "title": "State House District 109",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-simmons",
+     "name": "John Simmons",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10177
+    },
+    {
+     "id": "trent-leslie",
+     "name": "Trent Leslie",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6294
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-110",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 110",
+   "district": null,
+   "title": "State House District 110",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "niles-stephens",
+     "name": "Niles Stephens",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9310
+    },
+    {
+     "id": "claire-heinrich",
+     "name": "Claire Heinrich",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8897
+    }
+   ],
+   "precincts": {
+    "reporting": 43,
+    "total": 43,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-111",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 111",
+   "district": null,
+   "title": "State House District 111",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cecelie-williams",
+     "name": "Cecelie Williams",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8376
+    },
+    {
+     "id": "stacey-hagen",
+     "name": "Stacey Hagen",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5501
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-112",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 112",
+   "district": null,
+   "title": "State House District 112",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ed-callahan",
+     "name": "Ed Callahan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7956
+    },
+    {
+     "id": "dave-rekosh",
+     "name": "Dave Rekosh",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5565
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-113",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 113",
+   "district": null,
+   "title": "State House District 113",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phil-amato",
+     "name": "Phil Amato",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7119
+    },
+    {
+     "id": "ashley-drury",
+     "name": "Ashley Drury",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5667
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-114",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 114",
+   "district": null,
+   "title": "State House District 114",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ann-moloney",
+     "name": "Ann Moloney",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7225
+    },
+    {
+     "id": "jessie-shepherd",
+     "name": "Jessie Shepherd",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5179
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-115",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 115",
+   "district": null,
+   "title": "State House District 115",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-lucas",
+     "name": "Bill Lucas",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7700
+    },
+    {
+     "id": "david-george",
+     "name": "David George",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4258
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-116",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 116",
+   "district": null,
+   "title": "State House District 116",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-green",
+     "name": "Jason Green",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6131
+    },
+    {
+     "id": "whitney-wisker-brooks",
+     "name": "Whitney Wisker-Brooks",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3561
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-117",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 117",
+   "district": null,
+   "title": "State House District 117",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "becky-laubinger",
+     "name": "Becky Laubinger",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5846
+    },
+    {
+     "id": "eli-flowers",
+     "name": "Eli Flowers",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3456
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-118",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 118",
+   "district": null,
+   "title": "State House District 118",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-declue",
+     "name": "Amy DeClue",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8372
+    },
+    {
+     "id": "sarah-rachel-puckett",
+     "name": "Sarah Rachel Puckett",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3476
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-119",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 119",
+   "district": null,
+   "title": "State House District 119",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brad-banderman",
+     "name": "Brad Banderman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7549
+    },
+    {
+     "id": "amy-thompson",
+     "name": "Amy Thompson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4905
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-120",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 120",
+   "district": null,
+   "title": "State House District 120",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-w-hewkin",
+     "name": "John W Hewkin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8341
+    },
+    {
+     "id": "ray-bruno",
+     "name": "Ray Bruno",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2811
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-121",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 121",
+   "district": null,
+   "title": "State House District 121",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "keith-pritchard",
+     "name": "Keith Pritchard",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2925
+    },
+    {
+     "id": "miguel-arellanes",
+     "name": "Miguel Arellanes",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1859
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-122",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 122",
+   "district": null,
+   "title": "State House District 122",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tara-j-peters",
+     "name": "Tara J Peters",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6472
+    },
+    {
+     "id": "dan-victor",
+     "name": "Dan Victor",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4085
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-123",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 123",
+   "district": null,
+   "title": "State House District 123",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-vernetti",
+     "name": "Jeff Vernetti",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10910
+    },
+    {
+     "id": "cody-hutcheson",
+     "name": "Cody Hutcheson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4626
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-124",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 124",
+   "district": null,
+   "title": "State House District 124",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-onstott",
+     "name": "Kevin Onstott",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8866
+    },
+    {
+     "id": "tara-hallmark",
+     "name": "Tara Hallmark",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2699
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-125",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 125",
+   "district": null,
+   "title": "State House District 125",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dane-diehl",
+     "name": "Dane Diehl",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7728
+    },
+    {
+     "id": "lynda-c-jones",
+     "name": "Lynda C Jones",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2837
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-126",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 126",
+   "district": null,
+   "title": "State House District 126",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-kalberloh",
+     "name": "Jim Kalberloh",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9087
+    },
+    {
+     "id": "melissa-perry",
+     "name": "Melissa Perry",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3519
+    }
+   ],
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-127",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 127",
+   "district": null,
+   "title": "State House District 127",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brenden-j-kelley",
+     "name": "Brenden J. Kelley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9126
+    },
+    {
+     "id": "marvin-manring",
+     "name": "Marvin Manring",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2128
+    },
+    {
+     "id": "racheal-martin",
+     "name": "Racheal Martin",
+     "party": "I",
+     "party_code": "O",
+     "votes": 827
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-128",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 128",
+   "district": null,
+   "title": "State House District 128",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-d-warwick",
+     "name": "Christopher D. Warwick",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7372
+    },
+    {
+     "id": "michael-l-martin",
+     "name": "Michael L. Martin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2391
+    },
+    {
+     "id": "shane-sawyer",
+     "name": "Shane Sawyer",
+     "party": "I",
+     "party_code": "O",
+     "votes": 3492
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-129",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 129",
+   "district": null,
+   "title": "State House District 129",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "will-worsham",
+     "name": "Will Worsham",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8941
+    },
+    {
+     "id": "john-gray",
+     "name": "John Gray",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3972
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-130",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 130",
+   "district": null,
+   "title": "State House District 130",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bishop-davidson",
+     "name": "Bishop Davidson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7297
+    },
+    {
+     "id": "leslie-jones",
+     "name": "Leslie Jones",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5469
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-131",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 131",
+   "district": null,
+   "title": "State House District 131",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-owen",
+     "name": "Bill Owen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10443
+    },
+    {
+     "id": "ashley-cossins",
+     "name": "Ashley Cossins",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4473
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-132",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 132",
+   "district": null,
+   "title": "State House District 132",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "russ-gosselin",
+     "name": "Russ Gosselin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2737
+    },
+    {
+     "id": "jeremy-dean",
+     "name": "Jeremy Dean",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4539
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-133",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 133",
+   "district": null,
+   "title": "State House District 133",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jerry-angelo",
+     "name": "Jerry Angelo",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3640
+    },
+    {
+     "id": "katelyn-zach",
+     "name": "Katelyn Zach",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5711
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-134",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 134",
+   "district": null,
+   "title": "State House District 134",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alex-riley",
+     "name": "Alex Riley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8577
+    },
+    {
+     "id": "k-grant",
+     "name": "K. Grant",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7119
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-135",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 135",
+   "district": null,
+   "title": "State House District 135",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-hasty",
+     "name": "Michael Hasty",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4193
+    },
+    {
+     "id": "john-michael-johnny-chiles",
+     "name": "John Michael (Johnny) Chiles",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7327
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-136",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 136",
+   "district": null,
+   "title": "State House District 136",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jacey-buckles",
+     "name": "Jacey Buckles",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5559
+    },
+    {
+     "id": "stephanie-hein",
+     "name": "Stephanie Hein",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8524
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-137",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 137",
+   "district": null,
+   "title": "State House District 137",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "darin-chappell",
+     "name": "Darin Chappell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11318
+    },
+    {
+     "id": "bryce-f-lockwood",
+     "name": "Bryce F. Lockwood",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6809
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-138",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 138",
+   "district": null,
+   "title": "State House District 138",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "burt-whaley",
+     "name": "Burt Whaley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12224
+    },
+    {
+     "id": "chris-daugherty",
+     "name": "Chris Daugherty",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3833
+    }
+   ],
+   "precincts": {
+    "reporting": 28,
+    "total": 28,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-139",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 139",
+   "district": null,
+   "title": "State House District 139",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-titus",
+     "name": "Bob Titus",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11722
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-140",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 140",
+   "district": null,
+   "title": "State House District 140",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jamie-ray-gragg",
+     "name": "Jamie Ray Gragg",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9988
+    },
+    {
+     "id": "julia-e-curran",
+     "name": "Julia E. Curran",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4451
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-141",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 141",
+   "district": null,
+   "title": "State House District 141",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-schmidt",
+     "name": "Melissa Schmidt",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9074
+    },
+    {
+     "id": "darrel-mike-swofford",
+     "name": "Darrel (Mike) Swofford",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1864
+    }
+   ],
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-142",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 142",
+   "district": null,
+   "title": "State House District 142",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-brown",
+     "name": "Jeff Brown",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7212
+    },
+    {
+     "id": "josh-ray",
+     "name": "Josh Ray",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2358
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-143",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 143",
+   "district": null,
+   "title": "State House District 143",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bennie-cook",
+     "name": "Bennie Cook",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9868
+    },
+    {
+     "id": "marsha-snodgrass",
+     "name": "Marsha Snodgrass",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2709
+    }
+   ],
+   "precincts": {
+    "reporting": 41,
+    "total": 41,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-144",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 144",
+   "district": null,
+   "title": "State House District 144",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-dodson-dinkins",
+     "name": "Chris Dodson Dinkins",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8470
+    },
+    {
+     "id": "andrew-j-eye",
+     "name": "Andrew J Eye",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3096
+    }
+   ],
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-145",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 145",
+   "district": null,
+   "title": "State House District 145",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bryant-wolfin",
+     "name": "Bryant Wolfin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8128
+    },
+    {
+     "id": "carl-kinsky",
+     "name": "Carl Kinsky",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3640
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-146",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 146",
+   "district": null,
+   "title": "State House District 146",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lucas-green",
+     "name": "Lucas Green",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11282
+    },
+    {
+     "id": "mary-harriet-talbut",
+     "name": "Mary Harriet Talbut",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4288
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-147",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 147",
+   "district": null,
+   "title": "State House District 147",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-voss",
+     "name": "John Voss",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5662
+    },
+    {
+     "id": "tim-palmer",
+     "name": "Tim Palmer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4373
+    },
+    {
+     "id": "greg-tlapek",
+     "name": "Greg Tlapek",
+     "party": "L",
+     "party_code": "O",
+     "votes": 483
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-148",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 148",
+   "district": null,
+   "title": "State House District 148",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-a-dolan",
+     "name": "David A. Dolan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7237
+    },
+    {
+     "id": "casey-carlisle",
+     "name": "Casey Carlisle",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2730
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-149",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 149",
+   "district": null,
+   "title": "State House District 149",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-crumpecker",
+     "name": "Scott Crumpecker",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5621
+    },
+    {
+     "id": "john-armbruster",
+     "name": "John Armbruster",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2690
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-150",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 150",
+   "district": null,
+   "title": "State House District 150",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cameron-bunting-parker",
+     "name": "Cameron Bunting Parker",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6546
+    }
+   ],
+   "precincts": {
+    "reporting": 28,
+    "total": 28,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-151",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 151",
+   "district": null,
+   "title": "State House District 151",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-w-jordan",
+     "name": "Steve W Jordan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8545
+    },
+    {
+     "id": "pam-proffitt-rowland",
+     "name": "Pam Proffitt-Rowland",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2502
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-152",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 152",
+   "district": null,
+   "title": "State House District 152",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-shawan",
+     "name": "Jeff Shawan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6297
+    },
+    {
+     "id": "corretta-bishop",
+     "name": "Corretta Bishop",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2427
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-153",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 153",
+   "district": null,
+   "title": "State House District 153",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "keith-wayne-elliott",
+     "name": "Keith Wayne Elliott",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9518
+    },
+    {
+     "id": "les-majors",
+     "name": "Les Majors",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2563
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-154",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 154",
+   "district": null,
+   "title": "State House District 154",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lisa-k-durnell",
+     "name": "Lisa K Durnell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8369
+    },
+    {
+     "id": "jojo-stewart",
+     "name": "Jojo Stewart",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2358
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-155",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 155",
+   "district": null,
+   "title": "State House District 155",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-overcast",
+     "name": "Matthew Overcast",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11150
+    },
+    {
+     "id": "joshua-berzins",
+     "name": "Joshua Berzins",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2945
+    }
+   ],
+   "precincts": {
+    "reporting": 35,
+    "total": 35,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-156",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 156",
+   "district": null,
+   "title": "State House District 156",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-h-seitz",
+     "name": "Brian H. Seitz",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8483
+    },
+    {
+     "id": "trent-davis",
+     "name": "Trent Davis",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3094
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-157",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 157",
+   "district": null,
+   "title": "State House District 157",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mitch-boggs",
+     "name": "Mitch Boggs",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8651
+    },
+    {
+     "id": "bradley-bos",
+     "name": "Bradley Bos",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2927
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-158",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 158",
+   "district": null,
+   "title": "State House District 158",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-cupps",
+     "name": "Scott Cupps",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8799
+    },
+    {
+     "id": "chris-foster",
+     "name": "Chris Foster",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2796
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-159",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 159",
+   "district": null,
+   "title": "State House District 159",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joel-mace",
+     "name": "Joel Mace",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9347
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-160",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 160",
+   "district": null,
+   "title": "State House District 160",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cheryle-perkins",
+     "name": "Cheryle Perkins",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8783
+    },
+    {
+     "id": "angela-thomas",
+     "name": "Angela Thomas",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3415
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-161",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 161",
+   "district": null,
+   "title": "State House District 161",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "louise-secker",
+     "name": "Louise Secker",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3819
+    },
+    {
+     "id": "aaron-joseph-metzger",
+     "name": "Aaron Joseph Metzger",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3523
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-162",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 162",
+   "district": null,
+   "title": "State House District 162",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "roger-koch",
+     "name": "Roger Koch",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8681
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mo-state-house-district-163",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State House District 163",
+   "district": null,
+   "title": "State House District 163",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cathy-jo-loy",
+     "name": "Cathy Jo Loy",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6987
+    },
+    {
+     "id": "brenna-barksdale",
+     "name": "Brenna Barksdale",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3033
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
    }
   }
  ]

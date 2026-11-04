@@ -3,9 +3,10 @@
  "scope": "state-ok",
  "label": "Oklahoma",
  "source_ids": [
+  "ok-leg",
   "ok-seb"
  ],
- "updated_at": "2026-11-04T15:11:23Z",
+ "updated_at": "2026-11-04T20:05:18Z",
  "certified": false,
  "contests": [
   {
@@ -564,6 +565,2586 @@
    "precincts": {
     "reporting": 320,
     "total": 320,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 2",
+   "district": null,
+   "title": "State Senate District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ally-seifried",
+     "name": "Ally Seifried",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18677
+    },
+    {
+     "id": "randy-cowling",
+     "name": "Randy Cowling",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8724
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 4",
+   "district": null,
+   "title": "State Senate District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-woods",
+     "name": "Tom Woods",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15476
+    },
+    {
+     "id": "ellen-cuff",
+     "name": "Ellen Cuff",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5542
+    }
+   ],
+   "precincts": {
+    "reporting": 55,
+    "total": 55,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 6",
+   "district": null,
+   "title": "State Senate District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-bullard",
+     "name": "David Bullard",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15527
+    },
+    {
+     "id": "patrick-southerland",
+     "name": "Patrick Southerland",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5388
+    }
+   ],
+   "precincts": {
+    "reporting": 56,
+    "total": 56,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 8",
+   "district": null,
+   "title": "State Senate District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bryan-logan",
+     "name": "Bryan Logan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14690
+    },
+    {
+     "id": "nathan-brewer",
+     "name": "Nathan Brewer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7229
+    }
+   ],
+   "precincts": {
+    "reporting": 65,
+    "total": 65,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 10",
+   "district": null,
+   "title": "State Senate District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-coleman",
+     "name": "Bill Coleman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 17634
+    },
+    {
+     "id": "chayelynn-moore",
+     "name": "Chayelynn Moore",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6765
+    }
+   ],
+   "precincts": {
+    "reporting": 49,
+    "total": 49,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 12",
+   "district": null,
+   "title": "State Senate District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "todd-gollihare",
+     "name": "Todd Gollihare",
+     "party": "R",
+     "party_code": "R",
+     "votes": 16299
+    },
+    {
+     "id": "erica-watkins",
+     "name": "Erica Watkins",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7749
+    }
+   ],
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 18",
+   "district": null,
+   "title": "State Senate District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tyler-herring",
+     "name": "Tyler Herring",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14322
+    },
+    {
+     "id": "ginnis",
+     "name": "Ginnis",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12121
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 22",
+   "district": null,
+   "title": "State Senate District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristen-thompson",
+     "name": "Kristen Thompson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18545
+    },
+    {
+     "id": "kenny-kemper",
+     "name": "Kenny Kemper",
+     "party": "D",
+     "party_code": "D",
+     "votes": 15314
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 24",
+   "district": null,
+   "title": "State Senate District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jon-painter",
+     "name": "Jon Painter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12695
+    },
+    {
+     "id": "jonathan-morales",
+     "name": "Jonathan Morales",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9579
+    },
+    {
+     "id": "melissa-elder",
+     "name": "Melissa Elder",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1964
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 28",
+   "district": null,
+   "title": "State Senate District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "grant-green",
+     "name": "Grant Green",
+     "party": "R",
+     "party_code": "R",
+     "votes": 17882
+    },
+    {
+     "id": "kevin-m-connor",
+     "name": "Kevin M. Connor",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6974
+    }
+   ],
+   "precincts": {
+    "reporting": 46,
+    "total": 46,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 32",
+   "district": null,
+   "title": "State Senate District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "curtis-w-erwin",
+     "name": "Curtis W. Erwin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6583
+    },
+    {
+     "id": "booker-t-newton",
+     "name": "Booker T. Newton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4644
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 34",
+   "district": null,
+   "title": "State Senate District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "aaron-forst",
+     "name": "Aaron Forst",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9514
+    },
+    {
+     "id": "amy-hossain",
+     "name": "Amy Hossain",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8534
+    }
+   ],
+   "precincts": {
+    "reporting": 28,
+    "total": 28,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 36",
+   "district": null,
+   "title": "State Senate District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-haste",
+     "name": "John Haste",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12164
+    },
+    {
+     "id": "rick-larsen",
+     "name": "Rick Larsen",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9580
+    }
+   ],
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-senate-district-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State Senate District 42",
+   "district": null,
+   "title": "State Senate District 42",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brenda-stanley",
+     "name": "Brenda Stanley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13852
+    },
+    {
+     "id": "chris-jones",
+     "name": "Chris Jones",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11193
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 3",
+   "district": null,
+   "title": "State House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rick-west",
+     "name": "Rick West",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6629
+    },
+    {
+     "id": "steve-glinski",
+     "name": "Steve Glinski",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2464
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 4",
+   "district": null,
+   "title": "State House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-ed-culver",
+     "name": "Bob Ed Culver",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6089
+    },
+    {
+     "id": "christopher-wier",
+     "name": "Christopher Wier",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4188
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 9",
+   "district": null,
+   "title": "State House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scotty-stokes",
+     "name": "Scotty Stokes",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7883
+    },
+    {
+     "id": "andrea-biscardi",
+     "name": "Andrea Biscardi",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4031
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 10",
+   "district": null,
+   "title": "State House District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "judd-strom",
+     "name": "Judd Strom",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8739
+    },
+    {
+     "id": "isaac-d-mattox",
+     "name": "Isaac D Mattox",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2610
+    }
+   ],
+   "precincts": {
+    "reporting": 28,
+    "total": 28,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 12",
+   "district": null,
+   "title": "State House District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-chapman",
+     "name": "Mark Chapman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10538
+    },
+    {
+     "id": "tiffany-prater",
+     "name": "Tiffany Prater",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4274
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 14",
+   "district": null,
+   "title": "State House District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-sneed",
+     "name": "Chris Sneed",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5697
+    },
+    {
+     "id": "jeremiah-gantz",
+     "name": "Jeremiah Gantz",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4049
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 16",
+   "district": null,
+   "title": "State House District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-nelson",
+     "name": "David Nelson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6593
+    },
+    {
+     "id": "rose-rosie-lynch",
+     "name": "Rose Rosie Lynch",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3826
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 20",
+   "district": null,
+   "title": "State House District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jonathan-wilk",
+     "name": "Jonathan Wilk",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8920
+    },
+    {
+     "id": "chris-may",
+     "name": "Chris May",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4279
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 23",
+   "district": null,
+   "title": "State House District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "derrick-r-hildebrant",
+     "name": "Derrick R. Hildebrant",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5282
+    },
+    {
+     "id": "catherine-peters",
+     "name": "Catherine Peters",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3778
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 24",
+   "district": null,
+   "title": "State House District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-banning",
+     "name": "Chris Banning",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8859
+    },
+    {
+     "id": "joshua-conant",
+     "name": "Joshua Conant",
+     "party": "I",
+     "party_code": "O",
+     "votes": 3465
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 26",
+   "district": null,
+   "title": "State House District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leah-longest",
+     "name": "Leah Longest",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6110
+    },
+    {
+     "id": "chris-odneal",
+     "name": "Chris Odneal",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4090
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 27",
+   "district": null,
+   "title": "State House District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "danny-sterling",
+     "name": "Danny Sterling",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8741
+    },
+    {
+     "id": "memory-taylor",
+     "name": "Memory Taylor",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3672
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 28",
+   "district": null,
+   "title": "State House District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "danny-williams",
+     "name": "Danny Williams",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6153
+    },
+    {
+     "id": "blake-cummings",
+     "name": "Blake Cummings",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3695
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 30",
+   "district": null,
+   "title": "State House District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-lawson",
+     "name": "Mark Lawson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7205
+    },
+    {
+     "id": "sonya-amling",
+     "name": "Sonya Amling",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3416
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 32",
+   "district": null,
+   "title": "State House District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-shaw",
+     "name": "Jim Shaw",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8541
+    },
+    {
+     "id": "andy-brown",
+     "name": "Andy Brown",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2999
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 33",
+   "district": null,
+   "title": "State House District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "molly-jenkins",
+     "name": "Molly Jenkins",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7622
+    },
+    {
+     "id": "max-e-burchett-jr",
+     "name": "Max E. Burchett Jr",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4510
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 34",
+   "district": null,
+   "title": "State House District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "aaron-means",
+     "name": "Aaron Means",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2470
+    },
+    {
+     "id": "trish-ranson",
+     "name": "Trish Ranson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5029
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 36",
+   "district": null,
+   "title": "State House District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-george",
+     "name": "John George",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9172
+    },
+    {
+     "id": "leslie-hellebuyck",
+     "name": "Leslie Hellebuyck",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4141
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 38",
+   "district": null,
+   "title": "State House District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "madison-bolay",
+     "name": "Madison Bolay",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9828
+    },
+    {
+     "id": "doyle-lewis",
+     "name": "Doyle Lewis",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2502
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 41",
+   "district": null,
+   "title": "State House District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "denise-crosswhite-hader",
+     "name": "Denise Crosswhite Hader",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9360
+    },
+    {
+     "id": "mike-bockus",
+     "name": "Mike Bockus",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6897
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 45",
+   "district": null,
+   "title": "State House District 45",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carolyn-womack-bielich",
+     "name": "Carolyn Womack-Bielich",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4695
+    },
+    {
+     "id": "annie-menz",
+     "name": "Annie Menz",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7831
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 47",
+   "district": null,
+   "title": "State House District 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "toby-thompson",
+     "name": "Toby Thompson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8958
+    },
+    {
+     "id": "indigo-oliver",
+     "name": "Indigo Oliver",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5466
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 49",
+   "district": null,
+   "title": "State House District 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-cantrell",
+     "name": "Josh Cantrell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7749
+    },
+    {
+     "id": "dusty-jo-jones",
+     "name": "Dusty Jo Jones",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2467
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-53",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 53",
+   "district": null,
+   "title": "State House District 53",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-blair",
+     "name": "Jason Blair",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6025
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-54",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 54",
+   "district": null,
+   "title": "State House District 54",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "heath-kufahl",
+     "name": "Heath Kufahl",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4950
+    },
+    {
+     "id": "crystal-abram-garcia",
+     "name": "Crystal Abram-Garcia",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4719
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-56",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 56",
+   "district": null,
+   "title": "State House District 56",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dick-lowe",
+     "name": "Dick Lowe",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7019
+    },
+    {
+     "id": "linda-pedro",
+     "name": "Linda Pedro",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2704
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-58",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 58",
+   "district": null,
+   "title": "State House District 58",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carl-newton",
+     "name": "Carl Newton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9009
+    },
+    {
+     "id": "albert-borrie",
+     "name": "Albert Borrie",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1665
+    }
+   ],
+   "precincts": {
+    "reporting": 35,
+    "total": 35,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-60",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 60",
+   "district": null,
+   "title": "State House District 60",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-kelley",
+     "name": "Mike Kelley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8386
+    },
+    {
+     "id": "sharon-k-taylor",
+     "name": "Sharon K Taylor",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5971
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-62",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 62",
+   "district": null,
+   "title": "State House District 62",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-pae",
+     "name": "Daniel Pae",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3715
+    },
+    {
+     "id": "blake-munoz",
+     "name": "Blake Munoz",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2767
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-63",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 63",
+   "district": null,
+   "title": "State House District 63",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "trey-caldwell",
+     "name": "Trey Caldwell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4522
+    },
+    {
+     "id": "shykira-smith",
+     "name": "Shykira Smith",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1357
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-64",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 64",
+   "district": null,
+   "title": "State House District 64",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "louis-jackson",
+     "name": "Louis Jackson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2426
+    },
+    {
+     "id": "kathy-suttles",
+     "name": "Kathy Suttles",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2499
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-66",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 66",
+   "district": null,
+   "title": "State House District 66",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clay-staires",
+     "name": "Clay Staires",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7704
+    },
+    {
+     "id": "kenny-blevins",
+     "name": "Kenny Blevins",
+     "party": "L",
+     "party_code": "O",
+     "votes": 3395
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-68",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 68",
+   "district": null,
+   "title": "State House District 68",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-lay",
+     "name": "Mike Lay",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6015
+    },
+    {
+     "id": "fleur",
+     "name": "Fleur",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4434
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-69",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 69",
+   "district": null,
+   "title": "State House District 69",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sheila-dills",
+     "name": "Sheila Dills",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9400
+    },
+    {
+     "id": "tyler-price",
+     "name": "Tyler Price",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5207
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-72",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 72",
+   "district": null,
+   "title": "State House District 72",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-martin",
+     "name": "Adam Martin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2292
+    },
+    {
+     "id": "cane",
+     "name": "Cane",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4879
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-74",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 74",
+   "district": null,
+   "title": "State House District 74",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-w-norwood",
+     "name": "Kevin W. Norwood",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8555
+    },
+    {
+     "id": "aaron-brent",
+     "name": "Aaron Brent",
+     "party": "I",
+     "party_code": "O",
+     "votes": 4069
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-75",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 75",
+   "district": null,
+   "title": "State House District 75",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "t-j-marti",
+     "name": "T. J. Marti",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4040
+    },
+    {
+     "id": "joe-watkins",
+     "name": "Joe Watkins",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4582
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-76",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 76",
+   "district": null,
+   "title": "State House District 76",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ross-ford",
+     "name": "Ross Ford",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6577
+    },
+    {
+     "id": "michael-tinsley",
+     "name": "Michael Tinsley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5299
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-78",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 78",
+   "district": null,
+   "title": "State House District 78",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "meloyde-blancett",
+     "name": "Meloyde Blancett",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8646
+    },
+    {
+     "id": "tony-oliva",
+     "name": "Tony Oliva",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2434
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-79",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 79",
+   "district": null,
+   "title": "State House District 79",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-hassink",
+     "name": "Paul Hassink",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3855
+    },
+    {
+     "id": "melissa-provenzano",
+     "name": "Melissa Provenzano",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6431
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-80",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 80",
+   "district": null,
+   "title": "State House District 80",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stan-may",
+     "name": "Stan May",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8713
+    },
+    {
+     "id": "jeremy-founds",
+     "name": "Jeremy Founds",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5599
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-81",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 81",
+   "district": null,
+   "title": "State House District 81",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "troy-talley",
+     "name": "Troy Talley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7062
+    },
+    {
+     "id": "megan-hornbeek-allen",
+     "name": "Megan Hornbeek Allen",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6845
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-82",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 82",
+   "district": null,
+   "title": "State House District 82",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nicole-miller",
+     "name": "Nicole Miller",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8385
+    },
+    {
+     "id": "travis-headd",
+     "name": "Travis Headd",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7209
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-83",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 83",
+   "district": null,
+   "title": "State House District 83",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-roberts",
+     "name": "Eric Roberts",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7141
+    },
+    {
+     "id": "dalton-gau",
+     "name": "Dalton Gau",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8302
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-84",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 84",
+   "district": null,
+   "title": "State House District 84",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tammy-west",
+     "name": "Tammy West",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4734
+    },
+    {
+     "id": "jeffrey-perez",
+     "name": "Jeffrey Perez",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5097
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-85",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 85",
+   "district": null,
+   "title": "State House District 85",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joe-fallin",
+     "name": "Joe Fallin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5957
+    },
+    {
+     "id": "chelsey-branham",
+     "name": "Chelsey Branham",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10241
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-86",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 86",
+   "district": null,
+   "title": "State House District 86",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-hardin",
+     "name": "David Hardin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6746
+    },
+    {
+     "id": "hannah-cole",
+     "name": "Hannah Cole",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2862
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-87",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 87",
+   "district": null,
+   "title": "State House District 87",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "codey-bartle",
+     "name": "Codey Bartle",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2471
+    },
+    {
+     "id": "ellyn-hefner",
+     "name": "Ellyn Hefner",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6629
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-90",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 90",
+   "district": null,
+   "title": "State House District 90",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emily-gise",
+     "name": "Emily Gise",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4269
+    },
+    {
+     "id": "kymberly-ward",
+     "name": "Kymberly Ward",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3719
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-91",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 91",
+   "district": null,
+   "title": "State House District 91",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "roberto-seda",
+     "name": "Roberto Seda",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7400
+    },
+    {
+     "id": "chris-fowler",
+     "name": "Chris Fowler",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6594
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-95",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 95",
+   "district": null,
+   "title": "State House District 95",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "max-wolfley",
+     "name": "Max Wolfley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4373
+    },
+    {
+     "id": "tegan-malone",
+     "name": "Tegan Malone",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5259
+    },
+    {
+     "id": "ryan-gardner",
+     "name": "Ryan Gardner",
+     "party": "I",
+     "party_code": "O",
+     "votes": 400
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-96",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 96",
+   "district": null,
+   "title": "State House District 96",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "preston-stinson",
+     "name": "Preston Stinson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8847
+    },
+    {
+     "id": "ashtyn-smith",
+     "name": "Ashtyn Smith",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7250
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-98",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 98",
+   "district": null,
+   "title": "State House District 98",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gabe-woolley",
+     "name": "Gabe Woolley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6444
+    },
+    {
+     "id": "cathy-smythe",
+     "name": "Cathy Smythe",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5080
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-99",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 99",
+   "district": null,
+   "title": "State House District 99",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melvin-latham",
+     "name": "Melvin Latham",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1382
+    },
+    {
+     "id": "herschel-l-brown",
+     "name": "Herschel L. Brown",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8482
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-house-district-100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "State House District 100",
+   "district": null,
+   "title": "State House District 100",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marilyn-stark",
+     "name": "Marilyn Stark",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5000
+    },
+    {
+     "id": "gilmore",
+     "name": "Gilmore",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7238
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-district-judge-district-4-office-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "District Judge District 4, Office 2",
+   "district": null,
+   "title": "District Judge District 4, Office 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-edwards",
+     "name": "Eric Edwards",
+     "party": null,
+     "party_code": "O",
+     "votes": 7631
+    },
+    {
+     "id": "paul-k-woodward",
+     "name": "Paul K. Woodward",
+     "party": null,
+     "party_code": "O",
+     "votes": 13546
+    }
+   ],
+   "precincts": {
+    "reporting": 57,
+    "total": 57,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-district-judge-district-5-office-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "District Judge District 5, Office 1",
+   "district": null,
+   "title": "District Judge District 5, Office 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "neil-west",
+     "name": "Neil West",
+     "party": null,
+     "party_code": "O",
+     "votes": 16498
+    },
+    {
+     "id": "christine-galbraith",
+     "name": "Christine Galbraith",
+     "party": null,
+     "party_code": "O",
+     "votes": 11332
+    }
+   ],
+   "precincts": {
+    "reporting": 74,
+    "total": 84,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-district-judge-district-8-office-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "District Judge District 8, Office 1",
+   "district": null,
+   "title": "District Judge District 8, Office 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rob-davis",
+     "name": "Rob Davis",
+     "party": null,
+     "party_code": "O",
+     "votes": 7975
+    },
+    {
+     "id": "scott-loftis",
+     "name": "Scott Loftis",
+     "party": null,
+     "party_code": "O",
+     "votes": 6365
+    }
+   ],
+   "precincts": {
+    "reporting": 41,
+    "total": 41,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-district-judge-district-14-office-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "District Judge District 14, Office 1",
+   "district": null,
+   "title": "District Judge District 14, Office 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-sawyer",
+     "name": "Tom Sawyer",
+     "party": null,
+     "party_code": "O",
+     "votes": 68692
+    },
+    {
+     "id": "caroline-wall",
+     "name": "Caroline Wall",
+     "party": null,
+     "party_code": "O",
+     "votes": 96379
+    }
+   ],
+   "precincts": {
+    "reporting": 261,
+    "total": 261,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-district-judge-district-14-office-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "District Judge District 14, Office 4",
+   "district": null,
+   "title": "District Judge District 14, Office 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "loretta-radford",
+     "name": "Loretta Radford",
+     "party": null,
+     "party_code": "O",
+     "votes": 15766
+    },
+    {
+     "id": "dustin-allen",
+     "name": "Dustin Allen",
+     "party": null,
+     "party_code": "O",
+     "votes": 14218
+    }
+   ],
+   "precincts": {
+    "reporting": 52,
+    "total": 52,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-district-judge-district-14-office-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "District Judge District 14, Office 12",
+   "district": null,
+   "title": "District Judge District 14, Office 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-camp",
+     "name": "Christopher Camp",
+     "party": null,
+     "party_code": "O",
+     "votes": 60879
+    },
+    {
+     "id": "kevin-gray",
+     "name": "Kevin Gray",
+     "party": null,
+     "party_code": "O",
+     "votes": 99907
+    }
+   ],
+   "precincts": {
+    "reporting": 261,
+    "total": 261,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-district-judge-district-23-office-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "District Judge District 23, Office 2",
+   "district": null,
+   "title": "District Judge District 23, Office 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "troy-austin-officer",
+     "name": "Troy Austin Officer",
+     "party": null,
+     "party_code": "O",
+     "votes": 17698
+    },
+    {
+     "id": "joseph-costa",
+     "name": "Joseph Costa",
+     "party": null,
+     "party_code": "O",
+     "votes": 8926
+    }
+   ],
+   "precincts": {
+    "reporting": 50,
+    "total": 50,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-associate-district-judge-alfalfa-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "Associate District Judge Alfalfa County",
+   "district": null,
+   "title": "Associate District Judge Alfalfa County",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "megan-hickman",
+     "name": "Megan Hickman",
+     "party": null,
+     "party_code": "O",
+     "votes": 1033
+    },
+    {
+     "id": "brian-e-mitchell",
+     "name": "Brian E. Mitchell",
+     "party": null,
+     "party_code": "O",
+     "votes": 510
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-associate-district-judge-kiowa-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "Associate District Judge Kiowa County",
+   "district": null,
+   "title": "Associate District Judge Kiowa County",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ricky-a-marsh",
+     "name": "Ricky A. Marsh",
+     "party": null,
+     "party_code": "O",
+     "votes": 1285
+    },
+    {
+     "id": "kyle-n-eastwood",
+     "name": "Kyle N. Eastwood",
+     "party": null,
+     "party_code": "O",
+     "votes": 896
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-associate-district-judge-logan-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "Associate District Judge Logan County",
+   "district": null,
+   "title": "Associate District Judge Logan County",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sierra-pfeiffer",
+     "name": "Sierra Pfeiffer",
+     "party": null,
+     "party_code": "O",
+     "votes": 6626
+    },
+    {
+     "id": "diane-vaughan",
+     "name": "Diane Vaughan",
+     "party": null,
+     "party_code": "O",
+     "votes": 9135
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-associate-district-judge-nowata-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "Associate District Judge Nowata County",
+   "district": null,
+   "title": "Associate District Judge Nowata County",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-m-pfeffer",
+     "name": "James M Pfeffer",
+     "party": null,
+     "party_code": "O",
+     "votes": 1624
+    },
+    {
+     "id": "linda-michelle-branstetter",
+     "name": "Linda Michelle Branstetter",
+     "party": null,
+     "party_code": "O",
+     "votes": 1258
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-associate-district-judge-washington-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ok",
+   "office": "Associate District Judge Washington County",
+   "district": null,
+   "title": "Associate District Judge Washington County",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "todd-cone",
+     "name": "Todd Cone",
+     "party": null,
+     "party_code": "O",
+     "votes": 10315
+    },
+    {
+     "id": "alan-wayne-gentges",
+     "name": "Alan Wayne Gentges",
+     "party": null,
+     "party_code": "O",
+     "votes": 4515
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-question-845",
+   "kind": "measure",
+   "level": "state",
+   "state": "ok",
+   "office": "State Question 845",
+   "district": null,
+   "title": "State Question 845",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 292052
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 771614
+    }
+   ],
+   "precincts": {
+    "reporting": 1974,
+    "total": 1984,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ok-state-question-847",
+   "kind": "measure",
+   "level": "state",
+   "state": "ok",
+   "office": "State Question 847",
+   "district": null,
+   "title": "State Question 847",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 489744
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 581374
+    }
+   ],
+   "precincts": {
+    "reporting": 1974,
+    "total": 1984,
     "unit": "precincts"
    }
   }

@@ -5,13 +5,13 @@
  "source_ids": [
   "co-sos"
  ],
- "updated_at": "2026-11-04T11:05:50Z",
+ "updated_at": "2026-11-04T16:24:02Z",
  "certified": false,
  "contests": [
   {
    "id": "co-united-states-senator",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "co",
    "office": "United States Senator",
    "district": null,
@@ -74,10 +74,10 @@
   {
    "id": "co-representative-to-the-120th-united-states-congress-district-1",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "co",
    "office": "Representative to the 120th United States Congress - District 1",
-   "district": null,
+   "district": "1",
    "title": "Representative to the 120th United States Congress - District 1",
    "choices": [
     {
@@ -119,15 +119,21 @@
    "precincts": {
     "reporting": 0,
     "total": 3
+   },
+   "called": {
+    "winner": "melat-kiros",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:22:24.627Z",
+    "kind": "ap"
    }
   },
   {
    "id": "co-representative-to-the-120th-united-states-congress-district-2",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "co",
    "office": "Representative to the 120th United States Congress - District 2",
-   "district": null,
+   "district": "2",
    "title": "Representative to the 120th United States Congress - District 2",
    "choices": [
     {
@@ -155,15 +161,21 @@
    "precincts": {
     "reporting": 0,
     "total": 11
+   },
+   "called": {
+    "winner": "joe-neguse",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:34:10.952Z",
+    "kind": "ap"
    }
   },
   {
    "id": "co-representative-to-the-120th-united-states-congress-district-3",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "co",
    "office": "Representative to the 120th United States Congress - District 3",
-   "district": null,
+   "district": "3",
    "title": "Representative to the 120th United States Congress - District 3",
    "choices": [
     {
@@ -203,10 +215,10 @@
   {
    "id": "co-representative-to-the-120th-united-states-congress-district-4",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "co",
    "office": "Representative to the 120th United States Congress - District 4",
-   "district": null,
+   "district": "4",
    "title": "Representative to the 120th United States Congress - District 4",
    "choices": [
     {
@@ -239,10 +251,10 @@
   {
    "id": "co-representative-to-the-120th-united-states-congress-district-5",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "co",
    "office": "Representative to the 120th United States Congress - District 5",
-   "district": null,
+   "district": "5",
    "title": "Representative to the 120th United States Congress - District 5",
    "choices": [
     {
@@ -282,10 +294,10 @@
   {
    "id": "co-representative-to-the-120th-united-states-congress-district-6",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "co",
    "office": "Representative to the 120th United States Congress - District 6",
-   "district": null,
+   "district": "6",
    "title": "Representative to the 120th United States Congress - District 6",
    "choices": [
     {
@@ -327,15 +339,21 @@
    "precincts": {
     "reporting": 0,
     "total": 5
+   },
+   "called": {
+    "winner": "jason-crow",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:32:27.790Z",
+    "kind": "ap"
    }
   },
   {
    "id": "co-representative-to-the-120th-united-states-congress-district-7",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "co",
    "office": "Representative to the 120th United States Congress - District 7",
-   "district": null,
+   "district": "7",
    "title": "Representative to the 120th United States Congress - District 7",
    "choices": [
     {
@@ -384,15 +402,21 @@
    "precincts": {
     "reporting": 0,
     "total": 11
+   },
+   "called": {
+    "winner": "brittany-pettersen",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:12:06.684Z",
+    "kind": "ap"
    }
   },
   {
    "id": "co-representative-to-the-120th-united-states-congress-district-8",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "co",
    "office": "Representative to the 120th United States Congress - District 8",
-   "district": null,
+   "district": "8",
    "title": "Representative to the 120th United States Congress - District 8",
    "choices": [
     {
@@ -420,6 +444,12 @@
    "precincts": {
     "reporting": 0,
     "total": 3
+   },
+   "called": {
+    "winner": "manny-rutinel",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:49:24.111Z",
+    "kind": "ap"
    }
   },
   {
@@ -3548,7 +3578,7 @@
   },
   {
    "id": "co-colorado-supreme-court-justice-hood",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "Colorado Supreme Court Justice - Hood",
@@ -3577,7 +3607,7 @@
   },
   {
    "id": "co-colorado-court-of-appeals-judge-freyre",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "Colorado Court of Appeals Judge - Freyre",
@@ -3606,7 +3636,7 @@
   },
   {
    "id": "co-colorado-court-of-appeals-judge-harris",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "Colorado Court of Appeals Judge - Harris",
@@ -3635,7 +3665,7 @@
   },
   {
    "id": "co-colorado-court-of-appeals-judge-lum",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "Colorado Court of Appeals Judge - Lum",
@@ -3664,7 +3694,7 @@
   },
   {
    "id": "co-colorado-court-of-appeals-judge-moultrie",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "Colorado Court of Appeals Judge - Moultrie",
@@ -3693,7 +3723,7 @@
   },
   {
    "id": "co-colorado-court-of-appeals-judge-schock",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "Colorado Court of Appeals Judge - Schock",
@@ -3722,7 +3752,7 @@
   },
   {
    "id": "co-colorado-court-of-appeals-judge-sullivan",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "Colorado Court of Appeals Judge - Sullivan",
@@ -3751,7 +3781,7 @@
   },
   {
    "id": "co-district-court-judge-1st-judicial-district-contiguglia",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 1st Judicial District - Contiguglia",
@@ -3780,7 +3810,7 @@
   },
   {
    "id": "co-district-court-judge-1st-judicial-district-loewer",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 1st Judicial District - Loewer",
@@ -3809,7 +3839,7 @@
   },
   {
    "id": "co-district-court-judge-1st-judicial-district-miloud",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 1st Judicial District - Miloud",
@@ -3838,7 +3868,7 @@
   },
   {
    "id": "co-district-court-judge-1st-judicial-district-poland",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 1st Judicial District - Poland",
@@ -3867,7 +3897,7 @@
   },
   {
    "id": "co-district-court-judge-1st-judicial-district-rhamey",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 1st Judicial District - Rhamey",
@@ -3896,7 +3926,7 @@
   },
   {
    "id": "co-district-court-judge-1st-judicial-district-russell",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 1st Judicial District - Russell",
@@ -3925,7 +3955,7 @@
   },
   {
    "id": "co-district-court-judge-1st-judicial-district-zenisek",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 1st Judicial District - Zenisek",
@@ -3954,7 +3984,7 @@
   },
   {
    "id": "co-district-court-judge-2nd-judicial-district-angel",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 2nd Judicial District - Angel",
@@ -3983,7 +4013,7 @@
   },
   {
    "id": "co-district-court-judge-2nd-judicial-district-baumann",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 2nd Judicial District - Baumann",
@@ -4012,7 +4042,7 @@
   },
   {
    "id": "co-district-court-judge-2nd-judicial-district-elliff",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 2nd Judicial District - Elliff",
@@ -4041,7 +4071,7 @@
   },
   {
    "id": "co-district-court-judge-2nd-judicial-district-luxen",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 2nd Judicial District - Luxen",
@@ -4070,7 +4100,7 @@
   },
   {
    "id": "co-district-court-judge-2nd-judicial-district-olafson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 2nd Judicial District - Olafson",
@@ -4099,7 +4129,7 @@
   },
   {
    "id": "co-district-court-judge-2nd-judicial-district-wallace",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 2nd Judicial District - Wallace",
@@ -4128,7 +4158,7 @@
   },
   {
    "id": "co-district-court-judge-2nd-judicial-district-juvenile-gomez",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 2nd Judicial District/Juvenile - Gomez",
@@ -4157,7 +4187,7 @@
   },
   {
    "id": "co-district-court-judge-2nd-judicial-district-juvenile-mccarthy",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 2nd Judicial District/Juvenile - McCarthy",
@@ -4186,7 +4216,7 @@
   },
   {
    "id": "co-district-court-judge-2nd-judicial-district-probate-leith",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 2nd Judicial District/Probate - Leith",
@@ -4215,7 +4245,7 @@
   },
   {
    "id": "co-district-court-judge-3rd-judicial-district-fowler",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 3rd Judicial District - Fowler",
@@ -4244,7 +4274,7 @@
   },
   {
    "id": "co-district-court-judge-4th-judicial-district-bain",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 4th Judicial District - Bain",
@@ -4273,7 +4303,7 @@
   },
   {
    "id": "co-district-court-judge-4th-judicial-district-gurney",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 4th Judicial District - Gurney",
@@ -4302,7 +4332,7 @@
   },
   {
    "id": "co-district-court-judge-4th-judicial-district-mcguire",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 4th Judicial District - McGuire",
@@ -4331,7 +4361,7 @@
   },
   {
    "id": "co-district-court-judge-4th-judicial-district-philipps",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 4th Judicial District - Philipps",
@@ -4360,7 +4390,7 @@
   },
   {
    "id": "co-district-court-judge-4th-judicial-district-sokol",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 4th Judicial District - Sokol",
@@ -4389,7 +4419,7 @@
   },
   {
    "id": "co-district-court-judge-4th-judicial-district-werner",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 4th Judicial District - Werner",
@@ -4418,7 +4448,7 @@
   },
   {
    "id": "co-district-court-judge-7th-judicial-district-jackson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 7th Judicial District - Jackson",
@@ -4447,7 +4477,7 @@
   },
   {
    "id": "co-district-court-judge-7th-judicial-district-starritt",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 7th Judicial District - Starritt",
@@ -4476,7 +4506,7 @@
   },
   {
    "id": "co-district-court-judge-9th-judicial-district-myer",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 9th Judicial District - Myer",
@@ -4505,7 +4535,7 @@
   },
   {
    "id": "co-district-court-judge-10th-judicial-district-alexander",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 10th Judicial District - Alexander",
@@ -4534,7 +4564,7 @@
   },
   {
    "id": "co-district-court-judge-10th-judicial-district-chostner",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 10th Judicial District - Chostner",
@@ -4563,7 +4593,7 @@
   },
   {
    "id": "co-district-court-judge-10th-judicial-district-ernst",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 10th Judicial District - Ernst",
@@ -4592,7 +4622,7 @@
   },
   {
    "id": "co-district-court-judge-10th-judicial-district-thomas",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 10th Judicial District - Thomas",
@@ -4621,7 +4651,7 @@
   },
   {
    "id": "co-district-court-judge-11th-judicial-district-hunter",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 11th Judicial District - Hunter",
@@ -4650,7 +4680,7 @@
   },
   {
    "id": "co-district-court-judge-11th-judicial-district-vise",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 11th Judicial District - Vise",
@@ -4679,7 +4709,7 @@
   },
   {
    "id": "co-district-court-judge-12th-judicial-district-gonzales",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 12th Judicial District - Gonzales",
@@ -4708,7 +4738,7 @@
   },
   {
    "id": "co-district-court-judge-12th-judicial-district-hopkins",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 12th Judicial District - Hopkins",
@@ -4737,7 +4767,7 @@
   },
   {
    "id": "co-district-court-judge-13th-judicial-district-christiansen",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 13th Judicial District - Christiansen",
@@ -4766,7 +4796,7 @@
   },
   {
    "id": "co-district-court-judge-14th-judicial-district-schneider",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 14th Judicial District - Schneider",
@@ -4795,7 +4825,7 @@
   },
   {
    "id": "co-district-court-judge-15th-judicial-district-johnson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 15th Judicial District - Johnson",
@@ -4824,7 +4854,7 @@
   },
   {
    "id": "co-district-court-judge-17th-judicial-district-datz",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 17th Judicial District - Datz",
@@ -4853,7 +4883,7 @@
   },
   {
    "id": "co-district-court-judge-17th-judicial-district-finn",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 17th Judicial District - Finn",
@@ -4882,7 +4912,7 @@
   },
   {
    "id": "co-district-court-judge-17th-judicial-district-loew",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 17th Judicial District - Loew",
@@ -4911,7 +4941,7 @@
   },
   {
    "id": "co-district-court-judge-17th-judicial-district-ruff",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 17th Judicial District - Ruff",
@@ -4940,7 +4970,7 @@
   },
   {
    "id": "co-district-court-judge-17th-judicial-district-southerland",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 17th Judicial District - Southerland",
@@ -4969,7 +4999,7 @@
   },
   {
    "id": "co-district-court-judge-18th-judicial-district-amico",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 18th Judicial District - Amico",
@@ -4998,7 +5028,7 @@
   },
   {
    "id": "co-district-court-judge-18th-judicial-district-baker-mckay",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 18th Judicial District - Baker-McKay",
@@ -5027,7 +5057,7 @@
   },
   {
    "id": "co-district-court-judge-18th-judicial-district-edson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 18th Judicial District - Edson",
@@ -5056,7 +5086,7 @@
   },
   {
    "id": "co-district-court-judge-18th-judicial-district-henderson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 18th Judicial District - Henderson",
@@ -5085,7 +5115,7 @@
   },
   {
    "id": "co-district-court-judge-18th-judicial-district-jones",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 18th Judicial District - Jones",
@@ -5114,7 +5144,7 @@
   },
   {
    "id": "co-district-court-judge-18th-judicial-district-karpel",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 18th Judicial District - Karpel",
@@ -5143,7 +5173,7 @@
   },
   {
    "id": "co-district-court-judge-18th-judicial-district-stricklin",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 18th Judicial District - Stricklin",
@@ -5172,7 +5202,7 @@
   },
   {
    "id": "co-district-court-judge-18th-judicial-district-vahle",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 18th Judicial District - Vahle",
@@ -5201,7 +5231,7 @@
   },
   {
    "id": "co-district-court-judge-18th-judicial-district-washburn",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 18th Judicial District - Washburn",
@@ -5230,7 +5260,7 @@
   },
   {
    "id": "co-district-court-judge-19th-judicial-district-galloway",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 19th Judicial District - Galloway",
@@ -5259,7 +5289,7 @@
   },
   {
    "id": "co-district-court-judge-19th-judicial-district-kerns",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 19th Judicial District - Kerns",
@@ -5288,7 +5318,7 @@
   },
   {
    "id": "co-district-court-judge-20th-judicial-district-kotlarczyk",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 20th Judicial District - Kotlarczyk",
@@ -5317,7 +5347,7 @@
   },
   {
    "id": "co-district-court-judge-20th-judicial-district-larson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 20th Judicial District - Larson",
@@ -5346,7 +5376,7 @@
   },
   {
    "id": "co-district-court-judge-20th-judicial-district-salomone",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 20th Judicial District - Salomone",
@@ -5375,7 +5405,7 @@
   },
   {
    "id": "co-district-court-judge-21st-judicial-district-chaffin",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 21st Judicial District - Chaffin",
@@ -5404,7 +5434,7 @@
   },
   {
    "id": "co-district-court-judge-21st-judicial-district-henderson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 21st Judicial District - Henderson",
@@ -5433,7 +5463,7 @@
   },
   {
    "id": "co-district-court-judge-21st-judicial-district-larson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 21st Judicial District - Larson",
@@ -5462,7 +5492,7 @@
   },
   {
    "id": "co-district-court-judge-21st-judicial-district-lawrence",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 21st Judicial District - Lawrence",
@@ -5491,7 +5521,7 @@
   },
   {
    "id": "co-district-court-judge-22nd-judicial-district-furse",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 22nd Judicial District - Furse",
@@ -5520,7 +5550,7 @@
   },
   {
    "id": "co-district-court-judge-23rd-judicial-district-baum",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 23rd Judicial District - Baum",
@@ -5549,7 +5579,7 @@
   },
   {
    "id": "co-district-court-judge-23rd-judicial-district-klingensmith",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 23rd Judicial District - Klingensmith",
@@ -5578,7 +5608,7 @@
   },
   {
    "id": "co-district-court-judge-23rd-judicial-district-slade",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 23rd Judicial District - Slade",
@@ -5607,7 +5637,7 @@
   },
   {
    "id": "co-district-court-judge-23rd-judicial-district-warhola",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "District Court Judge - 23rd Judicial District - Warhola",
@@ -5636,7 +5666,7 @@
   },
   {
    "id": "co-county-court-judge-adams-jimenez",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Adams - Jimenez",
@@ -5665,7 +5695,7 @@
   },
   {
    "id": "co-county-court-judge-adams-vielma",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Adams - Vielma",
@@ -5694,7 +5724,7 @@
   },
   {
    "id": "co-county-court-judge-alamosa-walzl",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Alamosa - Walzl",
@@ -5723,7 +5753,7 @@
   },
   {
    "id": "co-county-court-judge-arapahoe-apostoli",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Arapahoe - Apostoli",
@@ -5752,7 +5782,7 @@
   },
   {
    "id": "co-county-court-judge-arapahoe-clark",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Arapahoe - Clark",
@@ -5781,7 +5811,7 @@
   },
   {
    "id": "co-county-court-judge-arapahoe-rowles-stokes",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Arapahoe - Rowles-Stokes",
@@ -5810,7 +5840,7 @@
   },
   {
    "id": "co-county-court-judge-boulder-brodsky",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Boulder - Brodsky",
@@ -5839,7 +5869,7 @@
   },
   {
    "id": "co-county-court-judge-boulder-haenselman",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Boulder - Haenselman",
@@ -5868,7 +5898,7 @@
   },
   {
    "id": "co-county-court-judge-boulder-malkinson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Boulder - Malkinson",
@@ -5897,7 +5927,7 @@
   },
   {
    "id": "co-county-court-judge-costilla-sullivan",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Costilla - Sullivan",
@@ -5926,7 +5956,7 @@
   },
   {
    "id": "co-county-court-judge-crowley-boyce",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Crowley - Boyce",
@@ -5955,7 +5985,7 @@
   },
   {
    "id": "co-county-court-judge-custer-halpin",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Custer - Halpin",
@@ -5984,7 +6014,7 @@
   },
   {
    "id": "co-county-court-judge-denver-eddy",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Denver - Eddy",
@@ -6013,7 +6043,7 @@
   },
   {
    "id": "co-county-court-judge-denver-fay",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Denver - Fay",
@@ -6042,7 +6072,7 @@
   },
   {
    "id": "co-county-court-judge-denver-lombardi",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Denver - Lombardi",
@@ -6071,7 +6101,7 @@
   },
   {
    "id": "co-county-court-judge-denver-malone",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Denver - Malone",
@@ -6100,7 +6130,7 @@
   },
   {
    "id": "co-county-court-judge-denver-martinez-thomas",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Denver - Martinez-Thomas",
@@ -6129,7 +6159,7 @@
   },
   {
    "id": "co-county-court-judge-denver-shamsid-deen",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Denver - Shamsid-Deen",
@@ -6158,7 +6188,7 @@
   },
   {
    "id": "co-county-court-judge-denver-smith",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Denver - Smith",
@@ -6187,7 +6217,7 @@
   },
   {
    "id": "co-county-court-judge-douglas-bowling",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Douglas - Bowling",
@@ -6216,7 +6246,7 @@
   },
   {
    "id": "co-county-court-judge-douglas-fields",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Douglas - Fields",
@@ -6245,7 +6275,7 @@
   },
   {
    "id": "co-county-court-judge-eagle-causey",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Eagle - Causey",
@@ -6274,7 +6304,7 @@
   },
   {
    "id": "co-county-court-judge-el-paso-burney",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - El Paso - Burney",
@@ -6303,7 +6333,7 @@
   },
   {
    "id": "co-county-court-judge-el-paso-frady",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - El Paso - Frady",
@@ -6332,7 +6362,7 @@
   },
   {
    "id": "co-county-court-judge-el-paso-cord",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - El Paso - Cord",
@@ -6361,7 +6391,7 @@
   },
   {
    "id": "co-county-court-judge-el-paso-rotolo",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - El Paso - Rotolo",
@@ -6390,7 +6420,7 @@
   },
   {
    "id": "co-county-court-judge-fremont-robak",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Fremont - Robak",
@@ -6419,7 +6449,7 @@
   },
   {
    "id": "co-county-court-judge-garfield-pototsky",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Garfield - Pototsky",
@@ -6448,7 +6478,7 @@
   },
   {
    "id": "co-county-court-judge-gilpin-lane",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Gilpin - Lane",
@@ -6477,7 +6507,7 @@
   },
   {
    "id": "co-county-court-judge-grand-catanzarite",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Grand - Catanzarite",
@@ -6506,7 +6536,7 @@
   },
   {
    "id": "co-county-court-judge-hinsdale-mcdonald",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Hinsdale - McDonald",
@@ -6535,7 +6565,7 @@
   },
   {
    "id": "co-county-court-judge-huerfano-mann",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Huerfano - Mann",
@@ -6564,7 +6594,7 @@
   },
   {
    "id": "co-county-court-judge-jackson-ryan",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Jackson - Ryan",
@@ -6593,7 +6623,7 @@
   },
   {
    "id": "co-county-court-judge-jefferson-garrido",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Jefferson - Garrido",
@@ -6622,7 +6652,7 @@
   },
   {
    "id": "co-county-court-judge-jefferson-magid",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Jefferson - Magid",
@@ -6651,7 +6681,7 @@
   },
   {
    "id": "co-county-court-judge-jefferson-melton",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Jefferson - Melton",
@@ -6680,7 +6710,7 @@
   },
   {
    "id": "co-county-court-judge-larimer-ellison",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Larimer - Ellison",
@@ -6709,7 +6739,7 @@
   },
   {
    "id": "co-county-court-judge-larimer-lynch",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Larimer - Lynch",
@@ -6738,7 +6768,7 @@
   },
   {
    "id": "co-county-court-judge-larimer-zehe",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Larimer - Zehe",
@@ -6767,7 +6797,7 @@
   },
   {
    "id": "co-county-court-judge-mesa-burrill",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Mesa - Burrill",
@@ -6796,7 +6826,7 @@
   },
   {
    "id": "co-county-court-judge-mesa-raaum",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Mesa - Raaum",
@@ -6825,7 +6855,7 @@
   },
   {
    "id": "co-county-court-judge-mineral-wheelwright",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Mineral - Wheelwright",
@@ -6854,7 +6884,7 @@
   },
   {
    "id": "co-county-court-judge-moffat-hesson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Moffat - Hesson",
@@ -6883,7 +6913,7 @@
   },
   {
    "id": "co-county-court-judge-otero-culver",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Otero - Culver",
@@ -6912,7 +6942,7 @@
   },
   {
    "id": "co-county-court-judge-park-green",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Park - Green",
@@ -6941,7 +6971,7 @@
   },
   {
    "id": "co-county-court-judge-prowers-porter",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Prowers - Porter",
@@ -6970,7 +7000,7 @@
   },
   {
    "id": "co-county-court-judge-rio-blanco-edwards",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Rio Blanco - Edwards",
@@ -6999,7 +7029,7 @@
   },
   {
    "id": "co-associate-county-court-judge-rio-blanco-edwards",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "Associate County Court Judge - Rio Blanco - Edwards",
@@ -7028,7 +7058,7 @@
   },
   {
    "id": "co-county-court-judge-washington-hansen",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Washington - Hansen",
@@ -7057,7 +7087,7 @@
   },
   {
    "id": "co-county-court-judge-weld-briggs",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Weld - Briggs",
@@ -7086,7 +7116,7 @@
   },
   {
    "id": "co-county-court-judge-weld-meyer",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Weld - Meyer",
@@ -7115,7 +7145,7 @@
   },
   {
    "id": "co-county-court-judge-weld-nichols",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "co",
    "office": "County Court Judge - Weld - Nichols",
