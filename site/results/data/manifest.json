@@ -5,7 +5,7 @@
   "date": "2026-11-03",
   "timezone": "America/Denver"
  },
- "generated_at": "2026-11-04T02:06:33Z",
+ "generated_at": "2026-11-04T02:07:45Z",
  "mode": "live",
  "certified": false,
  "sources": [
@@ -13,57 +13,65 @@
    "id": "co-sos",
    "name": "Colorado Secretary of State (Clarity)",
    "url": "https://results.enr.clarityelections.com/CO/127407/",
-   "checked_at": "2026-11-04T02:06:24Z",
-   "status": "error",
-   "note": "Last attempt failed; showing the last good copy."
+   "checked_at": "2026-11-04T02:07:44Z",
+   "status": "ok",
+   "note": "",
+   "data_updated_at": "2026-11-04T02:05:50Z"
   },
   {
    "id": "ga-scytl",
    "name": "Georgia Secretary of State",
    "url": "https://results.sos.ga.gov/results/public/Georgia/elections/11032026GeneralAndSpecialElection",
-   "checked_at": "2026-11-04T02:06:27Z",
+   "checked_at": "2026-11-04T02:07:44Z",
    "status": "ok",
    "note": "",
-   "data_updated_at": "2026-11-04T02:06:28Z"
+   "data_updated_at": "2026-11-04T02:07:45Z"
   },
   {
    "id": "va-scytl",
    "name": "Virginia Department of Elections",
    "url": "https://enr.elections.virginia.gov/results/public/Virginia/elections/2026-November-General",
-   "checked_at": "2026-11-04T02:06:28Z",
+   "checked_at": "2026-11-04T02:07:45Z",
    "status": "ok",
    "note": "",
-   "data_updated_at": "2026-11-04T02:06:33Z"
+   "data_updated_at": "2026-11-04T02:07:45Z"
   }
  ],
  "files": [
+  {
+   "scope": "co",
+   "label": "Colorado",
+   "path": "co.json",
+   "contests": 302,
+   "updated_at": "2026-11-04T02:07:45Z"
+  },
   {
    "scope": "house",
    "label": "U.S. House",
    "path": "house.json",
    "contests": 25,
-   "updated_at": "2026-11-04T02:06:33Z"
+   "updated_at": "2026-11-04T02:07:45Z"
   },
   {
    "scope": "senate",
    "label": "U.S. Senate",
    "path": "senate.json",
    "contests": 2,
-   "updated_at": "2026-11-04T02:06:33Z"
+   "updated_at": "2026-11-04T02:07:45Z"
   },
   {
    "scope": "state-ga",
    "label": "Georgia",
    "path": "state-ga.json",
    "contests": 273,
-   "updated_at": "2026-11-04T02:06:33Z"
+   "updated_at": "2026-11-04T02:07:45Z"
   },
   {
    "scope": "state-va",
    "label": "Virginia",
    "path": "state-va.json",
    "contests": 32,
-   "updated_at": "2026-11-04T02:06:33Z"
+   "updated_at": "2026-11-04T02:07:45Z"
   }
  ],
  "balance": {

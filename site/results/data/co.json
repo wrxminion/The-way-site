@@ -1,0 +1,9064 @@
+{
+ "schema": "theway-results/1",
+ "scope": "co",
+ "label": "Colorado",
+ "source_ids": [
+  "co-sos"
+ ],
+ "updated_at": "2026-11-04T02:07:45Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "co-united-states-senator",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "choices": [
+    {
+     "id": "mark-baisley",
+     "name": "Mark Baisley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 24290
+    },
+    {
+     "id": "john-hickenlooper",
+     "name": "John Hickenlooper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 157690
+    },
+    {
+     "id": "bob-chew",
+     "name": "Bob Chew",
+     "party": "FWD",
+     "party_code": "O",
+     "votes": 3936
+    },
+    {
+     "id": "christopher-baum",
+     "name": "Christopher Baum",
+     "party": "APV",
+     "party_code": "O",
+     "votes": 242
+    },
+    {
+     "id": "blake-huber",
+     "name": "Blake Huber",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 1460
+    },
+    {
+     "id": "adam-withrow",
+     "name": "Adam Withrow",
+     "party": "UNI",
+     "party_code": "O",
+     "votes": 934
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 1",
+   "district": null,
+   "title": "Representative to the 120th United States Congress - District 1",
+   "choices": [
+    {
+     "id": "melat-kiros",
+     "name": "Melat Kiros",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 144646
+    },
+    {
+     "id": "christy-peterson",
+     "name": "Christy Peterson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 25667
+    },
+    {
+     "id": "critter-milton",
+     "name": "Critter Milton",
+     "party": "UNI",
+     "party_code": "O",
+     "votes": 640
+    },
+    {
+     "id": "chad-humphrey",
+     "name": "Chad Humphrey",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 2832
+    },
+    {
+     "id": "shimon-blau",
+     "name": "Shimon Blau",
+     "party": "UAF",
+     "party_code": "O",
+     "votes": 10852
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 2",
+   "district": null,
+   "title": "Representative to the 120th United States Congress - District 2",
+   "choices": [
+    {
+     "id": "joe-neguse",
+     "name": "Joe Neguse",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 155
+    },
+    {
+     "id": "kelley-anne-dennison",
+     "name": "Kelley Anne Dennison",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 443
+    },
+    {
+     "id": "gaylon-kent",
+     "name": "Gaylon Kent",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 3",
+   "district": null,
+   "title": "Representative to the 120th United States Congress - District 3",
+   "choices": [
+    {
+     "id": "dwayne-l-romero",
+     "name": "Dwayne L. Romero",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jeff-hurd",
+     "name": "Jeff Hurd",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "cory-robertson",
+     "name": "Cory Robertson",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "clifton-brown",
+     "name": "Clifton Brown",
+     "party": "UAF",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 27
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 4",
+   "district": null,
+   "title": "Representative to the 120th United States Congress - District 4",
+   "choices": [
+    {
+     "id": "lauren-boebert",
+     "name": "Lauren Boebert",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 474
+    },
+    {
+     "id": "eileen-laubacher",
+     "name": "Eileen Laubacher",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 91
+    },
+    {
+     "id": "douglas-mangeris",
+     "name": "Douglas Mangeris",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 21
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 5",
+   "district": null,
+   "title": "Representative to the 120th United States Congress - District 5",
+   "choices": [
+    {
+     "id": "jeff-crank",
+     "name": "Jeff Crank",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jessica-killin",
+     "name": "Jessica Killin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "christopher-mitchell",
+     "name": "Christopher Mitchell",
+     "party": "ACN",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "mark-marky-jr-elworth",
+     "name": "Mark \"Marky Jr\" Elworth",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 6",
+   "district": null,
+   "title": "Representative to the 120th United States Congress - District 6",
+   "choices": [
+    {
+     "id": "jason-crow",
+     "name": "Jason Crow",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 312
+    },
+    {
+     "id": "jason-clark",
+     "name": "Jason Clark",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 61
+    },
+    {
+     "id": "patty-mcmahon",
+     "name": "Patty McMahon",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "meredith-ryan",
+     "name": "Meredith Ryan",
+     "party": "UNI",
+     "party_code": "O",
+     "votes": 5
+    },
+    {
+     "id": "samir-witta",
+     "name": "Samir Witta",
+     "party": "UAF",
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 7",
+   "district": null,
+   "title": "Representative to the 120th United States Congress - District 7",
+   "choices": [
+    {
+     "id": "tim-bennett",
+     "name": "Tim Bennett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "brittany-pettersen",
+     "name": "Brittany Pettersen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "susan-hall",
+     "name": "Susan Hall",
+     "party": "UNI",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "lawrence-kyle-clark",
+     "name": "Lawrence Kyle Clark",
+     "party": "ACN",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "dan-kilo-sallis",
+     "name": "Dan ''Kilo'' Sallis",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "joe-krzeczkowski",
+     "name": "Joe Krzeczkowski",
+     "party": "UAF",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11
+   }
+  },
+  {
+   "id": "co-representative-to-the-120th-united-states-congress-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Representative to the 120th United States Congress - District 8",
+   "district": null,
+   "title": "Representative to the 120th United States Congress - District 8",
+   "choices": [
+    {
+     "id": "gabe-evans",
+     "name": "Gabe Evans",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "manny-rutinel",
+     "name": "Manny Rutinel",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "dave-wood",
+     "name": "Dave Wood",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-governor-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Governor / Lieutenant Governor",
+   "district": null,
+   "title": "Governor / Lieutenant Governor",
+   "choices": [
+    {
+     "id": "victor-marx-george-washington-markert",
+     "name": "Victor Marx / George Washington Markert",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21982
+    },
+    {
+     "id": "phil-weiser-lesley-dahlkemper",
+     "name": "Phil Weiser / Lesley Dahlkemper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 160112
+    },
+    {
+     "id": "stephen-t-hamilton-james-k-treibert",
+     "name": "Stephen T. Hamilton / James K Treibert",
+     "party": "ACN",
+     "party_code": "O",
+     "votes": 571
+    },
+    {
+     "id": "eric-mulder-wayne-harlos",
+     "name": "Eric Mulder / Wayne Harlos",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 2134
+    },
+    {
+     "id": "jeff-peckman-t-j-cole",
+     "name": "Jeff Peckman / T.J. Cole",
+     "party": "UNI",
+     "party_code": "O",
+     "votes": 297
+    },
+    {
+     "id": "erik-underwood-frank-atwood",
+     "name": "Erik Underwood / Frank Atwood",
+     "party": "APV",
+     "party_code": "O",
+     "votes": 581
+    },
+    {
+     "id": "greg-lopez-taralyn-romero",
+     "name": "Greg Lopez / Taralyn Romero",
+     "party": "UAF",
+     "party_code": "O",
+     "votes": 3128
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "choices": [
+    {
+     "id": "amanda-gonzalez",
+     "name": "Amanda Gonzalez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 156896
+    },
+    {
+     "id": "james-wiley",
+     "name": "James Wiley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 27534
+    },
+    {
+     "id": "sean-vadney",
+     "name": "Sean Vadney",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 1844
+    },
+    {
+     "id": "amanda-campbell",
+     "name": "Amanda Campbell",
+     "party": "ACN",
+     "party_code": "O",
+     "votes": 779
+    },
+    {
+     "id": "celeste-landry",
+     "name": "Celeste Landry",
+     "party": "FWD",
+     "party_code": "O",
+     "votes": 968
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-state-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Treasurer",
+   "district": null,
+   "title": "State Treasurer",
+   "choices": [
+    {
+     "id": "jeff-bridges",
+     "name": "Jeff Bridges",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 152795
+    },
+    {
+     "id": "kevin-grantham",
+     "name": "Kevin Grantham",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 30037
+    },
+    {
+     "id": "jodie-barr",
+     "name": "Jodie Barr",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 2624
+    },
+    {
+     "id": "marilee-langner-sturgis",
+     "name": "Marilee Langner Sturgis",
+     "party": "APV",
+     "party_code": "O",
+     "votes": 540
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "choices": [
+    {
+     "id": "michael-j-allen",
+     "name": "Michael J. Allen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 35501
+    },
+    {
+     "id": "jena-griswold",
+     "name": "Jena Griswold",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 150295
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-state-board-of-education-member-congressional-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Board of Education Member - Congressional District 1",
+   "district": null,
+   "title": "State Board of Education Member - Congressional District 1",
+   "choices": [
+    {
+     "id": "lisa-esc-rcega",
+     "name": "Lisa Escárcega",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 150737
+    },
+    {
+     "id": "frederick-espinoza",
+     "name": "Frederick Espinoza",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 27908
+    },
+    {
+     "id": "clayton-casciato",
+     "name": "Clayton Casciato",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 3131
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-state-board-of-education-member-congressional-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Board of Education Member - Congressional District 3",
+   "district": null,
+   "title": "State Board of Education Member - Congressional District 3",
+   "choices": [
+    {
+     "id": "sherri-m-wright",
+     "name": "Sherri M Wright",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "barb-clementi",
+     "name": "Barb Clementi",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 27
+   }
+  },
+  {
+   "id": "co-state-board-of-education-member-congressional-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Board of Education Member - Congressional District 7",
+   "district": null,
+   "title": "State Board of Education Member - Congressional District 7",
+   "choices": [
+    {
+     "id": "karla-esser",
+     "name": "Karla Esser",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "steve-barton",
+     "name": "Steve Barton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "ross-klopf",
+     "name": "Ross Klopf",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11
+   }
+  },
+  {
+   "id": "co-regent-of-the-university-of-colorado-congressional-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Regent of the University of Colorado - Congressional District 2",
+   "district": null,
+   "title": "Regent of the University of Colorado - Congressional District 2",
+   "choices": [
+    {
+     "id": "marty-neilson",
+     "name": "Marty Neilson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 437
+    },
+    {
+     "id": "edie-hooton",
+     "name": "Edie Hooton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 100
+    },
+    {
+     "id": "richard-friend",
+     "name": "Richard Friend",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 21
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11
+   }
+  },
+  {
+   "id": "co-regent-of-the-university-of-colorado-congressional-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Regent of the University of Colorado - Congressional District 6",
+   "district": null,
+   "title": "Regent of the University of Colorado - Congressional District 6",
+   "choices": [
+    {
+     "id": "veanessa-burbage",
+     "name": "Veanessa Burbage",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 65
+    },
+    {
+     "id": "ilana-spiegel",
+     "name": "Ilana Spiegel",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 288
+    },
+    {
+     "id": "joe-johnson",
+     "name": "Joe Johnson",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "co-regent-of-the-university-of-colorado-congressional-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Regent of the University of Colorado - Congressional District 7",
+   "district": null,
+   "title": "Regent of the University of Colorado - Congressional District 7",
+   "choices": [
+    {
+     "id": "paul-mueller",
+     "name": "Paul Mueller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "nolbert-chavez",
+     "name": "Nolbert Chavez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "betterose-ryan",
+     "name": "BetteRose Ryan",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11
+   }
+  },
+  {
+   "id": "co-state-senator-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 1",
+   "district": null,
+   "title": "State Senator - District 1",
+   "choices": [
+    {
+     "id": "jamie-jeffery",
+     "name": "Jamie Jeffery",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "byron-pelton",
+     "name": "Byron Pelton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7
+   }
+  },
+  {
+   "id": "co-state-senator-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 3",
+   "district": null,
+   "title": "State Senator - District 3",
+   "choices": [
+    {
+     "id": "aaron-gutierrez",
+     "name": "Aaron Gutierrez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "dana-charles",
+     "name": "Dana Charles",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-senator-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 4",
+   "district": null,
+   "title": "State Senator - District 4",
+   "choices": [
+    {
+     "id": "justin-kurth",
+     "name": "Justin Kurth",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "teddy-collins",
+     "name": "Teddy Collins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8
+   }
+  },
+  {
+   "id": "co-state-senator-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 7",
+   "district": null,
+   "title": "State Senator - District 7",
+   "choices": [
+    {
+     "id": "janice-rich",
+     "name": "Janice Rich",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-senator-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 8",
+   "district": null,
+   "title": "State Senator - District 8",
+   "choices": [
+    {
+     "id": "dylan-roberts",
+     "name": "Dylan Roberts",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 157
+    },
+    {
+     "id": "corey-marshall",
+     "name": "Corey Marshall",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 439
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 10
+   }
+  },
+  {
+   "id": "co-state-senator-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 9",
+   "district": null,
+   "title": "State Senator - District 9",
+   "choices": [
+    {
+     "id": "terri-carver",
+     "name": "Terri Carver",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "william-delano-moses-iii",
+     "name": "William Delano Moses III",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-senator-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 11",
+   "district": null,
+   "title": "State Senator - District 11",
+   "choices": [
+    {
+     "id": "tony-exum-sr",
+     "name": "Tony Exum Sr",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "levon-stilson",
+     "name": "Levon Stilson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "janet-turner",
+     "name": "Janet Turner",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-senator-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 15",
+   "district": null,
+   "title": "State Senator - District 15",
+   "choices": [
+    {
+     "id": "rob-woodward",
+     "name": "Rob Woodward",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "janice-marchman",
+     "name": "Janice Marchman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-senator-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 17",
+   "district": null,
+   "title": "State Senator - District 17",
+   "choices": [
+    {
+     "id": "katie-wallace",
+     "name": "Katie Wallace",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "pat-miller",
+     "name": "Pat Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-senator-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 20",
+   "district": null,
+   "title": "State Senator - District 20",
+   "choices": [
+    {
+     "id": "richard-rich-mancuso",
+     "name": "Richard (Rich) Mancuso",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "sheila-lieder",
+     "name": "Sheila Lieder",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-senator-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 21",
+   "district": null,
+   "title": "State Senator - District 21",
+   "choices": [
+    {
+     "id": "frederick-alfred-jr",
+     "name": "Frederick Alfred Jr",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "adrienne-benavidez",
+     "name": "Adrienne Benavidez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-senator-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 22",
+   "district": null,
+   "title": "State Senator - District 22",
+   "choices": [
+    {
+     "id": "steve-harkess",
+     "name": "Steve Harkess",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "monica-irasema-duran",
+     "name": "Monica Irasema Duran",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-senator-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 24",
+   "district": null,
+   "title": "State Senator - District 24",
+   "choices": [
+    {
+     "id": "kevin-allen",
+     "name": "Kevin Allen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "kyle-mullica",
+     "name": "Kyle Mullica",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-senator-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 25",
+   "district": null,
+   "title": "State Senator - District 25",
+   "choices": [
+    {
+     "id": "paul-kohlhoff",
+     "name": "Paul Kohlhoff",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "william-lindstedt",
+     "name": "William Lindstedt",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "mark-philip-bromley",
+     "name": "Mark Philip Bromley",
+     "party": "UAF",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-state-senator-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 27",
+   "district": null,
+   "title": "State Senator - District 27",
+   "choices": [
+    {
+     "id": "danielle-lammon",
+     "name": "Danielle Lammon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "tom-sullivan",
+     "name": "Tom Sullivan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "michele-poague",
+     "name": "Michele Poague",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-senator-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 29",
+   "district": null,
+   "title": "State Senator - District 29",
+   "choices": [
+    {
+     "id": "iman-m-jodeh",
+     "name": "Iman M. Jodeh",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "robert-mckenna",
+     "name": "Robert McKenna",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-senator-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 30",
+   "district": null,
+   "title": "State Senator - District 30",
+   "choices": [
+    {
+     "id": "john-carson",
+     "name": "John Carson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "kevin-leung",
+     "name": "Kevin Leung",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-senator-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 31",
+   "district": null,
+   "title": "State Senator - District 31",
+   "choices": [
+    {
+     "id": "matt-ball",
+     "name": "Matt Ball",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 44380
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-senator-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 32",
+   "district": null,
+   "title": "State Senator - District 32",
+   "choices": [
+    {
+     "id": "emily-sirota",
+     "name": "Emily Sirota",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 29955
+    },
+    {
+     "id": "sydnnia-wulff",
+     "name": "Sydnnia Wulff",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7219
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-state-senator-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 34",
+   "district": null,
+   "title": "State Senator - District 34",
+   "choices": [
+    {
+     "id": "chela-garcia-irlando",
+     "name": "Chela Garcia Irlando",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 33735
+    },
+    {
+     "id": "jennifer-qualteri",
+     "name": "Jennifer Qualteri",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4831
+    },
+    {
+     "id": "jacob-luria",
+     "name": "Jacob Luria",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 706
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-senator-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Senator - District 35",
+   "district": null,
+   "title": "State Senator - District 35",
+   "choices": [
+    {
+     "id": "rod-pelton",
+     "name": "Rod Pelton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 522
+    },
+    {
+     "id": "richard-graf",
+     "name": "Richard Graf",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "travis-star-nelson",
+     "name": "Travis Star Nelson",
+     "party": "UAF",
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 13
+   }
+  },
+  {
+   "id": "co-state-representative-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 1",
+   "district": null,
+   "title": "State Representative - District 1",
+   "choices": [
+    {
+     "id": "javier-mabrey",
+     "name": "Javier Mabrey",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13234
+    },
+    {
+     "id": "joseph-montoya",
+     "name": "Joseph Montoya",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4815
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 2",
+   "district": null,
+   "title": "State Representative - District 2",
+   "choices": [
+    {
+     "id": "scott-baldermann",
+     "name": "Scott Baldermann",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23965
+    },
+    {
+     "id": "carey-marin",
+     "name": "Carey Marin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6748
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 3",
+   "district": null,
+   "title": "State Representative - District 3",
+   "choices": [
+    {
+     "id": "gena-ozols",
+     "name": "Gena Ozols",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6215
+    },
+    {
+     "id": "rebecca-winegar",
+     "name": "Rebecca Winegar",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2079
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 4",
+   "district": null,
+   "title": "State Representative - District 4",
+   "choices": [
+    {
+     "id": "ellwood-ervin",
+     "name": "Ellwood Ervin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2647
+    },
+    {
+     "id": "cecelia-espenoza",
+     "name": "Cecelia Espenoza",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 18491
+    },
+    {
+     "id": "bill-hare",
+     "name": "Bill Hare",
+     "party": "FWD",
+     "party_code": "O",
+     "votes": 374
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 5",
+   "district": null,
+   "title": "State Representative - District 5",
+   "choices": [
+    {
+     "id": "justine-sandoval",
+     "name": "Justine Sandoval",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 17809
+    },
+    {
+     "id": "johnnie-w-johnson",
+     "name": "Johnnie W. Johnson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2107
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 6",
+   "district": null,
+   "title": "State Representative - District 6",
+   "choices": [
+    {
+     "id": "iris-halpern",
+     "name": "Iris Halpern",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 22297
+    },
+    {
+     "id": "kathleen-angel",
+     "name": "Kathleen Angel",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2969
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 7",
+   "district": null,
+   "title": "State Representative - District 7",
+   "choices": [
+    {
+     "id": "jennifer-bacon",
+     "name": "Jennifer Bacon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13275
+    },
+    {
+     "id": "jeff-wilson",
+     "name": "Jeff Wilson",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 1954
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 8",
+   "district": null,
+   "title": "State Representative - District 8",
+   "choices": [
+    {
+     "id": "carolyn-barnes",
+     "name": "Carolyn Barnes",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2205
+    },
+    {
+     "id": "lindsay-gilchrist",
+     "name": "Lindsay Gilchrist",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 24487
+    },
+    {
+     "id": "jesse-lashawn-parris",
+     "name": "Jesse Lashawn Parris",
+     "party": "UNI",
+     "party_code": "O",
+     "votes": 303
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 9",
+   "district": null,
+   "title": "State Representative - District 9",
+   "choices": [
+    {
+     "id": "tom-cowhick",
+     "name": "Tom Cowhick",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3305
+    },
+    {
+     "id": "monica-vanbuskirk",
+     "name": "Monica VanBuskirk",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13258
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 10",
+   "district": null,
+   "title": "State Representative - District 10",
+   "choices": [
+    {
+     "id": "junie-joseph",
+     "name": "Junie Joseph",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 11",
+   "district": null,
+   "title": "State Representative - District 11",
+   "choices": [
+    {
+     "id": "karen-mccormick",
+     "name": "Karen McCormick",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 12",
+   "district": null,
+   "title": "State Representative - District 12",
+   "choices": [
+    {
+     "id": "ryan-rhatigan",
+     "name": "Ryan Rhatigan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "kyle-brown",
+     "name": "Kyle Brown",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 13",
+   "district": null,
+   "title": "State Representative - District 13",
+   "choices": [
+    {
+     "id": "consuelo-redhorse",
+     "name": "Consuelo Redhorse",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 137
+    },
+    {
+     "id": "miguel-martinez",
+     "name": "Miguel Martinez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 432
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "co-state-representative-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 14",
+   "district": null,
+   "title": "State Representative - District 14",
+   "choices": [
+    {
+     "id": "ava-flanell",
+     "name": "Ava Flanell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "sarah-emery",
+     "name": "Sarah Emery",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 15",
+   "district": null,
+   "title": "State Representative - District 15",
+   "choices": [
+    {
+     "id": "jeff-k-livingston",
+     "name": "Jeff K. Livingston",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "pricella-tiegen",
+     "name": "Pricella Tiegen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "doug-jones",
+     "name": "Doug Jones",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 16",
+   "district": null,
+   "title": "State Representative - District 16",
+   "choices": [
+    {
+     "id": "jill-haffley",
+     "name": "Jill Haffley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "steph-vigil",
+     "name": "Steph Vigil",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "john-c-hjersman",
+     "name": "John C Hjersman",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 17",
+   "district": null,
+   "title": "State Representative - District 17",
+   "choices": [
+    {
+     "id": "regina-english",
+     "name": "Regina English",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "laura-martin",
+     "name": "Laura Martin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "john-michael-angle",
+     "name": "John Michael Angle",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 18",
+   "district": null,
+   "title": "State Representative - District 18",
+   "choices": [
+    {
+     "id": "amy-t-paschal",
+     "name": "Amy T Paschal",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "adriana-cuva",
+     "name": "Adriana Cuva",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 19",
+   "district": null,
+   "title": "State Representative - District 19",
+   "choices": [
+    {
+     "id": "dan-woog",
+     "name": "Dan Woog",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jillaire-mcmillan",
+     "name": "Jillaire McMillan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 20",
+   "district": null,
+   "title": "State Representative - District 20",
+   "choices": [
+    {
+     "id": "jarvis-caldwell",
+     "name": "Jarvis Caldwell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 21",
+   "district": null,
+   "title": "State Representative - District 21",
+   "choices": [
+    {
+     "id": "brenda-miller",
+     "name": "Brenda Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "michelle-tweed",
+     "name": "Michelle Tweed",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 22",
+   "district": null,
+   "title": "State Representative - District 22",
+   "choices": [
+    {
+     "id": "michael-pierson",
+     "name": "Michael Pierson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ken-degraaf",
+     "name": "Ken deGraaf",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 23",
+   "district": null,
+   "title": "State Representative - District 23",
+   "choices": [
+    {
+     "id": "alexis-hoffkling",
+     "name": "Alexis Hoffkling",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ross-metler",
+     "name": "Ross Metler",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 24",
+   "district": null,
+   "title": "State Representative - District 24",
+   "choices": [
+    {
+     "id": "lisa-feret",
+     "name": "Lisa Feret",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kristopher-johnson",
+     "name": "Kristopher Johnson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 25",
+   "district": null,
+   "title": "State Representative - District 25",
+   "choices": [
+    {
+     "id": "mark-herzfeld",
+     "name": "Mark Herzfeld",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "tammy-story",
+     "name": "Tammy Story",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 26",
+   "district": null,
+   "title": "State Representative - District 26",
+   "choices": [
+    {
+     "id": "meghan-lukens",
+     "name": "Meghan Lukens",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "james-kellogg",
+     "name": "James Kellogg",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4
+   }
+  },
+  {
+   "id": "co-state-representative-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 27",
+   "district": null,
+   "title": "State Representative - District 27",
+   "choices": [
+    {
+     "id": "danielle-varda",
+     "name": "Danielle Varda",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "eric-bodenstab",
+     "name": "Eric Bodenstab",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 28",
+   "district": null,
+   "title": "State Representative - District 28",
+   "choices": [
+    {
+     "id": "david-rein",
+     "name": "David Rein",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 29",
+   "district": null,
+   "title": "State Representative - District 29",
+   "choices": [
+    {
+     "id": "kristine-ireland",
+     "name": "Kristine Ireland",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "lori-goldstein",
+     "name": "Lori Goldstein",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 30",
+   "district": null,
+   "title": "State Representative - District 30",
+   "choices": [
+    {
+     "id": "rebekah-stewart",
+     "name": "Rebekah Stewart",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "william-tyler-switzer",
+     "name": "William Tyler Switzer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 31",
+   "district": null,
+   "title": "State Representative - District 31",
+   "choices": [
+    {
+     "id": "gabriel-cervantes",
+     "name": "Gabriel Cervantes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ray-roll",
+     "name": "Ray Roll",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 32",
+   "district": null,
+   "title": "State Representative - District 32",
+   "choices": [
+    {
+     "id": "michelle-d-lee",
+     "name": "Michelle D. Lee",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "chris-vandijk",
+     "name": "Chris VanDijk",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 33",
+   "district": null,
+   "title": "State Representative - District 33",
+   "choices": [
+    {
+     "id": "kenny-van-nguyen",
+     "name": "Kenny Van Nguyen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "nate-jorgensen",
+     "name": "Nate Jorgensen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-state-representative-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 34",
+   "district": null,
+   "title": "State Representative - District 34",
+   "choices": [
+    {
+     "id": "craig-sullivan",
+     "name": "Craig Sullivan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jenny-willford",
+     "name": "Jenny Willford",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 35",
+   "district": null,
+   "title": "State Representative - District 35",
+   "choices": [
+    {
+     "id": "lorena-garcia",
+     "name": "Lorena Garcia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 36",
+   "district": null,
+   "title": "State Representative - District 36",
+   "choices": [
+    {
+     "id": "michael-carter",
+     "name": "Michael Carter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "paul-e-nelson",
+     "name": "Paul E. Nelson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "andrew-gibson",
+     "name": "Andrew Gibson",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 37",
+   "district": null,
+   "title": "State Representative - District 37",
+   "choices": [
+    {
+     "id": "jill-thompson",
+     "name": "Jill Thompson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "chad-clifford",
+     "name": "Chad Clifford",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 38",
+   "district": null,
+   "title": "State Representative - District 38",
+   "choices": [
+    {
+     "id": "gretchen-rydin",
+     "name": "Gretchen Rydin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tim-martin",
+     "name": "Tim Martin",
+     "party": "CCP",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "norm-olsen",
+     "name": "Norm Olsen",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "allison-madrigal",
+     "name": "Allison Madrigal",
+     "party": "UAF",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 39",
+   "district": null,
+   "title": "State Representative - District 39",
+   "choices": [
+    {
+     "id": "brandi-bradley",
+     "name": "Brandi Bradley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "christian-schilder",
+     "name": "Christian Schilder",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 40",
+   "district": null,
+   "title": "State Representative - District 40",
+   "choices": [
+    {
+     "id": "clinton-porter",
+     "name": "Clinton Porter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "naquetta-ricks",
+     "name": "Naquetta Ricks",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 41",
+   "district": null,
+   "title": "State Representative - District 41",
+   "choices": [
+    {
+     "id": "jamie-jackson",
+     "name": "Jamie Jackson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 42",
+   "district": null,
+   "title": "State Representative - District 42",
+   "choices": [
+    {
+     "id": "sarah-amelia-woodson",
+     "name": "Sarah Amelia Woodson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 43",
+   "district": null,
+   "title": "State Representative - District 43",
+   "choices": [
+    {
+     "id": "robert-bob-marshall",
+     "name": "Robert ''Bob'' Marshall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "nate-marsh",
+     "name": "Nate Marsh",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-44",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 44",
+   "district": null,
+   "title": "State Representative - District 44",
+   "choices": [
+    {
+     "id": "anthony-hartsook",
+     "name": "Anthony Hartsook",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "richard-bowness",
+     "name": "Richard Bowness",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "john-h-sutton",
+     "name": "John H Sutton",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 45",
+   "district": null,
+   "title": "State Representative - District 45",
+   "choices": [
+    {
+     "id": "michael-clarkson",
+     "name": "Michael Clarkson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "max-brooks",
+     "name": "Max Brooks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "caryn-ann-harlos",
+     "name": "Caryn Ann Harlos",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 46",
+   "district": null,
+   "title": "State Representative - District 46",
+   "choices": [
+    {
+     "id": "jonathan-post",
+     "name": "Jonathan Post",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "tisha-mauro",
+     "name": "Tisha Mauro",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 47",
+   "district": null,
+   "title": "State Representative - District 47",
+   "choices": [
+    {
+     "id": "vic-meyers",
+     "name": "Vic Meyers",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ty-winter",
+     "name": "Ty Winter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 9
+   }
+  },
+  {
+   "id": "co-state-representative-district-48",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 48",
+   "district": null,
+   "title": "State Representative - District 48",
+   "choices": [
+    {
+     "id": "carlos-barron",
+     "name": "Carlos Barron",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "dez-packard",
+     "name": "Dez Packard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "eric-e-joss",
+     "name": "Eric E. Joss",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 49",
+   "district": null,
+   "title": "State Representative - District 49",
+   "choices": [
+    {
+     "id": "michael-sheperek",
+     "name": "Michael Sheperek",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "lesley-smith",
+     "name": "Lesley Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4
+   }
+  },
+  {
+   "id": "co-state-representative-district-50",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 50",
+   "district": null,
+   "title": "State Representative - District 50",
+   "choices": [
+    {
+     "id": "ryan-gonzalez",
+     "name": "Ryan Gonzalez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "tommy-butler",
+     "name": "Tommy Butler",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-51",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 51",
+   "district": null,
+   "title": "State Representative - District 51",
+   "choices": [
+    {
+     "id": "amy-parks",
+     "name": "Amy Parks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jacki-marsh",
+     "name": "Jacki Marsh",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-52",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 52",
+   "district": null,
+   "title": "State Representative - District 52",
+   "choices": [
+    {
+     "id": "yara-zokaie",
+     "name": "Yara Zokaie",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "steve-yurash",
+     "name": "Steve Yurash",
+     "party": "CCP",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-53",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 53",
+   "district": null,
+   "title": "State Representative - District 53",
+   "choices": [
+    {
+     "id": "daniel-frick",
+     "name": "Daniel Frick",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "andy-boesenecker",
+     "name": "Andy Boesenecker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-54",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 54",
+   "district": null,
+   "title": "State Representative - District 54",
+   "choices": [
+    {
+     "id": "jason-bias",
+     "name": "Jason Bias",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "mallory-martin",
+     "name": "Mallory Martin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-55",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 55",
+   "district": null,
+   "title": "State Representative - District 55",
+   "choices": [
+    {
+     "id": "rick-taggart",
+     "name": "Rick Taggart",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "brittni-packard",
+     "name": "Brittni Packard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-state-representative-district-56",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 56",
+   "district": null,
+   "title": "State Representative - District 56",
+   "choices": [
+    {
+     "id": "chris-richardson",
+     "name": "Chris Richardson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 505
+    },
+    {
+     "id": "amy-l-lunde",
+     "name": "Amy L. Lunde",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 35
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7
+   }
+  },
+  {
+   "id": "co-state-representative-district-57",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 57",
+   "district": null,
+   "title": "State Representative - District 57",
+   "choices": [
+    {
+     "id": "elizabeth-velasco",
+     "name": "Elizabeth Velasco",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "russ-andrews",
+     "name": "Russ Andrews",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-state-representative-district-58",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 58",
+   "district": null,
+   "title": "State Representative - District 58",
+   "choices": [
+    {
+     "id": "larry-don-suckla",
+     "name": "Larry Don Suckla",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8
+   }
+  },
+  {
+   "id": "co-state-representative-district-59",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 59",
+   "district": null,
+   "title": "State Representative - District 59",
+   "choices": [
+    {
+     "id": "katie-stewart",
+     "name": "Katie Stewart",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "naomi-riess",
+     "name": "Naomi Riess",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4
+   }
+  },
+  {
+   "id": "co-state-representative-district-60",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 60",
+   "district": null,
+   "title": "State Representative - District 60",
+   "choices": [
+    {
+     "id": "kathryn-kester-green",
+     "name": "Kathryn Kester Green",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "matt-alexander",
+     "name": "Matt Alexander",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "co-state-representative-district-61",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 61",
+   "district": null,
+   "title": "State Representative - District 61",
+   "choices": [
+    {
+     "id": "scott-shamblin",
+     "name": "Scott Shamblin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "eliza-hamrick",
+     "name": "Eliza Hamrick",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kevin-gulbranson",
+     "name": "Kevin Gulbranson",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-62",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 62",
+   "district": null,
+   "title": "State Representative - District 62",
+   "choices": [
+    {
+     "id": "matthew-martinez",
+     "name": "Matthew Martinez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "steven-rodriguez",
+     "name": "Steven Rodriguez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "donald-vermillion",
+     "name": "Donald Vermillion",
+     "party": "LBR",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8
+   }
+  },
+  {
+   "id": "co-state-representative-district-63",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 63",
+   "district": null,
+   "title": "State Representative - District 63",
+   "choices": [
+    {
+     "id": "dusty-johnson",
+     "name": "Dusty Johnson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7
+   }
+  },
+  {
+   "id": "co-state-representative-district-64",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 64",
+   "district": null,
+   "title": "State Representative - District 64",
+   "choices": [
+    {
+     "id": "maureen-mo-dower",
+     "name": "Maureen (Mo) Dower",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "scott-l-slaugh",
+     "name": "Scott L. Slaugh",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-state-representative-district-65",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "State Representative - District 65",
+   "district": null,
+   "title": "State Representative - District 65",
+   "choices": [
+    {
+     "id": "lori-garcia-sander",
+     "name": "Lori Garcia Sander",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-regional-transportation-district-director-district-b",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Regional Transportation District Director - District B",
+   "district": null,
+   "title": "Regional Transportation District Director - District B",
+   "choices": [
+    {
+     "id": "john-glenn",
+     "name": "John Glenn",
+     "party": "1",
+     "party_code": "O",
+     "votes": 17087
+    },
+    {
+     "id": "bianka-emerson",
+     "name": "Bianka Emerson",
+     "party": "2",
+     "party_code": "O",
+     "votes": 11676
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-regional-transportation-district-director-district-c",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Regional Transportation District Director - District C",
+   "district": null,
+   "title": "Regional Transportation District Director - District C",
+   "choices": [
+    {
+     "id": "joe-meyer",
+     "name": "Joe Meyer",
+     "party": "1",
+     "party_code": "O",
+     "votes": 34175
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-regional-transportation-district-director-district-j",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Regional Transportation District Director - District J",
+   "district": null,
+   "title": "Regional Transportation District Director - District J",
+   "choices": [
+    {
+     "id": "coleman-erickson",
+     "name": "Coleman Erickson",
+     "party": "1",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-regional-transportation-district-director-district-k",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Regional Transportation District Director - District K",
+   "district": null,
+   "title": "Regional Transportation District Director - District K",
+   "choices": [
+    {
+     "id": "michael-farrington",
+     "name": "Michael Farrington",
+     "party": "1",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jessica-sandgren",
+     "name": "Jessica Sandgren",
+     "party": "2",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-regional-transportation-district-director-district-l",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Regional Transportation District Director - District L",
+   "district": null,
+   "title": "Regional Transportation District Director - District L",
+   "choices": [
+    {
+     "id": "ian-harwick",
+     "name": "Ian Harwick",
+     "party": "1",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-regional-transportation-district-director-district-n",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Regional Transportation District Director - District N",
+   "district": null,
+   "title": "Regional Transportation District Director - District N",
+   "choices": [
+    {
+     "id": "cindy-arcuri",
+     "name": "Cindy Arcuri",
+     "party": "1",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-regional-transportation-district-director-district-o",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Regional Transportation District Director - District O",
+   "district": null,
+   "title": "Regional Transportation District Director - District O",
+   "choices": [
+    {
+     "id": "jack-rosenthal",
+     "name": "Jack Rosenthal",
+     "party": "1",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "audrey-debarros",
+     "name": "Audrey DeBarros",
+     "party": "2",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-colorado-supreme-court-justice-hood",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Colorado Supreme Court Justice - Hood",
+   "district": null,
+   "title": "Colorado Supreme Court Justice - Hood",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 118060
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 31136
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-colorado-court-of-appeals-judge-freyre",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Colorado Court of Appeals Judge - Freyre",
+   "district": null,
+   "title": "Colorado Court of Appeals Judge - Freyre",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 118588
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 27536
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-colorado-court-of-appeals-judge-harris",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Colorado Court of Appeals Judge - Harris",
+   "district": null,
+   "title": "Colorado Court of Appeals Judge - Harris",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 115840
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 29604
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-colorado-court-of-appeals-judge-lum",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Colorado Court of Appeals Judge - Lum",
+   "district": null,
+   "title": "Colorado Court of Appeals Judge - Lum",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 117857
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 27447
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-colorado-court-of-appeals-judge-moultrie",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Colorado Court of Appeals Judge - Moultrie",
+   "district": null,
+   "title": "Colorado Court of Appeals Judge - Moultrie",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 116077
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 28935
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-colorado-court-of-appeals-judge-schock",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Colorado Court of Appeals Judge - Schock",
+   "district": null,
+   "title": "Colorado Court of Appeals Judge - Schock",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 114329
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 30412
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-colorado-court-of-appeals-judge-sullivan",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Colorado Court of Appeals Judge - Sullivan",
+   "district": null,
+   "title": "Colorado Court of Appeals Judge - Sullivan",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 112880
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 31933
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-district-court-judge-1st-judicial-district-contiguglia",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 1st Judicial District - Contiguglia",
+   "district": null,
+   "title": "District Court Judge - 1st Judicial District - Contiguglia",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-1st-judicial-district-loewer",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 1st Judicial District - Loewer",
+   "district": null,
+   "title": "District Court Judge - 1st Judicial District - Loewer",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-1st-judicial-district-miloud",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 1st Judicial District - Miloud",
+   "district": null,
+   "title": "District Court Judge - 1st Judicial District - Miloud",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-1st-judicial-district-poland",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 1st Judicial District - Poland",
+   "district": null,
+   "title": "District Court Judge - 1st Judicial District - Poland",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-1st-judicial-district-rhamey",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 1st Judicial District - Rhamey",
+   "district": null,
+   "title": "District Court Judge - 1st Judicial District - Rhamey",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-1st-judicial-district-russell",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 1st Judicial District - Russell",
+   "district": null,
+   "title": "District Court Judge - 1st Judicial District - Russell",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-1st-judicial-district-zenisek",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 1st Judicial District - Zenisek",
+   "district": null,
+   "title": "District Court Judge - 1st Judicial District - Zenisek",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-2nd-judicial-district-angel",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 2nd Judicial District - Angel",
+   "district": null,
+   "title": "District Court Judge - 2nd Judicial District - Angel",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 107138
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 29979
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-2nd-judicial-district-baumann",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 2nd Judicial District - Baumann",
+   "district": null,
+   "title": "District Court Judge - 2nd Judicial District - Baumann",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 107814
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 28964
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-2nd-judicial-district-elliff",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 2nd Judicial District - Elliff",
+   "district": null,
+   "title": "District Court Judge - 2nd Judicial District - Elliff",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 106999
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 29474
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-2nd-judicial-district-luxen",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 2nd Judicial District - Luxen",
+   "district": null,
+   "title": "District Court Judge - 2nd Judicial District - Luxen",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 107059
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 29255
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-2nd-judicial-district-olafson",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 2nd Judicial District - Olafson",
+   "district": null,
+   "title": "District Court Judge - 2nd Judicial District - Olafson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 107078
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 29200
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-2nd-judicial-district-wallace",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 2nd Judicial District - Wallace",
+   "district": null,
+   "title": "District Court Judge - 2nd Judicial District - Wallace",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 105864
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 31020
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-2nd-judicial-district-juvenile-gomez",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 2nd Judicial District/Juvenile - Gomez",
+   "district": null,
+   "title": "District Court Judge - 2nd Judicial District/Juvenile - Gomez",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 111032
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 25581
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-2nd-judicial-district-juvenile-mccarthy",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 2nd Judicial District/Juvenile - McCarthy",
+   "district": null,
+   "title": "District Court Judge - 2nd Judicial District/Juvenile - McCarthy",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 109224
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 26921
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-2nd-judicial-district-probate-leith",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 2nd Judicial District/Probate - Leith",
+   "district": null,
+   "title": "District Court Judge - 2nd Judicial District/Probate - Leith",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 107451
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 28738
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-3rd-judicial-district-fowler",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 3rd Judicial District - Fowler",
+   "district": null,
+   "title": "District Court Judge - 3rd Judicial District - Fowler",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-4th-judicial-district-bain",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 4th Judicial District - Bain",
+   "district": null,
+   "title": "District Court Judge - 4th Judicial District - Bain",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-4th-judicial-district-gurney",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 4th Judicial District - Gurney",
+   "district": null,
+   "title": "District Court Judge - 4th Judicial District - Gurney",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-4th-judicial-district-mcguire",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 4th Judicial District - McGuire",
+   "district": null,
+   "title": "District Court Judge - 4th Judicial District - McGuire",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-4th-judicial-district-philipps",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 4th Judicial District - Philipps",
+   "district": null,
+   "title": "District Court Judge - 4th Judicial District - Philipps",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-4th-judicial-district-sokol",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 4th Judicial District - Sokol",
+   "district": null,
+   "title": "District Court Judge - 4th Judicial District - Sokol",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-4th-judicial-district-werner",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 4th Judicial District - Werner",
+   "district": null,
+   "title": "District Court Judge - 4th Judicial District - Werner",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-7th-judicial-district-jackson",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 7th Judicial District - Jackson",
+   "district": null,
+   "title": "District Court Judge - 7th Judicial District - Jackson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "co-district-court-judge-7th-judicial-district-starritt",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 7th Judicial District - Starritt",
+   "district": null,
+   "title": "District Court Judge - 7th Judicial District - Starritt",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "co-district-court-judge-9th-judicial-district-myer",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 9th Judicial District - Myer",
+   "district": null,
+   "title": "District Court Judge - 9th Judicial District - Myer",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-district-court-judge-10th-judicial-district-alexander",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 10th Judicial District - Alexander",
+   "district": null,
+   "title": "District Court Judge - 10th Judicial District - Alexander",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-10th-judicial-district-chostner",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 10th Judicial District - Chostner",
+   "district": null,
+   "title": "District Court Judge - 10th Judicial District - Chostner",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-10th-judicial-district-ernst",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 10th Judicial District - Ernst",
+   "district": null,
+   "title": "District Court Judge - 10th Judicial District - Ernst",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-10th-judicial-district-thomas",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 10th Judicial District - Thomas",
+   "district": null,
+   "title": "District Court Judge - 10th Judicial District - Thomas",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-11th-judicial-district-hunter",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 11th Judicial District - Hunter",
+   "district": null,
+   "title": "District Court Judge - 11th Judicial District - Hunter",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4
+   }
+  },
+  {
+   "id": "co-district-court-judge-11th-judicial-district-vise",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 11th Judicial District - Vise",
+   "district": null,
+   "title": "District Court Judge - 11th Judicial District - Vise",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4
+   }
+  },
+  {
+   "id": "co-district-court-judge-12th-judicial-district-gonzales",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 12th Judicial District - Gonzales",
+   "district": null,
+   "title": "District Court Judge - 12th Judicial District - Gonzales",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "co-district-court-judge-12th-judicial-district-hopkins",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 12th Judicial District - Hopkins",
+   "district": null,
+   "title": "District Court Judge - 12th Judicial District - Hopkins",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "co-district-court-judge-13th-judicial-district-christiansen",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 13th Judicial District - Christiansen",
+   "district": null,
+   "title": "District Court Judge - 13th Judicial District - Christiansen",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7
+   }
+  },
+  {
+   "id": "co-district-court-judge-14th-judicial-district-schneider",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 14th Judicial District - Schneider",
+   "district": null,
+   "title": "District Court Judge - 14th Judicial District - Schneider",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-district-court-judge-15th-judicial-district-johnson",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 15th Judicial District - Johnson",
+   "district": null,
+   "title": "District Court Judge - 15th Judicial District - Johnson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 275
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 234
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4
+   }
+  },
+  {
+   "id": "co-district-court-judge-17th-judicial-district-datz",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 17th Judicial District - Datz",
+   "district": null,
+   "title": "District Court Judge - 17th Judicial District - Datz",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-17th-judicial-district-finn",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 17th Judicial District - Finn",
+   "district": null,
+   "title": "District Court Judge - 17th Judicial District - Finn",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-17th-judicial-district-loew",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 17th Judicial District - Loew",
+   "district": null,
+   "title": "District Court Judge - 17th Judicial District - Loew",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-17th-judicial-district-ruff",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 17th Judicial District - Ruff",
+   "district": null,
+   "title": "District Court Judge - 17th Judicial District - Ruff",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-17th-judicial-district-southerland",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 17th Judicial District - Southerland",
+   "district": null,
+   "title": "District Court Judge - 17th Judicial District - Southerland",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-18th-judicial-district-amico",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 18th Judicial District - Amico",
+   "district": null,
+   "title": "District Court Judge - 18th Judicial District - Amico",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-18th-judicial-district-baker-mckay",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 18th Judicial District - Baker-McKay",
+   "district": null,
+   "title": "District Court Judge - 18th Judicial District - Baker-McKay",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-18th-judicial-district-edson",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 18th Judicial District - Edson",
+   "district": null,
+   "title": "District Court Judge - 18th Judicial District - Edson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-18th-judicial-district-henderson",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 18th Judicial District - Henderson",
+   "district": null,
+   "title": "District Court Judge - 18th Judicial District - Henderson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-18th-judicial-district-jones",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 18th Judicial District - Jones",
+   "district": null,
+   "title": "District Court Judge - 18th Judicial District - Jones",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-18th-judicial-district-karpel",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 18th Judicial District - Karpel",
+   "district": null,
+   "title": "District Court Judge - 18th Judicial District - Karpel",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-18th-judicial-district-stricklin",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 18th Judicial District - Stricklin",
+   "district": null,
+   "title": "District Court Judge - 18th Judicial District - Stricklin",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-18th-judicial-district-vahle",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 18th Judicial District - Vahle",
+   "district": null,
+   "title": "District Court Judge - 18th Judicial District - Vahle",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-18th-judicial-district-washburn",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 18th Judicial District - Washburn",
+   "district": null,
+   "title": "District Court Judge - 18th Judicial District - Washburn",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-19th-judicial-district-galloway",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 19th Judicial District - Galloway",
+   "district": null,
+   "title": "District Court Judge - 19th Judicial District - Galloway",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-19th-judicial-district-kerns",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 19th Judicial District - Kerns",
+   "district": null,
+   "title": "District Court Judge - 19th Judicial District - Kerns",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-20th-judicial-district-kotlarczyk",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 20th Judicial District - Kotlarczyk",
+   "district": null,
+   "title": "District Court Judge - 20th Judicial District - Kotlarczyk",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-20th-judicial-district-larson",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 20th Judicial District - Larson",
+   "district": null,
+   "title": "District Court Judge - 20th Judicial District - Larson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-20th-judicial-district-salomone",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 20th Judicial District - Salomone",
+   "district": null,
+   "title": "District Court Judge - 20th Judicial District - Salomone",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-21st-judicial-district-chaffin",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 21st Judicial District - Chaffin",
+   "district": null,
+   "title": "District Court Judge - 21st Judicial District - Chaffin",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-21st-judicial-district-henderson",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 21st Judicial District - Henderson",
+   "district": null,
+   "title": "District Court Judge - 21st Judicial District - Henderson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-21st-judicial-district-larson",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 21st Judicial District - Larson",
+   "district": null,
+   "title": "District Court Judge - 21st Judicial District - Larson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-21st-judicial-district-lawrence",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 21st Judicial District - Lawrence",
+   "district": null,
+   "title": "District Court Judge - 21st Judicial District - Lawrence",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-district-court-judge-22nd-judicial-district-furse",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 22nd Judicial District - Furse",
+   "district": null,
+   "title": "District Court Judge - 22nd Judicial District - Furse",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-district-court-judge-23rd-judicial-district-baum",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 23rd Judicial District - Baum",
+   "district": null,
+   "title": "District Court Judge - 23rd Judicial District - Baum",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-district-court-judge-23rd-judicial-district-klingensmith",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 23rd Judicial District - Klingensmith",
+   "district": null,
+   "title": "District Court Judge - 23rd Judicial District - Klingensmith",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-district-court-judge-23rd-judicial-district-slade",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 23rd Judicial District - Slade",
+   "district": null,
+   "title": "District Court Judge - 23rd Judicial District - Slade",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-district-court-judge-23rd-judicial-district-warhola",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "District Court Judge - 23rd Judicial District - Warhola",
+   "district": null,
+   "title": "District Court Judge - 23rd Judicial District - Warhola",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-county-court-judge-adams-jimenez",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Adams - Jimenez",
+   "district": null,
+   "title": "County Court Judge - Adams - Jimenez",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-adams-vielma",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Adams - Vielma",
+   "district": null,
+   "title": "County Court Judge - Adams - Vielma",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-alamosa-walzl",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Alamosa - Walzl",
+   "district": null,
+   "title": "County Court Judge - Alamosa - Walzl",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-arapahoe-apostoli",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Arapahoe - Apostoli",
+   "district": null,
+   "title": "County Court Judge - Arapahoe - Apostoli",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-arapahoe-clark",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Arapahoe - Clark",
+   "district": null,
+   "title": "County Court Judge - Arapahoe - Clark",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-arapahoe-rowles-stokes",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Arapahoe - Rowles-Stokes",
+   "district": null,
+   "title": "County Court Judge - Arapahoe - Rowles-Stokes",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-boulder-brodsky",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Boulder - Brodsky",
+   "district": null,
+   "title": "County Court Judge - Boulder - Brodsky",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-boulder-haenselman",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Boulder - Haenselman",
+   "district": null,
+   "title": "County Court Judge - Boulder - Haenselman",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-boulder-malkinson",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Boulder - Malkinson",
+   "district": null,
+   "title": "County Court Judge - Boulder - Malkinson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-costilla-sullivan",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Costilla - Sullivan",
+   "district": null,
+   "title": "County Court Judge - Costilla - Sullivan",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-crowley-boyce",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Crowley - Boyce",
+   "district": null,
+   "title": "County Court Judge - Crowley - Boyce",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-custer-halpin",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Custer - Halpin",
+   "district": null,
+   "title": "County Court Judge - Custer - Halpin",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-denver-eddy",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Denver - Eddy",
+   "district": null,
+   "title": "County Court Judge - Denver - Eddy",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 110413
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 25841
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-denver-fay",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Denver - Fay",
+   "district": null,
+   "title": "County Court Judge - Denver - Fay",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 110150
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 25977
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-denver-lombardi",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Denver - Lombardi",
+   "district": null,
+   "title": "County Court Judge - Denver - Lombardi",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 109419
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 26792
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-denver-malone",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Denver - Malone",
+   "district": null,
+   "title": "County Court Judge - Denver - Malone",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 110115
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 25872
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-denver-martinez-thomas",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Denver - Martinez-Thomas",
+   "district": null,
+   "title": "County Court Judge - Denver - Martinez-Thomas",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 110875
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 25330
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-denver-shamsid-deen",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Denver - Shamsid-Deen",
+   "district": null,
+   "title": "County Court Judge - Denver - Shamsid-Deen",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 105975
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 30202
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-denver-smith",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Denver - Smith",
+   "district": null,
+   "title": "County Court Judge - Denver - Smith",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 109386
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 26665
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-douglas-bowling",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Douglas - Bowling",
+   "district": null,
+   "title": "County Court Judge - Douglas - Bowling",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-douglas-fields",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Douglas - Fields",
+   "district": null,
+   "title": "County Court Judge - Douglas - Fields",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-eagle-causey",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Eagle - Causey",
+   "district": null,
+   "title": "County Court Judge - Eagle - Causey",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-el-paso-burney",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - El Paso - Burney",
+   "district": null,
+   "title": "County Court Judge - El Paso - Burney",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-el-paso-frady",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - El Paso - Frady",
+   "district": null,
+   "title": "County Court Judge - El Paso - Frady",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-el-paso-cord",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - El Paso - Cord",
+   "district": null,
+   "title": "County Court Judge - El Paso - Cord",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-el-paso-rotolo",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - El Paso - Rotolo",
+   "district": null,
+   "title": "County Court Judge - El Paso - Rotolo",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-fremont-robak",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Fremont - Robak",
+   "district": null,
+   "title": "County Court Judge - Fremont - Robak",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-garfield-pototsky",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Garfield - Pototsky",
+   "district": null,
+   "title": "County Court Judge - Garfield - Pototsky",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-gilpin-lane",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Gilpin - Lane",
+   "district": null,
+   "title": "County Court Judge - Gilpin - Lane",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-grand-catanzarite",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Grand - Catanzarite",
+   "district": null,
+   "title": "County Court Judge - Grand - Catanzarite",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-hinsdale-mcdonald",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Hinsdale - McDonald",
+   "district": null,
+   "title": "County Court Judge - Hinsdale - McDonald",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-huerfano-mann",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Huerfano - Mann",
+   "district": null,
+   "title": "County Court Judge - Huerfano - Mann",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-jackson-ryan",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Jackson - Ryan",
+   "district": null,
+   "title": "County Court Judge - Jackson - Ryan",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 423
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 118
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-jefferson-garrido",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Jefferson - Garrido",
+   "district": null,
+   "title": "County Court Judge - Jefferson - Garrido",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-jefferson-magid",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Jefferson - Magid",
+   "district": null,
+   "title": "County Court Judge - Jefferson - Magid",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-jefferson-melton",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Jefferson - Melton",
+   "district": null,
+   "title": "County Court Judge - Jefferson - Melton",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-larimer-ellison",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Larimer - Ellison",
+   "district": null,
+   "title": "County Court Judge - Larimer - Ellison",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-larimer-lynch",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Larimer - Lynch",
+   "district": null,
+   "title": "County Court Judge - Larimer - Lynch",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-larimer-zehe",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Larimer - Zehe",
+   "district": null,
+   "title": "County Court Judge - Larimer - Zehe",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-mesa-burrill",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Mesa - Burrill",
+   "district": null,
+   "title": "County Court Judge - Mesa - Burrill",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-mesa-raaum",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Mesa - Raaum",
+   "district": null,
+   "title": "County Court Judge - Mesa - Raaum",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-mineral-wheelwright",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Mineral - Wheelwright",
+   "district": null,
+   "title": "County Court Judge - Mineral - Wheelwright",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-moffat-hesson",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Moffat - Hesson",
+   "district": null,
+   "title": "County Court Judge - Moffat - Hesson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-otero-culver",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Otero - Culver",
+   "district": null,
+   "title": "County Court Judge - Otero - Culver",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-park-green",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Park - Green",
+   "district": null,
+   "title": "County Court Judge - Park - Green",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-prowers-porter",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Prowers - Porter",
+   "district": null,
+   "title": "County Court Judge - Prowers - Porter",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-rio-blanco-edwards",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Rio Blanco - Edwards",
+   "district": null,
+   "title": "County Court Judge - Rio Blanco - Edwards",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-associate-county-court-judge-rio-blanco-edwards",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Associate County Court Judge - Rio Blanco - Edwards",
+   "district": null,
+   "title": "Associate County Court Judge - Rio Blanco - Edwards",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-washington-hansen",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Washington - Hansen",
+   "district": null,
+   "title": "County Court Judge - Washington - Hansen",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-weld-briggs",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Weld - Briggs",
+   "district": null,
+   "title": "County Court Judge - Weld - Briggs",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-weld-meyer",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Weld - Meyer",
+   "district": null,
+   "title": "County Court Judge - Weld - Meyer",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-county-court-judge-weld-nichols",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "County Court Judge - Weld - Nichols",
+   "district": null,
+   "title": "County Court Judge - Weld - Nichols",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "co-amendment-81-constitutional",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Amendment 81 (CONSTITUTIONAL)",
+   "district": null,
+   "title": "Amendment 81 (CONSTITUTIONAL)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 44005
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 142426
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-amendment-82-constitutional",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Amendment 82 (CONSTITUTIONAL)",
+   "district": null,
+   "title": "Amendment 82 (CONSTITUTIONAL)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 46692
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 138563
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-amendment-83-constitutional",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Amendment 83 (CONSTITUTIONAL)",
+   "district": null,
+   "title": "Amendment 83 (CONSTITUTIONAL)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 46679
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 137876
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-amendment-84-constitutional",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Amendment 84 (CONSTITUTIONAL)",
+   "district": null,
+   "title": "Amendment 84 (CONSTITUTIONAL)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 32274
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 154236
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-amendment-85-constitutional",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Amendment 85 (CONSTITUTIONAL)",
+   "district": null,
+   "title": "Amendment 85 (CONSTITUTIONAL)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 64107
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 121618
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-amendment-86-constitutional",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Amendment 86 (CONSTITUTIONAL)",
+   "district": null,
+   "title": "Amendment 86 (CONSTITUTIONAL)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 58196
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 125256
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-amendment-87-constitutional",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Amendment 87 (CONSTITUTIONAL)",
+   "district": null,
+   "title": "Amendment 87 (CONSTITUTIONAL)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 125103
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 60895
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-proposition-nn-statutory",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Proposition NN (STATUTORY)",
+   "district": null,
+   "title": "Proposition NN (STATUTORY)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 135624
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 51000
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-proposition-132-statutory",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Proposition 132 (STATUTORY)",
+   "district": null,
+   "title": "Proposition 132 (STATUTORY)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 63579
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 122538
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-proposition-133-statutory",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Proposition 133 (STATUTORY)",
+   "district": null,
+   "title": "Proposition 133 (STATUTORY)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 77498
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 107883
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-proposition-134-statutory",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Proposition 134 (STATUTORY)",
+   "district": null,
+   "title": "Proposition 134 (STATUTORY)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 54607
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 130818
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-proposition-135-statutory",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Proposition 135 (STATUTORY)",
+   "district": null,
+   "title": "Proposition 135 (STATUTORY)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 53097
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 132302
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-proposition-136-statutory",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Proposition 136 (STATUTORY)",
+   "district": null,
+   "title": "Proposition 136 (STATUTORY)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 52710
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 132075
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-proposition-137-statutory",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Proposition 137 (STATUTORY)",
+   "district": null,
+   "title": "Proposition 137 (STATUTORY)",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 103796
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 80947
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 64
+   }
+  },
+  {
+   "id": "co-town-of-erie-council-member-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Town of Erie Council Member - District 2",
+   "district": null,
+   "title": "Town of Erie Council Member - District 2",
+   "choices": [
+    {
+     "id": "delaney-dreckman",
+     "name": "Delaney Dreckman",
+     "party": "1",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "ben-hemphill",
+     "name": "Ben Hemphill",
+     "party": "2",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "dipak-basnet",
+     "name": "Dipak Basnet",
+     "party": "3",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-town-of-green-mountain-falls-mayor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Town of Green Mountain Falls Mayor",
+   "district": null,
+   "title": "Town of Green Mountain Falls Mayor",
+   "choices": [
+    {
+     "id": "todd-dixon",
+     "name": "Todd Dixon",
+     "party": "1",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-town-of-green-mountain-falls-trustee",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Town of Green Mountain Falls Trustee",
+   "district": null,
+   "title": "Town of Green Mountain Falls Trustee",
+   "choices": [
+    {
+     "id": "ted-hunt-watson-ii",
+     "name": "Ted Hunt Watson II",
+     "party": "1",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "brandy-moralez",
+     "name": "Brandy Moralez",
+     "party": "2",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-town-of-lochbuie-trustee",
+   "kind": "candidate",
+   "level": "state",
+   "state": "co",
+   "office": "Town of Lochbuie Trustee",
+   "district": null,
+   "title": "Town of Lochbuie Trustee",
+   "choices": [
+    {
+     "id": "shannon-donnelly",
+     "name": "Shannon Donnelly",
+     "party": "1",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "david-ott",
+     "name": "David Ott",
+     "party": "2",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "kathryn-hunt",
+     "name": "Kathryn Hunt",
+     "party": "3",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jacklyn-white",
+     "name": "Jacklyn White",
+     "party": "4",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "mary-lou-withrow",
+     "name": "Mary Lou Withrow",
+     "party": "5",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "catherine-moya",
+     "name": "Catherine Moya",
+     "party": "6",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-city-of-aurora-ballot-issue-3a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "City of Aurora Ballot Issue 3A",
+   "district": null,
+   "title": "City of Aurora Ballot Issue 3A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-city-of-aurora-ballot-issue-3b",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "City of Aurora Ballot Issue 3B",
+   "district": null,
+   "title": "City of Aurora Ballot Issue 3B",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-city-of-aurora-ballot-issue-3c",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "City of Aurora Ballot Issue 3C",
+   "district": null,
+   "title": "City of Aurora Ballot Issue 3C",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-city-of-aurora-ballot-question-3d",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "City of Aurora Ballot Question 3D",
+   "district": null,
+   "title": "City of Aurora Ballot Question 3D",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-town-of-basalt-ballot-issue-3a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Town of Basalt Ballot Issue 3A",
+   "district": null,
+   "title": "Town of Basalt Ballot Issue 3A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-town-of-berthoud-ballot-issue-3g",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Town of Berthoud Ballot Issue 3G",
+   "district": null,
+   "title": "Town of Berthoud Ballot Issue 3G",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-town-of-erie-ballot-issue-3e",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Town of Erie Ballot Issue 3E",
+   "district": null,
+   "title": "Town of Erie Ballot Issue 3E",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-town-of-erie-ballot-issue-3f",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Town of Erie Ballot Issue 3F",
+   "district": null,
+   "title": "Town of Erie Ballot Issue 3F",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-town-of-green-mountain-falls-ballot-issue-3a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Town of Green Mountain Falls Ballot Issue 3A",
+   "district": null,
+   "title": "Town of Green Mountain Falls Ballot Issue 3A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-city-of-longmont-ballot-issue-3a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "City of Longmont Ballot Issue 3A",
+   "district": null,
+   "title": "City of Longmont Ballot Issue 3A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-city-of-longmont-ballot-question-3b",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "City of Longmont Ballot Question 3B",
+   "district": null,
+   "title": "City of Longmont Ballot Question 3B",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-city-of-longmont-ballot-question-3c",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "City of Longmont Ballot Question 3C",
+   "district": null,
+   "title": "City of Longmont Ballot Question 3C",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-city-of-longmont-ballot-question-3d",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "City of Longmont Ballot Question 3D",
+   "district": null,
+   "title": "City of Longmont Ballot Question 3D",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-city-of-northglenn-ballot-issue-3h",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "City of Northglenn Ballot Issue 3H",
+   "district": null,
+   "title": "City of Northglenn Ballot Issue 3H",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-archuleta-county-school-district-50jt-ballot-issue-5a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Archuleta County School District 50JT Ballot Issue 5A",
+   "district": null,
+   "title": "Archuleta County School District 50JT Ballot Issue 5A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-bennett-school-district-29j-ballot-issue-5a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Bennett School District 29J Ballot Issue 5A",
+   "district": null,
+   "title": "Bennett School District 29J Ballot Issue 5A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-buffalo-school-district-re-4j-referred-ballot-issue-5a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Buffalo School District RE-4J Referred Ballot Issue 5A",
+   "district": null,
+   "title": "Buffalo School District RE-4J Referred Ballot Issue 5A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-burlington-school-district-re-6j-ballot-issue-5d",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Burlington School District RE-6J Ballot Issue 5D",
+   "district": null,
+   "title": "Burlington School District RE-6J Ballot Issue 5D",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-douglas-county-school-district-re-1-ballot-issue-5a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Douglas County School District RE-1 Ballot Issue 5A",
+   "district": null,
+   "title": "Douglas County School District RE-1 Ballot Issue 5A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-eagle-county-school-district-re50j-ballot-issue-5b",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Eagle County School District RE50J Ballot Issue 5B",
+   "district": null,
+   "title": "Eagle County School District RE50J Ballot Issue 5B",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-holyoke-school-district-no-re-1j-ballot-question-5a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Holyoke School District No RE 1J Ballot Question 5A",
+   "district": null,
+   "title": "Holyoke School District No RE 1J Ballot Question 5A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-jefferson-county-school-district-r-1-ballot-issue-5a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Jefferson County School District R-1 Ballot Issue 5A",
+   "district": null,
+   "title": "Jefferson County School District R-1 Ballot Issue 5A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-jefferson-county-school-district-r-1-ballot-issue-5b",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Jefferson County School District R-1 Ballot Issue 5B",
+   "district": null,
+   "title": "Jefferson County School District R-1 Ballot Issue 5B",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-roaring-fork-school-district-re-1-ballot-issue-5c",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Roaring Fork School District RE-1 Ballot Issue 5C",
+   "district": null,
+   "title": "Roaring Fork School District RE-1 Ballot Issue 5C",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-telluride-school-district-r-1-ballot-issue-5a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Telluride School District R-1 Ballot Issue 5A",
+   "district": null,
+   "title": "Telluride School District R-1 Ballot Issue 5A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-weld-county-school-district-re-5j-ballot-issue-5a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Weld County School District RE-5J Ballot Issue 5A",
+   "district": null,
+   "title": "Weld County School District RE-5J Ballot Issue 5A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-weld-county-school-district-re-8-ballot-issue-5c",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Weld County School District RE-8 Ballot Issue 5C",
+   "district": null,
+   "title": "Weld County School District RE-8 Ballot Issue 5C",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-west-grand-school-district-1-jt-ballot-issue-5a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "West Grand School District 1-JT. Ballot Issue 5A",
+   "district": null,
+   "title": "West Grand School District 1-JT. Ballot Issue 5A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-12th-judicial-district-ballot-question-7a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "12th Judicial District Ballot Question 7A",
+   "district": null,
+   "title": "12th Judicial District Ballot Question 7A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "co-17th-judicial-district-ballot-question-7e",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "17th Judicial District Ballot Question 7E",
+   "district": null,
+   "title": "17th Judicial District Ballot Question 7E",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-allenspark-fire-protection-district-ballot-issue-7c",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Allenspark Fire Protection District Ballot Issue 7C",
+   "district": null,
+   "title": "Allenspark Fire Protection District Ballot Issue 7C",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-basalt-amp-rural-fire-protection-district-ballot-issue-7a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Basalt &amp; Rural Fire Protection District Ballot Issue 7A",
+   "district": null,
+   "title": "Basalt &amp; Rural Fire Protection District Ballot Issue 7A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-bennett-fire-protection-district-ballot-issue-7f",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Bennett Fire Protection District Ballot Issue 7F",
+   "district": null,
+   "title": "Bennett Fire Protection District Ballot Issue 7F",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-bennett-fire-protection-district-ballot-issue-7g",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Bennett Fire Protection District Ballot Issue 7G",
+   "district": null,
+   "title": "Bennett Fire Protection District Ballot Issue 7G",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-central-colorado-water-conservancy-district-ballot-issue-7b",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Central Colorado Water Conservancy District Ballot Issue 7B",
+   "district": null,
+   "title": "Central Colorado Water Conservancy District Ballot Issue 7B",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-conifer-fire-protection-district-ballot-issue-7d",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Conifer Fire Protection District Ballot Issue 7D",
+   "district": null,
+   "title": "Conifer Fire Protection District Ballot Issue 7D",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-elbert-fire-protection-district-ballot-issue-7b",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Elbert Fire Protection District Ballot Issue 7B",
+   "district": null,
+   "title": "Elbert Fire Protection District Ballot Issue 7B",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-evergreen-fire-protection-district-ballot-issue-7b",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Evergreen Fire Protection District Ballot Issue 7B",
+   "district": null,
+   "title": "Evergreen Fire Protection District Ballot Issue 7B",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-front-range-passenger-rail-district-ballot-issue-7a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Front Range Passenger Rail District Ballot Issue 7A",
+   "district": null,
+   "title": "Front Range Passenger Rail District Ballot Issue 7A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 117155
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 62886
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 12
+   }
+  },
+  {
+   "id": "co-greater-brighton-fire-protection-district-ballot-issue-7d",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Greater Brighton Fire Protection District Ballot Issue 7D",
+   "district": null,
+   "title": "Greater Brighton Fire Protection District Ballot Issue 7D",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-groundwater-management-subdistrict-of-the-central-colorado-water-conservancy-",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Groundwater Management Subdistrict of the Central Colorado Water Conservancy District Ballot Issue 7C",
+   "district": null,
+   "title": "Groundwater Management Subdistrict of the Central Colorado Water Conservancy District Ballot Issue 7C",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-poudre-valley-fire-protection-district-ballot-issue-7e",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Poudre Valley Fire Protection District Ballot Issue 7E",
+   "district": null,
+   "title": "Poudre Valley Fire Protection District Ballot Issue 7E",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-rye-fire-protection-district-ballot-issue-7b",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Rye Fire Protection District Ballot Issue 7B",
+   "district": null,
+   "title": "Rye Fire Protection District Ballot Issue 7B",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-timberline-fire-protection-district-ballot-issue-7b",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Timberline Fire Protection District Ballot Issue 7B",
+   "district": null,
+   "title": "Timberline Fire Protection District Ballot Issue 7B",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-upper-san-juan-health-service-district-ballot-issue-7b",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Upper San Juan Health Service District Ballot Issue 7B",
+   "district": null,
+   "title": "Upper San Juan Health Service District Ballot Issue 7B",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "co-west-metro-fire-protection-district-ballot-issue-7c",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "West Metro Fire Protection District Ballot Issue 7C",
+   "district": null,
+   "title": "West Metro Fire Protection District Ballot Issue 7C",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-windsor-severance-fire-protection-district-ballot-issue-7f",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Windsor-Severance Fire Protection District Ballot Issue 7F",
+   "district": null,
+   "title": "Windsor-Severance Fire Protection District Ballot Issue 7F",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "co-yampa-valley-regional-transportation-authority-ballot-issue-7a",
+   "kind": "measure",
+   "level": "state",
+   "state": "co",
+   "office": "Yampa Valley Regional Transportation Authority Ballot Issue 7A",
+   "district": null,
+   "title": "Yampa Valley Regional Transportation Authority Ballot Issue 7A",
+   "choices": [
+    {
+     "id": "yes-for",
+     "name": "Yes/For",
+     "party": "Y",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-against",
+     "name": "No/Against",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  }
+ ]
+}
