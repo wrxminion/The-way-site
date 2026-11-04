@@ -44,7 +44,7 @@ const PLATFORMS = [
   { id: 'newsletter', label: 'Newsletter', audience: 'all (email)', locked: 'Email is off until a PO box exists.' },
 ];
 
-function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
+function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canReview, uid }) {
   const isAdmin = () => (typeof canWrite === 'function' ? canWrite() : !!canWrite);   // admins and super admins
   const list = (items) => h('ul', { class: 'md-list' }, items.map((t) => h('li', { text: t })));
 
@@ -292,11 +292,12 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
   // Planned social media posts. Drafts are visible only to admins (the database hides them from marketing).
   function social() {
     const admin = isAdmin();
+    const reviewer = admin || (typeof canReview === 'function' && canReview());   // admins, super admins and the Media Director (marketing)
     const msg = h('div');
     const accounts = new Map();   // platform id -> { handle, active }
     let posts = [];
     let platform = PLATFORMS[0].id;
-    let sub = admin ? 'draft' : 'approved';
+    let sub = reviewer ? 'draft' : 'approved';
     const tabsEl = h('div', { class: 'btns md-tabs', role: 'tablist', 'aria-label': 'Platforms' });
     const bodyEl = h('div');
 
@@ -349,7 +350,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
       }
 
       // add a draft (admins only)
-      if (admin) {
+      if (reviewer) {
         const pb = h('textarea', { maxlength: 500, rows: 2, placeholder: 'Post text (up to 500 characters)', 'aria-label': 'New post' });
         const slot = h('input', { maxlength: 20, placeholder: 'Planned time, for example 07:00 MT', 'aria-label': 'Planned time' });
         const comp = composer(pb);
@@ -365,8 +366,31 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
           h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit' }, 'Add draft'))));
       }
 
+      // load posts suggested by the local research model (admins and the Media Director). New ones become AI-made drafts.
+      if (reviewer) {
+        kids.push(h('div', { class: 'btns' }, h('button', { class: 'quiet', onclick: action(async () => {
+          const r = await fetch('/social-picks/data.json?t=' + Date.now(), { cache: 'no-store' });
+          if (!r.ok) throw new Error('Could not read the suggestions file.');
+          const d = await r.json();
+          const have = new Set(posts.map((x) => x.platform + '|' + x.body));
+          const rows = [];
+          for (const s of (d && d.posts) || []) {
+            const plats = s.platform === 'both' ? ['facebook', 'bluesky'] : [s.platform];
+            for (const pl of plats) {
+              const body = String(s.text || '').replace(/[<>]/g, '').trim() + (s.link ? '\n' + s.link : '');
+              if (!accounts.has(pl) || body.length < 3 || body.length > 500 || have.has(pl + '|' + body)) continue;
+              have.add(pl + '|' + body);
+              rows.push({ platform: pl, body, status: 'draft', source: 'llm' });
+            }
+          }
+          if (rows.length) await q(sb.from('social_posts').insert(rows));
+          sub = 'draft'; await load();
+          msg.replaceChildren(notice(rows.length ? `Added ${rows.length} suggested draft${rows.length === 1 ? '' : 's'}. Read each one before you approve it.` : 'No new suggestions.'));
+        }, msg) }, 'Load AI suggestions')));
+      }
+
       const mine = posts.filter((x) => x.platform === p.id);
-      const subs = admin ? ['draft', 'approved', 'posted'] : ['approved', 'posted'];
+      const subs = reviewer ? ['draft', 'approved', 'posted'] : ['approved', 'posted'];
       const LBL = { draft: 'Drafts', approved: 'Approved', posted: 'Posted' };
       kids.push(h('div', { class: 'btns md-tabs' }, subs.map((s) => {
         const b = h('button', { type: 'button', class: 'quiet md-tab', 'aria-pressed': String(sub === s), text: `${LBL[s]} (${mine.filter((x) => x.status === s).length})` });
@@ -389,17 +413,17 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
         h('div', { class: 'small muted' }, 'Posts as: ', as ? h('strong', { text: as }) : h('strong', { class: 'md-warn', text: 'Handle not set' })),
         h('div', { class: 'btns' },
           copyBtn(assemble(x.body, x.link_path, x.link_title)),
-          admin && x.status === 'draft' ? h('button', { class: 'quiet', onclick: action(async () => {
+          reviewer && x.status === 'draft' ? h('button', { class: 'quiet', onclick: action(async () => {
             await q(sb.from('social_posts').update({ status: 'approved' }).eq('id', x.id)); await load();
           }, msg) }, 'Approve') : null,
-          admin && x.status === 'approved' ? h('button', { class: 'quiet', onclick: action(async () => {
+          reviewer && x.status === 'approved' ? h('button', { class: 'quiet', onclick: action(async () => {
             if (!(await ask('Type POSTED once you have posted this by hand:') === 'POSTED')) return;
             await q(sb.from('social_posts').update({ status: 'posted' }).eq('id', x.id)); await load();
           }, msg) }, 'Mark as posted') : null,
-          admin && x.status !== 'draft' ? h('button', { class: 'quiet', onclick: action(async () => {
+          reviewer && x.status !== 'draft' ? h('button', { class: 'quiet', onclick: action(async () => {
             await q(sb.from('social_posts').update({ status: 'draft' }).eq('id', x.id)); await load();
           }, msg) }, 'Back to draft') : null,
-          admin ? h('button', { class: 'quiet', onclick: action(async () => {
+          reviewer ? h('button', { class: 'quiet', onclick: action(async () => {
             const t = await ask('Edit the post (3 to 500 characters). An approved post goes back to draft:', x.body);
             if (!t) return;
             await q(sb.from('social_posts').update({ body: t.trim() }).eq('id', x.id)); await load();
@@ -414,7 +438,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
     load().catch((e) => bodyEl.replaceChildren(notice(e.message || 'Could not load social posts. Has migration 0091 been run?')));
     return h('div', { id: 'md-social' },
       h('p', { class: 'muted small', text: 'Nothing is posted automatically. A person posts after approval, by hand or from Post online on the Admin page, and a post made by an AI must carry the AI label (tick the AI-written box there). Our audiences are voters, teachers and researchers or journalists. Posts are aimed at adults and teachers, not at children, and accounts follow each platform\'s own age rules.' }),
-      admin ? null : h('p', { class: 'small dim', text: 'You see approved and posted posts. Drafts are seen by admins only.' }),
+      reviewer ? null : h('p', { class: 'small dim', text: 'You see approved and posted posts. Drafts are seen by admins and the Media Director only.' }),
       msg, tabsEl, bodyEl);
   }
 
