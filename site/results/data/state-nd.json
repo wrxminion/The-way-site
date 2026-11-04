@@ -1,0 +1,199 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-nd",
+ "label": "North Dakota (unofficial: AP vote counts; the state has not posted 2026 results)",
+ "source_ids": [
+  "ap-votes"
+ ],
+ "updated_at": "2026-11-04T21:53:00Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "nd-ap-nd35342",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nd",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julie-fedorchak",
+     "name": "Julie Fedorchak",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 134477
+    },
+    {
+     "id": "trygve-hammer",
+     "name": "Trygve Hammer",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 85892
+    },
+    {
+     "id": "charles-tuttle",
+     "name": "Charles Tuttle",
+     "party": "Independent",
+     "party_code": "I",
+     "votes": 9282
+    },
+    {
+     "id": "helene-neville",
+     "name": "Helene Neville",
+     "party": "Independent",
+     "party_code": "I",
+     "votes": 4604
+    }
+   ],
+   "precincts": {
+    "reporting": 97,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "julie-fedorchak",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:56:13.495Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "nd-ap-nd35344",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nd",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-howe",
+     "name": "Michael Howe",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 144033
+    },
+    {
+     "id": "ryan-braunberger",
+     "name": "Ryan Braunberger",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 87963
+    }
+   ],
+   "precincts": {
+    "reporting": 97,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "michael-howe",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T07:32:27.413Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "nd-ap-nd35345",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nd",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "drew-wrigley",
+     "name": "Drew Wrigley",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 148423
+    },
+    {
+     "id": "tim-lamb",
+     "name": "Tim Lamb",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 83732
+    }
+   ],
+   "precincts": {
+    "reporting": 97,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "drew-wrigley",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T07:31:45.212Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "nd-ap-nd84788",
+   "kind": "measure",
+   "level": "state",
+   "state": "nd",
+   "office": "North Dakota Amendment 1 (1 - 60% voter approval for amendments)",
+   "district": null,
+   "title": "North Dakota Amendment 1 (1 - 60% voter approval for amendments)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 131947
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 101659
+    }
+   ],
+   "precincts": {
+    "reporting": 97,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   }
+  },
+  {
+   "id": "nd-ap-nd84789",
+   "kind": "measure",
+   "level": "state",
+   "state": "nd",
+   "office": "North Dakota Amendment 2 (2 - Free school meals)",
+   "district": null,
+   "title": "North Dakota Amendment 2 (2 - Free school meals)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 119152
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 116263
+    }
+   ],
+   "precincts": {
+    "reporting": 97,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   }
+  }
+ ]
+}

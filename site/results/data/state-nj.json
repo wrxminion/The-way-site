@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-04T21:37:41Z",
+ "updated_at": "2026-11-04T21:45:54Z",
  "certified": false,
  "contests": [
   {
@@ -23,28 +23,28 @@
      "name": "Cory BOOKER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1769435
+     "votes": 1769522
     },
     {
      "id": "murphy",
      "name": "Justin MURPHY",
      "party": "REP",
      "party_code": "R",
-     "votes": 995797
+     "votes": 995841
     },
     {
      "id": "fernandez",
      "name": "Veronica FERNANDEZ",
      "party": "NPC",
      "party_code": "O",
-     "votes": 46559
+     "votes": 46560
     },
     {
      "id": "kuniansky",
      "name": "NPD Joanne KUNIANSKY",
      "party": "NPD",
      "party_code": "O",
-     "votes": 24169
+     "votes": 24171
     },
     {
      "id": "write-in",
@@ -335,8 +335,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5628,
-    "total": 5775
+    "reporting": 5285,
+    "total": 5432
    },
    "counties": [
     {
@@ -602,14 +602,14 @@
     {
      "county": "Camden",
      "precincts": {
-      "reporting": 343,
-      "total": 343
+      "reporting": 0,
+      "total": 0
      },
      "votes": {
-      "booker": 119503,
-      "murphy": 42379,
-      "fernandez": 2067,
-      "kuniansky": 1583,
+      "booker": 119590,
+      "murphy": 42423,
+      "fernandez": 2068,
+      "kuniansky": 1585,
       "write-in": 165
      }
     },
@@ -674,21 +674,21 @@
      "name": "Donald Norcross",
      "party": "DEM",
      "party_code": "D",
-     "votes": 176672
+     "votes": 176763
     },
     {
      "id": "galdo",
      "name": "Damon Galdo",
      "party": "REP",
      "party_code": "R",
-     "votes": 75151
+     "votes": 75193
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 804
+     "votes": 805
     },
     {
      "id": "choice",
@@ -769,8 +769,8 @@
     }
    ],
    "precincts": {
-    "reporting": 541,
-    "total": 544
+    "reporting": 198,
+    "total": 201
    },
    "counties": [
     {
@@ -810,13 +810,13 @@
     {
      "county": "Camden",
      "precincts": {
-      "reporting": 343,
-      "total": 343
+      "reporting": 0,
+      "total": 0
      },
      "votes": {
-      "norcross": 122225,
-      "galdo": 42279,
-      "write-in": 566
+      "norcross": 122316,
+      "galdo": 42321,
+      "write-in": 567
      }
     }
    ],
@@ -79344,28 +79344,28 @@
      "name": "Cory Booker",
      "party": "DEM",
      "party_code": "D",
-     "votes": 119503
+     "votes": 119590
     },
     {
      "id": "justin-murphy",
      "name": "Justin Murphy",
      "party": "REP",
      "party_code": "R",
-     "votes": 42379
+     "votes": 42423
     },
     {
      "id": "veronica-fernandez",
      "name": "Veronica Fernandez",
      "party": "I",
      "party_code": "O",
-     "votes": 2067
+     "votes": 2068
     },
     {
      "id": "joanne-kuniansky",
      "name": "Joanne Kuniansky",
      "party": "I",
      "party_code": "O",
-     "votes": 1583
+     "votes": 1585
     },
     {
      "id": "write-in",
@@ -79376,8 +79376,8 @@
     }
    ],
    "precincts": {
-    "reporting": 343,
-    "total": 343
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79397,26 +79397,26 @@
      "name": "Donald Norcross",
      "party": "DEM",
      "party_code": "D",
-     "votes": 122225
+     "votes": 122316
     },
     {
      "id": "damon-galdo",
      "name": "Damon Galdo",
      "party": "REP",
      "party_code": "R",
-     "votes": 42279
+     "votes": 42321
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 566
+     "votes": 567
     }
    ],
    "precincts": {
-    "reporting": 343,
-    "total": 343
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79436,21 +79436,21 @@
      "name": "Louis Cappelli, Jr.",
      "party": "DEM",
      "party_code": "D",
-     "votes": 124407
+     "votes": 124504
     },
     {
      "id": "jonathan-young",
      "name": "Jonathan Young",
      "party": "DEM",
      "party_code": "D",
-     "votes": 122854
+     "votes": 122951
     },
     {
      "id": "robert-stone",
      "name": "Robert Stone",
      "party": "REP",
      "party_code": "R",
-     "votes": 43448
+     "votes": 43494
     },
     {
      "id": "write-in",
@@ -79461,8 +79461,8 @@
     }
    ],
    "precincts": {
-    "reporting": 343,
-    "total": 343
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79493,8 +79493,8 @@
     }
    ],
    "precincts": {
-    "reporting": 1,
-    "total": 1
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79532,8 +79532,8 @@
     }
    ],
    "precincts": {
-    "reporting": 1,
-    "total": 1
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79571,8 +79571,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5,
-    "total": 5
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79610,8 +79610,8 @@
     }
    ],
    "precincts": {
-    "reporting": 7,
-    "total": 7
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79663,8 +79663,8 @@
     }
    ],
    "precincts": {
-    "reporting": 7,
-    "total": 7
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79737,8 +79737,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5,
-    "total": 5
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79769,8 +79769,8 @@
     }
    ],
    "precincts": {
-    "reporting": 1,
-    "total": 1
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79815,8 +79815,8 @@
     }
    ],
    "precincts": {
-    "reporting": 1,
-    "total": 1
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79854,8 +79854,8 @@
     }
    ],
    "precincts": {
-    "reporting": 1,
-    "total": 1
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79893,8 +79893,8 @@
     }
    ],
    "precincts": {
-    "reporting": 3,
-    "total": 3
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79925,8 +79925,8 @@
     }
    ],
    "precincts": {
-    "reporting": 2,
-    "total": 2
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -79964,8 +79964,8 @@
     }
    ],
    "precincts": {
-    "reporting": 2,
-    "total": 2
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80003,8 +80003,8 @@
     }
    ],
    "precincts": {
-    "reporting": 8,
-    "total": 8
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80042,8 +80042,8 @@
     }
    ],
    "precincts": {
-    "reporting": 7,
-    "total": 7
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80095,8 +80095,8 @@
     }
    ],
    "precincts": {
-    "reporting": 1,
-    "total": 1
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80134,8 +80134,8 @@
     }
    ],
    "precincts": {
-    "reporting": 2,
-    "total": 2
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80166,8 +80166,8 @@
     }
    ],
    "precincts": {
-    "reporting": 2,
-    "total": 2
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80205,8 +80205,8 @@
     }
    ],
    "precincts": {
-    "reporting": 2,
-    "total": 2
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80244,8 +80244,8 @@
     }
    ],
    "precincts": {
-    "reporting": 9,
-    "total": 9
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80283,8 +80283,8 @@
     }
    ],
    "precincts": {
-    "reporting": 4,
-    "total": 4
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80315,8 +80315,8 @@
     }
    ],
    "precincts": {
-    "reporting": 3,
-    "total": 3
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80354,8 +80354,8 @@
     }
    ],
    "precincts": {
-    "reporting": 3,
-    "total": 3
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80393,8 +80393,8 @@
     }
    ],
    "precincts": {
-    "reporting": 4,
-    "total": 4
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80432,8 +80432,8 @@
     }
    ],
    "precincts": {
-    "reporting": 24,
-    "total": 24
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80471,8 +80471,8 @@
     }
    ],
    "precincts": {
-    "reporting": 6,
-    "total": 6
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80510,8 +80510,8 @@
     }
    ],
    "precincts": {
-    "reporting": 6,
-    "total": 6
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80549,8 +80549,8 @@
     }
    ],
    "precincts": {
-    "reporting": 6,
-    "total": 6
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80595,8 +80595,8 @@
     }
    ],
    "precincts": {
-    "reporting": 4,
-    "total": 4
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80655,8 +80655,8 @@
     }
    ],
    "precincts": {
-    "reporting": 6,
-    "total": 6
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80694,8 +80694,8 @@
     }
    ],
    "precincts": {
-    "reporting": 19,
-    "total": 19
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80715,28 +80715,28 @@
      "name": "Jaclyn \"Galante\" Hettinger",
      "party": "REP",
      "party_code": "R",
-     "votes": 1946
+     "votes": 1973
     },
     {
      "id": "colin-matthews",
      "name": "Colin Matthews",
      "party": "REP",
      "party_code": "R",
-     "votes": 1869
+     "votes": 1896
     },
     {
      "id": "joel-thompson",
      "name": "Joel Thompson",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1798
+     "votes": 1849
     },
     {
      "id": "pete-wristbridge",
      "name": "Pete Wristbridge",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1786
+     "votes": 1837
     },
     {
      "id": "write-in",
@@ -80747,8 +80747,8 @@
     }
    ],
    "precincts": {
-    "reporting": 8,
-    "total": 8
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80768,14 +80768,14 @@
      "name": "Robert Stimelski",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1747
+     "votes": 1784
     },
     {
      "id": "vincent-borrelli-jr",
      "name": "Vincent Borrelli, Jr.",
      "party": "REP",
      "party_code": "R",
-     "votes": 1693
+     "votes": 1711
     },
     {
      "id": "write-in",
@@ -80786,8 +80786,8 @@
     }
    ],
    "precincts": {
-    "reporting": 6,
-    "total": 6
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80825,8 +80825,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5,
-    "total": 5
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80864,8 +80864,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5,
-    "total": 5
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80903,8 +80903,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5,
-    "total": 5
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80942,8 +80942,8 @@
     }
    ],
    "precincts": {
-    "reporting": 2,
-    "total": 2
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80967,8 +80967,8 @@
     }
    ],
    "precincts": {
-    "reporting": 9,
-    "total": 9
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -80992,8 +80992,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5,
-    "total": 5
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81017,8 +81017,8 @@
     }
    ],
    "precincts": {
-    "reporting": 7,
-    "total": 7
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81042,8 +81042,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5,
-    "total": 5
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81067,8 +81067,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5,
-    "total": 5
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81092,8 +81092,8 @@
     }
    ],
    "precincts": {
-    "reporting": 4,
-    "total": 4
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81117,8 +81117,8 @@
     }
    ],
    "precincts": {
-    "reporting": 4,
-    "total": 4
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81142,8 +81142,8 @@
     }
    ],
    "precincts": {
-    "reporting": 1,
-    "total": 1
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81167,8 +81167,8 @@
     }
    ],
    "precincts": {
-    "reporting": 1,
-    "total": 1
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81192,8 +81192,8 @@
     }
    ],
    "precincts": {
-    "reporting": 40,
-    "total": 40
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81217,8 +81217,8 @@
     }
    ],
    "precincts": {
-    "reporting": 48,
-    "total": 48
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81242,8 +81242,8 @@
     }
    ],
    "precincts": {
-    "reporting": 1,
-    "total": 1
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81267,8 +81267,8 @@
     }
    ],
    "precincts": {
-    "reporting": 3,
-    "total": 3
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81292,8 +81292,8 @@
     }
    ],
    "precincts": {
-    "reporting": 12,
-    "total": 12
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81317,8 +81317,8 @@
     }
    ],
    "precincts": {
-    "reporting": 2,
-    "total": 2
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81342,8 +81342,8 @@
     }
    ],
    "precincts": {
-    "reporting": 8,
-    "total": 8
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81367,8 +81367,8 @@
     }
    ],
    "precincts": {
-    "reporting": 40,
-    "total": 40
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81392,8 +81392,8 @@
     }
    ],
    "precincts": {
-    "reporting": 40,
-    "total": 40
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81417,8 +81417,8 @@
     }
    ],
    "precincts": {
-    "reporting": 40,
-    "total": 40
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81442,8 +81442,8 @@
     }
    ],
    "precincts": {
-    "reporting": 15,
-    "total": 15
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81467,8 +81467,8 @@
     }
    ],
    "precincts": {
-    "reporting": 10,
-    "total": 10
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81492,8 +81492,8 @@
     }
    ],
    "precincts": {
-    "reporting": 7,
-    "total": 7
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81517,8 +81517,8 @@
     }
    ],
    "precincts": {
-    "reporting": 1,
-    "total": 1
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81542,8 +81542,8 @@
     }
    ],
    "precincts": {
-    "reporting": 2,
-    "total": 2
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81567,8 +81567,8 @@
     }
    ],
    "precincts": {
-    "reporting": 2,
-    "total": 2
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81592,8 +81592,8 @@
     }
    ],
    "precincts": {
-    "reporting": 2,
-    "total": 2
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81617,8 +81617,8 @@
     }
    ],
    "precincts": {
-    "reporting": 9,
-    "total": 9
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81642,8 +81642,8 @@
     }
    ],
    "precincts": {
-    "reporting": 9,
-    "total": 9
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81667,8 +81667,8 @@
     }
    ],
    "precincts": {
-    "reporting": 4,
-    "total": 4
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81692,8 +81692,8 @@
     }
    ],
    "precincts": {
-    "reporting": 4,
-    "total": 4
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81717,8 +81717,8 @@
     }
    ],
    "precincts": {
-    "reporting": 3,
-    "total": 3
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81742,8 +81742,8 @@
     }
    ],
    "precincts": {
-    "reporting": 4,
-    "total": 4
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81767,8 +81767,8 @@
     }
    ],
    "precincts": {
-    "reporting": 4,
-    "total": 4
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81792,8 +81792,8 @@
     }
    ],
    "precincts": {
-    "reporting": 24,
-    "total": 24
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81817,8 +81817,8 @@
     }
    ],
    "precincts": {
-    "reporting": 6,
-    "total": 6
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81842,8 +81842,8 @@
     }
    ],
    "precincts": {
-    "reporting": 6,
-    "total": 6
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81867,8 +81867,8 @@
     }
    ],
    "precincts": {
-    "reporting": 4,
-    "total": 4
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81892,8 +81892,8 @@
     }
    ],
    "precincts": {
-    "reporting": 4,
-    "total": 4
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81917,8 +81917,8 @@
     }
    ],
    "precincts": {
-    "reporting": 6,
-    "total": 6
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81942,8 +81942,8 @@
     }
    ],
    "precincts": {
-    "reporting": 6,
-    "total": 6
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81967,8 +81967,8 @@
     }
    ],
    "precincts": {
-    "reporting": 19,
-    "total": 19
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -81992,8 +81992,8 @@
     }
    ],
    "precincts": {
-    "reporting": 19,
-    "total": 19
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -82067,8 +82067,8 @@
     }
    ],
    "precincts": {
-    "reporting": 2,
-    "total": 2
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -82092,8 +82092,8 @@
     }
    ],
    "precincts": {
-    "reporting": 4,
-    "total": 4
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -82117,8 +82117,8 @@
     }
    ],
    "precincts": {
-    "reporting": 48,
-    "total": 48
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -82142,8 +82142,8 @@
     }
    ],
    "precincts": {
-    "reporting": 9,
-    "total": 9
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -82167,8 +82167,8 @@
     }
    ],
    "precincts": {
-    "reporting": 6,
-    "total": 6
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -82178,9 +82178,9 @@
    "level": "county",
    "state": "nj",
    "county": "Camden",
-   "office": "Members of Board of Fire Commissioner Winslow Township Fire District No. 1 Anthony L. Church 6,853 John E. (Smitty) Smith 6,332 Brian Donovan 4,126 John Matro 3,955",
+   "office": "Members of Board of Fire Commissioner Winslow Township Fire District No. 1 Anthony L. Church 6,882 John E. (Smitty) Smith 6,368 Brian Donovan 4,144 John Matro 3,964",
    "district": null,
-   "title": "Members of Board of Fire Commissioner Winslow Township Fire District No. 1 Anthony L. Church 6,853 John E. (Smitty) Smith 6,332 Brian Donovan 4,126 John Matro 3,955",
+   "title": "Members of Board of Fire Commissioner Winslow Township Fire District No. 1 Anthony L. Church 6,882 John E. (Smitty) Smith 6,368 Brian Donovan 4,144 John Matro 3,964",
    "vote_for": 2,
    "choices": [
     {
@@ -82188,12 +82188,12 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 128
+     "votes": 129
     }
    ],
    "precincts": {
-    "reporting": 21,
-    "total": 21
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -82213,19 +82213,19 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 91928
+     "votes": 92009
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 24748
+     "votes": 24779
     }
    ],
    "precincts": {
-    "reporting": 343,
-    "total": 343
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -82256,8 +82256,8 @@
     }
    ],
    "precincts": {
-    "reporting": 12,
-    "total": 12
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -82288,8 +82288,8 @@
     }
    ],
    "precincts": {
-    "reporting": 12,
-    "total": 12
+    "reporting": 0,
+    "total": 0
    },
    "partial": true
   },
@@ -102147,6 +102147,56 @@
      "party": null,
      "party_code": "O",
      "votes": 31
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-camden-0082-members-of-local-board-of-education-waterford-school-district-ryan-brinker-1-599",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Camden",
+   "office": "Members of Local Board of Education Waterford School District Ryan Brinker 1,599 Jacquelyn Foy 1,540 Ciaran Hennessey 1,328 Matthew V. Hunter 1,291 Steven Sorge 1,285 Barbara Libak Fanz 1,208",
+   "district": null,
+   "title": "Members of Local Board of Education Waterford School District Ryan Brinker 1,599 Jacquelyn Foy 1,540 Ciaran Hennessey 1,328 Matthew V. Hunter 1,291 Steven Sorge 1,285 Barbara Libak Fanz 1,208",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 99
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-camden-0083-members-of-local-board-of-education-winslow-school-district-john-m-shaw-jr-10-24",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Camden",
+   "office": "Members of Local Board of Education Winslow School District John M. Shaw, Jr. 10,243 Jovanni Polhill 9,846 Clarence Hardy 9,806",
+   "district": null,
+   "title": "Members of Local Board of Education Winslow School District John M. Shaw, Jr. 10,243 Jovanni Polhill 9,846 Clarence Hardy 9,806",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 749
     }
    ],
    "precincts": {

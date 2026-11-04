@@ -1,0 +1,224 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-me",
+ "label": "Maine (unofficial: AP vote counts; the state site blocks automated readers)",
+ "source_ids": [
+  "ap-votes"
+ ],
+ "updated_at": "2026-11-04T21:53:00Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "me-ap-me20643",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "me",
+   "office": "U.S. Senate Class II",
+   "district": null,
+   "title": "U.S. Senate Class II",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "troy-d-jackson",
+     "name": "Troy D. Jackson",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 368332
+    },
+    {
+     "id": "susan-m-collins",
+     "name": "Susan M. Collins",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 320742
+    },
+    {
+     "id": "brent-andrews-write-in",
+     "name": "Brent Andrews (write-in)",
+     "party": null,
+     "party_code": "O",
+     "votes": 220
+    },
+    {
+     "id": "ashley-j-webb-write-in",
+     "name": "Ashley J. Webb (write-in)",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 81
+    },
+    {
+     "id": "gina-oswald-write-in",
+     "name": "Gina Oswald (write-in)",
+     "party": "Independent",
+     "party_code": "I",
+     "votes": 67
+    },
+    {
+     "id": "sigrid-ann-olson-write-in",
+     "name": "Sigrid Ann Olson (write-in)",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 49
+    },
+    {
+     "id": "michael-turcotte-write-in",
+     "name": "Michael Turcotte (write-in)",
+     "party": null,
+     "party_code": "O",
+     "votes": 42
+    },
+    {
+     "id": "joseph-steinberger-write-in",
+     "name": "Joseph Steinberger (write-in)",
+     "party": null,
+     "party_code": "O",
+     "votes": 27
+    }
+   ],
+   "precincts": {
+    "reporting": 91,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "troy-d-jackson",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T06:02:01.517Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "me-ap-me20644",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "me",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chellie-pingree",
+     "name": "Chellie Pingree",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 246117
+    },
+    {
+     "id": "ronald-c-russell",
+     "name": "Ronald C. Russell",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 125671
+    }
+   ],
+   "precincts": {
+    "reporting": 90,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "chellie-pingree",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:18:52.586Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "me-ap-me20645",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "me",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-r-lepage",
+     "name": "Paul R. LePage",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 158657
+    },
+    {
+     "id": "matthew-g-dunlap",
+     "name": "Matthew G. Dunlap",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 156883
+    },
+    {
+     "id": "gregory-a-ward-write-in",
+     "name": "Gregory A. Ward (write-in)",
+     "party": "Independent",
+     "party_code": "I",
+     "votes": 163
+    }
+   ],
+   "precincts": {
+    "reporting": 92,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   }
+  },
+  {
+   "id": "me-ap-me20646",
+   "kind": "candidate",
+   "level": "state",
+   "state": "me",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hannah-m-pingree",
+     "name": "Hannah M. Pingree",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 379816
+    },
+    {
+     "id": "robert-b-charles",
+     "name": "Robert B. Charles",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 257687
+    },
+    {
+     "id": "rick-bennett",
+     "name": "Rick Bennett",
+     "party": "Independent",
+     "party_code": "I",
+     "votes": 55674
+    },
+    {
+     "id": "randy-wilcox-write-in",
+     "name": "Randy Wilcox (write-in)",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 186
+    },
+    {
+     "id": "john-glowa-write-in",
+     "name": "John Glowa (write-in)",
+     "party": "Independent",
+     "party_code": "I",
+     "votes": 55
+    }
+   ],
+   "precincts": {
+    "reporting": 91,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "hannah-m-pingree",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:29:21.708Z",
+    "kind": "ap"
+   }
+  }
+ ]
+}

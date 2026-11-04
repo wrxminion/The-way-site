@@ -1,0 +1,631 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-ma",
+ "label": "Massachusetts (unofficial: AP vote counts; the state has not posted 2026 results)",
+ "source_ids": [
+  "ap-votes"
+ ],
+ "updated_at": "2026-11-04T21:53:00Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ma-ap-ma22947",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ma",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-e-neal",
+     "name": "Richard E. Neal",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 168982
+    },
+    {
+     "id": "nadia-donya-milleron",
+     "name": "Nadia Donya Milleron",
+     "party": "Independent",
+     "party_code": "I",
+     "votes": 90397
+    }
+   ],
+   "precincts": {
+    "reporting": 94,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "richard-e-neal",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:38:52.897Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma22948",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ma",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-p-mcgovern",
+     "name": "James P. McGovern",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "james-p-mcgovern",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:00.000Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma22949",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ma",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lori-loureiro-trahan",
+     "name": "Lori Loureiro  Trahan",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 159573
+    },
+    {
+     "id": "gary-j-grossi",
+     "name": "Gary J. Grossi",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 75134
+    },
+    {
+     "id": "dennis-r-conlon",
+     "name": "Dennis R. Conlon",
+     "party": null,
+     "party_code": "O",
+     "votes": 6196
+    }
+   ],
+   "precincts": {
+    "reporting": 92,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "lori-loureiro-trahan",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:18:11.300Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma22950",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ma",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jake-auchincloss",
+     "name": "Jake Auchincloss",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 163838
+    },
+    {
+     "id": "thomas-stalcup",
+     "name": "Thomas Stalcup",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 90901
+    }
+   ],
+   "precincts": {
+    "reporting": 86,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "jake-auchincloss",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:39:36.475Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma22952",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ma",
+   "office": "U.S. House District 6",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dan-koh",
+     "name": "Dan Koh",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 206244
+    },
+    {
+     "id": "micah-quinney-jones",
+     "name": "Micah Quinney Jones",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 119112
+    }
+   ],
+   "precincts": {
+    "reporting": 99,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "dan-koh",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:24:39.483Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma22953",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ma",
+   "office": "U.S. House District 7",
+   "district": "7",
+   "title": "U.S. House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ayanna-s-pressley",
+     "name": "Ayanna S. Pressley",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "ayanna-s-pressley",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:00.000Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma22954",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ma",
+   "office": "U.S. House District 8",
+   "district": "8",
+   "title": "U.S. House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephen-f-lynch",
+     "name": "Stephen F. Lynch",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 194867
+    },
+    {
+     "id": "robert-g-burke",
+     "name": "Robert G. Burke",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 75503
+    },
+    {
+     "id": "rasheed-nicholas-walters",
+     "name": "Rasheed Nicholas Walters",
+     "party": "Independent",
+     "party_code": "I",
+     "votes": 10552
+    }
+   ],
+   "precincts": {
+    "reporting": 99,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "stephen-f-lynch",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:45:28.721Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma22957",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ma",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maura-healey",
+     "name": "Maura Healey",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 1563247
+    },
+    {
+     "id": "michael-roger-minogue",
+     "name": "Michael Roger Minogue",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 875013
+    },
+    {
+     "id": "andrea-james",
+     "name": "Andrea James",
+     "party": "Independent",
+     "party_code": "I",
+     "votes": 85041
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "maura-healey",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:01:28.205Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma22959",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ma",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-francis-galvin",
+     "name": "William Francis Galvin",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 1768565
+    },
+    {
+     "id": "anne-r-brensley",
+     "name": "Anne R. Brensley",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 718398
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "william-francis-galvin",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:56:30.534Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma22960",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ma",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrea-joy-campbell",
+     "name": "Andrea Joy Campbell",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 1630803
+    },
+    {
+     "id": "michael-c-walsh",
+     "name": "Michael C. Walsh",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 861245
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "andrea-joy-campbell",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:28:18.495Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma23865",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ma",
+   "office": "U.S. House District 9",
+   "district": "9",
+   "title": "U.S. House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-keating",
+     "name": "Bill Keating",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 208847
+    },
+    {
+     "id": "r-tyler-macallister",
+     "name": "R. Tyler Macallister",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 132820
+    }
+   ],
+   "precincts": {
+    "reporting": 94,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "bill-keating",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:27:54.454Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma24356",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ma",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "katherine-m-clark",
+     "name": "Katherine M. Clark",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "katherine-m-clark",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:00.000Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma24467",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ma",
+   "office": "U.S. Senate Class II",
+   "district": null,
+   "title": "U.S. Senate Class II",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "edward-j-markey",
+     "name": "Edward J. Markey",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 1590089
+    },
+    {
+     "id": "john-deaton",
+     "name": "John Deaton",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 811327
+    },
+    {
+     "id": "shiva-ayyadurai",
+     "name": "Shiva Ayyadurai",
+     "party": "Independent",
+     "party_code": "I",
+     "votes": 57847
+    },
+    {
+     "id": "joe-tache",
+     "name": "Joe Tache",
+     "party": null,
+     "party_code": "O",
+     "votes": 54678
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "edward-j-markey",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:01:27.995Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ma-ap-ma85146",
+   "kind": "measure",
+   "level": "state",
+   "state": "ma",
+   "office": "Massachusetts Question 3 (3 - Top-two primary elections)",
+   "district": null,
+   "title": "Massachusetts Question 3 (3 - Top-two primary elections)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1511406
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 963433
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   }
+  },
+  {
+   "id": "ma-ap-ma85147",
+   "kind": "measure",
+   "level": "state",
+   "state": "ma",
+   "office": "Massachusetts Question 4 (4 - Allow Election Day voter registration)",
+   "district": null,
+   "title": "Massachusetts Question 4 (4 - Allow Election Day voter registration)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1392721
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1082683
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   }
+  },
+  {
+   "id": "ma-ap-ma85151",
+   "kind": "measure",
+   "level": "state",
+   "state": "ma",
+   "office": "Massachusetts Question 8 (8 - Repeal recreational marijuana legalization)",
+   "district": null,
+   "title": "Massachusetts Question 8 (8 - Repeal recreational marijuana legalization)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1889727
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 609505
+    }
+   ],
+   "precincts": {
+    "reporting": 94,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   }
+  },
+  {
+   "id": "ma-ap-ma85152",
+   "kind": "measure",
+   "level": "state",
+   "state": "ma",
+   "office": "Massachusetts Question 9 (9 - HB4885 firearm regulations)",
+   "district": null,
+   "title": "Massachusetts Question 9 (9 - HB4885 firearm regulations)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1677408
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 831321
+    }
+   ],
+   "precincts": {
+    "reporting": 94,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   }
+  }
+ ]
+}
