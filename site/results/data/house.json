@@ -3,6 +3,7 @@
  "scope": "house",
  "label": "U.S. House",
  "source_ids": [
+  "az-scytl",
   "ca-sos",
   "fl-dos",
   "ga-scytl",
@@ -11,7 +12,7 @@
   "ut-scytl",
   "va-scytl"
  ],
- "updated_at": "2026-11-04T13:04:44Z",
+ "updated_at": "2026-11-04T13:08:44Z",
  "certified": false,
  "contests": [
   {
@@ -4796,6 +4797,502 @@
    "precincts": {
     "reporting": 7,
     "total": 7,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "az",
+   "office": "U.S. House",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amish-shah",
+     "name": "Amish Shah",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 163584
+    },
+    {
+     "id": "thomas-jay-feely-iv",
+     "name": "Thomas \"Jay\" Feely IV",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 141196
+    },
+    {
+     "id": "monica-alponte",
+     "name": "Monica Alponte",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 6360
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 147
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 65
+    },
+    {
+     "id": "dev-gupta",
+     "name": "Dev Gupta",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 8
+    },
+    {
+     "id": "gage-dylan-thunder",
+     "name": "Gage Dylan Thunder",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "az",
+   "office": "U.S. House",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jonathan-nez",
+     "name": "Jonathan Nez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 136344
+    },
+    {
+     "id": "eli-crane",
+     "name": "Eli Crane",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 136258
+    },
+    {
+     "id": "curtis-goodwin",
+     "name": "Curtis Goodwin",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 4776
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 115
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 45
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "az",
+   "office": "U.S. House",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yassamin-ansari",
+     "name": "Yassamin Ansari",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 103137
+    },
+    {
+     "id": "alan-aversa",
+     "name": "Alan Aversa",
+     "party": "NOL",
+     "party_code": "O",
+     "votes": 7218
+    },
+    {
+     "id": "david-redkey",
+     "name": "David Redkey",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 6422
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1422
+    },
+    {
+     "id": "jacob-parkman",
+     "name": "Jacob Parkman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1211
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "az",
+   "office": "U.S. House",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-stanton",
+     "name": "Greg Stanton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 132395
+    },
+    {
+     "id": "zuhdi-jasser",
+     "name": "Zuhdi Jasser",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 75216
+    },
+    {
+     "id": "tisha-benoit",
+     "name": "Tisha Benoit",
+     "party": "NOL",
+     "party_code": "O",
+     "votes": 4643
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 392
+    },
+    {
+     "id": "steven-sanders",
+     "name": "Steven Sanders",
+     "party": "NOL",
+     "party_code": "O",
+     "votes": 35
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "az",
+   "office": "U.S. House",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-lamb",
+     "name": "Mark Lamb",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 137240
+    },
+    {
+     "id": "elizabeth-lee",
+     "name": "Elizabeth Lee",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 131226
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 435
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "az",
+   "office": "U.S. House",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joanna-mendoza",
+     "name": "JoAnna Mendoza",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 157269
+    },
+    {
+     "id": "juan-ciscomani",
+     "name": "Juan Ciscomani",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 133502
+    },
+    {
+     "id": "jereme-lance-peters",
+     "name": "Jereme Lance Peters",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 3605
+    },
+    {
+     "id": "gary-swing",
+     "name": "Gary Swing",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 2518
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 155
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 113
+    },
+    {
+     "id": "michael-dorland",
+     "name": "Michael Dorland",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 30
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "az",
+   "office": "U.S. House",
+   "district": "7",
+   "title": "U.S. House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adelita-grijalva",
+     "name": "Adelita Grijalva",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 111192
+    },
+    {
+     "id": "daniel-francis-butierez-sr",
+     "name": "Daniel Francis Butierez Sr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 44298
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 231
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 42
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "az",
+   "office": "U.S. House",
+   "district": "8",
+   "title": "U.S. House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "abraham-abe-hamadeh",
+     "name": "Abraham \"Abe\" Hamadeh",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 127063
+    },
+    {
+     "id": "bernadette-greene-placentia",
+     "name": "Bernadette Greene-Placentia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 121500
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 483
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "az-u-s-representative-in-congress-district-no-9",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "az",
+   "office": "U.S. House",
+   "district": "9",
+   "title": "U.S. House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-gosar",
+     "name": "Paul Gosar",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 138732
+    },
+    {
+     "id": "danielle-dani-sterbinsky",
+     "name": "Danielle \"Dani\" Sterbinsky",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 101203
+    },
+    {
+     "id": "unofficial-write-in",
+     "name": "Unofficial Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 259
+    },
+    {
+     "id": "william-perry",
+     "name": "William Perry",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 24
+    },
+    {
+     "id": "unassigned-write-in",
+     "name": "Unassigned Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 24
+    },
+    {
+     "id": "g-seville-hatch",
+     "name": "G. Seville Hatch",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
     "unit": "counties"
    }
   }
