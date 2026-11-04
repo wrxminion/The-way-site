@@ -926,6 +926,26 @@
       "status_as_of_2026_10_25": "Merged in PR #94; live appearance and behavior not yet verified.",
       "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live page.",
       "checked_by_person": true
+    },
+    {
+      "id": "D089",
+      "decision_date_or_range": "2026-11-03",
+      "title": "The election results page now opens on the U.S",
+      "origin": "Maintainer (PR #302)",
+      "decision_or_proposal": "The election results page now opens on the U.S. Senate, then the U.S. House, instead of Colorado.",
+      "why": "Added automatically when the change was merged.",
+      "status_as_of_2026_10_25": "Merged in PR #302; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live page."
+    },
+    {
+      "id": "D090",
+      "decision_date_or_range": "2026-11-03",
+      "title": "The election results page now has one States tab with a picker for all 50 states and D.C.,",
+      "origin": "Maintainer (PR #303)",
+      "decision_or_proposal": "The election results page now has one States tab with a picker for all 50 states and D.C., and the separate Colorado tab is gone. A state with no results collected yet says so.",
+      "why": "Added automatically when the change was merged.",
+      "status_as_of_2026_10_25": "Merged in PR #303; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live page."
     }
   ]
 }
