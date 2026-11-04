@@ -35,7 +35,7 @@ function make(ctx) {
     try {
       const n = await unread();
       if (!n) return;
-      for (const t of (root || document).querySelectorAll('.adm-toggle span:not(.adm-arrow)')) {
+      for (const t of (root || document).querySelectorAll('.adm-toggle span:not(.adm-arrow), .md-tabbtn span')) {
         if (/^Post online/.test(t.textContent) && !/new\)$/.test(t.textContent)) t.textContent += ` (${n} new)`;
       }
     } catch { /* not installed yet */ }

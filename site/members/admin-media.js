@@ -1,7 +1,7 @@
-// Admin > Media ("Media relations"). Parts: The Way / Not The Way, suggested marketing ideas, conversation openers and
-// closers, ready-made copy, planned social media posts, and the site analytics panel. Marketing and admins add drafts of
-// ideas, openers, closers and copy; admins approve (the database enforces that). Social drafts are seen only by admins.
-// Nothing here posts anywhere: a person posts by hand after approval. Client-side only, no build step.
+// Admin > Media. One page with tabs: Posts (social post drafts, approval, and asks to the local drafter), Ideas and copy,
+// Post online, Analytics, Images, and The Way / Not The Way. Marketing and admins add drafts of ideas, openers, closers
+// and copy; admins approve (the database enforces that). Social drafts are seen by admins and the Media Director.
+// Nothing here posts anywhere by itself, and no LLM or API key is ever used here. Client-side only, no build step.
 // Text goes in through textContent only.
 (() => {
 'use strict';
@@ -158,7 +158,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
     { id: 'copy', label: 'Copy', kind: 'copy', addLabel: 'Add copy', addButton: 'Add copy', placeholder: 'A tagline, short description or explainer',
       lead: 'Taglines, short descriptions and explainers. No results or outcome claims. Copy and paste by hand.', copy: true },
     { id: 'posts', label: 'Posts', kind: 'idea', addLabel: 'Add a post idea', addButton: 'Add post idea', placeholder: 'An idea for a post, in a sentence or two', links: true, copy: true, showReason: true, postsLink: true,
-      lead: 'Ideas for posts. The planned and approved posts themselves are in Social media posts below.' },
+      lead: 'Ideas for posts. The drafts and approved posts themselves are on the Posts tab.' },
     { id: 'canned_response', label: 'Canned responses', kind: 'copy', showReason: true, reasonLabel: 'Note', addLabel: 'Add a canned response', addButton: 'Add response', placeholder: 'A short reply to a common question', copy: true,
       lead: 'Short replies to questions people ask often. Copy one and use it by hand.' },
     { id: 'debate_reply', label: 'They want a debate', kind: 'copy', showReason: true, reasonLabel: 'When to use', links: true, addLabel: 'Add a debate reply', addButton: 'Add reply', placeholder: 'A calm, short reply that moves the talk to sources', copy: true,
@@ -169,7 +169,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
   ];
   const CAT_LABEL = Object.fromEntries(CATEGORIES.map((c) => [c.id, c.label]));
 
-  function ideaBlock(cfg) {
+  function ideaBlock(cfg, go) {
     const admin = isAdmin();
     const me = typeof uid === 'function' ? uid() : uid;
     const msg = h('div');
@@ -254,14 +254,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
       h('p', { class: 'small dim', text: admin ? 'What you add is approved right away.' : 'What you add waits as a draft until an admin approves it.' }),
       h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit' }, cfg.addButton)));
 
-    const toSocial = cfg.postsLink ? h('div', { class: 'btns' }, h('button', { type: 'button', class: 'quiet', onclick: () => {
-      const el = document.getElementById('md-social');
-      const sec = el && el.closest('.adm-sec');
-      if (!sec) return;
-      const bodyEl = sec.querySelector('.adm-body');
-      if (bodyEl && bodyEl.hidden) { const t = sec.querySelector('.adm-toggle'); if (t) t.click(); }
-      sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } }, 'Open Social media posts')) : null;
+    const toSocial = cfg.postsLink && go ? h('div', { class: 'btns' }, h('button', { type: 'button', class: 'quiet', onclick: () => go('posts') }, 'Open Posts')) : null;
 
     load().catch((e) => approvedList.replaceChildren(h('li', {}, notice(e.message || 'Could not load this list. Has migration 0094 been run?'))));
     showTab('approved');
@@ -271,7 +264,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
   }
 
   // The six groups, one tab each. A group is built the first time its tab is opened.
-  function ideasHub() {
+  function ideasHub(go) {
     let current = CATEGORIES[0].id;
     const built = new Map();
     const tabs = h('div', { class: 'btns md-tabs', role: 'tablist', 'aria-label': 'Ideas by group' });
@@ -282,174 +275,329 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
         b.onclick = () => { current = c.id; draw(); };
         return b;
       }));
-      if (!built.has(current)) built.set(current, ideaBlock(CATEGORIES.find((c) => c.id === current)));
+      if (!built.has(current)) built.set(current, ideaBlock(CATEGORIES.find((c) => c.id === current), go));
       panel.replaceChildren(built.get(current));
     }
     draw();
     return h('div', {}, tabs, panel);
   }
 
-  // Planned social media posts. Drafts are visible only to admins (the database hides them from marketing).
+  // ---- Posts tab: the social post queue, and asks to the local drafter ----
+  // Drafts are seen by admins, super admins and the Media Director (marketing). Nothing is posted by itself.
+  // An ask (social_draft_requests, migration 0103) is picked up by the drafter on the research computer, which adds
+  // drafts marked AI-made. This page never holds an LLM or an API key; it only writes the ask.
+  const PLAT_LABEL = Object.fromEntries(PLATFORMS.map((p) => [p.id, p.label]));
+  const STATUS = [
+    { id: 'draft', label: 'Drafts' }, { id: 'approved', label: 'Approved' }, { id: 'posted', label: 'Posted' }, { id: 'dismissed', label: 'Hidden' }];
+  const URL_OK = /^https:\/\/[A-Za-z0-9.-]+(\/[^ <>"]*)?$/;   // same rule as the database
+  const timeMT = (iso) => `${new Date(iso).toLocaleString('en-US', { timeZone: 'America/Denver', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })} MT`;
+  const reviewerNow = () => isAdmin() || (typeof canReview === 'function' && canReview());
+
   function social() {
     const admin = isAdmin();
-    const reviewer = admin || (typeof canReview === 'function' && canReview());   // admins, super admins and the Media Director (marketing)
+    const reviewer = reviewerNow();
     const msg = h('div');
     const accounts = new Map();   // platform id -> { handle, active }
-    let posts = [];
-    let platform = PLATFORMS[0].id;
+    let posts = [], asks = [], asksReady = true;
     let sub = reviewer ? 'draft' : 'approved';
-    const tabsEl = h('div', { class: 'btns md-tabs', role: 'tablist', 'aria-label': 'Platforms' });
-    const bodyEl = h('div');
+    let plat = 'all';
+    let timer = null;
+    const asksEl = h('div', { class: 'md-asks' });
+    const chipsEl = h('div', { class: 'md-chiprow' });
+    const listEl = h('div', { class: 'md-cards' });
+    const extraEl = h('div');
+    const hintEl = h('p', { class: 'small dim md-hint' });
+
+    const isOn = (id) => { const a = accounts.get(id); return !!(a && a.active); };
+    const handleOf = (id) => { const a = accounts.get(id); return a && a.handle && a.handle.trim() ? a.handle.trim() : null; };
 
     async function load() {
       const [accs, rows] = await Promise.all([
         q(sb.from('social_accounts').select('platform,handle,active')),
-        q(sb.from('social_posts').select('id,platform,body,planned_slot,handle,status,source,created_at,link_path,link_title').order('id', { ascending: true }).limit(500)),
+        q(sb.from('social_posts').select('*').order('id', { ascending: false }).limit(500)),
       ]);
       accounts.clear(); for (const a of accs) accounts.set(a.platform, a);
       posts = rows;
+      if (reviewer) {
+        const since = new Date(Date.now() - 864e5).toISOString().replace(/\.\d+Z$/, 'Z');
+        try {
+          asks = await q(sb.from('social_draft_requests').select('id,kind,link,idea,platform,wanted,status,note,post_count,created_at,done_at')
+            .or(`status.in.(waiting,working),and(status.eq.failed,done_at.gte.${since})`).order('id', { ascending: false }).limit(40));
+          asksReady = true;
+        } catch { asks = []; asksReady = false; }
+      }
       draw();
+      // While an ask is open, look again every 45 seconds so new drafts show up without a reload.
+      clearTimeout(timer);
+      if (asks.some((a) => a.status === 'waiting' || a.status === 'working')) {
+        timer = setTimeout(function again() {
+          if (!root.isConnected) return;
+          if (document.hidden) { timer = setTimeout(again, 45000); return; }
+          load().catch(() => { /* keep the last list */ });
+        }, 45000);
+      }
     }
-    const isOn = (id) => { const a = accounts.get(id); return !!(a && a.active); };
-    const handleOf = (id) => { const a = accounts.get(id); return a && a.handle && a.handle.trim() ? a.handle.trim() : null; };
+
+    // ---- "Get a draft": a link or an idea, and "Ask for more drafts"
+    function askPanel() {
+      const ta = h('textarea', { class: 'md-ask-in', rows: 2, maxlength: 600, placeholder: 'A news link, or an idea in a sentence', 'aria-label': 'Paste a link or write an idea' });
+      const pf = h('select', { 'aria-label': 'Which network', class: 'md-ask-plat' },
+        h('option', { value: 'both', text: 'Facebook and Bluesky' }), h('option', { value: 'facebook', text: 'Facebook only' }), h('option', { value: 'bluesky', text: 'Bluesky only' }));
+      const form = h('form', { class: 'md-ask', onsubmit: action(async () => {
+        const t = ta.value.trim().replace(/[<>]/g, '');
+        if (t.length < 3) throw new Error('Paste a link or write a few words first.');
+        if (/(^|\s)http:\/\//.test(t)) throw new Error('Use the https link (it starts with https://).');
+        const m = t.match(/https:\/\/\S+/);
+        let row;
+        if (m) {
+          const link = m[0].replace(/[).,;]+$/, '');
+          if (!URL_OK.test(link) || link.length > 500) throw new Error('That link does not look right. Copy it again from the address bar.');
+          const rest = t.replace(m[0], '').trim();
+          row = { kind: 'link', link, platform: pf.value };
+          if (rest.length >= 3) row.idea = rest.slice(0, 500);
+        } else {
+          if (t.length > 500) throw new Error('Keep the idea under 500 characters.');
+          row = { kind: 'idea', idea: t, platform: pf.value };
+        }
+        await q(sb.from('social_draft_requests').insert(row));
+        ta.value = '';
+        sub = 'draft';
+        await load();
+        msg.replaceChildren(notice('Sent to the drafter. The draft shows up below when the research computer is free.', 'ok'));
+      }, msg) },
+      h('p', { class: 'md-label', text: 'Get a draft' }),
+      h('div', { class: 'md-ask-grid' },
+        h('label', {}, 'Paste a link or write an idea', ta),
+        h('div', { class: 'md-ask-go' }, pf, h('button', { class: 'primary', type: 'submit' }, 'Draft it'))));
+
+      const more = h('button', { type: 'button', class: 'quiet', onclick: action(async () => {
+        await q(sb.from('social_draft_requests').insert({ kind: 'more', wanted: 5, platform: 'both' }));
+        sub = 'draft';
+        await load();
+        msg.replaceChildren(notice('Asked the drafter for 5 more drafts. They show up below when the research computer is free.', 'ok'));
+      }, msg) }, 'Ask for more drafts');
+
+      // Drafts the research model already made, waiting in /social-picks/data.json. New ones become AI-made drafts.
+      const loadPicks = h('button', { type: 'button', class: 'quiet', onclick: action(async () => {
+        const r = await fetch('/social-picks/data.json?t=' + Date.now(), { cache: 'no-store' });
+        if (!r.ok) throw new Error('Could not read the suggestions file.');
+        const d = await r.json();
+        const have = new Set(posts.map((x) => x.platform + '|' + x.body));
+        const rows = [];
+        for (const s of (d && d.posts) || []) {
+          const plats = s.platform === 'both' ? ['facebook', 'bluesky'] : [s.platform];
+          for (const pl of plats) {
+            const body = String(s.text || '').replace(/[<>]/g, '').trim() + (s.link ? '\n' + s.link : '');
+            if (!accounts.has(pl) || body.length < 3 || body.length > 500 || have.has(pl + '|' + body)) continue;
+            have.add(pl + '|' + body);
+            const row = { platform: pl, body, status: 'draft', source: 'llm' };
+            if (s.link && URL_OK.test(s.link)) row.source_url = s.link;
+            if (s.source) row.source_name = String(s.source).replace(/[<>]/g, '').trim().slice(0, 120) || null;
+            rows.push(row);
+          }
+        }
+        if (rows.length) await q(sb.from('social_posts').insert(rows));
+        sub = 'draft'; await load();
+        msg.replaceChildren(notice(rows.length ? `Added ${rows.length} suggested draft${rows.length === 1 ? '' : 's'}. Read each one before you approve it.` : 'No new suggestions in the file yet.', 'ok'));
+      }, msg) }, 'Load AI suggestions');
+
+      return h('section', { class: 'panel md-askbox' }, form,
+        h('div', { class: 'md-ask-more' }, hintEl, h('div', { class: 'btns' }, loadPicks, more)));
+    }
+
+    function askCard(a) {
+      const what = a.kind === 'more' ? `More drafts (${a.wanted})`
+        : a.kind === 'link' ? `Your link: ${a.link}${a.idea ? ` (${a.idea})` : ''}` : `Your idea: ${a.idea}`;
+      const tag = a.status === 'waiting' ? h('span', { class: 'tag', text: 'waiting for the drafter' })
+        : a.status === 'working' ? h('span', { class: 'tag ok', text: 'drafting now' })
+        : h('span', { class: 'tag bad', text: 'could not draft' });
+      return h('article', { class: 'md-card md-askcard' },
+        h('div', { class: 'md-card-top' }, tag, a.platform !== 'both' ? h('span', { class: 'tag', text: PLAT_LABEL[a.platform] || a.platform }) : null,
+          h('span', { class: 'small dim', text: timeMT(a.created_at) })),
+        h('div', { class: 'md-card-body dim', text: what }),
+        a.note ? h('div', { class: 'small muted', text: a.note }) : null,
+        a.status === 'waiting' ? h('div', { class: 'btns' }, h('button', { type: 'button', class: 'quiet', onclick: action(async () => {
+          await q(sb.from('social_draft_requests').update({ status: 'cancelled' }).eq('id', a.id)); await load();
+        }, msg) }, 'Cancel')) : null);
+    }
 
     function draw() {
-      tabsEl.replaceChildren(...PLATFORMS.map((p) => {
-        const b = h('button', { type: 'button', class: 'quiet md-tab', role: 'tab', 'aria-pressed': String(p.id === platform) },
-          p.label, isOn(p.id) ? null : h('span', { class: 'tag md-badge', text: 'no account yet' }));
-        b.onclick = () => { platform = p.id; draw(); };
-        return b;
-      }));
-      const p = PLATFORMS.find((x) => x.id === platform);
-      const handle = handleOf(p.id);
-      const kids = [h('p', { class: 'small dim', text: `Main audience: ${p.audience}` })];
-
-      if (!isOn(p.id)) {
-        kids.push(h('p', { class: 'muted', text: 'Not set up yet.' }));
-        if (p.locked) kids.push(h('p', { class: 'small dim', text: p.locked }));
-        else if (admin) kids.push(h('div', { class: 'btns' }, h('button', { class: 'quiet', onclick: action(async () => {
-          const t = await ask(`Turn on ${p.label}. Name or handle it posts as (up to 100 characters, plain text):`);
-          if (t === null) return;
-          await q(sb.from('social_accounts').upsert({ platform: p.id, handle: t.trim() || null, active: true }));
-          await load();
-        }, msg) }, `Turn on ${p.label}`)));
-        else kids.push(h('p', { class: 'small dim', text: 'An admin turns an account on when it exists.' }));
-        bodyEl.replaceChildren(...kids); return;
-      }
-
-      kids.push(h('p', {}, 'Posts as: ', handle ? h('strong', { text: handle }) : h('strong', { class: 'md-warn', text: 'Handle not set' })));
-      if (admin) {
-        const hin = h('input', { maxlength: 100, placeholder: 'Name or handle it posts as', 'aria-label': 'Handle' });
-        hin.value = handle || '';
-        kids.push(h('form', { class: 'btns md-inline', onsubmit: action(async () => {
-          const t = hin.value.trim();
-          if (!t) throw new Error('Type the name or handle first.');
-          await q(sb.from('social_accounts').update({ handle: t }).eq('platform', p.id));
-          await load();
-        }, msg) }, hin, h('button', { class: 'quiet', type: 'submit' }, handle ? 'Change handle' : 'Save handle')));
-      }
-
-      // add a draft (admins only)
       if (reviewer) {
-        const pb = h('textarea', { maxlength: 500, rows: 2, placeholder: 'Post text (up to 500 characters)', 'aria-label': 'New post' });
-        const slot = h('input', { maxlength: 20, placeholder: 'Planned time, for example 07:00 MT', 'aria-label': 'Planned time' });
-        const comp = composer(pb);
-        kids.push(h('form', { class: 'panel', onsubmit: action(async () => {
-          const t = pb.value.trim();
-          if (t.length < 3) throw new Error('Write at least a few words.');
-          const r = { platform: p.id, body: t, status: 'draft', source: 'human' };
-          if (slot.value.trim()) r.planned_slot = slot.value.trim();
-          Object.assign(r, comp.fields());
-          await q(sb.from('social_posts').insert(r));
-          sub = 'draft'; await load();
-        }, msg) }, h('label', {}, `New ${p.label} post (saved as a draft)`, pb), comp.els, h('label', {}, 'Planned time', slot),
-          h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit' }, 'Add draft'))));
+        hintEl.textContent = asksReady ? 'The drafter runs on the research computer when it is free (not gaming or trading). It reads each ask and adds drafts here.'
+          : 'Asking for drafts turns on after database step 0103 is run.';
+        asksEl.replaceChildren(...asks.map(askCard));
       }
-
-      // load posts suggested by the local research model (admins and the Media Director). New ones become AI-made drafts.
-      if (reviewer) {
-        kids.push(h('div', { class: 'btns' }, h('button', { class: 'quiet', onclick: action(async () => {
-          const r = await fetch('/social-picks/data.json?t=' + Date.now(), { cache: 'no-store' });
-          if (!r.ok) throw new Error('Could not read the suggestions file.');
-          const d = await r.json();
-          const have = new Set(posts.map((x) => x.platform + '|' + x.body));
-          const rows = [];
-          for (const s of (d && d.posts) || []) {
-            const plats = s.platform === 'both' ? ['facebook', 'bluesky'] : [s.platform];
-            for (const pl of plats) {
-              const body = String(s.text || '').replace(/[<>]/g, '').trim() + (s.link ? '\n' + s.link : '');
-              if (!accounts.has(pl) || body.length < 3 || body.length > 500 || have.has(pl + '|' + body)) continue;
-              have.add(pl + '|' + body);
-              rows.push({ platform: pl, body, status: 'draft', source: 'llm' });
-            }
-          }
-          if (rows.length) await q(sb.from('social_posts').insert(rows));
-          sub = 'draft'; await load();
-          msg.replaceChildren(notice(rows.length ? `Added ${rows.length} suggested draft${rows.length === 1 ? '' : 's'}. Read each one before you approve it.` : 'No new suggestions.'));
-        }, msg) }, 'Load AI suggestions')));
-      }
-
-      const mine = posts.filter((x) => x.platform === p.id);
-      const subs = reviewer ? ['draft', 'approved', 'posted'] : ['approved', 'posted'];
-      const LBL = { draft: 'Drafts', approved: 'Approved', posted: 'Posted' };
-      kids.push(h('div', { class: 'btns md-tabs' }, subs.map((s) => {
-        const b = h('button', { type: 'button', class: 'quiet md-tab', 'aria-pressed': String(sub === s), text: `${LBL[s]} (${mine.filter((x) => x.status === s).length})` });
-        b.onclick = () => { sub = s; draw(); };
-        return b;
-      })));
-      const shown = mine.filter((x) => x.status === sub);
-      kids.push(h('ul', { class: 'list panel md-ideas' }, shown.length ? shown.map((x) => postRow(x, handle)) : [h('li', { class: 'muted', text: 'Nothing here.' })]));
-      bodyEl.replaceChildren(...kids);
+      const onPlats = PLATFORMS.filter((p) => isOn(p.id) || posts.some((x) => x.platform === p.id));
+      if (plat !== 'all' && !onPlats.some((p) => p.id === plat)) plat = 'all';
+      const inPlat = posts.filter((x) => plat === 'all' || x.platform === plat);
+      const subs = STATUS.filter((s) => reviewer || s.id === 'approved' || s.id === 'posted');
+      const chip = (on, label, n, fn) => {
+        const b = h('button', { type: 'button', class: 'md-chip', 'aria-pressed': String(on) }, label, n == null ? null : h('span', { class: 'md-n', text: String(n) }));
+        b.onclick = fn; return b;
+      };
+      chipsEl.replaceChildren(
+        h('div', { class: 'md-chips', role: 'group', 'aria-label': 'Status' }, subs.map((s) => chip(sub === s.id, s.label, inPlat.filter((x) => x.status === s.id).length, () => { sub = s.id; draw(); }))),
+        onPlats.length > 1 ? h('div', { class: 'md-chips', role: 'group', 'aria-label': 'Network' },
+          chip(plat === 'all', 'All', null, () => { plat = 'all'; draw(); }),
+          onPlats.map((p) => chip(plat === p.id, p.label, null, () => { plat = p.id; draw(); }))) : null);
+      const shown = inPlat.filter((x) => x.status === sub);
+      const EMPTY = { draft: reviewer ? 'No drafts waiting. Paste a link or an idea above, or ask for more drafts.' : 'Nothing here.', approved: 'Nothing approved yet.', posted: 'Nothing posted yet.', dismissed: 'Nothing hidden.' };
+      listEl.replaceChildren(...(shown.length ? shown.map(card) : [h('p', { class: 'muted md-empty', text: EMPTY[sub] })]));
+      extraEl.replaceChildren(...[reviewer ? writeOwn(onPlats) : null, admin ? accountsBox() : null].filter(Boolean));
     }
 
-    function postRow(x, accountHandle) {
-      const as = x.handle || accountHandle;   // approved posts keep the name copied when they were approved
-      return h('li', {},
-        h('div', { class: 'meta' }, x.planned_slot ? h('span', { class: 'tag', text: x.planned_slot }) : null, ' ',
-          h('span', { class: `tag ${x.status === 'draft' ? 'warn' : 'ok'}`, text: x.status }), ' ',
-          x.source === 'llm' ? h('span', { class: 'tag', text: 'AI-made: needs the AI label' }) : null),
-        h('div', { text: x.body }),
+    function card(x) {
+      const as = x.handle || handleOf(x.platform);
+      const btn = (label, fn, primary) => h('button', { type: 'button', class: primary ? 'primary' : 'quiet', onclick: action(fn, msg) }, label);
+      const copyB = copyBtn(assemble(x.body, x.link_path, x.link_title));
+      const btns = [];
+      if (x.status === 'draft') {
+        if (reviewer) btns.push(btn('Approve', async () => { await q(sb.from('social_posts').update({ status: 'approved' }).eq('id', x.id)); await load(); }, true));
+        btns.push(copyB);
+        if (reviewer) btns.push(btn('Edit', () => editPost(x)), btn('Not this one', async () => { await q(sb.from('social_posts').update({ status: 'dismissed' }).eq('id', x.id)); await load(); }));
+      } else if (x.status === 'dismissed') {
+        btns.push(copyB);
+        if (reviewer) btns.push(btn('Back to draft', async () => { await q(sb.from('social_posts').update({ status: 'draft' }).eq('id', x.id)); await load(); }));
+      } else {
+        copyB.className = 'primary';
+        btns.push(copyB);
+        if (reviewer && x.status === 'approved') btns.push(btn('Mark as posted', async () => {
+          if ((await ask('Type POSTED once you have posted this by hand:')) !== 'POSTED') return;
+          await q(sb.from('social_posts').update({ status: 'posted' }).eq('id', x.id)); await load();
+        }));
+        if (reviewer) btns.push(btn('Edit', () => editPost(x)), btn('Back to draft', async () => { await q(sb.from('social_posts').update({ status: 'draft' }).eq('id', x.id)); await load(); }));
+      }
+      if (admin) btns.push(btn('Delete', async () => {
+        if ((await ask('Type DELETE to remove this post for good:')) !== 'DELETE') return;
+        await q(sb.from('social_posts').delete().eq('id', x.id)); await load();
+      }));
+      return h('article', { class: `md-card md-st-${x.status}` },
+        h('div', { class: 'md-card-top' },
+          h('span', { class: `md-plat md-plat-${x.platform}`, text: PLAT_LABEL[x.platform] || x.platform }),
+          x.status === 'approved' ? h('span', { class: 'tag ok', text: 'approved' }) : x.status === 'posted' ? h('span', { class: 'tag ok', text: 'posted' }) : null,
+          x.source === 'llm' ? h('span', { class: 'tag', text: 'AI-made' }) : null,
+          x.request_id ? h('span', { class: 'tag', text: 'from your ask' }) : null,
+          x.planned_slot ? h('span', { class: 'tag', text: x.planned_slot }) : null,
+          h('span', { class: 'small dim', text: timeMT(x.created_at) })),
+        h('div', { class: 'md-card-body', text: x.body }),
         linkLine(x.link_path, x.link_title),
-        h('div', { class: 'small muted' }, 'Posts as: ', as ? h('strong', { text: as }) : h('strong', { class: 'md-warn', text: 'Handle not set' })),
-        h('div', { class: 'btns' },
-          copyBtn(assemble(x.body, x.link_path, x.link_title)),
-          reviewer && x.status === 'draft' ? h('button', { class: 'quiet', onclick: action(async () => {
-            await q(sb.from('social_posts').update({ status: 'approved' }).eq('id', x.id)); await load();
-          }, msg) }, 'Approve') : null,
-          reviewer && x.status === 'approved' ? h('button', { class: 'quiet', onclick: action(async () => {
-            if (!(await ask('Type POSTED once you have posted this by hand:') === 'POSTED')) return;
-            await q(sb.from('social_posts').update({ status: 'posted' }).eq('id', x.id)); await load();
-          }, msg) }, 'Mark as posted') : null,
-          reviewer && x.status !== 'draft' ? h('button', { class: 'quiet', onclick: action(async () => {
-            await q(sb.from('social_posts').update({ status: 'draft' }).eq('id', x.id)); await load();
-          }, msg) }, 'Back to draft') : null,
-          reviewer ? h('button', { class: 'quiet', onclick: action(async () => {
-            const t = await ask('Edit the post (3 to 500 characters). An approved post goes back to draft:', x.body);
-            if (!t) return;
-            await q(sb.from('social_posts').update({ body: t.trim() }).eq('id', x.id)); await load();
-          }, msg) }, 'Edit') : null,
-          admin ? h('button', { class: 'quiet', onclick: action(async () => {
-            if ((await ask('Type DELETE to remove this post:')) !== 'DELETE') return;
-            await q(sb.from('social_posts').delete().eq('id', x.id)); await load();
-          }, msg) }, 'Delete') : null),
+        x.source_name ? h('div', { class: 'small dim md-link', text: `Source: ${x.source_name}` }) : null,
+        as ? null : h('div', { class: 'small md-warn', text: 'Handle not set for this account.' }),
+        h('div', { class: 'btns' }, btns),
         admin ? changeLink('social_posts', x, load, msg) : null);
     }
 
-    load().catch((e) => bodyEl.replaceChildren(notice(e.message || 'Could not load social posts. Has migration 0091 been run?')));
-    return h('div', { id: 'md-social' },
-      h('p', { class: 'muted small', text: 'Nothing is posted automatically. A person posts after approval, by hand or from Post online below, and a post made by an AI must carry the AI label (tick the AI-written box there). Our audiences are voters, teachers and researchers or journalists. Posts are aimed at adults and teachers, not at children, and accounts follow each platform\'s own age rules.' }),
-      reviewer ? null : h('p', { class: 'small dim', text: 'You see approved and posted posts. Drafts are seen by admins and the Media Director only.' }),
-      msg, tabsEl, bodyEl);
+    async function editPost(x) {
+      const t = await ask('Edit the post (3 to 500 characters). An approved post goes back to draft:', x.body);
+      if (!t) return;
+      await q(sb.from('social_posts').update({ body: t.trim() }).eq('id', x.id)); await load();
+    }
+
+    // Write a draft by hand. Folded away so the page stays short.
+    function writeOwn(onPlats) {
+      const live = onPlats.filter((p) => isOn(p.id));
+      if (!live.length) return null;
+      const ps = h('select', { 'aria-label': 'Network' }, live.map((p) => h('option', { value: p.id, text: p.label })));
+      const pb = h('textarea', { maxlength: 500, rows: 3, placeholder: 'Post text (up to 500 characters)', 'aria-label': 'New post' });
+      const slot = h('input', { maxlength: 20, placeholder: 'For example 07:00 MT', 'aria-label': 'Planned time' });
+      const comp = composer(pb);
+      const form = h('form', { onsubmit: action(async () => {
+        const t = pb.value.trim();
+        if (t.length < 3) throw new Error('Write at least a few words.');
+        const r = { platform: ps.value, body: t, status: 'draft', source: 'human' };
+        if (slot.value.trim()) r.planned_slot = slot.value.trim();
+        Object.assign(r, comp.fields());
+        await q(sb.from('social_posts').insert(r));
+        sub = 'draft'; await load();
+      }, msg) }, h('label', {}, 'Network', ps), h('label', {}, 'Post text (saved as a draft)', pb), comp.els,
+        h('label', {}, 'Planned time (optional)', slot), h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit' }, 'Add draft')));
+      return h('details', { class: 'panel md-fold' }, h('summary', { text: 'Write a post yourself' }), form);
+    }
+
+    // Accounts and handles, for admins. Folded away: it is set once and rarely changed.
+    function accountsBox() {
+      const rows = PLATFORMS.map((p) => {
+        const handle = handleOf(p.id);
+        const parts = [h('div', {}, h('strong', { text: p.label }), h('span', { class: 'small dim', text: ` for ${p.audience}` }))];
+        if (!isOn(p.id)) {
+          parts.push(p.locked ? h('div', { class: 'small dim', text: p.locked }) : h('div', { class: 'btns' }, h('button', { type: 'button', class: 'quiet', onclick: action(async () => {
+            const t = await ask(`Turn on ${p.label}. Name or handle it posts as (up to 100 characters, plain text):`);
+            if (t === null) return;
+            await q(sb.from('social_accounts').upsert({ platform: p.id, handle: t.trim() || null, active: true }));
+            await load();
+          }, msg) }, `Turn on ${p.label}`)));
+        } else {
+          const hin = h('input', { maxlength: 100, placeholder: 'Name or handle it posts as', 'aria-label': `${p.label} handle` });
+          hin.value = handle || '';
+          parts.push(h('form', { class: 'btns md-inline', onsubmit: action(async () => {
+            const t = hin.value.trim();
+            if (!t) throw new Error('Type the name or handle first.');
+            await q(sb.from('social_accounts').update({ handle: t }).eq('platform', p.id));
+            await load();
+          }, msg) }, hin, h('button', { class: 'quiet', type: 'submit' }, handle ? 'Change' : 'Save')));
+        }
+        return h('li', {}, parts);
+      });
+      return h('details', { class: 'panel md-fold' }, h('summary', { text: 'Accounts and handles' }), h('ul', { class: 'list md-accounts' }, rows));
+    }
+
+    const root = h('div', { id: 'md-social' },
+      reviewer ? askPanel() : h('p', { class: 'small dim', text: 'You see approved and posted posts. Drafts are seen by admins and the Media Director.' }),
+      msg, asksEl, chipsEl, listEl, extraEl,
+      h('p', { class: 'small dim', text: 'Nothing is posted automatically. A person posts after approval, by hand or from Post online. A post made by an AI must carry the AI label. Posts are for adults and teachers, not children.' }));
+    load().catch((e) => listEl.replaceChildren(notice(e.message || 'Could not load social posts.')));
+    return root;
   }
 
-  function view(section, render, postNode) {
-    render(h('h1', { text: 'Media' }), h('p', { class: 'lede', text: 'Media relations' }),
-      section('guide', 'The Way / Not The Way', guide()),
-      section('ideas', 'Marketing ideas and copy', ideasHub()),
-      section('social', 'Social media posts', social()),
-      postNode ? section('post-online', 'Post online', postNode) : null,
-      STATS ? section('analytics', 'Site analytics and SEO', STATS.panel()) : null,
-      IMAGES ? section('images', 'Image copy', IMAGES.panel()) : null);
+  // The page: a title, a row of tabs, and one tab shown at a time. Each tab is built the first time it is opened and
+  // keeps its state after that. The last tab used is remembered in this browser.
+  const TAB_KEY = 'way-media-tab';
+  function view(render, parts) {
+    const p = parts || {};
+    const TABS = [
+      { id: 'posts', label: 'Posts', make: () => social() },
+      { id: 'ideas', label: 'Ideas and copy', make: () => ideasHub(go) },
+      p.postNode ? { id: 'online', label: 'Post online', make: () => p.postNode } : null,
+      STATS ? { id: 'analytics', label: 'Analytics', make: () => STATS.panel() } : null,
+      IMAGES ? { id: 'images', label: 'Images', make: () => IMAGES.panel() } : null,
+      { id: 'guide', label: 'The Way', make: guide, hidden: true },
+    ].filter(Boolean);
+    const built = new Map();
+    let cur = 'posts';
+    try { const s = localStorage.getItem(TAB_KEY); if (TABS.some((t) => t.id === s)) cur = s; } catch { /* private mode */ }
+    const bar = h('div', { class: 'md-tabbar', role: 'tablist', 'aria-label': 'Media' });
+    const panel = h('div', { class: 'md-panel', role: 'tabpanel' });
+    const buttons = TABS.filter((t) => !t.hidden).map((t) => {
+      const b = h('button', { type: 'button', role: 'tab', class: 'md-tabbtn', id: 'md-tab-' + t.id }, h('span', { text: t.label }));
+      b.onclick = () => go(t.id);
+      b.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        const vis = TABS.filter((x) => !x.hidden);
+        const i = vis.findIndex((x) => x.id === t.id);
+        const n = vis[(i + (e.key === 'ArrowRight' ? 1 : vis.length - 1)) % vis.length];
+        go(n.id); document.getElementById('md-tab-' + n.id).focus();
+      });
+      return b;
+    });
+    bar.append(...buttons);
+    function go(id) {
+      const t = TABS.find((x) => x.id === id) || TABS[0];
+      cur = t.id;
+      try { localStorage.setItem(TAB_KEY, cur); } catch { /* private mode */ }
+      for (const b of buttons) {
+        const on = b.id === 'md-tab-' + cur;
+        b.setAttribute('aria-selected', String(on)); b.tabIndex = on ? 0 : -1;
+      }
+      if (!built.has(cur)) built.set(cur, t.make());
+      panel.setAttribute('aria-labelledby', 'md-tab-' + (t.hidden ? 'posts' : cur));
+      panel.replaceChildren(built.get(cur));
+    }
+    const guideLink = h('button', { type: 'button', class: 'md-guidelink', text: 'The Way / Not The Way' });
+    guideLink.onclick = () => go(cur === 'guide' ? 'posts' : 'guide');
+    render(h('div', { class: 'md-page' },
+      h('div', { class: 'md-head' }, h('h1', { text: 'Media' }), guideLink),
+      bar, panel));
+    go(cur);
   }
   return { view };
 }

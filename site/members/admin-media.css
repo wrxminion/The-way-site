@@ -20,3 +20,56 @@
 .md-change summary{cursor:pointer;color:var(--aqua);font-size:13px;margin-top:6px}
 .md-change>*{margin-top:6px}
 .md-preview{margin:6px 0}
+
+/* Media page layout (tabs). The page is wider than other member pages so the post cards read in one line on a desk. */
+main:has(.md-page){max-width:1100px}
+.md-head{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between}
+.md-head h1{margin-bottom:0}
+.md-guidelink{background:none;border:0;padding:4px 0;color:var(--aqua);font:500 14px var(--sans);text-decoration:underline;text-underline-offset:3px;border-radius:0}
+.md-guidelink:hover{background:none;color:#fff}
+.md-tabbar{display:flex;gap:2px;margin:16px 0 18px;border-bottom:1px solid var(--line-strong);overflow-x:auto;scrollbar-width:thin}
+.md-tabbtn{flex:0 0 auto;background:none;border:0;border-bottom:3px solid transparent;border-radius:0;padding:10px 16px;color:var(--muted);font:600 15px var(--sans);white-space:nowrap}
+.md-tabbtn:hover{background:none;color:#fff}
+.md-tabbtn[aria-selected=true]{color:#fff;border-bottom-color:var(--aqua)}
+.md-panel>*:first-child{margin-top:0}
+.md-label{font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--aqua);margin:0}
+/* Get a draft */
+.md-askbox{margin-top:0}
+.md-ask{gap:8px}
+.md-ask-grid{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end}
+.md-ask-in{min-height:54px;height:54px}
+.md-ask-go{display:flex;gap:8px;align-items:center}
+.md-ask-plat{width:auto}
+.md-ask-more{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between;margin-top:10px}
+.md-hint{margin:0;flex:1 1 260px}
+/* chips */
+.md-chiprow{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;margin:14px 0 4px}
+.md-chips{display:flex;flex-wrap:wrap;gap:8px}
+.md-chip{padding:6px 14px;font:600 14px var(--sans);border-color:var(--line-strong);color:var(--muted);background:transparent}
+.md-chip[aria-pressed=true]{background:#2a8f95;border-color:#7fe3d9;color:#fff}
+.md-n{font-weight:500;opacity:.85}
+/* cards */
+.md-card{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0;background:#03192a99;overflow-wrap:anywhere}
+.md-card-top{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}
+.md-card-body{white-space:pre-wrap;margin:4px 0 6px}
+.md-card .btns{margin-top:10px}
+.md-askcard{border-style:dashed;display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;padding:8px 14px;margin:6px 0}
+.md-askcard .md-card-top,.md-askcard .md-card-body{margin:0}
+.md-askcard .md-card-body{flex:1 1 240px}
+.md-askcard .btns{margin:0 0 0 auto}
+.md-st-dismissed .md-card-body{opacity:.6}
+.md-plat{font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:99px;color:#052b3c;background:var(--aqua)}
+.md-plat-bluesky{background:#bcd9ff}
+.md-empty{padding:18px 4px}
+.md-fold{padding:12px 18px}
+.md-fold summary{cursor:pointer;font-weight:600}
+.md-fold[open] summary{margin-bottom:12px}
+.md-accounts>li{display:grid;gap:6px}
+@media (max-width:640px){
+  .md-ask-grid{grid-template-columns:1fr}
+  .md-ask-go{flex-wrap:wrap}
+  .md-ask-plat{flex:1 1 120px;min-width:0}
+  .md-ask-go .primary{flex:0 0 auto}
+  .md-tabbtn{padding:10px 12px}
+  .md-card{padding:12px 14px}
+}
