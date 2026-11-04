@@ -1,0 +1,3558 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-la",
+ "label": "Louisiana",
+ "source_ids": [
+  "la-sos"
+ ],
+ "updated_at": "2026-11-04T13:29:27Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "la-67997-u-s-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "jamie-davis",
+     "name": "Jamie Davis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 720106
+    },
+    {
+     "id": "julia-letlow",
+     "name": "Julia Letlow",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 745963
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70195-u-s-representative-1st-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "randall-arrington",
+     "name": "Randall Arrington",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9776
+    },
+    {
+     "id": "e-liddy-glass",
+     "name": "E. Liddy Glass",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 4279
+    },
+    {
+     "id": "lauren-jewett",
+     "name": "Lauren Jewett",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 89428
+    },
+    {
+     "id": "steve-scalise",
+     "name": "Steve Scalise",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 159890
+    }
+   ],
+   "precincts": {
+    "reporting": 522,
+    "total": 522,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70196-u-s-representative-2nd-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "lisa-ballay",
+     "name": "Lisa Ballay",
+     "party": "LBT",
+     "party_code": "O",
+     "votes": 6405
+    },
+    {
+     "id": "walter-rocky-beach",
+     "name": "Walter Rocky Beach",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 2553
+    },
+    {
+     "id": "troy-a-carter-sr",
+     "name": "Troy A. Carter, Sr.",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 192258
+    },
+    {
+     "id": "renada-honey-collins",
+     "name": "Renada Honey Collins",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 2999
+    },
+    {
+     "id": "peter-williams",
+     "name": "Peter Williams",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 36367
+    }
+   ],
+   "precincts": {
+    "reporting": 613,
+    "total": 613,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70197-u-s-representative-3rd-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "kate-cotten",
+     "name": "Kate Cotten",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15661
+    },
+    {
+     "id": "john-day",
+     "name": "John Day",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 49162
+    },
+    {
+     "id": "priscilla-gonzalez",
+     "name": "Priscilla Gonzalez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 16828
+    },
+    {
+     "id": "clay-higgins",
+     "name": "Clay Higgins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 129203
+    },
+    {
+     "id": "tia-lebrun",
+     "name": "Tia LeBrun",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 4208
+    },
+    {
+     "id": "caleb-with-a-c-walker",
+     "name": "Caleb With a C Walker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 19932
+    }
+   ],
+   "precincts": {
+    "reporting": 571,
+    "total": 571,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70198-u-s-representative-4th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "conrad-cable",
+     "name": "Conrad Cable",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 52893
+    },
+    {
+     "id": "matt-gromlich",
+     "name": "Matt Gromlich",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 32866
+    },
+    {
+     "id": "gordon-heslop",
+     "name": "Gordon Heslop",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2571
+    },
+    {
+     "id": "mike-johnson",
+     "name": "Mike Johnson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 134739
+    },
+    {
+     "id": "mike-nichols",
+     "name": "Mike Nichols",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7270
+    }
+   ],
+   "precincts": {
+    "reporting": 684,
+    "total": 684,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70199-u-s-representative-5th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "stewart-cathey-jr",
+     "name": "Stewart Cathey, Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28160
+    },
+    {
+     "id": "misti-cordell",
+     "name": "Misti Cordell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 33366
+    },
+    {
+     "id": "oscar-omar-dantzler",
+     "name": "Oscar Omar Dantzler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2238
+    },
+    {
+     "id": "michael-echols",
+     "name": "Michael Echols",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 32902
+    },
+    {
+     "id": "gabe-firment",
+     "name": "Gabe Firment",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 39131
+    },
+    {
+     "id": "austin-magee",
+     "name": "Austin Magee",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7920
+    },
+    {
+     "id": "dan-mckay",
+     "name": "Dan McKay",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 16047
+    },
+    {
+     "id": "patricia-pat-moore",
+     "name": "Patricia Pat Moore",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 40789
+    },
+    {
+     "id": "antonio-wilson",
+     "name": "Antonio Wilson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 27364
+    }
+   ],
+   "precincts": {
+    "reporting": 791,
+    "total": 791,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70200-u-s-representative-6th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. House District 6",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "monique-appeaning",
+     "name": "Monique Appeaning",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8109
+    },
+    {
+     "id": "chauna-banks",
+     "name": "Chauna Banks",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 50878
+    },
+    {
+     "id": "rufus-craig",
+     "name": "Rufus Craig",
+     "party": "LBT",
+     "party_code": "O",
+     "votes": 3461
+    },
+    {
+     "id": "larry-davis-iii",
+     "name": "Larry Davis III",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11356
+    },
+    {
+     "id": "rick-edmonds",
+     "name": "Rick Edmonds",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 49241
+    },
+    {
+     "id": "patrick-pat-forbes",
+     "name": "Patrick Pat Forbes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23820
+    },
+    {
+     "id": "lindsay-rubia-garcia",
+     "name": "Lindsay Rubia Garcia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 33544
+    },
+    {
+     "id": "michael-mebruer",
+     "name": "Michael Mebruer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3160
+    },
+    {
+     "id": "blake-miguez",
+     "name": "Blake Miguez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 50213
+    },
+    {
+     "id": "stephen-wagley",
+     "name": "Stephen Wagley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28169
+    }
+   ],
+   "precincts": {
+    "reporting": 541,
+    "total": 541,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67989-psc-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "PSC -- District 1",
+   "district": null,
+   "title": "PSC -- District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-hilferty",
+     "name": "Stephanie Hilferty",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 176505
+    },
+    {
+     "id": "christopher-chris-justin",
+     "name": "Christopher Chris Justin",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 39984
+    },
+    {
+     "id": "connie-norris",
+     "name": "Connie Norris",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 83259
+    }
+   ],
+   "precincts": {
+    "reporting": 608,
+    "total": 608,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67990-psc-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "PSC -- District 5",
+   "district": null,
+   "title": "PSC -- District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-e-atkins",
+     "name": "John E. Atkins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 161038
+    },
+    {
+     "id": "james-edward-green",
+     "name": "James Edward Green",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 111188
+    }
+   ],
+   "precincts": {
+    "reporting": 869,
+    "total": 869,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70065-bese-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "BESE -- District 1",
+   "district": null,
+   "title": "BESE -- District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joseph-cao",
+     "name": "Joseph Cao",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 127178
+    },
+    {
+     "id": "angela-hershey",
+     "name": "Angela Hershey",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 73614
+    }
+   ],
+   "precincts": {
+    "reporting": 389,
+    "total": 389,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70161-state-representative-92nd-representative-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "State Representative -- 92nd Representative District",
+   "district": null,
+   "title": "State Representative -- 92nd Representative District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gregory-carroll",
+     "name": "Gregory Carroll",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6620
+    },
+    {
+     "id": "alex-perdomo",
+     "name": "Alex Perdomo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1826
+    },
+    {
+     "id": "michael-mike-sigur",
+     "name": "Michael Mike Sigur",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3050
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67788-district-judge-1st-judicial-district-court-es-3-div-f",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 1st Judicial District Court, ES 3, Div. F",
+   "district": null,
+   "title": "District Judge -- 1st Judicial District Court, ES 3, Div. F",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "treneisha-jackson-hill",
+     "name": "Treneisha Jackson Hill",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12636
+    },
+    {
+     "id": "hugo-a-holland-jr",
+     "name": "Hugo A. Holland, Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13349
+    }
+   ],
+   "precincts": {
+    "reporting": 50,
+    "total": 50,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67790-district-judge-2nd-judicial-district-court-div-a",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 2nd Judicial District Court, Div. A",
+   "district": null,
+   "title": "District Judge -- 2nd Judicial District Court, Div. A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rachel-wiggins-bays",
+     "name": "Rachel Wiggins Bays",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8540
+    },
+    {
+     "id": "patrick-o-jefferson",
+     "name": "Patrick O. Jefferson",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 6315
+    }
+   ],
+   "precincts": {
+    "reporting": 89,
+    "total": 89,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67791-district-judge-2nd-judicial-district-court-div-b",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 2nd Judicial District Court, Div. B",
+   "district": null,
+   "title": "District Judge -- 2nd Judicial District Court, Div. B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clay-carroll",
+     "name": "Clay Carroll",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6993
+    },
+    {
+     "id": "yumeaka-robinson-washington",
+     "name": "Yumeaka Robinson Washington",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 7907
+    }
+   ],
+   "precincts": {
+    "reporting": 89,
+    "total": 89,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67794-district-judge-3rd-judicial-district-court-div-b",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 3rd Judicial District Court, Div. B",
+   "district": null,
+   "title": "District Judge -- 3rd Judicial District Court, Div. B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phillip-ellis",
+     "name": "Phillip Ellis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11975
+    },
+    {
+     "id": "lewis-a-jones",
+     "name": "Lewis A. Jones",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7532
+    }
+   ],
+   "precincts": {
+    "reporting": 79,
+    "total": 79,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67797-district-judge-4th-judicial-district-court-es-1-div-h",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 4th Judicial District Court, ES 1, Div. H",
+   "district": null,
+   "title": "District Judge -- 4th Judicial District Court, ES 1, Div. H",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carlton-parhms",
+     "name": "Carlton Parhms",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2961
+    },
+    {
+     "id": "shirley-wilson-davis",
+     "name": "Shirley Wilson Davis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4840
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67798-district-judge-4th-judicial-district-court-es-1-div-i",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 4th Judicial District Court, ES 1, Div. I",
+   "district": null,
+   "title": "District Judge -- 4th Judicial District Court, ES 1, Div. I",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mary-alice-bryant-cezar",
+     "name": "Mary Alice Bryant Cezar",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1376
+    },
+    {
+     "id": "janet-floyd",
+     "name": "Janet Floyd",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5092
+    },
+    {
+     "id": "jasmyne-mcconnell",
+     "name": "Jasmyne McConnell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1666
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67801-district-judge-4th-judicial-district-court-es-2-div-b",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 4th Judicial District Court, ES 2, Div. B",
+   "district": null,
+   "title": "District Judge -- 4th Judicial District Court, ES 2, Div. B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-cossey",
+     "name": "Adam Cossey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 23258
+    },
+    {
+     "id": "brandon-creekbaum",
+     "name": "Brandon Creekbaum",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10779
+    },
+    {
+     "id": "c-bryan-racer",
+     "name": "C. Bryan Racer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6251
+    }
+   ],
+   "precincts": {
+    "reporting": 98,
+    "total": 98,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67825-district-judge-12th-judicial-district-court-division-a",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 12th Judicial District Court, Division A",
+   "district": null,
+   "title": "District Judge -- 12th Judicial District Court, Division A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-jeansonne",
+     "name": "Mark Jeansonne",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6759
+    },
+    {
+     "id": "alissa-piazza-tassin",
+     "name": "Alissa Piazza Tassin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5396
+    }
+   ],
+   "precincts": {
+    "reporting": 41,
+    "total": 41,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67826-district-judge-12th-judicial-district-court-division-b",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 12th Judicial District Court, Division B",
+   "district": null,
+   "title": "District Judge -- 12th Judicial District Court, Division B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wesley-elmer",
+     "name": "Wesley Elmer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2631
+    },
+    {
+     "id": "kirk-lacour",
+     "name": "Kirk Lacour",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2052
+    },
+    {
+     "id": "barry-laiche",
+     "name": "Barry Laiche",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3919
+    },
+    {
+     "id": "elizabeth-williams",
+     "name": "Elizabeth Williams",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 3409
+    }
+   ],
+   "precincts": {
+    "reporting": 41,
+    "total": 41,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67831-district-judge-14th-judicial-district-court-es-1-div-j",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 14th Judicial District Court, ES 1, Div. J",
+   "district": null,
+   "title": "District Judge -- 14th Judicial District Court, ES 1, Div. J",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sa-trica-williams-bensaadat",
+     "name": "Sa Trica Williams Bensaadat",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5310
+    },
+    {
+     "id": "brittany-bell-chavis",
+     "name": "Brittany Bell Chavis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9139
+    }
+   ],
+   "precincts": {
+    "reporting": 43,
+    "total": 43,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67842-district-judge-15th-judicial-district-court-es-3-div-i",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 15th Judicial District Court, ES 3, Div. I",
+   "district": null,
+   "title": "District Judge -- 15th Judicial District Court, ES 3, Div. I",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "will-keaty-ii",
+     "name": "Will Keaty II",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 25399
+    },
+    {
+     "id": "david-way",
+     "name": "David Way",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29793
+    }
+   ],
+   "precincts": {
+    "reporting": 94,
+    "total": 94,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67845-district-judge-15th-judicial-district-court-es-3-div-m",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 15th Judicial District Court, ES 3, Div. M",
+   "district": null,
+   "title": "District Judge -- 15th Judicial District Court, ES 3, Div. M",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dyan-schnaars",
+     "name": "Dyan Schnaars",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16869
+    },
+    {
+     "id": "susan-theall",
+     "name": "Susan Theall",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 37916
+    }
+   ],
+   "precincts": {
+    "reporting": 94,
+    "total": 94,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67862-district-judge-17th-judicial-district-court-division-d",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 17th Judicial District Court, Division D",
+   "district": null,
+   "title": "District Judge -- 17th Judicial District Court, Division D",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "beau-brooks",
+     "name": "Beau Brooks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 22916
+    },
+    {
+     "id": "lantz-savage",
+     "name": "Lantz Savage",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3248
+    }
+   ],
+   "precincts": {
+    "reporting": 72,
+    "total": 72,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67864-district-judge-18th-judicial-district-court-es-1-div-c",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 18th Judicial District Court, ES 1, Div. C",
+   "district": null,
+   "title": "District Judge -- 18th Judicial District Court, ES 1, Div. C",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alycia-grace-o-bear",
+     "name": "Alycia Grace-O'Bear",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2050
+    },
+    {
+     "id": "lori-white",
+     "name": "Lori White",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2128
+    },
+    {
+     "id": "victor-woods-jr",
+     "name": "Victor Woods, Jr.",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2366
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70043-district-judge-19th-judicial-district-court-div-b",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 19th Judicial District Court, Div. B",
+   "district": null,
+   "title": "District Judge -- 19th Judicial District Court, Div. B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "winston-decuir-jr",
+     "name": "Winston DeCuir, Jr.",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 94306
+    },
+    {
+     "id": "justin-delaune",
+     "name": "Justin DeLaune",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 55100
+    }
+   ],
+   "precincts": {
+    "reporting": 329,
+    "total": 329,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70048-district-judge-19th-judicial-district-court-es-1-div-l",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 19th Judicial District Court, ES 1, Div. L",
+   "district": null,
+   "title": "District Judge -- 19th Judicial District Court, ES 1, Div. L",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "elzie-alford",
+     "name": "Elzie Alford",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 28467
+    },
+    {
+     "id": "jermaine-guillory",
+     "name": "Jermaine Guillory",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 32472
+    }
+   ],
+   "precincts": {
+    "reporting": 167,
+    "total": 167,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70049-district-judge-19th-judicial-district-court-es-1-div-m",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 19th Judicial District Court, ES 1, Div. M",
+   "district": null,
+   "title": "District Judge -- 19th Judicial District Court, ES 1, Div. M",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "reazalia-allen",
+     "name": "ReAzalia Allen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 16254
+    },
+    {
+     "id": "allison-aj-sabine",
+     "name": "Allison AJ Sabine",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12755
+    },
+    {
+     "id": "vernon-thomas",
+     "name": "Vernon Thomas",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 31416
+    }
+   ],
+   "precincts": {
+    "reporting": 167,
+    "total": 167,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67889-district-judge-21st-judicial-district-court-division-e",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 21st Judicial District Court, Division E",
+   "district": null,
+   "title": "District Judge -- 21st Judicial District Court, Division E",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lindon-bennett-magee",
+     "name": "Lindon Bennett Magee",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 59227
+    },
+    {
+     "id": "jasper-brock",
+     "name": "Jasper Brock",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 23567
+    }
+   ],
+   "precincts": {
+    "reporting": 164,
+    "total": 164,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67899-district-judge-22nd-judicial-district-court-division-e",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 22nd Judicial District Court, Division E",
+   "district": null,
+   "title": "District Judge -- 22nd Judicial District Court, Division E",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michele-moore-echols",
+     "name": "Michele Moore Echols",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 49063
+    },
+    {
+     "id": "cameron-mary",
+     "name": "Cameron Mary",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 53954
+    }
+   ],
+   "precincts": {
+    "reporting": 212,
+    "total": 212,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67901-district-judge-22nd-judicial-district-court-division-g",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 22nd Judicial District Court, Division G",
+   "district": null,
+   "title": "District Judge -- 22nd Judicial District Court, Division G",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-clayton",
+     "name": "Ben Clayton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 20379
+    },
+    {
+     "id": "jason-cuccia",
+     "name": "Jason Cuccia",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16513
+    },
+    {
+     "id": "theophile-theo-jones",
+     "name": "Theophile Theo Jones",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11806
+    },
+    {
+     "id": "amanda-a-trosclair",
+     "name": "Amanda A. Trosclair",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 34172
+    },
+    {
+     "id": "angelina-valuri",
+     "name": "Angelina Valuri",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17050
+    }
+   ],
+   "precincts": {
+    "reporting": 212,
+    "total": 212,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67902-district-judge-22nd-judicial-district-court-division-h",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 22nd Judicial District Court, Division H",
+   "district": null,
+   "title": "District Judge -- 22nd Judicial District Court, Division H",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "whitney-germany",
+     "name": "Whitney Germany",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 47814
+    },
+    {
+     "id": "luke-lancaster",
+     "name": "Luke Lancaster",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 51021
+    }
+   ],
+   "precincts": {
+    "reporting": 212,
+    "total": 212,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67908-district-judge-23rd-judicial-district-court-es-2-div-a",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 23rd Judicial District Court, ES 2, Div. A",
+   "district": null,
+   "title": "District Judge -- 23rd Judicial District Court, ES 2, Div. A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kim-landry",
+     "name": "Kim Landry",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 22867
+    },
+    {
+     "id": "jason-verdigets",
+     "name": "Jason Verdigets",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21470
+    }
+   ],
+   "precincts": {
+    "reporting": 103,
+    "total": 103,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67920-district-judge-24th-judicial-district-court-es-2-div-f",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 24th Judicial District Court, ES 2, Div. F",
+   "district": null,
+   "title": "District Judge -- 24th Judicial District Court, ES 2, Div. F",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marko-marjanovic",
+     "name": "Marko Marjanovic",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 31731
+    },
+    {
+     "id": "joseph-r-joe-mcmahon-iii",
+     "name": "Joseph R. Joe McMahon III",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 35120
+    }
+   ],
+   "precincts": {
+    "reporting": 159,
+    "total": 159,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67937-district-judge-27th-judicial-district-court-es-1-div-c",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 27th Judicial District Court, ES 1, Div. C",
+   "district": null,
+   "title": "District Judge -- 27th Judicial District Court, ES 1, Div. C",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jarvis-j-claiborne",
+     "name": "Jarvis J. Claiborne",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 966
+    },
+    {
+     "id": "charlee-renaud-lear",
+     "name": "Charlee Renaud Lear",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1494
+    },
+    {
+     "id": "greta-malbrough-marion",
+     "name": "Greta Malbrough Marion",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 302
+    },
+    {
+     "id": "ogden-l-pitre",
+     "name": "Ogden L. Pitre",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2217
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67947-district-judge-30th-judicial-district-court-division-c",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 30th Judicial District Court, Division C",
+   "district": null,
+   "title": "District Judge -- 30th Judicial District Court, Division C",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lisa-nelson",
+     "name": "Lisa Nelson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3092
+    },
+    {
+     "id": "cindy-poston-lavespere",
+     "name": "Cindy Poston Lavespere",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4731
+    },
+    {
+     "id": "bryan-somers",
+     "name": "Bryan Somers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2896
+    }
+   ],
+   "precincts": {
+    "reporting": 60,
+    "total": 60,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67948-district-judge-31st-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 31st Judicial District Court",
+   "district": null,
+   "title": "District Judge -- 31st Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "karen-daniel-ancelet",
+     "name": "Karen Daniel Ancelet",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4378
+    },
+    {
+     "id": "steve-gunnell",
+     "name": "Steve Gunnell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5809
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67952-district-judge-32nd-judicial-district-court-division-d",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 32nd Judicial District Court, Division D",
+   "district": null,
+   "title": "District Judge -- 32nd Judicial District Court, Division D",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gregg-j-graffagnino",
+     "name": "Gregg J. Graffagnino",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12574
+    },
+    {
+     "id": "amanda-mustin",
+     "name": "Amanda Mustin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14228
+    }
+   ],
+   "precincts": {
+    "reporting": 64,
+    "total": 64,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67953-district-judge-32nd-judicial-district-court-division-e",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 32nd Judicial District Court, Division E",
+   "district": null,
+   "title": "District Judge -- 32nd Judicial District Court, Division E",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kentley-r-fairchild",
+     "name": "Kentley R. Fairchild",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19381
+    },
+    {
+     "id": "kevin-d-thompson",
+     "name": "Kevin D. Thompson",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 8252
+    }
+   ],
+   "precincts": {
+    "reporting": 64,
+    "total": 64,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67961-district-judge-35th-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 35th Judicial District Court",
+   "district": null,
+   "title": "District Judge -- 35th Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "renee-dugas-nugent",
+     "name": "Renee Dugas Nugent",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2203
+    },
+    {
+     "id": "warren-daniel-danny-willett",
+     "name": "Warren Daniel Danny Willett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4156
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67967-district-judge-40th-judicial-district-court-es-1-div-b",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 40th Judicial District Court, ES 1, Div. B",
+   "district": null,
+   "title": "District Judge -- 40th Judicial District Court, ES 1, Div. B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-carter",
+     "name": "Eric Carter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1655
+    },
+    {
+     "id": "nghana-lewis",
+     "name": "Nghana Lewis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2374
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67968-district-judge-40th-judicial-district-court-es-2-div-a",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Judge -- 40th Judicial District Court, ES 2, Div. A",
+   "district": null,
+   "title": "District Judge -- 40th Judicial District Court, ES 2, Div. A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vercell-fiffie",
+     "name": "Vercell Fiffie",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1784
+    },
+    {
+     "id": "atoundra-pierre-lawson",
+     "name": "Atoundra Pierre Lawson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1991
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70082-judge-civil-district-court-division-l",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Judge -- Civil District Court, Division L",
+   "district": null,
+   "title": "Judge -- Civil District Court, Division L",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "warren-mckenna-iii",
+     "name": "Warren McKenna III",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 52474
+    },
+    {
+     "id": "candace-n-newell",
+     "name": "Candace N. Newell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 69879
+    }
+   ],
+   "precincts": {
+    "reporting": 349,
+    "total": 349,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70083-judge-civil-district-court-division-m",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Judge -- Civil District Court, Division M",
+   "district": null,
+   "title": "Judge -- Civil District Court, Division M",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-bridges",
+     "name": "Stephanie Bridges",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 68856
+    },
+    {
+     "id": "shawn-lindsay",
+     "name": "Shawn Lindsay",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 51628
+    }
+   ],
+   "precincts": {
+    "reporting": 349,
+    "total": 349,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70085-judge-civil-district-court-domestic-section-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Judge -- Civil District Court, Domestic Section 1",
+   "district": null,
+   "title": "Judge -- Civil District Court, Domestic Section 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-mike-hall",
+     "name": "Michael Mike Hall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 76794
+    },
+    {
+     "id": "marie-williams",
+     "name": "Marie Williams",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 41935
+    }
+   ],
+   "precincts": {
+    "reporting": 349,
+    "total": 349,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70090-judge-criminal-district-court-section-d",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Judge -- Criminal District Court, Section D",
+   "district": null,
+   "title": "Judge -- Criminal District Court, Section D",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kimya-holmes",
+     "name": "Kimya Holmes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 70882
+    },
+    {
+     "id": "simone-levine",
+     "name": "Simone Levine",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 51532
+    }
+   ],
+   "precincts": {
+    "reporting": 349,
+    "total": 349,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70094-judge-criminal-district-court-section-h",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Judge -- Criminal District Court, Section H",
+   "district": null,
+   "title": "Judge -- Criminal District Court, Section H",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "camille-buras",
+     "name": "Camille Buras",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 71309
+    },
+    {
+     "id": "leon-roch",
+     "name": "Leon Roché",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 51493
+    }
+   ],
+   "precincts": {
+    "reporting": 349,
+    "total": 349,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-69144-magistrate-magistrate-section-criminal-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Magistrate -- Magistrate Section, Criminal District Court",
+   "district": null,
+   "title": "Magistrate -- Magistrate Section, Criminal District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chanel-robinson-debose",
+     "name": "Chanel Robinson Debose",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 55351
+    },
+    {
+     "id": "juana-marine-lombard",
+     "name": "Juana Marine Lombard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 63966
+    }
+   ],
+   "precincts": {
+    "reporting": 349,
+    "total": 349,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70118-magistrate-judge-14th-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Magistrate Judge -- 14th Judicial District Court",
+   "district": null,
+   "title": "Magistrate Judge -- 14th Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brent-hawkins",
+     "name": "Brent Hawkins",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 21942
+    },
+    {
+     "id": "joseph-joey-williams",
+     "name": "Joseph Joey Williams",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 32475
+    }
+   ],
+   "precincts": {
+    "reporting": 123,
+    "total": 123,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70194-district-attorney-1st-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 1st Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 1st Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lauren-ray-anderson",
+     "name": "Lauren Ray Anderson",
+     "party": "LBT",
+     "party_code": "O",
+     "votes": 1726
+    },
+    {
+     "id": "patricia-pat-gilley",
+     "name": "Patricia Pat Gilley",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 1853
+    },
+    {
+     "id": "alan-seabaugh",
+     "name": "Alan Seabaugh",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29568
+    },
+    {
+     "id": "james-e-stewart-sr",
+     "name": "James E. Stewart, Sr.",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 38541
+    }
+   ],
+   "precincts": {
+    "reporting": 128,
+    "total": 128,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67738-district-attorney-2nd-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 2nd Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 2nd Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "colby-bowman",
+     "name": "Colby Bowman",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 4968
+    },
+    {
+     "id": "jim-colvin",
+     "name": "Jim Colvin",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 3180
+    },
+    {
+     "id": "tammy-gantt-jump",
+     "name": "Tammy Gantt Jump",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2660
+    },
+    {
+     "id": "rick-warren",
+     "name": "Rick Warren",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4187
+    }
+   ],
+   "precincts": {
+    "reporting": 89,
+    "total": 89,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67740-district-attorney-4th-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 4th Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 4th Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mennon-campbell-jr",
+     "name": "Mennon Campbell, Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28535
+    },
+    {
+     "id": "alvin-sharp",
+     "name": "Alvin Sharp",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21814
+    }
+   ],
+   "precincts": {
+    "reporting": 115,
+    "total": 115,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67742-district-attorney-6th-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 6th Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 6th Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joy-jackson",
+     "name": "Joy Jackson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2497
+    },
+    {
+     "id": "edwin-moberley-iv",
+     "name": "Edwin Moberley IV",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 4129
+    }
+   ],
+   "precincts": {
+    "reporting": 53,
+    "total": 53,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67744-district-attorney-8th-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 8th Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 8th Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jacque-derr",
+     "name": "Jacque Derr",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 1760
+    },
+    {
+     "id": "keith-gates",
+     "name": "Keith Gates",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2356
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67747-district-attorney-11th-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 11th Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 11th Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ronald-d-brandon",
+     "name": "Ronald D. Brandon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3411
+    },
+    {
+     "id": "anna-garcie",
+     "name": "Anna Garcie",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4455
+    }
+   ],
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67748-district-attorney-12th-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 12th Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 12th Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jonathan-terrel-gaspard",
+     "name": "Jonathan Terrel Gaspard",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2570
+    },
+    {
+     "id": "chad-guillot",
+     "name": "Chad Guillot",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9310
+    }
+   ],
+   "precincts": {
+    "reporting": 41,
+    "total": 41,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67751-district-attorney-15th-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 15th Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 15th Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristian-earles",
+     "name": "Kristian Earles",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 47878
+    },
+    {
+     "id": "donald-don-landry",
+     "name": "Donald Don Landry",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 60606
+    }
+   ],
+   "precincts": {
+    "reporting": 244,
+    "total": 244,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67755-district-attorney-19th-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 19th Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 19th Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hillar-moore-iii",
+     "name": "Hillar Moore III",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 85409
+    },
+    {
+     "id": "ryan-thompson",
+     "name": "Ryan Thompson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 62188
+    }
+   ],
+   "precincts": {
+    "reporting": 329,
+    "total": 329,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67756-district-attorney-20th-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 20th Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 20th Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cy-d-aquila-jr",
+     "name": "Cy D'Aquila, Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7389
+    },
+    {
+     "id": "kenneth-ken-fabre",
+     "name": "Kenneth Ken Fabre",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 4549
+    }
+   ],
+   "precincts": {
+    "reporting": 50,
+    "total": 50,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67757-district-attorney-21st-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 21st Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 21st Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brad-cascio",
+     "name": "Brad Cascio",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 53311
+    },
+    {
+     "id": "sherman-mack",
+     "name": "Sherman Mack",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29137
+    }
+   ],
+   "precincts": {
+    "reporting": 164,
+    "total": 164,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67767-district-attorney-31st-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 31st Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 31st Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lauren-heinen",
+     "name": "Lauren Heinen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4283
+    },
+    {
+     "id": "richard-ric-oustalet-jr",
+     "name": "Richard Ric Oustalet, Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3129
+    },
+    {
+     "id": "daniel-w-sparks",
+     "name": "Daniel W. Sparks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2819
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67769-district-attorney-33rd-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 33rd Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 33rd Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joseph-joe-green-jr",
+     "name": "Joseph Joe Green, Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4537
+    },
+    {
+     "id": "romelzy-willis-jr",
+     "name": "Romelzy Willis, Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1960
+    }
+   ],
+   "precincts": {
+    "reporting": 18,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67771-district-attorney-35th-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 35th Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 35th Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-patrick-lemoine",
+     "name": "James Patrick Lemoine",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3819
+    },
+    {
+     "id": "ed-tarpley",
+     "name": "Ed Tarpley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2440
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67773-district-attorney-37th-judicial-district-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "District Attorney -- 37th Judicial District Court",
+   "district": null,
+   "title": "District Attorney -- 37th Judicial District Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-frazier",
+     "name": "Brian Frazier",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 1710
+    },
+    {
+     "id": "w-mark-mckee",
+     "name": "W. Mark McKee",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 1396
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68069-city-judge-city-court-election-dist-2-div-d-city-of-shrevepor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "City Judge, City Court -- Election Dist. 2, Div. D, City of Shreveport",
+   "district": null,
+   "title": "City Judge, City Court -- Election Dist. 2, Div. D, City of Shreveport",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kharmen-davis-taylor",
+     "name": "Kharmen Davis-Taylor",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6041
+    },
+    {
+     "id": "trinicia-leonard",
+     "name": "Trinicia Leonard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4548
+    },
+    {
+     "id": "sheva-sims",
+     "name": "Sheva Sims",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5712
+    }
+   ],
+   "precincts": {
+    "reporting": 49,
+    "total": 49,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68072-city-marshal-city-court-city-of-eunice",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "City Marshal -- City Court, City of Eunice",
+   "district": null,
+   "title": "City Marshal -- City Court, City of Eunice",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "terry-j-darbonne",
+     "name": "Terry J. Darbonne",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2449
+    },
+    {
+     "id": "michael-devillier",
+     "name": "Michael DeVillier",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1024
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68220-mayor-city-of-eunice",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Mayor -- City of Eunice",
+   "district": null,
+   "title": "Mayor -- City of Eunice",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-a-fontenot",
+     "name": "Scott A. Fontenot",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 1424
+    },
+    {
+     "id": "m-guillory",
+     "name": "M. Guillory",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 194
+    },
+    {
+     "id": "van-reed",
+     "name": "Van Reed",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 707
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68222-mayor-city-of-shreveport",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Mayor -- City of Shreveport",
+   "district": null,
+   "title": "Mayor -- City of Shreveport",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-arceneaux",
+     "name": "Tom Arceneaux",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19401
+    },
+    {
+     "id": "siavash-sia-fakhriravari",
+     "name": "Siavash Sia Fakhriravari",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 386
+    },
+    {
+     "id": "chaunta-mero",
+     "name": "Chaunta Mero",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1101
+    },
+    {
+     "id": "tammy-phelps",
+     "name": "Tammy Phelps",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8723
+    },
+    {
+     "id": "stormy-gage-watts",
+     "name": "Stormy Gage Watts",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12331
+    },
+    {
+     "id": "michael-d-williams",
+     "name": "Michael D. Williams",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2666
+    },
+    {
+     "id": "john-paul-young",
+     "name": "John-Paul Young",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9945
+    }
+   ],
+   "precincts": {
+    "reporting": 114,
+    "total": 114,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-69547-mayor-town-of-arnaudville",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Mayor -- Town of Arnaudville",
+   "district": null,
+   "title": "Mayor -- Town of Arnaudville",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ginger-lecompte",
+     "name": "Ginger LeCompte",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 156
+    },
+    {
+     "id": "todd-meche",
+     "name": "Todd Meche",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 187
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67978-mayor-town-of-basile",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Mayor -- Town of Basile",
+   "district": null,
+   "title": "Mayor -- Town of Basile",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-denette",
+     "name": "Mark Denette",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 203
+    },
+    {
+     "id": "latoya-ivory",
+     "name": "Latoya Ivory",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 151
+    },
+    {
+     "id": "herbert-ripp-rippeon",
+     "name": "Herbert Ripp Rippeon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 49
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67728-chief-of-police-town-of-basile",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Chief of Police -- Town of Basile",
+   "district": null,
+   "title": "Chief of Police -- Town of Basile",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "victor-fontenot",
+     "name": "Victor Fontenot",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 141
+    },
+    {
+     "id": "nicholas-paul-richardson",
+     "name": "Nicholas Paul Richardson",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 257
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67722-alderman-at-large-town-of-basile",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Alderman at Large -- Town of Basile",
+   "district": null,
+   "title": "Alderman at Large -- Town of Basile",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "otis-johnson",
+     "name": "Otis Johnson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 245
+    },
+    {
+     "id": "tim-lavergne",
+     "name": "Tim Lavergne",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 143
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68010-alderman-ward-1-city-of-eunice",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Alderman -- Ward 1, City of Eunice",
+   "district": null,
+   "title": "Alderman -- Ward 1, City of Eunice",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chad-andrepont",
+     "name": "Chad Andrepont",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 311
+    },
+    {
+     "id": "darryl-hinds",
+     "name": "Darryl Hinds",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 250
+    }
+   ],
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68011-alderman-ward-2-city-of-eunice",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Alderman -- Ward 2, City of Eunice",
+   "district": null,
+   "title": "Alderman -- Ward 2, City of Eunice",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jackie-juju-landry",
+     "name": "Jackie JuJu Landry",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 306
+    },
+    {
+     "id": "germaine-simpson",
+     "name": "Germaine Simpson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 242
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68013-alderman-ward-4-city-of-eunice",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Alderman -- Ward 4, City of Eunice",
+   "district": null,
+   "title": "Alderman -- Ward 4, City of Eunice",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-donnie-fontenot",
+     "name": "James Donnie Fontenot",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 218
+    },
+    {
+     "id": "connie-thibodeaux",
+     "name": "Connie Thibodeaux",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 279
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67723-aldermen-district-2-town-of-basile",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Aldermen -- District 2, Town of Basile",
+   "district": null,
+   "title": "Aldermen -- District 2, Town of Basile",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "melissa-bergeron-clavier",
+     "name": "Melissa Bergeron Clavier",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 186
+    },
+    {
+     "id": "bryan-l-goodley",
+     "name": "Bryan L. Goodley",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 36
+    },
+    {
+     "id": "john-jj-jenkins",
+     "name": "John JJ Jenkins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 177
+    },
+    {
+     "id": "nickolas-nick-labauve",
+     "name": "Nickolas Nick Labauve",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 75
+    },
+    {
+     "id": "kristy-miller",
+     "name": "Kristy Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 131
+    },
+    {
+     "id": "charetha-ceaser-rankins",
+     "name": "Charetha Ceaser Rankins",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 66
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-69498-aldermen-town-of-arnaudville",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Aldermen -- Town of Arnaudville",
+   "district": null,
+   "title": "Aldermen -- Town of Arnaudville",
+   "vote_for": 5,
+   "choices": [
+    {
+     "id": "dakota-brown-arnaud",
+     "name": "Dakota Brown Arnaud",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 90
+    },
+    {
+     "id": "chelsey-coody",
+     "name": "Chelsey Coody",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 139
+    },
+    {
+     "id": "ryan-courville",
+     "name": "Ryan Courville",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 211
+    },
+    {
+     "id": "jamie-ulin-huval",
+     "name": "Jamie Ulin Huval",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 181
+    },
+    {
+     "id": "debbie-kidder",
+     "name": "Debbie Kidder",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 165
+    },
+    {
+     "id": "kathleen-kathy-richard",
+     "name": "Kathleen Kathy Richard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 179
+    },
+    {
+     "id": "cynthia-stelly",
+     "name": "Cynthia Stelly",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 176
+    },
+    {
+     "id": "john-ray-taylor",
+     "name": "John Ray Taylor",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 215
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-67724-aldermen-town-of-duson",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Aldermen -- Town of Duson",
+   "district": null,
+   "title": "Aldermen -- Town of Duson",
+   "vote_for": 5,
+   "choices": [
+    {
+     "id": "glenn-c-cormier",
+     "name": "Glenn C. Cormier",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 236
+    },
+    {
+     "id": "blake-credeur",
+     "name": "Blake Credeur",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 211
+    },
+    {
+     "id": "coby-j-duhon",
+     "name": "Coby J. Duhon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 218
+    },
+    {
+     "id": "steve-hanks",
+     "name": "Steve Hanks",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 186
+    },
+    {
+     "id": "john-johnny-lagneaux-ii",
+     "name": "John Johnny Lagneaux II",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 237
+    },
+    {
+     "id": "andrew-maxis-malaxonis",
+     "name": "Andrew Maxis Malaxonis",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 165
+    },
+    {
+     "id": "carolyn-pepe-richard",
+     "name": "Carolyn Pepe Richard",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 231
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68157-councilman-district-a-city-of-shreveport",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Councilman -- District A, City of Shreveport",
+   "district": null,
+   "title": "Councilman -- District A, City of Shreveport",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tabatha-tab-taylor",
+     "name": "Tabatha Tab Taylor",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5335
+    },
+    {
+     "id": "hanh-williams",
+     "name": "Hanh Williams",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 943
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68158-councilman-district-b-city-of-shreveport",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Councilman -- District B, City of Shreveport",
+   "district": null,
+   "title": "Councilman -- District B, City of Shreveport",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gary-brooks",
+     "name": "Gary Brooks",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2996
+    },
+    {
+     "id": "louis-paul-gaiennie",
+     "name": "Louis Paul Gaiennie",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 374
+    },
+    {
+     "id": "craig-b-lee",
+     "name": "Craig B. Lee",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1518
+    },
+    {
+     "id": "bennett-prestridge",
+     "name": "Bennett Prestridge",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 362
+    },
+    {
+     "id": "jeremy-taylor",
+     "name": "Jeremy Taylor",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 499
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68159-councilman-district-c-city-of-shreveport",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Councilman -- District C, City of Shreveport",
+   "district": null,
+   "title": "Councilman -- District C, City of Shreveport",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-black",
+     "name": "Mark Black",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 3134
+    },
+    {
+     "id": "jim-taliaferro",
+     "name": "Jim Taliaferro",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6125
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68161-councilman-district-e-city-of-shreveport",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Councilman -- District E, City of Shreveport",
+   "district": null,
+   "title": "Councilman -- District E, City of Shreveport",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "francine-monro-brown",
+     "name": "Francine Monro Brown",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1153
+    },
+    {
+     "id": "alan-jackson",
+     "name": "Alan Jackson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4116
+    },
+    {
+     "id": "alvin-oliver",
+     "name": "Alvin Oliver",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1975
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68162-councilman-district-f-city-of-shreveport",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Councilman -- District F, City of Shreveport",
+   "district": null,
+   "title": "Councilman -- District F, City of Shreveport",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "billy-roy-anderson-jr",
+     "name": "Billy Roy Anderson, Jr.",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2414
+    },
+    {
+     "id": "decarlous-muntaqim",
+     "name": "Decarlous Muntaqim",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 143
+    },
+    {
+     "id": "lester-smith",
+     "name": "Lester Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2569
+    },
+    {
+     "id": "james-r-sneed",
+     "name": "James R. Sneed",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 595
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68163-councilman-district-g-city-of-shreveport",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Councilman -- District G, City of Shreveport",
+   "district": null,
+   "title": "Councilman -- District G, City of Shreveport",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ursula-bowman",
+     "name": "Ursula Bowman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3970
+    },
+    {
+     "id": "steven-hall",
+     "name": "Steven Hall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1097
+    },
+    {
+     "id": "derrick-l-henderson",
+     "name": "Derrick L. Henderson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1664
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68866-councilman-district-1-city-of-broussard",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Councilman -- District 1, City of Broussard",
+   "district": null,
+   "title": "Councilman -- District 1, City of Broussard",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lori-landry",
+     "name": "Lori Landry",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 350
+    },
+    {
+     "id": "angel-racca",
+     "name": "Angel Racca",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 395
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-68867-councilman-district-2-city-of-broussard",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "Councilman -- District 2, City of Broussard",
+   "district": null,
+   "title": "Councilman -- District 2, City of Broussard",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charles-sharma",
+     "name": "Charles Sharma",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 314
+    },
+    {
+     "id": "trey-smith",
+     "name": "Trey Smith",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 598
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-13833-ca-no-1-act-no-39-2026-rs-sb-180-allows-a-one-time-transfer-o",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "CA No. 1 (ACT No. 39, 2026-RS - SB 180) -- Allows a one-time transfer of a property tax exemption for surviving spouse of a disabled veteran",
+   "district": null,
+   "title": "CA No. 1 (ACT No. 39, 2026-RS - SB 180) -- Allows a one-time transfer of a property tax exemption for surviving spouse of a disabled veteran",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 1071202
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 371217
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-13836-ca-no-2-act-no-273-2026-rs-hb-521-allows-taxing-authority-to-",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "CA No. 2 (ACT No. 273, 2026-RS - HB 521) -- Allows taxing authority to continue lower millage rate without losing ability to adjust to max rate",
+   "district": null,
+   "title": "CA No. 2 (ACT No. 273, 2026-RS - HB 521) -- Allows taxing authority to continue lower millage rate without losing ability to adjust to max rate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 596340
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 824341
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-13834-ca-no-3-act-no-271-2026-rs-hb-51-prohibits-release-on-bail-fo",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "CA No. 3 (ACT No. 271, 2026-RS - HB 51) -- Prohibits release on bail for defendants who have been convicted of certain offenses against a child",
+   "district": null,
+   "title": "CA No. 3 (ACT No. 271, 2026-RS - HB 51) -- Prohibits release on bail for defendants who have been convicted of certain offenses against a child",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 972108
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 461710
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-13839-ca-no-4-act-no-414-2026-rs-hb-225-sets-a-lifetime-term-limit-",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "CA No. 4 (ACT No. 414, 2026-RS - HB 225) -- Sets a lifetime term limit on a person who has served as governor more than one and one-half terms",
+   "district": null,
+   "title": "CA No. 4 (ACT No. 414, 2026-RS - HB 225) -- Sets a lifetime term limit on a person who has served as governor more than one and one-half terms",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 801160
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 631352
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-13840-ca-no-5-act-no-606-2026-rs-hb-27-authorizes-retirement-system",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "CA No. 5 (ACT No. 606, 2026-RS - HB 27) -- Authorizes retirement systems to apply funds to any unfunded accrued liability, not only the oldest",
+   "district": null,
+   "title": "CA No. 5 (ACT No. 606, 2026-RS - HB 27) -- Authorizes retirement systems to apply funds to any unfunded accrued liability, not only the oldest",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 526531
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 874544
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-13837-ca-no-6-act-no-274-2026-rs-hb-514-authorizes-extension-of-an-",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "CA No. 6 (ACT No. 274, 2026-RS - HB 514) -- Authorizes extension of an additional property tax exemption for owners who are 65 or older",
+   "district": null,
+   "title": "CA No. 6 (ACT No. 274, 2026-RS - HB 514) -- Authorizes extension of an additional property tax exemption for owners who are 65 or older",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 900356
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 516251
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-13841-ca-no-7-act-no-607-2026-rs-sb-228-authorizes-the-use-of-publi",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "CA No. 7 (ACT No. 607, 2026-RS - SB 228) -- Authorizes the use of public funds to identify, inventory, remove, or replace certain water lines",
+   "district": null,
+   "title": "CA No. 7 (ACT No. 607, 2026-RS - SB 228) -- Authorizes the use of public funds to identify, inventory, remove, or replace certain water lines",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 924321
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 492210
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-13838-ca-no-8-act-no-277-2026-rs-hb-192-prohibits-expropriation-of-",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "CA No. 8 (ACT No. 277, 2026-RS - HB 192) -- Prohibits expropriation of property by a foreign adversary or an agent of a foreign adversary",
+   "district": null,
+   "title": "CA No. 8 (ACT No. 277, 2026-RS - HB 192) -- Prohibits expropriation of property by a foreign adversary or an agent of a foreign adversary",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 876953
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 534925
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-13832-ca-no-9-act-no-220-2025-rs-hb-300-increases-the-income-limit-",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "CA No. 9 (ACT No. 220, 2025-RS - HB 300) -- Increases the income limit to qualify for the special assessment level for a homestead exemption",
+   "district": null,
+   "title": "CA No. 9 (ACT No. 220, 2025-RS - HB 300) -- Increases the income limit to qualify for the special assessment level for a homestead exemption",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 823788
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 591838
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-13835-ca-no-10-act-no-272-2026-rs-hb-214-allows-property-tax-exempt",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "CA No. 10 (ACT No. 272, 2026-RS - HB 214) -- Allows property tax exemption of rehabilitated blighted property under conditions provided by law",
+   "district": null,
+   "title": "CA No. 10 (ACT No. 272, 2026-RS - HB 214) -- Allows property tax exemption of rehabilitated blighted property under conditions provided by law",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 659113
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 749063
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-13804-city-of-shreveport-downtown-dev-dist-9-04-mills-cont-cc-25-yr",
+   "kind": "candidate",
+   "level": "state",
+   "state": "la",
+   "office": "City of Shreveport (Downtown Dev. Dist.) -- 9.04 Mills Cont. - CC - 25 Yrs.",
+   "district": null,
+   "title": "City of Shreveport (Downtown Dev. Dist.) -- 9.04 Mills Cont. - CC - 25 Yrs.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 26282
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 24653
+    }
+   ],
+   "precincts": {
+    "reporting": 114,
+    "total": 114,
+    "unit": "precincts"
+   }
+  }
+ ]
+}
