@@ -39,9 +39,20 @@ def to_int(v):
 
 
 # ---------------------------------------------------------------- fetching
-def fetch(url, state):
+def resolve_url(src, ua):
+    """Clarity election pages publish a new version folder on every update; current_ver.txt names it."""
+    base = src.get("clarity_base")
+    if not base:
+        return src["url"]
+    req = urllib.request.Request(base + "current_ver.txt", headers={"User-Agent": ua})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        ver = r.read().decode().strip()
+    return "%s%s/reports/%s" % (base, ver, src.get("report", "detail.xml"))
+
+
+def fetch(url, state, ua=None):
     """Return (bytes, source_last_modified or None, changed). Uses ETag / Last-Modified when offered."""
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Encoding": "gzip"})
+    req = urllib.request.Request(url, headers={"User-Agent": ua or UA, "Accept-Encoding": "gzip"})
     if not url.startswith("file:"):
         if state.get("etag"):
             req.add_header("If-None-Match", state["etag"])
@@ -76,11 +87,20 @@ def a_csv(body, src):
            "precincts_reporting": "precincts_reporting", "precincts_total": "precincts_total",
            "winner": "winner", "state": "state", "district": "district", "office": "office", "kind": "kind"}
     col.update(src.get("columns", {}))
-    rd = csv.DictReader(io.StringIO(body.decode("utf-8-sig")))
+    if body[:2] == b"PK":
+        body = unzip_first(body)
+    try:
+        text = body.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        text = body.decode("cp1252", "replace")
+    rd = csv.DictReader(io.StringIO(text))
     contests, order = {}, []
     for row in rd:
         g = lambda k: (row.get(col[k]) or "").strip()
         title = g("contest")
+        vf = re.search(r"\s*\(Vote For (\d+)\)\s*$", title)
+        if vf:
+            title = title[:vf.start()].strip()
         if not title or not g("choice"):
             continue
         state = (g("state") or src.get("state") or "").lower()
@@ -99,6 +119,9 @@ def a_csv(body, src):
         c["choices"].append(ch)
         if g("winner").lower() in ("1", "true", "yes", "y", "x", "winner"):
             c["called"] = {"winner": ch["id"], "by": src.get("name", "source"), "at": None}
+    for c in contests.values():
+        if {x["name"].strip().lower() for x in c["choices"]} <= {"yes", "no", "for", "against", "yes/for", "no/against"}:
+            c["kind"] = "judicial" if re.search(r"(judge|justice|retention)", c["title"], re.I) else "measure"
     return [contests[k] for k in order]
 
 
@@ -338,7 +361,8 @@ def run_once(cfg, out_dir, state_dir):
         rec.update({"id": sid, "name": src["name"], "url": src.get("public_url", src["url"]), "checked_at": now()})
         st = fstate.setdefault(sid, {})
         try:
-            body, lm, changed = fetch(src["url"], st)
+            ua = cfg.get("user_agent") or UA
+            body, lm, changed = fetch(resolve_url(src, ua), st, ua)
             if changed:
                 contests = ADAPTERS[src["adapter"]](body, src)
                 bad = [(c.get("id"), validate_contest(c)) for c in contests]
