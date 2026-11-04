@@ -1,0 +1,7324 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-in",
+ "label": "Indiana",
+ "source_ids": [
+  "in-enr"
+ ],
+ "updated_at": "2026-11-04T13:24:02Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "in-4912-united-states-representative-first-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, First District",
+   "district": "1",
+   "title": "United States Representative, First District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "frank-j-mrvan",
+     "name": "Frank J. Mrvan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 95632
+    },
+    {
+     "id": "barb-regnitz",
+     "name": "Barb Regnitz",
+     "party": "R",
+     "party_code": "R",
+     "votes": 48931
+    },
+    {
+     "id": "alexander-r-alex-degman-w-i",
+     "name": "Alexander R (Alex) Degman (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "prescription-dope-deaths-johnson-jr-w-i",
+     "name": "Prescription Dope Deaths Johnson, Jr (W/I)",
+     "party": "O",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2136-united-states-representative-second-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Second District",
+   "district": "2",
+   "title": "United States Representative, Second District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rudy-yakym",
+     "name": "Rudy Yakym",
+     "party": "R",
+     "party_code": "R",
+     "votes": 93633
+    },
+    {
+     "id": "jamee-decio",
+     "name": "Jamee Decio",
+     "party": "D",
+     "party_code": "D",
+     "votes": 84852
+    },
+    {
+     "id": "william-eric-henry",
+     "name": "William Eric Henry",
+     "party": "L",
+     "party_code": "O",
+     "votes": 4543
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1590-united-states-representative-third-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Third District",
+   "district": "3",
+   "title": "United States Representative, Third District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelly-thompson",
+     "name": "Kelly Thompson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 90180
+    },
+    {
+     "id": "marlin-a-stutzman",
+     "name": "Marlin A. Stutzman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 62702
+    },
+    {
+     "id": "phillip-d-beachy-phil-w-i",
+     "name": "Phillip D. Beachy (Phil) (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1997-united-states-representative-fourth-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Fourth District",
+   "district": "4",
+   "title": "United States Representative, Fourth District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-baird",
+     "name": "Jim Baird",
+     "party": "R",
+     "party_code": "R",
+     "votes": 112407
+    },
+    {
+     "id": "drew-cox",
+     "name": "Drew Cox",
+     "party": "D",
+     "party_code": "D",
+     "votes": 95115
+    },
+    {
+     "id": "david-e-bokash-w-i",
+     "name": "David E. Bokash (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 34
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5256-united-states-representative-fifth-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Fifth District",
+   "district": "5",
+   "title": "United States Representative, Fifth District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "j-d-ford",
+     "name": "J.D. Ford",
+     "party": "D",
+     "party_code": "D",
+     "votes": 116844
+    },
+    {
+     "id": "victoria-spartz",
+     "name": "Victoria Spartz",
+     "party": "R",
+     "party_code": "R",
+     "votes": 107239
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2995-united-states-representative-sixth-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Sixth District",
+   "district": "6",
+   "title": "United States Representative, Sixth District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jefferson-shreve",
+     "name": "Jefferson Shreve",
+     "party": "R",
+     "party_code": "R",
+     "votes": 93185
+    },
+    {
+     "id": "cynthia-cinde-wirth",
+     "name": "Cynthia (Cinde) Wirth",
+     "party": "D",
+     "party_code": "D",
+     "votes": 68486
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4908-united-states-representative-seventh-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Seventh District",
+   "district": "7",
+   "title": "United States Representative, Seventh District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andr-carson",
+     "name": "André Carson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 31792
+    },
+    {
+     "id": "patrick-mcauley",
+     "name": "Patrick McAuley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12259
+    },
+    {
+     "id": "james-m-sceniak",
+     "name": "James M Sceniak",
+     "party": "L",
+     "party_code": "O",
+     "votes": 1458
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1946-united-states-representative-eighth-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Eighth District",
+   "district": "8",
+   "title": "United States Representative, Eighth District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-messmer",
+     "name": "Mark Messmer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 101333
+    },
+    {
+     "id": "mary-allen",
+     "name": "Mary Allen",
+     "party": "D",
+     "party_code": "D",
+     "votes": 78349
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3409-united-states-representative-ninth-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Ninth District",
+   "district": "9",
+   "title": "United States Representative, Ninth District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "erin-houchin",
+     "name": "Erin Houchin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 120018
+    },
+    {
+     "id": "brad-a-meyer",
+     "name": "Brad A. Meyer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 96509
+    },
+    {
+     "id": "tonya-l-hudson",
+     "name": "Tonya L. Hudson",
+     "party": "L",
+     "party_code": "O",
+     "votes": 5454
+    },
+    {
+     "id": "floyd-michael-taylor-w-i",
+     "name": "Floyd Michael Taylor (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 41
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1409-united-states-senator-from-indiana-class-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Senator From Indiana, Class 1",
+   "district": null,
+   "title": "United States Senator From Indiana, Class 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-banks",
+     "name": "Jim Banks",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1659416
+    },
+    {
+     "id": "valerie-mccray",
+     "name": "Valerie McCray",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1097061
+    },
+    {
+     "id": "andrew-horning",
+     "name": "Andrew Horning",
+     "party": "L",
+     "party_code": "O",
+     "votes": 73233
+    },
+    {
+     "id": "phillip-d-beachy-phil-w-i",
+     "name": "Phillip D. Beachy (Phil) (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 168
+    },
+    {
+     "id": "antonio-xavier-alvarez-w-i",
+     "name": "Antonio Xavier Alvarez (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2026-governor-lt-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Governor & Lt. Governor",
+   "district": null,
+   "title": "Governor & Lt. Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-braun-micah-beckwith",
+     "name": "Mike Braun & Micah Beckwith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1566081
+    },
+    {
+     "id": "jennifer-g-mccormick-terry-goodin",
+     "name": "Jennifer G. McCormick & Terry Goodin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1183741
+    },
+    {
+     "id": "donald-rainwater-tonya-hudson",
+     "name": "Donald Rainwater & Tonya Hudson",
+     "party": "L",
+     "party_code": "O",
+     "votes": 129781
+    },
+    {
+     "id": "christopher-ryan-stried-w-i",
+     "name": "Christopher Ryan Stried (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 52
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1962-judge-of-the-marion-small-claims-court-center-twp",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Marion Small Claims Court, Center Twp.",
+   "district": null,
+   "title": "Judge Of The Marion Small Claims Court, Center Twp.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brenda-annette-roper",
+     "name": "Brenda Annette Roper",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8348
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1005-judge-of-the-marion-small-claims-court-decatur-twp",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Marion Small Claims Court, Decatur Twp.",
+   "district": null,
+   "title": "Judge Of The Marion Small Claims Court, Decatur Twp.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jonathan-p-sturgill",
+     "name": "Jonathan P. Sturgill",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1460
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1639-judge-of-the-marion-small-claims-court-franklin-twp",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Marion Small Claims Court, Franklin Twp.",
+   "district": null,
+   "title": "Judge Of The Marion Small Claims Court, Franklin Twp.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-a-kitley-jr",
+     "name": "John A. Kitley, Jr.",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1857
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4855-judge-of-the-marion-small-claims-court-lawrence-twp",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Marion Small Claims Court, Lawrence Twp.",
+   "district": null,
+   "title": "Judge Of The Marion Small Claims Court, Lawrence Twp.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kimberly-j-bacon",
+     "name": "Kimberly J. Bacon",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6500
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3068-judge-of-the-marion-small-claims-court-perry-twp",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Marion Small Claims Court, Perry Twp.",
+   "district": null,
+   "title": "Judge Of The Marion Small Claims Court, Perry Twp.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cheryl-rivera",
+     "name": "Cheryl Rivera",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4445
+    },
+    {
+     "id": "jami-r-sayeed",
+     "name": "Jami R. Sayeed",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3604
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2674-judge-of-the-marion-small-claims-court-pike-twp",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Marion Small Claims Court, Pike Twp.",
+   "district": null,
+   "title": "Judge Of The Marion Small Claims Court, Pike Twp.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "doug-stephens",
+     "name": "Doug Stephens",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2688
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1194-judge-of-the-marion-small-claims-court-warren-twp",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Marion Small Claims Court, Warren Twp.",
+   "district": null,
+   "title": "Judge Of The Marion Small Claims Court, Warren Twp.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "garland-e-graves",
+     "name": "Garland E. Graves",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3624
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4751-judge-of-the-marion-small-claims-court-washington-twp",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Marion Small Claims Court, Washington Twp.",
+   "district": null,
+   "title": "Judge Of The Marion Small Claims Court, Washington Twp.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-g-poore",
+     "name": "Steven G Poore",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8925
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3810-judge-of-the-marion-small-claims-court-wayne-twp",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Marion Small Claims Court, Wayne Twp.",
+   "district": null,
+   "title": "Judge Of The Marion Small Claims Court, Wayne Twp.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gerald-b-coleman",
+     "name": "Gerald B. Coleman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5641
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5864-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-braun",
+     "name": "Mike Braun",
+     "party": "R",
+     "party_code": "R",
+     "votes": 237125
+    },
+    {
+     "id": "jennifer-g-mccormick",
+     "name": "Jennifer G. McCormick",
+     "party": "D",
+     "party_code": "D",
+     "votes": 180577
+    },
+    {
+     "id": "suzanne-crouch",
+     "name": "Suzanne Crouch",
+     "party": "R",
+     "party_code": "R",
+     "votes": 130219
+    },
+    {
+     "id": "brad-chambers",
+     "name": "Brad Chambers",
+     "party": "R",
+     "party_code": "R",
+     "votes": 104723
+    },
+    {
+     "id": "eric-doden",
+     "name": "Eric Doden",
+     "party": "R",
+     "party_code": "R",
+     "votes": 71031
+    },
+    {
+     "id": "jamie-reitenour",
+     "name": "Jamie Reitenour",
+     "party": "R",
+     "party_code": "R",
+     "votes": 28774
+    },
+    {
+     "id": "curtis-hill",
+     "name": "Curtis Hill",
+     "party": "R",
+     "party_code": "R",
+     "votes": 27750
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1580-judge-of-the-st-joseph-probate-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The St. Joseph Probate Court",
+   "district": null,
+   "title": "Judge Of The St. Joseph Probate Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "loris-patrick-zappia",
+     "name": "Loris Patrick Zappia",
+     "party": "R",
+     "party_code": "R",
+     "votes": 58560
+    },
+    {
+     "id": "jason-cichowicz",
+     "name": "Jason Cichowicz",
+     "party": "D",
+     "party_code": "D",
+     "votes": 49793
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2938-state-senator-district-01",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 01",
+   "district": null,
+   "title": "State Senator, District 01",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-houldieson",
+     "name": "Scott Houldieson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 26570
+    },
+    {
+     "id": "trevor-g-de-vries",
+     "name": "Trevor G. De Vries",
+     "party": "R",
+     "party_code": "R",
+     "votes": 19941
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4495-state-senator-district-04",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 04",
+   "district": null,
+   "title": "State Senator, District 04",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rodney-pol",
+     "name": "Rodney Pol",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "nate-uldricks",
+     "name": "Nate Uldricks",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3174-state-senator-district-06",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 06",
+   "district": null,
+   "title": "State Senator, District 06",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-jay-starkey",
+     "name": "James (Jay) Starkey",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25497
+    },
+    {
+     "id": "kate-lynn-holley",
+     "name": "Kate-Lynn Holley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 19547
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1981-state-senator-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 11",
+   "district": null,
+   "title": "State Senator, District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gabrianna-gratzol",
+     "name": "Gabrianna Gratzol",
+     "party": "D",
+     "party_code": "D",
+     "votes": 19450
+    },
+    {
+     "id": "brian-s-schmutzler",
+     "name": "Brian S. Schmutzler",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18381
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2607-state-senator-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 14",
+   "district": null,
+   "title": "State Senator, District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tyler-johnson",
+     "name": "Tyler Johnson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 16290
+    },
+    {
+     "id": "blaine-sefton",
+     "name": "Blaine Sefton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13935
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4275-state-senator-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 15",
+   "district": null,
+   "title": "State Senator, District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julie-mcgill",
+     "name": "Julie McGill",
+     "party": "D",
+     "party_code": "D",
+     "votes": 21680
+    },
+    {
+     "id": "liz-brown",
+     "name": "Liz Brown",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20232
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2513-state-senator-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 17",
+   "district": null,
+   "title": "State Senator, District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-parker",
+     "name": "Chris Parker",
+     "party": "R",
+     "party_code": "R",
+     "votes": 22674
+    },
+    {
+     "id": "cynthia-m-wehr",
+     "name": "Cynthia M. Wehr",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12765
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4391-state-senator-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 19",
+   "district": null,
+   "title": "State Senator, District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "blake-fiechter",
+     "name": "Blake Fiechter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20773
+    },
+    {
+     "id": "timothy-c-murphy",
+     "name": "Timothy C. Murphy",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7705
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2230-state-senator-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 21",
+   "district": null,
+   "title": "State Senator, District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tracey-powell",
+     "name": "Tracey Powell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 28046
+    },
+    {
+     "id": "kirsten-root",
+     "name": "Kirsten Root",
+     "party": "D",
+     "party_code": "D",
+     "votes": 24689
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2180-state-senator-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 22",
+   "district": null,
+   "title": "State Senator, District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "natasha-baker",
+     "name": "Natasha Baker",
+     "party": "D",
+     "party_code": "D",
+     "votes": 19960
+    },
+    {
+     "id": "ron-alting",
+     "name": "Ron Alting",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13979
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1719-state-senator-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 23",
+   "district": null,
+   "title": "State Senator, District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "spencer-r-deery",
+     "name": "Spencer R. Deery",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15365
+    },
+    {
+     "id": "david-a-sanders",
+     "name": "David A Sanders",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11722
+    },
+    {
+     "id": "joshua-brant",
+     "name": "Joshua Brant",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1482
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3760-state-senator-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 25",
+   "district": null,
+   "title": "State Senator, District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-gaskill",
+     "name": "Mike Gaskill",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1396
+    },
+    {
+     "id": "tamie-dixon-tatum",
+     "name": "Tamie Dixon-Tatum",
+     "party": "D",
+     "party_code": "D",
+     "votes": 507
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2701-state-senator-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 26",
+   "district": null,
+   "title": "State Senator, District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-a-alexander",
+     "name": "Scott A. Alexander",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18972
+    },
+    {
+     "id": "andrew-dale",
+     "name": "Andrew Dale",
+     "party": "D",
+     "party_code": "D",
+     "votes": 17780
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3140-state-senator-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 27",
+   "district": null,
+   "title": "State Senator, District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-raatz",
+     "name": "Jeff Raatz",
+     "party": "R",
+     "party_code": "R",
+     "votes": 21149
+    },
+    {
+     "id": "ronald-itnyre",
+     "name": "Ronald Itnyre",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13522
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3501-state-senator-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 29",
+   "district": null,
+   "title": "State Senator, District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristina-moorhead",
+     "name": "Kristina Moorhead",
+     "party": "D",
+     "party_code": "D",
+     "votes": 20290
+    },
+    {
+     "id": "john-ruckelshaus",
+     "name": "John Ruckelshaus",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15559
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3489-state-senator-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 31",
+   "district": null,
+   "title": "State Senator, District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kerry-j-forestal",
+     "name": "Kerry J Forestal",
+     "party": "D",
+     "party_code": "D",
+     "votes": 25650
+    },
+    {
+     "id": "juanita-albright",
+     "name": "Juanita Albright",
+     "party": "R",
+     "party_code": "R",
+     "votes": 19732
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4933-state-senator-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 38",
+   "district": null,
+   "title": "State Senator, District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-goode",
+     "name": "Greg Goode",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6273
+    },
+    {
+     "id": "kacey-blundell",
+     "name": "Kacey Blundell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2273
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1128-state-senator-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 39",
+   "district": null,
+   "title": "State Senator, District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-ellington",
+     "name": "Jeff Ellington",
+     "party": "R",
+     "party_code": "R",
+     "votes": 26609
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1362-state-senator-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 41",
+   "district": null,
+   "title": "State Senator, District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michelle-davis",
+     "name": "Michelle Davis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20940
+    },
+    {
+     "id": "ross-thomas",
+     "name": "Ross Thomas",
+     "party": "D",
+     "party_code": "D",
+     "votes": 17262
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3912-state-senator-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 43",
+   "district": null,
+   "title": "State Senator, District 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "randall-d-maxwell",
+     "name": "Randall D. Maxwell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24822
+    },
+    {
+     "id": "byron-e-holland",
+     "name": "Byron E. Holland",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12382
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1019-state-senator-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 45",
+   "district": null,
+   "title": "State Senator, District 45",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-garten",
+     "name": "Chris Garten",
+     "party": "R",
+     "party_code": "R",
+     "votes": 21617
+    },
+    {
+     "id": "nick-marshall",
+     "name": "Nick Marshall",
+     "party": "D",
+     "party_code": "D",
+     "votes": 21171
+    },
+    {
+     "id": "larry-mahaney",
+     "name": "Larry Mahaney",
+     "party": "L",
+     "party_code": "O",
+     "votes": 988
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4782-state-senator-district-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 46",
+   "district": null,
+   "title": "State Senator, District 46",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "allissa-impink",
+     "name": "Allissa Impink",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6454
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2864-state-senator-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 47",
+   "district": null,
+   "title": "State Senator, District 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gary-byrne",
+     "name": "Gary Byrne",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24167
+    },
+    {
+     "id": "ethan-sweetland-may",
+     "name": "Ethan Sweetland-May",
+     "party": "D",
+     "party_code": "D",
+     "votes": 17826
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1697-state-senator-district-48",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 48",
+   "district": null,
+   "title": "State Senator, District 48",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daryl-schmitt",
+     "name": "Daryl Schmitt",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24945
+    },
+    {
+     "id": "bradley-brad-hochgesang",
+     "name": "Bradley (Brad) Hochgesang",
+     "party": "D",
+     "party_code": "D",
+     "votes": 18552
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4091-state-senator-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Senator, District 49",
+   "district": null,
+   "title": "State Senator, District 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-tomes",
+     "name": "Jim Tomes",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18244
+    },
+    {
+     "id": "cindi-clayton",
+     "name": "Cindi Clayton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 17162
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1822-judge-of-the-benton-circuit-court-76th-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Benton Circuit Court, 76th Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Benton Circuit Court, 76th Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-c-wright",
+     "name": "John C. Wright",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1888
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2635-judge-of-the-clark-circuit-court-4th-judicial-circuit-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Clark Circuit Court, 4th Judicial Circuit, No. 2",
+   "district": null,
+   "title": "Judge Of The Clark Circuit Court, 4th Judicial Circuit, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bradley-jacobs",
+     "name": "Bradley Jacobs",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24082
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2652-judge-of-the-clark-circuit-court-4th-judicial-circuit-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Clark Circuit Court, 4th Judicial Circuit, No. 3",
+   "district": null,
+   "title": "Judge Of The Clark Circuit Court, 4th Judicial Circuit, No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrea-wasson-stemle",
+     "name": "Andrea Wasson Stemle",
+     "party": "D",
+     "party_code": "D",
+     "votes": 19845
+    },
+    {
+     "id": "lisa-glickfield",
+     "name": "Lisa Glickfield",
+     "party": "R",
+     "party_code": "R",
+     "votes": 17406
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2415-judge-of-the-daviess-circuit-court-49th-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Daviess Circuit Court, 49th Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Daviess Circuit Court, 49th Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gregory-a-smith",
+     "name": "Gregory A. Smith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5599
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1640-judge-of-the-delaware-circuit-court-46th-judicial-circuit-no-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Delaware Circuit Court, 46th Judicial Circuit, No. 4",
+   "district": null,
+   "title": "Judge Of The Delaware Circuit Court, 46th Judicial Circuit, No. 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zachary-q-craig",
+     "name": "Zachary Q. Craig",
+     "party": "R",
+     "party_code": "R",
+     "votes": 19495
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1670-judge-of-the-delaware-circuit-court-46th-judicial-circuit-no-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Delaware Circuit Court, 46th Judicial Circuit, No. 5",
+   "district": null,
+   "title": "Judge Of The Delaware Circuit Court, 46th Judicial Circuit, No. 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amanda-dunnuck",
+     "name": "Amanda Dunnuck",
+     "party": "D",
+     "party_code": "D",
+     "votes": 17630
+    },
+    {
+     "id": "ben-freeman",
+     "name": "Ben Freeman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12909
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2654-judge-of-the-dubois-circuit-court-57th-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Dubois Circuit Court, 57th Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Dubois Circuit Court, 57th Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nathan-verkamp",
+     "name": "Nathan Verkamp",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8439
+    },
+    {
+     "id": "brian-d-lucchi",
+     "name": "Brian D. Lucchi",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6364
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4871-judge-of-the-franklin-circuit-court-37th-judicial-circuit-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Franklin Circuit Court, 37th Judicial Circuit, No. 2",
+   "district": null,
+   "title": "Judge Of The Franklin Circuit Court, 37th Judicial Circuit, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clay-m-kellerman",
+     "name": "Clay M. Kellerman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5750
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1801-judge-of-the-fulton-circuit-court-41st-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Fulton Circuit Court, 41st Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Fulton Circuit Court, 41st Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "a-christopher-lee",
+     "name": "A. Christopher Lee",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3317
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4993-judge-of-the-hendricks-circuit-court-55th-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Hendricks Circuit Court, 55th Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Hendricks Circuit Court, 55th Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "aaron-b-rodebeck",
+     "name": "Aaron B. Rodebeck",
+     "party": "R",
+     "party_code": "R",
+     "votes": 33494
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1786-judge-of-the-howard-circuit-court-62nd-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Howard Circuit Court, 62nd Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Howard Circuit Court, 62nd Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rebecca-r-vent",
+     "name": "Rebecca R. Vent",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18579
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3590-judge-of-the-jennings-circuit-court-86th-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Jennings Circuit Court, 86th Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Jennings Circuit Court, 86th Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-troiani",
+     "name": "James Troiani",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5598
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5319-judge-of-the-lawrence-circuit-court-81st-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Lawrence Circuit Court, 81st Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Lawrence Circuit Court, 81st Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nathan-g-nikirk",
+     "name": "Nathan G. Nikirk",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10203
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3100-judge-of-the-madison-circuit-court-50th-judicial-circuit-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Madison Circuit Court, 50th Judicial Circuit, No. 1",
+   "district": null,
+   "title": "Judge Of The Madison Circuit Court, 50th Judicial Circuit, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "angela-warner-sims",
+     "name": "Angela Warner Sims",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2697-judge-of-the-madison-circuit-court-50th-judicial-circuit-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Madison Circuit Court, 50th Judicial Circuit, No. 2",
+   "district": null,
+   "title": "Judge Of The Madison Circuit Court, 50th Judicial Circuit, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephen-j-koester",
+     "name": "Stephen J. Koester",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1730-judge-of-the-madison-circuit-court-50th-judicial-circuit-no-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Madison Circuit Court, 50th Judicial Circuit, No. 4",
+   "district": null,
+   "title": "Judge Of The Madison Circuit Court, 50th Judicial Circuit, No. 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-a-happe",
+     "name": "David A. Happe",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4604-judge-of-the-madison-circuit-court-50th-judicial-circuit-no-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Madison Circuit Court, 50th Judicial Circuit, No. 5",
+   "district": null,
+   "title": "Judge Of The Madison Circuit Court, 50th Judicial Circuit, No. 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emilee-a-hammond",
+     "name": "Emilee A. Hammond",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "scott-a-norrick",
+     "name": "Scott A. Norrick",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3547-judge-of-the-miami-circuit-court-51st-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Miami Circuit Court, 51st Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Miami Circuit Court, 51st Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "timothy-p-spahr",
+     "name": "Timothy P. Spahr",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6146
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2723-judge-of-the-monroe-circuit-court-10th-judicial-circuit-no-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Monroe Circuit Court, 10th Judicial Circuit, No. 5",
+   "district": null,
+   "title": "Judge Of The Monroe Circuit Court, 10th Judicial Circuit, No. 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kara-elaine-krothe",
+     "name": "Kara Elaine Krothe",
+     "party": "D",
+     "party_code": "D",
+     "votes": 30779
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2020-judge-of-the-monroe-circuit-court-10th-judicial-circuit-no-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Monroe Circuit Court, 10th Judicial Circuit, No. 9",
+   "district": null,
+   "title": "Judge Of The Monroe Circuit Court, 10th Judicial Circuit, No. 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "geoff-bradley",
+     "name": "Geoff Bradley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 30772
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4079-judge-of-the-noble-circuit-court-33rd-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Noble Circuit Court, 33rd Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Noble Circuit Court, 33rd Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-t-jansen",
+     "name": "Christopher T. Jansen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8343
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4127-judge-of-the-owen-circuit-court-78th-judicial-circuit-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Owen Circuit Court, 78th Judicial Circuit, No. 2",
+   "district": null,
+   "title": "Judge Of The Owen Circuit Court, 78th Judicial Circuit, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelsey-b-hanlon",
+     "name": "Kelsey B. Hanlon",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4747
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3181-judge-of-the-porter-circuit-court-67th-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Porter Circuit Court, 67th Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Porter Circuit Court, 67th Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rebecca-lynn-buitendorp",
+     "name": "Rebecca Lynn Buitendorp",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4013-judge-of-the-ripley-circuit-court-80th-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Ripley Circuit Court, 80th Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Ripley Circuit Court, 80th Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-j-king",
+     "name": "Ryan J. King",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5548
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2713-judge-of-the-spencer-circuit-court-84th-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Spencer Circuit Court, 84th Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Spencer Circuit Court, 84th Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jon-a-dartt",
+     "name": "Jon A. Dartt",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4466
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3879-judge-of-the-sullivan-circuit-court-14th-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Sullivan Circuit Court, 14th Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Sullivan Circuit Court, 14th Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-bob-hunley-ii",
+     "name": "Robert (Bob) Hunley, II",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4923
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4396-judge-of-the-switzerland-circuit-court-91st-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Switzerland Circuit Court, 91st Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Switzerland Circuit Court, 91st Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michelle-k-hicks",
+     "name": "Michelle K. Hicks",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1331
+    },
+    {
+     "id": "w-gregory-greg-coy",
+     "name": "W. Gregory (Greg) Coy",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1286
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3857-judge-of-the-tipton-circuit-court-36th-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Tipton Circuit Court, 36th Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Tipton Circuit Court, 36th Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-b-quigley",
+     "name": "Matthew B. Quigley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4852
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5195-judge-of-the-warrick-circuit-court-2nd-judicial-circuit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Warrick Circuit Court, 2nd Judicial Circuit",
+   "district": null,
+   "title": "Judge Of The Warrick Circuit Court, 2nd Judicial Circuit",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-a-granger",
+     "name": "Greg A. Granger",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14775
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1169-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "todd-rokita",
+     "name": "Todd Rokita",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1669586
+    },
+    {
+     "id": "destiny-wells",
+     "name": "Destiny Wells",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1168512
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4785-judge-of-the-adams-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Adams Superior Court",
+   "district": null,
+   "title": "Judge Of The Adams Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sam-conrad",
+     "name": "Sam Conrad",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6633
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4212-judge-of-the-allen-superior-court-civil-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Allen Superior Court, Civil No. 2",
+   "district": null,
+   "title": "Judge Of The Allen Superior Court, Civil No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "craig-j-bobay",
+     "name": "Craig J Bobay",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3266-judge-of-the-allen-superior-court-civil-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Allen Superior Court, Civil No. 3",
+   "district": null,
+   "title": "Judge Of The Allen Superior Court, Civil No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-l-degroote",
+     "name": "Jennifer L. DeGroote",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2665-judge-of-the-allen-superior-court-criminal-no-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Allen Superior Court, Criminal No. 5",
+   "district": null,
+   "title": "Judge Of The Allen Superior Court, Criminal No. 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christina-gull",
+     "name": "Christina Gull",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "samuel-r-keirns",
+     "name": "Samuel R. Keirns",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jesus-rick-trevino",
+     "name": "Jesus (Rick) Trevino",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3104-judge-of-the-allen-superior-court-criminal-no-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Allen Superior Court, Criminal No. 6",
+   "district": null,
+   "title": "Judge Of The Allen Superior Court, Criminal No. 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-m-zent",
+     "name": "David M Zent",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3200-judge-of-the-allen-superior-court-family-relations-no-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Allen Superior Court, Family Relations No. 7",
+   "district": null,
+   "title": "Judge Of The Allen Superior Court, Family Relations No. 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brent-a-ecenbarger",
+     "name": "Brent A. Ecenbarger",
+     "party": "N",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4833-judge-of-the-bartholomew-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Bartholomew Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Bartholomew Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jonathan-l-jon-rohde",
+     "name": "Jonathan L. (Jon) Rohde",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15641
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1766-judge-of-the-boone-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Boone Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Boone Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-c-kincaid",
+     "name": "Matthew C. Kincaid",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18467
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3704-judge-of-the-boone-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Boone Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Boone Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "thomas-kenneth-t-k-morris",
+     "name": "Thomas Kenneth (T.K.) Morris",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18103
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5174-judge-of-the-carroll-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Carroll Superior Court",
+   "district": null,
+   "title": "Judge Of The Carroll Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "troy-m-hawkins",
+     "name": "Troy M. Hawkins",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4453
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4337-judge-of-the-clinton-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Clinton Superior Court",
+   "district": null,
+   "title": "Judge Of The Clinton Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "thomas-f-little",
+     "name": "Thomas F. Little",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5215
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5003-judge-of-the-daviess-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Daviess Superior Court",
+   "district": null,
+   "title": "Judge Of The Daviess Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-s-murrie",
+     "name": "Daniel S. Murrie",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5492
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2502-judge-of-the-dearborn-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Dearborn Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Dearborn Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jonathan-n-cleary",
+     "name": "Jonathan N. Cleary",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13298
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1297-judge-of-the-decatur-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Decatur Superior Court",
+   "district": null,
+   "title": "Judge Of The Decatur Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-d-bailey",
+     "name": "Matthew D. Bailey",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5691
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3009-judge-of-the-dekalb-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Dekalb Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Dekalb Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-c-squiller",
+     "name": "Adam C. Squiller",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8915
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1148-judge-of-the-elkhart-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Elkhart Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Elkhart Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristine-a-osterday",
+     "name": "Kristine A. Osterday",
+     "party": "R",
+     "party_code": "R",
+     "votes": 30021
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4520-judge-of-the-elkhart-superior-court-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Elkhart Superior Court, No. 3",
+   "district": null,
+   "title": "Judge Of The Elkhart Superior Court, No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "teresa-l-cataldo",
+     "name": "Teresa L. Cataldo",
+     "party": "R",
+     "party_code": "R",
+     "votes": 30011
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5292-judge-of-the-elkhart-superior-court-no-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Elkhart Superior Court, No. 4",
+   "district": null,
+   "title": "Judge Of The Elkhart Superior Court, No. 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "elizabeth-a-bellin",
+     "name": "Elizabeth A. Bellin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 29689
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1093-judge-of-the-elkhart-superior-court-no-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Elkhart Superior Court, No. 5",
+   "district": null,
+   "title": "Judge Of The Elkhart Superior Court, No. 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-j-chris-spataro",
+     "name": "Christopher J. (Chris) Spataro",
+     "party": "R",
+     "party_code": "R",
+     "votes": 29953
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1960-judge-of-the-fayette-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Fayette Superior Court",
+   "district": null,
+   "title": "Judge Of The Fayette Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-l-freed",
+     "name": "Paul L. Freed",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4251
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3900-judge-of-the-floyd-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Floyd Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Floyd Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carrie-k-stiller",
+     "name": "Carrie K. Stiller",
+     "party": "R",
+     "party_code": "R",
+     "votes": 17567
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1686-judge-of-the-floyd-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Floyd Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Floyd Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-b-hancock",
+     "name": "James B. Hancock",
+     "party": "R",
+     "party_code": "R",
+     "votes": 17535
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1188-judge-of-the-floyd-superior-court-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Floyd Superior Court, No. 3",
+   "district": null,
+   "title": "Judge Of The Floyd Superior Court, No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maxwell-mccrite",
+     "name": "Maxwell McCrite",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13285
+    },
+    {
+     "id": "christina-knavely",
+     "name": "Christina Knavely",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12289
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4233-judge-of-the-grant-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Grant Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Grant Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jamie-l-moore",
+     "name": "Jamie L. Moore",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12215
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1648-judge-of-the-grant-superior-court-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Grant Superior Court, No. 3",
+   "district": null,
+   "title": "Judge Of The Grant Superior Court, No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-dean-mcvicker",
+     "name": "Jason Dean McVicker",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12383
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3088-judge-of-the-greene-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Greene Superior Court",
+   "district": null,
+   "title": "Judge Of The Greene Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dena-benham-martin",
+     "name": "Dena Benham Martin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6918
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1594-judge-of-the-hamilton-superior-court-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Hamilton Superior Court, No. 3",
+   "district": null,
+   "title": "Judge Of The Hamilton Superior Court, No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-evans",
+     "name": "Chris Evans",
+     "party": "R",
+     "party_code": "R",
+     "votes": 89371
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4097-judge-of-the-hamilton-superior-court-no-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Hamilton Superior Court, No. 4",
+   "district": null,
+   "title": "Judge Of The Hamilton Superior Court, No. 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "angela-brown-swenson",
+     "name": "Angela Brown Swenson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 89843
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2171-judge-of-the-hamilton-superior-court-no-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Hamilton Superior Court, No. 5",
+   "district": null,
+   "title": "Judge Of The Hamilton Superior Court, No. 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-k-najjar",
+     "name": "David K. Najjar",
+     "party": "R",
+     "party_code": "R",
+     "votes": 88659
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3999-judge-of-the-hamilton-superior-court-no-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Hamilton Superior Court, No. 8",
+   "district": null,
+   "title": "Judge Of The Hamilton Superior Court, No. 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emily-l-angel-shaw",
+     "name": "Emily L. Angel Shaw",
+     "party": "D",
+     "party_code": "D",
+     "votes": 75801
+    },
+    {
+     "id": "danica-l-eyler",
+     "name": "Danica L. Eyler",
+     "party": "R",
+     "party_code": "R",
+     "votes": 68664
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3146-judge-of-the-hamilton-superior-court-no-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Hamilton Superior Court, No. 9",
+   "district": null,
+   "title": "Judge Of The Hamilton Superior Court, No. 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-c-sweeney",
+     "name": "Paul C. Sweeney",
+     "party": "R",
+     "party_code": "R",
+     "votes": 89165
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4615-judge-of-the-hancock-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Hancock Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Hancock Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "janet-miles-manship",
+     "name": "Janet Miles-Manship",
+     "party": "R",
+     "party_code": "R",
+     "votes": 19742
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2155-judge-of-the-hancock-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Hancock Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Hancock Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cody-b-coombs",
+     "name": "Cody B. Coombs",
+     "party": "R",
+     "party_code": "R",
+     "votes": 19066
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1731-judge-of-the-harrison-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Harrison Superior Court",
+   "district": null,
+   "title": "Judge Of The Harrison Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "j-otto-schalk",
+     "name": "J. Otto Schalk",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9871
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1542-judge-of-the-hendricks-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Hendricks Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Hendricks Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rhett-m-stuard",
+     "name": "Rhett M. Stuard",
+     "party": "R",
+     "party_code": "R",
+     "votes": 34574
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4650-judge-of-the-howard-superior-court-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Howard Superior Court, No. 3",
+   "district": null,
+   "title": "Judge Of The Howard Superior Court, No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "douglas-a-tate",
+     "name": "Douglas A. Tate",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18565
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2757-judge-of-the-huntington-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Huntington Superior Court",
+   "district": null,
+   "title": "Judge Of The Huntington Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-newton",
+     "name": "Jennifer Newton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8301
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1077-judge-of-the-jackson-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Jackson Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Jackson Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amymarie-travis",
+     "name": "AmyMarie Travis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8273
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3755-judge-of-the-jasper-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Jasper Superior Court",
+   "district": null,
+   "title": "Judge Of The Jasper Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "russell-d-bailey",
+     "name": "Russell D. Bailey",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7172
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1070-judge-of-the-jay-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Jay Superior Court",
+   "district": null,
+   "title": "Judge Of The Jay Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gail-m-dues",
+     "name": "Gail M. Dues",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3809
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4248-judge-of-the-jefferson-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Jefferson Superior Court",
+   "district": null,
+   "title": "Judge Of The Jefferson Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "blaine-s-goode",
+     "name": "Blaine S. Goode",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6086
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2468-judge-of-the-jennings-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Jennings Superior Court",
+   "district": null,
+   "title": "Judge Of The Jennings Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-j-belding",
+     "name": "Brian J. Belding",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5748
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1043-judge-of-the-johnson-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Johnson Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Johnson Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "peter-d-nugent",
+     "name": "Peter D. Nugent",
+     "party": "R",
+     "party_code": "R",
+     "votes": 31194
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2740-judge-of-the-johnson-superior-court-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Johnson Superior Court, No. 3",
+   "district": null,
+   "title": "Judge Of The Johnson Superior Court, No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "douglas-brian-cummins",
+     "name": "Douglas Brian Cummins",
+     "party": "R",
+     "party_code": "R",
+     "votes": 30986
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1219-judge-of-the-johnson-superior-court-no-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Johnson Superior Court, No. 4",
+   "district": null,
+   "title": "Judge Of The Johnson Superior Court, No. 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marla-clark",
+     "name": "Marla Clark",
+     "party": "R",
+     "party_code": "R",
+     "votes": 31716
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4810-judge-of-the-knox-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Knox Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Knox Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gara-u-lee",
+     "name": "Gara U. Lee",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7442
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3112-judge-of-the-knox-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Knox Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Knox Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-m-johnson",
+     "name": "Brian M. Johnson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7430
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2571-judge-of-the-kosciusko-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Kosciusko Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Kosciusko Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "karin-a-mcgrath",
+     "name": "Karin A. McGrath",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15635
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2666-judge-of-the-kosciusko-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Kosciusko Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Kosciusko Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "torrey-j-bauer",
+     "name": "Torrey J. Bauer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15395
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4135-judge-of-the-kosciusko-superior-court-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Kosciusko Superior Court, No. 3",
+   "district": null,
+   "title": "Judge Of The Kosciusko Superior Court, No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chad-m-miner",
+     "name": "Chad M. Miner",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15627
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5069-judge-of-the-kosciusko-superior-court-no-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Kosciusko Superior Court, No. 4",
+   "district": null,
+   "title": "Judge Of The Kosciusko Superior Court, No. 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-douglas-kehler",
+     "name": "Christopher Douglas Kehler",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15613
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4946-judge-of-the-lagrange-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Lagrange Superior Court",
+   "district": null,
+   "title": "Judge Of The Lagrange Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lisa-m-bowen-slaven",
+     "name": "Lisa M. Bowen-Slaven",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5175
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3972-judge-of-the-laporte-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Laporte Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Laporte Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-s-bergerson",
+     "name": "Michael S. Bergerson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jaime-oss",
+     "name": "Jaime Oss",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2294-judge-of-the-laporte-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Laporte Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Laporte Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-r-stalbrink",
+     "name": "Richard R. Stalbrink",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4882-judge-of-the-laporte-superior-court-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Laporte Superior Court, No. 3",
+   "district": null,
+   "title": "Judge Of The Laporte Superior Court, No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-m-jim-macalka",
+     "name": "James M. (Jim) Macalka",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kurt-r-earnst",
+     "name": "Kurt R. Earnst",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3964-judge-of-the-laporte-superior-court-no-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Laporte Superior Court, No. 4",
+   "district": null,
+   "title": "Judge Of The Laporte Superior Court, No. 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-a-link",
+     "name": "John A. Link",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1255-judge-of-the-lawrence-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Lawrence Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Lawrence Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-bob-cline",
+     "name": "Robert (Bob) Cline",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9926
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1304-judge-of-the-marshall-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Marshall Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Marshall Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-t-aldridge",
+     "name": "Matthew T. Aldridge",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8176
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5189-judge-of-the-miami-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Miami Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Miami Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "j-david-grund",
+     "name": "J. David Grund",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6061
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1803-judge-of-the-montgomery-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Montgomery Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Montgomery Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "heather-barajas",
+     "name": "Heather Barajas",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7807
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1272-judge-of-the-montgomery-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Montgomery Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Montgomery Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-g-petrie",
+     "name": "Daniel G. Petrie",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8059
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1351-judge-of-the-morgan-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Morgan Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Morgan Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jerry-e-smith",
+     "name": "Jerry E. Smith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11027
+    },
+    {
+     "id": "jarrett-ksenak",
+     "name": "Jarrett Ksenak",
+     "party": "L",
+     "party_code": "O",
+     "votes": 7943
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4382-judge-of-the-morgan-superior-court-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Morgan Superior Court, No. 3",
+   "district": null,
+   "title": "Judge Of The Morgan Superior Court, No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sara-a-dungan",
+     "name": "Sara A. Dungan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15484
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5045-judge-of-the-noble-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Noble Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Noble Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-hagen",
+     "name": "Steven Hagen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8174
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2342-judge-of-the-orange-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Orange Superior Court",
+   "district": null,
+   "title": "Judge Of The Orange Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "debra-sue-andry",
+     "name": "Debra Sue Andry",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5029-judge-of-the-porter-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Porter Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Porter Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-fish",
+     "name": "Mike Fish",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2675-judge-of-the-porter-superior-court-no-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Porter Superior Court, No. 4",
+   "district": null,
+   "title": "Judge Of The Porter Superior Court, No. 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "heather-a-mccarthy",
+     "name": "Heather A. McCarthy",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "christopher-a-buckley",
+     "name": "Christopher A. Buckley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4470-judge-of-the-posey-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Posey Superior Court",
+   "district": null,
+   "title": "Judge Of The Posey Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "travis-lee-clowers",
+     "name": "Travis Lee Clowers",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6192
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3290-judge-of-the-putnam-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Putnam Superior Court",
+   "district": null,
+   "title": "Judge Of The Putnam Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-ensley",
+     "name": "Jim Ensley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7534
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3997-judge-of-the-randolph-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Randolph Superior Court",
+   "district": null,
+   "title": "Judge Of The Randolph Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "olivia-s-faddis",
+     "name": "Olivia S. Faddis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4435
+    },
+    {
+     "id": "christen-commers-smith",
+     "name": "Christen Commers Smith",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1757
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4456-judge-of-the-ripley-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Ripley Superior Court",
+   "district": null,
+   "title": "Judge Of The Ripley Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-sharp",
+     "name": "Jeff Sharp",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5576
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3968-judge-of-the-rush-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Rush Superior Court",
+   "district": null,
+   "title": "Judge Of The Rush Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-thompson",
+     "name": "David Thompson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3566
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1841-judge-of-the-shelby-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Shelby Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Shelby Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "r-kent-apsley",
+     "name": "R. Kent Apsley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8699
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2093-judge-of-the-shelby-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Shelby Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Shelby Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-n-riggins",
+     "name": "David N. Riggins",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8897
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5072-judge-of-the-steuben-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Steuben Superior Court",
+   "district": null,
+   "title": "Judge Of The Steuben Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "travis-b-musser",
+     "name": "Travis B. Musser",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7996
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2811-judge-of-the-sullivan-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Sullivan Superior Court",
+   "district": null,
+   "title": "Judge Of The Sullivan Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hugh-r-h-r-hunt",
+     "name": "Hugh R. (H.R.) Hunt",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4111
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1877-judge-of-the-tippecanoe-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Tippecanoe Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Tippecanoe Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-mcdaniel",
+     "name": "Kevin McDaniel",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25210
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5042-judge-of-the-tippecanoe-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Tippecanoe Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Tippecanoe Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sarah-m-wyatt",
+     "name": "Sarah M. Wyatt",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25148
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1700-judge-of-the-tippecanoe-superior-court-no-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Tippecanoe Superior Court, No. 4",
+   "district": null,
+   "title": "Judge Of The Tippecanoe Superior Court, No. 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-sandy",
+     "name": "Matt Sandy",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25052
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1978-judge-of-the-tippecanoe-superior-court-no-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Tippecanoe Superior Court, No. 5",
+   "district": null,
+   "title": "Judge Of The Tippecanoe Superior Court, No. 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristen-mcvey",
+     "name": "Kristen McVey",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25123
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3289-judge-of-the-tippecanoe-superior-court-no-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Tippecanoe Superior Court, No. 7",
+   "district": null,
+   "title": "Judge Of The Tippecanoe Superior Court, No. 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-j-moore",
+     "name": "Daniel J. Moore",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25096
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2663-judge-of-the-vanderburgh-superior-court-no-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Vanderburgh Superior Court, No. 1",
+   "district": null,
+   "title": "Judge Of The Vanderburgh Superior Court, No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "les-c-shively",
+     "name": "Les C. Shively",
+     "party": "N",
+     "party_code": "O",
+     "votes": 34042
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1707-judge-of-the-vigo-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Vigo Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Vigo Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lakshmi-lucky-reddy",
+     "name": "Lakshmi (Lucky) Reddy",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5262-judge-of-the-vigo-superior-court-no-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Vigo Superior Court, No. 5",
+   "district": null,
+   "title": "Judge Of The Vigo Superior Court, No. 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-anthony-sheehan",
+     "name": "Matthew Anthony Sheehan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "robert-e-rob-roberts",
+     "name": "Robert E. (Rob) Roberts",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3817-judge-of-the-wabash-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Wabash Superior Court",
+   "district": null,
+   "title": "Judge Of The Wabash Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "benjamin-daniel-robert-vanderpool",
+     "name": "Benjamin Daniel Robert Vanderpool",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6386
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2467-judge-of-the-wayne-superior-court-no-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Wayne Superior Court, No. 2",
+   "district": null,
+   "title": "Judge Of The Wayne Superior Court, No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "austin-a-shadle",
+     "name": "Austin A. Shadle",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8689
+    },
+    {
+     "id": "jessica-l-richert",
+     "name": "Jessica L. Richert",
+     "party": "I",
+     "party_code": "O",
+     "votes": 5172
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2615-judge-of-the-wayne-superior-court-no-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Wayne Superior Court, No. 3",
+   "district": null,
+   "title": "Judge Of The Wayne Superior Court, No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-i-cox",
+     "name": "Mark I. Cox",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10865
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2098-judge-of-the-wells-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The Wells Superior Court",
+   "district": null,
+   "title": "Judge Of The Wells Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-k-antrim",
+     "name": "Andrew K. Antrim",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6994
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4202-judge-of-the-white-superior-court",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Judge Of The White Superior Court",
+   "district": null,
+   "title": "Judge Of The White Superior Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ashley-a-federer",
+     "name": "Ashley A. Federer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5475
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1309-treasurer-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Treasurer Of State",
+   "district": null,
+   "title": "Treasurer Of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-elliott",
+     "name": "Daniel Elliott",
+     "party": "R",
+     "party_code": "R",
+     "votes": 863008
+    },
+    {
+     "id": "coumba-kebe",
+     "name": "Coumba Kebe",
+     "party": "D",
+     "party_code": "D",
+     "votes": 725806
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1874-state-representative-district-001",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 001",
+   "district": null,
+   "title": "State Representative, District 001",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carolyn-b-jackson",
+     "name": "Carolyn B. Jackson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11586
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4480-state-representative-district-002",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 002",
+   "district": null,
+   "title": "State Representative, District 002",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "earl-harris-jr",
+     "name": "Earl Harris, Jr.",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12492
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3993-state-representative-district-003",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 003",
+   "district": null,
+   "title": "State Representative, District 003",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ragen-hatcher",
+     "name": "Ragen Hatcher",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12712
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4988-state-representative-district-004",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 004",
+   "district": null,
+   "title": "State Representative, District 004",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-kominakis",
+     "name": "Ryan Kominakis",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ed-soliday",
+     "name": "Ed Soliday",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "travis-gearhart",
+     "name": "Travis Gearhart",
+     "party": "L",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1906-state-representative-district-005",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 005",
+   "district": null,
+   "title": "State Representative, District 005",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alex-wait",
+     "name": "Alex Wait",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10925
+    },
+    {
+     "id": "dale-devon",
+     "name": "Dale DeVon",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9901
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1126-state-representative-district-006",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 006",
+   "district": null,
+   "title": "State Representative, District 006",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maureen-bauer",
+     "name": "Maureen Bauer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12411
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1524-state-representative-district-007",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 007",
+   "district": null,
+   "title": "State Representative, District 007",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jake-teshka",
+     "name": "Jake Teshka",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10133
+    },
+    {
+     "id": "oliver-davis",
+     "name": "Oliver Davis",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9971
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1555-state-representative-district-008",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 008",
+   "district": null,
+   "title": "State Representative, District 008",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-m-dvorak",
+     "name": "Ryan M Dvorak",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12953
+    },
+    {
+     "id": "eric-harris",
+     "name": "Eric Harris",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6541
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4968-state-representative-district-009",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 009",
+   "district": null,
+   "title": "State Representative, District 009",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "randy-novak",
+     "name": "Randy Novak",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "chris-cleveland",
+     "name": "Chris Cleveland",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3512-state-representative-district-010",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 010",
+   "district": null,
+   "title": "State Representative, District 010",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charles-chuck-moseley",
+     "name": "Charles Chuck Moseley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ted-uzelac",
+     "name": "Ted Uzelac",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3758-state-representative-district-011",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 011",
+   "district": null,
+   "title": "State Representative, District 011",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-j-aylesworth",
+     "name": "Michael J. Aylesworth",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12789
+    },
+    {
+     "id": "tyler-thomas-bridges",
+     "name": "Tyler Thomas Bridges",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7609
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1182-state-representative-district-012",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 012",
+   "district": null,
+   "title": "State Representative, District 012",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-andrade",
+     "name": "Mike Andrade",
+     "party": "D",
+     "party_code": "D",
+     "votes": 16479
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5023-state-representative-district-013",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 013",
+   "district": null,
+   "title": "State Representative, District 013",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-commons",
+     "name": "Matt Commons",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10558
+    },
+    {
+     "id": "brenna-geswein",
+     "name": "Brenna Geswein",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6736
+    },
+    {
+     "id": "ben-davis",
+     "name": "Ben Davis",
+     "party": "Spi",
+     "party_code": "O",
+     "votes": 429
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4156-state-representative-district-014",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 014",
+   "district": null,
+   "title": "State Representative, District 014",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vernon-g-smith",
+     "name": "Vernon G. Smith",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14781
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3532-state-representative-district-015",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 015",
+   "district": null,
+   "title": "State Representative, District 015",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hal-slager",
+     "name": "Hal Slager",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13482
+    },
+    {
+     "id": "anthony-oberman",
+     "name": "Anthony Oberman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12341
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1958-state-representative-district-016",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 016",
+   "district": null,
+   "title": "State Representative, District 016",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kendell-culp",
+     "name": "Kendell Culp",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12279
+    },
+    {
+     "id": "ashley-hammac",
+     "name": "Ashley Hammac",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6366
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2966-state-representative-district-017",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 017",
+   "district": null,
+   "title": "State Representative, District 017",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jack-jordan",
+     "name": "Jack Jordan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11101
+    },
+    {
+     "id": "mary-e-gibson",
+     "name": "Mary E. Gibson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5834
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2348-state-representative-district-018",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 018",
+   "district": null,
+   "title": "State Representative, District 018",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-h-abbott",
+     "name": "David H. Abbott",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13381
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1830-state-representative-district-019",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 019",
+   "district": null,
+   "title": "State Representative, District 019",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nick-neal",
+     "name": "Nick Neal",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10673
+    },
+    {
+     "id": "julie-olthoff",
+     "name": "Julie Olthoff",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9290
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1873-state-representative-district-020",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 020",
+   "district": null,
+   "title": "State Representative, District 020",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-pressel",
+     "name": "Jim Pressel",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1111
+    },
+    {
+     "id": "laura-liskey",
+     "name": "Laura Liskey",
+     "party": "D",
+     "party_code": "D",
+     "votes": 520
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4341-state-representative-district-021",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 021",
+   "district": null,
+   "title": "State Representative, District 021",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "timothy-wesco",
+     "name": "Timothy Wesco",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7922
+    },
+    {
+     "id": "charles-burkley",
+     "name": "Charles Burkley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5526
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5083-state-representative-district-022",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 022",
+   "district": null,
+   "title": "State Representative, District 022",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "craig-snow",
+     "name": "Craig Snow",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12711
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4067-state-representative-district-023",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 023",
+   "district": null,
+   "title": "State Representative, District 023",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ethan-manning",
+     "name": "Ethan Manning",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10123
+    },
+    {
+     "id": "austin-d-meives",
+     "name": "Austin D. Meives",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5199
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5122-state-representative-district-024",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 024",
+   "district": null,
+   "title": "State Representative, District 024",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "racheal-bleicher",
+     "name": "Racheal Bleicher",
+     "party": "D",
+     "party_code": "D",
+     "votes": 17509
+    },
+    {
+     "id": "hunter-smith",
+     "name": "Hunter Smith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15490
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1431-state-representative-district-025",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 025",
+   "district": null,
+   "title": "State Representative, District 025",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffany-stoner",
+     "name": "Tiffany Stoner",
+     "party": "D",
+     "party_code": "D",
+     "votes": 16847
+    },
+    {
+     "id": "becky-cash",
+     "name": "Becky Cash",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11903
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3854-state-representative-district-026",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 026",
+   "district": null,
+   "title": "State Representative, District 026",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-campbell",
+     "name": "Chris Campbell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8597
+    },
+    {
+     "id": "magdalaine-davis",
+     "name": "Magdalaine Davis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3561
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2086-state-representative-district-027",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 027",
+   "district": null,
+   "title": "State Representative, District 027",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sheila-j-klinker",
+     "name": "Sheila J. Klinker",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9151
+    },
+    {
+     "id": "tracy-brown",
+     "name": "Tracy Brown",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5032
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4561-state-representative-district-028",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 028",
+   "district": null,
+   "title": "State Representative, District 028",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeffrey-a-thompson",
+     "name": "Jeffrey A. Thompson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12775
+    },
+    {
+     "id": "karen-whitney",
+     "name": "Karen Whitney",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9138
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4419-state-representative-district-029",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 029",
+   "district": null,
+   "title": "State Representative, District 029",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alaina-shonkwiler",
+     "name": "Alaina Shonkwiler",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14623
+    },
+    {
+     "id": "devon-wellington",
+     "name": "Devon Wellington",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13289
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1800-state-representative-district-030",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 030",
+   "district": null,
+   "title": "State Representative, District 030",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paula-davis",
+     "name": "Paula Davis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9953
+    },
+    {
+     "id": "jack-chance",
+     "name": "Jack Chance",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8523
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2706-state-representative-district-031",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 031",
+   "district": null,
+   "title": "State Representative, District 031",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lori-j-goss-reaves",
+     "name": "Lori J. Goss-Reaves",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10352
+    },
+    {
+     "id": "katie-robins",
+     "name": "Katie Robins",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5665
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4702-state-representative-district-032",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 032",
+   "district": null,
+   "title": "State Representative, District 032",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "victoria-garcia-wilburn",
+     "name": "Victoria Garcia Wilburn",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14994
+    },
+    {
+     "id": "paul-g-nix",
+     "name": "Paul G. Nix",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9427
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1660-state-representative-district-033",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 033",
+   "district": null,
+   "title": "State Representative, District 033",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-j-d-prescott",
+     "name": "John (J.D.) Prescott",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10570
+    },
+    {
+     "id": "john-e-bartlett",
+     "name": "John E Bartlett",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7620
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2167-state-representative-district-034",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 034",
+   "district": null,
+   "title": "State Representative, District 034",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sara-gullion",
+     "name": "Sara Gullion",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9714
+    },
+    {
+     "id": "richard-m-rich-ivy",
+     "name": "Richard M. (Rich) Ivy",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5647
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4010-state-representative-district-035",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 035",
+   "district": null,
+   "title": "State Representative, District 035",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "elizabeth-rowray",
+     "name": "Elizabeth Rowray",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6097
+    },
+    {
+     "id": "phil-g-gift",
+     "name": "Phil G. Gift",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4171
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1961-state-representative-district-036",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 036",
+   "district": null,
+   "title": "State Representative, District 036",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kimberly-kim-townsend",
+     "name": "Kimberly (Kim) Townsend",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kyle-pierce",
+     "name": "Kyle Pierce",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1572-state-representative-district-037",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 037",
+   "district": null,
+   "title": "State Representative, District 037",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lauren-s-cole",
+     "name": "Lauren S. Cole",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13318
+    },
+    {
+     "id": "todd-huston",
+     "name": "Todd Huston",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12532
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4034-state-representative-district-038",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 038",
+   "district": null,
+   "title": "State Representative, District 038",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "heath-r-vannatter",
+     "name": "Heath R. VanNatter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14451
+    },
+    {
+     "id": "nate-stout",
+     "name": "Nate Stout",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8178
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4103-state-representative-district-039",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 039",
+   "district": null,
+   "title": "State Representative, District 039",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lindsay-gramlich",
+     "name": "Lindsay Gramlich",
+     "party": "D",
+     "party_code": "D",
+     "votes": 16369
+    },
+    {
+     "id": "danny-lopez",
+     "name": "Danny Lopez",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13884
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3822-state-representative-district-040",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 040",
+   "district": null,
+   "title": "State Representative, District 040",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-colteryahn",
+     "name": "William Colteryahn",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11579
+    },
+    {
+     "id": "gregory-e-steuerwald",
+     "name": "Gregory E. Steuerwald",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9574
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1434-state-representative-district-041",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 041",
+   "district": null,
+   "title": "State Representative, District 041",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-genda",
+     "name": "Mark Genda",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11090
+    },
+    {
+     "id": "jackson-t-hayes",
+     "name": "Jackson T. Hayes",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6465
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1904-state-representative-district-042",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 042",
+   "district": null,
+   "title": "State Representative, District 042",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-r-yocum",
+     "name": "Tim R. Yocum",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8782
+    },
+    {
+     "id": "brandi-vandivier",
+     "name": "Brandi Vandivier",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5597
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1022-state-representative-district-043",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 043",
+   "district": null,
+   "title": "State Representative, District 043",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tonya-pfaff",
+     "name": "Tonya Pfaff",
+     "party": "D",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "amy-lore",
+     "name": "Amy Lore",
+     "party": "R",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4891-state-representative-district-044",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 044",
+   "district": null,
+   "title": "State Representative, District 044",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "beau-baird",
+     "name": "Beau Baird",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11323
+    },
+    {
+     "id": "kelsey-kauffman",
+     "name": "Kelsey Kauffman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6263
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2524-state-representative-district-045",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 045",
+   "district": null,
+   "title": "State Representative, District 045",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kellie-e-streeter",
+     "name": "Kellie E. Streeter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12691
+    },
+    {
+     "id": "rebecca-dawn-becky-mayfield",
+     "name": "Rebecca Dawn (Becky) Mayfield",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5517
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4815-state-representative-district-046",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 046",
+   "district": null,
+   "title": "State Representative, District 046",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-heaton",
+     "name": "Bob Heaton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8273
+    },
+    {
+     "id": "james-h-pittsford-jimmy-iii",
+     "name": "James H. Pittsford (Jimmy), III",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6358
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2041-state-representative-district-047",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 047",
+   "district": null,
+   "title": "State Representative, District 047",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robb-greene",
+     "name": "Robb Greene",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13277
+    },
+    {
+     "id": "michael-e-potter",
+     "name": "Michael E Potter",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7656
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2003-state-representative-district-048",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 048",
+   "district": null,
+   "title": "State Representative, District 048",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "doug-miller",
+     "name": "Doug Miller",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8513
+    },
+    {
+     "id": "emily-yaw",
+     "name": "Emily Yaw",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6810
+    },
+    {
+     "id": "marshall-travis",
+     "name": "Marshall Travis",
+     "party": "G",
+     "party_code": "O",
+     "votes": 275
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1394-state-representative-district-049",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 049",
+   "district": null,
+   "title": "State Representative, District 049",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joanna-king",
+     "name": "Joanna King",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8648
+    },
+    {
+     "id": "michelle-milne",
+     "name": "Michelle Milne",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7312
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2477-state-representative-district-050",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 050",
+   "district": null,
+   "title": "State Representative, District 050",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lorissa-c-sweet",
+     "name": "Lorissa C. Sweet",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12379
+    },
+    {
+     "id": "pepper-snyder",
+     "name": "Pepper Snyder",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6174
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5138-state-representative-district-051",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 051",
+   "district": null,
+   "title": "State Representative, District 051",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tony-isa",
+     "name": "Tony Isa",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10010
+    },
+    {
+     "id": "judy-rowe",
+     "name": "Judy Rowe",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4822
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3906-state-representative-district-052",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 052",
+   "district": null,
+   "title": "State Representative, District 052",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-smaltz",
+     "name": "Ben Smaltz",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11562
+    },
+    {
+     "id": "joseph-trost",
+     "name": "Joseph Trost",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6001
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1907-state-representative-district-053",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 053",
+   "district": null,
+   "title": "State Representative, District 053",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ethan-j-lawson",
+     "name": "Ethan J. Lawson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12817
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3032-state-representative-district-054",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 054",
+   "district": null,
+   "title": "State Representative, District 054",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cory-criswell",
+     "name": "Cory Criswell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11916
+    },
+    {
+     "id": "nan-polk",
+     "name": "Nan Polk",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5878
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3036-state-representative-district-055",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 055",
+   "district": null,
+   "title": "State Representative, District 055",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lindsay-patterson",
+     "name": "Lindsay Patterson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12370
+    },
+    {
+     "id": "victoria-c-martz",
+     "name": "Victoria C. Martz",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4817
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1548-state-representative-district-056",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 056",
+   "district": null,
+   "title": "State Representative, District 056",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "randy-retter",
+     "name": "Randy Retter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9672
+    },
+    {
+     "id": "thomas-scott-rockwell",
+     "name": "Thomas Scott Rockwell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6722
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1006-state-representative-district-057",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 057",
+   "district": null,
+   "title": "State Representative, District 057",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wes-bennett",
+     "name": "Wes Bennett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10280
+    },
+    {
+     "id": "suzanne-fortenberry",
+     "name": "Suzanne Fortenberry",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8200
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1020-state-representative-district-058",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 058",
+   "district": null,
+   "title": "State Representative, District 058",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-reed",
+     "name": "John Reed",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8806
+    },
+    {
+     "id": "michelle-hennessee-sears",
+     "name": "Michelle Hennessee Sears",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7907
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4627-state-representative-district-059",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 059",
+   "district": null,
+   "title": "State Representative, District 059",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-lauer",
+     "name": "Ryan Lauer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9530
+    },
+    {
+     "id": "josh-burbrink",
+     "name": "Josh Burbrink",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9097
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4063-state-representative-district-060",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 060",
+   "district": null,
+   "title": "State Representative, District 060",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "peggy-mayfield",
+     "name": "Peggy Mayfield",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13618
+    },
+    {
+     "id": "carrie-l-syczylo",
+     "name": "Carrie L. Syczylo",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7450
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5158-state-representative-district-061",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 061",
+   "district": null,
+   "title": "State Representative, District 061",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-pierce",
+     "name": "Matt Pierce",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12939
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3676-state-representative-district-062",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 062",
+   "district": null,
+   "title": "State Representative, District 062",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-huffman-oliver",
+     "name": "Amy Huffman Oliver",
+     "party": "D",
+     "party_code": "D",
+     "votes": 15746
+    },
+    {
+     "id": "dave-hall",
+     "name": "Dave Hall",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10799
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1438-state-representative-district-063",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 063",
+   "district": null,
+   "title": "State Representative, District 063",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-kippenbrock",
+     "name": "Amy Kippenbrock",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11718
+    },
+    {
+     "id": "tiffanie-arthur",
+     "name": "Tiffanie Arthur",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7482
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1038-state-representative-district-064",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 064",
+   "district": null,
+   "title": "State Representative, District 064",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-hostettler",
+     "name": "Matt Hostettler",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12878
+    },
+    {
+     "id": "candace-candy-greer",
+     "name": "Candace (Candy) Greer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6554
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5281-state-representative-district-065",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 065",
+   "district": null,
+   "title": "State Representative, District 065",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-d-may",
+     "name": "Chris D. May",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7693
+    },
+    {
+     "id": "sean-s-steele",
+     "name": "Sean S. Steele",
+     "party": "I",
+     "party_code": "O",
+     "votes": 6017
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3595-state-representative-district-066",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 066",
+   "district": null,
+   "title": "State Representative, District 066",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zach-payne",
+     "name": "Zach Payne",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12615
+    },
+    {
+     "id": "ryan-price",
+     "name": "Ryan Price",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8386
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3381-state-representative-district-067",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 067",
+   "district": null,
+   "title": "State Representative, District 067",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alex-zimmerman",
+     "name": "Alex Zimmerman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12686
+    },
+    {
+     "id": "justin-chadwick",
+     "name": "Justin Chadwick",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5994
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2470-state-representative-district-068",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 068",
+   "district": null,
+   "title": "State Representative, District 068",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "garrett-r-bascom",
+     "name": "Garrett R. Bascom",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14366
+    },
+    {
+     "id": "hunter-b-collins",
+     "name": "Hunter B Collins",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5281
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5182-state-representative-district-069",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 069",
+   "district": null,
+   "title": "State Representative, District 069",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-lucas",
+     "name": "Jim Lucas",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10010
+    },
+    {
+     "id": "chris-bowen",
+     "name": "Chris Bowen",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5225
+    },
+    {
+     "id": "tyler-j-henkle",
+     "name": "Tyler J. Henkle",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1381
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3246-state-representative-district-070",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 070",
+   "district": null,
+   "title": "State Representative, District 070",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-l-fluhr",
+     "name": "Scott L. Fluhr",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13694
+    },
+    {
+     "id": "sarah-blessing",
+     "name": "Sarah Blessing",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8381
+    },
+    {
+     "id": "brandi-tibben",
+     "name": "Brandi Tibben",
+     "party": "L",
+     "party_code": "O",
+     "votes": 716
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2661-state-representative-district-071",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 071",
+   "district": null,
+   "title": "State Representative, District 071",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wendy-dant-chesser",
+     "name": "Wendy Dant Chesser",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12548
+    },
+    {
+     "id": "james-r-mcclure-jr",
+     "name": "James R. McClure, Jr.",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7173
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1950-state-representative-district-072",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 072",
+   "district": null,
+   "title": "State Representative, District 072",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michele-shelly-henry",
+     "name": "Michele (Shelly) Henry",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11064
+    },
+    {
+     "id": "darrell-neeley",
+     "name": "Darrell Neeley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10380
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2029-state-representative-district-073",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 073",
+   "district": null,
+   "title": "State Representative, District 073",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-meltzer",
+     "name": "Jennifer Meltzer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9809
+    },
+    {
+     "id": "allen-j-a-j-miller",
+     "name": "Allen J. (A.J.) Miller",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5460
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3369-state-representative-district-074",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 074",
+   "district": null,
+   "title": "State Representative, District 074",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephen-r-bartels",
+     "name": "Stephen R. Bartels",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12875
+    },
+    {
+     "id": "lena-goffinet",
+     "name": "Lena Goffinet",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8496
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1069-state-representative-district-075",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 075",
+   "district": null,
+   "title": "State Representative, District 075",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cindy-ledbetter",
+     "name": "Cindy Ledbetter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12384
+    },
+    {
+     "id": "mason-barclay",
+     "name": "Mason Barclay",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9036
+    },
+    {
+     "id": "jim-shields-w-i",
+     "name": "Jim Shields (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1103-state-representative-district-076",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 076",
+   "district": null,
+   "title": "State Representative, District 076",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wendy-mac-mcnamara",
+     "name": "Wendy (Mac) McNamara",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11114
+    },
+    {
+     "id": "logan-a-patberg",
+     "name": "Logan A. Patberg",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8659
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3540-state-representative-district-077",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 077",
+   "district": null,
+   "title": "State Representative, District 077",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alex-burton",
+     "name": "Alex Burton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10273
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2796-state-representative-district-078",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 078",
+   "district": null,
+   "title": "State Representative, District 078",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-o-brien",
+     "name": "Tim O'Brien",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10765
+    },
+    {
+     "id": "sally-busby",
+     "name": "Sally Busby",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10707
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1142-state-representative-district-079",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 079",
+   "district": null,
+   "title": "State Representative, District 079",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-s-lehman",
+     "name": "Matthew S. Lehman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12859
+    },
+    {
+     "id": "ian-g-richardson",
+     "name": "Ian G. Richardson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4546
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4681-state-representative-district-080",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 080",
+   "district": null,
+   "title": "State Representative, District 080",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phil-giaquinta",
+     "name": "Phil GiaQuinta",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10323
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3932-state-representative-district-081",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 081",
+   "district": null,
+   "title": "State Representative, District 081",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "martin-carbaugh",
+     "name": "Martin Carbaugh",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10972
+    },
+    {
+     "id": "sharon-l-wight",
+     "name": "Sharon L Wight",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9840
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4771-state-representative-district-082",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 082",
+   "district": null,
+   "title": "State Representative, District 082",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kyle-miller",
+     "name": "Kyle Miller",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10876
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2512-state-representative-district-083",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 083",
+   "district": null,
+   "title": "State Representative, District 083",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-judy",
+     "name": "Christopher Judy",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11970
+    },
+    {
+     "id": "wesley-haffenden",
+     "name": "Wesley Haffenden",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10597
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1573-state-representative-district-084",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 084",
+   "district": null,
+   "title": "State Representative, District 084",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "misti-meehan",
+     "name": "Misti Meehan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10451
+    },
+    {
+     "id": "bob-morris",
+     "name": "Bob Morris",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9958
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3702-state-representative-district-085",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 085",
+   "district": null,
+   "title": "State Representative, District 085",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dave-heine",
+     "name": "Dave Heine",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12667
+    },
+    {
+     "id": "mark-bird-wehrle",
+     "name": "Mark (Bird) Wehrle",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7225
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1433-state-representative-district-086",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 086",
+   "district": null,
+   "title": "State Representative, District 086",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "edward-o-delaney",
+     "name": "Edward O. DeLaney",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5087
+    },
+    {
+     "id": "glenn-bill",
+     "name": "Glenn Bill",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2254
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4559-state-representative-district-087",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 087",
+   "district": null,
+   "title": "State Representative, District 087",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carey-hamilton",
+     "name": "Carey Hamilton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3968
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1099-state-representative-district-088",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 088",
+   "district": null,
+   "title": "State Representative, District 088",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-jo-yocum",
+     "name": "Stephanie Jo Yocum",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10534
+    },
+    {
+     "id": "chris-jeter",
+     "name": "Chris Jeter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9412
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5126-state-representative-district-089",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 089",
+   "district": null,
+   "title": "State Representative, District 089",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mitch-gore",
+     "name": "Mitch Gore",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2089
+    },
+    {
+     "id": "donald-weingarten",
+     "name": "Donald Weingarten",
+     "party": "L",
+     "party_code": "O",
+     "votes": 706
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1024-state-representative-district-090",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 090",
+   "district": null,
+   "title": "State Representative, District 090",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-ireland",
+     "name": "Andrew Ireland",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1513
+    },
+    {
+     "id": "david-lawrence-boyd",
+     "name": "David Lawrence Boyd",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1289
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5204-state-representative-district-091",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 091",
+   "district": null,
+   "title": "State Representative, District 091",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-w-behning",
+     "name": "Robert W. Behning",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1549
+    },
+    {
+     "id": "jarren-hurt",
+     "name": "Jarren Hurt",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1488
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4923-state-representative-district-092",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 092",
+   "district": null,
+   "title": "State Representative, District 092",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rene-pack",
+     "name": "Reneé Pack",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2592
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4634-state-representative-district-093",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 093",
+   "district": null,
+   "title": "State Representative, District 093",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julie-mcguire",
+     "name": "Julie McGuire",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3306
+    },
+    {
+     "id": "eva-m-rosberg",
+     "name": "Eva M. Rosberg",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2695
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2391-state-representative-district-094",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 094",
+   "district": null,
+   "title": "State Representative, District 094",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cherrish-s-pryor",
+     "name": "Cherrish S Pryor",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1197
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1423-state-representative-district-095",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 095",
+   "district": null,
+   "title": "State Representative, District 095",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-l-bartlett",
+     "name": "John L. Bartlett",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3482
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1891-state-representative-district-096",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 096",
+   "district": null,
+   "title": "State Representative, District 096",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gregory-w-porter",
+     "name": "Gregory W. Porter",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3934
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1520-state-representative-district-097",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 097",
+   "district": null,
+   "title": "State Representative, District 097",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "justin-moed",
+     "name": "Justin Moed",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2470
+    },
+    {
+     "id": "mark-a-renholzberger",
+     "name": "Mark A Renholzberger",
+     "party": "L",
+     "party_code": "O",
+     "votes": 707
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3249-state-representative-district-098",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 098",
+   "district": null,
+   "title": "State Representative, District 098",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robin-shackleford",
+     "name": "Robin Shackleford",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2154
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2598-state-representative-district-099",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 099",
+   "district": null,
+   "title": "State Representative, District 099",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vanessa-j-summers",
+     "name": "Vanessa J Summers",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3659
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4165-state-representative-district-100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "State Representative, District 100",
+   "district": null,
+   "title": "State Representative, District 100",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "blake-johnson",
+     "name": "Blake Johnson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3766
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2258-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "in",
+   "office": "Secretary Of State",
+   "district": null,
+   "title": "Secretary Of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "beau-bayh",
+     "name": "Beau Bayh",
+     "party": "D",
+     "party_code": "D",
+     "votes": 803294
+    },
+    {
+     "id": "max-engling",
+     "name": "Max Engling",
+     "party": "R",
+     "party_code": "R",
+     "votes": 743687
+    },
+    {
+     "id": "greg-ballard",
+     "name": "Greg Ballard",
+     "party": "Lp",
+     "party_code": "O",
+     "votes": 56974
+    },
+    {
+     "id": "lauri-a-shillings",
+     "name": "Lauri A. Shillings",
+     "party": "L",
+     "party_code": "O",
+     "votes": 31093
+    },
+    {
+     "id": "andrew-delano-w-i",
+     "name": "Andrew Delano (W/I)",
+     "party": "Nsaw",
+     "party_code": "O",
+     "votes": 36
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  }
+ ]
+}

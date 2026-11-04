@@ -4,9 +4,13 @@
  "label": "U.S. Senate",
  "source_ids": [
   "ak-doe",
+  "al-sos",
   "ar-tally",
+  "de-doe",
   "fl-dos",
   "ga-scytl",
+  "id-scytl",
+  "in-enr",
   "mi-mvic",
   "mt-ersws",
   "nc-sbe",
@@ -15,10 +19,11 @@
   "oh-sos",
   "or-ersws",
   "ri-scytl",
+  "sc-clarity",
   "sd-ersws",
   "va-scytl"
  ],
- "updated_at": "2026-11-04T13:18:36Z",
+ "updated_at": "2026-11-04T13:24:02Z",
  "certified": false,
  "contests": [
   {
@@ -249,28 +254,28 @@
      "name": "Kurt Alme",
      "party": "Republican",
      "party_code": "R",
-     "votes": 216913
+     "votes": 217154
     },
     {
      "id": "alani-bankhead",
      "name": "Alani Bankhead",
      "party": "Democrat",
      "party_code": "D",
-     "votes": 53167
+     "votes": 53182
     },
     {
      "id": "kyle-austin",
      "name": "Kyle Austin",
      "party": "Libertarian",
      "party_code": "O",
-     "votes": 8130
+     "votes": 8138
     },
     {
      "id": "seth-bodnar",
      "name": "Seth Bodnar",
      "party": "Independent",
      "party_code": "O",
-     "votes": 166480
+     "votes": 166511
     }
    ],
    "precincts": {
@@ -629,6 +634,220 @@
     "reporting": 2768,
     "total": 2768,
     "unit": "precincts"
+   }
+  },
+  {
+   "id": "de-u-s-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "de",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-coons",
+     "name": "Chris Coons",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 240347
+    },
+    {
+     "id": "michael-dr-mike-katz",
+     "name": "Michael \"Dr. Mike\" Katz",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 137764
+    }
+   ],
+   "precincts": {
+    "reporting": 530,
+    "total": 530,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "sc-u-s-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "choices": [
+    {
+     "id": "rep-darline-graham",
+     "name": "Darline Graham",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 951165
+    },
+    {
+     "id": "lib-kasie-whitener",
+     "name": "Kasie Whitener",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 23560
+    },
+    {
+     "id": "dem-annie-andrews",
+     "name": "Annie Andrews",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1042362
+    },
+    {
+     "id": "con-mark-hackett",
+     "name": "Mark Hackett",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 16799
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 4894
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "id-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "id",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-risch",
+     "name": "Jim Risch",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 391395
+    },
+    {
+     "id": "todd-achilles",
+     "name": "Todd Achilles",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 232525
+    },
+    {
+     "id": "natalie-m-fleming",
+     "name": "Natalie M Fleming",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 48189
+    },
+    {
+     "id": "matt-loesby",
+     "name": "Matt Loesby",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 20137
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "al-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "everett-wess",
+     "name": "Everett Wess",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 758397
+    },
+    {
+     "id": "barry-moore",
+     "name": "Barry Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 917344
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 2047
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1409-united-states-senator-from-indiana-class-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Senator From Indiana, Class 1",
+   "district": null,
+   "title": "United States Senator From Indiana, Class 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-banks",
+     "name": "Jim Banks",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1659416
+    },
+    {
+     "id": "valerie-mccray",
+     "name": "Valerie McCray",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1097061
+    },
+    {
+     "id": "andrew-horning",
+     "name": "Andrew Horning",
+     "party": "L",
+     "party_code": "O",
+     "votes": 73233
+    },
+    {
+     "id": "phillip-d-beachy-phil-w-i",
+     "name": "Phillip D. Beachy (Phil) (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 168
+    },
+    {
+     "id": "antonio-xavier-alvarez-w-i",
+     "name": "Antonio Xavier Alvarez (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
    }
   }
  ]
