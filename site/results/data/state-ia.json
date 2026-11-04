@@ -5,13 +5,13 @@
  "source_ids": [
   "ia-clarity"
  ],
- "updated_at": "2026-11-04T12:48:09Z",
+ "updated_at": "2026-11-04T16:05:48Z",
  "certified": false,
  "contests": [
   {
    "id": "ia-united-states-senator",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "ia",
    "office": "United States Senator",
    "district": null,
@@ -60,10 +60,10 @@
   {
    "id": "ia-united-states-representative-district-1",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "ia",
    "office": "United States Representative District 1",
-   "district": null,
+   "district": "1",
    "title": "United States Representative District 1",
    "choices": [
     {
@@ -98,15 +98,21 @@
    "precincts": {
     "reporting": 20,
     "total": 20
+   },
+   "called": {
+    "winner": "christina-bohannan",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:08:30.903Z",
+    "kind": "ap"
    }
   },
   {
    "id": "ia-united-states-representative-district-2",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "ia",
    "office": "United States Representative District 2",
-   "district": null,
+   "district": "2",
    "title": "United States Representative District 2",
    "choices": [
     {
@@ -148,15 +154,21 @@
    "precincts": {
     "reporting": 22,
     "total": 22
+   },
+   "called": {
+    "winner": "lindsay-james",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:19:55.506Z",
+    "kind": "ap"
    }
   },
   {
    "id": "ia-united-states-representative-district-3",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "ia",
    "office": "United States Representative District 3",
-   "district": null,
+   "district": "3",
    "title": "United States Representative District 3",
    "choices": [
     {
@@ -184,15 +196,21 @@
    "precincts": {
     "reporting": 21,
     "total": 21
+   },
+   "called": {
+    "winner": "sarah-trone-garriott",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:03:37.503Z",
+    "kind": "ap"
    }
   },
   {
    "id": "ia-united-states-representative-district-4",
    "kind": "candidate",
-   "level": "state",
+   "level": "federal",
    "state": "ia",
    "office": "United States Representative District 4",
-   "district": null,
+   "district": "4",
    "title": "United States Representative District 4",
    "choices": [
     {
@@ -220,6 +238,12 @@
    "precincts": {
     "reporting": 36,
     "total": 36
+   },
+   "called": {
+    "winner": "chris-mcgowan",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:33:34.046Z",
+    "kind": "ap"
    }
   },
   {
@@ -4736,7 +4760,7 @@
   },
   {
    "id": "ia-court-of-appeals-judge-john-m-sandy",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "Court of Appeals Judge - John M. Sandy",
@@ -4765,7 +4789,7 @@
   },
   {
    "id": "ia-court-of-appeals-judge-julie-a-schumacher",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "Court of Appeals Judge - Julie A. Schumacher",
@@ -4794,7 +4818,7 @@
   },
   {
    "id": "ia-court-of-appeals-judge-sharon-soorholtz-greer",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "Court of Appeals Judge - Sharon Soorholtz Greer",
@@ -4823,7 +4847,7 @@
   },
   {
    "id": "ia-district-1a-associate-judge-mark-t-hostager",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 1A Associate Judge - Mark T. Hostager",
@@ -4852,7 +4876,7 @@
   },
   {
    "id": "ia-district-1a-associate-judge-stephanie-c-rattenborg",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 1A Associate Judge - Stephanie C. Rattenborg",
@@ -4881,7 +4905,7 @@
   },
   {
    "id": "ia-district-1a-associate-juvenile-judge-thomas-j-straka",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 1A Associate Juvenile Judge - Thomas J. Straka",
@@ -4910,7 +4934,7 @@
   },
   {
    "id": "ia-district-1a-judge-alan-heavens",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 1A Judge - Alan Heavens",
@@ -4939,7 +4963,7 @@
   },
   {
    "id": "ia-district-1b-associate-judge-linnea-m-n-nicol",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 1B Associate Judge - Linnea M.N. Nicol",
@@ -4968,7 +4992,7 @@
   },
   {
    "id": "ia-district-1b-associate-judge-michelle-jungers",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 1B Associate Judge - Michelle Jungers",
@@ -4997,7 +5021,7 @@
   },
   {
    "id": "ia-district-1b-associate-judge-patrice-jaye-eichman",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 1B Associate Judge - Patrice Jaye Eichman",
@@ -5026,7 +5050,7 @@
   },
   {
    "id": "ia-district-1b-judge-joel-a-dalrymple",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 1B Judge - Joel A. Dalrymple",
@@ -5055,7 +5079,7 @@
   },
   {
    "id": "ia-district-2a-associate-judge-adam-sauer",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2A Associate Judge - Adam Sauer",
@@ -5084,7 +5108,7 @@
   },
   {
    "id": "ia-district-2a-associate-judge-karen-kaufman-salic",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2A Associate Judge - Karen Kaufman Salic",
@@ -5113,7 +5137,7 @@
   },
   {
    "id": "ia-district-2a-associate-judge-mark-milder",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2A Associate Judge - Mark Milder",
@@ -5142,7 +5166,7 @@
   },
   {
    "id": "ia-district-2a-judge-christopher-foy",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2A Judge - Christopher Foy",
@@ -5171,7 +5195,7 @@
   },
   {
    "id": "ia-district-2a-judge-colleen-d-weiland",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2A Judge - Colleen D. Weiland",
@@ -5200,7 +5224,7 @@
   },
   {
    "id": "ia-district-2a-judge-dedra-schroeder",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2A Judge - DeDra Schroeder",
@@ -5229,7 +5253,7 @@
   },
   {
    "id": "ia-district-2a-judge-gregg-r-rosenbladt",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2A Judge - Gregg R. Rosenbladt",
@@ -5258,7 +5282,7 @@
   },
   {
    "id": "ia-district-2b-associate-judge-joseph-l-tofilon",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2B Associate Judge - Joseph L. Tofilon",
@@ -5287,7 +5311,7 @@
   },
   {
    "id": "ia-district-2b-associate-judge-kathryn-e-austin",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2B Associate Judge - Kathryn E. Austin",
@@ -5316,7 +5340,7 @@
   },
   {
    "id": "ia-district-2b-associate-judge-stephen-a-owen",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2B Associate Judge - Stephen A. Owen",
@@ -5345,7 +5369,7 @@
   },
   {
    "id": "ia-district-2b-judge-amy-moore",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2B Judge - Amy Moore",
@@ -5374,7 +5398,7 @@
   },
   {
    "id": "ia-district-2b-judge-angela-l-doyle",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2B Judge - Angela L. Doyle",
@@ -5403,7 +5427,7 @@
   },
   {
    "id": "ia-district-2b-judge-ashley-sparks",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2B Judge - Ashley Sparks",
@@ -5432,7 +5456,7 @@
   },
   {
    "id": "ia-district-2b-judge-bethany-currie",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2B Judge - Bethany Currie",
@@ -5461,7 +5485,7 @@
   },
   {
    "id": "ia-district-2b-judge-christopher-polking",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 2B Judge - Christopher Polking",
@@ -5490,7 +5514,7 @@
   },
   {
    "id": "ia-district-3a-associate-judge-jennifer-bennett-finn",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 3A Associate Judge - Jennifer Bennett Finn",
@@ -5519,7 +5543,7 @@
   },
   {
    "id": "ia-district-3a-associate-judge-kristi-busse",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 3A Associate Judge - Kristi Busse",
@@ -5548,7 +5572,7 @@
   },
   {
    "id": "ia-district-3a-judge-adam-miller",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 3A Judge - Adam Miller",
@@ -5577,7 +5601,7 @@
   },
   {
    "id": "ia-district-3a-judge-andrew-j-smith",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 3A Judge - Andrew J. Smith",
@@ -5606,7 +5630,7 @@
   },
   {
    "id": "ia-district-3a-judge-carl-j-petersen",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 3A Judge - Carl J. Petersen",
@@ -5635,7 +5659,7 @@
   },
   {
    "id": "ia-district-3a-judge-charles-borth",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 3A Judge - Charles Borth",
@@ -5664,7 +5688,7 @@
   },
   {
    "id": "ia-district-3b-associate-judge-daniel-p-vakulskas",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 3B Associate Judge - Daniel P. Vakulskas",
@@ -5693,7 +5717,7 @@
   },
   {
    "id": "ia-district-3b-associate-judge-john-c-nelson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 3B Associate Judge - John C. Nelson",
@@ -5722,7 +5746,7 @@
   },
   {
    "id": "ia-district-3b-associate-judge-mark-c-cord",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 3B Associate Judge - Mark C. Cord",
@@ -5751,7 +5775,7 @@
   },
   {
    "id": "ia-district-3b-associate-judge-melinda-wicks",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 3B Associate Judge - Melinda Wicks",
@@ -5780,7 +5804,7 @@
   },
   {
    "id": "ia-district-3b-judge-tod-j-deck",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 3B Judge - Tod J. Deck",
@@ -5809,7 +5833,7 @@
   },
   {
    "id": "ia-district-3b-judge-zachary-s-hindman",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 3B Judge - Zachary S. Hindman",
@@ -5838,7 +5862,7 @@
   },
   {
    "id": "ia-district-4-associate-judge-ashley-n-west-joons",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 4 Associate Judge - Ashley N. West-Joons",
@@ -5867,7 +5891,7 @@
   },
   {
    "id": "ia-district-4-associate-judge-matthew-a-schuling",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 4 Associate Judge - Matthew A. Schuling",
@@ -5896,7 +5920,7 @@
   },
   {
    "id": "ia-district-4-associate-judge-scott-strait",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 4 Associate Judge - Scott Strait",
@@ -5925,7 +5949,7 @@
   },
   {
    "id": "ia-district-4-judge-amy-l-zacharias",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 4 Judge - Amy L. Zacharias",
@@ -5954,7 +5978,7 @@
   },
   {
    "id": "ia-district-4-judge-craig-michael-dreismeier",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 4 Judge - Craig Michael Dreismeier",
@@ -5983,7 +6007,7 @@
   },
   {
    "id": "ia-district-4-judge-donna-bothwell",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 4 Judge - Donna Bothwell",
@@ -6012,7 +6036,7 @@
   },
   {
    "id": "ia-district-4-judge-justin-r-wyatt",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 4 Judge - Justin R. Wyatt",
@@ -6041,7 +6065,7 @@
   },
   {
    "id": "ia-district-4-judge-margaret-j-reyes",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 4 Judge - Margaret J. Reyes",
@@ -6070,7 +6094,7 @@
   },
   {
    "id": "ia-district-4-judge-michael-donn-hooper",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 4 Judge - Michael Donn Hooper",
@@ -6099,7 +6123,7 @@
   },
   {
    "id": "ia-district-5a-associate-judge-mark-f-schlenker",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5A Associate Judge - Mark F. Schlenker",
@@ -6128,7 +6152,7 @@
   },
   {
    "id": "ia-district-5a-associate-judge-steven-w-guiter",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5A Associate Judge - Steven W. Guiter",
@@ -6157,7 +6181,7 @@
   },
   {
    "id": "ia-district-5a-judge-michael-k-jacobsen",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5A Judge - Michael K. Jacobsen",
@@ -6186,7 +6210,7 @@
   },
   {
    "id": "ia-district-5a-judge-nicholas-bailey",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5A Judge - Nicholas Bailey",
@@ -6215,7 +6239,7 @@
   },
   {
    "id": "ia-district-5a-judge-thomas-p-murphy",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5A Judge - Thomas P. Murphy",
@@ -6244,7 +6268,7 @@
   },
   {
    "id": "ia-district-5b-associate-judge-andrew-zimmerman",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5B Associate Judge - Andrew Zimmerman",
@@ -6273,7 +6297,7 @@
   },
   {
    "id": "ia-district-5b-judge-elisabeth-s-reynoldson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5B Judge - Elisabeth S. Reynoldson",
@@ -6302,7 +6326,7 @@
   },
   {
    "id": "ia-district-5c-associate-judge-ashley-stewart",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Associate Judge - Ashley Stewart",
@@ -6331,7 +6355,7 @@
   },
   {
    "id": "ia-district-5c-associate-judge-brendan-l-greiner",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Associate Judge - Brendan L. Greiner",
@@ -6360,7 +6384,7 @@
   },
   {
    "id": "ia-district-5c-associate-judge-jordan-brackey",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Associate Judge - Jordan Brackey",
@@ -6389,7 +6413,7 @@
   },
   {
    "id": "ia-district-5c-associate-judge-kimberly-ayotte",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Associate Judge - Kimberly Ayotte",
@@ -6418,7 +6442,7 @@
   },
   {
    "id": "ia-district-5c-associate-judge-lynn-poschner",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Associate Judge - Lynn Poschner",
@@ -6447,7 +6471,7 @@
   },
   {
    "id": "ia-district-5c-associate-judge-tabitha-turner",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Associate Judge - Tabitha Turner",
@@ -6476,7 +6500,7 @@
   },
   {
    "id": "ia-district-5c-judge-celene-gogerty",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Judge - Celene Gogerty",
@@ -6505,7 +6529,7 @@
   },
   {
    "id": "ia-district-5c-judge-christopher-kemp",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Judge - Christopher Kemp",
@@ -6534,7 +6558,7 @@
   },
   {
    "id": "ia-district-5c-judge-coleman-mcallister",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Judge - Coleman McAllister",
@@ -6563,7 +6587,7 @@
   },
   {
    "id": "ia-district-5c-judge-joseph-w-seidlin",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Judge - Joseph W. Seidlin",
@@ -6592,7 +6616,7 @@
   },
   {
    "id": "ia-district-5c-judge-lawrence-p-mclellan",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Judge - Lawrence P. McLellan",
@@ -6621,7 +6645,7 @@
   },
   {
    "id": "ia-district-5c-judge-samantha-j-gronewald",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Judge - Samantha J. Gronewald",
@@ -6650,7 +6674,7 @@
   },
   {
    "id": "ia-district-5c-judge-sarah-crane",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Judge - Sarah Crane",
@@ -6679,7 +6703,7 @@
   },
   {
    "id": "ia-district-5c-judge-scott-j-beattie",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 5C Judge - Scott J. Beattie",
@@ -6708,7 +6732,7 @@
   },
   {
    "id": "ia-district-6-associate-judge-angie-johnston",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 6 Associate Judge - Angie Johnston",
@@ -6737,7 +6761,7 @@
   },
   {
    "id": "ia-district-6-associate-judge-casey-d-jones",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 6 Associate Judge - Casey D. Jones",
@@ -6766,7 +6790,7 @@
   },
   {
    "id": "ia-district-6-associate-judge-kristin-schneider",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 6 Associate Judge - Kristin Schneider",
@@ -6795,7 +6819,7 @@
   },
   {
    "id": "ia-district-6-judge-jason-d-besler",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 6 Judge - Jason D. Besler",
@@ -6824,7 +6848,7 @@
   },
   {
    "id": "ia-district-6-judge-mark-fisher",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 6 Judge - Mark Fisher",
@@ -6853,7 +6877,7 @@
   },
   {
    "id": "ia-district-6-judge-michael-harris",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 6 Judge - Michael Harris",
@@ -6882,7 +6906,7 @@
   },
   {
    "id": "ia-district-7-associate-judge-cheryl-e-traum",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 7 Associate Judge - Cheryl E. Traum",
@@ -6911,7 +6935,7 @@
   },
   {
    "id": "ia-district-7-judge-elizabeth-o-donnell",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 7 Judge - Elizabeth O'Donnell",
@@ -6940,7 +6964,7 @@
   },
   {
    "id": "ia-district-7-judge-henry-william-latham-ii",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 7 Judge - Henry William Latham II",
@@ -6969,7 +6993,7 @@
   },
   {
    "id": "ia-district-7-judge-jeffrey-mcdaniel",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 7 Judge - Jeffrey McDaniel",
@@ -6998,7 +7022,7 @@
   },
   {
    "id": "ia-district-7-judge-joel-william-barrows",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 7 Judge - Joel William Barrows",
@@ -7027,7 +7051,7 @@
   },
   {
    "id": "ia-district-7-judge-mark-ray-lawson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 7 Judge - Mark Ray Lawson",
@@ -7056,7 +7080,7 @@
   },
   {
    "id": "ia-district-7-judge-patrick-a-mcelyea",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 7 Judge - Patrick A. McElyea",
@@ -7085,7 +7109,7 @@
   },
   {
    "id": "ia-district-7-judge-tamra-j-roberts",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 7 Judge - Tamra J. Roberts",
@@ -7114,7 +7138,7 @@
   },
   {
    "id": "ia-district-8a-associate-judge-jennifer-nicole-jensen",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 8A Associate Judge - Jennifer Nicole Jensen",
@@ -7143,7 +7167,7 @@
   },
   {
    "id": "ia-district-8a-associate-judge-susan-cole",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 8A Associate Judge - Susan Cole",
@@ -7172,7 +7196,7 @@
   },
   {
    "id": "ia-district-8a-judge-amber-l-thompson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 8A Judge - Amber L. Thompson",
@@ -7201,7 +7225,7 @@
   },
   {
    "id": "ia-district-8a-judge-dustin-hite",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 8A Judge - Dustin Hite",
@@ -7230,7 +7254,7 @@
   },
   {
    "id": "ia-district-8b-associate-judge-emily-s-dean",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 8B Associate Judge - Emily S. Dean",
@@ -7259,7 +7283,7 @@
   },
   {
    "id": "ia-district-8b-judge-wyatt-p-peterson",
-   "kind": "measure",
+   "kind": "judicial",
    "level": "state",
    "state": "ia",
    "office": "District 8B Judge - Wyatt P. Peterson",

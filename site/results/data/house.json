@@ -13,6 +13,7 @@
   "fl-dos",
   "ga-scytl",
   "hi-oe",
+  "ia-clarity",
   "id-scytl",
   "in-enr",
   "ks-sos",
@@ -39,7 +40,7 @@
   "vt-sos",
   "wy-sos"
  ],
- "updated_at": "2026-11-04T15:59:55Z",
+ "updated_at": "2026-11-04T16:05:48Z",
  "certified": false,
  "contests": [
   {
@@ -8670,7 +8671,7 @@
      "name": "Kelly Thompson",
      "party": "D",
      "party_code": "D",
-     "votes": 90180
+     "votes": 90248
     },
     {
      "id": "marlin-a-stutzman",
@@ -8684,7 +8685,7 @@
      "name": "Phillip D. Beachy (Phil) (W/I)",
      "party": "I",
      "party_code": "O",
-     "votes": 6
+     "votes": 12
     }
    ],
    "precincts": {
@@ -8871,14 +8872,14 @@
      "name": "Mark Messmer",
      "party": "R",
      "party_code": "R",
-     "votes": 101333
+     "votes": 102594
     },
     {
      "id": "mary-allen",
      "name": "Mary Allen",
      "party": "D",
      "party_code": "D",
-     "votes": 78349
+     "votes": 79029
     }
    ],
    "precincts": {
@@ -13695,6 +13696,195 @@
     "winner": "manny-rutinel",
     "by": "AP (not certified)",
     "at": "2026-11-04T04:49:24.111Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ia-united-states-representative-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ia",
+   "office": "United States Representative District 1",
+   "district": "1",
+   "title": "United States Representative District 1",
+   "choices": [
+    {
+     "id": "mariannette-miller-meeks",
+     "name": "Mariannette Miller-Meeks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 150471
+    },
+    {
+     "id": "christina-bohannan",
+     "name": "Christina Bohannan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 182396
+    },
+    {
+     "id": "michael-bridgford",
+     "name": "Michael Bridgford",
+     "party": null,
+     "party_code": "O",
+     "votes": 12603
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 356
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20
+   },
+   "called": {
+    "winner": "christina-bohannan",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:08:30.903Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ia-united-states-representative-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ia",
+   "office": "United States Representative District 2",
+   "district": "2",
+   "title": "United States Representative District 2",
+   "choices": [
+    {
+     "id": "joe-mitchell",
+     "name": "Joe Mitchell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 157722
+    },
+    {
+     "id": "lindsay-james",
+     "name": "Lindsay James",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 171484
+    },
+    {
+     "id": "rick-stewart",
+     "name": "Rick Stewart",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 9500
+    },
+    {
+     "id": "dave-bushaw",
+     "name": "Dave Bushaw",
+     "party": null,
+     "party_code": "O",
+     "votes": 7469
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 226
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22
+   },
+   "called": {
+    "winner": "lindsay-james",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:19:55.506Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ia-united-states-representative-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ia",
+   "office": "United States Representative District 3",
+   "district": "3",
+   "title": "United States Representative District 3",
+   "choices": [
+    {
+     "id": "zach-nunn",
+     "name": "Zach Nunn",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 163441
+    },
+    {
+     "id": "sarah-trone-garriott",
+     "name": "Sarah Trone Garriott",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 189217
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 869
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21
+   },
+   "called": {
+    "winner": "sarah-trone-garriott",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:03:37.503Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ia-united-states-representative-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ia",
+   "office": "United States Representative District 4",
+   "district": "4",
+   "title": "United States Representative District 4",
+   "choices": [
+    {
+     "id": "chris-mcgowan",
+     "name": "Chris McGowan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 178845
+    },
+    {
+     "id": "dave-dawson",
+     "name": "Dave Dawson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 123940
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 352
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36
+   },
+   "called": {
+    "winner": "chris-mcgowan",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:33:34.046Z",
     "kind": "ap"
    }
   }

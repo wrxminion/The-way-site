@@ -10,6 +10,7 @@
   "de-doe",
   "fl-dos",
   "ga-scytl",
+  "ia-clarity",
   "id-scytl",
   "in-enr",
   "ks-sos",
@@ -31,7 +32,7 @@
   "va-scytl",
   "wy-sos"
  ],
- "updated_at": "2026-11-04T15:59:55Z",
+ "updated_at": "2026-11-04T16:05:48Z",
  "certified": false,
  "contests": [
   {
@@ -1419,6 +1420,55 @@
     "winner": "john-hickenlooper",
     "by": "AP (not certified)",
     "at": "2026-11-04T02:00:32.190Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ia-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ia",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "choices": [
+    {
+     "id": "ashley-hinson",
+     "name": "Ashley Hinson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 630615
+    },
+    {
+     "id": "josh-turek",
+     "name": "Josh Turek",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 686486
+    },
+    {
+     "id": "thomas-laehn",
+     "name": "Thomas Laehn",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 42052
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1686
+    }
+   ],
+   "precincts": {
+    "reporting": 99,
+    "total": 99
+   },
+   "called": {
+    "winner": "josh-turek",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:35:30.952Z",
     "kind": "ap"
    }
   }
