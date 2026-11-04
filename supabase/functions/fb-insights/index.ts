@@ -62,12 +62,12 @@ Deno.serve(async (req) => {
     const jwt = (req.headers.get('authorization') ?? '').replace(/^Bearer /i, '');
     const { data } = await admin.auth.getUser(jwt);
     if (data?.user) {
-      const { data: roles } = await admin.from('member_roles').select('role').eq('member_id', data.user.id).eq('role', 'super_admin');
+      const { data: roles } = await admin.from('member_roles').select('role').eq('member_id', data.user.id).in('role', act === 'post' ? ['super_admin', 'marketing'] : ['super_admin']);
       const { data: m } = await admin.from('members').select('status').eq('id', data.user.id).maybeSingle();
       allowed = !!roles?.length && m?.status === 'active';
     }
   }
-  if (!allowed) return json({ ok: false, error: 'Super admins only.' }, 403);
+  if (!allowed) return json({ ok: false, error: act === 'post' ? 'Super admins and the Media Director only.' : 'Super admins only.' }, 403);
 
   const pageId = env('FB_PAGE_ID'), token = env('FB_PAGE_TOKEN'), ver = env('FB_GRAPH_VERSION') || 'v25.0';
   const fail = async (note: string) => {
