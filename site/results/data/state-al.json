@@ -1,0 +1,382 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-al",
+ "label": "Alabama",
+ "source_ids": [
+  "al-sos"
+ ],
+ "updated_at": "2026-11-04T13:29:26Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "al-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "al",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "doug-jones",
+     "name": "Doug Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 806149
+    },
+    {
+     "id": "tommy-tuberville",
+     "name": "Tommy Tuberville",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 872076
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 5917
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "al",
+   "office": "Lieutenant Governor",
+   "district": null,
+   "title": "Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phillip-ensler",
+     "name": "Phillip Ensler",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 765131
+    },
+    {
+     "id": "john-wahl",
+     "name": "John Wahl",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 910795
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 1782
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "everett-wess",
+     "name": "Everett Wess",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 758397
+    },
+    {
+     "id": "barry-moore",
+     "name": "Barry Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 917344
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 2047
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-1st-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 1St Congressional District",
+   "district": "1",
+   "title": "United States Representative, 1St Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clyde-jones",
+     "name": "Clyde Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 94925
+    },
+    {
+     "id": "jerry-carl",
+     "name": "Jerry Carl",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 137016
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 190
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-2nd-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 2Nd Congressional District",
+   "district": "2",
+   "title": "United States Representative, 2Nd Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shomari-c-figures",
+     "name": "Shomari C. Figures",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 124422
+    },
+    {
+     "id": "rhett-marques",
+     "name": "Rhett Marques",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 107049
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 338
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-3rd-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 3Rd Congressional District",
+   "district": "3",
+   "title": "United States Representative, 3Rd Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lee-mcinnis",
+     "name": "Lee McInnis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 79860
+    },
+    {
+     "id": "mike-rogers",
+     "name": "Mike Rogers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 141274
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 306
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-4th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 4Th Congressional District",
+   "district": "4",
+   "title": "United States Representative, 4Th Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amanda-n-pusczek",
+     "name": "Amanda N. Pusczek",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 53633
+    },
+    {
+     "id": "robert-b-aderholt",
+     "name": "Robert B. Aderholt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 160008
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 271
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-5th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 5Th Congressional District",
+   "district": "5",
+   "title": "United States Representative, 5Th Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-sneed",
+     "name": "Andrew Sneed",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 124763
+    },
+    {
+     "id": "dale-w-strong",
+     "name": "Dale W. Strong",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 142080
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 293
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-6th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 6Th Congressional District",
+   "district": "6",
+   "title": "United States Representative, 6Th Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maurice-mercer",
+     "name": "Maurice Mercer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 110957
+    },
+    {
+     "id": "gary-palmer",
+     "name": "Gary Palmer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 149921
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 257
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-7th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 7Th Congressional District",
+   "district": "7",
+   "title": "United States Representative, 7Th Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "terri-sewell",
+     "name": "Terri Sewell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 174823
+    },
+    {
+     "id": "ammie-akin",
+     "name": "Ammie Akin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 77085
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 173
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  }
+ ]
+}

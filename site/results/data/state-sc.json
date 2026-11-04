@@ -1,0 +1,6294 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-sc",
+ "label": "South Carolina",
+ "source_ids": [
+  "sc-clarity"
+ ],
+ "updated_at": "2026-11-04T13:24:02Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "sc-governor-and-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Governor and Lieutenant Governor",
+   "district": null,
+   "title": "Governor and Lieutenant Governor",
+   "choices": [
+    {
+     "id": "unc-michael-addison-candace-brewer",
+     "name": "Michael Addison / Candace Brewer",
+     "party": "UNC",
+     "party_code": "O",
+     "votes": 16111
+    },
+    {
+     "id": "grn-walid-hakim-arnold-e-karr",
+     "name": "Walid Hakim / Arnold E Karr",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 9078
+    },
+    {
+     "id": "rep-alan-wilson-mike-reichenbach",
+     "name": "Alan Wilson / Mike Reichenbach",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1050190
+    },
+    {
+     "id": "dem-jermaine-johnson-sam-skardon",
+     "name": "Jermaine Johnson / Sam Skardon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 959001
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1141
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "choices": [
+    {
+     "id": "rep-mark-hammond",
+     "name": "Mark Hammond",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1072797
+    },
+    {
+     "id": "dem-jason-belton",
+     "name": "Jason Belton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 950922
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 958
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State Treasurer",
+   "district": null,
+   "title": "State Treasurer",
+   "choices": [
+    {
+     "id": "rep-curtis-loftis",
+     "name": "Curtis Loftis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1061819
+    },
+    {
+     "id": "dem-vincent-coe",
+     "name": "Vincent Coe",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 958278
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1104
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "choices": [
+    {
+     "id": "rep-david-stumbo",
+     "name": "David Stumbo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1058525
+    },
+    {
+     "id": "dem-richard-hricik",
+     "name": "Richard Hricik",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 963645
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1132
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-comptroller-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Comptroller General",
+   "district": null,
+   "title": "Comptroller General",
+   "choices": [
+    {
+     "id": "rep-mike-burkhold",
+     "name": "Mike Burkhold",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1047724
+    },
+    {
+     "id": "dem-tiffany-boozer",
+     "name": "Tiffany Boozer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 963806
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 728
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-superintendent-of-education",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State Superintendent of Education",
+   "district": null,
+   "title": "State Superintendent of Education",
+   "choices": [
+    {
+     "id": "unc-baba-amin-ojuok",
+     "name": "Baba Amin Ojuok",
+     "party": "UNC",
+     "party_code": "O",
+     "votes": 15482
+    },
+    {
+     "id": "rep-ellen-weaver",
+     "name": "Ellen Weaver",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1031719
+    },
+    {
+     "id": "dem-sylvia-wright",
+     "name": "Sylvia Wright",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 975129
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1270
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-commissioner-of-agriculture",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Commissioner of Agriculture",
+   "district": null,
+   "title": "Commissioner of Agriculture",
+   "choices": [
+    {
+     "id": "unc-chris-nelums",
+     "name": "Chris Nelums",
+     "party": "UNC",
+     "party_code": "O",
+     "votes": 16013
+    },
+    {
+     "id": "rep-cody-simpson",
+     "name": "Cody Simpson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1041797
+    },
+    {
+     "id": "lib-michael-sullens",
+     "name": "Michael Sullens",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 38419
+    },
+    {
+     "id": "dem-deshawn-blanding",
+     "name": "DeShawn Blanding",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 921750
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1135
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "choices": [
+    {
+     "id": "rep-darline-graham",
+     "name": "Darline Graham",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 951165
+    },
+    {
+     "id": "lib-kasie-whitener",
+     "name": "Kasie Whitener",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 23560
+    },
+    {
+     "id": "dem-annie-andrews",
+     "name": "Annie Andrews",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1042362
+    },
+    {
+     "id": "con-mark-hackett",
+     "name": "Mark Hackett",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 16799
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 4894
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 1",
+   "district": "1",
+   "title": "U.S. House of Representatives, District 1",
+   "choices": [
+    {
+     "id": "rep-jenny-costa-honeycutt",
+     "name": "Jenny Costa Honeycutt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 158570
+    },
+    {
+     "id": "lib-bill-reeside",
+     "name": "Bill Reeside",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 5346
+    },
+    {
+     "id": "dem-nancy-lacore",
+     "name": "Nancy Lacore",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 161878
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 218
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 2",
+   "district": "2",
+   "title": "U.S. House of Representatives, District 2",
+   "choices": [
+    {
+     "id": "rep-joe-wilson",
+     "name": "Joe Wilson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 147620
+    },
+    {
+     "id": "dem-zyon-khalifa",
+     "name": "Zyon Khalifa",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 144593
+    },
+    {
+     "id": "wrk-dayna-alane-smith",
+     "name": "WRK Dayna Alane Smith",
+     "party": "WRK",
+     "party_code": "O",
+     "votes": 3665
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 332
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 3",
+   "district": "3",
+   "title": "U.S. House of Representatives, District 3",
+   "choices": [
+    {
+     "id": "rep-sheri-biggs",
+     "name": "Sheri Biggs",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 173801
+    },
+    {
+     "id": "lib-brian-corriea",
+     "name": "Brian Corriea",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 5094
+    },
+    {
+     "id": "dem-eunice-lehmacher",
+     "name": "Eunice Lehmacher",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 93821
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 150
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 4",
+   "district": "4",
+   "title": "U.S. House of Representatives, District 4",
+   "choices": [
+    {
+     "id": "rep-william-timmons",
+     "name": "William Timmons",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 146808
+    },
+    {
+     "id": "lib-jessica-ethridge",
+     "name": "Jessica Ethridge",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 7205
+    },
+    {
+     "id": "dem-courtney-mcclain",
+     "name": "Courtney McClain",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 129561
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 292
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 5",
+   "district": "5",
+   "title": "U.S. House of Representatives, District 5",
+   "choices": [
+    {
+     "id": "rep-wes-climer",
+     "name": "Wes Climer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 151553
+    },
+    {
+     "id": "dem-mallory-dittmer",
+     "name": "Mallory Dittmer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 135157
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 155
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 6",
+   "district": "6",
+   "title": "U.S. House of Representatives, District 6",
+   "choices": [
+    {
+     "id": "rep-john-peterson",
+     "name": "John Peterson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 79497
+    },
+    {
+     "id": "dem-james-e-jim-clyburn",
+     "name": "James E Jim Clyburn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 180559
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 318
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 7",
+   "district": "7",
+   "title": "U.S. House of Representatives, District 7",
+   "choices": [
+    {
+     "id": "rep-russell-fry",
+     "name": "Russell Fry",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 172308
+    },
+    {
+     "id": "dem-john-gregory-vincent",
+     "name": "John Gregory Vincent",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 131319
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 204
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-senate-district-15-unexpired-term",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State Senate District 15 (Unexpired Term)",
+   "district": null,
+   "title": "State Senate District 15 (Unexpired Term)",
+   "choices": [
+    {
+     "id": "rep-james-burns",
+     "name": "James Burns",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 26496
+    },
+    {
+     "id": "dem-chad-williams",
+     "name": "Chad Williams",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 22803
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 38
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 1",
+   "district": null,
+   "title": "State House of Representatives, District 1",
+   "choices": [
+    {
+     "id": "rep-bill-whitmire",
+     "name": "Bill Whitmire",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13839
+    },
+    {
+     "id": "dem-jasmine-williams",
+     "name": "Jasmine Williams",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4383
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 20
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 2",
+   "district": null,
+   "title": "State House of Representatives, District 2",
+   "choices": [
+    {
+     "id": "rep-adam-duncan",
+     "name": "Adam Duncan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10977
+    },
+    {
+     "id": "lib-christopher-damian-des-marais",
+     "name": "Christopher Damian Des Marais",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 207
+    },
+    {
+     "id": "dem-candace-schutt",
+     "name": "Candace Schutt",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5449
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 3",
+   "district": null,
+   "title": "State House of Representatives, District 3",
+   "choices": [
+    {
+     "id": "rep-phillip-bowers",
+     "name": "Phillip Bowers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5603
+    },
+    {
+     "id": "dem-claiborne-linvill",
+     "name": "Claiborne Linvill",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4735
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 4",
+   "district": null,
+   "title": "State House of Representatives, District 4",
+   "choices": [
+    {
+     "id": "rep-clay-counts",
+     "name": "Clay Counts",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12235
+    },
+    {
+     "id": "dem-derrick-kruse",
+     "name": "Derrick Kruse",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2931
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 21
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 5",
+   "district": null,
+   "title": "State House of Representatives, District 5",
+   "choices": [
+    {
+     "id": "rep-neal-collins",
+     "name": "Neal Collins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10608
+    },
+    {
+     "id": "dem-david-f-jones",
+     "name": "David F Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4777
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 68
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 6",
+   "district": null,
+   "title": "State House of Representatives, District 6",
+   "choices": [
+    {
+     "id": "rep-april-cromer",
+     "name": "April Cromer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11402
+    },
+    {
+     "id": "dem-jennifer-bachner",
+     "name": "Jennifer Bachner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5923
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 59
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 7",
+   "district": null,
+   "title": "State House of Representatives, District 7",
+   "choices": [
+    {
+     "id": "rep-lee-gilreath",
+     "name": "Lee Gilreath",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8644
+    },
+    {
+     "id": "dem-elizabeth-w-cooley",
+     "name": "Elizabeth W Cooley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4164
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 8",
+   "district": null,
+   "title": "State House of Representatives, District 8",
+   "choices": [
+    {
+     "id": "rep-don-chapman",
+     "name": "Don Chapman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9703
+    },
+    {
+     "id": "dem-demetrius-carson",
+     "name": "Demetrius Carson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5212
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 22
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 9",
+   "district": null,
+   "title": "State House of Representatives, District 9",
+   "choices": [
+    {
+     "id": "rep-blake-sanders",
+     "name": "Blake Sanders",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8998
+    },
+    {
+     "id": "dem-johnny-estrich",
+     "name": "Johnny Estrich",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4713
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 10",
+   "district": null,
+   "title": "State House of Representatives, District 10",
+   "choices": [
+    {
+     "id": "rep-thomas-beach",
+     "name": "Thomas Beach",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9865
+    },
+    {
+     "id": "dem-thomas-stewart",
+     "name": "Thomas Stewart",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5039
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 24
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 11",
+   "district": null,
+   "title": "State House of Representatives, District 11",
+   "choices": [
+    {
+     "id": "unc-e-t-stone",
+     "name": "E T Stone",
+     "party": "UNC",
+     "party_code": "O",
+     "votes": 138
+    },
+    {
+     "id": "rep-craig-gagnon",
+     "name": "Craig Gagnon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9263
+    },
+    {
+     "id": "dem-jessica-beasley",
+     "name": "Jessica Beasley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4407
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 12",
+   "district": null,
+   "title": "State House of Representatives, District 12",
+   "choices": [
+    {
+     "id": "rep-daniel-gibson",
+     "name": "Daniel Gibson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6198
+    },
+    {
+     "id": "dem-jumelle-brooks",
+     "name": "Jumelle Brooks",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7550
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 13",
+   "district": null,
+   "title": "State House of Representatives, District 13",
+   "choices": [
+    {
+     "id": "rep-john-mccravy",
+     "name": "John McCravy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11235
+    },
+    {
+     "id": "dem-c-rauch-wise",
+     "name": "C Rauch Wise",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5548
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 14",
+   "district": null,
+   "title": "State House of Representatives, District 14",
+   "choices": [
+    {
+     "id": "unc-henry-d-jones",
+     "name": "Henry D Jones",
+     "party": "UNC",
+     "party_code": "O",
+     "votes": 156
+    },
+    {
+     "id": "rep-rick-shealy",
+     "name": "Rick Shealy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8959
+    },
+    {
+     "id": "dem-michanna-tate",
+     "name": "Michanna Tate",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5321
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 15",
+   "district": null,
+   "title": "State House of Representatives, District 15",
+   "choices": [
+    {
+     "id": "rep-heather-hickman",
+     "name": "Heather Hickman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2991
+    },
+    {
+     "id": "lib-melissa-couture",
+     "name": "Melissa Couture",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 202
+    },
+    {
+     "id": "dem-ja-moore",
+     "name": "JA Moore",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6461
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 16",
+   "district": null,
+   "title": "State House of Representatives, District 16",
+   "choices": [
+    {
+     "id": "rep-mark-n-willis",
+     "name": "Mark N Willis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10764
+    },
+    {
+     "id": "dem-lynn-ramirez",
+     "name": "Lynn Ramirez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7718
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 17",
+   "district": null,
+   "title": "State House of Representatives, District 17",
+   "choices": [
+    {
+     "id": "rep-mike-burns",
+     "name": "Mike Burns",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13654
+    },
+    {
+     "id": "dem-rich-nicoloff",
+     "name": "Rich Nicoloff",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5393
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 17
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 18",
+   "district": null,
+   "title": "State House of Representatives, District 18",
+   "choices": [
+    {
+     "id": "rep-alan-morgan",
+     "name": "Alan Morgan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11761
+    },
+    {
+     "id": "dem-virginia-b-maclure",
+     "name": "Virginia B Maclure",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5808
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 19",
+   "district": null,
+   "title": "State House of Representatives, District 19",
+   "choices": [
+    {
+     "id": "rep-patrick-b-haddon",
+     "name": "Patrick B Haddon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6749
+    },
+    {
+     "id": "dem-rachel-smith",
+     "name": "Rachel Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6380
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 20",
+   "district": null,
+   "title": "State House of Representatives, District 20",
+   "choices": [
+    {
+     "id": "rep-stephen-d-frank",
+     "name": "Stephen D Frank",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9860
+    },
+    {
+     "id": "dem-polly-elbertse",
+     "name": "Polly Elbertse",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6302
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 21
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 21",
+   "district": null,
+   "title": "State House of Representatives, District 21",
+   "choices": [
+    {
+     "id": "rep-dianne-mitchell",
+     "name": "Dianne Mitchell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11573
+    },
+    {
+     "id": "dem-dexter-reaves",
+     "name": "Dexter Reaves",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7436
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 22",
+   "district": null,
+   "title": "State House of Representatives, District 22",
+   "choices": [
+    {
+     "id": "rep-paul-wickensimer",
+     "name": "Paul Wickensimer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9856
+    },
+    {
+     "id": "dem-josh-kendrick",
+     "name": "Josh Kendrick",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8872
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 23",
+   "district": null,
+   "title": "State House of Representatives, District 23",
+   "choices": [
+    {
+     "id": "dem-chandra-dillard",
+     "name": "Chandra Dillard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9253
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 151
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 24",
+   "district": null,
+   "title": "State House of Representatives, District 24",
+   "choices": [
+    {
+     "id": "rep-bruce-bannister",
+     "name": "Bruce Bannister",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10192
+    },
+    {
+     "id": "dem-caroline-avinger",
+     "name": "Caroline Avinger",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9382
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 25",
+   "district": null,
+   "title": "State House of Representatives, District 25",
+   "choices": [
+    {
+     "id": "dem-wendell-jones",
+     "name": "Wendell Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10920
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 177
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 26",
+   "district": null,
+   "title": "State House of Representatives, District 26",
+   "choices": [
+    {
+     "id": "rep-david-w-martin",
+     "name": "David W Martin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9990
+    },
+    {
+     "id": "dem-jenny-desch",
+     "name": "Jenny Desch",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8247
+    },
+    {
+     "id": "wrk-kiral-mace",
+     "name": "WRK Kiral Mace",
+     "party": "WRK",
+     "party_code": "O",
+     "votes": 122
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 22
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 27",
+   "district": null,
+   "title": "State House of Representatives, District 27",
+   "choices": [
+    {
+     "id": "rep-david-vaughan",
+     "name": "David Vaughan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9135
+    },
+    {
+     "id": "dem-john-maccarthy",
+     "name": "John MacCarthy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9093
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 28",
+   "district": null,
+   "title": "State House of Representatives, District 28",
+   "choices": [
+    {
+     "id": "rep-chris-huff",
+     "name": "Chris Huff",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10511
+    },
+    {
+     "id": "dem-alan-g-buckalew",
+     "name": "Alan G Buckalew",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8966
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 29",
+   "district": null,
+   "title": "State House of Representatives, District 29",
+   "choices": [
+    {
+     "id": "rep-dennis-moss",
+     "name": "Dennis Moss",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9381
+    },
+    {
+     "id": "dem-marina-franco",
+     "name": "Marina Franco",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4263
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 20
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 30",
+   "district": null,
+   "title": "State House of Representatives, District 30",
+   "choices": [
+    {
+     "id": "rep-brian-lawson",
+     "name": "Brian Lawson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9084
+    },
+    {
+     "id": "dem-stephanie-holstein",
+     "name": "Stephanie Holstein",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3802
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 10
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 31",
+   "district": null,
+   "title": "State House of Representatives, District 31",
+   "choices": [
+    {
+     "id": "unc-james-a-jones-sr",
+     "name": "James A Jones Sr",
+     "party": "UNC",
+     "party_code": "O",
+     "votes": 833
+    },
+    {
+     "id": "dem-rosalyn-henderson-myers",
+     "name": "Rosalyn Henderson-Myers",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7667
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 45
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 32",
+   "district": null,
+   "title": "State House of Representatives, District 32",
+   "choices": [
+    {
+     "id": "rep-scott-montgomery",
+     "name": "Scott Montgomery",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7521
+    },
+    {
+     "id": "dem-irene-benson",
+     "name": "Irene Benson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6423
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 33",
+   "district": null,
+   "title": "State House of Representatives, District 33",
+   "choices": [
+    {
+     "id": "rep-travis-a-moore",
+     "name": "Travis A Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10001
+    },
+    {
+     "id": "dem-clemson-g-turregano",
+     "name": "Clemson G Turregano",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6132
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 34",
+   "district": null,
+   "title": "State House of Representatives, District 34",
+   "choices": [
+    {
+     "id": "rep-sarita-edgerton",
+     "name": "Sarita Edgerton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9204
+    },
+    {
+     "id": "dem-saville-williams",
+     "name": "Saville Williams",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8480
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 35",
+   "district": null,
+   "title": "State House of Representatives, District 35",
+   "choices": [
+    {
+     "id": "rep-bill-chumley",
+     "name": "Bill Chumley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12115
+    },
+    {
+     "id": "dem-tatiana-skipper",
+     "name": "Tatiana Skipper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7867
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 21
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 36",
+   "district": null,
+   "title": "State House of Representatives, District 36",
+   "choices": [
+    {
+     "id": "rep-rob-harris",
+     "name": "Rob Harris",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7988
+    },
+    {
+     "id": "dem-virginia-mclean",
+     "name": "Virginia McLean",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6329
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 17
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 37",
+   "district": null,
+   "title": "State House of Representatives, District 37",
+   "choices": [
+    {
+     "id": "rep-steven-long",
+     "name": "Steven Long",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8312
+    },
+    {
+     "id": "dem-seth-sauer-hart",
+     "name": "Seth Sauer-Hart",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6451
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 38",
+   "district": null,
+   "title": "State House of Representatives, District 38",
+   "choices": [
+    {
+     "id": "rep-josiah-magnuson",
+     "name": "Josiah Magnuson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12164
+    },
+    {
+     "id": "dem-tammy-hahn",
+     "name": "Tammy Hahn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4348
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 22
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 39",
+   "district": null,
+   "title": "State House of Representatives, District 39",
+   "choices": [
+    {
+     "id": "rep-cally-r-cal-forrest",
+     "name": "Cally R Cal Forrest",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11590
+    },
+    {
+     "id": "dem-sherman-lott",
+     "name": "Sherman Lott",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4289
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 40",
+   "district": null,
+   "title": "State House of Representatives, District 40",
+   "choices": [
+    {
+     "id": "rep-joe-white",
+     "name": "Joe White",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9751
+    },
+    {
+     "id": "dem-engle-thompson",
+     "name": "Engle Thompson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6019
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 41",
+   "district": null,
+   "title": "State House of Representatives, District 41",
+   "choices": [
+    {
+     "id": "rep-tibi-czentye",
+     "name": "Tibi Czentye",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5940
+    },
+    {
+     "id": "dem-annie-e-mcdaniel",
+     "name": "Annie E McDaniel",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11712
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 42",
+   "district": null,
+   "title": "State House of Representatives, District 42",
+   "choices": [
+    {
+     "id": "rep-doug-gilliam",
+     "name": "Doug Gilliam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7723
+    },
+    {
+     "id": "dem-robert-larry-williams",
+     "name": "Robert Larry Williams",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5213
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 21
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 43",
+   "district": null,
+   "title": "State House of Representatives, District 43",
+   "choices": [
+    {
+     "id": "rep-randy-ligon",
+     "name": "Randy Ligon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9450
+    },
+    {
+     "id": "dem-alex-clark",
+     "name": "Alex Clark",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5772
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-44",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 44",
+   "district": null,
+   "title": "State House of Representatives, District 44",
+   "choices": [
+    {
+     "id": "rep-mike-neese",
+     "name": "Mike Neese",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12054
+    },
+    {
+     "id": "dem-katie-crosby",
+     "name": "Katie Crosby",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10901
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 45",
+   "district": null,
+   "title": "State House of Representatives, District 45",
+   "choices": [
+    {
+     "id": "rep-brandon-newton",
+     "name": "Brandon Newton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8725
+    },
+    {
+     "id": "dem-nicole-ventour",
+     "name": "Nicole Ventour",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6773
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 29
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 46",
+   "district": null,
+   "title": "State House of Representatives, District 46",
+   "choices": [
+    {
+     "id": "rep-heath-sessions",
+     "name": "Heath Sessions",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8760
+    },
+    {
+     "id": "dem-omar-l-mccrorey",
+     "name": "Omar L McCrorey",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8181
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 47",
+   "district": null,
+   "title": "State House of Representatives, District 47",
+   "choices": [
+    {
+     "id": "rep-tommy-pope",
+     "name": "Tommy Pope",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11586
+    },
+    {
+     "id": "dem-justin-bennett",
+     "name": "Justin Bennett",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5816
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-48",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 48",
+   "district": null,
+   "title": "State House of Representatives, District 48",
+   "choices": [
+    {
+     "id": "rep-brandon-guffey",
+     "name": "Brandon Guffey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10821
+    },
+    {
+     "id": "dem-rustin-terry",
+     "name": "Rustin Terry",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8200
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 21
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 49",
+   "district": null,
+   "title": "State House of Representatives, District 49",
+   "choices": [
+    {
+     "id": "dem-john-r-king",
+     "name": "John R King",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10939
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 223
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-50",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 50",
+   "district": null,
+   "title": "State House of Representatives, District 50",
+   "choices": [
+    {
+     "id": "rep-william-oden",
+     "name": "William Oden",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5793
+    },
+    {
+     "id": "dem-keishan-m-scott",
+     "name": "Keishan M Scott",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9539
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-51",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 51",
+   "district": null,
+   "title": "State House of Representatives, District 51",
+   "choices": [
+    {
+     "id": "dem-david-weeks",
+     "name": "David Weeks",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10122
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 149
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-52",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 52",
+   "district": null,
+   "title": "State House of Representatives, District 52",
+   "choices": [
+    {
+     "id": "dem-malcolm-taylor",
+     "name": "Malcolm Taylor",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13089
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 272
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-53",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 53",
+   "district": null,
+   "title": "State House of Representatives, District 53",
+   "choices": [
+    {
+     "id": "rep-richard-richie-yow",
+     "name": "Richard Richie Yow",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8769
+    },
+    {
+     "id": "dem-bruce-m-wallace",
+     "name": "Bruce M Wallace",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4560
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-54",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 54",
+   "district": null,
+   "title": "State House of Representatives, District 54",
+   "choices": [
+    {
+     "id": "dem-jason-luck",
+     "name": "Jason Luck",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9113
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 140
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-55",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 55",
+   "district": null,
+   "title": "State House of Representatives, District 55",
+   "choices": [
+    {
+     "id": "dem-jackie-hayes",
+     "name": "Jackie Hayes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9430
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 168
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-56",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 56",
+   "district": null,
+   "title": "State House of Representatives, District 56",
+   "choices": [
+    {
+     "id": "rep-tim-mcginnis",
+     "name": "Tim McGinnis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13910
+    },
+    {
+     "id": "dem-jacqualyn-meadow",
+     "name": "Jacqualyn Meadow",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8073
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-57",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 57",
+   "district": null,
+   "title": "State House of Representatives, District 57",
+   "choices": [
+    {
+     "id": "rep-lucas-atkinson",
+     "name": "Lucas Atkinson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7595
+    },
+    {
+     "id": "dem-cynthia-o-ford",
+     "name": "Cynthia O Ford",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8101
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-58",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 58",
+   "district": null,
+   "title": "State House of Representatives, District 58",
+   "choices": [
+    {
+     "id": "rep-jeff-johnson",
+     "name": "Jeff Johnson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10142
+    },
+    {
+     "id": "dem-sha-ron-e-jones",
+     "name": "Sha-Ron E Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5392
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 14
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-59",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 59",
+   "district": null,
+   "title": "State House of Representatives, District 59",
+   "choices": [
+    {
+     "id": "dem-terry-alexander",
+     "name": "Terry Alexander",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9432
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 201
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-60",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 60",
+   "district": null,
+   "title": "State House of Representatives, District 60",
+   "choices": [
+    {
+     "id": "rep-phillip-lowe",
+     "name": "Phillip Lowe",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8216
+    },
+    {
+     "id": "dem-adrian-peguese-carter",
+     "name": "Adrian Peguese Carter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6968
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-61",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 61",
+   "district": null,
+   "title": "State House of Representatives, District 61",
+   "choices": [
+    {
+     "id": "rep-carla-schuessler",
+     "name": "Carla Schuessler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8342
+    },
+    {
+     "id": "lib-david-herndon",
+     "name": "David Herndon",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 229
+    },
+    {
+     "id": "dem-carol-goodman",
+     "name": "Carol Goodman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5537
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-62",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 62",
+   "district": null,
+   "title": "State House of Representatives, District 62",
+   "choices": [
+    {
+     "id": "dem-robert-williams",
+     "name": "Robert Williams",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9856
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 222
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-63",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 63",
+   "district": null,
+   "title": "State House of Representatives, District 63",
+   "choices": [
+    {
+     "id": "rep-jay-jordan",
+     "name": "Jay Jordan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8849
+    },
+    {
+     "id": "dem-kory-haskins",
+     "name": "Kory Haskins",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6770
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-64",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 64",
+   "district": null,
+   "title": "State House of Representatives, District 64",
+   "choices": [
+    {
+     "id": "rep-fawn-pedalino",
+     "name": "Fawn Pedalino",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7972
+    },
+    {
+     "id": "dem-michele-demery",
+     "name": "Michele Demery",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8676
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 20
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-65",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 65",
+   "district": null,
+   "title": "State House of Representatives, District 65",
+   "choices": [
+    {
+     "id": "rep-cody-t-mitchell",
+     "name": "Cody T Mitchell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9634
+    },
+    {
+     "id": "dem-tanisha-baskin",
+     "name": "Tanisha Baskin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4563
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-66",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 66",
+   "district": null,
+   "title": "State House of Representatives, District 66",
+   "choices": [
+    {
+     "id": "rep-jackie-terribile",
+     "name": "Jackie Terribile",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8576
+    },
+    {
+     "id": "dem-heather-hart",
+     "name": "Heather Hart",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9046
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-67",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 67",
+   "district": null,
+   "title": "State House of Representatives, District 67",
+   "choices": [
+    {
+     "id": "rep-murrell-smith",
+     "name": "Murrell Smith",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8585
+    },
+    {
+     "id": "dem-lisa-davey",
+     "name": "Lisa Davey",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6771
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-68",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 68",
+   "district": null,
+   "title": "State House of Representatives, District 68",
+   "choices": [
+    {
+     "id": "rep-heather-ammons-crawford",
+     "name": "Heather Ammons Crawford",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11364
+    },
+    {
+     "id": "dem-judy-davies",
+     "name": "Judy Davies",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6639
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-69",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 69",
+   "district": null,
+   "title": "State House of Representatives, District 69",
+   "choices": [
+    {
+     "id": "rep-chris-wooten",
+     "name": "Chris Wooten",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9950
+    },
+    {
+     "id": "lib-allen-broadus",
+     "name": "Allen Broadus",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 419
+    },
+    {
+     "id": "dem-emery-k-chaplin",
+     "name": "Emery K Chaplin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6082
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 14
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-70",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 70",
+   "district": null,
+   "title": "State House of Representatives, District 70",
+   "choices": [
+    {
+     "id": "dem-robert-reese",
+     "name": "Robert Reese",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12622
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 292
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-71",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 71",
+   "district": null,
+   "title": "State House of Representatives, District 71",
+   "choices": [
+    {
+     "id": "rep-nathan-ballentine",
+     "name": "Nathan Ballentine",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11835
+    },
+    {
+     "id": "dem-julie-zimmerman",
+     "name": "Julie Zimmerman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8477
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 20
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-72",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 72",
+   "district": null,
+   "title": "State House of Representatives, District 72",
+   "choices": [
+    {
+     "id": "rep-dixie-kvatek",
+     "name": "Dixie Kvatek",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1370
+    },
+    {
+     "id": "dem-seth-rose",
+     "name": "Seth Rose",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6918
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-73",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 73",
+   "district": null,
+   "title": "State House of Representatives, District 73",
+   "choices": [
+    {
+     "id": "rep-allen-robertson",
+     "name": "Allen Robertson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2404
+    },
+    {
+     "id": "dem-chris-hart",
+     "name": "Chris Hart",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10391
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-74",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 74",
+   "district": null,
+   "title": "State House of Representatives, District 74",
+   "choices": [
+    {
+     "id": "rep-collin-shelton",
+     "name": "Collin Shelton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1870
+    },
+    {
+     "id": "dem-j-todd-rutherford",
+     "name": "J Todd Rutherford",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10967
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 18
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-75",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 75",
+   "district": null,
+   "title": "State House of Representatives, District 75",
+   "choices": [
+    {
+     "id": "rep-tracy-robins",
+     "name": "Tracy Robins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6682
+    },
+    {
+     "id": "lib-joshua-parks",
+     "name": "Joshua Parks",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 248
+    },
+    {
+     "id": "dem-heather-bauer",
+     "name": "Heather Bauer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9189
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-76",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 76",
+   "district": null,
+   "title": "State House of Representatives, District 76",
+   "choices": [
+    {
+     "id": "dem-leon-howard",
+     "name": "Leon Howard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12488
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 71
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-77",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 77",
+   "district": null,
+   "title": "State House of Representatives, District 77",
+   "choices": [
+    {
+     "id": "dem-kambrell-houston-garvin",
+     "name": "Kambrell Houston Garvin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 17092
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 168
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-78",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 78",
+   "district": null,
+   "title": "State House of Representatives, District 78",
+   "choices": [
+    {
+     "id": "rep-sonia-pollard",
+     "name": "Sonia Pollard",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4816
+    },
+    {
+     "id": "lib-angelo-joyner-sr",
+     "name": "Angelo Joyner Sr",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 304
+    },
+    {
+     "id": "dem-beth-bernstein",
+     "name": "Beth Bernstein",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12961
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-79",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 79",
+   "district": null,
+   "title": "State House of Representatives, District 79",
+   "choices": [
+    {
+     "id": "dem-hamilton-r-grant",
+     "name": "Hamilton R Grant",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15407
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 122
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-80",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 80",
+   "district": null,
+   "title": "State House of Representatives, District 80",
+   "choices": [
+    {
+     "id": "rep-kathy-landing",
+     "name": "Kathy Landing",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11201
+    },
+    {
+     "id": "dem-benjamin-e-brown",
+     "name": "Benjamin E Brown",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8429
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-81",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 81",
+   "district": null,
+   "title": "State House of Representatives, District 81",
+   "choices": [
+    {
+     "id": "rep-charles-hartz",
+     "name": "Charles Hartz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12112
+    },
+    {
+     "id": "dem-pete-swales",
+     "name": "Pete Swales",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7975
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 21
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-82",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 82",
+   "district": null,
+   "title": "State House of Representatives, District 82",
+   "choices": [
+    {
+     "id": "rep-suzy-spurgeon",
+     "name": "Suzy Spurgeon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5235
+    },
+    {
+     "id": "dem-william-bill-clyburn",
+     "name": "William Bill Clyburn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8544
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-83",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 83",
+   "district": null,
+   "title": "State House of Representatives, District 83",
+   "choices": [
+    {
+     "id": "rep-bill-hixon",
+     "name": "Bill Hixon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10417
+    },
+    {
+     "id": "dem-jason-payne",
+     "name": "Jason Payne",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5844
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 18
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-84",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 84",
+   "district": null,
+   "title": "State House of Representatives, District 84",
+   "choices": [
+    {
+     "id": "rep-melissa-oremus",
+     "name": "Melissa Oremus",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8452
+    },
+    {
+     "id": "dem-darnell-holston",
+     "name": "Darnell Holston",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6959
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 18
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-85",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 85",
+   "district": null,
+   "title": "State House of Representatives, District 85",
+   "choices": [
+    {
+     "id": "rep-jay-kilmartin",
+     "name": "Jay Kilmartin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11198
+    },
+    {
+     "id": "dem-steven-j-asbill-jr",
+     "name": "Steven J Asbill Jr",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8821
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 29
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-86",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 86",
+   "district": null,
+   "title": "State House of Representatives, District 86",
+   "choices": [
+    {
+     "id": "rep-tommy-paradise",
+     "name": "Tommy Paradise",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9180
+    },
+    {
+     "id": "dem-malcolm-green",
+     "name": "Malcolm Green",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6083
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-87",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 87",
+   "district": null,
+   "title": "State House of Representatives, District 87",
+   "choices": [
+    {
+     "id": "rep-paula-rawl-calhoon",
+     "name": "Paula Rawl Calhoon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13007
+    },
+    {
+     "id": "dem-reid-beaman",
+     "name": "Reid Beaman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5868
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-88",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 88",
+   "district": null,
+   "title": "State House of Representatives, District 88",
+   "choices": [
+    {
+     "id": "rep-john-lastinger",
+     "name": "John Lastinger",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7920
+    },
+    {
+     "id": "dem-jeremy-jones",
+     "name": "Jeremy Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5946
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-89",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 89",
+   "district": null,
+   "title": "State House of Representatives, District 89",
+   "choices": [
+    {
+     "id": "rep-micah-caskey",
+     "name": "Micah Caskey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7147
+    },
+    {
+     "id": "dem-joe-madge",
+     "name": "Joe Madge",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7248
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-90",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 90",
+   "district": null,
+   "title": "State House of Representatives, District 90",
+   "choices": [
+    {
+     "id": "dem-justin-bamberg",
+     "name": "Justin Bamberg",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10824
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 264
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-91",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 91",
+   "district": null,
+   "title": "State House of Representatives, District 91",
+   "choices": [
+    {
+     "id": "rep-daniel-alexander",
+     "name": "Daniel Alexander",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6127
+    },
+    {
+     "id": "dem-lonnie-hosey",
+     "name": "Lonnie Hosey",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8466
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 10
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-92",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 92",
+   "district": null,
+   "title": "State House of Representatives, District 92",
+   "choices": [
+    {
+     "id": "rep-brandon-cox",
+     "name": "Brandon Cox",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6996
+    },
+    {
+     "id": "dem-byron-walters",
+     "name": "Byron Walters",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7457
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-93",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 93",
+   "district": null,
+   "title": "State House of Representatives, District 93",
+   "choices": [
+    {
+     "id": "rep-alex-morris",
+     "name": "Alex Morris",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6293
+    },
+    {
+     "id": "dem-jerry-govan",
+     "name": "Jerry Govan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9637
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-94",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 94",
+   "district": null,
+   "title": "State House of Representatives, District 94",
+   "choices": [
+    {
+     "id": "rep-gil-gatch",
+     "name": "Gil Gatch",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7687
+    },
+    {
+     "id": "dem-sally-hebert",
+     "name": "Sally Hebert",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7510
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 20
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-95",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 95",
+   "district": null,
+   "title": "State House of Representatives, District 95",
+   "choices": [
+    {
+     "id": "dem-gilda-cobb-hunter",
+     "name": "Gilda Cobb-Hunter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11159
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 241
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-96",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 96",
+   "district": null,
+   "title": "State House of Representatives, District 96",
+   "choices": [
+    {
+     "id": "rep-hunter-hackett",
+     "name": "Hunter Hackett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7615
+    },
+    {
+     "id": "dem-vivian-elston",
+     "name": "Vivian Elston",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5112
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-97",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 97",
+   "district": null,
+   "title": "State House of Representatives, District 97",
+   "choices": [
+    {
+     "id": "rep-robby-robbins",
+     "name": "Robby Robbins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9618
+    },
+    {
+     "id": "dem-cathy-a-jaggars",
+     "name": "Cathy A Jaggars",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6742
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-98",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 98",
+   "district": null,
+   "title": "State House of Representatives, District 98",
+   "choices": [
+    {
+     "id": "rep-greg-ford",
+     "name": "Greg Ford",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6287
+    },
+    {
+     "id": "dem-sonja-ogletree-satani",
+     "name": "Sonja Ogletree Satani",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7689
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-99",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 99",
+   "district": null,
+   "title": "State House of Representatives, District 99",
+   "choices": [
+    {
+     "id": "rep-jarrod-brooks",
+     "name": "Jarrod Brooks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10053
+    },
+    {
+     "id": "dem-samuel-price",
+     "name": "Samuel Price",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7204
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 100",
+   "district": null,
+   "title": "State House of Representatives, District 100",
+   "choices": [
+    {
+     "id": "rep-sylleste-davis",
+     "name": "Sylleste Davis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8108
+    },
+    {
+     "id": "dem-crystal-y-campbell",
+     "name": "Crystal Y Campbell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7835
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-101",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 101",
+   "district": null,
+   "title": "State House of Representatives, District 101",
+   "choices": [
+    {
+     "id": "rep-arnie-borowsky",
+     "name": "Arnie Borowsky",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4360
+    },
+    {
+     "id": "dem-roger-k-kirby",
+     "name": "Roger K Kirby",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10007
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 30
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-102",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 102",
+   "district": null,
+   "title": "State House of Representatives, District 102",
+   "choices": [
+    {
+     "id": "rep-harriet-holman",
+     "name": "Harriet Holman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7377
+    },
+    {
+     "id": "dem-montez-aiken",
+     "name": "Montez Aiken",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9898
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 39
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-103",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 103",
+   "district": null,
+   "title": "State House of Representatives, District 103",
+   "choices": [
+    {
+     "id": "dem-carl-anderson",
+     "name": "Carl Anderson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9985
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 228
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-104",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 104",
+   "district": null,
+   "title": "State House of Representatives, District 104",
+   "choices": [
+    {
+     "id": "rep-william-bailey",
+     "name": "William Bailey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17924
+    },
+    {
+     "id": "dem-george-m-blumenthal",
+     "name": "George M Blumenthal",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8865
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-105",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 105",
+   "district": null,
+   "title": "State House of Representatives, District 105",
+   "choices": [
+    {
+     "id": "rep-kevin-hardee",
+     "name": "Kevin Hardee",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13299
+    },
+    {
+     "id": "dem-david-wilson",
+     "name": "David Wilson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6646
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-106",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 106",
+   "district": null,
+   "title": "State House of Representatives, District 106",
+   "choices": [
+    {
+     "id": "rep-val-guest",
+     "name": "Val Guest",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15010
+    },
+    {
+     "id": "dem-marisa-mccann",
+     "name": "Marisa McCann",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7440
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-107",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 107",
+   "district": null,
+   "title": "State House of Representatives, District 107",
+   "choices": [
+    {
+     "id": "rep-case-brittain",
+     "name": "Case Brittain",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10814
+    },
+    {
+     "id": "dem-christine-giguere",
+     "name": "Christine Giguere",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7052
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-108",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 108",
+   "district": null,
+   "title": "State House of Representatives, District 108",
+   "choices": [
+    {
+     "id": "rep-lee-hewitt",
+     "name": "Lee Hewitt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14480
+    },
+    {
+     "id": "dem-kathy-redwine",
+     "name": "Kathy Redwine",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8130
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-109",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 109",
+   "district": null,
+   "title": "State House of Representatives, District 109",
+   "choices": [
+    {
+     "id": "dem-tiffany-spann-wilder",
+     "name": "Tiffany Spann-Wilder",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9137
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 173
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-110",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 110",
+   "district": null,
+   "title": "State House of Representatives, District 110",
+   "choices": [
+    {
+     "id": "rep-tom-hartnett",
+     "name": "Tom Hartnett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9802
+    },
+    {
+     "id": "dem-kj-atwood",
+     "name": "KJ Atwood",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9200
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-111",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 111",
+   "district": null,
+   "title": "State House of Representatives, District 111",
+   "choices": [
+    {
+     "id": "dem-wendell-g-gilliard",
+     "name": "Wendell G Gilliard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11717
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 176
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-112",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 112",
+   "district": null,
+   "title": "State House of Representatives, District 112",
+   "choices": [
+    {
+     "id": "rep-joe-bustos",
+     "name": "Joe Bustos",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12184
+    },
+    {
+     "id": "dem-jenna-arsenault",
+     "name": "Jenna Arsenault",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10751
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-113",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 113",
+   "district": null,
+   "title": "State House of Representatives, District 113",
+   "choices": [
+    {
+     "id": "dem-courtney-waters",
+     "name": "Courtney Waters",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8951
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 102
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-114",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 114",
+   "district": null,
+   "title": "State House of Representatives, District 114",
+   "choices": [
+    {
+     "id": "rep-gary-brewer",
+     "name": "Gary Brewer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10736
+    },
+    {
+     "id": "dem-kelly-hough",
+     "name": "Kelly Hough",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10385
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-115",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 115",
+   "district": null,
+   "title": "State House of Representatives, District 115",
+   "choices": [
+    {
+     "id": "rep-johnnie-garmon",
+     "name": "Johnnie Garmon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9749
+    },
+    {
+     "id": "dem-nick-uricchio",
+     "name": "Nick Uricchio",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12971
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-116",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 116",
+   "district": null,
+   "title": "State House of Representatives, District 116",
+   "choices": [
+    {
+     "id": "rep-james-e-teeple",
+     "name": "James E Teeple",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9301
+    },
+    {
+     "id": "dem-clay-middleton",
+     "name": "Clay Middleton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11614
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-117",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 117",
+   "district": null,
+   "title": "State House of Representatives, District 117",
+   "choices": [
+    {
+     "id": "rep-jordan-pace",
+     "name": "Jordan Pace",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9864
+    },
+    {
+     "id": "dem-ashley-painter",
+     "name": "Ashley Painter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9529
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-118",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 118",
+   "district": null,
+   "title": "State House of Representatives, District 118",
+   "choices": [
+    {
+     "id": "rep-bill-herbkersman",
+     "name": "Bill Herbkersman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12090
+    },
+    {
+     "id": "dem-bernie-scolaro",
+     "name": "Bernie Scolaro",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8592
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-119",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 119",
+   "district": null,
+   "title": "State House of Representatives, District 119",
+   "choices": [
+    {
+     "id": "rep-lee-edwards",
+     "name": "Lee Edwards",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7301
+    },
+    {
+     "id": "dem-leon-stavrinakis",
+     "name": "Leon Stavrinakis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12562
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 18
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-120",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 120",
+   "district": null,
+   "title": "State House of Representatives, District 120",
+   "choices": [
+    {
+     "id": "rep-weston-newton",
+     "name": "Weston Newton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14358
+    },
+    {
+     "id": "dem-debbie-subera-wiggin",
+     "name": "Debbie Subera-Wiggin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8866
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 10
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-121",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 121",
+   "district": null,
+   "title": "State House of Representatives, District 121",
+   "choices": [
+    {
+     "id": "rep-shelley-gay-yuhas",
+     "name": "Shelley Gay Yuhas",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5142
+    },
+    {
+     "id": "dem-shannon-n-deloach",
+     "name": "Shannon N DeLoach",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8674
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 36
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-122",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 122",
+   "district": null,
+   "title": "State House of Representatives, District 122",
+   "choices": [
+    {
+     "id": "rep-bill-hager",
+     "name": "Bill Hager",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8947
+    },
+    {
+     "id": "dem-korey-williams",
+     "name": "Korey Williams",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9733
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 10
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-123",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 123",
+   "district": null,
+   "title": "State House of Representatives, District 123",
+   "choices": [
+    {
+     "id": "rep-jeff-bradley",
+     "name": "Jeff Bradley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12225
+    },
+    {
+     "id": "dem-ann-c-shippy",
+     "name": "Ann C Shippy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9618
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-state-house-of-representatives-district-124",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "State House of Representatives, District 124",
+   "district": null,
+   "title": "State House of Representatives, District 124",
+   "choices": [
+    {
+     "id": "rep-shannon-erickson",
+     "name": "Shannon Erickson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9954
+    },
+    {
+     "id": "dem-shauna-bishop",
+     "name": "Shauna Bishop",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7253
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 17
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-solicitor-circuit-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Solicitor, Circuit 3",
+   "district": null,
+   "title": "Solicitor, Circuit 3",
+   "choices": [
+    {
+     "id": "dem-lester-m-gill-bell-jr",
+     "name": "Lester M Gill Bell Jr",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 50101
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 773
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-solicitor-circuit-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Solicitor, Circuit 5",
+   "district": null,
+   "title": "Solicitor, Circuit 5",
+   "choices": [
+    {
+     "id": "dem-byron-e-gipson",
+     "name": "Byron E Gipson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 145300
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1718
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-solicitor-circuit-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Solicitor, Circuit 6",
+   "district": null,
+   "title": "Solicitor, Circuit 6",
+   "choices": [
+    {
+     "id": "rep-randy-e-newman-jr",
+     "name": "Randy E Newman Jr",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 41760
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1083
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-solicitor-circuit-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Solicitor, Circuit 12",
+   "district": null,
+   "title": "Solicitor, Circuit 12",
+   "choices": [
+    {
+     "id": "rep-ryan-white",
+     "name": "Ryan White",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 26757
+    },
+    {
+     "id": "dem-susan-mcgill",
+     "name": "Susan McGill",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 33263
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-solicitor-circuit-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Solicitor, Circuit 13",
+   "district": null,
+   "title": "Solicitor, Circuit 13",
+   "choices": [
+    {
+     "id": "rep-cindy-crick",
+     "name": "Cindy Crick",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 180870
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 4426
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-solicitor-circuit-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Solicitor, Circuit 15",
+   "district": null,
+   "title": "Solicitor, Circuit 15",
+   "choices": [
+    {
+     "id": "rep-jimmy-a-richardson-ii",
+     "name": "Jimmy A Richardson II",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 140332
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1998
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-town-council-town-of-ware-shoals",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Town Council - Town of Ware Shoals",
+   "district": null,
+   "title": "Town Council - Town of Ware Shoals",
+   "choices": [
+    {
+     "id": "tim-bostic",
+     "name": "Tim Bostic",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 277
+    },
+    {
+     "id": "john-hansen",
+     "name": "John Hansen",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 90
+    },
+    {
+     "id": "joy-hansen",
+     "name": "Joy Hansen",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 93
+    },
+    {
+     "id": "meg-jennings",
+     "name": "Meg Jennings",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 242
+    },
+    {
+     "id": "eli-morse",
+     "name": "Eli Morse",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 24
+    },
+    {
+     "id": "levi-marshall-owens",
+     "name": "Levi Marshall Owens",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 193
+    },
+    {
+     "id": "john-paul",
+     "name": "John Paul",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 47
+    },
+    {
+     "id": "micheal-powell",
+     "name": "Micheal Powell",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 220
+    },
+    {
+     "id": "fred-west",
+     "name": "Fred West",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 88
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-town-council-unexpired-term-town-of-ware-shoals",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Town Council (Unexpired Term) - Town of Ware Shoals",
+   "district": null,
+   "title": "Town Council (Unexpired Term) - Town of Ware Shoals",
+   "choices": [
+    {
+     "id": "katelyn-grizzle",
+     "name": "Katelyn Grizzle",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 298
+    },
+    {
+     "id": "george-leagans",
+     "name": "George Leagans",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 209
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-city-council-at-large-city-of-north-augusta",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "City Council At Large - City of North Augusta",
+   "district": null,
+   "title": "City Council At Large - City of North Augusta",
+   "choices": [
+    {
+     "id": "rep-david-buck",
+     "name": "David Buck",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6200
+    },
+    {
+     "id": "rep-jenafer-mccauley",
+     "name": "Jenafer McCauley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6024
+    },
+    {
+     "id": "rep-tabitha-waldrop",
+     "name": "Tabitha Waldrop",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6343
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 466
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-anderson-county-school-trustee-district-2-at-large",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Anderson County School Trustee District 2 At Large",
+   "district": null,
+   "title": "Anderson County School Trustee District 2 At Large",
+   "choices": [
+    {
+     "id": "eddie-martin",
+     "name": "Eddie Martin",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2599
+    },
+    {
+     "id": "jimmy-ouzts",
+     "name": "Jimmy Ouzts",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2877
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 49
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-anderson-county-board-of-education-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Anderson County Board of Education District 5",
+   "district": null,
+   "title": "Anderson County Board of Education District 5",
+   "choices": [
+    {
+     "id": "jason-dorriety",
+     "name": "Jason Dorriety",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 4629
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 58
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-brushy-creek-watershed-conservation-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Brushy Creek Watershed Conservation District",
+   "district": null,
+   "title": "Brushy Creek Watershed Conservation District",
+   "choices": [
+    {
+     "id": "rick-gantt",
+     "name": "Rick Gantt",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2617
+    },
+    {
+     "id": "scott-smart",
+     "name": "Scott Smart",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2287
+    },
+    {
+     "id": "allen-d-wilson",
+     "name": "Allen D Wilson",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3089
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 68
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-three-and-twenty-watershed-conservation-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Three and Twenty Watershed Conservation District",
+   "district": null,
+   "title": "Three and Twenty Watershed Conservation District",
+   "choices": [
+    {
+     "id": "kristen-beigay",
+     "name": "Kristen Beigay",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2022
+    },
+    {
+     "id": "randy-griffis",
+     "name": "Randy Griffis",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2488
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 47
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-fire-district-commissioner-piedmont-public-service-area",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Fire District Commissioner Piedmont Public Service Area",
+   "district": null,
+   "title": "Fire District Commissioner Piedmont Public Service Area",
+   "choices": [
+    {
+     "id": "joseph-e-collins-jr",
+     "name": "Joseph E Collins Jr",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 825
+    },
+    {
+     "id": "al-mcabee-jr",
+     "name": "Al McAbee Jr",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 893
+    },
+    {
+     "id": "ed-poore",
+     "name": "Ed Poore",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 555
+    },
+    {
+     "id": "terry-yates",
+     "name": "Terry Yates",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 724
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-city-council-clemson",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "City Council - Clemson",
+   "district": null,
+   "title": "City Council - Clemson",
+   "choices": [
+    {
+     "id": "scott-allison",
+     "name": "Scott Allison",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1790
+    },
+    {
+     "id": "joe-burgett",
+     "name": "Joe Burgett",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2209
+    },
+    {
+     "id": "nanda-edgerton",
+     "name": "Nanda Edgerton",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1481
+    },
+    {
+     "id": "fran-mcguire",
+     "name": "Fran McGuire",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1985
+    },
+    {
+     "id": "alesia-smith",
+     "name": "Alesia Smith",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2251
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 82
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-city-council-city-of-hardeeville",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "City Council - City of Hardeeville",
+   "district": null,
+   "title": "City Council - City of Hardeeville",
+   "choices": [
+    {
+     "id": "steve-fier",
+     "name": "Steve Fier",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 4635
+    },
+    {
+     "id": "valarie-guzman",
+     "name": "Valarie Guzman",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 4281
+    },
+    {
+     "id": "landon-papay",
+     "name": "Landon Papay",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3061
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 60
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-spartanburg-county-school-district-2-referendum-question-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Spartanburg County School District 2 Referendum-Question 1",
+   "district": null,
+   "title": "Spartanburg County School District 2 Referendum-Question 1",
+   "choices": [
+    {
+     "id": "yes-in-favor-of-the-question",
+     "name": "Yes, In Favor of the Question",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 16074
+    },
+    {
+     "id": "no-opposed-to-the-question",
+     "name": "No, Opposed to the Question",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 7623
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-spartanburg-county-school-district-2-referendum-question-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Spartanburg County School District 2 Referendum-Question 2",
+   "district": null,
+   "title": "Spartanburg County School District 2 Referendum-Question 2",
+   "choices": [
+    {
+     "id": "yes-in-favor-of-the-question",
+     "name": "Yes, In Favor of the Question",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 14270
+    },
+    {
+     "id": "no-opposed-to-the-question",
+     "name": "No, Opposed to the Question",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 9507
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-thicketty-creek-watershed-conservation-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Thicketty Creek Watershed Conservation District",
+   "district": null,
+   "title": "Thicketty Creek Watershed Conservation District",
+   "choices": [
+    {
+     "id": "deborah-w-perry",
+     "name": "Deborah W Perry",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2845
+    },
+    {
+     "id": "david-wheeler",
+     "name": "David Wheeler",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2726
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 28
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-rocky-creek-watershed-conservation-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Rocky Creek Watershed Conservation District",
+   "district": null,
+   "title": "Rocky Creek Watershed Conservation District",
+   "choices": [
+    {
+     "id": "claudia-f-dean",
+     "name": "Claudia F Dean",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1340
+    },
+    {
+     "id": "william-wishert",
+     "name": "William Wishert",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1180
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-tinker-s-creek-watershed-conservation-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Tinker's Creek Watershed Conservation District",
+   "district": null,
+   "title": "Tinker's Creek Watershed Conservation District",
+   "choices": [
+    {
+     "id": "david-j-wilson",
+     "name": "David J Wilson",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1359
+    },
+    {
+     "id": "cheryl-wylie",
+     "name": "Cheryl Wylie",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 880
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-fire-district-commissioner-south-lynches",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Fire District Commissioner South Lynches",
+   "district": null,
+   "title": "Fire District Commissioner South Lynches",
+   "choices": [
+    {
+     "id": "bobby-johnson",
+     "name": "Bobby Johnson",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1798
+    },
+    {
+     "id": "jay-steele",
+     "name": "Jay Steele",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 1589
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-greenville-county-school-board-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Greenville County School Board District 18",
+   "district": null,
+   "title": "Greenville County School Board District 18",
+   "choices": [
+    {
+     "id": "becky-mclaughlin",
+     "name": "Becky McLaughlin",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 6019
+    },
+    {
+     "id": "ann-marie-middleton",
+     "name": "Ann Marie Middleton",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 5132
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 104
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-greenville-county-school-board-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Greenville County School Board District 28",
+   "district": null,
+   "title": "Greenville County School Board District 28",
+   "choices": [
+    {
+     "id": "jeff-cochran",
+     "name": "Jeff Cochran",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 10817
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 190
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-rabon-creek-watershed-conservation-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Rabon Creek Watershed Conservation District",
+   "district": null,
+   "title": "Rabon Creek Watershed Conservation District",
+   "choices": [
+    {
+     "id": "casey-robinson",
+     "name": "Casey Robinson",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 3327
+    },
+    {
+     "id": "nick-wham",
+     "name": "Nick Wham",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2609
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 53
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-little-lynches-creek-watershed-conservation-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Little Lynches Creek Watershed Conservation District",
+   "district": null,
+   "title": "Little Lynches Creek Watershed Conservation District",
+   "choices": [
+    {
+     "id": "jacob-annan",
+     "name": "Jacob Annan",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 988
+    },
+    {
+     "id": "j-carrie-ford",
+     "name": "J Carrie Ford",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 820
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 24
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-lexington-county-school-trustee-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Lexington County School Trustee District 3",
+   "district": null,
+   "title": "Lexington County School Trustee District 3",
+   "choices": [
+    {
+     "id": "cheryl-a-burgess",
+     "name": "Cheryl A Burgess",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2808
+    },
+    {
+     "id": "gariane-p-gunter",
+     "name": "Gariane P Gunter",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2247
+    },
+    {
+     "id": "sharmen-m-oswald",
+     "name": "Sharmen M Oswald",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2133
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 66
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-town-of-irmo-form-of-government-referendum",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "Town of Irmo Form of Government Referendum",
+   "district": null,
+   "title": "Town of Irmo Form of Government Referendum",
+   "choices": [
+    {
+     "id": "yes-in-favor-of-the-question",
+     "name": "Yes, In favor of the Question",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2109
+    },
+    {
+     "id": "no-opposed-to-the-question",
+     "name": "No, Opposed to the Question",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 2378
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-straight-party-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "STRAIGHT PARTY 1",
+   "district": null,
+   "title": "STRAIGHT PARTY 1",
+   "choices": [
+    {
+     "id": "united-citizens",
+     "name": "United Citizens",
+     "party": "UNC",
+     "party_code": "O",
+     "votes": 2178
+    },
+    {
+     "id": "green",
+     "name": "Green",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 1704
+    },
+    {
+     "id": "republican",
+     "name": "Republican",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 399697
+    },
+    {
+     "id": "libertarian",
+     "name": "Libertarian",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 1273
+    },
+    {
+     "id": "democratic",
+     "name": "Democratic",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 367402
+    },
+    {
+     "id": "constitution",
+     "name": "Constitution",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 374
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-straight-party-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "STRAIGHT PARTY 2",
+   "district": null,
+   "title": "STRAIGHT PARTY 2",
+   "choices": [
+    {
+     "id": "united-citizens",
+     "name": "United Citizens",
+     "party": "UNC",
+     "party_code": "O",
+     "votes": 873
+    },
+    {
+     "id": "green",
+     "name": "Green",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 562
+    },
+    {
+     "id": "republican",
+     "name": "Republican",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 131287
+    },
+    {
+     "id": "libertarian",
+     "name": "Libertarian",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 497
+    },
+    {
+     "id": "democratic",
+     "name": "Democratic",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 173664
+    },
+    {
+     "id": "workers",
+     "name": "Workers",
+     "party": "WRK",
+     "party_code": "O",
+     "votes": 110
+    },
+    {
+     "id": "constitution",
+     "name": "Constitution",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 105
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-straight-party-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sc",
+   "office": "STRAIGHT PARTY 3",
+   "district": null,
+   "title": "STRAIGHT PARTY 3",
+   "choices": [
+    {
+     "id": "united-citizens",
+     "name": "United Citizens",
+     "party": "UNC",
+     "party_code": "O",
+     "votes": 447
+    },
+    {
+     "id": "forward-party",
+     "name": "Forward Party",
+     "party": "FWD",
+     "party_code": "O",
+     "votes": 32
+    },
+    {
+     "id": "green",
+     "name": "Green",
+     "party": "GRN",
+     "party_code": "O",
+     "votes": 378
+    },
+    {
+     "id": "republican",
+     "name": "Republican",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 125151
+    },
+    {
+     "id": "libertarian",
+     "name": "Libertarian",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 292
+    },
+    {
+     "id": "democratic",
+     "name": "Democratic",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 76223
+    },
+    {
+     "id": "constitution",
+     "name": "Constitution",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 75
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  }
+ ]
+}
