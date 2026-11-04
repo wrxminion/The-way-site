@@ -1,0 +1,4058 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-wv",
+ "label": "West Virginia (unofficial)",
+ "source_ids": [
+  "wv-clarity"
+ ],
+ "updated_at": "2026-11-04T20:12:02Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "wv-100",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wv",
+   "office": "U.S. SENATOR",
+   "district": null,
+   "title": "U.S. SENATOR",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 52,
+    "total": 55,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "shelley-moore-capito",
+     "name": "Shelley Moore Capito",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 266067
+    },
+    {
+     "id": "rachel-fetty-anderson",
+     "name": "Rachel Fetty Anderson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 172922
+    },
+    {
+     "id": "s-marshall-wilson",
+     "name": "S. Marshall Wilson",
+     "party": "CST",
+     "party_code": "O",
+     "votes": 17139
+    }
+   ]
+  },
+  {
+   "id": "wv-150",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wv",
+   "office": "U.S. HOUSE OF REPRESENTATIVES",
+   "district": "1st Congressional District",
+   "title": "U.S. HOUSE OF REPRESENTATIVES, 1st Congressional District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 26,
+    "total": 28,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "carol-miller",
+     "name": "Carol Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 118735
+    },
+    {
+     "id": "vince-george",
+     "name": "Vince George",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 82347
+    },
+    {
+     "id": "belinda-fox-spencer",
+     "name": "Belinda Fox-Spencer",
+     "party": "CST",
+     "party_code": "O",
+     "votes": 6904
+    }
+   ]
+  },
+  {
+   "id": "wv-200",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wv",
+   "office": "U.S. HOUSE OF REPRESENTATIVES",
+   "district": "2nd Congressional District",
+   "title": "U.S. HOUSE OF REPRESENTATIVES, 2nd Congressional District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 26,
+    "total": 27,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "riley-moore",
+     "name": "Riley Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 143756
+    },
+    {
+     "id": "ace-parsi",
+     "name": "Ace Parsi",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 98235
+    }
+   ]
+  },
+  {
+   "id": "wv-250",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "1st Senatorial District",
+   "title": "STATE SENATOR, 1st Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "laura-wakim-chapman",
+     "name": "Laura Wakim Chapman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14545
+    },
+    {
+     "id": "shawn-fluharty",
+     "name": "Shawn Fluharty",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12737
+    }
+   ]
+  },
+  {
+   "id": "wv-300",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "2nd Senatorial District",
+   "title": "STATE SENATOR, 2nd Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "toby-heaney",
+     "name": "Toby Heaney",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15397
+    },
+    {
+     "id": "chris-claypole",
+     "name": "Chris Claypole",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11628
+    }
+   ]
+  },
+  {
+   "id": "wv-350",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "3rd Senatorial District",
+   "title": "STATE SENATOR, 3rd Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "mike-azinger",
+     "name": "Mike Azinger",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17255
+    },
+    {
+     "id": "caci-petrehn",
+     "name": "Caci Petrehn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10798
+    }
+   ]
+  },
+  {
+   "id": "wv-400",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "3rd Senatorial District - UNEXPIRED TERM",
+   "title": "STATE SENATOR, 3rd Senatorial District - UNEXPIRED TERM",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "trenton-carl-barnhart",
+     "name": "Trenton Carl Barnhart",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 18239
+    },
+    {
+     "id": "ronnie-green",
+     "name": "Ronnie Green",
+     "party": "CST",
+     "party_code": "O",
+     "votes": 6436
+    }
+   ]
+  },
+  {
+   "id": "wv-450",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "4th Senatorial District",
+   "title": "STATE SENATOR, 4th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "eric-j-tarr",
+     "name": "Eric J. Tarr",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15295
+    }
+   ]
+  },
+  {
+   "id": "wv-500",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "5th Senatorial District",
+   "title": "STATE SENATOR, 5th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "duron-jackson",
+     "name": "Duron Jackson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12792
+    },
+    {
+     "id": "chris-miller",
+     "name": "Chris Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11690
+    }
+   ]
+  },
+  {
+   "id": "wv-550",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "6th Senatorial District",
+   "title": "STATE SENATOR, 6th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "mark-r-maynard",
+     "name": "Mark R Maynard",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12581
+    },
+    {
+     "id": "wyatt-lilly",
+     "name": "Wyatt Lilly",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7062
+    }
+   ]
+  },
+  {
+   "id": "wv-600",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "7th Senatorial District",
+   "title": "STATE SENATOR, 7th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 3,
+    "total": 4,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "zack-maynard",
+     "name": "Zack Maynard",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11797
+    },
+    {
+     "id": "cindy-brake",
+     "name": "Cindy Brake",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5997
+    },
+    {
+     "id": "shawn-legg",
+     "name": "Shawn Legg",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 1130
+    }
+   ]
+  },
+  {
+   "id": "wv-650",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "8th Senatorial District",
+   "title": "STATE SENATOR, 8th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "lance-wheeler",
+     "name": "Lance Wheeler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12587
+    },
+    {
+     "id": "kim-hundley",
+     "name": "Kim Hundley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11929
+    }
+   ]
+  },
+  {
+   "id": "wv-700",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "9th Senatorial District",
+   "title": "STATE SENATOR, 9th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "rollan-roberts",
+     "name": "Rollan Roberts",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13628
+    },
+    {
+     "id": "christy-cardwell",
+     "name": "Christy Cardwell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8247
+    }
+   ]
+  },
+  {
+   "id": "wv-750",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "10th Senatorial District",
+   "title": "STATE SENATOR, 10th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "vince-deeds",
+     "name": "Vince Deeds",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17208
+    },
+    {
+     "id": "kent-gilkerson",
+     "name": "Kent Gilkerson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10111
+    }
+   ]
+  },
+  {
+   "id": "wv-800",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "11th Senatorial District",
+   "title": "STATE SENATOR, 11th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "bill-hamilton",
+     "name": "Bill Hamilton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17246
+    },
+    {
+     "id": "kevin-leon-carpenter",
+     "name": "Kevin Leon Carpenter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8003
+    }
+   ]
+  },
+  {
+   "id": "wv-850",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "12th Senatorial District",
+   "title": "STATE SENATOR, 12th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "ben-queen",
+     "name": "Ben Queen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16822
+    },
+    {
+     "id": "lynette-murray",
+     "name": "Lynette Murray",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10087
+    }
+   ]
+  },
+  {
+   "id": "wv-900",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "13th Senatorial District",
+   "title": "STATE SENATOR, 13th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "john-williams",
+     "name": "John Williams",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15503
+    },
+    {
+     "id": "mike-oliverio",
+     "name": "Mike Oliverio",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11647
+    },
+    {
+     "id": "taylor-richmond",
+     "name": "Taylor Richmond",
+     "party": "LBN",
+     "party_code": "O",
+     "votes": 1009
+    }
+   ]
+  },
+  {
+   "id": "wv-950",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "14th Senatorial District",
+   "title": "STATE SENATOR, 14th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "jay-taylor",
+     "name": "Jay Taylor",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 18357
+    },
+    {
+     "id": "jason-armentrout",
+     "name": "Jason Armentrout",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8726
+    }
+   ]
+  },
+  {
+   "id": "wv-1000",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "15th Senatorial District",
+   "title": "STATE SENATOR, 15th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "darren-j-thorne",
+     "name": "Darren J Thorne",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 18368
+    },
+    {
+     "id": "elizabeth-ferris",
+     "name": "Elizabeth Ferris",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12317
+    }
+   ]
+  },
+  {
+   "id": "wv-1050",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "16th Senatorial District",
+   "title": "STATE SENATOR, 16th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "jason-barrett",
+     "name": "Jason Barrett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 18600
+    },
+    {
+     "id": "travis-l-bost",
+     "name": "Travis L. Bost",
+     "party": "LBN",
+     "party_code": "O",
+     "votes": 11729
+    }
+   ]
+  },
+  {
+   "id": "wv-1100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "17th Senatorial District",
+   "title": "STATE SENATOR, 17th Senatorial District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "tom-takubo",
+     "name": "Tom Takubo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14737
+    },
+    {
+     "id": "wes-holden",
+     "name": "Wes Holden",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13136
+    }
+   ]
+  },
+  {
+   "id": "wv-1150",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "STATE SENATOR",
+   "district": "17th Senatorial District - UNEXPIRED TERM",
+   "title": "STATE SENATOR, 17th Senatorial District - UNEXPIRED TERM",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "richie-robb",
+     "name": "Richie Robb",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 14732
+    },
+    {
+     "id": "anne-b-charnock",
+     "name": "Anne B. Charnock",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12964
+    }
+   ]
+  },
+  {
+   "id": "wv-1200",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "1st District",
+   "title": "HOUSE OF DELEGATES, 1st District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "pat-mcgeehan",
+     "name": "Pat Mcgeehan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3663
+    },
+    {
+     "id": "quincy-wilson",
+     "name": "Quincy Wilson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1509
+    }
+   ]
+  },
+  {
+   "id": "wv-1250",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "2nd District",
+   "title": "HOUSE OF DELEGATES, 2nd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "tony-viola",
+     "name": "Tony Viola",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2757
+    },
+    {
+     "id": "daniel-joseph-day",
+     "name": "Daniel Joseph Day",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1652
+    }
+   ]
+  },
+  {
+   "id": "wv-1300",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "3rd District",
+   "title": "HOUSE OF DELEGATES, 3rd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "jimmy-willis",
+     "name": "Jimmy Willis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2338
+    },
+    {
+     "id": "mike-robinson",
+     "name": "Mike Robinson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1233
+    },
+    {
+     "id": "dave-cantrell",
+     "name": "Dave Cantrell",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 828
+    }
+   ]
+  },
+  {
+   "id": "wv-1350",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "4th District",
+   "title": "HOUSE OF DELEGATES, 4th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "derek-ennis",
+     "name": "Derek Ennis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3184
+    },
+    {
+     "id": "joe-jividen",
+     "name": "Joe Jividen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2903
+    }
+   ]
+  },
+  {
+   "id": "wv-1400",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "5th District",
+   "title": "HOUSE OF DELEGATES, 5th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "karen-shuler-stakem",
+     "name": "Karen Shuler Stakem",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2861
+    },
+    {
+     "id": "beth-hinebaugh",
+     "name": "Beth Hinebaugh",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1934
+    }
+   ]
+  },
+  {
+   "id": "wv-1450",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "6th District",
+   "title": "HOUSE OF DELEGATES, 6th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "don-dewitt",
+     "name": "Don Dewitt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2561
+    },
+    {
+     "id": "cody-cumpston",
+     "name": "Cody Cumpston",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2480
+    }
+   ]
+  },
+  {
+   "id": "wv-1500",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "7th District",
+   "title": "HOUSE OF DELEGATES, 7th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "charles-r-sheedy-sr",
+     "name": "Charles R. Sheedy Sr",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2787
+    },
+    {
+     "id": "sarah-reggi",
+     "name": "Sarah Reggi",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1518
+    }
+   ]
+  },
+  {
+   "id": "wv-1550",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "8th District",
+   "title": "HOUSE OF DELEGATES, 8th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "steven-l-smith",
+     "name": "Steven L. Smith",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3315
+    }
+   ]
+  },
+  {
+   "id": "wv-1600",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "9th District",
+   "title": "HOUSE OF DELEGATES, 9th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "kerry-g-murphy",
+     "name": "Kerry G. Murphy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4064
+    }
+   ]
+  },
+  {
+   "id": "wv-1650",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "10th District",
+   "title": "HOUSE OF DELEGATES, 10th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "justin-beanard",
+     "name": "Justin Beanard",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2972
+    },
+    {
+     "id": "christopher-jones",
+     "name": "Christopher Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1958
+    }
+   ]
+  },
+  {
+   "id": "wv-1700",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "11th District",
+   "title": "HOUSE OF DELEGATES, 11th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "jeff-s-sandy",
+     "name": "Jeff S. Sandy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2668
+    },
+    {
+     "id": "daniel-miller",
+     "name": "Daniel Miller",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2235
+    }
+   ]
+  },
+  {
+   "id": "wv-1750",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "12th District",
+   "title": "HOUSE OF DELEGATES, 12th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "dennis-v-rempel",
+     "name": "Dennis V. Rempel",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1781
+    },
+    {
+     "id": "charles-d-hartzog",
+     "name": "Charles D. Hartzog",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1630
+    },
+    {
+     "id": "stephen-thomas-smith",
+     "name": "Stephen Thomas Smith",
+     "party": "LBN",
+     "party_code": "O",
+     "votes": 215
+    }
+   ]
+  },
+  {
+   "id": "wv-1800",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "13th District",
+   "title": "HOUSE OF DELEGATES, 13th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "melissa-mccrady",
+     "name": "Melissa Mccrady",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2488
+    },
+    {
+     "id": "marley-umensetter",
+     "name": "Marley Umensetter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1296
+    },
+    {
+     "id": "james-hendershot-jr",
+     "name": "James Hendershot Jr",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 375
+    }
+   ]
+  },
+  {
+   "id": "wv-1850",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "14th District",
+   "title": "HOUSE OF DELEGATES, 14th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "dave-foggin",
+     "name": "Dave Foggin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3378
+    },
+    {
+     "id": "crystal-butcher",
+     "name": "Crystal Butcher",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1432
+    }
+   ]
+  },
+  {
+   "id": "wv-1900",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "15th District",
+   "title": "HOUSE OF DELEGATES, 15th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "erica-j-moore",
+     "name": "Erica J. Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3084
+    },
+    {
+     "id": "tye-ward",
+     "name": "Tye Ward",
+     "party": "LBN",
+     "party_code": "O",
+     "votes": 1197
+    }
+   ]
+  },
+  {
+   "id": "wv-1950",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "16th District",
+   "title": "HOUSE OF DELEGATES, 16th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "frederick-happy-joe-parsons",
+     "name": "Frederick Happy Joe Parsons",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3568
+    },
+    {
+     "id": "jason-m-barr",
+     "name": "Jason M. Barr",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1612
+    }
+   ]
+  },
+  {
+   "id": "wv-2000",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "17th District",
+   "title": "HOUSE OF DELEGATES, 17th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "jonathan-adam-pinson",
+     "name": "Jonathan Adam Pinson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2738
+    },
+    {
+     "id": "kathryn-kat-weiland",
+     "name": "Kathryn 'Kat' Weiland",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2147
+    }
+   ]
+  },
+  {
+   "id": "wv-2050",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "18th District",
+   "title": "HOUSE OF DELEGATES, 18th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "jim-butler",
+     "name": "Jim Butler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2190
+    },
+    {
+     "id": "jonathan-hersman",
+     "name": "Jonathan Hersman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2100
+    }
+   ]
+  },
+  {
+   "id": "wv-2100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "19th District",
+   "title": "HOUSE OF DELEGATES, 19th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "kathie-hess-crouse",
+     "name": "Kathie Hess Crouse",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2856
+    },
+    {
+     "id": "nolan-rose",
+     "name": "Nolan Rose",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1923
+    }
+   ]
+  },
+  {
+   "id": "wv-2150",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "20th District",
+   "title": "HOUSE OF DELEGATES, 20th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "sarah-drennan",
+     "name": "Sarah Drennan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3508
+    },
+    {
+     "id": "tonya-patrick-shuler",
+     "name": "Tonya Patrick Shuler",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2186
+    }
+   ]
+  },
+  {
+   "id": "wv-2200",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "21st District",
+   "title": "HOUSE OF DELEGATES, 21st District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "c-d-caldwell",
+     "name": "C. D. Caldwell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3202
+    },
+    {
+     "id": "michael-g-mosteller-ii",
+     "name": "Michael G. Mosteller Ii",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1844
+    }
+   ]
+  },
+  {
+   "id": "wv-2250",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "22nd District",
+   "title": "HOUSE OF DELEGATES, 22nd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "aaron-holley",
+     "name": "Aaron Holley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3256
+    }
+   ]
+  },
+  {
+   "id": "wv-2300",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "23rd District",
+   "title": "HOUSE OF DELEGATES, 23rd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "evan-worrell",
+     "name": "Evan Worrell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2711
+    },
+    {
+     "id": "amanda-beth-beach-burge",
+     "name": "Amanda Beth Beach-Burge",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1646
+    }
+   ]
+  },
+  {
+   "id": "wv-2350",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "24th District",
+   "title": "HOUSE OF DELEGATES, 24th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "steve-williams",
+     "name": "Steve Williams",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2099
+    },
+    {
+     "id": "patrick-lucas",
+     "name": "Patrick Lucas",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1640
+    }
+   ]
+  },
+  {
+   "id": "wv-2400",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "25th District",
+   "title": "HOUSE OF DELEGATES, 25th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "sean-hornbuckle",
+     "name": "Sean Hornbuckle",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3110
+    }
+   ]
+  },
+  {
+   "id": "wv-2450",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "26th District",
+   "title": "HOUSE OF DELEGATES, 26th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "matthew-rohrbach",
+     "name": "Matthew Rohrbach",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3382
+    }
+   ]
+  },
+  {
+   "id": "wv-2500",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "27th District",
+   "title": "HOUSE OF DELEGATES, 27th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "ric-griffith",
+     "name": "Ric Griffith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2275
+    },
+    {
+     "id": "gordon-ramey-ii",
+     "name": "Gordon Ramey Ii",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1631
+    }
+   ]
+  },
+  {
+   "id": "wv-2550",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "28th District",
+   "title": "HOUSE OF DELEGATES, 28th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "ryan-browning",
+     "name": "Ryan Browning",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2511
+    },
+    {
+     "id": "brooke-smith",
+     "name": "Brooke Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1538
+    }
+   ]
+  },
+  {
+   "id": "wv-2600",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "29th District",
+   "title": "HOUSE OF DELEGATES, 29th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "henry-corby-dillon",
+     "name": "Henry Corby Dillon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1774
+    },
+    {
+     "id": "wendy-coleman",
+     "name": "Wendy Coleman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 883
+    }
+   ]
+  },
+  {
+   "id": "wv-2650",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "30th District",
+   "title": "HOUSE OF DELEGATES, 30th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "jeff-eldridge",
+     "name": "Jeff Eldridge",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2105
+    },
+    {
+     "id": "ryan-cledith-elkins",
+     "name": "Ryan Cledith Elkins",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 948
+    }
+   ]
+  },
+  {
+   "id": "wv-2700",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "31st District",
+   "title": "HOUSE OF DELEGATES, 31st District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "margitta-mazzocchi",
+     "name": "Margitta Mazzocchi",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1630
+    },
+    {
+     "id": "george-c-barker",
+     "name": "George C. Barker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1592
+    }
+   ]
+  },
+  {
+   "id": "wv-2750",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "32nd District",
+   "title": "HOUSE OF DELEGATES, 32nd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "josh-holstein",
+     "name": "Josh Holstein",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2113
+    },
+    {
+     "id": "jennifer-bias-bryant",
+     "name": "Jennifer Bias Bryant",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2027
+    }
+   ]
+  },
+  {
+   "id": "wv-2800",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "33rd District",
+   "title": "HOUSE OF DELEGATES, 33rd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "chris-tipton",
+     "name": "Chris Tipton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2258
+    },
+    {
+     "id": "michael-b-mickey-browning",
+     "name": "Michael B. (Mickey) Browning",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 635
+    },
+    {
+     "id": "leroy-dehart",
+     "name": "Leroy Dehart",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 467
+    }
+   ]
+  },
+  {
+   "id": "wv-2850",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "34th District",
+   "title": "HOUSE OF DELEGATES, 34th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "barry-c-marcum",
+     "name": "Barry C. Marcum",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2157
+    },
+    {
+     "id": "tara-babyt-sexton",
+     "name": "Tara 'Babyt' Sexton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 881
+    }
+   ]
+  },
+  {
+   "id": "wv-2900",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "35th District",
+   "title": "HOUSE OF DELEGATES, 35th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "john-morgan",
+     "name": "John Morgan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2018
+    },
+    {
+     "id": "rachael-hawkins-church",
+     "name": "Rachael Hawkins-Church",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 736
+    }
+   ]
+  },
+  {
+   "id": "wv-2950",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "36th District",
+   "title": "HOUSE OF DELEGATES, 36th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "david-green",
+     "name": "David Green",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1352
+    },
+    {
+     "id": "katelynn-jordan",
+     "name": "Katelynn Jordan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1044
+    }
+   ]
+  },
+  {
+   "id": "wv-3000",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "37th District",
+   "title": "HOUSE OF DELEGATES, 37th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "marty-gearheart",
+     "name": "Marty Gearheart",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2204
+    },
+    {
+     "id": "treyvon-simmons",
+     "name": "Treyvon Simmons",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1390
+    }
+   ]
+  },
+  {
+   "id": "wv-3050",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "38th District",
+   "title": "HOUSE OF DELEGATES, 38th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "joe-c-ellington-jr",
+     "name": "Joe C. Ellington Jr",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2549
+    },
+    {
+     "id": "randa-d-faulkner",
+     "name": "Randa D Faulkner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1272
+    }
+   ]
+  },
+  {
+   "id": "wv-3100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "39th District",
+   "title": "HOUSE OF DELEGATES, 39th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "samuel-lusk",
+     "name": "Samuel Lusk",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2850
+    },
+    {
+     "id": "brianna-a-pearcy",
+     "name": "Brianna A Pearcy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 836
+    },
+    {
+     "id": "ronnie-oakley",
+     "name": "Ronnie Oakley",
+     "party": "NP",
+     "party_code": "O",
+     "votes": 255
+    }
+   ]
+  },
+  {
+   "id": "wv-3150",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "40th District",
+   "title": "HOUSE OF DELEGATES, 40th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "roy-g-cooper",
+     "name": "Roy G. Cooper",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3307
+    },
+    {
+     "id": "jennifer-gilkerson",
+     "name": "Jennifer Gilkerson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1635
+    }
+   ]
+  },
+  {
+   "id": "wv-3200",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "41st District",
+   "title": "HOUSE OF DELEGATES, 41st District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "jordan-allen-maynor",
+     "name": "Jordan Allen Maynor",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3529
+    },
+    {
+     "id": "curtis-shaver",
+     "name": "Curtis Shaver",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1514
+    }
+   ]
+  },
+  {
+   "id": "wv-3250",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "42nd District",
+   "title": "HOUSE OF DELEGATES, 42nd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "john-k-jordan",
+     "name": "John K Jordan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2823
+    },
+    {
+     "id": "courtney-vandall",
+     "name": "Courtney Vandall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1145
+    }
+   ]
+  },
+  {
+   "id": "wv-3300",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "43rd District",
+   "title": "HOUSE OF DELEGATES, 43rd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "christopher-w-toney",
+     "name": "Christopher W Toney",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2908
+    }
+   ]
+  },
+  {
+   "id": "wv-3350",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "44th District",
+   "title": "HOUSE OF DELEGATES, 44th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "carl-bill-roop",
+     "name": "Carl Bill Roop",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2210
+    },
+    {
+     "id": "christina-baisden",
+     "name": "Christina Baisden",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1898
+    }
+   ]
+  },
+  {
+   "id": "wv-3400",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "45th District",
+   "title": "HOUSE OF DELEGATES, 45th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "eric-brooks",
+     "name": "Eric Brooks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2024
+    },
+    {
+     "id": "joseph-golden",
+     "name": "Joseph Golden",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1232
+    }
+   ]
+  },
+  {
+   "id": "wv-3450",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "46th District",
+   "title": "HOUSE OF DELEGATES, 46th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "jeff-campbell",
+     "name": "Jeff Campbell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3018
+    },
+    {
+     "id": "sarah-umberger",
+     "name": "Sarah Umberger",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2204
+    }
+   ]
+  },
+  {
+   "id": "wv-3500",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "47th District",
+   "title": "HOUSE OF DELEGATES, 47th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "ray-canterbury",
+     "name": "Ray Canterbury",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2838
+    },
+    {
+     "id": "sarah-morris",
+     "name": "Sarah Morris",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1997
+    }
+   ]
+  },
+  {
+   "id": "wv-3550",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "48th District",
+   "title": "HOUSE OF DELEGATES, 48th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "mackenzie-holdren",
+     "name": "Mackenzie Holdren",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2382
+    },
+    {
+     "id": "jourdan-deitz",
+     "name": "Jourdan Deitz",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1125
+    }
+   ]
+  },
+  {
+   "id": "wv-3600",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "49th District",
+   "title": "HOUSE OF DELEGATES, 49th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "newt-mccutcheon",
+     "name": "Newt Mccutcheon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2924
+    },
+    {
+     "id": "byron-tucker-jr",
+     "name": "Byron Tucker Jr",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1269
+    }
+   ]
+  },
+  {
+   "id": "wv-3650",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "50th District",
+   "title": "HOUSE OF DELEGATES, 50th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "mathew-anderson",
+     "name": "Mathew Anderson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1579
+    },
+    {
+     "id": "tom-louisos",
+     "name": "Tom Louisos",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 834
+    },
+    {
+     "id": "stacey-l-hensley",
+     "name": "Stacey L Hensley",
+     "party": "CST",
+     "party_code": "O",
+     "votes": 401
+    }
+   ]
+  },
+  {
+   "id": "wv-3700",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "51st District",
+   "title": "HOUSE OF DELEGATES, 51st District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "cy-persinger",
+     "name": "Cy Persinger",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2608
+    },
+    {
+     "id": "colby-a-lopez",
+     "name": "Colby A. Lopez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1708
+    }
+   ]
+  },
+  {
+   "id": "wv-3750",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "52nd District",
+   "title": "HOUSE OF DELEGATES, 52nd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "tresa-howell",
+     "name": "Tresa Howell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2192
+    },
+    {
+     "id": "joyce-brown",
+     "name": "Joyce Brown",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2114
+    }
+   ]
+  },
+  {
+   "id": "wv-3800",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "53rd District",
+   "title": "HOUSE OF DELEGATES, 53rd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "tristan-leavitt",
+     "name": "Tristan Leavitt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2185
+    },
+    {
+     "id": "keena-mullins",
+     "name": "Keena Mullins",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2025
+    }
+   ]
+  },
+  {
+   "id": "wv-3850",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "54th District",
+   "title": "HOUSE OF DELEGATES, 54th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "mike-pushkin",
+     "name": "Mike Pushkin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3520
+    },
+    {
+     "id": "tara-martinez",
+     "name": "Tara Martinez",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 877
+    }
+   ]
+  },
+  {
+   "id": "wv-3900",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "55th District",
+   "title": "HOUSE OF DELEGATES, 55th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "jb-akers",
+     "name": "Jb Akers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2896
+    },
+    {
+     "id": "anthony-dasaro",
+     "name": "Anthony Dasaro",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2831
+    }
+   ]
+  },
+  {
+   "id": "wv-3950",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "56th District",
+   "title": "HOUSE OF DELEGATES, 56th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "kayla-young",
+     "name": "Kayla Young",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3956
+    }
+   ]
+  },
+  {
+   "id": "wv-4000",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "57th District",
+   "title": "HOUSE OF DELEGATES, 57th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "hollis-t-lewis",
+     "name": "Hollis T. Lewis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3884
+    }
+   ]
+  },
+  {
+   "id": "wv-4050",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "58th District",
+   "title": "HOUSE OF DELEGATES, 58th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "marisa-jackson",
+     "name": "Marisa Jackson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2494
+    },
+    {
+     "id": "walter-hall",
+     "name": "Walter Hall",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2391
+    }
+   ]
+  },
+  {
+   "id": "wv-4100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "59th District",
+   "title": "HOUSE OF DELEGATES, 59th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "andy-shamblin",
+     "name": "Andy Shamblin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2652
+    },
+    {
+     "id": "howard-cookie-claytor-iii",
+     "name": "Howard 'Cookie' Claytor Iii",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1768
+    }
+   ]
+  },
+  {
+   "id": "wv-4150",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "60th District",
+   "title": "HOUSE OF DELEGATES, 60th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "dana-j-ferrell",
+     "name": "Dana J. Ferrell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2834
+    },
+    {
+     "id": "lynette-shaw",
+     "name": "Lynette Shaw",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1539
+    }
+   ]
+  },
+  {
+   "id": "wv-4200",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "61st District",
+   "title": "HOUSE OF DELEGATES, 61st District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "dean-jeffries",
+     "name": "Dean Jeffries",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2841
+    },
+    {
+     "id": "sue-crawford",
+     "name": "Sue Crawford",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1401
+    }
+   ]
+  },
+  {
+   "id": "wv-4250",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "62nd District",
+   "title": "HOUSE OF DELEGATES, 62nd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "roger-hanshaw",
+     "name": "Roger Hanshaw",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3222
+    }
+   ]
+  },
+  {
+   "id": "wv-4300",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "63rd District",
+   "title": "HOUSE OF DELEGATES, 63rd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "lori-cowger-dittman",
+     "name": "Lori Cowger Dittman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2583
+    },
+    {
+     "id": "kevin-westley-carpenter",
+     "name": "Kevin Westley Carpenter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1333
+    }
+   ]
+  },
+  {
+   "id": "wv-4350",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "64th District",
+   "title": "HOUSE OF DELEGATES, 64th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "adam-burkhammer",
+     "name": "Adam Burkhammer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2936
+    },
+    {
+     "id": "nate-stansberry",
+     "name": "Nate Stansberry",
+     "party": "CST",
+     "party_code": "O",
+     "votes": 1072
+    }
+   ]
+  },
+  {
+   "id": "wv-4400",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "65th District",
+   "title": "HOUSE OF DELEGATES, 65th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "carl-robbie-martin",
+     "name": "Carl 'Robbie' Martin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2779
+    },
+    {
+     "id": "mira-tanner-hughes",
+     "name": "Mira Tanner-Hughes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1360
+    }
+   ]
+  },
+  {
+   "id": "wv-4450",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "66th District",
+   "title": "HOUSE OF DELEGATES, 66th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "jonathan-b-kyle",
+     "name": "Jonathan B. Kyle",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2657
+    },
+    {
+     "id": "danielle-m-dougherty",
+     "name": "Danielle M. Dougherty",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1676
+    }
+   ]
+  },
+  {
+   "id": "wv-4500",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "67th District",
+   "title": "HOUSE OF DELEGATES, 67th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "les-mallow",
+     "name": "Les Mallow",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3100
+    },
+    {
+     "id": "mandy-weirich",
+     "name": "Mandy Weirich",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2084
+    }
+   ]
+  },
+  {
+   "id": "wv-4550",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "68th District",
+   "title": "HOUSE OF DELEGATES, 68th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "chris-phillips",
+     "name": "Chris Phillips",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3387
+    }
+   ]
+  },
+  {
+   "id": "wv-4600",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "69th District",
+   "title": "HOUSE OF DELEGATES, 69th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "danny-hamrick",
+     "name": "Danny Hamrick",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3254
+    },
+    {
+     "id": "jocelyn-blackwell",
+     "name": "Jocelyn Blackwell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1875
+    }
+   ]
+  },
+  {
+   "id": "wv-4650",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "70th District",
+   "title": "HOUSE OF DELEGATES, 70th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "shannon-welsh",
+     "name": "Shannon Welsh",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2258
+    },
+    {
+     "id": "paul-j-howe-iii",
+     "name": "Paul J. Howe Iii",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1631
+    }
+   ]
+  },
+  {
+   "id": "wv-4700",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "71st District",
+   "title": "HOUSE OF DELEGATES, 71st District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "tim-mcneely",
+     "name": "Tim Mcneely",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2983
+    },
+    {
+     "id": "robert-rob-garcia",
+     "name": "Robert 'Rob' Garcia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2630
+    }
+   ]
+  },
+  {
+   "id": "wv-4750",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "72nd District",
+   "title": "HOUSE OF DELEGATES, 72nd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "clay-riley",
+     "name": "Clay Riley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3112
+    }
+   ]
+  },
+  {
+   "id": "wv-4800",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "73rd District",
+   "title": "HOUSE OF DELEGATES, 73rd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "frank-sturm",
+     "name": "Frank Sturm",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3191
+    },
+    {
+     "id": "kit-kathleen-ford",
+     "name": "Kit (Kathleen) Ford",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1583
+    }
+   ]
+  },
+  {
+   "id": "wv-4850",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "74th District",
+   "title": "HOUSE OF DELEGATES, 74th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "guy-ward",
+     "name": "Guy Ward",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3113
+    },
+    {
+     "id": "frankie-delapas",
+     "name": "Frankie Delapas",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2117
+    }
+   ]
+  },
+  {
+   "id": "wv-4900",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "75th District",
+   "title": "HOUSE OF DELEGATES, 75th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "linda-longstreth",
+     "name": "Linda Longstreth",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2769
+    },
+    {
+     "id": "phil-mallow",
+     "name": "Phil Mallow",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2479
+    }
+   ]
+  },
+  {
+   "id": "wv-4950",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "76th District",
+   "title": "HOUSE OF DELEGATES, 76th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "rick-garcia",
+     "name": "Rick Garcia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2620
+    },
+    {
+     "id": "jon-dodds",
+     "name": "Jon Dodds",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1883
+    }
+   ]
+  },
+  {
+   "id": "wv-5000",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "77th District",
+   "title": "HOUSE OF DELEGATES, 77th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "joe-statler",
+     "name": "Joe Statler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3161
+    },
+    {
+     "id": "patricia-andrea-bunner",
+     "name": "Patricia Andrea Bunner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1977
+    }
+   ]
+  },
+  {
+   "id": "wv-5050",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "78th District",
+   "title": "HOUSE OF DELEGATES, 78th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "michael-wendell",
+     "name": "Michael Wendell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3124
+    },
+    {
+     "id": "geno-chiarelli",
+     "name": "Geno Chiarelli",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2687
+    }
+   ]
+  },
+  {
+   "id": "wv-5100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "79th District",
+   "title": "HOUSE OF DELEGATES, 79th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "evan-hansen",
+     "name": "Evan Hansen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2817
+    },
+    {
+     "id": "paige-reiring",
+     "name": "Paige Reiring",
+     "party": "MTN",
+     "party_code": "O",
+     "votes": 833
+    }
+   ]
+  },
+  {
+   "id": "wv-5150",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "80th District",
+   "title": "HOUSE OF DELEGATES, 80th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "olivia-miller",
+     "name": "Olivia Miller",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2986
+    },
+    {
+     "id": "melissa-ann-deserio",
+     "name": "Melissa Ann Deserio",
+     "party": "CST",
+     "party_code": "O",
+     "votes": 496
+    }
+   ]
+  },
+  {
+   "id": "wv-5200",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "81st District",
+   "title": "HOUSE OF DELEGATES, 81st District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "anitra-hamilton",
+     "name": "Anitra Hamilton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2384
+    }
+   ]
+  },
+  {
+   "id": "wv-5250",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "82nd District",
+   "title": "HOUSE OF DELEGATES, 82nd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "eddie-wagoner",
+     "name": "Eddie Wagoner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3284
+    },
+    {
+     "id": "david-mccormick",
+     "name": "David Mccormick",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2770
+    }
+   ]
+  },
+  {
+   "id": "wv-5300",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "83rd District",
+   "title": "HOUSE OF DELEGATES, 83rd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "george-street",
+     "name": "George Street",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3182
+    }
+   ]
+  },
+  {
+   "id": "wv-5350",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "84th District",
+   "title": "HOUSE OF DELEGATES, 84th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "d-r-buck-jennings",
+     "name": "D.R. Buck Jennings",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2783
+    },
+    {
+     "id": "colin-savage",
+     "name": "Colin Savage",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1324
+    },
+    {
+     "id": "joshua-haskiell",
+     "name": "Joshua Haskiell",
+     "party": "",
+     "party_code": "O",
+     "votes": 430
+    }
+   ]
+  },
+  {
+   "id": "wv-5400",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "85th District",
+   "title": "HOUSE OF DELEGATES, 85th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "alex-d-bosley",
+     "name": "Alex D. Bosley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3607
+    },
+    {
+     "id": "deborah-k-stiles",
+     "name": "Deborah K Stiles",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1741
+    }
+   ]
+  },
+  {
+   "id": "wv-5450",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "86th District",
+   "title": "HOUSE OF DELEGATES, 86th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "steven-schetrom",
+     "name": "Steven Schetrom",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3520
+    },
+    {
+     "id": "betsy-orndoff-sayers",
+     "name": "Betsy Orndoff-Sayers",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1538
+    }
+   ]
+  },
+  {
+   "id": "wv-5500",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "87th District",
+   "title": "HOUSE OF DELEGATES, 87th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "gary-g-howell",
+     "name": "Gary G. Howell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3122
+    },
+    {
+     "id": "rebecca-holler",
+     "name": "Rebecca Holler",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1476
+    }
+   ]
+  },
+  {
+   "id": "wv-5550",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "88th District",
+   "title": "HOUSE OF DELEGATES, 88th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "rick-hillenbrand",
+     "name": "Rick Hillenbrand",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3671
+    },
+    {
+     "id": "dorothy-l-kengla",
+     "name": "Dorothy L. Kengla",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1138
+    }
+   ]
+  },
+  {
+   "id": "wv-5600",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "89th District",
+   "title": "HOUSE OF DELEGATES, 89th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "david-cannon",
+     "name": "David Cannon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3557
+    },
+    {
+     "id": "j-r-hepworth",
+     "name": "J R Hepworth",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1301
+    },
+    {
+     "id": "walter-s-long-sr",
+     "name": "Walter S. Long Sr",
+     "party": "CST",
+     "party_code": "O",
+     "votes": 696
+    }
+   ]
+  },
+  {
+   "id": "wv-5650",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "90th District",
+   "title": "HOUSE OF DELEGATES, 90th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "george-miller",
+     "name": "George Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4306
+    },
+    {
+     "id": "ashley-braner",
+     "name": "Ashley Braner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1996
+    }
+   ]
+  },
+  {
+   "id": "wv-5700",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "91st District",
+   "title": "HOUSE OF DELEGATES, 91st District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "chris-clagett",
+     "name": "Chris Clagett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2787
+    },
+    {
+     "id": "david-michaels",
+     "name": "David Michaels",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2008
+    }
+   ]
+  },
+  {
+   "id": "wv-5750",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "92nd District",
+   "title": "HOUSE OF DELEGATES, 92nd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "michael-hite",
+     "name": "Michael Hite",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2860
+    },
+    {
+     "id": "brad-noll",
+     "name": "Brad Noll",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2296
+    }
+   ]
+  },
+  {
+   "id": "wv-5800",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "93rd District",
+   "title": "HOUSE OF DELEGATES, 93rd District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "mike-hornby",
+     "name": "Mike Hornby",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2108
+    },
+    {
+     "id": "tara-b-mccoy",
+     "name": "Tara B Mccoy",
+     "party": "CST",
+     "party_code": "O",
+     "votes": 1592
+    }
+   ]
+  },
+  {
+   "id": "wv-5850",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "94th District",
+   "title": "HOUSE OF DELEGATES, 94th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "donald-lee-bennett",
+     "name": "Donald Lee Bennett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2565
+    },
+    {
+     "id": "elizabeth-sanchez",
+     "name": "Elizabeth Sanchez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2130
+    }
+   ]
+  },
+  {
+   "id": "wv-5900",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "95th District",
+   "title": "HOUSE OF DELEGATES, 95th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "charles-chuck-horst",
+     "name": "Charles 'Chuck' Horst",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2179
+    },
+    {
+     "id": "kara-waldeck",
+     "name": "Kara Waldeck",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1874
+    },
+    {
+     "id": "daniel-walls",
+     "name": "Daniel Walls",
+     "party": "CST",
+     "party_code": "O",
+     "votes": 280
+    }
+   ]
+  },
+  {
+   "id": "wv-5950",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "96th District",
+   "title": "HOUSE OF DELEGATES, 96th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "katie-rose",
+     "name": "Katie Rose",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2245
+    },
+    {
+     "id": "lisa-cathro",
+     "name": "Lisa Cathro",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1908
+    },
+    {
+     "id": "becky-jane-dunmire",
+     "name": "Becky Jane Dunmire",
+     "party": "CST",
+     "party_code": "O",
+     "votes": 420
+    }
+   ]
+  },
+  {
+   "id": "wv-6000",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "97th District",
+   "title": "HOUSE OF DELEGATES, 97th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "lucia-valentine",
+     "name": "Lucia Valentine",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3450
+    },
+    {
+     "id": "s-chris-anders",
+     "name": "S. Chris Anders",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2701
+    }
+   ]
+  },
+  {
+   "id": "wv-6050",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "98th District",
+   "title": "HOUSE OF DELEGATES, 98th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "joe-funkhouser",
+     "name": "Joe Funkhouser",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2968
+    },
+    {
+     "id": "marta-beck",
+     "name": "Marta Beck",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2485
+    }
+   ]
+  },
+  {
+   "id": "wv-6100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "99th District",
+   "title": "HOUSE OF DELEGATES, 99th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "regina-dyer",
+     "name": "Regina Dyer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3647
+    },
+    {
+     "id": "wayne-m-clark",
+     "name": "Wayne M. Clark",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2963
+    }
+   ]
+  },
+  {
+   "id": "wv-6150",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wv",
+   "office": "HOUSE OF DELEGATES",
+   "district": "100th District",
+   "title": "HOUSE OF DELEGATES, 100th District",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "jenny-thacker",
+     "name": "Jenny Thacker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3415
+    },
+    {
+     "id": "william-ridenour",
+     "name": "William Ridenour",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2986
+    }
+   ]
+  },
+  {
+   "id": "wv-6200",
+   "kind": "judicial",
+   "level": "county",
+   "state": "wv",
+   "office": "NON-PARTISAN ELECTION OF CIRCUIT COURT JUDGE - UNEXPIRED TERM, 7th Division 2",
+   "district": null,
+   "title": "NON-PARTISAN ELECTION OF CIRCUIT COURT JUDGE - UNEXPIRED TERM, 7th Division 2",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "kris-raynes",
+     "name": "Kris Raynes",
+     "party": "",
+     "party_code": "O",
+     "votes": 7029
+    },
+    {
+     "id": "brenden-david-long",
+     "name": "Brenden David Long",
+     "party": "",
+     "party_code": "O",
+     "votes": 3239
+    },
+    {
+     "id": "a-shawn-d-bayliss",
+     "name": "A. Shawn D. Bayliss",
+     "party": "",
+     "party_code": "O",
+     "votes": 2625
+    },
+    {
+     "id": "ryanne-a-ball",
+     "name": "Ryanne A. Ball",
+     "party": "",
+     "party_code": "O",
+     "votes": 1625
+    }
+   ]
+  },
+  {
+   "id": "wv-6250",
+   "kind": "judicial",
+   "level": "county",
+   "state": "wv",
+   "office": "NON-PARTISAN ELECTION OF CIRCUIT COURT JUDGE - UNEXPIRED TERM, 27th Division 4",
+   "district": null,
+   "title": "NON-PARTISAN ELECTION OF CIRCUIT COURT JUDGE - UNEXPIRED TERM, 27th Division 4",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "joe-kinser",
+     "name": "Joe Kinser",
+     "party": "",
+     "party_code": "O",
+     "votes": 17170
+    },
+    {
+     "id": "richard-d-stephens",
+     "name": "Richard D. Stephens",
+     "party": "",
+     "party_code": "O",
+     "votes": 11041
+    }
+   ]
+  },
+  {
+   "id": "wv-6300",
+   "kind": "judicial",
+   "level": "county",
+   "state": "wv",
+   "office": "NON-PARTISAN ELECTION OF FAMILY COURT JUDGE - UNEXPIRED TERM, 6th Division 2",
+   "district": null,
+   "title": "NON-PARTISAN ELECTION OF FAMILY COURT JUDGE - UNEXPIRED TERM, 6th Division 2",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "eleni-kontos-miller",
+     "name": "Eleni Kontos-Miller",
+     "party": "",
+     "party_code": "O",
+     "votes": 9940
+    },
+    {
+     "id": "paula-harbour",
+     "name": "Paula Harbour",
+     "party": "",
+     "party_code": "O",
+     "votes": 9698
+    }
+   ]
+  },
+  {
+   "id": "wv-6350",
+   "kind": "measure",
+   "level": "county",
+   "state": "wv",
+   "office": "AMENDMENT NO 1: CITIZENSHIP REQUIREMENT TO VOTE IN WEST VIRGINIA ELECTIONS AMENDMENT",
+   "district": null,
+   "title": "AMENDMENT NO 1: CITIZENSHIP REQUIREMENT TO VOTE IN WEST VIRGINIA ELECTIONS AMENDMENT",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 52,
+    "total": 55,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 341290
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 87709
+    }
+   ]
+  }
+ ]
+}

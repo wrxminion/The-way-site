@@ -326,7 +326,7 @@
   }
   function load() {
     return getJSON('data/manifest.json').then(function (m) {
-      manifest = m; renderStatus(); renderSources(); renderBalance();
+      manifest = m; renderStatus(); renderSources(); renderBalance(); if (window.TWMap) TWMap.update(m, getJSON);
       if (!$('tabs').childNodes.length) renderTabs();
       show();
     }).catch(function () {

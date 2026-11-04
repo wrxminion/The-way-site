@@ -89,18 +89,17 @@ button,select,input{font:inherit}
 .cty-tbl .n{text-align:right;white-space:nowrap}
 .cty-tbl .lead{font-weight:700;color:#fff}
 .cty-tbl small{color:#a8c3ca;margin-left:4px}
-.cty{margin-top:12px;border-top:1px solid #b1eff12b;padding-top:8px}
-.cty summary{cursor:pointer;color:#aaf0e8;font-size:14px;font-weight:650;padding:6px 0;min-height:32px}
-.cty summary:focus-visible,.cty input:focus-visible,.cty select:focus-visible{outline:2px solid #91dfdc;outline-offset:2px}
-.cty-empty{font-size:13px;color:#c8e0e5;line-height:1.55;margin:6px 0}
-.cty-tools{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
-.cty-tools input,.cty-tools select{border:1px solid #86d4d35a;background:#061b28;color:var(--text);border-radius:100px;padding:8px 14px;font-size:14px;min-width:0}
-.cty-tools input{flex:1 1 150px}
-.cty-scroll{overflow:auto;max-height:420px;border:1px solid #b1eff12b;border-radius:10px}
-.cty-tbl{border-collapse:collapse;width:100%;font-size:13px}
-.cty-tbl th,.cty-tbl td{padding:6px 10px;border-bottom:1px solid #b1eff11f;text-align:left;vertical-align:top}
-.cty-tbl thead th{position:sticky;top:0;background:#082638;color:#93d6da;font-weight:600;z-index:1}
-.cty-tbl tbody th{font-weight:600;position:sticky;left:0;background:#071f2e;white-space:nowrap}
-.cty-tbl .n{text-align:right;white-space:nowrap}
-.cty-tbl .lead{font-weight:700;color:#fff}
-.cty-tbl small{color:#a8c3ca;margin-left:4px}
+.apmap h2{font:normal 24px Georgia,serif;margin:0 0 4px}
+.apm-tabs{margin:10px 0}
+.apm-svg{display:block;width:100%;height:auto;max-width:1060px;margin:6px auto}
+.apm-st{cursor:pointer;outline:none}
+.apm-sh{stroke:#071f2e;stroke-width:.8;stroke-linejoin:round}
+.apm-st:hover .apm-sh,.apm-st:focus .apm-sh{stroke:#fff;stroke-width:2}
+.apm-st:focus-visible .apm-sh{stroke:#91dfdc;stroke-width:3}
+.apm-tile .apm-sh{fill:none;stroke:#86d4d37a;stroke-width:1.2}
+.apm-lab{font:700 15px Inter,system-ui,sans-serif;fill:#fff;stroke:#021018;stroke-width:3px;paint-order:stroke;pointer-events:none}
+.apm-cap{font:12px Inter,system-ui,sans-serif;fill:#93d6da;letter-spacing:.1em}
+.p-n{background:#050f17;border:1px solid #86d4d35a}
+.apm-detail{min-height:3em;margin:8px 0;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:#051b28b0;font-size:15px;line-height:1.5}
+.apm-list{margin-top:8px}.apm-list summary{cursor:pointer;color:#aaf0e8;font-size:14px;padding:6px 0}
+.apm-list ul{margin:6px 0 0;padding-left:18px;font-size:13px;line-height:1.6;color:#c8e0e5;columns:2 320px}

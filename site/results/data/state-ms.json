@@ -1,0 +1,1271 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-ms",
+ "label": "Mississippi (unofficial, partial: 3 of 82 counties)",
+ "source_ids": [
+  "ms-counties"
+ ],
+ "updated_at": "2026-11-04T20:12:55Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ms-u-s-house-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ms",
+   "office": "U.S. House 1",
+   "district": null,
+   "title": "U.S. House 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cliff-johnson",
+     "name": "Cliff Johnson",
+     "party": null,
+     "party_code": "D",
+     "votes": 27281
+    },
+    {
+     "id": "trent-kelly",
+     "name": "Trent Kelly",
+     "party": null,
+     "party_code": "R",
+     "votes": 25971
+    },
+    {
+     "id": "johnny-baucom",
+     "name": "Johnny Baucom",
+     "party": null,
+     "party_code": "L",
+     "votes": 843
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 48
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "johnny-baucom": 843,
+     "cliff-johnson": 27281,
+     "trent-kelly": 25971,
+     "write-ins": 48
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-u-s-house-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ms",
+   "office": "U.S. House 2",
+   "district": null,
+   "title": "U.S. House 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bennie-g-thompson",
+     "name": "Bennie G. Thompson",
+     "party": null,
+     "party_code": "O",
+     "votes": 7595
+    },
+    {
+     "id": "ron-eller",
+     "name": "Ron Eller",
+     "party": null,
+     "party_code": "O",
+     "votes": 1966
+    },
+    {
+     "id": "bennie-foster",
+     "name": "Bennie Foster",
+     "party": null,
+     "party_code": "O",
+     "votes": 180
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "by_county": {
+    "Madison": {
+     "ron-eller": 1966,
+     "bennie-g-thompson": 7595,
+     "bennie-foster": 180,
+     "write-ins": 8
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-u-s-house-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ms",
+   "office": "U.S. House 3",
+   "district": null,
+   "title": "U.S. House 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-guest",
+     "name": "Michael Guest",
+     "party": null,
+     "party_code": "R",
+     "votes": 56047
+    },
+    {
+     "id": "michael-a-chiaradio",
+     "name": "Michael A Chiaradio",
+     "party": null,
+     "party_code": "D",
+     "votes": 29385
+    },
+    {
+     "id": "erik-kiehle",
+     "name": "Erik Kiehle",
+     "party": null,
+     "party_code": "L",
+     "votes": 1340
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 59
+    }
+   ],
+   "by_county": {
+    "Madison": {
+     "michael-a-chiaradio": 13073,
+     "michael-guest": 22052,
+     "write-ins": 59,
+     "erik-kiehle": 476
+    },
+    "Rankin": {
+     "michael-guest": 33995,
+     "michael-a-chiaradio": 16312,
+     "erik-kiehle": 864
+    }
+   },
+   "precincts": {
+    "reporting": 2,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-u-s-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ms",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cindy-hyde-smith",
+     "name": "Cindy Hyde-Smith",
+     "party": null,
+     "party_code": "R",
+     "votes": 78690
+    },
+    {
+     "id": "scott-colom",
+     "name": "Scott Colom",
+     "party": null,
+     "party_code": "D",
+     "votes": 69156
+    },
+    {
+     "id": "ty-pinkins",
+     "name": "Ty Pinkins",
+     "party": null,
+     "party_code": "I",
+     "votes": 3150
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 133
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "scott-colom": 28103,
+     "cindy-hyde-smith": 24780,
+     "ty-pinkins": 1301,
+     "write-ins": 68
+    },
+    "Madison": {
+     "scott-colom": 22540,
+     "cindy-hyde-smith": 22256,
+     "ty-pinkins": 685,
+     "write-ins": 65
+    },
+    "Rankin": {
+     "cindy-hyde-smith": 31654,
+     "scott-colom": 18513,
+     "ty-pinkins": 1164
+    }
+   },
+   "precincts": {
+    "reporting": 3,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-chancery-court-20-chancery-district-20-place-1",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Chancery Court 20 Chancery District 20 Place 1",
+   "district": null,
+   "title": "Chancery Court 20 Chancery District 20 Place 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bo-agnew",
+     "name": "Bo Agnew",
+     "party": null,
+     "party_code": "O",
+     "votes": 23487
+    },
+    {
+     "id": "keri-h-carroll",
+     "name": "Keri H. Carroll",
+     "party": null,
+     "party_code": "O",
+     "votes": 14578
+    },
+    {
+     "id": "michael-mike-wolf",
+     "name": "Michael 'Mike' Wolf",
+     "party": null,
+     "party_code": "O",
+     "votes": 9981
+    }
+   ],
+   "by_county": {
+    "Rankin": {
+     "bo-agnew": 23487,
+     "keri-h-carroll": 14578,
+     "michael-mike-wolf": 9981
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-chancery-court-20-chancery-district-20-place-2",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Chancery Court 20 Chancery District 20 Place 2",
+   "district": null,
+   "title": "Chancery Court 20 Chancery District 20 Place 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "troy-farrell-odom",
+     "name": "Troy Farrell Odom",
+     "party": null,
+     "party_code": "O",
+     "votes": 43270
+    }
+   ],
+   "by_county": {
+    "Rankin": {
+     "troy-farrell-odom": 43270
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-chancery-court-20-chancery-district-20-place-3",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Chancery Court 20 Chancery District 20 Place 3",
+   "district": null,
+   "title": "Chancery Court 20 Chancery District 20 Place 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "haydn-j-roberts",
+     "name": "Haydn J. Roberts",
+     "party": null,
+     "party_code": "O",
+     "votes": 43015
+    }
+   ],
+   "by_county": {
+    "Rankin": {
+     "haydn-j-roberts": 43015
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-chancery-district-11-place-3-chancery-court-judge",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Chancery District 11 Place 3 Chancery Court Judge",
+   "district": null,
+   "title": "Chancery District 11 Place 3 Chancery Court Judge",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gene-d-berry",
+     "name": "Gene D. Berry",
+     "party": null,
+     "party_code": "O",
+     "votes": 17956
+    },
+    {
+     "id": "david-bridges",
+     "name": "David Bridges",
+     "party": null,
+     "party_code": "O",
+     "votes": 16040
+    },
+    {
+     "id": "atan-rhea",
+     "name": "Atan Rhea",
+     "party": null,
+     "party_code": "O",
+     "votes": 5722
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 381
+    }
+   ],
+   "by_county": {
+    "Madison": {
+     "gene-d-berry": 17956,
+     "david-bridges": 16040,
+     "atan-rhea": 5722,
+     "write-ins": 381
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-chancery-district-17-1-place-3",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Chancery District 17-1 Place 3",
+   "district": null,
+   "title": "Chancery District 17-1 Place 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gwen-baptist",
+     "name": "Gwen Baptist",
+     "party": null,
+     "party_code": "O",
+     "votes": 3049
+    },
+    {
+     "id": "malenda-harris-meacham",
+     "name": "Malenda Harris Meacham",
+     "party": null,
+     "party_code": "O",
+     "votes": 2815
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 43
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "gwen-baptist": 3049,
+     "malenda-harris-meacham": 2815,
+     "write-ins": 43
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-chancery-district-17-place-1",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Chancery District 17 Place 1",
+   "district": null,
+   "title": "Chancery District 17 Place 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vicki-daniels",
+     "name": "Vicki Daniels",
+     "party": null,
+     "party_code": "O",
+     "votes": 43446
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 776
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "vicki-daniels": 43446,
+     "write-ins": 776
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-chancery-district-17-place-2",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Chancery District 17 Place 2",
+   "district": null,
+   "title": "Chancery District 17 Place 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-ty-scott",
+     "name": "William 'Ty' Scott",
+     "party": null,
+     "party_code": "O",
+     "votes": 28087
+    },
+    {
+     "id": "elizabeth-beth-owens",
+     "name": "Elizabeth 'Beth' Owens",
+     "party": null,
+     "party_code": "O",
+     "votes": 19229
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 412
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "elizabeth-beth-owens": 19229,
+     "william-ty-scott": 28087,
+     "write-ins": 412
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-circuit-court-20-circuit-district-20-place-1",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Circuit Court 20 Circuit District 20 Place 1",
+   "district": null,
+   "title": "Circuit Court 20 Circuit District 20 Place 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sarah-butler",
+     "name": "Sarah Butler",
+     "party": null,
+     "party_code": "O",
+     "votes": 20805
+    },
+    {
+     "id": "scott-gilbert",
+     "name": "Scott Gilbert",
+     "party": null,
+     "party_code": "O",
+     "votes": 18081
+    },
+    {
+     "id": "carter-smith",
+     "name": "Carter Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 8505
+    }
+   ],
+   "by_county": {
+    "Rankin": {
+     "sarah-butler": 20805,
+     "scott-gilbert": 18081,
+     "carter-smith": 8505
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-circuit-court-20-circuit-district-20-place-2",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Circuit Court 20 Circuit District 20 Place 2",
+   "district": null,
+   "title": "Circuit Court 20 Circuit District 20 Place 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-s-ratcliff",
+     "name": "Steve S. Ratcliff",
+     "party": null,
+     "party_code": "O",
+     "votes": 42727
+    }
+   ],
+   "by_county": {
+    "Rankin": {
+     "steve-s-ratcliff": 42727
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-circuit-court-20-circuit-district-20-place-3",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Circuit Court 20 Circuit District 20 Place 3",
+   "district": null,
+   "title": "Circuit Court 20 Circuit District 20 Place 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dewey-arthur",
+     "name": "Dewey Arthur",
+     "party": null,
+     "party_code": "O",
+     "votes": 42759
+    }
+   ],
+   "by_county": {
+    "Rankin": {
+     "dewey-arthur": 42759
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-circuit-court-21-1-place-4",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Circuit Court 21-1 Place 4",
+   "district": null,
+   "title": "Circuit Court 21-1 Place 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-hughes",
+     "name": "John Hughes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3584
+    },
+    {
+     "id": "lucius-edwards",
+     "name": "Lucius Edwards",
+     "party": null,
+     "party_code": "O",
+     "votes": 2225
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 47
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "lucius-edwards": 2225,
+     "john-hughes": 3584,
+     "write-ins": 47
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-circuit-district-20-place-3-circuit-court-judge",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Circuit District 20 Place 3 Circuit Court Judge",
+   "district": null,
+   "title": "Circuit District 20 Place 3 Circuit Court Judge",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dewey-arthur",
+     "name": "Dewey Arthur",
+     "party": null,
+     "party_code": "O",
+     "votes": 37180
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 553
+    }
+   ],
+   "by_county": {
+    "Madison": {
+     "dewey-arthur": 37180,
+     "write-ins": 553
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-circuit-district-21-place-1",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Circuit District 21 Place 1",
+   "district": null,
+   "title": "Circuit District 21 Place 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joseph-jody-neyman",
+     "name": "Joseph 'Jody' Neyman",
+     "party": null,
+     "party_code": "O",
+     "votes": 25447
+    },
+    {
+     "id": "gordon-shaw-jr",
+     "name": "Gordon Shaw, Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 20868
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 446
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "joseph-jody-neyman": 25447,
+     "gordon-shaw-jr": 20868,
+     "write-ins": 446
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-circuit-district-21-place-2",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Circuit District 21 Place 2",
+   "district": null,
+   "title": "Circuit District 21 Place 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "craig-treadway",
+     "name": "Craig Treadway",
+     "party": null,
+     "party_code": "O",
+     "votes": 44652
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 619
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "craig-treadway": 44652,
+     "write-ins": 619
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-circuit-district-21-place-3",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Circuit District 21 Place 3",
+   "district": null,
+   "title": "Circuit District 21 Place 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "w-douglas-hollowell-iii",
+     "name": "W. Douglas Hollowell, III",
+     "party": null,
+     "party_code": "O",
+     "votes": 43247
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 593
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "w-douglas-hollowell-iii": 43247,
+     "write-ins": 593
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-county-attorney",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "County Attorney",
+   "district": null,
+   "title": "County Attorney",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tori-williams",
+     "name": "Tori Williams",
+     "party": null,
+     "party_code": "O",
+     "votes": 43786
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 436
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "tori-williams": 43786,
+     "write-ins": 436
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-county-court-judge-place-1",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "County Court Judge Place 1",
+   "district": null,
+   "title": "County Court Judge Place 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "allen-b-couch-jr",
+     "name": "Allen B. Couch, Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 43681
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 576
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "allen-b-couch-jr": 43681,
+     "write-ins": 576
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-district-1-position-1",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "District 1 Position 1",
+   "district": null,
+   "title": "District 1 Position 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "derek-dewayne-hopson-jr",
+     "name": "Derek Dewayne Hopson, Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 25307
+    },
+    {
+     "id": "john-weddle",
+     "name": "John Weddle",
+     "party": null,
+     "party_code": "O",
+     "votes": 22303
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 549
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "derek-dewayne-hopson-jr": 25307,
+     "john-weddle": 22303,
+     "write-ins": 549
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-district-1-position-2",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "District 1 Position 2",
+   "district": null,
+   "title": "District 1 Position 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "donna-m-barnes",
+     "name": "Donna M. Barnes",
+     "party": null,
+     "party_code": "O",
+     "votes": 43507
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 878
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "donna-m-barnes": 43507,
+     "write-ins": 878
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-justice-court-judge-district-1-justice-court-judge-district-1",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Justice Court Judge District 1 Justice Court Judge District 1",
+   "district": null,
+   "title": "Justice Court Judge District 1 Justice Court Judge District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-billy-johnson",
+     "name": "Robert 'Billy' Johnson",
+     "party": null,
+     "party_code": "O",
+     "votes": 4844
+    },
+    {
+     "id": "james-earl-woodard",
+     "name": "James Earl Woodard",
+     "party": null,
+     "party_code": "O",
+     "votes": 4339
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 64
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "robert-billy-johnson": 4844,
+     "james-earl-woodard": 4339,
+     "write-ins": 64
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-rankin-county-judge-place-1",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Rankin County Judge - Place 1",
+   "district": null,
+   "title": "Rankin County Judge - Place 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-l-morrow-jr",
+     "name": "David L. Morrow, Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 43370
+    }
+   ],
+   "by_county": {
+    "Rankin": {
+     "david-l-morrow-jr": 43370
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-rankin-county-judge-place-2",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Rankin County Judge - Place 2",
+   "district": null,
+   "title": "Rankin County Judge - Place 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-mccrory",
+     "name": "Josh McCrory",
+     "party": null,
+     "party_code": "O",
+     "votes": 43300
+    }
+   ],
+   "by_county": {
+    "Rankin": {
+     "josh-mccrory": 43300
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-school-board-district-5",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "School Board District 5",
+   "district": null,
+   "title": "School Board District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charles-barton",
+     "name": "Charles Barton",
+     "party": null,
+     "party_code": "O",
+     "votes": 8792
+    },
+    {
+     "id": "rebeca-tello",
+     "name": "Rebeca Tello",
+     "party": null,
+     "party_code": "O",
+     "votes": 3767
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 68
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "charles-barton": 8792,
+     "rebeca-tello": 3767,
+     "write-ins": 68
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-school-board-district-5-district-5",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "School Board, District 5 District 5",
+   "district": null,
+   "title": "School Board, District 5 District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-grumpy-farmer",
+     "name": "David 'Grumpy' Farmer",
+     "party": null,
+     "party_code": "O",
+     "votes": 8896
+    }
+   ],
+   "by_county": {
+    "Rankin": {
+     "david-grumpy-farmer": 8896
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-state-house-of-rep-77-district-77",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ms",
+   "office": "State House Of Rep 77 District 77",
+   "district": null,
+   "title": "State House Of Rep 77 District 77",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-c-sullivan",
+     "name": "Melissa C. Sullivan",
+     "party": null,
+     "party_code": "I",
+     "votes": 725
+    },
+    {
+     "id": "christopher-chris-dunn",
+     "name": "Christopher 'Chris' Dunn",
+     "party": null,
+     "party_code": "I",
+     "votes": 691
+    },
+    {
+     "id": "craig-t-williams",
+     "name": "Craig T. Williams",
+     "party": null,
+     "party_code": "I",
+     "votes": 520
+    },
+    {
+     "id": "dianne-mcnair-gaddis",
+     "name": "Dianne McNair Gaddis",
+     "party": null,
+     "party_code": "I",
+     "votes": 313
+    }
+   ],
+   "by_county": {
+    "Rankin": {
+     "melissa-c-sullivan": 725,
+     "christopher-chris-dunn": 691,
+     "craig-t-williams": 520,
+     "dianne-mcnair-gaddis": 313
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  }
+ ]
+}
