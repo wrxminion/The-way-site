@@ -1,0 +1,6229 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-wa",
+ "label": "Washington",
+ "source_ids": [
+  "wa-scytl"
+ ],
+ "updated_at": "2026-11-04T03:32:25Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "wa-initiative-measure-no-ip26-645",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Initiative Measure No. IP26-645",
+   "district": null,
+   "title": "Initiative Measure No. IP26-645",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 39,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-initiative-measure-no-il26-001",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Initiative Measure No. IL26-001",
+   "district": null,
+   "title": "Initiative Measure No. IL26-001",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 39,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-initiative-measure-no-il26-638",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Initiative Measure No. IL26-638",
+   "district": null,
+   "title": "Initiative Measure No. IL26-638",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 39,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-congressional-district-1-u-s-representative",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Congressional District 1 - U.S. Representative",
+   "district": null,
+   "title": "Congressional District 1 - U.S. Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "suzan-delbene",
+     "name": "Suzan DelBene",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "mary-silva",
+     "name": "Mary Silva",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-congressional-district-2-u-s-representative",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Congressional District 2 - U.S. Representative",
+   "district": null,
+   "title": "Congressional District 2 - U.S. Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rick-larsen",
+     "name": "Rick Larsen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "edwin-h-feller",
+     "name": "Edwin H. Feller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-congressional-district-3-u-s-representative",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Congressional District 3 - U.S. Representative",
+   "district": null,
+   "title": "Congressional District 3 - U.S. Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-braun",
+     "name": "John Braun",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "marie-gluesenkamp-perez",
+     "name": "Marie Gluesenkamp Perez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-congressional-district-4-u-s-representative",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Congressional District 4 - U.S. Representative",
+   "district": null,
+   "title": "Congressional District 4 - U.S. Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amanda-mckinney",
+     "name": "Amanda McKinney",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "john-duresky",
+     "name": "John Duresky",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-congressional-district-5-u-s-representative",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Congressional District 5 - U.S. Representative",
+   "district": null,
+   "title": "Congressional District 5 - U.S. Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-baumgartner",
+     "name": "Michael Baumgartner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "carmela-conroy",
+     "name": "Carmela Conroy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 12,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-congressional-district-6-u-s-representative",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Congressional District 6 - U.S. Representative",
+   "district": null,
+   "title": "Congressional District 6 - U.S. Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emily-randall",
+     "name": "Emily Randall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "teresa-fox",
+     "name": "Teresa Fox",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-congressional-district-7-u-s-representative",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Congressional District 7 - U.S. Representative",
+   "district": null,
+   "title": "Congressional District 7 - U.S. Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pramila-jayapal",
+     "name": "Pramila Jayapal",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "nirav-sheth",
+     "name": "Nirav Sheth",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-congressional-district-8-u-s-representative",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Congressional District 8 - U.S. Representative",
+   "district": null,
+   "title": "Congressional District 8 - U.S. Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kim-schrier",
+     "name": "Kim Schrier",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "spencer-meline",
+     "name": "Spencer Meline",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-congressional-district-9-u-s-representative",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Congressional District 9 - U.S. Representative",
+   "district": null,
+   "title": "Congressional District 9 - U.S. Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-smith",
+     "name": "Adam Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "doug-basler",
+     "name": "Doug Basler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-congressional-district-10-u-s-representative",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Congressional District 10 - U.S. Representative",
+   "district": null,
+   "title": "Congressional District 10 - U.S. Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marilyn-strickland",
+     "name": "Marilyn Strickland",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "chris-d-chung",
+     "name": "Chris D. Chung",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-1-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 1 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 1 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "davina-duerr",
+     "name": "Davina Duerr",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "maggie-wang",
+     "name": "Maggie Wang",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-1-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 1 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 1 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shelley-kloba",
+     "name": "Shelley Kloba",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "cliff-moon",
+     "name": "Cliff Moon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-2-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 2 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 2 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-barkis",
+     "name": "Andrew Barkis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "william-dehnel",
+     "name": "William Dehnel",
+     "party": "LDP",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-2-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 2 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 2 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-marshall",
+     "name": "Matt Marshall",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "angela-taylor",
+     "name": "Angela Taylor",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-3-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 3 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 3 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "natasha-hill",
+     "name": "Natasha Hill",
+     "party": "DE2",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "tony-kiepe",
+     "name": "Tony Kiepe",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-3-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 3 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 3 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "natalie-poulson",
+     "name": "Natalie Poulson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "luc-jasmin-iii",
+     "name": "Luc Jasmin III",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-4-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 4 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 4 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hillary-q-pham",
+     "name": "Hillary Q. Pham",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "trent-maier",
+     "name": "Trent Maier",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-4-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 4 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 4 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rob-chase",
+     "name": "Rob Chase",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "rob-tupper",
+     "name": "Rob Tupper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-5-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 5 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 5 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zach-hall",
+     "name": "Zach Hall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "michelle-bennett",
+     "name": "Michelle Bennett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-5-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 5 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 5 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lisa-callan",
+     "name": "Lisa Callan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "patrick-peacock",
+     "name": "Patrick Peacock",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-6-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 6 - State Senator",
+   "district": null,
+   "title": "Legislative District 6 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-holy",
+     "name": "Jeff Holy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-6-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 6 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 6 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michaela-kelso",
+     "name": "Michaela Kelso",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "alan-nolan",
+     "name": "Alan Nolan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-6-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 6 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 6 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jonathan-bingle",
+     "name": "Jonathan Bingle",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "julia-payne",
+     "name": "Julia Payne",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-7-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 7 - State Senator",
+   "district": null,
+   "title": "Legislative District 7 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shelly-short",
+     "name": "Shelly Short",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "ronald-l-mccoy",
+     "name": "Ronald L McCoy",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-7-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 7 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 7 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-engell",
+     "name": "Andrew Engell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-7-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 7 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 7 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hunter-abell",
+     "name": "Hunter Abell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-8-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 8 - State Senator",
+   "district": null,
+   "title": "Legislative District 8 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nikki-torres",
+     "name": "Nikki Torres",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "gabe-galbraith",
+     "name": "Gabe Galbraith",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-8-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 8 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 8 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-barnard",
+     "name": "Stephanie Barnard",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-8-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 8 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 8 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "april-connors",
+     "name": "April Connors",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-9-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 9 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 9 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mary-dye",
+     "name": "Mary Dye",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-9-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 9 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 9 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joe-schmick",
+     "name": "Joe Schmick",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "karina-wallace",
+     "name": "Karina Wallace",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-10-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 10 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 10 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clyde-shavers",
+     "name": "Clyde Shavers",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "robert-chili-hicks",
+     "name": "Robert (Chili) Hicks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-10-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 10 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 10 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dave-paul",
+     "name": "Dave Paul",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tim-hazelo",
+     "name": "Tim Hazelo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-11-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 11 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 11 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-hackney",
+     "name": "David Hackney",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ashley-fedan",
+     "name": "Ashley Fedan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-11-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 11 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 11 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-bergquist",
+     "name": "Steve Bergquist",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-12-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 12 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 12 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-burnett",
+     "name": "Brian Burnett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "stacy-willoughby",
+     "name": "Stacy Willoughby",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-12-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 12 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 12 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-steele",
+     "name": "Mike Steele",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "maggie-adams",
+     "name": "Maggie Adams",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-13-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 13 - State Senator",
+   "district": null,
+   "title": "Legislative District 13 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alex-ybarra",
+     "name": "Alex Ybarra",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-13-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 13 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 13 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-dent",
+     "name": "Tom Dent",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "juan-jerry-garcia",
+     "name": "Juan \"Jerry\" Garcia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-13-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 13 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 13 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deanna-martinez",
+     "name": "Deanna Martinez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "joshua-thompson",
+     "name": "Joshua Thompson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-14-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 14 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 14 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gloria-mendoza",
+     "name": "Gloria Mendoza",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "chelsea-dimas",
+     "name": "Chelsea Dimas",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-14-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 14 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 14 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deb-manjarrez",
+     "name": "Deb Manjarrez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "ezequiel-morfin",
+     "name": "Ezequiel Morfin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-15-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 15 - State Senator",
+   "district": null,
+   "title": "Legislative District 15 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeremie-dufault",
+     "name": "Jeremie Dufault",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-15-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 15 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 15 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-corry",
+     "name": "Chris Corry",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jack-mcentire",
+     "name": "Jack McEntire",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-15-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 15 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 15 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "reedy-berg",
+     "name": "Reedy Berg",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "liz-hallock",
+     "name": "Liz Hallock",
+     "party": "NKP",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-16-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 16 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 16 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-klicker",
+     "name": "Mark Klicker",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "kyle-palmer",
+     "name": "Kyle Palmer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-16-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 16 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 16 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "skyler-rude",
+     "name": "Skyler Rude",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "derek-sarley",
+     "name": "Derek Sarley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-17-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 17 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 17 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-christly",
+     "name": "Ben Christly",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kevin-waters",
+     "name": "Kevin Waters",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-17-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 17 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 17 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "diana-h-perez",
+     "name": "Diana H. Perez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "david-stuebe",
+     "name": "David Stuebe",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-18-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 18 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 18 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "randi-l-knott",
+     "name": "Randi L. Knott",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "stephanie-mcclintock",
+     "name": "Stephanie McClintock",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-18-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 18 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 18 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deken-letinich",
+     "name": "Deken Letinich",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "john-ley",
+     "name": "John Ley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-19-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 19 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 19 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-walsh",
+     "name": "Jim Walsh",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "kevin-moynihan",
+     "name": "Kevin Moynihan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-19-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 19 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 19 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "terry-carlson",
+     "name": "Terry Carlson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "joel-mcentire",
+     "name": "Joel McEntire",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-20-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 20 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 20 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "peter-abbarno",
+     "name": "Peter Abbarno",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "andy-zahn",
+     "name": "Andy Zahn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-20-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 20 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 20 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ed-orcutt",
+     "name": "Ed Orcutt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "evan-jones",
+     "name": "Evan Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-21-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 21 - State Senator",
+   "district": null,
+   "title": "Legislative District 21 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marko-liias",
+     "name": "Marko Liias",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "riaz-khan",
+     "name": "Riaz Khan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-21-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 21 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 21 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "strom-peterson",
+     "name": "Strom Peterson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jason-moon",
+     "name": "Jason Moon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-21-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 21 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 21 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lillian-ortiz-self",
+     "name": "Lillian Ortiz-Self",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "bruce-guthrie",
+     "name": "Bruce Guthrie",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-22-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 22 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 22 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "beth-doglio",
+     "name": "Beth Doglio",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "don-hewett",
+     "name": "Don Hewett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-22-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 22 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 22 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lisa-parshley",
+     "name": "Lisa Parshley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jamie-keenan-devargas",
+     "name": "Jamie Keenan-deVargas",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-23-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 23 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 23 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tarra-simmons",
+     "name": "Tarra Simmons",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "daria-ilgen",
+     "name": "Daria Ilgen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-23-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 23 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 23 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-nance",
+     "name": "Greg Nance",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "lance-byrd",
+     "name": "Lance Byrd",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-24-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 24 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 24 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-bernbaum",
+     "name": "Adam Bernbaum",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "eric-w-pratt",
+     "name": "Eric W. Pratt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-24-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 24 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 24 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marcia-kelbon",
+     "name": "Marcia Kelbon",
+     "party": "NO",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "kaylee-kuehn",
+     "name": "Kaylee Kuehn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-25-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 25 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 25 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-keaton",
+     "name": "Michael Keaton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "david-berg",
+     "name": "David Berg",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-25-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 25 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 25 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cyndy-jacobsen",
+     "name": "Cyndy Jacobsen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jenn-marie-strickling",
+     "name": "Jenn Marie Strickling",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-26-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 26 - State Senator",
+   "district": null,
+   "title": "Legislative District 26 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deborah-krishnadasan",
+     "name": "Deborah Krishnadasan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "gary-parker",
+     "name": "Gary Parker",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-26-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 26 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 26 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-olson",
+     "name": "David Olson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "adison-richards",
+     "name": "Adison Richards",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-26-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 26 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 26 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "katy-cornell",
+     "name": "Katy Cornell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "renee-hernandez-greenfield",
+     "name": "Renee Hernandez Greenfield",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-27-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 27 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 27 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "laurie-jinkins",
+     "name": "Laurie Jinkins",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "carole-sue-braaten",
+     "name": "Carole Sue Braaten",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-27-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 27 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 27 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jake-fey",
+     "name": "Jake Fey",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-28-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 28 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 28 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mari-leavitt",
+     "name": "Mari Leavitt",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kathy-richardson",
+     "name": "Kathy Richardson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-28-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 28 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 28 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dan-bronoske",
+     "name": "Dan Bronoske",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kerry-hills",
+     "name": "Kerry Hills",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-29-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 29 - State Senator",
+   "district": null,
+   "title": "Legislative District 29 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sharlett-mena",
+     "name": "Sharlett Mena",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "david-anderson",
+     "name": "David Anderson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-29-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 29 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 29 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "krista-perez",
+     "name": "Krista Perez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "melanie-morgan",
+     "name": "Melanie Morgan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-29-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 29 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 29 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joe-bushnell",
+     "name": "Joe Bushnell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "patrick-stickney",
+     "name": "Patrick Stickney",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-30-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 30 - State Senator",
+   "district": null,
+   "title": "Legislative District 30 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "claire-wilson",
+     "name": "Claire Wilson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "michael-rutland",
+     "name": "Michael Rutland",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-30-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 30 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 30 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jamila-e-taylor",
+     "name": "Jamila E. Taylor",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tiffany-bowyer",
+     "name": "Tiffany Bowyer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-30-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 30 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 30 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristine-reeves",
+     "name": "Kristine Reeves",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "paul-mcdaniel",
+     "name": "Paul McDaniel",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-31-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 31 - State Senator",
+   "district": null,
+   "title": "Legislative District 31 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phil-fortunato",
+     "name": "Phil Fortunato",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "tamara-stramel",
+     "name": "Tamara Stramel",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-31-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 31 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 31 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "drew-stokesbary",
+     "name": "Drew Stokesbary",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "stephen-szczurko-walton",
+     "name": "Stephen Szczurko-Walton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-31-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 31 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 31 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joshua-penner",
+     "name": "Joshua Penner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "john-bielka",
+     "name": "John Bielka",
+     "party": "DE2",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-32-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 32 - State Senator",
+   "district": null,
+   "title": "Legislative District 32 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cindy-ryu",
+     "name": "Cindy Ryu",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jesse-salomon",
+     "name": "Jesse Salomon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-32-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 32 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 32 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "keith-scully",
+     "name": "Keith Scully",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "danica-noble",
+     "name": "Danica Noble",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-32-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 32 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 32 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lauren-davis",
+     "name": "Lauren Davis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "imraan-siddiqi",
+     "name": "Imraan Siddiqi",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-33-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 33 - State Senator",
+   "district": null,
+   "title": "Legislative District 33 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tina-l-orwall",
+     "name": "Tina L. Orwall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-33-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 33 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 33 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "edwin-obras",
+     "name": "Edwin Obras",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "chris-martinez",
+     "name": "Chris Martinez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-33-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 33 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 33 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mia-su-ling-gregerson",
+     "name": "Mia Su-Ling Gregerson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "yuri-marinchik",
+     "name": "Yuri Marinchik",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-34-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 34 - State Senator",
+   "district": null,
+   "title": "Legislative District 34 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emily-alvarado",
+     "name": "Emily Alvarado",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-34-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 34 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 34 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brianna-k-thomas",
+     "name": "Brianna K. Thomas",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-34-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 34 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 34 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joe-fitzgibbon",
+     "name": "Joe Fitzgibbon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "mary-anito",
+     "name": "Mary Anito",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-35-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 35 - State Senator",
+   "district": null,
+   "title": "Legislative District 35 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "drew-c-macewen",
+     "name": "Drew C MacEwen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "carolina-mejia",
+     "name": "Carolina Mejia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-35-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 35 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 35 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dan-griffey",
+     "name": "Dan Griffey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jim-pierson",
+     "name": "Jim Pierson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-35-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 35 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 35 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "travis-couture",
+     "name": "Travis Couture",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "maria-littlesun",
+     "name": "Maria Littlesun",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-36-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 36 - State Senator",
+   "district": null,
+   "title": "Legislative District 36 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "noel-c-frame",
+     "name": "Noel C. Frame",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jillian-england",
+     "name": "Jillian England",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-36-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 36 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 36 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julia-grant-reed",
+     "name": "Julia Grant Reed",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-36-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 36 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 36 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "liz-berry",
+     "name": "Liz Berry",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-37-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 37 - State Senator",
+   "district": null,
+   "title": "Legislative District 37 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chipalo-street",
+     "name": "Chipalo Street",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tatiana-brown",
+     "name": "Tatiana Brown",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-37-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 37 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 37 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelabe-tewolde",
+     "name": "Kelabe Tewolde",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "sharon-tomiko-santos",
+     "name": "Sharon Tomiko Santos",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-37-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 37 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 37 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jaelynn-scott",
+     "name": "Jaelynn Scott",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "evon-mccorkle",
+     "name": "Evon McCorkle",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-38-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 38 - State Senator",
+   "district": null,
+   "title": "Legislative District 38 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "june-robinson",
+     "name": "June Robinson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "brad-bender",
+     "name": "Brad Bender",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-38-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 38 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 38 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julio-cortes",
+     "name": "Julio Cortes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "thomas-jeff-kelly",
+     "name": "Thomas (Jeff) Kelly",
+     "party": "CAC",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-38-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 38 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 38 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mary-fosse",
+     "name": "Mary Fosse",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-39-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 39 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 39 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kathryn-lewandowsky",
+     "name": "Kathryn Lewandowsky",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "sam-low",
+     "name": "Sam Low",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-39-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 39 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 39 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ida-keeley",
+     "name": "Ida Keeley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "steve-ewing",
+     "name": "Steve Ewing",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-40-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 40 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 40 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "debra-lekanoff",
+     "name": "Debra Lekanoff",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "cindy-carter",
+     "name": "Cindy Carter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-40-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 40 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 40 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alex-ramel",
+     "name": "Alex Ramel",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "joseph-segault",
+     "name": "Joseph Segault",
+     "party": "NO",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-41-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 41 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 41 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "janice-zahn",
+     "name": "Janice Zahn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "elle-nguyen",
+     "name": "Elle Nguyen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-41-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 41 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 41 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "my-linh-t-thai",
+     "name": "My-Linh T Thai",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "michael-rosen",
+     "name": "Michael Rosen",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-42-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 42 - State Senator",
+   "district": null,
+   "title": "Legislative District 42 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "erika-creydt",
+     "name": "Erika Creydt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "michael-alvarez-shepard",
+     "name": "Michael Alvarez Shepard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-42-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 42 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 42 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alicia-rule",
+     "name": "Alicia Rule",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "misty-flowers",
+     "name": "Misty Flowers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-42-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 42 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 42 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joe-timmons",
+     "name": "Joe Timmons",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "justin-pike",
+     "name": "Justin Pike",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-43-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 43 - State Senator",
+   "district": null,
+   "title": "Legislative District 43 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jamie-pedersen",
+     "name": "Jamie Pedersen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "hannah-sabio-howell",
+     "name": "Hannah Sabio-Howell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-43-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 43 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 43 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nicole-macri",
+     "name": "Nicole Macri",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "alby-clendennin",
+     "name": "Alby Clendennin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-43-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 43 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 43 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shaun-scott",
+     "name": "Shaun Scott",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-44-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 44 - State Senator",
+   "district": null,
+   "title": "Legislative District 44 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-lovick",
+     "name": "John Lovick",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "sherri-larkin",
+     "name": "Sherri Larkin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-44-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 44 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 44 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandy-donaghy",
+     "name": "Brandy Donaghy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "chris-elder",
+     "name": "Chris Elder",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-44-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 44 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 44 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "april-berg",
+     "name": "April Berg",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tonya-stadlman",
+     "name": "Tonya Stadlman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-45-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 45 - State Senator",
+   "district": null,
+   "title": "Legislative District 45 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "manka-dhingra",
+     "name": "Manka Dhingra",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-45-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 45 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 45 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "roger-goodman",
+     "name": "Roger Goodman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "joann-tolentino",
+     "name": "JoAnn Tolentino",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-45-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 45 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 45 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vanessa-kritzer",
+     "name": "Vanessa Kritzer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "john-p-gibbons",
+     "name": "John P Gibbons",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-46-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 46 - State Senator",
+   "district": null,
+   "title": "Legislative District 46 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "javier-valdez",
+     "name": "Javier Valdez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "sandra-stephens",
+     "name": "Sandra Stephens",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-46-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 46 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 46 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gerry-pollet",
+     "name": "Gerry Pollet",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "will-dreher",
+     "name": "Will Dreher",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-46-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 46 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 46 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "darya-farivar",
+     "name": "Darya Farivar",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "rodney-star-thornley",
+     "name": "Rodney 'Star' Thornley",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-47-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 47 - State Senator",
+   "district": null,
+   "title": "Legislative District 47 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "claudia-kauffman",
+     "name": "Claudia Kauffman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kristina-soltys",
+     "name": "Kristina Soltys",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-47-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 47 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 47 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "debra-jean-entenman",
+     "name": "Debra Jean Entenman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "cobi-clark",
+     "name": "Cobi Clark",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-47-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 47 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 47 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-stearns",
+     "name": "Chris Stearns",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ted-cooke",
+     "name": "Ted Cooke",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-48-state-senator",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 48 - State Senator",
+   "district": null,
+   "title": "Legislative District 48 - State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vandana-slatter",
+     "name": "Vandana Slatter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-48-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 48 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 48 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "osman-salahuddin",
+     "name": "Osman Salahuddin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jeffery-poppe",
+     "name": "Jeffery Poppe",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-48-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 48 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 48 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jessica-forsythe",
+     "name": "Jessica Forsythe",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "amy-walen",
+     "name": "Amy Walen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-49-state-representative-pos-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 49 - State Representative Pos. 1",
+   "district": null,
+   "title": "Legislative District 49 - State Representative Pos. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kim-d-harless",
+     "name": "Kim D. Harless",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "sarah-mittelman",
+     "name": "Sarah Mittelman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-legislative-district-49-state-representative-pos-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Legislative District 49 - State Representative Pos. 2",
+   "district": null,
+   "title": "Legislative District 49 - State Representative Pos. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "monica-jurado-stonier",
+     "name": "Monica Jurado Stonier",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "derek-thompson",
+     "name": "Derek Thompson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-supreme-court-justice-position-01",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Supreme Court - Justice Position #01",
+   "district": null,
+   "title": "Supreme Court - Justice Position #01",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "colleen-melody",
+     "name": "Colleen Melody",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "scott-edwards",
+     "name": "Scott Edwards",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 39,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-supreme-court-justice-position-03",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Supreme Court - Justice Position #03",
+   "district": null,
+   "title": "Supreme Court - Justice Position #03",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-stevens",
+     "name": "David Stevens",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jaime-michelle-hawk",
+     "name": "Jaime Michelle Hawk",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 39,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-supreme-court-justice-position-04",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Supreme Court - Justice Position #04",
+   "district": null,
+   "title": "Supreme Court - Justice Position #04",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ian-birk",
+     "name": "Ian Birk",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "sean-o-donnell",
+     "name": "Sean O'Donnell",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 39,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-supreme-court-justice-position-05",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Supreme Court - Justice Position #05",
+   "district": null,
+   "title": "Supreme Court - Justice Position #05",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "theo-angelis",
+     "name": "Theo Angelis",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "dave-larson",
+     "name": "Dave Larson",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 39,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-supreme-court-justice-position-07",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Supreme Court - Justice Position #07",
+   "district": null,
+   "title": "Supreme Court - Justice Position #07",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "debra-l-stephens",
+     "name": "Debra L. Stephens",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "todd-a-bloom",
+     "name": "Todd A. Bloom",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 39,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-court-of-appeals-division-1-district-1-judge-position-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Court of Appeals, Division 1, District 1 - Judge Position 5",
+   "district": null,
+   "title": "Court of Appeals, Division 1, District 1 - Judge Position 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-s-mann",
+     "name": "David S. Mann",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-court-of-appeals-division-1-district-1-judge-position-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Court of Appeals, Division 1, District 1 - Judge Position 6",
+   "district": null,
+   "title": "Court of Appeals, Division 1, District 1 - Judge Position 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-a-bowman",
+     "name": "Bill A. Bowman",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-court-of-appeals-division-1-district-2-judge-position-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Court of Appeals, Division 1, District 2 - Judge Position 2",
+   "district": null,
+   "title": "Court of Appeals, Division 1, District 2 - Judge Position 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "linda-coburn",
+     "name": "Linda Coburn",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-court-of-appeals-division-2-district-1-judge-position-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Court of Appeals, Division 2, District 1 - Judge Position 2",
+   "district": null,
+   "title": "Court of Appeals, Division 2, District 1 - Judge Position 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "meng-li-che",
+     "name": "Meng Li Che",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-court-of-appeals-division-2-district-2-judge-position-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Court of Appeals, Division 2, District 2 - Judge Position 1",
+   "district": null,
+   "title": "Court of Appeals, Division 2, District 2 - Judge Position 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "erik-d-price",
+     "name": "Erik D. Price",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-court-of-appeals-division-3-district-1-judge-position-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Court of Appeals, Division 3, District 1 - Judge Position 2",
+   "district": null,
+   "title": "Court of Appeals, Division 3, District 1 - Judge Position 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tracy-arlene-staab",
+     "name": "Tracy Arlene Staab",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-court-of-appeals-division-3-district-2-judge-position-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Court of Appeals, Division 3, District 2 - Judge Position 1",
+   "district": null,
+   "title": "Court of Appeals, Division 3, District 2 - Judge Position 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tyson-r-hill",
+     "name": "Tyson R. Hill",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 9,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-court-of-appeals-division-3-district-3-judge-position-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Court of Appeals, Division 3, District 3 - Judge Position 1",
+   "district": null,
+   "title": "Court of Appeals, Division 3, District 3 - Judge Position 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "megan-k-murphy",
+     "name": "Megan K. Murphy",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-ferry-pend-oreille-stevens-superior-court-judge-position-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Ferry, Pend Oreille, Stevens Superior Court - Judge Position 2",
+   "district": null,
+   "title": "Ferry, Pend Oreille, Stevens Superior Court - Judge Position 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "thomas-franklin-webster",
+     "name": "Thomas Franklin Webster",
+     "party": "NO",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-southeast-electoral-district-judge-position-no-1",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Southeast Electoral District - Judge Position No. 1",
+   "district": null,
+   "title": "Southeast Electoral District - Judge Position No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leah-taguba",
+     "name": "Leah Taguba",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-southeast-electoral-district-judge-position-no-2",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Southeast Electoral District - Judge Position No. 2",
+   "district": null,
+   "title": "Southeast Electoral District - Judge Position No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-york",
+     "name": "Matthew York",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-southeast-electoral-district-judge-position-no-3",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Southeast Electoral District - Judge Position No. 3",
+   "district": null,
+   "title": "Southeast Electoral District - Judge Position No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tricia-grove-johnson",
+     "name": "Tricia Grove Johnson",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-southeast-electoral-district-judge-position-no-4",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Southeast Electoral District - Judge Position No. 4",
+   "district": null,
+   "title": "Southeast Electoral District - Judge Position No. 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "corinna-harn",
+     "name": "Corinna Harn",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-southeast-electoral-district-judge-position-no-5",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Southeast Electoral District - Judge Position No. 5",
+   "district": null,
+   "title": "Southeast Electoral District - Judge Position No. 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joshua-c-harris",
+     "name": "Joshua C. Harris",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "heather-m-barker",
+     "name": "Heather M. Barker",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-southeast-electoral-district-judge-position-no-6",
+   "kind": "local",
+   "level": "local",
+   "state": "wa",
+   "office": "Southeast Electoral District - Judge Position No. 6",
+   "district": null,
+   "title": "Southeast Electoral District - Judge Position No. 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rhonda-laumann",
+     "name": "Rhonda Laumann",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-pud-district-1-commissioner-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "PUD District 1 Commissioner District 2",
+   "district": null,
+   "title": "PUD District 1 Commissioner District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "howie-kubik",
+     "name": "Howie Kubik",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "andrea-morgan",
+     "name": "Andrea Morgan",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-public-utility-district-no-1-commissioner-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "Public Utility District No. 1 - Commissioner District 1",
+   "district": null,
+   "title": "Public Utility District No. 1 - Commissioner District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sid-logan",
+     "name": "Sid Logan",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "janet-st-clair",
+     "name": "Janet St Clair",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-pud-countywide-public-utility-commissioner-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wa",
+   "office": "PUD (Countywide) - Public Utility Commissioner #3",
+   "district": null,
+   "title": "PUD (Countywide) - Public Utility Commissioner #3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-pooler",
+     "name": "Andrew Pooler",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "doug-aubertin",
+     "name": "Doug Aubertin",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-public-hospital-district-no-1-public-hospital-district-no-1-proposition-1",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Public Hospital District No. 1 - Public Hospital District No. 1, Proposition 1",
+   "district": null,
+   "title": "Public Hospital District No. 1 - Public Hospital District No. 1, Proposition 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "approved",
+     "name": "Approved",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "rejected",
+     "name": "Rejected",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-city-of-bothell-proposition-no-1",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "City of Bothell - Proposition No. 1",
+   "district": null,
+   "title": "City of Bothell - Proposition No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-city-of-milton-proposition-no-1",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "City of Milton - Proposition No. 1",
+   "district": null,
+   "title": "City of Milton - Proposition No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-timberland-regional-library-district-regular-property-tax-levy-lid-lift-for-l",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Timberland Regional Library District - Regular Property Tax Levy Lid Lift for Library Services, Operations and Maintenance",
+   "district": null,
+   "title": "Timberland Regional Library District - Regular Property Tax Levy Lid Lift for Library Services, Operations and Maintenance",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-auburn-school-district-no-408-proposition-no-1",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Auburn School District No. 408 - Proposition No. 1",
+   "district": null,
+   "title": "Auburn School District No. 408 - Proposition No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "approved",
+     "name": "Approved",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "rejected",
+     "name": "Rejected",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-cheney-school-district-proposition-no-1",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Cheney School District - Proposition No. 1",
+   "district": null,
+   "title": "Cheney School District - Proposition No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "levy-yes",
+     "name": "Levy Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "levy-no",
+     "name": "Levy No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-cheney-school-district-proposition-no-2",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Cheney School District - Proposition No. 2",
+   "district": null,
+   "title": "Cheney School District - Proposition No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "levy-yes",
+     "name": "Levy Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "levy-no",
+     "name": "Levy No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-sch-dist-65-mccleary-mccleary-school-district-no-65-bonds",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Sch Dist 65 - McCleary - McCleary School District No. 65 - Bonds",
+   "district": null,
+   "title": "Sch Dist 65 - McCleary - McCleary School District No. 65 - Bonds",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "approved",
+     "name": "Approved",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "rejected",
+     "name": "Rejected",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-nine-mile-falls-school-district-proposition-no-1",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Nine Mile Falls School District - Proposition No. 1",
+   "district": null,
+   "title": "Nine Mile Falls School District - Proposition No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "levy-yes",
+     "name": "Levy Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "levy-no",
+     "name": "Levy No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-nine-mile-falls-school-district-proposition-no-2",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Nine Mile Falls School District - Proposition No. 2",
+   "district": null,
+   "title": "Nine Mile Falls School District - Proposition No. 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "levy-yes",
+     "name": "Levy Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "levy-no",
+     "name": "Levy No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-quillayute-valley-school-district-402-proposition-1",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Quillayute Valley School District 402 - Proposition 1",
+   "district": null,
+   "title": "Quillayute Valley School District 402 - Proposition 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "approved",
+     "name": "Approved",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "rejected",
+     "name": "Rejected",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-riverside-school-district-proposition-no-1",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Riverside School District - Proposition No. 1",
+   "district": null,
+   "title": "Riverside School District - Proposition No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "levy-yes",
+     "name": "Levy Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "levy-no",
+     "name": "Levy No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-yelm-community-schools-proposition-no-1-educational-programs-and-operations-m",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Yelm Community Schools - Proposition No. 1 - Educational Programs and Operations Maintenance Levy",
+   "district": null,
+   "title": "Yelm Community Schools - Proposition No. 1 - Educational Programs and Operations Maintenance Levy",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-fire-protection-district-no-1-proposition-1",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Fire Protection District No. 1 - Proposition 1",
+   "district": null,
+   "title": "Fire Protection District No. 1 - Proposition 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "approved",
+     "name": "Approved",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "rejected",
+     "name": "Rejected",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wa-prescott-joint-park-and-recreation-district-proposition-no-1",
+   "kind": "measure",
+   "level": "local",
+   "state": "wa",
+   "office": "Prescott Joint Park and Recreation District - Proposition No. 1",
+   "district": null,
+   "title": "Prescott Joint Park and Recreation District - Proposition No. 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "levy-yes",
+     "name": "Levy  Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "levy-no",
+     "name": "Levy  No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  }
+ ]
+}
