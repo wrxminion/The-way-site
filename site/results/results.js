@@ -97,7 +97,7 @@
       var row = el('div', 'choice' + (i === 0 && s.total ? ' lead' : ''));
       var r = el('div', 'row');
       var nm = el('span', 'name', x.name + (x.party ? ' (' + x.party + ')' : ''));
-      if (calledId && calledId === x.id) nm.appendChild(el('span', 'pill call', 'Called by ' + (c.called.by || 'source')));
+      if (calledId && calledId === x.id) nm.appendChild(el('span', 'pill call', callText(c.called)));
       var num = el('span', 'num', s.total ? s._pctText : '');
       num.textContent = fmtNum(x.votes || 0) + ' ';
       num.appendChild(el('small', null, s.total ? x._pct.toFixed(1) + '%' : ''));
@@ -109,9 +109,16 @@
     var p = c.precincts;
     if (p && p.total) meta.push(fmtNum(p.reporting) + ' of ' + fmtNum(p.total) + ' ' + (p.unit || 'precincts') + ' reporting (' + Math.round(p.reporting / p.total * 100) + '%)');
     meta.push(fmtNum(s.total) + ' votes counted');
-    if (!calledId) meta.push('Not called by the source yet');
+    if (!calledId) meta.push('No call yet');
     li.appendChild(el('div', 'meta', meta.join(' · ')));
     return li;
+  }
+  // Who says a race is decided. AP calls and state leader marks are not certified results; only "certified" is.
+  function callText(cl) {
+    if (cl.kind === 'ap') return 'What AP is calling (not certified)';
+    if (cl.kind === 'state_leader') return 'State shows leader (not certified)';
+    if (cl.kind === 'certified') return 'Certified by the state';
+    return 'Called by ' + (cl.by || 'source') + ' (not certified)';
   }
   function groupName(c) {
     if (c.kind === 'measure') return 'Ballot measures';
@@ -214,7 +221,7 @@
     if (!b || (!b.house && !b.senate)) { box.hidden = true; return; }
     box.hidden = false;
     box.appendChild(el('h2', null, 'Congress count'));
-    box.appendChild(el('p', 'muted', 'Seats the official source has called, so far. Not a prediction. Races not yet called are counted as not called.'));
+    box.appendChild(el('p', 'muted', 'Seats AP is calling, so far. This is what AP reports, not certified results; certified results come from the states and are shown separately. Not a prediction. Races AP has not called are counted as not called.'));
     [['house', 'U.S. House', 'U.S. House (435 seats)'], ['senate', 'U.S. Senate', 'U.S. Senate (seats up in this election)']].forEach(function (x) {
       var d = b[x[0]]; if (!d) return;
       var row = el('div', 'bal');
