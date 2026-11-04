@@ -358,6 +358,39 @@
       "checked_by_person": true
     },
     {
+      "id": "D035",
+      "decision_date_or_range": "2026-10-27",
+      "title": "About navigation",
+      "origin": "Frank's requested About navigation",
+      "decision_or_proposal": "Use the Why The Way essay for About with Methodology, Why AI and Legal links while retaining its water design.",
+      "why": "Keep the About page distinct and align its navigation with its purpose.",
+      "status_as_of_2026_10_25": "Merged in PR #6; live appearance not independently verified.",
+      "evidence_and_limits": "Repository PR #6 merged; deployment and full signed-in behavior have not been verified.",
+      "checked_by_person": true
+    },
+    {
+      "id": "D036",
+      "decision_date_or_range": "2026-10-27",
+      "title": "Shared header and floating controls",
+      "origin": "Frank's navigation and accessibility feedback",
+      "decision_or_proposal": "Center The Way, provide a mobile menu and a floating search, account and Back to Surface bar.",
+      "why": "Make site navigation and common controls easier to find.",
+      "status_as_of_2026_10_25": "Merged in PR #7; live appearance not independently verified.",
+      "evidence_and_limits": "Signed-out layout checked in a partial preview; signed-in display simulated, not tested with a real account.",
+      "checked_by_person": true
+    },
+    {
+      "id": "D037",
+      "decision_date_or_range": "2026-10-27",
+      "title": "One national voter guide entry",
+      "origin": "Frank's feedback on inconsistent ballot and map links",
+      "decision_or_proposal": "Replace the older landing page's separate Colorado guide and district-map cards with one Voter Guide link to the national state-selection page.",
+      "why": "Provide a consistent entry point for the map and voter guides.",
+      "status_as_of_2026_10_25": "Merged in PR #8; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "The shared header already points to the national guide. This change addressed the two legacy landing-page cards. A person has not yet opened every page to check for older links.",
+      "checked_by_person": true
+    },
+    {
       "id": "D039",
       "decision_date_or_range": "2026-10-27",
       "title": "Water and light across main pages",
@@ -421,39 +454,6 @@
       "why": "The banking work is unfinished and should not appear ready for publication.",
       "status_as_of_2026_10_25": "Merged in PR #16; live appearance and behavior not yet verified.",
       "evidence_and_limits": "Underlying research and data remain in place. The change is limited to the Research page; other entry points remain to be checked.",
-      "checked_by_person": true
-    },
-    {
-      "id": "D035",
-      "decision_date_or_range": "2026-10-27",
-      "title": "About navigation",
-      "origin": "Frank's requested About navigation",
-      "decision_or_proposal": "Use the Why The Way essay for About with Methodology, Why AI and Legal links while retaining its water design.",
-      "why": "Keep the About page distinct and align its navigation with its purpose.",
-      "status_as_of_2026_10_25": "Merged in PR #6; live appearance not independently verified.",
-      "evidence_and_limits": "Repository PR #6 merged; deployment and full signed-in behavior have not been verified.",
-      "checked_by_person": true
-    },
-    {
-      "id": "D036",
-      "decision_date_or_range": "2026-10-27",
-      "title": "Shared header and floating controls",
-      "origin": "Frank's navigation and accessibility feedback",
-      "decision_or_proposal": "Center The Way, provide a mobile menu and a floating search, account and Back to Surface bar.",
-      "why": "Make site navigation and common controls easier to find.",
-      "status_as_of_2026_10_25": "Merged in PR #7; live appearance not independently verified.",
-      "evidence_and_limits": "Signed-out layout checked in a partial preview; signed-in display simulated, not tested with a real account.",
-      "checked_by_person": true
-    },
-    {
-      "id": "D037",
-      "decision_date_or_range": "2026-10-27",
-      "title": "One national voter guide entry",
-      "origin": "Frank's feedback on inconsistent ballot and map links",
-      "decision_or_proposal": "Replace the older landing page's separate Colorado guide and district-map cards with one Voter Guide link to the national state-selection page.",
-      "why": "Provide a consistent entry point for the map and voter guides.",
-      "status_as_of_2026_10_25": "Merged in PR #8; live appearance and behavior not yet verified.",
-      "evidence_and_limits": "The shared header already points to the national guide. This change addressed the two legacy landing-page cards. A person has not yet opened every page to check for older links.",
       "checked_by_person": true
     },
     {
@@ -1023,6 +1023,16 @@
       "title": "Idaho, Montana and Wyoming judge pages now list district and local judges where official lists were found, and say plainly what is missing.",
       "origin": "Maintainer",
       "decision_or_proposal": "Idaho, Montana and Wyoming judge pages now list district and local judges where official lists were found, and say plainly what is missing.",
+      "why": "Added so readers can see which judges are on the ballot in states that had no judges page yet.",
+      "status_as_of_2026_10_25": "Not yet merged when this row was written; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live pages. Names and details come from official election pages where they could be opened and otherwise from news reports, and each line says which."
+    },
+    {
+      "id": "D099",
+      "decision_date_or_range": "2026-11-04",
+      "title": "Georgia, Florida and North Carolina judges pages now show local judges: GA has no judge races in November, FL has 4 circuit and 3 county runoffs, NC lists 164 district and superior court seats.",
+      "origin": "Maintainer",
+      "decision_or_proposal": "Georgia, Florida and North Carolina judges pages now show local judges: GA has no judge races in November, FL has 4 circuit and 3 county runoffs, NC lists 164 district and superior court seats.",
       "why": "Added so readers can see which judges are on the ballot in states that had no judges page yet.",
       "status_as_of_2026_10_25": "Not yet merged when this row was written; live appearance and behavior not yet verified.",
       "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live pages. Names and details come from official election pages where they could be opened and otherwise from news reports, and each line says which."
