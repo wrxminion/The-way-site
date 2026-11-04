@@ -1,0 +1,5580 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-ca",
+ "label": "California",
+ "source_ids": [
+  "ca-sos"
+ ],
+ "updated_at": "2026-11-04T02:18:24Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ca-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "xavier-becerra",
+     "name": "Xavier Becerra",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "steve-hilton",
+     "name": "Steve Hilton",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "Lieutenant Governor",
+   "district": null,
+   "title": "Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "fiona-ma",
+     "name": "Fiona Ma",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "gloria-romero",
+     "name": "Gloria Romero",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rob-bonta",
+     "name": "Rob Bonta",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "michael-e-gates",
+     "name": "Michael E. Gates",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shirley-n-weber",
+     "name": "Shirley N. Weber",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "donald-p-don-wagner",
+     "name": "Donald P. (Don) Wagner",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "Treasurer",
+   "district": null,
+   "title": "Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eleni-kounalakis",
+     "name": "Eleni Kounalakis",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jennifer-hawks",
+     "name": "Jennifer Hawks",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-controller",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "Controller",
+   "district": null,
+   "title": "Controller",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "malia-m-cohen",
+     "name": "Malia M. Cohen",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "herb-w-morgan",
+     "name": "Herb W Morgan",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-insurance-commissioner",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "Insurance Commissioner",
+   "district": null,
+   "title": "Insurance Commissioner",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-allen",
+     "name": "Ben Allen",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jane-kim",
+     "name": "Jane Kim",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-superintendent-of-public-instruction",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "Superintendent of Public Instruction",
+   "district": null,
+   "title": "Superintendent of Public Instruction",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-barrera",
+     "name": "Richard Barrera",
+     "party": "Non",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "sonja-shaw",
+     "name": "Sonja Shaw",
+     "party": "Non",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-01",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 1: Authorizes Bonds For Housing Affordability Programs. Legislative Statute.",
+   "district": null,
+   "title": "Proposition 1: Authorizes Bonds For Housing Affordability Programs. Legislative Statute.",
+   "text": "Authorizes Bonds For Housing Affordability Programs. Legislative Statute.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-02",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 2: Increases State's Rainy Day Fund. Legislative Constitutional Amendment.",
+   "district": null,
+   "title": "Proposition 2: Increases State's Rainy Day Fund. Legislative Constitutional Amendment.",
+   "text": "Increases State's Rainy Day Fund. Legislative Constitutional Amendment.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-03",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 3: Provides Permanent Funding For Schools And Health Care By Extending Existing Tax On High Incomes. Initiative Constitutional Amendment.",
+   "district": null,
+   "title": "Proposition 3: Provides Permanent Funding For Schools And Health Care By Extending Existing Tax On High Incomes. Initiative Constitutional Amendment.",
+   "text": "Provides Permanent Funding For Schools And Health Care By Extending Existing Tax On High Incomes. Initiative Constitutional Amendment.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-04",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 4: Repeals Prohibition Against Public Funding Of Election Campaigns. Legislative Statute.",
+   "district": null,
+   "title": "Proposition 4: Repeals Prohibition Against Public Funding Of Election Campaigns. Legislative Statute.",
+   "text": "Repeals Prohibition Against Public Funding Of Election Campaigns. Legislative Statute.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-05",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 5: Changes Recall Election Process For Statewide Officers. Legislative Constitutional Amendment.",
+   "district": null,
+   "title": "Proposition 5: Changes Recall Election Process For Statewide Officers. Legislative Constitutional Amendment.",
+   "text": "Changes Recall Election Process For Statewide Officers. Legislative Constitutional Amendment.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-37",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 37: Creates Loan Program For Middle-Income Buyers Of Qualified New Homes. Initiative Statute.",
+   "district": null,
+   "title": "Proposition 37: Creates Loan Program For Middle-Income Buyers Of Qualified New Homes. Initiative Statute.",
+   "text": "Creates Loan Program For Middle-Income Buyers Of Qualified New Homes. Initiative Statute.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-38",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 38: Authorizes Bonds For Immunology Medical Research. Initiative Statute.",
+   "district": null,
+   "title": "Proposition 38: Authorizes Bonds For Immunology Medical Research. Initiative Statute.",
+   "text": "Authorizes Bonds For Immunology Medical Research. Initiative Statute.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-39",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 39: Prohibits Citizens From Voting Unless They Present Government-Issued Identification. Initiative Constitutional Amendment.",
+   "district": null,
+   "title": "Proposition 39: Prohibits Citizens From Voting Unless They Present Government-Issued Identification. Initiative Constitutional Amendment.",
+   "text": "Prohibits Citizens From Voting Unless They Present Government-Issued Identification. Initiative Constitutional Amendment.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-40",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 40: Imposes One-Time Tax On Certain Taxpayers. Initiative Constitutional Amendment And Statute.",
+   "district": null,
+   "title": "Proposition 40: Imposes One-Time Tax On Certain Taxpayers. Initiative Constitutional Amendment And Statute.",
+   "text": "Imposes One-Time Tax On Certain Taxpayers. Initiative Constitutional Amendment And Statute.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-41",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 41: Prohibits New State Taxes That Exclude Revenues From State Spending Limit. Requires Audits For New State Special Taxes. Initiative Constitutional Amendment.",
+   "district": null,
+   "title": "Proposition 41: Prohibits New State Taxes That Exclude Revenues From State Spending Limit. Requires Audits For New State Special Taxes. Initiative Constitutional Amendment.",
+   "text": "Prohibits New State Taxes That Exclude Revenues From State Spending Limit. Requires Audits For New State Special Taxes. Initiative Constitutional Amendment.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-42",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 42: Prohibits New State Personal Property Taxes And Certain Retroactive State Taxes. Initiative Constitutional Amendment.",
+   "district": null,
+   "title": "Proposition 42: Prohibits New State Personal Property Taxes And Certain Retroactive State Taxes. Initiative Constitutional Amendment.",
+   "text": "Prohibits New State Personal Property Taxes And Certain Retroactive State Taxes. Initiative Constitutional Amendment.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-43",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 43: Limits Voters' Ability To Raise Revenues For Local Government Services. Legislative Constitutional Amendment.",
+   "district": null,
+   "title": "Proposition 43: Limits Voters' Ability To Raise Revenues For Local Government Services. Legislative Constitutional Amendment.",
+   "text": "Limits Voters' Ability To Raise Revenues For Local Government Services. Legislative Constitutional Amendment.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-44",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 44: Requires Community Health Clinics Spend 90% Of Revenue On Program Services. Initiative Statute.",
+   "district": null,
+   "title": "Proposition 44: Requires Community Health Clinics Spend 90% Of Revenue On Program Services. Initiative Statute.",
+   "text": "Requires Community Health Clinics Spend 90% Of Revenue On Program Services. Initiative Statute.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-ballot-measures-45",
+   "kind": "measure",
+   "level": "state",
+   "state": "ca",
+   "office": "Proposition 45: Modifies Environmental Review For Certain Projects. Initiative Statute.",
+   "district": null,
+   "title": "Proposition 45: Modifies Environmental Review For Certain Projects. Initiative Statute.",
+   "text": "Modifies Environmental Review For Certain Projects. Initiative Statute.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-supreme-court-kelli-m-evans",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ca",
+   "office": "Supreme Court Justice: Kelli M. Evans",
+   "district": null,
+   "title": "Supreme Court Justice: Kelli M. Evans",
+   "text": "Kelli M. Evans",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-supreme-court-joshua-groban",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ca",
+   "office": "Supreme Court Justice: Joshua Groban",
+   "district": null,
+   "title": "Supreme Court Justice: Joshua Groban",
+   "text": "Joshua Groban",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23860,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "1",
+   "title": "U.S. House of Representatives District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-mcguire",
+     "name": "Mike McGuire",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "james-gallagher",
+     "name": "James Gallagher",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 788,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "2",
+   "title": "U.S. House of Representatives District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jared-huffman",
+     "name": "Jared Huffman",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "robin-littau",
+     "name": "Robin Littau",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 595,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "3",
+   "title": "U.S. House of Representatives District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ami-bera",
+     "name": "Ami Bera",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "robb-tucker",
+     "name": "Robb Tucker",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 531,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "4",
+   "title": "U.S. House of Representatives District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-jones",
+     "name": "Eric Jones",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "mike-thompson",
+     "name": "Mike Thompson",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 500,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "5",
+   "title": "U.S. House of Representatives District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-masuda",
+     "name": "Michael Masuda",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tom-mcclintock",
+     "name": "Tom McClintock",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 399,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "6",
+   "title": "U.S. House of Representatives District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-pan",
+     "name": "Richard Pan",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kevin-kiley",
+     "name": "Kevin Kiley",
+     "party": "NPP",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 309,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "7",
+   "title": "U.S. House of Representatives District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "doris-matsui",
+     "name": "Doris Matsui",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "mai-vang",
+     "name": "Mai Vang",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 414,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "8",
+   "title": "U.S. House of Representatives District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-garamendi",
+     "name": "John Garamendi",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "rudy-recile",
+     "name": "Rudy Recile",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 396,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-9",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "9",
+   "title": "U.S. House of Representatives District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-harder",
+     "name": "Josh Harder",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "john-mcbride",
+     "name": "John McBride",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 322,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-10",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "10",
+   "title": "U.S. House of Representatives District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-desaulnier",
+     "name": "Mark DeSaulnier",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jeff-frese",
+     "name": "Jeff Frese",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 728,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-11",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "11",
+   "title": "U.S. House of Representatives District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "connie-chan",
+     "name": "Connie Chan",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "scott-wiener",
+     "name": "Scott Wiener",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 453,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-12",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "12",
+   "title": "U.S. House of Representatives District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jamie-joyce",
+     "name": "Jamie Joyce",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "lateefah-simon",
+     "name": "Lateefah Simon",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 190,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-13",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "13",
+   "title": "U.S. House of Representatives District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-gray",
+     "name": "Adam Gray",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kevin-lincoln",
+     "name": "Kevin Lincoln",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 974,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-14",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "14",
+   "title": "U.S. House of Representatives District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-hernandez",
+     "name": "Melissa Hernandez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "aisha-wahab",
+     "name": "Aisha Wahab",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 351,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-15",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "15",
+   "title": "U.S. House of Representatives District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-mullin",
+     "name": "Kevin Mullin",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "charles-hoelter",
+     "name": "Charles Hoelter",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 299,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-16",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "16",
+   "title": "U.S. House of Representatives District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sam-liccardo",
+     "name": "Sam Liccardo",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "peter-sundin-soul",
+     "name": "Peter Sundin Soulé",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 337,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-17",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "17",
+   "title": "U.S. House of Representatives District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ro-khanna",
+     "name": "Ro Khanna",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ritesh-tandon",
+     "name": "Ritesh Tandon",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 241,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-18",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "18",
+   "title": "U.S. House of Representatives District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zoe-lofgren",
+     "name": "Zoe Lofgren",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "shane-lewis",
+     "name": "Shane Lewis",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 376,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-19",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "19",
+   "title": "U.S. House of Representatives District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jimmy-panetta",
+     "name": "Jimmy Panetta",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "peter-coe-verbica",
+     "name": "Peter Coe Verbica",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 428,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-20",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "20",
+   "title": "U.S. House of Representatives District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sandra-van-scotter",
+     "name": "Sandra Van Scotter",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "vince-fong",
+     "name": "Vince Fong",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 764,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-21",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "21",
+   "title": "U.S. House of Representatives District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-costa",
+     "name": "Jim Costa",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kyle-kirkland",
+     "name": "Kyle Kirkland",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 323,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-22",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "22",
+   "title": "U.S. House of Representatives District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "randy-villegas",
+     "name": "Randy Villegas",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "david-g-valadao",
+     "name": "David G. Valadao",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 575,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-23",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "23",
+   "title": "U.S. House of Representatives District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tessa-lynn-hodge",
+     "name": "Tessa Lynn Hodge",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jay-obernolte",
+     "name": "Jay Obernolte",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1324,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-24",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "24",
+   "title": "U.S. House of Representatives District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "salud-carbajal",
+     "name": "Salud Carbajal",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "bob-smith",
+     "name": "Bob Smith",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 627,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-25",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "25",
+   "title": "U.S. House of Representatives District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "raul-ruiz",
+     "name": "Raul Ruiz",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "joe-males",
+     "name": "Joe Males",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 656,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-26",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "26",
+   "title": "U.S. House of Representatives District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jacqui-irwin",
+     "name": "Jacqui Irwin",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "sam-gallucci",
+     "name": "Sam Gallucci",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1087,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-27",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "27",
+   "title": "U.S. House of Representatives District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "george-whitesides",
+     "name": "George Whitesides",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jason-gibbs",
+     "name": "Jason Gibbs",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 378,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-28",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "28",
+   "title": "U.S. House of Representatives District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "judy-chu",
+     "name": "Judy Chu",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "april-a-verlato",
+     "name": "April A. Verlato",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 391,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-29",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "29",
+   "title": "U.S. House of Representatives District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ang-lica-mar-a-due-as",
+     "name": "Angélica María Dueñas",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "luz-maria-rivas",
+     "name": "Luz Maria Rivas",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 115,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-30",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "30",
+   "title": "U.S. House of Representatives District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "laura-friedman",
+     "name": "Laura Friedman",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "scott-alan-meyers",
+     "name": "Scott Alan Meyers",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 193,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-31",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "31",
+   "title": "U.S. House of Representatives District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gil-cisneros",
+     "name": "Gil Cisneros",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "eric-ching",
+     "name": "Eric Ching",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 360,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-32",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "32",
+   "title": "U.S. House of Representatives District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brad-sherman",
+     "name": "Brad Sherman",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "larry-thompson",
+     "name": "Larry Thompson",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 268,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-33",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "33",
+   "title": "U.S. House of Representatives District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pete-aguilar",
+     "name": "Pete Aguilar",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "stephanie-m-vargas",
+     "name": "Stephanie M. Vargas",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 491,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-34",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "34",
+   "title": "U.S. House of Representatives District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jimmy-gomez",
+     "name": "Jimmy Gomez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "angela-gonzales-torres",
+     "name": "Angela Gonzales-Torres",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 116,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-35",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "35",
+   "title": "U.S. House of Representatives District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "norma-j-torres",
+     "name": "Norma J. Torres",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "mike-cargile",
+     "name": "Mike Cargile",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 272,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-36",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "36",
+   "title": "U.S. House of Representatives District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ted-w-lieu",
+     "name": "Ted W. Lieu",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "houston-brignano",
+     "name": "Houston Brignano",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 156,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-37",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "37",
+   "title": "U.S. House of Representatives District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sydney-kamlager-dove",
+     "name": "Sydney Kamlager-Dove",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "samantha-mota",
+     "name": "Samantha Mota",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 140,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-38",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "38",
+   "title": "U.S. House of Representatives District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hilda-solis",
+     "name": "Hilda Solis",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "pedro-antonio-casas",
+     "name": "Pedro Antonio Casas",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 415,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-39",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "39",
+   "title": "U.S. House of Representatives District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-takano",
+     "name": "Mark Takano",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "steve-manos",
+     "name": "Steve Manos",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 210,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-40",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "40",
+   "title": "U.S. House of Representatives District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ken-calvert",
+     "name": "Ken Calvert",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "young-kim",
+     "name": "Young Kim",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 558,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-41",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "41",
+   "title": "U.S. House of Representatives District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "linda-s-nchez",
+     "name": "Linda Sánchez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "mitch-clemmons",
+     "name": "Mitch Clemmons",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 281,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-42",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "42",
+   "title": "U.S. House of Representatives District 42",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-garcia",
+     "name": "Robert Garcia",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "brian-burley",
+     "name": "Brian Burley",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 402,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-43",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "43",
+   "title": "U.S. House of Representatives District 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maxine-waters",
+     "name": "Maxine Waters",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "cristian-morales",
+     "name": "Cristian Morales",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 193,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-44",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "44",
+   "title": "U.S. House of Representatives District 44",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nanette-diaz-barragan",
+     "name": "Nanette Diaz Barragan",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "genevieve-angel",
+     "name": "Genevieve Angel",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 179,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-45",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "45",
+   "title": "U.S. House of Representatives District 45",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "derek-tran",
+     "name": "Derek Tran",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "chuong-v-vo",
+     "name": "Chuong V. Vo",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 424,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-46",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "46",
+   "title": "U.S. House of Representatives District 46",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lou-correa",
+     "name": "Lou Correa",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "david-pan",
+     "name": "David Pan",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 423,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-47",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "47",
+   "title": "U.S. House of Representatives District 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dave-min",
+     "name": "Dave Min",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jenny-rae-le-roux",
+     "name": "Jenny Rae Le Roux",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 561,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-48",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "48",
+   "title": "U.S. House of Representatives District 48",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marni-von-wilpert",
+     "name": "Marni von Wilpert",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jim-desmond",
+     "name": "Jim Desmond",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 692,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-49",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "49",
+   "title": "U.S. House of Representatives District 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-levin",
+     "name": "Mike Levin",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "armen-kurdian",
+     "name": "Armen Kurdian",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 699,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-50",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "50",
+   "title": "U.S. House of Representatives District 50",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-peters",
+     "name": "Scott Peters",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "steve-cohen",
+     "name": "Steve Cohen",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 713,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-51",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "51",
+   "title": "U.S. House of Representatives District 51",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sara-jacobs",
+     "name": "Sara Jacobs",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ricardo-cabrera",
+     "name": "Ricardo Cabrera",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 663,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-us-rep-district-52",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ca",
+   "office": "U.S. House",
+   "district": "52",
+   "title": "U.S. House of Representatives District 52",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "juan-vargas",
+     "name": "Juan Vargas",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jeff-belle",
+     "name": "Jeff Belle",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 580,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 2",
+   "district": null,
+   "title": "State Senate District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "damon-connolly",
+     "name": "Damon Connolly",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tief-gibbs",
+     "name": "Tief Gibbs",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 912,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 4",
+   "district": null,
+   "title": "State Senate District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jaron-brandon",
+     "name": "Jaron Brandon",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "alexandra-duarte",
+     "name": "Alexandra Duarte",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 739,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 6",
+   "district": null,
+   "title": "State Senate District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sean-frame",
+     "name": "Sean Frame",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "roger-niello",
+     "name": "Roger Niello",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 546,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 8",
+   "district": null,
+   "title": "State Senate District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "angelique-ashby",
+     "name": "Angelique Ashby",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "susan-a-mason",
+     "name": "Susan A Mason",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 388,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 10",
+   "district": null,
+   "title": "State Senate District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-sakakihara",
+     "name": "Scott Sakakihara",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "linda-r-price",
+     "name": "Linda R. Price",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 376,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 12",
+   "district": null,
+   "title": "State Senate District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nathan-magsig",
+     "name": "Nathan Magsig",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "william-brown-jr",
+     "name": "William Brown Jr.",
+     "party": "Lib",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 787,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 14",
+   "district": null,
+   "title": "State Senate District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "esmeralda-soria",
+     "name": "Esmeralda Soria",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "darin-s-dupont",
+     "name": "Darin S. DuPont",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1017,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 16",
+   "district": null,
+   "title": "State Senate District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-hurtado",
+     "name": "Melissa Hurtado",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "guillermo-asuncion-gonzalez",
+     "name": "Guillermo Asuncion Gonzalez",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 680,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 18",
+   "district": null,
+   "title": "State Senate District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-padilla",
+     "name": "Steve Padilla",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "art-hodges",
+     "name": "Art Hodges",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 834,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 20",
+   "district": null,
+   "title": "State Senate District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "caroline-menjivar",
+     "name": "Caroline Menjivar",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tony-rodriguez",
+     "name": "Tony Rodriguez",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 162,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 22",
+   "district": null,
+   "title": "State Senate District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "susan-rubio",
+     "name": "Susan Rubio",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "mike-netter",
+     "name": "Mike Netter",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 444,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 24",
+   "district": null,
+   "title": "State Senate District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-m-erickson",
+     "name": "John M. Erickson",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "brian-goldsmith",
+     "name": "Brian Goldsmith",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 228,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 26",
+   "district": null,
+   "title": "State Senate District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sara-hernandez",
+     "name": "Sara Hernandez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "sarah-rasc-n",
+     "name": "Sarah Rascón",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 155,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 28",
+   "district": null,
+   "title": "State Senate District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lola-smallwood-cuevas",
+     "name": "Lola Smallwood-Cuevas",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "joe-lisuzzo",
+     "name": "Joe Lisuzzo",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 187,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 30",
+   "district": null,
+   "title": "State Senate District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-j-archuleta",
+     "name": "Bob J. Archuleta",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "araceli-martinez",
+     "name": "Araceli Martinez",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 427,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 32",
+   "district": null,
+   "title": "State Senate District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tiffanie-tate",
+     "name": "Tiffanie Tate",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kelly-seyarto",
+     "name": "Kelly Seyarto",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 583,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 34",
+   "district": null,
+   "title": "State Senate District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "avelino-valencia",
+     "name": "Avelino Valencia",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "rhonda-shader",
+     "name": "Rhonda Shader",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 456,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 36",
+   "district": null,
+   "title": "State Senate District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-duncan",
+     "name": "Chris Duncan",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tony-strickland",
+     "name": "Tony Strickland",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 730,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 38",
+   "district": null,
+   "title": "State Senate District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "catherine-s-blakespear",
+     "name": "Catherine S. Blakespear",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "laura-bassett",
+     "name": "Laura Bassett",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 813,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-senate-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Senate District 40",
+   "district": null,
+   "title": "State Senate District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mara-elliott",
+     "name": "Mara Elliott",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kristie-bruce-lane",
+     "name": "Kristie Bruce-Lane",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1095,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 1",
+   "district": null,
+   "title": "State Assembly District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dianna-margaret-james",
+     "name": "Dianna Margaret James",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "heather-hadwick",
+     "name": "Heather Hadwick",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 516,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 2",
+   "district": null,
+   "title": "State Assembly District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-rogers",
+     "name": "Chris Rogers",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "michael-greer",
+     "name": "Michael Greer",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 622,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 3",
+   "district": null,
+   "title": "State Assembly District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dom-belza",
+     "name": "Dom Belza",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "james-jamie-johansson",
+     "name": "James \"Jamie\" Johansson",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 377,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 4",
+   "district": null,
+   "title": "State Assembly District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cecilia-m-aguiar-curry",
+     "name": "Cecilia M. Aguiar-Curry",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 289,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 5",
+   "district": null,
+   "title": "State Assembly District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "neva-parker",
+     "name": "Neva Parker",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "joe-patterson",
+     "name": "Joe Patterson",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 348,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 6",
+   "district": null,
+   "title": "State Assembly District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maggy-krell",
+     "name": "Maggy Krell",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jagtar-singh",
+     "name": "Jagtar Singh",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 229,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 7",
+   "district": null,
+   "title": "State Assembly District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-l-slavensky",
+     "name": "Amy L. Slavensky",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "josh-hoover",
+     "name": "Josh Hoover",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 223,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 8",
+   "district": null,
+   "title": "State Assembly District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-jariustokaeutulelei-tangipa",
+     "name": "David Jariustokaeutulelei Tangipa",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 232,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 9",
+   "district": null,
+   "title": "State Assembly District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-adams",
+     "name": "Matthew Adams",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "heath-flora",
+     "name": "Heath Flora",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 303,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 10",
+   "district": null,
+   "title": "State Assembly District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-nguyen",
+     "name": "Stephanie Nguyen",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "vinaya-singh",
+     "name": "Vinaya Singh",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 202,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 11",
+   "district": null,
+   "title": "State Assembly District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lori-d-wilson",
+     "name": "Lori D Wilson",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jenny-leilani-callison",
+     "name": "Jenny Leilani Callison",
+     "party": "NPP",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 323,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 12",
+   "district": null,
+   "title": "State Assembly District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jackie-elward",
+     "name": "Jackie Elward",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "eric-lucan",
+     "name": "Eric Lucan",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 301,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 13",
+   "district": null,
+   "title": "State Assembly District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rhodesia-ransom",
+     "name": "Rhodesia Ransom",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tom-patti",
+     "name": "Tom Patti",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 171,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 14",
+   "district": null,
+   "title": "State Assembly District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "buffy-wicks",
+     "name": "Buffy Wicks",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "mark-rendon",
+     "name": "Mark Rendon",
+     "party": "Grn",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 216,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 15",
+   "district": null,
+   "title": "State Assembly District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anamarie-avila-farias",
+     "name": "Anamarie Avila Farias",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "arthur-webb",
+     "name": "Arthur Webb",
+     "party": "NPP",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 410,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 16",
+   "district": null,
+   "title": "State Assembly District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rebecca-bauer-kahan",
+     "name": "Rebecca Bauer-Kahan",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "joseph-a-rubay",
+     "name": "Joseph A. Rubay",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 343,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 17",
+   "district": null,
+   "title": "State Assembly District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-haney",
+     "name": "Matt Haney",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "manuel-noris-barrera",
+     "name": "Manuel Noris-Barrera",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 298,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 18",
+   "district": null,
+   "title": "State Assembly District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mia-bonta",
+     "name": "Mia Bonta",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "andre-sandford",
+     "name": "Andre Sandford",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 113,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 19",
+   "district": null,
+   "title": "State Assembly District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "catherine-stefani",
+     "name": "Catherine Stefani",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "philip-louis-wing",
+     "name": "Philip Louis Wing",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 261,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 20",
+   "district": null,
+   "title": "State Assembly District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "liz-ortega",
+     "name": "Liz Ortega",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "patricia-muga",
+     "name": "Patricia Muga",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 294,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 21",
+   "district": null,
+   "title": "State Assembly District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "diane-papan",
+     "name": "Diane Papan",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jabra-j-muhawieh",
+     "name": "Jabra J Muhawieh",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 183,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 22",
+   "district": null,
+   "title": "State Assembly District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "juan-alanis",
+     "name": "Juan Alanis",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 256,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 23",
+   "district": null,
+   "title": "State Assembly District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marc-berman",
+     "name": "Marc Berman",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "david-g-johnson",
+     "name": "David G. Johnson",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 231,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 24",
+   "district": null,
+   "title": "State Assembly District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alex-lee",
+     "name": "Alex Lee",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "max-hsia",
+     "name": "Max Hsia",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 148,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 25",
+   "district": null,
+   "title": "State Assembly District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ash-kalra",
+     "name": "Ash Kalra",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "himat-singh-bainiwal",
+     "name": "Himat Singh Bainiwal",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 169,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 26",
+   "district": null,
+   "title": "State Assembly District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "patrick-ahrens",
+     "name": "Patrick Ahrens",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tim-gorsulowsky",
+     "name": "Tim Gorsulowsky",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 151,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 27",
+   "district": null,
+   "title": "State Assembly District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-pacheco",
+     "name": "Brian Pacheco",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "mike-murphy",
+     "name": "Mike Murphy",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 810,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 28",
+   "district": null,
+   "title": "State Assembly District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gail-pellerin",
+     "name": "Gail Pellerin",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "carol-pefley",
+     "name": "Carol Pefley",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 269,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 29",
+   "district": null,
+   "title": "State Assembly District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-rivas",
+     "name": "Robert Rivas",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "dennis-p-sanchez",
+     "name": "Dennis P. Sanchez",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 266,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 30",
+   "district": null,
+   "title": "State Assembly District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dawn-addis",
+     "name": "Dawn Addis",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "shannon-kessler",
+     "name": "Shannon Kessler",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 270,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 31",
+   "district": null,
+   "title": "State Assembly District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "annalisa-perea",
+     "name": "Annalisa Perea",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jim-polsgrove",
+     "name": "Jim Polsgrove",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 198,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 32",
+   "district": null,
+   "title": "State Assembly District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-couch",
+     "name": "David Couch",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 586,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 33",
+   "district": null,
+   "title": "State Assembly District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hipolito-angel-cerros",
+     "name": "Hipolito Angel Cerros",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "alexandra-ali-macedo",
+     "name": "Alexandra (Ali) Macedo",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 349,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 34",
+   "district": null,
+   "title": "State Assembly District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "randall-putz",
+     "name": "Randall Putz",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "charles-frederick-hughes",
+     "name": "Charles Frederick Hughes",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 989,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 35",
+   "district": null,
+   "title": "State Assembly District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrae-gonzales",
+     "name": "Andrae Gonzales",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "saul-ayon",
+     "name": "Saul Ayon",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 396,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 36",
+   "district": null,
+   "title": "State Assembly District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ida-s-obeso-martinez",
+     "name": "Ida S. Obeso-Martinez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jeff-gonzalez",
+     "name": "Jeff Gonzalez",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 479,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 37",
+   "district": null,
+   "title": "State Assembly District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gregg-hart",
+     "name": "Gregg Hart",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "sari-domingues",
+     "name": "Sari Domingues",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 248,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 38",
+   "district": null,
+   "title": "State Assembly District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-bennett",
+     "name": "Steve Bennett",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "michael-macdonald",
+     "name": "Michael MacDonald",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 897,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 39",
+   "district": null,
+   "title": "State Assembly District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "juan-carrillo",
+     "name": "Juan Carrillo",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "paul-andre-marsh",
+     "name": "Paul Andre Marsh",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 267,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 40",
+   "district": null,
+   "title": "State Assembly District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pilar-schiavo",
+     "name": "Pilar Schiavo",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "rickey-tracy-hayes-ii",
+     "name": "Rickey Tracy Hayes II",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 218,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 41",
+   "district": null,
+   "title": "State Assembly District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-harabedian",
+     "name": "John Harabedian",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "adam-christopher-vena",
+     "name": "Adam Christopher Vena",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 316,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 42",
+   "district": null,
+   "title": "State Assembly District 42",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deborah-klein-lopez",
+     "name": "Deborah Klein Lopez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ted-nordblum",
+     "name": "Ted Nordblum",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 584,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 43",
+   "district": null,
+   "title": "State Assembly District 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "celeste-rodriguez",
+     "name": "Celeste Rodriguez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ricardo-benitez",
+     "name": "Ricardo Benitez",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 76,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-44",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 44",
+   "district": null,
+   "title": "State Assembly District 44",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nicholas-nick-schultz",
+     "name": "Nicholas \"Nick\" Schultz",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "carolyn-daniels",
+     "name": "Carolyn Daniels",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 100,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 45",
+   "district": null,
+   "title": "State Assembly District 45",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-c-ramos",
+     "name": "James C. Ramos",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "greg-abdouch",
+     "name": "Greg Abdouch",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 348,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 46",
+   "district": null,
+   "title": "State Assembly District 46",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jesse-gabriel",
+     "name": "Jesse Gabriel",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tracey-schroeder",
+     "name": "Tracey Schroeder",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 93,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 47",
+   "district": null,
+   "title": "State Assembly District 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leila-namvar",
+     "name": "Leila Namvar",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "greg-wallis",
+     "name": "Greg Wallis",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 574,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-48",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 48",
+   "district": null,
+   "title": "State Assembly District 48",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "blanca-rubio",
+     "name": "Blanca Rubio",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "dan-t-tran",
+     "name": "Dan T. Tran",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 239,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 49",
+   "district": null,
+   "title": "State Assembly District 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-fong",
+     "name": "Mike Fong",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "long-david-liu",
+     "name": "Long David Liu",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 119,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-50",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 50",
+   "district": null,
+   "title": "State Assembly District 50",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-garcia",
+     "name": "Robert Garcia",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "victoria-viveros-mageno",
+     "name": "Victoria Viveros Mageno",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 269,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-51",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 51",
+   "district": null,
+   "title": "State Assembly District 51",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "colin-d-hernandez",
+     "name": "Colin D. Hernandez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "rick-chavez-zbur",
+     "name": "Rick Chavez Zbur",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 107,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-52",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 52",
+   "district": null,
+   "title": "State Assembly District 52",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jessica-caloza",
+     "name": "Jessica Caloza",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "andrea-lee-anderson",
+     "name": "Andrea Lee Anderson",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 87,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-53",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 53",
+   "district": null,
+   "title": "State Assembly District 53",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michelle-rodriguez",
+     "name": "Michelle Rodriguez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "rafaela-romero",
+     "name": "Rafaela Romero",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 178,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-54",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 54",
+   "district": null,
+   "title": "State Assembly District 54",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-gonzalez",
+     "name": "Mark Gonzalez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "alexandra-briseno",
+     "name": "Alexandra Briseno",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 90,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-55",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 55",
+   "district": null,
+   "title": "State Assembly District 55",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ashley-m-brown",
+     "name": "Ashley M. Brown",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "isaac-g-bryan",
+     "name": "Isaac G. Bryan",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 101,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-56",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 56",
+   "district": null,
+   "title": "State Assembly District 56",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lisa-calderon",
+     "name": "Lisa Calderon",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jessica-martinez",
+     "name": "Jessica Martinez",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 251,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-57",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 57",
+   "district": null,
+   "title": "State Assembly District 57",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sade-elhawary",
+     "name": "Sade Elhawary",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "constance-jewel-menzies",
+     "name": "Constance Jewel Menzies",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 82,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-58",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 58",
+   "district": null,
+   "title": "State Assembly District 58",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clarissa-cervantes",
+     "name": "Clarissa Cervantes",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "leticia-castillo",
+     "name": "Leticia Castillo",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 141,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-59",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 59",
+   "district": null,
+   "title": "State Assembly District 59",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phillip-chen",
+     "name": "Phillip Chen",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "victor-hernandez",
+     "name": "Victor Hernandez",
+     "party": "Grn",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 517,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-60",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 60",
+   "district": null,
+   "title": "State Assembly District 60",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "corey-a-jackson",
+     "name": "Corey A Jackson",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ed-delgado",
+     "name": "Ed Delgado",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 187,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-61",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 61",
+   "district": null,
+   "title": "State Assembly District 61",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tina-simone-mckinnor",
+     "name": "Tina Simone McKinnor",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "brian-lockwood",
+     "name": "Brian Lockwood",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 129,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-62",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 62",
+   "district": null,
+   "title": "State Assembly District 62",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jos-luis-solache",
+     "name": "José Luis Solache",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "paul-irving-jones",
+     "name": "Paul Irving Jones",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 100,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-63",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 63",
+   "district": null,
+   "title": "State Assembly District 63",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "natasha-johnson",
+     "name": "Natasha Johnson",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "kevin-akin",
+     "name": "Kevin Akin",
+     "party": "P&F",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 187,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-64",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 64",
+   "district": null,
+   "title": "State Assembly District 64",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "blanca-pacheco",
+     "name": "Blanca Pacheco",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "raul-ortiz-jr",
+     "name": "Raul Ortiz Jr.",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 148,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-65",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 65",
+   "district": null,
+   "title": "State Assembly District 65",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ayanna-davis",
+     "name": "Ayanna Davis",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "lydia-a-guti-rrez",
+     "name": "Lydia A. Gutiérrez",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 141,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-66",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 66",
+   "district": null,
+   "title": "State Assembly District 66",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sara-deen",
+     "name": "Sara Deen",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "paul-seo",
+     "name": "Paul Seo",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 99,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-67",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 67",
+   "district": null,
+   "title": "State Assembly District 67",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-pulido",
+     "name": "Mark Pulido",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "paulo-morales",
+     "name": "Paulo Morales",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 269,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-68",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 68",
+   "district": null,
+   "title": "State Assembly District 68",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jessie-lopez",
+     "name": "Jessie Lopez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "david-penaloza",
+     "name": "David Penaloza",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 222,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-69",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 69",
+   "district": null,
+   "title": "State Assembly District 69",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carolyn-j-essex",
+     "name": "Carolyn J. Essex",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "josh-lowenthal",
+     "name": "Josh Lowenthal",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 99,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-70",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 70",
+   "district": null,
+   "title": "State Assembly District 70",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paula-swift",
+     "name": "Paula Swift",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tri-ta",
+     "name": "Tri Ta",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 302,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-71",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 71",
+   "district": null,
+   "title": "State Assembly District 71",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jj-galvez",
+     "name": "JJ Galvez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kate-sanchez",
+     "name": "Kate Sanchez",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 356,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-72",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 72",
+   "district": null,
+   "title": "State Assembly District 72",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-kluwe",
+     "name": "Chris Kluwe",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "gracey-van-der-mark",
+     "name": "Gracey Van Der Mark",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 413,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-73",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 73",
+   "district": null,
+   "title": "State Assembly District 73",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cottie-petrie-norris",
+     "name": "Cottie Petrie-Norris",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "urson-russell",
+     "name": "Urson Russell",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 339,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-74",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 74",
+   "district": null,
+   "title": "State Assembly District 74",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sergio-farias",
+     "name": "Sergio Farias",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "laurie-davies",
+     "name": "Laurie Davies",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 381,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-75",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 75",
+   "district": null,
+   "title": "State Assembly District 75",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gerald-c-boursiquot",
+     "name": "Gerald C. Boursiquot",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "carl-demaio",
+     "name": "Carl DeMaio",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 698,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-76",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 76",
+   "district": null,
+   "title": "State Assembly District 76",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "darshana-patel",
+     "name": "Darshana Patel",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "carrie-s-espinoza-villanueva",
+     "name": "Carrie S. Espinoza Villanueva",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 557,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-77",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 77",
+   "district": null,
+   "title": "State Assembly District 77",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tasha-boerner",
+     "name": "Tasha Boerner",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "trinity-hannaway",
+     "name": "Trinity Hannaway",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 401,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-78",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 78",
+   "district": null,
+   "title": "State Assembly District 78",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-ward",
+     "name": "Chris Ward",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "payton-galvez",
+     "name": "Payton Galvez",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 387,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-79",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 79",
+   "district": null,
+   "title": "State Assembly District 79",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lashae-sharp-collins",
+     "name": "LaShae Sharp-Collins",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "andrew-lawson",
+     "name": "Andrew Lawson",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 365,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-state-assembly-district-80",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "State Assembly District 80",
+   "district": null,
+   "title": "State Assembly District 80",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-a-alvarez",
+     "name": "David A. Alvarez",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "alejandro-galicia",
+     "name": "Alejandro Galicia",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 357,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-board-of-equalization-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "Board of Equalization District 1",
+   "district": null,
+   "title": "Board of Equalization District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nelson-esparza",
+     "name": "Nelson Esparza",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "shannon-grove",
+     "name": "Shannon Grove",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7251,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-board-of-equalization-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "Board of Equalization District 2",
+   "district": null,
+   "title": "Board of Equalization District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sally-j-lieber",
+     "name": "Sally J. Lieber",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "john-pimentel",
+     "name": "John Pimentel",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6558,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-board-of-equalization-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "Board of Equalization District 3",
+   "district": null,
+   "title": "Board of Equalization District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-gipson",
+     "name": "Mike Gipson",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "samuel-p-sukaton",
+     "name": "Samuel P. Sukaton",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2853,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ca-board-of-equalization-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ca",
+   "office": "Board of Equalization District 4",
+   "district": null,
+   "title": "Board of Equalization District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-umberg",
+     "name": "Tom Umberg",
+     "party": "Dem",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "denis-bilodeau",
+     "name": "Denis Bilodeau",
+     "party": "Rep",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7198,
+    "unit": "precincts"
+   }
+  }
+ ]
+}
