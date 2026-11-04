@@ -437,16 +437,17 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
 
     load().catch((e) => bodyEl.replaceChildren(notice(e.message || 'Could not load social posts. Has migration 0091 been run?')));
     return h('div', { id: 'md-social' },
-      h('p', { class: 'muted small', text: 'Nothing is posted automatically. A person posts after approval, by hand or from Post online on the Admin page, and a post made by an AI must carry the AI label (tick the AI-written box there). Our audiences are voters, teachers and researchers or journalists. Posts are aimed at adults and teachers, not at children, and accounts follow each platform\'s own age rules.' }),
+      h('p', { class: 'muted small', text: 'Nothing is posted automatically. A person posts after approval, by hand or from Post online below, and a post made by an AI must carry the AI label (tick the AI-written box there). Our audiences are voters, teachers and researchers or journalists. Posts are aimed at adults and teachers, not at children, and accounts follow each platform\'s own age rules.' }),
       reviewer ? null : h('p', { class: 'small dim', text: 'You see approved and posted posts. Drafts are seen by admins and the Media Director only.' }),
       msg, tabsEl, bodyEl);
   }
 
-  function view(section, render) {
+  function view(section, render, postNode) {
     render(h('h1', { text: 'Media' }), h('p', { class: 'lede', text: 'Media relations' }),
       section('guide', 'The Way / Not The Way', guide()),
       section('ideas', 'Marketing ideas and copy', ideasHub()),
       section('social', 'Social media posts', social()),
+      postNode ? section('post-online', 'Post online', postNode) : null,
       STATS ? section('analytics', 'Site analytics and SEO', STATS.panel()) : null,
       IMAGES ? section('images', 'Image copy', IMAGES.panel()) : null);
   }

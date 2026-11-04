@@ -61,12 +61,12 @@ Deno.serve(async (req) => {
     const jwt = (req.headers.get('authorization') ?? '').replace(/^Bearer /i, '');
     const { data } = await admin.auth.getUser(jwt);
     if (data?.user) {
-      const { data: roles } = await admin.from('member_roles').select('role').eq('member_id', data.user.id).eq('role', 'super_admin');
+      const { data: roles } = await admin.from('member_roles').select('role').eq('member_id', data.user.id).in('role', act === 'post' ? ['super_admin', 'marketing'] : ['super_admin']);
       const { data: m } = await admin.from('members').select('status').eq('id', data.user.id).maybeSingle();
       allowed = !!roles?.length && m?.status === 'active';
     }
   }
-  if (!allowed) return json({ ok: false, error: 'Super admins only.' }, 403);
+  if (!allowed) return json({ ok: false, error: act === 'post' ? 'Super admins and the Media Director only.' : 'Super admins only.' }, 403);
 
   const handle = env('BSKY_HANDLE'), pass = env('BSKY_APP_PASSWORD');
   if (!handle || !pass) return json({ ok: false, error: 'Not set up yet: add BSKY_HANDLE and BSKY_APP_PASSWORD in Edge Functions > Secrets.' });

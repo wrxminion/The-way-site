@@ -84,7 +84,9 @@ function mediaView() {
   if (!MEDIA) return render(notice('Media is not available.'));
   const AT = window.TheWayAdminTools;
   let n = 0;
-  MEDIA.view((id, title, node) => AT.section('media-' + id, title, [node], { open: n++ < 3 || id === 'images' }), render);   // Image copy opens by default; it is the last section
+  const postNode = FB && (state.roles.has('super_admin') || state.roles.has('marketing')) ? FB.panel({ postOnly: !state.roles.has('super_admin') }) : null;   // super admins get the inbox too
+  MEDIA.view((id, title, node) => AT.section('media-' + id, title, [node], { open: n++ < 3 || id === 'images' }), render, postNode);
+  if (FB && state.roles.has('super_admin')) FB.badge(document);   // Image copy opens by default; it is the last section
 }
 const CL = window.TheWayClaim ? window.TheWayClaim.make({ sb, h, q, notice, action, render, can }) : null;
 
@@ -2273,8 +2275,7 @@ async function adminView() {
   render(
     h('h1', { text: 'Admin' }), msg,
     canStats() && STATS ? sec('analytics', 'Site analytics and SEO', STATS.panel()) : null,
-    state.roles.has('super_admin') && FB ? sec('facebook', 'Post online', FB.panel()) : null,
-    can('admin') ? sec('media', 'Media', h('div', { class: 'panel' }, h('p', { class: 'muted small', text: 'Media relations: site analytics, suggested marketing ideas, and The Way / Not The Way.' }), h('a', { class: 'button primary', href: '#/media', text: 'Open Media' }))) : null,
+    can('admin') ? sec('media', 'Media', h('div', { class: 'panel' }, h('p', { class: 'muted small', text: 'Everything for media in one place: ideas and copy, social posts and approval, posting online, analytics.' }), h('a', { class: 'button primary', href: '#/media', text: 'Open Media' }))) : null,
     can('admin') && ROLETREE ? sec('roles', 'Admin roles', ROLETREE.panel()) : null,
     can('admin') && LEDGER ? sec('ledger', 'Ledger checks', LEDGER.panel()) : null,
     can('admin') && CSTAT ? sec('review-status', 'Review status of AI-written pages', CSTAT.panel()) : null,
@@ -2326,7 +2327,6 @@ async function adminView() {
         await adminView();
       }, msg) }, 'Remove')))) : [h('li', { class: 'muted', text: 'Nobody yet.' })])),
   );
-  if (FB && state.roles.has('super_admin')) FB.badge(app);
   const mItems = [...document.querySelectorAll("#members-list > li")];
   memberBar.set(mItems.map((li, i) => ({ el: li, text: members[i].display_name, facets: { status: members[i].status, role: rolesOf(members[i].id).length ? rolesOf(members[i].id) : ['none'] } })));
   const nItems = [...document.querySelectorAll('#notify-list > li')];

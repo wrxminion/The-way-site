@@ -41,7 +41,7 @@ function make(ctx) {
     } catch { /* not installed yet */ }
   }
 
-  function panel() {
+  function panel(opts) {
     const root = h('div', { class: 'fb-root' });
     const status = h('p', { class: 'muted small' });
     const body = h('div');
@@ -228,7 +228,7 @@ function make(ctx) {
       }
       function draw() {
         list.replaceChildren(rows.length ? h('ul', { class: 'list' }, rows.map(one))
-          : h('p', { class: 'muted', text: 'Nothing approved and waiting. Approve a post on the Media page (Social media posts) and it shows up here.' }));
+          : h('p', { class: 'muted', text: 'Nothing approved and waiting. Approve a post under Social media posts and it shows up here.' }));
       }
       onChange.push(draw);
       function one(x) {
@@ -302,9 +302,16 @@ function make(ctx) {
         h('div', { class: 'btns' }, h('label', {}, onAi, ' AI-written (adds the AI label)'), ' ', send), slot);
     }
 
+    if (opts && opts.postOnly) {   // Media Director: posting only, no inbox or page numbers
+      root.append(h('h2', { text: 'Post online' }),
+        h('p', { class: 'muted small', text: 'Tick where to post, then send approved posts or write a new one. Each post asks first and is marked posted with the time and who.' }),
+        ticksBar, ready(), composer());
+      syncTicks();
+      return root;
+    }
     root.append(
       h('h2', { text: 'Post online' }),
-      h('p', { class: 'muted small', text: 'Super admins only. Tick where to post, then send approved posts or write a new one. Below, each network has its own drop-down for replies and incoming items (Facebook also has the Page numbers). Those are pulled on a schedule and when you press Refresh.' }),
+      h('p', { class: 'muted small', text: 'Tick where to post, then send approved posts or write a new one. Below, each network has its own drop-down for replies and incoming items (Facebook also has the Page numbers). Those are pulled on a schedule and when you press Refresh.' }),
       h('div', { class: 'btns' }, refresh), status, ticksBar, ready(), composer(), body);
     syncTicks();
     load();
