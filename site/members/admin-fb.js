@@ -45,7 +45,8 @@ function make(ctx) {
     const root = h('div', { class: 'fb-root' });
     const status = h('p', { class: 'muted small' });
     const body = h('div');
-    let busy = false, onlyNew = true;
+    let busy = false;
+    const onlyNew = { bluesky: true, facebook: true };
 
     async function load() {
       status.textContent = 'Loading...';
@@ -57,6 +58,7 @@ function make(ctx) {
           q(sb.from('fb_inbox').select('*').order('posted_at', { ascending: false }).limit(200)),
         ]);
         const m = meta[0];
+        fbOk.v = !!(m && m.ok); syncTicks();   // Facebook can be ticked only once a pull has worked
         status.textContent = !m ? 'No data yet. Press "Refresh now" once the Edge Function and its secrets are set up.'
           : `${m.ok ? 'Last refreshed' : 'Last attempt failed'} ${when(m.refreshed_at)}${m.note ? `. ${m.note}` : ''}`;
         draw(nums, inbox);
@@ -103,7 +105,7 @@ function make(ctx) {
       }, slot) }, 'Send reply');
       return h('li', { class: r.read_at ? 'fb-item' : 'fb-item fb-new' },
         h('div', { class: 'row' },
-          h('strong', { text: r.author_name || 'Someone' }), r.platform === 'bluesky' ? h('span', { class: 'tag', text: 'Bluesky' }) : null,
+          h('strong', { text: r.author_name || 'Someone' }),
           h('span', {}, r.kind === 'visitor_post' ? h('span', { class: 'tag', text: 'post on the Page' }) : r.parent_id ? h('span', { class: 'tag', text: 'reply' }) : h('span', { class: 'tag', text: 'comment' }), ' ',
             r.replied_at ? h('span', { class: 'tag ok', text: 'answered' }) : null, ' ',
             !r.read_at ? h('span', { class: 'tag warn', text: 'new' }) : null)),
@@ -111,23 +113,37 @@ function make(ctx) {
         h('p', { text: r.message || '(no text, maybe a photo or sticker)' }),
         r.reply_text ? h('p', { class: 'muted small', text: `You replied: ${r.reply_text}` }) : null,
         h('div', { class: 'btns' },
-          link ? h('a', { class: 'button quiet', href: link, target: '_blank', rel: 'noopener noreferrer', text: 'Open on Facebook' }) : null,
+          link ? h('a', { class: 'button quiet', href: link, target: '_blank', rel: 'noopener noreferrer', text: r.platform === 'bluesky' ? 'Open on Bluesky' : 'Open on Facebook' }) : null,
           h('button', { class: 'quiet', onclick: action(() => mark([r.id], !r.read_at), slot) }, r.read_at ? 'Mark unread' : 'Mark read')),
         r.kind === 'comment' && (r.platform === 'bluesky' ? !!r.ref_cid : /^\d+_\d+$/.test(r.id)) ? h('details', {}, h('summary', { text: r.replied_at ? 'Reply again' : 'Reply' }), box, h('div', { class: 'btns' }, sendBtn)) : null,
         slot);
     }
 
+    // One drop-down per network, built from the same inbox rows (filtered by platform). Each heading shows its own unread count.
+    // The open or closed choice is remembered by the admin page helper, under the id given here.
     function draw(nums, inbox) {
-      const fresh = inbox.filter((r) => !r.read_at);
-      const shown = onlyNew ? fresh : inbox;
-      const toggle = h('button', { class: 'quiet', onclick: () => { onlyNew = !onlyNew; draw(nums, inbox); } }, onlyNew ? 'Show all' : 'Show only new');
-      const markAll = fresh.length ? h('button', { class: 'quiet', onclick: action(() => mark(fresh.map((r) => r.id), true)) }, 'Mark all read') : null;
-      body.replaceChildren(
-        h('div', { class: 'panel' }, h('h3', { text: 'Inbox' }),
-          h('p', { class: 'muted small', text: `${fresh.length} new. Comments on the Page's posts and posts visitors made on the Page, pulled from Facebook about every few hours. Direct messages are not included.` }),
+      const AT = window.TheWayAdminTools;
+      const of = (p) => inbox.filter((r) => (r.platform || 'facebook') === p);
+      const unreadOf = (p) => of(p).filter((r) => !r.read_at).length;
+      const title = (name, p) => (unreadOf(p) ? `${name} (${unreadOf(p)} new)` : name);
+      function inboxPanel(p, blurb) {
+        const mine = of(p), fresh = mine.filter((r) => !r.read_at), shown = onlyNew[p] ? fresh : mine;
+        const toggle = h('button', { class: 'quiet', onclick: () => { onlyNew[p] = !onlyNew[p]; draw(nums, inbox); } }, onlyNew[p] ? 'Show all' : 'Show only new');
+        const markAll = fresh.length ? h('button', { class: 'quiet', onclick: action(() => mark(fresh.map((r) => r.id), true)) }, 'Mark all read') : null;
+        return h('div', { class: 'panel' }, h('h3', { text: 'Inbox' }),
+          h('p', { class: 'muted small', text: `${fresh.length} new. ${blurb}` }),
           h('div', { class: 'btns' }, toggle, markAll),
-          shown.length ? h('ul', { class: 'list' }, shown.map(item)) : h('p', { class: 'muted', text: onlyNew ? 'Nothing new.' : 'Nothing here yet.' })),
-        h('div', { class: 'panel' }, h('h3', { text: 'Page numbers' }), numbers(nums)));
+          shown.length ? h('ul', { class: 'list' }, shown.map(item)) : h('p', { class: 'muted', text: onlyNew[p] ? 'Nothing new.' : 'Nothing here yet.' }));
+      }
+      const drop = (id, name, p, nodes) => (AT ? AT.section(id, title(name, p), nodes, { open: false })
+        : h('div', {}, h('h3', { text: title(name, p) }), nodes));
+      body.replaceChildren(
+        drop('post-online-bluesky', 'Bluesky', 'bluesky', [
+          inboxPanel('bluesky', 'Replies, mentions and quotes of the Bluesky account. Direct messages are not included.')]),
+        drop('post-online-facebook', 'Facebook', 'facebook', [
+          fbOk.v ? null : h('p', { class: 'muted', text: 'Facebook is not set up yet.' }),
+          inboxPanel('facebook', "Comments on the Page's posts and posts visitors made on the Page. Direct messages are not included."),
+          h('div', { class: 'panel' }, h('h3', { text: 'Page numbers' }), numbers(nums))]));
     }
 
     async function refreshNow() {
@@ -163,44 +179,95 @@ function make(ctx) {
       else if (x.source_url) t += `\n${x.source_url}`;
       return x.source === 'llm' ? t + AI_LABEL : t;
     };
-    function ready() {
-      const list = h('div'), slot = h('div');
-      async function loadReady() {
+    // One set of tick boxes at the top of the section says who a post goes to. It governs both the Ready to post list and the
+    // New post box. Facebook stays unticked and disabled until its function has pulled successfully once (fb_meta.ok).
+    const sel = { bs: true, fb: false }, fbOk = { v: false }, onChange = [];
+    const tickBs = h('input', { type: 'checkbox', id: 'po-bs', checked: 'checked' });
+    const tickFb = h('input', { type: 'checkbox', id: 'po-fb', disabled: 'disabled' });
+    const fbNote = h('span', { class: 'muted small', text: ' Facebook is not set up yet, so it cannot be ticked.' });
+    function syncTicks() {
+      tickBs.checked = sel.bs;
+      tickFb.disabled = !fbOk.v;
+      tickFb.checked = fbOk.v && sel.fb;
+      fbNote.hidden = fbOk.v;
+      onChange.forEach((f) => f());
+    }
+    tickBs.addEventListener('change', () => { sel.bs = tickBs.checked; syncTicks(); });
+    tickFb.addEventListener('change', () => { sel.fb = tickFb.checked; syncTicks(); });
+    const ticksBar = h('div', { class: 'panel fb-ticks' }, h('strong', { text: 'Post to:' }), ' ',
+      h('label', {}, tickBs, ' Bluesky'), ' ', h('label', {}, tickFb, ' Facebook'), fbNote);
+    const PLACE = { bluesky: 'Bluesky', facebook: 'Facebook' };
+    const FN = { bluesky: 'bsky-inbox', facebook: 'fb-insights' };
+    // Send one text to the ticked places. Returns { done: [...], failed: ['Facebook: reason', ...] }.
+    async function publish(places, message) {
+      const done = [], failed = [];
+      for (const p of places) {
         try {
-          const rows = await q(sb.from('social_posts')
-            .select('id,platform,body,source,link_path,link_title,source_name,source_url,review_status')
-            .eq('status', 'approved').in('platform', ['bluesky', 'facebook']).order('id', { ascending: true }).limit(100));
-          list.replaceChildren(rows.length ? h('ul', { class: 'list' }, rows.map(one))
-            : h('p', { class: 'muted', text: 'Nothing approved and waiting. Approve a post on the Media page (Social media posts) and it shows up here.' }));
-        } catch (e) {
-          list.replaceChildren(h('p', { class: 'muted', text: `Could not load the list: ${e.message || e}. Has migration 0100 been run?` }));
-        }
-      }
-      function one(x) {
-        const text = textOf(x), n = charsOf(text), bsky = x.platform === 'bluesky';
-        const tooLong = bsky && n > 300;
-        const res = h('div');
-        const go = h('button', { class: 'primary', disabled: tooLong ? 'disabled' : null, onclick: action(async () => {
-          if (!confirm(`Publish this now on ${bsky ? 'Bluesky' : 'Facebook'}? It goes live right away.\n\n${text}`)) return;
-          const { data, error } = await sb.functions.invoke(bsky ? 'bsky-inbox' : 'fb-insights', { body: { action: 'post', message: text } });
+          const { data, error } = await sb.functions.invoke(FN[p], { body: { action: 'post', message } });
           if (error) throw error;
           if (data && data.ok === false) throw new Error(data.error);
-          try { await q(sb.from('social_posts').update({ status: 'posted' }).eq('id', x.id)); }
-          catch (e) { throw new Error(`It was posted, but could not be marked posted: ${e.message || e}`); }
+          done.push(p);
+        } catch (e) { failed.push(`${PLACE[p]}: ${e.message || e}`); }
+      }
+      return { done, failed };
+    }
+    const resultText = (r, pending) => `${r.done.length ? `Posted on ${r.done.map((p) => PLACE[p]).join(' and ')}. ` : ''}${r.failed.length ? `Failed: ${r.failed.join(' | ')}${pending ? '. Still pending there.' : ''}` : ''}`;
+
+    function ready() {
+      const list = h('div'), slot = h('div');
+      let rows = [];
+      async function loadReady() {
+        try {
+          rows = await q(sb.from('social_posts')
+            .select('id,platform,body,source,link_path,link_title,source_name,source_url,review_status,posted_platforms')
+            .eq('status', 'approved').in('platform', ['bluesky', 'facebook']).order('id', { ascending: true }).limit(100));
+          draw();
+        } catch (e) {
+          list.replaceChildren(h('p', { class: 'muted', text: `Could not load the list: ${e.message || e}. Have migrations 0100 and 0101 been run?` }));
+        }
+      }
+      function draw() {
+        list.replaceChildren(rows.length ? h('ul', { class: 'list' }, rows.map(one))
+          : h('p', { class: 'muted', text: 'Nothing approved and waiting. Approve a post on the Media page (Social media posts) and it shows up here.' }));
+      }
+      onChange.push(draw);
+      function one(x) {
+        const text = textOf(x), n = charsOf(text);
+        const had = new Set(x.posted_platforms || []);
+        // places this click would publish to: ticked, available, and not already done for this item
+        const places = [sel.bs && !had.has('bluesky') ? 'bluesky' : null, sel.fb && fbOk.v && !had.has('facebook') ? 'facebook' : null].filter(Boolean);
+        const overBsky = places.includes('bluesky') && n > 300;
+        const why = overBsky ? `Too long for Bluesky (${n} of 300). Shorten it on the Media page, or untick Bluesky.`
+          : !places.length ? (had.size && (sel.bs || sel.fb) ? 'Already posted on the ticked places.' : 'Tick Bluesky or Facebook above.') : '';
+        const res = h('div');
+        const go = h('button', { class: 'primary', disabled: why ? 'disabled' : null, onclick: action(async () => {
+          if (!confirm(`Publish this now on ${places.map((p) => PLACE[p]).join(' and ')}? It goes live right away.\n\n${text}`)) return;
+          const r = await publish(places, text);
+          const nowHad = [...had, ...r.done];
+          if (r.done.length) {
+            // record what succeeded; the post counts as posted only when every ticked place succeeded
+            const patch = { posted_platforms: nowHad };
+            if (!r.failed.length) patch.status = 'posted';
+            try { await q(sb.from('social_posts').update(patch).eq('id', x.id)); }
+            catch (e) { r.failed.push(`could not save the result: ${e.message || e}`); }
+          }
+          slot.replaceChildren(h('p', { class: r.failed.length ? 'md-warn' : 'tag ok', text: resultText(r, true) }));
           await loadReady();
-        }, res) }, `Post to ${bsky ? 'Bluesky' : 'Facebook'}`);
+        }, slot) }, 'Post');
         return h('li', { class: 'fb-item' },
-          h('div', { class: 'row' }, h('strong', { text: bsky ? 'Bluesky' : 'Facebook' }), h('span', {},
+          h('div', { class: 'row' }, h('span', {},
             x.review_status ? h('span', { class: x.review_status === 'checked' ? 'tag ok' : 'tag warn', text: REVIEW[x.review_status] }) : null, ' ',
-            x.source === 'llm' ? h('span', { class: 'tag', text: 'AI-made: label added' }) : null)),
+            x.source === 'llm' ? h('span', { class: 'tag', text: 'AI-made: label added' }) : null, ' ',
+            had.size ? h('span', { class: 'tag ok', text: `Posted on ${[...had].map((p) => PLACE[p]).join(' and ')}` }) : null)),
           h('p', { class: 'fb-text', text: text }),
           x.source_name ? h('p', { class: 'muted small', text: `Source: ${x.source_name}` }) : null,
-          h('p', { class: tooLong ? 'small md-warn' : 'muted small', text: bsky ? `${n} of 300 characters${tooLong ? '. Too long for Bluesky: shorten it on the Media page.' : '.'}` : `${n} characters.` }),
+          h('p', { class: overBsky ? 'small md-warn' : 'muted small', text: `${n} characters. Bluesky allows 300.` }),
+          why ? h('p', { class: 'small md-warn', text: why }) : null,
           h('div', { class: 'btns' }, go), res);
       }
       loadReady();
       return h('div', { class: 'panel' }, h('h3', { text: 'Ready to post' }),
-        h('p', { class: 'muted small', text: 'Approved posts from the Media page. One click publishes, after a quick confirm. The post is then marked posted with the time and who did it.' }),
+        h('p', { class: 'muted small', text: 'Approved posts from the Media page. One click publishes to the places ticked above, after a quick confirm. A post is marked posted, with the time and who did it, once every ticked place has it.' }),
         list, slot);
     }
 
@@ -209,8 +276,6 @@ function make(ctx) {
       const slot = h('div');
       const box = h('textarea', { rows: '4', maxlength: '5000', 'aria-label': 'New post', placeholder: 'Write a post' });
       const count = h('span', { class: 'muted small' });
-      const onFb = h('input', { type: 'checkbox', id: 'fb-post-fb', checked: 'checked' });
-      const onBs = h('input', { type: 'checkbox', id: 'fb-post-bs', checked: 'checked' });
       const onAi = h('input', { type: 'checkbox', id: 'fb-post-ai' });
       const AI = '\n\n(AI-written)';   // the label our rules require on a post an AI wrote
       const chars = (s) => [...s].length;
@@ -222,33 +287,26 @@ function make(ctx) {
         const text = box.value.trim();
         if (!text) throw new Error('Write something first.');
         const message = withLabel(text);
-        const targets = [onFb.checked ? 'Facebook' : null, onBs.checked ? 'Bluesky' : null].filter(Boolean);
-        if (!targets.length) throw new Error('Pick Facebook, Bluesky, or both.');
-        if (onBs.checked && chars(message) > 300) throw new Error('Bluesky posts are 300 characters at most. Shorten it or untick Bluesky.');
-        if (!confirm(`Publish this now on ${targets.join(' and ')}? It goes live right away.`)) return;
-        const done = [], failed = [];
-        for (const t of targets) {
-          try {
-            const { data, error } = await sb.functions.invoke(t === 'Facebook' ? 'fb-insights' : 'bsky-inbox', { body: { action: 'post', message } });
-            if (error) throw error;
-            if (data && data.ok === false) throw new Error(data.error);
-            done.push(t);
-          } catch (e) { failed.push(`${t}: ${e.message || e}`); }
-        }
-        if (!failed.length) box.value = '';
+        const places = [sel.bs ? 'bluesky' : null, sel.fb && fbOk.v ? 'facebook' : null].filter(Boolean);
+        if (!places.length) throw new Error('Tick Bluesky or Facebook at the top first.');
+        if (places.includes('bluesky') && chars(message) > 300) throw new Error('Bluesky posts are 300 characters at most. Shorten it or untick Bluesky at the top.');
+        if (!confirm(`Publish this now on ${places.map((p) => PLACE[p]).join(' and ')}? It goes live right away.`)) return;
+        const r = await publish(places, message);
+        if (!r.failed.length) box.value = '';
         upd();
-        slot.replaceChildren(h('p', { class: failed.length ? 'muted' : 'tag ok', text: `${done.length ? `Posted on ${done.join(' and ')}. ` : ''}${failed.length ? `Failed: ${failed.join(' | ')}` : ''}` }));
+        slot.replaceChildren(h('p', { class: r.failed.length ? 'md-warn' : 'tag ok', text: resultText(r, false) }));
       }, slot) }, 'Post');
       return h('div', { class: 'panel' }, h('h3', { text: 'New post' }),
-        h('p', { class: 'muted small', text: 'Publishes right away, as the Michi Institute account. Facebook needs the pages_manage_posts permission on the Page token.' }),
+        h('p', { class: 'muted small', text: 'Publishes right away to the places ticked at the top, as the Michi Institute account. Facebook also needs the pages_manage_posts permission on the Page token.' }),
         box, count,
-        h('div', { class: 'btns' }, h('label', {}, onFb, ' Facebook'), ' ', h('label', {}, onBs, ' Bluesky'), ' ', h('label', {}, onAi, ' AI-written (adds the AI label)'), ' ', send), slot);
+        h('div', { class: 'btns' }, h('label', {}, onAi, ' AI-written (adds the AI label)'), ' ', send), slot);
     }
 
     root.append(
       h('h2', { text: 'Post online' }),
-      h('p', { class: 'muted small', text: 'Super admins only. Publish to Bluesky and Facebook, and answer what comes back: approved posts ready to send, a box for a new post, replies and comments in one inbox, and the Facebook Page numbers. Inbox and numbers are pulled on a schedule and when you press Refresh.' }),
-      h('div', { class: 'btns' }, refresh), status, ready(), composer(), body);
+      h('p', { class: 'muted small', text: 'Super admins only. Tick where to post, then send approved posts or write a new one. Below, each network has its own drop-down for replies and incoming items (Facebook also has the Page numbers). Those are pulled on a schedule and when you press Refresh.' }),
+      h('div', { class: 'btns' }, refresh), status, ticksBar, ready(), composer(), body);
+    syncTicks();
     load();
     return root;
   }
