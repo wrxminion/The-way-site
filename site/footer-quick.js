@@ -25,6 +25,27 @@
     artBox.appendChild(about); artBox.appendChild(art);
     nav.appendChild(methods); nav.appendChild(artBox); nav.appendChild(legal);
     footer.appendChild(nav);
+    addDepth(nav);
+  }
+
+  // Depth counter: how many articles the news archive holds. Reads the count the news publisher already writes (/news/data/status.json, archive_items); nothing is shown if it can't be read.
+  function addDepth(nav) {
+    if (!window.fetch || nav.querySelector('.michi-footer-depth')) return;
+    fetch('/news/data/status.json', { credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        var n = d && Number(d.archive_items);
+        if (!n || n < 0 || nav.querySelector('.michi-footer-depth')) return;
+        var a = document.createElement('a');
+        a.className = 'michi-footer-depth'; a.href = '/news/';
+        var num = document.createElement('strong');
+        num.textContent = Math.floor(n).toLocaleString('en-US');
+        a.appendChild(document.createTextNode('Depth: '));
+        a.appendChild(num);
+        a.appendChild(document.createTextNode(' articles saved'));
+        nav.appendChild(a);
+      })
+      .catch(function () {});
   }
   function signedIn() {
     try {
@@ -59,6 +80,6 @@
     function visibility() { bar.hidden = window.scrollY <= 80; }
     window.addEventListener('scroll', visibility, { passive: true }); visibility();
   }
-  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=3'; document.head.appendChild(css);
+  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=4'; document.head.appendChild(css);
   appendFooter(); updateEssayBar();
 })();
