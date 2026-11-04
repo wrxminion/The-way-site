@@ -5,7 +5,7 @@
  "source_ids": [
   "vt-sos"
  ],
- "updated_at": "2026-11-04T14:58:51Z",
+ "updated_at": "2026-11-04T15:04:53Z",
  "certified": false,
  "contests": [
   {
@@ -21,8 +21,8 @@
     {
      "id": "becca-balint",
      "name": "Becca Balint",
-     "party": null,
-     "party_code": "O",
+     "party": "Democratic (per AP)",
+     "party_code": "D",
      "votes": 198668
     },
     {
@@ -43,6 +43,12 @@
    "precincts": {
     "reporting": 0,
     "total": 0
+   },
+   "called": {
+    "winner": "becca-balint",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T00:41:47.560Z",
+    "kind": "ap"
    }
   },
   {
@@ -58,8 +64,8 @@
     {
      "id": "phil-scott",
      "name": "Phil Scott",
-     "party": null,
-     "party_code": "O",
+     "party": "Republican (per AP)",
+     "party_code": "R",
      "votes": 161853
     },
     {
@@ -80,6 +86,12 @@
    "precincts": {
     "reporting": 0,
     "total": 0
+   },
+   "called": {
+    "winner": "phil-scott",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:35:27.269Z",
+    "kind": "ap"
    }
   },
   {
@@ -95,8 +107,8 @@
     {
      "id": "molly-gray",
      "name": "Molly Gray",
-     "party": null,
-     "party_code": "O",
+     "party": "Democratic (per AP)",
+     "party_code": "D",
      "votes": 190908
     },
     {
@@ -117,6 +129,12 @@
    "precincts": {
     "reporting": 0,
     "total": 0
+   },
+   "called": {
+    "winner": "molly-gray",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T07:31:44.030Z",
+    "kind": "ap"
    }
   },
   {
@@ -169,8 +187,8 @@
     {
      "id": "sarah-copeland-hanzas",
      "name": "Sarah Copeland Hanzas",
-     "party": null,
-     "party_code": "O",
+     "party": "Democratic (per AP)",
+     "party_code": "D",
      "votes": 174633
     },
     {
@@ -191,6 +209,12 @@
    "precincts": {
     "reporting": 0,
     "total": 0
+   },
+   "called": {
+    "winner": "sarah-copeland-hanzas",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T07:31:05.716Z",
+    "kind": "ap"
    }
   },
   {
@@ -243,8 +267,8 @@
     {
      "id": "charity-r-clark",
      "name": "Charity R. Clark",
-     "party": null,
-     "party_code": "O",
+     "party": "Democratic (per AP)",
+     "party_code": "D",
      "votes": 200391
     },
     {
@@ -265,6 +289,12 @@
    "precincts": {
     "reporting": 0,
     "total": 0
+   },
+   "called": {
+    "winner": "charity-r-clark",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T07:30:32.800Z",
+    "kind": "ap"
    }
   },
   {
@@ -2121,18 +2151,18 @@
      "votes": 1891
     },
     {
+     "id": "sarah-kittel",
+     "name": "Sarah Kittel",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
      "id": "alton-bryce",
      "name": "Alton Bryce",
      "party": null,
      "party_code": "O",
-     "votes": 0
-    },
-    {
-     "id": "brian-pomwitz",
-     "name": "Brian Pomwitz",
-     "party": null,
-     "party_code": "O",
-     "votes": 0
+     "votes": 1
     }
    ],
    "precincts": {
@@ -2407,7 +2437,7 @@
      "name": "Pat Barnes",
      "party": null,
      "party_code": "O",
-     "votes": 0
+     "votes": 1
     }
    ],
    "precincts": {
