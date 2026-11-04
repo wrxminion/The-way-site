@@ -3,9 +3,10 @@
  "scope": "state-tn",
  "label": "Tennessee",
  "source_ids": [
+  "tn-leg",
   "tn-sos"
  ],
- "updated_at": "2026-11-04T13:57:33Z",
+ "updated_at": "2026-11-04T14:35:03Z",
  "certified": false,
  "contests": [
   {
@@ -689,6 +690,3419 @@
    "precincts": {
     "reporting": 15,
     "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 1",
+   "district": null,
+   "title": "Senate District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "j-adam-lowe",
+     "name": "J. Adam Lowe",
+     "party": "R",
+     "party_code": "R",
+     "votes": 40401
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 3",
+   "district": null,
+   "title": "Senate District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rusty-crowe",
+     "name": "Rusty Crowe",
+     "party": "R",
+     "party_code": "R",
+     "votes": 39006
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 5",
+   "district": null,
+   "title": "Senate District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jimmy-matlock",
+     "name": "Jimmy Matlock",
+     "party": "R",
+     "party_code": "R",
+     "votes": 41483
+    },
+    {
+     "id": "david-miller",
+     "name": "David Miller",
+     "party": "D",
+     "party_code": "D",
+     "votes": 26347
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 7",
+   "district": null,
+   "title": "Senate District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-m-briggs",
+     "name": "Richard M. Briggs",
+     "party": "R",
+     "party_code": "R",
+     "votes": 33498
+    },
+    {
+     "id": "bryan-langan",
+     "name": "Bryan Langan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 30044
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 9",
+   "district": null,
+   "title": "Senate District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-southerland",
+     "name": "Steve Southerland",
+     "party": "R",
+     "party_code": "R",
+     "votes": 41139
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 11",
+   "district": null,
+   "title": "Senate District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bo-watson",
+     "name": "Bo Watson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 41395
+    },
+    {
+     "id": "tim-roberts",
+     "name": "Tim Roberts",
+     "party": "D",
+     "party_code": "D",
+     "votes": 36789
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 13",
+   "district": null,
+   "title": "Senate District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dawn-white",
+     "name": "Dawn White",
+     "party": "R",
+     "party_code": "R",
+     "votes": 33424
+    },
+    {
+     "id": "angela-evans-wynn",
+     "name": "Angela Evans Wynn",
+     "party": "D",
+     "party_code": "D",
+     "votes": 30981
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 15",
+   "district": null,
+   "title": "Senate District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-bailey",
+     "name": "Paul Bailey",
+     "party": "R",
+     "party_code": "R",
+     "votes": 47612
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 17",
+   "district": null,
+   "title": "Senate District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-pody",
+     "name": "Mark Pody",
+     "party": "R",
+     "party_code": "R",
+     "votes": 38466
+    },
+    {
+     "id": "lindsey-patrick-wright",
+     "name": "Lindsey Patrick-Wright",
+     "party": "D",
+     "party_code": "D",
+     "votes": 34517
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 19",
+   "district": null,
+   "title": "Senate District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charlane-oliver",
+     "name": "Charlane Oliver",
+     "party": "D",
+     "party_code": "D",
+     "votes": 46773
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 21",
+   "district": null,
+   "title": "Senate District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-yarbro",
+     "name": "Jeff Yarbro",
+     "party": "D",
+     "party_code": "D",
+     "votes": 46432
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 23",
+   "district": null,
+   "title": "Senate District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kerry-roberts",
+     "name": "Kerry Roberts",
+     "party": "R",
+     "party_code": "R",
+     "votes": 43196
+    },
+    {
+     "id": "david-lee-marcum",
+     "name": "David Lee Marcum",
+     "party": "I",
+     "party_code": "O",
+     "votes": 18947
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 25",
+   "district": null,
+   "title": "Senate District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ed-jackson",
+     "name": "Ed Jackson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 35953
+    }
+   ],
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 27",
+   "district": null,
+   "title": "Senate District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jack-johnson",
+     "name": "Jack Johnson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 55816
+    },
+    {
+     "id": "david-a-hardy",
+     "name": "David A Hardy",
+     "party": "D",
+     "party_code": "D",
+     "votes": 35465
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 29",
+   "district": null,
+   "title": "Senate District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "raumesh-akbari",
+     "name": "Raumesh Akbari",
+     "party": "D",
+     "party_code": "D",
+     "votes": 41625
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 31",
+   "district": null,
+   "title": "Senate District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brent-taylor",
+     "name": "Brent Taylor",
+     "party": "R",
+     "party_code": "R",
+     "votes": 38004
+    },
+    {
+     "id": "david-weatherspoon",
+     "name": "David Weatherspoon",
+     "party": "D",
+     "party_code": "D",
+     "votes": 35234
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-senate-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Senate District 33",
+   "district": null,
+   "title": "Senate District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "london-lamar",
+     "name": "London Lamar",
+     "party": "D",
+     "party_code": "D",
+     "votes": 39468
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 1",
+   "district": null,
+   "title": "House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jessica-means",
+     "name": "Jessica Means",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13227
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 2",
+   "district": null,
+   "title": "House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gary-stidham",
+     "name": "Gary Stidham",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14166
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 3",
+   "district": null,
+   "title": "House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "timothy-hill",
+     "name": "Timothy Hill",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15151
+    },
+    {
+     "id": "lori-love",
+     "name": "Lori Love",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4563
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 4",
+   "district": null,
+   "title": "House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "renea-jones",
+     "name": "Renea Jones",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14874
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 5",
+   "district": null,
+   "title": "House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-b-hawk",
+     "name": "David B. Hawk",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14813
+    },
+    {
+     "id": "catherine-bacon",
+     "name": "Catherine Bacon",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4467
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 6",
+   "district": null,
+   "title": "House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-hicks",
+     "name": "Tim Hicks",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13879
+    },
+    {
+     "id": "brad-batt",
+     "name": "Brad Batt",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7947
+    },
+    {
+     "id": "rodger-broadwater",
+     "name": "Rodger Broadwater",
+     "party": "I",
+     "party_code": "O",
+     "votes": 675
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 7",
+   "district": null,
+   "title": "House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rebecca-keefauver-alexander",
+     "name": "Rebecca Keefauver Alexander",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11585
+    },
+    {
+     "id": "sarah-jayne-della-vecchia",
+     "name": "Sarah Jayne Della Vecchia",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7154
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 8",
+   "district": null,
+   "title": "House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jordan-henderson",
+     "name": "Jordan Henderson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15800
+    },
+    {
+     "id": "hilary-trudell",
+     "name": "Hilary Trudell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7150
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 9",
+   "district": null,
+   "title": "House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gary-w-hicks-jr",
+     "name": "Gary W Hicks Jr",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14301
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 10",
+   "district": null,
+   "title": "House District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rick-eldridge",
+     "name": "Rick Eldridge",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13437
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 11",
+   "district": null,
+   "title": "House District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kenny-cody",
+     "name": "Kenny Cody",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13948
+    },
+    {
+     "id": "sheila-grooms-mcmahan",
+     "name": "Sheila Grooms McMahan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4712
+    },
+    {
+     "id": "larry-jeremiah-brown",
+     "name": "Larry Jeremiah Brown",
+     "party": "I",
+     "party_code": "O",
+     "votes": 392
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 12",
+   "district": null,
+   "title": "House District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "fred-a-atchley",
+     "name": "Fred A. Atchley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12608
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 13",
+   "district": null,
+   "title": "House District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brett-windrow",
+     "name": "Brett Windrow",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9901
+    },
+    {
+     "id": "robert-stevens",
+     "name": "Robert Stevens",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9345
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 14",
+   "district": null,
+   "title": "House District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-zachary",
+     "name": "Jason Zachary",
+     "party": "R",
+     "party_code": "R",
+     "votes": 17097
+    },
+    {
+     "id": "lindsay-young-honaker",
+     "name": "Lindsay Young Honaker",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13543
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 15",
+   "district": null,
+   "title": "House District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sam-mckenzie",
+     "name": "Sam McKenzie",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10925
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 16",
+   "district": null,
+   "title": "House District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michele-carringer",
+     "name": "Michele Carringer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12947
+    },
+    {
+     "id": "eliza-boles",
+     "name": "Eliza Boles",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8800
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 17",
+   "district": null,
+   "title": "House District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-ellis-farmer",
+     "name": "Andrew Ellis Farmer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13700
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 18",
+   "district": null,
+   "title": "House District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bryan-goldberg",
+     "name": "Bryan Goldberg",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14020
+    },
+    {
+     "id": "elaine-davis",
+     "name": "Elaine Davis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11452
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 19",
+   "district": null,
+   "title": "House District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dave-wright",
+     "name": "Dave Wright",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14086
+    },
+    {
+     "id": "jenny-fowler",
+     "name": "Jenny Fowler",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7414
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 20",
+   "district": null,
+   "title": "House District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-stinnett",
+     "name": "Tom Stinnett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13802
+    },
+    {
+     "id": "karen-gertz",
+     "name": "Karen Gertz",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7121
+    },
+    {
+     "id": "jeff-cog-coggin",
+     "name": "Jeff \"Cog\" Coggin",
+     "party": "I",
+     "party_code": "O",
+     "votes": 759
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 21",
+   "district": null,
+   "title": "House District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lowell-russell",
+     "name": "Lowell Russell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20778
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 22",
+   "district": null,
+   "title": "House District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dan-howell",
+     "name": "Dan Howell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 16532
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 23",
+   "district": null,
+   "title": "House District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-cochran",
+     "name": "Mark Cochran",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13248
+    },
+    {
+     "id": "jeremy-bromwell",
+     "name": "Jeremy Bromwell",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2846
+    },
+    {
+     "id": "jason-hitt",
+     "name": "Jason Hitt",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1006
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 24",
+   "district": null,
+   "title": "House District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-raper",
+     "name": "Kevin Raper",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11485
+    },
+    {
+     "id": "daniel-f-jones",
+     "name": "Daniel F. Jones",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5368
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 25",
+   "district": null,
+   "title": "House District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cameron-sexton",
+     "name": "Cameron Sexton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20492
+    },
+    {
+     "id": "monica-mowdy",
+     "name": "Monica Mowdy",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6139
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 26",
+   "district": null,
+   "title": "House District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-martin",
+     "name": "Greg Martin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18164
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 27",
+   "district": null,
+   "title": "House District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michele-reneau",
+     "name": "Michele Reneau",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15088
+    },
+    {
+     "id": "paige-quirin",
+     "name": "Paige Quirin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12999
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 28",
+   "district": null,
+   "title": "House District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yusuf-a-hakeem",
+     "name": "Yusuf A. Hakeem",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13008
+    },
+    {
+     "id": "demetrus-meechie-coonrod",
+     "name": "Demetrus \"Meechie\" Coonrod",
+     "party": "I",
+     "party_code": "O",
+     "votes": 3441
+    },
+    {
+     "id": "johnny-horne",
+     "name": "Johnny Horne",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1526
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 29",
+   "district": null,
+   "title": "House District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-vital",
+     "name": "Greg Vital",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15585
+    },
+    {
+     "id": "ryan-v-scofield",
+     "name": "Ryan V. Scofield",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9606
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 30",
+   "district": null,
+   "title": "House District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "esther-helton-haynes",
+     "name": "Esther Helton Haynes",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11611
+    },
+    {
+     "id": "art-rymer",
+     "name": "Art Rymer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11071
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 31",
+   "district": null,
+   "title": "House District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "j-swafford",
+     "name": "J. Swafford",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13722
+    },
+    {
+     "id": "michael-woodlee",
+     "name": "Michael Woodlee",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4696
+    },
+    {
+     "id": "randy-a-sharp",
+     "name": "Randy A Sharp",
+     "party": "I",
+     "party_code": "O",
+     "votes": 321
+    },
+    {
+     "id": "keith-nolan",
+     "name": "Keith Nolan",
+     "party": "I",
+     "party_code": "O",
+     "votes": 292
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 32",
+   "district": null,
+   "title": "House District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jack-l-stockton",
+     "name": "Jack L. Stockton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 16385
+    },
+    {
+     "id": "ali-simpson",
+     "name": "Ali Simpson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6514
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 33",
+   "district": null,
+   "title": "House District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rick-scarbrough",
+     "name": "Rick Scarbrough",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11571
+    },
+    {
+     "id": "anne-backus",
+     "name": "Anne Backus",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8631
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 34",
+   "district": null,
+   "title": "House District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "owen-farnsworth",
+     "name": "Owen Farnsworth",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10751
+    },
+    {
+     "id": "tim-rudd",
+     "name": "Tim Rudd",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9938
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 35",
+   "district": null,
+   "title": "House District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-slater",
+     "name": "William Slater",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12503
+    },
+    {
+     "id": "phil-barnes",
+     "name": "Phil Barnes",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7489
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 36",
+   "district": null,
+   "title": "House District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "noah-smith",
+     "name": "Noah Smith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13056
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 37",
+   "district": null,
+   "title": "House District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charlie-baum",
+     "name": "Charlie Baum",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9596
+    },
+    {
+     "id": "mary-ann-young",
+     "name": "Mary Ann Young",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8536
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 38",
+   "district": null,
+   "title": "House District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelly-t-keisling",
+     "name": "Kelly T Keisling",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12888
+    },
+    {
+     "id": "seth-mcmillan",
+     "name": "Seth McMillan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2943
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 39",
+   "district": null,
+   "title": "House District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "iris-rudder",
+     "name": "Iris Rudder",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14457
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 40",
+   "district": null,
+   "title": "House District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-hale",
+     "name": "Michael Hale",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14592
+    },
+    {
+     "id": "daniel-t-hawthorne",
+     "name": "Daniel T. Hawthorne",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4323
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 41",
+   "district": null,
+   "title": "House District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ed-butler",
+     "name": "Ed Butler",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13744
+    },
+    {
+     "id": "r-jason-goodman",
+     "name": "R. Jason Goodman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4268
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 42",
+   "district": null,
+   "title": "House District 42",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-d-williams",
+     "name": "Ryan D. Williams",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13093
+    },
+    {
+     "id": "trenton-tyler-strode",
+     "name": "Trenton Tyler Strode",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7319
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 43",
+   "district": null,
+   "title": "House District 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-sherrell",
+     "name": "Paul Sherrell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11695
+    },
+    {
+     "id": "samantha-petit",
+     "name": "Samantha Petit",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5508
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-44",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 44",
+   "district": null,
+   "title": "House District 44",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-lamberth",
+     "name": "William Lamberth",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14924
+    },
+    {
+     "id": "latoya-holcomb",
+     "name": "Latoya Holcomb",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7568
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 45",
+   "district": null,
+   "title": "House District 45",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-stewart",
+     "name": "Brian Stewart",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12570
+    },
+    {
+     "id": "mandy-cook",
+     "name": "Mandy Cook",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9177
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 46",
+   "district": null,
+   "title": "House District 46",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clark-boyd",
+     "name": "Clark Boyd",
+     "party": "R",
+     "party_code": "R",
+     "votes": 17187
+    },
+    {
+     "id": "dominic-howard",
+     "name": "Dominic Howard",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8951
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 47",
+   "district": null,
+   "title": "House District 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rush-bricken",
+     "name": "Rush Bricken",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12775
+    },
+    {
+     "id": "mike-stein",
+     "name": "Mike Stein",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5503
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-48",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 48",
+   "district": null,
+   "title": "House District 48",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bryan-terry",
+     "name": "Bryan Terry",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11849
+    },
+    {
+     "id": "matt-ferry",
+     "name": "Matt Ferry",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9694
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 49",
+   "district": null,
+   "title": "House District 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "connie-casha",
+     "name": "Connie Casha",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10417
+    },
+    {
+     "id": "mike-sparks",
+     "name": "Mike Sparks",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8498
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-50",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 50",
+   "district": null,
+   "title": "House District 50",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bo-mitchell",
+     "name": "Bo Mitchell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 15478
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-51",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 51",
+   "district": null,
+   "title": "House District 51",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "aftyn-behn",
+     "name": "Aftyn Behn",
+     "party": "D",
+     "party_code": "D",
+     "votes": 22630
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-52",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 52",
+   "district": null,
+   "title": "House District 52",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "justin-jones",
+     "name": "Justin Jones",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11922
+    },
+    {
+     "id": "michele-vetter",
+     "name": "Michele Vetter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2763
+    },
+    {
+     "id": "martez-coleman",
+     "name": "Martez Coleman",
+     "party": "I",
+     "party_code": "O",
+     "votes": 247
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-53",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 53",
+   "district": null,
+   "title": "House District 53",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-l-powell",
+     "name": "Jason L Powell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13501
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-54",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 54",
+   "district": null,
+   "title": "House District 54",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vincent-dixie",
+     "name": "Vincent Dixie",
+     "party": "D",
+     "party_code": "D",
+     "votes": 19690
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-55",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 55",
+   "district": null,
+   "title": "House District 55",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-ray-clemmons",
+     "name": "John Ray Clemmons",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10856
+    },
+    {
+     "id": "jayla-thomas",
+     "name": "Jayla Thomas",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1918
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-56",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 56",
+   "district": null,
+   "title": "House District 56",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-freeman",
+     "name": "Bob Freeman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 20492
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-57",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 57",
+   "district": null,
+   "title": "House District 57",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "susan-m-lynn",
+     "name": "Susan M Lynn",
+     "party": "R",
+     "party_code": "R",
+     "votes": 16323
+    },
+    {
+     "id": "matt-burchfield",
+     "name": "Matt Burchfield",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12189
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-58",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 58",
+   "district": null,
+   "title": "House District 58",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "harold-m-love-jr",
+     "name": "Harold M. Love, Jr.",
+     "party": "D",
+     "party_code": "D",
+     "votes": 15710
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-59",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 59",
+   "district": null,
+   "title": "House District 59",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-proctor",
+     "name": "Mark Proctor",
+     "party": "D",
+     "party_code": "D",
+     "votes": 18372
+    },
+    {
+     "id": "bill-hancock",
+     "name": "Bill Hancock",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13571
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-60",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 60",
+   "district": null,
+   "title": "House District 60",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shaundelle-brooks",
+     "name": "Shaundelle Brooks",
+     "party": "D",
+     "party_code": "D",
+     "votes": 15080
+    },
+    {
+     "id": "eva-angelina-romero",
+     "name": "Eva Angelina Romero",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8517
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-61",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 61",
+   "district": null,
+   "title": "House District 61",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gino-bulso",
+     "name": "Gino Bulso",
+     "party": "R",
+     "party_code": "R",
+     "votes": 16707
+    },
+    {
+     "id": "becca-ripley",
+     "name": "Becca Ripley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12508
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-62",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 62",
+   "district": null,
+   "title": "House District 62",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pat-marsh",
+     "name": "Pat Marsh",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13527
+    },
+    {
+     "id": "brieanna-l-akers",
+     "name": "Brieanna L Akers",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5243
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-63",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 63",
+   "district": null,
+   "title": "House District 63",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jake-mccalmon",
+     "name": "Jake McCalmon",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18760
+    },
+    {
+     "id": "laura-andreson",
+     "name": "Laura Andreson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11991
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-64",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 64",
+   "district": null,
+   "title": "House District 64",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-cepicky",
+     "name": "Scott Cepicky",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15364
+    },
+    {
+     "id": "craig-d-apolito",
+     "name": "Craig D'Apolito",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9305
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-65",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 65",
+   "district": null,
+   "title": "House District 65",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lee-reeves",
+     "name": "Lee Reeves",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18552
+    },
+    {
+     "id": "julian-herbert-pierre-griffin",
+     "name": "Julian Herbert Pierre-Griffin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11067
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-66",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 66",
+   "district": null,
+   "title": "House District 66",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sabi-doc-kumar",
+     "name": "Sabi \"Doc\" Kumar",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14892
+    },
+    {
+     "id": "tamara-bavendam",
+     "name": "Tamara Bavendam",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7626
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-67",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 67",
+   "district": null,
+   "title": "House District 67",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ronnie-l-glynn",
+     "name": "Ronnie L. Glynn",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9754
+    },
+    {
+     "id": "chris-lanier",
+     "name": "Chris Lanier",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5739
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-68",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 68",
+   "district": null,
+   "title": "House District 68",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "aron-maberry",
+     "name": "Aron Maberry",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14152
+    },
+    {
+     "id": "garfield-scott",
+     "name": "Garfield Scott",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10318
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-69",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 69",
+   "district": null,
+   "title": "House District 69",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jody-barrett",
+     "name": "Jody Barrett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13094
+    },
+    {
+     "id": "rachael-murray",
+     "name": "Rachael Murray",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5053
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-70",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 70",
+   "district": null,
+   "title": "House District 70",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clay-doggett",
+     "name": "Clay Doggett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14749
+    },
+    {
+     "id": "rayanne-moos",
+     "name": "Rayanne Moos",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4244
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-71",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 71",
+   "district": null,
+   "title": "House District 71",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kip-capley",
+     "name": "Kip Capley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15392
+    },
+    {
+     "id": "matt-day",
+     "name": "Matt Day",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5429
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-72",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 72",
+   "district": null,
+   "title": "House District 72",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kirk-haston",
+     "name": "Kirk Haston",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14343
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-73",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 73",
+   "district": null,
+   "title": "House District 73",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-todd",
+     "name": "Chris Todd",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13700
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-74",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 74",
+   "district": null,
+   "title": "House District 74",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jay-d-reedy",
+     "name": "Jay D. Reedy",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14630
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-75",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 75",
+   "district": null,
+   "title": "House District 75",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "allie-phillips",
+     "name": "Allie Phillips",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7822
+    },
+    {
+     "id": "michael-lankford",
+     "name": "Michael Lankford",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6396
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-76",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 76",
+   "district": null,
+   "title": "House District 76",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tandy-darby",
+     "name": "Tandy Darby",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13927
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-77",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 77",
+   "district": null,
+   "title": "House District 77",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rusty-grills",
+     "name": "Rusty Grills",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11442
+    },
+    {
+     "id": "erin-jerrod-reid",
+     "name": "Erin Jerrod Reid",
+     "party": "I",
+     "party_code": "O",
+     "votes": 3356
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-78",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 78",
+   "district": null,
+   "title": "House District 78",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "perry-keenan",
+     "name": "Perry Keenan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13460
+    },
+    {
+     "id": "hillary-capes-gwinn",
+     "name": "Hillary Capes-Gwinn",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7530
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-79",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 79",
+   "district": null,
+   "title": "House District 79",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brock-martin",
+     "name": "Brock Martin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11537
+    },
+    {
+     "id": "kirk-d-carter",
+     "name": "Kirk D Carter",
+     "party": "I",
+     "party_code": "O",
+     "votes": 3801
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-80",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 80",
+   "district": null,
+   "title": "House District 80",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrea-bond-johnson",
+     "name": "Andrea Bond Johnson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9180
+    },
+    {
+     "id": "julian-a-mctizic",
+     "name": "Julian A. McTizic",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5404
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-81",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 81",
+   "district": null,
+   "title": "House District 81",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brett-a-giannini",
+     "name": "Brett A. Giannini",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12980
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-82",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 82",
+   "district": null,
+   "title": "House District 82",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-hurt",
+     "name": "Chris Hurt",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12157
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-83",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 83",
+   "district": null,
+   "title": "House District 83",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-white",
+     "name": "Mark White",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13238
+    },
+    {
+     "id": "margaret-price",
+     "name": "Margaret Price",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12903
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-84",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 84",
+   "district": null,
+   "title": "House District 84",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-szalaj",
+     "name": "Matthew Szalaj",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10900
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-85",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 85",
+   "district": null,
+   "title": "House District 85",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jesse-chism",
+     "name": "Jesse Chism",
+     "party": "D",
+     "party_code": "D",
+     "votes": 20557
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-86",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 86",
+   "district": null,
+   "title": "House District 86",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "justin-j-pearson",
+     "name": "Justin J. Pearson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13515
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-87",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 87",
+   "district": null,
+   "title": "House District 87",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "karen-camper",
+     "name": "Karen Camper",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11516
+    },
+    {
+     "id": "reggie-william-hall",
+     "name": "Reggie William Hall",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1265
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-88",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 88",
+   "district": null,
+   "title": "House District 88",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "larry-j-miller",
+     "name": "Larry J. Miller",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13129
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-89",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 89",
+   "district": null,
+   "title": "House District 89",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "justin-lafferty",
+     "name": "Justin Lafferty",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13663
+    },
+    {
+     "id": "randy-debord",
+     "name": "Randy DeBord",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11088
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-90",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 90",
+   "district": null,
+   "title": "House District 90",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gloria-johnson",
+     "name": "Gloria Johnson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12928
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-91",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 91",
+   "district": null,
+   "title": "House District 91",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "torrey-c-harris",
+     "name": "Torrey C. Harris",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14186
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-92",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 92",
+   "district": null,
+   "title": "House District 92",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "todd-warner",
+     "name": "Todd Warner",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13512
+    },
+    {
+     "id": "teri-mai",
+     "name": "Teri Mai",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8085
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-94",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 94",
+   "district": null,
+   "title": "House District 94",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ron-m-gant",
+     "name": "Ron M. Gant",
+     "party": "R",
+     "party_code": "R",
+     "votes": 16924
+    },
+    {
+     "id": "francine-johnson",
+     "name": "Francine Johnson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6745
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-95",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 95",
+   "district": null,
+   "title": "House District 95",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-vaughan",
+     "name": "Kevin Vaughan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18483
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-96",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 96",
+   "district": null,
+   "title": "House District 96",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "telisa-franklin",
+     "name": "Telisa Franklin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14941
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-97",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 97",
+   "district": null,
+   "title": "House District 97",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jesse-huseth",
+     "name": "Jesse Huseth",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13895
+    },
+    {
+     "id": "john-gillespie",
+     "name": "John Gillespie",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10502
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-98",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 98",
+   "district": null,
+   "title": "House District 98",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "antonio-parkinson",
+     "name": "Antonio Parkinson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13175
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-house-district-99",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "House District 99",
+   "district": null,
+   "title": "House District 99",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-leatherwood",
+     "name": "Tom Leatherwood",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15003
+    },
+    {
+     "id": "william-p-mouzon",
+     "name": "William P Mouzon",
+     "party": "I",
+     "party_code": "O",
+     "votes": 8655
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-constitutional-amendment-1",
+   "kind": "measure",
+   "level": "state",
+   "state": "tn",
+   "office": "Constitutional Amendment 1",
+   "district": null,
+   "title": "Constitutional Amendment 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1330845
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 651321
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 95,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-constitutional-amendment-2",
+   "kind": "measure",
+   "level": "state",
+   "state": "tn",
+   "office": "Constitutional Amendment 2",
+   "district": null,
+   "title": "Constitutional Amendment 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1334067
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 664715
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 95,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-constitutional-amendment-3",
+   "kind": "measure",
+   "level": "state",
+   "state": "tn",
+   "office": "Constitutional Amendment 3",
+   "district": null,
+   "title": "Constitutional Amendment 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1526306
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 480508
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 95,
     "unit": "counties"
    }
   }
