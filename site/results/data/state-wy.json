@@ -5,7 +5,7 @@
  "source_ids": [
   "wy-sos"
  ],
- "updated_at": "2026-11-04T15:04:54Z",
+ "updated_at": "2026-11-04T15:11:23Z",
  "certified": false,
  "contests": [
   {
@@ -200,6 +200,61 @@
      "party": "R",
      "party_code": "R",
      "votes": 155787
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wy-state-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wy",
+   "office": "State Treasurer",
+   "district": null,
+   "title": "State Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "curt-meier",
+     "name": "Curt Meier",
+     "party": "R",
+     "party_code": "R",
+     "votes": 155009
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wy-superintendent-of-public-instruction",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wy",
+   "office": "Superintendent of Public Instruction",
+   "district": null,
+   "title": "Superintendent of Public Instruction",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-harshman",
+     "name": "Steve Harshman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 136744
+    },
+    {
+     "id": "ana-cordova",
+     "name": "Ana Cordova",
+     "party": "D",
+     "party_code": "D",
+     "votes": 45318
     }
    ],
    "precincts": {
