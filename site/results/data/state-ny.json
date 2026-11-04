@@ -1,0 +1,43 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-ny",
+ "label": "New York",
+ "source_ids": [
+  "ny-boe"
+ ],
+ "updated_at": "2026-11-04T13:46:30Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ny-governor-and-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ny",
+   "office": "Governor and Lieutenant Governor",
+   "district": null,
+   "title": "Governor and Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kathy-c-hochul-adrienne-e-adams",
+     "name": "Kathy C. Hochul / Adrienne E. Adams",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3481906
+    },
+    {
+     "id": "bruce-a-blakeman-todd-hood",
+     "name": "Bruce A. Blakeman / Todd Hood",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2328031
+    }
+   ],
+   "precincts": {
+    "reporting": 12144,
+    "total": 13187,
+    "unit": "election districts"
+   }
+  }
+ ]
+}

@@ -1,0 +1,188 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-wy",
+ "label": "Wyoming",
+ "source_ids": [
+  "wy-sos"
+ ],
+ "updated_at": "2026-11-04T13:46:30Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "wy-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wy",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "harriet-hageman",
+     "name": "Harriet Hageman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 122157
+    },
+    {
+     "id": "james-byrd",
+     "name": "James Byrd",
+     "party": "D",
+     "party_code": "D",
+     "votes": 65097
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wy-united-states-house-of-representatives-at-large",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wy",
+   "office": "U.S. House (at-large)",
+   "district": null,
+   "title": "U.S. House (at-large)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chuck-gray",
+     "name": "Chuck Gray",
+     "party": "R",
+     "party_code": "R",
+     "votes": 99891
+    },
+    {
+     "id": "lisa-kinney",
+     "name": "Lisa Kinney",
+     "party": "D",
+     "party_code": "D",
+     "votes": 61684
+    },
+    {
+     "id": "shawn-johnson",
+     "name": "Shawn Johnson",
+     "party": "L",
+     "party_code": "O",
+     "votes": 13665
+    },
+    {
+     "id": "jeffrey-haggit",
+     "name": "Jeffrey Haggit",
+     "party": "C",
+     "party_code": "O",
+     "votes": 7960
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wy-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wy",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-barlow",
+     "name": "Eric Barlow",
+     "party": "R",
+     "party_code": "R",
+     "votes": 128480
+    },
+    {
+     "id": "kenneth-r-casner",
+     "name": "Kenneth R. Casner",
+     "party": "D",
+     "party_code": "D",
+     "votes": 27469
+    },
+    {
+     "id": "rebecca-bextel",
+     "name": "Rebecca Bextel",
+     "party": "C",
+     "party_code": "O",
+     "votes": 31438
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wy-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wy",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-short",
+     "name": "Robert Short",
+     "party": "R",
+     "party_code": "R",
+     "votes": 124924
+    },
+    {
+     "id": "bryan-mccarty",
+     "name": "Bryan McCarty",
+     "party": "D",
+     "party_code": "D",
+     "votes": 43872
+    },
+    {
+     "id": "tamara-trujillo",
+     "name": "Tamara Trujillo",
+     "party": "C",
+     "party_code": "O",
+     "votes": 15504
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wy-state-auditor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "wy",
+   "office": "State Auditor",
+   "district": null,
+   "title": "State Auditor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristi-racines",
+     "name": "Kristi Racines",
+     "party": "R",
+     "party_code": "R",
+     "votes": 155787
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "counties"
+   }
+  }
+ ]
+}

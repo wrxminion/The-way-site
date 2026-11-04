@@ -1,0 +1,399 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-ct",
+ "label": "Connecticut",
+ "source_ids": [
+  "ct-sots"
+ ],
+ "updated_at": "2026-11-04T13:46:30Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ct-governor-and-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ct",
+   "office": "Governor and Lieutenant Governor",
+   "district": null,
+   "title": "Governor and Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ned-lamont-and-susan-bysiewicz",
+     "name": "Ned Lamont and Susan Bysiewicz",
+     "party": null,
+     "party_code": "O",
+     "votes": 672431
+    },
+    {
+     "id": "ryan-fazio-and-matt-corey",
+     "name": "Ryan Fazio and Matt Corey",
+     "party": null,
+     "party_code": "O",
+     "votes": 479667
+    },
+    {
+     "id": "zenobia-adgers-and-rick-adgers",
+     "name": "Zenobia Adgers and Rick Adgers",
+     "party": null,
+     "party_code": "O",
+     "votes": 19
+    },
+    {
+     "id": "christian-noe-and-michael-s-grant",
+     "name": "Christian Noe and Michael S. Grant",
+     "party": null,
+     "party_code": "O",
+     "votes": 11
+    },
+    {
+     "id": "l-lee-whitnum-and-david-spirt",
+     "name": "L. Lee Whitnum and David Spirt",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "ct-secretary-of-the-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ct",
+   "office": "Secretary of the State",
+   "district": null,
+   "title": "Secretary of the State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-thomas",
+     "name": "Stephanie Thomas",
+     "party": null,
+     "party_code": "O",
+     "votes": 702603
+    },
+    {
+     "id": "peter-lumaj",
+     "name": "Peter Lumaj",
+     "party": null,
+     "party_code": "O",
+     "votes": 422170
+    },
+    {
+     "id": "matthew-hallock",
+     "name": "Matthew Hallock",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "ct-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ct",
+   "office": "Treasurer",
+   "district": null,
+   "title": "Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "erick-russell",
+     "name": "Erick Russell",
+     "party": null,
+     "party_code": "O",
+     "votes": 666214
+    },
+    {
+     "id": "fred-wilms",
+     "name": "Fred Wilms",
+     "party": null,
+     "party_code": "O",
+     "votes": 458403
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "ct-comptroller",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ct",
+   "office": "Comptroller",
+   "district": null,
+   "title": "Comptroller",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sean-scanlon",
+     "name": "Sean Scanlon",
+     "party": null,
+     "party_code": "O",
+     "votes": 695475
+    },
+    {
+     "id": "jennifer-s-tooker",
+     "name": "Jennifer S. Tooker",
+     "party": null,
+     "party_code": "O",
+     "votes": 424689
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "ct-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ct",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-tong",
+     "name": "William Tong",
+     "party": null,
+     "party_code": "O",
+     "votes": 701227
+    },
+    {
+     "id": "john-bolton",
+     "name": "John Bolton",
+     "party": null,
+     "party_code": "O",
+     "votes": 423420
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "ct-united-states-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ct",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "luke-bronin",
+     "name": "Luke Bronin",
+     "party": null,
+     "party_code": "O",
+     "votes": 133941
+    },
+    {
+     "id": "amy-chai",
+     "name": "Amy Chai",
+     "party": null,
+     "party_code": "O",
+     "votes": 70199
+    },
+    {
+     "id": "mary-l-sanders",
+     "name": "Mary L. Sanders",
+     "party": null,
+     "party_code": "O",
+     "votes": 3428
+    },
+    {
+     "id": "mark-stewart-greenstein",
+     "name": "Mark Stewart Greenstein",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "ct-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ct",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joe-courtney",
+     "name": "Joe Courtney",
+     "party": null,
+     "party_code": "O",
+     "votes": 145456
+    },
+    {
+     "id": "george-patrick-austin",
+     "name": "George Patrick Austin",
+     "party": null,
+     "party_code": "O",
+     "votes": 92121
+    },
+    {
+     "id": "kyle-gauck",
+     "name": "Kyle Gauck",
+     "party": null,
+     "party_code": "O",
+     "votes": 27
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "ct-united-states-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ct",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rosa-l-delauro",
+     "name": "Rosa L. DeLauro",
+     "party": null,
+     "party_code": "O",
+     "votes": 133781
+    },
+    {
+     "id": "christopher-lancia",
+     "name": "Christopher Lancia",
+     "party": null,
+     "party_code": "O",
+     "votes": 82411
+    },
+    {
+     "id": "thomas-egan",
+     "name": "Thomas Egan",
+     "party": null,
+     "party_code": "O",
+     "votes": 7281
+    },
+    {
+     "id": "andrew-rice",
+     "name": "Andrew Rice",
+     "party": null,
+     "party_code": "O",
+     "votes": 427
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "ct-united-states-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ct",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-himes",
+     "name": "Jim Himes",
+     "party": null,
+     "party_code": "O",
+     "votes": 156442
+    },
+    {
+     "id": "michael-ted-goldstein",
+     "name": "Michael Ted Goldstein",
+     "party": null,
+     "party_code": "O",
+     "votes": 77960
+    },
+    {
+     "id": "benjamin-wesley",
+     "name": "Benjamin Wesley",
+     "party": null,
+     "party_code": "O",
+     "votes": 4543
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "ct-united-states-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ct",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jahana-hayes",
+     "name": "Jahana Hayes",
+     "party": null,
+     "party_code": "O",
+     "votes": 130024
+    },
+    {
+     "id": "chris-shea",
+     "name": "Chris Shea",
+     "party": null,
+     "party_code": "O",
+     "votes": 94583
+    },
+    {
+     "id": "jonathan-debarros",
+     "name": "Jonathan DeBarros",
+     "party": null,
+     "party_code": "O",
+     "votes": 43
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "towns"
+   }
+  }
+ ]
+}
