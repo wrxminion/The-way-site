@@ -3,18 +3,30 @@
  "scope": "senate",
  "label": "U.S. Senate",
  "source_ids": [
+  "ak-doe",
+  "al-sos",
+  "ar-tally",
+  "de-doe",
   "fl-dos",
   "ga-scytl",
+  "id-scytl",
+  "in-enr",
+  "la-sos",
+  "mi-mvic",
   "mt-ersws",
   "nc-sbe",
   "ne-ersws",
   "nm-ersws",
   "oh-sos",
   "or-ersws",
+  "ri-scytl",
+  "sc-clarity",
   "sd-ersws",
+  "tn-sos",
+  "tx-sos",
   "va-scytl"
  ],
- "updated_at": "2026-11-04T13:13:41Z",
+ "updated_at": "2026-11-04T13:29:26Z",
  "certified": false,
  "contests": [
   {
@@ -70,7 +82,7 @@
      "name": "Bert Mizusawa",
      "party": "R",
      "party_code": "R",
-     "votes": 1384613
+     "votes": 1384612
     },
     {
      "id": "write-in",
@@ -245,28 +257,28 @@
      "name": "Kurt Alme",
      "party": "Republican",
      "party_code": "R",
-     "votes": 216568
+     "votes": 217304
     },
     {
      "id": "alani-bankhead",
      "name": "Alani Bankhead",
      "party": "Democrat",
      "party_code": "D",
-     "votes": 53152
+     "votes": 53191
     },
     {
      "id": "kyle-austin",
      "name": "Kyle Austin",
      "party": "Libertarian",
      "party_code": "O",
-     "votes": 8125
+     "votes": 8144
     },
     {
      "id": "seth-bodnar",
      "name": "Seth Bodnar",
      "party": "Independent",
      "party_code": "O",
-     "votes": 166451
+     "votes": 166528
     }
    ],
    "precincts": {
@@ -439,6 +451,590 @@
     "reporting": 2204,
     "total": 2204,
     "unit": "precincts"
+   }
+  },
+  {
+   "id": "mi-united-states-senator-6-year-term-1-position-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "douglas-p-marsh",
+     "name": "Douglas P. Marsh",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 9225
+    },
+    {
+     "id": "lydia-christensen",
+     "name": "Lydia Christensen",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 38924
+    },
+    {
+     "id": "mike-rogers",
+     "name": "Mike Rogers",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1761026
+    },
+    {
+     "id": "abdul-el-sayed",
+     "name": "Abdul El-Sayed",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1791522
+    },
+    {
+     "id": "tim-long",
+     "name": "Tim Long",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 19992
+    },
+    {
+     "id": "walter-p-kristy",
+     "name": "Walter P. Kristy",
+     "party": "NATURAL LAW",
+     "party_code": "O",
+     "votes": 5248
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-6-u-s-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ak",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "heikes-gerald-l",
+     "name": "Gerald L. Heikes",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4821
+    },
+    {
+     "id": "peltola-mary",
+     "name": "Mary Peltola",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 102701
+    },
+    {
+     "id": "sullivan-daniel-j-jr",
+     "name": "Daniel J. Jr. Sullivan",
+     "party": null,
+     "party_code": "O",
+     "votes": 3583
+    },
+    {
+     "id": "sullivan-dan-s",
+     "name": "Dan S. Sullivan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 102075
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ri-senator-in-congress",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ri",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-f-reed",
+     "name": "John F. Reed",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 235276
+    },
+    {
+     "id": "raymond-t-mckay",
+     "name": "Raymond T. McKay",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 103996
+    },
+    {
+     "id": "michael-bahry",
+     "name": "Michael Bahry",
+     "party": "Ind",
+     "party_code": "O",
+     "votes": 13328
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 685
+    }
+   ],
+   "precincts": {
+    "reporting": 40,
+    "total": 40,
+    "unit": "voting units"
+   }
+  },
+  {
+   "id": "ar-u-s-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ar",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-cotton",
+     "name": "Tom Cotton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 480526
+    },
+    {
+     "id": "jeff-wadlin",
+     "name": "Jeff Wadlin",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 29478
+    },
+    {
+     "id": "hallie-shoffner",
+     "name": "Hallie Shoffner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 375596
+    }
+   ],
+   "precincts": {
+    "reporting": 2768,
+    "total": 2768,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "de-u-s-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "de",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-coons",
+     "name": "Chris Coons",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 240347
+    },
+    {
+     "id": "michael-dr-mike-katz",
+     "name": "Michael \"Dr. Mike\" Katz",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 137764
+    }
+   ],
+   "precincts": {
+    "reporting": 530,
+    "total": 530,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "sc-u-s-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "choices": [
+    {
+     "id": "rep-darline-graham",
+     "name": "Darline Graham",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 951165
+    },
+    {
+     "id": "lib-kasie-whitener",
+     "name": "Kasie Whitener",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 23560
+    },
+    {
+     "id": "dem-annie-andrews",
+     "name": "Annie Andrews",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1042362
+    },
+    {
+     "id": "con-mark-hackett",
+     "name": "Mark Hackett",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 16799
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 4894
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "id-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "id",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-risch",
+     "name": "Jim Risch",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 391395
+    },
+    {
+     "id": "todd-achilles",
+     "name": "Todd Achilles",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 232525
+    },
+    {
+     "id": "natalie-m-fleming",
+     "name": "Natalie M Fleming",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 48189
+    },
+    {
+     "id": "matt-loesby",
+     "name": "Matt Loesby",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 20137
+    }
+   ],
+   "precincts": {
+    "reporting": 44,
+    "total": 44,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "al-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "everett-wess",
+     "name": "Everett Wess",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 758397
+    },
+    {
+     "id": "barry-moore",
+     "name": "Barry Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 917344
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 2047
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1409-united-states-senator-from-indiana-class-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Senator From Indiana, Class 1",
+   "district": null,
+   "title": "United States Senator From Indiana, Class 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-banks",
+     "name": "Jim Banks",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1659416
+    },
+    {
+     "id": "valerie-mccray",
+     "name": "Valerie McCray",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1097061
+    },
+    {
+     "id": "andrew-horning",
+     "name": "Andrew Horning",
+     "party": "L",
+     "party_code": "O",
+     "votes": 73233
+    },
+    {
+     "id": "phillip-d-beachy-phil-w-i",
+     "name": "Phillip D. Beachy (Phil) (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 168
+    },
+    {
+     "id": "antonio-xavier-alvarez-w-i",
+     "name": "Antonio Xavier Alvarez (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tn-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-hagerty",
+     "name": "Bill Hagerty",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1138436
+    },
+    {
+     "id": "marquita-bradshaw",
+     "name": "Marquita Bradshaw",
+     "party": "D",
+     "party_code": "D",
+     "votes": 886974
+    },
+    {
+     "id": "robert-jones",
+     "name": "Robert Jones",
+     "party": "I",
+     "party_code": "O",
+     "votes": 9398
+    },
+    {
+     "id": "tharon-chandler",
+     "name": "Tharon Chandler",
+     "party": "I",
+     "party_code": "O",
+     "votes": 7689
+    },
+    {
+     "id": "andrew-gerena",
+     "name": "Andrew Gerena",
+     "party": "I",
+     "party_code": "O",
+     "votes": 5633
+    },
+    {
+     "id": "catherine-barcel-barcy-whitson",
+     "name": "Catherine Barcel \"Barcy\" Whitson",
+     "party": "I",
+     "party_code": "O",
+     "votes": 5113
+    },
+    {
+     "id": "jeremy-dean-hearn",
+     "name": "Jeremy Dean Hearn",
+     "party": "I",
+     "party_code": "O",
+     "votes": 4937
+    },
+    {
+     "id": "david-sutman-jr",
+     "name": "David Sutman, Jr.",
+     "party": "I",
+     "party_code": "O",
+     "votes": 3087
+    },
+    {
+     "id": "yoshi-d-matthews",
+     "name": "Yoshi D. Matthews",
+     "party": "I",
+     "party_code": "O",
+     "votes": 3026
+    },
+    {
+     "id": "james-william-macon-iii",
+     "name": "James William Macon III",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2576
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 95,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "la-67997-u-s-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "jamie-davis",
+     "name": "Jamie Davis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 720106
+    },
+    {
+     "id": "julia-letlow",
+     "name": "Julia Letlow",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 745963
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "tx-5075-u-s-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "avery-ayers",
+     "name": "Avery Ayers",
+     "party": null,
+     "party_code": "O",
+     "votes": 1850
+    },
+    {
+     "id": "ted-brown",
+     "name": "Ted Brown",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 186410
+    },
+    {
+     "id": "bradford-brad-hall",
+     "name": "Bradford \"Brad\" Hall",
+     "party": null,
+     "party_code": "O",
+     "votes": 1234
+    },
+    {
+     "id": "zul-mohamed",
+     "name": "Zul Mohamed",
+     "party": null,
+     "party_code": "O",
+     "votes": 175
+    },
+    {
+     "id": "ken-paxton",
+     "name": "Ken Paxton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4166380
+    },
+    {
+     "id": "jade-simmons",
+     "name": "Jade Simmons",
+     "party": null,
+     "party_code": "O",
+     "votes": 1677
+    },
+    {
+     "id": "james-talarico",
+     "name": "James Talarico",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5360196
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
    }
   }
  ]

@@ -1,0 +1,2189 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-de",
+ "label": "Delaware",
+ "source_ids": [
+  "de-doe"
+ ],
+ "updated_at": "2026-11-04T13:24:02Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "de-u-s-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "de",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-coons",
+     "name": "Chris Coons",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 240347
+    },
+    {
+     "id": "michael-dr-mike-katz",
+     "name": "Michael \"Dr. Mike\" Katz",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 137764
+    }
+   ],
+   "precincts": {
+    "reporting": 530,
+    "total": 530,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-representative-in-congress",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "Representative In Congress",
+   "district": null,
+   "title": "Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sarah-mcbride",
+     "name": "Sarah Mcbride",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 243467
+    },
+    {
+     "id": "joseph-dr-joe-arminio",
+     "name": "Joseph \"Dr. Joe\" Arminio",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 134966
+    }
+   ],
+   "precincts": {
+    "reporting": 530,
+    "total": 530,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kathy-jennings",
+     "name": "Kathy Jennings",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 240429
+    },
+    {
+     "id": "david-c-dave-graham",
+     "name": "David C. \"Dave\" Graham",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 137464
+    }
+   ],
+   "precincts": {
+    "reporting": 527,
+    "total": 527,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-auditor-of-accounts",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "Auditor of Accounts",
+   "district": null,
+   "title": "Auditor of Accounts",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lydia-york",
+     "name": "Lydia York",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 227502
+    },
+    {
+     "id": "april-callaway",
+     "name": "April Callaway",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 130879
+    },
+    {
+     "id": "austin-cassidy",
+     "name": "Austin Cassidy",
+     "party": "Independent of Delaware",
+     "party_code": "O",
+     "votes": 18365
+    }
+   ],
+   "precincts": {
+    "reporting": 527,
+    "total": 527,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Treasurer",
+   "district": null,
+   "title": "State Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ted-lauzen",
+     "name": "Ted Lauzen",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 235597
+    },
+    {
+     "id": "michael-ramone",
+     "name": "Michael Ramone",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 141755
+    }
+   ],
+   "precincts": {
+    "reporting": 527,
+    "total": 527,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-senator-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Senator District 1",
+   "district": null,
+   "title": "State Senator District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dan-cruce",
+     "name": "Dan Cruce",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 14558
+    },
+    {
+     "id": "hildi-bachtle",
+     "name": "Hildi Bachtle",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3558
+    },
+    {
+     "id": "steven-washington",
+     "name": "Steven Washington",
+     "party": "Independent of Delaware",
+     "party_code": "O",
+     "votes": 968
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-senator-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Senator District 5",
+   "district": null,
+   "title": "State Senator District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shay-frisby",
+     "name": "Shay Frisby",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 12275
+    },
+    {
+     "id": "brent-burdge",
+     "name": "Brent Burdge",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4823
+    },
+    {
+     "id": "carolyn-frank",
+     "name": "Carolyn Frank",
+     "party": "Independent of Delaware",
+     "party_code": "O",
+     "votes": 792
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-senator-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Senator District 7",
+   "district": null,
+   "title": "State Senator District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "spiros-mantzavinos",
+     "name": "Spiros Mantzavinos",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 10136
+    },
+    {
+     "id": "chris-rowe",
+     "name": "Chris Rowe",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4929
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-senator-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Senator District 8",
+   "district": null,
+   "title": "State Senator District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mara-gorman",
+     "name": "Mara Gorman",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 9538
+    },
+    {
+     "id": "shane-cavanaugh",
+     "name": "Shane Cavanaugh",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4830
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-senator-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Senator District 9",
+   "district": null,
+   "title": "State Senator District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jack-walsh",
+     "name": "Jack Walsh",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 10062
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-senator-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Senator District 12",
+   "district": null,
+   "title": "State Senator District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nicole-poore",
+     "name": "Nicole Poore",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 14503
+    },
+    {
+     "id": "mark-esposito",
+     "name": "Mark Esposito",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5510
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-senator-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Senator District 13",
+   "district": null,
+   "title": "State Senator District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marie-pinkney",
+     "name": "Marie Pinkney",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 12315
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-senator-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Senator District 14",
+   "district": null,
+   "title": "State Senator District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kyra-l-hoffner",
+     "name": "Kyra L. Hoffner",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 12243
+    },
+    {
+     "id": "mark-pugh",
+     "name": "Mark Pugh",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7451
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-senator-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Senator District 15",
+   "district": null,
+   "title": "State Senator District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nisha-lodhavia",
+     "name": "Nisha Lodhavia",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 7823
+    },
+    {
+     "id": "emily-a-thompson",
+     "name": "Emily A. Thompson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 10281
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-senator-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Senator District 19",
+   "district": null,
+   "title": "State Senator District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-g-pettyjohn",
+     "name": "Brian G. Pettyjohn",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 13938
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-senator-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Senator District 20",
+   "district": null,
+   "title": "State Senator District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "harry-s-gold",
+     "name": "Harry S. Gold",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 12858
+    },
+    {
+     "id": "gerald-w-hocker",
+     "name": "Gerald W. Hocker",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 16687
+    }
+   ],
+   "precincts": {
+    "reporting": 28,
+    "total": 28,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 1",
+   "district": null,
+   "title": "State Representative District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nnamdi-o-chukwuocha",
+     "name": "Nnamdi O. Chukwuocha",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 7145
+    },
+    {
+     "id": "lisa-mcinnis",
+     "name": "Lisa Mcinnis",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 684
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 2",
+   "district": null,
+   "title": "State Representative District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michelle-h-booker",
+     "name": "Michelle H. Booker",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4909
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 3",
+   "district": null,
+   "title": "State Representative District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "branden-fletcher-dominguez",
+     "name": "Branden Fletcher-Dominguez",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4360
+    },
+    {
+     "id": "shawn-l-dottery",
+     "name": "Shawn L. Dottery",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 543
+    },
+    {
+     "id": "dexter-dizzy-bland",
+     "name": "Dexter \"Dizzy\" Bland",
+     "party": "Independent of Delaware",
+     "party_code": "O",
+     "votes": 405
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 4",
+   "district": null,
+   "title": "State Representative District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gregg-lindner",
+     "name": "Gregg Lindner",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 8039
+    },
+    {
+     "id": "dan-zitofsky",
+     "name": "Dan Zitofsky",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7658
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 5",
+   "district": null,
+   "title": "State Representative District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kendra-johnson",
+     "name": "Kendra Johnson",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 6287
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 6",
+   "district": null,
+   "title": "State Representative District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rachel-rae-krantz",
+     "name": "Rachel \"Rae\" Krantz",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 7455
+    },
+    {
+     "id": "tanya-hettler",
+     "name": "Tanya Hettler",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2750
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 7",
+   "district": null,
+   "title": "State Representative District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "larry-lambert",
+     "name": "Larry Lambert",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5948
+    },
+    {
+     "id": "shane-stoneman",
+     "name": "Shane Stoneman",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1681
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 8",
+   "district": null,
+   "title": "State Representative District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sherae-a-rae-moore",
+     "name": "Sherae'A \"Rae\" Moore",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 6761
+    },
+    {
+     "id": "gary-taylor",
+     "name": "Gary Taylor",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3465
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 9",
+   "district": null,
+   "title": "State Representative District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ayanna-khan-flowers",
+     "name": "Ayanna Khan-Flowers",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 8451
+    },
+    {
+     "id": "jamar-money",
+     "name": "Jamar Money",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4753
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 10",
+   "district": null,
+   "title": "State Representative District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melanie-ross-levin",
+     "name": "Melanie Ross Levin",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 6824
+    },
+    {
+     "id": "dolores-dunleavy",
+     "name": "Dolores Dunleavy",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3052
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 11",
+   "district": null,
+   "title": "State Representative District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tori-parker",
+     "name": "Tori Parker",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3447
+    },
+    {
+     "id": "jeffrey-n-spiegelman",
+     "name": "Jeffrey N. Spiegelman",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5463
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 12",
+   "district": null,
+   "title": "State Representative District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "krista-griffith",
+     "name": "Krista Griffith",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 8921
+    },
+    {
+     "id": "steve-pickering",
+     "name": "Steve Pickering",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3943
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 13",
+   "district": null,
+   "title": "State Representative District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deshanna-u-neal",
+     "name": "Deshanna U. Neal",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5226
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 14",
+   "district": null,
+   "title": "State Representative District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "claire-snyder-hall",
+     "name": "Claire Snyder-Hall",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 9564
+    },
+    {
+     "id": "mike-simpler",
+     "name": "Mike Simpler",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5280
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 15",
+   "district": null,
+   "title": "State Representative District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kamela-t-smith",
+     "name": "Kamela T. Smith",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 7009
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 16",
+   "district": null,
+   "title": "State Representative District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pamela-salaam",
+     "name": "Pamela Salaam",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 6018
+    },
+    {
+     "id": "enala-a-mwashitete",
+     "name": "Enala A. Mwashitete",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1073
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 17",
+   "district": null,
+   "title": "State Representative District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-minor-brown",
+     "name": "Melissa Minor Brown",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5956
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 18",
+   "district": null,
+   "title": "State Representative District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sophie-phillips",
+     "name": "Sophie Phillips",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5881
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 19",
+   "district": null,
+   "title": "State Representative District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kim-williams",
+     "name": "Kim Williams",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5437
+    },
+    {
+     "id": "janyce-colmery",
+     "name": "Janyce Colmery",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2495
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 20",
+   "district": null,
+   "title": "State Representative District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alonna-berry",
+     "name": "Alonna Berry",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 8397
+    },
+    {
+     "id": "gene-dvornick",
+     "name": "Gene Dvornick",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6579
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 21",
+   "district": null,
+   "title": "State Representative District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "frank-burns",
+     "name": "Frank Burns",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 6690
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 22",
+   "district": null,
+   "title": "State Representative District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alex-green",
+     "name": "Alex Green",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5494
+    },
+    {
+     "id": "mike-smith",
+     "name": "Mike Smith",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6400
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 23",
+   "district": null,
+   "title": "State Representative District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dave-redlawsk",
+     "name": "Dave Redlawsk",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 6272
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 24",
+   "district": null,
+   "title": "State Representative District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ed-osienski",
+     "name": "Ed Osienski",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5047
+    },
+    {
+     "id": "stephen-p-ondich",
+     "name": "Stephen P. Ondich",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1634
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 25",
+   "district": null,
+   "title": "State Representative District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cyndie-romer",
+     "name": "Cyndie Romer",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5275
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 26",
+   "district": null,
+   "title": "State Representative District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "madinah-wilson-anton",
+     "name": "Madinah Wilson-Anton",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5415
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 27",
+   "district": null,
+   "title": "State Representative District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-morrison",
+     "name": "Eric Morrison",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 6387
+    },
+    {
+     "id": "mary-penny-kubin",
+     "name": "Mary \"Penny\" Kubin",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3947
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 28",
+   "district": null,
+   "title": "State Representative District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tyeisha-tye-grier",
+     "name": "Tyeisha \"Tye\" Grier",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5686
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 29",
+   "district": null,
+   "title": "State Representative District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-bush",
+     "name": "William Bush",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 8190
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 30",
+   "district": null,
+   "title": "State Representative District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wm-shannon-morris",
+     "name": "Wm Shannon Morris",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6277
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 31",
+   "district": null,
+   "title": "State Representative District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sean-m-lynn",
+     "name": "Sean M. Lynn",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5148
+    },
+    {
+     "id": "anton-brogden",
+     "name": "Anton Brogden",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1550
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 32",
+   "district": null,
+   "title": "State Representative District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kerri-evelyn-harris",
+     "name": "Kerri Evelyn Harris",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4203
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 33",
+   "district": null,
+   "title": "State Representative District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joshua-pennington",
+     "name": "Joshua Pennington",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4121
+    },
+    {
+     "id": "morgan-hudson",
+     "name": "Morgan Hudson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4941
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 34",
+   "district": null,
+   "title": "State Representative District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "annie-norman",
+     "name": "Annie Norman",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4905
+    },
+    {
+     "id": "lyndon-d-yearick",
+     "name": "Lyndon D. Yearick",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4755
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 35",
+   "district": null,
+   "title": "State Representative District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jesse-r-vanderwende",
+     "name": "Jesse R. Vanderwende",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5448
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 36",
+   "district": null,
+   "title": "State Representative District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-andy-gorlich",
+     "name": "Andrew \"Andy\" Gorlich",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4466
+    },
+    {
+     "id": "bryan-william-shupe",
+     "name": "Bryan William Shupe",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5220
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 37",
+   "district": null,
+   "title": "State Representative District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "valerie-jones-giltner",
+     "name": "Valerie Jones Giltner",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5425
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 38",
+   "district": null,
+   "title": "State Representative District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maureen-madden",
+     "name": "Maureen Madden",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 8065
+    },
+    {
+     "id": "carlie-carey",
+     "name": "Carlie Carey",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 9803
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 39",
+   "district": null,
+   "title": "State Representative District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-b-short",
+     "name": "Daniel B. Short",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4396
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 40",
+   "district": null,
+   "title": "State Representative District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "timothy-dale-dukes",
+     "name": "Timothy Dale Dukes",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5346
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-state-representative-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "de",
+   "office": "State Representative District 41",
+   "district": null,
+   "title": "State Representative District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-stuckey",
+     "name": "Ryan Stuckey",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5441
+    },
+    {
+     "id": "john-atkins",
+     "name": "John Atkins",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6173
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-new-castle-county-recorder-of-deeds",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "New Castle County Recorder of Deeds",
+   "district": null,
+   "title": "New Castle County Recorder of Deeds",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-tackett",
+     "name": "David Tackett",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 155586
+    }
+   ],
+   "precincts": {
+    "reporting": 312,
+    "total": 312,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-new-castle-county-register-of-wills",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "New Castle County Register of Wills",
+   "district": null,
+   "title": "New Castle County Register of Wills",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ciro-poppiti",
+     "name": "Ciro Poppiti",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 156163
+    }
+   ],
+   "precincts": {
+    "reporting": 312,
+    "total": 312,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-new-castle-county-sheriff",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "New Castle County Sheriff",
+   "district": null,
+   "title": "New Castle County Sheriff",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-phillips",
+     "name": "Scott Phillips",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 155352
+    }
+   ],
+   "precincts": {
+    "reporting": 312,
+    "total": 312,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-new-castle-county-council-district-1",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "New Castle County Council District 1",
+   "district": null,
+   "title": "New Castle County Council District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-toole",
+     "name": "Brandon Toole",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 10713
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-new-castle-county-council-district-2",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "New Castle County Council District 2",
+   "district": null,
+   "title": "New Castle County Council District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dee-durham",
+     "name": "Dee Durham",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 14222
+    },
+    {
+     "id": "jamie-collins",
+     "name": "Jamie Collins",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7012
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-new-castle-county-council-district-3",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "New Castle County Council District 3",
+   "district": null,
+   "title": "New Castle County Council District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kira-alejandro",
+     "name": "Kira Alejandro",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 13116
+    },
+    {
+     "id": "melissa-s-brayman",
+     "name": "Melissa S. Brayman",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7587
+    }
+   ],
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-new-castle-county-council-district-4",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "New Castle County Council District 4",
+   "district": null,
+   "title": "New Castle County Council District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-hoover",
+     "name": "Jason Hoover",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 13553
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-new-castle-county-council-district-5",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "New Castle County Council District 5",
+   "district": null,
+   "title": "New Castle County Council District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "valerie-george",
+     "name": "Valerie George",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 10917
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-new-castle-county-council-district-6",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "New Castle County Council District 6",
+   "district": null,
+   "title": "New Castle County Council District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-carter",
+     "name": "David Carter",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 13017
+    },
+    {
+     "id": "alison-t-gibbs",
+     "name": "Alison T. Gibbs",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7254
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-kent-county-recorder-of-deeds",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "Kent County Recorder of Deeds",
+   "district": null,
+   "title": "Kent County Recorder of Deeds",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ramona-bracy",
+     "name": "Ramona Bracy",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 36232
+    },
+    {
+     "id": "eugenia-thornton",
+     "name": "Eugenia Thornton",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 26904
+    }
+   ],
+   "precincts": {
+    "reporting": 97,
+    "total": 97,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-kent-county-sheriff",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "Kent County Sheriff",
+   "district": null,
+   "title": "Kent County Sheriff",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "norman-r-barlow",
+     "name": "Norman R. Barlow",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 35207
+    }
+   ],
+   "precincts": {
+    "reporting": 97,
+    "total": 97,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-kent-county-levy-court-at-large",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "Kent County Levy Court At-Large",
+   "district": null,
+   "title": "Kent County Levy Court At-Large",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "terry-l-pepper",
+     "name": "Terry L. Pepper",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 38856
+    },
+    {
+     "id": "frank-e-coleman",
+     "name": "Frank E. Coleman",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 24445
+    }
+   ],
+   "precincts": {
+    "reporting": 97,
+    "total": 97,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-kent-county-levy-court-district-2",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "Kent County Levy Court District 2",
+   "district": null,
+   "title": "Kent County Levy Court District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-hall",
+     "name": "Jeff Hall",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 6872
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-kent-county-levy-court-district-4",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "Kent County Levy Court District 4",
+   "district": null,
+   "title": "Kent County Levy Court District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-bobby-scott",
+     "name": "Robert \"Bobby\" Scott",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7180
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-kent-county-levy-court-district-6",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "Kent County Levy Court District 6",
+   "district": null,
+   "title": "Kent County Levy Court District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-hertz",
+     "name": "Paul Hertz",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7934
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-sussex-county-recorder-of-deeds",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "Sussex County Recorder of Deeds",
+   "district": null,
+   "title": "Sussex County Recorder of Deeds",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alexandra-reed-baker",
+     "name": "Alexandra Reed Baker",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 69494
+    }
+   ],
+   "precincts": {
+    "reporting": 118,
+    "total": 118,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-sussex-county-register-of-wills",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "Sussex County Register of Wills",
+   "district": null,
+   "title": "Sussex County Register of Wills",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-fuller",
+     "name": "Greg Fuller",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 69792
+    }
+   ],
+   "precincts": {
+    "reporting": 118,
+    "total": 118,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-sussex-county-sheriff",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "Sussex County Sheriff",
+   "district": null,
+   "title": "Sussex County Sheriff",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-t-lee",
+     "name": "Robert T. Lee",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 69404
+    }
+   ],
+   "precincts": {
+    "reporting": 118,
+    "total": 118,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-sussex-county-council-district-4",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "Sussex County Council District 4",
+   "district": null,
+   "title": "Sussex County Council District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "justine-cuccia",
+     "name": "Justine Cuccia",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 12988
+    },
+    {
+     "id": "douglas-b-hudson",
+     "name": "Douglas B. Hudson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 16202
+    }
+   ],
+   "precincts": {
+    "reporting": 28,
+    "total": 28,
+    "unit": "districts"
+   }
+  },
+  {
+   "id": "de-sussex-county-council-district-5",
+   "kind": "candidate",
+   "level": "local",
+   "state": "de",
+   "office": "Sussex County Council District 5",
+   "district": null,
+   "title": "Sussex County Council District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jill-hicks",
+     "name": "Jill Hicks",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 11251
+    },
+    {
+     "id": "john-l-rieley",
+     "name": "John L. Rieley",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 10657
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "districts"
+   }
+  }
+ ]
+}
