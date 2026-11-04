@@ -11,8 +11,10 @@
   "ga-scytl",
   "id-scytl",
   "in-enr",
+  "ks-sos",
   "la-sos",
   "mi-mvic",
+  "mn-sos",
   "mt-ersws",
   "nc-sbe",
   "ne-ersws",
@@ -24,9 +26,10 @@
   "sd-ersws",
   "tn-sos",
   "tx-sos",
-  "va-scytl"
+  "va-scytl",
+  "wy-sos"
  ],
- "updated_at": "2026-11-04T13:29:26Z",
+ "updated_at": "2026-11-04T13:41:11Z",
  "certified": false,
  "contests": [
   {
@@ -75,21 +78,21 @@
      "name": "Mark R. Warner",
      "party": "D",
      "party_code": "D",
-     "votes": 2175916
+     "votes": 2168802
     },
     {
      "id": "bert-mizusawa",
      "name": "Bert Mizusawa",
      "party": "R",
      "party_code": "R",
-     "votes": 1384612
+     "votes": 1373583
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 9420
+     "votes": 9401
     }
    ],
    "precincts": {
@@ -154,25 +157,25 @@
      "name": "Ashley Moody",
      "party": "REP",
      "party_code": "R",
-     "votes": 4207774
+     "votes": 4199078
     },
     {
      "id": "angie-nixon",
      "name": "Angie Nixon",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3968811
+     "votes": 3955419
     },
     {
      "id": "neil-j-gillespie",
      "name": "Neil J. Gillespie",
      "party": "NPA",
      "party_code": "O",
-     "votes": 94529
+     "votes": 94180
     }
    ],
    "precincts": {
-    "reporting": 5626,
+    "reporting": 5567,
     "total": 5626,
     "unit": "precincts"
    }
@@ -257,28 +260,28 @@
      "name": "Kurt Alme",
      "party": "Republican",
      "party_code": "R",
-     "votes": 217304
+     "votes": 217851
     },
     {
      "id": "alani-bankhead",
      "name": "Alani Bankhead",
      "party": "Democrat",
      "party_code": "D",
-     "votes": 53191
+     "votes": 53225
     },
     {
      "id": "kyle-austin",
      "name": "Kyle Austin",
      "party": "Libertarian",
      "party_code": "O",
-     "votes": 8144
+     "votes": 8165
     },
     {
      "id": "seth-bodnar",
      "name": "Seth Bodnar",
      "party": "Independent",
      "party_code": "O",
-     "votes": 166528
+     "votes": 166597
     }
    ],
    "precincts": {
@@ -1035,6 +1038,127 @@
    "precincts": {
     "reporting": 0,
     "total": 0
+   }
+  },
+  {
+   "id": "mn-0102-u-s-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marisa-simonetti",
+     "name": "Marisa Simonetti",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 41549
+    },
+    {
+     "id": "rebecca-whiting",
+     "name": "Rebecca Whiting",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 32476
+    },
+    {
+     "id": "peggy-flanagan",
+     "name": "Peggy Flanagan",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 1520295
+    },
+    {
+     "id": "michele-tafoya",
+     "name": "Michele Tafoya",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1232677
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 3374
+    }
+   ],
+   "precincts": {
+    "reporting": 4105,
+    "total": 4105,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ks",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-hamilton",
+     "name": "Adam Hamilton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 556414
+    },
+    {
+     "id": "roger-marshall",
+     "name": "Roger Marshall",
+     "party": "R",
+     "party_code": "R",
+     "votes": 503230
+    },
+    {
+     "id": "david-c-graham",
+     "name": "David C Graham",
+     "party": "L",
+     "party_code": "O",
+     "votes": 32934
+    }
+   ],
+   "precincts": {
+    "reporting": 4168,
+    "total": 4168,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wy-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wy",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "harriet-hageman",
+     "name": "Harriet Hageman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 122157
+    },
+    {
+     "id": "james-byrd",
+     "name": "James Byrd",
+     "party": "D",
+     "party_code": "D",
+     "votes": 65097
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "counties"
    }
   }
  ]

@@ -1,0 +1,664 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-mo",
+ "label": "Missouri",
+ "source_ids": [
+  "mo-sos"
+ ],
+ "updated_at": "2026-11-04T13:41:11Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "mo-state-auditor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mo",
+   "office": "State Auditor",
+   "district": null,
+   "title": "State Auditor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-fitzpatrick",
+     "name": "Scott Fitzpatrick",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1018753
+    },
+    {
+     "id": "quentin-wilson",
+     "name": "Quentin Wilson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 958595
+    },
+    {
+     "id": "dustin-coffell",
+     "name": "Dustin Coffell",
+     "party": "L",
+     "party_code": "O",
+     "votes": 53581
+    }
+   ],
+   "precincts": {
+    "reporting": 3214,
+    "total": 3214,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-berry-iii",
+     "name": "Paul Berry III",
+     "party": "R",
+     "party_code": "R",
+     "votes": 32308
+    },
+    {
+     "id": "wesley-bell",
+     "name": "Wesley Bell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 189175
+    },
+    {
+     "id": "tom-schmitz",
+     "name": "Tom Schmitz",
+     "party": "L",
+     "party_code": "O",
+     "votes": 10613
+    }
+   ],
+   "precincts": {
+    "reporting": 656,
+    "total": 656,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ann-wagner",
+     "name": "Ann Wagner",
+     "party": "R",
+     "party_code": "R",
+     "votes": 153132
+    },
+    {
+     "id": "fred-wellman",
+     "name": "Fred Wellman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 169477
+    },
+    {
+     "id": "brandon-coulter-daugherty",
+     "name": "Brandon Coulter Daugherty",
+     "party": "L",
+     "party_code": "O",
+     "votes": 8782
+    }
+   ],
+   "precincts": {
+    "reporting": 595,
+    "total": 595,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-onder",
+     "name": "Bob Onder",
+     "party": "R",
+     "party_code": "R",
+     "votes": 149239
+    },
+    {
+     "id": "bethany-e-mann",
+     "name": "Bethany E Mann",
+     "party": "D",
+     "party_code": "D",
+     "votes": 125271
+    },
+    {
+     "id": "jim-higgins",
+     "name": "Jim Higgins",
+     "party": "L",
+     "party_code": "O",
+     "votes": 7700
+    }
+   ],
+   "precincts": {
+    "reporting": 339,
+    "total": 339,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-alford",
+     "name": "Mark Alford",
+     "party": "R",
+     "party_code": "R",
+     "votes": 150944
+    },
+    {
+     "id": "jordan-herrera",
+     "name": "Jordan Herrera",
+     "party": "D",
+     "party_code": "D",
+     "votes": 88423
+    },
+    {
+     "id": "thomas-holbrook",
+     "name": "Thomas Holbrook",
+     "party": "L",
+     "party_code": "O",
+     "votes": 7183
+    }
+   ],
+   "precincts": {
+    "reporting": 351,
+    "total": 351,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rick-brattin",
+     "name": "Rick Brattin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 72572
+    },
+    {
+     "id": "emanuel-cleaver-ii",
+     "name": "Emanuel Cleaver, II",
+     "party": "D",
+     "party_code": "D",
+     "votes": 179256
+    },
+    {
+     "id": "randall-randy-langkraehr",
+     "name": "Randall (Randy) Langkraehr",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6128
+    }
+   ],
+   "precincts": {
+    "reporting": 201,
+    "total": 201,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 6",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-stigall",
+     "name": "Chris Stigall",
+     "party": "R",
+     "party_code": "R",
+     "votes": 151219
+    },
+    {
+     "id": "josh-smead",
+     "name": "Josh Smead",
+     "party": "D",
+     "party_code": "D",
+     "votes": 100416
+    },
+    {
+     "id": "andy-maidment",
+     "name": "Andy Maidment",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6028
+    }
+   ],
+   "precincts": {
+    "reporting": 438,
+    "total": 438,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 7",
+   "district": "7",
+   "title": "U.S. House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-w-burlison",
+     "name": "Eric W. Burlison",
+     "party": "R",
+     "party_code": "R",
+     "votes": 157599
+    },
+    {
+     "id": "missi-hesketh",
+     "name": "Missi Hesketh",
+     "party": "D",
+     "party_code": "D",
+     "votes": 89710
+    },
+    {
+     "id": "kevin-craig",
+     "name": "Kevin Craig",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6100
+    }
+   ],
+   "precincts": {
+    "reporting": 287,
+    "total": 287,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 8",
+   "district": "8",
+   "title": "U.S. House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-t-smith",
+     "name": "Jason T. Smith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 152677
+    },
+    {
+     "id": "chris-reichard",
+     "name": "Chris Reichard",
+     "party": "D",
+     "party_code": "D",
+     "votes": 65751
+    },
+    {
+     "id": "rebecca-sharpe-lombard",
+     "name": "Rebecca Sharpe Lombard",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6996
+    }
+   ],
+   "precincts": {
+    "reporting": 385,
+    "total": 385,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-constitutional-amendment-no-3",
+   "kind": "measure",
+   "level": "state",
+   "state": "mo",
+   "office": "Constitutional Amendment No. 3",
+   "district": null,
+   "title": "Constitutional Amendment No. 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 941065
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1173172
+    }
+   ],
+   "precincts": {
+    "reporting": 3214,
+    "total": 3214,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-constitutional-amendment-no-6",
+   "kind": "measure",
+   "level": "state",
+   "state": "mo",
+   "office": "Constitutional Amendment No. 6",
+   "district": null,
+   "title": "Constitutional Amendment No. 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1251555
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 835585
+    }
+   ],
+   "precincts": {
+    "reporting": 3214,
+    "total": 3214,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-constitutional-amendment-no-7",
+   "kind": "measure",
+   "level": "state",
+   "state": "mo",
+   "office": "Constitutional Amendment No. 7",
+   "district": null,
+   "title": "Constitutional Amendment No. 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 815744
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1251889
+    }
+   ],
+   "precincts": {
+    "reporting": 3214,
+    "total": 3214,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-constitutional-amendment-no-8",
+   "kind": "measure",
+   "level": "state",
+   "state": "mo",
+   "office": "Constitutional Amendment No. 8",
+   "district": null,
+   "title": "Constitutional Amendment No. 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1053346
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1012534
+    }
+   ],
+   "precincts": {
+    "reporting": 3214,
+    "total": 3214,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-proposition-a",
+   "kind": "measure",
+   "level": "state",
+   "state": "mo",
+   "office": "Proposition A",
+   "district": null,
+   "title": "Proposition A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 785969
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1273815
+    }
+   ],
+   "precincts": {
+    "reporting": 3214,
+    "total": 3214,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-retain-judge-paul-c-wilson-missouri-supreme-court",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mo",
+   "office": "Retain Judge Paul C. Wilson (Missouri Supreme Court)",
+   "district": null,
+   "title": "Retain Judge Paul C. Wilson (Missouri Supreme Court)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1157778
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 684554
+    }
+   ],
+   "precincts": {
+    "reporting": 3214,
+    "total": 3214,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-retain-judge-virginia-w-lay-court-of-appeals-eastern-district",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mo",
+   "office": "Retain Judge Virginia W. Lay (Court of Appeals, Eastern District)",
+   "district": null,
+   "title": "Retain Judge Virginia W. Lay (Court of Appeals, Eastern District)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 476082
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 276450
+    }
+   ],
+   "precincts": {
+    "reporting": 1656,
+    "total": 1656,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-retain-judge-rebeca-navarro-mckelvey-court-of-appeals-eastern-distr",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mo",
+   "office": "Retain Judge Rebeca Navarro-McKelvey (Court of Appeals, Eastern District)",
+   "district": null,
+   "title": "Retain Judge Rebeca Navarro-McKelvey (Court of Appeals, Eastern District)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 482888
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 266420
+    }
+   ],
+   "precincts": {
+    "reporting": 1656,
+    "total": 1656,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-retain-judge-angela-turner-quigless-court-of-appeals-eastern-distri",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mo",
+   "office": "Retain Judge Angela Turner Quigless (Court of Appeals, Eastern District)",
+   "district": null,
+   "title": "Retain Judge Angela Turner Quigless (Court of Appeals, Eastern District)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 496750
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 251940
+    }
+   ],
+   "precincts": {
+    "reporting": 1656,
+    "total": 1656,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-retain-judge-matthew-p-hamner-court-of-appeals-southern-district",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mo",
+   "office": "Retain Judge Matthew P. Hamner (Court of Appeals, Southern District)",
+   "district": null,
+   "title": "Retain Judge Matthew P. Hamner (Court of Appeals, Southern District)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 290537
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 110190
+    }
+   ],
+   "precincts": {
+    "reporting": 683,
+    "total": 683,
+    "unit": "counties"
+   }
+  }
+ ]
+}
