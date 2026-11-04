@@ -200,6 +200,38 @@ RE_STATE_LEVEL = re.compile(r"governor|lieutenant|attorney general|secretary of 
                             r"supreme court|court of appeals|constitutional amendment", re.I)
 
 
+def _scytl_counties(src, c, item_id):
+    """Per-county rows for one Scytl contest from the public site's own breakdown feed (data/ballot-item/<id>, breakdownResults).
+    Fails soft: if the call or the shape is wrong the contest just has no counties."""
+    try:
+        base = src["url"].split("/ballot-items")[0]
+        body, _, _ = fetch(base + "/data/ballot-item/" + str(item_id), {}, src.get("user_agent"))
+        br = (json.loads(body.decode("utf-8-sig")).get("ballotItemWithBreakdown") or {}).get("breakdownResults") or []
+    except Exception:
+        return
+    ids = [x["id"] for x in c["choices"]]
+    rows = []
+    for b in br:
+        name = _en((b.get("locality") or {}).get("name"))
+        if not name:
+            continue
+        by = {}
+        for o in b.get("ballotOptions") or []:
+            nm = _en(o.get("name"))
+            abbr = _en((o.get("party") or {}).get("abbreviation")) or _en((o.get("party") or {}).get("name"))
+            if abbr:
+                nm = re.sub(r"\s*\(" + re.escape(abbr) + r"\)\s*$", "", nm)
+            by[slug(nm) or "option"] = max(0, to_int(o.get("voteCount")))
+        row = {"name": name, "choices": [{"id": i, "votes": by.get(i, 0)} for i in ids]}
+        ps = b.get("precinctReportingStatus") or {}
+        if ps.get("totalUnits"):
+            row["precincts"] = {"reporting": to_int(ps.get("reportingUnits")), "total": to_int(ps.get("totalUnits"))}
+        rows.append(row)
+    if rows:
+        c["counties"] = sorted(rows, key=lambda r: r["name"])
+    time.sleep(0.2)
+
+
 def a_scytl_json(body, src):
     """Scytl 'results/public' election-night sites (Georgia, Virginia and others). Source url is the
     ballot-items endpoint: https://<host>/results/public/api/elections/<Jurisdiction>/<publicElectionId>/ballot-items
@@ -270,6 +302,8 @@ def a_scytl_json(body, src):
             c["choices"].append(ch)
             if o.get("isWinner") is True:
                 c["called"] = {"winner": oid, "by": src.get("name", "source"), "at": None}
+        if level != "local" and src.get("counties", True) and len([1 for x in out if x.get("counties")]) < int(src.get("county_max", 60)):
+            _scytl_counties(src, c, it.get("id"))
         out.append(c)
         if sen or hse:
             f = json.loads(json.dumps(c))
