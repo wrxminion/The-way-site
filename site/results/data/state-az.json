@@ -5,7 +5,7 @@
  "source_ids": [
   "az-scytl"
  ],
- "updated_at": "2026-11-04T20:16:16Z",
+ "updated_at": "2026-11-04T20:45:21Z",
  "certified": false,
  "contests": [
   {
@@ -72,7 +72,46 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "amish-shah",
+       "votes": 163584
+      },
+      {
+       "id": "thomas-jay-feely-iv",
+       "votes": 141196
+      },
+      {
+       "id": "monica-alponte",
+       "votes": 6360
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 147
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 65
+      },
+      {
+       "id": "dev-gupta",
+       "votes": 8
+      },
+      {
+       "id": "gage-dylan-thunder",
+       "votes": 6
+      }
+     ],
+     "precincts": {
+      "reporting": 206,
+      "total": 210
+     }
+    }
+   ]
   },
   {
    "id": "az-u-s-representative-in-congress-district-no-2",
@@ -124,7 +163,270 @@
     "reporting": 9,
     "total": 9,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Apache County",
+     "choices": [
+      {
+       "id": "jonathan-nez",
+       "votes": 17213
+      },
+      {
+       "id": "eli-crane",
+       "votes": 6250
+      },
+      {
+       "id": "curtis-goodwin",
+       "votes": 327
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 19
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 44,
+      "total": 44
+     }
+    },
+    {
+     "name": "Coconino County",
+     "choices": [
+      {
+       "id": "jonathan-nez",
+       "votes": 31907
+      },
+      {
+       "id": "eli-crane",
+       "votes": 13634
+      },
+      {
+       "id": "curtis-goodwin",
+       "votes": 797
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 20
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 56,
+      "total": 56
+     }
+    },
+    {
+     "name": "Gila County",
+     "choices": [
+      {
+       "id": "jonathan-nez",
+       "votes": 5962
+      },
+      {
+       "id": "eli-crane",
+       "votes": 10366
+      },
+      {
+       "id": "curtis-goodwin",
+       "votes": 312
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 11
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 39
+     }
+    },
+    {
+     "name": "Graham County",
+     "choices": [
+      {
+       "id": "jonathan-nez",
+       "votes": 610
+      },
+      {
+       "id": "eli-crane",
+       "votes": 48
+      },
+      {
+       "id": "curtis-goodwin",
+       "votes": 10
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 1
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 2,
+      "total": 2
+     }
+    },
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "jonathan-nez",
+       "votes": 293
+      },
+      {
+       "id": "eli-crane",
+       "votes": 36
+      },
+      {
+       "id": "curtis-goodwin",
+       "votes": 28
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 1
+      }
+     ],
+     "precincts": {
+      "reporting": 3,
+      "total": 6
+     }
+    },
+    {
+     "name": "Mohave County",
+     "choices": [
+      {
+       "id": "jonathan-nez",
+       "votes": 158
+      },
+      {
+       "id": "eli-crane",
+       "votes": 43
+      },
+      {
+       "id": "curtis-goodwin",
+       "votes": 13
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 2,
+      "total": 2
+     }
+    },
+    {
+     "name": "Navajo County",
+     "choices": [
+      {
+       "id": "jonathan-nez",
+       "votes": 17032
+      },
+      {
+       "id": "eli-crane",
+       "votes": 16723
+      },
+      {
+       "id": "curtis-goodwin",
+       "votes": 647
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 25
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 19,
+      "total": 19
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "jonathan-nez",
+       "votes": 24587
+      },
+      {
+       "id": "eli-crane",
+       "votes": 26026
+      },
+      {
+       "id": "curtis-goodwin",
+       "votes": 1034
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 39
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 59,
+      "total": 59
+     }
+    },
+    {
+     "name": "Yavapai County",
+     "choices": [
+      {
+       "id": "jonathan-nez",
+       "votes": 38582
+      },
+      {
+       "id": "eli-crane",
+       "votes": 63132
+      },
+      {
+       "id": "curtis-goodwin",
+       "votes": 1608
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 44
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 57
+     }
+    }
+   ]
   },
   {
    "id": "az-u-s-representative-in-congress-district-no-3",
@@ -184,6 +486,41 @@
     "total": 1,
     "unit": "counties"
    },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "yassamin-ansari",
+       "votes": 103137
+      },
+      {
+       "id": "alan-aversa",
+       "votes": 7218
+      },
+      {
+       "id": "david-redkey",
+       "votes": 6422
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 1422
+      },
+      {
+       "id": "jacob-parkman",
+       "votes": 1211
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 129,
+      "total": 135
+     }
+    }
+   ],
    "called": {
     "winner": "yassamin-ansari",
     "by": "AP (not certified)",
@@ -249,6 +586,41 @@
     "total": 1,
     "unit": "counties"
    },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "greg-stanton",
+       "votes": 132395
+      },
+      {
+       "id": "zuhdi-jasser",
+       "votes": 75216
+      },
+      {
+       "id": "tisha-benoit",
+       "votes": 4643
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 392
+      },
+      {
+       "id": "steven-sanders",
+       "votes": 35
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 149,
+      "total": 151
+     }
+    }
+   ],
    "called": {
     "winner": "greg-stanton",
     "by": "AP (not certified)",
@@ -299,7 +671,59 @@
     "reporting": 2,
     "total": 2,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "mark-lamb",
+       "votes": 110428
+      },
+      {
+       "id": "elizabeth-lee",
+       "votes": 111467
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 366
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 127,
+      "total": 127
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "mark-lamb",
+       "votes": 26812
+      },
+      {
+       "id": "elizabeth-lee",
+       "votes": 19759
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 69
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 46,
+      "total": 46
+     }
+    }
+   ]
   },
   {
    "id": "az-u-s-representative-in-congress-district-no-6",
@@ -365,7 +789,194 @@
     "reporting": 5,
     "total": 5,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Cochise County",
+     "choices": [
+      {
+       "id": "joanna-mendoza",
+       "votes": 11978
+      },
+      {
+       "id": "juan-ciscomani",
+       "votes": 20478
+      },
+      {
+       "id": "jereme-lance-peters",
+       "votes": 623
+      },
+      {
+       "id": "gary-swing",
+       "votes": 401
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 24
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 24
+      },
+      {
+       "id": "michael-dorland",
+       "votes": 4
+      }
+     ],
+     "precincts": {
+      "reporting": 43,
+      "total": 43
+     }
+    },
+    {
+     "name": "Graham County",
+     "choices": [
+      {
+       "id": "joanna-mendoza",
+       "votes": 2306
+      },
+      {
+       "id": "juan-ciscomani",
+       "votes": 6193
+      },
+      {
+       "id": "jereme-lance-peters",
+       "votes": 137
+      },
+      {
+       "id": "gary-swing",
+       "votes": 64
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 8
+      },
+      {
+       "id": "michael-dorland",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 21,
+      "total": 21
+     }
+    },
+    {
+     "name": "Greenlee County",
+     "choices": [
+      {
+       "id": "joanna-mendoza",
+       "votes": 759
+      },
+      {
+       "id": "juan-ciscomani",
+       "votes": 1036
+      },
+      {
+       "id": "jereme-lance-peters",
+       "votes": 31
+      },
+      {
+       "id": "gary-swing",
+       "votes": 21
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 1
+      },
+      {
+       "id": "michael-dorland",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    },
+    {
+     "name": "Pima County",
+     "choices": [
+      {
+       "id": "joanna-mendoza",
+       "votes": 128637
+      },
+      {
+       "id": "juan-ciscomani",
+       "votes": 91487
+      },
+      {
+       "id": "jereme-lance-peters",
+       "votes": 2527
+      },
+      {
+       "id": "gary-swing",
+       "votes": 1841
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 104
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 80
+      },
+      {
+       "id": "michael-dorland",
+       "votes": 26
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 151
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "joanna-mendoza",
+       "votes": 13589
+      },
+      {
+       "id": "juan-ciscomani",
+       "votes": 14308
+      },
+      {
+       "id": "jereme-lance-peters",
+       "votes": 287
+      },
+      {
+       "id": "gary-swing",
+       "votes": 191
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 27
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "michael-dorland",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 27,
+      "total": 27
+     }
+    }
+   ]
   },
   {
    "id": "az-u-s-representative-in-congress-district-no-7",
@@ -411,6 +1022,158 @@
     "total": 6,
     "unit": "counties"
    },
+   "counties": [
+    {
+     "name": "Cochise County",
+     "choices": [
+      {
+       "id": "adelita-grijalva",
+       "votes": 4830
+      },
+      {
+       "id": "daniel-francis-butierez-sr",
+       "votes": 2178
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 6
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 17
+      }
+     ],
+     "precincts": {
+      "reporting": 12,
+      "total": 12
+     }
+    },
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "adelita-grijalva",
+       "votes": 15661
+      },
+      {
+       "id": "daniel-francis-butierez-sr",
+       "votes": 5498
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 21
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Pima County",
+     "choices": [
+      {
+       "id": "adelita-grijalva",
+       "votes": 72735
+      },
+      {
+       "id": "daniel-francis-butierez-sr",
+       "votes": 28277
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 195
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 114
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "adelita-grijalva",
+       "votes": 614
+      },
+      {
+       "id": "daniel-francis-butierez-sr",
+       "votes": 821
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 4
+      }
+     ],
+     "precincts": {
+      "reporting": 4,
+      "total": 4
+     }
+    },
+    {
+     "name": "Santa Cruz County",
+     "choices": [
+      {
+       "id": "adelita-grijalva",
+       "votes": 8877
+      },
+      {
+       "id": "daniel-francis-butierez-sr",
+       "votes": 3411
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 12
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Yuma County",
+     "choices": [
+      {
+       "id": "adelita-grijalva",
+       "votes": 8475
+      },
+      {
+       "id": "daniel-francis-butierez-sr",
+       "votes": 4113
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 18
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 27,
+      "total": 27
+     }
+    }
+   ],
    "called": {
     "winner": "adelita-grijalva",
     "by": "AP (not certified)",
@@ -461,7 +1224,34 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "abraham-abe-hamadeh",
+       "votes": 127063
+      },
+      {
+       "id": "bernadette-greene-placentia",
+       "votes": 121500
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 483
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 185,
+      "total": 186
+     }
+    }
+   ]
   },
   {
    "id": "az-u-s-representative-in-congress-district-no-9",
@@ -521,6 +1311,140 @@
     "total": 4,
     "unit": "counties"
    },
+   "counties": [
+    {
+     "name": "La Paz County",
+     "choices": [
+      {
+       "id": "paul-gosar",
+       "votes": 3056
+      },
+      {
+       "id": "danielle-dani-sterbinsky",
+       "votes": 1452
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 5
+      },
+      {
+       "id": "william-perry",
+       "votes": 2
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 3
+      },
+      {
+       "id": "g-seville-hatch",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 11,
+      "total": 11
+     }
+    },
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "paul-gosar",
+       "votes": 74274
+      },
+      {
+       "id": "danielle-dani-sterbinsky",
+       "votes": 75969
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 190
+      },
+      {
+       "id": "william-perry",
+       "votes": 15
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "g-seville-hatch",
+       "votes": 9
+      }
+     ],
+     "precincts": {
+      "reporting": 117,
+      "total": 117
+     }
+    },
+    {
+     "name": "Mohave County",
+     "choices": [
+      {
+       "id": "paul-gosar",
+       "votes": 51358
+      },
+      {
+       "id": "danielle-dani-sterbinsky",
+       "votes": 17810
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 45
+      },
+      {
+       "id": "william-perry",
+       "votes": 4
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 21
+      },
+      {
+       "id": "g-seville-hatch",
+       "votes": 2
+      }
+     ],
+     "precincts": {
+      "reporting": 22,
+      "total": 22
+     }
+    },
+    {
+     "name": "Yuma County",
+     "choices": [
+      {
+       "id": "paul-gosar",
+       "votes": 10044
+      },
+      {
+       "id": "danielle-dani-sterbinsky",
+       "votes": 5972
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 19
+      },
+      {
+       "id": "william-perry",
+       "votes": 3
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "g-seville-hatch",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 20,
+      "total": 20
+     }
+    }
+   ],
    "called": {
     "winner": "paul-gosar",
     "by": "AP (not certified)",
@@ -600,6 +1524,623 @@
     "total": 15,
     "unit": "counties"
    },
+   "counties": [
+    {
+     "name": "Apache County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 16136
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 6774
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 392
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 295
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 12
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 24
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 0
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 44,
+      "total": 44
+     }
+    },
+    {
+     "name": "Cochise County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 18417
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 21269
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 475
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 441
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 16
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 25
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 1
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 55
+     }
+    },
+    {
+     "name": "Coconino County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 31598
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 13623
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 596
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 524
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 13
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 11
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 0
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 56,
+      "total": 56
+     }
+    },
+    {
+     "name": "Gila County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 6298
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 10059
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 145
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 185
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 5
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 0
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 39
+     }
+    },
+    {
+     "name": "Graham County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 3243
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 5930
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 89
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 112
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 9
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 0
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 23,
+      "total": 23
+     }
+    },
+    {
+     "name": "Greenlee County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 815
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 980
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 36
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 23
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 1
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 0
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    },
+    {
+     "name": "La Paz County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 1561
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 2906
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 46
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 64
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 3
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 2
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 0
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 11,
+      "total": 11
+     }
+    },
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 743797
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 536459
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 10135
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 9565
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 822
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 4
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 2
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    },
+    {
+     "name": "Mohave County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 19187
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 49237
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 699
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 672
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 30
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 11
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 0
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Navajo County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 16815
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 16657
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 472
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 411
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 3
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 33
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 0
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 19,
+      "total": 19
+     }
+    },
+    {
+     "name": "Pima County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 210744
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 109687
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 3336
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 2766
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 112
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 68
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 1
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 265
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 61450
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 64745
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 1246
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 1109
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 95
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 0
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 136,
+      "total": 136
+     }
+    },
+    {
+     "name": "Santa Cruz County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 8795
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 3210
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 195
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 90
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 9
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 0
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Yavapai County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 40332
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 61406
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 775
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 992
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 47
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 0
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 57
+     }
+    },
+    {
+     "name": "Yuma County",
+     "choices": [
+      {
+       "id": "katie-hobbs-dem-john-giles-pnd",
+       "votes": 14751
+      },
+      {
+       "id": "andy-biggs-rep-sine-kerr",
+       "votes": 13294
+      },
+      {
+       "id": "risa-lombardo-grn-lisa-castillo",
+       "votes": 485
+      },
+      {
+       "id": "teri-ann-hourihan-nol-angela-harrolle-mohan-pnd",
+       "votes": 256
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 20
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 2
+      },
+      {
+       "id": "alice-novoa",
+       "votes": 0
+      },
+      {
+       "id": "gertritrude-gonzalez",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 47,
+      "total": 47
+     }
+    }
+   ],
    "called": {
     "winner": "katie-hobbs-dem-john-giles-pnd",
     "by": "AP (not certified)",
@@ -658,6 +2199,443 @@
     "total": 15,
     "unit": "counties"
    },
+   "counties": [
+    {
+     "name": "Apache County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 15514
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 7025
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 781
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 39
+      }
+     ],
+     "precincts": {
+      "reporting": 44,
+      "total": 44
+     }
+    },
+    {
+     "name": "Cochise County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 17408
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 22179
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 745
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 20
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 9
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 55
+     }
+    },
+    {
+     "name": "Coconino County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 30756
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 13894
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 957
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 20
+      }
+     ],
+     "precincts": {
+      "reporting": 56,
+      "total": 56
+     }
+    },
+    {
+     "name": "Gila County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 6101
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 10231
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 252
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 5
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 39
+     }
+    },
+    {
+     "name": "Graham County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 3048
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 6060
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 161
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 6
+      }
+     ],
+     "precincts": {
+      "reporting": 23,
+      "total": 23
+     }
+    },
+    {
+     "name": "Greenlee County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 786
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 993
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 48
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    },
+    {
+     "name": "La Paz County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 1487
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 2983
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 80
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 4
+      }
+     ],
+     "precincts": {
+      "reporting": 11,
+      "total": 11
+     }
+    },
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 732663
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 542927
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 16046
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 523
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    },
+    {
+     "name": "Mohave County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 18075
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 50215
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 1019
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 37
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Navajo County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 16280
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 16826
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 791
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 40
+      }
+     ],
+     "precincts": {
+      "reporting": 19,
+      "total": 19
+     }
+    },
+    {
+     "name": "Pima County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 203833
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 114231
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 4932
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 165
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 265
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 59756
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 65865
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 2028
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 70
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 136,
+      "total": 136
+     }
+    },
+    {
+     "name": "Santa Cruz County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 8962
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 3154
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 163
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 3
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Yavapai County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 38824
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 61876
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 1388
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 48
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 57
+     }
+    },
+    {
+     "name": "Yuma County",
+     "choices": [
+      {
+       "id": "adrian-fontes",
+       "votes": 14308
+      },
+      {
+       "id": "alexander-kolodin",
+       "votes": 13815
+      },
+      {
+       "id": "duwayne-collier",
+       "votes": 505
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 12
+      }
+     ],
+     "precincts": {
+      "reporting": 47,
+      "total": 47
+     }
+    }
+   ],
    "called": {
     "winner": "adrian-fontes",
     "by": "AP (not certified)",
@@ -709,6 +2687,383 @@
     "total": 15,
     "unit": "counties"
    },
+   "counties": [
+    {
+     "name": "Apache County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 15960
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 7463
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 37
+      }
+     ],
+     "precincts": {
+      "reporting": 44,
+      "total": 44
+     }
+    },
+    {
+     "name": "Cochise County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 18087
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 22221
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 27
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 14
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 55
+     }
+    },
+    {
+     "name": "Coconino County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 31468
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 14322
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 34
+      }
+     ],
+     "precincts": {
+      "reporting": 56,
+      "total": 56
+     }
+    },
+    {
+     "name": "Gila County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 6178
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 10356
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 10
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 39
+     }
+    },
+    {
+     "name": "Graham County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 3091
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 6206
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 12
+      }
+     ],
+     "precincts": {
+      "reporting": 23,
+      "total": 23
+     }
+    },
+    {
+     "name": "Greenlee County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 804
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 1031
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 2
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    },
+    {
+     "name": "La Paz County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 1529
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 3012
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 5
+      }
+     ],
+     "precincts": {
+      "reporting": 11,
+      "total": 11
+     }
+    },
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 732299
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 552847
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 820
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    },
+    {
+     "name": "Mohave County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 18667
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 50555
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 48
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Navajo County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 16542
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 17437
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 47
+      }
+     ],
+     "precincts": {
+      "reporting": 19,
+      "total": 19
+     }
+    },
+    {
+     "name": "Pima County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 208050
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 115439
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 265
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 265
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 60909
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 66986
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 95
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 136,
+      "total": 136
+     }
+    },
+    {
+     "name": "Santa Cruz County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 8877
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 3345
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 16
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Yavapai County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 39523
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 62333
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 66
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 57
+     }
+    },
+    {
+     "name": "Yuma County",
+     "choices": [
+      {
+       "id": "kris-mayes",
+       "votes": 14477
+      },
+      {
+       "id": "warren-petersen",
+       "votes": 14035
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 20
+      }
+     ],
+     "precincts": {
+      "reporting": 47,
+      "total": 47
+     }
+    }
+   ],
    "called": {
     "winner": "kris-mayes",
     "by": "AP (not certified)",
@@ -759,7 +3114,384 @@
     "reporting": 15,
     "total": 15,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Apache County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 15571
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 7681
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 54
+      }
+     ],
+     "precincts": {
+      "reporting": 44,
+      "total": 44
+     }
+    },
+    {
+     "name": "Cochise County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 17127
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 22940
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 37
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 18
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 55
+     }
+    },
+    {
+     "name": "Coconino County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 30614
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 14813
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 33
+      }
+     ],
+     "precincts": {
+      "reporting": 56,
+      "total": 56
+     }
+    },
+    {
+     "name": "Gila County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 5804
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 10636
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 19
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 39
+     }
+    },
+    {
+     "name": "Graham County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 2880
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 6329
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 19
+      }
+     ],
+     "precincts": {
+      "reporting": 23,
+      "total": 23
+     }
+    },
+    {
+     "name": "Greenlee County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 761
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 1058
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 2
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    },
+    {
+     "name": "La Paz County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 1457
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 3065
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 7
+      }
+     ],
+     "precincts": {
+      "reporting": 11,
+      "total": 11
+     }
+    },
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 702461
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 568856
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 912
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    },
+    {
+     "name": "Mohave County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 17658
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 51215
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 68
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Navajo County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 15914
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 17795
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 69
+      }
+     ],
+     "precincts": {
+      "reporting": 19,
+      "total": 19
+     }
+    },
+    {
+     "name": "Pima County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 202094
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 119579
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 282
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 265
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 58263
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 68768
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 144
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 136,
+      "total": 136
+     }
+    },
+    {
+     "name": "Santa Cruz County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 8672
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 3549
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 10
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Yavapai County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 36992
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 63964
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 77
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 57
+     }
+    },
+    {
+     "name": "Yuma County",
+     "choices": [
+      {
+       "id": "nick-mansour",
+       "votes": 14098
+      },
+      {
+       "id": "elijah-norton",
+       "votes": 14310
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 16
+      }
+     ],
+     "precincts": {
+      "reporting": 47,
+      "total": 47
+     }
+    }
+   ]
   },
   {
    "id": "az-superintendent-of-public-instruction",
@@ -818,7 +3550,504 @@
     "reporting": 15,
     "total": 15,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Apache County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 15712
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 7578
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 20
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 35
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 3
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 2
+      }
+     ],
+     "precincts": {
+      "reporting": 44,
+      "total": 44
+     }
+    },
+    {
+     "name": "Cochise County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 17025
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 23062
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 35
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 26
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 8
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 2
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 55
+     }
+    },
+    {
+     "name": "Coconino County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 30553
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 15158
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 19
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 19
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 5
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 2
+      }
+     ],
+     "precincts": {
+      "reporting": 56,
+      "total": 56
+     }
+    },
+    {
+     "name": "Gila County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 5776
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 10728
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 22
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 0
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 39
+     }
+    },
+    {
+     "name": "Graham County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 2968
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 6352
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 14
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 0
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 23,
+      "total": 23
+     }
+    },
+    {
+     "name": "Greenlee County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 805
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 1031
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 1
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 0
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    },
+    {
+     "name": "La Paz County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 1445
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 3073
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 9
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 3
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 0
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 11,
+      "total": 11
+     }
+    },
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 692478
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 579763
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 1020
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 213
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 35
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    },
+    {
+     "name": "Mohave County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 17640
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 51233
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 58
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 27
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 2
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 2
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Navajo County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 16031
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 17827
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 8
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 55
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 1
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 19,
+      "total": 19
+     }
+    },
+    {
+     "name": "Pima County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 199793
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 121928
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 216
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 149
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 35
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 12
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 265
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 57990
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 69438
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 158
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 0
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 136,
+      "total": 136
+     }
+    },
+    {
+     "name": "Santa Cruz County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 8729
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 3467
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 10
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 0
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Yavapai County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 36947
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 64307
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 80
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 5
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 4
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 57
+     }
+    },
+    {
+     "name": "Yuma County",
+     "choices": [
+      {
+       "id": "teresa-leyba-ruiz",
+       "votes": 14257
+      },
+      {
+       "id": "kimberly-yee",
+       "votes": 14234
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 19
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      },
+      {
+       "id": "stephen-neal-jr",
+       "votes": 7
+      },
+      {
+       "id": "gerard-davis",
+       "votes": 2
+      }
+     ],
+     "precincts": {
+      "reporting": 47,
+      "total": 47
+     }
+    }
+   ]
   },
   {
    "id": "az-state-mine-inspector",
@@ -929,7 +4158,564 @@
     "reporting": 15,
     "total": 15,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Apache County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 11756
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 12619
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 6355
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 5734
+      },
+      {
+       "id": "mike-cease",
+       "votes": 562
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 33
+      }
+     ],
+     "precincts": {
+      "reporting": 44,
+      "total": 44
+     }
+    },
+    {
+     "name": "Cochise County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 15912
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 14667
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 21629
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 19875
+      },
+      {
+       "id": "mike-cease",
+       "votes": 1382
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 22
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 18
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 55
+     }
+    },
+    {
+     "name": "Coconino County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 28173
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 27649
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 13623
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 12259
+      },
+      {
+       "id": "mike-cease",
+       "votes": 1644
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 27
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 56,
+      "total": 56
+     }
+    },
+    {
+     "name": "Gila County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 5355
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 5254
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 10035
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 9418
+      },
+      {
+       "id": "mike-cease",
+       "votes": 442
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 12
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 39
+     }
+    },
+    {
+     "name": "Graham County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 2576
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 2543
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 5951
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 5580
+      },
+      {
+       "id": "mike-cease",
+       "votes": 235
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 11
+      }
+     ],
+     "precincts": {
+      "reporting": 23,
+      "total": 23
+     }
+    },
+    {
+     "name": "Greenlee County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 731
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 672
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 982
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 898
+      },
+      {
+       "id": "mike-cease",
+       "votes": 77
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 2
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    },
+    {
+     "name": "La Paz County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 1322
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 1205
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 2753
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 2513
+      },
+      {
+       "id": "mike-cease",
+       "votes": 134
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 8
+      }
+     ],
+     "precincts": {
+      "reporting": 11,
+      "total": 11
+     }
+    },
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 665345
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 643084
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 539166
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 510469
+      },
+      {
+       "id": "mike-cease",
+       "votes": 33552
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 895
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    },
+    {
+     "name": "Mohave County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 16231
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 15085
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 46822
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 43130
+      },
+      {
+       "id": "mike-cease",
+       "votes": 1584
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 54
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Navajo County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 13343
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 13726
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 16189
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 15203
+      },
+      {
+       "id": "mike-cease",
+       "votes": 1012
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 48
+      }
+     ],
+     "precincts": {
+      "reporting": 19,
+      "total": 19
+     }
+    },
+    {
+     "name": "Pima County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 190210
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 180532
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 111769
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 101093
+      },
+      {
+       "id": "mike-cease",
+       "votes": 8464
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 414
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 265
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 53629
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 50184
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 63470
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 59664
+      },
+      {
+       "id": "mike-cease",
+       "votes": 3627
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 127
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 136,
+      "total": 136
+     }
+    },
+    {
+     "name": "Santa Cruz County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 7815
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 7221
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 3141
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 2732
+      },
+      {
+       "id": "mike-cease",
+       "votes": 324
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 6
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Yavapai County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 35067
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 33933
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 60171
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 56351
+      },
+      {
+       "id": "mike-cease",
+       "votes": 2488
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 87
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 57
+     }
+    },
+    {
+     "name": "Yuma County",
+     "choices": [
+      {
+       "id": "clara-pratte",
+       "votes": 13056
+      },
+      {
+       "id": "jonathon-hill",
+       "votes": 11926
+      },
+      {
+       "id": "kevin-thompson",
+       "votes": 13119
+      },
+      {
+       "id": "ralph-heap",
+       "votes": 12069
+      },
+      {
+       "id": "mike-cease",
+       "votes": 915
+      },
+      {
+       "id": "unofficial-write-in",
+       "votes": 0
+      },
+      {
+       "id": "unassigned-write-in",
+       "votes": 34
+      }
+     ],
+     "precincts": {
+      "reporting": 47,
+      "total": 47
+     }
+    }
+   ]
   },
   {
    "id": "az-state-senator-district-no-1",
@@ -3954,7 +7740,264 @@
     "reporting": 15,
     "total": 15,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Apache County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 13183
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 7264
+      }
+     ],
+     "precincts": {
+      "reporting": 44,
+      "total": 44
+     }
+    },
+    {
+     "name": "Cochise County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 25759
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 8541
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 55
+     }
+    },
+    {
+     "name": "Coconino County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 22258
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 15319
+      }
+     ],
+     "precincts": {
+      "reporting": 56,
+      "total": 56
+     }
+    },
+    {
+     "name": "Gila County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 10831
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 3010
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 39
+     }
+    },
+    {
+     "name": "Graham County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 6429
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 1706
+      }
+     ],
+     "precincts": {
+      "reporting": 23,
+      "total": 23
+     }
+    },
+    {
+     "name": "Greenlee County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 1176
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 428
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    },
+    {
+     "name": "La Paz County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 2688
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 920
+      }
+     ],
+     "precincts": {
+      "reporting": 11,
+      "total": 11
+     }
+    },
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 537020
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 434599
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    },
+    {
+     "name": "Mohave County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 43553
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 10743
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Navajo County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 20288
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 8425
+      }
+     ],
+     "precincts": {
+      "reporting": 19,
+      "total": 19
+     }
+    },
+    {
+     "name": "Pima County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 155238
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 111187
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 265
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 74787
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 34067
+      }
+     ],
+     "precincts": {
+      "reporting": 136,
+      "total": 136
+     }
+    },
+    {
+     "name": "Santa Cruz County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 7409
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 3480
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Yavapai County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 62886
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 16363
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 57
+     }
+    },
+    {
+     "name": "Yuma County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 18339
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 6102
+      }
+     ],
+     "precincts": {
+      "reporting": 47,
+      "total": 47
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-michael-catlett-judge-of-the-court-of-appeals-division-i-be-retai",
@@ -3985,7 +8028,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 545270
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 321735
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-anni-hill-foster-judge-of-the-court-of-appeals-division-i-be-reta",
@@ -4016,7 +8078,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 453803
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 439990
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-randall-howe-judge-of-the-court-of-appeals-division-i-be-retained",
@@ -4047,7 +8128,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 592245
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 254023
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-andrew-jacobs-judge-of-the-court-of-appeals-division-i-be-retaine",
@@ -4078,7 +8178,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 549975
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 323067
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-daniel-kiley-judge-of-the-court-of-appeals-division-i-be-retained",
@@ -4109,7 +8228,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 541858
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 304306
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-james-morse-jr-judge-of-the-court-of-appeals-division-i-be-retain",
@@ -4140,7 +8278,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 521031
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 340052
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-jennifer-perkins-judge-of-the-court-of-appeals-division-i-be-reta",
@@ -4171,7 +8328,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 499660
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 393784
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-david-weinzweig-judge-of-the-court-of-appeals-division-i-be-retai",
@@ -4202,7 +8378,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Maricopa County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 478751
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 409162
+      }
+     ],
+     "precincts": {
+      "reporting": 940,
+      "total": 956
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-sean-brearcliffe-judge-of-the-court-of-appeals-division-ii-be-ret",
@@ -4233,7 +8428,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Pima County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 148970
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 114525
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 265
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-karl-eppich-judge-of-the-court-of-appeals-division-ii-be-retained",
@@ -4264,7 +8478,111 @@
     "reporting": 6,
     "total": 6,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Cochise County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 26012
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 7707
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 55
+     }
+    },
+    {
+     "name": "Gila County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 10712
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 2879
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 39
+     }
+    },
+    {
+     "name": "Graham County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 6290
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 1731
+      }
+     ],
+     "precincts": {
+      "reporting": 23,
+      "total": 23
+     }
+    },
+    {
+     "name": "Greenlee County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 1167
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 415
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 76603
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 30017
+      }
+     ],
+     "precincts": {
+      "reporting": 136,
+      "total": 136
+     }
+    },
+    {
+     "name": "Santa Cruz County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 7245
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 3474
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-lacey-stover-gard-judge-of-the-court-of-appeals-division-ii-be-re",
@@ -4295,7 +8613,111 @@
     "reporting": 6,
     "total": 6,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Cochise County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 25828
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 7331
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 55
+     }
+    },
+    {
+     "name": "Gila County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 10774
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 2810
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 39
+     }
+    },
+    {
+     "name": "Graham County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 6307
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 1714
+      }
+     ],
+     "precincts": {
+      "reporting": 23,
+      "total": 23
+     }
+    },
+    {
+     "name": "Greenlee County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 1168
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 413
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 76937
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 29740
+      }
+     ],
+     "precincts": {
+      "reporting": 136,
+      "total": 136
+     }
+    },
+    {
+     "name": "Santa Cruz County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 7348
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 3233
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-michael-kelly-judge-of-the-court-of-appeals-division-ii-be-retain",
@@ -4326,7 +8748,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Pima County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 170790
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 85681
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 265
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-christopher-o-neil-judge-of-the-court-of-appeals-division-ii-be-r",
@@ -4357,7 +8798,111 @@
     "reporting": 6,
     "total": 6,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Cochise County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 25843
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 7023
+      }
+     ],
+     "precincts": {
+      "reporting": 55,
+      "total": 55
+     }
+    },
+    {
+     "name": "Gila County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 10779
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 2699
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 39
+     }
+    },
+    {
+     "name": "Graham County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 6313
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 1582
+      }
+     ],
+     "precincts": {
+      "reporting": 23,
+      "total": 23
+     }
+    },
+    {
+     "name": "Greenlee County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 1179
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 392
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    },
+    {
+     "name": "Pinal County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 79191
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 27560
+      }
+     ],
+     "precincts": {
+      "reporting": 136,
+      "total": 136
+     }
+    },
+    {
+     "name": "Santa Cruz County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 7425
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 3180
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    }
+   ]
   },
   {
    "id": "az-shall-judge-jeffrey-sklar-judge-of-the-court-of-appeals-division-ii-be-retain",
@@ -4388,7 +8933,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Pima County",
+     "choices": [
+      {
+       "id": "be-retained-yes",
+       "votes": 169923
+      },
+      {
+       "id": "be-retained-no",
+       "votes": 86964
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 265
+     }
+    }
+   ]
   },
   {
    "id": "az-proposition-141",

@@ -5,7 +5,7 @@
  "source_ids": [
   "ut-scytl"
  ],
- "updated_at": "2026-11-04T20:16:16Z",
+ "updated_at": "2026-11-04T20:45:21Z",
  "certified": false,
  "contests": [
   {
@@ -59,6 +59,37 @@
     "total": 1,
     "unit": "counties"
    },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "ben-mcadams",
+       "votes": 128961
+      },
+      {
+       "id": "riley-owen",
+       "votes": 44607
+      },
+      {
+       "id": "jesse-west",
+       "votes": 3603
+      },
+      {
+       "id": "elias-henry-montgomery",
+       "votes": 2270
+      },
+      {
+       "id": "babak-bobby-darvish",
+       "votes": 40
+      }
+     ],
+     "precincts": {
+      "reporting": 602,
+      "total": 647
+     }
+    }
+   ],
    "called": {
     "winner": "ben-mcadams",
     "by": "AP (not certified)",
@@ -116,7 +147,154 @@
     "reporting": 5,
     "total": 5,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Box Elder County",
+     "choices": [
+      {
+       "id": "blake-d-moore",
+       "votes": 10815
+      },
+      {
+       "id": "peter-crosby",
+       "votes": 3964
+      },
+      {
+       "id": "carlton-e-bowen",
+       "votes": 747
+      },
+      {
+       "id": "robert-m-moesinger",
+       "votes": 600
+      },
+      {
+       "id": "daniel-cottam",
+       "votes": 398
+      }
+     ],
+     "precincts": {
+      "reporting": 52,
+      "total": 53
+     }
+    },
+    {
+     "name": "Cache County",
+     "choices": [
+      {
+       "id": "blake-d-moore",
+       "votes": 14490
+      },
+      {
+       "id": "peter-crosby",
+       "votes": 11986
+      },
+      {
+       "id": "carlton-e-bowen",
+       "votes": 793
+      },
+      {
+       "id": "robert-m-moesinger",
+       "votes": 303
+      },
+      {
+       "id": "daniel-cottam",
+       "votes": 406
+      }
+     ],
+     "precincts": {
+      "reporting": 126,
+      "total": 126
+     }
+    },
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "blake-d-moore",
+       "votes": 41699
+      },
+      {
+       "id": "peter-crosby",
+       "votes": 38093
+      },
+      {
+       "id": "carlton-e-bowen",
+       "votes": 2559
+      },
+      {
+       "id": "robert-m-moesinger",
+       "votes": 2026
+      },
+      {
+       "id": "daniel-cottam",
+       "votes": 1313
+      }
+     ],
+     "precincts": {
+      "reporting": 441,
+      "total": 441
+     }
+    },
+    {
+     "name": "Rich County",
+     "choices": [
+      {
+       "id": "blake-d-moore",
+       "votes": 960
+      },
+      {
+       "id": "peter-crosby",
+       "votes": 183
+      },
+      {
+       "id": "carlton-e-bowen",
+       "votes": 30
+      },
+      {
+       "id": "robert-m-moesinger",
+       "votes": 13
+      },
+      {
+       "id": "daniel-cottam",
+       "votes": 17
+      }
+     ],
+     "precincts": {
+      "reporting": 12,
+      "total": 12
+     }
+    },
+    {
+     "name": "Weber County",
+     "choices": [
+      {
+       "id": "blake-d-moore",
+       "votes": 27962
+      },
+      {
+       "id": "peter-crosby",
+       "votes": 28985
+      },
+      {
+       "id": "carlton-e-bowen",
+       "votes": 1506
+      },
+      {
+       "id": "robert-m-moesinger",
+       "votes": 1874
+      },
+      {
+       "id": "daniel-cottam",
+       "votes": 943
+      }
+     ],
+     "precincts": {
+      "reporting": 190,
+      "total": 190
+     }
+    }
+   ]
   },
   {
    "id": "ut-u-s-house-district-3",
@@ -176,6 +354,635 @@
     "total": 19,
     "unit": "counties"
    },
+   "counties": [
+    {
+     "name": "Beaver County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 1331
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 252
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 51
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 18
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 22
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 1
+      }
+     ],
+     "precincts": {
+      "reporting": 12,
+      "total": 12
+     }
+    },
+    {
+     "name": "Carbon County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 3390
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 1905
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 144
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 109
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 71
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 31
+      }
+     ],
+     "precincts": {
+      "reporting": 21,
+      "total": 21
+     }
+    },
+    {
+     "name": "Daggett County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 248
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 71
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 10
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 8
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 8
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 4,
+      "total": 4
+     }
+    },
+    {
+     "name": "Duchesne County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 3088
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 651
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 134
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 66
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 72
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 12
+      }
+     ],
+     "precincts": {
+      "reporting": 81,
+      "total": 81
+     }
+    },
+    {
+     "name": "Emery County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 2221
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 473
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 86
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 56
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 39
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 11
+      }
+     ],
+     "precincts": {
+      "reporting": 13,
+      "total": 13
+     }
+    },
+    {
+     "name": "Garfield County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 1459
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 482
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 37
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 29
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 15
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 6
+      }
+     ],
+     "precincts": {
+      "reporting": 12,
+      "total": 12
+     }
+    },
+    {
+     "name": "Grand County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 1573
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 2665
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 77
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 104
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 58
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 20
+      }
+     ],
+     "precincts": {
+      "reporting": 23,
+      "total": 23
+     }
+    },
+    {
+     "name": "Iron County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 9085
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 3721
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 527
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 296
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 198
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 79
+      }
+     ],
+     "precincts": {
+      "reporting": 51,
+      "total": 51
+     }
+    },
+    {
+     "name": "Kane County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 1884
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 997
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 84
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 55
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 41
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 7
+      }
+     ],
+     "precincts": {
+      "reporting": 12,
+      "total": 12
+     }
+    },
+    {
+     "name": "Morgan County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 1778
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 816
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 52
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 76
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 34
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 16
+      }
+     ],
+     "precincts": {
+      "reporting": 25,
+      "total": 25
+     }
+    },
+    {
+     "name": "Piute County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 613
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 62
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 21
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 7
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 7
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 0
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    },
+    {
+     "name": "San Juan County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 445
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 419
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 23
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 28
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 25
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 4
+      }
+     ],
+     "precincts": {
+      "reporting": 25,
+      "total": 25
+     }
+    },
+    {
+     "name": "Summit County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 2587
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 5562
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 115
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 99
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 37
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 12
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 77
+     }
+    },
+    {
+     "name": "Uintah County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 6770
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 1608
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 477
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 183
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 192
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 31
+      }
+     ],
+     "precincts": {
+      "reporting": 30,
+      "total": 30
+     }
+    },
+    {
+     "name": "Utah County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 28408
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 21892
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 1013
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 1041
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 788
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 557
+      }
+     ],
+     "precincts": {
+      "reporting": 256,
+      "total": 256
+     }
+    },
+    {
+     "name": "Wasatch County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 5540
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 4437
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 279
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 210
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 110
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 28
+      }
+     ],
+     "precincts": {
+      "reporting": 54,
+      "total": 54
+     }
+    },
+    {
+     "name": "Washington County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 26792
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 13470
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 1479
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 805
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 687
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 168
+      }
+     ],
+     "precincts": {
+      "reporting": 143,
+      "total": 143
+     }
+    },
+    {
+     "name": "Wayne County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 684
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 331
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 24
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 23
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 22
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 3
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 8
+     }
+    },
+    {
+     "name": "Weber County",
+     "choices": [
+      {
+       "id": "celeste-maloy",
+       "votes": 78
+      },
+      {
+       "id": "kent-s-udell",
+       "votes": 85
+      },
+      {
+       "id": "cassie-easley",
+       "votes": 3
+      },
+      {
+       "id": "michael-r-stoddard",
+       "votes": 0
+      },
+      {
+       "id": "ayden-scott",
+       "votes": 2
+      },
+      {
+       "id": "adonis-hooslyn",
+       "votes": 1
+      }
+     ],
+     "precincts": {
+      "reporting": 8,
+      "total": 8
+     }
+    }
+   ],
    "called": {
     "winner": "celeste-maloy",
     "by": "AP (not certified)",
@@ -226,7 +1033,184 @@
     "reporting": 7,
     "total": 7,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Juab County",
+     "choices": [
+      {
+       "id": "mike-kennedy",
+       "votes": 2871
+      },
+      {
+       "id": "jonny-larsen",
+       "votes": 520
+      },
+      {
+       "id": "steven-burt",
+       "votes": 122
+      },
+      {
+       "id": "taylor-wright",
+       "votes": 151
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 31
+     }
+    },
+    {
+     "name": "Millard County",
+     "choices": [
+      {
+       "id": "mike-kennedy",
+       "votes": 2382
+      },
+      {
+       "id": "jonny-larsen",
+       "votes": 437
+      },
+      {
+       "id": "steven-burt",
+       "votes": 101
+      },
+      {
+       "id": "taylor-wright",
+       "votes": 71
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 18
+     }
+    },
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "mike-kennedy",
+       "votes": 37322
+      },
+      {
+       "id": "jonny-larsen",
+       "votes": 43123
+      },
+      {
+       "id": "steven-burt",
+       "votes": 2783
+      },
+      {
+       "id": "taylor-wright",
+       "votes": 2077
+      }
+     ],
+     "precincts": {
+      "reporting": 328,
+      "total": 361
+     }
+    },
+    {
+     "name": "Sanpete County",
+     "choices": [
+      {
+       "id": "mike-kennedy",
+       "votes": 4323
+      },
+      {
+       "id": "jonny-larsen",
+       "votes": 1066
+      },
+      {
+       "id": "steven-burt",
+       "votes": 176
+      },
+      {
+       "id": "taylor-wright",
+       "votes": 157
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 29
+     }
+    },
+    {
+     "name": "Sevier County",
+     "choices": [
+      {
+       "id": "mike-kennedy",
+       "votes": 4324
+      },
+      {
+       "id": "jonny-larsen",
+       "votes": 772
+      },
+      {
+       "id": "steven-burt",
+       "votes": 110
+      },
+      {
+       "id": "taylor-wright",
+       "votes": 129
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    },
+    {
+     "name": "Tooele County",
+     "choices": [
+      {
+       "id": "mike-kennedy",
+       "votes": 8035
+      },
+      {
+       "id": "jonny-larsen",
+       "votes": 5484
+      },
+      {
+       "id": "steven-burt",
+       "votes": 712
+      },
+      {
+       "id": "taylor-wright",
+       "votes": 572
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 80
+     }
+    },
+    {
+     "name": "Utah County",
+     "choices": [
+      {
+       "id": "mike-kennedy",
+       "votes": 27745
+      },
+      {
+       "id": "jonny-larsen",
+       "votes": 18333
+      },
+      {
+       "id": "steven-burt",
+       "votes": 2295
+      },
+      {
+       "id": "taylor-wright",
+       "votes": 1483
+      }
+     ],
+     "precincts": {
+      "reporting": 279,
+      "total": 279
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-1-multi-county",
@@ -264,7 +1248,72 @@
     "reporting": 3,
     "total": 3,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Box Elder County",
+     "choices": [
+      {
+       "id": "scott-sandall",
+       "votes": 11159
+      },
+      {
+       "id": "claudia-bigler",
+       "votes": 3952
+      },
+      {
+       "id": "julie-quinlan",
+       "votes": 1382
+      }
+     ],
+     "precincts": {
+      "reporting": 51,
+      "total": 52
+     }
+    },
+    {
+     "name": "Cache County",
+     "choices": [
+      {
+       "id": "scott-sandall",
+       "votes": 3584
+      },
+      {
+       "id": "claudia-bigler",
+       "votes": 1499
+      },
+      {
+       "id": "julie-quinlan",
+       "votes": 367
+      }
+     ],
+     "precincts": {
+      "reporting": 22,
+      "total": 22
+     }
+    },
+    {
+     "name": "Tooele County",
+     "choices": [
+      {
+       "id": "scott-sandall",
+       "votes": 3608
+      },
+      {
+       "id": "claudia-bigler",
+       "votes": 2035
+      },
+      {
+       "id": "julie-quinlan",
+       "votes": 579
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 27
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-5-multi-county",
@@ -295,7 +1344,60 @@
     "reporting": 3,
     "total": 3,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "cj-christina-hernandez",
+       "votes": 2287
+      },
+      {
+       "id": "jill-f-koford",
+       "votes": 2153
+      }
+     ],
+     "precincts": {
+      "reporting": 25,
+      "total": 25
+     }
+    },
+    {
+     "name": "Morgan County",
+     "choices": [
+      {
+       "id": "cj-christina-hernandez",
+       "votes": 455
+      },
+      {
+       "id": "jill-f-koford",
+       "votes": 797
+      }
+     ],
+     "precincts": {
+      "reporting": 10,
+      "total": 10
+     }
+    },
+    {
+     "name": "Weber County",
+     "choices": [
+      {
+       "id": "cj-christina-hernandez",
+       "votes": 10977
+      },
+      {
+       "id": "jill-f-koford",
+       "votes": 7290
+      }
+     ],
+     "precincts": {
+      "reporting": 53,
+      "total": 53
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-6",
@@ -333,7 +1435,30 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "tami-tran",
+       "votes": 13594
+      },
+      {
+       "id": "jared-neal",
+       "votes": 9006
+      },
+      {
+       "id": "josh-smith",
+       "votes": 1721
+      }
+     ],
+     "precincts": {
+      "reporting": 134,
+      "total": 134
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-7-multi-county",
@@ -371,7 +1496,51 @@
     "reporting": 2,
     "total": 2,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "stephanie-hollist",
+       "votes": 16093
+      },
+      {
+       "id": "garret-rushforth",
+       "votes": 11410
+      },
+      {
+       "id": "jeffrey-ostler",
+       "votes": 1404
+      }
+     ],
+     "precincts": {
+      "reporting": 150,
+      "total": 150
+     }
+    },
+    {
+     "name": "Morgan County",
+     "choices": [
+      {
+       "id": "stephanie-hollist",
+       "votes": 378
+      },
+      {
+       "id": "garret-rushforth",
+       "votes": 83
+      },
+      {
+       "id": "jeffrey-ostler",
+       "votes": 19
+      }
+     ],
+     "precincts": {
+      "reporting": 4,
+      "total": 4
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-9",
@@ -409,7 +1578,30 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "jen-plumb",
+       "votes": 24256
+      },
+      {
+       "id": "thaddeus-a-evans",
+       "votes": 3586
+      },
+      {
+       "id": "j-lowry-snow",
+       "votes": 773
+      }
+     ],
+     "precincts": {
+      "reporting": 81,
+      "total": 83
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-11-multi-county",
@@ -440,7 +1632,60 @@
     "reporting": 3,
     "total": 3,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "emily-buss",
+       "votes": 4143
+      },
+      {
+       "id": "brooks-benson",
+       "votes": 3023
+      }
+     ],
+     "precincts": {
+      "reporting": 40,
+      "total": 60
+     }
+    },
+    {
+     "name": "Tooele County",
+     "choices": [
+      {
+       "id": "emily-buss",
+       "votes": 3849
+      },
+      {
+       "id": "brooks-benson",
+       "votes": 4563
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 52
+     }
+    },
+    {
+     "name": "Utah County",
+     "choices": [
+      {
+       "id": "emily-buss",
+       "votes": 1981
+      },
+      {
+       "id": "brooks-benson",
+       "votes": 2155
+      }
+     ],
+     "precincts": {
+      "reporting": 29,
+      "total": 29
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-12",
@@ -471,7 +1716,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "karen-kwan",
+       "votes": 12143
+      },
+      {
+       "id": "deidre-tyler",
+       "votes": 5629
+      }
+     ],
+     "precincts": {
+      "reporting": 63,
+      "total": 64
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-13",
@@ -509,7 +1773,30 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "silvia-catten",
+       "votes": 18416
+      },
+      {
+       "id": "ryan-l-mahoney",
+       "votes": 4452
+      },
+      {
+       "id": "colin-smith",
+       "votes": 829
+      }
+     ],
+     "precincts": {
+      "reporting": 93,
+      "total": 94
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-14",
@@ -533,7 +1820,22 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "stephanie-pitcher",
+       "votes": 29020
+      }
+     ],
+     "precincts": {
+      "reporting": 101,
+      "total": 103
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-18-multi-county",
@@ -564,7 +1866,43 @@
     "reporting": 2,
     "total": 2,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "doug-fiefia",
+       "votes": 11104
+      },
+      {
+       "id": "a-dane-anderson",
+       "votes": 8834
+      }
+     ],
+     "precincts": {
+      "reporting": 72,
+      "total": 75
+     }
+    },
+    {
+     "name": "Utah County",
+     "choices": [
+      {
+       "id": "doug-fiefia",
+       "votes": 438
+      },
+      {
+       "id": "a-dane-anderson",
+       "votes": 432
+      }
+     ],
+     "precincts": {
+      "reporting": 8,
+      "total": 8
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-19-multi-county",
@@ -595,7 +1933,43 @@
     "reporting": 2,
     "total": 2,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "shana-anderson",
+       "votes": 16317
+      },
+      {
+       "id": "kirk-cullimore",
+       "votes": 11491
+      }
+     ],
+     "precincts": {
+      "reporting": 119,
+      "total": 133
+     }
+    },
+    {
+     "name": "Utah County",
+     "choices": [
+      {
+       "id": "shana-anderson",
+       "votes": 1044
+      },
+      {
+       "id": "kirk-cullimore",
+       "votes": 1682
+      }
+     ],
+     "precincts": {
+      "reporting": 15,
+      "total": 15
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-20-multi-county",
@@ -626,7 +2000,94 @@
     "reporting": 5,
     "total": 5,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Daggett County",
+     "choices": [
+      {
+       "id": "ronald-m-winterton",
+       "votes": 275
+      },
+      {
+       "id": "annette-mcrae",
+       "votes": 64
+      }
+     ],
+     "precincts": {
+      "reporting": 3,
+      "total": 3
+     }
+    },
+    {
+     "name": "Duchesne County",
+     "choices": [
+      {
+       "id": "ronald-m-winterton",
+       "votes": 3072
+      },
+      {
+       "id": "annette-mcrae",
+       "votes": 878
+      }
+     ],
+     "precincts": {
+      "reporting": 80,
+      "total": 80
+     }
+    },
+    {
+     "name": "Summit County",
+     "choices": [
+      {
+       "id": "ronald-m-winterton",
+       "votes": 1739
+      },
+      {
+       "id": "annette-mcrae",
+       "votes": 3002
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 44
+     }
+    },
+    {
+     "name": "Uintah County",
+     "choices": [
+      {
+       "id": "ronald-m-winterton",
+       "votes": 7276
+      },
+      {
+       "id": "annette-mcrae",
+       "votes": 1773
+      }
+     ],
+     "precincts": {
+      "reporting": 29,
+      "total": 29
+     }
+    },
+    {
+     "name": "Wasatch County",
+     "choices": [
+      {
+       "id": "ronald-m-winterton",
+       "votes": 5008
+      },
+      {
+       "id": "annette-mcrae",
+       "votes": 3819
+      }
+     ],
+     "precincts": {
+      "reporting": 45,
+      "total": 45
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-21",
@@ -664,7 +2125,30 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Utah County",
+     "choices": [
+      {
+       "id": "brady-brammer",
+       "votes": 11964
+      },
+      {
+       "id": "kandee-myers",
+       "votes": 6428
+      },
+      {
+       "id": "wayne-woodfield",
+       "votes": 2937
+      }
+     ],
+     "precincts": {
+      "reporting": 99,
+      "total": 99
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-23",
@@ -695,7 +2179,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Utah County",
+     "choices": [
+      {
+       "id": "keith-grover",
+       "votes": 8458
+      },
+      {
+       "id": "tucker-smith",
+       "votes": 7269
+      }
+     ],
+     "precincts": {
+      "reporting": 71,
+      "total": 71
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-senate-district-28-multi-county",
@@ -726,7 +2229,94 @@
     "reporting": 5,
     "total": 5,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Beaver County",
+     "choices": [
+      {
+       "id": "evan-j-vickers",
+       "votes": 1449
+      },
+      {
+       "id": "richard-s-robillard",
+       "votes": 234
+      }
+     ],
+     "precincts": {
+      "reporting": 11,
+      "total": 11
+     }
+    },
+    {
+     "name": "Iron County",
+     "choices": [
+      {
+       "id": "evan-j-vickers",
+       "votes": 10502
+      },
+      {
+       "id": "richard-s-robillard",
+       "votes": 3293
+      }
+     ],
+     "precincts": {
+      "reporting": 50,
+      "total": 50
+     }
+    },
+    {
+     "name": "Juab County",
+     "choices": [
+      {
+       "id": "evan-j-vickers",
+       "votes": 49
+      },
+      {
+       "id": "richard-s-robillard",
+       "votes": 10
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 2
+     }
+    },
+    {
+     "name": "Millard County",
+     "choices": [
+      {
+       "id": "evan-j-vickers",
+       "votes": 1282
+      },
+      {
+       "id": "richard-s-robillard",
+       "votes": 198
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 7
+     }
+    },
+    {
+     "name": "Washington County",
+     "choices": [
+      {
+       "id": "evan-j-vickers",
+       "votes": 7193
+      },
+      {
+       "id": "richard-s-robillard",
+       "votes": 2961
+      }
+     ],
+     "precincts": {
+      "reporting": 34,
+      "total": 34
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-1-multi-county",
@@ -764,7 +2354,51 @@
     "reporting": 2,
     "total": 2,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Box Elder County",
+     "choices": [
+      {
+       "id": "thomas-peterson",
+       "votes": 7917
+      },
+      {
+       "id": "chris-reid",
+       "votes": 2446
+      },
+      {
+       "id": "jason-o-dell",
+       "votes": 1033
+      }
+     ],
+     "precincts": {
+      "reporting": 38,
+      "total": 39
+     }
+    },
+    {
+     "name": "Cache County",
+     "choices": [
+      {
+       "id": "thomas-peterson",
+       "votes": 379
+      },
+      {
+       "id": "chris-reid",
+       "votes": 109
+      },
+      {
+       "id": "jason-o-dell",
+       "votes": 37
+      }
+     ],
+     "precincts": {
+      "reporting": 6,
+      "total": 6
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-2",
@@ -795,7 +2429,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Cache County",
+     "choices": [
+      {
+       "id": "mike-petersen",
+       "votes": 5719
+      },
+      {
+       "id": "barbara-j-haggerty",
+       "votes": 3710
+      }
+     ],
+     "precincts": {
+      "reporting": 34,
+      "total": 34
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-3",
@@ -826,7 +2479,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Cache County",
+     "choices": [
+      {
+       "id": "patrick-belmont",
+       "votes": 4517
+      },
+      {
+       "id": "jason-e-thompson",
+       "votes": 3169
+      }
+     ],
+     "precincts": {
+      "reporting": 34,
+      "total": 34
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-4-multi-county",
@@ -857,7 +2529,60 @@
     "reporting": 3,
     "total": 3,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Morgan County",
+     "choices": [
+      {
+       "id": "zane-woolstenhulme",
+       "votes": 702
+      },
+      {
+       "id": "tiara-auxier",
+       "votes": 1706
+      }
+     ],
+     "precincts": {
+      "reporting": 22,
+      "total": 22
+     }
+    },
+    {
+     "name": "Rich County",
+     "choices": [
+      {
+       "id": "zane-woolstenhulme",
+       "votes": 290
+      },
+      {
+       "id": "tiara-auxier",
+       "votes": 897
+      }
+     ],
+     "precincts": {
+      "reporting": 11,
+      "total": 11
+     }
+    },
+    {
+     "name": "Summit County",
+     "choices": [
+      {
+       "id": "zane-woolstenhulme",
+       "votes": 3807
+      },
+      {
+       "id": "tiara-auxier",
+       "votes": 1870
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 58
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-5",
@@ -888,7 +2613,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Cache County",
+     "choices": [
+      {
+       "id": "casey-snider",
+       "votes": 6421
+      },
+      {
+       "id": "kendra-penry",
+       "votes": 3779
+      }
+     ],
+     "precincts": {
+      "reporting": 50,
+      "total": 50
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-6-multi-county",
@@ -919,7 +2663,43 @@
     "reporting": 2,
     "total": 2,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Box Elder County",
+     "choices": [
+      {
+       "id": "rob-bishop",
+       "votes": 3531
+      },
+      {
+       "id": "james-rich",
+       "votes": 1444
+      }
+     ],
+     "precincts": {
+      "reporting": 13,
+      "total": 13
+     }
+    },
+    {
+     "name": "Weber County",
+     "choices": [
+      {
+       "id": "rob-bishop",
+       "votes": 4299
+      },
+      {
+       "id": "james-rich",
+       "votes": 2170
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-7",
@@ -950,7 +2730,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Weber County",
+     "choices": [
+      {
+       "id": "ryan-d-wilcox",
+       "votes": 5217
+      },
+      {
+       "id": "bianca-mittendorf",
+       "votes": 4801
+      }
+     ],
+     "precincts": {
+      "reporting": 25,
+      "total": 25
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-8-multi-county",
@@ -988,7 +2787,51 @@
     "reporting": 2,
     "total": 2,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Morgan County",
+     "choices": [
+      {
+       "id": "kim-james",
+       "votes": 130
+      },
+      {
+       "id": "jason-b-kyle",
+       "votes": 218
+      },
+      {
+       "id": "libby-shelton",
+       "votes": 10
+      }
+     ],
+     "precincts": {
+      "reporting": 2,
+      "total": 2
+     }
+    },
+    {
+     "name": "Weber County",
+     "choices": [
+      {
+       "id": "kim-james",
+       "votes": 5781
+      },
+      {
+       "id": "jason-b-kyle",
+       "votes": 5196
+      },
+      {
+       "id": "libby-shelton",
+       "votes": 446
+      }
+     ],
+     "precincts": {
+      "reporting": 42,
+      "total": 42
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-9",
@@ -1019,7 +2862,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Weber County",
+     "choices": [
+      {
+       "id": "angela-choberka",
+       "votes": 4669
+      },
+      {
+       "id": "jake-sawyer",
+       "votes": 4033
+      }
+     ],
+     "precincts": {
+      "reporting": 34,
+      "total": 34
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-10",
@@ -1050,7 +2912,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Weber County",
+     "choices": [
+      {
+       "id": "rosemary-t-lesser",
+       "votes": 5661
+      },
+      {
+       "id": "jim-alvey",
+       "votes": 3332
+      }
+     ],
+     "precincts": {
+      "reporting": 23,
+      "total": 23
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-11-multi-county",
@@ -1081,7 +2962,43 @@
     "reporting": 2,
     "total": 2,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "katy-hall",
+       "votes": 1512
+      },
+      {
+       "id": "dave-calder",
+       "votes": 1359
+      }
+     ],
+     "precincts": {
+      "reporting": 18,
+      "total": 18
+     }
+    },
+    {
+     "name": "Weber County",
+     "choices": [
+      {
+       "id": "katy-hall",
+       "votes": 2994
+      },
+      {
+       "id": "dave-calder",
+       "votes": 3051
+      }
+     ],
+     "precincts": {
+      "reporting": 16,
+      "total": 16
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-12-multi-county",
@@ -1112,7 +3029,43 @@
     "reporting": 2,
     "total": 2,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "mike-schultz",
+       "votes": 820
+      },
+      {
+       "id": "anna-graff",
+       "votes": 485
+      }
+     ],
+     "precincts": {
+      "reporting": 17,
+      "total": 17
+     }
+    },
+    {
+     "name": "Weber County",
+     "choices": [
+      {
+       "id": "mike-schultz",
+       "votes": 5058
+      },
+      {
+       "id": "anna-graff",
+       "votes": 3995
+      }
+     ],
+     "precincts": {
+      "reporting": 32,
+      "total": 32
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-13",
@@ -1150,7 +3103,30 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "erik-r-craythorne",
+       "votes": 4974
+      },
+      {
+       "id": "jeffrey-anderson",
+       "votes": 3841
+      },
+      {
+       "id": "tony-de-mille",
+       "votes": 621
+      }
+     ],
+     "precincts": {
+      "reporting": 41,
+      "total": 41
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-14",
@@ -1181,7 +3157,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "john-taylor",
+       "votes": 4733
+      },
+      {
+       "id": "brandon-young",
+       "votes": 3961
+      }
+     ],
+     "precincts": {
+      "reporting": 40,
+      "total": 40
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-15",
@@ -1212,7 +3207,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "ariel-defay",
+       "votes": 6160
+      },
+      {
+       "id": "anne-berbert",
+       "votes": 4126
+      }
+     ],
+     "precincts": {
+      "reporting": 65,
+      "total": 65
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-16",
@@ -1243,7 +3257,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "bob-j-stevenson",
+       "votes": 5128
+      },
+      {
+       "id": "abigail-treasure",
+       "votes": 4936
+      }
+     ],
+     "precincts": {
+      "reporting": 48,
+      "total": 48
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-17",
@@ -1274,7 +3307,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "lili-bitner",
+       "votes": 6272
+      },
+      {
+       "id": "eric-last",
+       "votes": 4528
+      }
+     ],
+     "precincts": {
+      "reporting": 61,
+      "total": 61
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-18",
@@ -1305,7 +3357,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "paul-cutler",
+       "votes": 6536
+      },
+      {
+       "id": "scott-troxel",
+       "votes": 4633
+      }
+     ],
+     "precincts": {
+      "reporting": 59,
+      "total": 59
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-19",
@@ -1329,7 +3400,22 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "raymond-p-ward",
+       "votes": 8258
+      }
+     ],
+     "precincts": {
+      "reporting": 45,
+      "total": 45
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-20",
@@ -1360,7 +3446,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Davis County",
+     "choices": [
+      {
+       "id": "phil-graves",
+       "votes": 4691
+      },
+      {
+       "id": "melissa-ballard",
+       "votes": 4333
+      }
+     ],
+     "precincts": {
+      "reporting": 47,
+      "total": 47
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-21",
@@ -1384,7 +3489,22 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "stephen-otterstrom",
+       "votes": 5879
+      }
+     ],
+     "precincts": {
+      "reporting": 28,
+      "total": 29
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-22",
@@ -1415,7 +3535,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "jen-dailey-provost",
+       "votes": 10129
+      },
+      {
+       "id": "char-varga",
+       "votes": 1460
+      }
+     ],
+     "precincts": {
+      "reporting": 28,
+      "total": 30
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-23-multi-county",
@@ -1453,7 +3592,51 @@
     "reporting": 2,
     "total": 2,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "hoang-nguyen",
+       "votes": 12366
+      },
+      {
+       "id": "franklin-d-robinson",
+       "votes": 2242
+      },
+      {
+       "id": "cabot-w-nelson",
+       "votes": 330
+      }
+     ],
+     "precincts": {
+      "reporting": 35,
+      "total": 36
+     }
+    },
+    {
+     "name": "Summit County",
+     "choices": [
+      {
+       "id": "hoang-nguyen",
+       "votes": 327
+      },
+      {
+       "id": "franklin-d-robinson",
+       "votes": 58
+      },
+      {
+       "id": "cabot-w-nelson",
+       "votes": 7
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 2
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-24",
@@ -1484,7 +3667,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "grant-amjad-miller",
+       "votes": 9898
+      },
+      {
+       "id": "braeden-j-oswald",
+       "votes": 1142
+      }
+     ],
+     "precincts": {
+      "reporting": 35,
+      "total": 35
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-25",
@@ -1515,7 +3717,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "angela-romero",
+       "votes": 3842
+      },
+      {
+       "id": "richard-t-nowak",
+       "votes": 1123
+      }
+     ],
+     "precincts": {
+      "reporting": 16,
+      "total": 16
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-26",
@@ -1546,7 +3767,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "michael-e-finch",
+       "votes": 4889
+      },
+      {
+       "id": "matt-macpherson",
+       "votes": 2511
+      }
+     ],
+     "precincts": {
+      "reporting": 21,
+      "total": 22
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-27",
@@ -1577,7 +3817,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "liz-oates",
+       "votes": 4765
+      },
+      {
+       "id": "anthony-loubet",
+       "votes": 2708
+      }
+     ],
+     "precincts": {
+      "reporting": 34,
+      "total": 52
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-28",
@@ -1615,7 +3874,30 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Tooele County",
+     "choices": [
+      {
+       "id": "nicholeen-peck",
+       "votes": 4333
+      },
+      {
+       "id": "anita-dalrymple",
+       "votes": 3275
+      },
+      {
+       "id": "wales-nematollahi",
+       "votes": 593
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 34
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-29-multi-county",
@@ -1660,7 +3942,84 @@
     "reporting": 3,
     "total": 3,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Juab County",
+     "choices": [
+      {
+       "id": "sheldon-birch",
+       "votes": 44
+      },
+      {
+       "id": "sara-snow",
+       "votes": 7
+      },
+      {
+       "id": "tynley-bean",
+       "votes": 4
+      },
+      {
+       "id": "jonathan-garrard",
+       "votes": 9
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 4
+     }
+    },
+    {
+     "name": "Millard County",
+     "choices": [
+      {
+       "id": "sheldon-birch",
+       "votes": 2377
+      },
+      {
+       "id": "sara-snow",
+       "votes": 447
+      },
+      {
+       "id": "tynley-bean",
+       "votes": 79
+      },
+      {
+       "id": "jonathan-garrard",
+       "votes": 86
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 17
+     }
+    },
+    {
+     "name": "Tooele County",
+     "choices": [
+      {
+       "id": "sheldon-birch",
+       "votes": 4038
+      },
+      {
+       "id": "sara-snow",
+       "votes": 1842
+      },
+      {
+       "id": "tynley-bean",
+       "votes": 375
+      },
+      {
+       "id": "jonathan-garrard",
+       "votes": 296
+      }
+     ],
+     "precincts": {
+      "reporting": 0,
+      "total": 45
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-30",
@@ -1691,7 +4050,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "jake-fitisemanu",
+       "votes": 5155
+      },
+      {
+       "id": "dave-parke",
+       "votes": 2717
+      }
+     ],
+     "precincts": {
+      "reporting": 24,
+      "total": 24
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-31",
@@ -1722,7 +4100,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "verona-mauga",
+       "votes": 4711
+      },
+      {
+       "id": "melody-jones",
+       "votes": 2014
+      }
+     ],
+     "precincts": {
+      "reporting": 25,
+      "total": 25
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-32",
@@ -1753,7 +4150,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "sahara-hayes",
+       "votes": 7944
+      },
+      {
+       "id": "aileen-hampton",
+       "votes": 1650
+      }
+     ],
+     "precincts": {
+      "reporting": 36,
+      "total": 37
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-33",
@@ -1784,7 +4200,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "doug-owens",
+       "votes": 11469
+      },
+      {
+       "id": "anna-reeves",
+       "votes": 3229
+      }
+     ],
+     "precincts": {
+      "reporting": 41,
+      "total": 42
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-34",
@@ -1808,7 +4243,22 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "julie-jackson",
+       "votes": 9457
+      }
+     ],
+     "precincts": {
+      "reporting": 40,
+      "total": 41
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-35",
@@ -1839,7 +4289,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "rosalba-dominguez",
+       "votes": 6577
+      },
+      {
+       "id": "monique-i-ketcham",
+       "votes": 3247
+      }
+     ],
+     "precincts": {
+      "reporting": 36,
+      "total": 37
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-36",
@@ -1870,7 +4339,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "blake-townsend",
+       "votes": 5545
+      },
+      {
+       "id": "jim-dunnigan",
+       "votes": 4599
+      }
+     ],
+     "precincts": {
+      "reporting": 30,
+      "total": 32
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-37",
@@ -1901,7 +4389,26 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   }
+   },
+   "counties": [
+    {
+     "name": "Salt Lake County",
+     "choices": [
+      {
+       "id": "ashlee-matthews",
+       "votes": 4251
+      },
+      {
+       "id": "casey-saxton",
+       "votes": 2243
+      }
+     ],
+     "precincts": {
+      "reporting": 29,
+      "total": 30
+     }
+    }
+   ]
   },
   {
    "id": "ut-state-house-district-38",
