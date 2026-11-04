@@ -1,0 +1,2990 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-hi",
+ "label": "Hawaii",
+ "source_ids": [
+  "hi-oe"
+ ],
+ "updated_at": "2026-11-04T13:35:44Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "hi-30-u-s-representative-dist-i",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "hi",
+   "office": "U.S. Representative, Dist I",
+   "district": "1",
+   "title": "U.S. Representative, Dist I",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ed-case",
+     "name": "Ed Case",
+     "party": "D",
+     "party_code": "D",
+     "votes": 100096
+    },
+    {
+     "id": "adriel-c-lam",
+     "name": "Adriel C. Lam",
+     "party": "R",
+     "party_code": "R",
+     "votes": 28685
+    },
+    {
+     "id": "jordan-s-conley",
+     "name": "Jordan S. Conley",
+     "party": "G",
+     "party_code": "O",
+     "votes": 4528
+    },
+    {
+     "id": "nathan-m-berning",
+     "name": "Nathan M. Berning",
+     "party": "N",
+     "party_code": "O",
+     "votes": 1780
+    }
+   ],
+   "precincts": {
+    "reporting": 112,
+    "total": 223,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-5-u-s-representative-dist-ii",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "hi",
+   "office": "U.S. Representative, Dist II",
+   "district": "2",
+   "title": "U.S. Representative, Dist II",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jill-n-tokuda",
+     "name": "Jill N. Tokuda",
+     "party": "D",
+     "party_code": "D",
+     "votes": 108369
+    },
+    {
+     "id": "brenton-awa",
+     "name": "Brenton Awa",
+     "party": "R",
+     "party_code": "R",
+     "votes": 48764
+    }
+   ],
+   "precincts": {
+    "reporting": 43,
+    "total": 273,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-43-governor-and-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Governor and Lieutenant Governor",
+   "district": null,
+   "title": "Governor and Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-green-derek-s-k-kawakami",
+     "name": "Josh Green / Derek S.K. Kawakami",
+     "party": "D",
+     "party_code": "D",
+     "votes": 227046
+    },
+    {
+     "id": "gary-cordery-daniel-anthony",
+     "name": "Gary Cordery / Daniel Anthony",
+     "party": "R",
+     "party_code": "R",
+     "votes": 75978
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 494,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-6-state-senator-dist-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Senator, Dist 2",
+   "district": null,
+   "title": "State Senator, Dist 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joy-san-buenaventura",
+     "name": "Joy San Buenaventura",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9196
+    },
+    {
+     "id": "frederick-f-fogel",
+     "name": "Frederick F. Fogel",
+     "party": "L",
+     "party_code": "O",
+     "votes": 2317
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-65-state-senator-dist-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Senator, Dist 9",
+   "district": null,
+   "title": "State Senator, Dist 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stanley-chang",
+     "name": "Stanley Chang",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11453
+    },
+    {
+     "id": "david-a-croswell",
+     "name": "David A. Croswell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3915
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-90-state-senator-dist-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Senator, Dist 13",
+   "district": null,
+   "title": "State Senator, Dist 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tricia-kwai-lin-nakamatsu",
+     "name": "Tricia Kwai Lin Nakamatsu",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7844
+    },
+    {
+     "id": "wallyn-kanoelani-christian",
+     "name": "Wallyn Kanoelani Christian",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2287
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-77-state-senator-dist-18-vacancy",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Senator, Dist 18 (Vacancy)",
+   "district": null,
+   "title": "State Senator, Dist 18 (Vacancy)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "danielle-maliekekai-bass",
+     "name": "Danielle Maliekekai Bass",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6938
+    },
+    {
+     "id": "kelly-puamailani-kitashima",
+     "name": "Kelly Puamailani Kitashima",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5119
+    },
+    {
+     "id": "max-g-hanna",
+     "name": "Max G. Hanna",
+     "party": "N",
+     "party_code": "O",
+     "votes": 239
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-26-state-senator-dist-19-vacancy",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Senator, Dist 19 (Vacancy)",
+   "district": null,
+   "title": "State Senator, Dist 19 (Vacancy)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rachele-f-lamosao",
+     "name": "Rachele F. Lamosao",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5064
+    },
+    {
+     "id": "elijah-pierick",
+     "name": "Elijah Pierick",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2267
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-76-state-senator-dist-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Senator, Dist 20",
+   "district": null,
+   "title": "State Senator, Dist 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-mcdermott",
+     "name": "Bob Mcdermott",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4557
+    },
+    {
+     "id": "markus-owens",
+     "name": "Markus Owens",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4429
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-23-state-representative-dist-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 2",
+   "district": null,
+   "title": "State Representative, Dist 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sue-keohokapu-lee-loy",
+     "name": "Sue Keohokapu Lee Loy",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5725
+    },
+    {
+     "id": "jonathan-kennealy",
+     "name": "Jonathan Kennealy",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1431
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-71-state-representative-dist-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 3",
+   "district": null,
+   "title": "State Representative, Dist 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-l-t-todd",
+     "name": "Christopher L.T. Todd",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4457
+    },
+    {
+     "id": "austin-martin",
+     "name": "Austin Martin",
+     "party": "L",
+     "party_code": "O",
+     "votes": 915
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-82-state-representative-dist-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 4",
+   "district": null,
+   "title": "State Representative, Dist 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greggor-ilagan",
+     "name": "Greggor Ilagan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4737
+    },
+    {
+     "id": "zak-wittenhagen",
+     "name": "Zak Wittenhagen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1330
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-22-state-representative-dist-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 5",
+   "district": null,
+   "title": "State Representative, Dist 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeanne-kapela",
+     "name": "Jeanne Kapela",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4875
+    },
+    {
+     "id": "dalene-mccormick",
+     "name": "Dalene Mccormick",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1608
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 20,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-59-state-representative-dist-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 8",
+   "district": null,
+   "title": "State Representative, Dist 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-a-tarnas",
+     "name": "David A. Tarnas",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4595
+    },
+    {
+     "id": "monique-perreira",
+     "name": "Monique Perreira",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1893
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-11-state-representative-dist-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 10",
+   "district": null,
+   "title": "State Representative, Dist 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tyson-k-miyake",
+     "name": "Tyson K. Miyake",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6110
+    },
+    {
+     "id": "travis-bumanglag",
+     "name": "Travis Bumanglag",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1892
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-18-state-representative-dist-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 11",
+   "district": null,
+   "title": "State Representative, Dist 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "terez-t-amato-amato",
+     "name": "Terez (T.Amato) Amato",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5123
+    },
+    {
+     "id": "sheila-walker",
+     "name": "Sheila Walker",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2094
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-33-state-representative-dist-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 12",
+   "district": null,
+   "title": "State Representative, Dist 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kyle-t-yamashita",
+     "name": "Kyle T. Yamashita",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6139
+    },
+    {
+     "id": "dan-johnson",
+     "name": "Dan Johnson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2367
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-62-state-representative-dist-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 13",
+   "district": null,
+   "title": "State Representative, Dist 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mahina-poepoe",
+     "name": "Mahina Poepoe",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4649
+    },
+    {
+     "id": "robin-d-vanderpool",
+     "name": "Robin D. Vanderpool",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1136
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-27-state-representative-dist-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 14",
+   "district": null,
+   "title": "State Representative, Dist 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sne-patel",
+     "name": "Sne Patel",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2536
+    },
+    {
+     "id": "pa-ele-kiakona",
+     "name": "Pa'ele Kiakona",
+     "party": "G",
+     "party_code": "O",
+     "votes": 2466
+    },
+    {
+     "id": "elle-cochran",
+     "name": "Elle Cochran",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1071
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-20-state-representative-dist-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 16",
+   "district": null,
+   "title": "State Representative, Dist 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "luke-a-evslin",
+     "name": "Luke A. Evslin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4704
+    },
+    {
+     "id": "david-hazlebeck",
+     "name": "David Hazlebeck",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1685
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-67-state-representative-dist-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 17",
+   "district": null,
+   "title": "State Representative, Dist 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daynette-dee-morikawa",
+     "name": "Daynette (Dee) Morikawa",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4584
+    },
+    {
+     "id": "misty-cluett",
+     "name": "Misty Cluett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1513
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-72-state-representative-dist-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 18",
+   "district": null,
+   "title": "State Representative, Dist 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-jamie-wataru",
+     "name": "James (Jamie) Wataru",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4692
+    },
+    {
+     "id": "joe-gedeon",
+     "name": "Joe Gedeon",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4102
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-55-state-representative-dist-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 20",
+   "district": null,
+   "title": "State Representative, Dist 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tina-nakada-grandinetti",
+     "name": "Tina Nakada Grandinetti",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4876
+    },
+    {
+     "id": "david-asing",
+     "name": "David Asing",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1633
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-78-state-representative-dist-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 23",
+   "district": null,
+   "title": "State Representative, Dist 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ikaika-m-olds",
+     "name": "Ikaika M. Olds",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3556
+    },
+    {
+     "id": "victor-muh",
+     "name": "Victor Muh",
+     "party": "R",
+     "party_code": "R",
+     "votes": 915
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-15-state-representative-dist-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 26",
+   "district": null,
+   "title": "State Representative, Dist 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ian-m-a-ross",
+     "name": "Ian M.A. Ross",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4100
+    },
+    {
+     "id": "tony-silva",
+     "name": "Tony Silva",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1505
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-21-state-representative-dist-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 29",
+   "district": null,
+   "title": "State Representative, Dist 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ikaika-hussey",
+     "name": "Ikaika Hussey",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2314
+    },
+    {
+     "id": "tess-abalos",
+     "name": "Tess Abalos",
+     "party": "R",
+     "party_code": "R",
+     "votes": 826
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-53-state-representative-dist-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 30",
+   "district": null,
+   "title": "State Representative, Dist 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shirley-ann-templo",
+     "name": "Shirley Ann Templo",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1552
+    },
+    {
+     "id": "amanda-ybanez",
+     "name": "Amanda Ybanez",
+     "party": "R",
+     "party_code": "R",
+     "votes": 742
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-29-state-representative-dist-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 31",
+   "district": null,
+   "title": "State Representative, Dist 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "linda-ichiyama",
+     "name": "Linda Ichiyama",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3447
+    },
+    {
+     "id": "nancy-valdez",
+     "name": "Nancy Valdez",
+     "party": "R",
+     "party_code": "R",
+     "votes": 993
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-85-state-representative-dist-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 32",
+   "district": null,
+   "title": "State Representative, Dist 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "micah-pookela-kim-aiu",
+     "name": "Micah Pookela Kim Aiu",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2704
+    },
+    {
+     "id": "garner-m-shimizu",
+     "name": "Garner M. Shimizu",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2554
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-36-state-representative-dist-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 34",
+   "district": null,
+   "title": "State Representative, Dist 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gregg-takayama",
+     "name": "Gregg Takayama",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4463
+    },
+    {
+     "id": "gaius-ii-kipi-dupio",
+     "name": "Gaius, II (Kipi) Dupio",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1453
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-51-state-representative-dist-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 39",
+   "district": null,
+   "title": "State Representative, Dist 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "corey-rosenlee",
+     "name": "Corey Rosenlee",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3419
+    },
+    {
+     "id": "daniel-danny-degracia",
+     "name": "Daniel (Danny) Degracia",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1908
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-12-state-representative-dist-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 40",
+   "district": null,
+   "title": "State Representative, Dist 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rose-martinez",
+     "name": "Rose Martinez",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2071
+    },
+    {
+     "id": "julie-reyes-oda",
+     "name": "Julie Reyes Oda",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2032
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-80-state-representative-dist-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 42",
+   "district": null,
+   "title": "State Representative, Dist 42",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anthony-makana-paris",
+     "name": "Anthony Makana Paris",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2058
+    },
+    {
+     "id": "diamond-garcia",
+     "name": "Diamond Garcia",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1986
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-92-state-representative-dist-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 43",
+   "district": null,
+   "title": "State Representative, Dist 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kanani-souza",
+     "name": "Kanani Souza",
+     "party": null,
+     "party_code": "O",
+     "votes": 1855
+    },
+    {
+     "id": "sheila-medeiros",
+     "name": "Sheila Medeiros",
+     "party": null,
+     "party_code": "O",
+     "votes": 1695
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-24-state-representative-dist-44",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 44",
+   "district": null,
+   "title": "State Representative, Dist 44",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "darius-k-kila",
+     "name": "Darius K. Kila",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2283
+    },
+    {
+     "id": "charla-kahealani-weaver",
+     "name": "Charla (Kahealani) Weaver",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1195
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-35-state-representative-dist-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 45",
+   "district": null,
+   "title": "State Representative, Dist 45",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-muraoka",
+     "name": "Chris Muraoka",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1643
+    },
+    {
+     "id": "kalehua-kaopua",
+     "name": "Kalehua Kaopua",
+     "party": "D",
+     "party_code": "D",
+     "votes": 1463
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-46-state-representative-dist-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 46",
+   "district": null,
+   "title": "State Representative, Dist 46",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-a-perruso",
+     "name": "Amy A. Perruso",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3132
+    },
+    {
+     "id": "daniel-michael-gabriel",
+     "name": "Daniel Michael Gabriel",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1658
+    }
+   ],
+   "precincts": {
+    "reporting": 7,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-88-state-representative-dist-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 47",
+   "district": null,
+   "title": "State Representative, Dist 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sean-quinlan",
+     "name": "Sean Quinlan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2333
+    },
+    {
+     "id": "mark-talaeai",
+     "name": "Mark Talaeai",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1656
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-44-state-representative-dist-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 49",
+   "district": null,
+   "title": "State Representative, Dist 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scot-matayoshi",
+     "name": "Scot Matayoshi",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5073
+    },
+    {
+     "id": "ale-rodas",
+     "name": "'Ale Rodas",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1441
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-31-state-representative-dist-50",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "State Representative, Dist 50",
+   "district": null,
+   "title": "State Representative, Dist 50",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-lee",
+     "name": "Mike Lee",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6689
+    },
+    {
+     "id": "jesse-w-m-fitzgerald",
+     "name": "Jesse W.M. Fitzgerald",
+     "party": "G",
+     "party_code": "O",
+     "votes": 1282
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-89-maui-resident-trustee",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Maui Resident Trustee",
+   "district": null,
+   "title": "Maui Resident Trustee",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carmen-hulu-lindsey",
+     "name": "Carmen Hulu Lindsey",
+     "party": null,
+     "party_code": "O",
+     "votes": 92816
+    },
+    {
+     "id": "ke-eaumoku-kapu",
+     "name": "Ke'eaumoku Kapu",
+     "party": null,
+     "party_code": "O",
+     "votes": 82928
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 494,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-84-oahu-resident-trustee",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Oahu Resident Trustee",
+   "district": null,
+   "title": "Oahu Resident Trustee",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kalei-akaka",
+     "name": "Kalei Akaka",
+     "party": null,
+     "party_code": "O",
+     "votes": 118090
+    },
+    {
+     "id": "hinaleimoana-hina-wong",
+     "name": "Hinaleimoana (Hina) Wong",
+     "party": null,
+     "party_code": "O",
+     "votes": 92233
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 494,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-87-at-large-trustee",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "At-Large Trustee",
+   "district": null,
+   "title": "At-Large Trustee",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ikaika-anderson",
+     "name": "Ikaika Anderson",
+     "party": null,
+     "party_code": "O",
+     "votes": 99821
+    },
+    {
+     "id": "brickwood-m-galuteria",
+     "name": "Brickwood M. Galuteria",
+     "party": null,
+     "party_code": "O",
+     "votes": 96709
+    },
+    {
+     "id": "john-iv-waihee",
+     "name": "John, IV Waihee",
+     "party": null,
+     "party_code": "O",
+     "votes": 96661
+    },
+    {
+     "id": "keoni-souza",
+     "name": "Keoni Souza",
+     "party": null,
+     "party_code": "O",
+     "votes": 96366
+    },
+    {
+     "id": "adrian-kealii-akina",
+     "name": "Adrian (Kealii) Akina",
+     "party": null,
+     "party_code": "O",
+     "votes": 89214
+    },
+    {
+     "id": "kanekoa-koa-crabbe",
+     "name": "Kanekoa (Koa) Crabbe",
+     "party": null,
+     "party_code": "O",
+     "votes": 75254
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 494,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-47-councilmember-dist-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember, Dist 4",
+   "district": null,
+   "title": "Councilmember, Dist 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eileen-ohara",
+     "name": "Eileen Ohara",
+     "party": null,
+     "party_code": "O",
+     "votes": 2720
+    },
+    {
+     "id": "lloyd-k-enriquez",
+     "name": "Lloyd K. Enriquez",
+     "party": null,
+     "party_code": "O",
+     "votes": 2683
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-61-councilmember-dist-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember, Dist 5",
+   "district": null,
+   "title": "Councilmember, Dist 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ikaika-rodenhurst",
+     "name": "Ikaika Rodenhurst",
+     "party": null,
+     "party_code": "O",
+     "votes": 2621
+    },
+    {
+     "id": "shannon-lopeka-matson",
+     "name": "Shannon Lopeka Matson",
+     "party": null,
+     "party_code": "O",
+     "votes": 2225
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-63-councilmember-dist-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember, Dist 6",
+   "district": null,
+   "title": "Councilmember, Dist 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zed-kaapana-aki",
+     "name": "Zed Kaapana Aki",
+     "party": null,
+     "party_code": "O",
+     "votes": 2821
+    },
+    {
+     "id": "guy-enriques",
+     "name": "Guy Enriques",
+     "party": null,
+     "party_code": "O",
+     "votes": 2734
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-3-mayor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Mayor",
+   "district": null,
+   "title": "Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-t-jr-bissen",
+     "name": "Richard T., Jr. Bissen",
+     "party": null,
+     "party_code": "O",
+     "votes": 23109
+    },
+    {
+     "id": "yuki-lei-kashiwa-sugimura",
+     "name": "Yuki Lei Kashiwa Sugimura",
+     "party": null,
+     "party_code": "O",
+     "votes": 18779
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-52-councilmember-east-maui",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember (East Maui)",
+   "district": null,
+   "title": "Councilmember (East Maui)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shane-sinenci",
+     "name": "Shane Sinenci",
+     "party": null,
+     "party_code": "O",
+     "votes": 21342
+    },
+    {
+     "id": "claire-kamalu-carroll",
+     "name": "Claire Kamalu Carroll",
+     "party": null,
+     "party_code": "O",
+     "votes": 14126
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-60-councilmember-west-maui",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember (West Maui)",
+   "district": null,
+   "title": "Councilmember (West Maui)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tamara-akiko-maile-paltin",
+     "name": "Tamara Akiko Maile Paltin",
+     "party": null,
+     "party_code": "O",
+     "votes": 25990
+    },
+    {
+     "id": "mark-tillman",
+     "name": "Mark Tillman",
+     "party": null,
+     "party_code": "O",
+     "votes": 10556
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-19-councilmember-wailuku-waihee-waikapu",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember (Wailuku-Waihee-Waikapu)",
+   "district": null,
+   "title": "Councilmember (Wailuku-Waihee-Waikapu)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marvin-moniz",
+     "name": "Marvin Moniz",
+     "party": null,
+     "party_code": "O",
+     "votes": 22607
+    },
+    {
+     "id": "ashley-awakea-lindsey",
+     "name": "Ashley Awakea Lindsey",
+     "party": null,
+     "party_code": "O",
+     "votes": 13445
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-49-councilmember-kahului",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember (Kahului)",
+   "district": null,
+   "title": "Councilmember (Kahului)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kauanoe-batangan",
+     "name": "Kauanoe Batangan",
+     "party": null,
+     "party_code": "O",
+     "votes": 19462
+    },
+    {
+     "id": "carol-lee-kamekona",
+     "name": "Carol Lee Kamekona",
+     "party": null,
+     "party_code": "O",
+     "votes": 16977
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-8-councilmember-south-maui",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember (South Maui)",
+   "district": null,
+   "title": "Councilmember (South Maui)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelly-takaya-king",
+     "name": "Kelly Takaya King",
+     "party": null,
+     "party_code": "O",
+     "votes": 19857
+    },
+    {
+     "id": "tom-cook",
+     "name": "Tom Cook",
+     "party": null,
+     "party_code": "O",
+     "votes": 18375
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-66-councilmember-makawao-haiku-paia",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember (Makawao-Haiku-Paia)",
+   "district": null,
+   "title": "Councilmember (Makawao-Haiku-Paia)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nohe-u-u-hodgins",
+     "name": "Nohe U'u-hodgins",
+     "party": null,
+     "party_code": "O",
+     "votes": 22509
+    },
+    {
+     "id": "stevie-kathryn-chung",
+     "name": "Stevie Kathryn Chung",
+     "party": null,
+     "party_code": "O",
+     "votes": 12972
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-14-councilmember-upcountry",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember (Upcountry)",
+   "district": null,
+   "title": "Councilmember (Upcountry)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bobby-pahia",
+     "name": "Bobby Pahia",
+     "party": null,
+     "party_code": "O",
+     "votes": 25462
+    },
+    {
+     "id": "jon-masaru-yokouchi",
+     "name": "Jon Masaru Yokouchi",
+     "party": null,
+     "party_code": "O",
+     "votes": 11383
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-50-councilmember-lanai",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember (Lanai)",
+   "district": null,
+   "title": "Councilmember (Lanai)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gabe-johnson",
+     "name": "Gabe Johnson",
+     "party": null,
+     "party_code": "O",
+     "votes": 28394
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-70-councilmember-molokai",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember (Molokai)",
+   "district": null,
+   "title": "Councilmember (Molokai)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "keani-rawlins-fernandez",
+     "name": "Keani Rawlins-fernandez",
+     "party": null,
+     "party_code": "O",
+     "votes": 28269
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-28-mayor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Mayor",
+   "district": null,
+   "title": "Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mel-rapozo",
+     "name": "Mel Rapozo",
+     "party": null,
+     "party_code": "O",
+     "votes": 10859
+    },
+    {
+     "id": "bernard-jr-carvalho",
+     "name": "Bernard, Jr. Carvalho",
+     "party": null,
+     "party_code": "O",
+     "votes": 7325
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-10-councilmember",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember",
+   "district": null,
+   "title": "Councilmember",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "fern-anuenue-holland",
+     "name": "Fern Anuenue Holland",
+     "party": null,
+     "party_code": "O",
+     "votes": 9570
+    },
+    {
+     "id": "arryl-j-kaneshiro",
+     "name": "Arryl J. Kaneshiro",
+     "party": null,
+     "party_code": "O",
+     "votes": 9326
+    },
+    {
+     "id": "todd-r-ozaki",
+     "name": "Todd R. Ozaki",
+     "party": null,
+     "party_code": "O",
+     "votes": 9238
+    },
+    {
+     "id": "michelle-kaleiohi-correa",
+     "name": "Michelle Kaleiohi Correa",
+     "party": null,
+     "party_code": "O",
+     "votes": 8998
+    },
+    {
+     "id": "addison-bulosan",
+     "name": "Addison Bulosan",
+     "party": null,
+     "party_code": "O",
+     "votes": 7617
+    },
+    {
+     "id": "dane-smith",
+     "name": "Dane Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 7058
+    },
+    {
+     "id": "paul-noboru-applegate",
+     "name": "Paul Noboru Applegate",
+     "party": null,
+     "party_code": "O",
+     "votes": 6760
+    },
+    {
+     "id": "taylor-h-shigemoto",
+     "name": "Taylor H. Shigemoto",
+     "party": null,
+     "party_code": "O",
+     "votes": 6709
+    },
+    {
+     "id": "billy-d-decosta",
+     "name": "Billy D. Decosta",
+     "party": null,
+     "party_code": "O",
+     "votes": 6174
+    },
+    {
+     "id": "mike-coots",
+     "name": "Mike Coots",
+     "party": null,
+     "party_code": "O",
+     "votes": 5300
+    },
+    {
+     "id": "umi-martin",
+     "name": "Umi Martin",
+     "party": null,
+     "party_code": "O",
+     "votes": 4832
+    },
+    {
+     "id": "cheree-rapozo",
+     "name": "Cheree Rapozo",
+     "party": null,
+     "party_code": "O",
+     "votes": 4622
+    },
+    {
+     "id": "keola-kaiminaauao",
+     "name": "Keola Kaiminaauao",
+     "party": null,
+     "party_code": "O",
+     "votes": 3868
+    },
+    {
+     "id": "john-h-scooby-mattos",
+     "name": "John H. (Scooby) Mattos",
+     "party": null,
+     "party_code": "O",
+     "votes": 3104
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-39-councilmember-dist-iv",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember, Dist IV",
+   "district": null,
+   "title": "Councilmember, Dist IV",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "trevor-ozawa",
+     "name": "Trevor Ozawa",
+     "party": null,
+     "party_code": "O",
+     "votes": 18552
+    },
+    {
+     "id": "tara-malia-gregory",
+     "name": "Tara Malia Gregory",
+     "party": null,
+     "party_code": "O",
+     "votes": 9190
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 38,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-75-councilmember-dist-vi",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Councilmember, Dist VI",
+   "district": null,
+   "title": "Councilmember, Dist VI",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tyler-dos-santos-tam",
+     "name": "Tyler Dos Santos-tam",
+     "party": null,
+     "party_code": "O",
+     "votes": 12572
+    },
+    {
+     "id": "corey-morihara",
+     "name": "Corey Morihara",
+     "party": null,
+     "party_code": "O",
+     "votes": 4394
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 34,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-38-question-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Question #1",
+   "district": null,
+   "title": "Question #1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 182262
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 101906
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 494,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-16-question-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Question #2",
+   "district": null,
+   "title": "Question #2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 195307
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 88954
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 494,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-79-1-hawai-i-county-auditor-s-power-to-employ",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "1. Hawai'i: County Auditor's Power to Employ",
+   "district": null,
+   "title": "1. Hawai'i: County Auditor's Power to Employ",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 26888
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 21117
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 84,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-81-maui-planning-commission-review-of-general-plan-and-land-use-ord",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Maui: Planning Commission Review of General Plan and Land Use Ordinances",
+   "district": null,
+   "title": "Maui: Planning Commission Review of General Plan and Land Use Ordinances",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 31367
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 6378
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-40-maui-standardizing-deadlines-for-voter-initiative-recall-and-cha",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Maui: Standardizing Deadlines for Voter Initiative, Recall, and Charter Amendment",
+   "district": null,
+   "title": "Maui: Standardizing Deadlines for Voter Initiative, Recall, and Charter Amendment",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 30793
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 6079
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-9-maui-computation-of-time",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Maui: Computation of Time",
+   "district": null,
+   "title": "Maui: Computation of Time",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 26845
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 9765
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-17-maui-processing-of-claims",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Maui: Processing of Claims",
+   "district": null,
+   "title": "Maui: Processing of Claims",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 29594
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 7081
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-4-maui-removing-the-english-translation-of-the-hawai-i-state-motto",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Maui: Removing the English Translation of the Hawai'i State Motto",
+   "district": null,
+   "title": "Maui: Removing the English Translation of the Hawai'i State Motto",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 22494
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 16194
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-73-maui-emergency-appropriations",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Maui: Emergency Appropriations",
+   "district": null,
+   "title": "Maui: Emergency Appropriations",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 25870
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 10926
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-32-maui-independent-nomination-board",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Maui: Independent Nomination Board",
+   "district": null,
+   "title": "Maui: Independent Nomination Board",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 17816
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 17621
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-56-maui-reappointment-of-members-of-the-board-of-ethics",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Maui: Reappointment of Members of the Board of Ethics",
+   "district": null,
+   "title": "Maui: Reappointment of Members of the Board of Ethics",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 23468
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 13802
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-57-relating-to-the-planning-commission-s-appeals-process",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Relating to the Planning Commission's Appeals Process",
+   "district": null,
+   "title": "Relating to the Planning Commission's Appeals Process",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 10530
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 5394
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-37-charter-question-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #1",
+   "district": null,
+   "title": "Charter Question #1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 131200
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 47263
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-1-charter-question-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #2",
+   "district": null,
+   "title": "Charter Question #2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 109155
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 63975
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-54-charter-question-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #3",
+   "district": null,
+   "title": "Charter Question #3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 86089
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 84532
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-42-charter-question-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #4",
+   "district": null,
+   "title": "Charter Question #4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 107027
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 68644
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-86-charter-question-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #5",
+   "district": null,
+   "title": "Charter Question #5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 97997
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 77700
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-58-charter-question-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #6",
+   "district": null,
+   "title": "Charter Question #6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 118609
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 58667
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-83-charter-question-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #7",
+   "district": null,
+   "title": "Charter Question #7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 126493
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 46676
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-2-charter-question-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #8",
+   "district": null,
+   "title": "Charter Question #8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 141100
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 32202
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-68-charter-question-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #9",
+   "district": null,
+   "title": "Charter Question #9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 116627
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 54425
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-74-charter-question-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #10",
+   "district": null,
+   "title": "Charter Question #10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 140835
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 35194
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-91-charter-question-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #11",
+   "district": null,
+   "title": "Charter Question #11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 119055
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 53729
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-48-charter-question-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #12",
+   "district": null,
+   "title": "Charter Question #12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 135653
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 37999
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-45-charter-question-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #13",
+   "district": null,
+   "title": "Charter Question #13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 104420
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 66060
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-34-charter-question-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #14",
+   "district": null,
+   "title": "Charter Question #14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 86676
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 80549
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-64-charter-question-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #15",
+   "district": null,
+   "title": "Charter Question #15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 123255
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 49247
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-7-charter-question-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #16",
+   "district": null,
+   "title": "Charter Question #16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 98997
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 73653
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-69-charter-question-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #17",
+   "district": null,
+   "title": "Charter Question #17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 120703
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 47058
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-41-charter-question-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #18",
+   "district": null,
+   "title": "Charter Question #18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 83171
+    },
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 82313
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-25-charter-question-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #19",
+   "district": null,
+   "title": "Charter Question #19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 107417
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 57200
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-13-charter-question-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "hi",
+   "office": "Charter Question #20",
+   "district": null,
+   "title": "Charter Question #20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 150962
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 23051
+    }
+   ],
+   "precincts": {
+    "reporting": 154,
+    "total": 308,
+    "unit": "precincts"
+   }
+  }
+ ]
+}

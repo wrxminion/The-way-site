@@ -1,0 +1,50 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-pa",
+ "label": "Pennsylvania",
+ "source_ids": [
+  "pa-dos"
+ ],
+ "updated_at": "2026-11-04T13:35:44Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "pa-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "pa",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "text": "Incomplete: in-person votes and some mail-in ballots counted so far.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-shapiro",
+     "name": "Josh Shapiro / Austin Davis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2948412
+    },
+    {
+     "id": "stacy-garrity",
+     "name": "Stacy Garrity / Jason L Richey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1892438
+    },
+    {
+     "id": "ken-krawchuk",
+     "name": "Ken Krawchuk / John C Thomas",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 63696
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  }
+ ]
+}

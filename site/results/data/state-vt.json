@@ -1,0 +1,4280 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-vt",
+ "label": "Vermont",
+ "source_ids": [
+  "vt-sos"
+ ],
+ "updated_at": "2026-11-04T13:35:44Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "vt-4-representative-to-congress-225757",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "vt",
+   "office": "U.S. House (at-large)",
+   "district": null,
+   "title": "U.S. House (at-large)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "becca-balint",
+     "name": "Becca Balint",
+     "party": null,
+     "party_code": "O",
+     "votes": 198410
+    },
+    {
+     "id": "gerald-malloy",
+     "name": "Gerald Malloy",
+     "party": null,
+     "party_code": "O",
+     "votes": 93755
+    },
+    {
+     "id": "suzanne-suz-seymour",
+     "name": "Suzanne Suz Seymour",
+     "party": null,
+     "party_code": "O",
+     "votes": 4357
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-5-governor-225759",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phil-scott",
+     "name": "Phil Scott",
+     "party": null,
+     "party_code": "O",
+     "votes": 161481
+    },
+    {
+     "id": "amanda-janoo",
+     "name": "Amanda Janoo",
+     "party": null,
+     "party_code": "O",
+     "votes": 141298
+    },
+    {
+     "id": "brian-judd",
+     "name": "Brian Judd",
+     "party": null,
+     "party_code": "O",
+     "votes": 2608
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-6-lieutenant-governor-225762",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "Lieutenant Governor",
+   "district": null,
+   "title": "Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "molly-gray",
+     "name": "Molly Gray",
+     "party": null,
+     "party_code": "O",
+     "votes": 190673
+    },
+    {
+     "id": "john-s-rodgers",
+     "name": "John S. Rodgers",
+     "party": null,
+     "party_code": "O",
+     "votes": 112383
+    },
+    {
+     "id": "aly-richards",
+     "name": "Aly Richards",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-7-state-treasurer-225763",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Treasurer",
+   "district": null,
+   "title": "State Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-pieciak",
+     "name": "Mike Pieciak",
+     "party": null,
+     "party_code": "O",
+     "votes": 185457
+    },
+    {
+     "id": "lynn-lafleur",
+     "name": "Lynn Lafleur",
+     "party": null,
+     "party_code": "O",
+     "votes": 92556
+    },
+    {
+     "id": "zachary-hampl",
+     "name": "Zachary Hampl",
+     "party": null,
+     "party_code": "O",
+     "votes": 19220
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-8-secretary-of-state-225768",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "Secretary Of State",
+   "district": null,
+   "title": "Secretary Of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sarah-copeland-hanzas",
+     "name": "Sarah Copeland Hanzas",
+     "party": null,
+     "party_code": "O",
+     "votes": 174381
+    },
+    {
+     "id": "h-brooke-paige",
+     "name": "H. Brooke Paige",
+     "party": null,
+     "party_code": "O",
+     "votes": 95900
+    },
+    {
+     "id": "rachel-shaw",
+     "name": "Rachel Shaw",
+     "party": null,
+     "party_code": "O",
+     "votes": 23960
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-9-auditor-of-accounts-225769",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "Auditor Of Accounts",
+   "district": null,
+   "title": "Auditor Of Accounts",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-ashe",
+     "name": "Tim Ashe",
+     "party": null,
+     "party_code": "O",
+     "votes": 203074
+    },
+    {
+     "id": "ivar-kronick",
+     "name": "Ivar Kronick",
+     "party": null,
+     "party_code": "O",
+     "votes": 90390
+    },
+    {
+     "id": "allan-chamberlain",
+     "name": "Allan Chamberlain",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-10-attorney-general-225772",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charity-r-clark",
+     "name": "Charity R. Clark",
+     "party": null,
+     "party_code": "O",
+     "votes": 200116
+    },
+    {
+     "id": "edwin-howell-kemon",
+     "name": "Edwin Howell Kemon",
+     "party": null,
+     "party_code": "O",
+     "votes": 94653
+    },
+    {
+     "id": "elizabeth-grant",
+     "name": "Elizabeth Grant",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225787",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jonathan-hescock",
+     "name": "Jonathan Hescock",
+     "party": null,
+     "party_code": "O",
+     "votes": 1220
+    },
+    {
+     "id": "jim-casey",
+     "name": "Jim Casey",
+     "party": null,
+     "party_code": "O",
+     "votes": 917
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225773",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "mike-roy",
+     "name": "Mike Roy",
+     "party": null,
+     "party_code": "O",
+     "votes": 2726
+    },
+    {
+     "id": "robin-scheu",
+     "name": "Robin Scheu",
+     "party": null,
+     "party_code": "O",
+     "votes": 2659
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225776",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tanya-byker",
+     "name": "Tanya Byker",
+     "party": null,
+     "party_code": "O",
+     "votes": 1497
+    },
+    {
+     "id": "annie-wilson",
+     "name": "Annie Wilson",
+     "party": null,
+     "party_code": "O",
+     "votes": 818
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225777",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "john-stroup",
+     "name": "John Stroup",
+     "party": null,
+     "party_code": "O",
+     "votes": 2665
+    },
+    {
+     "id": "ariel-bolles",
+     "name": "Ariel Bolles",
+     "party": null,
+     "party_code": "O",
+     "votes": 2296
+    },
+    {
+     "id": "rob-north",
+     "name": "Rob North",
+     "party": null,
+     "party_code": "O",
+     "votes": 1953
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225781",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "jeanne-albert",
+     "name": "Jeanne Albert",
+     "party": null,
+     "party_code": "O",
+     "votes": 2981
+    },
+    {
+     "id": "karen-lueders",
+     "name": "Karen Lueders",
+     "party": null,
+     "party_code": "O",
+     "votes": 2963
+    },
+    {
+     "id": "lynn-dike",
+     "name": "Lynn Dike",
+     "party": null,
+     "party_code": "O",
+     "votes": 1797
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225785",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jubilee-mcgill",
+     "name": "Jubilee Mcgill",
+     "party": null,
+     "party_code": "O",
+     "votes": 1421
+    },
+    {
+     "id": "del-thompson",
+     "name": "Del Thompson",
+     "party": null,
+     "party_code": "O",
+     "votes": 860
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225908",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "larry-satcowitz",
+     "name": "Larry Satcowitz",
+     "party": null,
+     "party_code": "O",
+     "votes": 2156
+    },
+    {
+     "id": "emery-mattheis",
+     "name": "Emery Mattheis",
+     "party": null,
+     "party_code": "O",
+     "votes": 2056
+    },
+    {
+     "id": "stephen-w-webster",
+     "name": "Stephen W. Webster",
+     "party": null,
+     "party_code": "O",
+     "votes": 1722
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225978",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kirk-white",
+     "name": "Kirk White",
+     "party": null,
+     "party_code": "O",
+     "votes": 1359
+    },
+    {
+     "id": "michael-j-white",
+     "name": "Michael J. White",
+     "party": null,
+     "party_code": "O",
+     "votes": 692
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225803",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-rice",
+     "name": "Mike Rice",
+     "party": null,
+     "party_code": "O",
+     "votes": 1201
+    },
+    {
+     "id": "sandra-sandy-pinsonault",
+     "name": "Sandra Sandy Pinsonault",
+     "party": null,
+     "party_code": "O",
+     "votes": 1053
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225789",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jonathan-cooper",
+     "name": "Jonathan Cooper",
+     "party": null,
+     "party_code": "O",
+     "votes": 1072
+    },
+    {
+     "id": "charles-edward-jewett",
+     "name": "Charles Edward Jewett",
+     "party": null,
+     "party_code": "O",
+     "votes": 834
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225791",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "timothy-r-corcoran-ii",
+     "name": "Timothy R. Corcoran Ii",
+     "party": null,
+     "party_code": "O",
+     "votes": 1936
+    },
+    {
+     "id": "william-will-greer",
+     "name": "William Will Greer",
+     "party": null,
+     "party_code": "O",
+     "votes": 1737
+    },
+    {
+     "id": "anthony-a-cook",
+     "name": "Anthony A. Cook",
+     "party": null,
+     "party_code": "O",
+     "votes": 922
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225795",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-k-durfee",
+     "name": "David K. Durfee",
+     "party": null,
+     "party_code": "O",
+     "votes": 1249
+    },
+    {
+     "id": "victor-k-harwood-jr",
+     "name": "Victor K. Harwood Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 772
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225797",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "robert-hunter",
+     "name": "Robert Hunter",
+     "party": null,
+     "party_code": "O",
+     "votes": 2479
+    },
+    {
+     "id": "thomas-west",
+     "name": "Thomas West",
+     "party": null,
+     "party_code": "O",
+     "votes": 2412
+    },
+    {
+     "id": "alford-al-clayton",
+     "name": "Alford Al Clayton",
+     "party": null,
+     "party_code": "O",
+     "votes": 1262
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225800",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "michael-nigro",
+     "name": "Michael Nigro",
+     "party": null,
+     "party_code": "O",
+     "votes": 1530
+    },
+    {
+     "id": "thomas-tom-blakely",
+     "name": "Thomas Tom Blakely",
+     "party": null,
+     "party_code": "O",
+     "votes": 1469
+    },
+    {
+     "id": "mary-a-morrissey",
+     "name": "Mary A. Morrissey",
+     "party": null,
+     "party_code": "O",
+     "votes": 1297
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225929",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-pritchard",
+     "name": "Chris Pritchard",
+     "party": null,
+     "party_code": "O",
+     "votes": 1186
+    },
+    {
+     "id": "jessica-van-oort",
+     "name": "Jessica Van Oort",
+     "party": null,
+     "party_code": "O",
+     "votes": 970
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225964",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-morrow",
+     "name": "Chris Morrow",
+     "party": null,
+     "party_code": "O",
+     "votes": 1374
+    },
+    {
+     "id": "e-stuart-coleman",
+     "name": "E. Stuart Coleman",
+     "party": null,
+     "party_code": "O",
+     "votes": 863
+    },
+    {
+     "id": "denis-benson",
+     "name": "Denis Benson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225804",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-tucker",
+     "name": "David Tucker",
+     "party": null,
+     "party_code": "O",
+     "votes": 1121
+    },
+    {
+     "id": "debra-debbie-powers",
+     "name": "Debra Debbie Powers",
+     "party": null,
+     "party_code": "O",
+     "votes": 1034
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225806",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-southworth",
+     "name": "Michael Southworth",
+     "party": null,
+     "party_code": "O",
+     "votes": 997
+    },
+    {
+     "id": "audrey-grant",
+     "name": "Audrey Grant",
+     "party": null,
+     "party_code": "O",
+     "votes": 989
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225810",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "beth-m-quimby",
+     "name": "Beth M. Quimby",
+     "party": null,
+     "party_code": "O",
+     "votes": 1874
+    },
+    {
+     "id": "dennis-r-labounty",
+     "name": "Dennis R. Labounty",
+     "party": null,
+     "party_code": "O",
+     "votes": 1605
+    },
+    {
+     "id": "erik-r-lavallee",
+     "name": "Erik R. Lavallee",
+     "party": null,
+     "party_code": "O",
+     "votes": 1509
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225814",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "amanda-cochrane",
+     "name": "Amanda Cochrane",
+     "party": null,
+     "party_code": "O",
+     "votes": 2003
+    },
+    {
+     "id": "deborah-cordz-dolgin",
+     "name": "Deborah Cordz Dolgin",
+     "party": null,
+     "party_code": "O",
+     "votes": 1332
+    },
+    {
+     "id": "steven-dolgin",
+     "name": "Steven Dolgin",
+     "party": null,
+     "party_code": "O",
+     "votes": 1301
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225817",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-burtt",
+     "name": "Greg Burtt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1407
+    },
+    {
+     "id": "eric-bach",
+     "name": "Eric Bach",
+     "party": null,
+     "party_code": "O",
+     "votes": 1161
+    },
+    {
+     "id": "clayton-cargill",
+     "name": "Clayton Cargill",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225866",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-kascenska",
+     "name": "John Kascenska",
+     "party": null,
+     "party_code": "O",
+     "votes": 1603
+    },
+    {
+     "id": "adam-churchill",
+     "name": "Adam Churchill",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "eric-brault",
+     "name": "Eric Brault",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225903",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-otterman",
+     "name": "Tom Otterman",
+     "party": null,
+     "party_code": "O",
+     "votes": 960
+    },
+    {
+     "id": "aiden-boyd-otterman",
+     "name": "Aiden Boyd Otterman",
+     "party": null,
+     "party_code": "O",
+     "votes": 848
+    },
+    {
+     "id": "susan-culp",
+     "name": "Susan Culp",
+     "party": null,
+     "party_code": "O",
+     "votes": 296
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225818",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jana-brown",
+     "name": "Jana Brown",
+     "party": null,
+     "party_code": "O",
+     "votes": 2095
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225834",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "erin-brady",
+     "name": "Erin Brady",
+     "party": null,
+     "party_code": "O",
+     "votes": 3982
+    },
+    {
+     "id": "angela-arsenault",
+     "name": "Angela Arsenault",
+     "party": null,
+     "party_code": "O",
+     "votes": 3841
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225852",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "edye-graning",
+     "name": "Edye Graning",
+     "party": null,
+     "party_code": "O",
+     "votes": 3694
+    },
+    {
+     "id": "trevor-squirrell",
+     "name": "Trevor Squirrell",
+     "party": null,
+     "party_code": "O",
+     "votes": 3651
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225862",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "natalie-cashen",
+     "name": "Natalie Cashen",
+     "party": null,
+     "party_code": "O",
+     "votes": 1667
+    },
+    {
+     "id": "henry-a-bonges-iii",
+     "name": "Henry A. Bonges Iii",
+     "party": null,
+     "party_code": "O",
+     "votes": 1659
+    },
+    {
+     "id": "anthony-tony-micklus",
+     "name": "Anthony Tony Micklus",
+     "party": null,
+     "party_code": "O",
+     "votes": 1625
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225819",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kate-nugent",
+     "name": "Kate Nugent",
+     "party": null,
+     "party_code": "O",
+     "votes": 1747
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225820",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-minier",
+     "name": "Brian Minier",
+     "party": null,
+     "party_code": "O",
+     "votes": 1491
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225821",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "martin-j-lalonde",
+     "name": "Martin J. Lalonde",
+     "party": null,
+     "party_code": "O",
+     "votes": 2126
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225822",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "bram-kleppner",
+     "name": "Bram Kleppner",
+     "party": null,
+     "party_code": "O",
+     "votes": 3271
+    },
+    {
+     "id": "karen-paul",
+     "name": "Karen Paul",
+     "party": null,
+     "party_code": "O",
+     "votes": 3237
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-226110",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "elizabeth-allen-pennebaker",
+     "name": "Elizabeth Allen-Pennebaker",
+     "party": null,
+     "party_code": "O",
+     "votes": 1066
+    },
+    {
+     "id": "adam-franz",
+     "name": "Adam Franz",
+     "party": null,
+     "party_code": "O",
+     "votes": 835
+    },
+    {
+     "id": "aaliyah-davila",
+     "name": "Aaliyah Davila",
+     "party": null,
+     "party_code": "O",
+     "votes": 166
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-213127",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "ben-bosley",
+     "name": "Ben Bosley",
+     "party": null,
+     "party_code": "O",
+     "votes": 1629
+    },
+    {
+     "id": "brian-cina",
+     "name": "Brian Cina",
+     "party": null,
+     "party_code": "O",
+     "votes": 1525
+    },
+    {
+     "id": "troy-headrick",
+     "name": "Troy Headrick",
+     "party": null,
+     "party_code": "O",
+     "votes": 785
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-226133",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "trang-do",
+     "name": "Trang Do",
+     "party": null,
+     "party_code": "O",
+     "votes": 2200
+    },
+    {
+     "id": "jeffrey-peterson",
+     "name": "Jeffrey Peterson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1929
+    },
+    {
+     "id": "christopher-haessly",
+     "name": "Christopher Haessly",
+     "party": null,
+     "party_code": "O",
+     "votes": 598
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225827",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "abbey-duke",
+     "name": "Abbey Duke",
+     "party": null,
+     "party_code": "O",
+     "votes": 2028
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225828",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "carol-ode",
+     "name": "Carol Ode",
+     "party": null,
+     "party_code": "O",
+     "votes": 2545
+    },
+    {
+     "id": "ali-dieng",
+     "name": "Ali Dieng",
+     "party": null,
+     "party_code": "O",
+     "votes": 2329
+    },
+    {
+     "id": "dave-hartnett",
+     "name": "Dave Hartnett",
+     "party": null,
+     "party_code": "O",
+     "votes": 2115
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225830",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "wendy-critchlow",
+     "name": "Wendy Critchlow",
+     "party": null,
+     "party_code": "O",
+     "votes": 2651
+    },
+    {
+     "id": "sarah-sarita-austin",
+     "name": "Sarah Sarita Austin",
+     "party": null,
+     "party_code": "O",
+     "votes": 2321
+    },
+    {
+     "id": "alex-r-thibault",
+     "name": "Alex R. Thibault",
+     "party": null,
+     "party_code": "O",
+     "votes": 1707
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225835",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "doug-bishop",
+     "name": "Doug Bishop",
+     "party": null,
+     "party_code": "O",
+     "votes": 2048
+    },
+    {
+     "id": "gayle-pezzo",
+     "name": "Gayle Pezzo",
+     "party": null,
+     "party_code": "O",
+     "votes": 1803
+    },
+    {
+     "id": "doug-wood",
+     "name": "Doug Wood",
+     "party": null,
+     "party_code": "O",
+     "votes": 1237
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225839",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "daisy-berbeco",
+     "name": "Daisy Berbeco",
+     "party": null,
+     "party_code": "O",
+     "votes": 2347
+    },
+    {
+     "id": "matt-gile",
+     "name": "Matt Gile",
+     "party": null,
+     "party_code": "O",
+     "votes": 2095
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225841",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "lori-houghton",
+     "name": "Lori Houghton",
+     "party": null,
+     "party_code": "O",
+     "votes": 3122
+    },
+    {
+     "id": "karen-dolan",
+     "name": "Karen Dolan",
+     "party": null,
+     "party_code": "O",
+     "votes": 3075
+    },
+    {
+     "id": "brent-boerger",
+     "name": "Brent Boerger",
+     "party": null,
+     "party_code": "O",
+     "votes": 1069
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225845",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "rey-garofano",
+     "name": "Rey Garofano",
+     "party": null,
+     "party_code": "O",
+     "votes": 2631
+    },
+    {
+     "id": "erik-post",
+     "name": "Erik Post",
+     "party": null,
+     "party_code": "O",
+     "votes": 2402
+    },
+    {
+     "id": "lynn-u-smith",
+     "name": "Lynn U. Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 1373
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225848",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alyssa-black",
+     "name": "Alyssa Black",
+     "party": null,
+     "party_code": "O",
+     "votes": 1489
+    },
+    {
+     "id": "stephanie-mack",
+     "name": "Stephanie Mack",
+     "party": null,
+     "party_code": "O",
+     "votes": 926
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225851",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julia-andrews",
+     "name": "Julia Andrews",
+     "party": null,
+     "party_code": "O",
+     "votes": 1315
+    },
+    {
+     "id": "brenda-steady",
+     "name": "Brenda Steady",
+     "party": null,
+     "party_code": "O",
+     "votes": 1092
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225854",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelsey-pasteris",
+     "name": "Kelsey Pasteris",
+     "party": null,
+     "party_code": "O",
+     "votes": 1539
+    },
+    {
+     "id": "john-kingston",
+     "name": "John Kingston",
+     "party": null,
+     "party_code": "O",
+     "votes": 1024
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225855",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chea-waters-evans",
+     "name": "Chea Waters Evans",
+     "party": null,
+     "party_code": "O",
+     "votes": 1904
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225857",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kate-lalley",
+     "name": "Kate Lalley",
+     "party": null,
+     "party_code": "O",
+     "votes": 1989
+    },
+    {
+     "id": "deb-mayfield",
+     "name": "Deb Mayfield",
+     "party": null,
+     "party_code": "O",
+     "votes": 646
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225858",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shawn-j-sweeney",
+     "name": "Shawn J. Sweeney",
+     "party": null,
+     "party_code": "O",
+     "votes": 2251
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225859",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bridget-burkhardt",
+     "name": "Bridget Burkhardt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1717
+    },
+    {
+     "id": "mitchel-cypes",
+     "name": "Mitchel Cypes",
+     "party": null,
+     "party_code": "O",
+     "votes": 819
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225861",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emilie-krasnow",
+     "name": "Emilie Krasnow",
+     "party": null,
+     "party_code": "O",
+     "votes": 1770
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225886",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "michael-r-morgan",
+     "name": "Michael R. Morgan",
+     "party": null,
+     "party_code": "O",
+     "votes": 2381
+    },
+    {
+     "id": "dave-skinner",
+     "name": "Dave Skinner",
+     "party": null,
+     "party_code": "O",
+     "votes": 2328
+    },
+    {
+     "id": "sylvia-jensen",
+     "name": "Sylvia Jensen",
+     "party": null,
+     "party_code": "O",
+     "votes": 2246
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225943",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "theresa-a-m-wood",
+     "name": "Theresa A.M. Wood",
+     "party": null,
+     "party_code": "O",
+     "votes": 3739
+    },
+    {
+     "id": "katarina-lisaius",
+     "name": "Katarina Lisaius",
+     "party": null,
+     "party_code": "O",
+     "votes": 3495
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225867",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-m-jacobs",
+     "name": "David M. Jacobs",
+     "party": null,
+     "party_code": "O",
+     "votes": 1466
+    },
+    {
+     "id": "john-woton-lally",
+     "name": "John Woton Lally",
+     "party": null,
+     "party_code": "O",
+     "votes": 286
+    },
+    {
+     "id": "judith-castonguay",
+     "name": "Judith Castonguay",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225869",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "keith-billado",
+     "name": "Keith Billado",
+     "party": null,
+     "party_code": "O",
+     "votes": 2129
+    },
+    {
+     "id": "caroline-bright",
+     "name": "Caroline Bright",
+     "party": null,
+     "party_code": "O",
+     "votes": 2100
+    },
+    {
+     "id": "bob-stebbins",
+     "name": "Bob Stebbins",
+     "party": null,
+     "party_code": "O",
+     "votes": 2098
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225872",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eileen-lynn-dickinson",
+     "name": "Eileen Lynn Dickinson",
+     "party": null,
+     "party_code": "O",
+     "votes": 997
+    },
+    {
+     "id": "pam-mccarthy",
+     "name": "Pam Mccarthy",
+     "party": null,
+     "party_code": "O",
+     "votes": 961
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225874",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "suzanne-kenyon",
+     "name": "Suzanne Kenyon",
+     "party": null,
+     "party_code": "O",
+     "votes": 966
+    },
+    {
+     "id": "joseph-joe-luneau",
+     "name": "Joseph Joe Luneau",
+     "party": null,
+     "party_code": "O",
+     "votes": 756
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225878",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "thomas-tom-oliver",
+     "name": "Thomas Tom Oliver",
+     "party": null,
+     "party_code": "O",
+     "votes": 1905
+    },
+    {
+     "id": "matthew-e-walker",
+     "name": "Matthew E. Walker",
+     "party": null,
+     "party_code": "O",
+     "votes": 1846
+    },
+    {
+     "id": "tamar-bouchard",
+     "name": "Tamar Bouchard",
+     "party": null,
+     "party_code": "O",
+     "votes": 1268
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225881",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "wayne-a-laroche",
+     "name": "Wayne A. Laroche",
+     "party": null,
+     "party_code": "O",
+     "votes": 2505
+    },
+    {
+     "id": "lisa-a-hango",
+     "name": "Lisa A. Hango",
+     "party": null,
+     "party_code": "O",
+     "votes": 2447
+    },
+    {
+     "id": "zach-scheffler",
+     "name": "Zach Scheffler",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225882",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-gregoire",
+     "name": "James Gregoire",
+     "party": null,
+     "party_code": "O",
+     "votes": 1891
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225883",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "allen-penny-demar",
+     "name": "Allen Penny Demar",
+     "party": null,
+     "party_code": "O",
+     "votes": 1358
+    },
+    {
+     "id": "cindy-weed",
+     "name": "Cindy Weed",
+     "party": null,
+     "party_code": "O",
+     "votes": 18
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225884",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zach-scheffler",
+     "name": "Zach Scheffler",
+     "party": null,
+     "party_code": "O",
+     "votes": 1022
+    },
+    {
+     "id": "john-jack-brigham",
+     "name": "John Jack Brigham",
+     "party": null,
+     "party_code": "O",
+     "votes": 798
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225897",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "david-yacovone",
+     "name": "David Yacovone",
+     "party": null,
+     "party_code": "O",
+     "votes": 3155
+    },
+    {
+     "id": "saudia-lamont",
+     "name": "Saudia Lamont",
+     "party": null,
+     "party_code": "O",
+     "votes": 2680
+    },
+    {
+     "id": "susanna-guthmann-burnham",
+     "name": "Susanna Guthmann Burnham",
+     "party": null,
+     "party_code": "O",
+     "votes": 1365
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-210839",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jed-lipsky",
+     "name": "Jed Lipsky",
+     "party": null,
+     "party_code": "O",
+     "votes": 2024
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225890",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "daniel-noyes",
+     "name": "Daniel Noyes",
+     "party": null,
+     "party_code": "O",
+     "votes": 2037
+    },
+    {
+     "id": "james-jim-lipinski",
+     "name": "James Jim Lipinski",
+     "party": null,
+     "party_code": "O",
+     "votes": 1844
+    },
+    {
+     "id": "richard-j-bailey",
+     "name": "Richard J. Bailey",
+     "party": null,
+     "party_code": "O",
+     "votes": 1562
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-213269",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-howard",
+     "name": "Adam Howard",
+     "party": null,
+     "party_code": "O",
+     "votes": 990
+    },
+    {
+     "id": "deb-nevil",
+     "name": "Deb Nevil",
+     "party": null,
+     "party_code": "O",
+     "votes": 639
+    },
+    {
+     "id": "rebecca-pitre",
+     "name": "Rebecca Pitre",
+     "party": null,
+     "party_code": "O",
+     "votes": 544
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225693",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "mark-higley",
+     "name": "Mark Higley",
+     "party": null,
+     "party_code": "O",
+     "votes": 2815
+    },
+    {
+     "id": "praneet-menon",
+     "name": "Praneet Menon",
+     "party": null,
+     "party_code": "O",
+     "votes": 1992
+    },
+    {
+     "id": "bernie-sanders",
+     "name": "Bernie Sanders",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225899",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-mike-tagliavia",
+     "name": "Michael Mike Tagliavia",
+     "party": null,
+     "party_code": "O",
+     "votes": 867
+    },
+    {
+     "id": "gregory-wilson",
+     "name": "Gregory Wilson",
+     "party": null,
+     "party_code": "O",
+     "votes": 714
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225901",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lance-v-mills",
+     "name": "Lance V. Mills",
+     "party": null,
+     "party_code": "O",
+     "votes": 1257
+    },
+    {
+     "id": "nicholas-dilorenzo",
+     "name": "Nicholas Dilorenzo",
+     "party": null,
+     "party_code": "O",
+     "votes": 804
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225902",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "fran-covey",
+     "name": "Fran Covey",
+     "party": null,
+     "party_code": "O",
+     "votes": 1420
+    },
+    {
+     "id": "alexandra-aaron",
+     "name": "Alexandra Aaron",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "chuck-peel",
+     "name": "Chuck Peel",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225947",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "gina-galfetti",
+     "name": "Gina Galfetti",
+     "party": null,
+     "party_code": "O",
+     "votes": 2598
+    },
+    {
+     "id": "david-soucy",
+     "name": "David Soucy",
+     "party": null,
+     "party_code": "O",
+     "votes": 2252
+    },
+    {
+     "id": "melissa-battah",
+     "name": "Melissa Battah",
+     "party": null,
+     "party_code": "O",
+     "votes": 1738
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225980",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-k-o-brien",
+     "name": "John K. O'Brien",
+     "party": null,
+     "party_code": "O",
+     "votes": 1136
+    },
+    {
+     "id": "bruce-post",
+     "name": "Bruce Post",
+     "party": null,
+     "party_code": "O",
+     "votes": 862
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225982",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "dee-gish",
+     "name": "Dee Gish",
+     "party": null,
+     "party_code": "O",
+     "votes": 4134
+    },
+    {
+     "id": "lauren-morando-rhim",
+     "name": "Lauren Morando Rhim",
+     "party": null,
+     "party_code": "O",
+     "votes": 3903
+    },
+    {
+     "id": "fran-covey",
+     "name": "Fran Covey",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225909",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-nelson",
+     "name": "Richard Nelson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1729
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225911",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "woodman-woody-h-page",
+     "name": "Woodman Woody H. Page",
+     "party": null,
+     "party_code": "O",
+     "votes": 783
+    },
+    {
+     "id": "xavier-stevens",
+     "name": "Xavier Stevens",
+     "party": null,
+     "party_code": "O",
+     "votes": 634
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225912",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kenneth-l-wells",
+     "name": "Kenneth L. Wells",
+     "party": null,
+     "party_code": "O",
+     "votes": 1184
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225913",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leanne-harple",
+     "name": "Leanne Harple",
+     "party": null,
+     "party_code": "O",
+     "votes": 1603
+    },
+    {
+     "id": "john-s-rodgers",
+     "name": "John S Rodgers",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "tabitha-armstrong",
+     "name": "Tabitha Armstrong",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225931",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phoebe-tucker",
+     "name": "Phoebe Tucker",
+     "party": null,
+     "party_code": "O",
+     "votes": 1283
+    },
+    {
+     "id": "kevin-c-winter",
+     "name": "Kevin C. Winter",
+     "party": null,
+     "party_code": "O",
+     "votes": 993
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225914",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "patricia-a-mccoy",
+     "name": "Patricia A. Mccoy",
+     "party": null,
+     "party_code": "O",
+     "votes": 1471
+    },
+    {
+     "id": "jean-ray",
+     "name": "Jean Ray",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "patricia-mccoy",
+     "name": "Patricia Mccoy",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225915",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-p-canfield",
+     "name": "William P. Canfield",
+     "party": null,
+     "party_code": "O",
+     "votes": 1302
+    },
+    {
+     "id": "lyle-deida",
+     "name": "Lyle Deida",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "steve-seatta",
+     "name": "Steve Seatta",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225916",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "valorie-taylor",
+     "name": "Valorie Taylor",
+     "party": null,
+     "party_code": "O",
+     "votes": 1606
+    },
+    {
+     "id": "becca-jaren",
+     "name": "Becca Jaren",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "janice-stumpf",
+     "name": "Janice Stumpf",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225918",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "thomas-tom-burditt",
+     "name": "Thomas Tom Burditt",
+     "party": null,
+     "party_code": "O",
+     "votes": 2308
+    },
+    {
+     "id": "david-dave-bosch",
+     "name": "David Dave Bosch",
+     "party": null,
+     "party_code": "O",
+     "votes": 2152
+    },
+    {
+     "id": "marsha-cassel",
+     "name": "Marsha Cassel",
+     "party": null,
+     "party_code": "O",
+     "votes": 1826
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225920",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-brown",
+     "name": "Chris Brown",
+     "party": null,
+     "party_code": "O",
+     "votes": 1337
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225921",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-howland",
+     "name": "Christopher Howland",
+     "party": null,
+     "party_code": "O",
+     "votes": 1484
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225922",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-maguire",
+     "name": "Eric Maguire",
+     "party": null,
+     "party_code": "O",
+     "votes": 1281
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-226111",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-siliski",
+     "name": "Chris Siliski",
+     "party": null,
+     "party_code": "O",
+     "votes": 735
+    },
+    {
+     "id": "cindy-laskevich",
+     "name": "Cindy Laskevich",
+     "party": null,
+     "party_code": "O",
+     "votes": 462
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225923",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-keyser",
+     "name": "Chris Keyser",
+     "party": null,
+     "party_code": "O",
+     "votes": 1059
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225924",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alicia-malay",
+     "name": "Alicia Malay",
+     "party": null,
+     "party_code": "O",
+     "votes": 1233
+    },
+    {
+     "id": "genevieve-k-duchesneau",
+     "name": "Genevieve K. Duchesneau",
+     "party": null,
+     "party_code": "O",
+     "votes": 877
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225926",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-haylon",
+     "name": "Jeff Haylon",
+     "party": null,
+     "party_code": "O",
+     "votes": 1163
+    },
+    {
+     "id": "aida-nielsen",
+     "name": "Aida Nielsen",
+     "party": null,
+     "party_code": "O",
+     "votes": 739
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225933",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "kenneth-w-goslant",
+     "name": "Kenneth W. Goslant",
+     "party": null,
+     "party_code": "O",
+     "votes": 2477
+    },
+    {
+     "id": "lucas-j-herring",
+     "name": "Lucas J. Herring",
+     "party": null,
+     "party_code": "O",
+     "votes": 2154
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225935",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "candice-white",
+     "name": "Candice White",
+     "party": null,
+     "party_code": "O",
+     "votes": 3459
+    },
+    {
+     "id": "dara-torre",
+     "name": "Dara Torre",
+     "party": null,
+     "party_code": "O",
+     "votes": 3431
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225936",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "sonya-spaulding",
+     "name": "Sonya Spaulding",
+     "party": null,
+     "party_code": "O",
+     "votes": 1722
+    },
+    {
+     "id": "edward-teddy-waszazak",
+     "name": "Edward Teddy Waszazak",
+     "party": null,
+     "party_code": "O",
+     "votes": 1529
+    },
+    {
+     "id": "michael-boutin",
+     "name": "Michael Boutin",
+     "party": null,
+     "party_code": "O",
+     "votes": 1333
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225939",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "jared-duval",
+     "name": "Jared Duval",
+     "party": null,
+     "party_code": "O",
+     "votes": 3697
+    },
+    {
+     "id": "kate-mccann",
+     "name": "Kate Mccann",
+     "party": null,
+     "party_code": "O",
+     "votes": 3667
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225941",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ela-chapin",
+     "name": "Ela Chapin",
+     "party": null,
+     "party_code": "O",
+     "votes": 2121
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225942",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marc-mihaly",
+     "name": "Marc Mihaly",
+     "party": null,
+     "party_code": "O",
+     "votes": 1914
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225950",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zon-eastes",
+     "name": "Zon Eastes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1426
+    },
+    {
+     "id": "nancy-l-gassett",
+     "name": "Nancy L. Gassett",
+     "party": null,
+     "party_code": "O",
+     "votes": 738
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-210672",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "laura-sibilia",
+     "name": "Laura Sibilia",
+     "party": null,
+     "party_code": "O",
+     "votes": 1320
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225951",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "michelle-bos-lun",
+     "name": "Michelle Bos-Lun",
+     "party": null,
+     "party_code": "O",
+     "votes": 2598
+    },
+    {
+     "id": "chris-lundberg",
+     "name": "Chris Lundberg",
+     "party": null,
+     "party_code": "O",
+     "votes": 2430
+    },
+    {
+     "id": "nicole-amanda-cota",
+     "name": "Nicole Amanda Cota",
+     "party": null,
+     "party_code": "O",
+     "votes": 904
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225955",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-mrowicki",
+     "name": "Mike Mrowicki",
+     "party": null,
+     "party_code": "O",
+     "votes": 1770
+    },
+    {
+     "id": "lynne-wilkins",
+     "name": "Lynne Wilkins",
+     "party": null,
+     "party_code": "O",
+     "votes": 419
+    },
+    {
+     "id": "ian-g-diamondstone",
+     "name": "Ian G. Diamondstone",
+     "party": null,
+     "party_code": "O",
+     "votes": 208
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225957",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emily-long",
+     "name": "Emily Long",
+     "party": null,
+     "party_code": "O",
+     "votes": 1745
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225958",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emily-carris-duncan",
+     "name": "Emily Carris Duncan",
+     "party": null,
+     "party_code": "O",
+     "votes": 1369
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225960",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emilie-kornheiser",
+     "name": "Emilie Kornheiser",
+     "party": null,
+     "party_code": "O",
+     "votes": 1303
+    },
+    {
+     "id": "aaron-smith",
+     "name": "Aaron Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 416
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225961",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-quipp",
+     "name": "Daniel Quipp",
+     "party": null,
+     "party_code": "O",
+     "votes": 1472
+    },
+    {
+     "id": "william-bill-harvey",
+     "name": "William Bill Harvey",
+     "party": null,
+     "party_code": "O",
+     "votes": 240
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225963",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ian-goodnow",
+     "name": "Ian Goodnow",
+     "party": null,
+     "party_code": "O",
+     "votes": 1646
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225984",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-will-hoser",
+     "name": "William Will Hoser",
+     "party": null,
+     "party_code": "O",
+     "votes": 1344
+    },
+    {
+     "id": "thomas-f-charlton",
+     "name": "Thomas F. Charlton",
+     "party": null,
+     "party_code": "O",
+     "votes": 916
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225966",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "john-g-tansey",
+     "name": "John G. Tansey",
+     "party": null,
+     "party_code": "O",
+     "votes": 2733
+    },
+    {
+     "id": "dylan-morse",
+     "name": "Dylan Morse",
+     "party": null,
+     "party_code": "O",
+     "votes": 2702
+    },
+    {
+     "id": "rich-thomas",
+     "name": "Rich Thomas",
+     "party": null,
+     "party_code": "O",
+     "votes": 1173
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225968",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-yuengling",
+     "name": "Mark Yuengling",
+     "party": null,
+     "party_code": "O",
+     "votes": 1270
+    },
+    {
+     "id": "vl-coffin",
+     "name": "Vl Coffin",
+     "party": null,
+     "party_code": "O",
+     "votes": 997
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225972",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "kristi-c-morris",
+     "name": "Kristi C. Morris",
+     "party": null,
+     "party_code": "O",
+     "votes": 1960
+    },
+    {
+     "id": "alice-m-emmons",
+     "name": "Alice M. Emmons",
+     "party": null,
+     "party_code": "O",
+     "votes": 1953
+    },
+    {
+     "id": "randy-a-gray",
+     "name": "Randy A. Gray",
+     "party": null,
+     "party_code": "O",
+     "votes": 1487
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225974",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-hoyt",
+     "name": "Michael Hoyt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1120
+    },
+    {
+     "id": "kyle-hansen",
+     "name": "Kyle Hansen",
+     "party": null,
+     "party_code": "O",
+     "votes": 1002
+    },
+    {
+     "id": "justin-schoville",
+     "name": "Justin Schoville",
+     "party": null,
+     "party_code": "O",
+     "votes": 118
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225975",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charlie-kimbell",
+     "name": "Charlie Kimbell",
+     "party": null,
+     "party_code": "O",
+     "votes": 2025
+    },
+    {
+     "id": "powell",
+     "name": "Powell",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "joshua-linton",
+     "name": "Joshua Linton",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-11-state-representative-225976",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Representative",
+   "district": null,
+   "title": "State Representative",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "alanna-ojibway",
+     "name": "Alanna Ojibway",
+     "party": null,
+     "party_code": "O",
+     "votes": 3345
+    },
+    {
+     "id": "james-jimmy-coleman",
+     "name": "James Jimmy Coleman",
+     "party": null,
+     "party_code": "O",
+     "votes": 2508
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-225986",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "hannah-sessions",
+     "name": "Hannah Sessions",
+     "party": null,
+     "party_code": "O",
+     "votes": 12668
+    },
+    {
+     "id": "ruth-hardy",
+     "name": "Ruth Hardy",
+     "party": null,
+     "party_code": "O",
+     "votes": 12510
+    },
+    {
+     "id": "steven-heffernan",
+     "name": "Steven Heffernan",
+     "party": null,
+     "party_code": "O",
+     "votes": 7933
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-225993",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "seth-bongartz",
+     "name": "Seth Bongartz",
+     "party": null,
+     "party_code": "O",
+     "votes": 9968
+    },
+    {
+     "id": "robert-f-plunkett",
+     "name": "Robert F. Plunkett",
+     "party": null,
+     "party_code": "O",
+     "votes": 9901
+    },
+    {
+     "id": "lawrence-spike-whitmire",
+     "name": "Lawrence Spike Whitmire",
+     "party": null,
+     "party_code": "O",
+     "votes": 6070
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-225996",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-l-beck",
+     "name": "Scott L. Beck",
+     "party": null,
+     "party_code": "O",
+     "votes": 5306
+    },
+    {
+     "id": "david-m-roth",
+     "name": "David M. Roth",
+     "party": null,
+     "party_code": "O",
+     "votes": 5134
+    },
+    {
+     "id": "bruce-melendy",
+     "name": "Bruce Melendy",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-226017",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-morley-iii",
+     "name": "John Morley Iii",
+     "party": null,
+     "party_code": "O",
+     "votes": 7997
+    },
+    {
+     "id": "charlie-hancock",
+     "name": "Charlie Hancock",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "darren-drevik",
+     "name": "Darren Drevik",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-226007",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "russ-ingalls",
+     "name": "Russ Ingalls",
+     "party": null,
+     "party_code": "O",
+     "votes": 7206
+    },
+    {
+     "id": "peggy-stevens",
+     "name": "Peggy Stevens",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "casey-jennings",
+     "name": "Casey Jennings",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-226004",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "thomas-chittenden",
+     "name": "Thomas Chittenden",
+     "party": null,
+     "party_code": "O",
+     "votes": 28843
+    },
+    {
+     "id": "virginia-ginny-lyons",
+     "name": "Virginia Ginny Lyons",
+     "party": null,
+     "party_code": "O",
+     "votes": 26375
+    },
+    {
+     "id": "kesha-ram-hinsdale",
+     "name": "Kesha Ram Hinsdale",
+     "party": null,
+     "party_code": "O",
+     "votes": 24859
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-226000",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "irene-wrenner",
+     "name": "Irene Wrenner",
+     "party": null,
+     "party_code": "O",
+     "votes": 5718
+    },
+    {
+     "id": "ashley-r-bartley",
+     "name": "Ashley R. Bartley",
+     "party": null,
+     "party_code": "O",
+     "votes": 5475
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-225998",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "martine-larocque-gulick",
+     "name": "Martine Larocque Gulick",
+     "party": null,
+     "party_code": "O",
+     "votes": 18258
+    },
+    {
+     "id": "nikhil-goyal",
+     "name": "Nikhil Goyal",
+     "party": null,
+     "party_code": "O",
+     "votes": 16849
+    },
+    {
+     "id": "tanya-vyhovsky",
+     "name": "Tanya Vyhovsky",
+     "party": null,
+     "party_code": "O",
+     "votes": 14776
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-226013",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kim-gleason",
+     "name": "Kim Gleason",
+     "party": null,
+     "party_code": "O",
+     "votes": 5836
+    },
+    {
+     "id": "pat-brennan",
+     "name": "Pat Brennan",
+     "party": null,
+     "party_code": "O",
+     "votes": 5076
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-226011",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "randy-brock",
+     "name": "Randy Brock",
+     "party": null,
+     "party_code": "O",
+     "votes": 9020
+    },
+    {
+     "id": "robert-w-norris",
+     "name": "Robert W. Norris",
+     "party": null,
+     "party_code": "O",
+     "votes": 8909
+    },
+    {
+     "id": "a-gregory-rainville",
+     "name": "A. Gregory Rainville",
+     "party": null,
+     "party_code": "O",
+     "votes": 7765
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-226014",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-a-westman",
+     "name": "Richard A. Westman",
+     "party": null,
+     "party_code": "O",
+     "votes": 8589
+    },
+    {
+     "id": "bernie-sanders",
+     "name": "Bernie Sanders",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "daniel-neckers",
+     "name": "Daniel Neckers",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-226022",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "ann-cummings",
+     "name": "Ann Cummings",
+     "party": null,
+     "party_code": "O",
+     "votes": 21182
+    },
+    {
+     "id": "anne-watson",
+     "name": "Anne Watson",
+     "party": null,
+     "party_code": "O",
+     "votes": 19111
+    },
+    {
+     "id": "andrew-perchlik",
+     "name": "Andrew Perchlik",
+     "party": null,
+     "party_code": "O",
+     "votes": 18234
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-226015",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "monique-priestley",
+     "name": "Monique Priestley",
+     "party": null,
+     "party_code": "O",
+     "votes": 5341
+    },
+    {
+     "id": "john-k-benson",
+     "name": "John K. Benson",
+     "party": null,
+     "party_code": "O",
+     "votes": 4918
+    },
+    {
+     "id": "charles-russell",
+     "name": "Charles Russell",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-226031",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "rebecca-white",
+     "name": "Rebecca White",
+     "party": null,
+     "party_code": "O",
+     "votes": 18025
+    },
+    {
+     "id": "joe-major",
+     "name": "Joe Major",
+     "party": null,
+     "party_code": "O",
+     "votes": 17288
+    },
+    {
+     "id": "elizabeth-burrows",
+     "name": "Elizabeth Burrows",
+     "party": null,
+     "party_code": "O",
+     "votes": 16328
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-226018",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "brian-bc-collamore",
+     "name": "Brian Bc Collamore",
+     "party": null,
+     "party_code": "O",
+     "votes": 15731
+    },
+    {
+     "id": "dave-wolk",
+     "name": "Dave Wolk",
+     "party": null,
+     "party_code": "O",
+     "votes": 14329
+    },
+    {
+     "id": "david-h-weeks",
+     "name": "David H. Weeks",
+     "party": null,
+     "party_code": "O",
+     "votes": 13301
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-12-state-senator-226028",
+   "kind": "candidate",
+   "level": "state",
+   "state": "vt",
+   "office": "State Senator",
+   "district": null,
+   "title": "State Senator",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "wendy-k-harrison",
+     "name": "Wendy K. Harrison",
+     "party": null,
+     "party_code": "O",
+     "votes": 13349
+    },
+    {
+     "id": "nader-hashim",
+     "name": "Nader Hashim",
+     "party": null,
+     "party_code": "O",
+     "votes": 12652
+    },
+    {
+     "id": "rusty-e-sage",
+     "name": "Rusty E. Sage",
+     "party": null,
+     "party_code": "O",
+     "votes": 4118
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  }
+ ]
+}

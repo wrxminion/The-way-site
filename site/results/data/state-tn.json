@@ -1,0 +1,696 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-tn",
+ "label": "Tennessee",
+ "source_ids": [
+  "tn-sos"
+ ],
+ "updated_at": "2026-11-04T13:35:44Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "tn-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "tn",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marsha-blackburn",
+     "name": "Marsha Blackburn",
+     "party": "R",
+     "party_code": "R",
+     "votes": 957136
+    },
+    {
+     "id": "jerri-green",
+     "name": "Jerri Green",
+     "party": "D",
+     "party_code": "D",
+     "votes": 902953
+    },
+    {
+     "id": "david-hatley",
+     "name": "David Hatley",
+     "party": "I",
+     "party_code": "O",
+     "votes": 195564
+    },
+    {
+     "id": "lauren-pinkston",
+     "name": "Lauren Pinkston",
+     "party": "I",
+     "party_code": "O",
+     "votes": 26200
+    },
+    {
+     "id": "dean-brewer",
+     "name": "Dean Brewer",
+     "party": "I",
+     "party_code": "O",
+     "votes": 4098
+    },
+    {
+     "id": "ray-brown",
+     "name": "Ray Brown",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2880
+    },
+    {
+     "id": "wendell-jackson",
+     "name": "Wendell Jackson",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2372
+    },
+    {
+     "id": "eddie-lee-murphy",
+     "name": "Eddie Lee Murphy",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2296
+    },
+    {
+     "id": "robert-c-vick",
+     "name": "Robert C. Vick",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2248
+    },
+    {
+     "id": "misam-abidi",
+     "name": "Misam Abidi",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2110
+    },
+    {
+     "id": "charles-van-morgan",
+     "name": "Charles Van Morgan",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1323
+    },
+    {
+     "id": "l-webb-taylor",
+     "name": "L. Webb Taylor",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1113
+    },
+    {
+     "id": "dave-seeman",
+     "name": "Dave Seeman",
+     "party": "I",
+     "party_code": "O",
+     "votes": 870
+    },
+    {
+     "id": "victor-l-scoggin",
+     "name": "Victor L. Scoggin",
+     "party": "I",
+     "party_code": "O",
+     "votes": 817
+    },
+    {
+     "id": "karl-knox-smithson",
+     "name": "Karl Knox Smithson",
+     "party": "I",
+     "party_code": "O",
+     "votes": 494
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 95,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-hagerty",
+     "name": "Bill Hagerty",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1138436
+    },
+    {
+     "id": "marquita-bradshaw",
+     "name": "Marquita Bradshaw",
+     "party": "D",
+     "party_code": "D",
+     "votes": 886974
+    },
+    {
+     "id": "robert-jones",
+     "name": "Robert Jones",
+     "party": "I",
+     "party_code": "O",
+     "votes": 9398
+    },
+    {
+     "id": "tharon-chandler",
+     "name": "Tharon Chandler",
+     "party": "I",
+     "party_code": "O",
+     "votes": 7689
+    },
+    {
+     "id": "andrew-gerena",
+     "name": "Andrew Gerena",
+     "party": "I",
+     "party_code": "O",
+     "votes": 5633
+    },
+    {
+     "id": "catherine-barcel-barcy-whitson",
+     "name": "Catherine Barcel \"Barcy\" Whitson",
+     "party": "I",
+     "party_code": "O",
+     "votes": 5113
+    },
+    {
+     "id": "jeremy-dean-hearn",
+     "name": "Jeremy Dean Hearn",
+     "party": "I",
+     "party_code": "O",
+     "votes": 4937
+    },
+    {
+     "id": "david-sutman-jr",
+     "name": "David Sutman, Jr.",
+     "party": "I",
+     "party_code": "O",
+     "votes": 3087
+    },
+    {
+     "id": "yoshi-d-matthews",
+     "name": "Yoshi D. Matthews",
+     "party": "I",
+     "party_code": "O",
+     "votes": 3026
+    },
+    {
+     "id": "james-william-macon-iii",
+     "name": "James William Macon III",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2576
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 95,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "diana-harshbarger",
+     "name": "Diana Harshbarger",
+     "party": "R",
+     "party_code": "R",
+     "votes": 141117
+    },
+    {
+     "id": "kristi-burke",
+     "name": "Kristi Burke",
+     "party": "D",
+     "party_code": "D",
+     "votes": 61682
+    },
+    {
+     "id": "joshua-ray-ashburn",
+     "name": "Joshua Ray Ashburn",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2102
+    },
+    {
+     "id": "billy-cody",
+     "name": "Billy Cody",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1398
+    },
+    {
+     "id": "chris-campbell",
+     "name": "Chris Campbell",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1296
+    },
+    {
+     "id": "richard-g-baker",
+     "name": "Richard G. Baker",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1219
+    },
+    {
+     "id": "tyler-brice-mitchell-mcclain",
+     "name": "Tyler Brice Mitchell McClain",
+     "party": "I",
+     "party_code": "O",
+     "votes": 541
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-burchett",
+     "name": "Tim Burchett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 144892
+    },
+    {
+     "id": "michaela-barnett",
+     "name": "Michaela Barnett",
+     "party": "D",
+     "party_code": "D",
+     "votes": 103311
+    },
+    {
+     "id": "bruce-fine",
+     "name": "Bruce Fine",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1827
+    },
+    {
+     "id": "adam-heimerman",
+     "name": "Adam Heimerman",
+     "party": "I",
+     "party_code": "O",
+     "votes": 950
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chuck-fleischmann",
+     "name": "Chuck Fleischmann",
+     "party": "R",
+     "party_code": "R",
+     "votes": 136110
+    },
+    {
+     "id": "anna-golladay",
+     "name": "Anna Golladay",
+     "party": "D",
+     "party_code": "D",
+     "votes": 95051
+    },
+    {
+     "id": "dean-arnold",
+     "name": "Dean Arnold",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2136
+    },
+    {
+     "id": "rodney-joe-king",
+     "name": "Rodney Joe King",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1207
+    },
+    {
+     "id": "jean-howard-hill",
+     "name": "Jean Howard-Hill",
+     "party": "I",
+     "party_code": "O",
+     "votes": 923
+    },
+    {
+     "id": "donnie-lynn-ownby",
+     "name": "Donnie Lynn Ownby",
+     "party": "I",
+     "party_code": "O",
+     "votes": 527
+    },
+    {
+     "id": "edward-john-roland",
+     "name": "Edward John Roland",
+     "party": "I",
+     "party_code": "O",
+     "votes": 404
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "victoria-broderick",
+     "name": "Victoria Broderick",
+     "party": "D",
+     "party_code": "D",
+     "votes": 95585
+    },
+    {
+     "id": "scott-desjarlais",
+     "name": "Scott DesJarlais",
+     "party": "R",
+     "party_code": "R",
+     "votes": 95305
+    },
+    {
+     "id": "jacob-kristopher-anders",
+     "name": "Jacob Kristopher Anders",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2833
+    },
+    {
+     "id": "clay-faircloth",
+     "name": "Clay Faircloth",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1853
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charlie-hatcher",
+     "name": "Charlie Hatcher",
+     "party": "R",
+     "party_code": "R",
+     "votes": 110408
+    },
+    {
+     "id": "chaz-molder",
+     "name": "Chaz Molder",
+     "party": "D",
+     "party_code": "D",
+     "votes": 99841
+    },
+    {
+     "id": "james-a-johnson",
+     "name": "James A. Johnson",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2641
+    },
+    {
+     "id": "o-leary",
+     "name": "O'Leary",
+     "party": "I",
+     "party_code": "O",
+     "votes": 815
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 6",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "johnny-garrett",
+     "name": "Johnny Garrett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 120950
+    },
+    {
+     "id": "mike-croley",
+     "name": "Mike Croley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 113177
+    },
+    {
+     "id": "christopher-b-monday",
+     "name": "Christopher B. Monday",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2707
+    },
+    {
+     "id": "angus-purdy",
+     "name": "Angus Purdy",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1390
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 7",
+   "district": "7",
+   "title": "U.S. House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-van-epps",
+     "name": "Matt Van Epps",
+     "party": "R",
+     "party_code": "R",
+     "votes": 121100
+    },
+    {
+     "id": "darden-copeland",
+     "name": "Darden Copeland",
+     "party": "D",
+     "party_code": "D",
+     "votes": 115867
+    },
+    {
+     "id": "andrew-j-koontz",
+     "name": "Andrew J. Koontz",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2603
+    },
+    {
+     "id": "lowell-reynolds",
+     "name": "Lowell Reynolds",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1316
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 8",
+   "district": "8",
+   "title": "U.S. House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-kustoff",
+     "name": "David Kustoff",
+     "party": "R",
+     "party_code": "R",
+     "votes": 114045
+    },
+    {
+     "id": "heidi-kuhn",
+     "name": "Heidi Kuhn",
+     "party": "D",
+     "party_code": "D",
+     "votes": 102406
+    },
+    {
+     "id": "pamela-jeanine-p-moses",
+     "name": "Pamela Jeanine \"P.\" Moses",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1035
+    },
+    {
+     "id": "horace-taylor",
+     "name": "Horace Taylor",
+     "party": "I",
+     "party_code": "O",
+     "votes": 861
+    },
+    {
+     "id": "adam-d-austill",
+     "name": "Adam D. Austill",
+     "party": "I",
+     "party_code": "O",
+     "votes": 854
+    },
+    {
+     "id": "wendell-wells-blankenship",
+     "name": "Wendell \"Wells\" Blankenship",
+     "party": "I",
+     "party_code": "O",
+     "votes": 714
+    },
+    {
+     "id": "antonio-futch",
+     "name": "Antonio Futch",
+     "party": "I",
+     "party_code": "O",
+     "votes": 506
+    },
+    {
+     "id": "henry-j-ward-iii",
+     "name": "Henry J. Ward, III",
+     "party": "I",
+     "party_code": "O",
+     "votes": 485
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-9",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 9",
+   "district": "9",
+   "title": "U.S. House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brent-taylor",
+     "name": "Brent Taylor",
+     "party": "R",
+     "party_code": "R",
+     "votes": 111968
+    },
+    {
+     "id": "justin-j-pearson",
+     "name": "Justin J. Pearson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 109429
+    },
+    {
+     "id": "dennis-clark",
+     "name": "Dennis Clark",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2413
+    },
+    {
+     "id": "michelle-davis-head",
+     "name": "Michelle Davis Head",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1804
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  }
+ ]
+}
