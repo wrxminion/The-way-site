@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-04T21:02:51Z",
+ "updated_at": "2026-11-04T21:11:24Z",
  "certified": false,
  "contests": [
   {
@@ -23,35 +23,35 @@
      "name": "Cory BOOKER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1795170
+     "votes": 1768357
     },
     {
      "id": "murphy",
      "name": "Justin MURPHY",
      "party": "REP",
      "party_code": "R",
-     "votes": 1018799
+     "votes": 995437
     },
     {
      "id": "fernandez",
      "name": "Veronica FERNANDEZ",
      "party": "NPC",
      "party_code": "O",
-     "votes": 47342
+     "votes": 46536
     },
     {
      "id": "kuniansky",
      "name": "NPD Joanne KUNIANSKY",
      "party": "NPD",
      "party_code": "O",
-     "votes": 24642
+     "votes": 24165
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 6130
+     "votes": 6102
     },
     {
      "id": "choice",
@@ -457,10 +457,10 @@
       "total": 0
      },
      "votes": {
-      "booker": 188979,
-      "murphy": 113333,
-      "fernandez": 5829,
-      "write-in": 2191
+      "booker": 190624,
+      "murphy": 113950,
+      "fernandez": 5920,
+      "write-in": 2241
      }
     },
     {
@@ -484,11 +484,11 @@
       "total": 0
      },
      "votes": {
-      "booker": 61016,
-      "murphy": 52126,
-      "fernandez": 1930,
-      "kuniansky": 1037,
-      "write-in": 166
+      "booker": 32558,
+      "murphy": 28147,
+      "fernandez": 1033,
+      "kuniansky": 560,
+      "write-in": 88
      }
     },
     {
@@ -1381,28 +1381,28 @@
      "name": "Josh GOTTHEIMER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 168450
+     "votes": 169746
     },
     {
      "id": "kirrane",
      "name": "Sean KIRRANE",
      "party": "REP",
      "party_code": "R",
-     "votes": 93609
+     "votes": 93992
     },
     {
      "id": "rueda",
      "name": "Adam RUEDA",
      "party": "NMC",
      "party_code": "O",
-     "votes": 7943
+     "votes": 8076
     },
     {
      "id": "write-in",
      "name": "Write-In-Vote",
      "party": null,
      "party_code": "O",
-     "votes": 188
+     "votes": 229
     }
    ],
    "precincts": {
@@ -1430,10 +1430,10 @@
       "total": 0
      },
      "votes": {
-      "gottheimer": 143110,
-      "kirrane": 68403,
-      "rueda": 6642,
-      "write-in": 116
+      "gottheimer": 144406,
+      "kirrane": 68786,
+      "rueda": 6775,
+      "write-in": 157
      }
     },
     {
@@ -1636,7 +1636,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "bennett",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:48:17.933Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-8",
@@ -1749,28 +1755,28 @@
      "name": "Nelida Pou",
      "party": "DEM",
      "party_code": "D",
-     "votes": 123133
+     "votes": 123530
     },
     {
      "id": "pino",
      "name": "Rosie Pino",
      "party": "REP",
      "party_code": "R",
-     "votes": 58682
+     "votes": 58838
     },
     {
      "id": "bukovinac",
      "name": "Terrisa Bukovinac",
      "party": "N-E",
      "party_code": "O",
-     "votes": 2704
+     "votes": 2710
     },
     {
      "id": "write-in",
      "name": "Write-In Vote",
      "party": null,
      "party_code": "O",
-     "votes": 281
+     "votes": 303
     }
    ],
    "precincts": {
@@ -1811,10 +1817,10 @@
       "total": 0
      },
      "votes": {
-      "pou": 54828,
-      "pino": 33727,
-      "bukovinac": 1093,
-      "write-in": 33
+      "pou": 55225,
+      "pino": 33883,
+      "bukovinac": 1099,
+      "write-in": 55
      }
     }
    ],
@@ -62998,28 +63004,28 @@
      "name": "Cory Booker",
      "party": "DEM",
      "party_code": "D",
-     "votes": 188979
+     "votes": 190624
     },
     {
      "id": "justin-murphy",
      "name": "Justin Murphy",
      "party": "REP",
      "party_code": "R",
-     "votes": 113333
+     "votes": 113950
     },
     {
      "id": "veronica-fernandez",
      "name": "Veronica Fernandez",
      "party": null,
      "party_code": "O",
-     "votes": 5829
+     "votes": 5920
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 2191
+     "votes": 2241
     }
    ],
    "precincts": {
@@ -74328,7 +74334,13 @@
     "reporting": 0,
     "total": 0
    },
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-hunterdon-0002-united-states-house-of-representatives",
@@ -74374,7 +74386,13 @@
     "reporting": 0,
     "total": 0
    },
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "rebecca-bennett",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:48:17.933Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-hunterdon-0003-county-clerk",
@@ -77001,14 +77019,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 1135
+     "votes": 1660
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 509
+     "votes": 825
     }
    ],
    "precincts": {
@@ -77267,14 +77285,14 @@
      "name": "Thomas Mckee",
      "party": "REP",
      "party_code": "R",
-     "votes": 1934
+     "votes": 1947
     },
     {
      "id": "abraham-abuchowski",
      "name": "Abraham Abuchowski",
      "party": "REP",
      "party_code": "R",
-     "votes": 1856
+     "votes": 1865
     },
     {
      "id": "no-nomination-made",
@@ -77320,35 +77338,35 @@
      "name": "Lauren Macarthur",
      "party": null,
      "party_code": "O",
-     "votes": 1017
+     "votes": 1024
     },
     {
      "id": "jennifer-ronkewicz",
      "name": "Jennifer Ronkewicz",
      "party": null,
      "party_code": "O",
-     "votes": 1183
+     "votes": 1189
     },
     {
      "id": "abigail-sporer",
      "name": "Abigail Sporer",
      "party": null,
      "party_code": "O",
-     "votes": 1170
+     "votes": 1174
     },
     {
      "id": "jonelyn-jonie-planillo",
      "name": "Jonelyn \"Jonie\" Planillo-",
      "party": null,
      "party_code": "O",
-     "votes": 538
+     "votes": 543
     },
     {
      "id": "kimberly-whitaker",
      "name": "Kimberly Whitaker",
      "party": null,
      "party_code": "O",
-     "votes": 872
+     "votes": 876
     },
     {
      "id": "write-in",
@@ -77380,7 +77398,7 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 1766
+     "votes": 1781
     },
     {
      "id": "no",
@@ -78489,28 +78507,28 @@
      "name": "Josh Gottheimer",
      "party": "DEM",
      "party_code": "D",
-     "votes": 143110
+     "votes": 144406
     },
     {
      "id": "sean-kirrane",
      "name": "Sean Kirrane",
      "party": "REP",
      "party_code": "R",
-     "votes": 68403
+     "votes": 68786
     },
     {
      "id": "adam-rueda",
      "name": "Adam Rueda",
      "party": null,
      "party_code": "O",
-     "votes": 6642
+     "votes": 6775
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 116
+     "votes": 157
     }
    ],
    "precincts": {
@@ -78535,28 +78553,28 @@
      "name": "Nelida Pou",
      "party": "DEM",
      "party_code": "D",
-     "votes": 54828
+     "votes": 55225
     },
     {
      "id": "rosie-pino",
      "name": "Rosie Pino",
      "party": "REP",
      "party_code": "R",
-     "votes": 33727
+     "votes": 33883
     },
     {
      "id": "terrisa-bukovinac",
      "name": "Terrisa Bukovinac",
      "party": null,
      "party_code": "O",
-     "votes": 1093
+     "votes": 1099
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 33
+     "votes": 55
     }
    ],
    "precincts": {
@@ -78581,21 +78599,21 @@
      "name": "James J. Tedesco Iii",
      "party": "DEM",
      "party_code": "D",
-     "votes": 196041
+     "votes": 197768
     },
     {
      "id": "todd-h-hennessey",
      "name": "Todd H. Hennessey",
      "party": "REP",
      "party_code": "R",
-     "votes": 108589
+     "votes": 109211
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 77
+     "votes": 109
     }
    ],
    "precincts": {
@@ -78620,21 +78638,21 @@
      "name": "John S. Hogan",
      "party": "DEM",
      "party_code": "D",
-     "votes": 192320
+     "votes": 194056
     },
     {
      "id": "timothy-c-walsh",
      "name": "Timothy C. Walsh",
      "party": "REP",
      "party_code": "R",
-     "votes": 110747
+     "votes": 111351
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 57
+     "votes": 90
     }
    ],
    "precincts": {
@@ -78645,8 +78663,8 @@
   },
   {
    "id": "nj-bergen-0008-surrogate",
-   "kind": "candidate",
-   "level": "county",
+   "kind": "measure",
+   "level": "local",
    "state": "nj",
    "county": "Bergen",
    "office": "Surrogate",
@@ -78659,21 +78677,28 @@
      "name": "Linda H. Schwager",
      "party": "DEM",
      "party_code": "D",
-     "votes": 187838
+     "votes": 189493
     },
     {
      "id": "joseph-stephen-conte",
      "name": "Joseph Stephen Conte",
      "party": "REP",
      "party_code": "R",
-     "votes": 113319
+     "votes": 113967
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 56
+     "votes": 90
     }
    ],
    "precincts": {
@@ -78698,35 +78723,35 @@
      "name": "Joan M. Voss",
      "party": "DEM",
      "party_code": "D",
-     "votes": 187892
+     "votes": 189559
     },
     {
      "id": "rafael-marte",
      "name": "Rafael Marte",
      "party": "DEM",
      "party_code": "D",
-     "votes": 185204
+     "votes": 186850
     },
     {
      "id": "john-dinice",
      "name": "John Dinice",
      "party": "REP",
      "party_code": "R",
-     "votes": 112342
+     "votes": 112982
     },
     {
      "id": "maria-soledad-laman",
      "name": "Maria Soledad Laman",
      "party": "REP",
      "party_code": "R",
-     "votes": 111344
+     "votes": 111954
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 78
+     "votes": 136
     }
    ],
    "precincts": {
@@ -78751,21 +78776,21 @@
      "name": "Amy E. Wilczynski",
      "party": "REP",
      "party_code": "R",
-     "votes": 2026
+     "votes": 2034
     },
     {
      "id": "philip-cicchetti",
      "name": "Philip Cicchetti",
      "party": null,
      "party_code": "O",
-     "votes": 803
+     "votes": 813
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 4
+     "votes": 9
     }
    ],
    "precincts": {
@@ -78790,21 +78815,21 @@
      "name": "DONALD J. McKENNA",
      "party": "REP",
      "party_code": "R",
-     "votes": 2053
+     "votes": 2059
     },
     {
      "id": "david-w-rahal",
      "name": "David W. Rahal",
      "party": "REP",
      "party_code": "R",
-     "votes": 2031
+     "votes": 2036
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 37
+     "votes": 57
     }
    ],
    "precincts": {
@@ -78829,14 +78854,14 @@
      "name": "Paul H. Tomasko",
      "party": "DEM",
      "party_code": "D",
-     "votes": 574
+     "votes": 577
     },
     {
      "id": "faisel-hussein",
      "name": "Faisel Hussein",
      "party": "REP",
      "party_code": "R",
-     "votes": 121
+     "votes": 126
     }
    ],
    "precincts": {
@@ -78861,28 +78886,28 @@
      "name": "Philip E. Simotas",
      "party": "DEM",
      "party_code": "D",
-     "votes": 462
+     "votes": 464
     },
     {
      "id": "michael-a-cacouris",
      "name": "Michael A. Cacouris",
      "party": "DEM",
      "party_code": "D",
-     "votes": 413
+     "votes": 416
     },
     {
      "id": "david-w-kupferschmid",
      "name": "David W. Kupferschmid",
      "party": "REP",
      "party_code": "R",
-     "votes": 249
+     "votes": 255
     },
     {
      "id": "jacques-p-minoyan",
      "name": "Jacques P. Minoyan",
      "party": "REP",
      "party_code": "R",
-     "votes": 234
+     "votes": 239
     }
    ],
    "precincts": {
@@ -78907,14 +78932,14 @@
      "name": "Keren Barbi",
      "party": "DEM",
      "party_code": "D",
-     "votes": 438
+     "votes": 439
     },
     {
      "id": "judith-fisher",
      "name": "Judith Fisher",
      "party": "REP",
      "party_code": "R",
-     "votes": 246
+     "votes": 253
     }
    ],
    "precincts": {
@@ -78939,21 +78964,21 @@
      "name": "Marc Pascual",
      "party": "DEM",
      "party_code": "D",
-     "votes": 6605
+     "votes": 6667
     },
     {
      "id": "domingo-almonte",
      "name": "Domingo Almonte",
      "party": "DEM",
      "party_code": "D",
-     "votes": 6486
+     "votes": 6547
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 33
+     "votes": 159
     }
    ],
    "precincts": {
@@ -78978,28 +79003,28 @@
      "name": "Diana Vergara",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1929
+     "votes": 1939
     },
     {
      "id": "lisa-kohles",
      "name": "Lisa Kohles",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1897
+     "votes": 1904
     },
     {
      "id": "louis-j-alvarez",
      "name": "Louis J. Alvarez",
      "party": "REP",
      "party_code": "R",
-     "votes": 659
+     "votes": 661
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 23
+     "votes": 87
     }
    ],
    "precincts": {
@@ -79024,28 +79049,28 @@
      "name": "Dennis C. Ritchie",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1183
+     "votes": 1193
     },
     {
      "id": "walter-m-beese",
      "name": "Walter M. Beese",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1134
+     "votes": 1143
     },
     {
      "id": "james-a-lenoy",
      "name": "James A. Lenoy",
      "party": "REP",
      "party_code": "R",
-     "votes": 985
+     "votes": 986
     },
     {
      "id": "joseph-t-emerson",
      "name": "Joseph T. Emerson",
      "party": "REP",
      "party_code": "R",
-     "votes": 971
+     "votes": 973
     },
     {
      "id": "write-in-various-named",
@@ -79063,7 +79088,7 @@
   },
   {
    "id": "nj-bergen-0018-cliffside-park-council",
-   "kind": "candidate",
+   "kind": "measure",
    "level": "local",
    "state": "nj",
    "county": "Bergen",
@@ -79077,21 +79102,28 @@
      "name": "Dana Martinotti",
      "party": "DEM",
      "party_code": "D",
-     "votes": 4534
+     "votes": 4553
     },
     {
      "id": "eurice-e-rojas",
      "name": "Eurice E. Rojas",
      "party": "DEM",
      "party_code": "D",
-     "votes": 4449
+     "votes": 4466
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 19
+     "votes": 42
     }
    ],
    "precincts": {
@@ -79116,14 +79148,14 @@
      "name": "JOHN C. GLIDDEN Jr.",
      "party": "REP",
      "party_code": "R",
-     "votes": 1745
+     "votes": 1758
     },
     {
      "id": "dolores-a-witko",
      "name": "Dolores A. Witko",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1203
+     "votes": 1214
     },
     {
      "id": "write-in-various-named",
@@ -79155,28 +79187,28 @@
      "name": "Christopher Cho",
      "party": "REP",
      "party_code": "R",
-     "votes": 1597
+     "votes": 1610
     },
     {
      "id": "monica-jethani",
      "name": "Monica Jethani",
      "party": "REP",
      "party_code": "R",
-     "votes": 1504
+     "votes": 1516
     },
     {
      "id": "linda-albelli",
      "name": "Linda Albelli",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1376
+     "votes": 1387
     },
     {
      "id": "steven-j-spoto",
      "name": "Steven J. Spoto",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1369
+     "votes": 1382
     },
     {
      "id": "write-in-various-named",
@@ -79208,21 +79240,49 @@
      "name": "ARTHUR J. McLAUGHLIN",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1487
+     "votes": 1505
     },
     {
      "id": "hector-olmo",
      "name": "Hector Olmo",
      "party": "REP",
      "party_code": "R",
-     "votes": 1134
+     "votes": 1136
+    },
+    {
+     "id": "guy-peleg",
+     "name": "Guy Peleg",
+     "party": null,
+     "party_code": "O",
+     "votes": 184
+    },
+    {
+     "id": "netta-doron",
+     "name": "Netta Doron",
+     "party": null,
+     "party_code": "O",
+     "votes": 152
+    },
+    {
+     "id": "netta-doron-2",
+     "name": "Netta Doron",
+     "party": null,
+     "party_code": "O",
+     "votes": 150
+    },
+    {
+     "id": "guy-peleg-2",
+     "name": "Guy Peleg",
+     "party": null,
+     "party_code": "O",
+     "votes": 136
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 56
+     "votes": 60
     }
    ],
    "precincts": {
@@ -79247,14 +79307,21 @@
      "name": "Brian K. Bernstein",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1055
+     "votes": 1082
     },
     {
      "id": "raymond-j-cywinski",
      "name": "Raymond J. Cywinski",
      "party": "REP",
      "party_code": "R",
-     "votes": 688
+     "votes": 699
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
     }
    ],
    "precincts": {
@@ -79279,28 +79346,28 @@
      "name": "Adam J. Collins",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1035
+     "votes": 1062
     },
     {
      "id": "jonathan-reiss",
      "name": "Jonathan Reiss",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1011
+     "votes": 1038
     },
     {
      "id": "theodore-f-martens",
      "name": "Theodore F. Martens",
      "party": "REP",
      "party_code": "R",
-     "votes": 708
+     "votes": 715
     },
     {
      "id": "stephen-r-tillack",
      "name": "Stephen R. Tillack",
      "party": "REP",
      "party_code": "R",
-     "votes": 701
+     "votes": 712
     },
     {
      "id": "write-in-various-named",
@@ -79332,21 +79399,21 @@
      "name": "David Jiang",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1045
+     "votes": 1075
     },
     {
      "id": "anita-g-gatto",
      "name": "Anita G. Gatto",
      "party": "REP",
      "party_code": "R",
-     "votes": 675
+     "votes": 681
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 2
     }
    ],
    "precincts": {
@@ -79371,28 +79438,28 @@
      "name": "Maryann E. Russini",
      "party": "DEM",
      "party_code": "D",
-     "votes": 4068
+     "votes": 4102
     },
     {
      "id": "diana-englese",
      "name": "Diana Englese",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3910
+     "votes": 3943
     },
     {
      "id": "kenneth-armellino",
      "name": "Kenneth Armellino",
      "party": "REP",
      "party_code": "R",
-     "votes": 2124
+     "votes": 2133
     },
     {
      "id": "louis-sciarrino",
      "name": "Louis Sciarrino",
      "party": "REP",
      "party_code": "R",
-     "votes": 2052
+     "votes": 2062
     },
     {
      "id": "write-in-various-named",
@@ -79424,21 +79491,21 @@
      "name": "JESSE LEE DeROSA",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2047
+     "votes": 2059
     },
     {
      "id": "antonio-p-k-segalini",
      "name": "Antonio P-K Segalini",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2040
+     "votes": 2051
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 26
+     "votes": 57
     }
    ],
    "precincts": {
@@ -79463,35 +79530,35 @@
      "name": "Rinaldy A. Gutierrez",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2411
+     "votes": 2426
     },
     {
      "id": "jose-luis-vidal",
      "name": "Jose Luis Vidal",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2404
+     "votes": 2421
     },
     {
      "id": "frank-a-khoury",
      "name": "Frank A. Khoury",
      "party": "REP",
      "party_code": "R",
-     "votes": 749
+     "votes": 754
     },
     {
      "id": "krassimir-tassev",
      "name": "Krassimir Tassev",
      "party": "REP",
      "party_code": "R",
-     "votes": 734
+     "votes": 738
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 14
+     "votes": 21
     }
    ],
    "precincts": {
@@ -79516,28 +79583,35 @@
      "name": "Sandra Balistrieri",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3462
+     "votes": 3484
     },
     {
      "id": "karen-pena",
      "name": "Karen Pena",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3452
+     "votes": 3475
     },
     {
      "id": "lorraine-pellegrine",
      "name": "Lorraine Pellegrine",
      "party": "REP",
      "party_code": "R",
-     "votes": 2303
+     "votes": 2315
     },
     {
      "id": "pamela-troisi",
      "name": "Pamela Troisi",
      "party": "REP",
      "party_code": "R",
-     "votes": 2137
+     "votes": 2148
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
     }
    ],
    "precincts": {
@@ -79562,14 +79636,21 @@
      "name": "DANIELLE DiPAOLA",
      "party": "REP",
      "party_code": "R",
-     "votes": 1667
+     "votes": 1670
     },
     {
      "id": "joseph-solimando-iii",
      "name": "Joseph Solimando Iii",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1560
+     "votes": 1568
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
     }
    ],
    "precincts": {
@@ -79594,28 +79675,35 @@
      "name": "Michael Timmerman",
      "party": "REP",
      "party_code": "R",
-     "votes": 1687
+     "votes": 1689
     },
     {
      "id": "ashley-rice",
      "name": "Ashley Rice",
      "party": "REP",
      "party_code": "R",
-     "votes": 1607
+     "votes": 1609
     },
     {
      "id": "venessa-manzano",
      "name": "Venessa Manzano",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1569
+     "votes": 1578
     },
     {
      "id": "julia-guttilla",
      "name": "Julia Guttilla",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1527
+     "votes": 1536
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -79640,14 +79728,14 @@
      "name": "Lisa Wisotsky",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1761
+     "votes": 1782
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 4
+     "votes": 11
     }
    ],
    "precincts": {
@@ -79672,14 +79760,14 @@
      "name": "Kevin A. Wilson",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1750
+     "votes": 1767
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 3
+     "votes": 8
     }
    ],
    "precincts": {
@@ -79704,28 +79792,28 @@
      "name": "Zhi Liang",
      "party": "REP",
      "party_code": "R",
-     "votes": 1021
+     "votes": 1037
     },
     {
      "id": "rivka-biegacz",
      "name": "Rivka Biegacz",
      "party": "REP",
      "party_code": "R",
-     "votes": 982
+     "votes": 998
     },
     {
      "id": "patricia-drimones",
      "name": "Patricia Drimones",
      "party": "DEM",
      "party_code": "D",
-     "votes": 940
+     "votes": 950
     },
     {
      "id": "melanie-simon",
      "name": "Melanie Simon",
      "party": "DEM",
      "party_code": "D",
-     "votes": 921
+     "votes": 931
     },
     {
      "id": "write-in-various-named",
@@ -79757,21 +79845,21 @@
      "name": "Stephen Burke",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1820
+     "votes": 1833
     },
     {
      "id": "john-bussanich",
      "name": "John Bussanich",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1816
+     "votes": 1828
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 3
+     "votes": 7
     }
    ],
    "precincts": {
@@ -79796,35 +79884,35 @@
      "name": "Paul Yoon",
      "party": "DEM",
      "party_code": "D",
-     "votes": 7132
+     "votes": 7208
     },
     {
      "id": "bryan-drumgoole",
      "name": "Bryan Drumgoole",
      "party": "DEM",
      "party_code": "D",
-     "votes": 6864
+     "votes": 6936
     },
     {
      "id": "giovanna-surace",
      "name": "Giovanna Surace",
      "party": "REP",
      "party_code": "R",
-     "votes": 3083
+     "votes": 3105
     },
     {
      "id": "rosana-condina",
      "name": "Rosana Condina",
      "party": "REP",
      "party_code": "R",
-     "votes": 3054
+     "votes": 3078
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 8
     }
    ],
    "precincts": {
@@ -79849,7 +79937,7 @@
      "name": "Charles J.X. Kahwaty",
      "party": "REP",
      "party_code": "R",
-     "votes": 2949
+     "votes": 2963
     },
     {
      "id": "write-in-various-named",
@@ -79881,14 +79969,14 @@
      "name": "Gail A. Kelly",
      "party": "REP",
      "party_code": "R",
-     "votes": 2881
+     "votes": 2896
     },
     {
      "id": "ari-donio",
      "name": "Ari Donio",
      "party": "REP",
      "party_code": "R",
-     "votes": 2796
+     "votes": 2811
     },
     {
      "id": "write-in-various-named",
@@ -79920,14 +80008,14 @@
      "name": "Robert Katzman",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3479
+     "votes": 3519
     },
     {
      "id": "edward-morley",
      "name": "Edward Morley",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3468
+     "votes": 3508
     },
     {
      "id": "write-in-various-named",
@@ -79959,14 +80047,14 @@
      "name": "Allan S. Napolitano",
      "party": null,
      "party_code": "O",
-     "votes": 1077
+     "votes": 1090
     },
     {
      "id": "andrew-r-farrell",
      "name": "Andrew R. Farrell",
      "party": null,
      "party_code": "O",
-     "votes": 1029
+     "votes": 1042
     },
     {
      "id": "write-in-various-named",
@@ -79998,21 +80086,21 @@
      "name": "David D'Alessandro",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2574
+     "votes": 2596
     },
     {
      "id": "charlotte-sodora",
      "name": "Charlotte Sodora",
      "party": "REP",
      "party_code": "R",
-     "votes": 2251
+     "votes": 2268
     },
     {
      "id": "michael-sickels",
      "name": "Michael Sickels",
      "party": "REP",
      "party_code": "R",
-     "votes": 2189
+     "votes": 2199
     },
     {
      "id": "write-in-various-named",
@@ -80044,7 +80132,7 @@
      "name": "Heather J. Wasser",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1025
+     "votes": 1035
     },
     {
      "id": "write-in-various-named",
@@ -80076,14 +80164,14 @@
      "name": "Charles J. Crowley",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1024
+     "votes": 1033
     },
     {
      "id": "peter-r-laub",
      "name": "Peter R. Laub",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1023
+     "votes": 1031
     },
     {
      "id": "write-in-various-named",
@@ -80115,7 +80203,7 @@
      "name": "Jane Cabourg",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1032
+     "votes": 1041
     },
     {
      "id": "write-in-various-named",
@@ -80143,32 +80231,32 @@
    "vote_for": 2,
    "choices": [
     {
-     "id": "gabriella-a-ianni",
-     "name": "Gabriella A. Ianni",
-     "party": "DEM",
-     "party_code": "D",
-     "votes": 2308
-    },
-    {
      "id": "dena-m-toms",
      "name": "Dena M. Toms",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2307
+     "votes": 2340
+    },
+    {
+     "id": "gabriella-a-ianni",
+     "name": "Gabriella A. Ianni",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2340
     },
     {
      "id": "clemente-e-osso",
      "name": "Clemente E. Osso",
      "party": "REP",
      "party_code": "R",
-     "votes": 2192
+     "votes": 2206
     },
     {
      "id": "danielle-d-ganter",
      "name": "Danielle D. Ganter",
      "party": "REP",
      "party_code": "R",
-     "votes": 2115
+     "votes": 2129
     },
     {
      "id": "write-in-various-named",
@@ -80200,14 +80288,14 @@
      "name": "Steven D. Shell",
      "party": "REP",
      "party_code": "R",
-     "votes": 1025
+     "votes": 1035
     },
     {
      "id": "edmund-m-iannelli",
      "name": "Edmund M. Iannelli",
      "party": "REP",
      "party_code": "R",
-     "votes": 1022
+     "votes": 1033
     },
     {
      "id": "write-in-various-named",
@@ -80239,14 +80327,14 @@
      "name": "Diane M. Scarangella",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2201
+     "votes": 2224
     },
     {
      "id": "jordan-d-zeigler",
      "name": "Jordan D. Zeigler",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2187
+     "votes": 2211
     },
     {
      "id": "write-in-various-named",
@@ -80278,14 +80366,14 @@
      "name": "Jenifer A. Lange",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1876
+     "votes": 1888
     },
     {
      "id": "margaret-a-steinhilber",
      "name": "Margaret A. Steinhilber",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1875
+     "votes": 1887
     },
     {
      "id": "write-in-various-named",
@@ -80317,21 +80405,21 @@
      "name": "Karen F. Carrino",
      "party": null,
      "party_code": "O",
-     "votes": 2712
+     "votes": 2732
     },
     {
      "id": "john-j-montillo-jr",
      "name": "JOHN J. MONTILLO Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 2172
+     "votes": 2187
     },
     {
      "id": "michael-defrino",
      "name": "MICHAEL DeFRINO",
      "party": null,
      "party_code": "O",
-     "votes": 836
+     "votes": 844
     },
     {
      "id": "write-in-various-named",
@@ -80363,56 +80451,56 @@
      "name": "Robert M. Ferguson Iii",
      "party": null,
      "party_code": "O",
-     "votes": 4331
+     "votes": 4356
     },
     {
      "id": "megan-e-jankowski",
      "name": "Megan E. Jankowski",
      "party": null,
      "party_code": "O",
-     "votes": 4204
+     "votes": 4227
     },
     {
      "id": "christopher-m-howard",
      "name": "Christopher M. Howard",
      "party": null,
      "party_code": "O",
-     "votes": 4188
+     "votes": 4213
     },
     {
      "id": "anthony-j-miller",
      "name": "Anthony J. Miller",
      "party": null,
      "party_code": "O",
-     "votes": 3680
+     "votes": 3703
     },
     {
      "id": "janet-a-ariemma",
      "name": "Janet A. Ariemma",
      "party": null,
      "party_code": "O",
-     "votes": 3595
+     "votes": 3615
     },
     {
      "id": "philip-s-colella",
      "name": "Philip S. Colella",
      "party": null,
      "party_code": "O",
-     "votes": 3139
+     "votes": 3159
     },
     {
      "id": "john-stephen-morin-jr",
      "name": "JOHN STEPHEN MORIN Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 2542
+     "votes": 2558
     },
     {
      "id": "jennifer-diamond",
      "name": "Jennifer Diamond",
      "party": null,
      "party_code": "O",
-     "votes": 2246
+     "votes": 2258
     },
     {
      "id": "write-in-various-named",
@@ -80444,28 +80532,28 @@
      "name": "Claire A. Padovano",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2327
+     "votes": 2345
     },
     {
      "id": "curtis-r-mcauliffe",
      "name": "CURTIS R. McAULIFFE",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2209
+     "votes": 2225
     },
     {
      "id": "michael-a-trepicchio-jr",
      "name": "MICHAEL A. TREPICCHIO Jr.",
      "party": "REP",
      "party_code": "R",
-     "votes": 1115
+     "votes": 1118
     },
     {
      "id": "keith-soriano",
      "name": "Keith Soriano",
      "party": "REP",
      "party_code": "R",
-     "votes": 1100
+     "votes": 1102
     },
     {
      "id": "write-in-various-named",
@@ -80497,14 +80585,14 @@
      "name": "Kyla Smith",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2266
+     "votes": 2283
     },
     {
      "id": "anthony-p-klymenko-jr",
      "name": "ANTHONY P. KLYMENKO Jr.",
      "party": "REP",
      "party_code": "R",
-     "votes": 1119
+     "votes": 1121
     }
    ],
    "precincts": {
@@ -80529,28 +80617,28 @@
      "name": "Deborah A. Spell",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1592
+     "votes": 1601
     },
     {
      "id": "myrna-kayal",
      "name": "Myrna Kayal",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1560
+     "votes": 1570
     },
     {
      "id": "lorraine-deluca",
      "name": "LORRAINE DeLUCA",
      "party": "REP",
      "party_code": "R",
-     "votes": 1352
+     "votes": 1358
     },
     {
      "id": "kensler-randy-mayo",
      "name": "Kensler \"Randy\" Mayo",
      "party": "REP",
      "party_code": "R",
-     "votes": 1316
+     "votes": 1321
     },
     {
      "id": "write-in-various-named",
@@ -80582,14 +80670,14 @@
      "name": "Douglas M. Arendacs",
      "party": "REP",
      "party_code": "R",
-     "votes": 1893
+     "votes": 1903
     },
     {
      "id": "theresa-a-cudequest",
      "name": "Theresa A. Cudequest",
      "party": "REP",
      "party_code": "R",
-     "votes": 1877
+     "votes": 1889
     },
     {
      "id": "write-in-various-named",
@@ -80621,14 +80709,14 @@
      "name": "Bradford J. Haberlin",
      "party": null,
      "party_code": "O",
-     "votes": 509
+     "votes": 510
     },
     {
      "id": "dennis-vaccaro",
      "name": "Dennis Vaccaro",
      "party": "DEM",
      "party_code": "D",
-     "votes": 435
+     "votes": 437
     }
    ],
    "precincts": {
@@ -80653,28 +80741,28 @@
      "name": "Giovanni A. Brattoli",
      "party": null,
      "party_code": "O",
-     "votes": 496
+     "votes": 497
     },
     {
      "id": "matthew-patunas",
      "name": "Matthew Patunas",
      "party": null,
      "party_code": "O",
-     "votes": 465
+     "votes": 467
     },
     {
      "id": "antonio-cirillo",
      "name": "Antonio Cirillo",
      "party": "DEM",
      "party_code": "D",
-     "votes": 443
+     "votes": 445
     },
     {
      "id": "manuel-martinez-jr",
      "name": "MANUEL MARTINEZ Jr.",
      "party": "DEM",
      "party_code": "D",
-     "votes": 431
+     "votes": 432
     }
    ],
    "precincts": {
@@ -80699,14 +80787,14 @@
      "name": "Michael J. Putrino",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3722
+     "votes": 3752
     },
     {
      "id": "laure-d-schroeder",
      "name": "Laure D. Schroeder",
      "party": "REP",
      "party_code": "R",
-     "votes": 1610
+     "votes": 1614
     },
     {
      "id": "write-in-various-named",
@@ -80738,28 +80826,28 @@
      "name": "Matthew S. Seymour",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3449
+     "votes": 3477
     },
     {
      "id": "ira-s-grotsky",
      "name": "Ira S. Grotsky",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3403
+     "votes": 3430
     },
     {
      "id": "joseph-g-loporto",
      "name": "JOSEPH G. LoPORTO",
      "party": "REP",
      "party_code": "R",
-     "votes": 1889
+     "votes": 1896
     },
     {
      "id": "malcolm-sillars",
      "name": "Malcolm Sillars",
      "party": "REP",
      "party_code": "R",
-     "votes": 1777
+     "votes": 1783
     },
     {
      "id": "write-in-various-named",
@@ -80791,14 +80879,14 @@
      "name": "Daniel H. Pronti",
      "party": "REP",
      "party_code": "R",
-     "votes": 3133
+     "votes": 3145
     },
     {
      "id": "john-n-balwierczak",
      "name": "John N. Balwierczak",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2128
+     "votes": 2144
     },
     {
      "id": "write-in-various-named",
@@ -80830,28 +80918,28 @@
      "name": "Donna A. Bocchino",
      "party": "REP",
      "party_code": "R",
-     "votes": 2768
+     "votes": 2782
     },
     {
      "id": "marijo-l-karcic-jr",
      "name": "MARIJO L. KARCIC Jr.",
      "party": "REP",
      "party_code": "R",
-     "votes": 2732
+     "votes": 2745
     },
     {
      "id": "dennis-e-papile",
      "name": "Dennis E. Papile",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2430
+     "votes": 2445
     },
     {
      "id": "cengiz-n-sever",
      "name": "Cengiz N. Sever",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2364
+     "votes": 2378
     }
    ],
    "precincts": {
@@ -80876,14 +80964,14 @@
      "name": "JOSEPH E. McGUIRE",
      "party": "REP",
      "party_code": "R",
-     "votes": 1020
+     "votes": 1029
     },
     {
      "id": "kenneth-k-cho",
      "name": "Kenneth K. Cho",
      "party": "DEM",
      "party_code": "D",
-     "votes": 848
+     "votes": 850
     }
    ],
    "precincts": {
@@ -80908,28 +80996,28 @@
      "name": "Jean Marie Cerbasi",
      "party": "DEM",
      "party_code": "D",
-     "votes": 922
+     "votes": 924
     },
     {
      "id": "hovannes-bakalian",
      "name": "Hovannes Bakalian",
      "party": "REP",
      "party_code": "R",
-     "votes": 911
+     "votes": 921
     },
     {
      "id": "laura-n-fernandez",
      "name": "Laura N. Fernandez",
      "party": "REP",
      "party_code": "R",
-     "votes": 911
+     "votes": 919
     },
     {
      "id": "david-e-sillery",
      "name": "David E. Sillery",
      "party": "DEM",
      "party_code": "D",
-     "votes": 910
+     "votes": 911
     },
     {
      "id": "write-in-various-named",
@@ -80961,28 +81049,28 @@
      "name": "Annie Hausmann",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1260
+     "votes": 1269
     },
     {
      "id": "john-rooney",
      "name": "John Rooney",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1230
+     "votes": 1238
     },
     {
      "id": "jeffrey-krapels",
      "name": "Jeffrey Krapels",
      "party": "REP",
      "party_code": "R",
-     "votes": 1017
+     "votes": 1026
     },
     {
      "id": "bong-j-kim",
      "name": "Bong J. Kim",
      "party": "REP",
      "party_code": "R",
-     "votes": 996
+     "votes": 1004
     }
    ],
    "precincts": {
@@ -81007,28 +81095,28 @@
      "name": "James M. Folkerts",
      "party": null,
      "party_code": "O",
-     "votes": 2971
+     "votes": 2995
     },
     {
      "id": "frank-e-furbacher-jr",
      "name": "FRANK E. FURBACHER Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 2902
+     "votes": 2926
     },
     {
      "id": "russell-talamini",
      "name": "Russell Talamini",
      "party": "REP",
      "party_code": "R",
-     "votes": 1930
+     "votes": 1941
     },
     {
      "id": "ryan-schwertfeger",
      "name": "Ryan Schwertfeger",
      "party": "REP",
      "party_code": "R",
-     "votes": 1928
+     "votes": 1937
     },
     {
      "id": "write-in-various-named",
@@ -81060,14 +81148,14 @@
      "name": "RONALD E. BINAGHI Jr.",
      "party": "REP",
      "party_code": "R",
-     "votes": 1323
+     "votes": 1335
     },
     {
      "id": "donna-m-costello",
      "name": "Donna M. Costello",
      "party": "REP",
      "party_code": "R",
-     "votes": 1297
+     "votes": 1309
     },
     {
      "id": "write-in-various-named",
@@ -81099,28 +81187,28 @@
      "name": "Susan M. Croce",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1915
+     "votes": 1937
     },
     {
      "id": "jeffrey-r-stewart",
      "name": "Jeffrey R. Stewart",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1908
+     "votes": 1929
     },
     {
      "id": "james-ted-gullo",
      "name": "James \"Ted\" Gullo",
      "party": "REP",
      "party_code": "R",
-     "votes": 1502
+     "votes": 1511
     },
     {
      "id": "jonathan-kern",
      "name": "Jonathan Kern",
      "party": "REP",
      "party_code": "R",
-     "votes": 1420
+     "votes": 1429
     },
     {
      "id": "write-in-various-named",
@@ -81152,14 +81240,14 @@
      "name": "Chong Paul Kim",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2175
+     "votes": 2211
     },
     {
      "id": "stephanie-s-jang",
      "name": "Stephanie S. Jang",
      "party": "REP",
      "party_code": "R",
-     "votes": 967
+     "votes": 980
     },
     {
      "id": "write-in-various-named",
@@ -81191,21 +81279,21 @@
      "name": "Lucy Y. Yang",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2229
+     "votes": 2267
     },
     {
      "id": "justin-s-kang",
      "name": "Justin S. Kang",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2224
+     "votes": 2263
     },
     {
      "id": "carmelo-j-velardo",
      "name": "Carmelo J. Velardo",
      "party": "REP",
      "party_code": "R",
-     "votes": 878
+     "votes": 888
     },
     {
      "id": "write-in-various-named",
@@ -81237,7 +81325,7 @@
      "name": "CHRISTOPHER DiPIAZZA",
      "party": "REP",
      "party_code": "R",
-     "votes": 5696
+     "votes": 5731
     },
     {
      "id": "write-in-various-named",
@@ -81269,28 +81357,28 @@
      "name": "Eric Crespo",
      "party": "REP",
      "party_code": "R",
-     "votes": 4617
+     "votes": 4648
     },
     {
      "id": "alfredo-nadera",
      "name": "Alfredo Nadera",
      "party": "REP",
      "party_code": "R",
-     "votes": 4613
+     "votes": 4642
     },
     {
      "id": "melissa-caminiti",
      "name": "Melissa Caminiti",
      "party": "DEM",
      "party_code": "D",
-     "votes": 4533
+     "votes": 4576
     },
     {
      "id": "peter-caminiti-sr",
      "name": "PETER CAMINITI Sr.",
      "party": "DEM",
      "party_code": "D",
-     "votes": 4403
+     "votes": 4443
     },
     {
      "id": "write-in-various-named",
@@ -81322,28 +81410,28 @@
      "name": "Robert C. Metzdorf",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2148
+     "votes": 2160
     },
     {
      "id": "michael-g-mintz",
      "name": "Michael G. Mintz",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2080
+     "votes": 2092
     },
     {
      "id": "marc-a-weinberg",
      "name": "Marc A. Weinberg",
      "party": "REP",
      "party_code": "R",
-     "votes": 1683
+     "votes": 1692
     },
     {
      "id": "sebastian-e-hennessy",
      "name": "Sebastian E. Hennessy",
      "party": "REP",
      "party_code": "R",
-     "votes": 1677
+     "votes": 1685
     },
     {
      "id": "write-in-various-named",
@@ -81375,14 +81463,14 @@
      "name": "ANGELO R. LaMANNA Jr.",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3247
+     "votes": 3270
     },
     {
      "id": "deirdre-a-dillon",
      "name": "Deirdre A. Dillon",
      "party": "REP",
      "party_code": "R",
-     "votes": 3245
+     "votes": 3266
     },
     {
      "id": "write-in-various-named",
@@ -81414,28 +81502,28 @@
      "name": "Jennifer Crandall",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3303
+     "votes": 3324
     },
     {
      "id": "robert-barry",
      "name": "Robert Barry",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3277
+     "votes": 3301
     },
     {
      "id": "judith-a-cusick",
      "name": "Judith A. Cusick",
      "party": "REP",
      "party_code": "R",
-     "votes": 3147
+     "votes": 3168
     },
     {
      "id": "jacob-w-englishman",
      "name": "Jacob W. Englishman",
      "party": "REP",
      "party_code": "R",
-     "votes": 3118
+     "votes": 3137
     },
     {
      "id": "write-in-various-named",
@@ -81467,28 +81555,28 @@
      "name": "Frank Pellino",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1712
+     "votes": 1745
     },
     {
      "id": "james-v-kontolios",
      "name": "James V. Kontolios",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1571
+     "votes": 1603
     },
     {
      "id": "gino-s-ramundo",
      "name": "Gino S. Ramundo",
      "party": "REP",
      "party_code": "R",
-     "votes": 1225
+     "votes": 1240
     },
     {
      "id": "sarah-h-kim",
      "name": "Sarah H. Kim",
      "party": "REP",
      "party_code": "R",
-     "votes": 1204
+     "votes": 1220
     },
     {
      "id": "write-in-various-named",
@@ -81520,28 +81608,28 @@
      "name": "Evan Weitz",
      "party": null,
      "party_code": "O",
-     "votes": 4774
+     "votes": 4810
     },
     {
      "id": "siobhan-winograd",
      "name": "Siobhan Winograd",
      "party": null,
      "party_code": "O",
-     "votes": 4481
+     "votes": 4519
     },
     {
      "id": "hyunju-kwak",
      "name": "Hyunju Kwak",
      "party": null,
      "party_code": "O",
-     "votes": 3486
+     "votes": 3529
     },
     {
      "id": "denise-pierce-lima",
      "name": "Denise Pierce Lima",
      "party": null,
      "party_code": "O",
-     "votes": 2101
+     "votes": 2121
     },
     {
      "id": "write-in-various-named",
@@ -81573,14 +81661,14 @@
      "name": "David Glass",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2797
+     "votes": 2828
     },
     {
      "id": "matee-indira-kinsella",
      "name": "Matee Indira Kinsella",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2794
+     "votes": 2826
     },
     {
      "id": "write-in-various-named",
@@ -81612,7 +81700,7 @@
      "name": "Mark Bromberg",
      "party": "REP",
      "party_code": "R",
-     "votes": 2530
+     "votes": 2545
     },
     {
      "id": "write-in-various-named",
@@ -81644,14 +81732,14 @@
      "name": "Denise E. Sieg",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2527
+     "votes": 2545
     },
     {
      "id": "james-tolomeo",
      "name": "James Tolomeo",
      "party": "REP",
      "party_code": "R",
-     "votes": 2206
+     "votes": 2220
     },
     {
      "id": "write-in-various-named",
@@ -81683,7 +81771,7 @@
      "name": "Joseph Ziccarelli",
      "party": "REP",
      "party_code": "R",
-     "votes": 2457
+     "votes": 2471
     },
     {
      "id": "write-in-various-named",
@@ -81715,28 +81803,28 @@
      "name": "Teresa E. Judge Cravello",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1152
+     "votes": 1158
     },
     {
      "id": "andrew-mattson",
      "name": "Andrew Mattson",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1122
+     "votes": 1129
     },
     {
      "id": "jennifer-l-appice",
      "name": "Jennifer L. Appice",
      "party": "REP",
      "party_code": "R",
-     "votes": 583
+     "votes": 589
     },
     {
      "id": "john-p-appice",
      "name": "John P. Appice",
      "party": "REP",
      "party_code": "R",
-     "votes": 530
+     "votes": 533
     },
     {
      "id": "gail-artola",
@@ -81839,14 +81927,14 @@
      "name": "STEPHANIE L. McGOWAN",
      "party": "DEM",
      "party_code": "D",
-     "votes": 4742
+     "votes": 4785
     },
     {
      "id": "susan-e-quatrone",
      "name": "Susan E. Quatrone",
      "party": "DEM",
      "party_code": "D",
-     "votes": 4676
+     "votes": 4717
     },
     {
      "id": "write-in-various-named",
@@ -81878,14 +81966,14 @@
      "name": "Robert D. White",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3662
+     "votes": 3669
     },
     {
      "id": "omar-rodriguez",
      "name": "Omar Rodriguez",
      "party": "REP",
      "party_code": "R",
-     "votes": 1540
+     "votes": 1544
     },
     {
      "id": "write-in-various-named",
@@ -81917,28 +82005,28 @@
      "name": "Garrett S. Luna",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3269
+     "votes": 3275
     },
     {
      "id": "sarah-sanchez",
      "name": "Sarah Sanchez",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3207
+     "votes": 3213
     },
     {
      "id": "andrew-dziedzic",
      "name": "Andrew Dziedzic",
      "party": "REP",
      "party_code": "R",
-     "votes": 1848
+     "votes": 1853
     },
     {
      "id": "gerard-jerry-taylor",
      "name": "Gerard \"Jerry\" Taylor",
      "party": "REP",
      "party_code": "R",
-     "votes": 1793
+     "votes": 1798
     }
    ],
    "precincts": {
@@ -81963,14 +82051,14 @@
      "name": "Ravi Sachdev",
      "party": "REP",
      "party_code": "R",
-     "votes": 885
+     "votes": 892
     },
     {
      "id": "jonathan-kurpis",
      "name": "Jonathan Kurpis",
      "party": "REP",
      "party_code": "R",
-     "votes": 866
+     "votes": 873
     },
     {
      "id": "write-in-various-named",
@@ -82002,14 +82090,14 @@
      "name": "James A. Anzevino",
      "party": "DEM",
      "party_code": "D",
-     "votes": 481
+     "votes": 485
     },
     {
      "id": "luis-e-perdomo",
      "name": "Luis E. Perdomo",
      "party": "DEM",
      "party_code": "D",
-     "votes": 457
+     "votes": 460
     },
     {
      "id": "write-in-various-named",
@@ -82041,63 +82129,63 @@
      "name": "GEORGE FERNANDEZ Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 7194
+     "votes": 7260
     },
     {
      "id": "denise-belcher",
      "name": "Denise Belcher",
      "party": null,
      "party_code": "O",
-     "votes": 7163
+     "votes": 7235
     },
     {
      "id": "duane-m-harley",
      "name": "Duane M. Harley",
      "party": null,
      "party_code": "O",
-     "votes": 6775
+     "votes": 6840
     },
     {
      "id": "avi-berliner",
      "name": "Avi Berliner",
      "party": null,
      "party_code": "O",
-     "votes": 6550
+     "votes": 6609
     },
     {
      "id": "sharon-l-kolb",
      "name": "Sharon L. Kolb",
      "party": null,
      "party_code": "O",
-     "votes": 6418
+     "votes": 6478
     },
     {
      "id": "amrit-ramjattan",
      "name": "Amrit Ramjattan",
      "party": null,
      "party_code": "O",
-     "votes": 6236
+     "votes": 6296
     },
     {
      "id": "hillary-goldberg",
      "name": "Hillary Goldberg",
      "party": null,
      "party_code": "O",
-     "votes": 3743
+     "votes": 3785
     },
     {
      "id": "crystal-y-pressley",
      "name": "Crystal Y. Pressley",
      "party": null,
      "party_code": "O",
-     "votes": 1962
+     "votes": 1982
     },
     {
      "id": "howard-rose",
      "name": "Howard Rose",
      "party": null,
      "party_code": "O",
-     "votes": 1937
+     "votes": 1957
     },
     {
      "id": "write-in-various-named",
@@ -82129,14 +82217,14 @@
      "name": "Jamie Corsair",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3259
+     "votes": 3304
     },
     {
      "id": "aakash-k-shah",
      "name": "Aakash K. Shah",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3224
+     "votes": 3265
     },
     {
      "id": "write-in-various-named",
@@ -82193,14 +82281,14 @@
      "name": "Donna A. Friedlander",
      "party": "REP",
      "party_code": "R",
-     "votes": 1940
+     "votes": 1949
     },
     {
      "id": "roger-c-masi",
      "name": "Roger C. Masi",
      "party": "REP",
      "party_code": "R",
-     "votes": 1920
+     "votes": 1928
     },
     {
      "id": "write-in-various-named",
@@ -82232,28 +82320,28 @@
      "name": "Gilbert M. Hartmann",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2211
+     "votes": 2223
     },
     {
      "id": "eric-b-rubinstein",
      "name": "Eric B. Rubinstein",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2192
+     "votes": 2203
     },
     {
      "id": "joseph-v-martinello-jr",
      "name": "JOSEPH V. MARTINELLO Jr.",
      "party": "REP",
      "party_code": "R",
-     "votes": 1866
+     "votes": 1867
     },
     {
      "id": "jason-chrzanowski",
      "name": "Jason Chrzanowski",
      "party": "REP",
      "party_code": "R",
-     "votes": 1789
+     "votes": 1790
     },
     {
      "id": "write-in-various-named",
@@ -82285,28 +82373,28 @@
      "name": "WALTER WARGACKI Jr.",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1777
+     "votes": 1803
     },
     {
      "id": "albert-zaccone",
      "name": "Albert Zaccone",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1688
+     "votes": 1713
     },
     {
      "id": "dennis-graham",
      "name": "Dennis Graham",
      "party": "REP",
      "party_code": "R",
-     "votes": 1035
+     "votes": 1040
     },
     {
      "id": "sylwia-hejzner",
      "name": "Sylwia Hejzner",
      "party": "REP",
      "party_code": "R",
-     "votes": 1027
+     "votes": 1032
     },
     {
      "id": "write-in-various-named",
@@ -82338,14 +82426,14 @@
      "name": "Roman Kruk",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1698
+     "votes": 1722
     },
     {
      "id": "john-p-kosuda",
      "name": "John P. Kosuda",
      "party": "REP",
      "party_code": "R",
-     "votes": 1086
+     "votes": 1091
     }
    ],
    "precincts": {
@@ -82370,28 +82458,28 @@
      "name": "Erin M. Collins",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2655
+     "votes": 2671
     },
     {
      "id": "kristian-s-rasmussen",
      "name": "Kristian S. Rasmussen",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2431
+     "votes": 2444
     },
     {
      "id": "lauren-j-letizia",
      "name": "Lauren J. Letizia",
      "party": "REP",
      "party_code": "R",
-     "votes": 1915
+     "votes": 1924
     },
     {
      "id": "beth-f-staples",
      "name": "Beth F. Staples",
      "party": "REP",
      "party_code": "R",
-     "votes": 1727
+     "votes": 1734
     }
    ],
    "precincts": {
@@ -82416,28 +82504,28 @@
      "name": "Joshua S. Stern",
      "party": "REP",
      "party_code": "R",
-     "votes": 1447
+     "votes": 1453
     },
     {
      "id": "julie-b-brodsky",
      "name": "Julie B. Brodsky",
      "party": "REP",
      "party_code": "R",
-     "votes": 1439
+     "votes": 1445
     },
     {
      "id": "eric-bittman",
      "name": "Eric Bittman",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1258
+     "votes": 1268
     },
     {
      "id": "aleisia-gibson-wright",
      "name": "Aleisia Gibson Wright",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1237
+     "votes": 1247
     }
    ],
    "precincts": {
@@ -82462,14 +82550,14 @@
      "name": "Philip D. Romero",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2720
+     "votes": 2735
     },
     {
      "id": "dominick-g-azzolini",
      "name": "Dominick G. Azzolini",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2710
+     "votes": 2726
     },
     {
      "id": "write-in-various-named",
@@ -82501,14 +82589,14 @@
      "name": "Peter J. Melchionne",
      "party": "REP",
      "party_code": "R",
-     "votes": 4293
+     "votes": 4327
     },
     {
      "id": "roger-j-lane",
      "name": "Roger J. Lane",
      "party": "REP",
      "party_code": "R",
-     "votes": 4273
+     "votes": 4306
     },
     {
      "id": "write-in-various-named",
@@ -82540,7 +82628,7 @@
      "name": "James A. Schappert",
      "party": "REP",
      "party_code": "R",
-     "votes": 4253
+     "votes": 4288
     },
     {
      "id": "kenneth-silber",
@@ -82579,21 +82667,21 @@
      "name": "Andrew M. Prince",
      "party": null,
      "party_code": "O",
-     "votes": 1541
+     "votes": 1547
     },
     {
      "id": "jennifer-c-mario",
      "name": "Jennifer C. Mario",
      "party": null,
      "party_code": "O",
-     "votes": 1378
+     "votes": 1384
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 11
+     "votes": 18
     }
    ],
    "precincts": {
@@ -82618,14 +82706,14 @@
      "name": "Todd R. Fliegel",
      "party": null,
      "party_code": "O",
-     "votes": 1866
+     "votes": 1873
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 9
+     "votes": 13
     }
    ],
    "precincts": {
@@ -82650,14 +82738,14 @@
      "name": "MARIA DiBIASE",
      "party": null,
      "party_code": "O",
-     "votes": 281
+     "votes": 284
     },
     {
      "id": "vanessa-barrera",
      "name": "Vanessa Barrera",
      "party": null,
      "party_code": "O",
-     "votes": 264
+     "votes": 271
     },
     {
      "id": "anthony-fasano",
@@ -82671,7 +82759,7 @@
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 5
+     "votes": 9
     }
    ],
    "precincts": {
@@ -82696,21 +82784,21 @@
      "name": "Fanny L. Cruz Betesh",
      "party": null,
      "party_code": "O",
-     "votes": 3246
+     "votes": 3277
     },
     {
      "id": "martha-s-papapetrou",
      "name": "Martha S. Papapetrou",
      "party": null,
      "party_code": "O",
-     "votes": 2600
+     "votes": 2615
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 21
+     "votes": 57
     }
    ],
    "precincts": {
@@ -82735,28 +82823,28 @@
      "name": "Jose Chavez",
      "party": null,
      "party_code": "O",
-     "votes": 1372
+     "votes": 1380
     },
     {
      "id": "bisi-j-ruckett",
      "name": "Bisi J. Ruckett",
      "party": null,
      "party_code": "O",
-     "votes": 1152
+     "votes": 1160
     },
     {
      "id": "tasneem-salam",
      "name": "Tasneem Salam",
      "party": null,
      "party_code": "O",
-     "votes": 1090
+     "votes": 1099
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 16
+     "votes": 54
     }
    ],
    "precincts": {
@@ -82781,21 +82869,21 @@
      "name": "THOMAS J. COX Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 1125
+     "votes": 1130
     },
     {
      "id": "eric-jusino",
      "name": "Eric Jusino",
      "party": null,
      "party_code": "O",
-     "votes": 735
+     "votes": 738
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 8
+     "votes": 16
     }
    ],
    "precincts": {
@@ -82820,28 +82908,28 @@
      "name": "Frank M. Stallone",
      "party": null,
      "party_code": "O",
-     "votes": 1179
+     "votes": 1182
     },
     {
      "id": "ashley-m-balac",
      "name": "Ashley M. Balac",
      "party": null,
      "party_code": "O",
-     "votes": 1136
+     "votes": 1138
     },
     {
      "id": "leslie-a-molnar",
      "name": "Leslie A. Molnar",
      "party": null,
      "party_code": "O",
-     "votes": 1133
+     "votes": 1135
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 5
+     "votes": 19
     }
    ],
    "precincts": {
@@ -82866,14 +82954,14 @@
      "name": "Marc Cherichella",
      "party": null,
      "party_code": "O",
-     "votes": 1183
+     "votes": 1186
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 4
+     "votes": 8
     }
    ],
    "precincts": {
@@ -82898,21 +82986,21 @@
      "name": "Steven C. Lahullier",
      "party": null,
      "party_code": "O",
-     "votes": 792
+     "votes": 796
     },
     {
      "id": "sharon-o-brien-romer",
      "name": "Sharon O'Brien-Romer",
      "party": null,
      "party_code": "O",
-     "votes": 776
+     "votes": 779
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 4
+     "votes": 7
     }
    ],
    "precincts": {
@@ -82937,7 +83025,7 @@
      "name": "Joseph Argenziano",
      "party": null,
      "party_code": "O",
-     "votes": 1770
+     "votes": 1783
     },
     {
      "id": "write-in-various-named",
@@ -82969,14 +83057,14 @@
      "name": "Edmund Choi",
      "party": null,
      "party_code": "O",
-     "votes": 1433
+     "votes": 1449
     },
     {
      "id": "avishag-ravid",
      "name": "Avishag Ravid",
      "party": null,
      "party_code": "O",
-     "votes": 1313
+     "votes": 1329
     },
     {
      "id": "inbar-yodfat",
@@ -83022,28 +83110,28 @@
      "name": "Amy M. Cusick",
      "party": null,
      "party_code": "O",
-     "votes": 1506
+     "votes": 1520
     },
     {
      "id": "heiddy-martin",
      "name": "Heiddy Martin",
      "party": null,
      "party_code": "O",
-     "votes": 1230
+     "votes": 1243
     },
     {
      "id": "sarah-e-barrs",
      "name": "Sarah E. Barrs",
      "party": null,
      "party_code": "O",
-     "votes": 1207
+     "votes": 1218
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 6
+     "votes": 89
     }
    ],
    "precincts": {
@@ -83068,21 +83156,21 @@
      "name": "Andrew Shyong",
      "party": null,
      "party_code": "O",
-     "votes": 806
+     "votes": 823
     },
     {
      "id": "elizabeth-f-miller",
      "name": "Elizabeth F. Miller",
      "party": null,
      "party_code": "O",
-     "votes": 606
+     "votes": 617
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 6
     }
    ],
    "precincts": {
@@ -83107,21 +83195,21 @@
      "name": "Erica J. Cantatore",
      "party": null,
      "party_code": "O",
-     "votes": 1134
+     "votes": 1158
     },
     {
      "id": "diane-g-holzberg",
      "name": "Diane G. Holzberg",
      "party": null,
      "party_code": "O",
-     "votes": 1106
+     "votes": 1127
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 12
     }
    ],
    "precincts": {
@@ -83146,14 +83234,14 @@
      "name": "Bari Baron",
      "party": null,
      "party_code": "O",
-     "votes": 1067
+     "votes": 1086
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 2
+     "votes": 6
     }
    ],
    "precincts": {
@@ -83178,14 +83266,14 @@
      "name": "Stephanie Petriello",
      "party": null,
      "party_code": "O",
-     "votes": 3227
+     "votes": 3249
     },
     {
      "id": "theresa-l-riva",
      "name": "Theresa L. Riva",
      "party": null,
      "party_code": "O",
-     "votes": 2772
+     "votes": 2794
     },
     {
      "id": "stacey-belhumer",
@@ -83224,14 +83312,14 @@
      "name": "Krista Gentle",
      "party": null,
      "party_code": "O",
-     "votes": 1572
+     "votes": 1578
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 10
+     "votes": 18
     }
    ],
    "precincts": {
@@ -83256,21 +83344,21 @@
      "name": "Maria Caruso",
      "party": null,
      "party_code": "O",
-     "votes": 1531
+     "votes": 1537
     },
     {
      "id": "bobbie-jo-brelsford",
      "name": "Bobbie-Jo Brelsford",
      "party": null,
      "party_code": "O",
-     "votes": 955
+     "votes": 957
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 18
+     "votes": 21
     }
    ],
    "precincts": {
@@ -83295,35 +83383,35 @@
      "name": "Cristina Stefani-Rackow",
      "party": null,
      "party_code": "O",
-     "votes": 1290
+     "votes": 1298
     },
     {
      "id": "patrick-bussanich",
      "name": "Patrick Bussanich",
      "party": null,
      "party_code": "O",
-     "votes": 1205
+     "votes": 1212
     },
     {
      "id": "hagop-jacques-kalfayan",
      "name": "Hagop \"Jacques\" Kalfayan",
      "party": null,
      "party_code": "O",
-     "votes": 876
+     "votes": 882
     },
     {
      "id": "jason-yard",
      "name": "Jason Yard",
      "party": null,
      "party_code": "O",
-     "votes": 863
+     "votes": 868
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 18
+     "votes": 30
     }
    ],
    "precincts": {
@@ -83348,35 +83436,35 @@
      "name": "DOUGLAS A. DeMATTEO",
      "party": null,
      "party_code": "O",
-     "votes": 2454
+     "votes": 2475
     },
     {
      "id": "elizabeth-mierzejewski",
      "name": "Elizabeth Mierzejewski",
      "party": null,
      "party_code": "O",
-     "votes": 2379
+     "votes": 2398
     },
     {
      "id": "dorin-aspras",
      "name": "Dorin Aspras",
      "party": null,
      "party_code": "O",
-     "votes": 2240
+     "votes": 2260
     },
     {
      "id": "sabrina-m-lo-presti",
      "name": "SABRINA M. Lo PRESTI",
      "party": null,
      "party_code": "O",
-     "votes": 1603
+     "votes": 1612
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 9
+     "votes": 23
     }
    ],
    "precincts": {
@@ -83401,14 +83489,14 @@
      "name": "Azize Cornejo",
      "party": null,
      "party_code": "O",
-     "votes": 2545
+     "votes": 2561
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 7
+     "votes": 11
     }
    ],
    "precincts": {
@@ -83433,21 +83521,21 @@
      "name": "William \"Will\" Graulich V",
      "party": null,
      "party_code": "O",
-     "votes": 1506
+     "votes": 1512
     },
     {
      "id": "amanda-patricia-riccardi",
      "name": "Amanda Patricia Riccardi",
      "party": null,
      "party_code": "O",
-     "votes": 1332
+     "votes": 1338
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 13
+     "votes": 22
     }
    ],
    "precincts": {
@@ -83472,49 +83560,49 @@
      "name": "Vernedra C. Williams",
      "party": null,
      "party_code": "O",
-     "votes": 3231
+     "votes": 3264
     },
     {
      "id": "rebecca-p-tenzer",
      "name": "Rebecca P. Tenzer",
      "party": null,
      "party_code": "O",
-     "votes": 2889
+     "votes": 2941
     },
     {
      "id": "isaac-j-strulowitz",
      "name": "Isaac J. Strulowitz",
      "party": null,
      "party_code": "O",
-     "votes": 2767
+     "votes": 2812
     },
     {
      "id": "miriam-stiefel",
      "name": "Miriam Stiefel",
      "party": null,
      "party_code": "O",
-     "votes": 2651
+     "votes": 2694
     },
     {
      "id": "ignacio-acosta-thompson",
      "name": "Ignacio Acosta-Thompson",
      "party": null,
      "party_code": "O",
-     "votes": 2514
+     "votes": 2542
     },
     {
      "id": "william-feinstein",
      "name": "William Feinstein",
      "party": null,
      "party_code": "O",
-     "votes": 2049
+     "votes": 2072
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 21
+     "votes": 35
     }
    ],
    "precincts": {
@@ -83539,42 +83627,42 @@
      "name": "Anthony Hong",
      "party": null,
      "party_code": "O",
-     "votes": 906
+     "votes": 910
     },
     {
      "id": "margarita-lolis",
      "name": "Margarita Lolis",
      "party": null,
      "party_code": "O",
-     "votes": 715
+     "votes": 720
     },
     {
      "id": "jennifer-a-drimones",
      "name": "Jennifer A. Drimones",
      "party": null,
      "party_code": "O",
-     "votes": 700
+     "votes": 709
     },
     {
      "id": "orietta-osso",
      "name": "Orietta Osso",
      "party": null,
      "party_code": "O",
-     "votes": 669
+     "votes": 676
     },
     {
      "id": "gulezahra-mamdani",
      "name": "Gulezahra Mamdani",
      "party": null,
      "party_code": "O",
-     "votes": 602
+     "votes": 604
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 9
+     "votes": 14
     }
    ],
    "precincts": {
@@ -83599,70 +83687,70 @@
      "name": "Julie Mahan",
      "party": null,
      "party_code": "O",
-     "votes": 5952
+     "votes": 5981
     },
     {
      "id": "julie-kossoy",
      "name": "Julie Kossoy",
      "party": null,
      "party_code": "O",
-     "votes": 5693
+     "votes": 5720
     },
     {
      "id": "jeanne-l-browne",
      "name": "Jeanne L. Browne",
      "party": null,
      "party_code": "O",
-     "votes": 5638
+     "votes": 5666
     },
     {
      "id": "veronica-brenner",
      "name": "Veronica Brenner",
      "party": null,
      "party_code": "O",
-     "votes": 2796
+     "votes": 2815
     },
     {
      "id": "angela-kerr",
      "name": "Angela Kerr",
      "party": null,
      "party_code": "O",
-     "votes": 2732
+     "votes": 2749
     },
     {
      "id": "yan-j-rusanov",
      "name": "Yan J. Rusanov",
      "party": null,
      "party_code": "O",
-     "votes": 2532
+     "votes": 2551
     },
     {
      "id": "marcy-t-reiz",
      "name": "Marcy T. Reiz",
      "party": null,
      "party_code": "O",
-     "votes": 2300
+     "votes": 2318
     },
     {
      "id": "yael-y-suriel",
      "name": "Yael Y. Suriel",
      "party": null,
      "party_code": "O",
-     "votes": 1062
+     "votes": 1066
     },
     {
      "id": "dianna-m-sopala",
      "name": "Dianna M. Sopala",
      "party": null,
      "party_code": "O",
-     "votes": 950
+     "votes": 954
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 19
+     "votes": 53
     }
    ],
    "precincts": {
@@ -83687,28 +83775,28 @@
      "name": "Elizabeth Greenfield Estersohn",
      "party": null,
      "party_code": "O",
-     "votes": 4743
+     "votes": 4763
     },
     {
      "id": "matthew-j-correia",
      "name": "Matthew J. Correia",
      "party": null,
      "party_code": "O",
-     "votes": 2848
+     "votes": 2871
     },
     {
      "id": "dmytro-arshynov",
      "name": "Dmytro Arshynov",
      "party": null,
      "party_code": "O",
-     "votes": 2375
+     "votes": 2390
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 4
+     "votes": 18
     }
    ],
    "precincts": {
@@ -83733,49 +83821,49 @@
      "name": "Amy Ko-Tang",
      "party": null,
      "party_code": "O",
-     "votes": 4197
+     "votes": 4248
     },
     {
      "id": "candace-romba",
      "name": "Candace Romba",
      "party": null,
      "party_code": "O",
-     "votes": 3769
+     "votes": 3817
     },
     {
      "id": "christian-nowell",
      "name": "Christian Nowell",
      "party": null,
      "party_code": "O",
-     "votes": 3758
+     "votes": 3807
     },
     {
      "id": "tanya-byers-kang",
      "name": "Tanya Byers-Kang",
      "party": null,
      "party_code": "O",
-     "votes": 3300
+     "votes": 3334
     },
     {
      "id": "michael-rubino",
      "name": "Michael Rubino",
      "party": null,
      "party_code": "O",
-     "votes": 3186
+     "votes": 3215
     },
     {
      "id": "paula-colbath",
      "name": "Paula Colbath",
      "party": null,
      "party_code": "O",
-     "votes": 3018
+     "votes": 3045
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 21
+     "votes": 35
     }
    ],
    "precincts": {
@@ -83800,28 +83888,28 @@
      "name": "Carolina Severino",
      "party": null,
      "party_code": "O",
-     "votes": 1989
+     "votes": 2002
     },
     {
      "id": "se-whan-kim",
      "name": "Se Whan Kim",
      "party": null,
      "party_code": "O",
-     "votes": 1917
+     "votes": 1928
     },
     {
      "id": "ryan-richman",
      "name": "Ryan Richman",
      "party": null,
      "party_code": "O",
-     "votes": 1833
+     "votes": 1845
     },
     {
      "id": "dayaneiris-burton",
      "name": "Dayaneiris Burton",
      "party": null,
      "party_code": "O",
-     "votes": 920
+     "votes": 922
     },
     {
      "id": "write-in-various-named",
@@ -83853,28 +83941,28 @@
      "name": "Elizabeth Calvez",
      "party": null,
      "party_code": "O",
-     "votes": 2624
+     "votes": 2650
     },
     {
      "id": "edmund-c-hayward",
      "name": "Edmund C. Hayward",
      "party": null,
      "party_code": "O",
-     "votes": 2448
+     "votes": 2476
     },
     {
      "id": "damali-robinson",
      "name": "Damali Robinson",
      "party": null,
      "party_code": "O",
-     "votes": 2407
+     "votes": 2433
     },
     {
      "id": "gautam-s-surya",
      "name": "Gautam S. Surya",
      "party": null,
      "party_code": "O",
-     "votes": 2016
+     "votes": 2045
     },
     {
      "id": "write-in-various-named",
@@ -83906,21 +83994,21 @@
      "name": "Kenneth Martin",
      "party": null,
      "party_code": "O",
-     "votes": 5529
+     "votes": 5582
     },
     {
      "id": "mabel-bonilla",
      "name": "Mabel Bonilla",
      "party": null,
      "party_code": "O",
-     "votes": 5277
+     "votes": 5333
     },
     {
      "id": "victoria-vicky-farhi",
      "name": "Victoria \"Vicky\" Farhi",
      "party": null,
      "party_code": "O",
-     "votes": 5165
+     "votes": 5224
     },
     {
      "id": "write-in-various-named",
@@ -83952,7 +84040,7 @@
      "name": "Jessica Spillane",
      "party": null,
      "party_code": "O",
-     "votes": 1313
+     "votes": 1328
     },
     {
      "id": "write-in-various-named",
@@ -83984,14 +84072,14 @@
      "name": "Stephen S. Hahm",
      "party": null,
      "party_code": "O",
-     "votes": 980
+     "votes": 990
     },
     {
      "id": "jennifer-helfman",
      "name": "Jennifer Helfman",
      "party": null,
      "party_code": "O",
-     "votes": 954
+     "votes": 965
     },
     {
      "id": "write-in-various-named",
@@ -84023,28 +84111,28 @@
      "name": "Jillian Ferdinand",
      "party": null,
      "party_code": "O",
-     "votes": 1767
+     "votes": 1783
     },
     {
      "id": "corinne-ponte",
      "name": "Corinne Ponte",
      "party": null,
      "party_code": "O",
-     "votes": 1766
+     "votes": 1779
     },
     {
      "id": "lisa-krommenhoek",
      "name": "Lisa Krommenhoek",
      "party": null,
      "party_code": "O",
-     "votes": 1661
+     "votes": 1677
     },
     {
      "id": "angelo-joseph-caprio",
      "name": "Angelo Joseph Caprio",
      "party": null,
      "party_code": "O",
-     "votes": 1630
+     "votes": 1642
     },
     {
      "id": "write-in-various-named",
@@ -84076,14 +84164,14 @@
      "name": "Courtney Russell",
      "party": null,
      "party_code": "O",
-     "votes": 761
+     "votes": 771
     },
     {
      "id": "drew-s-krasny",
      "name": "Drew S. Krasny",
      "party": null,
      "party_code": "O",
-     "votes": 592
+     "votes": 597
     }
    ],
    "precincts": {
@@ -84108,21 +84196,21 @@
      "name": "Beth Kornblatt",
      "party": null,
      "party_code": "O",
-     "votes": 2011
+     "votes": 2034
     },
     {
      "id": "robert-stephen-oosting",
      "name": "Robert Stephen Oosting",
      "party": null,
      "party_code": "O",
-     "votes": 1357
+     "votes": 1375
     },
     {
      "id": "patrick-farley",
      "name": "Patrick Farley",
      "party": null,
      "party_code": "O",
-     "votes": 1249
+     "votes": 1264
     },
     {
      "id": "write-in-various-named",
@@ -84154,14 +84242,14 @@
      "name": "Kathleen Puerta",
      "party": null,
      "party_code": "O",
-     "votes": 2191
+     "votes": 2220
     },
     {
      "id": "michael-kenduck",
      "name": "Michael Kenduck",
      "party": null,
      "party_code": "O",
-     "votes": 1912
+     "votes": 1943
     },
     {
      "id": "write-in-various-named",
@@ -84193,14 +84281,14 @@
      "name": "Margaret Liljegren",
      "party": null,
      "party_code": "O",
-     "votes": 1069
+     "votes": 1079
     },
     {
      "id": "anthony-karoleski",
      "name": "Anthony Karoleski",
      "party": null,
      "party_code": "O",
-     "votes": 811
+     "votes": 819
     },
     {
      "id": "write-in-various-named",
@@ -84232,21 +84320,21 @@
      "name": "Daniel C. Lee",
      "party": null,
      "party_code": "O",
-     "votes": 1604
+     "votes": 1620
     },
     {
      "id": "kelly-o-neill",
      "name": "Kelly O'Neill",
      "party": null,
      "party_code": "O",
-     "votes": 1481
+     "votes": 1495
     },
     {
      "id": "seemashaheen-khan",
      "name": "Seemashaheen Khan",
      "party": null,
      "party_code": "O",
-     "votes": 1141
+     "votes": 1150
     },
     {
      "id": "write-in-various-named",
@@ -84278,21 +84366,21 @@
      "name": "Victoria Bradley",
      "party": null,
      "party_code": "O",
-     "votes": 1247
+     "votes": 1256
     },
     {
      "id": "purna-patel",
      "name": "Purna Patel",
      "party": null,
      "party_code": "O",
-     "votes": 906
+     "votes": 913
     },
     {
      "id": "brian-bonelli",
      "name": "Brian Bonelli",
      "party": null,
      "party_code": "O",
-     "votes": 818
+     "votes": 824
     },
     {
      "id": "write-in-various-named",
@@ -84324,18 +84412,25 @@
      "name": "Anna Passamano",
      "party": null,
      "party_code": "O",
-     "votes": 2300
+     "votes": 2315
     },
     {
      "id": "katherine-scaglione",
      "name": "Katherine Scaglione",
      "party": null,
      "party_code": "O",
-     "votes": 1743
+     "votes": 1755
     },
     {
      "id": "laura-jean-checki",
      "name": "Laura Jean Checki",
+     "party": null,
+     "party_code": "O",
+     "votes": 1753
+    },
+    {
+     "id": "anthony-scerbo",
+     "name": "Anthony Scerbo",
      "party": null,
      "party_code": "O",
      "votes": 1738
@@ -84345,49 +84440,42 @@
      "name": "DOMENICK ABBATE Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 1732
-    },
-    {
-     "id": "anthony-scerbo",
-     "name": "Anthony Scerbo",
-     "party": null,
-     "party_code": "O",
-     "votes": 1731
+     "votes": 1736
     },
     {
      "id": "jasmine-gonzalez",
      "name": "Jasmine Gonzalez",
      "party": null,
      "party_code": "O",
-     "votes": 1695
+     "votes": 1709
     },
     {
      "id": "chris-auriemma",
      "name": "Chris Auriemma",
      "party": null,
      "party_code": "O",
-     "votes": 1411
+     "votes": 1420
     },
     {
      "id": "craig-auriemma",
      "name": "Craig Auriemma",
      "party": null,
      "party_code": "O",
-     "votes": 1183
+     "votes": 1194
     },
     {
      "id": "chris-carmeci",
      "name": "Chris Carmeci",
      "party": null,
      "party_code": "O",
-     "votes": 1131
+     "votes": 1140
     },
     {
      "id": "silvana-czerwinski",
      "name": "Silvana Czerwinski",
      "party": null,
      "party_code": "O",
-     "votes": 823
+     "votes": 834
     },
     {
      "id": "write-in-various-named",
@@ -84419,21 +84507,21 @@
      "name": "Brett Coplin",
      "party": null,
      "party_code": "O",
-     "votes": 5645
+     "votes": 5683
     },
     {
      "id": "janine-ting-jansen",
      "name": "Janine Ting Jansen",
      "party": null,
      "party_code": "O",
-     "votes": 4726
+     "votes": 4767
     },
     {
      "id": "asad-r-khan",
      "name": "Asad R. Khan",
      "party": null,
      "party_code": "O",
-     "votes": 3981
+     "votes": 4017
     },
     {
      "id": "write-in-various-named",
@@ -84465,21 +84553,21 @@
      "name": "Gina Marie Kiely",
      "party": null,
      "party_code": "O",
-     "votes": 1438
+     "votes": 1446
     },
     {
      "id": "mark-mitchell",
      "name": "Mark Mitchell",
      "party": null,
      "party_code": "O",
-     "votes": 1345
+     "votes": 1353
     },
     {
      "id": "lynn-o-connell-soriano",
      "name": "Lynn O'Connell-Soriano",
      "party": null,
      "party_code": "O",
-     "votes": 1219
+     "votes": 1227
     },
     {
      "id": "write-in-various-named",
@@ -84557,7 +84645,7 @@
      "name": "Michael Weaver",
      "party": null,
      "party_code": "O",
-     "votes": 1983
+     "votes": 1998
     },
     {
      "id": "write-in-various-named",
@@ -84589,21 +84677,21 @@
      "name": "Rachel S. Baskin",
      "party": null,
      "party_code": "O",
-     "votes": 1721
+     "votes": 1734
     },
     {
      "id": "dominic-l-disalvo",
      "name": "DOMINIC L. DiSALVO",
      "party": null,
      "party_code": "O",
-     "votes": 1470
+     "votes": 1479
     },
     {
      "id": "john-f-carvelli",
      "name": "John F. Carvelli",
      "party": null,
      "party_code": "O",
-     "votes": 1283
+     "votes": 1290
     },
     {
      "id": "write-in-various-named",
@@ -84635,14 +84723,14 @@
      "name": "David Vaccaro",
      "party": null,
      "party_code": "O",
-     "votes": 396
+     "votes": 398
     },
     {
      "id": "matthew-a-vaccaro",
      "name": "Matthew A. Vaccaro",
      "party": null,
      "party_code": "O",
-     "votes": 379
+     "votes": 381
     },
     {
      "id": "write-in-various-named",
@@ -84674,28 +84762,28 @@
      "name": "Kendra K. Moore",
      "party": null,
      "party_code": "O",
-     "votes": 2179
+     "votes": 2199
     },
     {
      "id": "nicole-dunne",
      "name": "Nicole Dunne",
      "party": null,
      "party_code": "O",
-     "votes": 2130
+     "votes": 2153
     },
     {
      "id": "raymond-d-cottiers-sr",
      "name": "RAYMOND D. COTTIERS Sr.",
      "party": null,
      "party_code": "O",
-     "votes": 1661
+     "votes": 1678
     },
     {
      "id": "david-spektor",
      "name": "David Spektor",
      "party": null,
      "party_code": "O",
-     "votes": 1527
+     "votes": 1536
     },
     {
      "id": "write-in-various-named",
@@ -84727,28 +84815,28 @@
      "name": "Robert Dorsett",
      "party": null,
      "party_code": "O",
-     "votes": 1899
+     "votes": 1910
     },
     {
      "id": "edward-smith",
      "name": "Edward Smith",
      "party": null,
      "party_code": "O",
-     "votes": 1652
+     "votes": 1661
     },
     {
      "id": "alexandra-l-leitao",
      "name": "Alexandra L. Leitao",
      "party": null,
      "party_code": "O",
-     "votes": 1451
+     "votes": 1460
     },
     {
      "id": "nicole-decapua-rinck",
      "name": "NICOLE DeCAPUA RINCK",
      "party": null,
      "party_code": "O",
-     "votes": 1215
+     "votes": 1222
     },
     {
      "id": "write-in-various-named",
@@ -84780,7 +84868,7 @@
      "name": "Christopher M. Saxton",
      "party": null,
      "party_code": "O",
-     "votes": 1018
+     "votes": 1022
     },
     {
      "id": "write-in-various-named",
@@ -84812,7 +84900,7 @@
      "name": "Eunhwa Kim",
      "party": null,
      "party_code": "O",
-     "votes": 967
+     "votes": 970
     },
     {
      "id": "write-in-various-named",
@@ -84844,28 +84932,28 @@
      "name": "Jennifer R. Eisberg",
      "party": null,
      "party_code": "O",
-     "votes": 1075
+     "votes": 1083
     },
     {
      "id": "antonio-b-meo",
      "name": "Antonio B. Meo",
      "party": null,
      "party_code": "O",
-     "votes": 1036
+     "votes": 1045
     },
     {
      "id": "michael-j-sprague",
      "name": "Michael J. Sprague",
      "party": null,
      "party_code": "O",
-     "votes": 978
+     "votes": 987
     },
     {
      "id": "rita-l-bodine",
      "name": "Rita L. Bodine",
      "party": null,
      "party_code": "O",
-     "votes": 569
+     "votes": 574
     },
     {
      "id": "write-in-various-named",
@@ -84897,7 +84985,7 @@
      "name": "Jamie S. Karczewski",
      "party": null,
      "party_code": "O",
-     "votes": 1028
+     "votes": 1033
     }
    ],
    "precincts": {
@@ -84922,14 +85010,14 @@
      "name": "Melissa Kiel",
      "party": null,
      "party_code": "O",
-     "votes": 2285
+     "votes": 2300
     },
     {
      "id": "audrey-lynn-souders",
      "name": "Audrey Lynn Souders",
      "party": null,
      "party_code": "O",
-     "votes": 2276
+     "votes": 2289
     },
     {
      "id": "write-in-various-named",
@@ -84961,14 +85049,14 @@
      "name": "John A. Scerbo",
      "party": null,
      "party_code": "O",
-     "votes": 2458
+     "votes": 2475
     },
     {
      "id": "teresa-kilday",
      "name": "Teresa Kilday",
      "party": null,
      "party_code": "O",
-     "votes": 2429
+     "votes": 2446
     },
     {
      "id": "write-in-various-named",
@@ -85000,14 +85088,14 @@
      "name": "Briana Bregstein",
      "party": null,
      "party_code": "O",
-     "votes": 807
+     "votes": 810
     },
     {
      "id": "jesus-suarez",
      "name": "Jesus Suarez",
      "party": null,
      "party_code": "O",
-     "votes": 708
+     "votes": 719
     },
     {
      "id": "write-in-various-named",
@@ -85039,7 +85127,7 @@
      "name": "ROBERT J. GRAHAM Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 2274
+     "votes": 2298
     },
     {
      "id": "write-in-various-named",
@@ -85071,7 +85159,7 @@
      "name": "Alan Feigenson",
      "party": null,
      "party_code": "O",
-     "votes": 2251
+     "votes": 2273
     },
     {
      "id": "write-in-various-named",
@@ -85103,21 +85191,21 @@
      "name": "Rita J. Walker",
      "party": null,
      "party_code": "O",
-     "votes": 2127
+     "votes": 2149
     },
     {
      "id": "james-del-greco",
      "name": "JAMES Del GRECO",
      "party": null,
      "party_code": "O",
-     "votes": 1481
+     "votes": 1498
     },
     {
      "id": "christopher-w-nutland",
      "name": "Christopher W. Nutland",
      "party": null,
      "party_code": "O",
-     "votes": 1402
+     "votes": 1418
     },
     {
      "id": "write-in-various-named",
@@ -85149,42 +85237,42 @@
      "name": "Jason Kim",
      "party": null,
      "party_code": "O",
-     "votes": 1328
+     "votes": 1346
     },
     {
      "id": "stephen-kim",
      "name": "Stephen Kim",
      "party": null,
      "party_code": "O",
-     "votes": 1242
-    },
-    {
-     "id": "hea-helen-jeon",
-     "name": "Hea \"Helen\" Jeon",
-     "party": null,
-     "party_code": "O",
-     "votes": 1233
+     "votes": 1262
     },
     {
      "id": "grace-s-song",
      "name": "Grace S. Song",
      "party": null,
      "party_code": "O",
-     "votes": 1231
+     "votes": 1256
+    },
+    {
+     "id": "hea-helen-jeon",
+     "name": "Hea \"Helen\" Jeon",
+     "party": null,
+     "party_code": "O",
+     "votes": 1252
     },
     {
      "id": "sookyung-park",
      "name": "Sookyung Park",
      "party": null,
      "party_code": "O",
-     "votes": 1206
+     "votes": 1232
     },
     {
      "id": "jay-giardina",
      "name": "Jay Giardina",
      "party": null,
      "party_code": "O",
-     "votes": 1153
+     "votes": 1177
     },
     {
      "id": "write-in-various-named",
@@ -85216,35 +85304,35 @@
      "name": "Laura Siclari",
      "party": null,
      "party_code": "O",
-     "votes": 3863
+     "votes": 3905
     },
     {
      "id": "joanne-bergmann",
      "name": "Joanne Bergmann",
      "party": null,
      "party_code": "O",
-     "votes": 3401
+     "votes": 3441
     },
     {
      "id": "lauren-labarbiera",
      "name": "LAUREN LaBARBIERA",
      "party": null,
      "party_code": "O",
-     "votes": 3044
+     "votes": 3070
     },
     {
      "id": "alexander-aksanov",
      "name": "Alexander Aksanov",
      "party": null,
      "party_code": "O",
-     "votes": 2436
+     "votes": 2465
     },
     {
      "id": "anthony-feorenzo-iii",
      "name": "Anthony Feorenzo Iii",
      "party": null,
      "party_code": "O",
-     "votes": 2318
+     "votes": 2337
     },
     {
      "id": "write-in-various-named",
@@ -85276,28 +85364,28 @@
      "name": "Josephine V. Hunt",
      "party": null,
      "party_code": "O",
-     "votes": 1729
+     "votes": 1741
     },
     {
      "id": "rachelle-browne",
      "name": "Rachelle Browne",
      "party": null,
      "party_code": "O",
-     "votes": 1544
+     "votes": 1555
     },
     {
      "id": "shanai-jensen",
      "name": "Shanai Jensen",
      "party": null,
      "party_code": "O",
-     "votes": 1364
+     "votes": 1375
     },
     {
      "id": "amara-e-wagner",
      "name": "Amara E. Wagner",
      "party": null,
      "party_code": "O",
-     "votes": 1279
+     "votes": 1289
     },
     {
      "id": "write-in-various-named",
@@ -85361,21 +85449,21 @@
      "name": "Laura E. Genovese-Behrmann",
      "party": null,
      "party_code": "O",
-     "votes": 3424
+     "votes": 3445
     },
     {
      "id": "michael-a-augello-jr",
      "name": "MICHAEL A. AUGELLO Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 3305
+     "votes": 3325
     },
     {
      "id": "stephen-t-mcknight",
      "name": "STEPHEN T. McKNIGHT",
      "party": null,
      "party_code": "O",
-     "votes": 3210
+     "votes": 3230
     },
     {
      "id": "write-in-various-named",
@@ -85407,21 +85495,21 @@
      "name": "Lori Hoffman",
      "party": null,
      "party_code": "O",
-     "votes": 1306
+     "votes": 1331
     },
     {
      "id": "andrew-grippa",
      "name": "Andrew Grippa",
      "party": null,
      "party_code": "O",
-     "votes": 1117
+     "votes": 1135
     },
     {
      "id": "scott-j-russo",
      "name": "Scott J. Russo",
      "party": null,
      "party_code": "O",
-     "votes": 909
+     "votes": 924
     },
     {
      "id": "write-in-various-named",
@@ -85453,21 +85541,21 @@
      "name": "Berlinda Rodriguez",
      "party": null,
      "party_code": "O",
-     "votes": 1883
+     "votes": 1904
     },
     {
      "id": "jennifer-schmitt",
      "name": "Jennifer Schmitt",
      "party": null,
      "party_code": "O",
-     "votes": 1544
+     "votes": 1560
     },
     {
      "id": "john-malool",
      "name": "John Malool",
      "party": null,
      "party_code": "O",
-     "votes": 1524
+     "votes": 1540
     },
     {
      "id": "write-in-various-named",
@@ -85499,14 +85587,14 @@
      "name": "Mary E. Micale",
      "party": null,
      "party_code": "O",
-     "votes": 5613
+     "votes": 5675
     },
     {
      "id": "anabelle-andon",
      "name": "Anabelle Andon",
      "party": null,
      "party_code": "O",
-     "votes": 4800
+     "votes": 4850
     },
     {
      "id": "write-in-various-named",
@@ -85538,14 +85626,14 @@
      "name": "Suzanne Golden",
      "party": null,
      "party_code": "O",
-     "votes": 2137
+     "votes": 2167
     },
     {
      "id": "ryan-gibbons",
      "name": "Ryan Gibbons",
      "party": null,
      "party_code": "O",
-     "votes": 2008
+     "votes": 2033
     },
     {
      "id": "write-in-various-named",
@@ -85577,7 +85665,7 @@
      "name": "Elizabeth Brown",
      "party": null,
      "party_code": "O",
-     "votes": 2532
+     "votes": 2568
     },
     {
      "id": "write-in-various-named",
@@ -85609,7 +85697,7 @@
      "name": "Patricia J. Bryan",
      "party": null,
      "party_code": "O",
-     "votes": 2479
+     "votes": 2513
     },
     {
      "id": "write-in-various-named",
@@ -85641,21 +85729,21 @@
      "name": "Thomas Gallione",
      "party": null,
      "party_code": "O",
-     "votes": 2306
+     "votes": 2322
     },
     {
      "id": "patrice-pintarelli",
      "name": "Patrice Pintarelli",
      "party": null,
      "party_code": "O",
-     "votes": 2169
+     "votes": 2185
     },
     {
      "id": "jamie-assor",
      "name": "Jamie Assor",
      "party": null,
      "party_code": "O",
-     "votes": 1688
+     "votes": 1703
     },
     {
      "id": "write-in-various-named",
@@ -85687,21 +85775,21 @@
      "name": "JOSEPH DeFALCO",
      "party": null,
      "party_code": "O",
-     "votes": 923
+     "votes": 929
     },
     {
      "id": "joseph-marolda",
      "name": "Joseph Marolda",
      "party": null,
      "party_code": "O",
-     "votes": 791
+     "votes": 795
     },
     {
      "id": "scott-g-kral",
      "name": "Scott G. Kral",
      "party": null,
      "party_code": "O",
-     "votes": 737
+     "votes": 741
     },
     {
      "id": "write-in-various-named",
@@ -85733,21 +85821,21 @@
      "name": "Tracy W. Leigh",
      "party": null,
      "party_code": "O",
-     "votes": 3584
+     "votes": 3612
     },
     {
      "id": "james-a-bogosian",
      "name": "James A. Bogosian",
      "party": null,
      "party_code": "O",
-     "votes": 3485
+     "votes": 3513
     },
     {
      "id": "dennis-w-healey",
      "name": "Dennis W. Healey",
      "party": null,
      "party_code": "O",
-     "votes": 3431
+     "votes": 3455
     },
     {
      "id": "write-in-various-named",
@@ -85779,28 +85867,28 @@
      "name": "Michael Errichiello",
      "party": null,
      "party_code": "O",
-     "votes": 2142
+     "votes": 2146
     },
     {
      "id": "michele-roloff",
      "name": "Michele Roloff",
      "party": null,
      "party_code": "O",
-     "votes": 1994
+     "votes": 1998
     },
     {
      "id": "sylvia-zottarelli",
      "name": "Sylvia Zottarelli",
      "party": null,
      "party_code": "O",
-     "votes": 1714
+     "votes": 1717
     },
     {
      "id": "mohamed-fayez",
      "name": "Mohamed Fayez",
      "party": null,
      "party_code": "O",
-     "votes": 1579
+     "votes": 1581
     },
     {
      "id": "write-in-various-named",
@@ -85832,7 +85920,7 @@
      "name": "Caroline L. Aubrey-Smith",
      "party": null,
      "party_code": "O",
-     "votes": 627
+     "votes": 630
     },
     {
      "id": "write-in-various-named",
@@ -85864,14 +85952,14 @@
      "name": "Jennifer L. Zanca",
      "party": null,
      "party_code": "O",
-     "votes": 305
+     "votes": 309
     },
     {
      "id": "sheldon-smith",
      "name": "Sheldon Smith",
      "party": null,
      "party_code": "O",
-     "votes": 206
+     "votes": 211
     },
     {
      "id": "write-in-various-named",
@@ -85903,35 +85991,35 @@
      "name": "Liza Fernandez",
      "party": null,
      "party_code": "O",
-     "votes": 7796
+     "votes": 7884
     },
     {
      "id": "marcelo-venegas-pizarro",
      "name": "Marcelo Venegas-Pizarro",
      "party": null,
      "party_code": "O",
-     "votes": 7454
+     "votes": 7538
     },
     {
      "id": "eric-rhea",
      "name": "Eric Rhea",
      "party": null,
      "party_code": "O",
-     "votes": 7322
+     "votes": 7409
     },
     {
      "id": "david-gruber",
      "name": "David Gruber",
      "party": null,
      "party_code": "O",
-     "votes": 6317
+     "votes": 6374
     },
     {
      "id": "gerald-b-kirshenbaum",
      "name": "Gerald B. Kirshenbaum",
      "party": null,
      "party_code": "O",
-     "votes": 6284
+     "votes": 6338
     },
     {
      "id": "write-in-various-named",
@@ -85963,28 +86051,28 @@
      "name": "David Steven Miller",
      "party": null,
      "party_code": "O",
-     "votes": 2382
+     "votes": 2417
     },
     {
      "id": "daniel-kim-shin",
      "name": "Daniel Kim Shin",
      "party": null,
      "party_code": "O",
-     "votes": 2255
+     "votes": 2297
     },
     {
      "id": "angela-leone",
      "name": "Angela Leone",
      "party": null,
      "party_code": "O",
-     "votes": 2089
+     "votes": 2125
     },
     {
      "id": "kevin-shin",
      "name": "Kevin Shin",
      "party": null,
      "party_code": "O",
-     "votes": 1637
+     "votes": 1657
     },
     {
      "id": "write-in-various-named",
@@ -86016,7 +86104,7 @@
      "name": "Rachel Milston",
      "party": null,
      "party_code": "O",
-     "votes": 1727
+     "votes": 1738
     },
     {
      "id": "write-in-various-named",
@@ -86048,35 +86136,35 @@
      "name": "JOY A. McELYEA",
      "party": null,
      "party_code": "O",
-     "votes": 1419
+     "votes": 1428
     },
     {
      "id": "hani-batla",
      "name": "Hani Batla",
      "party": null,
      "party_code": "O",
-     "votes": 1268
+     "votes": 1274
     },
     {
      "id": "kyle-kotch",
      "name": "Kyle Kotch",
      "party": null,
      "party_code": "O",
-     "votes": 929
+     "votes": 938
     },
     {
      "id": "jeffery-f-de-vaul",
      "name": "Jeffery F. De Vaul",
      "party": null,
      "party_code": "O",
-     "votes": 884
+     "votes": 893
     },
     {
      "id": "anson-k-tang",
      "name": "Anson K. Tang",
      "party": null,
      "party_code": "O",
-     "votes": 245
+     "votes": 246
     },
     {
      "id": "write-in-various-named",
@@ -86108,28 +86196,28 @@
      "name": "Amy G. Weiner",
      "party": null,
      "party_code": "O",
-     "votes": 1576
+     "votes": 1583
     },
     {
      "id": "laura-a-litchult",
      "name": "Laura A. Litchult",
      "party": null,
      "party_code": "O",
-     "votes": 1469
+     "votes": 1472
     },
     {
      "id": "shanna-dawn-anderson",
      "name": "Shanna Dawn Anderson",
      "party": null,
      "party_code": "O",
-     "votes": 1053
+     "votes": 1058
     },
     {
      "id": "andrew-frey",
      "name": "Andrew Frey",
      "party": null,
      "party_code": "O",
-     "votes": 931
+     "votes": 936
     },
     {
      "id": "write-in-various-named",
@@ -86161,21 +86249,21 @@
      "name": "Joseph C. Brunacki Iv",
      "party": null,
      "party_code": "O",
-     "votes": 1336
+     "votes": 1356
     },
     {
      "id": "theadora-calabrese",
      "name": "Theadora Calabrese",
      "party": null,
      "party_code": "O",
-     "votes": 1312
+     "votes": 1319
     },
     {
      "id": "bobby-ristovski",
      "name": "Bobby Ristovski",
      "party": null,
      "party_code": "O",
-     "votes": 1045
+     "votes": 1049
     },
     {
      "id": "write-in-various-named",
@@ -86207,14 +86295,14 @@
      "name": "Loni Azzolina",
      "party": null,
      "party_code": "O",
-     "votes": 1780
+     "votes": 1793
     },
     {
      "id": "heather-m-perin",
      "name": "Heather M. Perin",
      "party": null,
      "party_code": "O",
-     "votes": 1536
+     "votes": 1544
     },
     {
      "id": "write-in-various-named",
@@ -86246,7 +86334,7 @@
      "name": "Nicole Martin",
      "party": null,
      "party_code": "O",
-     "votes": 2384
+     "votes": 2395
     },
     {
      "id": "write-in-various-named",
@@ -86278,7 +86366,7 @@
      "name": "Stephanie Mong-Ping Huang",
      "party": null,
      "party_code": "O",
-     "votes": 1689
+     "votes": 1701
     },
     {
      "id": "write-in-various-named",
@@ -86310,14 +86398,14 @@
      "name": "Kristan Saks",
      "party": null,
      "party_code": "O",
-     "votes": 1509
+     "votes": 1518
     },
     {
      "id": "jennifer-stroger",
      "name": "Jennifer Stroger",
      "party": null,
      "party_code": "O",
-     "votes": 1329
+     "votes": 1338
     },
     {
      "id": "write-in-various-named",
@@ -86349,7 +86437,7 @@
      "name": "Michele Milano",
      "party": null,
      "party_code": "O",
-     "votes": 2107
+     "votes": 2123
     },
     {
      "id": "write-in-various-named",
@@ -86406,14 +86494,14 @@
      "name": "BRIAN DeLAITE",
      "party": null,
      "party_code": "O",
-     "votes": 3144
+     "votes": 3170
     },
     {
      "id": "doreen-m-mariani",
      "name": "Doreen M. Mariani",
      "party": null,
      "party_code": "O",
-     "votes": 2626
+     "votes": 2647
     },
     {
      "id": "write-in-various-named",
@@ -86445,28 +86533,28 @@
      "name": "Ilyssa Callandrillo",
      "party": null,
      "party_code": "O",
-     "votes": 3374
+     "votes": 3403
     },
     {
      "id": "ashley-mungiello",
      "name": "Ashley Mungiello",
      "party": null,
      "party_code": "O",
-     "votes": 3332
+     "votes": 3359
     },
     {
      "id": "frank-barbagallo",
      "name": "Frank Barbagallo",
      "party": null,
      "party_code": "O",
-     "votes": 2398
+     "votes": 2416
     },
     {
      "id": "vivek-bhushan",
      "name": "Vivek Bhushan",
      "party": null,
      "party_code": "O",
-     "votes": 2266
+     "votes": 2284
     },
     {
      "id": "write-in-various-named",
@@ -86498,14 +86586,14 @@
      "name": "Samantha Anzano",
      "party": null,
      "party_code": "O",
-     "votes": 3296
+     "votes": 3323
     },
     {
      "id": "brian-benedik",
      "name": "Brian Benedik",
      "party": null,
      "party_code": "O",
-     "votes": 2448
+     "votes": 2466
     },
     {
      "id": "write-in-various-named",
@@ -86537,14 +86625,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 2822
+     "votes": 2837
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 2139
+     "votes": 2158
     }
    ],
    "precincts": {
@@ -86569,14 +86657,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 1997
+     "votes": 2005
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 1823
+     "votes": 1833
     }
    ],
    "precincts": {
@@ -86601,14 +86689,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 2722
+     "votes": 2735
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 759
+     "votes": 767
     }
    ],
    "precincts": {
@@ -86633,14 +86721,14 @@
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 1272
+     "votes": 1289
     },
     {
      "id": "yes",
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 1004
+     "votes": 1016
     }
    ],
    "precincts": {
@@ -86665,7 +86753,7 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 2852
+     "votes": 2871
     },
     {
      "id": "no",
@@ -86697,14 +86785,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 2013
+     "votes": 2029
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 996
+     "votes": 1007
     }
    ],
    "precincts": {
@@ -86729,14 +86817,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 4570
+     "votes": 4606
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 653
+     "votes": 659
     }
    ],
    "precincts": {
@@ -88297,6 +88385,4022 @@
      "party": null,
      "party_code": "O",
      "votes": 2725
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0002-booker-1-0-00",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Booker 1 0.00%",
+   "district": null,
+   "title": "Booker 1 0.00%",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 93
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0005-township-committee-alexandria-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "TOWNSHIP COMMITTEE Alexandria Township",
+   "district": null,
+   "title": "TOWNSHIP COMMITTEE Alexandria Township",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "james-p-kiernan",
+     "name": "James P. Kiernan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1410
+    },
+    {
+     "id": "robert-mortara",
+     "name": "Robert Mortara",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1350
+    },
+    {
+     "id": "melody-m-fogarty",
+     "name": "Melody M. Fogarty",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 972
+    },
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 32
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0006-membership-to-the-board-of-education-alexandria-township-del-val",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Alexandria Township Del Val",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Alexandria Township Del Val",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-sliver",
+     "name": "Andrew Sliver",
+     "party": null,
+     "party_code": "O",
+     "votes": 1245
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 26
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0007-membership-to-the-board-of-education-alexandria-township",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Alexandria Township",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Alexandria Township",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "michael-iarkowski",
+     "name": "Michael Iarkowski",
+     "party": null,
+     "party_code": "O",
+     "votes": 967
+    },
+    {
+     "id": "sean-t-hayes",
+     "name": "Sean T. Hayes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1068
+    },
+    {
+     "id": "renee-bagley",
+     "name": "Renee Bagley",
+     "party": null,
+     "party_code": "O",
+     "votes": 1125
+    },
+    {
+     "id": "yasmin-e-hernandez-manno",
+     "name": "Yasmin E. Hernandez-Manno",
+     "party": null,
+     "party_code": "O",
+     "votes": 680
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 44
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0008-bond-proposal-question-delaware-valley-regional-high-school",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOND PROPOSAL QUESTION Delaware Valley Regional High School",
+   "district": null,
+   "title": "BOND PROPOSAL QUESTION Delaware Valley Regional High School",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1414
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 677
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0009-township-committee-bethlehem-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "TOWNSHIP COMMITTEE Bethlehem Township",
+   "district": null,
+   "title": "TOWNSHIP COMMITTEE Bethlehem Township",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "judith-nelson",
+     "name": "Judith Nelson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1297
+    },
+    {
+     "id": "paul-j-muir",
+     "name": "Paul J. Muir",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1345
+    },
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 34
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0010-membership-to-the-board-of-education-bethlehem-township",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Bethlehem Township",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Bethlehem Township",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "daniel-p-macdonnell",
+     "name": "Daniel P. Macdonnell",
+     "party": null,
+     "party_code": "O",
+     "votes": 936
+    },
+    {
+     "id": "no-petition-filed",
+     "name": "No Petition Filed",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-petition-filed-2",
+     "name": "No Petition Filed",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 271
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0011-referendum-question-north-hunterdon-voorhees-regional-high-school-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "district": null,
+   "title": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1238
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 317
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0012-borough-council-bloomsbury-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOROUGH COUNCIL Bloomsbury Borough",
+   "district": null,
+   "title": "BOROUGH COUNCIL Bloomsbury Borough",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "vincent-kearney",
+     "name": "Vincent Kearney",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 232
+    },
+    {
+     "id": "ashley-smith",
+     "name": "Ashley Smith",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 241
+    },
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 10
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0013-membership-to-the-board-of-education-bloomsbury-borough-full-term",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Bloomsbury Borough Full Term",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Bloomsbury Borough Full Term",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no-petition-filed",
+     "name": "No Petition Filed",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0014-membership-to-the-board-of-education-bloomsbury-borough-unexpired-term",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Bloomsbury Borough Unexpired Term",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Bloomsbury Borough Unexpired Term",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no-petition-filed",
+     "name": "No Petition Filed",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0015-referendum-question-north-hunterdon-voorhees-regional-high-school-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "district": null,
+   "title": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 308
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 60
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0016-mayor-califon-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MAYOR Califon Borough",
+   "district": null,
+   "title": "MAYOR Califon Borough",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "charles-j-daniel",
+     "name": "Charles J. Daniel",
+     "party": "IEX",
+     "party_code": "O",
+     "votes": 267
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0017-borough-council-califon-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOROUGH COUNCIL Califon Borough",
+   "district": null,
+   "title": "BOROUGH COUNCIL Califon Borough",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "richard-a-shoolbraid",
+     "name": "Richard A. Shoolbraid",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 348
+    },
+    {
+     "id": "no-nomination-made-2-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 10
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0018-membership-to-the-board-of-education-califon-borough-north-voorhees-full-term",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Califon Borough North/Voorhees Full Term",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Califon Borough North/Voorhees Full Term",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrea-stein",
+     "name": "Andrea Stein",
+     "party": null,
+     "party_code": "O",
+     "votes": 342
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0019-membership-to-the-board-of-education-califon-borough-north-voorhees-unexpired-te",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Califon Borough North/Voorhees Unexpired Term",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Califon Borough North/Voorhees Unexpired Term",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "krista-ramirez",
+     "name": "Krista Ramirez",
+     "party": null,
+     "party_code": "O",
+     "votes": 319
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0020-membership-to-the-board-of-education-califon-borough",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Califon Borough",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Califon Borough",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "rita-lemley",
+     "name": "Rita Lemley",
+     "party": null,
+     "party_code": "O",
+     "votes": 339
+    },
+    {
+     "id": "netz-sacro",
+     "name": "Netz Sacro",
+     "party": null,
+     "party_code": "O",
+     "votes": 293
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0021-referendum-question-north-hunterdon-voorhees-regional-high-school-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "district": null,
+   "title": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 360
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 90
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0022-common-council-clinton-town",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "COMMON COUNCIL Clinton Town",
+   "district": null,
+   "title": "COMMON COUNCIL Clinton Town",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "susan-degasperis",
+     "name": "Susan Degasperis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 584
+    },
+    {
+     "id": "jonathan-price",
+     "name": "Jonathan Price",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 552
+    },
+    {
+     "id": "john-kashwick",
+     "name": "John Kashwick",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 884
+    },
+    {
+     "id": "kimberly-a-stentz",
+     "name": "Kimberly A. Stentz",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 858
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "municipality": "Clinton Town",
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0023-membership-to-the-board-of-education-clinton-town-north-voohees",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Clinton Town North/Voohees",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Clinton Town North/Voohees",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-vasisko",
+     "name": "Michael Vasisko",
+     "party": null,
+     "party_code": "O",
+     "votes": 936
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "municipality": "Clinton Town",
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0024-membership-to-the-board-of-education-clinton-town",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Clinton Town",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Clinton Town",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "brkich",
+     "name": "Brkich",
+     "party": "DAN",
+     "party_code": "O",
+     "votes": 844
+    },
+    {
+     "id": "rebecca-duffy",
+     "name": "Rebecca Duffy",
+     "party": null,
+     "party_code": "O",
+     "votes": 877
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "municipality": "Clinton Town",
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0025-referendum-question-north-hunterdon-voorhees-regional-high-school-district-clint",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District - Clinton Town",
+   "district": null,
+   "title": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District - Clinton Town",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 890
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 295
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "municipality": "Clinton Town",
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0026-mayor-clinton-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MAYOR Clinton Township",
+   "district": null,
+   "title": "MAYOR Clinton Township",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-mullay",
+     "name": "Brian Mullay",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3842
+    },
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 123
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0027-membership-to-the-board-of-education-clinton-township-north-voorhees",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Clinton Township North/Voorhees",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Clinton Township North/Voorhees",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "lana-brennan",
+     "name": "Lana Brennan",
+     "party": null,
+     "party_code": "O",
+     "votes": 3468
+    },
+    {
+     "id": "catherine-emery",
+     "name": "Catherine Emery",
+     "party": null,
+     "party_code": "O",
+     "votes": 3505
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 71
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0028-membership-to-the-board-of-education-clinton-township-full-term",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Clinton Township Full Term",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Clinton Township Full Term",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "andrew-clarke",
+     "name": "Andrew Clarke",
+     "party": null,
+     "party_code": "O",
+     "votes": 3461
+    },
+    {
+     "id": "matthew-fernandes",
+     "name": "Matthew Fernandes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3195
+    },
+    {
+     "id": "kathryn-miller",
+     "name": "Kathryn Miller",
+     "party": null,
+     "party_code": "O",
+     "votes": 3229
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 70
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0029-membership-to-the-board-of-education-clinton-township-unexpired-term",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Clinton Township Unexpired Term",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Clinton Township Unexpired Term",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-m-burns",
+     "name": "Jason M. Burns",
+     "party": null,
+     "party_code": "O",
+     "votes": 3590
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 34
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0030-referendum-question-north-hunterdon-voorhees-regional-high-school-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "district": null,
+   "title": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3612
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1370
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0031-township-committee-delaware-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "TOWNSHIP COMMITTEE Delaware Township",
+   "district": null,
+   "title": "TOWNSHIP COMMITTEE Delaware Township",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "nathaniel-patrick-miller",
+     "name": "Nathaniel Patrick Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1068
+    },
+    {
+     "id": "mark-e-wright",
+     "name": "Mark E. Wright",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1102
+    },
+    {
+     "id": "susan-d-lockwood",
+     "name": "Susan D. Lockwood",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1456
+    },
+    {
+     "id": "kathleen-e-klink",
+     "name": "Kathleen E. Klink",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1452
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0032-membership-to-the-board-of-education-delaware-township",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Delaware Township",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Delaware Township",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "adam-pate",
+     "name": "Adam Pate",
+     "party": null,
+     "party_code": "O",
+     "votes": 1419
+    },
+    {
+     "id": "jennifer-martin",
+     "name": "Jennifer Martin",
+     "party": null,
+     "party_code": "O",
+     "votes": 1535
+    },
+    {
+     "id": "john-kafarski",
+     "name": "John Kafarski",
+     "party": null,
+     "party_code": "O",
+     "votes": 1442
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 61
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0033-township-committee-east-amwell-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "TOWNSHIP COMMITTEE East Amwell Township",
+   "district": null,
+   "title": "TOWNSHIP COMMITTEE East Amwell Township",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "matthew-kohut",
+     "name": "Matthew Kohut",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1186
+    },
+    {
+     "id": "nathalie-s-nelson",
+     "name": "Nathalie S. Nelson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1227
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 31
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0034-membership-to-the-board-of-education-east-amwell-township-hunterdon-central",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION East Amwell Township Hunterdon Central",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION East Amwell Township Hunterdon Central",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dorothea-kellogg",
+     "name": "Dorothea Kellogg",
+     "party": null,
+     "party_code": "O",
+     "votes": 1261
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0035-membership-to-the-board-of-education-east-amwell-township",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION East Amwell Township",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION East Amwell Township",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "carole-ammann",
+     "name": "Carole Ammann",
+     "party": null,
+     "party_code": "O",
+     "votes": 1177
+    },
+    {
+     "id": "paul-hutchins",
+     "name": "Paul Hutchins",
+     "party": null,
+     "party_code": "O",
+     "votes": 1153
+    },
+    {
+     "id": "william-benson",
+     "name": "William Benson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1128
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 33
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0036-for-membership-to-the-board-of-fire-commissioners-east-amwell-township",
+   "kind": "candidate",
+   "level": "county",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "FOR MEMBERSHIP TO THE BOARD OF FIRE COMMISSIONERS East Amwell Township",
+   "district": null,
+   "title": "FOR MEMBERSHIP TO THE BOARD OF FIRE COMMISSIONERS East Amwell Township",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "paul-e-carlucci",
+     "name": "Paul E. Carlucci",
+     "party": null,
+     "party_code": "O",
+     "votes": 1337
+    },
+    {
+     "id": "no-petition-filed",
+     "name": "No Petition Filed",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 74
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0037-mayor-flemington-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MAYOR Flemington Borough",
+   "district": null,
+   "title": "MAYOR Flemington Borough",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "susan-d-engelhardt",
+     "name": "Susan D. Engelhardt",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 990
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 31
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0038-borough-council-flemington-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOROUGH COUNCIL Flemington Borough",
+   "district": null,
+   "title": "BOROUGH COUNCIL Flemington Borough",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "todd-cook",
+     "name": "Todd Cook",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 971
+    },
+    {
+     "id": "trent-levitt",
+     "name": "Trent Levitt",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 944
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 36
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0039-bond-proposal-question-flemington-raritan-school-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOND PROPOSAL QUESTION Flemington-Raritan School District",
+   "district": null,
+   "title": "BOND PROPOSAL QUESTION Flemington-Raritan School District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 771
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 393
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0040-township-committee-franklin-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "TOWNSHIP COMMITTEE Franklin Township",
+   "district": null,
+   "title": "TOWNSHIP COMMITTEE Franklin Township",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alexa-tarby",
+     "name": "Alexa Tarby",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1011
+    },
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 32
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0041-membership-to-the-board-of-education-franklin-township-north-voorhees",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Franklin Township North/Voorhees",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Franklin Township North/Voorhees",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-vasisko",
+     "name": "Michael Vasisko",
+     "party": null,
+     "party_code": "O",
+     "votes": 989
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 10
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0042-membership-to-the-board-of-education-franklin-township-full-term",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Franklin Township Full Term",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Franklin Township Full Term",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "jeffrey-castner",
+     "name": "Jeffrey Castner",
+     "party": null,
+     "party_code": "O",
+     "votes": 969
+    },
+    {
+     "id": "colleen-cummins",
+     "name": "Colleen Cummins",
+     "party": null,
+     "party_code": "O",
+     "votes": 808
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0043-membership-to-the-board-of-education-franklin-township-unexpired-term",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Franklin Township Unexpired Term",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Franklin Township Unexpired Term",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "connor",
+     "name": "Connor",
+     "party": "DAN",
+     "party_code": "O",
+     "votes": 994
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0044-referendum-question-north-hunterdon-voorhees-regional-high-school-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "district": null,
+   "title": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 941
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 377
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0045-for-membership-to-the-board-of-fire-commissioners-franklin-township",
+   "kind": "candidate",
+   "level": "county",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "FOR MEMBERSHIP TO THE BOARD OF FIRE COMMISSIONERS Franklin Township",
+   "district": null,
+   "title": "FOR MEMBERSHIP TO THE BOARD OF FIRE COMMISSIONERS Franklin Township",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charles-a-patkochis",
+     "name": "Charles A. Patkochis",
+     "party": null,
+     "party_code": "O",
+     "votes": 977
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0046-common-council-frenchtown-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "COMMON COUNCIL Frenchtown Borough",
+   "district": null,
+   "title": "COMMON COUNCIL Frenchtown Borough",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jacob-caplan",
+     "name": "Jacob Caplan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 578
+    },
+    {
+     "id": "john-dougherty",
+     "name": "John Dougherty",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 578
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0047-membership-to-the-board-of-education-frenchtown-borough-del-val",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Frenchtown Borough Del Val",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Frenchtown Borough Del Val",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "thomas-g-loughlin",
+     "name": "Thomas G. Loughlin",
+     "party": null,
+     "party_code": "O",
+     "votes": 549
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0048-membership-to-the-board-of-education-frenchtown-borough",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Frenchtown Borough",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Frenchtown Borough",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "erinn-nakahara",
+     "name": "Erinn Nakahara",
+     "party": null,
+     "party_code": "O",
+     "votes": 498
+    },
+    {
+     "id": "julie-klein",
+     "name": "Julie Klein",
+     "party": null,
+     "party_code": "O",
+     "votes": 524
+    },
+    {
+     "id": "adam-blackburn",
+     "name": "Adam Blackburn",
+     "party": null,
+     "party_code": "O",
+     "votes": 506
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0049-bond-proposal-question-delaware-valley-regional-high-school",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOND PROPOSAL QUESTION Delaware Valley Regional High School",
+   "district": null,
+   "title": "BOND PROPOSAL QUESTION Delaware Valley Regional High School",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 576
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 110
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0050-borough-council-glen-gardner-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOROUGH COUNCIL Glen Gardner Borough",
+   "district": null,
+   "title": "BOROUGH COUNCIL Glen Gardner Borough",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "michael-gronau",
+     "name": "Michael Gronau",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 290
+    },
+    {
+     "id": "robert-d-newland-jr",
+     "name": "Robert D. Newland, Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 276
+    },
+    {
+     "id": "thomas-g-davis",
+     "name": "Thomas G. Davis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 441
+    },
+    {
+     "id": "russel-taylor",
+     "name": "Russel Taylor",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 422
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0051-membership-to-the-board-of-education-glen-gardner-borough-north-voorhees",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Glen Gardner Borough North/Voorhees",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Glen Gardner Borough North/Voorhees",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-vasisko",
+     "name": "Michael Vasisko",
+     "party": null,
+     "party_code": "O",
+     "votes": 464
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0052-membership-to-the-board-of-education-glen-gardner-borough",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Glen Gardner Borough",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Glen Gardner Borough",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "brkich",
+     "name": "Brkich",
+     "party": "DAN",
+     "party_code": "O",
+     "votes": 418
+    },
+    {
+     "id": "rebecca-duffy",
+     "name": "Rebecca Duffy",
+     "party": null,
+     "party_code": "O",
+     "votes": 448
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0053-referendum-question-north-hunterdon-voorhees-regional-high-school-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "district": null,
+   "title": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 463
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 119
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0054-borough-council-hampton-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOROUGH COUNCIL Hampton Borough",
+   "district": null,
+   "title": "BOROUGH COUNCIL Hampton Borough",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "robert-celentano",
+     "name": "Robert Celentano",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 356
+    },
+    {
+     "id": "robert-sherlock",
+     "name": "Robert Sherlock",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 349
+    },
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0055-membership-to-the-board-of-education-hampton-borough",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Hampton Borough",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Hampton Borough",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "heather-burd",
+     "name": "Heather Burd",
+     "party": null,
+     "party_code": "O",
+     "votes": 323
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0057-mayor-high-bridge-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MAYOR High Bridge Borough",
+   "district": null,
+   "title": "MAYOR High Bridge Borough",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "al-schweikert",
+     "name": "Al Schweikert",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 829
+    },
+    {
+     "id": "kelly-matos",
+     "name": "Kelly Matos",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 894
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0058-borough-council-high-bridge-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOROUGH COUNCIL High Bridge Borough",
+   "district": null,
+   "title": "BOROUGH COUNCIL High Bridge Borough",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "jon-sciarrino",
+     "name": "Jon Sciarrino",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 733
+    },
+    {
+     "id": "stephanie-vasallo",
+     "name": "Stephanie Vasallo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 731
+    },
+    {
+     "id": "natalie-ferry",
+     "name": "Natalie Ferry",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 944
+    },
+    {
+     "id": "joseph-a-brosnan",
+     "name": "Joseph A. Brosnan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 952
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0059-membership-to-the-board-of-education-high-bridge-borough",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION High Bridge Borough",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION High Bridge Borough",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "kelly-mayer",
+     "name": "Kelly Mayer",
+     "party": null,
+     "party_code": "O",
+     "votes": 951
+    },
+    {
+     "id": "no-petition-filed",
+     "name": "No Petition Filed",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-petition-filed-2",
+     "name": "No Petition Filed",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 72
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0060-referendum-question-north-hunterdon-voorhees-regional-high-school-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "district": null,
+   "title": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1112
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 290
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0061-township-committee-holland-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "TOWNSHIP COMMITTEE Holland Township",
+   "district": null,
+   "title": "TOWNSHIP COMMITTEE Holland Township",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "duane-c-young",
+     "name": "Duane C. Young",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1713
+    },
+    {
+     "id": "michael-miller",
+     "name": "Michael Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1707
+    },
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 61
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0062-membership-to-the-board-of-education-holland-township",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Holland Township",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Holland Township",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "brian-hawley",
+     "name": "Brian Hawley",
+     "party": null,
+     "party_code": "O",
+     "votes": 1349
+    },
+    {
+     "id": "tracy-warren",
+     "name": "Tracy Warren",
+     "party": null,
+     "party_code": "O",
+     "votes": 1355
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 49
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0063-bond-proposal-question-delaware-valley-regional-high-school",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOND PROPOSAL QUESTION Delaware Valley Regional High School",
+   "district": null,
+   "title": "BOND PROPOSAL QUESTION Delaware Valley Regional High School",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1660
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 825
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0064-bond-proposal-question-no-1-holland-township",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOND PROPOSAL QUESTION NO. 1 Holland Township",
+   "district": null,
+   "title": "BOND PROPOSAL QUESTION NO. 1 Holland Township",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1371
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1110
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0065-bond-proposal-question-no-2-holland-township",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOND PROPOSAL QUESTION NO. 2 Holland Township",
+   "district": null,
+   "title": "BOND PROPOSAL QUESTION NO. 2 Holland Township",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1320
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1146
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0066-township-committee-holland-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "TOWNSHIP COMMITTEE Holland Township",
+   "district": null,
+   "title": "TOWNSHIP COMMITTEE Holland Township",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "duane-c-young",
+     "name": "Duane C. Young",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1713
+    },
+    {
+     "id": "michael-miller",
+     "name": "Michael Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1707
+    },
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 61
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0067-membership-to-the-board-of-education-holland-township",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Holland Township",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Holland Township",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "brian-hawley",
+     "name": "Brian Hawley",
+     "party": null,
+     "party_code": "O",
+     "votes": 1349
+    },
+    {
+     "id": "tracy-warren",
+     "name": "Tracy Warren",
+     "party": null,
+     "party_code": "O",
+     "votes": 1355
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 49
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0069-bond-proposal-question-no-1-holland-township",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOND PROPOSAL QUESTION NO. 1 Holland Township",
+   "district": null,
+   "title": "BOND PROPOSAL QUESTION NO. 1 Holland Township",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1371
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1110
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0070-bond-proposal-question-no-2-holland-township",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOND PROPOSAL QUESTION NO. 2 Holland Township",
+   "district": null,
+   "title": "BOND PROPOSAL QUESTION NO. 2 Holland Township",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1320
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1146
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0071-city-council-lambertville-city",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "CITY COUNCIL Lambertville City",
+   "district": null,
+   "title": "CITY COUNCIL Lambertville City",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "steven-stegman",
+     "name": "Steven Stegman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1844
+    },
+    {
+     "id": "benedetta-lambert",
+     "name": "Benedetta Lambert",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1938
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 60
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0072-membership-to-the-board-of-education-lambertville-city-south-hunterdon",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Lambertville City South Hunterdon",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Lambertville City South Hunterdon",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "lauren-braun-strumfels",
+     "name": "Lauren Braun-Strumfels",
+     "party": null,
+     "party_code": "O",
+     "votes": 1503
+    },
+    {
+     "id": "roni-todd-marino",
+     "name": "Roni Todd-Marino",
+     "party": null,
+     "party_code": "O",
+     "votes": 1424
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 27
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0073-for-membership-to-the-board-of-fire-commissioners-lambertville-city",
+   "kind": "candidate",
+   "level": "county",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "FOR MEMBERSHIP TO THE BOARD OF FIRE COMMISSIONERS Lambertville City",
+   "district": null,
+   "title": "FOR MEMBERSHIP TO THE BOARD OF FIRE COMMISSIONERS Lambertville City",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nancy-bakewell",
+     "name": "Nancy Bakewell",
+     "party": null,
+     "party_code": "O",
+     "votes": 1421
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 25
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0074-ballot-question-lambertville-fire-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BALLOT QUESTION Lambertville Fire District",
+   "district": null,
+   "title": "BALLOT QUESTION Lambertville Fire District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1220
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 845
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0078-mayor-lebanon-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MAYOR Lebanon Borough",
+   "district": null,
+   "title": "MAYOR Lebanon Borough",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sam-berger",
+     "name": "Sam Berger",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 479
+    },
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0079-borough-council-lebanon-borough-full-term",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOROUGH COUNCIL Lebanon Borough Full Term",
+   "district": null,
+   "title": "BOROUGH COUNCIL Lebanon Borough Full Term",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "james-lance",
+     "name": "James Lance",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 333
+    },
+    {
+     "id": "jeffrey-j-spencer",
+     "name": "Jeffrey J. Spencer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 341
+    },
+    {
+     "id": "marlene-g-baldinger",
+     "name": "Marlene G. Baldinger",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 440
+    },
+    {
+     "id": "jennifer-c-fink",
+     "name": "Jennifer C. Fink",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 401
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0080-borough-council-lebanon-borough-unexpired-term",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOROUGH COUNCIL Lebanon Borough Unexpired Term",
+   "district": null,
+   "title": "BOROUGH COUNCIL Lebanon Borough Unexpired Term",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 172
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0081-membership-to-the-board-of-education-lebanon-borough-north-voorhees",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Lebanon Borough North/Voorhees",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Lebanon Borough North/Voorhees",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "lana-brennan",
+     "name": "Lana Brennan",
+     "party": null,
+     "party_code": "O",
+     "votes": 366
+    },
+    {
+     "id": "catherine-emery",
+     "name": "Catherine Emery",
+     "party": null,
+     "party_code": "O",
+     "votes": 372
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0082-membership-to-the-board-of-education-lebanon-borough",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Lebanon Borough",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Lebanon Borough",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "danielle-n-valliere",
+     "name": "Danielle N. Valliere",
+     "party": null,
+     "party_code": "O",
+     "votes": 456
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0083-referendum-question-north-hunterdon-voorhees-regional-high-school-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "district": null,
+   "title": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 436
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 137
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0084-borough-council-milford-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOROUGH COUNCIL Milford Borough",
+   "district": null,
+   "title": "BOROUGH COUNCIL Milford Borough",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "douglas-l-sloyer",
+     "name": "Douglas L. Sloyer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 309
+    },
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "helen-m-livingston",
+     "name": "Helen M. Livingston",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 317
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0085-membership-to-the-board-of-education-milford-borough",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Milford Borough",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Milford Borough",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "maggie-lester",
+     "name": "Maggie Lester",
+     "party": null,
+     "party_code": "O",
+     "votes": 236
+    },
+    {
+     "id": "jonathan-wolf",
+     "name": "Jonathan Wolf",
+     "party": null,
+     "party_code": "O",
+     "votes": 247
+    },
+    {
+     "id": "laura-hanson",
+     "name": "Laura Hanson",
+     "party": null,
+     "party_code": "O",
+     "votes": 215
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0086-bond-proposal-question-delaware-valley-regional-high-school",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOND PROPOSAL QUESTION Delaware Valley Regional High School",
+   "district": null,
+   "title": "BOND PROPOSAL QUESTION Delaware Valley Regional High School",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 387
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 119
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0087-township-committee-raritan-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "TOWNSHIP COMMITTEE Raritan Township",
+   "district": null,
+   "title": "TOWNSHIP COMMITTEE Raritan Township",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "brad-perry",
+     "name": "Brad Perry",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5266
+    },
+    {
+     "id": "darlene-kuhl",
+     "name": "Darlene Kuhl",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5259
+    },
+    {
+     "id": "rachael-white",
+     "name": "Rachael White",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6006
+    },
+    {
+     "id": "adam-pianka",
+     "name": "Adam Pianka",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5728
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0088-membership-to-the-board-of-education-raritan-township-hunterdon-central",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Raritan Township Hunterdon Central",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Raritan Township Hunterdon Central",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "susan-toczylowski",
+     "name": "Susan Toczylowski",
+     "party": null,
+     "party_code": "O",
+     "votes": 4974
+    },
+    {
+     "id": "steven-d-farsiou",
+     "name": "Steven D. Farsiou",
+     "party": null,
+     "party_code": "O",
+     "votes": 3834
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 93
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0089-membership-to-the-board-of-education-raritan-township",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Raritan Township",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Raritan Township",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "antoinette-hutchinson",
+     "name": "Antoinette Hutchinson",
+     "party": null,
+     "party_code": "O",
+     "votes": 6016
+    },
+    {
+     "id": "chris-lajiness",
+     "name": "Chris Lajiness",
+     "party": null,
+     "party_code": "O",
+     "votes": 5355
+    },
+    {
+     "id": "no-petition-filed",
+     "name": "No Petition Filed",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 1201
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0090-bond-proposal-question-flemington-raritan-school-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOND PROPOSAL QUESTION Flemington-Raritan School District",
+   "district": null,
+   "title": "BOND PROPOSAL QUESTION Flemington-Raritan School District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 5573
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4302
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0091-township-committee-readington-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "TOWNSHIP COMMITTEE Readington Township",
+   "district": null,
+   "title": "TOWNSHIP COMMITTEE Readington Township",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "trevor-izzo",
+     "name": "Trevor Izzo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3934
+    },
+    {
+     "id": "eric-rhoades",
+     "name": "Eric Rhoades",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3876
+    },
+    {
+     "id": "dale-hwang",
+     "name": "Dale Hwang",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3583
+    },
+    {
+     "id": "rene-rao",
+     "name": "Rene Rao",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3702
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 845
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0092-membership-to-the-board-of-education-readington-township-hunterdon-central",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Readington Township Hunterdon Central",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Readington Township Hunterdon Central",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lisa-santangelo",
+     "name": "Lisa Santangelo",
+     "party": null,
+     "party_code": "O",
+     "votes": 3016
+    },
+    {
+     "id": "jodi-bettermann",
+     "name": "Jodi Bettermann",
+     "party": null,
+     "party_code": "O",
+     "votes": 3238
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 47
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0093-membership-to-the-board-of-education-readington-township-full-term",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Readington Township Full Term",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Readington Township Full Term",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "elizabeth-fiore",
+     "name": "Elizabeth Fiore",
+     "party": null,
+     "party_code": "O",
+     "votes": 3407
+    },
+    {
+     "id": "corinne-deberry",
+     "name": "Corinne Deberry",
+     "party": null,
+     "party_code": "O",
+     "votes": 2896
+    },
+    {
+     "id": "skowronek",
+     "name": "Skowronek",
+     "party": "BEN",
+     "party_code": "O",
+     "votes": 4339
+    },
+    {
+     "id": "paulo-lopes",
+     "name": "Paulo Lopes",
+     "party": null,
+     "party_code": "O",
+     "votes": 2007
+    },
+    {
+     "id": "meredith-o-donnell",
+     "name": "Meredith O'Donnell",
+     "party": null,
+     "party_code": "O",
+     "votes": 2280
+    },
+    {
+     "id": "michele-santangelo",
+     "name": "Michele Santangelo",
+     "party": null,
+     "party_code": "O",
+     "votes": 2199
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 44
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0094-membership-to-the-board-of-education-readington-township-unexpired-term",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Readington Township Unexpired Term",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Readington Township Unexpired Term",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stefan-van-den-akker",
+     "name": "Stefan Van Den Akker",
+     "party": null,
+     "party_code": "O",
+     "votes": 4736
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 95
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0095-mayor-stockton-borough",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MAYOR Stockton Borough",
+   "district": null,
+   "title": "MAYOR Stockton Borough",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "aaron-lipsen",
+     "name": "Aaron Lipsen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 201
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0096-borough-council-stockton-borough-full-term",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOROUGH COUNCIL Stockton Borough Full Term",
+   "district": null,
+   "title": "BOROUGH COUNCIL Stockton Borough Full Term",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "kimberly-damone",
+     "name": "Kimberly Damone",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 187
+    },
+    {
+     "id": "elizabeth-weidel",
+     "name": "Elizabeth Weidel",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 190
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0097-borough-council-stockton-borough-unexpired-term",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "BOROUGH COUNCIL Stockton Borough Unexpired Term",
+   "district": null,
+   "title": "BOROUGH COUNCIL Stockton Borough Unexpired Term",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 41
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0098-township-committee-tewksbury-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "TOWNSHIP COMMITTEE Tewksbury Township",
+   "district": null,
+   "title": "TOWNSHIP COMMITTEE Tewksbury Township",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jean-frankel",
+     "name": "Jean Frankel",
+     "party": "TIV",
+     "party_code": "O",
+     "votes": 1449
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 45
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0099-membership-to-the-board-of-education-tewksbury-township-north-voorhees-full-term",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Tewksbury Township North/Voorhees Full Term",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Tewksbury Township North/Voorhees Full Term",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrea-stein",
+     "name": "Andrea Stein",
+     "party": null,
+     "party_code": "O",
+     "votes": 1821
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 42
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0100-membership-to-the-board-of-education-tewksbury-township-north-voorhees-unexpired",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Tewksbury Township North/Voorhees Unexpired Term",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Tewksbury Township North/Voorhees Unexpired Term",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "krista-ramirez",
+     "name": "Krista Ramirez",
+     "party": null,
+     "party_code": "O",
+     "votes": 1591
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 36
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0101-membership-to-the-board-of-education-tewksbury-township",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Tewksbury Township",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Tewksbury Township",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "william-simon",
+     "name": "William Simon",
+     "party": null,
+     "party_code": "O",
+     "votes": 1390
+    },
+    {
+     "id": "connie-wygera",
+     "name": "Connie Wygera",
+     "party": null,
+     "party_code": "O",
+     "votes": 1230
+    },
+    {
+     "id": "justin-steele",
+     "name": "Justin Steele",
+     "party": null,
+     "party_code": "O",
+     "votes": 1241
+    },
+    {
+     "id": "lauren-bologno",
+     "name": "Lauren Bologno",
+     "party": null,
+     "party_code": "O",
+     "votes": 1336
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 192
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0102-referendum-question-north-hunterdon-voorhees-regional-high-school-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "district": null,
+   "title": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1700
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 895
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0103-township-committee-union-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "TOWNSHIP COMMITTEE Union Township",
+   "district": null,
+   "title": "TOWNSHIP COMMITTEE Union Township",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "alyssa-oliver",
+     "name": "Alyssa Oliver",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1305
+    },
+    {
+     "id": "christopher-widuta",
+     "name": "Christopher Widuta",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1280
+    },
+    {
+     "id": "no-nomination-made",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no-nomination-made-2",
+     "name": "No Nomination Made",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 82
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0104-membership-to-the-board-of-education-union-township",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION Union Township",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION Union Township",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "amelia-lamonde",
+     "name": "Amelia Lamonde",
+     "party": null,
+     "party_code": "O",
+     "votes": 1108
+    },
+    {
+     "id": "louis-palma",
+     "name": "Louis Palma",
+     "party": null,
+     "party_code": "O",
+     "votes": 1152
+    },
+    {
+     "id": "no-petition-filed",
+     "name": "No Petition Filed",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 326
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0105-referendum-question-north-hunterdon-voorhees-regional-high-school-district",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "district": null,
+   "title": "REFERENDUM QUESTION North Hunterdon-Voorhees Regional High School District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1218
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 587
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0106-township-committee-west-amwell-township",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "TOWNSHIP COMMITTEE West Amwell Township",
+   "district": null,
+   "title": "TOWNSHIP COMMITTEE West Amwell Township",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-balaam",
+     "name": "Robert Balaam",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 836
+    },
+    {
+     "id": "john-dale",
+     "name": "John Dale",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 739
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0107-public-question-west-amwell-township",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "PUBLIC QUESTION West Amwell Township",
+   "district": null,
+   "title": "PUBLIC QUESTION West Amwell Township",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 910
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 507
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-hunterdon-0108-membership-to-the-board-of-education-west-amwell-township-south-hunterdon",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Hunterdon",
+   "office": "MEMBERSHIP TO THE BOARD OF EDUCATION West Amwell Township South Hunterdon",
+   "district": null,
+   "title": "MEMBERSHIP TO THE BOARD OF EDUCATION West Amwell Township South Hunterdon",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-strouse",
+     "name": "Michael Strouse",
+     "party": null,
+     "party_code": "O",
+     "votes": 870
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 31
     }
    ],
    "precincts": {
