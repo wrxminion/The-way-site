@@ -1,0 +1,1419 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-mi",
+ "label": "Michigan",
+ "source_ids": [
+  "mi-mvic"
+ ],
+ "updated_at": "2026-11-04T13:18:36Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "mi-governor-and-lieutenant-governor-4-year-term-1-position-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Governor And Lieutenant Governor",
+   "district": null,
+   "title": "Governor And Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "write-in",
+     "name": "WRITE-IN",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 27
+    },
+    {
+     "id": "douglas-campbell",
+     "name": "Douglas Campbell",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 12395
+    },
+    {
+     "id": "anthony-hudson",
+     "name": "Anthony Hudson",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 36396
+    },
+    {
+     "id": "jocelyn-benson",
+     "name": "Jocelyn Benson",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1866099
+    },
+    {
+     "id": "john-james",
+     "name": "John James",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1696199
+    },
+    {
+     "id": "donna-brandenburg",
+     "name": "Donna Brandenburg",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 14601
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-secretary-of-state-4-year-term-1-position-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Secretary Of State",
+   "district": null,
+   "title": "Secretary Of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-borregard",
+     "name": "Eric Borregard",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 15589
+    },
+    {
+     "id": "anthony-g-forlini",
+     "name": "Anthony G. Forlini",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1669942
+    },
+    {
+     "id": "christine-sloan",
+     "name": "Christine Sloan",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 61488
+    },
+    {
+     "id": "scott-e-aughney",
+     "name": "Scott E. Aughney",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 21581
+    },
+    {
+     "id": "garlin-gilchrist",
+     "name": "Garlin Gilchrist",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1818421
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-attorney-general-4-year-term-1-position-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "doug-lloyd",
+     "name": "Doug Lloyd",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1705801
+    },
+    {
+     "id": "jason-dye",
+     "name": "Jason Dye",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 46654
+    },
+    {
+     "id": "jeff-polonowski",
+     "name": "Jeff Polonowski",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 17753
+    },
+    {
+     "id": "john-perry-ludtke",
+     "name": "John Perry Ludtke",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 23536
+    },
+    {
+     "id": "eli-savit",
+     "name": "Eli Savit",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1757920
+    },
+    {
+     "id": "doug-dern",
+     "name": "Doug Dern",
+     "party": "NATURAL LAW",
+     "party_code": "O",
+     "votes": 10252
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-united-states-senator-6-year-term-1-position-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "douglas-p-marsh",
+     "name": "Douglas P. Marsh",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 9225
+    },
+    {
+     "id": "lydia-christensen",
+     "name": "Lydia Christensen",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 38924
+    },
+    {
+     "id": "mike-rogers",
+     "name": "Mike Rogers",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1761026
+    },
+    {
+     "id": "abdul-el-sayed",
+     "name": "Abdul El-Sayed",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1791522
+    },
+    {
+     "id": "tim-long",
+     "name": "Tim Long",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 19992
+    },
+    {
+     "id": "walter-p-kristy",
+     "name": "Walter P. Kristy",
+     "party": "NATURAL LAW",
+     "party_code": "O",
+     "votes": 5248
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-1st-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "1St District Representative In Congress",
+   "district": "1",
+   "title": "1St District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "liz-hakola",
+     "name": "Liz Hakola",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 2383
+    },
+    {
+     "id": "laveta-davenport",
+     "name": "LaVeta Davenport",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 773
+    },
+    {
+     "id": "arnett-satterla",
+     "name": "Arnett Satterla",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 2757
+    },
+    {
+     "id": "zebulon-featherly",
+     "name": "Zebulon Featherly",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 922
+    },
+    {
+     "id": "jack-bergman",
+     "name": "Jack Bergman",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 216960
+    },
+    {
+     "id": "callie-barr",
+     "name": "Callie Barr",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 178381
+    },
+    {
+     "id": "doc-kovaly",
+     "name": "Doc Kovaly",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 1229
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-2nd-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "2Nd District Representative In Congress",
+   "district": "2",
+   "title": "2Nd District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charlotte-magoon",
+     "name": "Charlotte Magoon",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 3829
+    },
+    {
+     "id": "john-moolenaar",
+     "name": "John Moolenaar",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 218977
+    },
+    {
+     "id": "ben-ambrose",
+     "name": "Ben Ambrose",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 131823
+    },
+    {
+     "id": "richard-sills",
+     "name": "Richard Sills",
+     "party": "NATURAL LAW",
+     "party_code": "O",
+     "votes": 1749
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-3rd-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "3Rd District Representative In Congress",
+   "district": "3",
+   "title": "3Rd District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hillary-scholten",
+     "name": "Hillary Scholten",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 211061
+    },
+    {
+     "id": "terri-deboer",
+     "name": "Terri DeBoer",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 152988
+    },
+    {
+     "id": "joe-jock",
+     "name": "Joe Jock",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 5339
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-4th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "4Th District Representative In Congress",
+   "district": "4",
+   "title": "4Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-huizenga",
+     "name": "Bill Huizenga",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 177010
+    },
+    {
+     "id": "sean-mccann",
+     "name": "Sean McCann",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 183502
+    },
+    {
+     "id": "shafina-che-barnett",
+     "name": "Shafina Che Barnett",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 5636
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-5th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "5Th District Representative In Congress",
+   "district": "5",
+   "title": "5Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-bronke",
+     "name": "Jim Bronke",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 1227
+    },
+    {
+     "id": "tim-walberg",
+     "name": "Tim Walberg",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 198729
+    },
+    {
+     "id": "christian-vukasovich",
+     "name": "Christian Vukasovich",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 129797
+    },
+    {
+     "id": "ronald-a-muszynski",
+     "name": "Ronald A Muszynski",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 3457
+    },
+    {
+     "id": "sharon-marie-renier",
+     "name": "Sharon Marie Renier",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 3115
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-6th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "6Th District Representative In Congress",
+   "district": "6",
+   "title": "6Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clyde-shabazz",
+     "name": "Clyde Shabazz",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 1363
+    },
+    {
+     "id": "linda-rayburn",
+     "name": "Linda Rayburn",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 1759
+    },
+    {
+     "id": "debbie-dingell",
+     "name": "Debbie Dingell",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 169607
+    },
+    {
+     "id": "heather-smiley",
+     "name": "Heather Smiley",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 54716
+    },
+    {
+     "id": "timothy-a-teagan",
+     "name": "Timothy A. Teagan",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 1463
+    },
+    {
+     "id": "mike-mickevicius",
+     "name": "Mike Mickevicius",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 547
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-7th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "7Th District Representative In Congress",
+   "district": "7",
+   "title": "7Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shane-dedrick",
+     "name": "Shane Dedrick",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 4974
+    },
+    {
+     "id": "william-lawrence",
+     "name": "William Lawrence",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 202657
+    },
+    {
+     "id": "tom-barrett",
+     "name": "Tom Barrett",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 189482
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-8th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "8Th District Representative In Congress",
+   "district": "8",
+   "title": "8Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-casha",
+     "name": "Jim Casha",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 1039
+    },
+    {
+     "id": "kathy-goodwin",
+     "name": "Kathy Goodwin",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 5146
+    },
+    {
+     "id": "kristen-mcdonald-rivet",
+     "name": "Kristen McDonald Rivet",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 195378
+    },
+    {
+     "id": "thomas-j-smith",
+     "name": "Thomas J. Smith",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 147562
+    },
+    {
+     "id": "c-mia-pettus",
+     "name": "C. Mia Pettus",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 2844
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-9th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "9Th District Representative In Congress",
+   "district": "9",
+   "title": "9Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "destiny-clayton",
+     "name": "Destiny Clayton",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 1079
+    },
+    {
+     "id": "jim-walkowicz",
+     "name": "Jim Walkowicz",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 3170
+    },
+    {
+     "id": "lisa-mcclain",
+     "name": "Lisa McClain",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 184821
+    },
+    {
+     "id": "ray-pooley",
+     "name": "Ray Pooley",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 100748
+    },
+    {
+     "id": "kevin-vayko",
+     "name": "Kevin Vayko",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 2698
+    },
+    {
+     "id": "john-vlahos",
+     "name": "John Vlahos",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 1192
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-10th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "10Th District Representative In Congress",
+   "district": "10",
+   "title": "10Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrea-l-kirby",
+     "name": "Andrea L. Kirby",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 262
+    },
+    {
+     "id": "michael-bouchard",
+     "name": "Michael Bouchard",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 21897
+    },
+    {
+     "id": "christina-bertrand-hines",
+     "name": "Christina Bertrand Hines",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 24285
+    },
+    {
+     "id": "kwabena-nkromo",
+     "name": "Kwabena Nkromo",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 124
+    },
+    {
+     "id": "mike-saliba",
+     "name": "Mike Saliba",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 348
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-11th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "11Th District Representative In Congress",
+   "district": "11",
+   "title": "11Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-teasdale",
+     "name": "Ryan Teasdale",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 2902
+    },
+    {
+     "id": "ethan-baker",
+     "name": "Ethan Baker",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 144529
+    },
+    {
+     "id": "jeremy-moss",
+     "name": "Jeremy Moss",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 238750
+    },
+    {
+     "id": "anil-kumar",
+     "name": "Anil Kumar",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 3174
+    },
+    {
+     "id": "farid-ishac",
+     "name": "Farid Ishac",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 2946
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-12th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "12Th District Representative In Congress",
+   "district": "12",
+   "title": "12Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gary-walkowicz",
+     "name": "Gary Walkowicz",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 351
+    },
+    {
+     "id": "rashida-tlaib",
+     "name": "Rashida Tlaib",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 38246
+    },
+    {
+     "id": "james-d-hooper",
+     "name": "James D. Hooper",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 7420
+    },
+    {
+     "id": "brenda-k-sanders",
+     "name": "Brenda K. Sanders",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 559
+    },
+    {
+     "id": "marc-joseph-sosnowski",
+     "name": "Marc Joseph Sosnowski",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 213
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-member-of-the-state-board-of-education-8-year-terms-2-positions-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Member Of The State Board Of Education",
+   "district": null,
+   "title": "Member Of The State Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "wissam-charafeddine",
+     "name": "Wissam Charafeddine",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 25849
+    },
+    {
+     "id": "mary-anne-hering",
+     "name": "Mary Anne Hering",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 76394
+    },
+    {
+     "id": "terence-collins",
+     "name": "Terence Collins",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1605629
+    },
+    {
+     "id": "charles-essner",
+     "name": "Charles Essner",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 62749
+    },
+    {
+     "id": "bree-moeggenberg",
+     "name": "Bree Moeggenberg",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1570903
+    },
+    {
+     "id": "christine-c-schwartz",
+     "name": "Christine C. Schwartz",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 41564
+    },
+    {
+     "id": "william-mohr",
+     "name": "William Mohr",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 31101
+    },
+    {
+     "id": "tiffany-tilley",
+     "name": "Tiffany Tilley",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1671259
+    },
+    {
+     "id": "judith-pritchett",
+     "name": "Judith Pritchett",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1690582
+    },
+    {
+     "id": "kelli-monroe",
+     "name": "Kelli Monroe",
+     "party": "NATURAL LAW",
+     "party_code": "O",
+     "votes": 17173
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-regent-of-the-university-of-michigan-8-year-terms-2-positions-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Regent Of The University Of Michigan",
+   "district": null,
+   "title": "Regent Of The University Of Michigan",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "lena-epstein",
+     "name": "Lena Epstein",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1585116
+    },
+    {
+     "id": "michael-schostak",
+     "name": "Michael Schostak",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1609076
+    },
+    {
+     "id": "andrew-chadderdon",
+     "name": "Andrew Chadderdon",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 89471
+    },
+    {
+     "id": "kyle-maas",
+     "name": "Kyle Maas",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 81315
+    },
+    {
+     "id": "amir-makled",
+     "name": "Amir Makled",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1577210
+    },
+    {
+     "id": "paul-brown",
+     "name": "Paul Brown",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1692022
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-trustee-of-michigan-state-university-8-year-terms-2-positions-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Trustee Of Michigan State University",
+   "district": null,
+   "title": "Trustee Of Michigan State University",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "john-anthony-la-pietra",
+     "name": "JOHN ANTHONY LA PIETRA",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 30837
+    },
+    {
+     "id": "yaz-ozbek",
+     "name": "Yaz Ozbek",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 43540
+    },
+    {
+     "id": "julie-maday",
+     "name": "Julie Maday",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1578091
+    },
+    {
+     "id": "roger-victory",
+     "name": "Roger Victory",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1575861
+    },
+    {
+     "id": "daniel-r-patterson",
+     "name": "Daniel R. Patterson",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 60786
+    },
+    {
+     "id": "will-tyler-white",
+     "name": "Will Tyler White",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 44647
+    },
+    {
+     "id": "john-sanger",
+     "name": "John Sanger",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 32126
+    },
+    {
+     "id": "janet-sanger",
+     "name": "Janet Sanger",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 42052
+    },
+    {
+     "id": "kelly-tebay-zemke",
+     "name": "Kelly Tebay Zemke",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1593744
+    },
+    {
+     "id": "brianna-scott",
+     "name": "Brianna Scott",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1665691
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-governor-of-wayne-state-university-8-year-terms-2-positions-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Governor Of Wayne State University",
+   "district": null,
+   "title": "Governor Of Wayne State University",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "paul-m-ragan",
+     "name": "Paul M. Ragan",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 27505
+    },
+    {
+     "id": "suzanne-roehrig",
+     "name": "Suzanne Roehrig",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 71883
+    },
+    {
+     "id": "andy-anuzis",
+     "name": "Andy Anuzis",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1528557
+    },
+    {
+     "id": "christa-murphy",
+     "name": "Christa Murphy",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 1593397
+    },
+    {
+     "id": "jami-van-alstine",
+     "name": "Jami Van Alstine",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 47488
+    },
+    {
+     "id": "alex-avery",
+     "name": "Alex Avery",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 60983
+    },
+    {
+     "id": "jeff-mcdonald",
+     "name": "Jeff McDonald",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 43924
+    },
+    {
+     "id": "richard-mack",
+     "name": "Richard Mack",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1615008
+    },
+    {
+     "id": "shereef-akeel",
+     "name": "Shereef Akeel",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 1569849
+    },
+    {
+     "id": "kathleen-oakford",
+     "name": "Kathleen Oakford",
+     "party": "NATURAL LAW",
+     "party_code": "O",
+     "votes": 20770
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-justice-of-supreme-court-8-year-terms-2-positions-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Justice Of Supreme Court",
+   "district": null,
+   "title": "Justice Of Supreme Court",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "michael-warren",
+     "name": "Michael Warren",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 717775
+    },
+    {
+     "id": "casandra-morse-bills",
+     "name": "Casandra Morse-Bills",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 664185
+    },
+    {
+     "id": "jody-white",
+     "name": "Jody White",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 270116
+    },
+    {
+     "id": "thomas-w-howe",
+     "name": "Thomas W. Howe",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 236543
+    },
+    {
+     "id": "noah-p-hood",
+     "name": "Noah P. Hood",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 1435393
+    },
+    {
+     "id": "megan-kathleen-cavanagh",
+     "name": "Megan Kathleen Cavanagh",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 1677608
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-court-of-appeals-district-1-judge-of-court-of-appeals-incumbent-par-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Court Of Appeals District 1 Judge Of Court Of Appeals Incumbent - Partial Term Ending 1/1/2031",
+   "district": null,
+   "title": "Court Of Appeals District 1 Judge Of Court Of Appeals Incumbent - Partial Term Ending 1/1/2031",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-j-lievense",
+     "name": "Andrew J. Lievense",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 170549
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-court-of-appeals-district-1-judge-of-court-of-appeals-incumbent-6-y-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Court Of Appeals District 1 Judge Of Court Of Appeals Incumbent",
+   "district": null,
+   "title": "Court Of Appeals District 1 Judge Of Court Of Appeals Incumbent",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "mariam-saad-bazzi",
+     "name": "Mariam Saad Bazzi",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 124327
+    },
+    {
+     "id": "anica-letica",
+     "name": "Anica Letica",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 127653
+    },
+    {
+     "id": "christopher-m-murray",
+     "name": "Christopher M. Murray",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 148261
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-court-of-appeals-district-2-judge-of-court-of-appeals-incumbent-6-y-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Court Of Appeals District 2 Judge Of Court Of Appeals Incumbent",
+   "district": null,
+   "title": "Court Of Appeals District 2 Judge Of Court Of Appeals Incumbent",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "sima-g-patel",
+     "name": "Sima G. Patel",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 403601
+    },
+    {
+     "id": "christopher-m-trebilcock",
+     "name": "Christopher M. Trebilcock",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 405465
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-court-of-appeals-district-3-judge-of-court-of-appeals-incumbent-6-y-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Court Of Appeals District 3 Judge Of Court Of Appeals Incumbent",
+   "district": null,
+   "title": "Court Of Appeals District 3 Judge Of Court Of Appeals Incumbent",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "mark-t-boonstra",
+     "name": "Mark T. Boonstra",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 669116
+    },
+    {
+     "id": "daniel-s-korobkin",
+     "name": "Daniel S. Korobkin",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 618118
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-court-of-appeals-district-4-judge-of-court-of-appeals-incumbent-6-y-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mi",
+   "office": "Court Of Appeals District 4 Judge Of Court Of Appeals Incumbent",
+   "district": null,
+   "title": "Court Of Appeals District 4 Judge Of Court Of Appeals Incumbent",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "michael-j-kelly",
+     "name": "Michael J. Kelly",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 641533
+    },
+    {
+     "id": "michelle-m-rick",
+     "name": "Michelle M. Rick",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 514107
+    },
+    {
+     "id": "allie-greenleaf-maldonado",
+     "name": "Allie Greenleaf Maldonado",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 529604
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-proposal-2026-1-112750",
+   "kind": "measure",
+   "level": "state",
+   "state": "mi",
+   "office": "Proposal 2026-1",
+   "district": null,
+   "title": "Proposal 2026-1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 826146
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2429738
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-proposal-2026-2-112751",
+   "kind": "measure",
+   "level": "state",
+   "state": "mi",
+   "office": "Proposal 2026-2",
+   "district": null,
+   "title": "Proposal 2026-2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 2693913
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 621348
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  }
+ ]
+}
