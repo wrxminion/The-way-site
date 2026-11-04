@@ -26,9 +26,10 @@
   "sd-ersws",
   "tn-sos",
   "tx-sos",
-  "va-scytl"
+  "va-scytl",
+  "wy-sos"
  ],
- "updated_at": "2026-11-04T13:35:44Z",
+ "updated_at": "2026-11-04T13:46:29Z",
  "certified": false,
  "contests": [
   {
@@ -156,25 +157,25 @@
      "name": "Ashley Moody",
      "party": "REP",
      "party_code": "R",
-     "votes": 4207774
+     "votes": 4199078
     },
     {
      "id": "angie-nixon",
      "name": "Angie Nixon",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3968811
+     "votes": 3955419
     },
     {
      "id": "neil-j-gillespie",
      "name": "Neil J. Gillespie",
      "party": "NPA",
      "party_code": "O",
-     "votes": 94529
+     "votes": 94180
     }
    ],
    "precincts": {
-    "reporting": 5626,
+    "reporting": 5567,
     "total": 5626,
     "unit": "precincts"
    }
@@ -259,28 +260,28 @@
      "name": "Kurt Alme",
      "party": "Republican",
      "party_code": "R",
-     "votes": 217457
+     "votes": 218034
     },
     {
      "id": "alani-bankhead",
      "name": "Alani Bankhead",
      "party": "Democrat",
      "party_code": "D",
-     "votes": 53202
+     "votes": 53240
     },
     {
      "id": "kyle-austin",
      "name": "Kyle Austin",
      "party": "Libertarian",
      "party_code": "O",
-     "votes": 8145
+     "votes": 8169
     },
     {
      "id": "seth-bodnar",
      "name": "Seth Bodnar",
      "party": "Independent",
      "party_code": "O",
-     "votes": 166542
+     "votes": 166637
     }
    ],
    "precincts": {
@@ -1126,6 +1127,37 @@
    "precincts": {
     "reporting": 4168,
     "total": 4168,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "wy-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wy",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "harriet-hageman",
+     "name": "Harriet Hageman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 122157
+    },
+    {
+     "id": "james-byrd",
+     "name": "James Byrd",
+     "party": "D",
+     "party_code": "D",
+     "votes": 65097
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
     "unit": "counties"
    }
   }
