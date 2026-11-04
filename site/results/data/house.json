@@ -13,6 +13,7 @@
   "hi-oe",
   "id-scytl",
   "in-enr",
+  "la-sos",
   "mi-mvic",
   "mt-ersws",
   "nc-sbe",
@@ -24,10 +25,13 @@
   "ri-scytl",
   "sc-clarity",
   "sd-ersws",
+  "tn-sos",
+  "tx-sos",
   "ut-scytl",
-  "va-scytl"
+  "va-scytl",
+  "vt-sos"
  ],
- "updated_at": "2026-11-04T13:24:02Z",
+ "updated_at": "2026-11-04T13:29:26Z",
  "certified": false,
  "contests": [
   {
@@ -5326,21 +5330,21 @@
      "name": "Aaron Flint",
      "party": "Republican",
      "party_code": "R",
-     "votes": 106880
+     "votes": 107028
     },
     {
      "id": "sam-forstag",
      "name": "Sam Forstag",
      "party": "Democrat",
      "party_code": "D",
-     "votes": 114075
+     "votes": 114094
     },
     {
      "id": "nick-sheedy",
      "name": "Nick Sheedy",
      "party": "Libertarian",
      "party_code": "O",
-     "votes": 6443
+     "votes": 6457
     }
    ],
    "precincts": {
@@ -7945,6 +7949,2109 @@
      "party": "I",
      "party_code": "O",
      "votes": 41
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "diana-harshbarger",
+     "name": "Diana Harshbarger",
+     "party": "R",
+     "party_code": "R",
+     "votes": 141117
+    },
+    {
+     "id": "kristi-burke",
+     "name": "Kristi Burke",
+     "party": "D",
+     "party_code": "D",
+     "votes": 61682
+    },
+    {
+     "id": "joshua-ray-ashburn",
+     "name": "Joshua Ray Ashburn",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2102
+    },
+    {
+     "id": "billy-cody",
+     "name": "Billy Cody",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1398
+    },
+    {
+     "id": "chris-campbell",
+     "name": "Chris Campbell",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1296
+    },
+    {
+     "id": "richard-g-baker",
+     "name": "Richard G. Baker",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1219
+    },
+    {
+     "id": "tyler-brice-mitchell-mcclain",
+     "name": "Tyler Brice Mitchell McClain",
+     "party": "I",
+     "party_code": "O",
+     "votes": 541
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-burchett",
+     "name": "Tim Burchett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 144892
+    },
+    {
+     "id": "michaela-barnett",
+     "name": "Michaela Barnett",
+     "party": "D",
+     "party_code": "D",
+     "votes": 103311
+    },
+    {
+     "id": "bruce-fine",
+     "name": "Bruce Fine",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1827
+    },
+    {
+     "id": "adam-heimerman",
+     "name": "Adam Heimerman",
+     "party": "I",
+     "party_code": "O",
+     "votes": 950
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chuck-fleischmann",
+     "name": "Chuck Fleischmann",
+     "party": "R",
+     "party_code": "R",
+     "votes": 136110
+    },
+    {
+     "id": "anna-golladay",
+     "name": "Anna Golladay",
+     "party": "D",
+     "party_code": "D",
+     "votes": 95051
+    },
+    {
+     "id": "dean-arnold",
+     "name": "Dean Arnold",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2136
+    },
+    {
+     "id": "rodney-joe-king",
+     "name": "Rodney Joe King",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1207
+    },
+    {
+     "id": "jean-howard-hill",
+     "name": "Jean Howard-Hill",
+     "party": "I",
+     "party_code": "O",
+     "votes": 923
+    },
+    {
+     "id": "donnie-lynn-ownby",
+     "name": "Donnie Lynn Ownby",
+     "party": "I",
+     "party_code": "O",
+     "votes": 527
+    },
+    {
+     "id": "edward-john-roland",
+     "name": "Edward John Roland",
+     "party": "I",
+     "party_code": "O",
+     "votes": 404
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "victoria-broderick",
+     "name": "Victoria Broderick",
+     "party": "D",
+     "party_code": "D",
+     "votes": 95585
+    },
+    {
+     "id": "scott-desjarlais",
+     "name": "Scott DesJarlais",
+     "party": "R",
+     "party_code": "R",
+     "votes": 95305
+    },
+    {
+     "id": "jacob-kristopher-anders",
+     "name": "Jacob Kristopher Anders",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2833
+    },
+    {
+     "id": "clay-faircloth",
+     "name": "Clay Faircloth",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1853
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charlie-hatcher",
+     "name": "Charlie Hatcher",
+     "party": "R",
+     "party_code": "R",
+     "votes": 110408
+    },
+    {
+     "id": "chaz-molder",
+     "name": "Chaz Molder",
+     "party": "D",
+     "party_code": "D",
+     "votes": 99841
+    },
+    {
+     "id": "james-a-johnson",
+     "name": "James A. Johnson",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2641
+    },
+    {
+     "id": "o-leary",
+     "name": "O'Leary",
+     "party": "I",
+     "party_code": "O",
+     "votes": 815
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 6",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "johnny-garrett",
+     "name": "Johnny Garrett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 120950
+    },
+    {
+     "id": "mike-croley",
+     "name": "Mike Croley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 113177
+    },
+    {
+     "id": "christopher-b-monday",
+     "name": "Christopher B. Monday",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2707
+    },
+    {
+     "id": "angus-purdy",
+     "name": "Angus Purdy",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1390
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 7",
+   "district": "7",
+   "title": "U.S. House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-van-epps",
+     "name": "Matt Van Epps",
+     "party": "R",
+     "party_code": "R",
+     "votes": 121100
+    },
+    {
+     "id": "darden-copeland",
+     "name": "Darden Copeland",
+     "party": "D",
+     "party_code": "D",
+     "votes": 115867
+    },
+    {
+     "id": "andrew-j-koontz",
+     "name": "Andrew J. Koontz",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2603
+    },
+    {
+     "id": "lowell-reynolds",
+     "name": "Lowell Reynolds",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1316
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 8",
+   "district": "8",
+   "title": "U.S. House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-kustoff",
+     "name": "David Kustoff",
+     "party": "R",
+     "party_code": "R",
+     "votes": 114045
+    },
+    {
+     "id": "heidi-kuhn",
+     "name": "Heidi Kuhn",
+     "party": "D",
+     "party_code": "D",
+     "votes": 102406
+    },
+    {
+     "id": "pamela-jeanine-p-moses",
+     "name": "Pamela Jeanine \"P.\" Moses",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1035
+    },
+    {
+     "id": "horace-taylor",
+     "name": "Horace Taylor",
+     "party": "I",
+     "party_code": "O",
+     "votes": 861
+    },
+    {
+     "id": "adam-d-austill",
+     "name": "Adam D. Austill",
+     "party": "I",
+     "party_code": "O",
+     "votes": 854
+    },
+    {
+     "id": "wendell-wells-blankenship",
+     "name": "Wendell \"Wells\" Blankenship",
+     "party": "I",
+     "party_code": "O",
+     "votes": 714
+    },
+    {
+     "id": "antonio-futch",
+     "name": "Antonio Futch",
+     "party": "I",
+     "party_code": "O",
+     "votes": 506
+    },
+    {
+     "id": "henry-j-ward-iii",
+     "name": "Henry J. Ward, III",
+     "party": "I",
+     "party_code": "O",
+     "votes": 485
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "tn-united-states-house-of-representatives-district-9",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. House District 9",
+   "district": "9",
+   "title": "U.S. House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brent-taylor",
+     "name": "Brent Taylor",
+     "party": "R",
+     "party_code": "R",
+     "votes": 111968
+    },
+    {
+     "id": "justin-j-pearson",
+     "name": "Justin J. Pearson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 109429
+    },
+    {
+     "id": "dennis-clark",
+     "name": "Dennis Clark",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2413
+    },
+    {
+     "id": "michelle-davis-head",
+     "name": "Michelle Davis Head",
+     "party": "I",
+     "party_code": "O",
+     "votes": 1804
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "la-70195-u-s-representative-1st-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "randall-arrington",
+     "name": "Randall Arrington",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9776
+    },
+    {
+     "id": "e-liddy-glass",
+     "name": "E. Liddy Glass",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 4279
+    },
+    {
+     "id": "lauren-jewett",
+     "name": "Lauren Jewett",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 89428
+    },
+    {
+     "id": "steve-scalise",
+     "name": "Steve Scalise",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 159890
+    }
+   ],
+   "precincts": {
+    "reporting": 522,
+    "total": 522,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70196-u-s-representative-2nd-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "lisa-ballay",
+     "name": "Lisa Ballay",
+     "party": "LBT",
+     "party_code": "O",
+     "votes": 6405
+    },
+    {
+     "id": "walter-rocky-beach",
+     "name": "Walter Rocky Beach",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 2553
+    },
+    {
+     "id": "troy-a-carter-sr",
+     "name": "Troy A. Carter, Sr.",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 192258
+    },
+    {
+     "id": "renada-honey-collins",
+     "name": "Renada Honey Collins",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 2999
+    },
+    {
+     "id": "peter-williams",
+     "name": "Peter Williams",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 36367
+    }
+   ],
+   "precincts": {
+    "reporting": 613,
+    "total": 613,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70197-u-s-representative-3rd-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "kate-cotten",
+     "name": "Kate Cotten",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 15661
+    },
+    {
+     "id": "john-day",
+     "name": "John Day",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 49162
+    },
+    {
+     "id": "priscilla-gonzalez",
+     "name": "Priscilla Gonzalez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 16828
+    },
+    {
+     "id": "clay-higgins",
+     "name": "Clay Higgins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 129203
+    },
+    {
+     "id": "tia-lebrun",
+     "name": "Tia LeBrun",
+     "party": "NOPTY",
+     "party_code": "O",
+     "votes": 4208
+    },
+    {
+     "id": "caleb-with-a-c-walker",
+     "name": "Caleb With a C Walker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 19932
+    }
+   ],
+   "precincts": {
+    "reporting": 571,
+    "total": 571,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70198-u-s-representative-4th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "conrad-cable",
+     "name": "Conrad Cable",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 52893
+    },
+    {
+     "id": "matt-gromlich",
+     "name": "Matt Gromlich",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 32866
+    },
+    {
+     "id": "gordon-heslop",
+     "name": "Gordon Heslop",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2571
+    },
+    {
+     "id": "mike-johnson",
+     "name": "Mike Johnson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 134739
+    },
+    {
+     "id": "mike-nichols",
+     "name": "Mike Nichols",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7270
+    }
+   ],
+   "precincts": {
+    "reporting": 684,
+    "total": 684,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70199-u-s-representative-5th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "stewart-cathey-jr",
+     "name": "Stewart Cathey, Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28160
+    },
+    {
+     "id": "misti-cordell",
+     "name": "Misti Cordell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 33366
+    },
+    {
+     "id": "oscar-omar-dantzler",
+     "name": "Oscar Omar Dantzler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2238
+    },
+    {
+     "id": "michael-echols",
+     "name": "Michael Echols",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 32902
+    },
+    {
+     "id": "gabe-firment",
+     "name": "Gabe Firment",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 39131
+    },
+    {
+     "id": "austin-magee",
+     "name": "Austin Magee",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7920
+    },
+    {
+     "id": "dan-mckay",
+     "name": "Dan McKay",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 16047
+    },
+    {
+     "id": "patricia-pat-moore",
+     "name": "Patricia Pat Moore",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 40789
+    },
+    {
+     "id": "antonio-wilson",
+     "name": "Antonio Wilson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 27364
+    }
+   ],
+   "precincts": {
+    "reporting": 791,
+    "total": 791,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "la-70200-u-s-representative-6th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. House District 6",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "monique-appeaning",
+     "name": "Monique Appeaning",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8109
+    },
+    {
+     "id": "chauna-banks",
+     "name": "Chauna Banks",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 50878
+    },
+    {
+     "id": "rufus-craig",
+     "name": "Rufus Craig",
+     "party": "LBT",
+     "party_code": "O",
+     "votes": 3461
+    },
+    {
+     "id": "larry-davis-iii",
+     "name": "Larry Davis III",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11356
+    },
+    {
+     "id": "rick-edmonds",
+     "name": "Rick Edmonds",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 49241
+    },
+    {
+     "id": "patrick-pat-forbes",
+     "name": "Patrick Pat Forbes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23820
+    },
+    {
+     "id": "lindsay-rubia-garcia",
+     "name": "Lindsay Rubia Garcia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 33544
+    },
+    {
+     "id": "michael-mebruer",
+     "name": "Michael Mebruer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3160
+    },
+    {
+     "id": "blake-miguez",
+     "name": "Blake Miguez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 50213
+    },
+    {
+     "id": "stephen-wagley",
+     "name": "Stephen Wagley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28169
+    }
+   ],
+   "precincts": {
+    "reporting": 541,
+    "total": 541,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "tx-5038-u-s-representative-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nathaniel-moran",
+     "name": "Nathaniel Moran",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 181987
+    },
+    {
+     "id": "yolanda-r-prince",
+     "name": "Yolanda R. Prince",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 81598
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5063-u-s-representative-district-32",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 32",
+   "district": "32",
+   "title": "U.S. House District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dan-barrios",
+     "name": "Dan Barrios",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 134781
+    },
+    {
+     "id": "jace-yarbrough",
+     "name": "Jace Yarbrough",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 142834
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5042-u-s-representative-district-13",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 13",
+   "district": "13",
+   "title": "U.S. House District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ronny-jackson",
+     "name": "Ronny Jackson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 158134
+    },
+    {
+     "id": "mark-nair",
+     "name": "Mark Nair",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 84197
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5048-u-s-representative-district-19",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 19",
+   "district": "19",
+   "title": "U.S. House District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kyle-rable",
+     "name": "Kyle Rable",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 29672
+    },
+    {
+     "id": "tom-sell",
+     "name": "Tom Sell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 89575
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5064-u-s-representative-district-33",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 33",
+   "district": "33",
+   "title": "U.S. House District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "colin-allred",
+     "name": "Colin Allred",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 150891
+    },
+    {
+     "id": "michelle-craig",
+     "name": "Michelle Craig",
+     "party": null,
+     "party_code": "O",
+     "votes": 52
+    },
+    {
+     "id": "patrick-david-gillespie",
+     "name": "Patrick David Gillespie",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 41157
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5040-u-s-representative-district-11",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 11",
+   "district": "11",
+   "title": "U.S. House District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "august-pfluger",
+     "name": "August Pfluger",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 138627
+    },
+    {
+     "id": "claire-reynolds",
+     "name": "Claire Reynolds",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 94353
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5065-u-s-representative-district-35",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 35",
+   "district": "35",
+   "title": "U.S. House District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carlos-de-la-cruz",
+     "name": "Carlos De La Cruz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 112574
+    },
+    {
+     "id": "johnny-c-garcia",
+     "name": "Johnny C. Garcia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 139984
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5066-u-s-representative-district-36",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 36",
+   "district": "36",
+   "title": "U.S. House District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-babin",
+     "name": "Brian Babin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 137887
+    },
+    {
+     "id": "rhonda-hart",
+     "name": "Rhonda Hart",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 119489
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5067-u-s-representative-district-37",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 37",
+   "district": "37",
+   "title": "U.S. House District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-casar",
+     "name": "Greg Casar",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 254957
+    },
+    {
+     "id": "lauren-b-pe-a",
+     "name": "Lauren B. Peña",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 49469
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5068-u-s-representative-district-38",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 38",
+   "district": "38",
+   "title": "U.S. House District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jon-bonck",
+     "name": "Jon Bonck",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 156834
+    },
+    {
+     "id": "melissa-mcdonough",
+     "name": "Melissa Mcdonough",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 143784
+    },
+    {
+     "id": "alex-mcmenemy",
+     "name": "Alex Mcmenemy",
+     "party": "GRE",
+     "party_code": "O",
+     "votes": 3430
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5069-u-s-representative-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pat-fallon",
+     "name": "Pat Fallon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 171652
+    },
+    {
+     "id": "jason-pearce",
+     "name": "Jason Pearce",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 134563
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5070-u-s-representative-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lance-gooden",
+     "name": "Lance Gooden",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 130278
+    },
+    {
+     "id": "chelsey-hockett",
+     "name": "Chelsey Hockett",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 122855
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5071-u-s-representative-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 6",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jake-ellzey",
+     "name": "Jake Ellzey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 140014
+    },
+    {
+     "id": "danny-minton",
+     "name": "Danny Minton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 128394
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5039-u-s-representative-district-10",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 10",
+   "district": "10",
+   "title": "U.S. House District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-gober",
+     "name": "Chris Gober",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 161425
+    },
+    {
+     "id": "caitlin-rourk",
+     "name": "Caitlin Rourk",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 138832
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5072-u-s-representative-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 7",
+   "district": "7",
+   "title": "U.S. House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lizzie-pannill-fletcher",
+     "name": "Lizzie Pannill Fletcher",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 152650
+    },
+    {
+     "id": "alexander-hale",
+     "name": "Alexander Hale",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 58993
+    },
+    {
+     "id": "espoir-ngabo",
+     "name": "Espoir Ngabo",
+     "party": "GRE",
+     "party_code": "O",
+     "votes": 3340
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5073-u-s-representative-district-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 8",
+   "district": "8",
+   "title": "U.S. House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "laura-jones",
+     "name": "Laura Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 124441
+    },
+    {
+     "id": "jessica-hart-steinmann",
+     "name": "Jessica Hart Steinmann",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 141660
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5049-u-s-representative-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shaun-finnie",
+     "name": "Shaun Finnie",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 138871
+    },
+    {
+     "id": "steve-toth",
+     "name": "Steve Toth",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 144543
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5074-u-s-representative-district-9",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 9",
+   "district": "9",
+   "title": "U.S. House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leticia-gutierrez",
+     "name": "Leticia Gutierrez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 97888
+    },
+    {
+     "id": "alex-mealer",
+     "name": "Alex Mealer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 72227
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5050-u-s-representative-district-20",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 20",
+   "district": "20",
+   "title": "U.S. House District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "edgardo-rafael-baez",
+     "name": "Edgardo Rafael Baez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 43097
+    },
+    {
+     "id": "joaquin-castro",
+     "name": "Joaquin Castro",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 149397
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5051-u-s-representative-district-21",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 21",
+   "district": "21",
+   "title": "U.S. House District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristin-hook",
+     "name": "Kristin Hook",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 162088
+    },
+    {
+     "id": "mark-teixeira",
+     "name": "Mark Teixeira",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 194302
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5052-u-s-representative-district-22",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 22",
+   "district": "22",
+   "title": "U.S. House District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marquette-greene-scott",
+     "name": "Marquette Greene-Scott",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 124886
+    },
+    {
+     "id": "trever-nehls",
+     "name": "Trever Nehls",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 134110
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5053-u-s-representative-district-23",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 23",
+   "district": "23",
+   "title": "U.S. House District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-herrera",
+     "name": "Brandon Herrera",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 118768
+    },
+    {
+     "id": "ben-mendoza",
+     "name": "Ben Mendoza",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 10451
+    },
+    {
+     "id": "katy-padilla-stout",
+     "name": "Katy Padilla Stout",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 140202
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5043-u-s-representative-district-14",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 14",
+   "district": "14",
+   "title": "U.S. House District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "thurman-bill-bartie",
+     "name": "Thurman Bill Bartie",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 127147
+    },
+    {
+     "id": "randy-weber",
+     "name": "Randy Weber",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 150643
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5044-u-s-representative-district-15",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 15",
+   "district": "15",
+   "title": "U.S. House District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "monica-de-la-cruz",
+     "name": "Monica De La Cruz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 76305
+    },
+    {
+     "id": "bobby-pulido",
+     "name": "Bobby Pulido",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 126204
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5041-u-s-representative-district-12",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 12",
+   "district": "12",
+   "title": "U.S. House District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "craig-goldman",
+     "name": "Craig Goldman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 144438
+    },
+    {
+     "id": "angela-heli-rodriguez-prilliman",
+     "name": "Angela \"Heli\" Rodriguez Prilliman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 127456
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-35300-u-s-representative-district-34",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 34",
+   "district": "34",
+   "title": "U.S. House District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eddie-espinoza",
+     "name": "Eddie Espinoza",
+     "party": "GRE",
+     "party_code": "O",
+     "votes": 4737
+    },
+    {
+     "id": "eric-flores",
+     "name": "Eric Flores",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 80168
+    },
+    {
+     "id": "vicente-gonzalez",
+     "name": "Vicente Gonzalez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 112547
+    },
+    {
+     "id": "chris-royal",
+     "name": "Chris Royal",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 4639
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5054-u-s-representative-district-24",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 24",
+   "district": "24",
+   "title": "U.S. House District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-burge",
+     "name": "Kevin Burge",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 149697
+    },
+    {
+     "id": "beth-van-duyne",
+     "name": "Beth Van Duyne",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 171751
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5055-u-s-representative-district-25",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 25",
+   "district": "25",
+   "title": "U.S. House District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dione-sims",
+     "name": "Dione Sims",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 122854
+    },
+    {
+     "id": "roger-williams",
+     "name": "Roger Williams",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 142721
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5056-u-s-representative-district-26",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 26",
+   "district": "26",
+   "title": "U.S. House District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-gill",
+     "name": "Brandon Gill",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 182648
+    },
+    {
+     "id": "phil-gray",
+     "name": "Phil Gray",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 4308
+    },
+    {
+     "id": "steven-shook",
+     "name": "Steven Shook",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 147944
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5045-u-s-representative-district-16",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 16",
+   "district": "16",
+   "title": "U.S. House District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-bauman",
+     "name": "Adam Bauman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 57247
+    },
+    {
+     "id": "veronica-escobar",
+     "name": "Veronica Escobar",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 138543
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5046-u-s-representative-district-17",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 17",
+   "district": "17",
+   "title": "U.S. House District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pete-sessions",
+     "name": "Pete Sessions",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 143524
+    },
+    {
+     "id": "casey-shepard",
+     "name": "Casey Shepard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 124433
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5057-u-s-representative-district-27",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 27",
+   "district": "27",
+   "title": "U.S. House District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-cloud",
+     "name": "Michael Cloud",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 144467
+    },
+    {
+     "id": "tanya-lloyd",
+     "name": "Tanya Lloyd",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 137927
+    },
+    {
+     "id": "wayne-raasch",
+     "name": "Wayne Raasch",
+     "party": null,
+     "party_code": "O",
+     "votes": 22
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5058-u-s-representative-district-28",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 28",
+   "district": "28",
+   "title": "U.S. House District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "henry-cuellar",
+     "name": "Henry Cuellar",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 112930
+    },
+    {
+     "id": "marl-n-dur-n",
+     "name": "Marlón Durán",
+     "party": "GRE",
+     "party_code": "O",
+     "votes": 7904
+    },
+    {
+     "id": "tano-e-tijerina",
+     "name": "Tano E. Tijerina",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 50867
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5047-u-s-representative-district-18",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 18",
+   "district": "18",
+   "title": "U.S. House District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christian-dashaun-menefee",
+     "name": "Christian Dashaun Menefee",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 185485
+    },
+    {
+     "id": "ronald-dwayne-whitfield",
+     "name": "Ronald Dwayne Whitfield",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29265
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5059-u-s-representative-district-29",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 29",
+   "district": "29",
+   "title": "U.S. House District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "martha-fierro",
+     "name": "Martha Fierro",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 33541
+    },
+    {
+     "id": "sylvia-garcia",
+     "name": "Sylvia Garcia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 133649
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5060-u-s-representative-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "evan-hunt",
+     "name": "Evan Hunt",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 151667
+    },
+    {
+     "id": "keith-self",
+     "name": "Keith Self",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 169243
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5061-u-s-representative-district-30",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 30",
+   "district": "30",
+   "title": "U.S. House District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "frederick-d-haynes-iii",
+     "name": "Frederick D. Haynes Iii",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 186871
+    },
+    {
+     "id": "everett-jackson",
+     "name": "Everett Jackson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 39247
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tx-5062-u-s-representative-district-31",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. House District 31",
+   "district": "31",
+   "title": "U.S. House District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-carter",
+     "name": "John Carter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 164012
+    },
+    {
+     "id": "justin-early",
+     "name": "Justin Early",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 136734
+    },
+    {
+     "id": "greg-stoker",
+     "name": "Greg Stoker",
+     "party": "GRE",
+     "party_code": "O",
+     "votes": 4227
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "vt-4-representative-to-congress-225757",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "vt",
+   "office": "U.S. House (at-large)",
+   "district": null,
+   "title": "U.S. House (at-large)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "becca-balint",
+     "name": "Becca Balint",
+     "party": null,
+     "party_code": "O",
+     "votes": 197608
+    },
+    {
+     "id": "gerald-malloy",
+     "name": "Gerald Malloy",
+     "party": null,
+     "party_code": "O",
+     "votes": 93381
+    },
+    {
+     "id": "suzanne-suz-seymour",
+     "name": "Suzanne Suz Seymour",
+     "party": null,
+     "party_code": "O",
+     "votes": 4331
     }
    ],
    "precincts": {

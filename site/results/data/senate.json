@@ -11,6 +11,7 @@
   "ga-scytl",
   "id-scytl",
   "in-enr",
+  "la-sos",
   "mi-mvic",
   "mt-ersws",
   "nc-sbe",
@@ -21,9 +22,11 @@
   "ri-scytl",
   "sc-clarity",
   "sd-ersws",
+  "tn-sos",
+  "tx-sos",
   "va-scytl"
  ],
- "updated_at": "2026-11-04T13:24:02Z",
+ "updated_at": "2026-11-04T13:29:26Z",
  "certified": false,
  "contests": [
   {
@@ -79,7 +82,7 @@
      "name": "Bert Mizusawa",
      "party": "R",
      "party_code": "R",
-     "votes": 1384613
+     "votes": 1384612
     },
     {
      "id": "write-in",
@@ -254,28 +257,28 @@
      "name": "Kurt Alme",
      "party": "Republican",
      "party_code": "R",
-     "votes": 217154
+     "votes": 217304
     },
     {
      "id": "alani-bankhead",
      "name": "Alani Bankhead",
      "party": "Democrat",
      "party_code": "D",
-     "votes": 53182
+     "votes": 53191
     },
     {
      "id": "kyle-austin",
      "name": "Kyle Austin",
      "party": "Libertarian",
      "party_code": "O",
-     "votes": 8138
+     "votes": 8144
     },
     {
      "id": "seth-bodnar",
      "name": "Seth Bodnar",
      "party": "Independent",
      "party_code": "O",
-     "votes": 166511
+     "votes": 166528
     }
    ],
    "precincts": {
@@ -843,6 +846,190 @@
      "party": "I",
      "party_code": "O",
      "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "tn-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tn",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-hagerty",
+     "name": "Bill Hagerty",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1138436
+    },
+    {
+     "id": "marquita-bradshaw",
+     "name": "Marquita Bradshaw",
+     "party": "D",
+     "party_code": "D",
+     "votes": 886974
+    },
+    {
+     "id": "robert-jones",
+     "name": "Robert Jones",
+     "party": "I",
+     "party_code": "O",
+     "votes": 9398
+    },
+    {
+     "id": "tharon-chandler",
+     "name": "Tharon Chandler",
+     "party": "I",
+     "party_code": "O",
+     "votes": 7689
+    },
+    {
+     "id": "andrew-gerena",
+     "name": "Andrew Gerena",
+     "party": "I",
+     "party_code": "O",
+     "votes": 5633
+    },
+    {
+     "id": "catherine-barcel-barcy-whitson",
+     "name": "Catherine Barcel \"Barcy\" Whitson",
+     "party": "I",
+     "party_code": "O",
+     "votes": 5113
+    },
+    {
+     "id": "jeremy-dean-hearn",
+     "name": "Jeremy Dean Hearn",
+     "party": "I",
+     "party_code": "O",
+     "votes": 4937
+    },
+    {
+     "id": "david-sutman-jr",
+     "name": "David Sutman, Jr.",
+     "party": "I",
+     "party_code": "O",
+     "votes": 3087
+    },
+    {
+     "id": "yoshi-d-matthews",
+     "name": "Yoshi D. Matthews",
+     "party": "I",
+     "party_code": "O",
+     "votes": 3026
+    },
+    {
+     "id": "james-william-macon-iii",
+     "name": "James William Macon III",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2576
+    }
+   ],
+   "precincts": {
+    "reporting": 95,
+    "total": 95,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "la-67997-u-s-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "la",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "text": "Louisiana uses an open primary for these races; if no candidate has a majority the top two go to a runoff.",
+   "choices": [
+    {
+     "id": "jamie-davis",
+     "name": "Jamie Davis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 720106
+    },
+    {
+     "id": "julia-letlow",
+     "name": "Julia Letlow",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 745963
+    }
+   ],
+   "precincts": {
+    "reporting": 3722,
+    "total": 3722,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "tx-5075-u-s-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "tx",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "avery-ayers",
+     "name": "Avery Ayers",
+     "party": null,
+     "party_code": "O",
+     "votes": 1850
+    },
+    {
+     "id": "ted-brown",
+     "name": "Ted Brown",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 186410
+    },
+    {
+     "id": "bradford-brad-hall",
+     "name": "Bradford \"Brad\" Hall",
+     "party": null,
+     "party_code": "O",
+     "votes": 1234
+    },
+    {
+     "id": "zul-mohamed",
+     "name": "Zul Mohamed",
+     "party": null,
+     "party_code": "O",
+     "votes": 175
+    },
+    {
+     "id": "ken-paxton",
+     "name": "Ken Paxton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4166380
+    },
+    {
+     "id": "jade-simmons",
+     "name": "Jade Simmons",
+     "party": null,
+     "party_code": "O",
+     "votes": 1677
+    },
+    {
+     "id": "james-talarico",
+     "name": "James Talarico",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5360196
     }
    ],
    "precincts": {
