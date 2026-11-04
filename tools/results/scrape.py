@@ -166,6 +166,12 @@ def a_clarity_xml(body, src):
              "state": src.get("state", ""), "office": title, "district": None, "title": title,
              "vote_for": to_int(pick(ct, "voteFor", "VoteFor")) or 1, "choices": [],
              "precincts": {"reporting": pr, "total": pt}}
+        for pcs in ct:
+            if pcs.tag.split("}")[-1] == "ParticipatingCounties":
+                for k in pcs:
+                    pn = pick(k, "name", "Name")
+                    if pn:
+                        _cty_add(c, pn, None, 0, {"reporting": to_int(pick(k, "precinctsReported")), "total": to_int(pick(k, "precinctsParticipating"))})
         for ch in ct:
             if ch.tag.split("}")[-1] != "Choice":
                 continue
@@ -175,7 +181,14 @@ def a_clarity_xml(body, src):
                 votes = sum(to_int(v.get("votes") or v.get("Votes")) for v in ch if v.tag.split("}")[-1] == "VoteType")
             party = pick(ch, "party", "Party")
             c["choices"].append({"id": slug(name), "name": name, "party": party, "party_code": party_code(party), "votes": votes})
+            vts = [v for v in ch if v.tag.split("}")[-1] == "VoteType"]
+            tv = [v for v in vts if (v.get("name") or "").lower() == "total votes"] or vts
+            for v in (tv[:1] if tv and (tv[0].get("name") or "").lower() == "total votes" else tv):
+                for k in v:
+                    if k.tag.split("}")[-1] == "County" and k.get("name"):
+                        _cty_add(c, k.get("name"), slug(name), to_int(k.get("votes")))
         if c["choices"]:
+            _cty_finish(c)
             out.append(c)
     return out
 
