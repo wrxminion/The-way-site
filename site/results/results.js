@@ -141,23 +141,39 @@
   function loadFile(f) {
     return getJSON('data/' + f.path).then(function (d) { cache[f.scope] = d; return d; });
   }
+  var STATES = [['al','Alabama'],['ak','Alaska'],['az','Arizona'],['ar','Arkansas'],['ca','California'],['co','Colorado'],['ct','Connecticut'],['de','Delaware'],['dc','District of Columbia'],['fl','Florida'],['ga','Georgia'],['hi','Hawaii'],['id','Idaho'],['il','Illinois'],['in','Indiana'],['ia','Iowa'],['ks','Kansas'],['ky','Kentucky'],['la','Louisiana'],['me','Maine'],['md','Maryland'],['ma','Massachusetts'],['mi','Michigan'],['mn','Minnesota'],['ms','Mississippi'],['mo','Missouri'],['mt','Montana'],['ne','Nebraska'],['nv','Nevada'],['nh','New Hampshire'],['nj','New Jersey'],['nm','New Mexico'],['ny','New York'],['nc','North Carolina'],['nd','North Dakota'],['oh','Ohio'],['ok','Oklahoma'],['or','Oregon'],['pa','Pennsylvania'],['ri','Rhode Island'],['sc','South Carolina'],['sd','South Dakota'],['tn','Tennessee'],['tx','Texas'],['ut','Utah'],['vt','Vermont'],['va','Virginia'],['wa','Washington'],['wv','West Virginia'],['wi','Wisconsin'],['wy','Wyoming']];
+  function stateScope(code) { return code === 'co' ? 'co' : 'state-' + code; }
+  function fillStates(sel) {
+    if (sel.dataset.kind === 'states') return;
+    sel.textContent = ''; sel.dataset.kind = 'states';
+    var o0 = el('option', null, 'Choose a state'); o0.value = ''; sel.appendChild(o0);
+    STATES.forEach(function (x) { var o = el('option', null, x[1]); o.value = x[0]; sel.appendChild(o); });
+  }
   function show() {
     var st = $('statepick');
     st.hidden = !(tab === 'states' || tab === 'cities');
-    var fs = filesFor(tab);
-    if (tab === 'states' || tab === 'cities') {
-      var sel = $('st'), cur = sel.value;
-      sel.textContent = '';
+    var sel = $('st'), fs;
+    if (tab === 'states') {
+      fillStates(sel);
+      if (!sel.value) { $('panel').textContent = ''; $('panel').appendChild(el('p', 'empty', 'Choose a state above to see its results.')); return; }
+      var want = stateScope(sel.value);
+      fs = (manifest.files || []).filter(function (f) { return f.scope === want; });
+    } else if (tab === 'cities') {
+      var cur = sel.dataset.kind === 'cities' ? sel.value : '';
+      fs = filesFor(tab);
+      sel.textContent = ''; sel.dataset.kind = 'cities';
       fs.forEach(function (f) { var o = el('option', null, f.label || f.scope); o.value = f.scope; sel.appendChild(o); });
       if (cur) sel.value = cur;
       fs = fs.filter(function (f) { return f.scope === sel.value; });
+    } else {
+      fs = filesFor(tab);
     }
     if (!fs.length) { $('panel').textContent = ''; $('panel').appendChild(el('p', 'empty', 'Nothing collected for this group yet. It appears here as soon as the official source publishes it.')); return; }
     loadFile(fs[0]).then(renderScope).catch(function () {
       $('panel').textContent = ''; $('panel').appendChild(el('p', 'empty', 'These results could not be loaded just now. Try again in a minute, or use the official sites listed below.'));
     });
   }
-  var TABS = [['senate', 'U.S. Senate'], ['house', 'U.S. House'], ['co', 'Colorado'], ['states', 'Other states'], ['cities', 'Cities']];
+  var TABS = [['senate', 'U.S. Senate'], ['house', 'U.S. House'], ['states', 'States'], ['cities', 'Cities']];
   function renderTabs() {
     var t = $('tabs'); t.textContent = '';
     TABS.forEach(function (x) {
