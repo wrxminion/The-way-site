@@ -525,6 +525,10 @@ def a_nist1622(body, src):
             if loc(t) == "LanguageString" and (t.text or "").strip():
                 return t.text.strip()
         return ""
+    gpu = {}
+    for g in root.iter():
+        if loc(g) == "GpUnit" and g.get("Type") == "County" and g.get("ObjectId"):
+            gpu[g.get("ObjectId")] = (g.get("Name") or "").strip(), to_int(g.get("SubUnitsReported")), to_int(g.get("TotalSubUnits"))
     parties, cands = {}, {}
     for p in root.iter():
         if loc(p) == "Party":
@@ -541,6 +545,7 @@ def a_nist1622(body, src):
         title = (ct.get("Name") or "").strip()
         measure = (ct.get("{http://www.w3.org/2001/XMLSchema-instance}type") or "").endswith("BallotMeasureContest")
         ch = []
+        cty = {}
         for bs in kids(ct, "BallotSelection"):
             vc = None
             for coll in kids(bs, "VoteCountsCollection"):
@@ -548,6 +553,15 @@ def a_nist1622(body, src):
                     if v.get("Type") == "Total":
                         vc = to_int(v.get("Count"))
                         break
+                break
+            cvotes = {}
+            for coll in kids(bs, "VoteCountsCollection"):
+                for v in kids(coll, "VoteCounts"):
+                    if v.get("Type") != "Total":
+                        continue
+                    gid = next((x.text.strip() for x in kids(v, "GpUnitId") if x.text), None)
+                    if gid in gpu:
+                        cvotes[gid] = cvotes.get(gid, 0) + to_int(v.get("Count"))
                 break
             if vc is None:
                 continue
@@ -562,6 +576,8 @@ def a_nist1622(body, src):
             if not nm:
                 continue
             ch.append({"id": slug(nm) or "option", "name": nm, "party": party, "party_code": party_code(party), "votes": vc})
+            for gid, n in cvotes.items():
+                cty.setdefault(gid, {})[ch[-1]["id"]] = n
         if len(ch) < 1:
             continue
         up = title.upper()
@@ -570,6 +586,12 @@ def a_nist1622(body, src):
         c = {"id": slug("oh-" + (ct.get("ObjectId") or title))[:60], "kind": "measure" if measure else ("judicial" if re.search(r"retain|retention", title, re.I) else "candidate"),
              "level": "federal" if fed else "state", "state": "oh", "office": title, "district": m.group(1) if (fed and m) else None,
              "title": title, "vote_for": to_int(ct.get("VotesAllowed")) or 1, "choices": ch, "precincts": {"reporting": 0, "total": 0}}
+        if cty:
+            c["_cty"] = {}
+            for gid, by in cty.items():
+                nm_, rp, tt = gpu[gid]
+                c["_cty"][nm_] = {"choices": by, "precincts": {"reporting": rp, "total": tt} if tt else None}
+            _cty_finish(c)
         # ids from ObjectId are unique per contest; keep readable ones stable across passes
         out.append(c)
         if fed:
