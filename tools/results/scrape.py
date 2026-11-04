@@ -166,6 +166,12 @@ def a_clarity_xml(body, src):
              "state": src.get("state", ""), "office": title, "district": None, "title": title,
              "vote_for": to_int(pick(ct, "voteFor", "VoteFor")) or 1, "choices": [],
              "precincts": {"reporting": pr, "total": pt}}
+        for pcs in ct:
+            if pcs.tag.split("}")[-1] == "ParticipatingCounties":
+                for k in pcs:
+                    pn = pick(k, "name", "Name")
+                    if pn:
+                        _cty_add(c, pn, None, 0, {"reporting": to_int(pick(k, "precinctsReported")), "total": to_int(pick(k, "precinctsParticipating"))})
         for ch in ct:
             if ch.tag.split("}")[-1] != "Choice":
                 continue
@@ -175,7 +181,14 @@ def a_clarity_xml(body, src):
                 votes = sum(to_int(v.get("votes") or v.get("Votes")) for v in ch if v.tag.split("}")[-1] == "VoteType")
             party = pick(ch, "party", "Party")
             c["choices"].append({"id": slug(name), "name": name, "party": party, "party_code": party_code(party), "votes": votes})
+            vts = [v for v in ch if v.tag.split("}")[-1] == "VoteType"]
+            tv = [v for v in vts if (v.get("name") or "").lower() == "total votes"] or vts
+            for v in (tv[:1] if tv and (tv[0].get("name") or "").lower() == "total votes" else tv):
+                for k in v:
+                    if k.tag.split("}")[-1] == "County" and k.get("name"):
+                        _cty_add(c, k.get("name"), slug(name), to_int(k.get("votes")))
         if c["choices"]:
+            _cty_finish(c)
             out.append(c)
     return out
 
@@ -198,6 +211,38 @@ RE_US_HOUSE = re.compile(r"^(?:(?:u\.?s\.?|united states)\s+house\b|member,\s*ho
 RE_STATE_LEVEL = re.compile(r"governor|lieutenant|attorney general|secretary of state|commissioner|superintendent|"
                             r"state senate|state house|house of delegates|public service|\bpsc\b|treasurer|auditor|comptroller|"
                             r"supreme court|court of appeals|constitutional amendment", re.I)
+
+
+def _scytl_counties(src, c, item_id):
+    """Per-county rows for one Scytl contest from the public site's own breakdown feed (data/ballot-item/<id>, breakdownResults).
+    Fails soft: if the call or the shape is wrong the contest just has no counties."""
+    try:
+        base = src["url"].split("/ballot-items")[0]
+        body, _, _ = fetch(base + "/data/ballot-item/" + str(item_id), {}, src.get("user_agent"))
+        br = (json.loads(body.decode("utf-8-sig")).get("ballotItemWithBreakdown") or {}).get("breakdownResults") or []
+    except Exception:
+        return
+    ids = [x["id"] for x in c["choices"]]
+    rows = []
+    for b in br:
+        name = _en((b.get("locality") or {}).get("name"))
+        if not name:
+            continue
+        by = {}
+        for o in b.get("ballotOptions") or []:
+            nm = _en(o.get("name"))
+            abbr = _en((o.get("party") or {}).get("abbreviation")) or _en((o.get("party") or {}).get("name"))
+            if abbr:
+                nm = re.sub(r"\s*\(" + re.escape(abbr) + r"\)\s*$", "", nm)
+            by[slug(nm) or "option"] = max(0, to_int(o.get("voteCount")))
+        row = {"name": name, "choices": [{"id": i, "votes": by.get(i, 0)} for i in ids]}
+        ps = b.get("precinctReportingStatus") or {}
+        if ps.get("totalUnits"):
+            row["precincts"] = {"reporting": to_int(ps.get("reportingUnits")), "total": to_int(ps.get("totalUnits"))}
+        rows.append(row)
+    if rows:
+        c["counties"] = sorted(rows, key=lambda r: r["name"])
+    time.sleep(0.2)
 
 
 def a_scytl_json(body, src):
@@ -270,12 +315,41 @@ def a_scytl_json(body, src):
             c["choices"].append(ch)
             if o.get("isWinner") is True:
                 c["called"] = {"winner": oid, "by": src.get("name", "source"), "at": None}
+        if level != "local" and src.get("counties", True) and len([1 for x in out if x.get("counties")]) < int(src.get("county_max", 60)):
+            _scytl_counties(src, c, it.get("id"))
         out.append(c)
         if sen or hse:
             f = json.loads(json.dumps(c))
             f["_scope"] = "senate" if sen else "house"
             out.append(f)
     return out
+
+
+CA_COUNTIES = "alameda alpine amador butte calaveras colusa contra-costa del-norte el-dorado fresno glenn humboldt imperial inyo kern kings lake lassen los-angeles madera marin mariposa mendocino merced modoc mono monterey napa nevada orange placer plumas riverside sacramento san-benito san-bernardino san-diego san-francisco san-joaquin san-luis-obispo san-mateo santa-barbara santa-clara santa-cruz shasta sierra siskiyou solano sonoma stanislaus sutter tehama trinity tulare tuolumne ventura yolo yuba".split()
+_CA_CACHE = {}
+
+
+def _ca_county_fetch(url, ua=None, ttl=600):
+    """One county response for url + "/county/<slug>" (statewide races and ballot measures only). Cached for ttl seconds."""
+    hit = _CA_CACHE.get(url)
+    if hit and time.time() - hit[0] < ttl:
+        return hit[1]
+    try:
+        body, _, _ = fetch(url, {}, ua)
+        d = json.loads(body.decode("utf-8-sig"))
+        d = d[0] if isinstance(d, list) and d else d
+    except Exception:
+        d = None
+    _CA_CACHE[url] = (time.time(), d)
+    return d
+
+
+def _ca_county_rows(url, ua=None):
+    """{county display name: parsed json} for all 58 counties, fetched 8 at a time."""
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        res = list(ex.map(lambda sl: _ca_county_fetch(url + "/county/" + sl, ua), CA_COUNTIES))
+    return {sl.replace("-", " ").title(): d for sl, d in zip(CA_COUNTIES, res) if d}
 
 
 def a_ca_sos_json(body, src):
@@ -305,6 +379,14 @@ def a_ca_sos_json(body, src):
                 c = {"id": base, "kind": "candidate", "level": "federal" if house else "state", "state": "ca",
                      "office": "U.S. House" if house else title, "district": (re.search(r"District (\d+)", title) or [None, None])[1] if house else None,
                      "title": title, "vote_for": 1, "choices": ch, "precincts": prec}
+                if not house and src.get("counties", True) and "/district/" not in url:
+                    for cname, cd in _ca_county_rows(url, src.get("user_agent")).items():
+                        pm = re.search(r"\(([\d,]+) of ([\d,]+)\)", str(cd.get("Reporting") or ""))
+                        by = {slug(str(x.get("Name") or "").strip()) or "option": to_int(x.get("Votes")) for x in cd.get("candidates") or []}
+                        _cty_add(c, cname, None, 0, {"reporting": to_int(pm.group(1)), "total": to_int(pm.group(2))} if pm else None)
+                        for i, v in by.items():
+                            _cty_add(c, cname, i, v)
+                    _cty_finish(c)
                 out.append(c)
                 if house:
                     f = json.loads(json.dumps(c)); f["_scope"] = "house"; out.append(f)
@@ -313,6 +395,8 @@ def a_ca_sos_json(body, src):
             if not isinstance(items, list) or not items or "yesVotes" not in items[0]:
                 continue
             judge = key in ("supreme-court", "court-of-appeal") or "Court" in title
+            ctys = _ca_county_rows(url, src.get("user_agent")) if (src.get("counties", True) and "/district/" not in url) else {}
+            first = len(out)
             for it in items:
                 nm = str(it.get("Name") or "").strip()
                 num = str(it.get("Number") or "").strip()
@@ -322,6 +406,12 @@ def a_ca_sos_json(body, src):
                             "choices": [{"id": "yes", "name": "Yes", "party": None, "party_code": "O", "votes": to_int(it.get("yesVotes"))},
                                         {"id": "no", "name": "No", "party": None, "party_code": "O", "votes": to_int(it.get("noVotes"))}],
                             "precincts": prec})
+                for cname, cd in ctys.items():
+                    row = next((r for r in cd.get(key) or [] if str(r.get("Number") or "").strip() == num and str(r.get("Name") or "").strip() == nm), None)
+                    if row:
+                        _cty_add(out[-1], cname, "yes", to_int(row.get("yesVotes")))
+                        _cty_add(out[-1], cname, "no", to_int(row.get("noVotes")))
+                _cty_finish(out[-1])
     return out
 
 
@@ -478,6 +568,10 @@ def a_nist1622(body, src):
             if loc(t) == "LanguageString" and (t.text or "").strip():
                 return t.text.strip()
         return ""
+    gpu = {}
+    for g in root.iter():
+        if loc(g) == "GpUnit" and g.get("Type") == "County" and g.get("ObjectId"):
+            gpu[g.get("ObjectId")] = (g.get("Name") or "").strip(), to_int(g.get("SubUnitsReported")), to_int(g.get("TotalSubUnits"))
     parties, cands = {}, {}
     for p in root.iter():
         if loc(p) == "Party":
@@ -494,6 +588,7 @@ def a_nist1622(body, src):
         title = (ct.get("Name") or "").strip()
         measure = (ct.get("{http://www.w3.org/2001/XMLSchema-instance}type") or "").endswith("BallotMeasureContest")
         ch = []
+        cty = {}
         for bs in kids(ct, "BallotSelection"):
             vc = None
             for coll in kids(bs, "VoteCountsCollection"):
@@ -501,6 +596,15 @@ def a_nist1622(body, src):
                     if v.get("Type") == "Total":
                         vc = to_int(v.get("Count"))
                         break
+                break
+            cvotes = {}
+            for coll in kids(bs, "VoteCountsCollection"):
+                for v in kids(coll, "VoteCounts"):
+                    if v.get("Type") != "Total":
+                        continue
+                    gid = next((x.text.strip() for x in kids(v, "GpUnitId") if x.text), None)
+                    if gid in gpu:
+                        cvotes[gid] = cvotes.get(gid, 0) + to_int(v.get("Count"))
                 break
             if vc is None:
                 continue
@@ -515,6 +619,8 @@ def a_nist1622(body, src):
             if not nm:
                 continue
             ch.append({"id": slug(nm) or "option", "name": nm, "party": party, "party_code": party_code(party), "votes": vc})
+            for gid, n in cvotes.items():
+                cty.setdefault(gid, {})[ch[-1]["id"]] = n
         if len(ch) < 1:
             continue
         up = title.upper()
@@ -523,6 +629,12 @@ def a_nist1622(body, src):
         c = {"id": slug("oh-" + (ct.get("ObjectId") or title))[:60], "kind": "measure" if measure else ("judicial" if re.search(r"retain|retention", title, re.I) else "candidate"),
              "level": "federal" if fed else "state", "state": "oh", "office": title, "district": m.group(1) if (fed and m) else None,
              "title": title, "vote_for": to_int(ct.get("VotesAllowed")) or 1, "choices": ch, "precincts": {"reporting": 0, "total": 0}}
+        if cty:
+            c["_cty"] = {}
+            for gid, by in cty.items():
+                nm_, rp, tt = gpu[gid]
+                c["_cty"][nm_] = {"choices": by, "precincts": {"reporting": rp, "total": tt} if tt else None}
+            _cty_finish(c)
         # ids from ObjectId are unique per contest; keep readable ones stable across passes
         out.append(c)
         if fed:
