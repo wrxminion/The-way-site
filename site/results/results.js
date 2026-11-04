@@ -111,7 +111,74 @@
     meta.push(fmtNum(s.total) + ' votes counted');
     if (!calledId) meta.push('No call yet');
     li.appendChild(el('div', 'meta', meta.join(' · ')));
+    li.appendChild(countyBlock(c, s.ch));
     return li;
+  }
+  // County breakdown: contest.counties = [{name, fips?, choices:[{id,votes}], precincts?:{reporting,total}}] (see tools/results/README.md).
+  // Open state, search and sort survive the 60 second refresh.
+  var openCounty = {}, countySort = {}, countyFind = {};
+  function th(text, cls, scope) { var e = el('th', cls, text); e.scope = scope; return e; }
+  function countyBlock(c, ch) {
+    var d = el('details', 'cty');
+    var list = Array.isArray(c.counties) ? c.counties.filter(function (k) { return k && k.name; }) : [];
+    d.appendChild(el('summary', null, list.length ? 'By county (' + list.length + ')' : 'By county'));
+    var key = c.id || c.title || '';
+    if (openCounty[key]) d.open = true;
+    d.addEventListener('toggle', function () { openCounty[key] = d.open; });
+    if (!list.length) {
+      d.appendChild(el('p', 'cty-empty', 'County numbers for this race have not been collected yet. They appear here when the official source publishes them by county. The state totals above are not affected.'));
+      return d;
+    }
+    var cols = ch.slice(0, 4);
+    var tools = el('div', 'cty-tools');
+    var inp = el('input'); inp.type = 'search'; inp.placeholder = 'Find a county'; inp.maxLength = 60; inp.value = countyFind[key] || '';
+    inp.setAttribute('aria-label', 'Find a county in ' + (c.title || 'this race'));
+    var sel = el('select'); sel.setAttribute('aria-label', 'Sort counties');
+    [['az', 'A to Z'], ['votes', 'Most votes counted']].forEach(function (o) { var op = el('option', null, o[1]); op.value = o[0]; sel.appendChild(op); });
+    sel.value = countySort[key] || 'az';
+    tools.appendChild(inp); tools.appendChild(sel); d.appendChild(tools);
+    var wrap = el('div', 'cty-scroll'); d.appendChild(wrap);
+    function draw() {
+      wrap.textContent = '';
+      var f = inp.value.toLowerCase().trim(); countyFind[key] = inp.value; countySort[key] = sel.value;
+      var rows = list.map(function (k) {
+        var by = {}; (k.choices || []).forEach(function (x) { by[x.id] = x.votes || 0; });
+        var tot = (k.choices || []).reduce(function (s, x) { return s + (x.votes || 0); }, 0);
+        return { k: k, by: by, tot: tot };
+      }).filter(function (r) { return !f || String(r.k.name).toLowerCase().indexOf(f) >= 0; });
+      rows.sort(function (a, b) {
+        var byName = String(a.k.name).localeCompare(String(b.k.name));
+        return sel.value === 'votes' ? (b.tot - a.tot) || byName : byName;
+      });
+      if (!rows.length) { wrap.appendChild(el('p', 'cty-empty', 'No county matches that search.')); return; }
+      var t = el('table', 'cty-tbl');
+      t.appendChild(el('caption', 'sr', 'County results for ' + (c.title || 'this race')));
+      var hr = el('tr'); hr.appendChild(th('County', null, 'col'));
+      cols.forEach(function (x) { hr.appendChild(th(x.name + (x.party ? ' (' + x.party + ')' : ''), 'n', 'col')); });
+      hr.appendChild(th('Reporting', 'n', 'col'));
+      var hd = el('thead'); hd.appendChild(hr); t.appendChild(hd);
+      var tb = el('tbody');
+      rows.forEach(function (r) {
+        var tr = el('tr'); tr.appendChild(th(r.k.name, null, 'row'));
+        var lead = -1, best = 0;
+        cols.forEach(function (x, i) { if ((r.by[x.id] || 0) > best) { best = r.by[x.id]; lead = i; } });
+        cols.forEach(function (x, i) {
+          var v = r.by[x.id] || 0;
+          var td = el('td', 'n' + (i === lead ? ' lead' : ''), fmtNum(v));
+          if (r.tot) td.appendChild(el('small', null, (v / r.tot * 100).toFixed(1) + '%'));
+          tr.appendChild(td);
+        });
+        var p = r.k.precincts, rep = 'not given';
+        if (p && p.total) rep = fmtNum(p.reporting) + ' of ' + fmtNum(p.total) + ' (' + Math.round(p.reporting / p.total * 100) + '%)';
+        tr.appendChild(el('td', 'n', rep));
+        tb.appendChild(tr);
+      });
+      t.appendChild(tb); wrap.appendChild(t);
+      if (ch.length > cols.length) wrap.appendChild(el('p', 'cty-empty', 'Showing the top ' + cols.length + ' candidates by state total. Others are in the state totals above.'));
+    }
+    inp.addEventListener('input', draw); sel.addEventListener('change', draw);
+    draw();
+    return d;
   }
   // Who says a race is decided. AP calls and state leader marks are not certified results; only "certified" is.
   function callText(cl) {

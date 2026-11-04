@@ -73,6 +73,7 @@ Every file is UTF-8 JSON. Write each file to a temp name and rename it, so the p
 - `votes`: whole numbers, never negative. Percentages are computed by the page, not stored.
 - `called`: `null`, or `{"winner": "<choice id>", "by": "<source name>", "at": "ISO or null"}`. Set only when the official source says the race is decided. We never call a race ourselves.
 - Order of contests and choices does not matter; the page sorts by votes.
+- `counties` (optional, per contest): county breakdown for that race. `[{"name": "Adams", "fips": "08001", "precincts": {"reporting": 40, "total": 60}, "choices": [{"id": "<same choice id as the contest>", "votes": 1200}]}]`. Match `choices[].id` to the contest's choice ids; counties are shown A to Z or by votes counted. Include all counties (or parishes, boroughs, independent cities, D.C. wards if that is all there is) the source lists, even those with zero votes. Leave the field out until the source publishes it; the page then shows a plain "not collected yet" line. Statewide totals stay in `choices`.
 
 ### Collector safety rules (built into scrape.py)
 
