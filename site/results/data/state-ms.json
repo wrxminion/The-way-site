@@ -5,7 +5,7 @@
  "source_ids": [
   "ms-counties"
  ],
- "updated_at": "2026-11-04T21:45:55Z",
+ "updated_at": "2026-11-04T21:54:10Z",
  "certified": false,
  "contests": [
   {
@@ -78,7 +78,7 @@
      "name": "Bennie G. Thompson",
      "party": null,
      "party_code": "O",
-     "votes": 7595
+     "votes": 7633
     },
     {
      "id": "ron-eller",
@@ -105,7 +105,7 @@
    "by_county": {
     "Madison": {
      "ron-eller": 1966,
-     "bennie-g-thompson": 7595,
+     "bennie-g-thompson": 7633,
      "bennie-foster": 180,
      "write-ins": 8
     }
@@ -131,7 +131,7 @@
     {
      "id": "michael-guest",
      "name": "Michael Guest",
-     "party": null,
+     "party": "Republican (per AP)",
      "party_code": "R",
      "votes": 56047
     },
@@ -176,7 +176,13 @@
     "unit": "counties"
    },
    "partial": true,
-   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide.",
+   "called": {
+    "winner": "michael-guest",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:21:31.654Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "ms-u-s-senate",
@@ -193,21 +199,21 @@
      "name": "Cindy Hyde-Smith",
      "party": null,
      "party_code": "R",
-     "votes": 78690
+     "votes": 78798
     },
     {
      "id": "scott-colom",
      "name": "Scott Colom",
      "party": null,
      "party_code": "D",
-     "votes": 69156
+     "votes": 69328
     },
     {
      "id": "ty-pinkins",
      "name": "Ty Pinkins",
      "party": null,
      "party_code": "I",
-     "votes": 3150
+     "votes": 3155
     },
     {
      "id": "write-ins",
@@ -225,9 +231,9 @@
      "write-ins": 68
     },
     "Madison": {
-     "scott-colom": 22540,
-     "cindy-hyde-smith": 22256,
-     "ty-pinkins": 685,
+     "scott-colom": 22712,
+     "cindy-hyde-smith": 22364,
+     "ty-pinkins": 690,
      "write-ins": 65
     },
     "Rankin": {
@@ -368,36 +374,36 @@
      "name": "Gene D. Berry",
      "party": null,
      "party_code": "O",
-     "votes": 17956
+     "votes": 18041
     },
     {
-     "id": "david-bridges",
-     "name": "David Bridges",
+     "id": "david-bfidges",
+     "name": "David Bfidges",
      "party": null,
      "party_code": "O",
-     "votes": 16040
+     "votes": 16134
     },
     {
-     "id": "atan-rhea",
-     "name": "Atan Rhea",
+     "id": "alan-rhea",
+     "name": "Alan Rhea",
      "party": null,
      "party_code": "O",
-     "votes": 5722
+     "votes": 5765
     },
     {
      "id": "write-ins",
      "name": "Write-ins",
      "party": null,
      "party_code": "O",
-     "votes": 381
+     "votes": 386
     }
    ],
    "by_county": {
     "Madison": {
-     "gene-d-berry": 17956,
-     "david-bridges": 16040,
-     "atan-rhea": 5722,
-     "write-ins": 381
+     "gene-d-berry": 18041,
+     "david-bfidges": 16134,
+     "alan-rhea": 5765,
+     "write-ins": 386
     }
    },
    "precincts": {
@@ -1257,6 +1263,53 @@
      "christopher-chris-dunn": 691,
      "craig-t-williams": 520,
      "dianne-mcnair-gaddis": 313
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-county-judge-place-2-madison-county",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "County Judge, Place 2 Madison County",
+   "district": null,
+   "title": "County Judge, Place 2 Madison County",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lindsey-hetr",
+     "name": "Lindsey Hetr",
+     "party": null,
+     "party_code": "O",
+     "votes": 23973
+    },
+    {
+     "id": "todd-mcalpin",
+     "name": "Todd McAlpin",
+     "party": null,
+     "party_code": "O",
+     "votes": 16565
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 359
+    }
+   ],
+   "by_county": {
+    "Madison": {
+     "lindsey-hetr": 23973,
+     "todd-mcalpin": 16565,
+     "write-ins": 359
     }
    },
    "precincts": {
