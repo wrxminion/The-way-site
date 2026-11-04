@@ -1,5 +1,5 @@
 // Copies recommended social posts from the research output folder into
-// site/social-picks/data.json, then (with --push) commits and pushes that one file.
+// site/social-picks/data.json (an admin then clicks "Load AI suggestions" in Admin, Media, Social posts), then (with --push) commits and pushes that one file.
 // No AI, no network calls except git, no keys or tokens stored here.
 //
 // Usage (Windows, from the repo checkout):
@@ -21,7 +21,7 @@ const opt = (n, d) => { const i = args.indexOf('--' + n); return i >= 0 ? args[i
 const outDir = opt('out');
 const repo = path.resolve(opt('repo', path.join(__dirname, '..')));
 const push = args.includes('--push');
-const MAX_POSTS = 60, MAX_AGE_DAYS = 7, MAX_LEN = 2000;
+const MAX_POSTS = 60, MAX_AGE_DAYS = 7, MAX_LEN = 500; // the social_posts table allows 3 to 500 characters
 if (!outDir || !fs.existsSync(outDir)) { console.error('Need --out <existing folder>'); process.exit(2); }
 
 const dataFile = path.join(repo, 'site', 'social-picks', 'data.json');
@@ -30,10 +30,14 @@ const PLAT = { facebook: 'facebook', fb: 'facebook', bluesky: 'bluesky', bsky: '
 
 function norm(p, mtime) {
   const platform = PLAT[String(p.platform || '').toLowerCase().trim()];
-  const text = clean(p.text).slice(0, MAX_LEN);
-  if (!platform || !text) return null;
+  const text = clean(p.text).replace(/[<>]/g, '');
+  if (!platform || text.length < 3) return null;
   let link = clean(p.link);
   if (link && !/^https:\/\/[^\s]+$/.test(link)) link = '';
+  // the site adds the link on its own line, so the whole post must fit
+  const total = text.length + (link ? link.length + 1 : 0);
+  if (total > MAX_LEN) return null;
+  if (platform !== 'facebook' && total > 300) return null; // Bluesky limit
   const source = clean(p.source).slice(0, 200);
   const id = crypto.createHash('sha1').update(platform + '|' + text + '|' + link).digest('hex').slice(0, 12);
   return { id, platform, text, link, source, created: mtime.toISOString().slice(0, 10) };

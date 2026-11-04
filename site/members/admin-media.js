@@ -365,6 +365,29 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, uid }) {
           h('div', { class: 'btns' }, h('button', { class: 'primary', type: 'submit' }, 'Add draft'))));
       }
 
+      // load posts suggested by the local research model (admins only). New ones become AI-made drafts.
+      if (admin) {
+        kids.push(h('div', { class: 'btns' }, h('button', { class: 'quiet', onclick: action(async () => {
+          const r = await fetch('/social-picks/data.json?t=' + Date.now(), { cache: 'no-store' });
+          if (!r.ok) throw new Error('Could not read the suggestions file.');
+          const d = await r.json();
+          const have = new Set(posts.map((x) => x.platform + '|' + x.body));
+          const rows = [];
+          for (const s of (d && d.posts) || []) {
+            const plats = s.platform === 'both' ? ['facebook', 'bluesky'] : [s.platform];
+            for (const pl of plats) {
+              const body = String(s.text || '').replace(/[<>]/g, '').trim() + (s.link ? '\n' + s.link : '');
+              if (!accounts.has(pl) || body.length < 3 || body.length > 500 || have.has(pl + '|' + body)) continue;
+              have.add(pl + '|' + body);
+              rows.push({ platform: pl, body, status: 'draft', source: 'llm' });
+            }
+          }
+          if (rows.length) await q(sb.from('social_posts').insert(rows));
+          sub = 'draft'; await load();
+          msg.replaceChildren(notice(rows.length ? `Added ${rows.length} suggested draft${rows.length === 1 ? '' : 's'}. Read each one before you approve it.` : 'No new suggestions.'));
+        }, msg) }, 'Load AI suggestions')));
+      }
+
       const mine = posts.filter((x) => x.platform === p.id);
       const subs = admin ? ['draft', 'approved', 'posted'] : ['approved', 'posted'];
       const LBL = { draft: 'Drafts', approved: 'Approved', posted: 'Posted' };
