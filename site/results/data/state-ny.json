@@ -5,7 +5,7 @@
  "source_ids": [
   "ny-boe"
  ],
- "updated_at": "2026-11-04T13:57:33Z",
+ "updated_at": "2026-11-04T14:17:18Z",
  "certified": false,
  "contests": [
   {
@@ -36,6 +36,68 @@
    "precincts": {
     "reporting": 12144,
     "total": 13187,
+    "unit": "election districts"
+   }
+  },
+  {
+   "id": "ny-state-comptroller",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ny",
+   "office": "State Comptroller",
+   "district": null,
+   "title": "State Comptroller",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "thomas-p-dinapoli",
+     "name": "Thomas P. DiNapoli",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3694544
+    },
+    {
+     "id": "joseph-hernandez",
+     "name": "Joseph Hernandez",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2018046
+    }
+   ],
+   "precincts": {
+    "reporting": 12144,
+    "total": 13187,
+    "unit": "election districts"
+   }
+  },
+  {
+   "id": "ny-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ny",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "letitia-a-james",
+     "name": "Letitia A. James",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3463959
+    },
+    {
+     "id": "saritha-komatireddy",
+     "name": "Saritha Komatireddy",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2282393
+    }
+   ],
+   "precincts": {
+    "reporting": 12144,
+    "total": 13162,
     "unit": "election districts"
    }
   }
