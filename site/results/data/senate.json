@@ -4,9 +4,10 @@
  "label": "U.S. Senate",
  "source_ids": [
   "ga-scytl",
+  "nc-sbe",
   "va-scytl"
  ],
- "updated_at": "2026-11-04T02:23:35Z",
+ "updated_at": "2026-11-04T02:27:40Z",
  "certified": false,
  "contests": [
   {
@@ -55,21 +56,21 @@
      "name": "Mark R. Warner",
      "party": "D",
      "party_code": "D",
-     "votes": 1479579
+     "votes": 1547620
     },
     {
      "id": "bert-mizusawa",
      "name": "Bert Mizusawa",
      "party": "R",
      "party_code": "R",
-     "votes": 999215
+     "votes": 1030731
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 6981
+     "votes": 7354
     }
    ],
    "precincts": {
@@ -77,6 +78,47 @@
     "total": 133,
     "unit": "localities"
    }
+  },
+  {
+   "id": "nc-us-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nc",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-dublin",
+     "name": "Michael Dublin",
+     "party": "GRE",
+     "party_code": "O",
+     "votes": 27240
+    },
+    {
+     "id": "michael-whatley",
+     "name": "Michael Whatley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1290791
+    },
+    {
+     "id": "roy-cooper",
+     "name": "Roy Cooper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2012643
+    },
+    {
+     "id": "shannon-w-bray",
+     "name": "Shannon W. Bray",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 40165
+    }
+   ],
+   "precincts": {}
   }
  ]
 }
