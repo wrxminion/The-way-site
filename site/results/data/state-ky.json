@@ -1,0 +1,6908 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-ky",
+ "label": "Kentucky (unofficial)",
+ "source_ids": [
+  "ky-sos"
+ ],
+ "updated_at": "2026-11-04T21:36:33Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ky-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ky",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andy-barr",
+     "name": "Andy Barr",
+     "party": "R",
+     "party_code": "R",
+     "votes": 784869
+    },
+    {
+     "id": "charles-booker",
+     "name": "Charles Booker",
+     "party": "D",
+     "party_code": "D",
+     "votes": 612357
+    },
+    {
+     "id": "christopher-campbell",
+     "name": "Christopher Campbell",
+     "party": null,
+     "party_code": "O",
+     "votes": 29892
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 152
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   },
+   "called": {
+    "winner": "andy-barr",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:16:00.684Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ky-united-states-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ky",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-r-comer",
+     "name": "James R. Comer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 154910
+    },
+    {
+     "id": "john-drew-williams",
+     "name": "John \"Drew\" Williams",
+     "party": "D",
+     "party_code": "D",
+     "votes": 74260
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   },
+   "called": {
+    "winner": "james-r-comer",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T00:56:30.063Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ky-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ky",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "s-brett-guthrie",
+     "name": "S. Brett Guthrie",
+     "party": "R",
+     "party_code": "R",
+     "votes": 145139
+    },
+    {
+     "id": "megan-wingfield",
+     "name": "Megan Wingfield",
+     "party": "D",
+     "party_code": "D",
+     "votes": 81112
+    },
+    {
+     "id": "thomas-a-loecken",
+     "name": "Thomas A. Loecken",
+     "party": "I",
+     "party_code": "O",
+     "votes": 4807
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   },
+   "called": {
+    "winner": "s-brett-guthrie",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:42:38.829Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ky-united-states-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ky",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "morgan-mcgarvey",
+     "name": "Morgan McGarvey",
+     "party": "D",
+     "party_code": "D",
+     "votes": 174781
+    },
+    {
+     "id": "maria-teresa-rodriguez",
+     "name": "Maria Teresa Rodriguez",
+     "party": "R",
+     "party_code": "R",
+     "votes": 73719
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   },
+   "called": {
+    "winner": "morgan-mcgarvey",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T00:03:20.762Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ky-united-states-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ky",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ed-gallrein",
+     "name": "Ed Gallrein",
+     "party": "R",
+     "party_code": "R",
+     "votes": 137623
+    },
+    {
+     "id": "melissa-claire-strange",
+     "name": "Melissa Claire Strange",
+     "party": "D",
+     "party_code": "D",
+     "votes": 103713
+    },
+    {
+     "id": "jeremy-todd",
+     "name": "Jeremy Todd",
+     "party": "L",
+     "party_code": "O",
+     "votes": 12484
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   },
+   "called": {
+    "winner": "ed-gallrein",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:43:12.412Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ky-united-states-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ky",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hal-rogers",
+     "name": "Hal Rogers",
+     "party": "R",
+     "party_code": "R",
+     "votes": 139808
+    },
+    {
+     "id": "ned-pillersdorf",
+     "name": "Ned Pillersdorf",
+     "party": "D",
+     "party_code": "D",
+     "votes": 49805
+    },
+    {
+     "id": "mikel-wein",
+     "name": "Mikel Wein",
+     "party": "I",
+     "party_code": "O",
+     "votes": 4117
+    },
+    {
+     "id": "gerardo-serrano",
+     "name": "Gerardo Serrano",
+     "party": "I",
+     "party_code": "O",
+     "votes": 2738
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   },
+   "called": {
+    "winner": "hal-rogers",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T00:00:02.966Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ky-united-states-house-of-representatives-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ky",
+   "office": "U.S. House District 6",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zach-dembo",
+     "name": "Zach Dembo",
+     "party": "D",
+     "party_code": "D",
+     "votes": 138777
+    },
+    {
+     "id": "ralph-alvarado",
+     "name": "Ralph Alvarado",
+     "party": "R",
+     "party_code": "R",
+     "votes": 114030
+    },
+    {
+     "id": "jay-j-bowman",
+     "name": "Jay J Bowman",
+     "party": "I",
+     "party_code": "O",
+     "votes": 6710
+    },
+    {
+     "id": "pete-lynch",
+     "name": "Pete Lynch",
+     "party": null,
+     "party_code": "O",
+     "votes": 3836
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 208
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   },
+   "called": {
+    "winner": "zach-dembo",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:16:11.543Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 2",
+   "district": null,
+   "title": "State Senate District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "danny-carroll",
+     "name": "Danny Carroll",
+     "party": "R",
+     "party_code": "R",
+     "votes": 30565
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 4",
+   "district": null,
+   "title": "State Senate District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-m-robby-mills",
+     "name": "Robert M. \"Robby\" Mills",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24709
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 1389
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 6",
+   "district": null,
+   "title": "State Senate District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christian-furman",
+     "name": "Christian Furman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 24735
+    },
+    {
+     "id": "lindsey-tichenor",
+     "name": "Lindsey Tichenor",
+     "party": "R",
+     "party_code": "R",
+     "votes": 23582
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 8",
+   "district": null,
+   "title": "State Senate District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gary-m-boswell",
+     "name": "Gary M. Boswell",
+     "party": "R",
+     "party_code": "R",
+     "votes": 21825
+    },
+    {
+     "id": "vicki-quisenberry",
+     "name": "Vicki Quisenberry",
+     "party": "D",
+     "party_code": "D",
+     "votes": 16437
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 10",
+   "district": null,
+   "title": "State Senate District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-deneen",
+     "name": "Matt Deneen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20522
+    },
+    {
+     "id": "christopher-gatrost",
+     "name": "Christopher Gatrost",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12953
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 12",
+   "district": null,
+   "title": "State Senate District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amanda-mays-bledsoe",
+     "name": "Amanda Mays Bledsoe",
+     "party": "R",
+     "party_code": "R",
+     "votes": 31531
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 14",
+   "district": null,
+   "title": "State Senate District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-mudd",
+     "name": "Ben Mudd",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25927
+    },
+    {
+     "id": "carrie-gribbins-truitt",
+     "name": "Carrie Gribbins Truitt",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13473
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 16",
+   "district": null,
+   "title": "State Senate District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "george-maxwell-max-wise",
+     "name": "George Maxwell \"Max\" Wise",
+     "party": "R",
+     "party_code": "R",
+     "votes": 28142
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 18",
+   "district": null,
+   "title": "State Senate District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robin-l-webb",
+     "name": "Robin L. Webb",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24565
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 20",
+   "district": null,
+   "title": "State Senate District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gex-jay-williams",
+     "name": "Gex \"jay\" Williams",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20793
+    },
+    {
+     "id": "stella-r-pollard",
+     "name": "Stella R. Pollard",
+     "party": "D",
+     "party_code": "D",
+     "votes": 18163
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 22",
+   "district": null,
+   "title": "State Senate District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "donald-r-douglas",
+     "name": "Donald R. Douglas",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24795
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 1958
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 24",
+   "district": null,
+   "title": "State Senate District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shelley-funke-frommeyer",
+     "name": "Shelley \"Funke\" Frommeyer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24113
+    },
+    {
+     "id": "joshua-baker",
+     "name": "Joshua Baker",
+     "party": "D",
+     "party_code": "D",
+     "votes": 18866
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 26",
+   "district": null,
+   "title": "State Senate District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "karen-a-berg",
+     "name": "Karen A. Berg",
+     "party": "D",
+     "party_code": "D",
+     "votes": 30081
+    },
+    {
+     "id": "everett-c-corley",
+     "name": "Everett C. Corley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14009
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 28",
+   "district": null,
+   "title": "State Senate District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-elkins",
+     "name": "Greg Elkins",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25524
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 30",
+   "district": null,
+   "title": "State Senate District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-d-smith",
+     "name": "Brandon D. Smith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25074
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 32",
+   "district": null,
+   "title": "State Senate District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-wilson",
+     "name": "Mike Wilson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25813
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 34",
+   "district": null,
+   "title": "State Senate District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jared-k-carpenter",
+     "name": "Jared K. Carpenter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 22660
+    },
+    {
+     "id": "jessica-d-mcintosh",
+     "name": "Jessica D. McIntosh",
+     "party": "D",
+     "party_code": "D",
+     "votes": 21595
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 36",
+   "district": null,
+   "title": "State Senate District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sarah-cole-mcintosh",
+     "name": "Sarah Cole McIntosh",
+     "party": "D",
+     "party_code": "D",
+     "votes": 26755
+    },
+    {
+     "id": "julie-raque-adams",
+     "name": "Julie Raque Adams",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24663
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-senate-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State Senate District 38",
+   "district": null,
+   "title": "State Senate District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-nemes",
+     "name": "Mike Nemes",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25941
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 1",
+   "district": null,
+   "title": "State House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-jack-rudy",
+     "name": "Steven Jack Rudy",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10897
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 2",
+   "district": null,
+   "title": "State House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kim-holloway",
+     "name": "Kim Holloway",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10435
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 3",
+   "district": null,
+   "title": "State House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "randy-bridges",
+     "name": "Randy Bridges",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8396
+    },
+    {
+     "id": "michael-mcvicker",
+     "name": "Michael McVicker",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5299
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 4",
+   "district": null,
+   "title": "State House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "d-wade-williams",
+     "name": "D. Wade Williams",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10304
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 5",
+   "district": null,
+   "title": "State House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mary-beth-imes",
+     "name": "Mary Beth Imes",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10004
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 6",
+   "district": null,
+   "title": "State House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-freeland",
+     "name": "Chris Freeland",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12453
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 7",
+   "district": null,
+   "title": "State House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "suzanne-miles",
+     "name": "Suzanne Miles",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8174
+    },
+    {
+     "id": "laurie-c-campbell",
+     "name": "Laurie C. Campbell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6526
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 8",
+   "district": null,
+   "title": "State House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "walker-wood-thomas",
+     "name": "Walker Wood Thomas",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9030
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 9",
+   "district": null,
+   "title": "State House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "myron-b-dossett",
+     "name": "Myron B. Dossett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4578
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 10",
+   "district": null,
+   "title": "State House District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-calloway",
+     "name": "Josh Calloway",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9402
+    },
+    {
+     "id": "john-b-whipple",
+     "name": "John B. Whipple",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6252
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 11",
+   "district": null,
+   "title": "State House District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "j-t-payne",
+     "name": "J. T. Payne",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8449
+    },
+    {
+     "id": "janelle-rowena-glass",
+     "name": "Janelle Rowena Glass",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5018
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 12",
+   "district": null,
+   "title": "State House District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-gooch-jr",
+     "name": "Jim Gooch JR.",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10628
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 13",
+   "district": null,
+   "title": "State House District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "d-j-johnson",
+     "name": "D. J. Johnson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7083
+    },
+    {
+     "id": "rhondalyn-randolph",
+     "name": "Rhondalyn Randolph",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5728
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 14",
+   "district": null,
+   "title": "State House District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wes-pate",
+     "name": "Wes Pate",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10236
+    },
+    {
+     "id": "donna-haynes",
+     "name": "Donna Haynes",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3806
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 15",
+   "district": null,
+   "title": "State House District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rebecca-raymer",
+     "name": "Rebecca Raymer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9514
+    },
+    {
+     "id": "chris-waddell",
+     "name": "Chris Waddell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3433
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 16",
+   "district": null,
+   "title": "State House District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-petrie",
+     "name": "Jason Petrie",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10085
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 17",
+   "district": null,
+   "title": "State House District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-b-duvall",
+     "name": "Robert B. Duvall",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8307
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 18",
+   "district": null,
+   "title": "State House District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "samara-heavrin",
+     "name": "Samara Heavrin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10288
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 19",
+   "district": null,
+   "title": "State House District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-lee-meredith",
+     "name": "Michael Lee Meredith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10014
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 20",
+   "district": null,
+   "title": "State House District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-jackson",
+     "name": "Kevin Jackson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7079
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 21",
+   "district": null,
+   "title": "State House District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-neighbors",
+     "name": "Amy Neighbors",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12044
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 22",
+   "district": null,
+   "title": "State House District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shawn-mcpherson",
+     "name": "Shawn McPherson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9830
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 23",
+   "district": null,
+   "title": "State House District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-riley",
+     "name": "Steve Riley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9234
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 24",
+   "district": null,
+   "title": "State House District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-dale-bivens",
+     "name": "Ryan Dale Bivens",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10284
+    },
+    {
+     "id": "johnny-pennington",
+     "name": "Johnny Pennington",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3341
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 25",
+   "district": null,
+   "title": "State House District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-bratcher",
+     "name": "Steve Bratcher",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7259
+    },
+    {
+     "id": "cherlyn-evette-smith",
+     "name": "Cherlyn Evette Smith",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5866
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 26",
+   "district": null,
+   "title": "State House District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "peyton-griffee",
+     "name": "Peyton Griffee",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8430
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 27",
+   "district": null,
+   "title": "State House District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joseph-redmon",
+     "name": "Joseph Redmon",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6898
+    },
+    {
+     "id": "susan-c-doman",
+     "name": "Susan C. Doman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5338
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 28",
+   "district": null,
+   "title": "State House District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "almaria-baker",
+     "name": "Almaria Baker",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7090
+    },
+    {
+     "id": "jared-a-bauman",
+     "name": "Jared A. Bauman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6116
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 29",
+   "district": null,
+   "title": "State House District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cassie-blausey",
+     "name": "Cassie Blausey",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9596
+    },
+    {
+     "id": "chris-lewis",
+     "name": "Chris Lewis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8647
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 30",
+   "district": null,
+   "title": "State House District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mitra-subedi",
+     "name": "Mitra Subedi",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8234
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 31",
+   "district": null,
+   "title": "State House District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-hall",
+     "name": "Tim Hall",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10375
+    },
+    {
+     "id": "susan-tyler-witten",
+     "name": "Susan Tyler Witten",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7825
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 32",
+   "district": null,
+   "title": "State House District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tina-bojanowski",
+     "name": "Tina Bojanowski",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13739
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 33",
+   "district": null,
+   "title": "State House District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-hardin",
+     "name": "Jennifer Hardin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9857
+    },
+    {
+     "id": "jason-michael-nemes",
+     "name": "Jason Michael Nemes",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9323
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 34",
+   "district": null,
+   "title": "State House District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sarah-stalker",
+     "name": "Sarah Stalker",
+     "party": "D",
+     "party_code": "D",
+     "votes": 15782
+    },
+    {
+     "id": "victoria-ligon",
+     "name": "Victoria Ligon",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5678
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 35",
+   "district": null,
+   "title": "State House District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lisa-willner",
+     "name": "Lisa Willner",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6359
+    },
+    {
+     "id": "bret-shultz",
+     "name": "Bret Shultz",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3206
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 36",
+   "district": null,
+   "title": "State House District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-f-hodgson",
+     "name": "John F. Hodgson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10389
+    },
+    {
+     "id": "william-woody-zorn",
+     "name": "William \"Woody\" Zorn",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10289
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 37",
+   "district": null,
+   "title": "State House District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emily-myers-callaway",
+     "name": "Emily Myers Callaway",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7622
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 38",
+   "district": null,
+   "title": "State House District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rachel-roarx",
+     "name": "Rachel Roarx",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7474
+    },
+    {
+     "id": "carrie-sanders-mckeehan",
+     "name": "Carrie Sanders McKeehan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4690
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 39",
+   "district": null,
+   "title": "State House District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-stanford",
+     "name": "Ryan Stanford",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7846
+    },
+    {
+     "id": "matt-lockett",
+     "name": "Matt Lockett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7630
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 40",
+   "district": null,
+   "title": "State House District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nima-kulkarni",
+     "name": "Nima Kulkarni",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8047
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 41",
+   "district": null,
+   "title": "State House District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mary-lou-marzian",
+     "name": "Mary Lou Marzian",
+     "party": "D",
+     "party_code": "D",
+     "votes": 17335
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 42",
+   "district": null,
+   "title": "State House District 42",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joshua-watkins",
+     "name": "Joshua Watkins",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10076
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 43",
+   "district": null,
+   "title": "State House District 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-levertis-bell",
+     "name": "Robert LeVertis Bell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9472
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 73
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-44",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 44",
+   "district": null,
+   "title": "State House District 44",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kenya-wade",
+     "name": "Kenya Wade",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10107
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 45",
+   "district": null,
+   "title": "State House District 45",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-moore",
+     "name": "Adam Moore",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11185
+    },
+    {
+     "id": "killian-timoney",
+     "name": "Killian Timoney",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9455
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 46",
+   "district": null,
+   "title": "State House District 46",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "al-gentry",
+     "name": "Al Gentry",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10156
+    },
+    {
+     "id": "brad-woolridge",
+     "name": "Brad Woolridge",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5336
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 47",
+   "district": null,
+   "title": "State House District 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "felicia-rabourn",
+     "name": "Felicia Rabourn",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11325
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-48",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 48",
+   "district": null,
+   "title": "State House District 48",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "suhas-kulkarni",
+     "name": "Suhas Kulkarni",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11446
+    },
+    {
+     "id": "ken-fleming",
+     "name": "Ken Fleming",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10635
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 49",
+   "district": null,
+   "title": "State House District 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "thomas-huff",
+     "name": "Thomas Huff",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11060
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-50",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 50",
+   "district": null,
+   "title": "State House District 50",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "candy-massaroni",
+     "name": "Candy Massaroni",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10513
+    },
+    {
+     "id": "j-d-netherton",
+     "name": "J. D. Netherton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5466
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-51",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 51",
+   "district": null,
+   "title": "State House District 51",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-sarge-pollock",
+     "name": "Michael \"Sarge\" Pollock",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10905
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-52",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 52",
+   "district": null,
+   "title": "State House District 52",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-g-jones",
+     "name": "Kevin G. Jones",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10180
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-53",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 53",
+   "district": null,
+   "title": "State House District 53",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-allen-tipton",
+     "name": "James Allen Tipton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12723
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-54",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 54",
+   "district": null,
+   "title": "State House District 54",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-b-elliott",
+     "name": "Daniel B. Elliott",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10543
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-55",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 55",
+   "district": null,
+   "title": "State House District 55",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kim-king",
+     "name": "Kim King",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9397
+    },
+    {
+     "id": "katrina-a-sexton",
+     "name": "Katrina A. Sexton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6673
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-56",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 56",
+   "district": null,
+   "title": "State House District 56",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-a-fister",
+     "name": "Daniel A. Fister",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9816
+    },
+    {
+     "id": "david-graves",
+     "name": "David Graves",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9298
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-57",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 57",
+   "district": null,
+   "title": "State House District 57",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "erika-hancock",
+     "name": "Erika Hancock",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11653
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-58",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 58",
+   "district": null,
+   "title": "State House District 58",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-henson-decker",
+     "name": "Jennifer Henson Decker",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10451
+    },
+    {
+     "id": "andrew-thomas-monarch",
+     "name": "Andrew Thomas Monarch",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6501
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-59",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 59",
+   "district": null,
+   "title": "State House District 59",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-w-osborne",
+     "name": "David W. Osborne",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10646
+    },
+    {
+     "id": "stephanie-white",
+     "name": "Stephanie White",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8114
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-60",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 60",
+   "district": null,
+   "title": "State House District 60",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marianne-proctor",
+     "name": "Marianne Proctor",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9884
+    },
+    {
+     "id": "tracey-reid",
+     "name": "Tracey Reid",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6548
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-61",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 61",
+   "district": null,
+   "title": "State House District 61",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "savannah-maddox",
+     "name": "Savannah Maddox",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10385
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-62",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 62",
+   "district": null,
+   "title": "State House District 62",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tony-hampton",
+     "name": "Tony Hampton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9489
+    },
+    {
+     "id": "randy-jackson-simpkins",
+     "name": "Randy Jackson Simpkins",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6657
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-63",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 63",
+   "district": null,
+   "title": "State House District 63",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cole-cuzick",
+     "name": "Cole Cuzick",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8518
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-64",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 64",
+   "district": null,
+   "title": "State House District 64",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kimberly-poore-moser",
+     "name": "Kimberly Poore Moser",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8258
+    },
+    {
+     "id": "william-nick-whalen",
+     "name": "William Nick Whalen",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6520
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-65",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 65",
+   "district": null,
+   "title": "State House District 65",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "aaron-john-currin",
+     "name": "Aaron John Currin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7648
+    },
+    {
+     "id": "stephanie-a-dietz",
+     "name": "Stephanie A. Dietz",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6769
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-66",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 66",
+   "district": null,
+   "title": "State House District 66",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "t-j-roberts",
+     "name": "T. J. Roberts",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9542
+    },
+    {
+     "id": "jason-ellis",
+     "name": "Jason Ellis",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6004
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-67",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 67",
+   "district": null,
+   "title": "State House District 67",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-lehman",
+     "name": "Matthew Lehman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8418
+    },
+    {
+     "id": "terry-hatton",
+     "name": "Terry Hatton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5637
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-68",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 68",
+   "district": null,
+   "title": "State House District 68",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-clines",
+     "name": "Mike Clines",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10538
+    },
+    {
+     "id": "amy-amin",
+     "name": "Amy Amin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7702
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-69",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 69",
+   "district": null,
+   "title": "State House District 69",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-doan",
+     "name": "Steven Doan",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6046
+    },
+    {
+     "id": "wilanne-stangel",
+     "name": "Wilanne Stangel",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5579
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-70",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 70",
+   "district": null,
+   "title": "State House District 70",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-fisher",
+     "name": "Mike Fisher",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10348
+    },
+    {
+     "id": "charlotte-harris",
+     "name": "Charlotte Harris",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5446
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-71",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 71",
+   "district": null,
+   "title": "State House District 71",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-bray",
+     "name": "Josh Bray",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9301
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-72",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 72",
+   "district": null,
+   "title": "State House District 72",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-r-koch",
+     "name": "Matthew R. Koch",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10418
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-73",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 73",
+   "district": null,
+   "title": "State House District 73",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-konstantopoulos",
+     "name": "Daniel Konstantopoulos",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8584
+    },
+    {
+     "id": "chelsea-kirk",
+     "name": "Chelsea Kirk",
+     "party": "D",
+     "party_code": "D",
+     "votes": 7196
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-74",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 74",
+   "district": null,
+   "title": "State House District 74",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-f-charles",
+     "name": "David F. Charles",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11091
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-75",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 75",
+   "district": null,
+   "title": "State House District 75",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lindsey-burke",
+     "name": "Lindsey Burke",
+     "party": "D",
+     "party_code": "D",
+     "votes": 8727
+    },
+    {
+     "id": "jeff-forsyth",
+     "name": "Jeff Forsyth",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3005
+    },
+    {
+     "id": "geoffrey-m-geoff-young",
+     "name": "Geoffrey M. \"Geoff\" Young",
+     "party": null,
+     "party_code": "O",
+     "votes": 505
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-76",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 76",
+   "district": null,
+   "title": "State House District 76",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anne-gay-donworth",
+     "name": "Anne Gay Donworth",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12185
+    },
+    {
+     "id": "avram-phoenix-hicks",
+     "name": "Avram Phoenix Hicks",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4085
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-77",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 77",
+   "district": null,
+   "title": "State House District 77",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "george-a-brown-jr",
+     "name": "George A. Brown JR.",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11696
+    },
+    {
+     "id": "jason-griffith",
+     "name": "Jason Griffith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2642
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-78",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 78",
+   "district": null,
+   "title": "State House District 78",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-hart",
+     "name": "Mark Hart",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11110
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-79",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 79",
+   "district": null,
+   "title": "State House District 79",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chad-r-aull",
+     "name": "Chad R. Aull",
+     "party": "D",
+     "party_code": "D",
+     "votes": 10226
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-80",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 80",
+   "district": null,
+   "title": "State House District 80",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-meade",
+     "name": "David Meade",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9583
+    },
+    {
+     "id": "mary-russell",
+     "name": "Mary Russell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3223
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-81",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 81",
+   "district": null,
+   "title": "State House District 81",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deanna-frazier-gordon",
+     "name": "Deanna Frazier Gordon",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9313
+    },
+    {
+     "id": "anthony-looney",
+     "name": "Anthony Looney",
+     "party": "D",
+     "party_code": "D",
+     "votes": 6399
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-82",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 82",
+   "district": null,
+   "title": "State House District 82",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nick-wilson",
+     "name": "Nick Wilson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8141
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-83",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 83",
+   "district": null,
+   "title": "State House District 83",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joshua-branscum",
+     "name": "Joshua Branscum",
+     "party": "R",
+     "party_code": "R",
+     "votes": 11373
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-84",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 84",
+   "district": null,
+   "title": "State House District 84",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-fugate",
+     "name": "Chris Fugate",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9074
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-85",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 85",
+   "district": null,
+   "title": "State House District 85",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "r-shane-baker",
+     "name": "R. Shane Baker",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10818
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-86",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 86",
+   "district": null,
+   "title": "State House District 86",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-o-dell-smith",
+     "name": "Tom O'Dell Smith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7846
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-87",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 87",
+   "district": null,
+   "title": "State House District 87",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-bowling",
+     "name": "Adam Bowling",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8056
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-88",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 88",
+   "district": null,
+   "title": "State House District 88",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vanessa-grossl",
+     "name": "Vanessa Grossl",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7720
+    },
+    {
+     "id": "l-scott-miller",
+     "name": "L. Scott Miller",
+     "party": "I",
+     "party_code": "O",
+     "votes": 6939
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-89",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 89",
+   "district": null,
+   "title": "State House District 89",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "timmy-truett",
+     "name": "Timmy Truett",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10739
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-90",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 90",
+   "district": null,
+   "title": "State House District 90",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "derek-lewis",
+     "name": "Derek Lewis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9514
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-91",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 91",
+   "district": null,
+   "title": "State House District 91",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "darrell-billings",
+     "name": "Darrell Billings",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8427
+    },
+    {
+     "id": "david-johnson",
+     "name": "David Johnson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5457
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-92",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 92",
+   "district": null,
+   "title": "State House District 92",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-blanton",
+     "name": "John Blanton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10172
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-93",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 93",
+   "district": null,
+   "title": "State House District 93",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adrielle-camuel",
+     "name": "Adrielle Camuel",
+     "party": "D",
+     "party_code": "D",
+     "votes": 9576
+    },
+    {
+     "id": "hannah-beth-rivera",
+     "name": "Hannah Beth Rivera",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5263
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-94",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 94",
+   "district": null,
+   "title": "State House District 94",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mitchum-addison-whitaker",
+     "name": "Mitchum Addison Whitaker",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8709
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-95",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 95",
+   "district": null,
+   "title": "State House District 95",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tanner-hesterberg",
+     "name": "Tanner Hesterberg",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8452
+    },
+    {
+     "id": "johnny-ray-turner",
+     "name": "Johnny Ray Turner",
+     "party": "D",
+     "party_code": "D",
+     "votes": 5598
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-96",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 96",
+   "district": null,
+   "title": "State House District 96",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "patrick-flannery",
+     "name": "Patrick Flannery",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8140
+    },
+    {
+     "id": "pamela-lewis",
+     "name": "Pamela Lewis",
+     "party": "D",
+     "party_code": "D",
+     "votes": 3774
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-97",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 97",
+   "district": null,
+   "title": "State House District 97",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bobby-w-mccool",
+     "name": "Bobby W. McCool",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7995
+    },
+    {
+     "id": "rebekah-d-skaggs",
+     "name": "Rebekah D. Skaggs",
+     "party": "D",
+     "party_code": "D",
+     "votes": 2590
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-98",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 98",
+   "district": null,
+   "title": "State House District 98",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "aaron-thompson",
+     "name": "Aaron Thompson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9512
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-99",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 99",
+   "district": null,
+   "title": "State House District 99",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-lee-white",
+     "name": "Richard Lee White",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7648
+    },
+    {
+     "id": "iva-markicevic-daley",
+     "name": "Iva Markicevic Daley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 4586
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-state-house-district-100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "State House District 100",
+   "district": null,
+   "title": "State House District 100",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-sharp",
+     "name": "Scott Sharp",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8021
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-constitutional-amendment-1",
+   "kind": "measure",
+   "level": "state",
+   "state": "ky",
+   "office": "Constitutional Amendment 1",
+   "district": null,
+   "title": "Constitutional Amendment 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 896220
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 371660
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-justice-of-the-supreme-court-3rd-supreme-court-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Justice of the Supreme Court, 3rd Supreme Court District",
+   "district": null,
+   "title": "Justice of the Supreme Court, 3rd Supreme Court District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "debra-hembree-lambert",
+     "name": "Debra Hembree Lambert",
+     "party": null,
+     "party_code": "O",
+     "votes": 97761
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-judge-of-the-court-of-appeals-3rd-appellate-district-2nd-division-u",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Judge of the Court of Appeals, 3rd Appellate District 2nd Division (unexpired term)",
+   "district": null,
+   "title": "Judge of the Court of Appeals, 3rd Appellate District 2nd Division (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-lay",
+     "name": "Greg Lay",
+     "party": null,
+     "party_code": "O",
+     "votes": 94819
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-judge-of-the-court-of-appeals-5th-appellate-district-1st-division-u",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Judge of the Court of Appeals, 5th Appellate District 1st Division (unexpired term)",
+   "district": null,
+   "title": "Judge of the Court of Appeals, 5th Appellate District 1st Division (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lucy-ferguson-vanmeter",
+     "name": "Lucy Ferguson Vanmeter",
+     "party": null,
+     "party_code": "O",
+     "votes": 108065
+    },
+    {
+     "id": "will-moynahan",
+     "name": "Will Moynahan",
+     "party": null,
+     "party_code": "O",
+     "votes": 76414
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-circuit-judge-6th-judicial-circuit-division-1-unexpired-term",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Circuit Judge, 6th Judicial Circuit, Division 1 (unexpired term)",
+   "district": null,
+   "title": "Circuit Judge, 6th Judicial Circuit, Division 1 (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bryce-caldwell",
+     "name": "Bryce Caldwell",
+     "party": null,
+     "party_code": "O",
+     "votes": 16679
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-circuit-judge-family-court-8th-judicial-circuit-division-3-unexpire",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Circuit Judge \"Family Court\", 8th Judicial Circuit, Division 3 (unexpired term)",
+   "district": null,
+   "title": "Circuit Judge \"Family Court\", 8th Judicial Circuit, Division 3 (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rebecca-adams-simpson",
+     "name": "Rebecca Adams Simpson",
+     "party": null,
+     "party_code": "O",
+     "votes": 22559
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-circuit-judge-18th-judicial-circuit-division-1-unexpired-term",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Circuit Judge, 18th Judicial Circuit, Division 1 (unexpired term)",
+   "district": null,
+   "title": "Circuit Judge, 18th Judicial Circuit, Division 1 (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-joey-verax-iv",
+     "name": "William \"Joey\" Verax IV.",
+     "party": null,
+     "party_code": "O",
+     "votes": 8908
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-circuit-judge-family-court-28th-judicial-circuit-division-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Circuit Judge \"Family Court\", 28th Judicial Circuit, Division 4",
+   "district": null,
+   "title": "Circuit Judge \"Family Court\", 28th Judicial Circuit, Division 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jane-adams-venters",
+     "name": "Jane Adams Venters",
+     "party": null,
+     "party_code": "O",
+     "votes": 18402
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-circuit-judge-50th-judicial-circuit-division-1-unexpired-term",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Circuit Judge, 50th Judicial Circuit, Division 1 (unexpired term)",
+   "district": null,
+   "title": "Circuit Judge, 50th Judicial Circuit, Division 1 (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "whitney-johns",
+     "name": "Whitney Johns",
+     "party": null,
+     "party_code": "O",
+     "votes": 8368
+    },
+    {
+     "id": "christopher-reed",
+     "name": "Christopher Reed",
+     "party": null,
+     "party_code": "O",
+     "votes": 5262
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-circuit-judge-family-court-54th-judicial-circuit-division-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Circuit Judge \"Family Court\", 54th Judicial Circuit, Division 4",
+   "district": null,
+   "title": "Circuit Judge \"Family Court\", 54th Judicial Circuit, Division 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-dusing",
+     "name": "Jennifer Dusing",
+     "party": null,
+     "party_code": "O",
+     "votes": 29045
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-circuit-judge-family-court-55th-judicial-circuit-division-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Circuit Judge \"Family Court\", 55th Judicial Circuit, Division 3",
+   "district": null,
+   "title": "Circuit Judge \"Family Court\", 55th Judicial Circuit, Division 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amanda-m-spalding",
+     "name": "Amanda M. Spalding",
+     "party": null,
+     "party_code": "O",
+     "votes": 13720
+    },
+    {
+     "id": "monica-meredith",
+     "name": "Monica Meredith",
+     "party": null,
+     "party_code": "O",
+     "votes": 6546
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-1st-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 1st Judicial District",
+   "district": null,
+   "title": "District Judge, 1st Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-stephen-medlin",
+     "name": "Mark Stephen Medlin",
+     "party": null,
+     "party_code": "O",
+     "votes": 4154
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-2nd-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 2nd Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 2nd Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "todd-s-jones",
+     "name": "Todd S. Jones",
+     "party": null,
+     "party_code": "O",
+     "votes": 12685
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-2nd-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 2nd Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 2nd Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jenny-hines",
+     "name": "Jenny Hines",
+     "party": null,
+     "party_code": "O",
+     "votes": 13236
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-3rd-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 3rd Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 3rd Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-lindsey-adams",
+     "name": "John Lindsey Adams",
+     "party": null,
+     "party_code": "O",
+     "votes": 8227
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-3rd-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 3rd Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 3rd Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "j-foster-cotthoff",
+     "name": "J. Foster Cotthoff",
+     "party": null,
+     "party_code": "O",
+     "votes": 8135
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-4th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 4th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 4th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-g-massamore",
+     "name": "David G. Massamore",
+     "party": null,
+     "party_code": "O",
+     "votes": 7802
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-4th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 4th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 4th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kim-poe-gilliam",
+     "name": "Kim Poe Gilliam",
+     "party": null,
+     "party_code": "O",
+     "votes": 8014
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-5th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 5th Judicial District",
+   "district": null,
+   "title": "District Judge, 5th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-leonard",
+     "name": "Ben Leonard",
+     "party": null,
+     "party_code": "O",
+     "votes": 6362
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-6th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 6th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 6th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "j-nick-payne",
+     "name": "J. Nick Payne",
+     "party": null,
+     "party_code": "O",
+     "votes": 12577
+    },
+    {
+     "id": "lelah-rogers",
+     "name": "Lelah Rogers",
+     "party": null,
+     "party_code": "O",
+     "votes": 11923
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-6th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 6th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 6th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-l-quattrocchi",
+     "name": "Brian L. Quattrocchi",
+     "party": null,
+     "party_code": "O",
+     "votes": 12451
+    },
+    {
+     "id": "phillip-j-page",
+     "name": "Phillip J. Page",
+     "party": null,
+     "party_code": "O",
+     "votes": 11014
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-6th-judicial-district-division-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 6th Judicial District, Division 3",
+   "district": null,
+   "title": "District Judge, 6th Judicial District, Division 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shannon-meyer",
+     "name": "Shannon Meyer",
+     "party": null,
+     "party_code": "O",
+     "votes": 17089
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-7th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 7th Judicial District",
+   "district": null,
+   "title": "District Judge, 7th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ken-williams",
+     "name": "Ken Williams",
+     "party": null,
+     "party_code": "O",
+     "votes": 7337
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-8th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 8th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 8th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kimberly-geoghegan",
+     "name": "Kimberly Geoghegan",
+     "party": null,
+     "party_code": "O",
+     "votes": 21169
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-8th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 8th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 8th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brent-j-potter",
+     "name": "Brent J. Potter",
+     "party": null,
+     "party_code": "O",
+     "votes": 22108
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-8th-judicial-district-division-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 8th Judicial District, Division 3",
+   "district": null,
+   "title": "District Judge, 8th Judicial District, Division 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-brown",
+     "name": "John Brown",
+     "party": null,
+     "party_code": "O",
+     "votes": 22201
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-9th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 9th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 9th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shelt-michael-lewis",
+     "name": "Shelt Michael Lewis",
+     "party": null,
+     "party_code": "O",
+     "votes": 19874
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-9th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 9th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 9th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kim-winkenhofer-shumate",
+     "name": "Kim Winkenhofer Shumate",
+     "party": null,
+     "party_code": "O",
+     "votes": 23035
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-10th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 10th Judicial District",
+   "district": null,
+   "title": "District Judge, 10th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "teresa-r-mcmahan-miller",
+     "name": "Teresa R. McMahan-Miller",
+     "party": null,
+     "party_code": "O",
+     "votes": 4526
+    },
+    {
+     "id": "david-c-perkins",
+     "name": "David C. Perkins",
+     "party": null,
+     "party_code": "O",
+     "votes": 2895
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-11th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 11th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 11th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-sullivan-anderson",
+     "name": "Amy Sullivan Anderson",
+     "party": null,
+     "party_code": "O",
+     "votes": 13754
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-11th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 11th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 11th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-mike-hall-jr",
+     "name": "William \"Mike\" Hall JR.",
+     "party": null,
+     "party_code": "O",
+     "votes": 13669
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-12th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 12th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 12th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-fendley",
+     "name": "Daniel Fendley",
+     "party": null,
+     "party_code": "O",
+     "votes": 20086
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-12th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 12th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 12th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jessica-n-beard",
+     "name": "Jessica N. Beard",
+     "party": null,
+     "party_code": "O",
+     "votes": 19639
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-13th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 13th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 13th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-l-gullette-iii",
+     "name": "Robert L. Gullette III.",
+     "party": null,
+     "party_code": "O",
+     "votes": 16922
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-13th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 13th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 13th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "janet-c-booth",
+     "name": "Janet C. Booth",
+     "party": null,
+     "party_code": "O",
+     "votes": 17860
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-14th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 14th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 14th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bolton-bevins",
+     "name": "Bolton Bevins",
+     "party": null,
+     "party_code": "O",
+     "votes": 20314
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-14th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 14th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 14th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sarah-hays-spedding",
+     "name": "Sarah Hays Spedding",
+     "party": null,
+     "party_code": "O",
+     "votes": 20319
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-15th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 15th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 15th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-m-smith",
+     "name": "Josh M. Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 7439
+    },
+    {
+     "id": "enguerrand-meyrat",
+     "name": "Enguerrand Meyrat",
+     "party": null,
+     "party_code": "O",
+     "votes": 1562
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-15th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 15th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 15th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-c-burke",
+     "name": "Amy C. Burke",
+     "party": null,
+     "party_code": "O",
+     "votes": 7645
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-16th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 16th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 16th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ann-ruttle",
+     "name": "Ann Ruttle",
+     "party": null,
+     "party_code": "O",
+     "votes": 29057
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-16th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 16th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 16th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kenneth-l-easterling",
+     "name": "Kenneth L. Easterling",
+     "party": null,
+     "party_code": "O",
+     "votes": 27864
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-16th-judicial-district-division-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 16th Judicial District, Division 3",
+   "district": null,
+   "title": "District Judge, 16th Judicial District, Division 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "douglas-j-grothaus",
+     "name": "Douglas J. Grothaus",
+     "party": null,
+     "party_code": "O",
+     "votes": 28352
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-17th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 17th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 17th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cameron-j-blau",
+     "name": "Cameron J. Blau",
+     "party": null,
+     "party_code": "O",
+     "votes": 20666
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-17th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 17th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 17th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "erin-sizemore",
+     "name": "Erin Sizemore",
+     "party": null,
+     "party_code": "O",
+     "votes": 19781
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-18th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 18th Judicial District",
+   "district": null,
+   "title": "District Judge, 18th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gregory-e-j-coulson",
+     "name": "Gregory E. J. Coulson",
+     "party": null,
+     "party_code": "O",
+     "votes": 6200
+    },
+    {
+     "id": "brian-t-canupp",
+     "name": "Brian T. Canupp",
+     "party": null,
+     "party_code": "O",
+     "votes": 5820
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-19th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 19th Judicial District",
+   "district": null,
+   "title": "District Judge, 19th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kim-leet-razor",
+     "name": "Kim Leet Razor",
+     "party": null,
+     "party_code": "O",
+     "votes": 7853
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-20th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 20th Judicial District",
+   "district": null,
+   "title": "District Judge, 20th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-e-craft",
+     "name": "Paul E. Craft",
+     "party": null,
+     "party_code": "O",
+     "votes": 7929
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-21st-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 21st Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 21st Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-willie-roberts",
+     "name": "William \"Willie\" Roberts",
+     "party": null,
+     "party_code": "O",
+     "votes": 12798
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-21st-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 21st Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 21st Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "don-blair",
+     "name": "Don Blair",
+     "party": null,
+     "party_code": "O",
+     "votes": 12597
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-22nd-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 22nd Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 22nd Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "denotra-spruill-gunther",
+     "name": "Denotra Spruill Gunther",
+     "party": null,
+     "party_code": "O",
+     "votes": 60802
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-22nd-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 22nd Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 22nd Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shannon-brooks",
+     "name": "Shannon Brooks",
+     "party": null,
+     "party_code": "O",
+     "votes": 46178
+    },
+    {
+     "id": "alex-garcia",
+     "name": "Alex Garcia",
+     "party": null,
+     "party_code": "O",
+     "votes": 34692
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-22nd-judicial-district-division-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 22nd Judicial District, Division 3",
+   "district": null,
+   "title": "District Judge, 22nd Judicial District, Division 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lindsay-hughes-thurston",
+     "name": "Lindsay Hughes Thurston",
+     "party": null,
+     "party_code": "O",
+     "votes": 62350
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-22nd-judicial-district-division-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 22nd Judicial District, Division 4",
+   "district": null,
+   "title": "District Judge, 22nd Judicial District, Division 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-moore-murphy",
+     "name": "Melissa Moore Murphy",
+     "party": null,
+     "party_code": "O",
+     "votes": 62807
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-22nd-judicial-district-division-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 22nd Judicial District, Division 5",
+   "district": null,
+   "title": "District Judge, 22nd Judicial District, Division 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-tackett",
+     "name": "John Tackett",
+     "party": null,
+     "party_code": "O",
+     "votes": 61758
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-23rd-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 23rd Judicial District",
+   "district": null,
+   "title": "District Judge, 23rd Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-delton-bo-leach",
+     "name": "William Delton \"Bo\" Leach",
+     "party": null,
+     "party_code": "O",
+     "votes": 4777
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-24th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 24th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 24th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-t-chafin",
+     "name": "John T. Chafin",
+     "party": null,
+     "party_code": "O",
+     "votes": 7388
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-24th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 24th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 24th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-brett-butcher",
+     "name": "David Brett Butcher",
+     "party": null,
+     "party_code": "O",
+     "votes": 7204
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-25th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 25th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 25th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tyler-s-frazier",
+     "name": "Tyler S. Frazier",
+     "party": null,
+     "party_code": "O",
+     "votes": 22333
+    },
+    {
+     "id": "darrian-d-botts",
+     "name": "Darrian D. Botts",
+     "party": null,
+     "party_code": "O",
+     "votes": 9110
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-25th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 25th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 25th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-jennings",
+     "name": "Robert Jennings",
+     "party": null,
+     "party_code": "O",
+     "votes": 25116
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-25th-judicial-district-division-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 25th Judicial District, Division 3",
+   "district": null,
+   "title": "District Judge, 25th Judicial District, Division 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "earl-ray-neal",
+     "name": "Earl-Ray Neal",
+     "party": null,
+     "party_code": "O",
+     "votes": 25056
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-26th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 26th Judicial District",
+   "district": null,
+   "title": "District Judge, 26th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "timothy-jason-jackson",
+     "name": "Timothy Jason Jackson",
+     "party": null,
+     "party_code": "O",
+     "votes": 3242
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-27th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 27th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 27th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "w-skip-hammons",
+     "name": "W. \"Skip\" Hammons",
+     "party": null,
+     "party_code": "O",
+     "votes": 15046
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-27th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 27th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 27th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-p-chappell",
+     "name": "John P. Chappell",
+     "party": null,
+     "party_code": "O",
+     "votes": 14265
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-28th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 28th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 28th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "benjamin-b-j-hardy",
+     "name": "Benjamin \"B. J.\" Hardy",
+     "party": null,
+     "party_code": "O",
+     "votes": 14286
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-28th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 28th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 28th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "katie-gregory-slone",
+     "name": "Katie Gregory Slone",
+     "party": null,
+     "party_code": "O",
+     "votes": 14653
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-29th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 29th Judicial District",
+   "district": null,
+   "title": "District Judge, 29th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-loy",
+     "name": "Michael Loy",
+     "party": null,
+     "party_code": "O",
+     "votes": 5936
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anthony-lewis-jones",
+     "name": "Anthony Lewis Jones",
+     "party": null,
+     "party_code": "O",
+     "votes": 145488
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amber-b-wolf",
+     "name": "Amber B. Wolf",
+     "party": null,
+     "party_code": "O",
+     "votes": 145524
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 3",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristina-marie-garvey",
+     "name": "Kristina Marie Garvey",
+     "party": null,
+     "party_code": "O",
+     "votes": 147307
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 4",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yvette-de-la-guardia",
+     "name": "Yvette De La Guardia",
+     "party": null,
+     "party_code": "O",
+     "votes": 143494
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 5",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-h-leibson",
+     "name": "Jennifer H. Leibson",
+     "party": null,
+     "party_code": "O",
+     "votes": 143208
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 6",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lisa-l-langford",
+     "name": "Lisa L. Langford",
+     "party": null,
+     "party_code": "O",
+     "votes": 122863
+    },
+    {
+     "id": "teddy-b-gordon",
+     "name": "Teddy B. Gordon",
+     "party": null,
+     "party_code": "O",
+     "votes": 62342
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 7",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "megan-mcdonald",
+     "name": "Megan McDonald",
+     "party": null,
+     "party_code": "O",
+     "votes": 142713
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 8",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "karen-faulkner",
+     "name": "Karen Faulkner",
+     "party": null,
+     "party_code": "O",
+     "votes": 128435
+    },
+    {
+     "id": "jonathan-max-allen",
+     "name": "Jonathan Max Allen",
+     "party": null,
+     "party_code": "O",
+     "votes": 54907
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 9",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tanisha-ann-hickerson",
+     "name": "Tanisha Ann Hickerson",
+     "party": null,
+     "party_code": "O",
+     "votes": 145028
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 10",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sara-michael-nicholson",
+     "name": "Sara Michael Nicholson",
+     "party": null,
+     "party_code": "O",
+     "votes": 144672
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 11",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jessica-ann-moore",
+     "name": "Jessica Ann Moore",
+     "party": null,
+     "party_code": "O",
+     "votes": 144017
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 12",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josephine-layne-buckner",
+     "name": "Josephine Layne Buckner",
+     "party": null,
+     "party_code": "O",
+     "votes": 143063
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 13",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anne-delahanty",
+     "name": "Anne Delahanty",
+     "party": null,
+     "party_code": "O",
+     "votes": 148194
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 14",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-pearce-burke",
+     "name": "Stephanie Pearce Burke",
+     "party": null,
+     "party_code": "O",
+     "votes": 144674
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 15",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 434
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-30th-judicial-district-division-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 30th Judicial District, Division 16",
+   "district": null,
+   "title": "District Judge, 30th Judicial District, Division 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "katie-king",
+     "name": "Katie King",
+     "party": null,
+     "party_code": "O",
+     "votes": 145584
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-31st-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 31st Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 31st Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jimmy-blue-marcum",
+     "name": "Jimmy \"Blue\" Marcum",
+     "party": null,
+     "party_code": "O",
+     "votes": 8154
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-31st-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 31st Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 31st Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tyler-green",
+     "name": "Tyler Green",
+     "party": null,
+     "party_code": "O",
+     "votes": 5765
+    },
+    {
+     "id": "ashley-tackett-laferty",
+     "name": "Ashley Tackett Laferty",
+     "party": null,
+     "party_code": "O",
+     "votes": 5014
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-32nd-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 32nd Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 32nd Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-t-reese",
+     "name": "Scott T. Reese",
+     "party": null,
+     "party_code": "O",
+     "votes": 6973
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-32nd-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 32nd Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 32nd Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "devon-e-reams",
+     "name": "Devon E. Reams",
+     "party": null,
+     "party_code": "O",
+     "votes": 6978
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-33rd-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 33rd Judicial District",
+   "district": null,
+   "title": "District Judge, 33rd Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "b-cody-goerhing",
+     "name": "B. Cody Goerhing",
+     "party": null,
+     "party_code": "O",
+     "votes": 4746
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-34th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 34th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 34th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cathy-e-prewitt",
+     "name": "Cathy E. Prewitt",
+     "party": null,
+     "party_code": "O",
+     "votes": 7607
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-34th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 34th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 34th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "fred-f-white",
+     "name": "Fred F. White",
+     "party": null,
+     "party_code": "O",
+     "votes": 7537
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-35th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 35th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 35th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-f-wright",
+     "name": "Robert F. Wright",
+     "party": null,
+     "party_code": "O",
+     "votes": 8457
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-35th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 35th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 35th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tommy-t-j-may",
+     "name": "Tommy \"T. J.\" May",
+     "party": null,
+     "party_code": "O",
+     "votes": 8496
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-36th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 36th Judicial District",
+   "district": null,
+   "title": "District Judge, 36th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dennis-b-prater",
+     "name": "Dennis B. Prater",
+     "party": null,
+     "party_code": "O",
+     "votes": 5731
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-37th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 37th Judicial District",
+   "district": null,
+   "title": "District Judge, 37th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rupert-wilhoit",
+     "name": "Rupert Wilhoit",
+     "party": null,
+     "party_code": "O",
+     "votes": 7976
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-38th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 38th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 38th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gregory-r-vincent",
+     "name": "Gregory R. Vincent",
+     "party": null,
+     "party_code": "O",
+     "votes": 9399
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-38th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 38th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 38th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-boling",
+     "name": "Daniel Boling",
+     "party": null,
+     "party_code": "O",
+     "votes": 9720
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-39th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 39th Judicial District",
+   "district": null,
+   "title": "District Judge, 39th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-gary-salyers",
+     "name": "William Gary Salyers",
+     "party": null,
+     "party_code": "O",
+     "votes": 6669
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-40th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 40th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 40th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scarlett-b-latham",
+     "name": "Scarlett B. Latham",
+     "party": null,
+     "party_code": "O",
+     "votes": 8261
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-40th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 40th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 40th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "athena-cooper-bradshaw",
+     "name": "Athena Cooper Bradshaw",
+     "party": null,
+     "party_code": "O",
+     "votes": 7991
+    },
+    {
+     "id": "tom-simmons",
+     "name": "Tom Simmons",
+     "party": null,
+     "party_code": "O",
+     "votes": 3754
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-41st-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 41st Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 41st Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "allen-b-roberts",
+     "name": "Allen B. Roberts",
+     "party": null,
+     "party_code": "O",
+     "votes": 6604
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-41st-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 41st Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 41st Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "henria-bailey-lewis",
+     "name": "Henria Bailey-Lewis",
+     "party": null,
+     "party_code": "O",
+     "votes": 6369
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-42nd-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 42nd Judicial District",
+   "district": null,
+   "title": "District Judge, 42nd Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-hendricks",
+     "name": "Chris Hendricks",
+     "party": null,
+     "party_code": "O",
+     "votes": 6652
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-43rd-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 43rd Judicial District",
+   "district": null,
+   "title": "District Judge, 43rd Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-gabriel-pendleton",
+     "name": "John Gabriel Pendleton",
+     "party": null,
+     "party_code": "O",
+     "votes": 8349
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-44th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 44th Judicial District",
+   "district": null,
+   "title": "District Judge, 44th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-robby-yoakum",
+     "name": "Robert \"Robby\" Yoakum",
+     "party": null,
+     "party_code": "O",
+     "votes": 3779
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-45th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 45th Judicial District",
+   "district": null,
+   "title": "District Judge, 45th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-s-stovall",
+     "name": "Eric S. Stovall",
+     "party": null,
+     "party_code": "O",
+     "votes": 6942
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-46th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 46th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 46th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bradley-s-butler",
+     "name": "Bradley S. Butler",
+     "party": null,
+     "party_code": "O",
+     "votes": 12388
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-46th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 46th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 46th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-crebessa",
+     "name": "Steven Crebessa",
+     "party": null,
+     "party_code": "O",
+     "votes": 12029
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-47th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 47th Judicial District",
+   "district": null,
+   "title": "District Judge, 47th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "j-nick-whitaker",
+     "name": "J. \"Nick\" Whitaker",
+     "party": null,
+     "party_code": "O",
+     "votes": 3838
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-48th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 48th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 48th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kathy-r-mangeot",
+     "name": "Kathy R. Mangeot",
+     "party": null,
+     "party_code": "O",
+     "votes": 12594
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-48th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 48th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 48th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-olds",
+     "name": "Chris Olds",
+     "party": null,
+     "party_code": "O",
+     "votes": 12790
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-49th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 49th Judicial District",
+   "district": null,
+   "title": "District Judge, 49th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-tomlinson",
+     "name": "Christopher Tomlinson",
+     "party": null,
+     "party_code": "O",
+     "votes": 5479
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-50th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 50th Judicial District",
+   "district": null,
+   "title": "District Judge, 50th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "patrick-f-barsotti",
+     "name": "Patrick F. Barsotti",
+     "party": null,
+     "party_code": "O",
+     "votes": 9811
+    },
+    {
+     "id": "lakeysha-w-singleton",
+     "name": "LaKeysha W. Singleton",
+     "party": null,
+     "party_code": "O",
+     "votes": 4482
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-51st-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 51st Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 51st Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ashley-renee-hampton",
+     "name": "Ashley Renee Hampton",
+     "party": null,
+     "party_code": "O",
+     "votes": 5042
+    },
+    {
+     "id": "lindsey-noller-turner",
+     "name": "Lindsey Noller Turner",
+     "party": null,
+     "party_code": "O",
+     "votes": 4326
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-51st-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 51st Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 51st Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leslie-m-newman",
+     "name": "Leslie M. Newman",
+     "party": null,
+     "party_code": "O",
+     "votes": 8672
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-52nd-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 52nd Judicial District",
+   "district": null,
+   "title": "District Judge, 52nd Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-r-robbins",
+     "name": "Scott R. Robbins",
+     "party": null,
+     "party_code": "O",
+     "votes": 5371
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-53rd-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 53rd Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 53rd Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "laura-witt",
+     "name": "Laura Witt",
+     "party": null,
+     "party_code": "O",
+     "votes": 18296
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-53rd-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 53rd Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 53rd Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "donna-dutton",
+     "name": "Donna Dutton",
+     "party": null,
+     "party_code": "O",
+     "votes": 18420
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-54th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 54th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 54th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeffrey-s-smith",
+     "name": "Jeffrey S. Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 28076
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-54th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 54th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 54th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marcia-thomas",
+     "name": "Marcia Thomas",
+     "party": null,
+     "party_code": "O",
+     "votes": 28181
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-55th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 55th Judicial District",
+   "district": null,
+   "title": "District Judge, 55th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-elizabeth-porter",
+     "name": "Jennifer Elizabeth Porter",
+     "party": null,
+     "party_code": "O",
+     "votes": 15410
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-56th-judicial-district-division-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 56th Judicial District, Division 1",
+   "district": null,
+   "title": "District Judge, 56th Judicial District, Division 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-knoth",
+     "name": "Brandon Knoth",
+     "party": null,
+     "party_code": "O",
+     "votes": 9306
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-56th-judicial-district-division-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 56th Judicial District, Division 2",
+   "district": null,
+   "title": "District Judge, 56th Judicial District, Division 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-schalk",
+     "name": "Matt Schalk",
+     "party": null,
+     "party_code": "O",
+     "votes": 8794
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-57th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 57th Judicial District",
+   "district": null,
+   "title": "District Judge, 57th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-s-jack-kelley-v",
+     "name": "John S. \"Jack\" Kelley V.",
+     "party": null,
+     "party_code": "O",
+     "votes": 9876
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-58th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 58th Judicial District",
+   "district": null,
+   "title": "District Judge, 58th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jacob-p-ford",
+     "name": "Jacob P. Ford",
+     "party": null,
+     "party_code": "O",
+     "votes": 5986
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-district-judge-59th-judicial-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "District Judge, 59th Judicial District",
+   "district": null,
+   "title": "District Judge, 59th Judicial District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristi-castillo",
+     "name": "Kristi Castillo",
+     "party": null,
+     "party_code": "O",
+     "votes": 2926
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-commonwealth-s-attorney-1st-judicial-circuit-unexpired-term",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Commonwealth's Attorney, 1st Judicial Circuit (unexpired term)",
+   "district": null,
+   "title": "Commonwealth's Attorney, 1st Judicial Circuit (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "grace-e-stewart",
+     "name": "Grace E. Stewart",
+     "party": null,
+     "party_code": "O",
+     "votes": 5822
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-commonwealth-s-attorney-4th-judicial-circuit-unexpired-term",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Commonwealth's Attorney, 4th Judicial Circuit (unexpired term)",
+   "district": null,
+   "title": "Commonwealth's Attorney, 4th Judicial Circuit (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 4027
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-garrard-county-circuit-clerk-unexpired-term",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Garrard County - Circuit Clerk (unexpired term)",
+   "district": null,
+   "title": "Garrard County - Circuit Clerk (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bethany-denny",
+     "name": "Bethany Denny",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4497
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-johnson-county-circuit-clerk-unexpired-term",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Johnson County - Circuit Clerk (unexpired term)",
+   "district": null,
+   "title": "Johnson County - Circuit Clerk (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hillary-chafin",
+     "name": "Hillary Chafin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4824
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-mccracken-county-circuit-clerk-unexpired-term",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "McCracken County - Circuit Clerk (unexpired term)",
+   "district": null,
+   "title": "McCracken County - Circuit Clerk (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anita-turner",
+     "name": "Anita Turner",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14792
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-mercer-county-circuit-clerk-unexpired-term",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Mercer County - Circuit Clerk (unexpired term)",
+   "district": null,
+   "title": "Mercer County - Circuit Clerk (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-b-edwards",
+     "name": "Jennifer B. Edwards",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5980
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ky-pendleton-county-circuit-clerk-unexpired-term",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ky",
+   "office": "Pendleton County - Circuit Clerk (unexpired term)",
+   "district": null,
+   "title": "Pendleton County - Circuit Clerk (unexpired term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sabrina-hazen",
+     "name": "Sabrina Hazen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 2062
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 1796
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   }
+  }
+ ]
+}

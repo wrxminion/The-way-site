@@ -14,6 +14,7 @@
   "id-scytl",
   "in-enr",
   "ks-sos",
+  "ky-sos",
   "la-sos",
   "mi-mvic",
   "mn-sos",
@@ -32,7 +33,7 @@
   "va-scytl",
   "wy-sos"
  ],
- "updated_at": "2026-11-04T21:27:52Z",
+ "updated_at": "2026-11-04T21:36:31Z",
  "certified": false,
  "contests": [
   {
@@ -7780,25 +7781,25 @@
      "name": "Ashley Moody",
      "party": "REP",
      "party_code": "R",
-     "votes": 4207774
+     "votes": 4199597
     },
     {
      "id": "angie-nixon",
      "name": "Angie Nixon",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3968811
+     "votes": 3956669
     },
     {
      "id": "neil-j-gillespie",
      "name": "Neil J. Gillespie",
      "party": "NPA",
      "party_code": "O",
-     "votes": 94529
+     "votes": 94231
     }
    ],
    "precincts": {
-    "reporting": 5626,
+    "reporting": 5557,
     "total": 5626,
     "unit": "precincts"
    },
@@ -7808,19 +7809,19 @@
      "choices": [
       {
        "id": "ashley-moody",
-       "votes": 34791
+       "votes": 34270
       },
       {
        "id": "angie-nixon",
-       "votes": 69665
+       "votes": 69313
       },
       {
        "id": "neil-j-gillespie",
-       "votes": 980
+       "votes": 966
       }
      ],
      "precincts": {
-      "reporting": 63,
+      "reporting": 0,
       "total": 63
      }
     },
@@ -7892,15 +7893,15 @@
      "choices": [
       {
        "id": "ashley-moody",
-       "votes": 152413
+       "votes": 150665
       },
       {
        "id": "angie-nixon",
-       "votes": 113853
+       "votes": 111598
       },
       {
        "id": "neil-j-gillespie",
-       "votes": 3675
+       "votes": 3628
       }
      ],
      "precincts": {
@@ -7913,19 +7914,19 @@
      "choices": [
       {
        "id": "ashley-moody",
-       "votes": 220138
+       "votes": 219725
       },
       {
        "id": "angie-nixon",
-       "votes": 432972
+       "votes": 432214
       },
       {
        "id": "neil-j-gillespie",
-       "votes": 6651
+       "votes": 6638
       }
      ],
      "precincts": {
-      "reporting": 346,
+      "reporting": 342,
       "total": 346
      }
     },
@@ -8102,15 +8103,15 @@
      "choices": [
       {
        "id": "ashley-moody",
-       "votes": 158022
+       "votes": 157167
       },
       {
        "id": "angie-nixon",
-       "votes": 197361
+       "votes": 195811
       },
       {
        "id": "neil-j-gillespie",
-       "votes": 3408
+       "votes": 3369
       }
      ],
      "precincts": {
@@ -8123,15 +8124,15 @@
      "choices": [
       {
        "id": "ashley-moody",
-       "votes": 62985
+       "votes": 62732
       },
       {
        "id": "angie-nixon",
-       "votes": 51672
+       "votes": 51292
       },
       {
        "id": "neil-j-gillespie",
-       "votes": 1379
+       "votes": 1364
       }
      ],
      "precincts": {
@@ -8690,15 +8691,15 @@
      "choices": [
       {
        "id": "ashley-moody",
-       "votes": 359887
+       "votes": 358067
       },
       {
        "id": "angie-nixon",
-       "votes": 415732
+       "votes": 412910
       },
       {
        "id": "neil-j-gillespie",
-       "votes": 8804
+       "votes": 8736
       }
      ],
      "precincts": {
@@ -8837,15 +8838,15 @@
      "choices": [
       {
        "id": "ashley-moody",
-       "votes": 252798
+       "votes": 251316
       },
       {
        "id": "angie-nixon",
-       "votes": 311187
+       "votes": 308357
       },
       {
        "id": "neil-j-gillespie",
-       "votes": 6122
+       "votes": 6066
       }
      ],
      "precincts": {
@@ -8858,15 +8859,15 @@
      "choices": [
       {
        "id": "ashley-moody",
-       "votes": 135423
+       "votes": 135009
       },
       {
        "id": "angie-nixon",
-       "votes": 101193
+       "votes": 100614
       },
       {
        "id": "neil-j-gillespie",
-       "votes": 3494
+       "votes": 3473
       }
      ],
      "precincts": {
@@ -9026,19 +9027,19 @@
      "choices": [
       {
        "id": "ashley-moody",
-       "votes": 66631
+       "votes": 65960
       },
       {
        "id": "angie-nixon",
-       "votes": 69632
+       "votes": 69016
       },
       {
        "id": "neil-j-gillespie",
-       "votes": 1560
+       "votes": 1535
       }
      ],
      "precincts": {
-      "reporting": 62,
+      "reporting": 60,
       "total": 62
      }
     },
@@ -15842,6 +15843,57 @@
     "winner": "josh-turek",
     "by": "AP (not certified)",
     "at": "2026-11-04T04:35:30.952Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ky-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ky",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andy-barr",
+     "name": "Andy Barr",
+     "party": "R",
+     "party_code": "R",
+     "votes": 784869
+    },
+    {
+     "id": "charles-booker",
+     "name": "Charles Booker",
+     "party": "D",
+     "party_code": "D",
+     "votes": 612357
+    },
+    {
+     "id": "christopher-campbell",
+     "name": "Christopher Campbell",
+     "party": null,
+     "party_code": "O",
+     "votes": 29892
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 152
+    }
+   ],
+   "precincts": {
+    "reporting": 120,
+    "total": 120,
+    "unit": "counties"
+   },
+   "called": {
+    "winner": "andy-barr",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:16:00.684Z",
     "kind": "ap"
    }
   }

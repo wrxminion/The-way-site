@@ -1,0 +1,298 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-nh",
+ "label": "New Hampshire (unofficial, partial: governor, U.S. House 1, Executive Council; others not posted by the state yet)",
+ "source_ids": [
+  "nh-gov",
+  "nh-sos"
+ ],
+ "updated_at": "2026-11-04T21:36:33Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "nh-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cinde-warmington",
+     "name": "Cinde Warmington",
+     "party": "D",
+     "party_code": "D",
+     "votes": 296773
+    },
+    {
+     "id": "kelly-ayotte",
+     "name": "Kelly Ayotte",
+     "party": "R",
+     "party_code": "R",
+     "votes": 324846
+    },
+    {
+     "id": "stephen-villee",
+     "name": "Stephen Villee",
+     "party": "L",
+     "party_code": "O",
+     "votes": 9629
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 730
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "counties"
+   },
+   "called": {
+    "winner": "kelly-ayotte",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:42:29.910Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "nh-united-states-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nh",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stefany-shaheen",
+     "name": "Stefany Shaheen",
+     "party": "D",
+     "party_code": "D",
+     "votes": 180683
+    },
+    {
+     "id": "anthony-dilorenzo",
+     "name": "Anthony DiLorenzo",
+     "party": "R",
+     "party_code": "R",
+     "votes": 136041
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 508
+    }
+   ],
+   "precincts": {
+    "reporting": 109,
+    "total": 109,
+    "unit": "towns"
+   },
+   "called": {
+    "winner": "stefany-shaheen",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:21:46.377Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "nh-executive-council-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "Executive Council District 1",
+   "district": null,
+   "title": "Executive Council District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "luz-bay",
+     "name": "Luz Bay",
+     "party": "D",
+     "party_code": "D",
+     "votes": 64227
+    },
+    {
+     "id": "joseph-d-kenney",
+     "name": "Joseph D. Kenney",
+     "party": "R",
+     "party_code": "R",
+     "votes": 60500
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 86
+    }
+   ],
+   "precincts": {
+    "reporting": 112,
+    "total": 112,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-executive-council-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "Executive Council District 2",
+   "district": null,
+   "title": "Executive Council District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "karen-liot-hill",
+     "name": "Karen Liot Hill",
+     "party": "D",
+     "party_code": "D",
+     "votes": 81364
+    },
+    {
+     "id": "tobin-menard",
+     "name": "Tobin Menard",
+     "party": "R",
+     "party_code": "R",
+     "votes": 44197
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 104
+    }
+   ],
+   "precincts": {
+    "reporting": 98,
+    "total": 98,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-executive-council-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "Executive Council District 3",
+   "district": null,
+   "title": "Executive Council District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lisa-kennedy-sheldon",
+     "name": "Lisa Kennedy Sheldon",
+     "party": "D",
+     "party_code": "D",
+     "votes": 70251
+    },
+    {
+     "id": "janet-stevens",
+     "name": "Janet Stevens",
+     "party": "R",
+     "party_code": "R",
+     "votes": 64617
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 68
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-executive-council-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "Executive Council District 4",
+   "district": null,
+   "title": "Executive Council District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-o-connell",
+     "name": "Jim O'Connell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 60468
+    },
+    {
+     "id": "john-stephen",
+     "name": "John Stephen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 52471
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 64
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-executive-council-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "Executive Council District 5",
+   "district": null,
+   "title": "Executive Council District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melanie-levesque",
+     "name": "Melanie Levesque",
+     "party": "D",
+     "party_code": "D",
+     "votes": 64712
+    },
+    {
+     "id": "dave-wheeler",
+     "name": "Dave Wheeler",
+     "party": "R",
+     "party_code": "R",
+     "votes": 55615
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 70
+    }
+   ],
+   "precincts": {
+    "reporting": 43,
+    "total": 43,
+    "unit": "towns"
+   }
+  }
+ ]
+}
