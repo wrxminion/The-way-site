@@ -325,6 +325,33 @@ def a_scytl_json(body, src):
     return out
 
 
+CA_COUNTIES = "alameda alpine amador butte calaveras colusa contra-costa del-norte el-dorado fresno glenn humboldt imperial inyo kern kings lake lassen los-angeles madera marin mariposa mendocino merced modoc mono monterey napa nevada orange placer plumas riverside sacramento san-benito san-bernardino san-diego san-francisco san-joaquin san-luis-obispo san-mateo santa-barbara santa-clara santa-cruz shasta sierra siskiyou solano sonoma stanislaus sutter tehama trinity tulare tuolumne ventura yolo yuba".split()
+_CA_CACHE = {}
+
+
+def _ca_county_fetch(url, ua=None, ttl=600):
+    """One county response for url + "/county/<slug>" (statewide races and ballot measures only). Cached for ttl seconds."""
+    hit = _CA_CACHE.get(url)
+    if hit and time.time() - hit[0] < ttl:
+        return hit[1]
+    try:
+        body, _, _ = fetch(url, {}, ua)
+        d = json.loads(body.decode("utf-8-sig"))
+        d = d[0] if isinstance(d, list) and d else d
+    except Exception:
+        d = None
+    _CA_CACHE[url] = (time.time(), d)
+    return d
+
+
+def _ca_county_rows(url, ua=None):
+    """{county display name: parsed json} for all 58 counties, fetched 8 at a time."""
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        res = list(ex.map(lambda sl: _ca_county_fetch(url + "/county/" + sl, ua), CA_COUNTIES))
+    return {sl.replace("-", " ").title(): d for sl, d in zip(CA_COUNTIES, res) if d}
+
+
 def a_ca_sos_json(body, src):
     """California Secretary of State api.sos.ca.gov/returns/<race> JSON. The source lists many race urls ("urls");
     the collector fetches each and hands this adapter a JSON list of {"url", "body"}. Nothing is called here:
@@ -352,6 +379,14 @@ def a_ca_sos_json(body, src):
                 c = {"id": base, "kind": "candidate", "level": "federal" if house else "state", "state": "ca",
                      "office": "U.S. House" if house else title, "district": (re.search(r"District (\d+)", title) or [None, None])[1] if house else None,
                      "title": title, "vote_for": 1, "choices": ch, "precincts": prec}
+                if not house and src.get("counties", True) and "/district/" not in url:
+                    for cname, cd in _ca_county_rows(url, src.get("user_agent")).items():
+                        pm = re.search(r"\(([\d,]+) of ([\d,]+)\)", str(cd.get("Reporting") or ""))
+                        by = {slug(str(x.get("Name") or "").strip()) or "option": to_int(x.get("Votes")) for x in cd.get("candidates") or []}
+                        _cty_add(c, cname, None, 0, {"reporting": to_int(pm.group(1)), "total": to_int(pm.group(2))} if pm else None)
+                        for i, v in by.items():
+                            _cty_add(c, cname, i, v)
+                    _cty_finish(c)
                 out.append(c)
                 if house:
                     f = json.loads(json.dumps(c)); f["_scope"] = "house"; out.append(f)
@@ -360,6 +395,8 @@ def a_ca_sos_json(body, src):
             if not isinstance(items, list) or not items or "yesVotes" not in items[0]:
                 continue
             judge = key in ("supreme-court", "court-of-appeal") or "Court" in title
+            ctys = _ca_county_rows(url, src.get("user_agent")) if (src.get("counties", True) and "/district/" not in url) else {}
+            first = len(out)
             for it in items:
                 nm = str(it.get("Name") or "").strip()
                 num = str(it.get("Number") or "").strip()
@@ -369,6 +406,12 @@ def a_ca_sos_json(body, src):
                             "choices": [{"id": "yes", "name": "Yes", "party": None, "party_code": "O", "votes": to_int(it.get("yesVotes"))},
                                         {"id": "no", "name": "No", "party": None, "party_code": "O", "votes": to_int(it.get("noVotes"))}],
                             "precincts": prec})
+                for cname, cd in ctys.items():
+                    row = next((r for r in cd.get(key) or [] if str(r.get("Number") or "").strip() == num and str(r.get("Name") or "").strip() == nm), None)
+                    if row:
+                        _cty_add(out[-1], cname, "yes", to_int(row.get("yesVotes")))
+                        _cty_add(out[-1], cname, "no", to_int(row.get("noVotes")))
+                _cty_finish(out[-1])
     return out
 
 
