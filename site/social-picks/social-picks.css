@@ -1,0 +1,25 @@
+:root{color-scheme:dark;--aqua:#a6f0e7;--text:#eaf8fa;--line:#abedf536;--amber:#eac690}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#030d16;color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+body{background:radial-gradient(ellipse at 46% 0%,#176b85 0,transparent 42%),linear-gradient(#071e2b,#030d16 70%);background-repeat:no-repeat;background-color:#030d16}
+a{color:#aaf0e8}
+[hidden]{display:none!important}
+button{font:inherit}
+.top{max-width:860px;margin:auto;padding:30px 16px 10px}
+.eyebrow{color:var(--aqua);font-size:12px;letter-spacing:.25em;text-transform:uppercase}
+.top h1{font:normal clamp(32px,5vw,52px)/1.08 Georgia,serif;letter-spacing:-.03em;margin:12px 0}
+.top p{color:#c8e0e5;line-height:1.6;max-width:680px}
+.wrap{max-width:860px;margin:auto;padding:0 16px 40px}
+.modes{display:flex;flex-wrap:wrap;gap:4px;padding:4px;border:1px solid var(--line);border-radius:22px;background:#061b28;width:fit-content;max-width:100%}
+.modes button{border:0;background:transparent;color:var(--text);border-radius:100px;padding:10px 18px;font-weight:650;font-size:14px;cursor:pointer}
+.modes button[aria-selected="true"]{background:var(--aqua);color:#052230}
+.modes button:focus-visible,.copy:focus-visible{outline:2px solid #91dfdc;outline-offset:2px}
+.status{color:#a9f0e7;font-size:14px;line-height:1.55;margin:12px 0}
+.card{border:1px solid var(--line);background:#061b28;border-radius:14px;padding:16px;margin:0 0 14px}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:100px;padding:3px 10px;margin:0 6px 8px 0;background:#0e3a4a;color:var(--aqua)}
+.tag.fb{background:#1b3a6b;color:#cfe0ff}
+.tag.bs{background:#0b4a7a;color:#c9e8ff}
+.text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6;font-size:16px;margin:4px 0 10px}
+.meta{color:#a9cdd3;font-size:13px;margin:0 0 10px;overflow-wrap:anywhere}
+.count{color:var(--amber)}
+.copy{border:0;background:var(--aqua);color:#052230;border-radius:100px;padding:10px 20px;font-weight:700;font-size:15px;cursor:pointer;min-height:44px}
