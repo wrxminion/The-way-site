@@ -3,10 +3,13 @@
  "scope": "senate",
  "label": "U.S. Senate",
  "source_ids": [
+  "fl-dos",
   "ga-scytl",
+  "nc-sbe",
+  "oh-sos",
   "va-scytl"
  ],
- "updated_at": "2026-11-04T01:49:27Z",
+ "updated_at": "2026-11-04T03:19:42Z",
  "certified": false,
  "contests": [
   {
@@ -24,18 +27,18 @@
      "name": "Mike Collins",
      "party": "Rep",
      "party_code": "R",
-     "votes": 1132481
+     "votes": 1518176
     },
     {
      "id": "jon-ossoff-i",
      "name": "Jon Ossoff (I)",
      "party": "Dem",
      "party_code": "D",
-     "votes": 1733537
+     "votes": 2182677
     }
    ],
    "precincts": {
-    "reporting": 130,
+    "reporting": 156,
     "total": 159,
     "unit": "counties"
    }
@@ -55,27 +58,171 @@
      "name": "Mark R. Warner",
      "party": "D",
      "party_code": "D",
-     "votes": 1223901
+     "votes": 1771950
     },
     {
      "id": "bert-mizusawa",
      "name": "Bert Mizusawa",
      "party": "R",
      "party_code": "R",
-     "votes": 811857
+     "votes": 1184068
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 5804
+     "votes": 8093
     }
    ],
    "precincts": {
-    "reporting": 124,
+    "reporting": 132,
     "total": 133,
     "unit": "localities"
+   }
+  },
+  {
+   "id": "nc-us-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nc",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-whatley",
+     "name": "Michael Whatley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1552993
+    },
+    {
+     "id": "michael-dublin",
+     "name": "Michael Dublin",
+     "party": "GRE",
+     "party_code": "O",
+     "votes": 33291
+    },
+    {
+     "id": "roy-cooper",
+     "name": "Roy Cooper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2286266
+    },
+    {
+     "id": "shannon-w-bray",
+     "name": "Shannon W. Bray",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 51343
+    }
+   ],
+   "precincts": {}
+  },
+  {
+   "id": "fl-uss-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "fl",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ashley-moody",
+     "name": "Ashley Moody",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "angie-nixon",
+     "name": "Angie Nixon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "neil-j-gillespie",
+     "name": "Neil J. Gillespie",
+     "party": "NPA",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5626,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "oh-55a742ea56a709a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sherrod-brown",
+     "name": "Sherrod Brown",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1735415
+    },
+    {
+     "id": "stephen-faris",
+     "name": "Stephen Faris",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "anthony-holliman",
+     "name": "Anthony Holliman",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jon-husted",
+     "name": "Jon Husted",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1711393
+    },
+    {
+     "id": "greg-levy",
+     "name": "Greg Levy",
+     "party": "Other-part",
+     "party_code": "O",
+     "votes": 71063
+    },
+    {
+     "id": "william-redpath",
+     "name": "William Redpath",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 102343
+    },
+    {
+     "id": "timothy-telymonde",
+     "name": "Timothy Telymonde",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
    }
   }
  ]

@@ -1,0 +1,8736 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-ia",
+ "label": "Iowa",
+ "source_ids": [
+  "ia-clarity"
+ ],
+ "updated_at": "2026-11-04T03:19:42Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ia-united-states-senator",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "choices": [
+    {
+     "id": "ashley-hinson",
+     "name": "Ashley Hinson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 181698
+    },
+    {
+     "id": "josh-turek",
+     "name": "Josh Turek",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 226730
+    },
+    {
+     "id": "thomas-laehn",
+     "name": "Thomas Laehn",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 11269
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 544
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 99
+   }
+  },
+  {
+   "id": "ia-united-states-representative-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "United States Representative District 1",
+   "district": null,
+   "title": "United States Representative District 1",
+   "choices": [
+    {
+     "id": "mariannette-miller-meeks",
+     "name": "Mariannette Miller-Meeks",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19181
+    },
+    {
+     "id": "christina-bohannan",
+     "name": "Christina Bohannan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 18472
+    },
+    {
+     "id": "michael-bridgford",
+     "name": "Michael Bridgford",
+     "party": null,
+     "party_code": "O",
+     "votes": 1658
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 38
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 20
+   }
+  },
+  {
+   "id": "ia-united-states-representative-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "United States Representative District 2",
+   "district": null,
+   "title": "United States Representative District 2",
+   "choices": [
+    {
+     "id": "joe-mitchell",
+     "name": "Joe Mitchell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 42605
+    },
+    {
+     "id": "lindsay-james",
+     "name": "Lindsay James",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 58717
+    },
+    {
+     "id": "rick-stewart",
+     "name": "Rick Stewart",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 2411
+    },
+    {
+     "id": "dave-bushaw",
+     "name": "Dave Bushaw",
+     "party": null,
+     "party_code": "O",
+     "votes": 1410
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 65
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 22
+   }
+  },
+  {
+   "id": "ia-united-states-representative-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "United States Representative District 3",
+   "district": null,
+   "title": "United States Representative District 3",
+   "choices": [
+    {
+     "id": "zach-nunn",
+     "name": "Zach Nunn",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 80965
+    },
+    {
+     "id": "sarah-trone-garriott",
+     "name": "Sarah Trone Garriott",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 119632
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 535
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 21
+   }
+  },
+  {
+   "id": "ia-united-states-representative-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "United States Representative District 4",
+   "district": null,
+   "title": "United States Representative District 4",
+   "choices": [
+    {
+     "id": "chris-mcgowan",
+     "name": "Chris McGowan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 46966
+    },
+    {
+     "id": "dave-dawson",
+     "name": "Dave Dawson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23932
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 81
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 36
+   }
+  },
+  {
+   "id": "ia-governor-and-lt-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "Governor and Lt. Governor",
+   "district": null,
+   "title": "Governor and Lt. Governor",
+   "choices": [
+    {
+     "id": "zach-lahn-and-derek-wulf",
+     "name": "Zach Lahn and Derek Wulf",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 173743
+    },
+    {
+     "id": "rob-sand-and-dave-muhlbauer",
+     "name": "Rob Sand and Dave Muhlbauer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 247090
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 516
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 99
+   }
+  },
+  {
+   "id": "ia-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "choices": [
+    {
+     "id": "paul-d-pate",
+     "name": "Paul D. Pate",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 206806
+    },
+    {
+     "id": "ryan-peterman",
+     "name": "Ryan Peterman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 205362
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 391
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 99
+   }
+  },
+  {
+   "id": "ia-auditor-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "Auditor of State",
+   "district": null,
+   "title": "Auditor of State",
+   "choices": [
+    {
+     "id": "chris-cournoyer",
+     "name": "Chris Cournoyer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 188801
+    },
+    {
+     "id": "taylor-wettach",
+     "name": "Taylor Wettach",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 219909
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 452
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 99
+   }
+  },
+  {
+   "id": "ia-treasurer-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "Treasurer of State",
+   "district": null,
+   "title": "Treasurer of State",
+   "choices": [
+    {
+     "id": "roby-smith",
+     "name": "Roby Smith",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 189528
+    },
+    {
+     "id": "john-norwood",
+     "name": "John Norwood",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 215703
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 427
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 99
+   }
+  },
+  {
+   "id": "ia-secretary-of-agriculture",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "Secretary of Agriculture",
+   "district": null,
+   "title": "Secretary of Agriculture",
+   "choices": [
+    {
+     "id": "mike-naig",
+     "name": "Mike Naig",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 201083
+    },
+    {
+     "id": "chris-jones",
+     "name": "Chris Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 207374
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 348
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 99
+   }
+  },
+  {
+   "id": "ia-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "choices": [
+    {
+     "id": "brenna-bird",
+     "name": "Brenna Bird",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 189987
+    },
+    {
+     "id": "nate-willems",
+     "name": "Nate Willems",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 225059
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 509
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 99
+   }
+  },
+  {
+   "id": "ia-state-senator-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 1",
+   "district": null,
+   "title": "State Senator District 1",
+   "choices": [
+    {
+     "id": "christopher-prosch",
+     "name": "Christopher Prosch",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "catelin-drey",
+     "name": "Catelin Drey",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-senator-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 3",
+   "district": null,
+   "title": "State Senator District 3",
+   "choices": [
+    {
+     "id": "lynn-evans",
+     "name": "Lynn Evans",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1466
+    },
+    {
+     "id": "mike-frantz",
+     "name": "Mike Frantz",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1063
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-state-senator-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 5",
+   "district": null,
+   "title": "State Senator District 5",
+   "choices": [
+    {
+     "id": "dave-rowley",
+     "name": "Dave Rowley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9153
+    },
+    {
+     "id": "rachel-gravert",
+     "name": "Rachel Gravert",
+     "party": null,
+     "party_code": "O",
+     "votes": 2556
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 75
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-state-senator-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 7",
+   "district": null,
+   "title": "State Senator District 7",
+   "choices": [
+    {
+     "id": "kevin-alons",
+     "name": "Kevin Alons",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-state-senator-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 9",
+   "district": null,
+   "title": "State Senator District 9",
+   "choices": [
+    {
+     "id": "steve-baier",
+     "name": "Steve Baier",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3232
+    },
+    {
+     "id": "james-uhlenkamp",
+     "name": "James Uhlenkamp",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2283
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 7
+   }
+  },
+  {
+   "id": "ia-state-senator-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 11",
+   "district": null,
+   "title": "State Senator District 11",
+   "choices": [
+    {
+     "id": "hollie-arlene-zajicek",
+     "name": "Hollie Arlene Zajicek",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5873
+    },
+    {
+     "id": "sinikka-waugh",
+     "name": "Sinikka Waugh",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3586
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 14
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-senator-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 13",
+   "district": null,
+   "title": "State Senator District 13",
+   "choices": [
+    {
+     "id": "jeff-kulmatycki",
+     "name": "Jeff Kulmatycki",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5018
+    },
+    {
+     "id": "brenda-case",
+     "name": "Brenda Case",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2379
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 26
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-state-senator-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 15",
+   "district": null,
+   "title": "State Senator District 15",
+   "choices": [
+    {
+     "id": "tony-bisignano",
+     "name": "Tony Bisignano",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12378
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 352
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-senator-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 17",
+   "district": null,
+   "title": "State Senator District 17",
+   "choices": [
+    {
+     "id": "ronald-langston",
+     "name": "Ronald Langston",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3173
+    },
+    {
+     "id": "samy-el-baroudi",
+     "name": "Samy El-Baroudi",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10451
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 32
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-senator-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 19",
+   "district": null,
+   "title": "State Senator District 19",
+   "choices": [
+    {
+     "id": "barb-kniff-mcculla",
+     "name": "Barb Kniff McCulla",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "zachary-mecham",
+     "name": "Zachary Mecham",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-senator-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 21",
+   "district": null,
+   "title": "State Senator District 21",
+   "choices": [
+    {
+     "id": "john-hollinrake",
+     "name": "John Hollinrake",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11750
+    },
+    {
+     "id": "heather-matson",
+     "name": "Heather Matson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 16041
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-senator-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 23",
+   "district": null,
+   "title": "State Senator District 23",
+   "choices": [
+    {
+     "id": "wes-enos",
+     "name": "Wes Enos",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10311
+    },
+    {
+     "id": "tony-thompson",
+     "name": "Tony Thompson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9920
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 27
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-senator-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 25",
+   "district": null,
+   "title": "State Senator District 25",
+   "choices": [
+    {
+     "id": "paul-wacker",
+     "name": "Paul Wacker",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "herman-c-quirmbach",
+     "name": "Herman C. Quirmbach",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-senator-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 27",
+   "district": null,
+   "title": "State Senator District 27",
+   "choices": [
+    {
+     "id": "annette-sweeney",
+     "name": "Annette Sweeney",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-state-senator-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 29",
+   "district": null,
+   "title": "State Senator District 29",
+   "choices": [
+    {
+     "id": "sandy-salmon",
+     "name": "Sandy Salmon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6122
+    },
+    {
+     "id": "jim-vowels",
+     "name": "Jim Vowels",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3873
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-state-senator-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 31",
+   "district": null,
+   "title": "State Senator District 31",
+   "choices": [
+    {
+     "id": "timi-brown-powers",
+     "name": "Timi Brown Powers",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-senator-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 33",
+   "district": null,
+   "title": "State Senator District 33",
+   "choices": [
+    {
+     "id": "carrie-koelker",
+     "name": "Carrie Koelker",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8713
+    },
+    {
+     "id": "mary-ungs-sogaard",
+     "name": "Mary Ungs-Sogaard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7207
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-senator-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 37",
+   "district": null,
+   "title": "State Senator District 37",
+   "choices": [
+    {
+     "id": "randy-marzen",
+     "name": "Randy Marzen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2439
+    },
+    {
+     "id": "molly-donahue",
+     "name": "Molly Donahue",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6763
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-senator-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 39",
+   "district": null,
+   "title": "State Senator District 39",
+   "choices": [
+    {
+     "id": "edward-bernie-hayes",
+     "name": "Edward Bernie Hayes",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2210
+    },
+    {
+     "id": "liz-bennett",
+     "name": "Liz Bennett",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7374
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-senator-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 41",
+   "district": null,
+   "title": "State Senator District 41",
+   "choices": [
+    {
+     "id": "kerry-gruenhagen",
+     "name": "Kerry Gruenhagen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "tom-wieck",
+     "name": "Tom Wieck",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-senator-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 35",
+   "district": null,
+   "title": "State Senator District 35",
+   "choices": [
+    {
+     "id": "joe-stutting",
+     "name": "Joe Stutting",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1539
+    },
+    {
+     "id": "mike-zimmer",
+     "name": "Mike Zimmer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1536
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-senator-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 43",
+   "district": null,
+   "title": "State Senator District 43",
+   "choices": [
+    {
+     "id": "meghann-foster",
+     "name": "Meghann Foster",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-senator-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 45",
+   "district": null,
+   "title": "State Senator District 45",
+   "choices": [
+    {
+     "id": "janice-weiner",
+     "name": "Janice Weiner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-senator-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 47",
+   "district": null,
+   "title": "State Senator District 47",
+   "choices": [
+    {
+     "id": "scott-webster",
+     "name": "Scott Webster",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "nikhil-wagle",
+     "name": "Nikhil Wagle",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-senator-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Senator District 49",
+   "district": null,
+   "title": "State Senator District 49",
+   "choices": [
+    {
+     "id": "cynthia-mensendick",
+     "name": "Cynthia Mensendick",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "cindy-winckler",
+     "name": "Cindy Winckler",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 1",
+   "district": null,
+   "title": "State Representative District 1",
+   "choices": [
+    {
+     "id": "josh-steinhoff",
+     "name": "Josh Steinhoff",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "shawn-olorundami",
+     "name": "Shawn Olorundami",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 2",
+   "district": null,
+   "title": "State Representative District 2",
+   "choices": [
+    {
+     "id": "robert-henderson",
+     "name": "Robert Henderson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jessica-lopez-walker",
+     "name": "Jessica Lopez-Walker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 3",
+   "district": null,
+   "title": "State Representative District 3",
+   "choices": [
+    {
+     "id": "robert-driesen",
+     "name": "Robert Driesen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5701
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 58
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 4",
+   "district": null,
+   "title": "State Representative District 4",
+   "choices": [
+    {
+     "id": "skyler-wheeler",
+     "name": "Skyler Wheeler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10849
+    },
+    {
+     "id": "garth-van-donselaar",
+     "name": "Garth Van Donselaar",
+     "party": null,
+     "party_code": "O",
+     "votes": 2194
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 55
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 5",
+   "district": null,
+   "title": "State Representative District 5",
+   "choices": [
+    {
+     "id": "keith-glienke",
+     "name": "Keith Glienke",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "stephanie-steiner",
+     "name": "Stephanie Steiner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-state-representative-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 6",
+   "district": null,
+   "title": "State Representative District 6",
+   "choices": [
+    {
+     "id": "megan-jones",
+     "name": "Megan Jones",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1812
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 112
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 7",
+   "district": null,
+   "title": "State Representative District 7",
+   "choices": [
+    {
+     "id": "wendy-larson",
+     "name": "Wendy Larson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 312
+    },
+    {
+     "id": "rachel-burns",
+     "name": "Rachel Burns",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 194
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-state-representative-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 8",
+   "district": null,
+   "title": "State Representative District 8",
+   "choices": [
+    {
+     "id": "ann-meyer",
+     "name": "Ann Meyer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2042
+    },
+    {
+     "id": "kristofer-williams",
+     "name": "Kristofer Williams",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1914
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 9",
+   "district": null,
+   "title": "State Representative District 9",
+   "choices": [
+    {
+     "id": "henry-stone",
+     "name": "Henry Stone",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 10",
+   "district": null,
+   "title": "State Representative District 10",
+   "choices": [
+    {
+     "id": "john-h-wills",
+     "name": "John H. Wills",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9773
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 200
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-state-representative-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 11",
+   "district": null,
+   "title": "State Representative District 11",
+   "choices": [
+    {
+     "id": "craig-williams",
+     "name": "Craig Williams",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5335
+    },
+    {
+     "id": "bill-owen",
+     "name": "Bill Owen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2614
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-state-representative-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 12",
+   "district": null,
+   "title": "State Representative District 12",
+   "choices": [
+    {
+     "id": "steven-holt",
+     "name": "Steven Holt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3078
+    },
+    {
+     "id": "dustin-durbin",
+     "name": "Dustin Durbin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1918
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 13",
+   "district": null,
+   "title": "State Representative District 13",
+   "choices": [
+    {
+     "id": "travis-m-sitzmann",
+     "name": "Travis M. Sitzmann",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-state-representative-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 14",
+   "district": null,
+   "title": "State Representative District 14",
+   "choices": [
+    {
+     "id": "jacob-bossman",
+     "name": "Jacob Bossman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 15",
+   "district": null,
+   "title": "State Representative District 15",
+   "choices": [
+    {
+     "id": "jason-sherer",
+     "name": "Jason Sherer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "benjamin-schauer",
+     "name": "Benjamin Schauer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "blake-johnson",
+     "name": "Blake Johnson",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "marilyn-j-mentzer",
+     "name": "Marilyn J. Mentzer",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 16",
+   "district": null,
+   "title": "State Representative District 16",
+   "choices": [
+    {
+     "id": "david-a-sieck",
+     "name": "David A. Sieck",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jack-goodman",
+     "name": "Jack Goodman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 17",
+   "district": null,
+   "title": "State Representative District 17",
+   "choices": [
+    {
+     "id": "devon-wood",
+     "name": "Devon Wood",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2940
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 52
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-state-representative-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 18",
+   "district": null,
+   "title": "State Representative District 18",
+   "choices": [
+    {
+     "id": "thomas-jay-moore",
+     "name": "Thomas Jay Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1072
+    },
+    {
+     "id": "tripp-narup",
+     "name": "Tripp Narup",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 692
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 19",
+   "district": null,
+   "title": "State Representative District 19",
+   "choices": [
+    {
+     "id": "brent-siegrist",
+     "name": "Brent Siegrist",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "benjamin-thomas-larson",
+     "name": "Benjamin Thomas Larson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 20",
+   "district": null,
+   "title": "State Representative District 20",
+   "choices": [
+    {
+     "id": "keith-jones",
+     "name": "Keith Jones",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "eric-armstrong",
+     "name": "Eric Armstrong",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 21",
+   "district": null,
+   "title": "State Representative District 21",
+   "choices": [
+    {
+     "id": "brooke-boden",
+     "name": "Brooke Boden",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2995
+    },
+    {
+     "id": "spencer-a-waugh",
+     "name": "Spencer A. Waugh",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1944
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 22",
+   "district": null,
+   "title": "State Representative District 22",
+   "choices": [
+    {
+     "id": "samantha-fett",
+     "name": "Samantha Fett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2879
+    },
+    {
+     "id": "rory-taylor",
+     "name": "Rory Taylor",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1701
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 23",
+   "district": null,
+   "title": "State Representative District 23",
+   "choices": [
+    {
+     "id": "ray-bubba-sorensen",
+     "name": "Ray Bubba Sorensen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 250
+    },
+    {
+     "id": "karen-varley",
+     "name": "Karen Varley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 194
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-state-representative-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 24",
+   "district": null,
+   "title": "State Representative District 24",
+   "choices": [
+    {
+     "id": "sam-wengryn",
+     "name": "Sam Wengryn",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1776
+    },
+    {
+     "id": "sonya-hicks",
+     "name": "Sonya Hicks",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 799
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-state-representative-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 25",
+   "district": null,
+   "title": "State Representative District 25",
+   "choices": [
+    {
+     "id": "hans-c-wilz",
+     "name": "Hans C. Wilz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "kolton-jones",
+     "name": "Kolton Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 26",
+   "district": null,
+   "title": "State Representative District 26",
+   "choices": [
+    {
+     "id": "austin-harris",
+     "name": "Austin Harris",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5081
+    },
+    {
+     "id": "brett-mohler",
+     "name": "Brett Mohler",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2327
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 22
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-state-representative-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 27",
+   "district": null,
+   "title": "State Representative District 27",
+   "choices": [
+    {
+     "id": "kenan-judge",
+     "name": "Kenan Judge",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 966
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 28",
+   "district": null,
+   "title": "State Representative District 28",
+   "choices": [
+    {
+     "id": "david-young",
+     "name": "David Young",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1169
+    },
+    {
+     "id": "tom-walton",
+     "name": "Tom Walton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1678
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 29",
+   "district": null,
+   "title": "State Representative District 29",
+   "choices": [
+    {
+     "id": "brian-meyer",
+     "name": "Brian Meyer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6006
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 174
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 30",
+   "district": null,
+   "title": "State Representative District 30",
+   "choices": [
+    {
+     "id": "megan-l-srinivas",
+     "name": "Megan L. Srinivas",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6076
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 171
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 31",
+   "district": null,
+   "title": "State Representative District 31",
+   "choices": [
+    {
+     "id": "kevin-w-dubay",
+     "name": "Kevin W. DuBay",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5478
+    },
+    {
+     "id": "mary-madison",
+     "name": "Mary Madison",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9451
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 32",
+   "district": null,
+   "title": "State Representative District 32",
+   "choices": [
+    {
+     "id": "mike-jones",
+     "name": "Mike Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9949
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 318
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 33",
+   "district": null,
+   "title": "State Representative District 33",
+   "choices": [
+    {
+     "id": "lynn-hammel",
+     "name": "Lynn Hammel",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2106
+    },
+    {
+     "id": "ivette-muhammad",
+     "name": "Ivette Muhammad",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5194
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 58
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 34",
+   "district": null,
+   "title": "State Representative District 34",
+   "choices": [
+    {
+     "id": "rob-johnson",
+     "name": "Rob Johnson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5530
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 117
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 35",
+   "district": null,
+   "title": "State Representative District 35",
+   "choices": [
+    {
+     "id": "sean-bagniewski",
+     "name": "Sean Bagniewski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9446
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 246
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 36",
+   "district": null,
+   "title": "State Representative District 36",
+   "choices": [
+    {
+     "id": "bruce-a-michalowski",
+     "name": "Bruce A. Michalowski",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2445
+    },
+    {
+     "id": "austin-baeth",
+     "name": "Austin Baeth",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11739
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 25
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 37",
+   "district": null,
+   "title": "State Representative District 37",
+   "choices": [
+    {
+     "id": "jason-sandholdt",
+     "name": "Jason Sandholdt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 38",
+   "district": null,
+   "title": "State Representative District 38",
+   "choices": [
+    {
+     "id": "matthew-oleson",
+     "name": "Matthew Oleson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "brad-magg",
+     "name": "Brad Magg",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 39",
+   "district": null,
+   "title": "State Representative District 39",
+   "choices": [
+    {
+     "id": "troy-clark",
+     "name": "Troy Clark",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3078
+    },
+    {
+     "id": "nate-boulton",
+     "name": "Nate Boulton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4879
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 40",
+   "district": null,
+   "title": "State Representative District 40",
+   "choices": [
+    {
+     "id": "bill-gustoff",
+     "name": "Bill Gustoff",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4046
+    },
+    {
+     "id": "heather-sievers",
+     "name": "Heather Sievers",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5529
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 41",
+   "district": null,
+   "title": "State Representative District 41",
+   "choices": [
+    {
+     "id": "ryan-weldon",
+     "name": "Ryan Weldon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5981
+    },
+    {
+     "id": "molly-buck",
+     "name": "Molly Buck",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7942
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 42",
+   "district": null,
+   "title": "State Representative District 42",
+   "choices": [
+    {
+     "id": "heather-stephenson",
+     "name": "Heather Stephenson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6080
+    },
+    {
+     "id": "amy-tagliareni",
+     "name": "Amy Tagliareni",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7677
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 17
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 43",
+   "district": null,
+   "title": "State Representative District 43",
+   "choices": [
+    {
+     "id": "nicole-hasso",
+     "name": "Nicole Hasso",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6734
+    },
+    {
+     "id": "jill-alesch",
+     "name": "Jill Alesch",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9150
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 14
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-44",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 44",
+   "district": null,
+   "title": "State Representative District 44",
+   "choices": [
+    {
+     "id": "larry-mcburney",
+     "name": "Larry McBurney",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10828
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 374
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 45",
+   "district": null,
+   "title": "State Representative District 45",
+   "choices": [
+    {
+     "id": "austin-stubbs",
+     "name": "Austin Stubbs",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8931
+    },
+    {
+     "id": "kendra-haug",
+     "name": "Kendra Haug",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6763
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 30
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 46",
+   "district": null,
+   "title": "State Representative District 46",
+   "choices": [
+    {
+     "id": "dan-gehlbach",
+     "name": "Dan Gehlbach",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1777
+    },
+    {
+     "id": "mandy-newton-rosenow",
+     "name": "Mandy Newton Rosenow",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2802
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 47",
+   "district": null,
+   "title": "State Representative District 47",
+   "choices": [
+    {
+     "id": "carter-f-nordman",
+     "name": "Carter F. Nordman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 332
+    },
+    {
+     "id": "chris-new",
+     "name": "Chris New",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 551
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-48",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 48",
+   "district": null,
+   "title": "State Representative District 48",
+   "choices": [
+    {
+     "id": "chad-behn",
+     "name": "Chad Behn",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "benjamin-olsen",
+     "name": "Benjamin Olsen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 49",
+   "district": null,
+   "title": "State Representative District 49",
+   "choices": [
+    {
+     "id": "beth-wessel-kroeschell",
+     "name": "Beth Wessel-Kroeschell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-50",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 50",
+   "district": null,
+   "title": "State Representative District 50",
+   "choices": [
+    {
+     "id": "ross-wilburn",
+     "name": "Ross Wilburn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-51",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 51",
+   "district": null,
+   "title": "State Representative District 51",
+   "choices": [
+    {
+     "id": "brett-barker",
+     "name": "Brett Barker",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1927
+    },
+    {
+     "id": "teresa-perin",
+     "name": "Teresa Perin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1180
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-52",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 52",
+   "district": null,
+   "title": "State Representative District 52",
+   "choices": [
+    {
+     "id": "david-blom",
+     "name": "David Blom",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3329
+    },
+    {
+     "id": "mike-tupper",
+     "name": "Mike Tupper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4396
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-53",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 53",
+   "district": null,
+   "title": "State Representative District 53",
+   "choices": [
+    {
+     "id": "dean-fisher",
+     "name": "Dean Fisher",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "berleen-wobeter",
+     "name": "Berleen Wobeter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-54",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 54",
+   "district": null,
+   "title": "State Representative District 54",
+   "choices": [
+    {
+     "id": "joshua-meggers",
+     "name": "Joshua Meggers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "leila-ann-staton",
+     "name": "Leila Ann Staton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-55",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 55",
+   "district": null,
+   "title": "State Representative District 55",
+   "choices": [
+    {
+     "id": "beau-klaver",
+     "name": "Beau Klaver",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 336
+    },
+    {
+     "id": "cynthia-oppedal-paschen",
+     "name": "Cynthia Oppedal Paschen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 141
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-state-representative-district-56",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 56",
+   "district": null,
+   "title": "State Representative District 56",
+   "choices": [
+    {
+     "id": "mark-i-thompson",
+     "name": "Mark I. Thompson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5289
+    },
+    {
+     "id": "kyle-kruse",
+     "name": "Kyle Kruse",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2397
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-57",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 57",
+   "district": null,
+   "title": "State Representative District 57",
+   "choices": [
+    {
+     "id": "pat-grassley",
+     "name": "Pat Grassley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4076
+    },
+    {
+     "id": "shawn-ellerbroek",
+     "name": "Shawn Ellerbroek",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2274
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-58",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 58",
+   "district": null,
+   "title": "State Representative District 58",
+   "choices": [
+    {
+     "id": "charley-thomson",
+     "name": "Charley Thomson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2067
+    },
+    {
+     "id": "india-may",
+     "name": "India May",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1601
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-59",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 59",
+   "district": null,
+   "title": "State Representative District 59",
+   "choices": [
+    {
+     "id": "christian-hermanson",
+     "name": "Christian Hermanson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6097
+    },
+    {
+     "id": "jacob-welper",
+     "name": "Jacob Welper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6794
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-60",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 60",
+   "district": null,
+   "title": "State Representative District 60",
+   "choices": [
+    {
+     "id": "dani-ollenburg",
+     "name": "Dani Ollenburg",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3968
+    },
+    {
+     "id": "alexander-schmidt",
+     "name": "Alexander Schmidt",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2609
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-state-representative-district-61",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 61",
+   "district": null,
+   "title": "State Representative District 61",
+   "choices": [
+    {
+     "id": "vincent-collis",
+     "name": "Vincent Collis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "lucas-hewitt",
+     "name": "Lucas Hewitt",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-62",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 62",
+   "district": null,
+   "title": "State Representative District 62",
+   "choices": [
+    {
+     "id": "jerome-amos-jr",
+     "name": "Jerome Amos Jr",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-63",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 63",
+   "district": null,
+   "title": "State Representative District 63",
+   "choices": [
+    {
+     "id": "michael-r-bergan",
+     "name": "Michael R. Bergan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jeff-thurlow",
+     "name": "Jeff Thurlow",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-64",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 64",
+   "district": null,
+   "title": "State Representative District 64",
+   "choices": [
+    {
+     "id": "jason-gearhart",
+     "name": "Jason Gearhart",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4520
+    },
+    {
+     "id": "brian-bruening",
+     "name": "Brian Bruening",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2799
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-65",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 65",
+   "district": null,
+   "title": "State Representative District 65",
+   "choices": [
+    {
+     "id": "shannon-lundgren",
+     "name": "Shannon Lundgren",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3708
+    },
+    {
+     "id": "carolyn-wiezorek",
+     "name": "Carolyn Wiezorek",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4241
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-66",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 66",
+   "district": null,
+   "title": "State Representative District 66",
+   "choices": [
+    {
+     "id": "steven-bradley",
+     "name": "Steven Bradley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4492
+    },
+    {
+     "id": "matt-english",
+     "name": "Matt English",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3583
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-67",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 67",
+   "district": null,
+   "title": "State Representative District 67",
+   "choices": [
+    {
+     "id": "craig-johnson",
+     "name": "Craig Johnson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1403
+    },
+    {
+     "id": "michael-coonrad",
+     "name": "Michael Coonrad",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1287
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-68",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 68",
+   "district": null,
+   "title": "State Representative District 68",
+   "choices": [
+    {
+     "id": "chad-ingels",
+     "name": "Chad Ingels",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "scott-bodley",
+     "name": "Scott Bodley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-69",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 69",
+   "district": null,
+   "title": "State Representative District 69",
+   "choices": [
+    {
+     "id": "tom-determann",
+     "name": "Tom Determann",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "randy-meier",
+     "name": "Randy Meier",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-70",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 70",
+   "district": null,
+   "title": "State Representative District 70",
+   "choices": [
+    {
+     "id": "norlin-mommsen",
+     "name": "Norlin Mommsen",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1339
+    },
+    {
+     "id": "george-pickup",
+     "name": "George Pickup",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1760
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-71",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 71",
+   "district": null,
+   "title": "State Representative District 71",
+   "choices": [
+    {
+     "id": "sam-wooden",
+     "name": "Sam Wooden",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8880
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 292
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-72",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 72",
+   "district": null,
+   "title": "State Representative District 72",
+   "choices": [
+    {
+     "id": "jennifer-smith",
+     "name": "Jennifer Smith",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5495
+    },
+    {
+     "id": "matt-robinson",
+     "name": "Matt Robinson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6629
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-73",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 73",
+   "district": null,
+   "title": "State Representative District 73",
+   "choices": [
+    {
+     "id": "elizabeth-wilson",
+     "name": "Elizabeth Wilson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3798
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 72
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-74",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 74",
+   "district": null,
+   "title": "State Representative District 74",
+   "choices": [
+    {
+     "id": "eric-gjerde",
+     "name": "Eric Gjerde",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3346
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 48
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-75",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 75",
+   "district": null,
+   "title": "State Representative District 75",
+   "choices": [
+    {
+     "id": "drew-stensland",
+     "name": "Drew Stensland",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-76",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 76",
+   "district": null,
+   "title": "State Representative District 76",
+   "choices": [
+    {
+     "id": "matt-reisetter",
+     "name": "Matt Reisetter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "calvin-horn",
+     "name": "Calvin Horn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-77",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 77",
+   "district": null,
+   "title": "State Representative District 77",
+   "choices": [
+    {
+     "id": "jeff-cooling",
+     "name": "Jeff Cooling",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3108
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 54
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-78",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 78",
+   "district": null,
+   "title": "State Representative District 78",
+   "choices": [
+    {
+     "id": "angel-ramirez",
+     "name": "Angel Ramirez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4757
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 101
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-79",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 79",
+   "district": null,
+   "title": "State Representative District 79",
+   "choices": [
+    {
+     "id": "barclay-woerner",
+     "name": "Barclay Woerner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 826
+    },
+    {
+     "id": "tracy-ehlert",
+     "name": "Tracy Ehlert",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2910
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-80",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 80",
+   "district": null,
+   "title": "State Representative District 80",
+   "choices": [
+    {
+     "id": "aime-j-wichtendahl",
+     "name": "Aime J. Wichtendahl",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4259
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 164
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-81",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 81",
+   "district": null,
+   "title": "State Representative District 81",
+   "choices": [
+    {
+     "id": "dillon-fillion",
+     "name": "Dillon Fillion",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "daniel-gosa",
+     "name": "Daniel Gosa",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-82",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 82",
+   "district": null,
+   "title": "State Representative District 82",
+   "choices": [
+    {
+     "id": "bobby-kaufmann",
+     "name": "Bobby Kaufmann",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "james-behrmann",
+     "name": "James Behrmann",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-83",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 83",
+   "district": null,
+   "title": "State Representative District 83",
+   "choices": [
+    {
+     "id": "cindy-golding",
+     "name": "Cindy Golding",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1112
+    },
+    {
+     "id": "mike-bergman",
+     "name": "Mike Bergman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2266
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-84",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 84",
+   "district": null,
+   "title": "State Representative District 84",
+   "choices": [
+    {
+     "id": "thomas-gerhold",
+     "name": "Thomas Gerhold",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 278
+    },
+    {
+     "id": "polly-denison",
+     "name": "Polly Denison",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 481
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-85",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 85",
+   "district": null,
+   "title": "State Representative District 85",
+   "choices": [
+    {
+     "id": "amy-nielsen",
+     "name": "Amy Nielsen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-86",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 86",
+   "district": null,
+   "title": "State Representative District 86",
+   "choices": [
+    {
+     "id": "dave-jacoby",
+     "name": "Dave Jacoby",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-87",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 87",
+   "district": null,
+   "title": "State Representative District 87",
+   "choices": [
+    {
+     "id": "jeff-shipley",
+     "name": "Jeff Shipley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 941
+    },
+    {
+     "id": "thomas-r-o-donnell",
+     "name": "Thomas R. O'Donnell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2315
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-88",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 88",
+   "district": null,
+   "title": "State Representative District 88",
+   "choices": [
+    {
+     "id": "helena-hayes",
+     "name": "Helena Hayes",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 276
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-state-representative-district-89",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 89",
+   "district": null,
+   "title": "State Representative District 89",
+   "choices": [
+    {
+     "id": "elinor-a-levin",
+     "name": "Elinor A. Levin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "daniel-arch",
+     "name": "Daniel Arch",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-90",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 90",
+   "district": null,
+   "title": "State Representative District 90",
+   "choices": [
+    {
+     "id": "adam-zabner",
+     "name": "Adam Zabner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-91",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 91",
+   "district": null,
+   "title": "State Representative District 91",
+   "choices": [
+    {
+     "id": "judd-lawler",
+     "name": "Judd Lawler",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "mark-divitt",
+     "name": "Mark Divitt",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-92",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 92",
+   "district": null,
+   "title": "State Representative District 92",
+   "choices": [
+    {
+     "id": "heather-hora",
+     "name": "Heather Hora",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "brittany-erickson",
+     "name": "Brittany Erickson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-93",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 93",
+   "district": null,
+   "title": "State Representative District 93",
+   "choices": [
+    {
+     "id": "gary-m-mohr",
+     "name": "Gary M. Mohr",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "keith-soko",
+     "name": "Keith Soko",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-94",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 94",
+   "district": null,
+   "title": "State Representative District 94",
+   "choices": [
+    {
+     "id": "mike-vondran",
+     "name": "Mike Vondran",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "karen-roebuck",
+     "name": "Karen Roebuck",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-95",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 95",
+   "district": null,
+   "title": "State Representative District 95",
+   "choices": [
+    {
+     "id": "taylor-collins",
+     "name": "Taylor Collins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2602
+    },
+    {
+     "id": "carrie-trevino",
+     "name": "Carrie Trevino",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1256
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-state-representative-district-96",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 96",
+   "district": null,
+   "title": "State Representative District 96",
+   "choices": [
+    {
+     "id": "mark-cisneros",
+     "name": "Mark Cisneros",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "nick-salazar",
+     "name": "Nick Salazar",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-97",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 97",
+   "district": null,
+   "title": "State Representative District 97",
+   "choices": [
+    {
+     "id": "charlie-helmick",
+     "name": "Charlie Helmick",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "adam-peters",
+     "name": "Adam Peters",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-98",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 98",
+   "district": null,
+   "title": "State Representative District 98",
+   "choices": [
+    {
+     "id": "nathan-ramker",
+     "name": "Nathan Ramker",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "andrew-fitzgerald",
+     "name": "Andrew Fitzgerald",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-state-representative-district-99",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 99",
+   "district": null,
+   "title": "State Representative District 99",
+   "choices": [
+    {
+     "id": "matthew-rinker",
+     "name": "Matthew Rinker",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4768
+    },
+    {
+     "id": "jennifer-kirkman",
+     "name": "Jennifer Kirkman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6150
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 39
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-state-representative-district-100",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ia",
+   "office": "State Representative District 100",
+   "district": null,
+   "title": "State Representative District 100",
+   "choices": [
+    {
+     "id": "blaine-watkins",
+     "name": "Blaine Watkins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "matthew-mohrfeld",
+     "name": "Matthew Mohrfeld",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-constitutional-amendment-1",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Constitutional Amendment 1",
+   "district": null,
+   "title": "Constitutional Amendment 1",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 205531
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 173971
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 99
+   }
+  },
+  {
+   "id": "ia-court-of-appeals-judge-john-m-sandy",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Court of Appeals Judge - John M. Sandy",
+   "district": null,
+   "title": "Court of Appeals Judge - John M. Sandy",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 204205
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 83948
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 99
+   }
+  },
+  {
+   "id": "ia-court-of-appeals-judge-julie-a-schumacher",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Court of Appeals Judge - Julie A. Schumacher",
+   "district": null,
+   "title": "Court of Appeals Judge - Julie A. Schumacher",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 214521
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 74455
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 99
+   }
+  },
+  {
+   "id": "ia-court-of-appeals-judge-sharon-soorholtz-greer",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Court of Appeals Judge - Sharon Soorholtz Greer",
+   "district": null,
+   "title": "Court of Appeals Judge - Sharon Soorholtz Greer",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 206609
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 82163
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 99
+   }
+  },
+  {
+   "id": "ia-district-1a-associate-judge-mark-t-hostager",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 1A Associate Judge - Mark T. Hostager",
+   "district": null,
+   "title": "District 1A Associate Judge - Mark T. Hostager",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 23606
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6907
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-district-1a-associate-judge-stephanie-c-rattenborg",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 1A Associate Judge - Stephanie C. Rattenborg",
+   "district": null,
+   "title": "District 1A Associate Judge - Stephanie C. Rattenborg",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 23379
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 7229
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-district-1a-associate-juvenile-judge-thomas-j-straka",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 1A Associate Juvenile Judge - Thomas J. Straka",
+   "district": null,
+   "title": "District 1A Associate Juvenile Judge - Thomas J. Straka",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 24214
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6906
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-district-1a-judge-alan-heavens",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 1A Judge - Alan Heavens",
+   "district": null,
+   "title": "District 1A Judge - Alan Heavens",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 24529
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6727
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-district-1b-associate-judge-linnea-m-n-nicol",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 1B Associate Judge - Linnea M.N. Nicol",
+   "district": null,
+   "title": "District 1B Associate Judge - Linnea M.N. Nicol",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-1b-associate-judge-michelle-jungers",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 1B Associate Judge - Michelle Jungers",
+   "district": null,
+   "title": "District 1B Associate Judge - Michelle Jungers",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-1b-associate-judge-patrice-jaye-eichman",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 1B Associate Judge - Patrice Jaye Eichman",
+   "district": null,
+   "title": "District 1B Associate Judge - Patrice Jaye Eichman",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-1b-judge-joel-a-dalrymple",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 1B Judge - Joel A. Dalrymple",
+   "district": null,
+   "title": "District 1B Judge - Joel A. Dalrymple",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-2a-associate-judge-adam-sauer",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2A Associate Judge - Adam Sauer",
+   "district": null,
+   "title": "District 2A Associate Judge - Adam Sauer",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 15524
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5741
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-2a-associate-judge-karen-kaufman-salic",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2A Associate Judge - Karen Kaufman Salic",
+   "district": null,
+   "title": "District 2A Associate Judge - Karen Kaufman Salic",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 14971
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6154
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-2a-associate-judge-mark-milder",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2A Associate Judge - Mark Milder",
+   "district": null,
+   "title": "District 2A Associate Judge - Mark Milder",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 15398
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5728
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-2a-judge-christopher-foy",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2A Judge - Christopher Foy",
+   "district": null,
+   "title": "District 2A Judge - Christopher Foy",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 14950
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6414
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-2a-judge-colleen-d-weiland",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2A Judge - Colleen D. Weiland",
+   "district": null,
+   "title": "District 2A Judge - Colleen D. Weiland",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 15898
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5830
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-2a-judge-dedra-schroeder",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2A Judge - DeDra Schroeder",
+   "district": null,
+   "title": "District 2A Judge - DeDra Schroeder",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 15694
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6141
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-2a-judge-gregg-r-rosenbladt",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2A Judge - Gregg R. Rosenbladt",
+   "district": null,
+   "title": "District 2A Judge - Gregg R. Rosenbladt",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 15244
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6059
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-2b-associate-judge-joseph-l-tofilon",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2B Associate Judge - Joseph L. Tofilon",
+   "district": null,
+   "title": "District 2B Associate Judge - Joseph L. Tofilon",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 15672
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5676
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 13
+   }
+  },
+  {
+   "id": "ia-district-2b-associate-judge-kathryn-e-austin",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2B Associate Judge - Kathryn E. Austin",
+   "district": null,
+   "title": "District 2B Associate Judge - Kathryn E. Austin",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 2296
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 798
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-2b-associate-judge-stephen-a-owen",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2B Associate Judge - Stephen A. Owen",
+   "district": null,
+   "title": "District 2B Associate Judge - Stephen A. Owen",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 13531
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4688
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 12
+   }
+  },
+  {
+   "id": "ia-district-2b-judge-amy-moore",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2B Judge - Amy Moore",
+   "district": null,
+   "title": "District 2B Judge - Amy Moore",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 16228
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5342
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 13
+   }
+  },
+  {
+   "id": "ia-district-2b-judge-angela-l-doyle",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2B Judge - Angela L. Doyle",
+   "district": null,
+   "title": "District 2B Judge - Angela L. Doyle",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 16234
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5320
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 13
+   }
+  },
+  {
+   "id": "ia-district-2b-judge-ashley-sparks",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2B Judge - Ashley Sparks",
+   "district": null,
+   "title": "District 2B Judge - Ashley Sparks",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 16052
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5397
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 13
+   }
+  },
+  {
+   "id": "ia-district-2b-judge-bethany-currie",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2B Judge - Bethany Currie",
+   "district": null,
+   "title": "District 2B Judge - Bethany Currie",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 16041
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5392
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 13
+   }
+  },
+  {
+   "id": "ia-district-2b-judge-christopher-polking",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 2B Judge - Christopher Polking",
+   "district": null,
+   "title": "District 2B Judge - Christopher Polking",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 16784
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5550
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 13
+   }
+  },
+  {
+   "id": "ia-district-3a-associate-judge-jennifer-bennett-finn",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 3A Associate Judge - Jennifer Bennett Finn",
+   "district": null,
+   "title": "District 3A Associate Judge - Jennifer Bennett Finn",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 11654
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2791
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 10
+   }
+  },
+  {
+   "id": "ia-district-3a-associate-judge-kristi-busse",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 3A Associate Judge - Kristi Busse",
+   "district": null,
+   "title": "District 3A Associate Judge - Kristi Busse",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 12435
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2211
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 10
+   }
+  },
+  {
+   "id": "ia-district-3a-judge-adam-miller",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 3A Judge - Adam Miller",
+   "district": null,
+   "title": "District 3A Judge - Adam Miller",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 12175
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2195
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 10
+   }
+  },
+  {
+   "id": "ia-district-3a-judge-andrew-j-smith",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 3A Judge - Andrew J. Smith",
+   "district": null,
+   "title": "District 3A Judge - Andrew J. Smith",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 11639
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2687
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 10
+   }
+  },
+  {
+   "id": "ia-district-3a-judge-carl-j-petersen",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 3A Judge - Carl J. Petersen",
+   "district": null,
+   "title": "District 3A Judge - Carl J. Petersen",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 12373
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2346
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 10
+   }
+  },
+  {
+   "id": "ia-district-3a-judge-charles-borth",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 3A Judge - Charles Borth",
+   "district": null,
+   "title": "District 3A Judge - Charles Borth",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 12260
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2388
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 10
+   }
+  },
+  {
+   "id": "ia-district-3b-associate-judge-daniel-p-vakulskas",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 3B Associate Judge - Daniel P. Vakulskas",
+   "district": null,
+   "title": "District 3B Associate Judge - Daniel P. Vakulskas",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 9234
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2821
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-3b-associate-judge-john-c-nelson",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 3B Associate Judge - John C. Nelson",
+   "district": null,
+   "title": "District 3B Associate Judge - John C. Nelson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 9409
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2591
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-3b-associate-judge-mark-c-cord",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 3B Associate Judge - Mark C. Cord",
+   "district": null,
+   "title": "District 3B Associate Judge - Mark C. Cord",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 10009
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2315
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-3b-associate-judge-melinda-wicks",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 3B Associate Judge - Melinda Wicks",
+   "district": null,
+   "title": "District 3B Associate Judge - Melinda Wicks",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 9305
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2650
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-3b-judge-tod-j-deck",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 3B Judge - Tod J. Deck",
+   "district": null,
+   "title": "District 3B Judge - Tod J. Deck",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 10318
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2125
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-3b-judge-zachary-s-hindman",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 3B Judge - Zachary S. Hindman",
+   "district": null,
+   "title": "District 3B Judge - Zachary S. Hindman",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 10388
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1990
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-4-associate-judge-ashley-n-west-joons",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 4 Associate Judge - Ashley N. West-Joons",
+   "district": null,
+   "title": "District 4 Associate Judge - Ashley N. West-Joons",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 630
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 393
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-4-associate-judge-matthew-a-schuling",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 4 Associate Judge - Matthew A. Schuling",
+   "district": null,
+   "title": "District 4 Associate Judge - Matthew A. Schuling",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 640
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 364
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-4-associate-judge-scott-strait",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 4 Associate Judge - Scott Strait",
+   "district": null,
+   "title": "District 4 Associate Judge - Scott Strait",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8
+   }
+  },
+  {
+   "id": "ia-district-4-judge-amy-l-zacharias",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 4 Judge - Amy L. Zacharias",
+   "district": null,
+   "title": "District 4 Judge - Amy L. Zacharias",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 662
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 374
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-4-judge-craig-michael-dreismeier",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 4 Judge - Craig Michael Dreismeier",
+   "district": null,
+   "title": "District 4 Judge - Craig Michael Dreismeier",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 630
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 378
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-4-judge-donna-bothwell",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 4 Judge - Donna Bothwell",
+   "district": null,
+   "title": "District 4 Judge - Donna Bothwell",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 660
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 350
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-4-judge-justin-r-wyatt",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 4 Judge - Justin R. Wyatt",
+   "district": null,
+   "title": "District 4 Judge - Justin R. Wyatt",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 647
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 364
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-4-judge-margaret-j-reyes",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 4 Judge - Margaret J. Reyes",
+   "district": null,
+   "title": "District 4 Judge - Margaret J. Reyes",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 645
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 378
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-4-judge-michael-donn-hooper",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 4 Judge - Michael Donn Hooper",
+   "district": null,
+   "title": "District 4 Judge - Michael Donn Hooper",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 704
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 355
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-5a-associate-judge-mark-f-schlenker",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5A Associate Judge - Mark F. Schlenker",
+   "district": null,
+   "title": "District 5A Associate Judge - Mark F. Schlenker",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 7927
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 3748
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-5a-associate-judge-steven-w-guiter",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5A Associate Judge - Steven W. Guiter",
+   "district": null,
+   "title": "District 5A Associate Judge - Steven W. Guiter",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 7991
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 3493
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-5a-judge-michael-k-jacobsen",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5A Judge - Michael K. Jacobsen",
+   "district": null,
+   "title": "District 5A Judge - Michael K. Jacobsen",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 7877
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 3657
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-5a-judge-nicholas-bailey",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5A Judge - Nicholas Bailey",
+   "district": null,
+   "title": "District 5A Judge - Nicholas Bailey",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 8131
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 3397
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-5a-judge-thomas-p-murphy",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5A Judge - Thomas P. Murphy",
+   "district": null,
+   "title": "District 5A Judge - Thomas P. Murphy",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 8167
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 3439
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-5b-associate-judge-andrew-zimmerman",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5B Associate Judge - Andrew Zimmerman",
+   "district": null,
+   "title": "District 5B Associate Judge - Andrew Zimmerman",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3437
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1220
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-5b-judge-elisabeth-s-reynoldson",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5B Judge - Elisabeth S. Reynoldson",
+   "district": null,
+   "title": "District 5B Judge - Elisabeth S. Reynoldson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3435
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1221
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-5c-associate-judge-ashley-stewart",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Associate Judge - Ashley Stewart",
+   "district": null,
+   "title": "District 5C Associate Judge - Ashley Stewart",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 78334
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 35679
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-associate-judge-brendan-l-greiner",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Associate Judge - Brendan L. Greiner",
+   "district": null,
+   "title": "District 5C Associate Judge - Brendan L. Greiner",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 67913
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 46712
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-associate-judge-jordan-brackey",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Associate Judge - Jordan Brackey",
+   "district": null,
+   "title": "District 5C Associate Judge - Jordan Brackey",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 77517
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 35702
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-associate-judge-kimberly-ayotte",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Associate Judge - Kimberly Ayotte",
+   "district": null,
+   "title": "District 5C Associate Judge - Kimberly Ayotte",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 77950
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 36218
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-associate-judge-lynn-poschner",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Associate Judge - Lynn Poschner",
+   "district": null,
+   "title": "District 5C Associate Judge - Lynn Poschner",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 78869
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 34645
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-associate-judge-tabitha-turner",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Associate Judge - Tabitha Turner",
+   "district": null,
+   "title": "District 5C Associate Judge - Tabitha Turner",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 78799
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 34922
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-judge-celene-gogerty",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Judge - Celene Gogerty",
+   "district": null,
+   "title": "District 5C Judge - Celene Gogerty",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 76653
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 38684
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-judge-christopher-kemp",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Judge - Christopher Kemp",
+   "district": null,
+   "title": "District 5C Judge - Christopher Kemp",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 78091
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 36709
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-judge-coleman-mcallister",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Judge - Coleman McAllister",
+   "district": null,
+   "title": "District 5C Judge - Coleman McAllister",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 77089
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 37178
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-judge-joseph-w-seidlin",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Judge - Joseph W. Seidlin",
+   "district": null,
+   "title": "District 5C Judge - Joseph W. Seidlin",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 76085
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 37576
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-judge-lawrence-p-mclellan",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Judge - Lawrence P. McLellan",
+   "district": null,
+   "title": "District 5C Judge - Lawrence P. McLellan",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 76854
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 37300
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-judge-samantha-j-gronewald",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Judge - Samantha J. Gronewald",
+   "district": null,
+   "title": "District 5C Judge - Samantha J. Gronewald",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 81024
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 34732
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-judge-sarah-crane",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Judge - Sarah Crane",
+   "district": null,
+   "title": "District 5C Judge - Sarah Crane",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 81548
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 34513
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-5c-judge-scott-j-beattie",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 5C Judge - Scott J. Beattie",
+   "district": null,
+   "title": "District 5C Judge - Scott J. Beattie",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 80665
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 36401
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-district-6-associate-judge-angie-johnston",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 6 Associate Judge - Angie Johnston",
+   "district": null,
+   "title": "District 6 Associate Judge - Angie Johnston",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 20051
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6483
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-6-associate-judge-casey-d-jones",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 6 Associate Judge - Casey D. Jones",
+   "district": null,
+   "title": "District 6 Associate Judge - Casey D. Jones",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 20009
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6616
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-6-associate-judge-kristin-schneider",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 6 Associate Judge - Kristin Schneider",
+   "district": null,
+   "title": "District 6 Associate Judge - Kristin Schneider",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 18397
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 8056
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-6-judge-jason-d-besler",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 6 Judge - Jason D. Besler",
+   "district": null,
+   "title": "District 6 Judge - Jason D. Besler",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 19030
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 7382
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-6-judge-mark-fisher",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 6 Judge - Mark Fisher",
+   "district": null,
+   "title": "District 6 Judge - Mark Fisher",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 18126
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 8351
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-6-judge-michael-harris",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 6 Judge - Michael Harris",
+   "district": null,
+   "title": "District 6 Judge - Michael Harris",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 19193
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 7392
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6
+   }
+  },
+  {
+   "id": "ia-district-7-associate-judge-cheryl-e-traum",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 7 Associate Judge - Cheryl E. Traum",
+   "district": null,
+   "title": "District 7 Associate Judge - Cheryl E. Traum",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3314
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1018
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-district-7-judge-elizabeth-o-donnell",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 7 Judge - Elizabeth O'Donnell",
+   "district": null,
+   "title": "District 7 Judge - Elizabeth O'Donnell",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3279
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1044
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-district-7-judge-henry-william-latham-ii",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 7 Judge - Henry William Latham II",
+   "district": null,
+   "title": "District 7 Judge - Henry William Latham II",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3166
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1138
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-district-7-judge-jeffrey-mcdaniel",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 7 Judge - Jeffrey McDaniel",
+   "district": null,
+   "title": "District 7 Judge - Jeffrey McDaniel",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3109
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1164
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-district-7-judge-joel-william-barrows",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 7 Judge - Joel William Barrows",
+   "district": null,
+   "title": "District 7 Judge - Joel William Barrows",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3160
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1109
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-district-7-judge-mark-ray-lawson",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 7 Judge - Mark Ray Lawson",
+   "district": null,
+   "title": "District 7 Judge - Mark Ray Lawson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3459
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1495
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-district-7-judge-patrick-a-mcelyea",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 7 Judge - Patrick A. McElyea",
+   "district": null,
+   "title": "District 7 Judge - Patrick A. McElyea",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3154
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1106
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-district-7-judge-tamra-j-roberts",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 7 Judge - Tamra J. Roberts",
+   "district": null,
+   "title": "District 7 Judge - Tamra J. Roberts",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 3206
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1085
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-district-8a-associate-judge-jennifer-nicole-jensen",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 8A Associate Judge - Jennifer Nicole Jensen",
+   "district": null,
+   "title": "District 8A Associate Judge - Jennifer Nicole Jensen",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 6264
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2261
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 10
+   }
+  },
+  {
+   "id": "ia-district-8a-associate-judge-susan-cole",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 8A Associate Judge - Susan Cole",
+   "district": null,
+   "title": "District 8A Associate Judge - Susan Cole",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 6364
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2249
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 10
+   }
+  },
+  {
+   "id": "ia-district-8a-judge-amber-l-thompson",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 8A Judge - Amber L. Thompson",
+   "district": null,
+   "title": "District 8A Judge - Amber L. Thompson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 6269
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2278
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 9
+   }
+  },
+  {
+   "id": "ia-district-8a-judge-dustin-hite",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 8A Judge - Dustin Hite",
+   "district": null,
+   "title": "District 8A Judge - Dustin Hite",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 6077
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2394
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 10
+   }
+  },
+  {
+   "id": "ia-district-8b-associate-judge-emily-s-dean",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 8B Associate Judge - Emily S. Dean",
+   "district": null,
+   "title": "District 8B Associate Judge - Emily S. Dean",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 8899
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2458
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-district-8b-judge-wyatt-p-peterson",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "District 8B Judge - Wyatt P. Peterson",
+   "district": null,
+   "title": "District 8B Judge - Wyatt P. Peterson",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 8756
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2411
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-city-of-bellevue-public-measure-li",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Bellevue - Public Measure LI",
+   "district": null,
+   "title": "City of Bellevue - Public Measure LI",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 942
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 181
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-burlington-public-measure-gm",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Burlington - Public Measure GM",
+   "district": null,
+   "title": "City of Burlington - Public Measure GM",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 5615
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2696
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-cedar-rapids-public-measure-d",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Cedar Rapids - Public Measure D",
+   "district": null,
+   "title": "City of Cedar Rapids - Public Measure D",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 14892
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4611
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-churdan-public-measure-im",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Churdan - Public Measure IM",
+   "district": null,
+   "title": "City of Churdan - Public Measure IM",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-dana-public-measure-in",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Dana - Public Measure IN",
+   "district": null,
+   "title": "City of Dana - Public Measure IN",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-decorah-public-measure-wd",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Decorah - Public Measure WD",
+   "district": null,
+   "title": "City of Decorah - Public Measure WD",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-dike-public-measure-io",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Dike - Public Measure IO",
+   "district": null,
+   "title": "City of Dike - Public Measure IO",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-ely-public-measure-e",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Ely - Public Measure E",
+   "district": null,
+   "title": "City of Ely - Public Measure E",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 118
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 45
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-grand-junction-public-measure-ii",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Grand Junction - Public Measure II",
+   "district": null,
+   "title": "City of Grand Junction - Public Measure II",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-hills-public-measure-lz",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Hills - Public Measure LZ",
+   "district": null,
+   "title": "City of Hills - Public Measure LZ",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-independence-public-measure-cd",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Independence - Public Measure CD",
+   "district": null,
+   "title": "City of Independence - Public Measure CD",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-jefferson-public-measure-ij",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Jefferson - Public Measure IJ",
+   "district": null,
+   "title": "City of Jefferson - Public Measure IJ",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-lake-park-public-measure-gx",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Lake Park - Public Measure GX",
+   "district": null,
+   "title": "City of Lake Park - Public Measure GX",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 286
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 273
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-le-mars-public-measure-rc",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Le Mars - Public Measure RC",
+   "district": null,
+   "title": "City of Le Mars - Public Measure RC",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-paton-public-measure-ik",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Paton - Public Measure IK",
+   "district": null,
+   "title": "City of Paton - Public Measure IK",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-reinbeck-public-measure-ip",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Reinbeck - Public Measure IP",
+   "district": null,
+   "title": "City of Reinbeck - Public Measure IP",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-rippey-public-measure-il",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Rippey - Public Measure IL",
+   "district": null,
+   "title": "City of Rippey - Public Measure IL",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-scranton-public-measure-gy",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Scranton - Public Measure GY",
+   "district": null,
+   "title": "City of Scranton - Public Measure GY",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-spillville-public-measure-we",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Spillville - Public Measure WE",
+   "district": null,
+   "title": "City of Spillville - Public Measure WE",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-city-of-urbandale-public-measure-u",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Urbandale - Public Measure U",
+   "district": null,
+   "title": "City of Urbandale - Public Measure U",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 10121
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6019
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-city-of-waukon-public-measure-am",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "City of Waukon - Public Measure AM",
+   "district": null,
+   "title": "City of Waukon - Public Measure AM",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-agwsr-school-public-measure-ir",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "AGWSR School - Public Measure IR",
+   "district": null,
+   "title": "AGWSR School - Public Measure IR",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 22
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-carroll-school-public-measure-da",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Carroll School - Public Measure DA",
+   "district": null,
+   "title": "Carroll School - Public Measure DA",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 2823
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 3257
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-central-decatur-school-public-measure-ga",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Central Decatur School - Public Measure GA",
+   "district": null,
+   "title": "Central Decatur School - Public Measure GA",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-central-dewitt-school-public-measure-fc",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Central DeWitt School - Public Measure FC",
+   "district": null,
+   "title": "Central DeWitt School - Public Measure FC",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-easton-valley-school-public-measure-lj",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Easton Valley School - Public Measure LJ",
+   "district": null,
+   "title": "Easton Valley School - Public Measure LJ",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 172
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 191
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-emmetsburg-school-public-measure-a",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Emmetsburg School - Public Measure A",
+   "district": null,
+   "title": "Emmetsburg School - Public Measure A",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1165
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 988
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-fairfield-school-public-measure-lr",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Fairfield School - Public Measure LR",
+   "district": null,
+   "title": "Fairfield School - Public Measure LR",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 2518
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 893
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5
+   }
+  },
+  {
+   "id": "ia-george-little-rock-school-public-measure-nv",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "George-Little Rock School - Public Measure NV",
+   "district": null,
+   "title": "George-Little Rock School - Public Measure NV",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 565
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 636
+    }
+   ],
+   "precincts": {
+    "reporting": 2,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-hinton-school-public-measure-rd",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Hinton School - Public Measure RD",
+   "district": null,
+   "title": "Hinton School - Public Measure RD",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-independence-school-public-measure-ce",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Independence School - Public Measure CE",
+   "district": null,
+   "title": "Independence School - Public Measure CE",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-interstate-35-school-public-measure-z",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Interstate 35 School - Public Measure Z",
+   "district": null,
+   "title": "Interstate 35 School - Public Measure Z",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 86
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 83
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-keota-school-public-measure-ml",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Keota School - Public Measure ML",
+   "district": null,
+   "title": "Keota School - Public Measure ML",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-kirkwood-community-college-public-measure-nc",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Kirkwood Community College - Public Measure NC",
+   "district": null,
+   "title": "Kirkwood Community College - Public Measure NC",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 24411
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 10238
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 18
+   }
+  },
+  {
+   "id": "ia-knoxville-school-public-measure-on",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Knoxville School - Public Measure ON",
+   "district": null,
+   "title": "Knoxville School - Public Measure ON",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-lamoni-school-public-measure-gb",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Lamoni School - Public Measure GB",
+   "district": null,
+   "title": "Lamoni School - Public Measure GB",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-lone-tree-school-public-measure-ma",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Lone Tree School - Public Measure MA",
+   "district": null,
+   "title": "Lone Tree School - Public Measure MA",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-madrid-school-public-measure-bq",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Madrid School - Public Measure BQ",
+   "district": null,
+   "title": "Madrid School - Public Measure BQ",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 91
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 58
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-mid-prairie-school-public-measure-vf",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Mid-Prairie School - Public Measure VF",
+   "district": null,
+   "title": "Mid-Prairie School - Public Measure VF",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-north-union-school-public-measure-hf",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "North Union School - Public Measure HF",
+   "district": null,
+   "title": "North Union School - Public Measure HF",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 31
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-norwalk-school-public-measure-a",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Norwalk School - Public Measure A",
+   "district": null,
+   "title": "Norwalk School - Public Measure A",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 898
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 354
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-pcm-school-public-measure-ll",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "PCM School - Public Measure LL",
+   "district": null,
+   "title": "PCM School - Public Measure LL",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2
+   }
+  },
+  {
+   "id": "ia-pekin-school-public-measure-mn",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Pekin School - Public Measure MN",
+   "district": null,
+   "title": "Pekin School - Public Measure MN",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 39
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 17
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4
+   }
+  },
+  {
+   "id": "ia-pocahontas-area-school-public-measure-rq",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Pocahontas Area School - Public Measure RQ",
+   "district": null,
+   "title": "Pocahontas Area School - Public Measure RQ",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-saydel-school-public-measure-s",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Saydel School - Public Measure S",
+   "district": null,
+   "title": "Saydel School - Public Measure S",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 978
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 415
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-sergeant-bluff-luton-school-public-measure-wd",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Sergeant Bluff-Luton School - Public Measure WD",
+   "district": null,
+   "title": "Sergeant Bluff-Luton School - Public Measure WD",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-spirit-lake-school-public-measure-gw",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Spirit Lake School - Public Measure GW",
+   "district": null,
+   "title": "Spirit Lake School - Public Measure GW",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 1891
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2917
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-sumner-fredericksburg-school-public-measure-bw",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Sumner-Fredericksburg School - Public Measure BW",
+   "district": null,
+   "title": "Sumner-Fredericksburg School - Public Measure BW",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3
+   }
+  },
+  {
+   "id": "ia-tipton-school-public-measure-a",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Tipton School - Public Measure A",
+   "district": null,
+   "title": "Tipton School - Public Measure A",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1
+   }
+  },
+  {
+   "id": "ia-van-buren-county-school-public-measure-us",
+   "kind": "measure",
+   "level": "state",
+   "state": "ia",
+   "office": "Van Buren County School - Public Measure US",
+   "district": null,
+   "title": "Van Buren County School - Public Measure US",
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 1,
+    "total": 4
+   }
+  }
+ ]
+}

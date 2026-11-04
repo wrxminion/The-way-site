@@ -1,0 +1,4984 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-oh",
+ "label": "Ohio",
+ "source_ids": [
+  "oh-sos"
+ ],
+ "updated_at": "2026-11-04T03:19:42Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "oh-55a742ea542a09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Governor and Lieutenant Governor",
+   "district": null,
+   "title": "Governor and Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-acton-david-pepper",
+     "name": "Amy Acton / David Pepper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1810727
+    },
+    {
+     "id": "timothy-grady-andrea-neutzling",
+     "name": "Timothy Grady / Andrea Neutzling",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "heather-hill-patrick-manley",
+     "name": "Heather Hill / Patrick Manley",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "don-kissick-james-mills",
+     "name": "Don Kissick / James Mills",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 121191
+    },
+    {
+     "id": "vivek-ramaswamy-robert-mccolley",
+     "name": "Vivek Ramaswamy / Robert McColley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1681799
+    },
+    {
+     "id": "renea-turner-jalen-turner",
+     "name": "Renea Turner / Jalen Turner",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea548509a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "keith-faber",
+     "name": "Keith Faber",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1857211
+    },
+    {
+     "id": "john-kulewicz",
+     "name": "John  Kulewicz",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1717154
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea54e009a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Auditor of State",
+   "district": null,
+   "title": "Auditor of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "annette-blackwell",
+     "name": "Annette Blackwell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1682339
+    },
+    {
+     "id": "frank-larose",
+     "name": "Frank LaRose",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1897818
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea553b09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-pruss",
+     "name": "Tom Pruss",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 102926
+    },
+    {
+     "id": "allison-russo",
+     "name": "Allison Russo",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1721535
+    },
+    {
+     "id": "robert-sprague",
+     "name": "Robert Sprague",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1759191
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea559609a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Treasurer of State",
+   "district": null,
+   "title": "Treasurer of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jay-edwards",
+     "name": "Jay Edwards",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1838825
+    },
+    {
+     "id": "seth-walsh",
+     "name": "Seth Walsh",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1716934
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea55f109a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Justice of the Supreme Court",
+   "district": null,
+   "title": "Justice of the Supreme Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-hawkins",
+     "name": "Daniel Hawkins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1826245
+    },
+    {
+     "id": "marilyn-zayas",
+     "name": "Marilyn Zayas",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1735938
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea564c09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Justice of the Supreme Court",
+   "district": null,
+   "title": "Justice of the Supreme Court",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-brunner",
+     "name": "Jennifer Brunner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1752095
+    },
+    {
+     "id": "colleen-o-donnell",
+     "name": "Colleen O'Donnell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1811233
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea56a709a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sherrod-brown",
+     "name": "Sherrod Brown",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1735415
+    },
+    {
+     "id": "stephen-faris",
+     "name": "Stephen Faris",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "anthony-holliman",
+     "name": "Anthony Holliman",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jon-husted",
+     "name": "Jon Husted",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1711393
+    },
+    {
+     "id": "greg-levy",
+     "name": "Greg Levy",
+     "party": "Other-part",
+     "party_code": "O",
+     "votes": 71063
+    },
+    {
+     "id": "william-redpath",
+     "name": "William Redpath",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 102343
+    },
+    {
+     "id": "timothy-telymonde",
+     "name": "Timothy Telymonde",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea574909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 01",
+   "district": "01",
+   "title": "Representative to Congress - District 01",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-conroy",
+     "name": "Eric Conroy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 116976
+    },
+    {
+     "id": "greg-landsman",
+     "name": "Greg Landsman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 148973
+    },
+    {
+     "id": "nathan-weise",
+     "name": "Nathan Weise",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 7216
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea574f09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 02",
+   "district": "02",
+   "title": "Representative to Congress - District 02",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jen-mazzuckelli",
+     "name": "Jen Mazzuckelli",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 87972
+    },
+    {
+     "id": "david-taylor",
+     "name": "David Taylor",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 150968
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea570c09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 03",
+   "district": "03",
+   "title": "Representative to Congress - District 03",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joyce-beatty",
+     "name": "Joyce Beatty",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 177500
+    },
+    {
+     "id": "cleophus-dulaney",
+     "name": "Cleophus Dulaney",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 49745
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea578509a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 04",
+   "district": "04",
+   "title": "Representative to Congress - District 04",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-jordan",
+     "name": "Jim Jordan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 192588
+    },
+    {
+     "id": "joshua-kolasinski",
+     "name": "Joshua Kolasinski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 93382
+    },
+    {
+     "id": "tracey-tackett",
+     "name": "Tracey  Tackett",
+     "party": "Indep",
+     "party_code": "O",
+     "votes": 12778
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea573509a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 05",
+   "district": "05",
+   "title": "Representative to Congress - District 05",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-latta",
+     "name": "Bob Latta",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 143978
+    },
+    {
+     "id": "brian-shaver",
+     "name": "Brian Shaver",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 117752
+    },
+    {
+     "id": "michael-veloff",
+     "name": "Michael Veloff",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 8467
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea576209a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 06",
+   "district": "06",
+   "title": "Representative to Congress - District 06",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "elizabeth-kirtley",
+     "name": "Elizabeth Kirtley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 104154
+    },
+    {
+     "id": "michael-rulli",
+     "name": "Michael Rulli",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 154391
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea571a09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 07",
+   "district": "07",
+   "title": "Representative to Congress - District 07",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "thahbia-asad",
+     "name": "Thahbia Asad",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "andrey-martinichin",
+     "name": "Andrey Martinichin",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "max-miller",
+     "name": "Max Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 86879
+    },
+    {
+     "id": "brian-poindexter",
+     "name": "Brian Poindexter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 103252
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea574109a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 08",
+   "district": "08",
+   "title": "Representative to Congress - District 08",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "warren-davidson",
+     "name": "Warren Davidson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 145420
+    },
+    {
+     "id": "vanessa-enoch",
+     "name": "Vanessa Enoch",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 124230
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea577809a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 09",
+   "district": "09",
+   "title": "Representative to Congress - District 09",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marcy-kaptur",
+     "name": "Marcy Kaptur",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 58735
+    },
+    {
+     "id": "kathy-mckinstry",
+     "name": "Kathy McKinstry",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "derek-merrin",
+     "name": "Derek Merrin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 86534
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea571009a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 10",
+   "district": "10",
+   "title": "Representative to Congress - District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristina-knickerbocker",
+     "name": "Kristina Knickerbocker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 142981
+    },
+    {
+     "id": "thomas-mcmasters",
+     "name": "Thomas McMasters",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 8389
+    },
+    {
+     "id": "mike-turner",
+     "name": "Mike Turner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 137180
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea571609a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 11",
+   "district": "11",
+   "title": "Representative to Congress - District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shontel-brown",
+     "name": "Shontel Brown",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 82254
+    },
+    {
+     "id": "mike-kirchner",
+     "name": "Mike Kirchner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12049
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea572109a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 12",
+   "district": "12",
+   "title": "Representative to Congress - District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "troy-balderson",
+     "name": "Troy Balderson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 169825
+    },
+    {
+     "id": "jerrad-christian",
+     "name": "Jerrad Christian",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 113391
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea572f09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 13",
+   "district": "13",
+   "title": "Representative to Congress - District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carey-coleman",
+     "name": "Carey Coleman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 93981
+    },
+    {
+     "id": "sandeep-dixit",
+     "name": "Sandeep Dixit",
+     "party": "Nonprtycan",
+     "party_code": "O",
+     "votes": 3526
+    },
+    {
+     "id": "emilia-sykes",
+     "name": "Emilia Sykes",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 139975
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea576f09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 14",
+   "district": "14",
+   "title": "Representative to Congress - District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-joyce",
+     "name": "David Joyce",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 165460
+    },
+    {
+     "id": "maria-jukic",
+     "name": "Maria Jukic",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 137734
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea570209a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "oh",
+   "office": "Representative to Congress - District 15",
+   "district": "15",
+   "title": "Representative to Congress - District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brennan-barrington",
+     "name": "Brennan Barrington",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 5768
+    },
+    {
+     "id": "mike-carey",
+     "name": "Mike Carey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 98260
+    },
+    {
+     "id": "gary-josephson",
+     "name": "Gary Josephson",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "don-leonard",
+     "name": "Don Leonard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 100563
+    },
+    {
+     "id": "samuel-ronan",
+     "name": "Samuel Ronan",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea579609a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 12",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "willa-concannon",
+     "name": "Willa Concannon",
+     "party": "Non-partis",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea62dc09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 01",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 01",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ginger-bock",
+     "name": "Ginger Bock",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 167659
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea57da09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 02",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 02",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-epley",
+     "name": "Chris Epley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 258589
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea57e309a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 03",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 03",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-miller",
+     "name": "Mark Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 232016
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea57a109a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 04",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 04",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jayme-fountain",
+     "name": "Jayme Fountain",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 97806
+    },
+    {
+     "id": "todd-grace",
+     "name": "Todd Grace",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 59862
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea57bd09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 05",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 05",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-george",
+     "name": "Matthew George",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 405474
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea580609a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 06",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 06",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-goulding",
+     "name": "Michael Goulding",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 109379
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea57cf09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 07",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 07",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "molly-johnson",
+     "name": "Molly Johnson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 131813
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea62d809a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 08",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 08",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeffrey-crossman",
+     "name": "Jeffrey Crossman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 120593
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea57f709a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 09",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 09",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cynthia-curtin",
+     "name": "Cynthia Curtin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 165540
+    },
+    {
+     "id": "betty-sutton",
+     "name": "Betty Sutton",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 208750
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea62ce09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 10",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-mentel",
+     "name": "Michael Mentel",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 221998
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea57fe09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 11",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marisa-cornachio",
+     "name": "Marisa Cornachio",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 186102
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea57b209a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 12",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-hendrickson",
+     "name": "Robert Hendrickson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 271567
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea581c09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 06",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 06",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "myron-duhart",
+     "name": "Myron Duhart",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 68244
+    },
+    {
+     "id": "cj-kamm",
+     "name": "CJ Kamm",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 85950
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea581109a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 07",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 07",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-hanni",
+     "name": "Mark Hanni",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 106992
+    },
+    {
+     "id": "katherine-rudzik",
+     "name": "Katherine Rudzik",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 81302
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea62ea09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 08",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 08",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-ryan",
+     "name": "Michael Ryan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 119886
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea582709a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 11",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-patton",
+     "name": "Robert Patton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 185309
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea62ee09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 08",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 08",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "emanuella-groves",
+     "name": "Emanuella Groves",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 117380
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea582f09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 08",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 08",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anthony-alto",
+     "name": "Anthony Alto",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 35966
+    },
+    {
+     "id": "anita-mays",
+     "name": "Anita Mays",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 124883
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea62f909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 10",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "terri-jamison",
+     "name": "Terri Jamison",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 220769
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea62f509a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 08",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 08",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ashley-kilbane",
+     "name": "Ashley Kilbane",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 117974
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-5a1d28564624d7bee0633390ee0a2fbb",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "Judge of the Court of Appeals - District 09",
+   "district": null,
+   "title": "Judge of the Court of Appeals - District 09",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tavia-galonski",
+     "name": "Tavia Galonski",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 192381
+    },
+    {
+     "id": "nathan-manning",
+     "name": "Nathan Manning",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 178839
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea584409a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 01",
+   "district": null,
+   "title": "State Senator - District 01",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "craig-riedel",
+     "name": "Craig Riedel",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 101378
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea583709a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 03",
+   "district": null,
+   "title": "State Senator - District 03",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stacie-baker",
+     "name": "Stacie Baker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 45581
+    },
+    {
+     "id": "michele-reynolds",
+     "name": "Michele Reynolds",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 45676
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea588209a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 05",
+   "district": null,
+   "title": "State Senator - District 05",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeffrey-harris",
+     "name": "Jeffrey Harris",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 49366
+    },
+    {
+     "id": "phil-plummer",
+     "name": "Phil Plummer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 87610
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea586c09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 07",
+   "district": null,
+   "title": "State Senator - District 07",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zac-haines",
+     "name": "Zac Haines",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 84382
+    },
+    {
+     "id": "cara-jacob",
+     "name": "Cara Jacob",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 70281
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea587509a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 09",
+   "district": null,
+   "title": "State Senator - District 09",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "catherine-ingram",
+     "name": "Catherine Ingram",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 75228
+    },
+    {
+     "id": "linda-matthews",
+     "name": "Linda Matthews",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19096
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea587a09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 11",
+   "district": null,
+   "title": "State Senator - District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paula-hicks-hudson",
+     "name": "Paula Hicks-Hudson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "james-nowak",
+     "name": "James Nowak",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "kenneth-sharp",
+     "name": "Kenneth Sharp",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea588e09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 13",
+   "district": null,
+   "title": "State Senator - District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gayle-manning",
+     "name": "Gayle Manning",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 62566
+    },
+    {
+     "id": "joe-miller",
+     "name": "Joe Miller",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 66094
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea583309a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 15",
+   "district": null,
+   "title": "State Senator - District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joseph-healy",
+     "name": "Joseph Healy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11174
+    },
+    {
+     "id": "latyna-humphrey",
+     "name": "Latyna Humphrey",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 63694
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea585909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 17",
+   "district": null,
+   "title": "State Senator - District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-deer",
+     "name": "Brian Deer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 32266
+    },
+    {
+     "id": "shane-wilkin",
+     "name": "Shane Wilkin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 67743
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea583d09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 19",
+   "district": null,
+   "title": "State Senator - District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-charland",
+     "name": "Scott Charland",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 64471
+    },
+    {
+     "id": "ryan-rivers",
+     "name": "Ryan Rivers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 81935
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea587109a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 21",
+   "district": null,
+   "title": "State Senator - District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mikhail-alterman",
+     "name": "Mikhail Alterman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4737
+    },
+    {
+     "id": "kent-smith",
+     "name": "Kent Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 45439
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea588a09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 23",
+   "district": null,
+   "title": "State Senator - District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-dintaman",
+     "name": "Robert Dintaman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8154
+    },
+    {
+     "id": "bride-sweeney",
+     "name": "Bride Sweeney",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 36455
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea587e09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 25",
+   "district": null,
+   "title": "State Senator - District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "raisheda-angus",
+     "name": "Raisheda Angus",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "bill-demora",
+     "name": "Bill DeMora",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 68230
+    },
+    {
+     "id": "don-roberts",
+     "name": "Don Roberts",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 22891
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea589309a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 27",
+   "district": null,
+   "title": "State Senator - District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-demetriou",
+     "name": "Steve Demetriou",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 57744
+    },
+    {
+     "id": "mike-roberto",
+     "name": "Mike Roberto",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 68494
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea587609a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 29",
+   "district": null,
+   "title": "State Senator - District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jane-timken",
+     "name": "Jane Timken",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 68693
+    },
+    {
+     "id": "thomas-west",
+     "name": "Thomas West",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 57409
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea585109a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 31",
+   "district": null,
+   "title": "State Senator - District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "al-landis",
+     "name": "Al Landis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 65499
+    },
+    {
+     "id": "laura-sirot",
+     "name": "Laura Sirot",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 36396
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea586609a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Senator - District 33",
+   "district": null,
+   "title": "State Senator - District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "al-cutrona",
+     "name": "Al Cutrona",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 72170
+    },
+    {
+     "id": "michael-kripchak",
+     "name": "Michael Kripchak",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 60350
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a3809a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 01",
+   "district": null,
+   "title": "State Representative - District 01",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joel-greff",
+     "name": "Joel Greff",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4357
+    },
+    {
+     "id": "dontavius-jarrells",
+     "name": "Dontavius Jarrells",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 24555
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea589909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 02",
+   "district": null,
+   "title": "State Representative - District 02",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charity-martin-king",
+     "name": "Charity Martin King",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15924
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58d409a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 03",
+   "district": null,
+   "title": "State Representative - District 03",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "elegant-afriyie",
+     "name": "Elegant Afriyie",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "bernadine-kent",
+     "name": "Bernadine Kent",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4404
+    },
+    {
+     "id": "ismail-mohamed",
+     "name": "Ismail Mohamed",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 22506
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea63a909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 04",
+   "district": null,
+   "title": "State Representative - District 04",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "beryl-piccolantonio",
+     "name": "Beryl Piccolantonio",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 30866
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58f909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 05",
+   "district": null,
+   "title": "State Representative - District 05",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-cole",
+     "name": "Richard Cole",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7099
+    },
+    {
+     "id": "eboney-eldridge",
+     "name": "Eboney Eldridge",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "meredith-lawson-rowe",
+     "name": "Meredith Lawson Rowe",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15270
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea595509a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 06",
+   "district": null,
+   "title": "State Representative - District 06",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christine-cockley",
+     "name": "Christine Cockley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13326
+    },
+    {
+     "id": "matthew-jackson",
+     "name": "Matthew Jackson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5825
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea595109a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 07",
+   "district": null,
+   "title": "State Representative - District 07",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ukeme-jeter",
+     "name": "Ukeme Jeter",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 29611
+    },
+    {
+     "id": "cameron-koffel",
+     "name": "Cameron Koffel",
+     "party": "Nonprtycan",
+     "party_code": "O",
+     "votes": 2155
+    },
+    {
+     "id": "william-mercier",
+     "name": "William Mercier",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9092
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58fa09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 08",
+   "district": null,
+   "title": "State Representative - District 08",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelly-kalagidis",
+     "name": "Kelly Kalagidis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10551
+    },
+    {
+     "id": "anita-somani",
+     "name": "Anita Somani",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 27365
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea594d09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 09",
+   "district": null,
+   "title": "State Representative - District 09",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "munira-abdullahi",
+     "name": "Munira Abdullahi",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 22733
+    },
+    {
+     "id": "bruce-euans",
+     "name": "Bruce Euans",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 8033
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea599b09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 10",
+   "district": null,
+   "title": "State Representative - District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "denise-d-angelo",
+     "name": "Denise D'Angelo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10389
+    },
+    {
+     "id": "mark-sigrist",
+     "name": "Mark Sigrist",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 17830
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea594909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 11",
+   "district": null,
+   "title": "State Representative - District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shawn-kaeser",
+     "name": "Shawn Kaeser",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14470
+    },
+    {
+     "id": "crystal-lett",
+     "name": "Crystal Lett",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 25648
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58df09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 12",
+   "district": null,
+   "title": "State Representative - District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-stewart",
+     "name": "Brian Stewart",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 26920
+    },
+    {
+     "id": "lee-yarsky",
+     "name": "Lee Yarsky",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13505
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea594509a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 13",
+   "district": null,
+   "title": "State Representative - District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "billy-fronimo",
+     "name": "Billy Fronimo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1926
+    },
+    {
+     "id": "tristan-rader",
+     "name": "Tristan Rader",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12775
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea595e09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 14",
+   "district": null,
+   "title": "State Representative - District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sean-brennan",
+     "name": "Sean Brennan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9631
+    },
+    {
+     "id": "david-morgan",
+     "name": "David Morgan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3425
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea595f09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 15",
+   "district": null,
+   "title": "State Representative - District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-conway",
+     "name": "Daniel Conway",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3829
+    },
+    {
+     "id": "chris-glassburn",
+     "name": "Chris Glassburn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8951
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea594109a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 16",
+   "district": null,
+   "title": "State Representative - District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-dimauro",
+     "name": "Scott DiMauro",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 14055
+    },
+    {
+     "id": "sophia-tjotjos",
+     "name": "Sophia Tjotjos",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6045
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59d909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 17",
+   "district": null,
+   "title": "State Representative - District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "megan-coy",
+     "name": "Megan Coy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12639
+    },
+    {
+     "id": "mike-dovilla",
+     "name": "Mike Dovilla",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9334
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea598409a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 18",
+   "district": null,
+   "title": "State Representative - District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maureen-lynn",
+     "name": "Maureen Lynn",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1379
+    },
+    {
+     "id": "davida-russell",
+     "name": "Davida Russell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 18759
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea598f09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 19",
+   "district": null,
+   "title": "State Representative - District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ed-hargate",
+     "name": "Ed Hargate",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 7301
+    },
+    {
+     "id": "nicole-sigurdson",
+     "name": "Nicole Sigurdson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 14447
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea593809a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 20",
+   "district": null,
+   "title": "State Representative - District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eugene-miller",
+     "name": "Eugene Miller",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8525
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea598809a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 21",
+   "district": null,
+   "title": "State Representative - District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tina-barhams",
+     "name": "Tina Barhams",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2005
+    },
+    {
+     "id": "eric-synenberg",
+     "name": "Eric Synenberg",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 14664
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea598909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 22",
+   "district": null,
+   "title": "State Representative - District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "darnell-brewer",
+     "name": "Darnell Brewer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11642
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea593c09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 23",
+   "district": null,
+   "title": "State Representative - District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julie-belich",
+     "name": "Julie Belich",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21815
+    },
+    {
+     "id": "daniel-troy",
+     "name": "Daniel Troy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 28601
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea598a09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 24",
+   "district": null,
+   "title": "State Representative - District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dani-isaacsohn",
+     "name": "Dani Isaacsohn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 16582
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea591909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 25",
+   "district": null,
+   "title": "State Representative - District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cecil-thomas",
+     "name": "Cecil Thomas",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 20410
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea542909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 26",
+   "district": null,
+   "title": "State Representative - District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-brinkman",
+     "name": "Tom Brinkman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12751
+    },
+    {
+     "id": "ashley-bryant-bailey",
+     "name": "Ashley Bryant Bailey",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 38349
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58e509a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 27",
+   "district": null,
+   "title": "State Representative - District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nancy-aichholz",
+     "name": "Nancy Aichholz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21239
+    },
+    {
+     "id": "rachel-baker",
+     "name": "Rachel Baker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 32069
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58e909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 28",
+   "district": null,
+   "title": "State Representative - District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "karen-brownlee",
+     "name": "Karen Brownlee",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 25238
+    },
+    {
+     "id": "jill-cole",
+     "name": "Jill Cole",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17722
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58ed09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 29",
+   "district": null,
+   "title": "State Representative - District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cindy-abrams",
+     "name": "Cindy Abrams",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 6022
+    },
+    {
+     "id": "jonathan-bradner",
+     "name": "Jonathan Bradner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9815
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58f109a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 30",
+   "district": null,
+   "title": "State Representative - District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-odioso",
+     "name": "Mike Odioso",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 18851
+    },
+    {
+     "id": "caleb-price",
+     "name": "Caleb Price",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11680
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58fb09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 31",
+   "district": null,
+   "title": "State Representative - District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-kahoe",
+     "name": "Mike Kahoe",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 22559
+    },
+    {
+     "id": "j-spinner",
+     "name": "J. Spinner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 29822
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58b009a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 32",
+   "district": null,
+   "title": "State Representative - District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jack-daniels",
+     "name": "Jack Daniels",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14456
+    },
+    {
+     "id": "djordjije-popovic",
+     "name": "Djordjije Popovic",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13435
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58b409a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 33",
+   "district": null,
+   "title": "State Representative - District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "napoleon-rodgers",
+     "name": "Napoleon Rodgers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3566
+    },
+    {
+     "id": "veronica-sims",
+     "name": "Veronica Sims",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 14995
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58f509a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 34",
+   "district": null,
+   "title": "State Representative - District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "derrick-hall",
+     "name": "Derrick Hall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 21570
+    },
+    {
+     "id": "craig-shubert",
+     "name": "Craig Shubert",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12725
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58ff09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 35",
+   "district": null,
+   "title": "State Representative - District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "samantha-salamon",
+     "name": "Samantha Salamon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 24701
+    },
+    {
+     "id": "vik-sandhu",
+     "name": "Vik Sandhu",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 18944
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea590509a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 36",
+   "district": null,
+   "title": "State Representative - District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chuck-horn",
+     "name": "Chuck Horn",
+     "party": "Indep",
+     "party_code": "O",
+     "votes": 1073
+    },
+    {
+     "id": "rose-lounsbury",
+     "name": "Rose Lounsbury",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 25213
+    },
+    {
+     "id": "andrea-white",
+     "name": "Andrea White",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 18855
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea590909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 37",
+   "district": null,
+   "title": "State Representative - District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-herner",
+     "name": "Tom Herner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 26227
+    },
+    {
+     "id": "tom-young",
+     "name": "Tom Young",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 26093
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea589a09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 38",
+   "district": null,
+   "title": "State Representative - District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "desiree-tims",
+     "name": "Desiree Tims",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 27533
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58ac09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 39",
+   "district": null,
+   "title": "State Representative - District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-campbell",
+     "name": "Mark Campbell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19742
+    },
+    {
+     "id": "daquan-neal",
+     "name": "Daquan Neal",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 21686
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58b809a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 40",
+   "district": null,
+   "title": "State Representative - District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rodney-creech",
+     "name": "Rodney Creech",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28313
+    },
+    {
+     "id": "timothy-hornbacker",
+     "name": "Timothy Hornbacker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12962
+    },
+    {
+     "id": "joshua-umbaugh",
+     "name": "Joshua Umbaugh",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 2135
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea593409a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 41",
+   "district": null,
+   "title": "State Representative - District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ian-chamberlin",
+     "name": "Ian Chamberlin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "erika-white",
+     "name": "Erika White",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea595909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 42",
+   "district": null,
+   "title": "State Representative - District 42",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-mcmahon",
+     "name": "Robert McMahon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "elgin-rogers-jr",
+     "name": "Elgin Rogers Jr.",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea595a09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 43",
+   "district": null,
+   "title": "State Representative - District 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michele-grim",
+     "name": "Michele Grim",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "zach-hall",
+     "name": "Zach Hall",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "david-karmol",
+     "name": "David Karmol",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a2009a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 44",
+   "district": null,
+   "title": "State Representative - District 44",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-fournier",
+     "name": "David Fournier",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 5352
+    },
+    {
+     "id": "edward-schimmel",
+     "name": "Edward Schimmel",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5598
+    },
+    {
+     "id": "lyndsey-stough",
+     "name": "Lyndsey Stough",
+     "party": "Indep",
+     "party_code": "O",
+     "votes": 361
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a2609a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 45",
+   "district": null,
+   "title": "State Representative - District 45",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-gross",
+     "name": "Jennifer Gross",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28433
+    },
+    {
+     "id": "jayson-ameer-rasheed",
+     "name": "Jayson Ameer Rasheed",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 22240
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58a809a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 46",
+   "district": null,
+   "title": "State Representative - District 46",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "thomas-hall",
+     "name": "Thomas Hall",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 25237
+    },
+    {
+     "id": "benjamin-mccall",
+     "name": "Benjamin McCall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 17883
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a2a09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 47",
+   "district": null,
+   "title": "State Representative - District 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jordan-haire",
+     "name": "Jordan Haire",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 16205
+    },
+    {
+     "id": "diane-mullins",
+     "name": "Diane Mullins",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19409
+    },
+    {
+     "id": "jason-purviance",
+     "name": "Jason Purviance",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 1166
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea596909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 48",
+   "district": null,
+   "title": "State Representative - District 48",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christina-hagan",
+     "name": "Christina Hagan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 26578
+    },
+    {
+     "id": "nick-morris",
+     "name": "Nick Morris",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 21068
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea596d09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 49",
+   "district": null,
+   "title": "State Representative - District 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "krista-allison",
+     "name": "Krista Allison",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 20055
+    },
+    {
+     "id": "jim-thomas",
+     "name": "Jim Thomas",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16873
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a1509a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 50",
+   "district": null,
+   "title": "State Representative - District 50",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rylan-finzer",
+     "name": "Rylan Finzer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 17028
+    },
+    {
+     "id": "matthew-kishman",
+     "name": "Matthew Kishman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 23903
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a0209a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 51",
+   "district": null,
+   "title": "State Representative - District 51",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amanda-fontana",
+     "name": "Amanda Fontana",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13318
+    },
+    {
+     "id": "jodi-salvo",
+     "name": "Jodi Salvo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 24261
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a0709a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 52",
+   "district": null,
+   "title": "State Representative - District 52",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-baker",
+     "name": "Mike Baker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 26477
+    },
+    {
+     "id": "cliff-winkel",
+     "name": "Cliff Winkel",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21568
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a0b09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 53",
+   "district": null,
+   "title": "State Representative - District 53",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bradley-lacko",
+     "name": "Bradley Lacko",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 17506
+    },
+    {
+     "id": "matt-lundy",
+     "name": "Matt Lundy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 27002
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58be09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 54",
+   "district": null,
+   "title": "State Representative - District 54",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brenda-buchanan",
+     "name": "Brenda Buchanan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15536
+    },
+    {
+     "id": "kellie-deeter",
+     "name": "Kellie Deeter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19791
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea599309a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 55",
+   "district": null,
+   "title": "State Representative - District 55",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-kurtz",
+     "name": "Paul Kurtz",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 18729
+    },
+    {
+     "id": "philip-pirdy",
+     "name": "Philip Pirdy",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 1731
+    },
+    {
+     "id": "c-teska",
+     "name": "C. Teska",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 37808
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea599709a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 56",
+   "district": null,
+   "title": "State Representative - District 56",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "laalitya-acharya",
+     "name": "Laalitya Acharya",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23907
+    },
+    {
+     "id": "adam-mathews",
+     "name": "Adam Mathews",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29339
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea598b09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 57",
+   "district": null,
+   "title": "State Representative - District 57",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "belinda-grassi",
+     "name": "Belinda Grassi",
+     "party": "Nonprtycan",
+     "party_code": "O",
+     "votes": 3228
+    },
+    {
+     "id": "jesse-styles",
+     "name": "Jesse Styles",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29588
+    },
+    {
+     "id": "rick-walker",
+     "name": "Rick Walker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23401
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea592209a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 58",
+   "district": null,
+   "title": "State Representative - District 58",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-boccieri",
+     "name": "John Boccieri",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 25642
+    },
+    {
+     "id": "heather-fronk",
+     "name": "Heather Fronk",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14707
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea592609a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 59",
+   "district": null,
+   "title": "State Representative - District 59",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tex-fischer",
+     "name": "Tex Fischer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 27956
+    },
+    {
+     "id": "wayne-penny",
+     "name": "Wayne Penny",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 22260
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59ca09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 60",
+   "district": null,
+   "title": "State Representative - District 60",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shelby-kimball",
+     "name": "Shelby Kimball",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 29413
+    },
+    {
+     "id": "brian-lorenz",
+     "name": "Brian Lorenz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 27938
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59ba09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 61",
+   "district": null,
+   "title": "State Representative - District 61",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "vince-mcgrail",
+     "name": "Vince McGrail",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 24555
+    },
+    {
+     "id": "shawn-stevens",
+     "name": "Shawn Stevens",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29485
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58c309a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 62",
+   "district": null,
+   "title": "State Representative - District 62",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ron-grethel",
+     "name": "Ron Grethel",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 2829
+    },
+    {
+     "id": "jean-schmidt",
+     "name": "Jean Schmidt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 23599
+    },
+    {
+     "id": "ian-schwartz",
+     "name": "Ian Schwartz",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 18497
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59dd09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 63",
+   "district": null,
+   "title": "State Representative - District 63",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-bird",
+     "name": "Adam Bird",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 19133
+    },
+    {
+     "id": "debbie-davidson",
+     "name": "Debbie Davidson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9932
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59e209a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 64",
+   "district": null,
+   "title": "State Representative - District 64",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nick-santucci",
+     "name": "Nick Santucci",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 26736
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59f909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 65",
+   "district": null,
+   "title": "State Representative - District 65",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-barbo",
+     "name": "John Barbo",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 20073
+    },
+    {
+     "id": "david-thomas",
+     "name": "David Thomas",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 26595
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59fe09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 66",
+   "district": null,
+   "title": "State Representative - District 66",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sean-hutson",
+     "name": "Sean Hutson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29253
+    },
+    {
+     "id": "chris-nardo",
+     "name": "Chris Nardo",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 21329
+    },
+    {
+     "id": "justin-peroli",
+     "name": "Justin Peroli",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 1949
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea591d09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 67",
+   "district": null,
+   "title": "State Representative - District 67",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melanie-miller",
+     "name": "Melanie Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 30628
+    },
+    {
+     "id": "heather-sample",
+     "name": "Heather Sample",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 17300
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea597c09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 68",
+   "district": null,
+   "title": "State Representative - District 68",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mason-blankenship",
+     "name": "Mason Blankenship",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23499
+    },
+    {
+     "id": "thad-claggett",
+     "name": "Thad Claggett",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 25383
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea597609a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 69",
+   "district": null,
+   "title": "State Representative - District 69",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-miller",
+     "name": "Kevin Miller",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 30168
+    },
+    {
+     "id": "amy-rigsby",
+     "name": "Amy Rigsby",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 13070
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea593009a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 70",
+   "district": null,
+   "title": "State Representative - District 70",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-lampton",
+     "name": "Brian Lampton",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 27988
+    },
+    {
+     "id": "kim-mccarthy",
+     "name": "Kim McCarthy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23594
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a2e09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 71",
+   "district": null,
+   "title": "State Representative - District 71",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "levi-dean",
+     "name": "Levi Dean",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 27579
+    },
+    {
+     "id": "krista-magaw",
+     "name": "Krista Magaw",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15457
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a3409a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 72",
+   "district": null,
+   "title": "State Representative - District 72",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-clapper",
+     "name": "Jeff Clapper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15179
+    },
+    {
+     "id": "michael-fricke",
+     "name": "Michael Fricke",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 983
+    },
+    {
+     "id": "heidi-workman",
+     "name": "Heidi Workman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14913
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea598009a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 73",
+   "district": null,
+   "title": "State Representative - District 73",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-lare",
+     "name": "Jeff LaRe",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 13370
+    },
+    {
+     "id": "whittney-wood",
+     "name": "Whittney Wood",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12947
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59f009a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 74",
+   "district": null,
+   "title": "State Representative - District 74",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "darrell-jackson",
+     "name": "Darrell Jackson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 17629
+    },
+    {
+     "id": "bernard-willis",
+     "name": "Bernard Willis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21575
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a3c09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 75",
+   "district": null,
+   "title": "State Representative - District 75",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "haraz-ghanbari",
+     "name": "Haraz Ghanbari",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 14910
+    },
+    {
+     "id": "richard-rettig",
+     "name": "Richard Rettig",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 17590
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59ec09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 76",
+   "district": null,
+   "title": "State Representative - District 76",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marilyn-john",
+     "name": "Marilyn John",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 28606
+    },
+    {
+     "id": "colton-stidam",
+     "name": "Colton Stidam",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15038
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58db09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 77",
+   "district": null,
+   "title": "State Representative - District 77",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "meredith-craig",
+     "name": "Meredith Craig",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16390
+    },
+    {
+     "id": "brooke-dillon",
+     "name": "Brooke Dillon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10441
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59bf09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 78",
+   "district": null,
+   "title": "State Representative - District 78",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeffrey-givan",
+     "name": "Jeffrey Givan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12185
+    },
+    {
+     "id": "matt-huffman",
+     "name": "Matt Huffman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 27531
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59f409a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 79",
+   "district": null,
+   "title": "State Representative - District 79",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "monica-blasdel",
+     "name": "Monica Blasdel",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29069
+    },
+    {
+     "id": "bob-guy",
+     "name": "Bob Guy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12334
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea599f09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 80",
+   "district": null,
+   "title": "State Representative - District 80",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "johnathan-newman",
+     "name": "Johnathan Newman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 34768
+    },
+    {
+     "id": "katie-wagner",
+     "name": "Katie Wagner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 16902
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58cd09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 81",
+   "district": null,
+   "title": "State Representative - District 81",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "patti-rockey",
+     "name": "Patti Rockey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 29896
+    },
+    {
+     "id": "david-swanson",
+     "name": "David Swanson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 14124
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59ad09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 82",
+   "district": null,
+   "title": "State Representative - District 82",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-elder",
+     "name": "Christopher Elder",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 1819
+    },
+    {
+     "id": "roy-klopfenstein",
+     "name": "Roy Klopfenstein",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 33656
+    },
+    {
+     "id": "maddux-mccray",
+     "name": "Maddux McCray",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11067
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea589b09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 83",
+   "district": null,
+   "title": "State Representative - District 83",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sheila-coressel",
+     "name": "Sheila Coressel",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12878
+    },
+    {
+     "id": "ty-mathews",
+     "name": "Ty Mathews",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 27784
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59d309a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 84",
+   "district": null,
+   "title": "State Representative - District 84",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "arienne-childrey",
+     "name": "Arienne Childrey",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 8981
+    },
+    {
+     "id": "angie-king",
+     "name": "Angie King",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 36799
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a0f09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 85",
+   "district": null,
+   "title": "State Representative - District 85",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-barhorst",
+     "name": "Tim Barhorst",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 33853
+    },
+    {
+     "id": "victoria-maddox",
+     "name": "Victoria Maddox",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11296
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59ce09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 86",
+   "district": null,
+   "title": "State Representative - District 86",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kent-halloran",
+     "name": "Kent Halloran",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 18104
+    },
+    {
+     "id": "ben-weber",
+     "name": "Ben Weber",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 26269
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea5a1909a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 87",
+   "district": null,
+   "title": "State Representative - District 87",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lora-covrett",
+     "name": "Lora Covrett",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 11163
+    },
+    {
+     "id": "jeffrey-mcclain",
+     "name": "Jeffrey McClain",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 30215
+    },
+    {
+     "id": "craig-swartz",
+     "name": "Craig Swartz",
+     "party": "Indep",
+     "party_code": "O",
+     "votes": 2920
+    },
+    {
+     "id": "greg-white",
+     "name": "Greg White",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea591409a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 88",
+   "district": null,
+   "title": "State Representative - District 88",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gary-click",
+     "name": "Gary Click",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21750
+    },
+    {
+     "id": "aaron-jones",
+     "name": "Aaron Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15386
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58d509a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 89",
+   "district": null,
+   "title": "State Representative - District 89",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-kraus",
+     "name": "Steve  Kraus",
+     "party": "Write-in",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "easton-retzke",
+     "name": "Easton Retzke",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 20754
+    },
+    {
+     "id": "caleb-stidham",
+     "name": "Caleb Stidham",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 26504
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58c709a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 90",
+   "district": null,
+   "title": "State Representative - District 90",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "collin-docterman",
+     "name": "Collin Docterman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9691
+    },
+    {
+     "id": "justin-pizzulli",
+     "name": "Justin Pizzulli",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21746
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea58a109a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 91",
+   "district": null,
+   "title": "State Representative - District 91",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-peterson",
+     "name": "Bob Peterson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 23894
+    },
+    {
+     "id": "amy-wright",
+     "name": "Amy Wright",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 9205
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea590d09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 92",
+   "district": null,
+   "title": "State Representative - District 92",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-johnson",
+     "name": "Mark Johnson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 20815
+    },
+    {
+     "id": "sarah-senff",
+     "name": "Sarah Senff",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12260
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59b409a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 93",
+   "district": null,
+   "title": "State Representative - District 93",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jessica-harper",
+     "name": "Jessica Harper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10351
+    },
+    {
+     "id": "jason-stephens",
+     "name": "Jason Stephens",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 23772
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea596309a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 94",
+   "district": null,
+   "title": "State Representative - District 94",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-ritter",
+     "name": "Kevin Ritter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 25078
+    },
+    {
+     "id": "wenda-sheard",
+     "name": "Wenda Sheard",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 16119
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59a409a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 95",
+   "district": null,
+   "title": "State Representative - District 95",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-cameron",
+     "name": "Paul Cameron",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 14666
+    },
+    {
+     "id": "ty-moore",
+     "name": "Ty Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 22152
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59c409a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 96",
+   "district": null,
+   "title": "State Representative - District 96",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ron-ferguson",
+     "name": "Ron Ferguson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 24802
+    },
+    {
+     "id": "charrie-foglio",
+     "name": "Charrie Foglio",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 12949
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea592b09a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 97",
+   "district": null,
+   "title": "State Representative - District 97",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kris-geis",
+     "name": "Kris Geis",
+     "party": "Indep",
+     "party_code": "O",
+     "votes": 6538
+    },
+    {
+     "id": "tim-godwin",
+     "name": "Tim Godwin",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 4514
+    },
+    {
+     "id": "adam-holmes",
+     "name": "Adam Holmes",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 24818
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea59e609a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 98",
+   "district": null,
+   "title": "State Representative - District 98",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-grund",
+     "name": "Scott Grund",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10283
+    },
+    {
+     "id": "mark-hiner",
+     "name": "Mark Hiner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 25155
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-55a742ea597109a3e0633390ee0ae290",
+   "kind": "candidate",
+   "level": "state",
+   "state": "oh",
+   "office": "State Representative - District 99",
+   "district": null,
+   "title": "State Representative - District 99",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sarah-arthur",
+     "name": "Sarah Arthur",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 25418
+    },
+    {
+     "id": "louis-murphy",
+     "name": "Louis Murphy",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 17195
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "oh-58f2c0185a8c8a6ae0633390ee0af8c5",
+   "kind": "measure",
+   "level": "state",
+   "state": "oh",
+   "office": "State Issue 3 To require voters to present photo identification in order to vote",
+   "district": null,
+   "title": "State Issue 3 To require voters to present photo identification in order to vote",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 2370402
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1215777
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  }
+ ]
+}

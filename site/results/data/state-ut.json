@@ -1,0 +1,4337 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-ut",
+ "label": "Utah",
+ "source_ids": [
+  "ut-scytl"
+ ],
+ "updated_at": "2026-11-04T03:19:42Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ut-u-s-house-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ut",
+   "office": "U.S. House",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "riley-owen",
+     "name": "RILEY OWEN",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jesse-west",
+     "name": "JESSE WEST",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "elias-henry-montgomery",
+     "name": "ELIAS HENRY MONTGOMERY",
+     "party": "Unaffiliated",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "ben-mcadams",
+     "name": "BEN MCADAMS",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "babak-bobby-darvish",
+     "name": "BABAK \"BOBBY\" DARVISH",
+     "party": "Unaffiliated",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-u-s-house-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ut",
+   "office": "U.S. House",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-m-moesinger",
+     "name": "ROBERT M. MOESINGER",
+     "party": "Unaffiliated",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "peter-crosby",
+     "name": "PETER CROSBY",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "blake-d-moore",
+     "name": "BLAKE D. MOORE",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "carlton-e-bowen",
+     "name": "CARLTON E. BOWEN",
+     "party": "Independent American",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "daniel-cottam",
+     "name": "DANIEL COTTAM",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-u-s-house-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ut",
+   "office": "U.S. House",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "celeste-maloy",
+     "name": "CELESTE MALOY",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "adonis-hooslyn",
+     "name": "ADONIS HOOSLYN",
+     "party": "Unaffiliated",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "michael-r-stoddard",
+     "name": "MICHAEL R. STODDARD",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "ayden-scott",
+     "name": "AYDEN SCOTT",
+     "party": "Unaffiliated",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "cassie-easley",
+     "name": "CASSIE EASLEY",
+     "party": "Constitution",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "kent-s-udell",
+     "name": "KENT S. UDELL",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 19,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-u-s-house-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ut",
+   "office": "U.S. House",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "taylor-wright",
+     "name": "TAYLOR WRIGHT",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "mike-kennedy",
+     "name": "MIKE KENNEDY",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jonny-larsen",
+     "name": "JONNY LARSEN",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "steven-burt",
+     "name": "STEVEN BURT",
+     "party": "Unaffiliated",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-1-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 1 (Multi-County)",
+   "district": null,
+   "title": "State Senate District 1 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julie-quinlan",
+     "name": "JULIE QUINLAN",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "claudia-bigler",
+     "name": "CLAUDIA BIGLER",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "scott-sandall",
+     "name": "SCOTT SANDALL",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-5-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 5 (Multi-County)",
+   "district": null,
+   "title": "State Senate District 5 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jill-f-koford",
+     "name": "JILL F. KOFORD",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "cj-christina-hernandez",
+     "name": "\"CJ\" CHRISTINA HERNANDEZ",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 6",
+   "district": null,
+   "title": "State Senate District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jared-neal",
+     "name": "JARED NEAL",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "josh-smith",
+     "name": "JOSH SMITH",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "tami-tran",
+     "name": "TAMI TRAN",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-7-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 7 (Multi-County)",
+   "district": null,
+   "title": "State Senate District 7 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "garret-rushforth",
+     "name": "GARRET RUSHFORTH",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "stephanie-hollist",
+     "name": "STEPHANIE HOLLIST",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jeffrey-ostler",
+     "name": "JEFFREY OSTLER",
+     "party": "Constitution",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 9",
+   "district": null,
+   "title": "State Senate District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "j-lowry-snow",
+     "name": "J. LOWRY SNOW",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "thaddeus-a-evans",
+     "name": "THADDEUS A EVANS",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jen-plumb",
+     "name": "JEN PLUMB",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-11-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 11 (Multi-County)",
+   "district": null,
+   "title": "State Senate District 11 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brooks-benson",
+     "name": "BROOKS BENSON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "emily-buss",
+     "name": "EMILY BUSS",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 12",
+   "district": null,
+   "title": "State Senate District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deidre-tyler",
+     "name": "DEIDRE TYLER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "karen-kwan",
+     "name": "KAREN KWAN",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 13",
+   "district": null,
+   "title": "State Senate District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "silvia-catten",
+     "name": "SILVIA CATTEN",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "colin-smith",
+     "name": "COLIN SMITH",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "ryan-l-mahoney",
+     "name": "RYAN L. MAHONEY",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 14",
+   "district": null,
+   "title": "State Senate District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-pitcher",
+     "name": "STEPHANIE PITCHER",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-18-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 18 (Multi-County)",
+   "district": null,
+   "title": "State Senate District 18 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "a-dane-anderson",
+     "name": "A, DANE ANDERSON",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "doug-fiefia",
+     "name": "DOUG FIEFIA",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-19-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 19 (Multi-County)",
+   "district": null,
+   "title": "State Senate District 19 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kirk-cullimore",
+     "name": "KIRK CULLIMORE",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "shana-anderson",
+     "name": "SHANA ANDERSON",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-20-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 20 (Multi-County)",
+   "district": null,
+   "title": "State Senate District 20 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "annette-mcrae",
+     "name": "ANNETTE MCRAE",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "ronald-m-winterton",
+     "name": "RONALD M WINTERTON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 21",
+   "district": null,
+   "title": "State Senate District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "wayne-woodfield",
+     "name": "WAYNE WOODFIELD",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "brady-brammer",
+     "name": "BRADY BRAMMER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "kandee-myers",
+     "name": "KANDEE MYERS",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 23",
+   "district": null,
+   "title": "State Senate District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tucker-smith",
+     "name": "TUCKER SMITH",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "keith-grover",
+     "name": "KEITH GROVER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-senate-district-28-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State Senate District 28 (Multi-County)",
+   "district": null,
+   "title": "State Senate District 28 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-s-robillard",
+     "name": "RICHARD S ROBILLARD",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "evan-j-vickers",
+     "name": "EVAN J VICKERS",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-1-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 1 (Multi-County)",
+   "district": null,
+   "title": "State House District 1 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-o-dell",
+     "name": "JASON O'DELL",
+     "party": "Constitution",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "thomas-peterson",
+     "name": "THOMAS PETERSON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "chris-reid",
+     "name": "CHRIS REID",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 2",
+   "district": null,
+   "title": "State House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-petersen",
+     "name": "MIKE PETERSEN",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "barbara-j-haggerty",
+     "name": "BARBARA J. HAGGERTY",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 3",
+   "district": null,
+   "title": "State House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-e-thompson",
+     "name": "JASON E. THOMPSON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "patrick-belmont",
+     "name": "PATRICK BELMONT",
+     "party": "Unaffiliated",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-4-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 4 (Multi-County)",
+   "district": null,
+   "title": "State House District 4 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zane-woolstenhulme",
+     "name": "ZANE WOOLSTENHULME",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tiara-auxier",
+     "name": "TIARA AUXIER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 5",
+   "district": null,
+   "title": "State House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kendra-penry",
+     "name": "KENDRA PENRY",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "casey-snider",
+     "name": "CASEY SNIDER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-6-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 6 (Multi-County)",
+   "district": null,
+   "title": "State House District 6 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-rich",
+     "name": "JAMES RICH",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "rob-bishop",
+     "name": "ROB BISHOP",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 7",
+   "district": null,
+   "title": "State House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-d-wilcox",
+     "name": "RYAN D. WILCOX",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "bianca-mittendorf",
+     "name": "BIANCA MITTENDORF",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-8-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 8 (Multi-County)",
+   "district": null,
+   "title": "State House District 8 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "libby-shelton",
+     "name": "LIBBY SHELTON",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "kim-james",
+     "name": "KIM JAMES",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jason-b-kyle",
+     "name": "JASON B KYLE",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 9",
+   "district": null,
+   "title": "State House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "angela-choberka",
+     "name": "ANGELA CHOBERKA",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jake-sawyer",
+     "name": "JAKE SAWYER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 10",
+   "district": null,
+   "title": "State House District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rosemary-t-lesser",
+     "name": "ROSEMARY T LESSER",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jim-alvey",
+     "name": "JIM ALVEY",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-11-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 11 (Multi-County)",
+   "district": null,
+   "title": "State House District 11 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dave-calder",
+     "name": "DAVE CALDER",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "katy-hall",
+     "name": "KATY HALL",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-12-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 12 (Multi-County)",
+   "district": null,
+   "title": "State House District 12 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anna-graff",
+     "name": "ANNA GRAFF",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "mike-schultz",
+     "name": "MIKE SCHULTZ",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 13",
+   "district": null,
+   "title": "State House District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "erik-r-craythorne",
+     "name": "ERIK R. CRAYTHORNE",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jeffrey-anderson",
+     "name": "JEFFREY ANDERSON",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tony-de-mille",
+     "name": "TONY DE MILLE",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 14",
+   "district": null,
+   "title": "State House District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-taylor",
+     "name": "JOHN TAYLOR",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "brandon-young",
+     "name": "BRANDON YOUNG",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 15",
+   "district": null,
+   "title": "State House District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anne-berbert",
+     "name": "ANNE BERBERT",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ariel-defay",
+     "name": "ARIEL DEFAY",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 16",
+   "district": null,
+   "title": "State House District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-j-stevenson",
+     "name": "BOB J STEVENSON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "abigail-treasure",
+     "name": "ABIGAIL TREASURE",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 17",
+   "district": null,
+   "title": "State House District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lili-bitner",
+     "name": "LILI BITNER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "eric-last",
+     "name": "ERIC LAST",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 18",
+   "district": null,
+   "title": "State House District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-troxel",
+     "name": "SCOTT TROXEL",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "paul-cutler",
+     "name": "PAUL CUTLER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 19",
+   "district": null,
+   "title": "State House District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "raymond-p-ward",
+     "name": "RAYMOND P. WARD",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 20",
+   "district": null,
+   "title": "State House District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-ballard",
+     "name": "MELISSA BALLARD",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "phil-graves",
+     "name": "PHIL GRAVES",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 21",
+   "district": null,
+   "title": "State House District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephen-otterstrom",
+     "name": "STEPHEN OTTERSTROM",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 22",
+   "district": null,
+   "title": "State House District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "char-varga",
+     "name": "CHAR VARGA",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jen-dailey-provost",
+     "name": "JEN DAILEY-PROVOST",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-23-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 23 (Multi-County)",
+   "district": null,
+   "title": "State House District 23 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cabot-w-nelson",
+     "name": "CABOT W NELSON",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "hoang-nguyen",
+     "name": "HOANG NGUYEN",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "franklin-d-robinson",
+     "name": "FRANKLIN D. ROBINSON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 24",
+   "district": null,
+   "title": "State House District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "braeden-j-oswald",
+     "name": "BRAEDEN J. OSWALD",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "grant-amjad-miller",
+     "name": "GRANT AMJAD MILLER",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 25",
+   "district": null,
+   "title": "State House District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "richard-t-nowak",
+     "name": "RICHARD T NOWAK",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "angela-romero",
+     "name": "ANGELA ROMERO",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 26",
+   "district": null,
+   "title": "State House District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-e-finch",
+     "name": "MICHAEL E FINCH",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "matt-macpherson",
+     "name": "MATT MACPHERSON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 27",
+   "district": null,
+   "title": "State House District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "liz-oates",
+     "name": "LIZ OATES",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "anthony-loubet",
+     "name": "ANTHONY LOUBET",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 28",
+   "district": null,
+   "title": "State House District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anita-dalrymple",
+     "name": "ANITA DALRYMPLE",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "nicholeen-peck",
+     "name": "NICHOLEEN PECK",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "wales-nematollahi",
+     "name": "WALES NEMATOLLAHI",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-29-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 29 (Multi-County)",
+   "district": null,
+   "title": "State House District 29 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jonathan-garrard",
+     "name": "JONATHAN GARRARD",
+     "party": "Constitution",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "sheldon-birch",
+     "name": "SHELDON BIRCH",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "sara-snow",
+     "name": "SARA SNOW",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tynley-bean",
+     "name": "TYNLEY BEAN",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 30",
+   "district": null,
+   "title": "State House District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jake-fitisemanu",
+     "name": "JAKE FITISEMANU",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "dave-parke",
+     "name": "DAVE PARKE",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 31",
+   "district": null,
+   "title": "State House District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melody-jones",
+     "name": "MELODY JONES",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "verona-mauga",
+     "name": "VERONA MAUGA",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 32",
+   "district": null,
+   "title": "State House District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sahara-hayes",
+     "name": "SAHARA HAYES",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "aileen-hampton",
+     "name": "AILEEN HAMPTON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 33",
+   "district": null,
+   "title": "State House District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "doug-owens",
+     "name": "DOUG OWENS",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "anna-reeves",
+     "name": "ANNA REEVES",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 34",
+   "district": null,
+   "title": "State House District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julie-jackson",
+     "name": "JULIE JACKSON",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 35",
+   "district": null,
+   "title": "State House District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "monique-i-ketcham",
+     "name": "MONIQUE I. KETCHAM",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "rosalba-dominguez",
+     "name": "ROSALBA DOMINGUEZ",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 36",
+   "district": null,
+   "title": "State House District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "blake-townsend",
+     "name": "BLAKE TOWNSEND",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jim-dunnigan",
+     "name": "JIM DUNNIGAN",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 37",
+   "district": null,
+   "title": "State House District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "casey-saxton",
+     "name": "CASEY SAXTON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "ashlee-matthews",
+     "name": "ASHLEE MATTHEWS",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 38",
+   "district": null,
+   "title": "State House District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-mcconnehey",
+     "name": "CHRIS MCCONNEHEY",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "sergio-sotelo",
+     "name": "SERGIO SOTELO",
+     "party": "Unaffiliated",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 39",
+   "district": null,
+   "title": "State House District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "drew-howells",
+     "name": "DREW HOWELLS",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "ken-ivory",
+     "name": "KEN IVORY",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 40",
+   "district": null,
+   "title": "State House District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-stoddard",
+     "name": "ANDREW STODDARD",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 41",
+   "district": null,
+   "title": "State House District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "darren-croft",
+     "name": "DARREN CROFT",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "john-arthur",
+     "name": "JOHN ARTHUR",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 42",
+   "district": null,
+   "title": "State House District 42",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "iva-williams",
+     "name": "IVA WILLIAMS",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "clint-okerlund",
+     "name": "CLINT OKERLUND",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 43",
+   "district": null,
+   "title": "State House District 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-eliason",
+     "name": "STEVE ELIASON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "ofa-matagi",
+     "name": "OFA MATAGI",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-44",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 44",
+   "district": null,
+   "title": "State House District 44",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jordan-teuscher",
+     "name": "JORDAN TEUSCHER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jess-birtcher",
+     "name": "JESS BIRTCHER",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 45",
+   "district": null,
+   "title": "State House District 45",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rod-moser",
+     "name": "ROD MOSER",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "tracy-miller",
+     "name": "TRACY MILLER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 46",
+   "district": null,
+   "title": "State House District 46",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cal-roberts",
+     "name": "CAL ROBERTS",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "braxten-rutherford",
+     "name": "BRAXTEN RUTHERFORD",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 47",
+   "district": null,
+   "title": "State House District 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-a-strong",
+     "name": "MARK A. STRONG",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-48",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 48",
+   "district": null,
+   "title": "State House District 48",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jake-hunsaker",
+     "name": "JAKE HUNSAKER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "benyde-walker",
+     "name": "BENYDE WALKER",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 49",
+   "district": null,
+   "title": "State House District 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "candice-b-pierucci",
+     "name": "CANDICE B. PIERUCCI",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "lillian-bowles",
+     "name": "LILLIAN BOWLES",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-50",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 50",
+   "district": null,
+   "title": "State House District 50",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristin-meyer",
+     "name": "KRISTIN MEYER",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "stephanie-gricius",
+     "name": "STEPHANIE GRICIUS",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-51",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 51",
+   "district": null,
+   "title": "State House District 51",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brett-nielsen",
+     "name": "BRETT NIELSEN",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "leah-hansen",
+     "name": "LEAH HANSEN",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-52",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 52",
+   "district": null,
+   "title": "State House District 52",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nicole-melling",
+     "name": "NICOLE MELLING",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "cory-maloy",
+     "name": "CORY MALOY",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "WRITE-IN",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-53",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 53",
+   "district": null,
+   "title": "State House District 53",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-r-slater",
+     "name": "KEVIN R SLATER",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kay-j-christofferson",
+     "name": "KAY J. CHRISTOFFERSON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "john-boyd",
+     "name": "JOHN BOYD",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-54",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 54",
+   "district": null,
+   "title": "State House District 54",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kristina-robinson",
+     "name": "KRISTINA ROBINSON",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "kristen-s-chevrier",
+     "name": "KRISTEN S. CHEVRIER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-55",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 55",
+   "district": null,
+   "title": "State House District 55",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jon-hawkins",
+     "name": "JON HAWKINS",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "travis-hysell",
+     "name": "TRAVIS HYSELL",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-56",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 56",
+   "district": null,
+   "title": "State House District 56",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "val-l-peterson",
+     "name": "VAL L. PETERSON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "natassja-grossman",
+     "name": "NATASSJA GROSSMAN",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-57",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 57",
+   "district": null,
+   "title": "State House District 57",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nelson-abbott",
+     "name": "NELSON ABBOTT",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "WRITE-IN",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-58",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 58",
+   "district": null,
+   "title": "State House District 58",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-shallenberger",
+     "name": "DAVID SHALLENBERGER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "karli-black",
+     "name": "KARLI BLACK",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-59-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 59 (Multi-County)",
+   "district": null,
+   "title": "State House District 59 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "luke-searle",
+     "name": "LUKE SEARLE",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "celeste-t-johnson",
+     "name": "CELESTE T. JOHNSON",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-60",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 60",
+   "district": null,
+   "title": "State House District 60",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "grant-pace",
+     "name": "GRANT PACE",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-61",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 61",
+   "district": null,
+   "title": "State House District 61",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alan-jimenez",
+     "name": "ALAN JIMENEZ",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "lisa-shepherd",
+     "name": "LISA SHEPHERD",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jennifer-k-doud",
+     "name": "JENNIFER K DOUD",
+     "party": "Constitution",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-62",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 62",
+   "district": null,
+   "title": "State House District 62",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "norm-thurston",
+     "name": "NORM THURSTON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "david-chappell",
+     "name": "DAVID CHAPPELL",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-63",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 63",
+   "district": null,
+   "title": "State House District 63",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-youngquist",
+     "name": "MARK YOUNGQUIST",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "julie-smith",
+     "name": "JULIE SMITH",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "stephen-l-whyte",
+     "name": "STEPHEN L. WHYTE",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-64",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 64",
+   "district": null,
+   "title": "State House District 64",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jackie-larson",
+     "name": "JACKIE LARSON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "alan-wessman",
+     "name": "ALAN WESSMAN",
+     "party": "Unaffiliated",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-65",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 65",
+   "district": null,
+   "title": "State House District 65",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "doug-welton",
+     "name": "DOUG WELTON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-66-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 66 (Multi-County)",
+   "district": null,
+   "title": "State House District 66 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "breanne-mashek",
+     "name": "BREANNE MASHEK",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "russ-hatch",
+     "name": "RUSS HATCH",
+     "party": "Constitution",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "troy-shelley",
+     "name": "TROY SHELLEY",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-67-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 67 (Multi-County)",
+   "district": null,
+   "title": "State House District 67 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carl-ingwell",
+     "name": "CARL INGWELL",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "jr-bird",
+     "name": "JR BIRD",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-68-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 68 (Multi-County)",
+   "district": null,
+   "title": "State House District 68 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sonya-ray",
+     "name": "SONYA RAY",
+     "party": "Constitution",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "scott-h-chew",
+     "name": "SCOTT H CHEW",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-69-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 69 (Multi-County)",
+   "district": null,
+   "title": "State House District 69 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tracie-yellowman-tso",
+     "name": "TRACIE YELLOWMAN TSO",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "logan-j-monson",
+     "name": "LOGAN J. MONSON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-70-multi-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 70 (Multi-County)",
+   "district": null,
+   "title": "State House District 70 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carl-r-albrecht",
+     "name": "CARL R. ALBRECHT",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "stacey-d-pendergraft",
+     "name": "STACEY D. PENDERGRAFT",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "zeno-b-parry",
+     "name": "ZENO B. PARRY",
+     "party": "Forward",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-71",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 71",
+   "district": null,
+   "title": "State House District 71",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "thomas-loveheart",
+     "name": "THOMAS LOVEHEART",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "rex-p-shipp",
+     "name": "REX P SHIPP",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-72",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 72",
+   "district": null,
+   "title": "State House District 72",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joseph-elison",
+     "name": "JOSEPH ELISON",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "april-a-pinkston",
+     "name": "APRIL A PINKSTON",
+     "party": "Constitution",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "eva-m-weldon",
+     "name": "EVA M WELDON",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-73",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 73",
+   "district": null,
+   "title": "State House District 73",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "colin-w-jack",
+     "name": "COLIN W. JACK",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "glenn-d-webb",
+     "name": "GLENN D WEBB",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-74",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 74",
+   "district": null,
+   "title": "State House District 74",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "r-neil-walter",
+     "name": "R. NEIL WALTER",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "jeffrey-n-lipe",
+     "name": "JEFFREY N LIPE",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-house-district-75",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ut",
+   "office": "State House District 75",
+   "district": null,
+   "title": "State House District 75",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rebecca-winsor",
+     "name": "REBECCA WINSOR",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "walt-brooks",
+     "name": "WALT BROOKS",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-school-board-district-1-multi-county",
+   "kind": "local",
+   "level": "local",
+   "state": "ut",
+   "office": "State School Board District 1 (Multi-County)",
+   "district": null,
+   "title": "State School Board District 1 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennie-earl",
+     "name": "JENNIE EARL",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "cathy-callow-heusser",
+     "name": "CATHY CALLOW-HEUSSER",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-school-board-district-2",
+   "kind": "local",
+   "level": "local",
+   "state": "ut",
+   "office": "State School Board District 2",
+   "district": null,
+   "title": "State School Board District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kacee-weaver",
+     "name": "KACEE WEAVER",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-school-board-district-4-multi-county",
+   "kind": "local",
+   "level": "local",
+   "state": "ut",
+   "office": "State School Board District 4 (Multi-County)",
+   "district": null,
+   "title": "State School Board District 4 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "leann-wood",
+     "name": "LEANN WOOD",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-school-board-district-5",
+   "kind": "local",
+   "level": "local",
+   "state": "ut",
+   "office": "State School Board District 5",
+   "district": null,
+   "title": "State School Board District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sarah-reale",
+     "name": "SARAH REALE",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-school-board-district-7-2-year-term",
+   "kind": "local",
+   "level": "local",
+   "state": "ut",
+   "office": "State School Board District 7 (2-Year Term)",
+   "district": null,
+   "title": "State School Board District 7 (2-Year Term)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-martin",
+     "name": "JAMES MARTIN",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "erin-longacre",
+     "name": "ERIN LONGACRE",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-school-board-district-8",
+   "kind": "local",
+   "level": "local",
+   "state": "ut",
+   "office": "State School Board District 8",
+   "district": null,
+   "title": "State School Board District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "araueni-olivares",
+     "name": "ARAUENI OLIVARES",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    },
+    {
+     "id": "nicole-mcdermott",
+     "name": "NICOLE MCDERMOTT",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-school-board-district-11-multi-county",
+   "kind": "local",
+   "level": "local",
+   "state": "ut",
+   "office": "State School Board District 11 (Multi-County)",
+   "district": null,
+   "title": "State School Board District 11 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tracy-j-nuttall",
+     "name": "TRACY J. NUTTALL",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    },
+    {
+     "id": "lacey-peterson",
+     "name": "LACEY PETERSON",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-state-school-board-district-14-multi-county",
+   "kind": "local",
+   "level": "local",
+   "state": "ut",
+   "office": "State School Board District 14 (Multi-County)",
+   "district": null,
+   "title": "State School Board District 14 (Multi-County)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "linda-hanks",
+     "name": "LINDA HANKS",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 10,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-constitutional-amendment-a",
+   "kind": "measure",
+   "level": "state",
+   "state": "ut",
+   "office": "Constitutional Amendment A",
+   "district": null,
+   "title": "Constitutional Amendment A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "for",
+     "name": "FOR",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "against",
+     "name": "AGAINST",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 29,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-constitutional-amendment-b",
+   "kind": "measure",
+   "level": "state",
+   "state": "ut",
+   "office": "Constitutional Amendment B",
+   "district": null,
+   "title": "Constitutional Amendment B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "for",
+     "name": "FOR",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "against",
+     "name": "AGAINST",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 29,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-jill-m-pohlman-be-retained-in-the-office-of-justice-of-the-supreme-cour",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ut",
+   "office": "Shall JILL M. POHLMAN be retained in the office of Justice of the Supreme Court of Utah?",
+   "district": null,
+   "title": "Shall JILL M. POHLMAN be retained in the office of Justice of the Supreme Court of Utah?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 29,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-michele-m-christiansen-forster-be-retained-in-the-office-of-judge-of-th",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ut",
+   "office": "Shall MICHELE M. CHRISTIANSEN FORSTER be retained in the office of Judge of the Court of Appeals of Utah?",
+   "district": null,
+   "title": "Shall MICHELE M. CHRISTIANSEN FORSTER be retained in the office of Judge of the Court of Appeals of Utah?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 29,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-ryan-m-harris-be-retained-in-the-office-of-judge-of-the-court-of-appeal",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ut",
+   "office": "Shall RYAN M. HARRIS be retained in the office of Judge of the Court of Appeals of Utah?",
+   "district": null,
+   "title": "Shall RYAN M. HARRIS be retained in the office of Judge of the Court of Appeals of Utah?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 29,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-john-david-luthy-be-retained-in-the-office-of-judge-of-the-court-of-app",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ut",
+   "office": "Shall JOHN DAVID LUTHY be retained in the office of Judge of the Court of Appeals of Utah?",
+   "district": null,
+   "title": "Shall JOHN DAVID LUTHY be retained in the office of Judge of the Court of Appeals of Utah?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 29,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-david-ned-mortensen-be-retained-in-the-office-of-judge-of-the-court-of-",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ut",
+   "office": "Shall DAVID NED MORTENSEN be retained in the office of Judge of the Court of Appeals of Utah?",
+   "district": null,
+   "title": "Shall DAVID NED MORTENSEN be retained in the office of Judge of the Court of Appeals of Utah?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 29,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-amy-jo-oliver-be-retained-in-the-office-of-judge-of-the-court-of-appeal",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ut",
+   "office": "Shall AMY JO OLIVER be retained in the office of Judge of the Court of Appeals of Utah?",
+   "district": null,
+   "title": "Shall AMY JO OLIVER be retained in the office of Judge of the Court of Appeals of Utah?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 29,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-gregory-keith-orme-be-retained-in-the-office-of-judge-of-the-court-of-a",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ut",
+   "office": "Shall GREGORY KEITH ORME be retained in the office of Judge of the Court of Appeals of Utah?",
+   "district": null,
+   "title": "Shall GREGORY KEITH ORME be retained in the office of Judge of the Court of Appeals of Utah?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 29,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-kirk-max-morgan-be-retained-in-the-office-of-judge-of-the-district-cour",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall KIRK MAX MORGAN be retained in the office of Judge of the District Court of the First Judicial District?",
+   "district": null,
+   "title": "Shall KIRK MAX MORGAN be retained in the office of Judge of the District Court of the First Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-jason-craig-nelson-be-retained-in-the-office-of-judge-of-the-district-c",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall JASON CRAIG NELSON be retained in the office of Judge of the District Court of the Second Judicial District?",
+   "district": null,
+   "title": "Shall JASON CRAIG NELSON be retained in the office of Judge of the District Court of the Second Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-eldred-blaine-rawson-be-retained-in-the-office-of-judge-of-the-district",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall ELDRED BLAINE RAWSON be retained in the office of Judge of the District Court of the Second Judicial District?",
+   "district": null,
+   "title": "Shall ELDRED BLAINE RAWSON be retained in the office of Judge of the District Court of the Second Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-jennifer-lyn-valencia-be-retained-in-the-office-of-judge-of-the-distric",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall JENNIFER LYN VALENCIA be retained in the office of Judge of the District Court of the Second Judicial District?",
+   "district": null,
+   "title": "Shall JENNIFER LYN VALENCIA be retained in the office of Judge of the District Court of the Second Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-matthew-david-bates-be-retained-in-the-office-of-judge-of-the-district-",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall MATTHEW DAVID BATES be retained in the office of Judge of the District Court of the Third Judicial District?",
+   "district": null,
+   "title": "Shall MATTHEW DAVID BATES be retained in the office of Judge of the District Court of the Third Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-coral-sanchez-be-retained-in-the-office-of-judge-of-the-district-court-",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall CORAL SANCHEZ be retained in the office of Judge of the District Court of the Third Judicial District?",
+   "district": null,
+   "title": "Shall CORAL SANCHEZ be retained in the office of Judge of the District Court of the Third Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-todd-shaughnessy-be-retained-in-the-office-of-judge-of-the-district-cou",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall TODD SHAUGHNESSY be retained in the office of Judge of the District Court of the Third Judicial District?",
+   "district": null,
+   "title": "Shall TODD SHAUGHNESSY be retained in the office of Judge of the District Court of the Third Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-charles-a-stormont-be-retained-in-the-office-of-judge-of-the-district-c",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall CHARLES A. STORMONT be retained in the office of Judge of the District Court of the Third Judicial District?",
+   "district": null,
+   "title": "Shall CHARLES A. STORMONT be retained in the office of Judge of the District Court of the Third Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-jared-william-eldridge-be-retained-in-the-office-of-judge-of-the-distri",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall JARED WILLIAM ELDRIDGE be retained in the office of Judge of the District Court of the Fourth Judicial District?",
+   "district": null,
+   "title": "Shall JARED WILLIAM ELDRIDGE be retained in the office of Judge of the District Court of the Fourth Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-anthony-leonard-howell-be-retained-in-the-office-of-judge-of-the-distri",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall ANTHONY LEONARD HOWELL be retained in the office of Judge of the District Court of the Fourth Judicial District?",
+   "district": null,
+   "title": "Shall ANTHONY LEONARD HOWELL be retained in the office of Judge of the District Court of the Fourth Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-thomas-low-be-retained-in-the-office-of-judge-of-the-district-court-of-",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall THOMAS LOW be retained in the office of Judge of the District Court of the Fourth Judicial District?",
+   "district": null,
+   "title": "Shall THOMAS LOW be retained in the office of Judge of the District Court of the Fourth Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-kraig-powell-be-retained-in-the-office-of-judge-of-the-district-court-o",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall KRAIG POWELL be retained in the office of Judge of the District Court of the Fourth Judicial District?",
+   "district": null,
+   "title": "Shall KRAIG POWELL be retained in the office of Judge of the District Court of the Fourth Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-eric-russell-gentry-be-retained-in-the-office-of-judge-of-the-district-",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall ERIC RUSSELL GENTRY be retained in the office of Judge of the District Court of the Fifth Judicial District?",
+   "district": null,
+   "title": "Shall ERIC RUSSELL GENTRY be retained in the office of Judge of the District Court of the Fifth Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-jay-winward-be-retained-in-the-office-of-judge-of-the-district-court-of",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall JAY WINWARD be retained in the office of Judge of the District Court of the Fifth Judicial District?",
+   "district": null,
+   "title": "Shall JAY WINWARD be retained in the office of Judge of the District Court of the Fifth Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-mandy-sue-larsen-be-retained-in-the-office-of-judge-of-the-district-cou",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall MANDY SUE LARSEN be retained in the office of Judge of the District Court of the Sixth Judicial District?",
+   "district": null,
+   "title": "Shall MANDY SUE LARSEN be retained in the office of Judge of the District Court of the Sixth Judicial District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-robert-garrett-neill-be-retained-in-the-office-of-judge-of-the-juvenile",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall ROBERT GARRETT NEILL be retained in the office of Judge of the Juvenile Court of the Second Juvenile Court District?",
+   "district": null,
+   "title": "Shall ROBERT GARRETT NEILL be retained in the office of Judge of the Juvenile Court of the Second Juvenile Court District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-jeffrey-j-noland-be-retained-in-the-office-of-judge-of-the-juvenile-cou",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall JEFFREY J. NOLAND be retained in the office of Judge of the Juvenile Court of the Second Juvenile Court District?",
+   "district": null,
+   "title": "Shall JEFFREY J. NOLAND be retained in the office of Judge of the Juvenile Court of the Second Juvenile Court District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-rick-westmoreland-be-retained-in-the-office-of-judge-of-the-juvenile-co",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall RICK WESTMORELAND be retained in the office of Judge of the Juvenile Court of the Second Juvenile Court District?",
+   "district": null,
+   "title": "Shall RICK WESTMORELAND be retained in the office of Judge of the Juvenile Court of the Second Juvenile Court District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-steven-k-beck-be-retained-in-the-office-of-judge-of-the-juvenile-court-",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall STEVEN K. BECK be retained in the office of Judge of the Juvenile Court of the Third Juvenile Court District?",
+   "district": null,
+   "title": "Shall STEVEN K. BECK be retained in the office of Judge of the Juvenile Court of the Third Juvenile Court District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-susan-heather-eisenman-be-retained-in-the-office-of-judge-of-the-juveni",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall SUSAN HEATHER EISENMAN be retained in the office of Judge of the Juvenile Court of the Third Juvenile Court District?",
+   "district": null,
+   "title": "Shall SUSAN HEATHER EISENMAN be retained in the office of Judge of the Juvenile Court of the Third Juvenile Court District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-aaron-william-flater-be-retained-in-the-office-of-judge-of-the-juvenile",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall AARON WILLIAM FLATER be retained in the office of Judge of the Juvenile Court of the Third Juvenile Court District?",
+   "district": null,
+   "title": "Shall AARON WILLIAM FLATER be retained in the office of Judge of the Juvenile Court of the Third Juvenile Court District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-douglas-john-nielsen-be-retained-in-the-office-of-judge-of-the-juvenile",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall DOUGLAS JOHN NIELSEN be retained in the office of Judge of the Juvenile Court of the Fourth Juvenile Court District?",
+   "district": null,
+   "title": "Shall DOUGLAS JOHN NIELSEN be retained in the office of Judge of the Juvenile Court of the Fourth Juvenile Court District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-alex-goble-be-retained-in-the-office-of-judge-of-the-juvenile-court-of-",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall ALEX GOBLE be retained in the office of Judge of the Juvenile Court of the Sixth Juvenile Court District?",
+   "district": null,
+   "title": "Shall ALEX GOBLE be retained in the office of Judge of the Juvenile Court of the Sixth Juvenile Court District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ut-shall-craig-miles-bunnell-be-retained-in-the-office-of-judge-of-the-juvenile-",
+   "kind": "judicial",
+   "level": "local",
+   "state": "ut",
+   "office": "Shall CRAIG MILES BUNNELL be retained in the office of Judge of the Juvenile Court of the Seventh Juvenile Court District?",
+   "district": null,
+   "title": "Shall CRAIG MILES BUNNELL be retained in the office of Judge of the Juvenile Court of the Seventh Juvenile Court District?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "YES",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "no",
+     "name": "NO",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "counties"
+   }
+  }
+ ]
+}
