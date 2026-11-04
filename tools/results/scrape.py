@@ -139,7 +139,105 @@ def a_clarity_xml(body, src):
     return out
 
 
-ADAPTERS = {"csv": a_csv, "clarity-xml": a_clarity_xml}
+def _en(v):
+    """Scytl text fields are lists of {languageId, text}. Return the English text."""
+    if isinstance(v, list):
+        for t in v:
+            if isinstance(t, dict) and t.get("languageId", "en").startswith("en") and t.get("text"):
+                return str(t["text"]).strip()
+        for t in v:
+            if isinstance(t, dict) and t.get("text"):
+                return str(t["text"]).strip()
+        return ""
+    return str(v or "").strip()
+
+
+RE_US_SEN = re.compile(r"^(?:member,\s*)?(?:u\.?s\.?|united states)\s+senate\b", re.I)
+RE_US_HOUSE = re.compile(r"^(?:(?:u\.?s\.?|united states)\s+house\b|member,\s*house of representatives)", re.I)
+RE_STATE_LEVEL = re.compile(r"governor|lieutenant|attorney general|secretary of state|commissioner|superintendent|"
+                            r"state senate|state house|house of delegates|public service|\bpsc\b|treasurer|auditor|comptroller|"
+                            r"supreme court|court of appeals|constitutional amendment", re.I)
+
+
+def a_scytl_json(body, src):
+    """Scytl 'results/public' election-night sites (Georgia, Virginia and others). Source url is the
+    ballot-items endpoint: https://<host>/results/public/api/elections/<Jurisdiction>/<publicElectionId>/ballot-items
+    Checked by hand against the live Georgia and Virginia pages (see README). U.S. Senate and U.S. House
+    contests are also emitted for the 'senate' and 'house' scopes (key '_scope'). A race is only 'called'
+    when the official source marks an option isWinner; we never call one ourselves."""
+    d = json.loads(body.decode("utf-8-sig"))
+    items = d.get("data") if isinstance(d, dict) else None
+    if not isinstance(items, list):
+        raise ValueError("scytl: no data list")
+    if d.get("totalRecordCount") is not None and d["totalRecordCount"] > len(items):
+        raise ValueError("scytl: partial page (%d of %d); refusing" % (len(items), d["totalRecordCount"]))
+    state = (src.get("state") or "").lower()
+    unit = src.get("unit") or "reporting units"
+    out, seen = [], set()
+    for it in items:
+        opts = (it.get("summaryResults") or {}).get("ballotOptions") or []
+        title = _en(it.get("name"))
+        if not title or not opts:
+            continue
+        if "/ " in title and re.search(r"\b(Distrito|Para la|Senador)\b", title):
+            title = title.split("/ ")[0].strip()
+        yn = {_en(o.get("name")).lower() for o in opts} <= {"yes", "no", "si", "sí"}
+        measure = it.get("contestType") == "BallotMeasure" or bool(it.get("referendum")) or yn
+        sen, hse = bool(RE_US_SEN.match(title)), bool(RE_US_HOUSE.match(title))
+        m = re.search(r"District\s+(\d+)|\((\d+)(?:st|nd|rd|th) District\)", title)
+        district = (m.group(1) or m.group(2)) if m else None
+        if sen:
+            office, shown, level = "U.S. Senate", "U.S. Senate", "federal"
+        elif hse:
+            office = "U.S. House"
+            shown = "U.S. House District " + district if district else "U.S. House"
+            level = "federal"
+        else:
+            office, shown = title, title
+            level = "state" if RE_STATE_LEVEL.search(title) else "local"
+        if measure:
+            kind = "judicial" if re.search(r"\b(judge|justice|retention)\b", title, re.I) else "measure"
+        elif level == "local":
+            kind = "local"
+        else:
+            kind = "candidate"
+        cid = slug(state + "-" + title)
+        n = 2
+        while cid in seen:
+            cid = slug(state + "-" + title)[:70] + "-" + str(n)
+            n += 1
+        seen.add(cid)
+        rs = it.get("reportingStatus") or {}
+        vf = re.search(r"\d+", _en(it.get("voteFor")))
+        c = {"id": cid, "kind": kind, "level": level, "state": state, "office": office,
+             "district": district if (sen or hse) else None, "title": shown,
+             "vote_for": int(vf.group()) if vf else 1, "choices": [],
+             "precincts": {"reporting": to_int(rs.get("reportingUnits")), "total": to_int(rs.get("totalUnits")), "unit": unit}}
+        cids = set()
+        for o in opts:
+            name = _en(o.get("name"))
+            pt = o.get("party") or {}
+            abbr = _en(pt.get("abbreviation")) or _en(pt.get("name"))
+            if abbr:
+                name = re.sub(r"\s*\(" + re.escape(abbr) + r"\)\s*$", "", name)
+            oid = slug(name) or "option"
+            if oid in cids:
+                oid = oid + "-" + str(o.get("nativeId") or len(cids))
+            cids.add(oid)
+            ch = {"id": oid, "name": name, "party": abbr or None, "party_code": party_code(abbr),
+                  "votes": max(0, to_int(o.get("voteCount")))}
+            c["choices"].append(ch)
+            if o.get("isWinner") is True:
+                c["called"] = {"winner": oid, "by": src.get("name", "source"), "at": None}
+        out.append(c)
+        if sen or hse:
+            f = json.loads(json.dumps(c))
+            f["_scope"] = "senate" if sen else "house"
+            out.append(f)
+    return out
+
+
+ADAPTERS = {"csv": a_csv, "clarity-xml": a_clarity_xml, "scytl-json": a_scytl_json}
 
 
 # ---------------------------------------------------------------- validation and merge
@@ -251,7 +349,11 @@ def run_once(cfg, out_dir, state_dir):
                     rec["status"] = "waiting"
                     rec["note"] = "Source has no results yet."
                 else:
-                    by_scope.setdefault(src["scope"], []).append((src, contests))
+                    routed = {}
+                    for c in contests:
+                        routed.setdefault(c.pop("_scope", None) or src["scope"], []).append(c)
+                    for sc, cs in routed.items():
+                        by_scope.setdefault(sc, []).append((src, cs))
                     rec["status"] = "ok"
                     rec["note"] = ""
                 rec["data_updated_at"] = (lm and httpdate(lm)) or src.get("updated_at") or now()

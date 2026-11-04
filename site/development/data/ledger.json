@@ -958,6 +958,16 @@
       "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live page. Six of the 51 links could not be opened by the author's tools and are unverified."
     },
     {
+      "id": "D092",
+      "decision_date_or_range": "2026-11-03",
+      "title": "The election results collector can now read Scytl-style official results sites, which Georgia and Virginia use",
+      "origin": "Maintainer (PR #306)",
+      "decision_or_proposal": "The election results collector can now read Scytl-style official results sites, which Georgia and Virginia use, including their U.S. Senate, U.S. House, state and local races and ballot measures. Numbers were checked by hand against both official pages.",
+      "why": "Added automatically when the change was merged.",
+      "status_as_of_2026_10_25": "Merged in PR #306; live appearance and behavior not yet verified.",
+      "evidence_and_limits": "Wording supplied by the author of the change. A person has not yet checked the live page."
+    },
+    {
       "id": "D093",
       "decision_date_or_range": "2026-11-04",
       "title": "Ten new judges pages (Kentucky, Minnesota, Mississippi, Montana, Nevada, North Carolina, North Dakota, Ohio, Texas, Washington) list the judges on the 2026 ballot, with a source on each line and a mark on anything not independently reviewed.",

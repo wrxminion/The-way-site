@@ -1,7 +1,7 @@
 {
   "election": {"name": "2026 General Election", "date": "2026-11-03", "timezone": "America/Denver"},
   "mode": null,
-  "scopes": {"co": "Colorado", "house": "U.S. House", "senate": "U.S. Senate", "state-ca": "California"},
+  "scopes": {"co": "Colorado", "house": "U.S. House", "senate": "U.S. Senate", "state-ca": "California", "state-ga": "Georgia", "state-va": "Virginia"},
   "seats_expected": {"house": 435, "senate": 35},
   "sources": [
     {"id": "co-sos", "name": "Colorado Secretary of State (sample)", "adapter": "clarity-xml", "scope": "co", "state": "co",
@@ -11,6 +11,10 @@
     {"id": "senate-sample", "name": "U.S. Senate (sample)", "adapter": "csv", "scope": "senate", "level": "federal",
      "url": "file:sample/raw/senate.csv", "public_url": "https://www.senate.gov/"},
     {"id": "ca-sample", "name": "California (sample)", "adapter": "csv", "scope": "state-ca", "state": "ca",
-     "url": "file:sample/raw/state-ca.csv", "public_url": "https://www.sos.ca.gov/"}
+     "url": "file:sample/raw/state-ca.csv", "public_url": "https://www.sos.ca.gov/"},
+    {"id": "ga-scytl", "name": "Georgia Secretary of State (sample)", "adapter": "scytl-json", "scope": "state-ga", "state": "ga", "unit": "counties",
+     "url": "file:sample/raw/scytl-ga.json", "public_url": "https://results.sos.ga.gov/"},
+    {"id": "va-scytl", "name": "Virginia Department of Elections (sample)", "adapter": "scytl-json", "scope": "state-va", "state": "va", "unit": "localities",
+     "url": "file:sample/raw/scytl-va.json", "public_url": "https://enr.elections.virginia.gov/"}
   ]
 }
