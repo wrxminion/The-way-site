@@ -13,8 +13,11 @@
   "hi-oe",
   "id-scytl",
   "in-enr",
+  "ks-sos",
   "la-sos",
   "mi-mvic",
+  "mn-sos",
+  "mo-sos",
   "mt-ersws",
   "nc-sbe",
   "ne-ersws",
@@ -31,7 +34,7 @@
   "va-scytl",
   "vt-sos"
  ],
- "updated_at": "2026-11-04T13:29:26Z",
+ "updated_at": "2026-11-04T13:35:44Z",
  "certified": false,
  "contests": [
   {
@@ -483,21 +486,21 @@
      "name": "Shannon L. Taylor",
      "party": "D",
      "party_code": "D",
-     "votes": 213608
+     "votes": 207827
     },
     {
      "id": "robert-j-rob-wittman",
      "name": "Robert J. \"Rob\" Wittman",
      "party": "R",
      "party_code": "R",
-     "votes": 208515
+     "votes": 198416
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 996
+     "votes": 983
     }
    ],
    "precincts": {
@@ -670,28 +673,28 @@
      "name": "Tom S. P. Perriello",
      "party": "D",
      "party_code": "D",
-     "votes": 173981
+     "votes": 173166
     },
     {
      "id": "john-j-mcguire-iii",
      "name": "John J. McGuire III",
      "party": "R",
      "party_code": "R",
-     "votes": 182620
+     "votes": 181191
     },
     {
      "id": "cooke-c-harvey",
      "name": "Cooke C. Harvey",
      "party": "I",
      "party_code": "O",
-     "votes": 5812
+     "votes": 5789
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 712
+     "votes": 711
     }
    ],
    "precincts": {
@@ -5330,21 +5333,21 @@
      "name": "Aaron Flint",
      "party": "Republican",
      "party_code": "R",
-     "votes": 107028
+     "votes": 107183
     },
     {
      "id": "sam-forstag",
      "name": "Sam Forstag",
      "party": "Democrat",
      "party_code": "D",
-     "votes": 114094
+     "votes": 114112
     },
     {
      "id": "nick-sheedy",
      "name": "Nick Sheedy",
      "party": "Libertarian",
      "party_code": "O",
-     "votes": 6457
+     "votes": 6462
     }
    ],
    "precincts": {
@@ -10037,26 +10040,793 @@
      "name": "Becca Balint",
      "party": null,
      "party_code": "O",
-     "votes": 197608
+     "votes": 198410
     },
     {
      "id": "gerald-malloy",
      "name": "Gerald Malloy",
      "party": null,
      "party_code": "O",
-     "votes": 93381
+     "votes": 93755
     },
     {
      "id": "suzanne-suz-seymour",
      "name": "Suzanne Suz Seymour",
      "party": null,
      "party_code": "O",
-     "votes": 4331
+     "votes": 4357
     }
    ],
    "precincts": {
     "reporting": 0,
     "total": 0
+   }
+  },
+  {
+   "id": "mn-0104-1-u-s-representative-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 1",
+   "district": "1",
+   "title": "U.S. Representative District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jake-johnson",
+     "name": "Jake Johnson",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 163057
+    },
+    {
+     "id": "brad-finstad",
+     "name": "Brad Finstad",
+     "party": "R",
+     "party_code": "R",
+     "votes": 162733
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 391
+    }
+   ],
+   "precincts": {
+    "reporting": 750,
+    "total": 750,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0105-2-u-s-representative-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 2",
+   "district": "2",
+   "title": "U.S. Representative District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-little",
+     "name": "Matt Little",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 213653
+    },
+    {
+     "id": "eric-pratt",
+     "name": "Eric Pratt",
+     "party": "R",
+     "party_code": "R",
+     "votes": 159829
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 335
+    }
+   ],
+   "precincts": {
+    "reporting": 260,
+    "total": 260,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0106-3-u-s-representative-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 3",
+   "district": "3",
+   "title": "U.S. Representative District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tyler-bass",
+     "name": "Tyler Bass",
+     "party": "R",
+     "party_code": "R",
+     "votes": 135505
+    },
+    {
+     "id": "kelly-morrison",
+     "name": "Kelly Morrison",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 242079
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 413
+    }
+   ],
+   "precincts": {
+    "reporting": 229,
+    "total": 229,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0107-4-u-s-representative-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 4",
+   "district": "4",
+   "title": "U.S. Representative District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "betty-mccollum",
+     "name": "Betty McCollum",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 245699
+    },
+    {
+     "id": "paul-wikstrom",
+     "name": "Paul Wikstrom",
+     "party": "R",
+     "party_code": "R",
+     "votes": 90068
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 477
+    }
+   ],
+   "precincts": {
+    "reporting": 212,
+    "total": 212,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0108-5-u-s-representative-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 5",
+   "district": "5",
+   "title": "U.S. Representative District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ilhan-omar",
+     "name": "Ilhan Omar",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 262702
+    },
+    {
+     "id": "john-nagel",
+     "name": "John Nagel",
+     "party": "R",
+     "party_code": "R",
+     "votes": 55765
+    },
+    {
+     "id": "develle-l-jackson",
+     "name": "DeVelle L. Jackson",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 24110
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 931
+    }
+   ],
+   "precincts": {
+    "reporting": 217,
+    "total": 217,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0109-6-u-s-representative-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 6",
+   "district": "6",
+   "title": "U.S. Representative District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-emmer",
+     "name": "Tom Emmer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 204705
+    },
+    {
+     "id": "doug-chapin",
+     "name": "Doug Chapin",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 162213
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 427
+    }
+   ],
+   "precincts": {
+    "reporting": 276,
+    "total": 276,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0110-7-u-s-representative-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 7",
+   "district": "7",
+   "title": "U.S. Representative District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michelle-fischbach",
+     "name": "Michelle Fischbach",
+     "party": "R",
+     "party_code": "R",
+     "votes": 214505
+    },
+    {
+     "id": "erik-osberg",
+     "name": "Erik Osberg",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 115805
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 320
+    }
+   ],
+   "precincts": {
+    "reporting": 1327,
+    "total": 1327,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0111-8-u-s-representative-district-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 8",
+   "district": "8",
+   "title": "U.S. Representative District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pete-stauber",
+     "name": "Pete Stauber",
+     "party": "R",
+     "party_code": "R",
+     "votes": 190743
+    },
+    {
+     "id": "trina-swanson",
+     "name": "Trina Swanson",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 168350
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 359
+    }
+   ],
+   "precincts": {
+    "reporting": 834,
+    "total": 834,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ks-united-states-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ks",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lauren-reinhold",
+     "name": "Lauren Reinhold",
+     "party": "D",
+     "party_code": "D",
+     "votes": 94651
+    },
+    {
+     "id": "tracey-mann",
+     "name": "Tracey Mann",
+     "party": "R",
+     "party_code": "R",
+     "votes": 149757
+    },
+    {
+     "id": "steven-jacob",
+     "name": "Steven Jacob",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6805
+    }
+   ],
+   "precincts": {
+    "reporting": 1403,
+    "total": 1403,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ks",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "don-coover",
+     "name": "Don Coover",
+     "party": "D",
+     "party_code": "D",
+     "votes": 109091
+    },
+    {
+     "id": "derek-schmidt",
+     "name": "Derek Schmidt",
+     "party": "R",
+     "party_code": "R",
+     "votes": 125026
+    },
+    {
+     "id": "john-hauer",
+     "name": "John Hauer",
+     "party": "L",
+     "party_code": "O",
+     "votes": 9096
+    }
+   ],
+   "precincts": {
+    "reporting": 1089,
+    "total": 1089,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-united-states-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ks",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sharice-l-davids",
+     "name": "Sharice L. Davids",
+     "party": "D",
+     "party_code": "D",
+     "votes": 200463
+    },
+    {
+     "id": "eric-jenkins",
+     "name": "Eric Jenkins",
+     "party": "R",
+     "party_code": "R",
+     "votes": 129248
+    },
+    {
+     "id": "steven-a-hohe",
+     "name": "Steven A Hohe",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6903
+    }
+   ],
+   "precincts": {
+    "reporting": 735,
+    "total": 735,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-united-states-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ks",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "katy-tyndell",
+     "name": "Katy Tyndell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 113553
+    },
+    {
+     "id": "ron-estes",
+     "name": "Ron Estes",
+     "party": "R",
+     "party_code": "R",
+     "votes": 138445
+    },
+    {
+     "id": "drew-cranmer",
+     "name": "Drew Cranmer",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6128
+    }
+   ],
+   "precincts": {
+    "reporting": 942,
+    "total": 942,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-berry-iii",
+     "name": "Paul Berry III",
+     "party": "R",
+     "party_code": "R",
+     "votes": 32308
+    },
+    {
+     "id": "wesley-bell",
+     "name": "Wesley Bell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 189175
+    },
+    {
+     "id": "tom-schmitz",
+     "name": "Tom Schmitz",
+     "party": "L",
+     "party_code": "O",
+     "votes": 10613
+    }
+   ],
+   "precincts": {
+    "reporting": 656,
+    "total": 656,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ann-wagner",
+     "name": "Ann Wagner",
+     "party": "R",
+     "party_code": "R",
+     "votes": 153132
+    },
+    {
+     "id": "fred-wellman",
+     "name": "Fred Wellman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 169477
+    },
+    {
+     "id": "brandon-coulter-daugherty",
+     "name": "Brandon Coulter Daugherty",
+     "party": "L",
+     "party_code": "O",
+     "votes": 8782
+    }
+   ],
+   "precincts": {
+    "reporting": 595,
+    "total": 595,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bob-onder",
+     "name": "Bob Onder",
+     "party": "R",
+     "party_code": "R",
+     "votes": 149239
+    },
+    {
+     "id": "bethany-e-mann",
+     "name": "Bethany E Mann",
+     "party": "D",
+     "party_code": "D",
+     "votes": 125271
+    },
+    {
+     "id": "jim-higgins",
+     "name": "Jim Higgins",
+     "party": "L",
+     "party_code": "O",
+     "votes": 7700
+    }
+   ],
+   "precincts": {
+    "reporting": 339,
+    "total": 339,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-alford",
+     "name": "Mark Alford",
+     "party": "R",
+     "party_code": "R",
+     "votes": 150944
+    },
+    {
+     "id": "jordan-herrera",
+     "name": "Jordan Herrera",
+     "party": "D",
+     "party_code": "D",
+     "votes": 88423
+    },
+    {
+     "id": "thomas-holbrook",
+     "name": "Thomas Holbrook",
+     "party": "L",
+     "party_code": "O",
+     "votes": 7183
+    }
+   ],
+   "precincts": {
+    "reporting": 351,
+    "total": 351,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rick-brattin",
+     "name": "Rick Brattin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 72572
+    },
+    {
+     "id": "emanuel-cleaver-ii",
+     "name": "Emanuel Cleaver, II",
+     "party": "D",
+     "party_code": "D",
+     "votes": 179256
+    },
+    {
+     "id": "randall-randy-langkraehr",
+     "name": "Randall (Randy) Langkraehr",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6128
+    }
+   ],
+   "precincts": {
+    "reporting": 201,
+    "total": 201,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 6",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-stigall",
+     "name": "Chris Stigall",
+     "party": "R",
+     "party_code": "R",
+     "votes": 151219
+    },
+    {
+     "id": "josh-smead",
+     "name": "Josh Smead",
+     "party": "D",
+     "party_code": "D",
+     "votes": 100416
+    },
+    {
+     "id": "andy-maidment",
+     "name": "Andy Maidment",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6028
+    }
+   ],
+   "precincts": {
+    "reporting": 438,
+    "total": 438,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 7",
+   "district": "7",
+   "title": "U.S. House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-w-burlison",
+     "name": "Eric W. Burlison",
+     "party": "R",
+     "party_code": "R",
+     "votes": 157599
+    },
+    {
+     "id": "missi-hesketh",
+     "name": "Missi Hesketh",
+     "party": "D",
+     "party_code": "D",
+     "votes": 89710
+    },
+    {
+     "id": "kevin-craig",
+     "name": "Kevin Craig",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6100
+    }
+   ],
+   "precincts": {
+    "reporting": 287,
+    "total": 287,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "mo-united-states-house-of-representatives-district-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mo",
+   "office": "U.S. House District 8",
+   "district": "8",
+   "title": "U.S. House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-t-smith",
+     "name": "Jason T. Smith",
+     "party": "R",
+     "party_code": "R",
+     "votes": 152677
+    },
+    {
+     "id": "chris-reichard",
+     "name": "Chris Reichard",
+     "party": "D",
+     "party_code": "D",
+     "votes": 65751
+    },
+    {
+     "id": "rebecca-sharpe-lombard",
+     "name": "Rebecca Sharpe Lombard",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6996
+    }
+   ],
+   "precincts": {
+    "reporting": 385,
+    "total": 385,
+    "unit": "counties"
    }
   }
  ]
