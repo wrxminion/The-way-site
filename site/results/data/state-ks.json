@@ -1,0 +1,471 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-ks",
+ "label": "Kansas",
+ "source_ids": [
+  "ks-sos"
+ ],
+ "updated_at": "2026-11-04T13:35:44Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "ks-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ks",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-hamilton",
+     "name": "Adam Hamilton",
+     "party": "D",
+     "party_code": "D",
+     "votes": 556414
+    },
+    {
+     "id": "roger-marshall",
+     "name": "Roger Marshall",
+     "party": "R",
+     "party_code": "R",
+     "votes": 503230
+    },
+    {
+     "id": "david-c-graham",
+     "name": "David C Graham",
+     "party": "L",
+     "party_code": "O",
+     "votes": 32934
+    }
+   ],
+   "precincts": {
+    "reporting": 4168,
+    "total": 4168,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-united-states-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ks",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lauren-reinhold",
+     "name": "Lauren Reinhold",
+     "party": "D",
+     "party_code": "D",
+     "votes": 94651
+    },
+    {
+     "id": "tracey-mann",
+     "name": "Tracey Mann",
+     "party": "R",
+     "party_code": "R",
+     "votes": 149757
+    },
+    {
+     "id": "steven-jacob",
+     "name": "Steven Jacob",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6805
+    }
+   ],
+   "precincts": {
+    "reporting": 1403,
+    "total": 1403,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ks",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "don-coover",
+     "name": "Don Coover",
+     "party": "D",
+     "party_code": "D",
+     "votes": 109091
+    },
+    {
+     "id": "derek-schmidt",
+     "name": "Derek Schmidt",
+     "party": "R",
+     "party_code": "R",
+     "votes": 125026
+    },
+    {
+     "id": "john-hauer",
+     "name": "John Hauer",
+     "party": "L",
+     "party_code": "O",
+     "votes": 9096
+    }
+   ],
+   "precincts": {
+    "reporting": 1089,
+    "total": 1089,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-united-states-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ks",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sharice-l-davids",
+     "name": "Sharice L. Davids",
+     "party": "D",
+     "party_code": "D",
+     "votes": 200463
+    },
+    {
+     "id": "eric-jenkins",
+     "name": "Eric Jenkins",
+     "party": "R",
+     "party_code": "R",
+     "votes": 129248
+    },
+    {
+     "id": "steven-a-hohe",
+     "name": "Steven A Hohe",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6903
+    }
+   ],
+   "precincts": {
+    "reporting": 735,
+    "total": 735,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-united-states-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ks",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "katy-tyndell",
+     "name": "Katy Tyndell",
+     "party": "D",
+     "party_code": "D",
+     "votes": 113553
+    },
+    {
+     "id": "ron-estes",
+     "name": "Ron Estes",
+     "party": "R",
+     "party_code": "R",
+     "votes": 138445
+    },
+    {
+     "id": "drew-cranmer",
+     "name": "Drew Cranmer",
+     "party": "L",
+     "party_code": "O",
+     "votes": 6128
+    }
+   ],
+   "precincts": {
+    "reporting": 942,
+    "total": 942,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-governor-lt-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Governor / Lt. Governor",
+   "district": null,
+   "title": "Governor / Lt. Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cindy-holscher",
+     "name": "Cindy Holscher",
+     "party": "D",
+     "party_code": "D",
+     "votes": 546587
+    },
+    {
+     "id": "ty-masterson",
+     "name": "Ty Masterson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 541030
+    }
+   ],
+   "precincts": {
+    "reporting": 4168,
+    "total": 4168,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jennifer-day",
+     "name": "Jennifer Day",
+     "party": "D",
+     "party_code": "D",
+     "votes": 511419
+    },
+    {
+     "id": "pat-proctor",
+     "name": "Pat Proctor",
+     "party": "R",
+     "party_code": "R",
+     "votes": 522175
+    },
+    {
+     "id": "scott-e-morgan",
+     "name": "Scott E. Morgan",
+     "party": "UK",
+     "party_code": "O",
+     "votes": 45571
+    }
+   ],
+   "precincts": {
+    "reporting": 4168,
+    "total": 4168,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-mann",
+     "name": "Chris Mann",
+     "party": "D",
+     "party_code": "D",
+     "votes": 548047
+    },
+    {
+     "id": "kris-kobach",
+     "name": "Kris Kobach",
+     "party": "R",
+     "party_code": "R",
+     "votes": 536759
+    }
+   ],
+   "precincts": {
+    "reporting": 4168,
+    "total": 4168,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-state-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "State Treasurer",
+   "district": null,
+   "title": "State Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "juan-c-luengo",
+     "name": "Juan C. Luengo",
+     "party": "D",
+     "party_code": "D",
+     "votes": 475695
+    },
+    {
+     "id": "steven-johnson",
+     "name": "Steven Johnson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 551643
+    },
+    {
+     "id": "eric-lund",
+     "name": "Eric Lund",
+     "party": "L",
+     "party_code": "O",
+     "votes": 48797
+    }
+   ],
+   "precincts": {
+    "reporting": 4168,
+    "total": 4168,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-commissioner-of-insurance",
+   "kind": "candidate",
+   "level": "state",
+   "state": "ks",
+   "office": "Commissioner of Insurance",
+   "district": null,
+   "title": "Commissioner of Insurance",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dinah-sykes",
+     "name": "Dinah Sykes",
+     "party": "D",
+     "party_code": "D",
+     "votes": 508889
+    },
+    {
+     "id": "daniel-hawkins",
+     "name": "Daniel Hawkins",
+     "party": "R",
+     "party_code": "R",
+     "votes": 528004
+    },
+    {
+     "id": "ric-koehn",
+     "name": "Ric Koehn",
+     "party": "L",
+     "party_code": "O",
+     "votes": 38498
+    }
+   ],
+   "precincts": {
+    "reporting": 4168,
+    "total": 4168,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-constitutional-amendment",
+   "kind": "measure",
+   "level": "state",
+   "state": "ks",
+   "office": "Constitutional Amendment",
+   "district": null,
+   "title": "Constitutional Amendment",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 669505
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 381855
+    }
+   ],
+   "precincts": {
+    "reporting": 4168,
+    "total": 4168,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-retain-justice-eric-s-rosen-supreme-court-justice-4",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ks",
+   "office": "Retain Justice Eric S. Rosen (Supreme Court Justice 4)",
+   "district": null,
+   "title": "Retain Justice Eric S. Rosen (Supreme Court Justice 4)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 609670
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 325843
+    }
+   ],
+   "precincts": {
+    "reporting": 4168,
+    "total": 4168,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "ks-retain-justice-larkin-e-walsh-supreme-court-justice-6",
+   "kind": "judicial",
+   "level": "state",
+   "state": "ks",
+   "office": "Retain Justice Larkin E. Walsh (Supreme Court Justice 6)",
+   "district": null,
+   "title": "Retain Justice Larkin E. Walsh (Supreme Court Justice 6)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 600555
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 325257
+    }
+   ],
+   "precincts": {
+    "reporting": 4168,
+    "total": 4168,
+    "unit": "counties"
+   }
+  }
+ ]
+}
