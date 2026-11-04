@@ -4,9 +4,10 @@
  "label": "U.S. Senate",
  "source_ids": [
   "ga-scytl",
+  "nc-sbe",
   "va-scytl"
  ],
- "updated_at": "2026-11-04T01:49:27Z",
+ "updated_at": "2026-11-04T02:27:40Z",
  "certified": false,
  "contests": [
   {
@@ -24,18 +25,18 @@
      "name": "Mike Collins",
      "party": "Rep",
      "party_code": "R",
-     "votes": 1132481
+     "votes": 1319530
     },
     {
      "id": "jon-ossoff-i",
      "name": "Jon Ossoff (I)",
      "party": "Dem",
      "party_code": "D",
-     "votes": 1733537
+     "votes": 1967877
     }
    ],
    "precincts": {
-    "reporting": 130,
+    "reporting": 144,
     "total": 159,
     "unit": "counties"
    }
@@ -55,28 +56,69 @@
      "name": "Mark R. Warner",
      "party": "D",
      "party_code": "D",
-     "votes": 1223901
+     "votes": 1547620
     },
     {
      "id": "bert-mizusawa",
      "name": "Bert Mizusawa",
      "party": "R",
      "party_code": "R",
-     "votes": 811857
+     "votes": 1030731
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 5804
+     "votes": 7354
     }
    ],
    "precincts": {
-    "reporting": 124,
+    "reporting": 128,
     "total": 133,
     "unit": "localities"
    }
+  },
+  {
+   "id": "nc-us-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nc",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-dublin",
+     "name": "Michael Dublin",
+     "party": "GRE",
+     "party_code": "O",
+     "votes": 27240
+    },
+    {
+     "id": "michael-whatley",
+     "name": "Michael Whatley",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1290791
+    },
+    {
+     "id": "roy-cooper",
+     "name": "Roy Cooper",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2012643
+    },
+    {
+     "id": "shannon-w-bray",
+     "name": "Shannon W. Bray",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 40165
+    }
+   ],
+   "precincts": {}
   }
  ]
 }
