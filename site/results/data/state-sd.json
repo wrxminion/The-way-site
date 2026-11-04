@@ -1,0 +1,2759 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-sd",
+ "label": "South Dakota",
+ "source_ids": [
+  "sd-ersws"
+ ],
+ "updated_at": "2026-11-04T13:13:42Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "sd-constitutional-amendment-i-an-amendment-to-the-south-dakota-constit",
+   "kind": "measure",
+   "level": "state",
+   "state": "sd",
+   "office": "Constitutional Amendment I: An Amendment to the South Dakota Constitution that Repeals Expanded Medicaid Coverage if Federal Funding for the Program Drops below 90%.",
+   "district": null,
+   "title": "Constitutional Amendment I: An Amendment to the South Dakota Constitution that Repeals Expanded Medicaid Coverage if Federal Funding for the Program Drops below 90%.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 131187
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 165391
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-constitutional-amendment-j-an-amendment-to-the-south-dakota-constit",
+   "kind": "measure",
+   "level": "state",
+   "state": "sd",
+   "office": "Constitutional Amendment J: An Amendment to the South Dakota Constitution Clarifying that an Individual Must Be a Citizen of the United States to be Eligible to Vote.",
+   "district": null,
+   "title": "Constitutional Amendment J: An Amendment to the South Dakota Constitution Clarifying that an Individual Must Be a Citizen of the United States to be Eligible to Vote.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 183740
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 114909
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-constitutional-amendment-k-an-amendment-to-the-south-dakota-constit",
+   "kind": "measure",
+   "level": "state",
+   "state": "sd",
+   "office": "Constitutional Amendment K: An Amendment to the South Dakota Constitution Establishing the Trust for Unclaimed Property Fund.",
+   "district": null,
+   "title": "Constitutional Amendment K: An Amendment to the South Dakota Constitution Establishing the Trust for Unclaimed Property Fund.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 178554
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 114464
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-constitutional-amendment-l-an-amendment-to-the-south-dakota-constit",
+   "kind": "measure",
+   "level": "state",
+   "state": "sd",
+   "office": "Constitutional Amendment L: An Amendment to the South Dakota Constitution Requiring that a Proposed Constitutional Amendment or Revision Receive an Affirmative Vote of Sixty Percent of the Votes Cast.",
+   "district": null,
+   "title": "Constitutional Amendment L: An Amendment to the South Dakota Constitution Requiring that a Proposed Constitutional Amendment or Revision Receive an Affirmative Vote of Sixty Percent of the Votes Cast.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 126154
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 171340
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-01",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 01",
+   "district": null,
+   "title": "State Senator - District 01",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-h-rohl",
+     "name": "Michael H. Rohl",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6026
+    }
+   ],
+   "precincts": {
+    "reporting": 43,
+    "total": 43,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-01",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 01",
+   "district": "01",
+   "title": "State Representative - District 01",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-kjos",
+     "name": "Daniel Kjos",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5446
+    },
+    {
+     "id": "nick-fosness",
+     "name": "Nick Fosness",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5144
+    },
+    {
+     "id": "courtney-gale-enfield",
+     "name": "Courtney Gale Enfield",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3353
+    }
+   ],
+   "precincts": {
+    "reporting": 43,
+    "total": 43,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-02",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 02",
+   "district": null,
+   "title": "State Senator - District 02",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-sjaarda",
+     "name": "John Sjaarda",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7111
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-02",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 02",
+   "district": "02",
+   "title": "State Representative - District 02",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-long",
+     "name": "Adam Long",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6594
+    },
+    {
+     "id": "manuel-luschas",
+     "name": "Manuel Luschas",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5309
+    },
+    {
+     "id": "blake-rife",
+     "name": "Blake Rife",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4187
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-03",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 03",
+   "district": null,
+   "title": "State Senator - District 03",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "katherine-katie-washnok",
+     "name": "Katherine \"Katie\" Washnok",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5223
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-03-possible-recount",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 03 (Possible Recount)",
+   "district": "03",
+   "title": "State Representative - District 03 (Possible Recount)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "spencer-sommers",
+     "name": "Spencer Sommers",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4354
+    },
+    {
+     "id": "timothy-hanigan",
+     "name": "Timothy Hanigan",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3772
+    },
+    {
+     "id": "erin-ronayne-rudner",
+     "name": "Erin Ronayne Rudner",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3629
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-04",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 04",
+   "district": null,
+   "title": "State Senator - District 04",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-sauder",
+     "name": "Stephanie Sauder",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7565
+    }
+   ],
+   "precincts": {
+    "reporting": 56,
+    "total": 56,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-04",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 04",
+   "district": "04",
+   "title": "State Representative - District 04",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-kohl",
+     "name": "Ryan Kohl",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6856
+    },
+    {
+     "id": "fred-deutsch",
+     "name": "Fred Deutsch",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6131
+    },
+    {
+     "id": "emelia-enquist",
+     "name": "Emelia Enquist",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 2725
+    },
+    {
+     "id": "samuel-froehlke",
+     "name": "Samuel Froehlke",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 1646
+    }
+   ],
+   "precincts": {
+    "reporting": 56,
+    "total": 56,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-05",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 05",
+   "district": null,
+   "title": "State Senator - District 05",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "glen-a-vilhauer",
+     "name": "Glen A. Vilhauer",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6113
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-05",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 05",
+   "district": "05",
+   "title": "State Representative - District 05",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "byron-i-callies",
+     "name": "Byron I. Callies",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4137
+    },
+    {
+     "id": "matt-roby",
+     "name": "Matt Roby",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5825
+    },
+    {
+     "id": "neal-tapio",
+     "name": "Neal Tapio",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 2691
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-06",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 06",
+   "district": null,
+   "title": "State Senator - District 06",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ernie-otten",
+     "name": "Ernie Otten",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5582
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-06",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 06",
+   "district": "06",
+   "title": "State Representative - District 06",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jerry-jongeling",
+     "name": "Jerry Jongeling",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4925
+    },
+    {
+     "id": "elliott-neff",
+     "name": "Elliott Neff",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4365
+    },
+    {
+     "id": "austin-wolf",
+     "name": "Austin Wolf",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3066
+    },
+    {
+     "id": "garret-m-campbell",
+     "name": "Garret M Campbell",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 2694
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-07",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 07",
+   "district": null,
+   "title": "State Senator - District 07",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-reed",
+     "name": "Tim Reed",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5313
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-07",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 07",
+   "district": "07",
+   "title": "State Representative - District 07",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mellissa-heermann",
+     "name": "Mellissa Heermann",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4699
+    },
+    {
+     "id": "roger-degroot",
+     "name": "Roger DeGroot",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4457
+    },
+    {
+     "id": "blake-stevens",
+     "name": "Blake Stevens",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3509
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-08",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 08",
+   "district": null,
+   "title": "State Senator - District 08",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "casey-crabtree",
+     "name": "Casey Crabtree",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6100
+    },
+    {
+     "id": "clint-hoyer",
+     "name": "Clint Hoyer",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 4099
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-08",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 08",
+   "district": "08",
+   "title": "State Representative - District 08",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jon-nelson",
+     "name": "Jon Nelson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6188
+    },
+    {
+     "id": "todd-wilkinson",
+     "name": "Todd Wilkinson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5699
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-09",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 09",
+   "district": null,
+   "title": "State Senator - District 09",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joy-hohn",
+     "name": "Joy Hohn",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5305
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-09-possible-recount",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 09 (Possible Recount)",
+   "district": "09",
+   "title": "State Representative - District 09 (Possible Recount)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tesa-schwans",
+     "name": "Tesa Schwans",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4575
+    },
+    {
+     "id": "megan-tschetter",
+     "name": "Megan Tschetter",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4254
+    },
+    {
+     "id": "amanda-potter",
+     "name": "Amanda Potter",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4097
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 10",
+   "district": null,
+   "title": "State Senator - District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-dupic",
+     "name": "Michael Dupic",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2676
+    },
+    {
+     "id": "liz-larson",
+     "name": "Liz Larson",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4486
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 10",
+   "district": "10",
+   "title": "State Representative - District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-pohlman",
+     "name": "John Pohlman",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2851
+    },
+    {
+     "id": "kimberly-petterson",
+     "name": "Kimberly Petterson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2539
+    },
+    {
+     "id": "adam-bair",
+     "name": "Adam Bair",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3763
+    },
+    {
+     "id": "kathleen-brudvig",
+     "name": "Kathleen Brudvig",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4182
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-11-possible-recount",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 11 (Possible Recount)",
+   "district": null,
+   "title": "State Senator - District 11 (Possible Recount)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-karr",
+     "name": "Chris Karr",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4209
+    },
+    {
+     "id": "aaron-matson",
+     "name": "Aaron Matson",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4175
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-11-possible-recount",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 11 (Possible Recount)",
+   "district": "11",
+   "title": "State Representative - District 11 (Possible Recount)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-mulder",
+     "name": "Brian Mulder",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4190
+    },
+    {
+     "id": "keri-k-weems",
+     "name": "Keri K. Weems",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4061
+    },
+    {
+     "id": "tracey-quint",
+     "name": "Tracey Quint",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 1554
+    },
+    {
+     "id": "sonja-mentzer",
+     "name": "Sonja Mentzer",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4234
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-12-possible-recount",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 12 (Possible Recount)",
+   "district": null,
+   "title": "State Senator - District 12 (Possible Recount)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kari-shanard-koenders",
+     "name": "Kari Shanard-Koenders",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4009
+    },
+    {
+     "id": "joe-zweifel",
+     "name": "Joe Zweifel",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3877
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 12",
+   "district": "12",
+   "title": "State Representative - District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kerry-loudenslager",
+     "name": "Kerry Loudenslager",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3349
+    },
+    {
+     "id": "amber-arlint",
+     "name": "Amber Arlint",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4125
+    },
+    {
+     "id": "stephanie-arne",
+     "name": "Stephanie Arne",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4270
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 13",
+   "district": null,
+   "title": "State Senator - District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sue-peterson",
+     "name": "Sue Peterson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6447
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 13",
+   "district": "13",
+   "title": "State Representative - District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jack-r-kolbeck",
+     "name": "Jack R Kolbeck",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5873
+    },
+    {
+     "id": "john-hughes",
+     "name": "John Hughes",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5274
+    },
+    {
+     "id": "ali-rae-horsted",
+     "name": "Ali Rae Horsted",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5584
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 14",
+   "district": null,
+   "title": "State Senator - District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "larry-p-zikmund",
+     "name": "Larry P. Zikmund",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5529
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 14",
+   "district": "14",
+   "title": "State Representative - District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tyler-tordsen",
+     "name": "Tyler Tordsen",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4649
+    },
+    {
+     "id": "taylor-rae-rehfeldt",
+     "name": "Taylor Rae Rehfeldt",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5501
+    },
+    {
+     "id": "erinn-williams",
+     "name": "Erinn Williams",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 5258
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 15",
+   "district": null,
+   "title": "State Senator - District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brenda-lawrence",
+     "name": "Brenda Lawrence",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1909
+    },
+    {
+     "id": "erik-muckey",
+     "name": "Erik Muckey",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3290
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 15",
+   "district": "15",
+   "title": "State Representative - District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andre-zachariahs",
+     "name": "Andre Zachariahs",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1780
+    },
+    {
+     "id": "joni-tschetter",
+     "name": "Joni Tschetter",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1886
+    },
+    {
+     "id": "kadyn-wittman",
+     "name": "Kadyn Wittman",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3202
+    },
+    {
+     "id": "june-copperstad",
+     "name": "June CopperStad",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 2906
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 16",
+   "district": null,
+   "title": "State Senator - District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-d-jensen",
+     "name": "Kevin D. Jensen",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6478
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 16",
+   "district": "16",
+   "title": "State Representative - District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lisa-bogue",
+     "name": "Lisa Bogue",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5355
+    },
+    {
+     "id": "john-shubeck",
+     "name": "John Shubeck",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4837
+    },
+    {
+     "id": "tim-rhead",
+     "name": "Tim Rhead",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3394
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 17",
+   "district": null,
+   "title": "State Senator - District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sydney-davis",
+     "name": "Sydney Davis",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4926
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 17",
+   "district": "17",
+   "title": "State Representative - District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-kassin",
+     "name": "Chris Kassin",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4588
+    },
+    {
+     "id": "troy-redler",
+     "name": "Troy Redler",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3797
+    },
+    {
+     "id": "austin-brunick",
+     "name": "Austin Brunick",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 2695
+    },
+    {
+     "id": "leslie-gerrish",
+     "name": "Leslie Gerrish",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3440
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 18",
+   "district": null,
+   "title": "State Senator - District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lauren-nelson",
+     "name": "Lauren Nelson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4484
+    },
+    {
+     "id": "kay-swihart",
+     "name": "Kay Swihart",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3294
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 18",
+   "district": "18",
+   "title": "State Representative - District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-r-marquardt",
+     "name": "John R. Marquardt",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3852
+    },
+    {
+     "id": "mike-stevens",
+     "name": "Mike Stevens",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5105
+    },
+    {
+     "id": "karen-springer",
+     "name": "Karen Springer",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3021
+    },
+    {
+     "id": "jarod-holcomb",
+     "name": "Jarod Holcomb",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 2357
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 19",
+   "district": null,
+   "title": "State Senator - District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kyle-schoenfish",
+     "name": "Kyle Schoenfish",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6177
+    },
+    {
+     "id": "russell-e-graeff",
+     "name": "Russell E. Graeff",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 1750
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 19",
+   "district": "19",
+   "title": "State Representative - District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "drew-peterson",
+     "name": "Drew Peterson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5506
+    },
+    {
+     "id": "jessica-bahmuller",
+     "name": "Jessica Bahmuller",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5580
+    },
+    {
+     "id": "heidi-hora",
+     "name": "Heidi Hora",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 2112
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 20",
+   "district": null,
+   "title": "State Senator - District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-miskimins",
+     "name": "Paul Miskimins",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5335
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 20",
+   "district": "20",
+   "title": "State Representative - District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-bathke",
+     "name": "Jeff Bathke",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4559
+    },
+    {
+     "id": "terry-sabers",
+     "name": "Terry Sabers",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4167
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 21",
+   "district": null,
+   "title": "State Senator - District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mykala-voita",
+     "name": "Mykala Voita",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6190
+    },
+    {
+     "id": "dan-andersson",
+     "name": "Dan Andersson",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 1969
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 21",
+   "district": "21",
+   "title": "State Representative - District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-halverson",
+     "name": "Jim Halverson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5527
+    },
+    {
+     "id": "marty-overweg",
+     "name": "Marty Overweg",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4953
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 22",
+   "district": null,
+   "title": "State Senator - District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brandon-r-wipf",
+     "name": "Brandon R. Wipf",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5124
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 22",
+   "district": "22",
+   "title": "State Representative - District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lana-greenfield",
+     "name": "Lana Greenfield",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4376
+    },
+    {
+     "id": "kevin-van-diepen",
+     "name": "Kevin Van Diepen",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4318
+    },
+    {
+     "id": "cully-williams",
+     "name": "Cully Williams",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 2478
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 23",
+   "district": null,
+   "title": "State Senator - District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-lapka",
+     "name": "Mark Lapka",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6267
+    }
+   ],
+   "precincts": {
+    "reporting": 47,
+    "total": 47,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 23",
+   "district": "23",
+   "title": "State Representative - District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dick-werner",
+     "name": "Dick Werner",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5190
+    },
+    {
+     "id": "spencer-gosch",
+     "name": "Spencer Gosch",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5579
+    },
+    {
+     "id": "garett-heinz",
+     "name": "Garett Heinz",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 2290
+    }
+   ],
+   "precincts": {
+    "reporting": 47,
+    "total": 47,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 24",
+   "district": null,
+   "title": "State Senator - District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-mehlhaff",
+     "name": "Jim Mehlhaff",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6992
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 24",
+   "district": "24",
+   "title": "State Representative - District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "laurie-gill",
+     "name": "Laurie Gill",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6123
+    },
+    {
+     "id": "mike-weisgram",
+     "name": "Mike Weisgram",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6308
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 25",
+   "district": null,
+   "title": "State Senator - District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bart-sample",
+     "name": "Bart Sample",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5718
+    },
+    {
+     "id": "bryan-j-breitling",
+     "name": "Bryan J. Breitling",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 4146
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 25",
+   "district": "25",
+   "title": "State Representative - District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carrie-sanderson",
+     "name": "Carrie Sanderson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6324
+    },
+    {
+     "id": "nick-buchholz",
+     "name": "Nick Buchholz",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4602
+    }
+   ],
+   "precincts": {
+    "reporting": 16,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 26",
+   "district": null,
+   "title": "State Senator - District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rebecca-reimer",
+     "name": "Rebecca Reimer",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3187
+    },
+    {
+     "id": "shawn-bordeaux",
+     "name": "Shawn Bordeaux",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 2706
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-26a",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 26A",
+   "district": "26",
+   "title": "State Representative - District 26A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ron-frederick",
+     "name": "Ron Frederick",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 839
+    },
+    {
+     "id": "eric-e-emery",
+     "name": "Eric E. Emery",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 1523
+    }
+   ],
+   "precincts": {
+    "reporting": 15,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-26b",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 26B",
+   "district": "26",
+   "title": "State Representative - District 26B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "angi-hanzlik",
+     "name": "Angi Hanzlik",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2419
+    },
+    {
+     "id": "lewis-j-grassrope",
+     "name": "Lewis J. GrassRope",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 1123
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 27",
+   "district": null,
+   "title": "State Senator - District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anthony-kathol",
+     "name": "Anthony Kathol",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2270
+    },
+    {
+     "id": "celestine-stadnick",
+     "name": "Celestine Stadnick",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 2035
+    },
+    {
+     "id": "peri-pourier",
+     "name": "Peri Pourier",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 1013
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 27",
+   "district": "27",
+   "title": "State Representative - District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "liz-may",
+     "name": "Liz May",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2453
+    },
+    {
+     "id": "evangeline-poor-bear",
+     "name": "Evangeline Poor Bear",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 1600
+    },
+    {
+     "id": "elizabeth-lone-eagle",
+     "name": "Elizabeth Lone Eagle",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 1009
+    },
+    {
+     "id": "joe-flood",
+     "name": "Joe Flood",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 1471
+    },
+    {
+     "id": "jay-yohner",
+     "name": "Jay Yohner",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 755
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 28",
+   "district": null,
+   "title": "State Senator - District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sam-marty",
+     "name": "Sam Marty",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5576
+    }
+   ],
+   "precincts": {
+    "reporting": 62,
+    "total": 62,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-28a",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 28A",
+   "district": "28",
+   "title": "State Representative - District 28A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jana-hunt",
+     "name": "Jana Hunt",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1832
+    },
+    {
+     "id": "chastity-chas-jewett",
+     "name": "Chastity \"Chas\" Jewett",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 1297
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-28b",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 28B",
+   "district": "28",
+   "title": "State Representative - District 28B",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "travis-ismay",
+     "name": "Travis Ismay",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3384
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 29",
+   "district": null,
+   "title": "State Senator - District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "william-j-meirose",
+     "name": "William J. Meirose",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6105
+    }
+   ],
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 29",
+   "district": "29",
+   "title": "State Representative - District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gary-l-cammack",
+     "name": "Gary L Cammack",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5160
+    },
+    {
+     "id": "gary-deering",
+     "name": "Gary Deering",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4630
+    }
+   ],
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 30",
+   "district": null,
+   "title": "State Senator - District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amber-hulse",
+     "name": "Amber Hulse",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 8708
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 30",
+   "district": "30",
+   "title": "State Representative - District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "trish-ladner",
+     "name": "Trish Ladner",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7724
+    },
+    {
+     "id": "tim-r-goodwin",
+     "name": "Tim R Goodwin",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7387
+    },
+    {
+     "id": "bret-swanson",
+     "name": "Bret Swanson",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3530
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 31",
+   "district": null,
+   "title": "State Senator - District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "randy-deibert",
+     "name": "Randy Deibert",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6941
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 31",
+   "district": "31",
+   "title": "State Representative - District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-odenbach",
+     "name": "Scott Odenbach",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6253
+    },
+    {
+     "id": "mary-j-fitzgerald",
+     "name": "Mary J. Fitzgerald",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5991
+    },
+    {
+     "id": "morgan-plucker",
+     "name": "Morgan Plucker",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3867
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 32",
+   "district": null,
+   "title": "State Senator - District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "helene-duhamel",
+     "name": "Helene Duhamel",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3317
+    },
+    {
+     "id": "jeff-shelton",
+     "name": "Jeff Shelton",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3015
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 32",
+   "district": "32",
+   "title": "State Representative - District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zachary-martin",
+     "name": "Zachary Martin",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2317
+    },
+    {
+     "id": "steve-duffy",
+     "name": "Steve Duffy",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2666
+    },
+    {
+     "id": "nicole-uhre-balk",
+     "name": "Nicole Uhre-Balk",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3283
+    },
+    {
+     "id": "samuel-hare-sr",
+     "name": "Samuel Hare Sr",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 1756
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 33",
+   "district": null,
+   "title": "State Senator - District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-johnson",
+     "name": "David Johnson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6427
+    },
+    {
+     "id": "christopher-baumgartner",
+     "name": "Christopher Baumgartner",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3448
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 33",
+   "district": "33",
+   "title": "State Representative - District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phil-jensen",
+     "name": "Phil Jensen",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5403
+    },
+    {
+     "id": "curt-massie",
+     "name": "Curt Massie",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5824
+    },
+    {
+     "id": "kari-hall",
+     "name": "Kari Hall",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3803
+    }
+   ],
+   "precincts": {
+    "reporting": 12,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 34",
+   "district": null,
+   "title": "State Senator - District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "taffy-howard",
+     "name": "Taffy Howard",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4943
+    },
+    {
+     "id": "michael-calabrese",
+     "name": "Michael Calabrese",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 4508
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 34",
+   "district": "34",
+   "title": "State Representative - District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "becky-j-drury",
+     "name": "Becky J Drury",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4941
+    },
+    {
+     "id": "mike-derby",
+     "name": "Mike Derby",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5453
+    },
+    {
+     "id": "victor-diego-dominquez",
+     "name": "Victor Diego Dominquez",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 3858
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-senator-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Senator - District 35",
+   "district": null,
+   "title": "State Senator - District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-blanc",
+     "name": "Greg Blanc",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4213
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-representative-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Representative - District 35",
+   "district": "35",
+   "title": "State Representative - District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-fleming",
+     "name": "Jason Fleming",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3751
+    },
+    {
+     "id": "dale-bartscher",
+     "name": "Dale Bartscher",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3262
+    },
+    {
+     "id": "ken-jeakins",
+     "name": "Ken Jeakins",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 2483
+    }
+   ],
+   "precincts": {
+    "reporting": 9,
+    "total": 9,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sd",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-rounds",
+     "name": "Mike Rounds",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 184571
+    },
+    {
+     "id": "brian-l-bengs",
+     "name": "Brian L Bengs",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 120484
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-united-states-representative",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sd",
+   "office": "United States Representative",
+   "district": null,
+   "title": "United States Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marty-jackley",
+     "name": "Marty Jackley",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 195570
+    },
+    {
+     "id": "nicole-nikki-gronli",
+     "name": "Nicole \"Nikki\" Gronli",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 109967
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-governor-and-lieutenant-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "Governor and Lieutenant Governor",
+   "district": null,
+   "title": "Governor and Lieutenant Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "larry-rhoden-and-tony-venhuizen",
+     "name": "Larry Rhoden and Tony Venhuizen",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 193317
+    },
+    {
+     "id": "dan-ahlers-and-steven-mccleerey",
+     "name": "Dan Ahlers and Steven McCleerey",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 111131
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "heather-baxter",
+     "name": "Heather Baxter",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 172350
+    },
+    {
+     "id": "tamara-j-lesnar",
+     "name": "Tamara J. Lesnar",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 16260
+    },
+    {
+     "id": "terrence-davis",
+     "name": "Terrence Davis",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 106533
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lance-russell",
+     "name": "Lance Russell",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 193243
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-auditor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Auditor",
+   "district": null,
+   "title": "State Auditor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "catherine-barranco",
+     "name": "Catherine Barranco",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 182677
+    },
+    {
+     "id": "tom-cool",
+     "name": "Tom Cool",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 109365
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-state-treasurer",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "State Treasurer",
+   "district": null,
+   "title": "State Treasurer",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-hull",
+     "name": "Melissa Hull",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 182344
+    },
+    {
+     "id": "margaret-kuipers",
+     "name": "Margaret Kuipers",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 109731
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-commissioner-of-school-and-public-lands",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "Commissioner of School and Public Lands",
+   "district": null,
+   "title": "Commissioner of School and Public Lands",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brock-greenfield",
+     "name": "Brock Greenfield",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 179727
+    },
+    {
+     "id": "raeann-mettler",
+     "name": "Raeann Mettler",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 110996
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-public-utilities-commissioner",
+   "kind": "candidate",
+   "level": "state",
+   "state": "sd",
+   "office": "Public Utilities Commissioner",
+   "district": null,
+   "title": "Public Utilities Commissioner",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "don-haggar",
+     "name": "Don Haggar",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 174552
+    },
+    {
+     "id": "frank-kloucek",
+     "name": "Frank Kloucek",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 115197
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  }
+ ]
+}

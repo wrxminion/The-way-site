@@ -1,0 +1,7091 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-or",
+ "label": "Oregon",
+ "source_ids": [
+  "or-ersws"
+ ],
+ "updated_at": "2026-11-04T13:13:41Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "or-us-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "or",
+   "office": "US Senator",
+   "district": null,
+   "title": "US Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-brock-smith",
+     "name": "David Brock Smith",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 619239
+    },
+    {
+     "id": "jeff-merkley",
+     "name": "Jeff Merkley",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 864411
+    },
+    {
+     "id": "gary-lyndon-dye",
+     "name": "Gary Lyndon Dye",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 14371
+    },
+    {
+     "id": "chris-henry",
+     "name": "Chris Henry",
+     "party": "Progressive, Pacific Green",
+     "party_code": "O",
+     "votes": 28843
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1123
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1318,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-us-representative-1st-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "or",
+   "office": "US Representative, 1st District",
+   "district": null,
+   "title": "US Representative, 1st District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "barbara-j-kahl",
+     "name": "Barbara J Kahl",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 67166
+    },
+    {
+     "id": "suzanne-bonamici",
+     "name": "Suzanne Bonamici",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 154258
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 324
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 218,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-us-representative-2nd-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "or",
+   "office": "US Representative, 2nd District",
+   "district": null,
+   "title": "US Representative, 2nd District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-beck",
+     "name": "Chris Beck",
+     "party": "Democrat, Independent",
+     "party_code": "D",
+     "votes": 115706
+    },
+    {
+     "id": "cliff-bentz",
+     "name": "Cliff Bentz",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 185635
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 438
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 370,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-us-representative-3rd-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "or",
+   "office": "US Representative, 3rd District",
+   "district": null,
+   "title": "US Representative, 3rd District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maxine-e-dexter",
+     "name": "Maxine E Dexter",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 164418
+    },
+    {
+     "id": "loran-ayles",
+     "name": "Loran Ayles",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 51095
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 473
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 118,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-us-representative-4th-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "or",
+   "office": "US Representative, 4th District",
+   "district": null,
+   "title": "US Representative, 4th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "monique-despain",
+     "name": "Monique DeSpain",
+     "party": "Republican, Libertarian",
+     "party_code": "R",
+     "votes": 117593
+    },
+    {
+     "id": "val-hoyle",
+     "name": "Val Hoyle",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 148193
+    },
+    {
+     "id": "justin-filip",
+     "name": "Justin Filip",
+     "party": "Pacific Green, Progressive",
+     "party_code": "O",
+     "votes": 8215
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 212
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 187,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-us-representative-5th-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "or",
+   "office": "US Representative, 5th District",
+   "district": null,
+   "title": "US Representative, 5th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "janelle-s-bynum",
+     "name": "Janelle S Bynum",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 166185
+    },
+    {
+     "id": "andrea-townsend",
+     "name": "Andrea Townsend",
+     "party": "Pacific Green",
+     "party_code": "O",
+     "votes": 6133
+    },
+    {
+     "id": "patti-adair",
+     "name": "Patti Adair",
+     "party": "Republican, Libertarian",
+     "party_code": "R",
+     "votes": 134477
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 303
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 249,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-us-representative-6th-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "or",
+   "office": "US Representative, 6th District",
+   "district": null,
+   "title": "US Representative, 6th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrea-salinas",
+     "name": "Andrea Salinas",
+     "party": "Democrat, Independent",
+     "party_code": "D",
+     "votes": 113919
+    },
+    {
+     "id": "david-russ",
+     "name": "David Russ",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 82550
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 162
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 183,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-1st-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 1st District",
+   "district": null,
+   "title": "State Representative, 1st District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "court-boice",
+     "name": "Court Boice",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 20918
+    },
+    {
+     "id": "bret-cecil",
+     "name": "Bret Cecil",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 11708
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 77
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 43,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-2nd-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 2nd District",
+   "district": null,
+   "title": "State Representative, 2nd District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "virgle-j-osborne",
+     "name": "Virgle J Osborne",
+     "party": "Republican, Democrat",
+     "party_code": "R",
+     "votes": 19077
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1051
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-3rd-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 3rd District",
+   "district": null,
+   "title": "State Representative, 3rd District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dwayne-yunker",
+     "name": "Dwayne Yunker",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 17897
+    },
+    {
+     "id": "susan-fischer-maki",
+     "name": "Susan Fischer-Maki",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 12050
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 67
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 34,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-4th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 4th District",
+   "district": null,
+   "title": "State Representative, 4th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alek-skarlatos",
+     "name": "Alek Skarlatos",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 23004
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1278
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-5th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 5th District",
+   "district": null,
+   "title": "State Representative, 5th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alexander-krigsvold",
+     "name": "Alexander Krigsvold",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 11374
+    },
+    {
+     "id": "pam-marsh",
+     "name": "Pam Marsh",
+     "party": "Democrat, Independent",
+     "party_code": "D",
+     "votes": 24519
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 50
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-6th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 6th District",
+   "district": null,
+   "title": "State Representative, 6th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kim-wallan",
+     "name": "Kim Wallan",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 15048
+    },
+    {
+     "id": "john-p-holm",
+     "name": "John P Holm",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 12013
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 85
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-7th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 7th District",
+   "district": null,
+   "title": "State Representative, 7th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "adam-wilson",
+     "name": "Adam Wilson",
+     "party": "Republican, Libertarian",
+     "party_code": "R",
+     "votes": 9298
+    },
+    {
+     "id": "kori-rodley",
+     "name": "Kori Rodley",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 12386
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 92
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-8th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 8th District",
+   "district": null,
+   "title": "State Representative, 8th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-vivian",
+     "name": "Bill Vivian",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3225
+    },
+    {
+     "id": "lisa-fragala",
+     "name": "Lisa Fragala",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 18414
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 46
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-9th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 9th District",
+   "district": null,
+   "title": "State Representative, 9th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-ezra-scheirman",
+     "name": "John Ezra Scheirman",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 13375
+    },
+    {
+     "id": "claire-lynn",
+     "name": "Claire Lynn",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 16984
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 47
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-10th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 10th District",
+   "district": null,
+   "title": "State Representative, 10th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-gomberg",
+     "name": "David Gomberg",
+     "party": "Democrat, Independent, Republican",
+     "party_code": "D",
+     "votes": 19194
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 652
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 42,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-11th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 11th District",
+   "district": null,
+   "title": "State Representative, 11th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ivan-maluski",
+     "name": "Ivan Maluski",
+     "party": "Democrat, Independent, Working Families",
+     "party_code": "D",
+     "votes": 10024
+    },
+    {
+     "id": "ken-jackola",
+     "name": "Ken Jackola",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 21565
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 56
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 53,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-12th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 12th District",
+   "district": null,
+   "title": "State Representative, 12th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amber-smith",
+     "name": "Amber Smith",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 12028
+    },
+    {
+     "id": "darin-harbick",
+     "name": "Darin Harbick",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 15547
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 299
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 18,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-13th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 13th District",
+   "district": null,
+   "title": "State Representative, 13th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nancy-nathanson",
+     "name": "Nancy Nathanson",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 19870
+    },
+    {
+     "id": "jonathan-t-abrahamsen",
+     "name": "Jonathan T Abrahamsen",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 8241
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 41
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-14th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 14th District",
+   "district": null,
+   "title": "State Representative, 14th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-t-burton",
+     "name": "Kevin T Burton",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 8108
+    },
+    {
+     "id": "julie-fahey",
+     "name": "Julie Fahey",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 14768
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 29
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-15th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 15th District",
+   "district": null,
+   "title": "State Representative, 15th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shelly-boshart-davis",
+     "name": "Shelly Boshart Davis",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 16898
+    },
+    {
+     "id": "joanna-robinson",
+     "name": "Joanna Robinson",
+     "party": "Democrat, Independent, Working Families",
+     "party_code": "D",
+     "votes": 15862
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 35
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-16th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 16th District",
+   "district": null,
+   "title": "State Representative, 16th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sarah-finger-mcdonald",
+     "name": "Sarah Finger McDonald",
+     "party": "Democrat, Republican",
+     "party_code": "D",
+     "votes": 21680
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 574
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-17th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 17th District",
+   "district": null,
+   "title": "State Representative, 17th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-nelson",
+     "name": "David Nelson",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 6901
+    },
+    {
+     "id": "dan-farrington",
+     "name": "Dan Farrington",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 11842
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 20
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 45,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-18th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 18th District",
+   "district": null,
+   "title": "State Representative, 18th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amanda-staehely",
+     "name": "Amanda Staehely",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 14054
+    },
+    {
+     "id": "roy-kaufmann",
+     "name": "Roy Kaufmann",
+     "party": "Independent, Working Families, Democrat",
+     "party_code": "O",
+     "votes": 8073
+    },
+    {
+     "id": "patrick-marnell",
+     "name": "Patrick Marnell",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 281
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-19th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 19th District",
+   "district": null,
+   "title": "State Representative, 19th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anna-munson",
+     "name": "Anna Munson",
+     "party": "Republican, Libertarian",
+     "party_code": "R",
+     "votes": 5769
+    },
+    {
+     "id": "tom-andersen",
+     "name": "Tom Andersen",
+     "party": "Democrat, Independent, Working Families",
+     "party_code": "D",
+     "votes": 9543
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 17
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-20th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 20th District",
+   "district": null,
+   "title": "State Representative, 20th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-evans",
+     "name": "Paul Evans",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 12288
+    },
+    {
+     "id": "andrew-fudge",
+     "name": "Andrew Fudge",
+     "party": "Republican, Independent",
+     "party_code": "R",
+     "votes": 9326
+    },
+    {
+     "id": "taylor-a-rickey",
+     "name": "Taylor A Rickey",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 533
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 47
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-21st-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 21st District",
+   "district": null,
+   "title": "State Representative, 21st District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-welsh",
+     "name": "Michael Welsh",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 7450
+    },
+    {
+     "id": "kevin-l-mannix",
+     "name": "Kevin L Mannix",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6275
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 18
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-22nd-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 22nd District",
+   "district": null,
+   "title": "State Representative, 22nd District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lesly-m-munoz",
+     "name": "Lesly M Munoz",
+     "party": "Democrat, Independent, Working Families",
+     "party_code": "D",
+     "votes": 5549
+    },
+    {
+     "id": "noemi-legaspi",
+     "name": "Noemi Legaspi",
+     "party": "Republican, Libertarian",
+     "party_code": "R",
+     "votes": 3964
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-23rd-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 23rd District",
+   "district": null,
+   "title": "State Representative, 23rd District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "anna-m-scharf",
+     "name": "Anna M Scharf",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 17905
+    },
+    {
+     "id": "kriss-wright",
+     "name": "Kriss Wright",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 12157
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-24th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 24th District",
+   "district": null,
+   "title": "State Representative, 24th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lucetta-a-elmer",
+     "name": "Lucetta A Elmer",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 16226
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 60
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-25th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 25th District",
+   "district": null,
+   "title": "State Representative, 25th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-bowman",
+     "name": "Ben Bowman",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 13527
+    },
+    {
+     "id": "bob-niemeyer",
+     "name": "Bob Niemeyer",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5455
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-26th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 26th District",
+   "district": null,
+   "title": "State Representative, 26th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "stephanie-carkin",
+     "name": "Stephanie Carkin",
+     "party": "Republican, Libertarian",
+     "party_code": "R",
+     "votes": 9087
+    },
+    {
+     "id": "steph-terrio",
+     "name": "Steph Terrio",
+     "party": "Pacific Green, Progressive",
+     "party_code": "O",
+     "votes": 541
+    },
+    {
+     "id": "sue-r-rieke-smith",
+     "name": "Sue R Rieke Smith",
+     "party": "Democrat, Independent",
+     "party_code": "D",
+     "votes": 12527
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 18
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-27th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 27th District",
+   "district": null,
+   "title": "State Representative, 27th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tammy-carpenter",
+     "name": "Tammy Carpenter",
+     "party": "Democrat, Progressive, Working Families",
+     "party_code": "D",
+     "votes": 14574
+    },
+    {
+     "id": "g-mark-norman",
+     "name": "G Mark Norman",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5369
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 38
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-28th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 28th District",
+   "district": null,
+   "title": "State Representative, 28th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dacia-grayber",
+     "name": "Dacia Grayber",
+     "party": "Democrat, Independent, Working Families",
+     "party_code": "D",
+     "votes": 21236
+    },
+    {
+     "id": "randall-fryer",
+     "name": "Randall Fryer",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3850
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 22
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-29th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 29th District",
+   "district": null,
+   "title": "State Representative, 29th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-schimmel",
+     "name": "Brian Schimmel",
+     "party": "Independent, Republican",
+     "party_code": "O",
+     "votes": 6339
+    },
+    {
+     "id": "susan-mclain",
+     "name": "Susan McLain",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 9533
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 37
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-representative-30th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Representative, 30th District",
+   "district": null,
+   "title": "State Representative, 30th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nathan-sosa",
+     "name": "Nathan Sosa",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 10845
+    },
+    {
+     "id": "charles-a-ross",
+     "name": "Charles A Ross",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4102
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 22
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-02-157-north-albany-rural-fire-protection-district-measure-proposin",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "02-157 North Albany Rural Fire Protection District: Measure proposing a five-year operating local option levy.",
+   "district": null,
+   "title": "02-157 North Albany Rural Fire Protection District: Measure proposing a five-year operating local option levy.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 606
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 246
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-02-158-adair-rural-fire-protection-district-adair-rural-fire-protec",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "02-158 Adair Rural Fire Protection District: Adair Rural Fire Protection District general obligation bond authorization",
+   "district": null,
+   "title": "02-158 Adair Rural Fire Protection District: Adair Rural Fire Protection District general obligation bond authorization",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1001
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 193
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-02-159-city-of-corvallis-amend-corvallis-charter-to-change-city-cou",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "02-159 City of Corvallis: Amend Corvallis Charter to change city council, wards, and terms",
+   "district": null,
+   "title": "02-159 City of Corvallis: Amend Corvallis Charter to change city council, wards, and terms",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-9-precincts-reported",
+     "name": "0 out of 9 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 11907
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 8545
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 9,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-03-638-city-of-estacada-prohibits-new-marijuana-production-processi",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "03-638 City of Estacada: Prohibits new marijuana production, processing, and wholesaling businesses in Estacada.",
+   "district": null,
+   "title": "03-638 City of Estacada: Prohibits new marijuana production, processing, and wholesaling businesses in Estacada.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1126
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 784
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-03-642-city-of-canby-amend-city-of-canby-charter-chapter-v-section-",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "03-642 City of Canby: Amend City of Canby Charter Chapter V Section 2",
+   "district": null,
+   "title": "03-642 City of Canby: Amend City of Canby Charter Chapter V Section 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-4-precincts-reported",
+     "name": "0 out of 4 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2352
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4896
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-03-643-city-of-canby-amend-city-of-canby-city-charter-chapter-x",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "03-643 City of Canby: Amend City of Canby City Charter Chapter X",
+   "district": null,
+   "title": "03-643 City of Canby: Amend City of Canby City Charter Chapter X",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-4-precincts-reported",
+     "name": "0 out of 4 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2753
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4341
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-04-243-city-of-cannon-beach-amends-charter-to-require-management-de",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "04-243 City of Cannon Beach: Amends Charter to Require 'Management' (defined) of Foredunes Within City Limits",
+   "district": null,
+   "title": "04-243 City of Cannon Beach: Amends Charter to Require 'Management' (defined) of Foredunes Within City Limits",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 233
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 655
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-04-244-city-of-astoria-increases-council-size-clarifies-residency-r",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "04-244 City of Astoria: Increases Council Size, Clarifies Residency Requirements and Effect of Vacancy.",
+   "district": null,
+   "title": "04-244 City of Astoria: Increases Council Size, Clarifies Residency Requirements and Effect of Vacancy.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1822
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2646
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-04-245-city-of-astoria-requires-council-approval-of-mayor-s-appoint",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "04-245 City of Astoria: Requires Council Approval of Mayor's Appointments and Removals",
+   "district": null,
+   "title": "04-245 City of Astoria: Requires Council Approval of Mayor's Appointments and Removals",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2462
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2107
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-04-246-city-of-astoria-revises-charter-provisions-regarding-city-go",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "04-246 City of Astoria: Revises Charter Provisions Regarding City Government Administration",
+   "district": null,
+   "title": "04-246 City of Astoria: Revises Charter Provisions Regarding City Government Administration",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1790
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2597
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-04-247-city-of-astoria-excise-tax-on-homes-kept-vacant-most-of-the-",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "04-247 City of Astoria: Excise tax on homes kept vacant most of the year.",
+   "district": null,
+   "title": "04-247 City of Astoria: Excise tax on homes kept vacant most of the year.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1876
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2901
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-04-248-city-of-warrenton-amend-city-code-chapter-3-10-030-c-to-impo",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "04-248 City of Warrenton: Amend City Code Chapter 3.10.030(C) to Impose 3% Marijuana Tax",
+   "district": null,
+   "title": "04-248 City of Warrenton: Amend City Code Chapter 3.10.030(C) to Impose 3% Marijuana Tax",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1839
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 657
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-04-249-clatsop-care-center-health-district-bonds-for-local-healthca",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "04-249 Clatsop Care Center Health District: Bonds for local healthcare, skilled nursing on the North Coast",
+   "district": null,
+   "title": "04-249 Clatsop Care Center Health District: Bonds for local healthcare, skilled nursing on the North Coast",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-16-precincts-reported",
+     "name": "0 out of 16 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 8071
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4626
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-05-312-city-of-st-helens-police-services-child-safety-24-7-police-p",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "05-312 City of St. Helens: Police Services, Child Safety, 24/7 Police Patrol Local Option Levy",
+   "district": null,
+   "title": "05-312 City of St. Helens: Police Services, Child Safety, 24/7 Police Patrol Local Option Levy",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1544
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4290
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-05-313-city-of-columbia-city-approval-of-a-police-department-operat",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "05-313 City of Columbia City: Approval of a Police Department Operations Levy for Five Years.",
+   "district": null,
+   "title": "05-313 City of Columbia City: Approval of a Police Department Operations Levy for Five Years.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 445
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 716
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-05-314-columbia-columbia-county-transient-lodging-tax-measure",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "05-314 Columbia: Columbia County Transient Lodging Tax Measure",
+   "district": null,
+   "title": "05-314 Columbia: Columbia County Transient Lodging Tax Measure",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-33-precincts-reported",
+     "name": "0 out of 33 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 6810
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 18383
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-05-315-clatskanie-park-and-recreation-district-five-year-local-opti",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "05-315 Clatskanie Park and Recreation District: Five-Year Local Option Tax for Park Operations",
+   "district": null,
+   "title": "05-315 Clatskanie Park and Recreation District: Five-Year Local Option Tax for Park Operations",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-6-precincts-reported",
+     "name": "0 out of 6 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1150
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1834
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-06-230-coos-bay-city-amends-charter-lodging-taxes-municipal-court-a",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "06-230 Coos Bay City: Amends Charter; Lodging Taxes, Municipal Court, Administrative Updates",
+   "district": null,
+   "title": "06-230 Coos Bay City: Amends Charter; Lodging Taxes, Municipal Court, Administrative Updates",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2289
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 3123
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-06-231-bandon-city-city-of-bandon-transient-lodging-tax-increase",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "06-231 Bandon City: City of Bandon Transient Lodging Tax Increase",
+   "district": null,
+   "title": "06-231 Bandon City: City of Bandon Transient Lodging Tax Increase",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 922
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 764
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-06-232-north-bend-city-five-year-local-option-tax-for-pool-operatio",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "06-232 North Bend City: Five-year Local Option Tax for Pool Operations and Maintenance",
+   "district": null,
+   "title": "06-232 North Bend City: Five-year Local Option Tax for Pool Operations and Maintenance",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-4-precincts-reported",
+     "name": "0 out of 4 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1733
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2466
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-09-185-deschutes-establishes-five-deschutes-county-commissioner-dis",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "09-185 Deschutes: Establishes Five Deschutes County Commissioner Districts",
+   "district": null,
+   "title": "09-185 Deschutes: Establishes Five Deschutes County Commissioner Districts",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-50-precincts-reported",
+     "name": "0 out of 50 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 37637
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 61063
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 50,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-09-186-city-of-redmond-extension-of-the-two-year-moratorium-on-psil",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "09-186 City of Redmond: Extension of the two-year moratorium on psilocybin service centers.",
+   "district": null,
+   "title": "09-186 City of Redmond: Extension of the two-year moratorium on psilocybin service centers.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-4-precincts-reported",
+     "name": "0 out of 4 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 8388
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6409
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-10-215-city-of-reedsport-bans-the-establishment-of-psilocybin-relat",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "10-215 City of Reedsport: Bans the establishment of psilocybin related businesses",
+   "district": null,
+   "title": "10-215 City of Reedsport: Bans the establishment of psilocybin related businesses",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1016
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 512
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-10-216-glide-school-district-12-bonds-to-improve-schools-safety-cap",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "10-216 Glide School District 12: Bonds to Improve Schools, Safety, Capacity; Secure Matching Grant",
+   "district": null,
+   "title": "10-216 Glide School District 12: Bonds to Improve Schools, Safety, Capacity; Secure Matching Grant",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1705
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 968
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-10-217-city-of-sutherlin-repeals-citywide-ban-on-marijuana-faciliti",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "10-217 City of Sutherlin: Repeals citywide ban on marijuana facilities upon update of regulations",
+   "district": null,
+   "title": "10-217 City of Sutherlin: Repeals citywide ban on marijuana facilities upon update of regulations",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1370
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1710
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-10-218-city-of-sutherlin-imposes-3-local-tax-on-retail-marijuana-sa",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "10-218 City of Sutherlin: Imposes 3% Local Tax on Retail Marijuana Sales Within the City of Sutherlin",
+   "district": null,
+   "title": "10-218 City of Sutherlin: Imposes 3% Local Tax on Retail Marijuana Sales Within the City of Sutherlin",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2311
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 735
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-12-88-john-day-imposes-city-tax-on-marijuana-retailer-s-sale-of-mar",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "12-88 John Day: Imposes city tax on marijuana retailer's sale of marijuana items.",
+   "district": null,
+   "title": "12-88 John Day: Imposes city tax on marijuana retailer's sale of marijuana items.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 358
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 286
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-12-89-canyon-city-amend-the-canyon-city-charter-to-align-with-model",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "12-89 Canyon City: Amend the Canyon City Charter to Align with Model Charter",
+   "district": null,
+   "title": "12-89 Canyon City: Amend the Canyon City Charter to Align with Model Charter",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 169
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 104
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-13-28-harney-county-school-district-no-3-bonds-for-schools-allow-fo",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "13-28 Harney County School District No 3: Bonds for Schools, Allow for State Matching Grant",
+   "district": null,
+   "title": "13-28 Harney County School District No 3: Bonds for Schools, Allow for State Matching Grant",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1214
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1698
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-14-85-city-of-hood-river-city-of-hood-river-bonds-to-fund-affordabl",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "14-85 City of Hood River: City of Hood River bonds to fund affordable housing",
+   "district": null,
+   "title": "14-85 City of Hood River: City of Hood River bonds to fund affordable housing",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1733
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2251
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-14-86-city-of-hood-river-bonds-to-renovate-and-expand-public-safety",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "14-86 City of Hood River: Bonds to renovate and expand public safety facility",
+   "district": null,
+   "title": "14-86 City of Hood River: Bonds to renovate and expand public safety facility",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2206
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1760
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-14-87-city-of-cascade-locks-tax-on-prepared-food-and-beverages-to-f",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "14-87 City of Cascade Locks: Tax on prepared food and beverages to fund EMS Services",
+   "district": null,
+   "title": "14-87 City of Cascade Locks: Tax on prepared food and beverages to fund EMS Services",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 388
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 257
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-15-243-city-of-ashland-requiring-voter-approval-for-new-or-increase",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "15-243 City of Ashland: Requiring Voter Approval for New or Increased Fee or Tax.",
+   "district": null,
+   "title": "15-243 City of Ashland: Requiring Voter Approval for New or Increased Fee or Tax.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-4-precincts-reported",
+     "name": "0 out of 4 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 6485
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4835
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-15-244-jackson-county-vector-control-district-five-year-local-optio",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "15-244 Jackson County Vector Control District: Five-Year Local Option Levy for Vector (Mosquito, Fly) Control",
+   "district": null,
+   "title": "15-244 Jackson County Vector Control District: Five-Year Local Option Levy for Vector (Mosquito, Fly) Control",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-50-precincts-reported",
+     "name": "0 out of 50 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 44149
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 52143
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 50,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-16-118-jefferson-five-year-levy-renewal-for-jail-operations-and-mai",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "16-118 Jefferson: Five Year Levy Renewal for Jail Operations and Maintenance",
+   "district": null,
+   "title": "16-118 Jefferson: Five Year Levy Renewal for Jail Operations and Maintenance",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-17-precincts-reported",
+     "name": "0 out of 17 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 5470
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4196
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-17-128-williams-rural-fire-protection-district-five-year-local-opti",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "17-128 Williams Rural Fire Protection District: Five-Year Local Option Levy for Fire and Emergency Services",
+   "district": null,
+   "title": "17-128 Williams Rural Fire Protection District: Five-Year Local Option Levy for Fire and Emergency Services",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-4-precincts-reported",
+     "name": "0 out of 4 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 676
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 329
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-17-129-josephine-renewal-of-current-five-year-jail-and-juvenile-loc",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "17-129 Josephine: Renewal of Current Five-Year Jail and Juvenile Local Option Tax",
+   "district": null,
+   "title": "17-129 Josephine: Renewal of Current Five-Year Jail and Juvenile Local Option Tax",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-47-precincts-reported",
+     "name": "0 out of 47 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 16660
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 20645
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 47,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-17-130-grants-pass-school-district-7-bonds-to-update-school-facilit",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "17-130 Grants Pass School District 7: Bonds to update school facilities, increase safety; receive grant",
+   "district": null,
+   "title": "17-130 Grants Pass School District 7: Bonds to update school facilities, increase safety; receive grant",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-16-precincts-reported",
+     "name": "0 out of 16 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 8906
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6031
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-18-145-chemult-rfpd-new-five-year-local-option-tax-for-operations-a",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "18-145 Chemult RFPD: New Five Year Local Option Tax For Operations and Maintenance",
+   "district": null,
+   "title": "18-145 Chemult RFPD: New Five Year Local Option Tax For Operations and Maintenance",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 52
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 89
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-19-40-lake-end-requirement-of-special-meetings-to-discuss-moving-st",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "19-40 Lake: End requirement of special meetings to discuss moving State border.",
+   "district": null,
+   "title": "19-40 Lake: End requirement of special meetings to discuss moving State border.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-19-precincts-reported",
+     "name": "0 out of 19 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1812
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1552
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-20-386-city-of-dunes-city-prohibit-new-short-term-rentals-change-re",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "20-386 City of Dunes City: Prohibit new short-term rentals, change regulation of existing short-term rentals",
+   "district": null,
+   "title": "20-386 City of Dunes City: Prohibit new short-term rentals, change regulation of existing short-term rentals",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 374
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 456
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-20-387-city-of-oakridge-five-year-ambulance-service-operations-loca",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "20-387 City of Oakridge: FIVE-YEAR AMBULANCE SERVICE OPERATIONS LOCAL OPTION TAX",
+   "district": null,
+   "title": "20-387 City of Oakridge: FIVE-YEAR AMBULANCE SERVICE OPERATIONS LOCAL OPTION TAX",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 325
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 587
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-20-388-city-of-eugene-licensure-of-large-retailers-to-finance-a-cle",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "20-388 City of Eugene: Licensure of Large Retailers to Finance a Clean Energy Fund",
+   "district": null,
+   "title": "20-388 City of Eugene: Licensure of Large Retailers to Finance a Clean Energy Fund",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-24-precincts-reported",
+     "name": "0 out of 24 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 33537
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 24476
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-20-389-western-lane-ambulance-district-renew-five-year-option-levy-",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "20-389 Western Lane Ambulance District: Renew Five-Year Option Levy for Emergency Medical/Ambulance Services.",
+   "district": null,
+   "title": "20-389 Western Lane Ambulance District: Renew Five-Year Option Levy for Emergency Medical/Ambulance Services.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-6-precincts-reported",
+     "name": "0 out of 6 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 6481
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1536
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-21-241-city-of-siletz-amend-the-siletz-city-charter-to-align-with-m",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "21-241 City of Siletz: Amend the Siletz City Charter to Align with Model Charter",
+   "district": null,
+   "title": "21-241 City of Siletz: Amend the Siletz City Charter to Align with Model Charter",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 147
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 59
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-21-242-city-of-lincoln-city-adopt-revised-lincoln-city-charter",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "21-242 City of Lincoln City: Adopt Revised Lincoln City Charter",
+   "district": null,
+   "title": "21-242 City of Lincoln City: Adopt Revised Lincoln City Charter",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-4-precincts-reported",
+     "name": "0 out of 4 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1597
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1259
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-21-243-city-of-lincoln-city-city-of-lincoln-city-general-obligation",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "21-243 City of Lincoln City: City of Lincoln City General Obligation Bond For City Hall/Library",
+   "district": null,
+   "title": "21-243 City of Lincoln City: City of Lincoln City General Obligation Bond For City Hall/Library",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-4-precincts-reported",
+     "name": "0 out of 4 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 958
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1967
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-21-244-city-of-newport-bonds-to-repair-critical-facilities-wastewat",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "21-244 City of Newport: Bonds to repair critical facilities; wastewater treatment, protect drinking water",
+   "district": null,
+   "title": "21-244 City of Newport: Bonds to repair critical facilities; wastewater treatment, protect drinking water",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-7-precincts-reported",
+     "name": "0 out of 7 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2285
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 531
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-22-216-city-of-lebanon-5-year-local-option-levy-for-jail-operations",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "22-216 City Of Lebanon: 5-Year Local Option Levy for Jail Operations",
+   "district": null,
+   "title": "22-216 City Of Lebanon: 5-Year Local Option Levy for Jail Operations",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-8-precincts-reported",
+     "name": "0 out of 8 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1484
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5939
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-22-217-city-of-tangent-approve-amendments-to-the-tangent-transporta",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "22-217 City Of Tangent: Approve amendments to the Tangent Transportation System Plan",
+   "district": null,
+   "title": "22-217 City Of Tangent: Approve amendments to the Tangent Transportation System Plan",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 316
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 191
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-22-218-city-of-tangent-approve-amendments-to-the-tangent-developmen",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "22-218 City Of Tangent: Approve amendments to the Tangent Development Code",
+   "district": null,
+   "title": "22-218 City Of Tangent: Approve amendments to the Tangent Development Code",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 340
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 172
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-23-76-malheur-increase-annual-ambulance-service-district-asd-charge",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "23-76 Malheur: Increase Annual Ambulance Service District (ASD) Charge",
+   "district": null,
+   "title": "23-76 Malheur: Increase Annual Ambulance Service District (ASD) Charge",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-24-precincts-reported",
+     "name": "0 out of 24 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 4357
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4191
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-24-525-city-of-aurora-voter-approval-of-updated-city-charter",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "24-525 City of Aurora: Voter Approval of Updated City Charter",
+   "district": null,
+   "title": "24-525 City of Aurora: Voter Approval of Updated City Charter",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 237
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 136
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-24-526-mt-angel-fire-district-dissolution-of-mt-angel-fire-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "24-526 Mt Angel Fire District: Dissolution of Mt. Angel Fire District Contingent Other Measures",
+   "district": null,
+   "title": "24-526 Mt Angel Fire District: Dissolution of Mt. Angel Fire District Contingent Other Measures",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-4-precincts-reported",
+     "name": "0 out of 4 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 833
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 282
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-24-527-city-of-silverton-proposed-amendments-to-city-of-silverton-m",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "24-527 City of Silverton: Proposed Amendments to City of Silverton Municipal Charter",
+   "district": null,
+   "title": "24-527 City of Silverton: Proposed Amendments to City of Silverton Municipal Charter",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1644
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1162
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-25-107-town-of-lexington-approval-of-a-fire-department-operations-l",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "25-107 Town of Lexington: Approval of a fire department operations levy for five: years.",
+   "district": null,
+   "title": "25-107 Town of Lexington: Approval of a fire department operations levy for five: years.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 67
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 52
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-26-265-city-of-troutdale-five-year-local-option-levy-for-police-fir",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "26-265 City of Troutdale: Five-year Local Option Levy for Police, Fire & 911 Operations.",
+   "district": null,
+   "title": "26-265 City of Troutdale: Five-year Local Option Levy for Police, Fire & 911 Operations.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1745
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2925
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-26-266-city-of-troutdale-advisory-vote-should-troutdale-create-a-mu",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "26-266 City of Troutdale: ADVISORY VOTE: Should Troutdale Create a Municipal Police Department?",
+   "district": null,
+   "title": "26-266 City of Troutdale: ADVISORY VOTE: Should Troutdale Create a Municipal Police Department?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2285
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2388
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-26-268-reynolds-school-district-7-bonds-to-increase-safety-security",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "26-268 Reynolds School District 7: Bonds to Increase Safety, Security; Repair, Construct Schools; Increase Accessibility",
+   "district": null,
+   "title": "26-268 Reynolds School District 7: Bonds to Increase Safety, Security; Repair, Construct Schools; Increase Accessibility",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-17-precincts-reported",
+     "name": "0 out of 17 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 9183
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6791
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-26-269-burlington-water-district-five-year-local-option-tax-for-fir",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "26-269 Burlington Water District: Five-Year Local Option Tax for Fire & Ambulance Operations",
+   "district": null,
+   "title": "26-269 Burlington Water District: Five-Year Local Option Tax for Fire & Ambulance Operations",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 84
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 56
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-27-149-polk-polk-county-fairgrounds-event-center-local-option-tax",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "27-149 Polk: Polk County Fairgrounds & Event Center Local Option Tax",
+   "district": null,
+   "title": "27-149 Polk: Polk County Fairgrounds & Event Center Local Option Tax",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-16-precincts-reported",
+     "name": "0 out of 16 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 16497
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 14220
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-27-150-city-of-monmouth-city-of-monmouth-approving-an-urban-growth-",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "27-150 City of Monmouth: City of Monmouth - Approving an Urban Growth Boundary",
+   "district": null,
+   "title": "27-150 City of Monmouth: City of Monmouth - Approving an Urban Growth Boundary",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1033
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1592
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-27-151-city-of-independence-creation-of-a-new-city-community-servic",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "27-151 City of Independence: Creation of a new City Community Services and Parks Fee",
+   "district": null,
+   "title": "27-151 City of Independence: Creation of a new City Community Services and Parks Fee",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1358
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1198
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-28-50-city-of-rufus-authorizes-a-tax-on-motor-vehicle-fuel",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "28-50 City of Rufus: Authorizes a tax on motor vehicle fuel.",
+   "district": null,
+   "title": "28-50 City of Rufus: Authorizes a tax on motor vehicle fuel.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 83
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 48
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-28-51-city-of-rufus-adopts-a-new-charter-for-city-of-rufus-municipa",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "28-51 City of Rufus: Adopts a new charter for City of Rufus municipal government.",
+   "district": null,
+   "title": "28-51 City of Rufus: Adopts a new charter for City of Rufus municipal government.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 84
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 46
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-28-52-city-of-grass-valley-grass-valley-proposed-city-charter-amend",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "28-52 City of Grass Valley: Grass Valley Proposed City Charter Amendment Reducing Number of Councilors",
+   "district": null,
+   "title": "28-52 City of Grass Valley: Grass Valley Proposed City Charter Amendment Reducing Number of Councilors",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 57
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 33
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-29-187-city-of-rockaway-beach-city-of-rockaway-beach-city-charter-a",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "29-187 City of Rockaway Beach: City of Rockaway Beach City Charter Amendment",
+   "district": null,
+   "title": "29-187 City of Rockaway Beach: City of Rockaway Beach City Charter Amendment",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 433
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 358
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-30-175-umatilla-county-fire-district-1-five-year-local-option-tax-f",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "30-175 Umatilla County Fire District #1: Five-year local option tax for general operations",
+   "district": null,
+   "title": "30-175 Umatilla County Fire District #1: Five-year local option tax for general operations",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-12-precincts-reported",
+     "name": "0 out of 12 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 4607
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4128
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-30-177-city-of-pendleton-local-option-levy-for-fire-and-ambulance-o",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "30-177 City of Pendleton: Local Option Levy for Fire and Ambulance Operations",
+   "district": null,
+   "title": "30-177 City of Pendleton: Local Option Levy for Fire and Ambulance Operations",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-7-precincts-reported",
+     "name": "0 out of 7 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2606
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 3253
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-30-178-city-of-hermiston-amend-the-city-of-hermiston-charter",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "30-178 City of Hermiston: Amend the City of Hermiston Charter",
+   "district": null,
+   "title": "30-178 City of Hermiston: Amend the City of Hermiston Charter",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-5-precincts-reported",
+     "name": "0 out of 5 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2364
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1944
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-31-124-city-of-elgin-amendment-of-city-of-elgin-charter",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "31-124 CITY OF ELGIN: Amendment of City of Elgin Charter.",
+   "district": null,
+   "title": "31-124 CITY OF ELGIN: Amendment of City of Elgin Charter.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 332
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 413
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-31-125-city-of-elgin-amendment-of-city-of-elgin-charter",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "31-125 CITY OF ELGIN: Amendment of City of Elgin Charter.",
+   "district": null,
+   "title": "31-125 CITY OF ELGIN: Amendment of City of Elgin Charter.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 234
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 516
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-31-126-city-of-elgin-amendment-of-city-of-elgin-charter",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "31-126 CITY OF ELGIN: Amendment of City of Elgin Charter.",
+   "district": null,
+   "title": "31-126 CITY OF ELGIN: Amendment of City of Elgin Charter.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 486
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 266
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-31-127-city-of-la-grande-amendment-of-city-of-la-grande-charter",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "31-127 CITY OF LA GRANDE: Amendment of City of La Grande Charter.",
+   "district": null,
+   "title": "31-127 CITY OF LA GRANDE: Amendment of City of La Grande Charter.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-5-precincts-reported",
+     "name": "0 out of 5 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2497
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2345
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-31-128-city-of-la-grande-city-of-la-grande-local-fuel-tax-five-year",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "31-128 CITY OF LA GRANDE: City of La Grande Local Fuel Tax; Five-Year Sunset.",
+   "district": null,
+   "title": "31-128 CITY OF LA GRANDE: City of La Grande Local Fuel Tax; Five-Year Sunset.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-5-precincts-reported",
+     "name": "0 out of 5 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1514
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 3642
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-32-012-city-of-joseph-25-prohibits-certain-psilocybin-related-busin",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "32-012 CITY OF JOSEPH #25: Prohibits certain psilocybin-related business in the City of Joseph?",
+   "district": null,
+   "title": "32-012 CITY OF JOSEPH #25: Prohibits certain psilocybin-related business in the City of Joseph?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 414
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 279
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-34-352-city-of-banks-levy-to-fund-dedicated-washington-county-law-e",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "34-352 City of Banks: Levy to fund dedicated Washington County Law Enforcement Services",
+   "district": null,
+   "title": "34-352 City of Banks: Levy to fund dedicated Washington County Law Enforcement Services",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 259
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 150
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-34-353-city-of-forest-grove-general-obligation-bonds-to-replace-the",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "34-353 City of Forest Grove: General Obligation Bonds to replace the current police facility",
+   "district": null,
+   "title": "34-353 City of Forest Grove: General Obligation Bonds to replace the current police facility",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 2605
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 3351
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-34-354-city-of-king-city-city-of-king-city-charter-modernization-am",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "34-354 City of King City: City of King City Charter Modernization Amendment",
+   "district": null,
+   "title": "34-354 City of King City: City of King City Charter Modernization Amendment",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 889
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 917
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-36-241-yamhill-referendum-on-yamhill-county-board-ordinance-948-yam",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "36-241 Yamhill: Referendum on Yamhill County Board Ordinance 948: Yamhelas Westsider Trail.",
+   "district": null,
+   "title": "36-241 Yamhill: Referendum on Yamhill County Board Ordinance 948: Yamhelas Westsider Trail.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-23-precincts-reported",
+     "name": "0 out of 23 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 19829
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 19104
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-36-242-city-of-lafayette-approve-expenditure-of-funds-to-improve-ca",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "36-242 City of Lafayette: Approve expenditure of funds to improve Canyon View Pump Station.",
+   "district": null,
+   "title": "36-242 City of Lafayette: Approve expenditure of funds to improve Canyon View Pump Station.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1235
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 237
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-36-243-city-of-dayton-5-year-renewal-of-public-safety-tax-for-polic",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "36-243 City of Dayton: 5 YEAR RENEWAL OF PUBLIC SAFETY TAX FOR POLICE SERVICES",
+   "district": null,
+   "title": "36-243 City of Dayton: 5 YEAR RENEWAL OF PUBLIC SAFETY TAX FOR POLICE SERVICES",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-1-precincts-reported",
+     "name": "0 out of 1 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 527
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 338
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-baker-valley-soil-and-water-at-large-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Baker Valley Soil and Water At Large 2",
+   "district": null,
+   "title": "Baker Valley Soil and Water At Large 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-11-precincts-reported",
+     "name": "0 out of 11 Precincts Reported",
+     "party": "Tim A Kerns",
+     "party_code": "O",
+     "votes": 5392
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 34
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-baker-valley-soil-and-water-zone-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Baker Valley Soil and Water Zone 1",
+   "district": null,
+   "title": "Baker Valley Soil and Water Zone 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-11-precincts-reported",
+     "name": "0 out of 11 Precincts Reported",
+     "party": "Myron Miles",
+     "party_code": "O",
+     "votes": 5166
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 42
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-baker-valley-soil-and-water-zone-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Baker Valley Soil and Water Zone 3",
+   "district": null,
+   "title": "Baker Valley Soil and Water Zone 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-11-precincts-reported",
+     "name": "0 out of 11 Precincts Reported",
+     "party": "Mike T Williams",
+     "party_code": "O",
+     "votes": 5083
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 32
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-central-lincoln-pud-subdivision-5-director",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Central Lincoln PUD - Subdivision 5 Director",
+   "district": null,
+   "title": "Central Lincoln PUD - Subdivision 5 Director",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-5-precincts-reported",
+     "name": "0 out of 5 Precincts Reported",
+     "party": "Keith Tymchuk",
+     "party_code": "O",
+     "votes": 3091
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 36
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-albany-councilor-ward-i-a",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Albany, Councilor, Ward I-A",
+   "district": null,
+   "title": "City of Albany, Councilor, Ward I-A",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-4-precincts-reported",
+     "name": "0 out of 4 Precincts Reported",
+     "party": "Steph Newton",
+     "party_code": "O",
+     "votes": 6105
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 163
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-albany-mayor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Albany Mayor",
+   "district": null,
+   "title": "City of Albany Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-16-precincts-reported",
+     "name": "0 out of 16 Precincts Reported",
+     "party": "Josh Wark",
+     "party_code": "O",
+     "votes": 3602
+    },
+    {
+     "id": "carolyn-mcleod",
+     "name": "Carolyn McLeod",
+     "party": null,
+     "party_code": "O",
+     "votes": 8256
+    },
+    {
+     "id": "alex-johnson-ii",
+     "name": "Alex Johnson II",
+     "party": null,
+     "party_code": "O",
+     "votes": 11258
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 155
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-gaston-council-member-position-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Gaston, Council Member, Position 4",
+   "district": null,
+   "title": "City of Gaston, Council Member, Position 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Scott P Hoodenpyl",
+     "party_code": "O",
+     "votes": 103
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-gaston-council-member-position-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Gaston, Council Member, Position 5",
+   "district": null,
+   "title": "City of Gaston, Council Member, Position 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "David Lee Benson",
+     "party_code": "O",
+     "votes": 98
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-gaston-council-member-position-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Gaston, Council Member, Position 6",
+   "district": null,
+   "title": "City of Gaston, Council Member, Position 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Jake Howard",
+     "party_code": "O",
+     "votes": 94
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-gaston-mayor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Gaston, Mayor",
+   "district": null,
+   "title": "City of Gaston, Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Scott Glavan",
+     "party_code": "O",
+     "votes": 56
+    },
+    {
+     "id": "william-e-martin",
+     "name": "William E Martin",
+     "party": null,
+     "party_code": "O",
+     "votes": 80
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-gates-councilor-vote-for-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Gates, Councilor (Vote For 3)",
+   "district": null,
+   "title": "City of Gates, Councilor (Vote For 3)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Brian Gander",
+     "party_code": "O",
+     "votes": 59
+    },
+    {
+     "id": "patrick-peterson",
+     "name": "Patrick Peterson",
+     "party": null,
+     "party_code": "O",
+     "votes": 58
+    },
+    {
+     "id": "donald-mann",
+     "name": "Donald Mann",
+     "party": null,
+     "party_code": "O",
+     "votes": 58
+    },
+    {
+     "id": "emily-newton",
+     "name": "Emily Newton",
+     "party": null,
+     "party_code": "O",
+     "votes": 79
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-gates-mayor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Gates, Mayor",
+   "district": null,
+   "title": "City of Gates, Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Ron Evans",
+     "party_code": "O",
+     "votes": 90
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-idanha-councilor-vote-for-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Idanha, Councilor (Vote For 5)",
+   "district": null,
+   "title": "City of Idanha, Councilor (Vote For 5)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "No Candidate Filed",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 56
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-lake-oswego-councilor-vote-for-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Lake Oswego, Councilor (Vote For 4)",
+   "district": null,
+   "title": "City of Lake Oswego, Councilor (Vote For 4)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-13-precincts-reported",
+     "name": "0 out of 13 Precincts Reported",
+     "party": "Bryan Guiney",
+     "party_code": "O",
+     "votes": 10448
+    },
+    {
+     "id": "patrick-walsh",
+     "name": "Patrick Walsh",
+     "party": null,
+     "party_code": "O",
+     "votes": 8872
+    },
+    {
+     "id": "suzanne-miles",
+     "name": "Suzanne Miles",
+     "party": null,
+     "party_code": "O",
+     "votes": 12809
+    },
+    {
+     "id": "peren-tiemann",
+     "name": "Peren Tiemann",
+     "party": null,
+     "party_code": "O",
+     "votes": 7955
+    },
+    {
+     "id": "neil-tunmore",
+     "name": "Neil Tunmore",
+     "party": null,
+     "party_code": "O",
+     "votes": 6870
+    },
+    {
+     "id": "heather-ramsey",
+     "name": "Heather Ramsey",
+     "party": null,
+     "party_code": "O",
+     "votes": 9880
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 210
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-mill-city-councilor-vote-for-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Mill City Councilor (Vote For 4)",
+   "district": null,
+   "title": "City of Mill City Councilor (Vote For 4)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Steven A Winn",
+     "party_code": "O",
+     "votes": 449
+    },
+    {
+     "id": "sean-carey",
+     "name": "Sean Carey",
+     "party": null,
+     "party_code": "O",
+     "votes": 369
+    },
+    {
+     "id": "janet-zeyen-hall",
+     "name": "Janet Zeyen-Hall",
+     "party": null,
+     "party_code": "O",
+     "votes": 387
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 32
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-mill-city-mayor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City Of Mill City Mayor",
+   "district": null,
+   "title": "City Of Mill City Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Mike Van Atta",
+     "party_code": "O",
+     "votes": 443
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 65
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-milwaukie-councilor-position-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Milwaukie, Councilor, Position 2",
+   "district": null,
+   "title": "City of Milwaukie, Councilor, Position 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-5-precincts-reported",
+     "name": "0 out of 5 Precincts Reported",
+     "party": "Allie Ball",
+     "party_code": "O",
+     "votes": 2124
+    },
+    {
+     "id": "jennifer-murphy",
+     "name": "Jennifer Murphy",
+     "party": null,
+     "party_code": "O",
+     "votes": 2341
+    },
+    {
+     "id": "nick-hess",
+     "name": "Nick Hess",
+     "party": null,
+     "party_code": "O",
+     "votes": 3406
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 40
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-milwaukie-councilor-position-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Milwaukie, Councilor, Position 4",
+   "district": null,
+   "title": "City of Milwaukie, Councilor, Position 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-5-precincts-reported",
+     "name": "0 out of 5 Precincts Reported",
+     "party": "Rebecca Stavenjord",
+     "party_code": "O",
+     "votes": 5322
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 104
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-milwaukie-mayor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Milwaukie, Mayor",
+   "district": null,
+   "title": "City of Milwaukie, Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-5-precincts-reported",
+     "name": "0 out of 5 Precincts Reported",
+     "party": "Lisa Batey",
+     "party_code": "O",
+     "votes": 3236
+    },
+    {
+     "id": "leslie-wright",
+     "name": "Leslie Wright",
+     "party": null,
+     "party_code": "O",
+     "votes": 957
+    },
+    {
+     "id": "will-anderson",
+     "name": "Will Anderson",
+     "party": null,
+     "party_code": "O",
+     "votes": 4258
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-portland-auditor-view-results-at-rcvresults-multco-us",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Portland, Auditor - view results at rcvresults.multco.us",
+   "district": null,
+   "title": "City of Portland, Auditor - view results at rcvresults.multco.us",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-89-precincts-reported",
+     "name": "0 out of 89 Precincts Reported",
+     "party": "Simone Rede",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 89,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-portland-councilor-district-3-view-results-at-rcvresults-mu",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Portland, Councilor, District 3 - view results at rcvresults.multco.us",
+   "district": null,
+   "title": "City of Portland, Councilor, District 3 - view results at rcvresults.multco.us",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-26-precincts-reported",
+     "name": "0 out of 26 Precincts Reported",
+     "party": "John Sweeney",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "tom-sollitt",
+     "name": "Tom Sollitt",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "larry-kelly",
+     "name": "Larry Kelly",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "tiffany-koyama-lane",
+     "name": "Tiffany Koyama Lane",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "ali-beaudoin",
+     "name": "Ali Beaudoin",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "heart-free-pham",
+     "name": "Heart Free Pham",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "terry-parker",
+     "name": "Terry Parker",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "martin-ward",
+     "name": "Martin Ward",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "joel-corcoran",
+     "name": "Joel Corcoran",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "darren-mccormick",
+     "name": "Darren McCormick",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "angelita-morillo",
+     "name": "Angelita Morillo",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "steve-novick",
+     "name": "Steve Novick",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "patrick-hilton",
+     "name": "Patrick Hilton",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "matthias-hallett",
+     "name": "Matthias Hallett",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "kellie-torres",
+     "name": "Kellie Torres",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "kimberly-tucker",
+     "name": "Kimberly Tucker",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "cristal-otero",
+     "name": "Cristal Otero",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "guy-frankenstein",
+     "name": "Guy Frankenstein",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "keir-legree",
+     "name": "Keir Legree",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "esther-le-n",
+     "name": "Esther León",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "kenneth-kent-r-landgraver-iii",
+     "name": "Kenneth (Kent) R Landgraver III",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-portland-councilor-district-4-view-results-at-rcvresults-mu",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Portland, Councilor, District 4 - view results at rcvresults.multco.us",
+   "district": null,
+   "title": "City of Portland, Councilor, District 4 - view results at rcvresults.multco.us",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-29-precincts-reported",
+     "name": "0 out of 29 Precincts Reported",
+     "party": "Matt Schulte",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jeremy-beausoleil-smith",
+     "name": "Jeremy Beausoleil Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "john-j-goldsmith",
+     "name": "John J Goldsmith",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "mitch-green",
+     "name": "Mitch Green",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "olivia-clark",
+     "name": "Olivia Clark",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jayne-cronlund",
+     "name": "Jayne Cronlund",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "john-mcdonald",
+     "name": "John McDonald",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "eric-zimmerman",
+     "name": "Eric Zimmerman",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jamey-evenstar",
+     "name": "Jamey Evenstar",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "timothy-tj-anderson",
+     "name": "Timothy (TJ) Anderson",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "eli-arnold",
+     "name": "Eli Arnold",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "josh-leake",
+     "name": "Josh Leake",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-rivergrove-councilor-vote-for-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Rivergrove, Councilor (Vote For 3)",
+   "district": null,
+   "title": "City of Rivergrove, Councilor (Vote For 3)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Leah Silber",
+     "party_code": "O",
+     "votes": 103
+    },
+    {
+     "id": "doug-mclean",
+     "name": "Doug McLean",
+     "party": null,
+     "party_code": "O",
+     "votes": 84
+    },
+    {
+     "id": "david-m-dull",
+     "name": "David M Dull",
+     "party": null,
+     "party_code": "O",
+     "votes": 109
+    },
+    {
+     "id": "joan-joyce",
+     "name": "Joan Joyce",
+     "party": null,
+     "party_code": "O",
+     "votes": 93
+    },
+    {
+     "id": "brett-egusa",
+     "name": "Brett Egusa",
+     "party": null,
+     "party_code": "O",
+     "votes": 166
+    },
+    {
+     "id": "curt-taylor",
+     "name": "Curt Taylor",
+     "party": null,
+     "party_code": "O",
+     "votes": 150
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-salem-mayor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Salem, Mayor",
+   "district": null,
+   "title": "City of Salem, Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-36-precincts-reported",
+     "name": "0 out of 36 Precincts Reported",
+     "party": "Vanessa Nordyke",
+     "party_code": "O",
+     "votes": 25413
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 2079
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 36,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-salem-municipal-judge",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Salem, Municipal Judge",
+   "district": null,
+   "title": "City of Salem, Municipal Judge",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-36-precincts-reported",
+     "name": "0 out of 36 Precincts Reported",
+     "party": "Eleanor C Beatty",
+     "party_code": "O",
+     "votes": 22526
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 404
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 36,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-tualatin-council-member-position-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Tualatin, Council Member, Position 1",
+   "district": null,
+   "title": "City of Tualatin, Council Member, Position 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-8-precincts-reported",
+     "name": "0 out of 8 Precincts Reported",
+     "party": "Maria Antonieta Reyes",
+     "party_code": "O",
+     "votes": 4785
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 83
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-tualatin-council-member-position-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Tualatin, Council Member, Position 3",
+   "district": null,
+   "title": "City of Tualatin, Council Member, Position 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-8-precincts-reported",
+     "name": "0 out of 8 Precincts Reported",
+     "party": "Bridget Brooks",
+     "party_code": "O",
+     "votes": 4635
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 116
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-tualatin-council-member-position-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Tualatin, Council Member, Position 5",
+   "district": null,
+   "title": "City of Tualatin, Council Member, Position 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-8-precincts-reported",
+     "name": "0 out of 8 Precincts Reported",
+     "party": "Beth Dittman",
+     "party_code": "O",
+     "votes": 4944
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 96
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-tualatin-mayor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Tualatin, Mayor",
+   "district": null,
+   "title": "City of Tualatin, Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-8-precincts-reported",
+     "name": "0 out of 8 Precincts Reported",
+     "party": "Octavio Gonzalez",
+     "party_code": "O",
+     "votes": 2658
+    },
+    {
+     "id": "valerie-pratt",
+     "name": "Valerie Pratt",
+     "party": null,
+     "party_code": "O",
+     "votes": 4702
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 27
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-willamina-councilor-3-at-large-vote-for-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Willamina, Councilor, 3 At-Large (Vote For 3)",
+   "district": null,
+   "title": "City of Willamina, Councilor, 3 At-Large (Vote For 3)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Cori Blackwell",
+     "party_code": "O",
+     "votes": 340
+    },
+    {
+     "id": "jennifer-pederson",
+     "name": "Jennifer Pederson",
+     "party": null,
+     "party_code": "O",
+     "votes": 271
+    },
+    {
+     "id": "tiffany-mooney",
+     "name": "Tiffany Mooney",
+     "party": null,
+     "party_code": "O",
+     "votes": 277
+    },
+    {
+     "id": "michael-alger",
+     "name": "Michael Alger",
+     "party": null,
+     "party_code": "O",
+     "votes": 256
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 10
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-willamina-mayor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Willamina, Mayor",
+   "district": null,
+   "title": "City of Willamina, Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Vickie K Hernandez",
+     "party_code": "O",
+     "votes": 410
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-city-of-wilsonville-councilor-vote-for-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "City of Wilsonville, Councilor (Vote For 2)",
+   "district": null,
+   "title": "City of Wilsonville, Councilor (Vote For 2)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-5-precincts-reported",
+     "name": "0 out of 5 Precincts Reported",
+     "party": "Sam Scull",
+     "party_code": "O",
+     "votes": 4051
+    },
+    {
+     "id": "adrienne-scritsmier",
+     "name": "Adrienne Scritsmier",
+     "party": null,
+     "party_code": "O",
+     "votes": 3926
+    },
+    {
+     "id": "katie-dunwell",
+     "name": "Katie Dunwell",
+     "party": null,
+     "party_code": "O",
+     "votes": 3320
+    },
+    {
+     "id": "jennie-hill",
+     "name": "Jennie Hill",
+     "party": null,
+     "party_code": "O",
+     "votes": 3130
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 29
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-columbia-river-pud-director-subdivision-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Columbia River PUD, Director, Subdivision 1",
+   "district": null,
+   "title": "Columbia River PUD, Director, Subdivision 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-6-precincts-reported",
+     "name": "0 out of 6 Precincts Reported",
+     "party": "Andy Krieck",
+     "party_code": "O",
+     "votes": 2565
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 34
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-keating-soil-and-water-at-large-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Keating Soil and Water At Large 2",
+   "district": null,
+   "title": "Keating Soil and Water At Large 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "Skyler Martin",
+     "party_code": "O",
+     "votes": 170
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-keating-soil-and-water-zone-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Keating Soil and Water Zone 1",
+   "district": null,
+   "title": "Keating Soil and Water Zone 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-2-precincts-reported",
+     "name": "0 out of 2 Precincts Reported",
+     "party": "John Wirth",
+     "party_code": "O",
+     "votes": 154
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 14
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 2,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-linn-soil-water-conservation-district-director-at-large-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Linn Soil & Water Conservation District Director, At-Large 2",
+   "district": null,
+   "title": "Linn Soil & Water Conservation District Director, At-Large 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-86-precincts-reported",
+     "name": "0 out of 86 Precincts Reported",
+     "party": "David Neal",
+     "party_code": "O",
+     "votes": 32138
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 587
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 86,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-linn-soil-water-conservation-district-director-zone-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Linn Soil & Water Conservation District Director, Zone 1",
+   "district": null,
+   "title": "Linn Soil & Water Conservation District Director, Zone 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-86-precincts-reported",
+     "name": "0 out of 86 Precincts Reported",
+     "party": "Hubert Christensen",
+     "party_code": "O",
+     "votes": 33099
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 616
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 86,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-linn-soil-water-conservation-district-director-zone-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Linn Soil & Water Conservation District Director, Zone 3",
+   "district": null,
+   "title": "Linn Soil & Water Conservation District Director, Zone 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-86-precincts-reported",
+     "name": "0 out of 86 Precincts Reported",
+     "party": "No Candidate Filed",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 3686
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 86,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-mt-angel-monitor-fire-protection-district-director-vote-for-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Mt Angel-Monitor Fire Protection District Director (Vote For 5)",
+   "district": null,
+   "title": "Mt Angel-Monitor Fire Protection District Director (Vote For 5)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-7-precincts-reported",
+     "name": "0 out of 7 Precincts Reported",
+     "party": "Shayne Kleinschmit",
+     "party_code": "O",
+     "votes": 1252
+    },
+    {
+     "id": "aaron-g-bielemeier",
+     "name": "Aaron G Bielemeier",
+     "party": null,
+     "party_code": "O",
+     "votes": 1269
+    },
+    {
+     "id": "lori-m-pavlicek",
+     "name": "Lori M Pavlicek",
+     "party": null,
+     "party_code": "O",
+     "votes": 1275
+    },
+    {
+     "id": "paul-iverson",
+     "name": "Paul Iverson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1368
+    },
+    {
+     "id": "phil-wiesner",
+     "name": "Phil Wiesner",
+     "party": null,
+     "party_code": "O",
+     "votes": 1270
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 25
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-tillamook-pud-director-subdivision-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Tillamook PUD Director, Subdivision 5",
+   "district": null,
+   "title": "Tillamook PUD Director, Subdivision 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-5-precincts-reported",
+     "name": "0 out of 5 Precincts Reported",
+     "party": "Barbara Trout",
+     "party_code": "O",
+     "votes": 2160
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 31
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-west-multnomah-soil-and-water-conservation-district-director-at-lar",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "West Multnomah Soil and Water Conservation District, Director, At-Large, Position 2",
+   "district": null,
+   "title": "West Multnomah Soil and Water Conservation District, Director, At-Large, Position 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-24-precincts-reported",
+     "name": "0 out of 24 Precincts Reported",
+     "party": "Ronda Zakocs",
+     "party_code": "O",
+     "votes": 32630
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 408
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-west-multnomah-soil-and-water-conservation-district-director-zone-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "West Multnomah Soil and Water Conservation District, Director, Zone 4",
+   "district": null,
+   "title": "West Multnomah Soil and Water Conservation District, Director, Zone 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-24-precincts-reported",
+     "name": "0 out of 24 Precincts Reported",
+     "party": "Elizabeth Offensend",
+     "party_code": "O",
+     "votes": 32034
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 390
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-west-multnomah-soil-and-water-conservation-district-director-zone-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "West Multnomah Soil and Water Conservation District, Director, Zone 5",
+   "district": null,
+   "title": "West Multnomah Soil and Water Conservation District, Director, Zone 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-24-precincts-reported",
+     "name": "0 out of 24 Precincts Reported",
+     "party": "Terri Preeg Riggsby",
+     "party_code": "O",
+     "votes": 27655
+    },
+    {
+     "id": "joy-vandervort-fields",
+     "name": "Joy VanDervort Fields",
+     "party": null,
+     "party_code": "O",
+     "votes": 5199
+    },
+    {
+     "id": "shari-freshman",
+     "name": "Shari Freshman",
+     "party": null,
+     "party_code": "O",
+     "votes": 3889
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 289
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-02-160-corvallis-school-district-509j-renewal-of-current-five-year-",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "02-160 Corvallis School District 509J: Renewal of current five-year local option tax for school operations",
+   "district": null,
+   "title": "02-160 Corvallis School District 509J: Renewal of current five-year local option tax for school operations",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-15-precincts-reported",
+     "name": "0 out of 15 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 22403
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5845
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 15,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-03-640-monitor-fire-district-dissolution-of-monitor-rfpd-contingent",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "03-640 Monitor Fire District: Dissolution of Monitor RFPD Contingent Other Measures",
+   "district": null,
+   "title": "03-640 Monitor Fire District: Dissolution of Monitor RFPD Contingent Other Measures",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-3-precincts-reported",
+     "name": "0 out of 3 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 591
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 333
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-03-641-city-of-wilsonville-vote-to-approve-the-wilsonville-town-cen",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "03-641 City of Wilsonville: Vote to approve the Wilsonville Town Center Development District",
+   "district": null,
+   "title": "03-641 City of Wilsonville: Vote to approve the Wilsonville Town Center Development District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-5-precincts-reported",
+     "name": "0 out of 5 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 3801
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4912
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-22-219-mill-city-rural-fire-protection-district-five-year-local-opt",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "22-219 Mill City Rural Fire Protection District: Five year Local Option Levy for Operations",
+   "district": null,
+   "title": "22-219 Mill City Rural Fire Protection District: Five year Local Option Levy for Operations",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-5-precincts-reported",
+     "name": "0 out of 5 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 602
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 235
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-24-528-silver-falls-school-district-4j-bonds-for-replacement-ms-new",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "24-528 Silver Falls School District 4J: Bonds for replacement MS, new K-8 school; facility improvements",
+   "district": null,
+   "title": "24-528 Silver Falls School District 4J: Bonds for replacement MS, new K-8 school; facility improvements",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-14-precincts-reported",
+     "name": "0 out of 14 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 3438
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2718
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-24-529-mt-angel-monitor-fire-protection-district-form-mt-angel-moni",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "24-529 Mt Angel-Monitor Fire Protection District: Form Mt. Angel-Monitor Fire District and Set Tax Rate",
+   "district": null,
+   "title": "24-529 Mt Angel-Monitor Fire Protection District: Form Mt. Angel-Monitor Fire District and Set Tax Rate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-7-precincts-reported",
+     "name": "0 out of 7 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1399
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 626
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-24-530-gates-rural-fire-protection-district-renewal-of-current-four",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "24-530 Gates Rural Fire Protection District: Renewal of current four-year Local Option tax for general operations.",
+   "district": null,
+   "title": "24-530 Gates Rural Fire Protection District: Renewal of current four-year Local Option tax for general operations.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-5-precincts-reported",
+     "name": "0 out of 5 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 276
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 71
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-24-531-stayton-fire-district-local-option-levy-for-fire-and-emergen",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "24-531 Stayton Fire District: Local Option Levy for Fire and Emergency Medical Services.",
+   "district": null,
+   "title": "24-531 Stayton Fire District: Local Option Levy for Fire and Emergency Medical Services.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-11-precincts-reported",
+     "name": "0 out of 11 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 1795
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1286
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 11,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-26-267-city-of-portland-amends-charter-portland-residents-decide-2-",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "26-267 City of Portland: Amends Charter: Portland residents decide 2% of city's annual discretionary budget.",
+   "district": null,
+   "title": "26-267 City of Portland: Amends Charter: Portland residents decide 2% of city's annual discretionary budget.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-92-precincts-reported",
+     "name": "0 out of 92 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 66073
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 130403
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 92,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-30-176-pilot-rock-fire-district-7-401-five-year-local-option-tax-fo",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "30-176 Pilot Rock Fire District, 7-401: Five-Year Local Option Tax for General Operations",
+   "district": null,
+   "title": "30-176 Pilot Rock Fire District, 7-401: Five-Year Local Option Tax for General Operations",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-4-precincts-reported",
+     "name": "0 out of 4 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 759
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 151
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-34-355-hillsboro-school-district-1j-bonds-fixing-failing-aging-infr",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "34-355 Hillsboro School District 1J: Bonds Fixing Failing & Aging Infrastructure; Improving Safety, Vocational Facilities.",
+   "district": null,
+   "title": "34-355 Hillsboro School District 1J: Bonds Fixing Failing & Aging Infrastructure; Improving Safety, Vocational Facilities.",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-48-precincts-reported",
+     "name": "0 out of 48 Precincts Reported",
+     "party": "Yes",
+     "party_code": "O",
+     "votes": 20211
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 12314
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 48,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-3rd-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 3rd District",
+   "district": null,
+   "title": "State Senator, 3rd District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "denise-d-krause",
+     "name": "Denise D Krause",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 34532
+    },
+    {
+     "id": "clay-bearnson",
+     "name": "Clay Bearnson",
+     "party": "Independent, Pacific Green",
+     "party_code": "O",
+     "votes": 2506
+    },
+    {
+     "id": "brad-hicks",
+     "name": "Brad Hicks",
+     "party": "Republican, Libertarian",
+     "party_code": "R",
+     "votes": 26981
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 67
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 27,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-4th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 4th District",
+   "district": null,
+   "title": "State Senator, 4th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "floyd-prozanski",
+     "name": "Floyd Prozanski",
+     "party": "Democrat, Republican",
+     "party_code": "D",
+     "votes": 29911
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 867
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-6th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 6th District",
+   "district": null,
+   "title": "State Senator, 6th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sierrah-williams",
+     "name": "Sierrah Williams",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 21827
+    },
+    {
+     "id": "jack-tibbetts",
+     "name": "Jack Tibbetts",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 36771
+    },
+    {
+     "id": "caleb-ticer",
+     "name": "Caleb Ticer",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 1134
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 47
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 71,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-7th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 7th District",
+   "district": null,
+   "title": "State Senator, 7th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-i-manning-jr",
+     "name": "James I Manning Jr",
+     "party": "Democrat, Independent, Working Families",
+     "party_code": "D",
+     "votes": 34478
+    },
+    {
+     "id": "jack-jake-d-huff",
+     "name": "Jack (Jake) D Huff",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 16321
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 159
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-8th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 8th District",
+   "district": null,
+   "title": "State Senator, 8th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sara-gelser-blouin",
+     "name": "Sara Gelser Blouin",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 39178
+    },
+    {
+     "id": "valerie-draper-woldeit",
+     "name": "Valerie Draper Woldeit",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 21622
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 129
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 42,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-10th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 10th District",
+   "district": null,
+   "title": "State Senator, 10th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "deb-patterson",
+     "name": "Deb Patterson",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 22716
+    },
+    {
+     "id": "angela-plowhead",
+     "name": "Angela Plowhead",
+     "party": "Republican, Libertarian",
+     "party_code": "R",
+     "votes": 15089
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 45
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-11th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 11th District",
+   "district": null,
+   "title": "State Senator, 11th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "virginia-stapleton",
+     "name": "Virginia Stapleton",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 12815
+    },
+    {
+     "id": "tracy-m-cramer",
+     "name": "Tracy M Cramer",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 10517
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 48
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 34,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-13th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 13th District",
+   "district": null,
+   "title": "State Senator, 13th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tim-e-nelson",
+     "name": "Tim E Nelson",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 647
+    },
+    {
+     "id": "courtney-neron-misslin",
+     "name": "Courtney Neron Misslin",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 26147
+    },
+    {
+     "id": "glenn-lancaster",
+     "name": "Glenn Lancaster",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 14455
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 28
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 34,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-15th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 15th District",
+   "district": null,
+   "title": "State Senator, 15th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "myrna-a-munoz",
+     "name": "Myrna A Munoz",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 20708
+    },
+    {
+     "id": "harold-hutchison",
+     "name": "Harold Hutchison",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 10111
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 117
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-16th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 16th District",
+   "district": null,
+   "title": "State Senator, 16th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "courtney-bangs",
+     "name": "Courtney Bangs",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 33721
+    },
+    {
+     "id": "rachel-armitage",
+     "name": "Rachel Armitage",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 30561
+    },
+    {
+     "id": "melisa-finkle",
+     "name": "Melisa Finkle",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 2785
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 51
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 101,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-17th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 17th District",
+   "district": null,
+   "title": "State Senator, 17th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-a-n-chee",
+     "name": "John A N Chee",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7039
+    },
+    {
+     "id": "lisa-reynolds",
+     "name": "Lisa Reynolds",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 31253
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 67
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 28,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-19th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 19th District",
+   "district": null,
+   "title": "State Senator, 19th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rob-wagner",
+     "name": "Rob Wagner",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 38771
+    },
+    {
+     "id": "mary-dirksen",
+     "name": "Mary Dirksen",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 16573
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 59
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 48,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-20th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 20th District",
+   "district": null,
+   "title": "State Senator, 20th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michele-stroh",
+     "name": "Michele Stroh",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 20659
+    },
+    {
+     "id": "mark-meek",
+     "name": "Mark Meek",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 29992
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 46
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-24th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 24th District",
+   "district": null,
+   "title": "State Senator, 24th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kayse-jama",
+     "name": "Kayse Jama",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 21525
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1451
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-state-senator-26th-district",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "State Senator, 26th District",
+   "district": null,
+   "title": "State Senator, 26th District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nicole-bassett",
+     "name": "Nicole Bassett",
+     "party": "Democrat, Independent, Working Families",
+     "party_code": "D",
+     "votes": 28581
+    },
+    {
+     "id": "jeff-helfrich",
+     "name": "Jeff Helfrich",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 31249
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 45
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 47,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-judge-of-the-circuit-court-4th-district-position-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Judge of the Circuit Court, 4th District, Position 2",
+   "district": null,
+   "title": "Judge of the Circuit Court, 4th District, Position 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-110-precincts-reported",
+     "name": "0 out of 110 Precincts Reported",
+     "party": "Diane S Sykes",
+     "party_code": "O",
+     "votes": 116243
+    },
+    {
+     "id": "laura-maurer-rowan",
+     "name": "Laura Maurer Rowan",
+     "party": null,
+     "party_code": "O",
+     "votes": 89173
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1424
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 110,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-judge-of-the-circuit-court-4th-district-position-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Judge of the Circuit Court, 4th District, Position 14",
+   "district": null,
+   "title": "Judge of the Circuit Court, 4th District, Position 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-110-precincts-reported",
+     "name": "0 out of 110 Precincts Reported",
+     "party": "Elizabeth Savage",
+     "party_code": "O",
+     "votes": 114792
+    },
+    {
+     "id": "joseph-hagedorn",
+     "name": "Joseph Hagedorn",
+     "party": null,
+     "party_code": "O",
+     "votes": 91561
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1344
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 110,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-judge-of-the-circuit-court-11th-district-position-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Judge of the Circuit Court, 11th District, Position 3",
+   "district": null,
+   "title": "Judge of the Circuit Court, 11th District, Position 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-50-precincts-reported",
+     "name": "0 out of 50 Precincts Reported",
+     "party": "Thaddeus Betz",
+     "party_code": "O",
+     "votes": 32736
+    },
+    {
+     "id": "sonia-huntsman",
+     "name": "Sonia Huntsman",
+     "party": null,
+     "party_code": "O",
+     "votes": 20585
+    },
+    {
+     "id": "raun-atkinson",
+     "name": "Raun Atkinson",
+     "party": null,
+     "party_code": "O",
+     "votes": 16770
+    },
+    {
+     "id": "keith-a-leitz",
+     "name": "Keith A Leitz",
+     "party": null,
+     "party_code": "O",
+     "votes": 16879
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 273
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 50,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-judge-of-the-circuit-court-2nd-district-position-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Judge of the Circuit Court, 2nd District, Position 14",
+   "district": null,
+   "title": "Judge of the Circuit Court, 2nd District, Position 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-66-precincts-reported",
+     "name": "0 out of 66 Precincts Reported",
+     "party": "Nathan J Lichvarcik - Incumbent",
+     "party_code": "O",
+     "votes": 73164
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1514
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 66,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-judge-of-the-circuit-court-4th-district-position-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Judge of the Circuit Court, 4th District, Position 6",
+   "district": null,
+   "title": "Judge of the Circuit Court, 4th District, Position 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-110-precincts-reported",
+     "name": "0 out of 110 Precincts Reported",
+     "party": "Sonia A Montalbano - Incumbent",
+     "party_code": "O",
+     "votes": 154851
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 2652
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 110,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-judge-of-the-circuit-court-5th-district-position-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Judge of the Circuit Court, 5th District, Position 5",
+   "district": null,
+   "title": "Judge of the Circuit Court, 5th District, Position 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-119-precincts-reported",
+     "name": "0 out of 119 Precincts Reported",
+     "party": "Kara A Brooks - Incumbent",
+     "party_code": "O",
+     "votes": 91792
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1858
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 119,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-judge-of-the-circuit-court-20th-district-position-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Judge of the Circuit Court, 20th District, Position 1",
+   "district": null,
+   "title": "Judge of the Circuit Court, 20th District, Position 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-155-precincts-reported",
+     "name": "0 out of 155 Precincts Reported",
+     "party": "Zohra Tourville - Incumbent",
+     "party_code": "O",
+     "votes": 93666
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 2238
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 155,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-district-attorney-curry-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "District Attorney, Curry County",
+   "district": null,
+   "title": "District Attorney, Curry County",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-27-precincts-reported",
+     "name": "0 out of 27 Precincts Reported",
+     "party": "Kevin Kelley",
+     "party_code": "O",
+     "votes": 6328
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 172
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 27,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-district-attorney-jefferson-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "District Attorney, Jefferson County",
+   "district": null,
+   "title": "District Attorney, Jefferson County",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-17-precincts-reported",
+     "name": "0 out of 17 Precincts Reported",
+     "party": "Eric J Nisley",
+     "party_code": "O",
+     "votes": 6588
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 230
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-district-attorney-lake-county",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "District Attorney, Lake County",
+   "district": null,
+   "title": "District Attorney, Lake County",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "0-out-of-19-precincts-reported",
+     "name": "0 out of 19 Precincts Reported",
+     "party": "Lane W Simpson",
+     "party_code": "O",
+     "votes": 553
+    },
+    {
+     "id": "rami-amaro",
+     "name": "Rami Amaro",
+     "party": null,
+     "party_code": "O",
+     "votes": 2768
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "or",
+   "office": "Governor",
+   "district": null,
+   "title": "Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brett-smith",
+     "name": "Brett Smith",
+     "party": "Pacific Green",
+     "party_code": "O",
+     "votes": 40739
+    },
+    {
+     "id": "tina-kotek",
+     "name": "Tina Kotek",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 795725
+    },
+    {
+     "id": "christine-drazan",
+     "name": "Christine Drazan",
+     "party": "Republican, Libertarian",
+     "party_code": "R",
+     "votes": 699400
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1883
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1318,
+    "unit": "precincts"
+   }
+  }
+ ]
+}

@@ -5,11 +5,16 @@
  "source_ids": [
   "fl-dos",
   "ga-scytl",
+  "mt-ersws",
   "nc-sbe",
+  "ne-ersws",
+  "nm-ersws",
   "oh-sos",
+  "or-ersws",
+  "sd-ersws",
   "va-scytl"
  ],
- "updated_at": "2026-11-04T13:08:44Z",
+ "updated_at": "2026-11-04T13:13:41Z",
  "certified": false,
  "contests": [
   {
@@ -223,6 +228,217 @@
    "precincts": {
     "reporting": 0,
     "total": 0
+   }
+  },
+  {
+   "id": "mt-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mt",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kurt-alme",
+     "name": "Kurt Alme",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 216568
+    },
+    {
+     "id": "alani-bankhead",
+     "name": "Alani Bankhead",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 53152
+    },
+    {
+     "id": "kyle-austin",
+     "name": "Kyle Austin",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 8125
+    },
+    {
+     "id": "seth-bodnar",
+     "name": "Seth Bodnar",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 166451
+    }
+   ],
+   "precincts": {
+    "reporting": 454,
+    "total": 728,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "or-us-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "or",
+   "office": "US Senator",
+   "district": null,
+   "title": "US Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-brock-smith",
+     "name": "David Brock Smith",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 619239
+    },
+    {
+     "id": "jeff-merkley",
+     "name": "Jeff Merkley",
+     "party": "Democrat, Working Families",
+     "party_code": "D",
+     "votes": 864411
+    },
+    {
+     "id": "gary-lyndon-dye",
+     "name": "Gary Lyndon Dye",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 14371
+    },
+    {
+     "id": "chris-henry",
+     "name": "Chris Henry",
+     "party": "Progressive, Pacific Green",
+     "party_code": "O",
+     "votes": 28843
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 1123
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 1318,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ne-united-states-senator-6-year-term",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ne",
+   "office": "United States Senator - 6 Year Term",
+   "district": null,
+   "title": "United States Senator - 6 Year Term",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pete-ricketts",
+     "name": "Pete Ricketts",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 370411
+    },
+    {
+     "id": "mike-marvin",
+     "name": "Mike Marvin",
+     "party": "Legal Marijuana Now",
+     "party_code": "O",
+     "votes": 15848
+    },
+    {
+     "id": "robin-richards",
+     "name": "Robin Richards",
+     "party": "Nebraska Working People",
+     "party_code": "O",
+     "votes": 18937
+    },
+    {
+     "id": "chuck-conboy",
+     "name": "Chuck Conboy",
+     "party": "America First",
+     "party_code": "O",
+     "votes": 8846
+    },
+    {
+     "id": "dan-osborn",
+     "name": "Dan Osborn",
+     "party": "By Petition",
+     "party_code": "O",
+     "votes": 321218
+    }
+   ],
+   "precincts": {
+    "reporting": 1309,
+    "total": 1322,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sd-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sd",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-rounds",
+     "name": "Mike Rounds",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 184571
+    },
+    {
+     "id": "brian-l-bengs",
+     "name": "Brian L Bengs",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 120484
+    }
+   ],
+   "precincts": {
+    "reporting": 671,
+    "total": 671,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "nm-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nm",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-r-lujan",
+     "name": "Ben R Lujan",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 455165
+    },
+    {
+     "id": "larry-e-marker",
+     "name": "Larry E Marker",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 265557
+    }
+   ],
+   "precincts": {
+    "reporting": 2204,
+    "total": 2204,
+    "unit": "precincts"
    }
   }
  ]

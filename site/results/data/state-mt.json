@@ -1,0 +1,1879 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-mt",
+ "label": "Montana",
+ "source_ids": [
+  "mt-ersws"
+ ],
+ "updated_at": "2026-11-04T13:13:41Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "mt-ci-132-constitutional-initiative-no-132",
+   "kind": "measure",
+   "level": "state",
+   "state": "mt",
+   "office": "Ci-132 Constitutional Initiative No. 132",
+   "district": null,
+   "title": "Ci-132 Constitutional Initiative No. 132",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 297702
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 139288
+    }
+   ],
+   "precincts": {
+    "reporting": 454,
+    "total": 728,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-ci-133-constitutional-initiative-no-133",
+   "kind": "measure",
+   "level": "state",
+   "state": "mt",
+   "office": "Ci-133 Constitutional Initiative No. 133",
+   "district": null,
+   "title": "Ci-133 Constitutional Initiative No. 133",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 279529
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 149042
+    }
+   ],
+   "precincts": {
+    "reporting": 454,
+    "total": 728,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-i-194-initiative-no-194",
+   "kind": "measure",
+   "level": "state",
+   "state": "mt",
+   "office": "I-194 Initiative No. 194",
+   "district": null,
+   "title": "I-194 Initiative No. 194",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 278385
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 147191
+    }
+   ],
+   "precincts": {
+    "reporting": 454,
+    "total": 728,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mt",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kurt-alme",
+     "name": "Kurt Alme",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 216568
+    },
+    {
+     "id": "alani-bankhead",
+     "name": "Alani Bankhead",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 53152
+    },
+    {
+     "id": "kyle-austin",
+     "name": "Kyle Austin",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 8125
+    },
+    {
+     "id": "seth-bodnar",
+     "name": "Seth Bodnar",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 166451
+    }
+   ],
+   "precincts": {
+    "reporting": 454,
+    "total": 728,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-united-states-representative-1st-congressional",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mt",
+   "office": "United States Representative 1St Congressional",
+   "district": "1",
+   "title": "United States Representative 1St Congressional",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "aaron-flint",
+     "name": "Aaron Flint",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 106283
+    },
+    {
+     "id": "sam-forstag",
+     "name": "Sam Forstag",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 114005
+    },
+    {
+     "id": "nick-sheedy",
+     "name": "Nick Sheedy",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 6423
+    }
+   ],
+   "precincts": {
+    "reporting": 163,
+    "total": 346,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-united-states-representative-2nd-congressional",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mt",
+   "office": "United States Representative 2Nd Congressional",
+   "district": "2",
+   "title": "United States Representative 2Nd Congressional",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "troy-downing",
+     "name": "Troy Downing",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 126122
+    },
+    {
+     "id": "brian-j-miller",
+     "name": "Brian J Miller",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 69597
+    },
+    {
+     "id": "patrick-mccracken",
+     "name": "Patrick Mccracken",
+     "party": "Libertarian",
+     "party_code": "O",
+     "votes": 3935
+    },
+    {
+     "id": "michael-d-eisenhauer",
+     "name": "Michael D Eisenhauer",
+     "party": "Independent",
+     "party_code": "O",
+     "votes": 16847
+    }
+   ],
+   "precincts": {
+    "reporting": 292,
+    "total": 383,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 1",
+   "district": "1",
+   "title": "State Representative District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michelle-bianco",
+     "name": "Michelle Bianco",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2935
+    },
+    {
+     "id": "dakota-v-adams",
+     "name": "Dakota V Adams",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1193
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 12,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 2",
+   "district": "2",
+   "title": "State Representative District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-millett",
+     "name": "Tom Millett",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2849
+    },
+    {
+     "id": "jane-maahs",
+     "name": "Jane Maahs",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1073
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 3",
+   "district": "3",
+   "title": "State Representative District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "derek-peachey",
+     "name": "Derek Peachey",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1951
+    },
+    {
+     "id": "debo-powers",
+     "name": "Debo Powers",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 2306
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 4",
+   "district": "4",
+   "title": "State Representative District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shaun-pandina",
+     "name": "Shaun Pandina",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1826
+    },
+    {
+     "id": "paula-koch",
+     "name": "Paula Koch",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 2211
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 5",
+   "district": "5",
+   "title": "State Representative District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "braxton-mitchell",
+     "name": "Braxton Mitchell",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3350
+    },
+    {
+     "id": "luca-welle",
+     "name": "Luca Welle",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1394
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 6",
+   "district": "6",
+   "title": "State Representative District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-riley",
+     "name": "Jim Riley",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3128
+    },
+    {
+     "id": "darren-fix",
+     "name": "Darren Fix",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1840
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 7",
+   "district": "7",
+   "title": "State Representative District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "courtenay-sprunger",
+     "name": "Courtenay Sprunger",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1971
+    },
+    {
+     "id": "madison-evans",
+     "name": "Madison Evans",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1576
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 8",
+   "district": "8",
+   "title": "State Representative District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lukas-schubert",
+     "name": "Lukas Schubert",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2287
+    },
+    {
+     "id": "calvin-lime",
+     "name": "Calvin Lime",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1167
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 9",
+   "district": "9",
+   "title": "State Representative District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-c-kelly",
+     "name": "Steven C Kelly",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3291
+    },
+    {
+     "id": "kate-mclaughlin",
+     "name": "Kate Mclaughlin",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1530
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 10",
+   "district": "10",
+   "title": "State Representative District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "terry-falk",
+     "name": "Terry Falk",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2651
+    },
+    {
+     "id": "catherine-c-allen",
+     "name": "Catherine C Allen",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1266
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 5,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 11",
+   "district": "11",
+   "title": "State Representative District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ed-byrne",
+     "name": "Ed Byrne",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3318
+    },
+    {
+     "id": "maeve-kintzler",
+     "name": "Maeve Kintzler",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1196
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 12",
+   "district": "12",
+   "title": "State Representative District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tracy-a-sharp",
+     "name": "Tracy A Sharp",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4018
+    },
+    {
+     "id": "cindy-l-bruckner",
+     "name": "Cindy L Bruckner",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 2070
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 9,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 13",
+   "district": "13",
+   "title": "State Representative District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "finley-warden",
+     "name": "Finley Warden",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2757
+    },
+    {
+     "id": "dalton-bradford",
+     "name": "Dalton Bradford",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 2276
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 14",
+   "district": "14",
+   "title": "State Representative District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-fielder",
+     "name": "Paul Fielder",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4166
+    },
+    {
+     "id": "colleen-hinds",
+     "name": "Colleen Hinds",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1495
+    }
+   ],
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 15",
+   "district": "15",
+   "title": "State Representative District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ralph-foster",
+     "name": "Ralph Foster",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1282
+    },
+    {
+     "id": "thedis-b-crowe",
+     "name": "Thedis B Crowe",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1866
+    }
+   ],
+   "precincts": {
+    "reporting": 8,
+    "total": 9,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 16",
+   "district": "16",
+   "title": "State Representative District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lona-r-running-wolf",
+     "name": "Lona R Running Wolf",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 2473
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 17",
+   "district": "17",
+   "title": "State Representative District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "justin-w-cleveland",
+     "name": "Justin W Cleveland",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3606
+    },
+    {
+     "id": "chris-bechtold",
+     "name": "Chris Bechtold",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1547
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 9,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 18",
+   "district": "18",
+   "title": "State Representative District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bruce-butch-gillespie",
+     "name": "Bruce \"Butch\" Gillespie",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3688
+    }
+   ],
+   "precincts": {
+    "reporting": 14,
+    "total": 14,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 19",
+   "district": "19",
+   "title": "State Representative District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hannah-trebas",
+     "name": "Hannah Trebas",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 925
+    },
+    {
+     "id": "jane-weber",
+     "name": "Jane Weber",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1657
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 20",
+   "district": "20",
+   "title": "State Representative District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "melissa-nikolakakos",
+     "name": "Melissa Nikolakakos",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1940
+    },
+    {
+     "id": "steve-keller",
+     "name": "Steve Keller",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1986
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 21",
+   "district": "21",
+   "title": "State Representative District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "trevor-p-funseth",
+     "name": "Trevor P Funseth",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2510
+    },
+    {
+     "id": "lela-graham",
+     "name": "Lela Graham",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1798
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 22",
+   "district": "22",
+   "title": "State Representative District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-lorang",
+     "name": "Jason Lorang",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1325
+    },
+    {
+     "id": "neal-miller",
+     "name": "Neal Miller",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1146
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 23",
+   "district": "23",
+   "title": "State Representative District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-tilleman",
+     "name": "Eric Tilleman",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 1847
+    },
+    {
+     "id": "rebecca-bogden-richards",
+     "name": "Rebecca Bogden-Richards",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1746
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 24",
+   "district": "24",
+   "title": "State Representative District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-fitzpatrick",
+     "name": "Steve Fitzpatrick",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2355
+    },
+    {
+     "id": "pam-carroll",
+     "name": "Pam Carroll",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1685
+    }
+   ],
+   "precincts": {
+    "reporting": 3,
+    "total": 3,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-representative-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Representative District 25",
+   "district": "25",
+   "title": "State Representative District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-gist",
+     "name": "Steve Gist",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2988
+    },
+    {
+     "id": "jerry-ferderer",
+     "name": "Jerry Ferderer",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 1243
+    }
+   ],
+   "precincts": {
+    "reporting": 4,
+    "total": 4,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-district-court-judge-district-1-dept-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "District Court Judge District 1, Dept 3",
+   "district": null,
+   "title": "District Court Judge District 1, Dept 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-guzynski",
+     "name": "Daniel Guzynski",
+     "party": "Non-Partisan",
+     "party_code": "O",
+     "votes": 27823
+    }
+   ],
+   "precincts": {
+    "reporting": 5,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-shall-judge-shane-a-vannatta-of-the-district-court-judge-district-4",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mt",
+   "office": "Shall Judge SHANE A VANNATTA of the DISTRICT COURT JUDGE DISTRICT 4, DEPT 5 of the state of Montana be retained in office for another term?",
+   "district": null,
+   "title": "Shall Judge SHANE A VANNATTA of the DISTRICT COURT JUDGE DISTRICT 4, DEPT 5 of the state of Montana be retained in office for another term?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 36611
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6882
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 71,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-district-court-judge-district-7-dept-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "District Court Judge District 7, Dept 2",
+   "district": null,
+   "title": "District Court Judge District 7, Dept 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-w-herring",
+     "name": "Scott W Herring",
+     "party": "Non-Partisan",
+     "party_code": "O",
+     "votes": 4488
+    },
+    {
+     "id": "brett-irigoin",
+     "name": "Brett Irigoin",
+     "party": "Non-Partisan",
+     "party_code": "O",
+     "votes": 3989
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-shall-judge-john-w-parker-of-the-district-court-judge-district-8-de",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mt",
+   "office": "Shall Judge JOHN W PARKER of the DISTRICT COURT JUDGE DISTRICT 8, DEPT 4 of the state of Montana be retained in office for another term?",
+   "district": null,
+   "title": "Shall Judge JOHN W PARKER of the DISTRICT COURT JUDGE DISTRICT 8, DEPT 4 of the state of Montana be retained in office for another term?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 22188
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 4584
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-shall-judge-brett-linneweber-of-the-district-court-judge-district-1",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mt",
+   "office": "Shall Judge BRETT LINNEWEBER of the DISTRICT COURT JUDGE DISTRICT 13, DEPT 4 of the state of Montana be retained in office for another term?",
+   "district": null,
+   "title": "Shall Judge BRETT LINNEWEBER of the DISTRICT COURT JUDGE DISTRICT 13, DEPT 4 of the state of Montana be retained in office for another term?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 44137
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 9191
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 59,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-shall-judge-rod-souza-of-the-district-court-judge-district-13-dept-",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mt",
+   "office": "Shall Judge ROD SOUZA of the DISTRICT COURT JUDGE DISTRICT 13, DEPT 5 of the state of Montana be retained in office for another term?",
+   "district": null,
+   "title": "Shall Judge ROD SOUZA of the DISTRICT COURT JUDGE DISTRICT 13, DEPT 5 of the state of Montana be retained in office for another term?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 46941
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 7414
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 59,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-shall-judge-seth-cunningham-of-the-district-court-judge-district-13",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mt",
+   "office": "Shall Judge SETH CUNNINGHAM of the DISTRICT COURT JUDGE DISTRICT 13, DEPT 9 of the state of Montana be retained in office for another term?",
+   "district": null,
+   "title": "Shall Judge SETH CUNNINGHAM of the DISTRICT COURT JUDGE DISTRICT 13, DEPT 9 of the state of Montana be retained in office for another term?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 44626
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 8319
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 59,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-shall-judge-ed-zink-of-the-district-court-judge-district-13-dept-10",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mt",
+   "office": "Shall Judge ED ZINK of the DISTRICT COURT JUDGE DISTRICT 13, DEPT 10 of the state of Montana be retained in office for another term?",
+   "district": null,
+   "title": "Shall Judge ED ZINK of the DISTRICT COURT JUDGE DISTRICT 13, DEPT 10 of the state of Montana be retained in office for another term?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 44360
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 9027
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 59,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-shall-judge-rienne-h-mcelyea-of-the-district-court-judge-district-1",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mt",
+   "office": "Shall Judge RIENNE H MCELYEA of the DISTRICT COURT JUDGE DISTRICT 18, DEPT 2 of the state of Montana be retained in office for another term?",
+   "district": null,
+   "title": "Shall Judge RIENNE H MCELYEA of the DISTRICT COURT JUDGE DISTRICT 18, DEPT 2 of the state of Montana be retained in office for another term?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 30257
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 6759
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 46,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-shall-judge-molly-owen-of-the-district-court-judge-district-20-dept",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mt",
+   "office": "Shall Judge MOLLY OWEN of the DISTRICT COURT JUDGE DISTRICT 20, DEPT 1 of the state of Montana be retained in office for another term?",
+   "district": null,
+   "title": "Shall Judge MOLLY OWEN of the DISTRICT COURT JUDGE DISTRICT 20, DEPT 1 of the state of Montana be retained in office for another term?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 15118
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2716
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-shall-judge-john-a-mercer-of-the-district-court-judge-district-20-d",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mt",
+   "office": "Shall Judge JOHN A MERCER of the DISTRICT COURT JUDGE DISTRICT 20, DEPT 2 UNEXPIRED of the state of Montana be retained in office for another term?",
+   "district": null,
+   "title": "Shall Judge JOHN A MERCER of the DISTRICT COURT JUDGE DISTRICT 20, DEPT 2 UNEXPIRED of the state of Montana be retained in office for another term?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 14951
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2934
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-shall-judge-jennifer-lint-of-the-district-court-judge-district-21-d",
+   "kind": "judicial",
+   "level": "state",
+   "state": "mt",
+   "office": "Shall Judge JENNIFER LINT of the DISTRICT COURT JUDGE DISTRICT 21, DEPT 2 of the state of Montana be retained in office for another term?",
+   "district": null,
+   "title": "Shall Judge JENNIFER LINT of the DISTRICT COURT JUDGE DISTRICT 21, DEPT 2 of the state of Montana be retained in office for another term?",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 15843
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 5113
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-public-service-commissioner-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "Public Service Commissioner, District 1",
+   "district": null,
+   "title": "Public Service Commissioner, District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeff-pattison",
+     "name": "Jeff Pattison",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 50010
+    },
+    {
+     "id": "angeline-cheek",
+     "name": "Angeline Cheek",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 26384
+    }
+   ],
+   "precincts": {
+    "reporting": 163,
+    "total": 179,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-public-service-commissioner-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "Public Service Commissioner, District 5",
+   "district": null,
+   "title": "Public Service Commissioner, District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "annie-bukacek",
+     "name": "Annie Bukacek",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 45964
+    },
+    {
+     "id": "kevin-hamm",
+     "name": "Kevin Hamm",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 41333
+    }
+   ],
+   "precincts": {
+    "reporting": 68,
+    "total": 142,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-supreme-court-justice-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "Supreme Court Justice #4",
+   "district": null,
+   "title": "Supreme Court Justice #4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-eddy",
+     "name": "Amy Eddy",
+     "party": "Non-Partisan",
+     "party_code": "O",
+     "votes": 250164
+    },
+    {
+     "id": "dan-wilson",
+     "name": "Dan Wilson",
+     "party": "Non-Partisan",
+     "party_code": "O",
+     "votes": 171819
+    }
+   ],
+   "precincts": {
+    "reporting": 454,
+    "total": 728,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 1",
+   "district": null,
+   "title": "State Senator District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-gunderson",
+     "name": "Steve Gunderson",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5790
+    },
+    {
+     "id": "jonathan-russell-jameson",
+     "name": "Jonathan Russell Jameson",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 2282
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 17,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 4",
+   "district": null,
+   "title": "State Senator District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-regier",
+     "name": "Amy Regier",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4113
+    },
+    {
+     "id": "kyle-waterman",
+     "name": "Kyle Waterman",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 2940
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 10,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 6",
+   "district": null,
+   "title": "State Senator District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-noland",
+     "name": "Mark Noland",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 7214
+    },
+    {
+     "id": "patrick-fitzpatrick",
+     "name": "Patrick Fitzpatrick",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 3425
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 16,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 8",
+   "district": null,
+   "title": "State Senator District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-paul-buckles",
+     "name": "Christopher Paul Buckles",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2421
+    },
+    {
+     "id": "tyson-t-running-wolf",
+     "name": "Tyson T Running Wolf",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 3938
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 9",
+   "district": null,
+   "title": "State Senator District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "llew-jones",
+     "name": "Llew Jones",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6867
+    },
+    {
+     "id": "noy-holland",
+     "name": "Noy Holland",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 2277
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 10",
+   "district": null,
+   "title": "State Senator District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jessica-dyrdahl",
+     "name": "Jessica Dyrdahl",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 2832
+    },
+    {
+     "id": "margaret-mitchell",
+     "name": "Margaret Mitchell",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 3701
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 11",
+   "district": null,
+   "title": "State Senator District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-galloway",
+     "name": "Steven Galloway",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3679
+    },
+    {
+     "id": "valynda-holland",
+     "name": "Valynda Holland",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 3087
+    }
+   ],
+   "precincts": {
+    "reporting": 7,
+    "total": 7,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 12",
+   "district": null,
+   "title": "State Senator District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "george-nikolakakos",
+     "name": "George Nikolakakos",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3964
+    },
+    {
+     "id": "mindy-leach",
+     "name": "Mindy Leach",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 3646
+    }
+   ],
+   "precincts": {
+    "reporting": 6,
+    "total": 6,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 14",
+   "district": null,
+   "title": "State Senator District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-albus",
+     "name": "Eric Albus",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5033
+    },
+    {
+     "id": "blake-borst",
+     "name": "Blake Borst",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 2581
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 18",
+   "district": null,
+   "title": "State Senator District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "greg-kmetz",
+     "name": "Greg Kmetz",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 6304
+    },
+    {
+     "id": "stan-taylor",
+     "name": "Stan Taylor",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 2103
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 19",
+   "district": null,
+   "title": "State Senator District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-rindal",
+     "name": "Chris Rindal",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 8102
+    },
+    {
+     "id": "deanna-j-daigrepont",
+     "name": "Deanna J Daigrepont",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 2141
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 22",
+   "district": null,
+   "title": "State Senator District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-zolnikov",
+     "name": "Daniel Zolnikov",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 5552
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 8,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 23",
+   "district": null,
+   "title": "State Senator District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joanna-oblander",
+     "name": "Joanna Oblander",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 3307
+    },
+    {
+     "id": "emma-kerr-carpenter",
+     "name": "Emma Kerr-Carpenter",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 4327
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 6,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mt-state-senator-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mt",
+   "office": "State Senator District 25",
+   "district": null,
+   "title": "State Senator District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dennis-lenz",
+     "name": "Dennis Lenz",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 4885
+    },
+    {
+     "id": "julie-hippler",
+     "name": "Julie Hippler",
+     "party": "Democrat",
+     "party_code": "D",
+     "votes": 3675
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 7,
+    "unit": "precincts"
+   }
+  }
+ ]
+}
