@@ -1,0 +1,3132 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-mn",
+ "label": "Minnesota",
+ "source_ids": [
+  "mn-sos"
+ ],
+ "updated_at": "2026-11-04T13:35:44Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "mn-0102-u-s-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Senator",
+   "district": null,
+   "title": "U.S. Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marisa-simonetti",
+     "name": "Marisa Simonetti",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 41549
+    },
+    {
+     "id": "rebecca-whiting",
+     "name": "Rebecca Whiting",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 32476
+    },
+    {
+     "id": "peggy-flanagan",
+     "name": "Peggy Flanagan",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 1520295
+    },
+    {
+     "id": "michele-tafoya",
+     "name": "Michele Tafoya",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1232677
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 3374
+    }
+   ],
+   "precincts": {
+    "reporting": 4105,
+    "total": 4105,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0104-1-u-s-representative-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 1",
+   "district": "1",
+   "title": "U.S. Representative District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jake-johnson",
+     "name": "Jake Johnson",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 163057
+    },
+    {
+     "id": "brad-finstad",
+     "name": "Brad Finstad",
+     "party": "R",
+     "party_code": "R",
+     "votes": 162733
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 391
+    }
+   ],
+   "precincts": {
+    "reporting": 750,
+    "total": 750,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0105-2-u-s-representative-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 2",
+   "district": "2",
+   "title": "U.S. Representative District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matt-little",
+     "name": "Matt Little",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 213653
+    },
+    {
+     "id": "eric-pratt",
+     "name": "Eric Pratt",
+     "party": "R",
+     "party_code": "R",
+     "votes": 159829
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 335
+    }
+   ],
+   "precincts": {
+    "reporting": 260,
+    "total": 260,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0106-3-u-s-representative-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 3",
+   "district": "3",
+   "title": "U.S. Representative District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tyler-bass",
+     "name": "Tyler Bass",
+     "party": "R",
+     "party_code": "R",
+     "votes": 135505
+    },
+    {
+     "id": "kelly-morrison",
+     "name": "Kelly Morrison",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 242079
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 413
+    }
+   ],
+   "precincts": {
+    "reporting": 229,
+    "total": 229,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0107-4-u-s-representative-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 4",
+   "district": "4",
+   "title": "U.S. Representative District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "betty-mccollum",
+     "name": "Betty McCollum",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 245699
+    },
+    {
+     "id": "paul-wikstrom",
+     "name": "Paul Wikstrom",
+     "party": "R",
+     "party_code": "R",
+     "votes": 90068
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 477
+    }
+   ],
+   "precincts": {
+    "reporting": 212,
+    "total": 212,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0108-5-u-s-representative-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 5",
+   "district": "5",
+   "title": "U.S. Representative District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ilhan-omar",
+     "name": "Ilhan Omar",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 262702
+    },
+    {
+     "id": "john-nagel",
+     "name": "John Nagel",
+     "party": "R",
+     "party_code": "R",
+     "votes": 55765
+    },
+    {
+     "id": "develle-l-jackson",
+     "name": "DeVelle L. Jackson",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 24110
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 931
+    }
+   ],
+   "precincts": {
+    "reporting": 217,
+    "total": 217,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0109-6-u-s-representative-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 6",
+   "district": "6",
+   "title": "U.S. Representative District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "tom-emmer",
+     "name": "Tom Emmer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 204705
+    },
+    {
+     "id": "doug-chapin",
+     "name": "Doug Chapin",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 162213
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 427
+    }
+   ],
+   "precincts": {
+    "reporting": 276,
+    "total": 276,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0110-7-u-s-representative-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 7",
+   "district": "7",
+   "title": "U.S. Representative District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michelle-fischbach",
+     "name": "Michelle Fischbach",
+     "party": "R",
+     "party_code": "R",
+     "votes": 214505
+    },
+    {
+     "id": "erik-osberg",
+     "name": "Erik Osberg",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 115805
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 320
+    }
+   ],
+   "precincts": {
+    "reporting": 1327,
+    "total": 1327,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0111-8-u-s-representative-district-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mn",
+   "office": "U.S. Representative District 8",
+   "district": "8",
+   "title": "U.S. Representative District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pete-stauber",
+     "name": "Pete Stauber",
+     "party": "R",
+     "party_code": "R",
+     "votes": 190743
+    },
+    {
+     "id": "trina-swanson",
+     "name": "Trina Swanson",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 168350
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 359
+    }
+   ],
+   "precincts": {
+    "reporting": 834,
+    "total": 834,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0331-governor-lt-governor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "Governor & Lt Governor",
+   "district": null,
+   "title": "Governor & Lt Governor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-young-and-jane-kirby",
+     "name": "Steven Young and Jane Kirby",
+     "party": "GP",
+     "party_code": "O",
+     "votes": 51384
+    },
+    {
+     "id": "amy-klobuchar-and-ben-schierer",
+     "name": "Amy Klobuchar and Ben Schierer",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 1569094
+    },
+    {
+     "id": "lisa-demuth-and-ryan-wilson",
+     "name": "Lisa Demuth and Ryan Wilson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1205788
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 2474
+    }
+   ],
+   "precincts": {
+    "reporting": 4105,
+    "total": 4105,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0332-secretary-of-state",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "Secretary of State",
+   "district": null,
+   "title": "Secretary of State",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steve-simon",
+     "name": "Steve Simon",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 1528567
+    },
+    {
+     "id": "seth-kuhl-stennes",
+     "name": "Seth Kuhl-Stennes",
+     "party": "GP",
+     "party_code": "O",
+     "votes": 41372
+    },
+    {
+     "id": "tad-jude",
+     "name": "Tad Jude",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1167892
+    },
+    {
+     "id": "george-chip-tangen",
+     "name": "George \"Chip\" Tangen",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 54665
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 1311
+    }
+   ],
+   "precincts": {
+    "reporting": 4105,
+    "total": 4105,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0335-attorney-general",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "Attorney General",
+   "district": null,
+   "title": "Attorney General",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "keith-ellison",
+     "name": "Keith Ellison",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 1520397
+    },
+    {
+     "id": "ronald-j-schutz",
+     "name": "Ronald J. Schutz",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1275393
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 4222
+    }
+   ],
+   "precincts": {
+    "reporting": 4105,
+    "total": 4105,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0333-state-auditor",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Auditor",
+   "district": null,
+   "title": "State Auditor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jay-reeves",
+     "name": "Jay Reeves",
+     "party": "FI",
+     "party_code": "O",
+     "votes": 78968
+    },
+    {
+     "id": "scott-jensen",
+     "name": "Scott Jensen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 1229400
+    },
+    {
+     "id": "zack-filipovich",
+     "name": "Zack Filipovich",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 1473426
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 1528
+    }
+   ],
+   "precincts": {
+    "reporting": 4105,
+    "total": 4105,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0351-constitutional-amendment-1",
+   "kind": "measure",
+   "level": "state",
+   "state": "mn",
+   "office": "Constitutional Amendment 1",
+   "district": null,
+   "title": "Constitutional Amendment 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": "NP",
+     "party_code": "O",
+     "votes": 2067164
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": "NP",
+     "party_code": "O",
+     "votes": 666208
+    }
+   ],
+   "precincts": {
+    "reporting": 4105,
+    "total": 4105,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0121-1-state-senator-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 1",
+   "district": null,
+   "title": "State Senator District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-johnson",
+     "name": "Mark Johnson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24012
+    },
+    {
+     "id": "bjorn-solberg",
+     "name": "Bjorn Solberg",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 11278
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 315,
+    "total": 315,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0122-2-state-senator-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 2",
+   "district": null,
+   "title": "State Senator District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "dan-r-rogers",
+     "name": "Dan R. Rogers",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 16692
+    },
+    {
+     "id": "steve-green",
+     "name": "Steve Green",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20443
+    },
+    {
+     "id": "calvin-larson-jr",
+     "name": "Calvin Larson Jr",
+     "party": "UNI",
+     "party_code": "O",
+     "votes": 649
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 189,
+    "total": 189,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0123-3-state-senator-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 3",
+   "district": null,
+   "title": "State Senator District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "grant-hauschild",
+     "name": "Grant Hauschild",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 24873
+    },
+    {
+     "id": "andrea-zupancich",
+     "name": "Andrea Zupancich",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20866
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 69
+    }
+   ],
+   "precincts": {
+    "reporting": 132,
+    "total": 132,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0124-4-state-senator-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 4",
+   "district": null,
+   "title": "State Senator District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rob-kupec",
+     "name": "Rob Kupec",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 18103
+    },
+    {
+     "id": "austin-peterson",
+     "name": "Austin Peterson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18107
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 42
+    }
+   ],
+   "precincts": {
+    "reporting": 68,
+    "total": 68,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0125-5-state-senator-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 5",
+   "district": null,
+   "title": "State Senator District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-wiener",
+     "name": "Mike Wiener",
+     "party": "R",
+     "party_code": "R",
+     "votes": 30380
+    },
+    {
+     "id": "skylar-fynboh",
+     "name": "Skylar Fynboh",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 12197
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 99
+    }
+   ],
+   "precincts": {
+    "reporting": 143,
+    "total": 143,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0126-6-state-senator-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 6",
+   "district": null,
+   "title": "State Senator District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "keri-heintzeman",
+     "name": "Keri Heintzeman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 27503
+    },
+    {
+     "id": "denise-slipy",
+     "name": "Denise Slipy",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 16799
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 40
+    }
+   ],
+   "precincts": {
+    "reporting": 80,
+    "total": 80,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0127-7-state-senator-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 7",
+   "district": null,
+   "title": "State Senator District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kim-kotonias-mclaughlin",
+     "name": "Kim (Kotonias) McLaughlin",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 18222
+    },
+    {
+     "id": "robert-farnsworth",
+     "name": "Robert Farnsworth",
+     "party": "R",
+     "party_code": "R",
+     "votes": 21773
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "precincts": {
+    "reporting": 127,
+    "total": 127,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0128-8-state-senator-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 8",
+   "district": null,
+   "title": "State Senator District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "darrick-law",
+     "name": "Darrick Law",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9951
+    },
+    {
+     "id": "jen-mcewen",
+     "name": "Jen McEwen",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 31668
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 33
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0129-9-state-senator-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 9",
+   "district": null,
+   "title": "State Senator District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jordan-rasmusson",
+     "name": "Jordan Rasmusson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 30091
+    },
+    {
+     "id": "krystyne-m-knutson",
+     "name": "Krystyne M. Knutson",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 13116
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 31
+    }
+   ],
+   "precincts": {
+    "reporting": 183,
+    "total": 183,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0130-10-state-senator-district-10",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 10",
+   "district": null,
+   "title": "State Senator District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nathan-wesenberg",
+     "name": "Nathan Wesenberg",
+     "party": "R",
+     "party_code": "R",
+     "votes": 30655
+    },
+    {
+     "id": "tara-killen",
+     "name": "Tara Killen",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 11593
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 59
+    }
+   ],
+   "precincts": {
+    "reporting": 123,
+    "total": 123,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0131-11-state-senator-district-11",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 11",
+   "district": null,
+   "title": "State Senator District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jason-rarick",
+     "name": "Jason Rarick",
+     "party": "R",
+     "party_code": "R",
+     "votes": 22240
+    },
+    {
+     "id": "mary-carlson",
+     "name": "Mary Carlson",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 16937
+    },
+    {
+     "id": "monique-doward",
+     "name": "Monique Doward",
+     "party": "FI",
+     "party_code": "O",
+     "votes": 996
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 25
+    }
+   ],
+   "precincts": {
+    "reporting": 106,
+    "total": 106,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0132-12-state-senator-district-12",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 12",
+   "district": null,
+   "title": "State Senator District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kari-dorry",
+     "name": "Kari Dorry",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 12813
+    },
+    {
+     "id": "torrey-westrom",
+     "name": "Torrey Westrom",
+     "party": "R",
+     "party_code": "R",
+     "votes": 28957
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 24
+    }
+   ],
+   "precincts": {
+    "reporting": 157,
+    "total": 157,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0133-13-state-senator-district-13",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 13",
+   "district": null,
+   "title": "State Senator District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jared-j-gapinski",
+     "name": "Jared J. Gapinski",
+     "party": "R",
+     "party_code": "R",
+     "votes": 28815
+    },
+    {
+     "id": "trent-c-dilks",
+     "name": "Trent C Dilks",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 14169
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 124
+    }
+   ],
+   "precincts": {
+    "reporting": 49,
+    "total": 49,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0134-14-state-senator-district-14",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 14",
+   "district": null,
+   "title": "State Senator District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "aric-putnam",
+     "name": "Aric Putnam",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 19679
+    },
+    {
+     "id": "bernie-perryman",
+     "name": "Bernie Perryman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15448
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 49
+    }
+   ],
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0135-15-state-senator-district-15",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 15",
+   "district": null,
+   "title": "State Senator District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "braxton-john-seifert",
+     "name": "Braxton John Seifert",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25174
+    },
+    {
+     "id": "andrea-boettger",
+     "name": "Andrea Boettger",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 12518
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 26
+    }
+   ],
+   "precincts": {
+    "reporting": 171,
+    "total": 171,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0136-16-state-senator-district-16",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 16",
+   "district": null,
+   "title": "State Senator District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kathy-jorgenson",
+     "name": "Kathy Jorgenson",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 12261
+    },
+    {
+     "id": "andrew-r-lang",
+     "name": "Andrew R. Lang",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24919
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 129,
+    "total": 129,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0137-17-state-senator-district-17",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 17",
+   "district": null,
+   "title": "State Senator District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julie-kelzer",
+     "name": "Julie Kelzer",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 13860
+    },
+    {
+     "id": "glenn-h-gruenhagen",
+     "name": "Glenn H Gruenhagen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 28402
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 39
+    }
+   ],
+   "precincts": {
+    "reporting": 76,
+    "total": 76,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0138-18-state-senator-district-18",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 18",
+   "district": null,
+   "title": "State Senator District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jackie-henry",
+     "name": "Jackie Henry",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14992
+    },
+    {
+     "id": "nick-frentz",
+     "name": "Nick Frentz",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 21992
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 29
+    }
+   ],
+   "precincts": {
+    "reporting": 53,
+    "total": 53,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0139-19-state-senator-district-19",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 19",
+   "district": null,
+   "title": "State Senator District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "sam-powell",
+     "name": "Sam Powell",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 14924
+    },
+    {
+     "id": "john-r-jasinski",
+     "name": "John R. Jasinski",
+     "party": "R",
+     "party_code": "R",
+     "votes": 22607
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 31
+    }
+   ],
+   "precincts": {
+    "reporting": 53,
+    "total": 53,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0140-20-state-senator-district-20",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 20",
+   "district": null,
+   "title": "State Senator District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-e-jacob",
+     "name": "Steven E Jacob",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24874
+    },
+    {
+     "id": "jason-lohmann",
+     "name": "Jason Lohmann",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 18430
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 32
+    }
+   ],
+   "precincts": {
+    "reporting": 91,
+    "total": 91,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0141-21-state-senator-district-21",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 21",
+   "district": null,
+   "title": "State Senator District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-knoll",
+     "name": "Chris Knoll",
+     "party": "R",
+     "party_code": "R",
+     "votes": 23002
+    },
+    {
+     "id": "caitlyn-sanow-minett",
+     "name": "Caitlyn Sanow-Minett",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 11257
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 209,
+    "total": 209,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0142-22-state-senator-district-22",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 22",
+   "district": null,
+   "title": "State Senator District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jeremy-munson",
+     "name": "Jeremy Munson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25169
+    },
+    {
+     "id": "marisa-ulmen",
+     "name": "Marisa Ulmen",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 13278
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 35
+    }
+   ],
+   "precincts": {
+    "reporting": 110,
+    "total": 110,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0143-23-state-senator-district-23",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 23",
+   "district": null,
+   "title": "State Senator District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "angie-hanson",
+     "name": "Angie Hanson",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 16091
+    },
+    {
+     "id": "gene-dornink",
+     "name": "Gene Dornink",
+     "party": "R",
+     "party_code": "R",
+     "votes": 19686
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 29
+    }
+   ],
+   "precincts": {
+    "reporting": 113,
+    "total": 113,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0144-24-state-senator-district-24",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 24",
+   "district": null,
+   "title": "State Senator District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nels-t-pierson",
+     "name": "Nels T. Pierson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20403
+    },
+    {
+     "id": "simon-glaser",
+     "name": "Simon Glaser",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 21082
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 42
+    }
+   ],
+   "precincts": {
+    "reporting": 63,
+    "total": 63,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0145-25-state-senator-district-25",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 25",
+   "district": null,
+   "title": "State Senator District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "liz-boldon",
+     "name": "Liz Boldon",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 26126
+    },
+    {
+     "id": "john-howie",
+     "name": "John Howie",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13418
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 33
+    }
+   ],
+   "precincts": {
+    "reporting": 56,
+    "total": 56,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0146-26-state-senator-district-26",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 26",
+   "district": null,
+   "title": "State Senator District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cherie-johnson",
+     "name": "Cherie Johnson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20629
+    },
+    {
+     "id": "jack-hedin",
+     "name": "Jack Hedin",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 19509
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 26
+    }
+   ],
+   "precincts": {
+    "reporting": 108,
+    "total": 108,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0147-27-state-senator-district-27",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 27",
+   "district": null,
+   "title": "State Senator District 27",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-mathews",
+     "name": "Andrew Mathews",
+     "party": "R",
+     "party_code": "R",
+     "votes": 28596
+    },
+    {
+     "id": "brandon-van-dover",
+     "name": "Brandon Van Dover",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 12619
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 20
+    }
+   ],
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0148-28-state-senator-district-28",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 28",
+   "district": null,
+   "title": "State Senator District 28",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-koran",
+     "name": "Mark Koran",
+     "party": "R",
+     "party_code": "R",
+     "votes": 28084
+    },
+    {
+     "id": "max-glenna",
+     "name": "Max Glenna",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 15149
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 79
+    }
+   ],
+   "precincts": {
+    "reporting": 36,
+    "total": 36,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0149-29-state-senator-district-29",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 29",
+   "district": null,
+   "title": "State Senator District 29",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "louis-mcnutt",
+     "name": "Louis McNutt",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 15836
+    },
+    {
+     "id": "michael-holmstrom-jr",
+     "name": "Michael Holmstrom Jr",
+     "party": "R",
+     "party_code": "R",
+     "votes": 27444
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 24
+    }
+   ],
+   "precincts": {
+    "reporting": 37,
+    "total": 37,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0150-30-state-senator-district-30",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 30",
+   "district": null,
+   "title": "State Senator District 30",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-lucero",
+     "name": "Eric Lucero",
+     "party": "R",
+     "party_code": "R",
+     "votes": 28534
+    },
+    {
+     "id": "leah-temple",
+     "name": "Leah Temple",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 18743
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0151-31-state-senator-district-31",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 31",
+   "district": null,
+   "title": "State Senator District 31",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "calvin-bahr",
+     "name": "Calvin Bahr",
+     "party": "R",
+     "party_code": "R",
+     "votes": 27808
+    },
+    {
+     "id": "gadisa-berkessa",
+     "name": "Gadisa Berkessa",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 17640
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 48
+    }
+   ],
+   "precincts": {
+    "reporting": 28,
+    "total": 28,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0152-32-state-senator-district-32",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 32",
+   "district": null,
+   "title": "State Senator District 32",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-ford",
+     "name": "Chris Ford",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 23761
+    },
+    {
+     "id": "michael-kreun",
+     "name": "Michael Kreun",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20978
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 37
+    }
+   ],
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0153-33-state-senator-district-33",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 33",
+   "district": null,
+   "title": "State Senator District 33",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "karin-housley",
+     "name": "Karin Housley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 23977
+    },
+    {
+     "id": "nat-smith",
+     "name": "Nat Smith",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 23935
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 39
+    }
+   ],
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0154-34-state-senator-district-34",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 34",
+   "district": null,
+   "title": "State Senator District 34",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-hoffman",
+     "name": "John Hoffman",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 29217
+    },
+    {
+     "id": "karen-attia",
+     "name": "Karen Attia",
+     "party": "R",
+     "party_code": "R",
+     "votes": 17704
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 40
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0155-35-state-senator-district-35",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 35",
+   "district": null,
+   "title": "State Senator District 35",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "angela-nelson",
+     "name": "Angela Nelson",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 21268
+    },
+    {
+     "id": "jim-abeler",
+     "name": "Jim Abeler",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18248
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 53
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0156-36-state-senator-district-36",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 36",
+   "district": null,
+   "title": "State Senator District 36",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "heidi-heino",
+     "name": "Heidi Heino",
+     "party": "R",
+     "party_code": "R",
+     "votes": 20698
+    },
+    {
+     "id": "heather-gustafson",
+     "name": "Heather Gustafson",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 27492
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 29
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0157-37-state-senator-district-37",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 37",
+   "district": null,
+   "title": "State Senator District 37",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brady-hoag",
+     "name": "Brady Hoag",
+     "party": "R",
+     "party_code": "R",
+     "votes": 23667
+    },
+    {
+     "id": "kristy-janigo",
+     "name": "Kristy Janigo",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 27849
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 52
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0158-38-state-senator-district-38",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 38",
+   "district": null,
+   "title": "State Senator District 38",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brad-olson",
+     "name": "Brad Olson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6511
+    },
+    {
+     "id": "susan-pha",
+     "name": "Susan Pha",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 21015
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 66
+    }
+   ],
+   "precincts": {
+    "reporting": 21,
+    "total": 21,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0159-39-state-senator-district-39",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 39",
+   "district": null,
+   "title": "State Senator District 39",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ngone-saliou-niang",
+     "name": "Ngone Saliou Niang",
+     "party": "GP",
+     "party_code": "O",
+     "votes": 1023
+    },
+    {
+     "id": "mary-k-kunesh",
+     "name": "Mary K Kunesh",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 26141
+    },
+    {
+     "id": "pam-wolf",
+     "name": "Pam Wolf",
+     "party": "R",
+     "party_code": "R",
+     "votes": 9757
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 21
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0160-40-state-senator-district-40",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 40",
+   "district": null,
+   "title": "State Senator District 40",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rachel-japuntich",
+     "name": "Rachel Japuntich",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14092
+    },
+    {
+     "id": "john-marty",
+     "name": "John Marty",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 31233
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 46
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0161-41-state-senator-district-41",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 41",
+   "district": null,
+   "title": "State Senator District 41",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "judy-seeberger",
+     "name": "Judy Seeberger",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 25547
+    },
+    {
+     "id": "tom-dippel",
+     "name": "Tom Dippel",
+     "party": "R",
+     "party_code": "R",
+     "votes": 23184
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 42
+    }
+   ],
+   "precincts": {
+    "reporting": 32,
+    "total": 32,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0162-42-state-senator-district-42",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 42",
+   "district": null,
+   "title": "State Senator District 42",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-peterson",
+     "name": "Kevin Peterson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 16343
+    },
+    {
+     "id": "bonnie-westlin",
+     "name": "Bonnie Westlin",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 28366
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 36
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0163-43-state-senator-district-43",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 43",
+   "district": null,
+   "title": "State Senator District 43",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-freiberg",
+     "name": "Mike Freiberg",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 34034
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 976
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0164-44-state-senator-district-44",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 44",
+   "district": null,
+   "title": "State Senator District 44",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-tacheny",
+     "name": "James Tacheny",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12603
+    },
+    {
+     "id": "sam-rosemark",
+     "name": "Sam Rosemark",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 24793
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 83
+    }
+   ],
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0165-45-state-senator-district-45",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 45",
+   "district": null,
+   "title": "State Senator District 45",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shannon-bruce",
+     "name": "Shannon Bruce",
+     "party": "R",
+     "party_code": "R",
+     "votes": 22059
+    },
+    {
+     "id": "ann-johnson-stewart",
+     "name": "Ann Johnson Stewart",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 29279
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 30
+    }
+   ],
+   "precincts": {
+    "reporting": 38,
+    "total": 38,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0166-46-state-senator-district-46",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 46",
+   "district": null,
+   "title": "State Senator District 46",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ron-latz",
+     "name": "Ron Latz",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 35832
+    },
+    {
+     "id": "kayla-wright",
+     "name": "Kayla Wright",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10522
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 123
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0167-47-state-senator-district-47",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 47",
+   "district": null,
+   "title": "State Senator District 47",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-stalboerger",
+     "name": "Brian Stalboerger",
+     "party": "R",
+     "party_code": "R",
+     "votes": 16330
+    },
+    {
+     "id": "amanda-hemmingsen-jaeger",
+     "name": "Amanda Hemmingsen-Jaeger",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 29076
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 34
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0168-48-state-senator-district-48",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 48",
+   "district": null,
+   "title": "State Senator District 48",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "julia-coleman",
+     "name": "Julia Coleman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 25122
+    },
+    {
+     "id": "dan-kessler",
+     "name": "Dan Kessler",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 24140
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 36
+    }
+   ],
+   "precincts": {
+    "reporting": 27,
+    "total": 27,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0169-49-state-senator-district-49",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 49",
+   "district": null,
+   "title": "State Senator District 49",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "krish-subrahmanian",
+     "name": "Krish Subrahmanian",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 29406
+    },
+    {
+     "id": "kris-babler",
+     "name": "Kris Babler",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 2003
+    },
+    {
+     "id": "dustin-r-dufault",
+     "name": "Dustin R. DuFault",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15528
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 14
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0170-50-state-senator-district-50",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 50",
+   "district": null,
+   "title": "State Senator District 50",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "owen-michaelson",
+     "name": "Owen Michaelson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15185
+    },
+    {
+     "id": "karla-hult",
+     "name": "Karla Hult",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 33770
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 47
+    }
+   ],
+   "precincts": {
+    "reporting": 28,
+    "total": 28,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0171-51-state-senator-district-51",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 51",
+   "district": null,
+   "title": "State Senator District 51",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "simon-trautmann-cordova",
+     "name": "Simon Trautmann Cordova",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 29588
+    },
+    {
+     "id": "juline-birgersson",
+     "name": "Juline Birgersson",
+     "party": "R",
+     "party_code": "R",
+     "votes": 10220
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 75
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0172-52-state-senator-district-52",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 52",
+   "district": null,
+   "title": "State Senator District 52",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brady-o-neil",
+     "name": "Brady O'Neil",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14837
+    },
+    {
+     "id": "liz-reyer",
+     "name": "Liz Reyer",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 30349
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 25
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0173-53-state-senator-district-53",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 53",
+   "district": null,
+   "title": "State Senator District 53",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-cumings",
+     "name": "Paul Cumings",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 26272
+    },
+    {
+     "id": "todd-podgorski",
+     "name": "Todd Podgorski",
+     "party": "R",
+     "party_code": "R",
+     "votes": 16219
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 32
+    }
+   ],
+   "precincts": {
+    "reporting": 30,
+    "total": 30,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0174-54-state-senator-district-54",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 54",
+   "district": null,
+   "title": "State Senator District 54",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rick-olson",
+     "name": "Rick Olson",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 22360
+    },
+    {
+     "id": "ben-bakeberg",
+     "name": "Ben Bakeberg",
+     "party": "R",
+     "party_code": "R",
+     "votes": 21848
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 40
+    }
+   ],
+   "precincts": {
+    "reporting": 33,
+    "total": 33,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0175-55-state-senator-district-55",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 55",
+   "district": null,
+   "title": "State Senator District 55",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "van-holston",
+     "name": "Van Holston",
+     "party": "R",
+     "party_code": "R",
+     "votes": 14910
+    },
+    {
+     "id": "lindsey-port",
+     "name": "Lindsey Port",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 24856
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 29
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0176-56-state-senator-district-56",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 56",
+   "district": null,
+   "title": "State Senator District 56",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "raymond-david-petersen",
+     "name": "Raymond David Petersen",
+     "party": "R",
+     "party_code": "R",
+     "votes": 16709
+    },
+    {
+     "id": "erin-maye-quade",
+     "name": "Erin Maye Quade",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 28435
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 43
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0177-57-state-senator-district-57",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 57",
+   "district": null,
+   "title": "State Senator District 57",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-schroer",
+     "name": "Steven Schroer",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 22325
+    },
+    {
+     "id": "zach-duckworth",
+     "name": "Zach Duckworth",
+     "party": "R",
+     "party_code": "R",
+     "votes": 26262
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 29
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0178-58-state-senator-district-58",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 58",
+   "district": null,
+   "title": "State Senator District 58",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-legvold",
+     "name": "Mark Legvold",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 22889
+    },
+    {
+     "id": "bill-lieske",
+     "name": "Bill Lieske",
+     "party": "R",
+     "party_code": "R",
+     "votes": 22226
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 35
+    }
+   ],
+   "precincts": {
+    "reporting": 46,
+    "total": 46,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0179-59-state-senator-district-59",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 59",
+   "district": null,
+   "title": "State Senator District 59",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bobby-joe-champion",
+     "name": "Bobby Joe Champion",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 28994
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 484
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0180-60-state-senator-district-60",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 60",
+   "district": null,
+   "title": "State Senator District 60",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "abigail-wolters",
+     "name": "Abigail Wolters",
+     "party": "R",
+     "party_code": "R",
+     "votes": 3550
+    },
+    {
+     "id": "doron-clark",
+     "name": "Doron Clark",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 33261
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 49
+    }
+   ],
+   "precincts": {
+    "reporting": 25,
+    "total": 25,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0181-61-state-senator-district-61",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 61",
+   "district": null,
+   "title": "State Senator District 61",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "scott-dibble",
+     "name": "Scott Dibble",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 43594
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 483
+    }
+   ],
+   "precincts": {
+    "reporting": 29,
+    "total": 29,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0182-62-state-senator-district-62",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 62",
+   "district": null,
+   "title": "State Senator District 62",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "omar-fateh",
+     "name": "Omar Fateh",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 29733
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 826
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0183-63-state-senator-district-63",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 63",
+   "district": null,
+   "title": "State Senator District 63",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "diane-napper",
+     "name": "Diane Napper",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6023
+    },
+    {
+     "id": "zaynab-mohamed",
+     "name": "Zaynab Mohamed",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 44769
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 126
+    }
+   ],
+   "precincts": {
+    "reporting": 31,
+    "total": 31,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0184-64-state-senator-district-64",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 64",
+   "district": null,
+   "title": "State Senator District 64",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-bushard",
+     "name": "Robert Bushard",
+     "party": "R",
+     "party_code": "R",
+     "votes": 6339
+    },
+    {
+     "id": "erin-murphy",
+     "name": "Erin Murphy",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 41957
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 57
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0185-65-state-senator-district-65",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 65",
+   "district": null,
+   "title": "State Senator District 65",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rocco",
+     "name": "_ Rocco",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4303
+    },
+    {
+     "id": "robyn-gulley",
+     "name": "Robyn Gulley",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 26470
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 145
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0186-66-state-senator-district-66",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 66",
+   "district": null,
+   "title": "State Senator District 66",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clare-oumou-verbeten",
+     "name": "Clare Oumou Verbeten",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 29868
+    },
+    {
+     "id": "kathleen-bart",
+     "name": "Kathleen Bart",
+     "party": "R",
+     "party_code": "R",
+     "votes": 5342
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 63
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "mn-0187-67-state-senator-district-67",
+   "kind": "candidate",
+   "level": "state",
+   "state": "mn",
+   "office": "State Senator District 67",
+   "district": null,
+   "title": "State Senator District 67",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "toby-hesselgrave",
+     "name": "Toby Hesselgrave",
+     "party": "R",
+     "party_code": "R",
+     "votes": 4402
+    },
+    {
+     "id": "foung-hawj",
+     "name": "Foung Hawj",
+     "party": "DFL",
+     "party_code": "D",
+     "votes": 19293
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "WI",
+     "party_code": "O",
+     "votes": 44
+    }
+   ],
+   "precincts": {
+    "reporting": 23,
+    "total": 23,
+    "unit": "precincts"
+   }
+  }
+ ]
+}
