@@ -3,21 +3,31 @@
  "scope": "house",
  "label": "U.S. House",
  "source_ids": [
+  "ak-doe",
+  "al-sos",
+  "ar-tally",
   "az-scytl",
   "ca-sos",
   "fl-dos",
   "ga-scytl",
+  "hi-oe",
+  "id-scytl",
+  "in-enr",
+  "mi-mvic",
   "mt-ersws",
   "nc-sbe",
   "ne-ersws",
   "nm-ersws",
+  "nv-sos",
   "oh-sos",
   "or-ersws",
+  "ri-scytl",
+  "sc-clarity",
   "sd-ersws",
   "ut-scytl",
   "va-scytl"
  ],
- "updated_at": "2026-11-04T13:13:41Z",
+ "updated_at": "2026-11-04T13:24:02Z",
  "certified": false,
  "contests": [
   {
@@ -5316,21 +5326,21 @@
      "name": "Aaron Flint",
      "party": "Republican",
      "party_code": "R",
-     "votes": 106283
+     "votes": 106880
     },
     {
      "id": "sam-forstag",
      "name": "Sam Forstag",
      "party": "Democrat",
      "party_code": "D",
-     "votes": 114005
+     "votes": 114075
     },
     {
      "id": "nick-sheedy",
      "name": "Nick Sheedy",
      "party": "Libertarian",
      "party_code": "O",
-     "votes": 6423
+     "votes": 6443
     }
    ],
    "precincts": {
@@ -5883,6 +5893,2063 @@
     "reporting": 763,
     "total": 763,
     "unit": "precincts"
+   }
+  },
+  {
+   "id": "nv-representative-in-congress-district-1-2ca9e9",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nv",
+   "office": "Representative In Congress, District 1",
+   "district": "1",
+   "title": "Representative In Congress, District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "carrie-buck",
+     "name": "Carrie Buck",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 81873
+    },
+    {
+     "id": "afzal-khan",
+     "name": "Afzal Khan",
+     "party": "NPP",
+     "party_code": "O",
+     "votes": 2864
+    },
+    {
+     "id": "steven-john",
+     "name": "Steven John",
+     "party": "NPP",
+     "party_code": "O",
+     "votes": 3555
+    },
+    {
+     "id": "dina-titus",
+     "name": "Dina Titus",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 127098
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "nv-representative-in-congress-district-2-38861d",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nv",
+   "office": "Representative In Congress, District 2",
+   "district": "2",
+   "title": "Representative In Congress, District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "teresa-f-f-benitez-thompson",
+     "name": "Teresa F. F. Benitez-Thompson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 144014
+    },
+    {
+     "id": "lynn-chapman",
+     "name": "Lynn Chapman",
+     "party": "IAP",
+     "party_code": "O",
+     "votes": 14730
+    },
+    {
+     "id": "david-flippo",
+     "name": "David Flippo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 125031
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "nv-representative-in-congress-district-3-501872",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nv",
+   "office": "Representative In Congress, District 3",
+   "district": "3",
+   "title": "Representative In Congress, District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jon-kamerath",
+     "name": "Jon Kamerath",
+     "party": "IAP",
+     "party_code": "O",
+     "votes": 5617
+    },
+    {
+     "id": "suzanne-lee",
+     "name": "Suzanne Lee",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 146863
+    },
+    {
+     "id": "martin-o-donnell",
+     "name": "Martin O'Donnell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 95845
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "nv-representative-in-congress-district-4-edd5e3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nv",
+   "office": "Representative In Congress, District 4",
+   "district": "4",
+   "title": "Representative In Congress, District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "russell-best",
+     "name": "Russell Best",
+     "party": "IAP",
+     "party_code": "O",
+     "votes": 2133
+    },
+    {
+     "id": "steven-horsford",
+     "name": "Steven Horsford",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 134980
+    },
+    {
+     "id": "william-johnson",
+     "name": "William Johnson",
+     "party": "NPP",
+     "party_code": "O",
+     "votes": 1969
+    },
+    {
+     "id": "cody-whipple",
+     "name": "Cody Whipple",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 84017
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-1st-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "1St District Representative In Congress",
+   "district": "1",
+   "title": "1St District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "liz-hakola",
+     "name": "Liz Hakola",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 2383
+    },
+    {
+     "id": "laveta-davenport",
+     "name": "LaVeta Davenport",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 773
+    },
+    {
+     "id": "arnett-satterla",
+     "name": "Arnett Satterla",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 2757
+    },
+    {
+     "id": "zebulon-featherly",
+     "name": "Zebulon Featherly",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 922
+    },
+    {
+     "id": "jack-bergman",
+     "name": "Jack Bergman",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 216960
+    },
+    {
+     "id": "callie-barr",
+     "name": "Callie Barr",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 178381
+    },
+    {
+     "id": "doc-kovaly",
+     "name": "Doc Kovaly",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 1229
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-2nd-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "2Nd District Representative In Congress",
+   "district": "2",
+   "title": "2Nd District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charlotte-magoon",
+     "name": "Charlotte Magoon",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 3829
+    },
+    {
+     "id": "john-moolenaar",
+     "name": "John Moolenaar",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 218977
+    },
+    {
+     "id": "ben-ambrose",
+     "name": "Ben Ambrose",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 131823
+    },
+    {
+     "id": "richard-sills",
+     "name": "Richard Sills",
+     "party": "NATURAL LAW",
+     "party_code": "O",
+     "votes": 1749
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-3rd-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "3Rd District Representative In Congress",
+   "district": "3",
+   "title": "3Rd District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hillary-scholten",
+     "name": "Hillary Scholten",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 211061
+    },
+    {
+     "id": "terri-deboer",
+     "name": "Terri DeBoer",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 152988
+    },
+    {
+     "id": "joe-jock",
+     "name": "Joe Jock",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 5339
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-4th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "4Th District Representative In Congress",
+   "district": "4",
+   "title": "4Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bill-huizenga",
+     "name": "Bill Huizenga",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 177010
+    },
+    {
+     "id": "sean-mccann",
+     "name": "Sean McCann",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 183502
+    },
+    {
+     "id": "shafina-che-barnett",
+     "name": "Shafina Che Barnett",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 5636
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-5th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "5Th District Representative In Congress",
+   "district": "5",
+   "title": "5Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-bronke",
+     "name": "Jim Bronke",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 1227
+    },
+    {
+     "id": "tim-walberg",
+     "name": "Tim Walberg",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 198729
+    },
+    {
+     "id": "christian-vukasovich",
+     "name": "Christian Vukasovich",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 129797
+    },
+    {
+     "id": "ronald-a-muszynski",
+     "name": "Ronald A Muszynski",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 3457
+    },
+    {
+     "id": "sharon-marie-renier",
+     "name": "Sharon Marie Renier",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 3115
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-6th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "6Th District Representative In Congress",
+   "district": "6",
+   "title": "6Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clyde-shabazz",
+     "name": "Clyde Shabazz",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 1363
+    },
+    {
+     "id": "linda-rayburn",
+     "name": "Linda Rayburn",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 1759
+    },
+    {
+     "id": "debbie-dingell",
+     "name": "Debbie Dingell",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 169607
+    },
+    {
+     "id": "heather-smiley",
+     "name": "Heather Smiley",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 54716
+    },
+    {
+     "id": "timothy-a-teagan",
+     "name": "Timothy A. Teagan",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 1463
+    },
+    {
+     "id": "mike-mickevicius",
+     "name": "Mike Mickevicius",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 547
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-7th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "7Th District Representative In Congress",
+   "district": "7",
+   "title": "7Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shane-dedrick",
+     "name": "Shane Dedrick",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 4974
+    },
+    {
+     "id": "william-lawrence",
+     "name": "William Lawrence",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 202657
+    },
+    {
+     "id": "tom-barrett",
+     "name": "Tom Barrett",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 189482
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-8th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "8Th District Representative In Congress",
+   "district": "8",
+   "title": "8Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-casha",
+     "name": "Jim Casha",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 1039
+    },
+    {
+     "id": "kathy-goodwin",
+     "name": "Kathy Goodwin",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 5146
+    },
+    {
+     "id": "kristen-mcdonald-rivet",
+     "name": "Kristen McDonald Rivet",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 195378
+    },
+    {
+     "id": "thomas-j-smith",
+     "name": "Thomas J. Smith",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 147562
+    },
+    {
+     "id": "c-mia-pettus",
+     "name": "C. Mia Pettus",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 2844
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-9th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "9Th District Representative In Congress",
+   "district": "9",
+   "title": "9Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "destiny-clayton",
+     "name": "Destiny Clayton",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 1079
+    },
+    {
+     "id": "jim-walkowicz",
+     "name": "Jim Walkowicz",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 3170
+    },
+    {
+     "id": "lisa-mcclain",
+     "name": "Lisa McClain",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 184821
+    },
+    {
+     "id": "ray-pooley",
+     "name": "Ray Pooley",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 100748
+    },
+    {
+     "id": "kevin-vayko",
+     "name": "Kevin Vayko",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 2698
+    },
+    {
+     "id": "john-vlahos",
+     "name": "John Vlahos",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 1192
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-10th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "10Th District Representative In Congress",
+   "district": "10",
+   "title": "10Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrea-l-kirby",
+     "name": "Andrea L. Kirby",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 262
+    },
+    {
+     "id": "michael-bouchard",
+     "name": "Michael Bouchard",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 21897
+    },
+    {
+     "id": "christina-bertrand-hines",
+     "name": "Christina Bertrand Hines",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 24285
+    },
+    {
+     "id": "kwabena-nkromo",
+     "name": "Kwabena Nkromo",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 124
+    },
+    {
+     "id": "mike-saliba",
+     "name": "Mike Saliba",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 348
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-11th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "11Th District Representative In Congress",
+   "district": "11",
+   "title": "11Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ryan-teasdale",
+     "name": "Ryan Teasdale",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 2902
+    },
+    {
+     "id": "ethan-baker",
+     "name": "Ethan Baker",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 144529
+    },
+    {
+     "id": "jeremy-moss",
+     "name": "Jeremy Moss",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 238750
+    },
+    {
+     "id": "anil-kumar",
+     "name": "Anil Kumar",
+     "party": "NO PARTY AFFILIATION",
+     "party_code": "O",
+     "votes": 3174
+    },
+    {
+     "id": "farid-ishac",
+     "name": "Farid Ishac",
+     "party": "LIBERTARIAN",
+     "party_code": "O",
+     "votes": 2946
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "mi-12th-district-representative-in-congress-2-year-term-1-position-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "mi",
+   "office": "12Th District Representative In Congress",
+   "district": "12",
+   "title": "12Th District Representative In Congress",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gary-walkowicz",
+     "name": "Gary Walkowicz",
+     "party": "WORKING CLASS PARTY",
+     "party_code": "O",
+     "votes": 351
+    },
+    {
+     "id": "rashida-tlaib",
+     "name": "Rashida Tlaib",
+     "party": "DEMOCRATIC",
+     "party_code": "D",
+     "votes": 38246
+    },
+    {
+     "id": "james-d-hooper",
+     "name": "James D. Hooper",
+     "party": "REPUBLICAN",
+     "party_code": "R",
+     "votes": 7420
+    },
+    {
+     "id": "brenda-k-sanders",
+     "name": "Brenda K. Sanders",
+     "party": "GREEN",
+     "party_code": "O",
+     "votes": 559
+    },
+    {
+     "id": "marc-joseph-sosnowski",
+     "name": "Marc Joseph Sosnowski",
+     "party": "U.S. TAXPAYERS",
+     "party_code": "O",
+     "votes": 213
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "ak-7-u-s-representative",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ak",
+   "office": "U.S. Representative",
+   "district": null,
+   "title": "U.S. Representative",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "begich-nick",
+     "name": "Nick Begich",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 105353
+    },
+    {
+     "id": "hafner-eric",
+     "name": "Eric Hafner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 15501
+    },
+    {
+     "id": "hill-bill",
+     "name": "Bill Hill",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 85838
+    },
+    {
+     "id": "mcdermott-james-c-jim",
+     "name": "James C. \"Jim\" McDermott",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 5763
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only. Ranked-choice tabulation is not released until Nov. 18."
+  },
+  {
+   "id": "ri-representative-in-congress-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ri",
+   "office": "U.S. House",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gabriel-amo",
+     "name": "Gabriel Amo",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 108752
+    },
+    {
+     "id": "kellie-keenan",
+     "name": "Kellie Keenan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 43862
+    },
+    {
+     "id": "pedro-desouza",
+     "name": "Pedro DeSouza",
+     "party": "Ind",
+     "party_code": "O",
+     "votes": 6028
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 223
+    }
+   ],
+   "precincts": {
+    "reporting": 20,
+    "total": 20,
+    "unit": "voting units"
+   }
+  },
+  {
+   "id": "ri-representative-in-congress-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ri",
+   "office": "U.S. House",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "seth-magaziner",
+     "name": "Seth Magaziner",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 119134
+    },
+    {
+     "id": "victor-mellor",
+     "name": "Victor Mellor",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 73353
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": null,
+     "party_code": "O",
+     "votes": 506
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "voting units"
+   }
+  },
+  {
+   "id": "ar-u-s-congress-district-04",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ar",
+   "office": "U.S. Congress District 04",
+   "district": "04",
+   "title": "U.S. Congress District 04",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-rus-russell-iii",
+     "name": "James \"Rus\" Russell, III",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 69153
+    },
+    {
+     "id": "bruce-westerman",
+     "name": "Bruce Westerman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 131253
+    }
+   ],
+   "precincts": {
+    "reporting": 820,
+    "total": 820,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-u-s-congress-district-01",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ar",
+   "office": "U.S. Congress District 01",
+   "district": "01",
+   "title": "U.S. Congress District 01",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "terri-yarbrough-green",
+     "name": "Terri Yarbrough Green",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 60047
+    },
+    {
+     "id": "rick-crawford",
+     "name": "Rick Crawford",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 126902
+    },
+    {
+     "id": "steve-g-parsons",
+     "name": "Steve G. Parsons",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 6936
+    }
+   ],
+   "precincts": {
+    "reporting": 712,
+    "total": 712,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-u-s-congress-district-03",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ar",
+   "office": "U.S. Congress District 03",
+   "district": "03",
+   "title": "U.S. Congress District 03",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bobby-wilson",
+     "name": "Bobby Wilson",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 8413
+    },
+    {
+     "id": "robb-ryerse",
+     "name": "Robb Ryerse",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 96189
+    },
+    {
+     "id": "steve-womack",
+     "name": "Steve Womack",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 127303
+    }
+   ],
+   "precincts": {
+    "reporting": 833,
+    "total": 833,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "ar-u-s-congress-district-02",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ar",
+   "office": "U.S. Congress District 02",
+   "district": "02",
+   "title": "U.S. Congress District 02",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "french-hill",
+     "name": "French Hill",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 127427
+    },
+    {
+     "id": "chris-jones",
+     "name": "Chris Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 123025
+    }
+   ],
+   "precincts": {
+    "reporting": 404,
+    "total": 404,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 1",
+   "district": "1",
+   "title": "U.S. House of Representatives, District 1",
+   "choices": [
+    {
+     "id": "rep-jenny-costa-honeycutt",
+     "name": "Jenny Costa Honeycutt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 158570
+    },
+    {
+     "id": "lib-bill-reeside",
+     "name": "Bill Reeside",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 5346
+    },
+    {
+     "id": "dem-nancy-lacore",
+     "name": "Nancy Lacore",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 161878
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 218
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 2",
+   "district": "2",
+   "title": "U.S. House of Representatives, District 2",
+   "choices": [
+    {
+     "id": "rep-joe-wilson",
+     "name": "Joe Wilson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 147620
+    },
+    {
+     "id": "dem-zyon-khalifa",
+     "name": "Zyon Khalifa",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 144593
+    },
+    {
+     "id": "wrk-dayna-alane-smith",
+     "name": "WRK Dayna Alane Smith",
+     "party": "WRK",
+     "party_code": "O",
+     "votes": 3665
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 332
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 3",
+   "district": "3",
+   "title": "U.S. House of Representatives, District 3",
+   "choices": [
+    {
+     "id": "rep-sheri-biggs",
+     "name": "Sheri Biggs",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 173801
+    },
+    {
+     "id": "lib-brian-corriea",
+     "name": "Brian Corriea",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 5094
+    },
+    {
+     "id": "dem-eunice-lehmacher",
+     "name": "Eunice Lehmacher",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 93821
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 150
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 4",
+   "district": "4",
+   "title": "U.S. House of Representatives, District 4",
+   "choices": [
+    {
+     "id": "rep-william-timmons",
+     "name": "William Timmons",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 146808
+    },
+    {
+     "id": "lib-jessica-ethridge",
+     "name": "Jessica Ethridge",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 7205
+    },
+    {
+     "id": "dem-courtney-mcclain",
+     "name": "Courtney McClain",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 129561
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 292
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 5",
+   "district": "5",
+   "title": "U.S. House of Representatives, District 5",
+   "choices": [
+    {
+     "id": "rep-wes-climer",
+     "name": "Wes Climer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 151553
+    },
+    {
+     "id": "dem-mallory-dittmer",
+     "name": "Mallory Dittmer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 135157
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 155
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 6",
+   "district": "6",
+   "title": "U.S. House of Representatives, District 6",
+   "choices": [
+    {
+     "id": "rep-john-peterson",
+     "name": "John Peterson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 79497
+    },
+    {
+     "id": "dem-james-e-jim-clyburn",
+     "name": "James E Jim Clyburn",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 180559
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 318
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "sc-u-s-house-of-representatives-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "sc",
+   "office": "U.S. House of Representatives, District 7",
+   "district": "7",
+   "title": "U.S. House of Representatives, District 7",
+   "choices": [
+    {
+     "id": "rep-russell-fry",
+     "name": "Russell Fry",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 172308
+    },
+    {
+     "id": "dem-john-gregory-vincent",
+     "name": "John Gregory Vincent",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 131319
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": "NON",
+     "party_code": "O",
+     "votes": 204
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "id-united-states-representative-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "id",
+   "office": "U.S. House",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "russ-fulcher",
+     "name": "Russ Fulcher",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 235535
+    },
+    {
+     "id": "kaylee-peterson",
+     "name": "Kaylee Peterson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 104452
+    },
+    {
+     "id": "sarah-zabel",
+     "name": "Sarah Zabel",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 22050
+    },
+    {
+     "id": "brendan-j-gomez",
+     "name": "Brendan J. Gomez",
+     "party": "CON",
+     "party_code": "O",
+     "votes": 3318
+    }
+   ],
+   "precincts": {
+    "reporting": 19,
+    "total": 19,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "id-united-states-representative-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "id",
+   "office": "U.S. House",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-simpson",
+     "name": "Mike Simpson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 168203
+    },
+    {
+     "id": "ellie-gilbreath",
+     "name": "Ellie Gilbreath",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 131242
+    },
+    {
+     "id": "tripp-charles-hutchinson",
+     "name": "Tripp Charles Hutchinson",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 11405
+    },
+    {
+     "id": "emre-houser",
+     "name": "Emre Houser",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 7728
+    },
+    {
+     "id": "will-johanson",
+     "name": "Will Johanson",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 7005
+    }
+   ],
+   "precincts": {
+    "reporting": 26,
+    "total": 26,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "hi-30-u-s-representative-dist-i",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "hi",
+   "office": "U.S. Representative, Dist I",
+   "district": "1",
+   "title": "U.S. Representative, Dist I",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ed-case",
+     "name": "Ed Case",
+     "party": "D",
+     "party_code": "D",
+     "votes": 100096
+    },
+    {
+     "id": "adriel-c-lam",
+     "name": "Adriel C. Lam",
+     "party": "R",
+     "party_code": "R",
+     "votes": 28685
+    },
+    {
+     "id": "jordan-s-conley",
+     "name": "Jordan S. Conley",
+     "party": "G",
+     "party_code": "O",
+     "votes": 4528
+    },
+    {
+     "id": "nathan-m-berning",
+     "name": "Nathan M. Berning",
+     "party": "N",
+     "party_code": "O",
+     "votes": 1780
+    }
+   ],
+   "precincts": {
+    "reporting": 112,
+    "total": 223,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "hi-5-u-s-representative-dist-ii",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "hi",
+   "office": "U.S. Representative, Dist II",
+   "district": "2",
+   "title": "U.S. Representative, Dist II",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jill-n-tokuda",
+     "name": "Jill N. Tokuda",
+     "party": "D",
+     "party_code": "D",
+     "votes": 108369
+    },
+    {
+     "id": "brenton-awa",
+     "name": "Brenton Awa",
+     "party": "R",
+     "party_code": "R",
+     "votes": 48764
+    }
+   ],
+   "precincts": {
+    "reporting": 43,
+    "total": 273,
+    "unit": "precincts"
+   }
+  },
+  {
+   "id": "al-united-states-representative-1st-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 1St Congressional District",
+   "district": "1",
+   "title": "United States Representative, 1St Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "clyde-jones",
+     "name": "Clyde Jones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 94925
+    },
+    {
+     "id": "jerry-carl",
+     "name": "Jerry Carl",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 137016
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 190
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-2nd-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 2Nd Congressional District",
+   "district": "2",
+   "title": "United States Representative, 2Nd Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "shomari-c-figures",
+     "name": "Shomari C. Figures",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 124422
+    },
+    {
+     "id": "rhett-marques",
+     "name": "Rhett Marques",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 107049
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 338
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-3rd-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 3Rd Congressional District",
+   "district": "3",
+   "title": "United States Representative, 3Rd Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lee-mcinnis",
+     "name": "Lee McInnis",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 79860
+    },
+    {
+     "id": "mike-rogers",
+     "name": "Mike Rogers",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 141274
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 306
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-4th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 4Th Congressional District",
+   "district": "4",
+   "title": "United States Representative, 4Th Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amanda-n-pusczek",
+     "name": "Amanda N. Pusczek",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 53633
+    },
+    {
+     "id": "robert-b-aderholt",
+     "name": "Robert B. Aderholt",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 160008
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 271
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-5th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 5Th Congressional District",
+   "district": "5",
+   "title": "United States Representative, 5Th Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-sneed",
+     "name": "Andrew Sneed",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 124763
+    },
+    {
+     "id": "dale-w-strong",
+     "name": "Dale W. Strong",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 142080
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 293
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-6th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 6Th Congressional District",
+   "district": "6",
+   "title": "United States Representative, 6Th Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maurice-mercer",
+     "name": "Maurice Mercer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 110957
+    },
+    {
+     "id": "gary-palmer",
+     "name": "Gary Palmer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 149921
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 257
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "al-united-states-representative-7th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "al",
+   "office": "United States Representative, 7Th Congressional District",
+   "district": "7",
+   "title": "United States Representative, 7Th Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "terri-sewell",
+     "name": "Terri Sewell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 174823
+    },
+    {
+     "id": "ammie-akin",
+     "name": "Ammie Akin",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 77085
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 173
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4912-united-states-representative-first-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, First District",
+   "district": "1",
+   "title": "United States Representative, First District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "frank-j-mrvan",
+     "name": "Frank J. Mrvan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 95632
+    },
+    {
+     "id": "barb-regnitz",
+     "name": "Barb Regnitz",
+     "party": "R",
+     "party_code": "R",
+     "votes": 48931
+    },
+    {
+     "id": "alexander-r-alex-degman-w-i",
+     "name": "Alexander R (Alex) Degman (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "prescription-dope-deaths-johnson-jr-w-i",
+     "name": "Prescription Dope Deaths Johnson, Jr (W/I)",
+     "party": "O",
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2136-united-states-representative-second-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Second District",
+   "district": "2",
+   "title": "United States Representative, Second District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rudy-yakym",
+     "name": "Rudy Yakym",
+     "party": "R",
+     "party_code": "R",
+     "votes": 93633
+    },
+    {
+     "id": "jamee-decio",
+     "name": "Jamee Decio",
+     "party": "D",
+     "party_code": "D",
+     "votes": 84852
+    },
+    {
+     "id": "william-eric-henry",
+     "name": "William Eric Henry",
+     "party": "L",
+     "party_code": "O",
+     "votes": 4543
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1590-united-states-representative-third-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Third District",
+   "district": "3",
+   "title": "United States Representative, Third District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kelly-thompson",
+     "name": "Kelly Thompson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 90180
+    },
+    {
+     "id": "marlin-a-stutzman",
+     "name": "Marlin A. Stutzman",
+     "party": "R",
+     "party_code": "R",
+     "votes": 62702
+    },
+    {
+     "id": "phillip-d-beachy-phil-w-i",
+     "name": "Phillip D. Beachy (Phil) (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1997-united-states-representative-fourth-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Fourth District",
+   "district": "4",
+   "title": "United States Representative, Fourth District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jim-baird",
+     "name": "Jim Baird",
+     "party": "R",
+     "party_code": "R",
+     "votes": 112407
+    },
+    {
+     "id": "drew-cox",
+     "name": "Drew Cox",
+     "party": "D",
+     "party_code": "D",
+     "votes": 95115
+    },
+    {
+     "id": "david-e-bokash-w-i",
+     "name": "David E. Bokash (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 34
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-5256-united-states-representative-fifth-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Fifth District",
+   "district": "5",
+   "title": "United States Representative, Fifth District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "j-d-ford",
+     "name": "J.D. Ford",
+     "party": "D",
+     "party_code": "D",
+     "votes": 116844
+    },
+    {
+     "id": "victoria-spartz",
+     "name": "Victoria Spartz",
+     "party": "R",
+     "party_code": "R",
+     "votes": 107239
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-2995-united-states-representative-sixth-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Sixth District",
+   "district": "6",
+   "title": "United States Representative, Sixth District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jefferson-shreve",
+     "name": "Jefferson Shreve",
+     "party": "R",
+     "party_code": "R",
+     "votes": 93185
+    },
+    {
+     "id": "cynthia-cinde-wirth",
+     "name": "Cynthia (Cinde) Wirth",
+     "party": "D",
+     "party_code": "D",
+     "votes": 68486
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-4908-united-states-representative-seventh-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Seventh District",
+   "district": "7",
+   "title": "United States Representative, Seventh District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andr-carson",
+     "name": "André Carson",
+     "party": "D",
+     "party_code": "D",
+     "votes": 31792
+    },
+    {
+     "id": "patrick-mcauley",
+     "name": "Patrick McAuley",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12259
+    },
+    {
+     "id": "james-m-sceniak",
+     "name": "James M Sceniak",
+     "party": "L",
+     "party_code": "O",
+     "votes": 1458
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-1946-united-states-representative-eighth-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Eighth District",
+   "district": "8",
+   "title": "United States Representative, Eighth District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-messmer",
+     "name": "Mark Messmer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 101333
+    },
+    {
+     "id": "mary-allen",
+     "name": "Mary Allen",
+     "party": "D",
+     "party_code": "D",
+     "votes": 78349
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "in-3409-united-states-representative-ninth-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "in",
+   "office": "United States Representative, Ninth District",
+   "district": "9",
+   "title": "United States Representative, Ninth District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "erin-houchin",
+     "name": "Erin Houchin",
+     "party": "R",
+     "party_code": "R",
+     "votes": 120018
+    },
+    {
+     "id": "brad-a-meyer",
+     "name": "Brad A. Meyer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 96509
+    },
+    {
+     "id": "tonya-l-hudson",
+     "name": "Tonya L. Hudson",
+     "party": "L",
+     "party_code": "O",
+     "votes": 5454
+    },
+    {
+     "id": "floyd-michael-taylor-w-i",
+     "name": "Floyd Michael Taylor (W/I)",
+     "party": "I",
+     "party_code": "O",
+     "votes": 41
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
    }
   }
  ]

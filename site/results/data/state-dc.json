@@ -1,0 +1,869 @@
+{
+ "schema": "theway-results/1",
+ "scope": "state-dc",
+ "label": "District of Columbia",
+ "source_ids": [
+  "dc-boe"
+ ],
+ "updated_at": "2026-11-04T13:24:02Z",
+ "certified": false,
+ "contests": [
+  {
+   "id": "dc-delegate-to-the-house-of-representatives-from-the-district-of-colum",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Delegate To The House Of Representatives From The District Of Columbia (non-voting)",
+   "district": null,
+   "title": "Delegate To The House Of Representatives From The District Of Columbia (non-voting)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "denise-rosado",
+     "name": "Denise Rosado",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11583
+    },
+    {
+     "id": "robert-white",
+     "name": "Robert White",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 157979
+    },
+    {
+     "id": "kymone-freeman",
+     "name": "Kymone Freeman",
+     "party": "STG",
+     "party_code": "O",
+     "votes": 10275
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 1142
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 602
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3181
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only; ranked-choice rounds are published later."
+  },
+  {
+   "id": "dc-mayor-of-the-district-of-columbia",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Mayor Of The District Of Columbia",
+   "district": null,
+   "title": "Mayor Of The District Of Columbia",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rhonda-hamilton",
+     "name": "Rhonda Hamilton",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 18073
+    },
+    {
+     "id": "janeese-lewis-george",
+     "name": "Janeese Lewis George",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 151539
+    },
+    {
+     "id": "robert-l-gross",
+     "name": "Robert L. Gross",
+     "party": "STG",
+     "party_code": "O",
+     "votes": 6297
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 3765
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 424
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 4977
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only; ranked-choice rounds are published later."
+  },
+  {
+   "id": "dc-chairman-of-the-council-of-the-district-of-columbia",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Chairman Of The Council Of The District Of Columbia",
+   "district": null,
+   "title": "Chairman Of The Council Of The District Of Columbia",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "phil-mendelson",
+     "name": "Phil Mendelson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 161936
+    },
+    {
+     "id": "abi-ananiah-prudent",
+     "name": "Abi-Ananiah Prudent",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10629
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 2013
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 285
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 10212
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "dc-at-large-member-of-the-council-of-the-district-of-columbia",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "At-Large Member Of The Council Of The District Of Columbia",
+   "district": null,
+   "title": "At-Large Member Of The Council Of The District Of Columbia",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "oye-owolewa",
+     "name": "Oye Owolewa",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 126272
+    },
+    {
+     "id": "darryl-moch",
+     "name": "Darryl Moch",
+     "party": "STG",
+     "party_code": "O",
+     "votes": 5975
+    },
+    {
+     "id": "darrell-green",
+     "name": "Darrell Green",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10788
+    },
+    {
+     "id": "elissa-silverman",
+     "name": "Elissa Silverman",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 36903
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 995
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 724
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3418
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only; ranked-choice rounds are published later."
+  },
+  {
+   "id": "dc-ward-one-member-of-the-council-of-the-district-of-columbia",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Ward One Member Of The Council Of The District Of Columbia",
+   "district": null,
+   "title": "Ward One Member Of The Council Of The District Of Columbia",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jett-james-jasper",
+     "name": "Jett James Jasper",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1141
+    },
+    {
+     "id": "ryan-prince",
+     "name": "Ryan Prince",
+     "party": "IND",
+     "party_code": "O",
+     "votes": 870
+    },
+    {
+     "id": "jude-crannitch",
+     "name": "Jude Crannitch",
+     "party": "STG",
+     "party_code": "O",
+     "votes": 616
+    },
+    {
+     "id": "aparna-raj",
+     "name": "Aparna Raj",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 19072
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 391
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 98
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 556
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only; ranked-choice rounds are published later."
+  },
+  {
+   "id": "dc-ward-three-member-of-the-council-of-the-district-of-columbia",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Ward Three Member Of The Council Of The District Of Columbia",
+   "district": null,
+   "title": "Ward Three Member Of The Council Of The District Of Columbia",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-frumin",
+     "name": "Matthew Frumin",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 22081
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 859
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 11
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2786
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "dc-ward-five-member-of-the-council-of-the-district-of-columbia",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Ward Five Member Of The Council Of The District Of Columbia",
+   "district": null,
+   "title": "Ward Five Member Of The Council Of The District Of Columbia",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "zachary-parker",
+     "name": "Zachary Parker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 22873
+    },
+    {
+     "id": "joyce-robinson-paul",
+     "name": "Joyce Robinson-Paul",
+     "party": "STG",
+     "party_code": "O",
+     "votes": 1618
+    },
+    {
+     "id": "jeffrey-kihien-palza",
+     "name": "Jeffrey Kihien-Palza",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 874
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 102
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 56
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 456
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only; ranked-choice rounds are published later."
+  },
+  {
+   "id": "dc-ward-six-member-of-the-council-of-the-district-of-columbia",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Ward Six Member Of The Council Of The District Of Columbia",
+   "district": null,
+   "title": "Ward Six Member Of The Council Of The District Of Columbia",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charles-allen",
+     "name": "Charles Allen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 23657
+    },
+    {
+     "id": "jorge-rice",
+     "name": "Jorge Rice",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2676
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 255
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 18
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 859
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "dc-attorney-general-for-the-district-of-columbia",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Attorney General For The District Of Columbia",
+   "district": null,
+   "title": "Attorney General For The District Of Columbia",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "manuel-rivera",
+     "name": "Manuel Rivera",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12416
+    },
+    {
+     "id": "brian-l-schwalb",
+     "name": "Brian L. Schwalb",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 165147
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 1237
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 443
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5832
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "dc-united-states-senator",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "United States Senator",
+   "district": null,
+   "title": "United States Senator",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-simmons",
+     "name": "Robert Simmons",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11825
+    },
+    {
+     "id": "paul-strauss",
+     "name": "Paul Strauss",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 161041
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 2039
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 369
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 9477
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "dc-united-states-representative-citywide",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "United States Representative Citywide",
+   "district": null,
+   "title": "United States Representative Citywide",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ciprian-ivanof",
+     "name": "Ciprian Ivanof",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10247
+    },
+    {
+     "id": "franklin-garcia",
+     "name": "Franklin Garcia",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 161019
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 1861
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 316
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 11308
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "dc-ward-one-member-of-the-state-board-of-education",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Ward One Member Of The State Board Of Education",
+   "district": null,
+   "title": "Ward One Member Of The State Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ben-williams",
+     "name": "Ben Williams",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 16605
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 261
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 13
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 5865
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "dc-ward-three-member-of-the-state-board-of-education",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Ward Three Member Of The State Board Of Education",
+   "district": null,
+   "title": "Ward Three Member Of The State Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "eric-goulet",
+     "name": "Eric Goulet",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 10163
+    },
+    {
+     "id": "aaron-wesolowski",
+     "name": "Aaron Wesolowski",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 9700
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 248
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 20
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 5606
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "dc-ward-five-member-of-the-state-board-of-education",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Ward Five Member Of The State Board Of Education",
+   "district": null,
+   "title": "Ward Five Member Of The State Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jon-alfuth",
+     "name": "Jon Alfuth",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 4846
+    },
+    {
+     "id": "lynn-jennings",
+     "name": "Lynn Jennings",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 16623
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 232
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 39
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 4239
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  },
+  {
+   "id": "dc-ward-six-member-of-the-state-board-of-education",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Ward Six Member Of The State Board Of Education",
+   "district": null,
+   "title": "Ward Six Member Of The State Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amber-a-williams",
+     "name": "Amber A. Williams",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 12852
+    },
+    {
+     "id": "david-parker",
+     "name": "David Parker",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 2853
+    },
+    {
+     "id": "joshua-wiley",
+     "name": "Joshua Wiley",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 6105
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 350
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 47
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 5258
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "text": "First-choice (round 1) votes only; ranked-choice rounds are published later."
+  },
+  {
+   "id": "dc-initiative-measure-no-86",
+   "kind": "candidate",
+   "level": "state",
+   "state": "dc",
+   "office": "Initiative Measure No. 86",
+   "district": null,
+   "title": "Initiative Measure No. 86",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes-to-approve",
+     "name": "Yes, to approve",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 117053
+    },
+    {
+     "id": "no-to-reject",
+     "name": "No, to reject",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 42615
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 121
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 25286
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   }
+  }
+ ]
+}
