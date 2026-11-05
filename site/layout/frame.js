@@ -10,7 +10,9 @@
   if (!body || !body.classList.contains('wf')) return;
   var host = document.querySelector('[data-wf-main]');
   if (!host) return;
-  var kind = body.getAttribute('data-wf') === 'pick' ? 'pick' : 'facts';
+  // The Nov 3, 2026 guides are archived and picking is closed (members/waybar.js, BALLOTS_ARCHIVED): no pick box on those pages.
+  var archived = /^\/(guide|map)(-[a-z]{2})?\//.exec(location.pathname);
+  var kind = body.getAttribute('data-wf') === 'pick' && !archived ? 'pick' : 'facts';
 
   function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
   function box(title) { var b = el('section', 'wf-box'); var h = el('h2', 'wf-box-title', title); b.appendChild(h); return b; }
@@ -26,6 +28,14 @@
   if (facts) {
     var fb = box(facts.getAttribute('data-title') || 'Key facts');
     facts.hidden = false; fb.appendChild(facts); side.appendChild(fb);
+  }
+
+  // ---- archived guide: point to what happened
+  if (archived) {
+    var rb = box('After the election');
+    var rp = el('p', 'wf-fine', 'This guide is kept as a record of the November 3, 2026 ballot. ');
+    var ra = el('a', null, 'See the results for this state'); ra.href = '/results/?state=' + (archived[2] || 'co') + '#tabs';
+    rp.appendChild(ra); rb.appendChild(rp); side.appendChild(rb);
   }
 
   // ---- Your pick and notes
