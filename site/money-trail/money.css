@@ -42,3 +42,6 @@ footer{border-top:1px solid #315363;padding:23px 0 15px;margin-top:28px;display:
 .tab:focus-visible{outline:none;box-shadow:var(--ring)}
 .tab.active{background:var(--mint);color:#06141e;border-color:var(--mint);font-weight:800}
 @media(max-width:760px){.tabs{gap:6px;flex-wrap:nowrap}.tab{flex:1;font-size:15px;padding:12px 6px;min-height:52px;border-radius:10px 10px 0 0;text-align:center;line-height:1.2}}
+.graph-node .graph-sub{font-size:11px;font-weight:400;fill:#a5c2c8}
+/* keep the filters and the Evidence Inspector clear of the floating side buttons on wide screens */
+@media(min-width:1251px){main{padding-left:max(clamp(16px,3.2vw,52px),118px);padding-right:max(clamp(16px,3.2vw,52px),118px)}}
