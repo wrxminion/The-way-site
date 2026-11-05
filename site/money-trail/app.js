@@ -21,6 +21,27 @@ const coGuide={'CO-NN':[['The Way · Proposition NN guide','/guide/measures/prop
 ['81','82','83','84','85','86','87'].forEach(n=>coGuide['CO-'+n]=[['The Way · Amendment '+n+' guide','/guide/measures/amendment-'+n+'.html']]);
 ['132','133','134','135','136','137'].forEach(n=>coGuide['CO-'+n]=[['The Way · Proposition '+n+' guide','/guide/measures/proposition-'+n+'.html']]);
 function hubLabel(name){const b=ballotById[name];return b?measureName(b)+': '+b.short_title:name}
+// Passed or Failed for each measure, from the live results files. Same rule as /results/outcome.js: only an AP call,
+// an official call or state certification counts. A state page that only shows who is ahead is not a call.
+const measureOutcome={},measureGuide={};
+function voteSide(x){const s=String((x&&(x.id||''))+' '+(x&&(x.name||''))).toLowerCase().trim();return /^(yes|for|approve)\b/.test(s)?'yes':/^(no|against|reject)\b/.test(s)?'no':null}
+function readOutcome(c,file){let total=0,yes=null,no=null;(c.choices||[]).forEach(x=>{total+=x.votes||0;const s=voteSide(x);if(s==='yes'&&!yes)yes=x;if(s==='no'&&!no)no=x});
+ const cl=c.called,certified=cl&&(cl.kind==='certified'||(file&&file.certified===true&&cl.kind!=='ap'&&cl.kind!=='state_leader'));let winner=null;
+ if(cl&&cl.winner&&cl.kind!=='state_leader')(c.choices||[]).forEach(x=>{if(x.id===cl.winner)winner=x});const ws=winner&&voteSide(winner);
+ const pct=x=>total&&x?Math.round(1000*(x.votes||0)/total)/10:null;const o={yesPct:pct(yes),noPct:pct(no),total};
+ if(ws==='yes'||ws==='no'){o.status=ws==='yes'?'passed':'failed';o.who=certified?'Certified by the state':cl.kind==='ap'?'What AP is calling (not certified)':'Called by '+(cl.by||'the official source')+' (not certified)';}
+ else{o.status='open';o.who=total?'Not yet called. Neither AP nor the state has called it.':'No vote count yet.';}
+ return o}
+function outcomeBox(mid){const o=measureOutcome[mid];if(!o)return `<div class="mt-outcome open"><b>Result not loaded</b><span>No November 3, 2026 result for this measure is in our results files.</span></div>`;
+ const word=o.status==='passed'?'✓ PASSED':o.status==='failed'?'✗ FAILED':'… NOT YET CALLED';
+ const means=o.status==='passed'?'You are following the money around a measure that passed.':o.status==='failed'?'You are following the money around a measure that failed.':'';
+ const votes=o.yesPct!=null&&o.noPct!=null?`<span>YES ${o.yesPct}% · NO ${o.noPct}%</span>`:'';
+ return `<div class="mt-outcome ${o.status}"><b>${word}</b><span>${escapeHtml(o.who)}</span>${votes}${means?`<p>${means}</p>`:''}</div>`}
+function outcomeColor(mid){const o=measureOutcome[mid];return o&&o.status==='passed'?'#3ddc84':o&&o.status==='failed'?'#ff6b6b':null}
+fetch('measure-results.json?t='+Math.floor(Date.now()/60000),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(map=>{if(!map||!map.measures)return;
+ const files={};Object.entries(map.measures).forEach(([mid,e])=>{if(e.guide)measureGuide[mid]=e.guide;if(/^[a-z0-9-]+\.json$/.test(e.file||''))(files[e.file]=files[e.file]||[]).push([mid,e.contest])});
+ return Promise.all(Object.entries(files).map(([f,list])=>fetch('/results/data/'+f+'?t='+Math.floor(Date.now()/60000),{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null).then(d=>{if(!d)return;
+  list.forEach(([mid,id])=>{const c=(d.contests||[]).find(k=>k.id===id);if(c)measureOutcome[mid]=readOutcome(c,d)})})))}).catch(()=>null).then(()=>{if(view==='network')renderGraph();if(selected&&selected.record_kind==='ballot')details(selected)});
 const events=[...RESEARCH.transactions,...RESEARCH.ballots,...RESEARCH.reported_observations];
 const eventMap=Object.fromEntries(events.map(e=>[e.event_id,e]));
 let view='timeline',selected=null,visible=30,graphHub='GOPAC ELECTION FUND',stateFocus='CO',graphScale=1;
@@ -55,7 +76,7 @@ function renderTimeline(){const a=filtered(),shown=a.slice(0,visible);let month=
 function datum(key,val){if(val===undefined||val===null||val==='')return '';return `<div class="datum"><div class="key">${escapeHtml(key)}</div><div class="val">${escapeHtml(val)}</div></div>`}
 function sourceButton(url,label='Open original filing / source'){url=safeUrl(url);return url?`<a class="detail-link" href="${escapeHtml(url)}" rel="noopener noreferrer" target="_blank">${escapeHtml(label)} ↗</a>`:''}
 function positionPanel(mid){let ps=positionsByMeasure[mid]||[];let sides={support:[],oppose:[],other:[]};for(let p of ps){let side=/support|yes|favor/i.test(p.stance||'')?'support':/oppose|no|against/i.test(p.stance||'')?'oppose':'other';sides[side].push(p)};return `<div class="side-group"><h4>Campaign sides · documented positions</h4><p><strong>Support:</strong> ${sides.support.length?sides.support.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p><strong>Opposition:</strong> ${sides.oppose.length?sides.oppose.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p>These positions do not prove how any particular donation was allocated.</p></div>`}
-function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<span class="event-kind ${kind}">${escapeHtml(kindLabel(e)||'Graph connection')}</span><h2>${escapeHtml(getTitle(e))}</h2>`;
+function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<span class="event-kind ${kind}">${escapeHtml(kindLabel(e)||'Graph connection')}</span>`+(kind==='ballot'?outcomeBox(e.measure_id):'')+`<h2>${escapeHtml(getTitle(e))}</h2>`;
  if(kind==='transaction'){
  h+=`<div class="event-amount mt-big">${money(e.amount_usd)}</div>`;
  h+=datum('Reported transaction date',dateText(e.transaction_date))+datum('Date semantics',e.date_kind)+datum('Source',e.source_name)+datum('Recipient',e.recipient_name)+datum('Source entity ID',e.source_entity_id)+datum('Recipient entity ID',e.recipient_entity_id)+datum('Election cycle',e.cycle)+datum('Jurisdiction / attribution',e.jurisdiction)+datum('Filing classification',e.activity_type)+datum('Confidence as recorded',e.confidence)+datum('Amendment status',e.amendment_status)+datum('Filing identifier',e.filing_id);
@@ -64,7 +85,7 @@ function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<span cl
  h+=`<button class="detail-action" id="to-graph">Explore this relationship in network</button>`;
  }else if(kind==='ballot'){
  h+=datum('Election date',dateText(e.election_date))+datum('State',stName[e.state]||e.state)+datum('Question number',e.measure_number)+datum('Scope',e.scope)+datum('Official source status',e.source_status)+datum('Support committee review',e.support_committee_review||'Not checked')+datum('Opposition committee review',e.opposition_committee_review||'Not checked')+datum('Donor/vendor/ad reconciliation',e.donor_vendor_ad_reconciliation||'Pending');
- h+=sourceButton(e.source_url,'Open official ballot source')+(coGuide[e.measure_id]||[]).map(([l,u])=>`<a class="detail-link" href="${escapeHtml(u)}">${escapeHtml(l)} →</a>`).join('')+positionPanel(e.measure_id)+datum('Research notes',e.notes);
+ h+=sourceButton(e.source_url,'Open official ballot source')+(coGuide[e.measure_id]||(measureGuide[e.measure_id]?[['The Way · '+measureName(e)+' guide',measureGuide[e.measure_id]]]:[])).map(([l,u])=>`<a class="detail-link" href="${escapeHtml(u)}">${escapeHtml(l)} →</a>`).join('')+positionPanel(e.measure_id)+datum('Research notes',e.notes);
  }else if(kind==='reported'){
  h+=`<div class="event-amount mt-big">${money(e.amount_usd)}</div>`;
  h+=`<div class="detail-caution">This is a reported disclosure observation. It is NOT confirmed as one uniquely itemized transfer and may overlap other reports.</div>`;
@@ -110,9 +131,9 @@ function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const n
  other.forEach((n,i)=>{const inner=i<Math.min(16,total);const sameName=n.central;const radius=sameName?68:inner?200:290;const idx=sameName?i:(inner?i: i-16);const span=sameName?Math.max(roots.length-1,1):inner?Math.min(16,total):Math.max(total-16,1);let angle=2*Math.PI*(idx/Math.max(span,1))-.5*Math.PI;pos[n.id]={x:cx+Math.cos(angle)*radius+(i%2?2:-2),y:cy+Math.sin(angle)*radius*.86};});
  let pan=svgEl('g',{transform:`translate(${cx*(1-graphScale)} ${cy*(1-graphScale)}) scale(${graphScale})`},svg);
  for(let {a,b,e} of net.edges){let A=pos[a],B=pos[b];if(!A||!B)continue;let tier=e.tier;let line=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:tier==='itemized'?'#57c2ad':tier==='reported'?'#ad946c':'#659eb3','stroke-width':tier==='itemized'?'1.8':'1.3','stroke-dasharray':tier==='itemized'?'none':tier==='reported'?'7 5':'2 5',class:'graph-edge',opacity:'.7'},pan);svgEl('title',{},line).textContent=`${e.from_name} → ${e.to_name}\n${e.amount_usd!=null?money(e.amount_usd):'Non-financial'}\n${e.edge_type}`;line.addEventListener('click',()=>pick(e.record_ref||e));}
- for(let n of net.nodes){let P=pos[n.id],isRoot=n.id===root.id;let group=svgEl('g',{class:'graph-node'},pan);let circ=svgEl('circle',{cx:P.x,cy:P.y,r:isRoot?'24':n.central?'11':Math.max(6,Math.min(14,7+n.count/4)),fill:isRoot?'#6be3c9':n.central?'#c4b18a':'#4c9ba5'},group);svgEl('title',{},group).textContent=`${n.name}\n${n.id}\n${n.count} connections`;
+ for(let n of net.nodes){let P=pos[n.id],isRoot=n.id===root.id;let group=svgEl('g',{class:'graph-node'},pan);let circ=svgEl('circle',{cx:P.x,cy:P.y,r:isRoot?'24':n.central?'11':ballotById[n.name]?'13':Math.max(6,Math.min(14,7+n.count/4)),fill:(ballotById[n.name]&&outcomeColor(n.name))||(isRoot?'#6be3c9':n.central?'#c4b18a':'#4c9ba5')},group);if(ballotById[n.name]&&outcomeColor(n.name))circ.setAttribute('stroke','#ffffff'),circ.setAttribute('stroke-width','3');svgEl('title',{},group).textContent=`${n.name}\n${n.id}\n${n.count} connections`;
  if(isRoot||n.count>=2||other.indexOf(n)<17){let text=svgEl('text',{x:P.x,y:P.y+(isRoot?42:24),'text-anchor':'middle'},group);const mb=ballotById[n.name];let label=mb?mb.state+' '+measureName(mb).slice((stName[mb.state]||mb.state).length+1):n.name;label=label.length>24?label.slice(0,22)+'…':label;text.textContent=label;
- if(mb){let sub=svgEl('text',{x:P.x,y:P.y+(isRoot?60:40),'text-anchor':'middle',class:'graph-sub'},group);sub.textContent=mb.short_title.length>34?mb.short_title.slice(0,32)+'…':mb.short_title;}}
+ if(mb){let sub=svgEl('text',{x:P.x,y:P.y+(isRoot?60:40),'text-anchor':'middle',class:'graph-sub'},group);sub.textContent=mb.short_title.length>34?mb.short_title.slice(0,32)+'…':mb.short_title;const mo=measureOutcome[n.name];if(mo){let st=svgEl('text',{x:P.x,y:P.y+(isRoot?84:62),'text-anchor':'middle',class:'graph-status '+mo.status},group);st.textContent=mo.status==='passed'?'✓ PASSED':mo.status==='failed'?'✗ FAILED':'Not yet called';}}}
  group.addEventListener('click',()=>{const mb=ballotById[n.name];if(mb){pick({...mb});if(n.name!==graphHub){graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()}return;}
  if(n.name===graphHub){const ent=entityById[n.id];if(ent){pick({record_kind:'graph',from_name:ent.legal_or_reported_name,to_name:'registered entity',edge_type:ent.entity_type,source_url:ent.source_url,notes:ent.notes,jurisdiction:ent.jurisdiction,confidence:'registry identifier shown',id:ent.entity_id})}return;}
  graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()});}
