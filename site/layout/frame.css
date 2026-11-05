@@ -32,7 +32,7 @@ body.wf .otp-side,body.wf .otp-jump{display:none!important}
 /* calmer headers: smaller titles, the section picture becomes a short strip */
 body.wf h1{font-size:clamp(32px,4.2vw,52px);line-height:1.08}
 body.wf .essay-top{min-height:0;padding-top:28px;padding-bottom:10px}
-body.wf .case-banner{max-width:1240px;margin-left:auto;margin-right:auto}
+body.wf .case-banner{max-width:1240px;margin:12px auto 22px}
 body.wf .case-banner-img{height:120px;object-fit:cover;width:100%}
 body.wf .essay-content.wf-grid{max-width:1240px;padding:10px 22px 95px}
 body.wf main.wrap.wf-grid{max-width:1240px}
