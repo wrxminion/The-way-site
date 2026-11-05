@@ -333,8 +333,24 @@
       $('status').textContent = 'Results could not be loaded just now. Try again in a minute.';
     });
   }
+  // Open one state's results in the States tab: from /results/?state=co, or a "See every ... race" link on the AP map.
+  function openState(code, scroll) {
+    code = String(code || '').toLowerCase();
+    if (!STATES.some(function (x) { return x[0] === code; })) return false;
+    tab = 'states'; fillStates($('st')); $('st').value = code;
+    if ($('tabs').childNodes.length) { renderTabs(); show(); }
+    if (scroll && $('tabs').scrollIntoView) $('tabs').scrollIntoView({ block: 'start' });
+    return true;
+  }
   function start() {
     if (gate()) return;
+    openState(new URLSearchParams(location.search).get('state'), false);
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[data-state-results]');
+      if (!a || !openState(a.getAttribute('data-state-results'), true)) return;
+      e.preventDefault();
+      try { history.replaceState(null, '', '/results/?state=' + a.getAttribute('data-state-results')); } catch (er) { /* the link still worked */ }
+    });
     $('q').addEventListener('input', function () { if (cache[tab] || tab === 'states' || tab === 'cities') show(); });
     $('st').addEventListener('change', show);
     load();
