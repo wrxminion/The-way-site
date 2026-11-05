@@ -5,7 +5,7 @@
  "source_ids": [
   "ms-counties"
  ],
- "updated_at": "2026-11-05T17:04:36Z",
+ "updated_at": "2026-11-05T17:13:26Z",
  "certified": false,
  "contests": [
   {
@@ -76,8 +76,8 @@
     {
      "id": "bennie-g-thompson",
      "name": "Bennie G. Thompson",
-     "party": null,
-     "party_code": "O",
+     "party": "Democratic (per AP)",
+     "party_code": "D",
      "votes": 7633
     },
     {
@@ -116,7 +116,13 @@
     "unit": "counties"
    },
    "partial": true,
-   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide.",
+   "called": {
+    "winner": "bennie-g-thompson",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:45:41.646Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "ms-u-s-house-3",
@@ -131,38 +137,38 @@
     {
      "id": "michael-guest",
      "name": "Michael Guest",
-     "party": "Republican (per AP)",
+     "party": null,
      "party_code": "R",
-     "votes": 56047
+     "votes": 56169
     },
     {
      "id": "michael-a-chiaradio",
-     "name": "Michael A Chiaradio",
+     "name": "Michael A. Chiaradio",
      "party": null,
      "party_code": "D",
-     "votes": 29385
+     "votes": 29501
     },
     {
      "id": "erik-kiehle",
      "name": "Erik Kiehle",
      "party": null,
      "party_code": "L",
-     "votes": 1340
+     "votes": 1345
     },
     {
      "id": "write-ins",
      "name": "Write-ins",
      "party": null,
      "party_code": "O",
-     "votes": 59
+     "votes": 61
     }
    ],
    "by_county": {
     "Madison": {
-     "michael-a-chiaradio": 13073,
-     "michael-guest": 22052,
-     "write-ins": 59,
-     "erik-kiehle": 476
+     "michael-a-chiaradio": 13189,
+     "michael-guest": 22174,
+     "erik-kiehle": 481,
+     "write-ins": 61
     },
     "Rankin": {
      "michael-guest": 33995,
@@ -176,13 +182,7 @@
     "unit": "counties"
    },
    "partial": true,
-   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide.",
-   "called": {
-    "winner": "michael-guest",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T03:21:31.654Z",
-    "kind": "ap"
-   }
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
   },
   {
    "id": "ms-u-s-senate",
@@ -718,20 +718,20 @@
      "name": "Dewey Arthur",
      "party": null,
      "party_code": "O",
-     "votes": 37180
+     "votes": 37381
     },
     {
      "id": "write-ins",
      "name": "Write-ins",
      "party": null,
      "party_code": "O",
-     "votes": 553
+     "votes": 559
     }
    ],
    "by_county": {
     "Madison": {
-     "dewey-arthur": 37180,
-     "write-ins": 553
+     "dewey-arthur": 37381,
+     "write-ins": 559
     }
    },
    "precincts": {
@@ -1310,6 +1310,45 @@
      "lindsey-hetr": 23973,
      "todd-mcalpin": 16565,
      "write-ins": 359
+    }
+   },
+   "precincts": {
+    "reporting": 1,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "ms-chancery-district-11-1-chancery-court-judge",
+   "kind": "local",
+   "level": "local",
+   "state": "ms",
+   "office": "Chancery District 11-1 Chancery Court Judge",
+   "district": null,
+   "title": "Chancery District 11-1 Chancery Court Judge",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-g-clark-ill",
+     "name": "Robert G. Clark Ill",
+     "party": null,
+     "party_code": "O",
+     "votes": 3613
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 79
+    }
+   ],
+   "by_county": {
+    "Madison": {
+     "robert-g-clark-ill": 3613,
+     "write-ins": 79
     }
    },
    "precincts": {
