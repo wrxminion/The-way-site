@@ -105,6 +105,12 @@ Copy `config.example.json` to `config.json` (not committed) and replace the samp
 
 Source addresses were NOT verified from the build side. Do not trust any address until it has been fetched and compared by hand.
 
+## Passed / Failed marks on measure pages
+
+`site/results/outcome.js` puts a result box at the top of every Election Study (`/case-studies/`) and every statewide measure page (`/guide*/measures/`), and a small mark next to each measure on the list pages. `site/results/measure-pages.json` says which contest belongs to which page; rebuild it with `python3 tools/build-measure-outcomes.py` when pages or contest ids change (it lists the pages it could not match; fix those in its `OVERRIDES`).
+
+The box reads only the results files. It says Passed or Failed only when the contest has `called` with a `winner` that is the YES-side or NO-side choice id (choices named Yes/For/Approve or No/Against/Reject), and `kind` is `ap` (shown as "What AP is calling (not certified)"), `certified` ("Certified by the state"), or unset (an official source marked it decided). `kind: "state_leader"` is not a call. Without a call the box says Not yet called and shows the count so far. So for the marks to appear before certification, the AP calls step must also write `called` for ballot measures, the same way it does for candidate races.
+
 ## Page settings: site/results/config.json
 
 - `release_at`: before this time, `/results/` shows the "Results will be posted as they come in" message and sends people to `redirect_to` (the ballot map) after `redirect_after_seconds`. Add `?preview=1` to look at the page early.

@@ -1,0 +1,1303 @@
+{
+ "note": "Built by tools/build-measure-outcomes.py. Maps a measure page to its results contest. The mark comes from the results data, never from this file.",
+ "pages": {
+  "/case-studies/amendment-81.html": {
+   "contest": "co-amendment-81-constitutional",
+   "file": "co.json",
+   "guide": "/guide/measures/amendment-81.html",
+   "needs": "55 percent of the vote",
+   "no": "No law requires that notice, and state limits on sharing private information with federal immigration officials stay in place.",
+   "state": "co",
+   "yes": "Officers must notify federal immigration officials within 72 hours of charging someone with a violent crime, or someone with a past felony, whose legal status they cannot confirm."
+  },
+  "/case-studies/amendment-82.html": {
+   "contest": "co-amendment-82-constitutional",
+   "file": "co.json",
+   "guide": "/guide/measures/amendment-82.html",
+   "needs": "55 percent of the vote",
+   "no": "State and local governments keep their current power to regulate natural gas, including limits on gas in new buildings.",
+   "state": "co",
+   "yes": "Buying and selling natural gas for homes and businesses becomes a constitutional right, which may limit state and local rules on gas."
+  },
+  "/case-studies/amendment-83.html": {
+   "contest": "co-amendment-83-constitutional",
+   "file": "co.json",
+   "guide": "/guide/measures/amendment-83.html",
+   "needs": "55 percent of the vote",
+   "no": "Hunting and fishing continue under the current state and federal laws and rules.",
+   "state": "co",
+   "yes": "Hunting and fishing become a right in the state constitution and the preferred way to manage fish and wildlife."
+  },
+  "/case-studies/amendment-84.html": {
+   "contest": "co-amendment-84-constitutional",
+   "file": "co.json",
+   "guide": "/guide/measures/amendment-84.html",
+   "needs": "55 percent of the vote",
+   "no": "Mail ballots keep being checked by signature only.",
+   "state": "co",
+   "yes": "Mail voters must add the last four digits of an accepted ID number to their ballot, on top of their signature."
+  },
+  "/case-studies/amendment-85.html": {
+   "contest": "co-amendment-85-constitutional",
+   "file": "co.json",
+   "guide": "/guide/measures/amendment-85.html",
+   "needs": "55 percent of the vote",
+   "no": "Titles must still be in plain language under state law, with no set reading level, and laws requiring extra wording, such as for tax changes, stay.",
+   "state": "co",
+   "yes": "Every ballot title must be at an eighth-grade reading level or lower, and laws cannot require initiative wording that gets in the way."
+  },
+  "/case-studies/amendment-86.html": {
+   "contest": "co-amendment-86-constitutional",
+   "file": "co.json",
+   "guide": "/guide/measures/amendment-86.html",
+   "needs": "55 percent of the vote",
+   "no": "The commission keeps drawing the map every ten years, and the constitution sets no process for changes in between.",
+   "state": "co",
+   "yes": "Any off-cycle change to Colorado's U.S. House map needs the commission's approval and the Colorado Supreme Court's adoption, and cannot be drawn to help a party."
+  },
+  "/case-studies/amendment-87.html": {
+   "contest": "co-amendment-87-constitutional",
+   "file": "co.json",
+   "guide": "/guide/measures/amendment-87.html",
+   "needs": "majority vote",
+   "no": "Everyone keeps paying one flat state income tax rate of 4.4 percent, as the state constitution requires today.",
+   "state": "co",
+   "yes": "Starting in 2027, state income tax rates would range from 3.7 percent to 8.4 percent depending on income, and the extra money would go to schools, health care, and early childhood care and education."
+  },
+  "/case-studies/florida-amendment-1.html": {
+   "contest": "fl-amd-budget-stabilization-fund",
+   "file": "state-fl.json",
+   "guide": "/guide-fl/measures/amendment-1.html",
+   "needs": "60 percent of the vote",
+   "no": "The emergency fund stays limited to 10% of a year's general tax money, and the new yearly deposit rule doesn't start.",
+   "state": "fl",
+   "yes": "The state must save up to $750 million a year until its emergency fund holds up to 25% of a year's general tax money, instead of the 10% limit today."
+  },
+  "/case-studies/florida-amendment-2.html": {
+   "contest": "fl-amd-exemption-of-tangible-personal-property-on-agricultural-land-from-taxatio",
+   "file": "state-fl.json",
+   "guide": "/guide-fl/measures/amendment-2.html",
+   "needs": "at least 60% of the votes cast on it",
+   "no": "Those farm belongings keep being taxed the same way as other business equipment.",
+   "state": "fl",
+   "yes": "Tractors, tools and other business belongings kept on farmland and used for farming or agritourism stop being taxed, starting in 2027."
+  },
+  "/case-studies/florida-amendment-3.html": {
+   "contest": "fl-amd-increased-homestead-exemption-lower-cap-on-increases-in-non-homestead-pro",
+   "file": "state-fl.json",
+   "guide": "/guide-fl/measures/amendment-3.html",
+   "needs": "at least 60 percent voter support",
+   "no": "Your home keeps today's smaller break (about $50,000 of value skipped for city and county taxes), and other property can still rise up to 10% a year.",
+   "state": "fl",
+   "yes": "City and county taxes would skip the first $150,000 of the taxed value of the home you live in from 2027 and $250,000 from 2028, and the taxed value of other property could rise at most 5% a year instead of 10%."
+  },
+  "/case-studies/north-carolina-income-tax-cap-amendment.html": {
+   "contest": "nc-constitutional-amendment-maximum-income-tax-rate-of-3-5",
+   "file": "state-nc.json",
+   "guide": "/guide-nc/measures/income-tax-cap-amendment.html",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The ceiling stays at 7%, so future lawmakers could raise the rate above 3.5% without a statewide vote.",
+   "state": "nc",
+   "yes": "The highest income tax rate the state may ever charge drops from 7% to 3.5% starting in 2027."
+  },
+  "/case-studies/north-carolina-photo-id-amendment.html": {
+   "contest": "nc-constitutional-amendment-require-photo-id-for-voting",
+   "file": "state-nc.json",
+   "guide": "/guide-nc/measures/photo-id-amendment.html",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Photo ID for mail-in voting stays a state law that lawmakers could change; in-person photo ID stays in the constitution.",
+   "state": "nc",
+   "yes": "Photo ID for mail-in voting becomes part of the state constitution, so only another statewide vote could remove it."
+  },
+  "/case-studies/north-carolina-property-tax-limit-amendment.html": {
+   "contest": "nc-constitutional-amendment-property-tax-levy-limit",
+   "file": "state-nc.json",
+   "guide": "/guide-nc/measures/property-tax-limit-amendment.html",
+   "needs": "simple majority of the votes cast on it",
+   "no": "No such limit goes into the constitution; counties and cities keep setting their own property tax rates.",
+   "state": "nc",
+   "yes": "The legislature must pass a law limiting how fast local property tax collections can grow; the size of the limit is decided later."
+  },
+  "/case-studies/oklahoma-state-question-845.html": {
+   "contest": "ok-state-question-845",
+   "file": "state-ok.json",
+   "guide": "/guide-ok/measures/state-question-845.html",
+   "needs": "majority of the votes cast on the question",
+   "no": "The governor's 6 members can include at most 3 from one party, the commission's own 3 picks at most 2, and none of them can be lawyers.",
+   "state": "ok",
+   "yes": "The governor's 6 members and the commission's own 3 picks could all be from one party, and could be lawyers."
+  },
+  "/case-studies/oklahoma-state-question-847.html": {
+   "contest": "ok-state-question-847",
+   "file": "state-ok.json",
+   "guide": "/guide-ok/measures/state-question-847.html",
+   "needs": "majority of the votes cast on the question",
+   "no": "The yearly limits stay at 3% for homes and farmland and 5% for other property, and the senior freeze stays the same.",
+   "state": "ok",
+   "yes": "Your property's taxed value can go up less each year (1.75% instead of 3% for homes and farmland, 4% instead of 5% for other property), and more seniors get a small yearly limit."
+  },
+  "/case-studies/proposition-132.html": {
+   "contest": "co-proposition-132-statutory",
+   "file": "co.json",
+   "guide": "/guide/measures/proposition-132.html",
+   "needs": "majority vote",
+   "no": "Having under 1 gram stays a lesser crime with no prison, and prison time for selling or sharing still depends on the amount.",
+   "state": "co",
+   "yes": "Having any amount of fentanyl becomes a felony, and selling or sharing any amount means at least 8 years in prison."
+  },
+  "/case-studies/proposition-133.html": {
+   "contest": "co-proposition-133-statutory",
+   "file": "co.json",
+   "guide": "/guide/measures/proposition-133.html",
+   "needs": "majority vote",
+   "no": "Child sex trafficking stays a crime with 8 to 48 years in prison plus 5 years of parole, set by the judge.",
+   "state": "co",
+   "yes": "Anyone convicted of child sex trafficking, including buyers, gets life in prison without parole."
+  },
+  "/case-studies/proposition-134.html": {
+   "contest": "co-proposition-134-statutory",
+   "file": "co.json",
+   "guide": "/guide/measures/proposition-134.html",
+   "needs": "majority vote",
+   "no": "Schools, school districts and athletic associations would keep setting their own rules on who plays on which team, under current state and federal law.",
+   "state": "co",
+   "yes": "Every school team from elementary school through college would be for biological males, biological females, or anyone, and students would play on the team that matches their biological sex."
+  },
+  "/case-studies/proposition-135.html": {
+   "contest": "co-proposition-135-statutory",
+   "file": "co.json",
+   "guide": "/guide/measures/proposition-135.html",
+   "needs": "majority vote",
+   "no": "Colorado law would keep protecting these surgeries for minors, and insurance and public health programs could keep paying for them.",
+   "state": "co",
+   "yes": "Doctors could not do these surgeries on anyone under 18, and insurance and government money could not pay for them."
+  },
+  "/case-studies/proposition-136.html": {
+   "contest": "co-proposition-136-statutory",
+   "file": "co.json",
+   "guide": "/guide/measures/proposition-136.html",
+   "needs": "majority vote",
+   "no": "The income tax rate stays at 4.4 percent, with no limit written into state law.",
+   "state": "co",
+   "yes": "State law would say the income tax rate can be no higher than today's 4.4 percent, starting January 1, 2027."
+  },
+  "/case-studies/proposition-137.html": {
+   "contest": "co-proposition-137-statutory",
+   "file": "co.json",
+   "guide": "/guide/measures/proposition-137.html",
+   "needs": "majority vote",
+   "no": "Sales tax from sporting goods would stay in the general budget and under the TABOR cap, to be spent as the legislature decides or refunded when required.",
+   "state": "co",
+   "yes": "Sales tax from sporting goods, about $175 million in 2027-28, would go to conservation, wildfire and outdoor programs and would not count under the TABOR cap."
+  },
+  "/case-studies/proposition-nn.html": {
+   "contest": "co-proposition-nn-statutory",
+   "file": "co.json",
+   "guide": "/guide/measures/proposition-nn.html",
+   "needs": "majority vote",
+   "no": "The current TABOR limit stays. Revenue above it is still refunded to taxpayers, and funding for K-12 education, children's programs and other state purposes stays at current levels.",
+   "state": "co",
+   "yes": "The state may keep revenue above the current TABOR limit, up to a new, higher limit tied to past K-12 spending. That money first pays back local governments for property tax breaks."
+  },
+  "/guide-ak/measures/measure-2.html": {
+   "contest": "ak-68-bm-2-24eseg",
+   "file": "state-ak.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Alaska keeps the open top-four primary and ranked-choice voting in November, and the 2020 campaign-finance rules stay.",
+   "state": "ak",
+   "yes": "Alaska goes back to party primaries and one-choice general elections, and several 2020 campaign-finance rules are repealed."
+  },
+  "/guide-ak/measures/measure-3.html": {
+   "contest": "ak-69-bm-3-25uscv",
+   "file": "state-ak.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The voting law keeps its current wording; citizens can vote, and noncitizens already cannot.",
+   "state": "ak",
+   "yes": "The voting law would say 'Only a person who is a citizen of the United States' may vote, instead of 'a person may vote'."
+  },
+  "/guide-al/measures/amendment-1.html": {
+   "needs": "majority of the votes cast on it",
+   "no": "An empty lieutenant governor's office stays empty until the next regular election, and those salaries stay set in the constitution.",
+   "state": "al",
+   "yes": "If the lieutenant governor's office becomes empty early in a term, voters elect a replacement, and lawmakers can set the pay of the lieutenant governor and their own leaders."
+  },
+  "/guide-al/measures/amendment-2.html": {
+   "needs": "majority of the votes cast on it",
+   "no": "The constitution keeps no process for merging county school boards; each county keeps its own board.",
+   "state": "al",
+   "yes": "Bordering county school boards get a way to merge into one system after a state study, and 25% of voters can force a public vote on it."
+  },
+  "/guide-al/measures/amendment-3.html": {
+   "needs": "majority of the votes cast on it",
+   "no": "The constitution stays silent on the Pledge and student prayer; current state policy and federal law still apply.",
+   "state": "al",
+   "yes": "Every public K-12 school starts the day with the Pledge, and every school board must allow student-led prayer, written into the constitution."
+  },
+  "/guide-al/measures/amendment-4.html": {
+   "needs": "majority of the votes cast on it",
+   "no": "The constitution sets no anthem rule; schools and local boards keep deciding for themselves.",
+   "state": "al",
+   "yes": "Every public K-12 school must play or perform the anthem's first verse at least once a week, written into the constitution."
+  },
+  "/guide-ar/measures/issue-1.html": {
+   "needs": "majority of the votes cast on the issue",
+   "no": "A NO (AGAINST) vote keeps the current wording of Article 3, which already lists U.S. citizenship as a voter qualification.",
+   "state": "ar",
+   "yes": "A YES (FOR) vote adds citizens-only voting language to Article 3 of the Arkansas Constitution, starting Jan. 1, 2027."
+  },
+  "/guide-ar/measures/issue-2.html": {
+   "needs": "majority of the votes cast on the issue",
+   "no": "A NO (AGAINST) vote keeps the current Article 2, sec. 5, which protects the right to keep and bear arms for the common defense.",
+   "state": "ar",
+   "yes": "A YES (FOR) vote replaces Article 2, sec. 5 with the new, longer right-to-bear-arms wording, starting Jan. 1, 2027."
+  },
+  "/guide-ar/measures/issue-3.html": {
+   "needs": "majority of the votes cast on the issue",
+   "no": "A NO (AGAINST) vote keeps current constitutional limits; cities and counties keep only the development tools they have now (such as tax increment financing and existing bonds).",
+   "state": "ar",
+   "yes": "A YES (FOR) vote lets the legislature pass laws creating economic development districts and funding programs, starting Jan. 1, 2027; no district is created by the vote itself."
+  },
+  "/guide-ar/measures/issue-4.html": {
+   "needs": "majority of the voters voting on the question",
+   "no": "A NO (AGAINST) vote means no new bonds under this act; the legislature would need to use general revenue or other money for these water programs and federal matches.",
+   "state": "ar",
+   "yes": "A YES (FOR) vote lets the Arkansas Natural Resources Commission issue up to $500 million in state bonds, repaid over up to 35 years, starting July 1, 2027."
+  },
+  "/guide-az/measures/prop-141-vehicle-mileage.html": {
+   "contest": "az-proposition-141",
+   "file": "state-az.json",
+   "needs": "majority of the voters voting on it",
+   "no": "Nothing changes: the constitution stays as it is now.",
+   "state": "az",
+   "yes": "The state, counties, cities and towns could not tax you or charge a fee based on how many miles you drive, and could not track or limit your miles unless you agree."
+  },
+  "/guide-az/measures/prop-142-preferential-treatment.html": {
+   "contest": "az-proposition-142",
+   "file": "state-az.json",
+   "needs": "majority of the voters voting on it",
+   "no": "Nothing changes: the current ban in the constitution stays as it is.",
+   "state": "az",
+   "yes": "The constitution's existing ban would add details: no requiring people to back race-based preferences or \"diversity, equity and inclusion\" ideas to get schooling, a job or a contract, no public money for positions that promote them, and\u2026"
+  },
+  "/guide-az/measures/prop-144-election-requirements.html": {
+   "contest": "az-proposition-144",
+   "file": "state-az.json",
+   "needs": "majority of the voters voting on it",
+   "no": "Nothing changes: the current election rules in the constitution stay.",
+   "state": "az",
+   "yes": "Every voter, including mail voters, would have to show government-issued proof of identity in each election; only government-issued ID would count. Other election rules would also change."
+  },
+  "/guide-az/measures/prop-316-grocery-taxes.html": {
+   "contest": "az-proposition-316",
+   "file": "state-az.json",
+   "needs": "majority of the votes cast on it",
+   "no": "Nothing changes: current laws on local taxes stay.",
+   "state": "az",
+   "yes": "Local governments could not adopt or raise a tax on groceries from July 1, 2025 to June 30, 2027; after that, only with voter approval and no higher than 2%."
+  },
+  "/guide-az/measures/prop-317-drug-cartels.html": {
+   "contest": "az-proposition-317",
+   "file": "state-az.json",
+   "needs": "majority of the votes cast on it",
+   "no": "Nothing changes: current laws on terrorism and the Department of Homeland Security stay.",
+   "state": "az",
+   "yes": "State law would declare drug cartels terrorist organizations and direct the Arizona Department of Homeland Security to do everything in its authority about the threat."
+  },
+  "/guide-az/measures/prop-318-athletic-teams.html": {
+   "contest": "az-proposition-318",
+   "file": "state-az.json",
+   "needs": "majority of the votes cast on it",
+   "no": "Nothing changes: current laws on student athletics stay.",
+   "state": "az",
+   "yes": "All public and private schools and athletic associations must label teams male, female or coed by biological sex at birth and keep males off female teams, bar use of private spaces such as locker rooms meant for the other sex, and\u2026"
+  },
+  "/guide-az/measures/prop-319-photo-enforcement.html": {
+   "contest": "az-proposition-319",
+   "file": "state-az.json",
+   "needs": "majority of the votes cast on it",
+   "no": "Nothing changes: current laws on photo enforcement stay.",
+   "state": "az",
+   "yes": "State agencies and local governments could not use photo enforcement for traffic unless they have a contract by December 31, 2026, and local governments would need voter approval at the next general election and every 10 years after."
+  },
+  "/guide-az/measures/prop-320-classroom-spending.html": {
+   "contest": "az-proposition-320",
+   "file": "state-az.json",
+   "needs": "majority of the votes cast on it",
+   "no": "Nothing changes: current laws on school district budgets stay.",
+   "state": "az",
+   "yes": "Large school districts must reach spending of at least 60% of their operating money on direct instruction as the Auditor General defines it, on a ramp that starts in 2027-28 (at least half a percentage point more each year)."
+  },
+  "/guide-ca/measures/prop-1.html": {
+   "contest": "ca-ballot-measures-01",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The state does not borrow this $11.25 billion for housing and veterans' home loans.",
+   "state": "ca",
+   "yes": "The state can borrow $11.25 billion for affordable housing and veterans' home loans, repaid at about $500 million to $600 million a year."
+  },
+  "/guide-ca/measures/prop-2.html": {
+   "contest": "ca-ballot-measures-02",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The rainy day fund stays capped at 10%, and the extra debt payments end in 2030.",
+   "state": "ca",
+   "yes": "The state's rainy day fund can grow to 20% of its main tax money instead of 10%, and extra debt payments continue to 2040."
+  },
+  "/guide-ca/measures/prop-3.html": {
+   "contest": "ca-ballot-measures-03",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The extra income tax on high incomes expires as scheduled in 2031.",
+   "state": "ca",
+   "yes": "The extra income tax on income above about $371,000 (single) or $742,000 (joint) becomes permanent instead of ending."
+  },
+  "/guide-ca/measures/prop-37.html": {
+   "contest": "ca-ballot-measures-37",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "No new state loan program for buyers of new homes is created.",
+   "state": "ca",
+   "yes": "The state housing agency can borrow up to $25 billion to lend buyers of new homes up to 17% of the price, repaid by the buyers."
+  },
+  "/guide-ca/measures/prop-38.html": {
+   "contest": "ca-ballot-measures-38",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The state does not borrow $8.4 billion for immunology research.",
+   "state": "ca",
+   "yes": "The state can borrow $8.4 billion for immunology research, repaid at about $500 million to $600 million a year for 20 years."
+  },
+  "/guide-ca/measures/prop-39.html": {
+   "contest": "ca-ballot-measures-39",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Voters keep proving who they are by signature, with no ID number needed on mail ballots.",
+   "state": "ca",
+   "yes": "You would show government ID to vote in person and write the last 4 digits of an ID number on your mail ballot envelope."
+  },
+  "/guide-ca/measures/prop-4.html": {
+   "contest": "ca-ballot-measures-04",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The ban stays: the state and most local governments still cannot give public money to campaigns.",
+   "state": "ca",
+   "yes": "The state, counties and cities may create programs that give public money to qualifying candidates, within set limits."
+  },
+  "/guide-ca/measures/prop-40.html": {
+   "contest": "ca-ballot-measures-40",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "No wealth tax on billionaires is charged.",
+   "state": "ca",
+   "yes": "California billionaires pay a one-time tax of up to 5% of their covered assets, mostly for health care."
+  },
+  "/guide-ca/measures/prop-41.html": {
+   "contest": "ca-ballot-measures-41",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "No new audit rules, and the spending-limit rules for new taxes stay as they are.",
+   "state": "ca",
+   "yes": "New special taxes get State Auditor reviews before the vote and every 4 years after, and new taxes count under the spending limit."
+  },
+  "/guide-ca/measures/prop-42.html": {
+   "contest": "ca-ballot-measures-42",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The state keeps the option to create such taxes in the future.",
+   "state": "ca",
+   "yes": "The state could not create new taxes on owning stocks, savings or other personal property, and retroactive taxes are limited."
+  },
+  "/guide-ca/measures/prop-43.html": {
+   "contest": "ca-ballot-measures-43",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Local special taxes proposed by voters can still pass with a simple majority.",
+   "state": "ca",
+   "yes": "Starting in 2027, local special taxes proposed by voters would need two-thirds of the vote to pass."
+  },
+  "/guide-ca/measures/prop-44.html": {
+   "contest": "ca-ballot-measures-44",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "No minimum spending rule for nonprofit community clinics.",
+   "state": "ca",
+   "yes": "Nonprofit community clinics must spend at least 90% of their revenue on health care services or pay the shortfall to the state."
+  },
+  "/guide-ca/measures/prop-45.html": {
+   "contest": "ca-ballot-measures-45",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "All projects keep using today's environmental review and lawsuit rules.",
+   "state": "ca",
+   "yes": "Essential projects can use a faster environmental review with deadlines and narrower lawsuits."
+  },
+  "/guide-ca/measures/prop-5.html": {
+   "contest": "ca-ballot-measures-05",
+   "file": "state-ca.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Recall ballots keep asking both whether to remove the official and who should replace them.",
+   "state": "ca",
+   "yes": "A recall ballot would only ask whether to remove the official; the seat would be filled by the normal vacancy rules."
+  },
+  "/guide-fl/measures/amendment-1.html": {
+   "contest": "fl-amd-budget-stabilization-fund",
+   "file": "state-fl.json",
+   "needs": "at least 60% of the votes cast on it",
+   "no": "The emergency fund stays limited to 10% of a year's general tax money, and the new yearly deposit rule doesn't start.",
+   "state": "fl",
+   "yes": "The state must save up to $750 million a year until its emergency fund holds up to 25% of a year's general tax money, instead of the 10% limit today."
+  },
+  "/guide-fl/measures/amendment-2.html": {
+   "contest": "fl-amd-exemption-of-tangible-personal-property-on-agricultural-land-from-taxatio",
+   "file": "state-fl.json",
+   "needs": "at least 60% of the votes cast on it",
+   "no": "Those farm belongings keep being taxed the same way as other business equipment.",
+   "state": "fl",
+   "yes": "Tractors, tools and other business belongings kept on farmland and used for farming or agritourism stop being taxed, starting in 2027."
+  },
+  "/guide-fl/measures/amendment-3.html": {
+   "contest": "fl-amd-increased-homestead-exemption-lower-cap-on-increases-in-non-homestead-pro",
+   "file": "state-fl.json",
+   "needs": "at least 60% of the votes cast on it",
+   "no": "Your home keeps today's smaller break (about $50,000 of value skipped for city and county taxes), and other property can still rise up to 10% a year.",
+   "state": "fl",
+   "yes": "City and county taxes would skip the first $150,000 of the taxed value of the home you live in from 2027 and $250,000 from 2028, and the taxed value of other property could rise at most 5% a year instead of 10%."
+  },
+  "/guide-ga/measures/amendment-1.html": {
+   "contest": "ga-proposed-constitutional-amendment-1",
+   "file": "state-ga.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The limit stays at 2,000 acres per owner.",
+   "state": "ga",
+   "yes": "One owner can put up to 4,000 acres of farm or timber land in the lower property tax program, up from 2,000."
+  },
+  "/guide-ga/measures/amendment-2.html": {
+   "contest": "ga-proposed-constitutional-amendment-2",
+   "file": "state-ga.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Probate judges in those 53 counties keep running with a party label unless a local law changes it.",
+   "state": "ga",
+   "yes": "All probate judges run without a party label, including in the 53 counties where they run as Republicans or Democrats today."
+  },
+  "/guide-ga/measures/amendment-3.html": {
+   "contest": "ga-proposed-constitutional-amendment-3",
+   "file": "state-ga.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "No dedicated 911 fund; 911 money stays as it is handled today.",
+   "state": "ga",
+   "yes": "Lawmakers may set up a state fund, paid from existing 911 money, that can be spent only on 911 systems."
+  },
+  "/guide-hi/measures/question-1-judicial-appointments.html": {
+   "needs": "more yes votes than no votes, and yes votes equal to at least half of all ballots cast",
+   "no": "The Senate keeps 30 days to act on every judge pick, all year.",
+   "state": "hi",
+   "yes": "The Senate gets 60 days instead of 30 to act on judges picked between April 1 and December 31."
+  },
+  "/guide-hi/measures/question-2-rise-bonds.html": {
+   "needs": "more yes votes than no votes, and yes votes equal to at least half of all ballots cast",
+   "no": "Counties could not issue RISE bonds; infrastructure would still be paid for with existing kinds of borrowing under the debt limit.",
+   "state": "hi",
+   "yes": "Counties could, once the Legislature sets rules, borrow for housing infrastructure and repay it only from new property tax growth in a set district, outside their debt limit."
+  },
+  "/guide-ia/measures/amendment-1-income-tax-two-thirds-vote.html": {
+   "contest": "ia-constitutional-amendment-1",
+   "file": "state-ia.json",
+   "needs": "simple majority of voters voting on the question",
+   "no": "A NO vote leaves the constitution as it is, so the Legislature can keep raising income tax rates or creating new income taxes with a simple majority in each chamber.",
+   "state": "ia",
+   "yes": "A YES vote adds the two-thirds rule to the Iowa Constitution, so future income tax rate increases or new state income taxes need two-thirds of each chamber to pass."
+  },
+  "/guide-id/measures/hjr-4.html": {
+   "contest": "id-idaho-constitutional-amendment-house-joint-resolution-4",
+   "file": "state-id.json",
+   "needs": "majority of the votes cast on it",
+   "no": "Nothing changes: voters could still petition to put drug legalization on the ballot.",
+   "state": "id",
+   "yes": "Only the Legislature could make marijuana or other drugs legal; citizens could no longer do it by petition."
+  },
+  "/guide-id/measures/hjr-6.html": {
+   "contest": "id-idaho-constitutional-amendment-house-joint-resolution-6",
+   "file": "state-id.json",
+   "needs": "majority of the votes cast on it",
+   "no": "English stays the official language under state law only, and the constitution does not change.",
+   "state": "id",
+   "yes": "English becomes Idaho's official language in the constitution, and government business and public school lessons must be in English unless federal law says otherwise."
+  },
+  "/guide-id/measures/proposition-1.html": {
+   "contest": "id-proposition-1-reproductive-freedom-privacy-act",
+   "file": "state-id.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Idaho's current ban stays: abortion only to prevent death, or for reported rape or incest in the first trimester.",
+   "state": "id",
+   "yes": "Abortion becomes a legal right in Idaho until viability, and after that in medical emergencies."
+  },
+  "/guide-id/measures/state-gun-advisory.html": {
+   "contest": "id-advisory-question-house-bill-932",
+   "file": "state-id.json",
+   "no": "This is not a yes-or-no question.",
+   "state": "id",
+   "yes": "There is no yes or no. You choose one of six guns. The result is advice only."
+  },
+  "/guide-in/measures/public-question-1-let-judges-deny-bail-to-dangerous-defendan.html": {
+   "needs": "majority of the votes cast on it",
+   "no": "Keeps the current rule: bail can be denied only for murder or treason.",
+   "state": "in",
+   "yes": "Amends the constitution so bail can be denied in more cases when the state meets the required proof."
+  },
+  "/guide-in/measures/public-question-2-where-city-and-town-court-judges-may-live.html": {
+   "needs": "majority of the votes cast on it",
+   "no": "Keeps the rule that the judge must live in the city or town.",
+   "state": "in",
+   "yes": "Allows city and town court judges to live in the county or the nearest bordering county."
+  },
+  "/guide-ks/measures/citizen-voting-amendment.html": {
+   "contest": "ks-constitutional-amendment",
+   "file": "state-ks.json",
+   "needs": "simple majority of the votes cast on the question",
+   "no": "A NO vote keeps the current wording of Article 5, Section 1 the same.",
+   "state": "ks",
+   "yes": "A YES vote changes Article 5, Section 1 of the Kansas Constitution to say only U.S. citizens who are 18 or older and live in the voting area can vote."
+  },
+  "/guide-ky/measures/amendment-1-pardons.html": {
+   "contest": "ky-constitutional-amendment-1",
+   "file": "state-ky.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Governors keep the power to pardon and shorten sentences at any time during their term.",
+   "state": "ky",
+   "yes": "Governors could not pardon anyone or shorten sentences from 60 days before each governor's election until the next term starts."
+  },
+  "/guide-la/measures/blighted-property-rehab-exemption.html": {
+   "needs": "majority of votes cast statewide",
+   "no": "A NO vote means no such exemption.",
+   "state": "la",
+   "yes": "A YES vote lets parishes offer a tax break for rehabilitated blighted property (companion law: up to 75% of value for up to 20 years for homes)."
+  },
+  "/guide-la/measures/governor-lifetime-term-limit.html": {
+   "needs": "majority of votes cast statewide",
+   "no": "A NO vote keeps the current rule, which only limits a governor to two terms in a row.",
+   "state": "la",
+   "yes": "A YES vote means anyone who has served more than one and a half terms as governor can never be elected governor again."
+  },
+  "/guide-la/measures/keep-millage-roll-forward-ability.html": {
+   "needs": "majority of votes cast statewide",
+   "no": "A NO vote keeps the rule that a taxing body that does not move back up to its maximum rate before the next reassessment loses that option for good.",
+   "state": "la",
+   "yes": "A YES vote lets taxing bodies stay at a lower rate and still raise it later (up to the voter-approved maximum, with a two-thirds vote after a public hearing) until that tax expires."
+  },
+  "/guide-la/measures/lead-water-line-public-funds.html": {
+   "needs": "majority of votes cast statewide",
+   "no": "A NO vote keeps the current constitutional rule with no specific exception for this work.",
+   "state": "la",
+   "yes": "A YES vote allows local water systems to spend public funds on the private-side part of water service lines."
+  },
+  "/guide-la/measures/no-expropriation-foreign-adversary.html": {
+   "needs": "majority of votes cast statewide",
+   "no": "A NO vote keeps current expropriation rules with no such ban in the constitution.",
+   "state": "la",
+   "yes": "A YES vote bans foreign adversaries and their agents from using expropriation to take property in Louisiana."
+  },
+  "/guide-la/measures/no-post-conviction-bail-child-offenses.html": {
+   "needs": "majority of votes cast statewide",
+   "no": "A NO vote keeps the current rule, where a judge decides on bail after conviction in these cases.",
+   "state": "la",
+   "yes": "A YES vote means a person convicted of a listed aggravated offense against a minor could not be released on any bail after conviction."
+  },
+  "/guide-la/measures/retirement-debt-payment-order.html": {
+   "needs": "majority of votes cast statewide",
+   "no": "A NO vote keeps the rule that this money must go to the oldest debt first.",
+   "state": "la",
+   "yes": "A YES vote lets one-time state money go to any part of a retirement system's unfunded debt."
+  },
+  "/guide-la/measures/senior-extra-homestead-exemption.html": {
+   "needs": "majority of votes cast statewide",
+   "no": "A NO vote means no new age-based extra exemption; the current homestead exemption stays as is.",
+   "state": "la",
+   "yes": "A YES vote lets each parish or city ask its voters whether to give eligible seniors a bigger homestead exemption, starting no earlier than 2028."
+  },
+  "/guide-la/measures/special-assessment-income-limit-150k.html": {
+   "needs": "majority of votes cast statewide",
+   "no": "A NO vote keeps the limit at $100,000, adjusted for inflation.",
+   "state": "la",
+   "yes": "A YES vote raises the income limit for the freeze to $150,000, adjusted for inflation starting in 2028, with income checked against state tax returns."
+  },
+  "/guide-la/measures/veteran-spouse-exemption-transfer.html": {
+   "needs": "majority of votes cast statewide",
+   "no": "A NO vote keeps the rule that the spouse loses the extra exemption if the spouse moves.",
+   "state": "la",
+   "yes": "A YES vote lets a qualifying surviving spouse move the extra exemption one time to a new home, up to the amount claimed on the old home."
+  },
+  "/guide-ma/measures/question-1-public-records-for-the-legislature-and-governor-s.html": {
+   "needs": "more YES than NO votes, and YES votes from at least 30% of all voters who cast a ballot",
+   "no": "No change to the Public Records Law.",
+   "state": "ma",
+   "yes": "Most records of the Legislature and Governor's office become public under the Public Records Law."
+  },
+  "/guide-ma/measures/question-2-union-rights-for-public-defender-agency-workers.html": {
+   "needs": "more YES than NO votes, and YES votes from at least 30% of all voters who cast a ballot",
+   "no": "No change to labor law for CPCS workers.",
+   "state": "ma",
+   "yes": "CPCS workers may form a union to bargain with their employer."
+  },
+  "/guide-ma/measures/question-3-one-all-party-primary-top-two-advance.html": {
+   "contest": "ma-ap-ma85146",
+   "file": "state-ma.json",
+   "needs": "more YES than NO votes, and YES votes from at least 30% of all voters who cast a ballot",
+   "no": "No change to primary election laws.",
+   "state": "ma",
+   "yes": "Ends separate party primaries for state offices; one primary where the top two advance."
+  },
+  "/guide-ma/measures/question-4-register-to-vote-on-election-day.html": {
+   "contest": "ma-ap-ma85147",
+   "file": "state-ma.json",
+   "needs": "more YES than NO votes, and YES votes from at least 30% of all voters who cast a ballot",
+   "no": "No change to voter registration laws.",
+   "state": "ma",
+   "yes": "Allows registering or updating an address at the polling place on Election Day."
+  },
+  "/guide-ma/measures/question-5-limit-on-state-tax-revenue-with-rebates.html": {
+   "needs": "more YES than NO votes, and YES votes from at least 30% of all voters who cast a ballot",
+   "no": "No change to state revenue law.",
+   "state": "ma",
+   "yes": "Ties the revenue limit to prior-year revenue plus wage growth and requires rebates above it."
+  },
+  "/guide-ma/measures/question-6-conservation-fund-from-sporting-goods-sales-tax.html": {
+   "needs": "more YES than NO votes, and YES votes from at least 30% of all voters who cast a ballot",
+   "no": "No fund is created; no change in how these taxes are spent.",
+   "state": "ma",
+   "yes": "Creates a conservation fund that receives some sales tax on sporting goods, recreational vehicles, and golf."
+  },
+  "/guide-ma/measures/question-7-allow-single-family-homes-on-5-000-sq-ft-lots.html": {
+   "needs": "more YES than NO votes, and YES votes from at least 30% of all voters who cast a ballot",
+   "no": "No change to the law on building single-family homes.",
+   "state": "ma",
+   "yes": "Allows single-family homes on residential lots of 5,000 sq ft or more, with some local rules."
+  },
+  "/guide-ma/measures/question-8-end-retail-sales-of-recreational-marijuana.html": {
+   "contest": "ma-ap-ma85151",
+   "file": "state-ma.json",
+   "needs": "more YES than NO votes, and YES votes from at least 30% of all voters who cast a ballot",
+   "no": "No change to marijuana law.",
+   "state": "ma",
+   "yes": "Ends retail sale of adult-use marijuana and changes possession penalties."
+  },
+  "/guide-ma/measures/question-9-keep-or-repeal-the-2024-gun-law.html": {
+   "contest": "ma-ap-ma85152",
+   "file": "state-ma.json",
+   "needs": "the law is repealed only if NO wins and the NO votes equal at least 30% of all ballots cast",
+   "no": "Repeals the 2024 gun law.",
+   "state": "ma",
+   "yes": "Keeps the 2024 gun law in place."
+  },
+  "/guide-md/measures/question-1.html": {
+   "contest": "md-question-1-constitutional-amendment",
+   "file": "state-md.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The governor keeps deciding whether to fund state worker contracts, and stuck talks still end with only a fact finder's suggestions.",
+   "state": "md",
+   "yes": "The governor's budget must fund state worker contracts, and stuck contract talks go to binding arbitration."
+  },
+  "/guide-md/measures/question-2.html": {
+   "contest": "md-question-2-constitutional-amendment",
+   "file": "state-md.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The commission keeps having no fill-in process; empty seats wait for a governor's appointment approved by the Senate.",
+   "state": "md",
+   "yes": "The judge-discipline commission can use temporary fill-in members when seats are empty or members step aside."
+  },
+  "/guide-md/measures/question-3.html": {
+   "contest": "md-question-3-constitutional-amendment",
+   "file": "state-md.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "U.S. House maps stay subject to the 2022 court ruling that applies the state's compact-and-connected district rules.",
+   "state": "md",
+   "yes": "The state constitution would set no rules for U.S. House district lines, so lawmakers could draw a new map under federal rules only."
+  },
+  "/guide-mi/measures/proposal-1.html": {
+   "contest": "mi-proposal-2026-1-112750",
+   "file": "state-mi.json",
+   "needs": "majority of the votes cast on it",
+   "no": "No convention is held; the current constitution stays as it is, and the question returns in 2042.",
+   "state": "mi",
+   "yes": "Voters elect 148 delegates in 2027 to write a new or revised constitution, which voters would then accept or reject at a later election."
+  },
+  "/guide-mi/measures/proposal-2.html": {
+   "contest": "mi-proposal-2026-2-112751",
+   "file": "state-mi.json",
+   "needs": "majority of the votes cast on it",
+   "no": "Campaign finance rules stay as they are: utilities' and contractors' officials and related groups can keep giving, and issue ads don't have to name donors.",
+   "state": "mi",
+   "yes": "Regulated utilities and companies with over $250,000 a year in government contracts can't give to the politicians who oversee them, and more political ads must name who paid."
+  },
+  "/guide-mn/measures/amendment-1-school-fund.html": {
+   "contest": "mn-0351-constitutional-amendment-1",
+   "file": "state-mn.json",
+   "needs": "YES votes from more than half of everyone who votes in the election",
+   "no": "The fund's principal stays untouched, and schools keep getting the fund's regular yield, recently roughly 2.5% of its value (an approximate yield, not a fixed legal rate).",
+   "state": "mn",
+   "yes": "Schools would get 4.5% of the fund's average value over the preceding three fiscal years each year, a required transfer set by the state law that takes effect only if voters approve, starting July 1, 2027 (aid for fiscal year 2028)."
+  },
+  "/guide-mo/measures/amendment-3.html": {
+   "contest": "mo-constitutional-amendment-no-3",
+   "file": "state-mo.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The 2024 amendment stays, so abortion remains a constitutional right up to fetal viability; minors' gender transition care stays banned only by a state law set to end in 2027.",
+   "state": "mo",
+   "yes": "The 2024 abortion-rights amendment is repealed; abortion is allowed only in emergencies, for fetal anomalies, and for rape or incest before 12 weeks, and gender transition care for minors is banned in the constitution."
+  },
+  "/guide-mo/measures/amendment-6.html": {
+   "contest": "mo-constitutional-amendment-no-6",
+   "file": "state-mo.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Lawmakers keep the power to change or repeal voter-passed laws with a regular majority and to set petition rules by law.",
+   "state": "mo",
+   "yes": "Voter-passed laws could be changed only with 80% of both chambers plus a statewide vote, and lawmakers could not make the petition process harder by regular law."
+  },
+  "/guide-mo/measures/amendment-7.html": {
+   "contest": "mo-constitutional-amendment-no-7",
+   "file": "state-mo.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "No endowment fund is created, and state taxes stay under the control of lawmakers and voters.",
+   "state": "mo",
+   "yes": "A state endowment fund is created; state taxes stay for now but would end once the fund's earnings can replace them."
+  },
+  "/guide-mo/measures/amendment-8.html": {
+   "contest": "mo-constitutional-amendment-no-8",
+   "file": "state-mo.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Sheriffs' election, duties and removal stay set by state law, which lawmakers can change.",
+   "state": "mo",
+   "yes": "The elected county sheriff and the sheriff's duties go into the constitution, and a sheriff can be removed only by a court case the Attorney General brings."
+  },
+  "/guide-mo/measures/proposition-a.html": {
+   "contest": "mo-proposition-a",
+   "file": "state-mo.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The 2025 map is rejected and the 2022 congressional map stays in place.",
+   "state": "mo",
+   "yes": "The 2025 congressional map is approved and used in future elections, splitting Kansas City among three districts."
+  },
+  "/guide-mt/measures/ci-132.html": {
+   "contest": "mt-ci-132-constitutional-initiative-no-132",
+   "file": "state-mt.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Judge elections stay nonpartisan for now, but the Legislature could change that by passing a law.",
+   "state": "mt",
+   "yes": "The constitution will say judge elections stay nonpartisan, so only another statewide vote could add party labels."
+  },
+  "/guide-mt/measures/ci-133.html": {
+   "contest": "mt-ci-133-constitutional-initiative-no-133",
+   "file": "state-mt.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The initiative process stays as it is, with its rules set by state law and court rulings.",
+   "state": "mt",
+   "yes": "The constitution will call the ballot initiative process a fundamental right and set deadlines and limits on how the state handles petitions."
+  },
+  "/guide-mt/measures/i-194.html": {
+   "contest": "mt-i-194-initiative-no-194",
+   "file": "state-mt.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Groups can keep spending on Montana campaigns as they can today.",
+   "state": "mt",
+   "yes": "Corporations, nonprofits and other groups could no longer spend money on Montana candidate, party or ballot-measure campaigns, starting Jan. 1, 2027."
+  },
+  "/guide-nc/measures/income-tax-cap-amendment.html": {
+   "contest": "nc-constitutional-amendment-maximum-income-tax-rate-of-3-5",
+   "file": "state-nc.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The ceiling stays at 7%, so future lawmakers could raise the rate above 3.5% without a statewide vote.",
+   "state": "nc",
+   "yes": "The highest income tax rate the state may ever charge drops from 7% to 3.5% starting in 2027."
+  },
+  "/guide-nc/measures/photo-id-amendment.html": {
+   "contest": "nc-constitutional-amendment-require-photo-id-for-voting",
+   "file": "state-nc.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Photo ID for mail-in voting stays a state law that lawmakers could change; in-person photo ID stays in the constitution.",
+   "state": "nc",
+   "yes": "Photo ID for mail-in voting becomes part of the state constitution, so only another statewide vote could remove it."
+  },
+  "/guide-nc/measures/property-tax-limit-amendment.html": {
+   "contest": "nc-constitutional-amendment-property-tax-levy-limit",
+   "file": "state-nc.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "No such limit goes into the constitution; counties and cities keep setting their own property tax rates.",
+   "state": "nc",
+   "yes": "The legislature must pass a law limiting how fast local property tax collections can grow; the size of the limit is decided later."
+  },
+  "/guide-nd/measures/measure-1-sixty-percent.html": {
+   "contest": "nd-ap-nd84788",
+   "file": "state-nd.json",
+   "needs": "more than half of the votes cast on it",
+   "no": "Changing the state constitution would still take more than 50% yes votes.",
+   "state": "nd",
+   "yes": "Changing the state constitution would take at least 60% yes votes instead of more than 50%."
+  },
+  "/guide-nd/measures/measure-2-school-meals.html": {
+   "contest": "nd-ap-nd84789",
+   "file": "state-nd.json",
+   "needs": "more than half of the votes cast on it",
+   "no": "Schools keep the current free and reduced-price meal rules, and the state does not take on the new meal cost.",
+   "state": "nd",
+   "yes": "Every public school would serve every student one free breakfast and one free lunch a day, and the state would pay schools back."
+  },
+  "/guide-ne/measures/amendment-1.html": {
+   "contest": "ne-proposed-amendment-no-1",
+   "file": "state-ne.json",
+   "needs": "majority of the votes cast on it, and the yes votes must also be at least 35% of the total votes cast in the election",
+   "no": "A senator could still serve only 8 years in a row (two terms).",
+   "state": "ne",
+   "yes": "A senator could serve up to 12 years in a row (three terms) instead of 8."
+  },
+  "/guide-ne/measures/initiative-440.html": {
+   "contest": "ne-initiative-measure-440",
+   "file": "state-ne.json",
+   "needs": "majority of the votes cast on it, and the yes votes must be at least 35% of all votes cast in the election",
+   "no": "Sports betting would stay in person only, at the racetrack casinos.",
+   "state": "ne",
+   "yes": "The constitution would allow laws that let people in Nebraska bet on sports online through an operator at a licensed racetrack."
+  },
+  "/guide-ne/measures/initiative-441.html": {
+   "contest": "ne-initiative-measure-441",
+   "file": "state-ne.json",
+   "needs": "majority of the votes cast on it, and the yes votes must be at least 35% of all votes cast in the election",
+   "no": "No state rules or tax for online sports betting would be written.",
+   "state": "ne",
+   "yes": "Online sports betting would get state rules and a tax, with 70% of the tax going to property tax relief."
+  },
+  "/guide-ne/measures/initiative-442.html": {
+   "contest": "ne-initiative-measure-442",
+   "file": "state-ne.json",
+   "needs": "majority of the votes cast on it, and the yes votes must be at least 35% of all votes cast in the election",
+   "no": "The rule would stay only in state law, which lawmakers could change.",
+   "state": "ne",
+   "yes": "Keeping male students off girls' and women's school teams would be in the constitution, not just state law."
+  },
+  "/guide-nh/measures/question-1-register-of-probate.html": {
+   "contest": "nh-constitutional-amendment-question-1",
+   "file": "state-nh.json",
+   "needs": "two-thirds of the votes cast on it",
+   "no": "The register of probate stays in the constitution as an elected county office.",
+   "state": "nh",
+   "yes": "The register of probate, a county office with no duties since 2011, is removed from the state constitution."
+  },
+  "/guide-nm/measures/amendment-1-veto-rules.html": {
+   "contest": "nm-constitutional-amendment-1-proposing-an-amendment-to-article-4-sect",
+   "file": "state-nm.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The governor can still kill late bills by not acting, with no reason required.",
+   "state": "nm",
+   "yes": "Bills the governor ignores become law, and every veto needs a written reason."
+  },
+  "/guide-nm/measures/amendment-2-school-elections.html": {
+   "contest": "nm-constitutional-amendment-2-proposing-to-amend-article-7-section-1-o",
+   "file": "state-nm.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "School elections must stay separate from elections with party candidates.",
+   "state": "nm",
+   "yes": "School districts could put bond and tax questions on the November ballot."
+  },
+  "/guide-nm/measures/amendment-3-university-regents.html": {
+   "contest": "nm-constitutional-amendment-3-proposing-an-amendment-to-article-12-sec",
+   "file": "state-nm.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The governor keeps picking regents directly, with Senate approval.",
+   "state": "nm",
+   "yes": "The governor must pick university regents from a nominating committee's list."
+  },
+  "/guide-nm/measures/amendment-4-legislator-pay.html": {
+   "contest": "nm-constitutional-amendment-4-proposing-to-amend-article-4-section-10-",
+   "file": "state-nm.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "No legislative salary is added; existing per diem, mileage and retirement arrangements remain.",
+   "state": "nm",
+   "yes": "State lawmakers would get a salary equal to the state's median household income, starting in 2029."
+  },
+  "/guide-nm/measures/bond-1-senior-centers.html": {
+   "contest": "nm-bond-question-1-the-2026-capital-projects-general-obligation-bond-a",
+   "file": "state-nm.json",
+   "needs": "simple majority of the votes cast on each question",
+   "no": "The state does not borrow this money for senior citizen facilities.",
+   "state": "nm",
+   "yes": "The state may borrow up to $21,582,213 for senior citizen facilities, repaid by property tax."
+  },
+  "/guide-nm/measures/bond-2-libraries.html": {
+   "contest": "nm-bond-question-2-the-2026-capital-projects-general-obligation-bond-a",
+   "file": "state-nm.json",
+   "needs": "simple majority of the votes cast on each question",
+   "no": "The state does not borrow this money for libraries.",
+   "state": "nm",
+   "yes": "The state may borrow up to $19,324,188 for libraries, repaid by property tax."
+  },
+  "/guide-nm/measures/bond-3-higher-ed.html": {
+   "contest": "nm-bond-question-3-the-2026-capital-projects-general-obligation-bond-a",
+   "file": "state-nm.json",
+   "needs": "simple majority of the votes cast on each question",
+   "no": "The state does not borrow this money for higher education, special and tribal schools.",
+   "state": "nm",
+   "yes": "The state may borrow up to $352,225,379 for higher education, special and tribal schools, repaid by property tax."
+  },
+  "/guide-nv/measures/question-6.html": {
+   "contest": "nv-statewide-ballot-question-no-6-60921b",
+   "file": "state-nv.json",
+   "needs": "majority YES",
+   "no": "A NO vote leaves the Nevada Constitution unchanged. Abortion stays legal under current state law, which allows it up to 24 weeks and later to protect the patient's life or health.",
+   "state": "nv",
+   "yes": "A YES vote adds a right to abortion to the Nevada Constitution. It would take effect when the vote is made official in late Nov 2026."
+  },
+  "/guide-nv/measures/question-7.html": {
+   "contest": "nv-statewide-ballot-question-no-7-121094",
+   "file": "state-nv.json",
+   "needs": "majority YES",
+   "no": "A NO vote leaves the Nevada Constitution unchanged. Most voters would keep voting without showing ID, as they do now.",
+   "state": "nv",
+   "yes": "A YES vote puts a voter ID rule in the Nevada Constitution. The Legislature would set details in 2027, and the rule would apply starting with the 2028 elections."
+  },
+  "/guide-oh/measures/issue-3.html": {
+   "contest": "oh-58f2c0185a8c8a6ae0633390ee0af8c5",
+   "file": "state-oh.json",
+   "needs": "majority of the votes cast on it",
+   "no": "Photo ID to vote stays a state law, with the same ID list, that lawmakers could change on their own.",
+   "state": "oh",
+   "yes": "Photo ID to vote becomes part of the Ohio Constitution, with a fixed list of IDs, so only another statewide vote could remove or widen it."
+  },
+  "/guide-ok/measures/state-question-845.html": {
+   "contest": "ok-state-question-845",
+   "file": "state-ok.json",
+   "needs": "majority of the votes cast on the question",
+   "no": "The governor's 6 members can include at most 3 from one party, the commission's own 3 picks at most 2, and none of them can be lawyers.",
+   "state": "ok",
+   "yes": "The governor's 6 members and the commission's own 3 picks could all be from one party, and could be lawyers."
+  },
+  "/guide-ok/measures/state-question-847.html": {
+   "contest": "ok-state-question-847",
+   "file": "state-ok.json",
+   "needs": "majority of the votes cast on the question",
+   "no": "The yearly limits stay at 3% for homes and farmland and 5% for other property, and the senior freeze stays the same.",
+   "state": "ok",
+   "yes": "Your property's taxed value can go up less each year (1.75% instead of 3% for homes and farmland, 4% instead of 5% for other property), and more seniors get a small yearly limit."
+  },
+  "/guide-ri/measures/cultural-economy.html": {
+   "needs": "simple majority of the votes cast on it",
+   "no": "The state cannot borrow this money for a History Center or these grants.",
+   "state": "ri",
+   "yes": "The state can borrow up to $50 million for a State History Center and historic-site grants."
+  },
+  "/guide-ri/measures/economic-development.html": {
+   "needs": "simple majority of the votes cast on it",
+   "no": "The state cannot borrow this money for these projects.",
+   "state": "ri",
+   "yes": "The state can borrow up to $100 million for business sites and for ocean, defense and life-science industries."
+  },
+  "/guide-ri/measures/green-economy-bonds.html": {
+   "contest": "ri-5-green-economy-bonds-55-000-000",
+   "file": "state-ri.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The state cannot borrow this money for these projects.",
+   "state": "ri",
+   "yes": "The state can borrow up to $55 million for parks, flood protection, clean water and open space."
+  },
+  "/guide-ri/measures/higher-education-facilities.html": {
+   "needs": "simple majority of the votes cast on it",
+   "no": "The state cannot borrow this money for these college buildings.",
+   "state": "ri",
+   "yes": "The state can borrow up to $275 million for new buildings at URI, CCRI and Rhode Island College."
+  },
+  "/guide-ri/measures/housing-and-homeownership.html": {
+   "needs": "simple majority of the votes cast on it",
+   "no": "The state cannot borrow this money for housing.",
+   "state": "ri",
+   "yes": "The state can borrow up to $120 million for affordable housing and homeownership."
+  },
+  "/guide-sd/measures/citizenship-voting-amendment.html": {
+   "contest": "sd-constitutional-amendment-j-an-amendment-to-the-south-dakota-constit",
+   "file": "state-sd.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The constitution stays as it is; voting is still limited to citizens by its current voter-qualification rule and by state law.",
+   "state": "sd",
+   "yes": "The constitution says outright that people who are not U.S. citizens may not vote in South Dakota elections."
+  },
+  "/guide-sd/measures/medicaid-expansion-amendment.html": {
+   "contest": "sd-constitutional-amendment-i-an-amendment-to-the-south-dakota-constit",
+   "file": "state-sd.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The constitution keeps requiring the state to cover these adults, whatever share the federal government pays.",
+   "state": "sd",
+   "yes": "Medicaid for adults under 65 with low incomes stays a constitutional requirement only while the federal government pays at least 90% of the cost."
+  },
+  "/guide-sd/measures/sixty-percent-amendment.html": {
+   "contest": "sd-constitutional-amendment-l-an-amendment-to-the-south-dakota-constit",
+   "file": "state-sd.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Future changes to the constitution keep passing with a majority of the votes cast.",
+   "state": "sd",
+   "yes": "Future changes to the South Dakota constitution would need 60% of the votes cast, not just a majority."
+  },
+  "/guide-sd/measures/unclaimed-property-trust-amendment.html": {
+   "contest": "sd-constitutional-amendment-k-an-amendment-to-the-south-dakota-constit",
+   "file": "state-sd.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The constitution has no unclaimed property trust fund; the State Treasurer keeps handling it under current state law.",
+   "state": "sd",
+   "yes": "Unclaimed property goes into a trust fund in the constitution, and part of its yearly interest and income goes to the state's general fund."
+  },
+  "/guide-tn/measures/amendment-1-bail.html": {
+   "contest": "tn-constitutional-amendment-1",
+   "file": "state-tn.json",
+   "needs": "more YES than NO votes, and YES votes greater than half of all votes cast for governor",
+   "no": "Everyone except people charged with a capital crime keeps a right to bail before trial.",
+   "state": "tn",
+   "yes": "Judges could hold people charged with the listed serious crimes in jail with no bail before trial when the evidence is strong."
+  },
+  "/guide-tn/measures/amendment-2-state-property-tax.html": {
+   "contest": "tn-constitutional-amendment-2",
+   "file": "state-tn.json",
+   "needs": "more YES than NO votes, and YES votes greater than half of all votes cast for governor",
+   "no": "There is still no state property tax, but lawmakers could create one by passing a law.",
+   "state": "tn",
+   "yes": "The constitution would ban any state property tax; county and city property taxes stay."
+  },
+  "/guide-tn/measures/amendment-3-crime-victims-rights.html": {
+   "contest": "tn-constitutional-amendment-3",
+   "file": "state-tn.json",
+   "needs": "more YES than NO votes, and YES votes greater than half of all votes cast for governor",
+   "no": "The current list of eight victims' rights stays in the constitution.",
+   "state": "tn",
+   "yes": "The constitution's eight victims' rights would be replaced by 13, including being heard at parole and being told the release date."
+  },
+  "/guide-ut/measures/amendment-a.html": {
+   "contest": "ut-constitutional-amendment-a",
+   "file": "state-ut.json",
+   "needs": "simple majority",
+   "no": "A NO vote keeps the rule that proposed amendments must be printed in at least one newspaper in every county that has one, for two months before the election.",
+   "state": "ut",
+   "yes": "A YES vote removes the newspaper rule and lets state law set how proposed amendments are published for the 60 days before the general election."
+  },
+  "/guide-ut/measures/amendment-b.html": {
+   "contest": "ut-constitutional-amendment-b",
+   "file": "state-ut.json",
+   "needs": "simple majority",
+   "no": "A NO vote keeps the rule that these citizen initiatives pass with more than half of the vote.",
+   "state": "ut",
+   "yes": "A YES vote means statewide citizen initiatives voted on after November 1, 2026 that create, expand or raise a tax would need at least 60% of the vote to pass."
+  },
+  "/guide-va/measures/question-1.html": {
+   "contest": "va-proposed-constitutional-amendment-question-1",
+   "file": "state-va.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The constitution stays silent on reproductive care, and the General Assembly keeps setting abortion rules by ordinary law.",
+   "state": "va",
+   "yes": "Reproductive care, including abortion, becomes a right in the state constitution, and the state could limit abortion only in the third trimester with health exceptions."
+  },
+  "/guide-va/measures/question-2.html": {
+   "contest": "va-proposed-constitutional-amendment-question-2",
+   "file": "state-va.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The same-sex marriage ban stays in the state constitution; it stays unenforceable unless the U.S. Supreme Court overturns its 2015 ruling.",
+   "state": "va",
+   "yes": "The same-sex marriage ban comes out of the state constitution, and the state must treat all lawful marriages of two adults equally."
+  },
+  "/guide-va/measures/question-3.html": {
+   "contest": "va-proposed-constitutional-amendment-question-3",
+   "file": "state-va.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "People convicted of a felony keep losing the vote for life unless the governor restores it, and the \"mentally incompetent\" rule stays.",
+   "state": "va",
+   "yes": "People convicted of a felony get their vote back automatically when released from prison, and the right to vote becomes a fundamental right in the constitution."
+  },
+  "/guide-vt/measures/proposal-3-collective-bargaining.html": {
+   "needs": "majority of the votes cast on it",
+   "no": "The constitution stays as it is, and the right to organize and bargain together, and any ban on union-membership requirements, stays up to ordinary state law.",
+   "state": "vt",
+   "yes": "Workers get a right to organize and bargain together written into the Vermont Constitution, and lawmakers could not ban union-membership requirements in job contracts."
+  },
+  "/guide-vt/measures/proposal-4-equal-protection.html": {
+   "needs": "majority of the votes cast on it",
+   "no": "The constitution stays as it is, with no new equal protection article, and equal treatment rules stay in ordinary state and federal law.",
+   "state": "vt",
+   "yes": "The Vermont Constitution would guarantee equal protection under the law and bar the state from denying equal treatment for the listed reasons, and measures to promote equal opportunity for groups that faced discrimination would be\u2026"
+  },
+  "/guide-wa/measures/il26-001-parental-rights.html": {
+   "contest": "wa-initiative-measure-no-il26-001",
+   "file": "state-wa.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The parents' rights law stays as lawmakers changed it in 2025.",
+   "state": "wa",
+   "yes": "The 2025 changes are undone: parents get records in 10 business days, notice of medical services, and wider opt-outs, and some 2025 protections are removed."
+  },
+  "/guide-wa/measures/il26-638-girls-school-sports.html": {
+   "contest": "wa-initiative-measure-no-il26-638",
+   "file": "state-wa.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "School sports rules stay as they are, and transgender girls may keep playing on girls' teams.",
+   "state": "wa",
+   "yes": "Students the law defines as biologically male may not play on girls' school teams, and girls need a provider's form confirming sex to play."
+  },
+  "/guide-wa/measures/ip26-645-income-tax-repeal.html": {
+   "contest": "wa-initiative-measure-no-ip26-645",
+   "file": "state-wa.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The 9.9% tax on household income over $1 million starts in 2028 as passed by the Legislature.",
+   "state": "wa",
+   "yes": "The 9.9% tax on income over $1 million is repealed before it starts in 2028, and the state and local governments may not tax personal income."
+  },
+  "/guide-wi/measures/question-1-partial-veto.html": {
+   "contest": "wi-state-question-1",
+   "file": "state-wi.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "A governor could still use a partial veto in ways that create or raise a tax or fee, within today's limits.",
+   "state": "wi",
+   "yes": "A governor could no longer use a partial veto to create or raise any tax or fee."
+  },
+  "/guide-wi/measures/question-2-places-of-worship.html": {
+   "contest": "wi-state-question-2",
+   "file": "state-wi.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Emergency orders could still limit or close gatherings in places of worship, as in 2020, subject to court challenges.",
+   "state": "wi",
+   "yes": "State and local governments could never close places of worship or ban gatherings there during an emergency."
+  },
+  "/guide-wi/measures/question-3-government-discrimination.html": {
+   "contest": "wi-state-question-3",
+   "file": "state-wi.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "Existing laws against discrimination stay, and preference programs remain legal unless a court strikes them down one at a time.",
+   "state": "wi",
+   "yes": "The constitution would ban state and local governments from giving any preference based on race, sex, color, ethnicity or national origin."
+  },
+  "/guide-wv/measures/amendment-1-citizenship-voting.html": {
+   "contest": "wv-6350",
+   "file": "state-wv.json",
+   "needs": "simple majority of the votes cast on it",
+   "no": "The constitution keeps saying \"citizens of the state\" may vote, and the U.S.-citizen rule stays in state law, which lawmakers can change.",
+   "state": "wv",
+   "yes": "The constitution will say only U.S. citizens who are West Virginia citizens may vote, so only another statewide vote could change that."
+  },
+  "/guide-wy/measures/property-tax-exemption.html": {
+   "needs": "majority of those voting in the General Election",
+   "no": "No new homeowner exemption of this kind; property is taxed as it is now.",
+   "state": "wy",
+   "yes": "Qualified owners who live in their home get half of its assessed value taken off for property tax (the land is still taxed). The state estimates it would collect about $92.6 million less in 2028, not counting local governments."
+  },
+  "/guide/measures/amendment-81.html": {
+   "contest": "co-amendment-81-constitutional",
+   "file": "co.json",
+   "needs": "55 percent of the vote",
+   "no": "No law requires that notice, and state limits on sharing private information with federal immigration officials stay in place.",
+   "state": "co",
+   "yes": "Officers must notify federal immigration officials within 72 hours of charging someone with a violent crime, or someone with a past felony, whose legal status they cannot confirm."
+  },
+  "/guide/measures/amendment-82.html": {
+   "contest": "co-amendment-82-constitutional",
+   "file": "co.json",
+   "needs": "55 percent of the vote",
+   "no": "State and local governments keep their current power to regulate natural gas, including limits on gas in new buildings.",
+   "state": "co",
+   "yes": "Buying and selling natural gas for homes and businesses becomes a constitutional right, which may limit state and local rules on gas."
+  },
+  "/guide/measures/amendment-83.html": {
+   "contest": "co-amendment-83-constitutional",
+   "file": "co.json",
+   "needs": "55 percent of the vote",
+   "no": "Hunting and fishing continue under the current state and federal laws and rules.",
+   "state": "co",
+   "yes": "Hunting and fishing become a right in the state constitution and the preferred way to manage fish and wildlife."
+  },
+  "/guide/measures/amendment-84.html": {
+   "contest": "co-amendment-84-constitutional",
+   "file": "co.json",
+   "needs": "55 percent of the vote",
+   "no": "Mail ballots keep being checked by signature only.",
+   "state": "co",
+   "yes": "Mail voters must add the last four digits of an accepted ID number to their ballot, on top of their signature."
+  },
+  "/guide/measures/amendment-85.html": {
+   "contest": "co-amendment-85-constitutional",
+   "file": "co.json",
+   "needs": "55 percent of the vote",
+   "no": "Titles must still be in plain language under state law, with no set reading level, and laws requiring extra wording, such as for tax changes, stay.",
+   "state": "co",
+   "yes": "Every ballot title must be at an eighth-grade reading level or lower, and laws cannot require initiative wording that gets in the way."
+  },
+  "/guide/measures/amendment-86.html": {
+   "contest": "co-amendment-86-constitutional",
+   "file": "co.json",
+   "needs": "55 percent of the vote",
+   "no": "The commission keeps drawing the map every ten years, and the constitution sets no process for changes in between.",
+   "state": "co",
+   "yes": "Any off-cycle change to Colorado's U.S. House map needs the commission's approval and the Colorado Supreme Court's adoption, and cannot be drawn to help a party."
+  },
+  "/guide/measures/amendment-87.html": {
+   "contest": "co-amendment-87-constitutional",
+   "file": "co.json",
+   "needs": "majority vote",
+   "no": "Everyone keeps paying one flat state income tax rate of 4.4 percent, as the state constitution requires today.",
+   "state": "co",
+   "yes": "Starting in 2027, state income tax rates would range from 3.7 percent to 8.4 percent depending on income, and the extra money would go to schools, health care, and early childhood care and education."
+  },
+  "/guide/measures/ballot-issue-7a.html": {
+   "contest": "co-front-range-passenger-rail-district-ballot-issue-7a",
+   "file": "co.json",
+   "needs": "majority of district voters",
+   "no": "The district would get no new tax and no new borrowing.",
+   "state": "co",
+   "yes": "The district would charge a 0.333 percent sales tax, about $295 million a year, and could borrow $580 million to build and run the CoCo train."
+  },
+  "/guide/measures/proposition-132.html": {
+   "contest": "co-proposition-132-statutory",
+   "file": "co.json",
+   "needs": "majority vote",
+   "no": "Having under 1 gram stays a lesser crime with no prison, and prison time for selling or sharing still depends on the amount.",
+   "state": "co",
+   "yes": "Having any amount of fentanyl becomes a felony, and selling or sharing any amount means at least 8 years in prison."
+  },
+  "/guide/measures/proposition-133.html": {
+   "contest": "co-proposition-133-statutory",
+   "file": "co.json",
+   "needs": "majority vote",
+   "no": "Child sex trafficking stays a crime with 8 to 48 years in prison plus 5 years of parole, set by the judge.",
+   "state": "co",
+   "yes": "Anyone convicted of child sex trafficking, including buyers, gets life in prison without parole."
+  },
+  "/guide/measures/proposition-134.html": {
+   "contest": "co-proposition-134-statutory",
+   "file": "co.json",
+   "needs": "majority vote",
+   "no": "Schools, school districts and athletic associations would keep setting their own rules on who plays on which team, under current state and federal law.",
+   "state": "co",
+   "yes": "Every school team from elementary school through college would be for biological males, biological females, or anyone, and students would play on the team that matches their biological sex."
+  },
+  "/guide/measures/proposition-135.html": {
+   "contest": "co-proposition-135-statutory",
+   "file": "co.json",
+   "needs": "majority vote",
+   "no": "Colorado law would keep protecting these surgeries for minors, and insurance and public health programs could keep paying for them.",
+   "state": "co",
+   "yes": "Doctors could not do these surgeries on anyone under 18, and insurance and government money could not pay for them."
+  },
+  "/guide/measures/proposition-136.html": {
+   "contest": "co-proposition-136-statutory",
+   "file": "co.json",
+   "needs": "majority vote",
+   "no": "The income tax rate stays at 4.4 percent, with no limit written into state law.",
+   "state": "co",
+   "yes": "State law would say the income tax rate can be no higher than today's 4.4 percent, starting January 1, 2027."
+  },
+  "/guide/measures/proposition-137.html": {
+   "contest": "co-proposition-137-statutory",
+   "file": "co.json",
+   "needs": "majority vote",
+   "no": "Sales tax from sporting goods would stay in the general budget and under the TABOR cap, to be spent as the legislature decides or refunded when required.",
+   "state": "co",
+   "yes": "Sales tax from sporting goods, about $175 million in 2027-28, would go to conservation, wildfire and outdoor programs and would not count under the TABOR cap."
+  },
+  "/guide/measures/proposition-nn.html": {
+   "contest": "co-proposition-nn-statutory",
+   "file": "co.json",
+   "needs": "majority vote",
+   "no": "The current TABOR limit stays. Revenue above it is still refunded to taxpayers, and funding for K-12 education, children's programs and other state purposes stays at current levels.",
+   "state": "co",
+   "yes": "The state may keep revenue above the current TABOR limit, up to a new, higher limit tied to past K-12 spending. That money first pays back local governments for property tax breaks."
+  }
+ },
+ "schema": "theway-measure-pages/1"
+}

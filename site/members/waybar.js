@@ -709,6 +709,12 @@
     var dl = document.createElement('script'); dl.src = '/members/discuss-link.js?v=1'; document.body.appendChild(dl);
   }
 
+  // Passed / Failed / Not yet called on ballot measure pages and Election Studies, read from the live results files.
+  if (!inMembers && /^\/(case-studies\/|guide(-[a-z]{2})?\/measures\/)/.test(path)) {
+    var ocss = document.createElement('link'); ocss.rel = 'stylesheet'; ocss.href = '/results/outcome.css?v=1'; document.head.appendChild(ocss);
+    var oj = document.createElement('script'); oj.src = '/results/outcome.js?v=1'; document.body.appendChild(oj);
+  }
+
   // Help is now a bubble on the left (bubbles.js); the old floating "What do I do here?" button and the Invite and My ballot pills are gone.
 
   // Cloudflare Web Analytics on every public page that carries the bar (not the member area).

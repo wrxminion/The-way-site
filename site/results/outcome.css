@@ -1,0 +1,21 @@
+/* The Way: Passed / Failed / Not yet called box (results/outcome.js). Same look for Passed and Failed: no side gets a "good" color. */
+.mo{margin:14px 0 18px;padding:16px 18px 14px;border:1px solid #b1eff12b;border-left:6px solid #eaf8fa;border-radius:12px;background:#051b28e6;color:#eaf8fa;line-height:1.5;max-width:760px}
+.mo.mo-wait{border-left-color:#eac690}
+.mo-eyebrow{margin:0;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#a6f0e7}
+.mo-word{margin:2px 0 4px;font:800 clamp(40px,7vw,60px)/1.02 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.02em;color:#fff}
+.mo.mo-wait .mo-word{font-size:clamp(32px,5.5vw,46px);color:#f4e8d0}
+.mo-who{margin:0 0 10px;font-weight:700;font-size:16px;color:#f4e8d0}
+.mo-means{margin:0 0 12px;font-size:16px}
+.mo-means b{letter-spacing:.04em}
+.mo-count{display:grid;gap:8px;margin:6px 0 10px}
+.mo-rtop{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.mo-side{font-weight:800;letter-spacing:.12em;font-size:14px}
+.mo-num{font-weight:800;font-size:22px;white-space:nowrap}
+.mo-num small{font-weight:400;font-size:13px;color:#b6cdd3}
+.mo-bar{height:8px;border-radius:4px;background:#0d2c3b;margin-top:3px;overflow:hidden}
+.mo-bar i{display:block;height:100%;background:#a6f0e7}
+.mo-fine{margin:6px 0 0;font-size:13.5px;color:#b6cdd3}
+.mo-fine a,.mo a{color:#aaf0e8}
+.mo-chip{display:inline-block;margin:0 0 0 8px;padding:1px 10px;border:1px solid #eaf8fa;border-radius:999px;font-size:12.5px;font-weight:700;color:#eaf8fa;vertical-align:middle;white-space:nowrap}
+.mo-chip.mo-wait{border-color:#eac690;color:#f4e8d0;font-weight:600}
+@media(max-width:640px){.mo{padding:14px 14px 12px;margin:10px 0 14px}.mo-num{font-size:19px}.mo-chip{white-space:normal}}
