@@ -176,7 +176,7 @@ function make(ctx) {
     const textOf = (x) => {
       let t = x.body;
       if (x.link_path && x.link_title) t += `\n${x.link_title}\n${SITE}${x.link_path}`;
-      else if (x.source_url) t += `\n${x.source_url}`;
+      else if (x.source_url && !t.includes(x.source_url)) t += `\n${x.source_url}`;   // AI drafts already end with their link
       return x.source === 'llm' ? t + AI_LABEL : t;
     };
     // One set of tick boxes at the top of the section says who a post goes to. It governs both the Ready to post list and the

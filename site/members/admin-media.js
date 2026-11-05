@@ -74,6 +74,17 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
   const assemble = (body, path, title) => (path && title ? `${body}\n${title}\n${CAT.origin}${path}` : body);
   const linkLine = (path, title) => (path && title
     ? h('div', { class: 'small md-link' }, 'Link: ', h('strong', { text: title }), ` ${CAT.origin}${path}`) : null);
+  // Bluesky allows 300 characters, counting the link and the AI label. This is the same text Post online publishes.
+  const BSKY_MAX = 300, AI_LABEL = '\n\n(AI-written)';
+  const nChars = (s) => [...s].length;
+  const finalText = (x) => {
+    let t = x.body || '';
+    if (x.link_path && x.link_title) t += `\n${x.link_title}\n${CAT.origin}${x.link_path}`;
+    else if (x.source_url && !t.includes(x.source_url)) t += `\n${x.source_url}`;
+    return x.source === 'llm' ? t + AI_LABEL : t;
+  };
+  const bskyOver = (x) => x.platform === 'bluesky' && nChars(finalText(x)) > BSKY_MAX;
+  const tooLong = (x) => `Too long for Bluesky: ${nChars(finalText(x))} of ${BSKY_MAX} characters, counting the link${x.source === 'llm' ? ' and the AI label' : ''}. Shorten it first.`;
 
   function picker(initial, onPick) {
     const pages = CAT.pages || [];
@@ -391,6 +402,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
         const d = await r.json();
         const have = new Set(posts.map((x) => x.platform + '|' + x.body));
         const rows = [];
+        let long = 0;
         for (const s of (d && d.posts) || []) {
           const plats = s.platform === 'both' ? ['facebook', 'bluesky'] : [s.platform];
           for (const pl of plats) {
@@ -400,12 +412,14 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
             const row = { platform: pl, body, status: 'draft', source: 'llm' };
             if (s.link && URL_OK.test(s.link)) row.source_url = s.link;
             if (s.source) row.source_name = String(s.source).replace(/[<>]/g, '').trim().slice(0, 120) || null;
+            if (bskyOver(row)) { long++; continue; }
             rows.push(row);
           }
         }
         if (rows.length) await q(sb.from('social_posts').insert(rows));
         sub = 'draft'; await load();
-        msg.replaceChildren(notice((rows.length ? `Added ${rows.length} AI draft${rows.length === 1 ? '' : 's'}. Read each one before you approve it.` : 'No new drafts in the saved batch.') + asked, 'ok'));
+        msg.replaceChildren(notice((rows.length ? `Added ${rows.length} AI draft${rows.length === 1 ? '' : 's'}. Read each one before you approve it.` : 'No new drafts in the saved batch.')
+          + (long ? ` Left out ${long} Bluesky draft${long === 1 ? '' : 's'} over ${BSKY_MAX} characters.` : '') + asked, 'ok'));
       }, msg) }, 'Get AI drafts');
 
       return h('section', { class: 'panel md-askbox' }, form,
@@ -460,6 +474,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
       const btns = [];
       if (x.status === 'draft') {
         if (reviewer) btns.push(btn('Approve', async () => {
+          if (bskyOver(x)) throw new Error(tooLong(x));
           await q(sb.from('social_posts').update({ status: 'approved' }).eq('id', x.id));
           await load();
           changed();
@@ -492,6 +507,8 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
           x.planned_slot ? h('span', { class: 'tag', text: x.planned_slot }) : null,
           h('span', { class: 'small dim', text: timeMT(x.created_at) })),
         h('div', { class: 'md-card-body', text: x.body }),
+        x.platform === 'bluesky' ? h('div', { class: bskyOver(x) ? 'small md-warn' : 'small dim', text: bskyOver(x) ? tooLong(x)
+          : `${nChars(finalText(x))} of ${BSKY_MAX} characters on Bluesky.` }) : null,
         linkLine(x.link_path, x.link_title),
         x.source_name ? h('div', { class: 'small dim md-link', text: `Source: ${x.source_name}` }) : null,
         as ? null : h('div', { class: 'small md-warn', text: 'Handle not set for this account.' }),
@@ -515,6 +532,8 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
     async function editPost(x) {
       const t = await ask('Edit the post (3 to 500 characters). An approved post goes back to draft:', x.body);
       if (!t) return;
+      const next = { ...x, body: t.trim() };
+      if (bskyOver(next)) throw new Error(tooLong(next));
       await q(sb.from('social_posts').update({ body: t.trim() }).eq('id', x.id)); await load();
     }
 
@@ -532,6 +551,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
         const r = { platform: ps.value, body: t, status: 'draft', source: 'human' };
         if (slot.value.trim()) r.planned_slot = slot.value.trim();
         Object.assign(r, comp.fields());
+        if (bskyOver(r)) throw new Error(tooLong(r));
         await q(sb.from('social_posts').insert(r));
         sub = 'draft'; await load();
       }, msg) }, h('label', {}, 'Network', ps), h('label', {}, 'Post text (saved as a draft)', pb), comp.els,
