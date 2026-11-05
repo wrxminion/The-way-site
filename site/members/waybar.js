@@ -70,6 +70,7 @@
     news: 'M5 4h12v16H5z M17 8h3v10a2 2 0 0 1-2 2 M8 8h6 M8 12h6 M8 16h4',
     cases: 'M3 9l9-5 9 5 M5 10v8 M10 10v8 M14 10v8 M19 10v8 M3 20h18',
     casestudies: 'M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z M8 7h7',
+    money: 'M12 2v20 M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6',
     'research-lib': 'M9 3h6 M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3',
     map: 'M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14 M15 6v14',
     invite: 'M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z M3 20a6 6 0 0 1 12 0 M18 8v6 M15 11h6',
@@ -150,6 +151,7 @@
     if (/^\/teacher-parent/.test(path)) return 'teacherparent';
     if (/^\/case-studies/.test(path)) return 'casestudies';
     if (/^\/research\//.test(path)) return 'research-lib';
+    if (/^\/money-trail\//.test(path)) return 'money';
     if (/^\/search\//.test(path)) return 'search';
     if (/^\/members\/pull-a-thread/.test(path)) return 'thread';
     if (/^\/results/.test(path)) return 'results';
@@ -241,6 +243,7 @@
       { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
       { href: '/case-studies/', label: 'Election Studies', icon: 'casestudies', key: 'casestudies' },
       { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
+        { href: '/money-trail/', label: 'Money Trail', desc: 'Follow campaign money through the public filings', icon: 'money', key: 'money' },
       { href: TEACH, label: 'Teacher? Parent? Like to have fun?', desc: 'Meet Scuba Steve, who hunts the hallucination shark', icon: 'teacherparent', key: 'teacherparent' }
     ];
     if (d.findings) explore.push({ href: '/members/findings.html', label: 'Findings', desc: 'What members checked, with the verdict', icon: 'findings', key: 'findings' });
@@ -288,6 +291,7 @@
         { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
         { href: '/case-studies/', label: 'Election Studies', icon: 'casestudies', key: 'casestudies' },
         { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
+        { href: '/money-trail/', label: 'Money Trail', desc: 'Follow campaign money through the public filings', icon: 'money', key: 'money' },
         { href: TEACH, label: 'Teacher? Parent? Like to have fun?', desc: 'Meet Scuba Steve, who hunts the hallucination shark', icon: 'teacherparent', key: 'teacherparent' }
       ] },
       { heading: 'Your account', items: [
@@ -440,6 +444,7 @@
     pubR.appendChild(link(GOV, 'Government', 'govworks', cur));
     pubR.appendChild(link('/case-studies/', 'Election Studies', 'casestudies', cur));
     pubR.appendChild(link('/research/', 'Research', 'research-lib', cur));
+    pubR.appendChild(link('/money-trail/', 'Money Trail', 'money', cur));
     pub.appendChild(pubL); pub.appendChild(pubR);
     return pub;
   }

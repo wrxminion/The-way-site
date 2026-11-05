@@ -447,3 +447,13 @@ html.wb-bubs-building .wb-dock > :not(.wb-bubbles-toggle),html.wb-bubs-building 
 .wb-archive a{color:#9ff3dc;font-weight:700;white-space:nowrap}
 @media (max-width:1272px){.wb-archive{margin:10px 16px 0}}
 @media print{.wb-archive{border:1px solid #000;background:none;color:#000}.wb-archive a{color:#000}}
+/* Seven section links (Money Trail added Nov 2026): tighten them on a narrower desktop so the right group stays on one line */
+@media (min-width:761px) and (max-width:1249px){
+  .waybar .wb-pub-l,.waybar .wb-pub-r{column-gap:13px}
+  .waybar .wb-pub a{letter-spacing:.05em;font-size:12px}
+}
+@media (min-width:761px) and (max-width:999px){
+  .waybar .wb-pub{column-gap:18px}
+  .waybar .wb-pub-l,.waybar .wb-pub-r{column-gap:9px}
+  .waybar .wb-pub a{letter-spacing:.02em;font-size:11px}
+}

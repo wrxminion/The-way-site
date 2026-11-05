@@ -1,0 +1,38 @@
+body{margin:0;background:#06141c}
+.trail-wrap{max-width:980px;margin:auto;padding:clamp(8px,3vw,24px)}
+#way-trail{color:#edf6ef;background:#081e27;border-radius:6px;overflow:hidden;font:15px/1.5 system-ui,sans-serif;color-scheme:dark}
+ #way-trail .trail-head{padding:22px;background:radial-gradient(ellipse at 85% -35%,#286467,transparent 75%),repeating-radial-gradient(ellipse at 94% -10%,transparent 0 18px,#b9e4d217 19px 20px),#10343d;border-bottom:1px solid #557c7f}
+ #way-trail .trail-head span{color:#f0ce77;letter-spacing:.17em;font-size:11px}
+ #way-trail h1,#way-trail h2,#way-trail h3{font-family:Georgia,serif;font-weight:400;margin:0}
+ #way-trail h1{font-size:clamp(33px,6vw,52px)}
+ #way-trail h2{font-size:clamp(24px,4vw,32px);overflow-wrap:anywhere}
+ #way-trail h3{font-size:21px;margin:0 0 8px}
+ #way-trail p{margin:4px 0 9px;color:#d0e1dd}
+ #way-trail .trail-body{padding:16px 22px 22px}
+ #way-trail .trail-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px}
+ #way-trail label{display:grid;gap:4px;color:#e9d59d;font-size:13px}
+ #way-trail select,#way-trail input,#way-trail button{font:inherit;font-size:16px;min-height:44px;max-width:100%;color:#edf6ef;background:#102f39;border:1px solid #618989;border-radius:3px;padding:5px 8px}
+ #way-trail .trail-record{border-top:1px solid #456870;padding-top:12px}
+ #way-trail a{color:#a7e3d0;text-underline-offset:3px}
+ #way-trail button{font-size:13px;margin:2px 3px}
+ #way-trail li{margin-bottom:8px;overflow-wrap:anywhere}
+ #way-trail ul,#way-trail ol{padding-left:21px}
+ #way-trail details{padding:8px 0;border-top:1px solid #456870}
+ #way-trail summary{color:#f0ce77;min-height:38px}
+ #way-trail .trail-small{font-size:13px}
+ #way-trail #trail-permalink{overflow-wrap:anywhere;color:#b1d8d0}
+ #way-trail #trail-totals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ #way-trail #trail-totals div{background:#10323b;padding:9px}
+ #way-trail #trail-totals span{display:block;overflow-wrap:anywhere}
+ @media(max-width:480px){#way-trail .trail-body,#way-trail .trail-head{padding-inline:13px}#way-trail .trail-body>.trail-controls{grid-template-columns:1fr}}
+/* ---- The Way additions */
+#way-trail .trail-head span a{color:#f0ce77;text-decoration:none}
+#way-trail select,#way-trail input[type=search]{width:100%;box-sizing:border-box}
+#way-trail .trail-big{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 14px}
+#way-trail .trail-big[hidden]{display:none}
+#way-trail .trail-big div{background:#10323b;border:1px solid #2f6a6c;border-radius:6px;padding:12px 14px}
+#way-trail .trail-big b{display:block;font:800 clamp(30px,5vw,44px)/1.1 system-ui,sans-serif;color:#7ff0d4;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+#way-trail .trail-big span{display:block;margin-top:4px;color:#e9d59d;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+#way-trail .trail-big p{grid-column:1/-1;margin:0;font-size:13px}
+#way-trail #trail-totals span:nth-child(2),#way-trail #trail-totals span:nth-child(3){font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
+@media(max-width:480px){#way-trail .trail-big{grid-template-columns:1fr}}
