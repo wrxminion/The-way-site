@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#071722">
+<title>The Money Trail | The Way</title>
+<meta name="description" content="Follow disclosed campaign-finance records, connected committees, and state ballot questions through source-linked evidence. A nonpartisan research map.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="/news/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="money.css?v=3">
+<link rel="stylesheet" href="/members/waybar.css?v=29">
+<link rel="canonical" href="https://michiinstitute.com/money-trail/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Money Trail | The Way">
+<meta property="og:description" content="Follow disclosed campaign-finance records, connected committees, and state ballot questions through source-linked evidence. A nonpartisan research map.">
+<meta property="og:site_name" content="The Way | Michi Institute">
+<meta property="og:image" content="https://michiinstitute.com/og-logo.png">
+</head>
+<body>
+<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-mid wb-pub" aria-label="Sections"><a href="/states/">Ballot</a><a href="/news/">News</a><a href="/cases/">Civics &amp; History</a><a href="/foundation.html">Why?</a></nav><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+<main>
+<section class="hero"><div class="eyebrow">The Way / Research / Money Trail</div><h1>Where the money <em>flows.</em></h1><p>An explorable record of campaign contributions, committee relationships, vendors, and statewide ballot questions. Follow a source, inspect a filing, and separate documented payments from reported leads.</p><div class="hero-meta"><span class="line-accent"></span> 50-state investigation · All states remain open</div></section>
+<section class="kpis" id="kpis" aria-label="Research coverage summary"></section>
+<nav class="tabs" aria-label="Visualization modes"><button class="tab active" data-view="timeline">◷ &nbsp; Timeline</button><button class="tab" data-view="network">◇ &nbsp; Money network</button><button class="tab" data-view="states">▦ &nbsp; State tracker</button><a class="tabs-helper mt-follow" href="follow.html">Follow one trail: a group, person, bill or contractor →</a></nav>
+<div class="workbench">
+<aside class="panel filter-panel" id="filter-panel"><div class="panel-heading" id="filter-toggle" role="button" tabindex="0" aria-expanded="false">Filter the evidence</div><div class="filter-body">
+ <div class="field"><label for="search">Name, donor, committee, measure</label><input id="search" type="search" placeholder="Search the trail…" autocomplete="off"></div>
+ <div class="field"><label for="state">Jurisdiction / state context</label><select id="state"><option value="ALL">All states</option></select></div>
+ <div class="field"><label for="kind">Record type</label><select id="kind"><option value="all">All record types</option><option value="transaction">Itemized transactions</option><option value="ballot">Official ballot events</option><option value="reported">Reported observations</option></select></div>
+ <div class="field"><label for="direction">Order by date</label><select id="direction"><option value="desc">Newest first</option><option value="asc">Oldest first</option></select></div>
+ <div class="field"><label for="minimum">Minimum itemized amount</label><select id="minimum"><option value="0">All amounts</option><option value="10000">$10,000+</option><option value="100000">$100,000+</option><option value="1000000">$1,000,000+</option></select></div>
+ <label class="checks"><input id="show-reported" type="checkbox" checked> Include reported disclosure observations (not verified unique transfers)</label>
+ <hr class="filter-divider"><button class="reset-btn" id="clear-filters">Reset filters</button>
+ <div class="filter-note">State context does not prove that a federal payment funded activity in that state. Reported totals are never added to itemized totals.</div>
+</div></aside>
+<section class="center-panel" aria-live="polite">
+ <div class="feed-head"><div><h2 id="feed-title">The chronological trail</h2><div class="feed-sub" id="feed-sub">Reading original record dates, not inferred transfers.</div></div><div class="mini-ctrls" id="feed-tools"><button id="today-top" class="small-btn" title="Back to latest">Latest ↑</button></div></div>
+ <div id="timeline-view"><div class="timeline-feed" id="timeline-feed"></div></div>
+ <div id="network-view" hidden><div class="network-area"><div class="network-controls"><select id="hub" aria-label="Choose a funding hub"></select><label class="checks mt-flat"><input id="include-context" type="checkbox" checked> Include reported context</label></div><p class="network-desc" id="network-desc">Select a funding hub to explore recorded connections. Solid lines represent itemized transactions; dashed lines represent reports requiring reconciliation.</p><div class="mini-warning" id="network-warning">Equal or similar names are not necessarily the same legal entity. Distinct IDs remain distinct nodes.</div><div class="graph-wrap" id="graph-wrap"><svg id="network-svg" role="img" aria-label="Interactive entity relationship network" viewBox="0 0 1120 640"></svg><div class="bubble"><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out">−</button><button id="zoom-reset" aria-label="Reset zoom">↺</button></div></div><div class="graph-legend"><span class="graph-key"><i class="line-sample"></i>Itemized filing</span><span class="graph-key"><i class="line-sample dashed"></i>Reported observation</span><span class="graph-key"><i class="line-sample dotted"></i>Nonfinancial/context link</span></div><p class="graph-bottom" id="graph-count"></p></div></div>
+ <div id="states-view" hidden><div class="state-area"><p class="state-lead">Coverage is evidence of work underway—not an assessment that an election or state has been fully researched. Choose a state to see its ballot records and review gaps.</p><div class="state-map" id="state-map"></div><div class="state-grid" id="state-grid"></div><div class="state-focus" id="state-focus"></div></div></div>
+</section>
+<aside class="panel detail-panel" id="detail-panel"><div class="mt-detail-head"><div class="panel-heading">Evidence inspector</div><button class="detail-close" id="detail-close" aria-label="Close evidence inspector">×</button></div><div id="detail-content" class="detail-placeholder"><svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="49" cy="50" r="28" stroke="#62beba" stroke-width="1"/><circle cx="49" cy="50" r="16" stroke="#497f8b" stroke-width="1"/><path d="M3 55C18 34 30 79 53 48S79 35 98 49" stroke="#75d6b9" stroke-width="1.7"/></svg><h2>Every thread has a source.</h2><p>Select a transaction, event, graph connection, or state to see source links, confidence, and outstanding verification questions.</p><div class="detail-caution">This tool follows the research archive, not a live feed. A matching name alone never proves that two organizations are legally identical.</div></div></aside>
+</div>
+<footer><div><strong>THE WAY / MICHI INSTITUTE</strong> · Evidence-first civic research<br>Data snapshot: November 2 cumulative + November 3–5 research notes.</div><div>150 itemized records are source-annotated claims in the archived research; original filings were <strong>not re-fetched</strong> during this build.<br>No state is complete. No connection implies wrongdoing. <a href="/">MichiInstitute.com</a></div></footer>
+</main>
+<script src="/results/ap-map-paths.js?v=d116"></script>
+<script src="data.js?v=1"></script>
+<script src="app.js?v=2"></script>
+<script src="/members/waybar.js?v=75" defer></script>
+</body>
+</html>
