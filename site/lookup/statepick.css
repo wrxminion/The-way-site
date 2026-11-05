@@ -1,0 +1,26 @@
+/* State picker: US map + dropdown on every voter guide (us-build/tools/statepick.py) */
+.statepick{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px}
+.statepick label{color:var(--muted,#bcd7df)}
+.sp-select{font:inherit;font-size:14px;color:#e9ffff;background:#06283a;border:1px solid #abedf55c;border-radius:999px;padding:6px 12px;max-width:100%;min-height:36px}
+.sp-select:focus-visible{outline:2px solid #91dfdc;outline-offset:2px}
+.sp-msg{color:#ffe7a8;font-size:13px}
+.sp-msg:empty{display:none}
+.statemap .sp-map{display:block;width:100%;height:auto;margin:10px 0 4px}
+.sp-state path{stroke:#020b13;stroke-width:.8;transition:fill .15s}
+.sp-live path{fill:#4fc7c0}
+.sp-live:hover path,.sp-live:focus-visible path{fill:#bdfbf4}
+.sp-here path{fill:#ffd166}
+.sp-soon path{fill:#1d4256}
+.sp-soon:hover path,.sp-soon:focus-visible path{fill:#2d5f78}
+.sp-state:focus{outline:none}
+.sp-state:focus-visible path{stroke:#ffffff;stroke-width:2.5}
+.sp-lab{font:600 11px Inter,system-ui,sans-serif;fill:#021018;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
+.sp-key{font-size:13px;color:var(--muted,#bcd7df);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.sp-dot{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:4px}
+.sp-dot.sp-live{background:#4fc7c0}.sp-dot.sp-soon{background:#1d4256;border:1px solid #abedf55c}.sp-dot.sp-here{background:#ffd166}
+@media (max-width:600px){.sp-lab{font-size:14px}.crumbs .statepick{width:100%}.sp-select{width:100%}}
+.sp-picking .sp-here path{fill:#4fc7c0}
+.sp-pick path,.sp-pick:hover path,.sp-picking .sp-pick path{fill:#ffd166;stroke:#ffffff;stroke-width:2}
+.sp-mini{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.sp-mini .sp-map{width:220px;max-width:100%;height:auto;flex:0 0 auto}
+@media (max-width:600px){.sp-mini .sp-map{width:100%;max-width:340px}}

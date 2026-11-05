@@ -1,0 +1,14 @@
+.lk{max-width:1200px;margin:0 auto;padding:0 22px 40px;display:grid;gap:18px}
+.panel{padding:26px;border-radius:20px;border:1px solid var(--line,#abedf536);background:linear-gradient(155deg,#123c4cc9,#061b2bde)}
+.panel[hidden]{display:none}
+.panel h2{font:normal 30px Georgia,serif;margin:0 0 10px}
+.panel .note{font-size:14px;color:#b6cdd3;line-height:1.55;margin:0 0 12px}
+.panel .results{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.statemap{max-width:760px}
+.pickrow{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.pickrow .sp-select{min-width:170px;flex:1 1 170px}
+.cands{margin:8px 0 0;padding-left:18px;font-size:13px;color:#c8dfe4;line-height:1.55}
+.cands .wi{color:#93aeb6;font-style:italic}
+.gofull a{display:inline-block;border:1px solid #86d4d35a;background:#12394a;color:#eaf8fa;border-radius:100px;padding:10px 16px;font-weight:650;font-size:14px;text-decoration:none;margin:4px 8px 0 0}
+.gofull a:hover,.gofull a:focus-visible{background:#215466;outline:2px solid #91dfdc}
+.sp-live path{fill:#4fc7c0}
