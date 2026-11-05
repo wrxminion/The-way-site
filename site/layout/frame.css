@@ -1,9 +1,12 @@
 /* The Way: shared page frame (redesign step 1, Nov 2026). Opt-in: a page gets it with <body class="wf" data-wf="facts|pick">
    and data-wf-main on the element that holds the article. frame.js builds a reading column plus a side panel:
    a fact box ("facts") or Your pick and notes ("pick", voter guide). Same look on every page that opts in. */
-body.wf{--wf-ink:#e9ffff;--wf-soft:#cfe4ea;--wf-line:#c7ffff2e;--wf-accent:#a7f0e9;--wf-panel:#052b3c;--wf-surface:#06202ef5}
+html:has(body.wf){overflow-x:clip}
+body.wf{overflow-x:clip;--wf-ink:#e9ffff;--wf-soft:#cfe4ea;--wf-line:#c7ffff2e;--wf-accent:#a7f0e9;--wf-panel:#052b3c;--wf-surface:#06202ef5}
 body.wf .wf-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;max-width:1240px;margin:0 auto;align-items:start;box-sizing:border-box}
 body.wf .wf-main{min-width:0}
+/* the ocean pages hide overflow on <main>, which would stop the panel from staying on screen; clip does the same job without that */
+body.wf main.ocean{overflow:clip}
 body.wf .wf-main p,body.wf .wf-main li,body.wf .wf-main dd{max-width:72ch}
 /* the side panel stays on screen while the article scrolls; it scrolls on its own when it is taller than the window */
 body.wf .wf-side{position:sticky;top:var(--wf-top,14px);max-height:calc(100vh - var(--wf-top,14px) - 14px);overflow:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:14px;font:14px/1.45 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--wf-ink)}
