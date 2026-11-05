@@ -293,7 +293,10 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
   const timeMT = (iso) => `${new Date(iso).toLocaleString('en-US', { timeZone: 'America/Denver', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })} MT`;
   const reviewerNow = () => isAdmin() || (typeof canReview === 'function' && canReview());
 
-  function social() {
+  // Tell the Post online tab that the approved list changed, so its Ready to post list reloads.
+  const changed = (focusId) => window.dispatchEvent(new CustomEvent('way-social-changed', { detail: { focusId: focusId || null } }));
+
+  function social(nav) {
     const admin = isAdmin();
     const reviewer = reviewerNow();
     const msg = h('div');
@@ -311,7 +314,9 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
     const isOn = (id) => { const a = accounts.get(id); return !!(a && a.active); };
     const handleOf = (id) => { const a = accounts.get(id); return a && a.handle && a.handle.trim() ? a.handle.trim() : null; };
 
+    let lastLoad = 0;
     async function load() {
+      lastLoad = Date.now();
       const [accs, rows] = await Promise.all([
         q(sb.from('social_accounts').select('platform,handle,active')),
         q(sb.from('social_posts').select('*').order('id', { ascending: false }).limit(500)),
@@ -370,17 +375,19 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
         h('label', {}, 'Paste a link or write an idea', ta),
         h('div', { class: 'md-ask-go' }, pf, h('button', { class: 'primary', type: 'submit' }, 'Draft it'))));
 
-      const more = h('button', { type: 'button', class: 'quiet', onclick: action(async () => {
-        await q(sb.from('social_draft_requests').insert({ kind: 'more', wanted: 5, platform: 'both' }));
-        sub = 'draft';
-        await load();
-        msg.replaceChildren(notice('Asked the drafter for 5 more drafts. They show up below when the research computer is free.', 'ok'));
-      }, msg) }, 'Ask for more drafts');
-
-      // Drafts the research model already made, waiting in /social-picks/data.json. New ones become AI-made drafts.
+      // One button does both: it loads the drafts the research model already made (/social-picks/data.json, new ones
+      // become AI-made drafts) and asks the drafter for 5 more. The ask is skipped if one is already open.
       const loadPicks = h('button', { type: 'button', class: 'quiet', onclick: action(async () => {
+        let asked = '';
+        if (asksReady) {
+          if (asks.some((a) => a.kind === 'more' && (a.status === 'waiting' || a.status === 'working'))) asked = ' An ask for more is already open.';
+          else {
+            try { await q(sb.from('social_draft_requests').insert({ kind: 'more', wanted: 5, platform: 'both' })); asked = ' Asked the drafter for 5 more. They show up here when the research computer is free.'; }
+            catch (e) { asked = ` Could not ask for more: ${e.message || e}.`; }
+          }
+        }
         const r = await fetch('/social-picks/data.json?t=' + Date.now(), { cache: 'no-store' });
-        if (!r.ok) throw new Error('Could not read the suggestions file.');
+        if (!r.ok) { await load(); throw new Error('Could not read the suggestions file.' + asked); }
         const d = await r.json();
         const have = new Set(posts.map((x) => x.platform + '|' + x.body));
         const rows = [];
@@ -398,11 +405,11 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
         }
         if (rows.length) await q(sb.from('social_posts').insert(rows));
         sub = 'draft'; await load();
-        msg.replaceChildren(notice(rows.length ? `Added ${rows.length} suggested draft${rows.length === 1 ? '' : 's'}. Read each one before you approve it.` : 'No new suggestions in the file yet.', 'ok'));
-      }, msg) }, 'Load AI suggestions');
+        msg.replaceChildren(notice((rows.length ? `Added ${rows.length} AI draft${rows.length === 1 ? '' : 's'}. Read each one before you approve it.` : 'No new drafts in the saved batch.') + asked, 'ok'));
+      }, msg) }, 'Get AI drafts');
 
       return h('section', { class: 'panel md-askbox' }, form,
-        h('div', { class: 'md-ask-more' }, hintEl, h('div', { class: 'btns' }, loadPicks, more)));
+        h('div', { class: 'md-ask-more' }, hintEl, h('div', { class: 'btns' }, loadPicks)));
     }
 
     function askCard(a) {
@@ -452,7 +459,12 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
       const copyB = copyBtn(assemble(x.body, x.link_path, x.link_title));
       const btns = [];
       if (x.status === 'draft') {
-        if (reviewer) btns.push(btn('Approve', async () => { await q(sb.from('social_posts').update({ status: 'approved' }).eq('id', x.id)); await load(); }, true));
+        if (reviewer) btns.push(btn('Approve', async () => {
+          await q(sb.from('social_posts').update({ status: 'approved' }).eq('id', x.id));
+          await load();
+          changed();
+          afterApprove(x);
+        }, true));
         btns.push(copyB);
         if (reviewer) btns.push(btn('Edit', () => editPost(x)), btn('Not this one', async () => { await q(sb.from('social_posts').update({ status: 'dismissed' }).eq('id', x.id)); await load(); }));
       } else if (x.status === 'dismissed') {
@@ -485,6 +497,19 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
         as ? null : h('div', { class: 'small md-warn', text: 'Handle not set for this account.' }),
         h('div', { class: 'btns' }, btns),
         admin ? changeLink('social_posts', x, load, msg) : null);
+    }
+
+    // After Approve: post it now (opens Post online with this post at the top of the view) or keep it for later.
+    function afterApprove(x) {
+      const canPost = nav && nav.has('online') && (x.platform === 'bluesky' || x.platform === 'facebook');
+      if (!canPost) { msg.replaceChildren(notice('Approved. It is under Approved until it is posted.', 'ok')); return; }
+      const now = h('button', { type: 'button', class: 'primary' }, 'Post now');
+      const later = h('button', { type: 'button', class: 'quiet' }, 'Post later');
+      now.onclick = () => { msg.replaceChildren(); nav.go('online', x.id); };
+      later.onclick = () => msg.replaceChildren(notice('Kept for later. It is under Approved, and in Post online under Ready to post.', 'ok'));
+      msg.replaceChildren(h('div', { class: 'notice ok md-postnow', role: 'status' },
+        h('span', { text: 'Approved. Post it now, or keep it for later?' }), h('div', { class: 'btns' }, now, later)));
+      msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     async function editPost(x) {
@@ -546,6 +571,9 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
       msg, asksEl, chipsEl, listEl, extraEl,
       h('p', { class: 'small dim', text: 'Nothing is posted automatically. A person posts after approval, by hand or from Post online. A post made by an AI must carry the AI label. Posts are for adults and teachers, not children.' }));
     load().catch((e) => listEl.replaceChildren(notice(e.message || 'Could not load social posts.')));
+    window.addEventListener('way-media-posts', () => {
+      if (root.isConnected && Date.now() - lastLoad > 2000) load().catch(() => { /* keep the last list */ });
+    });
     return root;
   }
 
@@ -555,7 +583,7 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
   function view(render, parts) {
     const p = parts || {};
     const TABS = [
-      { id: 'posts', label: 'Posts', make: () => social() },
+      { id: 'posts', label: 'Posts', make: () => social(nav) },
       { id: 'ideas', label: 'Ideas and copy', make: () => ideasHub(go) },
       p.postNode ? { id: 'online', label: 'Post online', make: () => p.postNode } : null,
       STATS ? { id: 'analytics', label: 'Analytics', make: () => STATS.panel() } : null,
@@ -580,7 +608,8 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
       return b;
     });
     bar.append(...buttons);
-    function go(id) {
+    const nav = { go: (id, focusId) => go(id, focusId), has: (id) => TABS.some((x) => x.id === id) };
+    function go(id, focusId) {
       const t = TABS.find((x) => x.id === id) || TABS[0];
       cur = t.id;
       try { localStorage.setItem(TAB_KEY, cur); } catch { /* private mode */ }
@@ -591,6 +620,8 @@ function make({ sb, h, q, notice, action, ask, STATS, IMAGES, canWrite, canRevie
       if (!built.has(cur)) built.set(cur, t.make());
       panel.setAttribute('aria-labelledby', 'md-tab-' + (t.hidden ? 'posts' : cur));
       panel.replaceChildren(built.get(cur));
+      if (cur === 'online') changed(focusId);   // Post online reloads Ready to post each time it is opened
+      if (cur === 'posts') window.dispatchEvent(new CustomEvent('way-media-posts'));   // Posts reloads too, after posting elsewhere
     }
     const guideLink = h('button', { type: 'button', class: 'md-guidelink', text: 'The Way / Not The Way' });
     guideLink.onclick = () => go(cur === 'guide' ? 'posts' : 'guide');
