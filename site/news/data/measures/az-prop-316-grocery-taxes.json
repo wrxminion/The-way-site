@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "ccd058a8e052c7b0",
+   "kind": "news",
+   "title": "Arizona voters approve Prop 316 to cap grocery taxes",
+   "source": "AZ Family",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNaERSZmtpMUMyWmdnMkRpZ29YUmhlaXZfWnFDUEE4b0FXZVFYMDdKSlBhQVJzWnRpdlEzV2dqQTlRN3dpTWYxeHN5ZTJHc1VLNlJPazNiQlpMTFI1WEZrOEtBV0FrZ2tHbEhBUU8xM1pKVzBVTm9ZVERmaVA0QUN1N2JZYWc3aUxELTd4bEc2RQ?oc=5",
+   "published_at": "2026-11-04",
+   "first_seen_at": "2026-11-05T03:50:58Z",
+   "states": [
+    "az"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "az-prop-316-grocery-taxes",
+     "kind": "measure",
+     "label": "Proposition 316: Limit local taxes on groceries: voter approval and a 2% cap, Arizona",
+     "page": "guide-az/measures/prop-316-grocery-taxes.html"
+    }
+   ]
+  },
+  {
    "id": "84fd5523b045735e",
    "kind": "news",
    "title": "Prop 316 passes, will limit grocery taxes in Arizona municipalities",
@@ -380,5 +407,5 @@
    ]
   }
  ],
- "generated_at": "2026-11-05T03:03:19Z"
+ "generated_at": "2026-11-05T04:07:20Z"
 }
