@@ -13,7 +13,7 @@ The Facebook token and Page id are secrets that live only in the Supabase dashbo
 5. **Add the two secrets** at [Edge Function secrets](https://supabase.com/dashboard/project/tiuhyulxdiiiqspysfci/functions/secrets): `FB_PAGE_ID` and `FB_PAGE_TOKEN`. `STATS_CRON_SECRET` is already there from the analytics function.
 6. **Run the SQL.** Open the [SQL editor](https://supabase.com/dashboard/project/tiuhyulxdiiiqspysfci/sql/new), paste `supabase/migrations/0098_facebook_page_insights.sql`, and run it.
 7. **Create the function.** In [Edge Functions](https://supabase.com/dashboard/project/tiuhyulxdiiiqspysfci/functions) make a new function named `fb-insights` and paste in `supabase/functions/fb-insights/index.ts`. Turn "Verify JWT" off, the same as `site-stats` (the function checks who is asking by itself).
-8. **Schedule it.** In [Cron jobs](https://supabase.com/dashboard/project/tiuhyulxdiiiqspysfci/integrations/cron/jobs) add a job every 3 hours that calls the `fb-insights` function with the header `x-cron-secret` set to your `STATS_CRON_SECRET` value and the body `{"action":"pull","days":7}`.
+8. **Schedule it.** Run `supabase/migrations/0104_fb_insights_schedule.sql` in the [SQL editor](https://supabase.com/dashboard/project/tiuhyulxdiiiqspysfci/sql/new). It adds the cron job `fb-insights` (every 3 hours). No secret is needed: the function lets any caller pull only when the last pull is more than 50 minutes old.
 9. Open **Admin > Facebook** and press Refresh now.
 
 ## Good to know

@@ -7,3 +7,11 @@
 .fb-ticks{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
 .fb-ticks label{display:inline-flex;gap:6px;align-items:center}
 .list>li.fb-focus{border-left:3px solid var(--aqua);padding-left:12px;background:#a7f0e914}
+/* Facebook picture picker (Ready to post) */
+.fb-pics{margin:8px 0}
+.fb-thumbs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+.fb-thumb{position:relative;padding:0;border:2px solid var(--line);border-radius:10px;overflow:hidden;width:132px;height:74px;background:#020f1a}
+.fb-thumb:hover{background:#020f1a;border-color:var(--line-strong)}
+.fb-thumb[aria-pressed=true]{border-color:var(--aqua);box-shadow:0 0 0 2px #a7f0e955}
+.fb-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.fb-thumb .fb-thumb-logo{position:absolute;right:4px;bottom:4px;width:18px;height:18px;object-fit:contain}
