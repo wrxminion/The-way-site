@@ -132,12 +132,13 @@ function senateCard(S){
   return el('div',{cls:'result'},[el('div',{cls:'kind',text:'U.S. Senate'}),el('div',{cls:'value',text:'Statewide'}),d]);
 }
 function resetOut(){
+  $('local').replaceChildren();localSeq++;
   $('selected').replaceChildren();$('status').textContent='';$('results').replaceChildren();$('gofull').replaceChildren();
 }
 function showOut(){$('out').hidden=false;}
 function say(msg,label){showOut();resetOut();if(label)$('selected').append(el('b',{text:label}));$('status').textContent=msg;$('out').scrollIntoView({behavior:'smooth',block:'start'});}
 
-async function lookupPoint(lat,lng,label,abbrHint,general){
+async function lookupPoint(lat,lng,label,abbrHint,general,addr){
   showOut();resetOut();
   $('selected').append(label?el('b',{text:label}):el('span',{},['Selected point: ',el('b',{text:lat.toFixed(5)+', '+lng.toFixed(5)})]));
   $('status').textContent='Finding your state…';
@@ -150,6 +151,7 @@ async function lookupPoint(lat,lng,label,abbrHint,general){
   if(!info.map){
     $('status').textContent=info.name+' is inside this lookup, but its district map is not built yet.';
     $('gofull').append(el('a',{href:'../states/district-of-columbia.html',text:'See '+info.name+' voting rules →'}));
+    showLocal(abbr,lat,lng,addr);
     return;
   }
   $('status').textContent='Loading '+info.name+' districts…';
@@ -173,7 +175,119 @@ async function lookupPoint(lat,lng,label,abbrHint,general){
   g.append(el('a',{href:'../'+info.map+'#at='+lat.toFixed(5)+','+lng.toFixed(5),text:'Full '+info.name+' map and ballot for this spot →'}));
   if(S.config.sampleBallot&&/^https?:\/\//.test(S.config.sampleBallot.url||''))
     g.append(el('a',{href:S.config.sampleBallot.url,target:'_blank',rel:'noopener',text:'Your official sample ballot ↗'}));
+  showLocal(abbr,lat,lng,addr);
   $('out').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+/* ---------- local resources ----------
+   lookup/local/xx.json is written by the local-resources job on a home computer
+   (tools/local-resources/). Every link and date there passed code checks and two
+   local models. lookup/data/counties/xx.json holds coarse county outlines. */
+const KIND_LABEL={election_office:'Election office',clerk:'Clerk or recorder',government:'Official government site',library:'Public library',state_election_office:'State election office'};
+const localCache={};
+let localSeq=0;
+function loadLocal(abbr){
+  const a=abbr.toLowerCase();
+  if(!localCache[a])localCache[a]=Promise.all([getJSON('local/'+a+'.json').catch(()=>null),getJSON('data/counties/'+a+'.json').catch(()=>null)])
+    .then(([local,counties])=>({local,counties}));
+  return localCache[a];
+}
+function fmtDate(iso){return new Date(iso+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
+function okUrl(u){return typeof u==='string'&&/^https?:\/\//.test(u);}
+function todayISO(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function countyName(p){
+  if(p.k==='parish')return p.n+' Parish';
+  if(p.k==='city')return /city$/i.test(p.n)?p.n:p.n+' (city)';
+  if(p.k==='borough'||p.k==='district')return p.n;
+  return p.n+' County';
+}
+function normName(s){return String(s||'').toLowerCase().replace(/\b(county|parish|borough|census area|city and borough|municipality)\b/g,'').replace(/^saint /,'st ').replace(/[^a-z0-9]+/g,' ').trim();}
+function findCounty(fc,lat,lng,addr){
+  if(!fc)return null;
+  const want=addr&&addr.county?normName(addr.county):'';
+  if(want){const f=fc.features.find(f=>normName(f.properties.n)===want&&f.properties.k!=='city');if(f)return f.properties;}
+  const f=find(fc,lat,lng);
+  return f?f.properties:null;
+}
+function linkItem(it){
+  return el('li',{},[el('a',{href:it.u,target:'_blank',rel:'noopener',text:it.t+' ↗'}),
+    el('span',{cls:'lr-meta',text:' · '+(KIND_LABEL[it.k]||'Official link')+' · checked '+fmtDate(it.c)})]);
+}
+function localCard(L,p){
+  const name=countyName(p);
+  const C=L.local&&L.local.counties?L.local.counties[p.f]:null;
+  const body=[el('div',{cls:'kind',text:'Your local election help'}),el('div',{cls:'value',text:name})];
+  const links=C?C.links.filter(i=>okUrl(i.u)):[];
+  if(links.length){
+    const top=links.find(i=>i.k==='election_office')||links.find(i=>i.k==='clerk');
+    if(top)body.push(el('a',{cls:'lr-top',href:top.u,target:'_blank',rel:'noopener',text:top.t+' ↗'}));
+    const rest=links.filter(i=>i!==top);
+    if(rest.length)body.push(el('ul',{cls:'lr-list'},rest.map(linkItem)));
+    if(top)body.push(el('div',{cls:'note',text:'Checked '+fmtDate(top.c)+'. Your election office has the final word on your ballot and polling place.'}));
+  }else{
+    body.push(el('div',{cls:'detail',text:'Official links for '+name+' are not checked yet. Our checker reads official county sites one at a time, so this list grows every week.'}));
+  }
+  return el('div',{cls:'result lr'},body);
+}
+function electionsCard(L,p){
+  const C=L.local&&L.local.counties?L.local.counties[p.f]:null;
+  if(!C)return null;
+  const t=todayISO();
+  const els=(C.elections||[]).filter(e=>e.d>=t&&okUrl(e.u));
+  const body=[el('div',{cls:'kind',text:'Upcoming local elections'})];
+  if(!els.length){
+    body.push(el('div',{cls:'detail',text:'No upcoming election was found on '+countyName(p)+"'s official pages the last time we looked. That does not mean there is none."}));
+  }else{
+    const ul=el('ul',{cls:'lr-list'});
+    for(const e of els)ul.append(el('li',{},[el('b',{text:fmtDate(e.d)}),' '+e.n+'. ',
+      el('span',{cls:'lr-quote',text:'"'+e.q+'"'}),' ',el('a',{href:e.u,target:'_blank',rel:'noopener',text:'Source ↗'}),
+      el('span',{cls:'lr-meta',text:' · checked '+fmtDate(e.c)})]));
+    body.push(el('div',{cls:'value',text:fmtDate(els[0].d)}),ul,
+      el('div',{cls:'note',text:'Found on official pages by an automatic check and confirmed word for word. Dates can change: confirm with your election office.'}));
+  }
+  return el('div',{cls:'result lr'},body);
+}
+function stateLinksCard(L,stateName){
+  const links=L.local&&L.local.state_links?L.local.state_links.filter(i=>okUrl(i.u)):[];
+  if(!links.length)return null;
+  return el('div',{cls:'result lr'},[el('div',{cls:'kind',text:'State election office'}),el('div',{cls:'value',text:stateName}),el('ul',{cls:'lr-list'},links.map(linkItem))]);
+}
+async function showLocal(abbr,lat,lng,addr){
+  const seq=localSeq,box=$('local');
+  const L=await loadLocal(abbr);
+  if(seq!==localSeq)return; // a newer search started
+  const p=findCounty(L.counties,lat,lng,addr);
+  const cards=[];
+  if(p){
+    cards.push(localCard(L,p));
+    const ec=electionsCard(L,p);if(ec)cards.push(ec);
+  }
+  const sl=stateLinksCard(L,stateInfo(abbr).name);if(sl)cards.push(sl);
+  if(!cards.length)return;
+  box.replaceChildren(el('h3',{cls:'lr-h',text:p?'Local resources for '+countyName(p):'Local resources'}),el('div',{cls:'results'},cards),
+    el('p',{cls:'note',text:p&&!(addr&&addr.county)?'County is worked out from a simple outline map, so it can be wrong right at a county line.':'Links come only from official government sites and the pages they link to.'}));
+}
+function districtCountiesCard(L,ch,dist,stateName){
+  const keys=L.local&&L.local.districts?L.local.districts[ch+':'+dist]:null;
+  if(!keys||!keys.length||!L.counties)return null;
+  const props={};for(const f of L.counties.features)props[f.properties.f]=f.properties;
+  const ul=el('ul',{cls:'lr-list'});
+  const shown=keys.slice(0,15);
+  for(const fips of shown){
+    const p=props[fips];if(!p)continue;
+    const C=L.local.counties[fips];
+    const links=C?C.links.filter(i=>okUrl(i.u)):[];
+    const top=links.find(i=>i.k==='election_office')||links.find(i=>i.k==='clerk')||links.find(i=>i.k==='government');
+    const t=todayISO();
+    const next=C?(C.elections||[]).find(e=>e.d>=t):null;
+    ul.append(el('li',{},[el('b',{text:countyName(p)}),
+      top?[' · ',el('a',{href:top.u,target:'_blank',rel:'noopener',text:(KIND_LABEL[top.k]||'Official link')+' ↗'})]:el('span',{cls:'lr-meta',text:' · not checked yet'}),
+      next?el('span',{cls:'lr-meta',text:' · next election '+fmtDate(next.d)}):null].flat()));
+  }
+  const body=[el('div',{cls:'kind',text:'Counties in this district'}),el('div',{cls:'value',text:keys.length+(keys.length===1?' county':' counties')}),ul];
+  if(keys.length>shown.length)body.push(el('div',{cls:'note',text:'And '+(keys.length-shown.length)+' more. Type an address above to see one county in full.'}));
+  body.push(el('div',{cls:'note',text:'Each county runs its own elections. A district can cover only part of a county.'}));
+  return el('div',{cls:'result lr'},body);
 }
 
 /* ---------- address search ---------- */
@@ -195,7 +309,7 @@ $('search').addEventListener('submit',async e=>{
     const iso=hit.address&&hit.address['ISO3166-2-lvl4'];
     const abbr=iso&&/^US-[A-Z]{2}$/.test(iso)?iso.slice(3):null;
     const exact=['house','building','place','road'].includes(hit.addresstype)&&!!(hit.address&&(hit.address.house_number||hit.addresstype==='building'));
-    await lookupPoint(lat,lng,hit.display_name,abbr&&stateInfo(abbr)?abbr:null,!exact);
+    await lookupPoint(lat,lng,hit.display_name,abbr&&stateInfo(abbr)?abbr:null,!exact,hit.address||null);
   }catch(err){
     say('Address search is unavailable right now. You can still click your state on the map below.');
   }finally{clearTimeout(t);setTimeout(()=>{searching=false;},1100);}
@@ -247,6 +361,9 @@ pDist.addEventListener('change',async()=>{
   if(pState.value!==abbr||pChamber.value!==ch||pDist.value!==dist)return;
   dres.append(seatCard(S,ch,dist,ch==='us_house'?S.config.congressNote:null));
   const sc=ch==='us_house'?senateCard(S):null;if(sc)dres.append(sc);
+  const L=await loadLocal(abbr);
+  if(pState.value!==abbr||pChamber.value!==ch||pDist.value!==dist)return;
+  const dc=districtCountiesCard(L,ch,dist,info.name);if(dc)dres.append(dc);
   dres.append(el('p',{cls:'gofull'},[el('a',{href:'../'+info.map,text:'Open the '+info.name+' map →'})]));
 });
 

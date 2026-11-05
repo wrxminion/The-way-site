@@ -1,0 +1,20 @@
+{
+  "repo": "D:\\theway\\deploy",
+  "work": "D:\\theway\\local-resources",
+  "ollama_url": "http://127.0.0.1:11434",
+  "finder_model": "theway-qwen3:latest",
+  "checker_model": "theway-hermes3:8b",
+  "our_models": ["theway-qwen3:latest", "theway-hermes3:8b"],
+  "counties_per_run": 20,
+  "max_run_min": 45,
+  "request_gap_sec": 3,
+  "recheck_days": 30,
+  "election_recheck_days": 7,
+  "state_order": ["CO", "OK", "NC", "SC", "FL"],
+  "off_files": ["D:\\theway\\local-resources\\local-resources.off", "D:\\theway\\idle-research\\idle-research.off"],
+  "busy_check_ps1": "D:\\theway\\precheck\\frak_busy_check.ps1",
+  "quiet_hours_local": [],
+  "publish_mode": "hold",
+  "push": false,
+  "_notes": "Paths and model names are FRAK's as of Nov 2026; change them on the machine that runs the job. finder_model and checker_model must differ. publish_mode hold writes to work\\outbox only; switch to live after a person has looked at the first outbox. push true needs a git login on this machine."
+}

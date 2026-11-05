@@ -12,7 +12,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="map.css?v=2">
 <link rel="stylesheet" href="statepick.css?v=1a7b0ee5">
-<link rel="stylesheet" href="lookup.css?v=1">
+<link rel="stylesheet" href="lookup.css?v=2">
 <link rel="stylesheet" href="/members/waybar.css?v=1">
 </head>
 <body>
@@ -35,6 +35,7 @@
     <p class="status" id="status"></p>
     <div class="results" id="results"></div>
     <p class="gofull" id="gofull"></p>
+    <div class="localres" id="local"></div>
   </section>
   <section class="panel" id="bymap">
     <h2>Or click your state</h2>
@@ -57,11 +58,12 @@
 </main>
 <footer class="bottom">
   <p><strong>Where this comes from.</strong> District lines, officeholders and candidates are the same files used on each state's district map. See that map's <em>Full source list</em> link for the exact official sources and dates. State outlines for "Use my location": U.S. Census Bureau via the us-atlas project. Officeholders listed are the people who held each seat before the November 3, 2026 election. New members take office later, so these may change.</p>
+  <p><strong>Local resources.</strong> County election offices, clerks, libraries and upcoming local election dates come only from official government sites (found through the official .gov registry and state election office directories) and the pages they link to. An automatic check on our own computer reads them, and each link and date must pass code checks and a second check before it shows here, with the day it was last checked. County outlines: U.S. Census Bureau via us-atlas.</p>
   <p><strong>Privacy.</strong> Clicking and "Use my location" are worked out in your browser. Address search sends what you type to OpenStreetMap's Nominatim service. No cookies, no tracking.</p>
   <p>The Way takes no side on any candidate or measure.</p>
   <p class="motto">Not left. Not right. We are The Way.</p>
 </footer>
-<script src="lookup.js?v=1"></script>
+<script src="lookup.js?v=2"></script>
 <script src="/members/waybar.js?v=1" defer></script>
 </body>
 </html>
