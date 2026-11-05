@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "34fe5dc36ff3ef85",
+   "kind": "news",
+   "title": "AP: Arkansas voters approve Issue 4’s $500 million bond-khbs",
+   "source": "khbs",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNU3hWRGJDU2JndTdBcWw4c0pFVUhqX2F4cHVvNDlaVUpTd0Jidy1vN2IzcmJyMFdJRmRscXZzZFBzR1c3cGtJcngxNmh6OW5SN2g0emhqZkFGUnVBbkVNbjhXR2lRODhKWXNpQUhMZTF5d0U4QUpZdVlja2pYd2JhZ3Z2b0xSVWk1bVN6bXo3ZElZV21WV1Ew?oc=5",
+   "published_at": "2026-11-04",
+   "first_seen_at": "2026-11-04T13:51:47Z",
+   "states": [
+    "ar"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "ar-issue-4",
+     "kind": "measure",
+     "label": "issue 4: $500 million water bonds, Arkansas",
+     "page": "guide-ar/measures/issue-4.html"
+    }
+   ]
+  },
+  {
    "id": "cfb0cefa5f4d52b3",
    "kind": "news",
    "title": "Issue 4 Would Create Funding To Support Water, Sewer Projects",
@@ -218,5 +245,5 @@
    ]
   }
  ],
- "generated_at": "2026-10-30T03:03:14Z"
+ "generated_at": "2026-11-05T03:03:19Z"
 }
