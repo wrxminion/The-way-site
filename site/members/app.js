@@ -863,8 +863,14 @@ async function homeView() {
     h('span', { class: 'home-cta', text: a0 ? 'Open your voter guide' : 'Choose your state' }));
   if (!a0) ballotCard.href = '#/account';
   // A small map of the whole country: click a state to open its voter guide (its state page if there is no guide yet).
+  // After the polls close (season card phase "results" or later) it opens that state's election results instead.
   const homeMap = usSvg({});
-  const goState = async (a) => { setPick(a); const v = await available(a); location.href = v.guide || v.page; };
+  let afterVote = false;
+  const goState = async (a) => {
+    setPick(a);
+    if (afterVote) { location.href = '/results/?state=' + a.toLowerCase(); return; }
+    const v = await available(a); location.href = v.guide || v.page;
+  };
   homeMap.addEventListener('click', (ev) => { const p = ev.target.closest('path'); if (p && p.dataset.st) goState(p.dataset.st); });
   homeMap.addEventListener('keydown', (ev) => {
     if (ev.key !== 'Enter' && ev.key !== ' ') return;
@@ -872,13 +878,19 @@ async function homeView() {
   });
   const mapCard = h('div', { class: 'home-card home-map' },
     h('strong', { class: 'home-card-title', text: 'Map' }),
-    h('span', { class: 'home-card-sub', text: 'Click a state to open its voter guide' }),
+    h('span', { class: 'home-card-sub home-map-sub', text: 'Click a state to open its voter guide' }),
     homeMap,
     h('a', { class: 'button', href: '#/map', text: 'Open the map' }));
 
   const feedBox = h('div', { class: 'home-news' });
   const inbox = homeInbox(wantsMod);
   const seasonBox = h('div', { class: 'home-season' });
+  seasonBox.addEventListener('wayseason', (ev) => {
+    const ph = ev.detail && ev.detail.phase;
+    afterVote = ph === 'results' || ph === 'accountability';
+    const sub = mapCard.querySelector('.home-map-sub');
+    if (afterVote && sub) sub.textContent = 'Click a state to see its election results';
+  });
   render(
     h('div', { class: 'home-head' },
       h('h1', { class: 'home-hello', text: `Welcome back, ${state.me.display_name}` }),

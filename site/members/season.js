@@ -127,7 +127,7 @@
       }
 
       var fine = el('p', 'season-fine', which === 'election_day' ? (pollsOwn && row.note ? row.note + ' ' : '') + 'Confirm your polling place and closing time with your state election office.' : '');
-      var picks = which === 'accountability' ? null : picksBox();
+      var picks = which === 'results' || which === 'accountability' ? null : picksBox();   // after the polls close, no "mark your ballot" prompts
       card.append(title, sub, count, fine); if (picks) card.append(picks); card.append(btns);
       var ups = upcoming(clock());
       if (ups.length) {
@@ -138,6 +138,8 @@
       }
       card.setAttribute('data-phase', which);
       into.replaceChildren(card);
+      // Tell the rest of the home page which phase it is (the map card sends people to results after the polls close).
+      try { into.dispatchEvent(new CustomEvent('wayseason', { bubbles: true, detail: { phase: which } })); } catch (e) { /* older browsers: the map keeps opening guides */ }
     }
   }
   window.WaySeason = { mount: mount, phase: phase, zoned: zoned };

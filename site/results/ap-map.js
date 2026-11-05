@@ -135,8 +135,16 @@
     var show = function () { if (!pinned) detail.textContent = info(c).text; };
     g.addEventListener('mouseenter', show); g.addEventListener('focus', show);
     g.addEventListener('mouseleave', function () { if (!pinned) detail.textContent = 'Tap or hover a state to see what AP is calling.'; });
-    g.addEventListener('click', function () { pinned = c; detail.textContent = info(c).text; });
-    g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pinned = c; detail.textContent = info(c).text; } });
+    g.addEventListener('click', function () { pin(c); });
+    g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pin(c); } });
+  }
+  // A clicked state stays in the line under the map, with a link that opens all of that state's results in the panel below
+  // (results.js picks the link up; without script it reloads the page with ?state=).
+  function pin(c) {
+    pinned = c; detail.textContent = info(c).text + ' ';
+    var a = el('a', 'apm-open', 'See every ' + (NAMES[c] || c.toUpperCase()) + ' race');
+    a.href = '/results/?state=' + c + '#tabs'; a.setAttribute('data-state-results', c);
+    detail.appendChild(a);
   }
 
   function render() {
