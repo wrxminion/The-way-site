@@ -21,6 +21,7 @@
   "mt-ersws",
   "nc-sbe",
   "ne-ersws",
+  "nh-gov",
   "nm-ersws",
   "oh-sos",
   "ok-seb",
@@ -33,7 +34,7 @@
   "va-scytl",
   "wy-sos"
  ],
- "updated_at": "2026-11-05T21:05:54Z",
+ "updated_at": "2026-11-05T21:14:09Z",
  "certified": false,
  "contests": [
   {
@@ -2807,7 +2808,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 9431
+     "votes": 9433
     }
    ],
    "precincts": {
@@ -4039,11 +4040,11 @@
      "choices": [
       {
        "id": "mark-r-warner",
-       "votes": 110102
+       "votes": 110281
       },
       {
        "id": "bert-mizusawa",
-       "votes": 42436
+       "votes": 42449
       },
       {
        "id": "write-in",
@@ -4635,7 +4636,7 @@
       },
       {
        "id": "write-in",
-       "votes": 14
+       "votes": 16
       }
      ],
      "precincts": {
@@ -21769,25 +21770,25 @@
      "name": "Sevier White",
      "party": "L",
      "party_code": "O",
-     "votes": 10092
+     "votes": 10199
     },
     {
      "id": "ron-meinhardt",
      "name": "Ron Meinhardt",
      "party": "I",
      "party_code": "O",
-     "votes": 14314
+     "votes": 14492
     },
     {
      "id": "curtis-stinnett",
      "name": "Curtis Stinnett",
      "party": "I",
      "party_code": "O",
-     "votes": 14406
+     "votes": 14622
     }
    ],
    "precincts": {
-    "reporting": 1960,
+    "reporting": 1984,
     "total": 1984,
     "unit": "precincts"
    },
@@ -23885,6 +23886,57 @@
     "winner": "andy-barr",
     "by": "AP (not certified)",
     "at": "2026-11-04T02:16:00.684Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "nh-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nh",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-pappas",
+     "name": "Chris Pappas",
+     "party": "D",
+     "party_code": "D",
+     "votes": 355976
+    },
+    {
+     "id": "john-e-sununu",
+     "name": "John E. Sununu",
+     "party": "R",
+     "party_code": "R",
+     "votes": 268682
+    },
+    {
+     "id": "edmond-laplante",
+     "name": "Edmond Laplante",
+     "party": "C",
+     "party_code": "O",
+     "votes": 12081
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 777
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "counties"
+   },
+   "called": {
+    "winner": "chris-pappas",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:20:51.833Z",
     "kind": "ap"
    }
   }

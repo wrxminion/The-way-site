@@ -6,7 +6,7 @@
   "nh-gov",
   "nh-sos"
  ],
- "updated_at": "2026-11-05T21:05:56Z",
+ "updated_at": "2026-11-05T21:14:11Z",
  "certified": false,
  "contests": [
   {
@@ -24,28 +24,28 @@
      "name": "Cinde Warmington",
      "party": "D",
      "party_code": "D",
-     "votes": 296773
+     "votes": 296834
     },
     {
      "id": "kelly-ayotte",
      "name": "Kelly Ayotte",
      "party": "R",
      "party_code": "R",
-     "votes": 324846
+     "votes": 324734
     },
     {
      "id": "stephen-villee",
      "name": "Stephen Villee",
      "party": "L",
      "party_code": "O",
-     "votes": 9629
+     "votes": 9630
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 730
+     "votes": 732
     }
    ],
    "precincts": {
@@ -75,21 +75,21 @@
      "name": "Stefany Shaheen",
      "party": "D",
      "party_code": "D",
-     "votes": 180683
+     "votes": 180763
     },
     {
      "id": "anthony-dilorenzo",
      "name": "Anthony DiLorenzo",
      "party": "R",
      "party_code": "R",
-     "votes": 136041
+     "votes": 136115
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 508
+     "votes": 512
     }
    ],
    "precincts": {
@@ -233,14 +233,14 @@
      "name": "Jim O'Connell",
      "party": "D",
      "party_code": "D",
-     "votes": 60468
+     "votes": 60540
     },
     {
      "id": "john-stephen",
      "name": "John Stephen",
      "party": "R",
      "party_code": "R",
-     "votes": 52471
+     "votes": 52547
     },
     {
      "id": "write-in",
@@ -291,6 +291,481 @@
    "precincts": {
     "reporting": 43,
     "total": 43,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-united-states-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nh",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chris-pappas",
+     "name": "Chris Pappas",
+     "party": "D",
+     "party_code": "D",
+     "votes": 355976
+    },
+    {
+     "id": "john-e-sununu",
+     "name": "John E. Sununu",
+     "party": "R",
+     "party_code": "R",
+     "votes": 268682
+    },
+    {
+     "id": "edmond-laplante",
+     "name": "Edmond Laplante",
+     "party": "C",
+     "party_code": "O",
+     "votes": 12081
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 777
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "counties"
+   },
+   "called": {
+    "winner": "chris-pappas",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:20:51.833Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "nh-constitutional-amendment-question-1",
+   "kind": "measure",
+   "level": "state",
+   "state": "nh",
+   "office": "Constitutional Amendment Question 1",
+   "district": null,
+   "title": "Constitutional Amendment Question 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yes",
+     "name": "Yes",
+     "party": null,
+     "party_code": "O",
+     "votes": 366633
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 199425
+    }
+   ],
+   "precincts": {
+    "reporting": 10,
+    "total": 10,
+    "unit": "counties"
+   }
+  },
+  {
+   "id": "nh-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nh",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maggie-goodlander",
+     "name": "Maggie Goodlander",
+     "party": "D",
+     "party_code": "D",
+     "votes": 185900
+    },
+    {
+     "id": "lily-tang-williams",
+     "name": "Lily Tang Williams",
+     "party": "R",
+     "party_code": "R",
+     "votes": 122645
+    },
+    {
+     "id": "robbie-mahrou",
+     "name": "Robbie Mahrou",
+     "party": "I",
+     "party_code": "O",
+     "votes": 7478
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 234
+    }
+   ],
+   "precincts": {
+    "reporting": 211,
+    "total": 211,
+    "unit": "towns"
+   },
+   "called": {
+    "winner": "maggie-goodlander",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:05:53.943Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "nh-state-senate-district-1",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "State Senate District 1",
+   "district": null,
+   "title": "State Senate District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cathleen-a-fountain",
+     "name": "Cathleen A. Fountain",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11361
+    },
+    {
+     "id": "david-rochefort",
+     "name": "David Rochefort",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12987
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 49,
+    "total": 49,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-state-senate-district-2",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "State Senate District 2",
+   "district": null,
+   "title": "State Senate District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kurt-webber",
+     "name": "Kurt Webber",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14563
+    },
+    {
+     "id": "timothy-p-lang",
+     "name": "Timothy P. Lang",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13365
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-state-senate-district-3",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "State Senate District 3",
+   "district": null,
+   "title": "State Senate District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bobbi-boudman",
+     "name": "Bobbi Boudman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14387
+    },
+    {
+     "id": "mark-mcconkey",
+     "name": "Mark McConkey",
+     "party": "R",
+     "party_code": "R",
+     "votes": 15945
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 33
+    }
+   ],
+   "precincts": {
+    "reporting": 34,
+    "total": 34,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-state-senate-district-4",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "State Senate District 4",
+   "district": null,
+   "title": "State Senate District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-h-watters",
+     "name": "David H. Watters",
+     "party": "D",
+     "party_code": "D",
+     "votes": 17866
+    },
+    {
+     "id": "shawn-mickelonis",
+     "name": "Shawn Mickelonis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 8422
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-state-senate-district-5",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "State Senate District 5",
+   "district": null,
+   "title": "State Senate District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "suzanne-m-prentiss",
+     "name": "Suzanne M. Prentiss",
+     "party": "D",
+     "party_code": "D",
+     "votes": 21132
+    },
+    {
+     "id": "conrad-schoeffter",
+     "name": "Conrad Schoeffter",
+     "party": "R",
+     "party_code": "R",
+     "votes": 7262
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 17,
+    "total": 17,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-state-senate-district-6",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "State Senate District 6",
+   "district": null,
+   "title": "State Senate District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cecil-abels",
+     "name": "Cecil Abels",
+     "party": "D",
+     "party_code": "D",
+     "votes": 11456
+    },
+    {
+     "id": "james-p-gray",
+     "name": "James P. Gray",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12245
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 42
+    }
+   ],
+   "precincts": {
+    "reporting": 11,
+    "total": 11,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-state-senate-district-7",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "State Senate District 7",
+   "district": null,
+   "title": "State Senate District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "rebecca-harned",
+     "name": "Rebecca Harned",
+     "party": "D",
+     "party_code": "D",
+     "votes": 13174
+    },
+    {
+     "id": "daniel-e-innis",
+     "name": "Daniel E. Innis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12285
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 30
+    }
+   ],
+   "precincts": {
+    "reporting": 24,
+    "total": 24,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-state-senate-district-8",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "State Senate District 8",
+   "district": null,
+   "title": "State Senate District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-trumble",
+     "name": "David Trumble",
+     "party": "D",
+     "party_code": "D",
+     "votes": 12150
+    },
+    {
+     "id": "jim-creighton",
+     "name": "Jim Creighton",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12539
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 22,
+    "total": 22,
+    "unit": "towns"
+   }
+  },
+  {
+   "id": "nh-state-senate-district-9",
+   "kind": "candidate",
+   "level": "state",
+   "state": "nh",
+   "office": "State Senate District 9",
+   "district": null,
+   "title": "State Senate District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "matthew-mclaughlin",
+     "name": "Matthew McLaughlin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 14352
+    },
+    {
+     "id": "denise-ricciardi",
+     "name": "Denise Ricciardi",
+     "party": "R",
+     "party_code": "R",
+     "votes": 12417
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 34
+    }
+   ],
+   "precincts": {
+    "reporting": 13,
+    "total": 13,
     "unit": "towns"
    }
   }

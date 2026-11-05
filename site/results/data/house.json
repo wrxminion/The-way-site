@@ -42,7 +42,7 @@
   "vt-sos",
   "wy-sos"
  ],
- "updated_at": "2026-11-05T21:05:54Z",
+ "updated_at": "2026-11-05T21:14:09Z",
  "certified": false,
  "contests": [
   {
@@ -37362,11 +37362,11 @@
      "name": "Rocco Bonacci",
      "party": "I",
      "party_code": "O",
-     "votes": 5975
+     "votes": 6381
     }
    ],
    "precincts": {
-    "reporting": 336,
+    "reporting": 360,
     "total": 360,
     "unit": "precincts"
    },
@@ -39301,21 +39301,21 @@
      "name": "Stefany Shaheen",
      "party": "D",
      "party_code": "D",
-     "votes": 180683
+     "votes": 180763
     },
     {
      "id": "anthony-dilorenzo",
      "name": "Anthony DiLorenzo",
      "party": "R",
      "party_code": "R",
-     "votes": 136041
+     "votes": 136115
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 508
+     "votes": 512
     }
    ],
    "precincts": {
@@ -39327,6 +39327,57 @@
     "winner": "stefany-shaheen",
     "by": "AP (not certified)",
     "at": "2026-11-04T02:21:46.377Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "nh-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nh",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "maggie-goodlander",
+     "name": "Maggie Goodlander",
+     "party": "D",
+     "party_code": "D",
+     "votes": 185900
+    },
+    {
+     "id": "lily-tang-williams",
+     "name": "Lily Tang Williams",
+     "party": "R",
+     "party_code": "R",
+     "votes": 122645
+    },
+    {
+     "id": "robbie-mahrou",
+     "name": "Robbie Mahrou",
+     "party": "I",
+     "party_code": "O",
+     "votes": 7478
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 234
+    }
+   ],
+   "precincts": {
+    "reporting": 211,
+    "total": 211,
+    "unit": "towns"
+   },
+   "called": {
+    "winner": "maggie-goodlander",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:05:53.943Z",
     "kind": "ap"
    }
   }
