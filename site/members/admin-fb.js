@@ -198,12 +198,71 @@ function make(ctx) {
       h('label', {}, tickBs, ' Bluesky'), ' ', h('label', {}, tickFb, ' Facebook'), fbNote);
     const PLACE = { bluesky: 'Bluesky', facebook: 'Facebook' };
     const FN = { bluesky: 'bsky-inbox', facebook: 'fb-insights' };
-    // Send one text to the ticked places. Returns { done: [...], failed: ['Facebook: reason', ...] }.
-    async function publish(places, message) {
+    // Pictures for Facebook. Every Facebook post gets one: the article picture picked below with our small logo in the
+    // corner, or our logo card when there is no article picture. Both are made here with a canvas and sent as a JPEG or PNG.
+    // Article pictures come from fb-insights (action 'preview') as data: URLs, which the page CSP allows.
+    const LOGO = '/the-way-logo-360.png', CARD = '/og-logo.png';
+    const loadImg = (src) => new Promise((ok, bad) => {
+      const i = new Image(); i.onload = () => ok(i); i.onerror = () => bad(new Error('Could not open the picture.')); i.src = src;
+    });
+    async function withLogo(src) {
+      const [img, logo] = await Promise.all([loadImg(src), loadImg(LOGO)]);
+      const k = Math.min(1, 1600 / img.naturalWidth), w = Math.round(img.naturalWidth * k), ht = Math.round(img.naturalHeight * k);
+      const c = document.createElement('canvas'); c.width = w; c.height = ht;
+      const g = c.getContext('2d');
+      g.fillStyle = '#ffffff'; g.fillRect(0, 0, w, ht);   // a see-through picture gets white behind it, not black
+      g.drawImage(img, 0, 0, w, ht);
+      const s = Math.round(Math.max(44, Math.min(110, Math.min(w, ht) * 0.11))), m = Math.round(s * 0.22);
+      g.drawImage(logo, w - s - m, ht - s - m, s, s);   // small, bottom right
+      return c.toDataURL('image/jpeg', 0.88);
+    }
+    async function logoCard() {
+      const img = await loadImg(CARD);
+      const c = document.createElement('canvas'); c.width = img.naturalWidth; c.height = img.naturalHeight;
+      c.getContext('2d').drawImage(img, 0, 0);
+      return c.toDataURL('image/png');
+    }
+    const pics = new Map();   // post id -> { state: 'loading'|'ready'|'none', list: [{ url, data }], pick: index, -1 = logo card, note }
+    const linkOf = (x) => x.source_url || (x.link_path ? SITE + x.link_path : ((/https:\/\/\S+/.exec(x.body || '') || [])[0] || ''));
+    function loadPics(x, redraw) {
+      const url = linkOf(x);
+      if (pics.has(x.id)) return;
+      if (!url) { pics.set(x.id, { state: 'none', list: [], pick: -1 }); return; }
+      pics.set(x.id, { state: 'loading', list: [], pick: -1 });
+      sb.functions.invoke('fb-insights', { body: { action: 'preview', url } }).then(({ data, error }) => {
+        const list = !error && data && data.ok ? (data.images || []).filter((i) => /^data:image\//.test(i.data)) : [];
+        const note = error || (data && data.ok === false) ? 'Could not read the article pictures, so the logo card is used.' : list.length ? '' : 'The article has no pictures to pick, so the logo card is used.';
+        pics.set(x.id, { state: 'ready', list, pick: list.length ? 0 : -1, note });
+        redraw();
+      });
+    }
+    function picker(x, redraw) {
+      const st = pics.get(x.id) || { state: 'none', list: [], pick: -1 };
+      const thumb = (src, i, label) => {
+        const b = h('button', { type: 'button', class: 'fb-thumb', 'aria-pressed': String(st.pick === i), title: label },
+          h('img', { src, alt: label }), i >= 0 ? h('img', { class: 'fb-thumb-logo', src: LOGO, alt: '' }) : null);
+        b.onclick = () => { st.pick = i; redraw(); };
+        return b;
+      };
+      return h('div', { class: 'fb-pics' },
+        h('p', { class: 'small muted', text: 'Facebook picture: pick one. Article pictures get our small logo in the corner.' }),
+        h('div', { class: 'fb-thumbs' },
+          st.list.map((p, i) => thumb(p.data, i, `Article picture ${i + 1}`)),
+          thumb(CARD, -1, 'Our logo card')),
+        st.state === 'loading' ? h('p', { class: 'small dim', text: 'Finding the article pictures...' }) : null,
+        st.note ? h('p', { class: 'small dim', text: st.note }) : null);
+    }
+    async function pictureFor(x) {
+      const st = pics.get(x.id);
+      return st && st.pick >= 0 && st.list[st.pick] ? withLogo(st.list[st.pick].data) : logoCard();
+    }
+
+    // Send one text to the ticked places. Facebook also gets the picture. Returns { done: [...], failed: ['Facebook: reason', ...] }.
+    async function publish(places, message, image) {
       const done = [], failed = [];
       for (const p of places) {
         try {
-          const { data, error } = await sb.functions.invoke(FN[p], { body: { action: 'post', message } });
+          const { data, error } = await sb.functions.invoke(FN[p], { body: p === 'facebook' && image ? { action: 'post', message, image } : { action: 'post', message } });
           if (error) throw error;
           if (data && data.ok === false) throw new Error(data.error);
           done.push(p);
@@ -252,9 +311,14 @@ function make(ctx) {
         const why = overBsky ? `Too long for Bluesky (${n} of 300). Shorten it on the Media page, or untick Bluesky.`
           : !places.length ? (had.size && (sel.bs || sel.fb) ? 'Already posted on the ticked places.' : 'Tick Bluesky or Facebook above.') : '';
         const res = h('div');
+        const toFb = places.includes('facebook');
+        if (toFb) loadPics(x, draw);
         const go = h('button', { class: 'primary', disabled: why ? 'disabled' : null, onclick: action(async () => {
-          if (!confirm(`Publish this now on ${places.map((p) => PLACE[p]).join(' and ')}? It goes live right away.\n\n${text}`)) return;
-          const r = await publish(places, text);
+          const st = pics.get(x.id);
+          const picNote = !toFb ? '' : st && st.pick >= 0 ? '\n\nFacebook picture: the article picture you picked, with our small logo.' : '\n\nFacebook picture: our logo card.';
+          if (!confirm(`Publish this now on ${places.map((p) => PLACE[p]).join(' and ')}? It goes live right away.${picNote}\n\n${text}`)) return;
+          const image = toFb ? await pictureFor(x) : null;
+          const r = await publish(places, text, image);
           const nowHad = [...had, ...r.done];
           if (r.done.length) {
             // record what succeeded; the post counts as posted only when every ticked place succeeded
@@ -275,6 +339,7 @@ function make(ctx) {
           x.source_name ? h('p', { class: 'muted small', text: `Source: ${x.source_name}` }) : null,
           h('p', { class: overBsky ? 'small md-warn' : 'muted small', text: `${n} characters. Bluesky allows 300.` }),
           why ? h('p', { class: 'small md-warn', text: why }) : null,
+          toFb ? picker(x, draw) : null,
           h('div', { class: 'btns' }, go), res);
       }
       loadReady();
@@ -303,13 +368,13 @@ function make(ctx) {
         if (!places.length) throw new Error('Tick Bluesky or Facebook at the top first.');
         if (places.includes('bluesky') && chars(message) > 300) throw new Error('Bluesky posts are 300 characters at most. Shorten it or untick Bluesky at the top.');
         if (!confirm(`Publish this now on ${places.map((p) => PLACE[p]).join(' and ')}? It goes live right away.`)) return;
-        const r = await publish(places, message);
+        const r = await publish(places, message, places.includes('facebook') ? await logoCard() : null);   // Facebook always gets our logo card
         if (!r.failed.length) box.value = '';
         upd();
         slot.replaceChildren(h('p', { class: r.failed.length ? 'md-warn' : 'tag ok', text: resultText(r, false) }));
       }, slot) }, 'Post');
       return h('div', { class: 'panel' }, h('h3', { text: 'New post' }),
-        h('p', { class: 'muted small', text: 'Publishes right away to the places ticked at the top, as the Michi Institute account. Facebook also needs the pages_manage_posts permission on the Page token.' }),
+        h('p', { class: 'muted small', text: 'Publishes right away to the places ticked at the top, as the Michi Institute account. On Facebook it goes up with our logo card as its picture.' }),
         box, count,
         h('div', { class: 'btns' }, h('label', {}, onAi, ' AI-written (adds the AI label)'), ' ', send), slot);
     }
