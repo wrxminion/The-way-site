@@ -5,7 +5,7 @@
  "source_ids": [
   "ms-counties"
  ],
- "updated_at": "2026-11-05T07:53:34Z",
+ "updated_at": "2026-11-05T08:04:06Z",
  "certified": false,
  "contests": [
   {
@@ -28,7 +28,7 @@
     {
      "id": "trent-kelly",
      "name": "Trent Kelly",
-     "party": null,
+     "party": "Republican (per AP)",
      "party_code": "R",
      "votes": 25971
     },
@@ -61,7 +61,13 @@
     "unit": "counties"
    },
    "partial": true,
-   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide.",
+   "called": {
+    "winner": "trent-kelly",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:05:36.317Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "ms-u-s-house-2",
