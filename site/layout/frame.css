@@ -1,0 +1,53 @@
+/* The Way: shared page frame (redesign step 1, Nov 2026). Opt-in: a page gets it with <body class="wf" data-wf="facts|pick">
+   and data-wf-main on the element that holds the article. frame.js builds a reading column plus a side panel:
+   a fact box ("facts") or Your pick and notes ("pick", voter guide). Same look on every page that opts in. */
+body.wf{--wf-ink:#e9ffff;--wf-soft:#cfe4ea;--wf-line:#c7ffff2e;--wf-accent:#a7f0e9;--wf-panel:#052b3c;--wf-surface:#06202ef5}
+body.wf .wf-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;max-width:1240px;margin:0 auto;align-items:start;box-sizing:border-box}
+body.wf .wf-main{min-width:0}
+body.wf .wf-main p,body.wf .wf-main li,body.wf .wf-main dd{max-width:72ch}
+/* the side panel stays on screen while the article scrolls; it scrolls on its own when it is taller than the window */
+body.wf .wf-side{position:sticky;top:var(--wf-top,14px);max-height:calc(100vh - var(--wf-top,14px) - 14px);overflow:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:14px;font:14px/1.45 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--wf-ink)}
+body.wf .wf-box{background:var(--wf-panel);border:1px solid var(--wf-line);border-radius:12px;padding:14px 16px}
+body.wf .wf-box-title{margin:0 0 10px;font:700 11px/1.2 Inter,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--wf-accent)}
+body.wf .wf-item{margin:0 0 10px;font-weight:600;font-size:15px;line-height:1.3}
+body.wf .wf-fine{margin:8px 0 0;font-size:12px;color:#9fbac2}
+body.wf .wf-side a{color:var(--wf-accent)}
+/* fact box */
+body.wf .wf-factbox{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:0}
+body.wf .wf-factbox dt{color:#9fbac2;font-size:12px;letter-spacing:.04em;padding-top:1px}
+body.wf .wf-factbox dd{margin:0;color:var(--wf-ink)}
+/* jump list */
+body.wf .wf-jump ol{list-style:none;margin:0;padding:0}
+body.wf .wf-jump a{display:block;padding:4px 8px;border-radius:6px;color:#e9ffffcc;text-decoration:none}
+body.wf .wf-jump a:hover,body.wf .wf-jump a[aria-current=true]{color:#fff;background:#0a3a50;box-shadow:inset 2px 0 0 var(--wf-accent)}
+/* Your pick and notes: the My Ballot controls from ballot-pick.js are moved in here */
+body.wf .wf-side .bp-bar{margin:0;padding:0;border:0;background:none}
+body.wf .wf-side .bp-noteform{box-shadow:none;background:#041f31;margin-top:8px}
+body.wf .wf-side .bp-addnote{box-shadow:none;margin-top:8px}
+body.wf .wf-saved{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+body.wf .wf-saved li{padding:8px 10px;border:1px solid var(--wf-line);border-radius:8px;background:#041f31}
+body.wf .wf-saved small{display:block;margin-top:4px}
+/* the page's own "On this page" button and side list are replaced by the jump list in the panel */
+body.wf .otp-side,body.wf .otp-jump{display:none!important}
+/* calmer headers: smaller titles, the section picture becomes a short strip */
+body.wf h1{font-size:clamp(32px,4.2vw,52px);line-height:1.08}
+body.wf .essay-top{min-height:0;padding-top:28px;padding-bottom:10px}
+body.wf .case-banner{max-width:1240px;margin-left:auto;margin-right:auto}
+body.wf .case-banner-img{height:120px;object-fit:cover;width:100%}
+body.wf .essay-content.wf-grid{max-width:1240px;padding:10px 22px 95px}
+body.wf main.wrap.wf-grid{max-width:1240px}
+/* phones and narrow windows: one column. A fact box comes first; Your pick and notes becomes a bottom sheet */
+.wf-sheet-btn{display:none}
+@media (max-width:999px){
+  body.wf .wf-grid{grid-template-columns:minmax(0,1fr)}
+  body.wf[data-wf=facts] .wf-side{position:static;max-height:none;order:-1}
+  body.wf[data-wf=facts] .wf-side .wf-jump{display:none}
+  body.wf[data-wf=pick] .wf-side{position:fixed;left:8px;right:8px;bottom:0;top:auto;z-index:90;max-height:72vh;padding:12px 12px calc(64px + env(safe-area-inset-bottom));background:#031b28f7;border:1px solid var(--wf-line);border-radius:16px 16px 0 0;box-shadow:0 -12px 40px #000a;transform:translateY(105%);transition:transform .25s ease;visibility:hidden}
+  body.wf[data-wf=pick].wf-open .wf-side{transform:none;visibility:visible}
+  body.wf[data-wf=pick] .wf-sheet-btn{display:block;position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));z-index:91;font:700 14px/1 Inter,system-ui,sans-serif;color:#052230;background:#a6f0e7;border:0;border-radius:99px;padding:12px 18px;box-shadow:0 8px 28px #0008;cursor:pointer}
+  body.wf[data-wf=pick] .wf-sheet-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+}
+/* while the sheet is open, the floating bubbles step aside so they do not cover it */
+body.wf.wf-open .wb-bub-wrap,body.wf.wf-open .wb-bubs-l,body.wf.wf-open .wb-floating,body.wf.wf-open .wb-to-top,body.wf.wf-open .bp-dock{visibility:hidden}
+@media (prefers-reduced-motion:reduce){body.wf .wf-side{transition:none}}
+@media print{body.wf .wf-side,.wf-sheet-btn{display:none!important}body.wf .wf-grid{display:block}}
