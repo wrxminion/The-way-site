@@ -18,8 +18,8 @@
     var art = document.createElement('a');
     art.href = '/members/submit-art.html';
     art.textContent = 'Submit your art';
-    var legal = document.createElement('span');
-    legal.textContent = 'Legal (coming soon)';
+    var legal = document.createElement('a');
+    legal.href = '/legal.html'; legal.textContent = 'Legal';
     var artBox = document.createElement('span');
     artBox.className = 'michi-footer-art';
     artBox.appendChild(about); artBox.appendChild(art);
