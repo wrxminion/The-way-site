@@ -226,7 +226,7 @@ function humanCheck() {
 }
 
 // Age question (migration 0041). A neutral question with no answer chosen in advance. 13 or older may go on; anyone younger stops
-// with a friendly note. Only the confirmation is ever stored (members.adult_confirmed_at, name kept from migration 0041; since 0085 it means 13 or older). An under-13 answer is remembered in this
+// with a friendly note. Only the confirmation is ever stored (members.adult_confirmed_at, name kept from migration 0041; since 0105 it means 13 or older). An under-13 answer is remembered in this
 // browser only, so pressing Back does not offer the question again; nothing is sent to us.
 const AGE_KEY = 'theway.agegate13';
 const ageStopped = () => { try { return localStorage.getItem(AGE_KEY) === 'under13'; } catch { return false; } };
