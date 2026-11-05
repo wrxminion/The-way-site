@@ -727,15 +727,30 @@
     document.body.insertBefore(water, document.body.firstChild);
     syncWave();
   }
-  // My Ballot: on voter-guide pages, load the pick/save controls (browser-only; see ballot-store.js).
-  if (/^\/guide(-[a-z]{2})?\//.test(path) && !inMembers) {
+  // The November 3, 2026 voter guides are archived (Frank, Nov 5 2026): same addresses, a banner on top, picking closed.
+  // For the next election, set BALLOTS_ARCHIVED to false (layout/frame.js reads the same path rule for its side panel).
+  var BALLOTS_ARCHIVED = true;
+  var archived = BALLOTS_ARCHIVED && !inMembers && /^\/(guide|map)(-[a-z]{2})?\//.exec(path);
+  function archiveBanner() {
+    if (!archived || document.querySelector('.wb-archive')) return;
+    var st = archived[2] || 'co';
+    var note = el('div', { class: 'wb-archive', role: 'note' });
+    note.appendChild(el('b', null, 'Archived guide. '));
+    note.appendChild(document.createTextNode('This is The Way\'s voter guide for the November 3, 2026 election, kept as a record. Picks are closed. '));
+    var a = el('a', { href: '/results/?state=' + st + '#tabs' }, 'See the results');
+    note.appendChild(a);
+    var bar = document.getElementById('waybar');
+    if (bar && bar.parentNode) bar.parentNode.insertBefore(note, bar.nextSibling); else document.body.insertBefore(note, document.body.firstChild);
+  }
+  // My Ballot: on voter-guide pages, load the pick/save controls (browser-only; see ballot-store.js). Off while the guides are archived.
+  if (/^\/guide(-[a-z]{2})?\//.test(path) && !inMembers && !BALLOTS_ARCHIVED) {
     var bcss = document.createElement('link'); bcss.rel = 'stylesheet'; bcss.href = '/members/ballot-pick.css?v=6'; document.head.appendChild(bcss);
     var bstore = document.createElement('script'); bstore.src = '/members/ballot-store.js?v=6';
     bstore.onload = function () { var bp = document.createElement('script'); bp.src = '/members/ballot-pick.js?v=8'; document.body.appendChild(bp); };
     document.body.appendChild(bstore);
   }
   var start = function () {
-    addOriginalOcean(); loadBubbles(); render(stored());
+    addOriginalOcean(); loadBubbles(); render(stored()); archiveBanner();
     // One document-anchored whale on each page, sharing the cached asset.
     if (!document.querySelector('link[href^="/whale.css"]')) {
       var whaleCss = document.createElement('link');

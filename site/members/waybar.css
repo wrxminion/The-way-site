@@ -441,3 +441,9 @@ html.wb-bubs-building .wb-dock > :not(.wb-bubbles-toggle),html.wb-bubs-building 
 #waybar.waybar .wb-logo:before{width:92px;height:92px;border-radius:20px;box-shadow:0 6px 26px #0008}
 @media(max-width:600px){#waybar.waybar{min-height:96px}#waybar.waybar .wb-logo:before{width:56px;height:56px;border-radius:13px}}
 /* END HEADER C */
+/* Archived voter guides (Nov 2026): a plain line under the top bar on every guide and district-map page */
+.wb-archive{position:relative;z-index:30;max-width:1240px;margin:10px auto 0;padding:10px 16px;border:1px solid #e9c97f80;border-radius:10px;background:#2a2412e6;color:#f6ecd2;font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wb-archive b{color:#ffe3a3}
+.wb-archive a{color:#9ff3dc;font-weight:700;white-space:nowrap}
+@media (max-width:1272px){.wb-archive{margin:10px 16px 0}}
+@media print{.wb-archive{border:1px solid #000;background:none;color:#000}.wb-archive a{color:#000}}
