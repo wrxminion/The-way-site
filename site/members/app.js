@@ -225,20 +225,20 @@ function humanCheck() {
   };
 }
 
-// Age question (migration 0041). A neutral question with no answer chosen in advance. 18 or older may go on; anyone younger stops
-// with a friendly note. Only "adult confirmed" is ever stored (members.adult_confirmed_at). An under-18 answer is remembered in this
+// Age question (migration 0041). A neutral question with no answer chosen in advance. 13 or older may go on; anyone younger stops
+// with a friendly note. Only the confirmation is ever stored (members.adult_confirmed_at, name kept from migration 0041; since 0085 it means 13 or older). An under-13 answer is remembered in this
 // browser only, so pressing Back does not offer the question again; nothing is sent to us.
-const AGE_KEY = 'theway.agegate';
-const ageStopped = () => { try { return localStorage.getItem(AGE_KEY) === 'under18'; } catch { return false; } };
-const markAgeStopped = () => { try { localStorage.setItem(AGE_KEY, 'under18'); } catch { /* private mode */ } };
+const AGE_KEY = 'theway.agegate13';
+const ageStopped = () => { try { return localStorage.getItem(AGE_KEY) === 'under13'; } catch { return false; } };
+const markAgeStopped = () => { try { localStorage.setItem(AGE_KEY, 'under13'); } catch { /* private mode */ } };
 function ageQuestion() {
   const id = 'age-' + Math.random().toString(36).slice(2, 8);
   const opt = (value, label) => h('label', { class: 'age-opt' }, h('input', { type: 'radio', name: id, value }), ' ' + label);
   const el = h('fieldset', { class: 'age-q' },
-    h('legend', { text: 'Are you 18 or older?' }),
+    h('legend', { text: 'Are you 13 or older?' }),
     opt('yes', 'Yes'), opt('no', 'No'),
     h('p', { class: 'small dim', text: 'We ask so we can keep younger visitors safe. We do not keep your age or birth date.' }));
-  const note = notice('Thank you for being honest. Member accounts are for people 18 and older right now. A login for kids and teens is on the plan. You can still read the public guides, cases and maps without an account.', 'ok');
+  const note = notice('Thank you for being honest. Member accounts are for people 13 and older. A login for younger kids is not planned yet. You can still read the public guides, cases and maps without an account.', 'ok');
   note.hidden = true;
   return {
     el, note,
@@ -246,7 +246,7 @@ function ageQuestion() {
     // true when the person may go on; shows the note and stops otherwise
     check(form) {
       const v = this.value();
-      if (!v) throw new Error('Please answer: are you 18 or older?');
+      if (!v) throw new Error('Please answer: are you 13 or older?');
       if (v === 'yes') return true;
       markAgeStopped();
       if (form) form.hidden = true;
@@ -282,7 +282,7 @@ function artQuestion() {
 }
 
 // The answers given on the create-account steps, kept in this browser until the join screen, so nobody is asked twice.
-const ADULT_KEY = 'theway.age18', TEACH_KEY = 'theway.teacher', ART_KEY = 'theway.art', FIELD_KEY = 'theway.field';
+const ADULT_KEY = 'theway.age13', TEACH_KEY = 'theway.teacher', ART_KEY = 'theway.art', FIELD_KEY = 'theway.field';
 const keptAdult = () => { try { return localStorage.getItem(ADULT_KEY) === 'yes'; } catch { return false; } };
 const keptTeacher = () => { try { return localStorage.getItem(TEACH_KEY) || ''; } catch { return ''; } };
 const keptArt = () => { try { return { art: localStorage.getItem(ART_KEY) || '', other: localStorage.getItem(FIELD_KEY) || '' }; } catch { return { art: '', other: '' }; } };
@@ -413,7 +413,7 @@ async function signInView() {
       msg, age.note, form, code.form);
   }
 
-  // Create an account, open sign-up: a button first, then "Are you 18 or older?", then (on Yes) the teacher question and email.
+  // Create an account, open sign-up: a button first, then "Are you 13 or older?", then (on Yes) the teacher question and email.
   function createPanel(invited) {
     const msg = h('div');
     const emailIn = h('input', { type: 'email', name: 'new-email', required: true, autocomplete: 'email', placeholder: 'you@example.org' });
@@ -511,7 +511,7 @@ async function joinView() {
       age.note,
       h('form', { id: 'join-form', onsubmit: action(async (ev) => {
         if (!knownAdult && !age.check(ev.target)) {
-          // Under 18: no account is made. Sign out so the half-made sign-in does not linger.
+          // Under 13: no account is made. Sign out so the half-made sign-in does not linger.
           await sb.auth.signOut();
           return;
         }
