@@ -73,3 +73,5 @@ main:has(.md-page){max-width:1100px}
   .md-tabbtn{padding:10px 12px}
   .md-card{padding:12px 14px}
 }
+.md-postnow{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between}
+.md-postnow .btns{margin:0}

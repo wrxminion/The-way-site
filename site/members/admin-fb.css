@@ -6,3 +6,4 @@
 .fb-text{white-space:pre-wrap;margin:6px 0}
 .fb-ticks{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
 .fb-ticks label{display:inline-flex;gap:6px;align-items:center}
+.list>li.fb-focus{border-left:3px solid var(--aqua);padding-left:12px;background:#a7f0e914}

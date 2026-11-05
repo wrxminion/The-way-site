@@ -226,11 +226,23 @@ function make(ctx) {
           list.replaceChildren(h('p', { class: 'muted', text: `Could not load the list: ${e.message || e}. Have migrations 0100 and 0101 been run?` }));
         }
       }
+      let focusId = null;
       function draw() {
         list.replaceChildren(rows.length ? h('ul', { class: 'list' }, rows.map(one))
-          : h('p', { class: 'muted', text: 'Nothing approved and waiting. Approve a post under Social media posts and it shows up here.' }));
+          : h('p', { class: 'muted', text: 'Nothing approved and waiting. Approve a post on the Posts tab and it shows up here.' }));
+        if (focusId != null) {
+          const li = list.querySelector(`[data-id="${Number(focusId)}"]`);
+          focusId = null;
+          if (li) { li.classList.add('fb-focus'); li.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        }
       }
       onChange.push(draw);
+      // The Media page says when the approved list changed (a post was approved, or the Post online tab was opened).
+      window.addEventListener('way-social-changed', (e) => {
+        if (!list.isConnected) return;   // not on screen; it reloads when the tab is opened
+        focusId = e.detail && e.detail.focusId;
+        loadReady();
+      });
       function one(x) {
         const text = textOf(x), n = charsOf(text);
         const had = new Set(x.posted_platforms || []);
@@ -254,7 +266,7 @@ function make(ctx) {
           slot.replaceChildren(h('p', { class: r.failed.length ? 'md-warn' : 'tag ok', text: resultText(r, true) }));
           await loadReady();
         }, slot) }, 'Post');
-        return h('li', { class: 'fb-item' },
+        return h('li', { class: 'fb-item', 'data-id': String(x.id) },
           h('div', { class: 'row' }, h('span', {},
             x.review_status ? h('span', { class: x.review_status === 'checked' ? 'tag ok' : 'tag warn', text: REVIEW[x.review_status] }) : null, ' ',
             x.source === 'llm' ? h('span', { class: 'tag', text: 'AI-made: label added' }) : null, ' ',
