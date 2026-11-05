@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-05T20:00:33Z",
+ "updated_at": "2026-11-05T20:09:09Z",
  "certified": false,
  "contests": [
   {
@@ -23,21 +23,21 @@
      "name": "Cory BOOKER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1779654
+     "votes": 1779886
     },
     {
      "id": "murphy",
      "name": "Justin MURPHY",
      "party": "REP",
      "party_code": "R",
-     "votes": 998379
+     "votes": 998456
     },
     {
      "id": "fernandez",
      "name": "Veronica FERNANDEZ",
      "party": "NPC",
      "party_code": "O",
-     "votes": 46796
+     "votes": 46806
     },
     {
      "id": "kuniansky",
@@ -51,7 +51,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 6123
+     "votes": 6174
     },
     {
      "id": "choice",
@@ -593,10 +593,10 @@
       "total": 0
      },
      "votes": {
-      "booker": 190624,
-      "murphy": 113950,
-      "fernandez": 5920,
-      "write-in": 2241
+      "booker": 190856,
+      "murphy": 114027,
+      "fernandez": 5930,
+      "write-in": 2292
      }
     },
     {
@@ -1621,28 +1621,28 @@
      "name": "Josh GOTTHEIMER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 169746
+     "votes": 169938
     },
     {
      "id": "kirrane",
      "name": "Sean KIRRANE",
      "party": "REP",
      "party_code": "R",
-     "votes": 93992
+     "votes": 94039
     },
     {
      "id": "rueda",
      "name": "Adam RUEDA",
      "party": "NMC",
      "party_code": "O",
-     "votes": 8076
+     "votes": 8088
     },
     {
      "id": "write-in",
      "name": "Write-In-Vote",
      "party": null,
      "party_code": "O",
-     "votes": 229
+     "votes": 313
     }
    ],
    "precincts": {
@@ -1670,10 +1670,10 @@
       "total": 0
      },
      "votes": {
-      "gottheimer": 144406,
-      "kirrane": 68786,
-      "rueda": 6775,
-      "write-in": 157
+      "gottheimer": 144598,
+      "kirrane": 68833,
+      "rueda": 6787,
+      "write-in": 241
      }
     },
     {
@@ -1995,28 +1995,28 @@
      "name": "Nelida Pou",
      "party": "DEM",
      "party_code": "D",
-     "votes": 123530
+     "votes": 123580
     },
     {
      "id": "pino",
      "name": "Rosie Pino",
      "party": "REP",
      "party_code": "R",
-     "votes": 58838
+     "votes": 58858
     },
     {
      "id": "bukovinac",
      "name": "Terrisa Bukovinac",
      "party": "N-E",
      "party_code": "O",
-     "votes": 2710
+     "votes": 2711
     },
     {
      "id": "write-in",
      "name": "Write-In Vote",
      "party": null,
      "party_code": "O",
-     "votes": 303
+     "votes": 367
     }
    ],
    "precincts": {
@@ -2057,10 +2057,10 @@
       "total": 0
      },
      "votes": {
-      "pou": 55225,
-      "pino": 33883,
-      "bukovinac": 1099,
-      "write-in": 55
+      "pou": 55275,
+      "pino": 33903,
+      "bukovinac": 1100,
+      "write-in": 119
      }
     }
    ],
@@ -71014,28 +71014,28 @@
      "name": "Cory Booker",
      "party": "DEM",
      "party_code": "D",
-     "votes": 190624
+     "votes": 190856
     },
     {
      "id": "justin-murphy",
      "name": "Justin Murphy",
      "party": "REP",
      "party_code": "R",
-     "votes": 113950
+     "votes": 114027
     },
     {
      "id": "veronica-fernandez",
      "name": "Veronica Fernandez",
      "party": null,
      "party_code": "O",
-     "votes": 5920
+     "votes": 5930
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 2241
+     "votes": 2292
     }
    ],
    "precincts": {
@@ -86545,7 +86545,13 @@
     "reporting": 0,
     "total": 0
    },
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "josh-gottheimer",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:12:11.123Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-bergen-0005-member-of-the-house-of-representatives-9th-congressional-district",
@@ -86591,7 +86597,13 @@
     "reporting": 0,
     "total": 0
    },
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "nelida-pou",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:22:06.948Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-bergen-0006-county-executive",
@@ -92687,28 +92699,28 @@
      "name": "Rachel S. Baskin",
      "party": null,
      "party_code": "O",
-     "votes": 1734
+     "votes": 1736
     },
     {
      "id": "dominic-l-disalvo",
      "name": "DOMINIC L. DiSALVO",
      "party": null,
      "party_code": "O",
-     "votes": 1479
+     "votes": 1481
     },
     {
      "id": "john-f-carvelli",
      "name": "John F. Carvelli",
      "party": null,
      "party_code": "O",
-     "votes": 1290
+     "votes": 1292
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 11
+     "votes": 21
     }
    ],
    "precincts": {
@@ -94061,35 +94073,35 @@
      "name": "David Steven Miller",
      "party": null,
      "party_code": "O",
-     "votes": 2417
+     "votes": 2424
     },
     {
      "id": "daniel-kim-shin",
      "name": "Daniel Kim Shin",
      "party": null,
      "party_code": "O",
-     "votes": 2297
+     "votes": 2304
     },
     {
      "id": "angela-leone",
      "name": "Angela Leone",
      "party": null,
      "party_code": "O",
-     "votes": 2125
+     "votes": 2130
     },
     {
      "id": "kevin-shin",
      "name": "Kevin Shin",
      "party": null,
      "party_code": "O",
-     "votes": 1657
+     "votes": 1667
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 21
+     "votes": 46
     }
    ],
    "precincts": {
@@ -94114,14 +94126,14 @@
      "name": "Rachel Milston",
      "party": null,
      "party_code": "O",
-     "votes": 1738
+     "votes": 1741
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 6
     }
    ],
    "precincts": {
@@ -94146,14 +94158,14 @@
      "name": "JOY A. McELYEA",
      "party": null,
      "party_code": "O",
-     "votes": 1428
+     "votes": 1431
     },
     {
      "id": "hani-batla",
      "name": "Hani Batla",
      "party": null,
      "party_code": "O",
-     "votes": 1274
+     "votes": 1277
     },
     {
      "id": "kyle-kotch",
@@ -94181,7 +94193,7 @@
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 3
+     "votes": 6
     }
    ],
    "precincts": {
@@ -94220,21 +94232,21 @@
      "name": "Shanna Dawn Anderson",
      "party": null,
      "party_code": "O",
-     "votes": 1058
+     "votes": 1059
     },
     {
      "id": "andrew-frey",
      "name": "Andrew Frey",
      "party": null,
      "party_code": "O",
-     "votes": 936
+     "votes": 937
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 10
+     "votes": 36
     }
    ],
    "precincts": {
@@ -94259,28 +94271,28 @@
      "name": "Joseph C. Brunacki Iv",
      "party": null,
      "party_code": "O",
-     "votes": 1356
+     "votes": 1358
     },
     {
      "id": "theadora-calabrese",
      "name": "Theadora Calabrese",
      "party": null,
      "party_code": "O",
-     "votes": 1319
+     "votes": 1321
     },
     {
      "id": "bobby-ristovski",
      "name": "Bobby Ristovski",
      "party": null,
      "party_code": "O",
-     "votes": 1049
+     "votes": 1050
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 13
+     "votes": 25
     }
    ],
    "precincts": {
@@ -94305,21 +94317,21 @@
      "name": "Loni Azzolina",
      "party": null,
      "party_code": "O",
-     "votes": 1793
+     "votes": 1795
     },
     {
      "id": "heather-m-perin",
      "name": "Heather M. Perin",
      "party": null,
      "party_code": "O",
-     "votes": 1544
+     "votes": 1545
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 30
+     "votes": 76
     }
    ],
    "precincts": {
@@ -94344,14 +94356,14 @@
      "name": "Nicole Martin",
      "party": null,
      "party_code": "O",
-     "votes": 2395
+     "votes": 2397
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 25
+     "votes": 69
     }
    ],
    "precincts": {
@@ -94376,14 +94388,14 @@
      "name": "Stephanie Mong-Ping Huang",
      "party": null,
      "party_code": "O",
-     "votes": 1701
+     "votes": 1703
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 10
+     "votes": 15
     }
    ],
    "precincts": {
@@ -94408,21 +94420,21 @@
      "name": "Kristan Saks",
      "party": null,
      "party_code": "O",
-     "votes": 1518
+     "votes": 1520
     },
     {
      "id": "jennifer-stroger",
      "name": "Jennifer Stroger",
      "party": null,
      "party_code": "O",
-     "votes": 1338
+     "votes": 1340
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 13
+     "votes": 14
     }
    ],
    "precincts": {
@@ -94447,14 +94459,14 @@
      "name": "Michele Milano",
      "party": null,
      "party_code": "O",
-     "votes": 2123
+     "votes": 2124
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 19
+     "votes": 20
     }
    ],
    "precincts": {
@@ -94479,7 +94491,7 @@
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 5
+     "votes": 13
     }
    ],
    "precincts": {
@@ -94504,21 +94516,21 @@
      "name": "BRIAN DeLAITE",
      "party": null,
      "party_code": "O",
-     "votes": 3170
+     "votes": 3176
     },
     {
      "id": "doreen-m-mariani",
      "name": "Doreen M. Mariani",
      "party": null,
      "party_code": "O",
-     "votes": 2647
+     "votes": 2648
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 7
+     "votes": 9
     }
    ],
    "precincts": {
@@ -94543,35 +94555,35 @@
      "name": "Ilyssa Callandrillo",
      "party": null,
      "party_code": "O",
-     "votes": 3403
+     "votes": 3405
     },
     {
      "id": "ashley-mungiello",
      "name": "Ashley Mungiello",
      "party": null,
      "party_code": "O",
-     "votes": 3359
+     "votes": 3362
     },
     {
      "id": "frank-barbagallo",
      "name": "Frank Barbagallo",
      "party": null,
      "party_code": "O",
-     "votes": 2416
+     "votes": 2418
     },
     {
      "id": "vivek-bhushan",
      "name": "Vivek Bhushan",
      "party": null,
      "party_code": "O",
-     "votes": 2284
+     "votes": 2286
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 9
+     "votes": 12
     }
    ],
    "precincts": {
@@ -94596,21 +94608,21 @@
      "name": "Samantha Anzano",
      "party": null,
      "party_code": "O",
-     "votes": 3323
+     "votes": 3325
     },
     {
      "id": "brian-benedik",
      "name": "Brian Benedik",
      "party": null,
      "party_code": "O",
-     "votes": 2466
+     "votes": 2469
     },
     {
      "id": "write-in-various-named",
      "name": "Write-In (various named)",
      "party": null,
      "party_code": "O",
-     "votes": 5
+     "votes": 10
     }
    ],
    "precincts": {
@@ -94642,7 +94654,7 @@
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 2158
+     "votes": 2159
     }
    ],
    "precincts": {
@@ -94667,7 +94679,7 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 2005
+     "votes": 2011
     },
     {
      "id": "no",
@@ -94699,14 +94711,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 2735
+     "votes": 2736
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 767
+     "votes": 768
     }
    ],
    "precincts": {
@@ -94731,14 +94743,14 @@
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 1289
+     "votes": 1291
     },
     {
      "id": "yes",
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 1016
+     "votes": 1017
     }
    ],
    "precincts": {
@@ -94763,14 +94775,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 2871
+     "votes": 2875
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 418
+     "votes": 419
     }
    ],
    "precincts": {
@@ -94795,14 +94807,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 2029
+     "votes": 2035
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 1007
+     "votes": 1010
     }
    ],
    "precincts": {
@@ -94827,7 +94839,7 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 4606
+     "votes": 4610
     },
     {
      "id": "no",
@@ -102367,6 +102379,7719 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0002-chris-hedges-1-0-00",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Chris Hedges 1 0.00%",
+   "district": null,
+   "title": "Chris Hedges 1 0.00%",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 194
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0003-member-of-the-house-of-representatives-5th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Member Of The House Of Representatives 5Th Congressional District",
+   "district": 5,
+   "title": "Member Of The House Of Representatives 5Th Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-gottheimer",
+     "name": "Josh Gottheimer",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 144598
+    },
+    {
+     "id": "sean-kirrane",
+     "name": "Sean Kirrane",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 68833
+    },
+    {
+     "id": "adam-rueda",
+     "name": "Adam Rueda",
+     "party": null,
+     "party_code": "O",
+     "votes": 6787
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 241
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0004-member-of-the-house-of-representatives-9th-congressional-district",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Member Of The House Of Representatives 9Th Congressional District",
+   "district": 9,
+   "title": "Member Of The House Of Representatives 9Th Congressional District",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "nelida-pou",
+     "name": "Nelida Pou",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 55275
+    },
+    {
+     "id": "rosie-pino",
+     "name": "Rosie Pino",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 33903
+    },
+    {
+     "id": "terrisa-bukovinac",
+     "name": "Terrisa Bukovinac",
+     "party": null,
+     "party_code": "O",
+     "votes": 1100
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 119
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0005-county-executive",
+   "kind": "candidate",
+   "level": "county",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "County Executive",
+   "district": null,
+   "title": "County Executive",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-j-tedesco-iii",
+     "name": "James J. Tedesco Iii",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 197994
+    },
+    {
+     "id": "todd-h-hennessey",
+     "name": "Todd H. Hennessey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 109281
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 188
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0006-county-clerk",
+   "kind": "candidate",
+   "level": "county",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "County Clerk",
+   "district": null,
+   "title": "County Clerk",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-s-hogan",
+     "name": "John S. Hogan",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 194271
+    },
+    {
+     "id": "timothy-c-walsh",
+     "name": "Timothy C. Walsh",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 111426
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 154
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0007-surrogate",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Surrogate",
+   "district": null,
+   "title": "Surrogate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "linda-h-schwager",
+     "name": "Linda H. Schwager",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 189703
+    },
+    {
+     "id": "joseph-stephen-conte",
+     "name": "Joseph Stephen Conte",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 114047
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 147
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0008-members-of-the-board-of-county-commissioners",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Members Of The Board Of County Commissioners",
+   "district": null,
+   "title": "Members Of The Board Of County Commissioners",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "joan-m-voss",
+     "name": "Joan M. Voss",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 189767
+    },
+    {
+     "id": "rafael-marte",
+     "name": "Rafael Marte",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 187060
+    },
+    {
+     "id": "john-dinice",
+     "name": "John Dinice",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 113064
+    },
+    {
+     "id": "maria-soledad-laman",
+     "name": "Maria Soledad Laman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 112036
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 225
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0009-allendale-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Allendale Mayor",
+   "district": null,
+   "title": "Allendale Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amy-e-wilczynski",
+     "name": "Amy E. Wilczynski",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2034
+    },
+    {
+     "id": "philip-cicchetti",
+     "name": "Philip Cicchetti",
+     "party": null,
+     "party_code": "O",
+     "votes": 815
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0010-allendale-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Allendale Council",
+   "district": null,
+   "title": "Allendale Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "donald-j-mckenna",
+     "name": "DONALD J. McKENNA",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2059
+    },
+    {
+     "id": "david-w-rahal",
+     "name": "David W. Rahal",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2036
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 57
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0011-alpine-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Alpine Mayor",
+   "district": null,
+   "title": "Alpine Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-h-tomasko",
+     "name": "Paul H. Tomasko",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 577
+    },
+    {
+     "id": "faisel-hussein",
+     "name": "Faisel Hussein",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 127
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0012-alpine-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Alpine Council",
+   "district": null,
+   "title": "Alpine Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "philip-e-simotas",
+     "name": "Philip E. Simotas",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 464
+    },
+    {
+     "id": "michael-a-cacouris",
+     "name": "Michael A. Cacouris",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 416
+    },
+    {
+     "id": "david-w-kupferschmid",
+     "name": "David W. Kupferschmid",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 256
+    },
+    {
+     "id": "jacques-p-minoyan",
+     "name": "Jacques P. Minoyan",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 240
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0013-alpine-council-unexpired-2-year",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Alpine Council Unexpired 2 Year",
+   "district": null,
+   "title": "Alpine Council Unexpired 2 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "keren-barbi",
+     "name": "Keren Barbi",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 439
+    },
+    {
+     "id": "judith-fisher",
+     "name": "Judith Fisher",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 254
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0014-bergenfield-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Bergenfield Council",
+   "district": null,
+   "title": "Bergenfield Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "marc-pascual",
+     "name": "Marc Pascual",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6670
+    },
+    {
+     "id": "domingo-almonte",
+     "name": "Domingo Almonte",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6550
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 159
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0015-bogota-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Bogota Council",
+   "district": null,
+   "title": "Bogota Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "diana-vergara",
+     "name": "Diana Vergara",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1941
+    },
+    {
+     "id": "lisa-kohles",
+     "name": "Lisa Kohles",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1906
+    },
+    {
+     "id": "louis-j-alvarez",
+     "name": "Louis J. Alvarez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 661
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 89
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0016-carlstadt-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Carlstadt Council",
+   "district": null,
+   "title": "Carlstadt Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "dennis-c-ritchie",
+     "name": "Dennis C. Ritchie",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1198
+    },
+    {
+     "id": "walter-m-beese",
+     "name": "Walter M. Beese",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1148
+    },
+    {
+     "id": "james-a-lenoy",
+     "name": "James A. Lenoy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 986
+    },
+    {
+     "id": "joseph-t-emerson",
+     "name": "Joseph T. Emerson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 973
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0017-cliffside-park-council",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Cliffside Park Council",
+   "district": null,
+   "title": "Cliffside Park Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "dana-martinotti",
+     "name": "Dana Martinotti",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4556
+    },
+    {
+     "id": "eurice-e-rojas",
+     "name": "Eurice E. Rojas",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4469
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 42
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0018-closter-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Closter Mayor",
+   "district": null,
+   "title": "Closter Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-c-glidden-jr",
+     "name": "JOHN C. GLIDDEN Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1759
+    },
+    {
+     "id": "dolores-a-witko",
+     "name": "Dolores A. Witko",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1217
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0019-closter-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Closter Council",
+   "district": null,
+   "title": "Closter Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "christopher-cho",
+     "name": "Christopher Cho",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1610
+    },
+    {
+     "id": "monica-jethani",
+     "name": "Monica Jethani",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1516
+    },
+    {
+     "id": "linda-albelli",
+     "name": "Linda Albelli",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1391
+    },
+    {
+     "id": "steven-j-spoto",
+     "name": "Steven J. Spoto",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1386
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0020-cresskill-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Cresskill Council",
+   "district": null,
+   "title": "Cresskill Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "arthur-j-mclaughlin",
+     "name": "ARTHUR J. McLAUGHLIN",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1508
+    },
+    {
+     "id": "hector-olmo",
+     "name": "Hector Olmo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1139
+    },
+    {
+     "id": "guy-peleg",
+     "name": "Guy Peleg",
+     "party": null,
+     "party_code": "O",
+     "votes": 185
+    },
+    {
+     "id": "netta-doron",
+     "name": "Netta Doron",
+     "party": null,
+     "party_code": "O",
+     "votes": 152
+    },
+    {
+     "id": "netta-doron-2",
+     "name": "Netta Doron",
+     "party": null,
+     "party_code": "O",
+     "votes": 150
+    },
+    {
+     "id": "guy-peleg-2",
+     "name": "Guy Peleg",
+     "party": null,
+     "party_code": "O",
+     "votes": 136
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 60
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0021-demarest-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Demarest Mayor",
+   "district": null,
+   "title": "Demarest Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brian-k-bernstein",
+     "name": "Brian K. Bernstein",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1084
+    },
+    {
+     "id": "raymond-j-cywinski",
+     "name": "Raymond J. Cywinski",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 699
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0022-demarest-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Demarest Council",
+   "district": null,
+   "title": "Demarest Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "adam-j-collins",
+     "name": "Adam J. Collins",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1064
+    },
+    {
+     "id": "jonathan-reiss",
+     "name": "Jonathan Reiss",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1040
+    },
+    {
+     "id": "theodore-f-martens",
+     "name": "Theodore F. Martens",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 715
+    },
+    {
+     "id": "stephen-r-tillack",
+     "name": "Stephen R. Tillack",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 712
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0023-demarest-council-unexpired-1-year",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Demarest Council Unexpired 1 Year",
+   "district": null,
+   "title": "Demarest Council Unexpired 1 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "david-jiang",
+     "name": "David Jiang",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1077
+    },
+    {
+     "id": "anita-g-gatto",
+     "name": "Anita G. Gatto",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 681
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0024-dumont-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Dumont Council",
+   "district": null,
+   "title": "Dumont Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "maryann-e-russini",
+     "name": "Maryann E. Russini",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4104
+    },
+    {
+     "id": "diana-englese",
+     "name": "Diana Englese",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3944
+    },
+    {
+     "id": "kenneth-armellino",
+     "name": "Kenneth Armellino",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2134
+    },
+    {
+     "id": "louis-sciarrino",
+     "name": "Louis Sciarrino",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2064
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0025-east-rutherford-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "East Rutherford Council",
+   "district": null,
+   "title": "East Rutherford Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "jesse-lee-derosa",
+     "name": "JESSE LEE DeROSA",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2060
+    },
+    {
+     "id": "antonio-p-k-segalini",
+     "name": "Antonio P-K Segalini",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2052
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 57
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0026-edgewater-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Edgewater Council",
+   "district": null,
+   "title": "Edgewater Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "rinaldy-a-gutierrez",
+     "name": "Rinaldy A. Gutierrez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2428
+    },
+    {
+     "id": "jose-luis-vidal",
+     "name": "Jose Luis Vidal",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2423
+    },
+    {
+     "id": "frank-a-khoury",
+     "name": "Frank A. Khoury",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 756
+    },
+    {
+     "id": "krassimir-tassev",
+     "name": "Krassimir Tassev",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 740
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 21
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0027-elmwood-park-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Elmwood Park Council",
+   "district": null,
+   "title": "Elmwood Park Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "sandra-balistrieri",
+     "name": "Sandra Balistrieri",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3485
+    },
+    {
+     "id": "karen-pena",
+     "name": "Karen Pena",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3476
+    },
+    {
+     "id": "lorraine-pellegrine",
+     "name": "Lorraine Pellegrine",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2315
+    },
+    {
+     "id": "pamela-troisi",
+     "name": "Pamela Troisi",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2148
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0028-emerson-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Emerson Mayor",
+   "district": null,
+   "title": "Emerson Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "danielle-dipaola",
+     "name": "DANIELLE DiPAOLA",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1670
+    },
+    {
+     "id": "joseph-solimando-iii",
+     "name": "Joseph Solimando Iii",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1573
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0029-emerson-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Emerson Council",
+   "district": null,
+   "title": "Emerson Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "michael-timmerman",
+     "name": "Michael Timmerman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1689
+    },
+    {
+     "id": "ashley-rice",
+     "name": "Ashley Rice",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1609
+    },
+    {
+     "id": "venessa-manzano",
+     "name": "Venessa Manzano",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1583
+    },
+    {
+     "id": "julia-guttilla",
+     "name": "Julia Guttilla",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1541
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0030-englewood-council-ward-2",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Englewood Council Ward 2",
+   "district": null,
+   "title": "Englewood Council Ward 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "lisa-wisotsky",
+     "name": "Lisa Wisotsky",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1784
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0031-englewood-council-ward-4",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Englewood Council Ward 4",
+   "district": null,
+   "title": "Englewood Council Ward 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kevin-a-wilson",
+     "name": "Kevin A. Wilson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1769
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0032-englewood-cliffs-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Englewood Cliffs Council",
+   "district": null,
+   "title": "Englewood Cliffs Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "zhi-liang",
+     "name": "Zhi Liang",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1042
+    },
+    {
+     "id": "rivka-biegacz",
+     "name": "Rivka Biegacz",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1000
+    },
+    {
+     "id": "patricia-drimones",
+     "name": "Patricia Drimones",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 957
+    },
+    {
+     "id": "melanie-simon",
+     "name": "Melanie Simon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 935
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0033-fairview-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Fairview Council",
+   "district": null,
+   "title": "Fairview Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "stephen-burke",
+     "name": "Stephen Burke",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1833
+    },
+    {
+     "id": "john-bussanich",
+     "name": "John Bussanich",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1828
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0034-fort-lee-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Fort Lee Council",
+   "district": null,
+   "title": "Fort Lee Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "paul-yoon",
+     "name": "Paul Yoon",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 7213
+    },
+    {
+     "id": "bryan-drumgoole",
+     "name": "Bryan Drumgoole",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 6941
+    },
+    {
+     "id": "giovanna-surace",
+     "name": "Giovanna Surace",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3106
+    },
+    {
+     "id": "rosana-condina",
+     "name": "Rosana Condina",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3079
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0035-franklin-lakes-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Franklin Lakes Mayor",
+   "district": null,
+   "title": "Franklin Lakes Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "charles-j-x-kahwaty",
+     "name": "Charles J.X. Kahwaty",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2966
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 56
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0036-franklin-lakes-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Franklin Lakes Council",
+   "district": null,
+   "title": "Franklin Lakes Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "gail-a-kelly",
+     "name": "Gail A. Kelly",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2899
+    },
+    {
+     "id": "ari-donio",
+     "name": "Ari Donio",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2814
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 65
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0037-glen-rock-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Glen Rock Council",
+   "district": null,
+   "title": "Glen Rock Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "robert-katzman",
+     "name": "Robert Katzman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3527
+    },
+    {
+     "id": "edward-morley",
+     "name": "Edward Morley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3516
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 62
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0038-harrington-park-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Harrington Park Council",
+   "district": null,
+   "title": "Harrington Park Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "allan-s-napolitano",
+     "name": "Allan S. Napolitano",
+     "party": null,
+     "party_code": "O",
+     "votes": 1090
+    },
+    {
+     "id": "andrew-r-farrell",
+     "name": "Andrew R. Farrell",
+     "party": null,
+     "party_code": "O",
+     "votes": 1042
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 22
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0039-hasbrouck-heights-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Hasbrouck Heights Council",
+   "district": null,
+   "title": "Hasbrouck Heights Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "david-d-alessandro",
+     "name": "David D'Alessandro",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2598
+    },
+    {
+     "id": "charlotte-sodora",
+     "name": "Charlotte Sodora",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2269
+    },
+    {
+     "id": "michael-sickels",
+     "name": "Michael Sickels",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2199
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 30
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0040-haworth-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Haworth Mayor",
+   "district": null,
+   "title": "Haworth Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "heather-j-wasser",
+     "name": "Heather J. Wasser",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1037
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 26
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0041-haworth-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Haworth Council",
+   "district": null,
+   "title": "Haworth Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "charles-j-crowley",
+     "name": "Charles J. Crowley",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1035
+    },
+    {
+     "id": "peter-r-laub",
+     "name": "Peter R. Laub",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1034
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0042-haworth-council-unexpired-1-year",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Haworth Council Unexpired 1 Year",
+   "district": null,
+   "title": "Haworth Council Unexpired 1 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jane-cabourg",
+     "name": "Jane Cabourg",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1044
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0043-hillsdale-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Hillsdale Council",
+   "district": null,
+   "title": "Hillsdale Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "dena-m-toms",
+     "name": "Dena M. Toms",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2342
+    },
+    {
+     "id": "gabriella-a-ianni",
+     "name": "Gabriella A. Ianni",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2342
+    },
+    {
+     "id": "clemente-e-osso",
+     "name": "Clemente E. Osso",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2207
+    },
+    {
+     "id": "danielle-d-ganter",
+     "name": "Danielle D. Ganter",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2130
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0044-ho-ho-kus-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Ho-Ho-Kus Council",
+   "district": null,
+   "title": "Ho-Ho-Kus Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "steven-d-shell",
+     "name": "Steven D. Shell",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1037
+    },
+    {
+     "id": "edmund-m-iannelli",
+     "name": "Edmund M. Iannelli",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1035
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 36
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0045-leonia-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Leonia Council",
+   "district": null,
+   "title": "Leonia Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "diane-m-scarangella",
+     "name": "Diane M. Scarangella",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2224
+    },
+    {
+     "id": "jordan-d-zeigler",
+     "name": "Jordan D. Zeigler",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2211
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 40
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0046-little-ferry-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Little Ferry Council",
+   "district": null,
+   "title": "Little Ferry Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "jenifer-a-lange",
+     "name": "Jenifer A. Lange",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1888
+    },
+    {
+     "id": "margaret-a-steinhilber",
+     "name": "Margaret A. Steinhilber",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1887
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0047-lyndhurst-commissioner-unexpired-3-year",
+   "kind": "candidate",
+   "level": "county",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Lyndhurst Commissioner Unexpired 3 Year",
+   "district": null,
+   "title": "Lyndhurst Commissioner Unexpired 3 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "karen-f-carrino",
+     "name": "Karen F. Carrino",
+     "party": null,
+     "party_code": "O",
+     "votes": 2736
+    },
+    {
+     "id": "john-j-montillo-jr",
+     "name": "JOHN J. MONTILLO Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 2189
+    },
+    {
+     "id": "michael-defrino",
+     "name": "MICHAEL DeFRINO",
+     "party": null,
+     "party_code": "O",
+     "votes": 845
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0048-mahwah-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Mahwah Council",
+   "district": null,
+   "title": "Mahwah Council",
+   "vote_for": 4,
+   "choices": [
+    {
+     "id": "robert-m-ferguson-iii",
+     "name": "Robert M. Ferguson Iii",
+     "party": null,
+     "party_code": "O",
+     "votes": 4361
+    },
+    {
+     "id": "megan-e-jankowski",
+     "name": "Megan E. Jankowski",
+     "party": null,
+     "party_code": "O",
+     "votes": 4231
+    },
+    {
+     "id": "christopher-m-howard",
+     "name": "Christopher M. Howard",
+     "party": null,
+     "party_code": "O",
+     "votes": 4218
+    },
+    {
+     "id": "anthony-j-miller",
+     "name": "Anthony J. Miller",
+     "party": null,
+     "party_code": "O",
+     "votes": 3708
+    },
+    {
+     "id": "janet-a-ariemma",
+     "name": "Janet A. Ariemma",
+     "party": null,
+     "party_code": "O",
+     "votes": 3616
+    },
+    {
+     "id": "philip-s-colella",
+     "name": "Philip S. Colella",
+     "party": null,
+     "party_code": "O",
+     "votes": 3159
+    },
+    {
+     "id": "john-stephen-morin-jr",
+     "name": "JOHN STEPHEN MORIN Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 2558
+    },
+    {
+     "id": "jennifer-diamond",
+     "name": "Jennifer Diamond",
+     "party": null,
+     "party_code": "O",
+     "votes": 2259
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 68
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0049-maywood-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Maywood Council",
+   "district": null,
+   "title": "Maywood Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "claire-a-padovano",
+     "name": "Claire A. Padovano",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2348
+    },
+    {
+     "id": "curtis-r-mcauliffe",
+     "name": "CURTIS R. McAULIFFE",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2228
+    },
+    {
+     "id": "michael-a-trepicchio-jr",
+     "name": "MICHAEL A. TREPICCHIO Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1118
+    },
+    {
+     "id": "keith-soriano",
+     "name": "Keith Soriano",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1102
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0050-maywood-council-unexpired-2-year",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Maywood Council Unexpired 2 Year",
+   "district": null,
+   "title": "Maywood Council Unexpired 2 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "kyla-smith",
+     "name": "Kyla Smith",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2286
+    },
+    {
+     "id": "anthony-p-klymenko-jr",
+     "name": "ANTHONY P. KLYMENKO Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1121
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0051-midland-park-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Midland Park Council",
+   "district": null,
+   "title": "Midland Park Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "deborah-a-spell",
+     "name": "Deborah A. Spell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1603
+    },
+    {
+     "id": "myrna-kayal",
+     "name": "Myrna Kayal",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1572
+    },
+    {
+     "id": "lorraine-deluca",
+     "name": "LORRAINE DeLUCA",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1358
+    },
+    {
+     "id": "kensler-randy-mayo",
+     "name": "Kensler \"Randy\" Mayo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1321
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0052-montvale-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Montvale Council",
+   "district": null,
+   "title": "Montvale Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "douglas-m-arendacs",
+     "name": "Douglas M. Arendacs",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1905
+    },
+    {
+     "id": "theresa-a-cudequest",
+     "name": "Theresa A. Cudequest",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1891
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 57
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0053-moonachie-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Moonachie Mayor",
+   "district": null,
+   "title": "Moonachie Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bradford-j-haberlin",
+     "name": "Bradford J. Haberlin",
+     "party": null,
+     "party_code": "O",
+     "votes": 510
+    },
+    {
+     "id": "dennis-vaccaro",
+     "name": "Dennis Vaccaro",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 437
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0054-moonachie-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Moonachie Council",
+   "district": null,
+   "title": "Moonachie Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "giovanni-a-brattoli",
+     "name": "Giovanni A. Brattoli",
+     "party": null,
+     "party_code": "O",
+     "votes": 497
+    },
+    {
+     "id": "matthew-patunas",
+     "name": "Matthew Patunas",
+     "party": null,
+     "party_code": "O",
+     "votes": 467
+    },
+    {
+     "id": "antonio-cirillo",
+     "name": "Antonio Cirillo",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 445
+    },
+    {
+     "id": "manuel-martinez-jr",
+     "name": "MANUEL MARTINEZ Jr.",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 432
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0055-new-milford-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "New Milford Mayor",
+   "district": null,
+   "title": "New Milford Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-j-putrino",
+     "name": "Michael J. Putrino",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3754
+    },
+    {
+     "id": "laure-d-schroeder",
+     "name": "Laure D. Schroeder",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1615
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0056-new-milford-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "New Milford Council",
+   "district": null,
+   "title": "New Milford Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "matthew-s-seymour",
+     "name": "Matthew S. Seymour",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3480
+    },
+    {
+     "id": "ira-s-grotsky",
+     "name": "Ira S. Grotsky",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3432
+    },
+    {
+     "id": "joseph-g-loporto",
+     "name": "JOSEPH G. LoPORTO",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1896
+    },
+    {
+     "id": "malcolm-sillars",
+     "name": "Malcolm Sillars",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1783
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0057-north-arlington-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "North Arlington Mayor",
+   "district": null,
+   "title": "North Arlington Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "daniel-h-pronti",
+     "name": "Daniel H. Pronti",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3147
+    },
+    {
+     "id": "john-n-balwierczak",
+     "name": "John N. Balwierczak",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2145
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0058-north-arlington-council",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "North Arlington Council",
+   "district": null,
+   "title": "North Arlington Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "donna-a-bocchino",
+     "name": "Donna A. Bocchino",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2784
+    },
+    {
+     "id": "marijo-l-karcic-jr",
+     "name": "MARIJO L. KARCIC Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2747
+    },
+    {
+     "id": "dennis-e-papile",
+     "name": "Dennis E. Papile",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2446
+    },
+    {
+     "id": "cengiz-n-sever",
+     "name": "Cengiz N. Sever",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2379
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0059-northvale-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Northvale Mayor",
+   "district": null,
+   "title": "Northvale Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joseph-e-mcguire",
+     "name": "JOSEPH E. McGUIRE",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1029
+    },
+    {
+     "id": "kenneth-k-cho",
+     "name": "Kenneth K. Cho",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 852
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0060-northvale-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Northvale Council",
+   "district": null,
+   "title": "Northvale Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "jean-marie-cerbasi",
+     "name": "Jean Marie Cerbasi",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 926
+    },
+    {
+     "id": "hovannes-bakalian",
+     "name": "Hovannes Bakalian",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 921
+    },
+    {
+     "id": "laura-n-fernandez",
+     "name": "Laura N. Fernandez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 919
+    },
+    {
+     "id": "david-e-sillery",
+     "name": "David E. Sillery",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 913
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0061-norwood-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Norwood Council",
+   "district": null,
+   "title": "Norwood Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "annie-hausmann",
+     "name": "Annie Hausmann",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1271
+    },
+    {
+     "id": "john-rooney",
+     "name": "John Rooney",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1240
+    },
+    {
+     "id": "jeffrey-krapels",
+     "name": "Jeffrey Krapels",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1026
+    },
+    {
+     "id": "bong-j-kim",
+     "name": "Bong J. Kim",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1004
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0062-oakland-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Oakland Council",
+   "district": null,
+   "title": "Oakland Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "james-m-folkerts",
+     "name": "James M. Folkerts",
+     "party": null,
+     "party_code": "O",
+     "votes": 2997
+    },
+    {
+     "id": "frank-e-furbacher-jr",
+     "name": "FRANK E. FURBACHER Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 2928
+    },
+    {
+     "id": "russell-talamini",
+     "name": "Russell Talamini",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1943
+    },
+    {
+     "id": "ryan-schwertfeger",
+     "name": "Ryan Schwertfeger",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1938
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0063-old-tappan-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Old Tappan Council",
+   "district": null,
+   "title": "Old Tappan Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "ronald-e-binaghi-jr",
+     "name": "RONALD E. BINAGHI Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1337
+    },
+    {
+     "id": "donna-m-costello",
+     "name": "Donna M. Costello",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1310
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 25
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0064-oradell-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Oradell Council",
+   "district": null,
+   "title": "Oradell Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "susan-m-croce",
+     "name": "Susan M. Croce",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1940
+    },
+    {
+     "id": "jeffrey-r-stewart",
+     "name": "Jeffrey R. Stewart",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1932
+    },
+    {
+     "id": "james-ted-gullo",
+     "name": "James \"Ted\" Gullo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1512
+    },
+    {
+     "id": "jonathan-kern",
+     "name": "Jonathan Kern",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1430
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0065-palisades-park-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Palisades Park Mayor",
+   "district": null,
+   "title": "Palisades Park Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "chong-paul-kim",
+     "name": "Chong Paul Kim",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2211
+    },
+    {
+     "id": "stephanie-s-jang",
+     "name": "Stephanie S. Jang",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 981
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0066-palisades-park-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Palisades Park Council",
+   "district": null,
+   "title": "Palisades Park Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "lucy-y-yang",
+     "name": "Lucy Y. Yang",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2269
+    },
+    {
+     "id": "justin-s-kang",
+     "name": "Justin S. Kang",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2264
+    },
+    {
+     "id": "carmelo-j-velardo",
+     "name": "Carmelo J. Velardo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 888
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 13
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0067-paramus-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Paramus Mayor",
+   "district": null,
+   "title": "Paramus Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-dipiazza",
+     "name": "CHRISTOPHER DiPIAZZA",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 5737
+    },
+    {
+     "id": "steven-mercer",
+     "name": "Steven Mercer",
+     "party": null,
+     "party_code": "O",
+     "votes": 62
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 297
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0068-paramus-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Paramus Council",
+   "district": null,
+   "title": "Paramus Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "eric-crespo",
+     "name": "Eric Crespo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4653
+    },
+    {
+     "id": "alfredo-nadera",
+     "name": "Alfredo Nadera",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4646
+    },
+    {
+     "id": "melissa-caminiti",
+     "name": "Melissa Caminiti",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4582
+    },
+    {
+     "id": "peter-caminiti-sr",
+     "name": "PETER CAMINITI Sr.",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4448
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 10
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0069-park-ridge-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Park Ridge Council",
+   "district": null,
+   "title": "Park Ridge Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "robert-c-metzdorf",
+     "name": "Robert C. Metzdorf",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2164
+    },
+    {
+     "id": "michael-g-mintz",
+     "name": "Michael G. Mintz",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2097
+    },
+    {
+     "id": "marc-a-weinberg",
+     "name": "Marc A. Weinberg",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1695
+    },
+    {
+     "id": "sebastian-e-hennessy",
+     "name": "Sebastian E. Hennessy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1688
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0070-ramsey-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Ramsey Mayor",
+   "district": null,
+   "title": "Ramsey Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "angelo-r-lamanna-jr",
+     "name": "ANGELO R. LaMANNA Jr.",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3275
+    },
+    {
+     "id": "deirdre-a-dillon",
+     "name": "Deirdre A. Dillon",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3268
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0071-ramsey-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Ramsey Council",
+   "district": null,
+   "title": "Ramsey Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "jennifer-crandall",
+     "name": "Jennifer Crandall",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3330
+    },
+    {
+     "id": "robert-barry",
+     "name": "Robert Barry",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3308
+    },
+    {
+     "id": "judith-a-cusick",
+     "name": "Judith A. Cusick",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3169
+    },
+    {
+     "id": "jacob-w-englishman",
+     "name": "Jacob W. Englishman",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 3137
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0072-ridgefield-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Ridgefield Council",
+   "district": null,
+   "title": "Ridgefield Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "frank-pellino",
+     "name": "Frank Pellino",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1746
+    },
+    {
+     "id": "james-v-kontolios",
+     "name": "James V. Kontolios",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1604
+    },
+    {
+     "id": "gino-s-ramundo",
+     "name": "Gino S. Ramundo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1241
+    },
+    {
+     "id": "sarah-h-kim",
+     "name": "Sarah H. Kim",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1221
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0073-ridgewood-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Ridgewood Council",
+   "district": null,
+   "title": "Ridgewood Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "evan-weitz",
+     "name": "Evan Weitz",
+     "party": null,
+     "party_code": "O",
+     "votes": 4816
+    },
+    {
+     "id": "siobhan-winograd",
+     "name": "Siobhan Winograd",
+     "party": null,
+     "party_code": "O",
+     "votes": 4526
+    },
+    {
+     "id": "hyunju-kwak",
+     "name": "Hyunju Kwak",
+     "party": null,
+     "party_code": "O",
+     "votes": 3535
+    },
+    {
+     "id": "denise-pierce-lima",
+     "name": "Denise Pierce Lima",
+     "party": null,
+     "party_code": "O",
+     "votes": 2127
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 56
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0074-river-edge-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "River Edge Council",
+   "district": null,
+   "title": "River Edge Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "david-glass",
+     "name": "David Glass",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2829
+    },
+    {
+     "id": "matee-indira-kinsella",
+     "name": "Matee Indira Kinsella",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2827
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 56
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0075-river-vale-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "River Vale Mayor",
+   "district": null,
+   "title": "River Vale Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mark-bromberg",
+     "name": "Mark Bromberg",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2549
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 46
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0076-river-vale-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "River Vale Council",
+   "district": null,
+   "title": "River Vale Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "denise-e-sieg",
+     "name": "Denise E. Sieg",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2551
+    },
+    {
+     "id": "james-tolomeo",
+     "name": "James Tolomeo",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2224
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 24
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0077-river-vale-council-unexpired-2-year",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "River Vale Council Unexpired 2 Year",
+   "district": null,
+   "title": "River Vale Council Unexpired 2 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joseph-ziccarelli",
+     "name": "Joseph Ziccarelli",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 2476
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 35
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0078-rochelle-park-township-committee",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Rochelle Park Township Committee",
+   "district": null,
+   "title": "Rochelle Park Township Committee",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "teresa-e-judge-cravello",
+     "name": "Teresa E. Judge Cravello",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1158
+    },
+    {
+     "id": "andrew-mattson",
+     "name": "Andrew Mattson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1129
+    },
+    {
+     "id": "jennifer-l-appice",
+     "name": "Jennifer L. Appice",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 589
+    },
+    {
+     "id": "john-p-appice",
+     "name": "John P. Appice",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 533
+    },
+    {
+     "id": "gail-artola",
+     "name": "Gail Artola",
+     "party": null,
+     "party_code": "O",
+     "votes": 319
+    },
+    {
+     "id": "joseph-j-scarpa",
+     "name": "Joseph J. Scarpa",
+     "party": null,
+     "party_code": "O",
+     "votes": 281
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0079-rockleigh-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Rockleigh Mayor",
+   "district": null,
+   "title": "Rockleigh Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-g-pontone",
+     "name": "James G. Pontone",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 102
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0080-rockleigh-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Rockleigh Council",
+   "district": null,
+   "title": "Rockleigh Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "frank-cumiskey",
+     "name": "Frank Cumiskey",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 97
+    },
+    {
+     "id": "rosanne-urciuoli-antine",
+     "name": "Rosanne Urciuoli Antine",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 85
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0081-rutherford-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Rutherford Council",
+   "district": null,
+   "title": "Rutherford Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "stephanie-l-mcgowan",
+     "name": "STEPHANIE L. McGOWAN",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4789
+    },
+    {
+     "id": "susan-e-quatrone",
+     "name": "Susan E. Quatrone",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 4721
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 140
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0082-saddle-brook-mayor",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Saddle Brook Mayor",
+   "district": null,
+   "title": "Saddle Brook Mayor",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-d-white",
+     "name": "Robert D. White",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3670
+    },
+    {
+     "id": "omar-rodriguez",
+     "name": "Omar Rodriguez",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1544
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0083-saddle-brook-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Saddle Brook Council",
+   "district": null,
+   "title": "Saddle Brook Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "garrett-s-luna",
+     "name": "Garrett S. Luna",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3276
+    },
+    {
+     "id": "sarah-sanchez",
+     "name": "Sarah Sanchez",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3214
+    },
+    {
+     "id": "andrew-dziedzic",
+     "name": "Andrew Dziedzic",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1853
+    },
+    {
+     "id": "gerard-jerry-taylor",
+     "name": "Gerard \"Jerry\" Taylor",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1798
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0084-saddle-river-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Saddle River Council",
+   "district": null,
+   "title": "Saddle River Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "ravi-sachdev",
+     "name": "Ravi Sachdev",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 892
+    },
+    {
+     "id": "jonathan-kurpis",
+     "name": "Jonathan Kurpis",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 873
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 28
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0085-south-hackensack-township-committee",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "South Hackensack Township Committee",
+   "district": null,
+   "title": "South Hackensack Township Committee",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "james-a-anzevino",
+     "name": "James A. Anzevino",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 486
+    },
+    {
+     "id": "luis-e-perdomo",
+     "name": "Luis E. Perdomo",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 461
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0086-teaneck-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Teaneck Council",
+   "district": null,
+   "title": "Teaneck Council",
+   "vote_for": 4,
+   "choices": [
+    {
+     "id": "george-fernandez-jr",
+     "name": "GEORGE FERNANDEZ Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 7262
+    },
+    {
+     "id": "denise-belcher",
+     "name": "Denise Belcher",
+     "party": null,
+     "party_code": "O",
+     "votes": 7237
+    },
+    {
+     "id": "duane-m-harley",
+     "name": "Duane M. Harley",
+     "party": null,
+     "party_code": "O",
+     "votes": 6842
+    },
+    {
+     "id": "avi-berliner",
+     "name": "Avi Berliner",
+     "party": null,
+     "party_code": "O",
+     "votes": 6615
+    },
+    {
+     "id": "sharon-l-kolb",
+     "name": "Sharon L. Kolb",
+     "party": null,
+     "party_code": "O",
+     "votes": 6485
+    },
+    {
+     "id": "amrit-ramjattan",
+     "name": "Amrit Ramjattan",
+     "party": null,
+     "party_code": "O",
+     "votes": 6304
+    },
+    {
+     "id": "hillary-goldberg",
+     "name": "Hillary Goldberg",
+     "party": null,
+     "party_code": "O",
+     "votes": 3785
+    },
+    {
+     "id": "crystal-y-pressley",
+     "name": "Crystal Y. Pressley",
+     "party": null,
+     "party_code": "O",
+     "votes": 1983
+    },
+    {
+     "id": "howard-rose",
+     "name": "Howard Rose",
+     "party": null,
+     "party_code": "O",
+     "votes": 1959
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 87
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0087-tenafly-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Tenafly Council",
+   "district": null,
+   "title": "Tenafly Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "jamie-corsair",
+     "name": "Jamie Corsair",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3314
+    },
+    {
+     "id": "aakash-k-shah",
+     "name": "Aakash K. Shah",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 3274
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 72
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0088-teterboro-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Teterboro Council",
+   "district": null,
+   "title": "Teterboro Council",
+   "vote_for": 5,
+   "choices": [
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 56
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0089-upper-saddle-river-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Upper Saddle River Council",
+   "district": null,
+   "title": "Upper Saddle River Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "donna-a-friedlander",
+     "name": "Donna A. Friedlander",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1952
+    },
+    {
+     "id": "roger-c-masi",
+     "name": "Roger C. Masi",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1931
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 35
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0090-waldwick-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Waldwick Council",
+   "district": null,
+   "title": "Waldwick Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "gilbert-m-hartmann",
+     "name": "Gilbert M. Hartmann",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2223
+    },
+    {
+     "id": "eric-b-rubinstein",
+     "name": "Eric B. Rubinstein",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2203
+    },
+    {
+     "id": "joseph-v-martinello-jr",
+     "name": "JOSEPH V. MARTINELLO Jr.",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1868
+    },
+    {
+     "id": "jason-chrzanowski",
+     "name": "Jason Chrzanowski",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1791
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0091-wallington-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Wallington Council",
+   "district": null,
+   "title": "Wallington Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "walter-wargacki-jr",
+     "name": "WALTER WARGACKI Jr.",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1805
+    },
+    {
+     "id": "albert-zaccone",
+     "name": "Albert Zaccone",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1715
+    },
+    {
+     "id": "dennis-graham",
+     "name": "Dennis Graham",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1042
+    },
+    {
+     "id": "sylwia-hejzner",
+     "name": "Sylwia Hejzner",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1034
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0092-wallington-council-unexpired-2-year",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Wallington Council Unexpired 2 Year",
+   "district": null,
+   "title": "Wallington Council Unexpired 2 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "roman-kruk",
+     "name": "Roman Kruk",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1724
+    },
+    {
+     "id": "john-p-kosuda",
+     "name": "John P. Kosuda",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1093
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0093-westwood-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Westwood Council",
+   "district": null,
+   "title": "Westwood Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "erin-m-collins",
+     "name": "Erin M. Collins",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2674
+    },
+    {
+     "id": "kristian-s-rasmussen",
+     "name": "Kristian S. Rasmussen",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2447
+    },
+    {
+     "id": "lauren-j-letizia",
+     "name": "Lauren J. Letizia",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1924
+    },
+    {
+     "id": "beth-f-staples",
+     "name": "Beth F. Staples",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1734
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0094-woodcliff-lake-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Woodcliff Lake Council",
+   "district": null,
+   "title": "Woodcliff Lake Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "joshua-s-stern",
+     "name": "Joshua S. Stern",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1453
+    },
+    {
+     "id": "julie-b-brodsky",
+     "name": "Julie B. Brodsky",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 1445
+    },
+    {
+     "id": "eric-bittman",
+     "name": "Eric Bittman",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1270
+    },
+    {
+     "id": "aleisia-gibson-wright",
+     "name": "Aleisia Gibson Wright",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1249
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0095-wood-ridge-council",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Wood-Ridge Council",
+   "district": null,
+   "title": "Wood-Ridge Council",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "philip-d-romero",
+     "name": "Philip D. Romero",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2738
+    },
+    {
+     "id": "dominick-g-azzolini",
+     "name": "Dominick G. Azzolini",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 2728
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 31
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0096-wyckoff-township-committee",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Wyckoff Township Committee",
+   "district": null,
+   "title": "Wyckoff Township Committee",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "peter-j-melchionne",
+     "name": "Peter J. Melchionne",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4333
+    },
+    {
+     "id": "roger-j-lane",
+     "name": "Roger J. Lane",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4310
+    },
+    {
+     "id": "kenneth-silber",
+     "name": "Kenneth Silber",
+     "party": null,
+     "party_code": "O",
+     "votes": 126
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 159
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0097-wyckoff-township-committee-unexpired-1-year",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Wyckoff Township Committee Unexpired 1 Year",
+   "district": null,
+   "title": "Wyckoff Township Committee Unexpired 1 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "james-a-schappert",
+     "name": "James A. Schappert",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 4293
+    },
+    {
+     "id": "kenneth-silber",
+     "name": "Kenneth Silber",
+     "party": null,
+     "party_code": "O",
+     "votes": 120
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 55
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0098-allendale-regional-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Allendale Regional Board Of Education",
+   "district": null,
+   "title": "Allendale Regional Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "andrew-m-prince",
+     "name": "Andrew M. Prince",
+     "party": null,
+     "party_code": "O",
+     "votes": 1547
+    },
+    {
+     "id": "jennifer-c-mario",
+     "name": "Jennifer C. Mario",
+     "party": null,
+     "party_code": "O",
+     "votes": 1385
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0099-allendale-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Allendale Board Of Education",
+   "district": null,
+   "title": "Allendale Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "todd-r-fliegel",
+     "name": "Todd R. Fliegel",
+     "party": null,
+     "party_code": "O",
+     "votes": 1873
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 14
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0100-alpine-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Alpine Board Of Education",
+   "district": null,
+   "title": "Alpine Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "maria-dibiase",
+     "name": "MARIA DiBIASE",
+     "party": null,
+     "party_code": "O",
+     "votes": 284
+    },
+    {
+     "id": "vanessa-barrera",
+     "name": "Vanessa Barrera",
+     "party": null,
+     "party_code": "O",
+     "votes": 272
+    },
+    {
+     "id": "anthony-fasano",
+     "name": "Anthony Fasano",
+     "party": null,
+     "party_code": "O",
+     "votes": 188
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0101-bergenfield-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Bergenfield Board Of Education",
+   "district": null,
+   "title": "Bergenfield Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "fanny-l-cruz-betesh",
+     "name": "Fanny L. Cruz Betesh",
+     "party": null,
+     "party_code": "O",
+     "votes": 3278
+    },
+    {
+     "id": "martha-s-papapetrou",
+     "name": "Martha S. Papapetrou",
+     "party": null,
+     "party_code": "O",
+     "votes": 2617
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 57
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0102-bogota-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Bogota Board Of Education",
+   "district": null,
+   "title": "Bogota Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "jose-chavez",
+     "name": "Jose Chavez",
+     "party": null,
+     "party_code": "O",
+     "votes": 1380
+    },
+    {
+     "id": "bisi-j-ruckett",
+     "name": "Bisi J. Ruckett",
+     "party": null,
+     "party_code": "O",
+     "votes": 1160
+    },
+    {
+     "id": "tasneem-salam",
+     "name": "Tasneem Salam",
+     "party": null,
+     "party_code": "O",
+     "votes": 1099
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 56
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0103-carlstadt-regional-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Carlstadt Regional Board Of Education",
+   "district": null,
+   "title": "Carlstadt Regional Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "thomas-j-cox-jr",
+     "name": "THOMAS J. COX Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 1135
+    },
+    {
+     "id": "eric-jusino",
+     "name": "Eric Jusino",
+     "party": null,
+     "party_code": "O",
+     "votes": 740
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0104-carlstadt-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Carlstadt Board Of Education",
+   "district": null,
+   "title": "Carlstadt Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "frank-m-stallone",
+     "name": "Frank M. Stallone",
+     "party": null,
+     "party_code": "O",
+     "votes": 1184
+    },
+    {
+     "id": "ashley-m-balac",
+     "name": "Ashley M. Balac",
+     "party": null,
+     "party_code": "O",
+     "votes": 1140
+    },
+    {
+     "id": "leslie-a-molnar",
+     "name": "Leslie A. Molnar",
+     "party": null,
+     "party_code": "O",
+     "votes": 1137
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 19
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0105-carlstadt-board-of-education-unexpired-2-year",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Carlstadt Board Of Education Unexpired 2 Year",
+   "district": null,
+   "title": "Carlstadt Board Of Education Unexpired 2 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "marc-cherichella",
+     "name": "Marc Cherichella",
+     "party": null,
+     "party_code": "O",
+     "votes": 1188
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0106-carlstadt-board-of-education-unexpired-1-year",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Carlstadt Board Of Education Unexpired 1 Year",
+   "district": null,
+   "title": "Carlstadt Board Of Education Unexpired 1 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "steven-c-lahullier",
+     "name": "Steven C. Lahullier",
+     "party": null,
+     "party_code": "O",
+     "votes": 797
+    },
+    {
+     "id": "sharon-o-brien-romer",
+     "name": "Sharon O'Brien-Romer",
+     "party": null,
+     "party_code": "O",
+     "votes": 780
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0107-closter-regional-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Closter Regional Board Of Education",
+   "district": null,
+   "title": "Closter Regional Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joseph-argenziano",
+     "name": "Joseph Argenziano",
+     "party": null,
+     "party_code": "O",
+     "votes": 1786
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 44
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0108-closter-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Closter Board Of Education",
+   "district": null,
+   "title": "Closter Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "edmund-choi",
+     "name": "Edmund Choi",
+     "party": null,
+     "party_code": "O",
+     "votes": 1452
+    },
+    {
+     "id": "avishag-ravid",
+     "name": "Avishag Ravid",
+     "party": null,
+     "party_code": "O",
+     "votes": 1332
+    },
+    {
+     "id": "inbar-yodfat",
+     "name": "Inbar Yodfat",
+     "party": null,
+     "party_code": "O",
+     "votes": 72
+    },
+    {
+     "id": "inbar-yodfat-2",
+     "name": "Inbar Yodfat",
+     "party": null,
+     "party_code": "O",
+     "votes": 62
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 91
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0109-cresskill-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Cresskill Board Of Education",
+   "district": null,
+   "title": "Cresskill Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "amy-m-cusick",
+     "name": "Amy M. Cusick",
+     "party": null,
+     "party_code": "O",
+     "votes": 1521
+    },
+    {
+     "id": "heiddy-martin",
+     "name": "Heiddy Martin",
+     "party": null,
+     "party_code": "O",
+     "votes": 1244
+    },
+    {
+     "id": "sarah-e-barrs",
+     "name": "Sarah E. Barrs",
+     "party": null,
+     "party_code": "O",
+     "votes": 1219
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 90
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0110-demarest-regional-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Demarest Regional Board Of Education",
+   "district": null,
+   "title": "Demarest Regional Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "andrew-shyong",
+     "name": "Andrew Shyong",
+     "party": null,
+     "party_code": "O",
+     "votes": 823
+    },
+    {
+     "id": "elizabeth-f-miller",
+     "name": "Elizabeth F. Miller",
+     "party": null,
+     "party_code": "O",
+     "votes": 618
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0111-demarest-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Demarest Board Of Education",
+   "district": null,
+   "title": "Demarest Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "erica-j-cantatore",
+     "name": "Erica J. Cantatore",
+     "party": null,
+     "party_code": "O",
+     "votes": 1159
+    },
+    {
+     "id": "diane-g-holzberg",
+     "name": "Diane G. Holzberg",
+     "party": null,
+     "party_code": "O",
+     "votes": 1128
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0112-demarest-board-of-education-unexpired-2-year",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Demarest Board Of Education Unexpired 2 Year",
+   "district": null,
+   "title": "Demarest Board Of Education Unexpired 2 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "bari-baron",
+     "name": "Bari Baron",
+     "party": null,
+     "party_code": "O",
+     "votes": 1087
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 8
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0113-dumont-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Dumont Board Of Education",
+   "district": null,
+   "title": "Dumont Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "stephanie-petriello",
+     "name": "Stephanie Petriello",
+     "party": null,
+     "party_code": "O",
+     "votes": 3249
+    },
+    {
+     "id": "theresa-l-riva",
+     "name": "Theresa L. Riva",
+     "party": null,
+     "party_code": "O",
+     "votes": 2795
+    },
+    {
+     "id": "stacey-belhumer",
+     "name": "Stacey Belhumer",
+     "party": null,
+     "party_code": "O",
+     "votes": 94
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 336
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0114-east-rutherford-regional-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "East Rutherford Regional Board Of Education",
+   "district": null,
+   "title": "East Rutherford Regional Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "krista-gentle",
+     "name": "Krista Gentle",
+     "party": null,
+     "party_code": "O",
+     "votes": 1578
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 18
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0115-east-rutherford-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "East Rutherford Board Of Education",
+   "district": null,
+   "title": "East Rutherford Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "maria-caruso",
+     "name": "Maria Caruso",
+     "party": null,
+     "party_code": "O",
+     "votes": 1537
+    },
+    {
+     "id": "bobbie-jo-brelsford",
+     "name": "Bobbie-Jo Brelsford",
+     "party": null,
+     "party_code": "O",
+     "votes": 957
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 21
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0116-edgewater-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Edgewater Board Of Education",
+   "district": null,
+   "title": "Edgewater Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "cristina-stefani-rackow",
+     "name": "Cristina Stefani-Rackow",
+     "party": null,
+     "party_code": "O",
+     "votes": 1299
+    },
+    {
+     "id": "patrick-bussanich",
+     "name": "Patrick Bussanich",
+     "party": null,
+     "party_code": "O",
+     "votes": 1213
+    },
+    {
+     "id": "hagop-jacques-kalfayan",
+     "name": "Hagop \"Jacques\" Kalfayan",
+     "party": null,
+     "party_code": "O",
+     "votes": 883
+    },
+    {
+     "id": "jason-yard",
+     "name": "Jason Yard",
+     "party": null,
+     "party_code": "O",
+     "votes": 869
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 30
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0117-elmwood-park-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Elmwood Park Board Of Education",
+   "district": null,
+   "title": "Elmwood Park Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "douglas-a-dematteo",
+     "name": "DOUGLAS A. DeMATTEO",
+     "party": null,
+     "party_code": "O",
+     "votes": 2475
+    },
+    {
+     "id": "elizabeth-mierzejewski",
+     "name": "Elizabeth Mierzejewski",
+     "party": null,
+     "party_code": "O",
+     "votes": 2398
+    },
+    {
+     "id": "dorin-aspras",
+     "name": "Dorin Aspras",
+     "party": null,
+     "party_code": "O",
+     "votes": 2260
+    },
+    {
+     "id": "sabrina-m-lo-presti",
+     "name": "SABRINA M. Lo PRESTI",
+     "party": null,
+     "party_code": "O",
+     "votes": 1613
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0118-elmwood-park-board-of-education-unexpired-1-year",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Elmwood Park Board Of Education Unexpired 1 Year",
+   "district": null,
+   "title": "Elmwood Park Board Of Education Unexpired 1 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "azize-cornejo",
+     "name": "Azize Cornejo",
+     "party": null,
+     "party_code": "O",
+     "votes": 2561
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 11
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0119-emerson-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Emerson Board Of Education",
+   "district": null,
+   "title": "Emerson Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "william-will-graulich-v",
+     "name": "William \"Will\" Graulich V",
+     "party": null,
+     "party_code": "O",
+     "votes": 1513
+    },
+    {
+     "id": "amanda-patricia-riccardi",
+     "name": "Amanda Patricia Riccardi",
+     "party": null,
+     "party_code": "O",
+     "votes": 1341
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 22
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0120-englewood-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Englewood Board Of Education",
+   "district": null,
+   "title": "Englewood Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "vernedra-c-williams",
+     "name": "Vernedra C. Williams",
+     "party": null,
+     "party_code": "O",
+     "votes": 3269
+    },
+    {
+     "id": "rebecca-p-tenzer",
+     "name": "Rebecca P. Tenzer",
+     "party": null,
+     "party_code": "O",
+     "votes": 2943
+    },
+    {
+     "id": "isaac-j-strulowitz",
+     "name": "Isaac J. Strulowitz",
+     "party": null,
+     "party_code": "O",
+     "votes": 2814
+    },
+    {
+     "id": "miriam-stiefel",
+     "name": "Miriam Stiefel",
+     "party": null,
+     "party_code": "O",
+     "votes": 2698
+    },
+    {
+     "id": "ignacio-acosta-thompson",
+     "name": "Ignacio Acosta-Thompson",
+     "party": null,
+     "party_code": "O",
+     "votes": 2544
+    },
+    {
+     "id": "william-feinstein",
+     "name": "William Feinstein",
+     "party": null,
+     "party_code": "O",
+     "votes": 2076
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 36
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0121-englewood-cliffs-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Englewood Cliffs Board Of Education",
+   "district": null,
+   "title": "Englewood Cliffs Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "anthony-hong",
+     "name": "Anthony Hong",
+     "party": null,
+     "party_code": "O",
+     "votes": 917
+    },
+    {
+     "id": "margarita-lolis",
+     "name": "Margarita Lolis",
+     "party": null,
+     "party_code": "O",
+     "votes": 723
+    },
+    {
+     "id": "jennifer-a-drimones",
+     "name": "Jennifer A. Drimones",
+     "party": null,
+     "party_code": "O",
+     "votes": 713
+    },
+    {
+     "id": "orietta-osso",
+     "name": "Orietta Osso",
+     "party": null,
+     "party_code": "O",
+     "votes": 678
+    },
+    {
+     "id": "gulezahra-mamdani",
+     "name": "Gulezahra Mamdani",
+     "party": null,
+     "party_code": "O",
+     "votes": 607
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0122-fair-lawn-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Fair Lawn Board Of Education",
+   "district": null,
+   "title": "Fair Lawn Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "julie-mahan",
+     "name": "Julie Mahan",
+     "party": null,
+     "party_code": "O",
+     "votes": 5988
+    },
+    {
+     "id": "julie-kossoy",
+     "name": "Julie Kossoy",
+     "party": null,
+     "party_code": "O",
+     "votes": 5727
+    },
+    {
+     "id": "jeanne-l-browne",
+     "name": "Jeanne L. Browne",
+     "party": null,
+     "party_code": "O",
+     "votes": 5672
+    },
+    {
+     "id": "veronica-brenner",
+     "name": "Veronica Brenner",
+     "party": null,
+     "party_code": "O",
+     "votes": 2816
+    },
+    {
+     "id": "angela-kerr",
+     "name": "Angela Kerr",
+     "party": null,
+     "party_code": "O",
+     "votes": 2750
+    },
+    {
+     "id": "yan-j-rusanov",
+     "name": "Yan J. Rusanov",
+     "party": null,
+     "party_code": "O",
+     "votes": 2552
+    },
+    {
+     "id": "marcy-t-reiz",
+     "name": "Marcy T. Reiz",
+     "party": null,
+     "party_code": "O",
+     "votes": 2319
+    },
+    {
+     "id": "yael-y-suriel",
+     "name": "Yael Y. Suriel",
+     "party": null,
+     "party_code": "O",
+     "votes": 1066
+    },
+    {
+     "id": "dianna-m-sopala",
+     "name": "Dianna M. Sopala",
+     "party": null,
+     "party_code": "O",
+     "votes": 954
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 54
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0123-fair-lawn-board-of-education-unexpired-1-year",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Fair Lawn Board Of Education Unexpired 1 Year",
+   "district": null,
+   "title": "Fair Lawn Board Of Education Unexpired 1 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "elizabeth-greenfield-estersohn",
+     "name": "Elizabeth Greenfield Estersohn",
+     "party": null,
+     "party_code": "O",
+     "votes": 4769
+    },
+    {
+     "id": "matthew-j-correia",
+     "name": "Matthew J. Correia",
+     "party": null,
+     "party_code": "O",
+     "votes": 2872
+    },
+    {
+     "id": "dmytro-arshynov",
+     "name": "Dmytro Arshynov",
+     "party": null,
+     "party_code": "O",
+     "votes": 2391
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 18
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0124-fort-lee-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Fort Lee Board Of Education",
+   "district": null,
+   "title": "Fort Lee Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "amy-ko-tang",
+     "name": "Amy Ko-Tang",
+     "party": null,
+     "party_code": "O",
+     "votes": 4252
+    },
+    {
+     "id": "candace-romba",
+     "name": "Candace Romba",
+     "party": null,
+     "party_code": "O",
+     "votes": 3820
+    },
+    {
+     "id": "christian-nowell",
+     "name": "Christian Nowell",
+     "party": null,
+     "party_code": "O",
+     "votes": 3810
+    },
+    {
+     "id": "tanya-byers-kang",
+     "name": "Tanya Byers-Kang",
+     "party": null,
+     "party_code": "O",
+     "votes": 3335
+    },
+    {
+     "id": "michael-rubino",
+     "name": "Michael Rubino",
+     "party": null,
+     "party_code": "O",
+     "votes": 3217
+    },
+    {
+     "id": "paula-colbath",
+     "name": "Paula Colbath",
+     "party": null,
+     "party_code": "O",
+     "votes": 3046
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 35
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0125-franklin-lakes-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Franklin Lakes Board Of Education",
+   "district": null,
+   "title": "Franklin Lakes Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "carolina-severino",
+     "name": "Carolina Severino",
+     "party": null,
+     "party_code": "O",
+     "votes": 2006
+    },
+    {
+     "id": "se-whan-kim",
+     "name": "Se Whan Kim",
+     "party": null,
+     "party_code": "O",
+     "votes": 1932
+    },
+    {
+     "id": "ryan-richman",
+     "name": "Ryan Richman",
+     "party": null,
+     "party_code": "O",
+     "votes": 1850
+    },
+    {
+     "id": "dayaneiris-burton",
+     "name": "Dayaneiris Burton",
+     "party": null,
+     "party_code": "O",
+     "votes": 922
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 43
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0126-glen-rock-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Glen Rock Board Of Education",
+   "district": null,
+   "title": "Glen Rock Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "elizabeth-calvez",
+     "name": "Elizabeth Calvez",
+     "party": null,
+     "party_code": "O",
+     "votes": 2658
+    },
+    {
+     "id": "edmund-c-hayward",
+     "name": "Edmund C. Hayward",
+     "party": null,
+     "party_code": "O",
+     "votes": 2481
+    },
+    {
+     "id": "damali-robinson",
+     "name": "Damali Robinson",
+     "party": null,
+     "party_code": "O",
+     "votes": 2440
+    },
+    {
+     "id": "gautam-s-surya",
+     "name": "Gautam S. Surya",
+     "party": null,
+     "party_code": "O",
+     "votes": 2048
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 58
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0127-hackensack-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Hackensack Board Of Education",
+   "district": null,
+   "title": "Hackensack Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "kenneth-martin",
+     "name": "Kenneth Martin",
+     "party": null,
+     "party_code": "O",
+     "votes": 5589
+    },
+    {
+     "id": "mabel-bonilla",
+     "name": "Mabel Bonilla",
+     "party": null,
+     "party_code": "O",
+     "votes": 5341
+    },
+    {
+     "id": "victoria-vicky-farhi",
+     "name": "Victoria \"Vicky\" Farhi",
+     "party": null,
+     "party_code": "O",
+     "votes": 5232
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 90
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0128-harrington-park-regional-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Harrington Park Regional Board Of Education",
+   "district": null,
+   "title": "Harrington Park Regional Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jessica-spillane",
+     "name": "Jessica Spillane",
+     "party": null,
+     "party_code": "O",
+     "votes": 1328
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0129-harrington-park-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Harrington Park Board Of Education",
+   "district": null,
+   "title": "Harrington Park Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "stephen-s-hahm",
+     "name": "Stephen S. Hahm",
+     "party": null,
+     "party_code": "O",
+     "votes": 990
+    },
+    {
+     "id": "jennifer-helfman",
+     "name": "Jennifer Helfman",
+     "party": null,
+     "party_code": "O",
+     "votes": 965
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 25
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0130-hasbrouck-heights-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Hasbrouck Heights Board Of Education",
+   "district": null,
+   "title": "Hasbrouck Heights Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "jillian-ferdinand",
+     "name": "Jillian Ferdinand",
+     "party": null,
+     "party_code": "O",
+     "votes": 1783
+    },
+    {
+     "id": "corinne-ponte",
+     "name": "Corinne Ponte",
+     "party": null,
+     "party_code": "O",
+     "votes": 1779
+    },
+    {
+     "id": "lisa-krommenhoek",
+     "name": "Lisa Krommenhoek",
+     "party": null,
+     "party_code": "O",
+     "votes": 1677
+    },
+    {
+     "id": "angelo-joseph-caprio",
+     "name": "Angelo Joseph Caprio",
+     "party": null,
+     "party_code": "O",
+     "votes": 1642
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 32
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0131-haworth-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Haworth Board Of Education",
+   "district": null,
+   "title": "Haworth Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "courtney-russell",
+     "name": "Courtney Russell",
+     "party": null,
+     "party_code": "O",
+     "votes": 772
+    },
+    {
+     "id": "drew-s-krasny",
+     "name": "Drew S. Krasny",
+     "party": null,
+     "party_code": "O",
+     "votes": 597
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0132-hillsdale-regional-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Hillsdale Regional Board Of Education",
+   "district": null,
+   "title": "Hillsdale Regional Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "beth-kornblatt",
+     "name": "Beth Kornblatt",
+     "party": null,
+     "party_code": "O",
+     "votes": 2036
+    },
+    {
+     "id": "robert-stephen-oosting",
+     "name": "Robert Stephen Oosting",
+     "party": null,
+     "party_code": "O",
+     "votes": 1377
+    },
+    {
+     "id": "patrick-farley",
+     "name": "Patrick Farley",
+     "party": null,
+     "party_code": "O",
+     "votes": 1266
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 18
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0133-hillsdale-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Hillsdale Board Of Education",
+   "district": null,
+   "title": "Hillsdale Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "kathleen-puerta",
+     "name": "Kathleen Puerta",
+     "party": null,
+     "party_code": "O",
+     "votes": 2222
+    },
+    {
+     "id": "michael-kenduck",
+     "name": "Michael Kenduck",
+     "party": null,
+     "party_code": "O",
+     "votes": 1945
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 34
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0134-ho-ho-kus-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Ho-Ho-Kus Board Of Education",
+   "district": null,
+   "title": "Ho-Ho-Kus Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "margaret-liljegren",
+     "name": "Margaret Liljegren",
+     "party": null,
+     "party_code": "O",
+     "votes": 1081
+    },
+    {
+     "id": "anthony-karoleski",
+     "name": "Anthony Karoleski",
+     "party": null,
+     "party_code": "O",
+     "votes": 821
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0135-leonia-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Leonia Board Of Education",
+   "district": null,
+   "title": "Leonia Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "daniel-c-lee",
+     "name": "Daniel C. Lee",
+     "party": null,
+     "party_code": "O",
+     "votes": 1620
+    },
+    {
+     "id": "kelly-o-neill",
+     "name": "Kelly O'Neill",
+     "party": null,
+     "party_code": "O",
+     "votes": 1495
+    },
+    {
+     "id": "seemashaheen-khan",
+     "name": "Seemashaheen Khan",
+     "party": null,
+     "party_code": "O",
+     "votes": 1150
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 40
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0136-little-ferry-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Little Ferry Board Of Education",
+   "district": null,
+   "title": "Little Ferry Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "victoria-bradley",
+     "name": "Victoria Bradley",
+     "party": null,
+     "party_code": "O",
+     "votes": 1256
+    },
+    {
+     "id": "purna-patel",
+     "name": "Purna Patel",
+     "party": null,
+     "party_code": "O",
+     "votes": 913
+    },
+    {
+     "id": "brian-bonelli",
+     "name": "Brian Bonelli",
+     "party": null,
+     "party_code": "O",
+     "votes": 824
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 6
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0137-lyndhurst-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Lyndhurst Board Of Education",
+   "district": null,
+   "title": "Lyndhurst Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "anna-passamano",
+     "name": "Anna Passamano",
+     "party": null,
+     "party_code": "O",
+     "votes": 2317
+    },
+    {
+     "id": "katherine-scaglione",
+     "name": "Katherine Scaglione",
+     "party": null,
+     "party_code": "O",
+     "votes": 1756
+    },
+    {
+     "id": "laura-jean-checki",
+     "name": "Laura Jean Checki",
+     "party": null,
+     "party_code": "O",
+     "votes": 1753
+    },
+    {
+     "id": "anthony-scerbo",
+     "name": "Anthony Scerbo",
+     "party": null,
+     "party_code": "O",
+     "votes": 1741
+    },
+    {
+     "id": "domenick-abbate-jr",
+     "name": "DOMENICK ABBATE Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 1739
+    },
+    {
+     "id": "jasmine-gonzalez",
+     "name": "Jasmine Gonzalez",
+     "party": null,
+     "party_code": "O",
+     "votes": 1715
+    },
+    {
+     "id": "chris-auriemma",
+     "name": "Chris Auriemma",
+     "party": null,
+     "party_code": "O",
+     "votes": 1424
+    },
+    {
+     "id": "craig-auriemma",
+     "name": "Craig Auriemma",
+     "party": null,
+     "party_code": "O",
+     "votes": 1197
+    },
+    {
+     "id": "chris-carmeci",
+     "name": "Chris Carmeci",
+     "party": null,
+     "party_code": "O",
+     "votes": 1144
+    },
+    {
+     "id": "silvana-czerwinski",
+     "name": "Silvana Czerwinski",
+     "party": null,
+     "party_code": "O",
+     "votes": 834
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 35
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0138-mahwah-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Mahwah Board Of Education",
+   "district": null,
+   "title": "Mahwah Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "brett-coplin",
+     "name": "Brett Coplin",
+     "party": null,
+     "party_code": "O",
+     "votes": 5686
+    },
+    {
+     "id": "janine-ting-jansen",
+     "name": "Janine Ting Jansen",
+     "party": null,
+     "party_code": "O",
+     "votes": 4775
+    },
+    {
+     "id": "asad-r-khan",
+     "name": "Asad R. Khan",
+     "party": null,
+     "party_code": "O",
+     "votes": 4020
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 99
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0139-maywood-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Maywood Board Of Education",
+   "district": null,
+   "title": "Maywood Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "gina-marie-kiely",
+     "name": "Gina Marie Kiely",
+     "party": null,
+     "party_code": "O",
+     "votes": 1449
+    },
+    {
+     "id": "mark-mitchell",
+     "name": "Mark Mitchell",
+     "party": null,
+     "party_code": "O",
+     "votes": 1353
+    },
+    {
+     "id": "lynn-o-connell-soriano",
+     "name": "Lynn O'Connell-Soriano",
+     "party": null,
+     "party_code": "O",
+     "votes": 1230
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 52
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0140-midland-park-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Midland Park Board Of Education",
+   "district": null,
+   "title": "Midland Park Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "sandra-criscenzo",
+     "name": "Sandra Criscenzo",
+     "party": null,
+     "party_code": "O",
+     "votes": 107
+    },
+    {
+     "id": "daniel-mccarthy",
+     "name": "Daniel Mccarthy",
+     "party": null,
+     "party_code": "O",
+     "votes": 86
+    },
+    {
+     "id": "daniel-mccarthy-2",
+     "name": "Daniel McCarthy",
+     "party": null,
+     "party_code": "O",
+     "votes": 73
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 535
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0141-montvale-regional-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Montvale Regional Board Of Education",
+   "district": null,
+   "title": "Montvale Regional Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "michael-weaver",
+     "name": "Michael Weaver",
+     "party": null,
+     "party_code": "O",
+     "votes": 2000
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0142-someonewhocaresfortransyo",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Someonewhocaresfortransyo",
+   "district": null,
+   "title": "Someonewhocaresfortransyo",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0144-someonewhocaresfortransyo",
+   "kind": "candidate",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Someonewhocaresfortransyo",
+   "district": null,
+   "title": "Someonewhocaresfortransyo",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0145-moonachie-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Moonachie Board Of Education",
+   "district": null,
+   "title": "Moonachie Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "david-vaccaro",
+     "name": "David Vaccaro",
+     "party": null,
+     "party_code": "O",
+     "votes": 398
+    },
+    {
+     "id": "matthew-a-vaccaro",
+     "name": "Matthew A. Vaccaro",
+     "party": null,
+     "party_code": "O",
+     "votes": 381
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 21
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0146-new-milford-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "New Milford Board Of Education",
+   "district": null,
+   "title": "New Milford Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "kendra-k-moore",
+     "name": "Kendra K. Moore",
+     "party": null,
+     "party_code": "O",
+     "votes": 2201
+    },
+    {
+     "id": "nicole-dunne",
+     "name": "Nicole Dunne",
+     "party": null,
+     "party_code": "O",
+     "votes": 2156
+    },
+    {
+     "id": "raymond-d-cottiers-sr",
+     "name": "RAYMOND D. COTTIERS Sr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 1679
+    },
+    {
+     "id": "david-spektor",
+     "name": "David Spektor",
+     "party": null,
+     "party_code": "O",
+     "votes": 1536
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 39
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0147-north-arlington-board-of-education",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "North Arlington Board Of Education",
+   "district": null,
+   "title": "North Arlington Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "robert-dorsett",
+     "name": "Robert Dorsett",
+     "party": null,
+     "party_code": "O",
+     "votes": 1911
+    },
+    {
+     "id": "edward-smith",
+     "name": "Edward Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 1662
+    },
+    {
+     "id": "alexandra-l-leitao",
+     "name": "Alexandra L. Leitao",
+     "party": null,
+     "party_code": "O",
+     "votes": 1461
+    },
+    {
+     "id": "nicole-decapua-rinck",
+     "name": "NICOLE DeCAPUA RINCK",
+     "party": null,
+     "party_code": "O",
+     "votes": 1223
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0148-northvale-regional-board-of-education-unexpired-2-year",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Northvale Regional Board Of Education Unexpired 2 Year",
+   "district": null,
+   "title": "Northvale Regional Board Of Education Unexpired 2 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-m-saxton",
+     "name": "Christopher M. Saxton",
+     "party": null,
+     "party_code": "O",
+     "votes": 1024
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 23
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0149-northvale-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Northvale Board Of Education",
+   "district": null,
+   "title": "Northvale Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "eunhwa-kim",
+     "name": "Eunhwa Kim",
+     "party": null,
+     "party_code": "O",
+     "votes": 971
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 82
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0150-norwood-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Norwood Board Of Education",
+   "district": null,
+   "title": "Norwood Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "jennifer-r-eisberg",
+     "name": "Jennifer R. Eisberg",
+     "party": null,
+     "party_code": "O",
+     "votes": 1083
+    },
+    {
+     "id": "antonio-b-meo",
+     "name": "Antonio B. Meo",
+     "party": null,
+     "party_code": "O",
+     "votes": 1045
+    },
+    {
+     "id": "michael-j-sprague",
+     "name": "Michael J. Sprague",
+     "party": null,
+     "party_code": "O",
+     "votes": 988
+    },
+    {
+     "id": "rita-l-bodine",
+     "name": "Rita L. Bodine",
+     "party": null,
+     "party_code": "O",
+     "votes": 574
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0151-norwood-board-of-education-unexpired-1-year",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Norwood Board Of Education Unexpired 1 Year",
+   "district": null,
+   "title": "Norwood Board Of Education Unexpired 1 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "jamie-s-karczewski",
+     "name": "Jamie S. Karczewski",
+     "party": null,
+     "party_code": "O",
+     "votes": 1034
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0152-oakland-regional-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Oakland Regional Board Of Education",
+   "district": null,
+   "title": "Oakland Regional Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "melissa-kiel",
+     "name": "Melissa Kiel",
+     "party": null,
+     "party_code": "O",
+     "votes": 2303
+    },
+    {
+     "id": "audrey-lynn-souders",
+     "name": "Audrey Lynn Souders",
+     "party": null,
+     "party_code": "O",
+     "votes": 2291
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 67
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0153-oakland-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Oakland Board Of Education",
+   "district": null,
+   "title": "Oakland Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "john-a-scerbo",
+     "name": "John A. Scerbo",
+     "party": null,
+     "party_code": "O",
+     "votes": 2478
+    },
+    {
+     "id": "teresa-kilday",
+     "name": "Teresa Kilday",
+     "party": null,
+     "party_code": "O",
+     "votes": 2448
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 42
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0154-old-tappan-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Old Tappan Board Of Education",
+   "district": null,
+   "title": "Old Tappan Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "briana-bregstein",
+     "name": "Briana Bregstein",
+     "party": null,
+     "party_code": "O",
+     "votes": 810
+    },
+    {
+     "id": "jesus-suarez",
+     "name": "Jesus Suarez",
+     "party": null,
+     "party_code": "O",
+     "votes": 720
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0155-oradell-regional-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Oradell Regional Board Of Education",
+   "district": null,
+   "title": "Oradell Regional Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-j-graham-jr",
+     "name": "ROBERT J. GRAHAM Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 2299
+    },
+    {
+     "id": "rob-monaco",
+     "name": "Rob Monaco",
+     "party": null,
+     "party_code": "O",
+     "votes": 75
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 31
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0156-oradell-regional-board-of-education-unexpired-1-year",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Oradell Regional Board Of Education Unexpired 1 Year",
+   "district": null,
+   "title": "Oradell Regional Board Of Education Unexpired 1 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alan-feigenson",
+     "name": "Alan Feigenson",
+     "party": null,
+     "party_code": "O",
+     "votes": 2274
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 28
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0157-oradell-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Oradell Board Of Education",
+   "district": null,
+   "title": "Oradell Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "rita-j-walker",
+     "name": "Rita J. Walker",
+     "party": null,
+     "party_code": "O",
+     "votes": 2150
+    },
+    {
+     "id": "james-del-greco",
+     "name": "JAMES Del GRECO",
+     "party": null,
+     "party_code": "O",
+     "votes": 1498
+    },
+    {
+     "id": "christopher-w-nutland",
+     "name": "Christopher W. Nutland",
+     "party": null,
+     "party_code": "O",
+     "votes": 1420
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 43
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0158-palisades-park-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Palisades Park Board Of Education",
+   "district": null,
+   "title": "Palisades Park Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "jason-kim",
+     "name": "Jason Kim",
+     "party": null,
+     "party_code": "O",
+     "votes": 1346
+    },
+    {
+     "id": "stephen-kim",
+     "name": "Stephen Kim",
+     "party": null,
+     "party_code": "O",
+     "votes": 1262
+    },
+    {
+     "id": "grace-s-song",
+     "name": "Grace S. Song",
+     "party": null,
+     "party_code": "O",
+     "votes": 1256
+    },
+    {
+     "id": "hea-helen-jeon",
+     "name": "Hea \"Helen\" Jeon",
+     "party": null,
+     "party_code": "O",
+     "votes": 1252
+    },
+    {
+     "id": "sookyung-park",
+     "name": "Sookyung Park",
+     "party": null,
+     "party_code": "O",
+     "votes": 1232
+    },
+    {
+     "id": "jay-giardina",
+     "name": "Jay Giardina",
+     "party": null,
+     "party_code": "O",
+     "votes": 1177
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0159-paramus-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Paramus Board Of Education",
+   "district": null,
+   "title": "Paramus Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "laura-siclari",
+     "name": "Laura Siclari",
+     "party": null,
+     "party_code": "O",
+     "votes": 3909
+    },
+    {
+     "id": "joanne-bergmann",
+     "name": "Joanne Bergmann",
+     "party": null,
+     "party_code": "O",
+     "votes": 3448
+    },
+    {
+     "id": "lauren-labarbiera",
+     "name": "LAUREN LaBARBIERA",
+     "party": null,
+     "party_code": "O",
+     "votes": 3073
+    },
+    {
+     "id": "alexander-aksanov",
+     "name": "Alexander Aksanov",
+     "party": null,
+     "party_code": "O",
+     "votes": 2467
+    },
+    {
+     "id": "anthony-feorenzo-iii",
+     "name": "Anthony Feorenzo Iii",
+     "party": null,
+     "party_code": "O",
+     "votes": 2338
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 45
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0160-park-ridge-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Park Ridge Board Of Education",
+   "district": null,
+   "title": "Park Ridge Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "josephine-v-hunt",
+     "name": "Josephine V. Hunt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1745
+    },
+    {
+     "id": "rachelle-browne",
+     "name": "Rachelle Browne",
+     "party": null,
+     "party_code": "O",
+     "votes": 1560
+    },
+    {
+     "id": "shanai-jensen",
+     "name": "Shanai Jensen",
+     "party": null,
+     "party_code": "O",
+     "votes": 1377
+    },
+    {
+     "id": "amara-e-wagner",
+     "name": "Amara E. Wagner",
+     "party": null,
+     "party_code": "O",
+     "votes": 1293
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 38
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0161-park-ridge-board-of-education-unexpired-1-year",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Park Ridge Board Of Education Unexpired 1 Year",
+   "district": null,
+   "title": "Park Ridge Board Of Education Unexpired 1 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "amara-e-wagner",
+     "name": "Amara E. Wagner",
+     "party": null,
+     "party_code": "O",
+     "votes": 53
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 45
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0162-ramsey-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Ramsey Board Of Education",
+   "district": null,
+   "title": "Ramsey Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "laura-e-genovese-behrmann",
+     "name": "Laura E. Genovese-Behrmann",
+     "party": null,
+     "party_code": "O",
+     "votes": 3449
+    },
+    {
+     "id": "michael-a-augello-jr",
+     "name": "MICHAEL A. AUGELLO Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 3329
+    },
+    {
+     "id": "stephen-t-mcknight",
+     "name": "STEPHEN T. McKNIGHT",
+     "party": null,
+     "party_code": "O",
+     "votes": 3234
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 83
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0163-ridgefield-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Ridgefield Board Of Education",
+   "district": null,
+   "title": "Ridgefield Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "lori-hoffman",
+     "name": "Lori Hoffman",
+     "party": null,
+     "party_code": "O",
+     "votes": 1332
+    },
+    {
+     "id": "andrew-grippa",
+     "name": "Andrew Grippa",
+     "party": null,
+     "party_code": "O",
+     "votes": 1137
+    },
+    {
+     "id": "scott-j-russo",
+     "name": "Scott J. Russo",
+     "party": null,
+     "party_code": "O",
+     "votes": 925
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 61
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0164-ridgefield-park-board-of-education",
+   "kind": "measure",
+   "level": "local",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Ridgefield Park Board Of Education",
+   "district": null,
+   "title": "Ridgefield Park Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "berlinda-rodriguez",
+     "name": "Berlinda Rodriguez",
+     "party": null,
+     "party_code": "O",
+     "votes": 1906
+    },
+    {
+     "id": "jennifer-schmitt",
+     "name": "Jennifer Schmitt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1561
+    },
+    {
+     "id": "john-malool",
+     "name": "John Malool",
+     "party": null,
+     "party_code": "O",
+     "votes": 1541
+    },
+    {
+     "id": "no",
+     "name": "No",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 60
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0165-ridgewood-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Ridgewood Board Of Education",
+   "district": null,
+   "title": "Ridgewood Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "mary-e-micale",
+     "name": "Mary E. Micale",
+     "party": null,
+     "party_code": "O",
+     "votes": 5686
+    },
+    {
+     "id": "anabelle-andon",
+     "name": "Anabelle Andon",
+     "party": null,
+     "party_code": "O",
+     "votes": 4858
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 145
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0166-river-edge-regional-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "River Edge Regional Board Of Education",
+   "district": null,
+   "title": "River Edge Regional Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "suzanne-golden",
+     "name": "Suzanne Golden",
+     "party": null,
+     "party_code": "O",
+     "votes": 2168
+    },
+    {
+     "id": "ryan-gibbons",
+     "name": "Ryan Gibbons",
+     "party": null,
+     "party_code": "O",
+     "votes": 2033
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 32
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0167-river-edge-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "River Edge Board Of Education",
+   "district": null,
+   "title": "River Edge Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "elizabeth-brown",
+     "name": "Elizabeth Brown",
+     "party": null,
+     "party_code": "O",
+     "votes": 2569
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 57
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0168-river-edge-board-of-education-unexpired-2-year",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "River Edge Board Of Education Unexpired 2 Year",
+   "district": null,
+   "title": "River Edge Board Of Education Unexpired 2 Year",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "patricia-j-bryan",
+     "name": "Patricia J. Bryan",
+     "party": null,
+     "party_code": "O",
+     "votes": 2514
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 12
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0169-river-vale-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "River Vale Board Of Education",
+   "district": null,
+   "title": "River Vale Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "thomas-gallione",
+     "name": "Thomas Gallione",
+     "party": null,
+     "party_code": "O",
+     "votes": 2325
+    },
+    {
+     "id": "patrice-pintarelli",
+     "name": "Patrice Pintarelli",
+     "party": null,
+     "party_code": "O",
+     "votes": 2189
+    },
+    {
+     "id": "jamie-assor",
+     "name": "Jamie Assor",
+     "party": null,
+     "party_code": "O",
+     "votes": 1704
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 39
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0170-rochelle-park-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Rochelle Park Board Of Education",
+   "district": null,
+   "title": "Rochelle Park Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "joseph-defalco",
+     "name": "JOSEPH DeFALCO",
+     "party": null,
+     "party_code": "O",
+     "votes": 929
+    },
+    {
+     "id": "joseph-marolda",
+     "name": "Joseph Marolda",
+     "party": null,
+     "party_code": "O",
+     "votes": 795
+    },
+    {
+     "id": "scott-g-kral",
+     "name": "Scott G. Kral",
+     "party": null,
+     "party_code": "O",
+     "votes": 741
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 98
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0171-rutherford-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Rutherford Board Of Education",
+   "district": null,
+   "title": "Rutherford Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "tracy-w-leigh",
+     "name": "Tracy W. Leigh",
+     "party": null,
+     "party_code": "O",
+     "votes": 3616
+    },
+    {
+     "id": "james-a-bogosian",
+     "name": "James A. Bogosian",
+     "party": null,
+     "party_code": "O",
+     "votes": 3517
+    },
+    {
+     "id": "dennis-w-healey",
+     "name": "Dennis W. Healey",
+     "party": null,
+     "party_code": "O",
+     "votes": 3461
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 120
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0172-saddle-brook-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Saddle Brook Board Of Education",
+   "district": null,
+   "title": "Saddle Brook Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "michael-errichiello",
+     "name": "Michael Errichiello",
+     "party": null,
+     "party_code": "O",
+     "votes": 2147
+    },
+    {
+     "id": "michele-roloff",
+     "name": "Michele Roloff",
+     "party": null,
+     "party_code": "O",
+     "votes": 1999
+    },
+    {
+     "id": "sylvia-zottarelli",
+     "name": "Sylvia Zottarelli",
+     "party": null,
+     "party_code": "O",
+     "votes": 1718
+    },
+    {
+     "id": "mohamed-fayez",
+     "name": "Mohamed Fayez",
+     "party": null,
+     "party_code": "O",
+     "votes": 1581
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 15
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0173-saddle-river-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Saddle River Board Of Education",
+   "district": null,
+   "title": "Saddle River Board Of Education",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "caroline-l-aubrey-smith",
+     "name": "Caroline L. Aubrey-Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 630
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 16
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0174-south-hackensack-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "South Hackensack Board Of Education",
+   "district": null,
+   "title": "South Hackensack Board Of Education",
+   "vote_for": 2,
+   "choices": [
+    {
+     "id": "jennifer-l-zanca",
+     "name": "Jennifer L. Zanca",
+     "party": null,
+     "party_code": "O",
+     "votes": 309
+    },
+    {
+     "id": "sheldon-smith",
+     "name": "Sheldon Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 211
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "partial": true
+  },
+  {
+   "id": "nj-bergen-0175-teaneck-board-of-education",
+   "kind": "candidate",
+   "level": "school",
+   "state": "nj",
+   "county": "Bergen",
+   "office": "Teaneck Board Of Education",
+   "district": null,
+   "title": "Teaneck Board Of Education",
+   "vote_for": 3,
+   "choices": [
+    {
+     "id": "liza-fernandez",
+     "name": "Liza Fernandez",
+     "party": null,
+     "party_code": "O",
+     "votes": 7888
+    },
+    {
+     "id": "marcelo-venegas-pizarro",
+     "name": "Marcelo Venegas-Pizarro",
+     "party": null,
+     "party_code": "O",
+     "votes": 7541
+    },
+    {
+     "id": "eric-rhea",
+     "name": "Eric Rhea",
+     "party": null,
+     "party_code": "O",
+     "votes": 7411
+    },
+    {
+     "id": "david-gruber",
+     "name": "David Gruber",
+     "party": null,
+     "party_code": "O",
+     "votes": 6380
+    },
+    {
+     "id": "gerald-b-kirshenbaum",
+     "name": "Gerald B. Kirshenbaum",
+     "party": null,
+     "party_code": "O",
+     "votes": 6344
+    },
+    {
+     "id": "write-in-various-named",
+     "name": "Write-In (various named)",
+     "party": null,
+     "party_code": "O",
+     "votes": 141
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
    "partial": true
   }
  ],
