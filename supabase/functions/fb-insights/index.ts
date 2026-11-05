@@ -6,7 +6,10 @@
 // Secrets (Edge Functions > Secrets): FB_PAGE_ID, FB_PAGE_TOKEN, optionally FB_GRAPH_VERSION (default v25.0) and
 // STATS_CRON_SECRET (the same one site-stats uses, for the scheduled call).
 // SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are provided by Supabase.
-// Who may call it: a signed-in super admin, or (pull only) a caller with header x-cron-secret = STATS_CRON_SECRET.
+// Who may call it: a signed-in super admin, or (pull only) a caller with header x-cron-secret = STATS_CRON_SECRET,
+// or (pull only) anyone at all when the last pull is more than 50 minutes old. That last one is what the Supabase cron job
+// uses, so no secret has to be made for it. A pull only reads the Page and writes to admin-only tables, and such a caller
+// gets back nothing but ok, so the worst a stranger can do is make the scheduled pull happen early.
 // Body: { action: 'pull', days?: 1..60 } or { action: 'reply', comment_id, message }.
 import { createClient } from 'npm:@supabase/supabase-js@2.45.4';
 
@@ -67,12 +70,18 @@ Deno.serve(async (req) => {
       allowed = !!roles?.length && m?.status === 'active';
     }
   }
+  let anon = false;   // scheduled (or anonymous) pull: only when the last one is stale, and it learns nothing back
+  if (!allowed && act === 'pull') {
+    const { data: last } = await admin.from('fb_meta').select('refreshed_at').eq('id', 1).maybeSingle();
+    anon = allowed = !last?.refreshed_at || Date.now() - new Date(last.refreshed_at).getTime() > 50 * 60000;
+    if (!allowed) return json({ ok: true, skipped: 'Pulled less than 50 minutes ago.' });
+  }
   if (!allowed) return json({ ok: false, error: act === 'post' ? 'Super admins and the Media Director only.' : 'Super admins only.' }, 403);
 
   const pageId = env('FB_PAGE_ID'), token = env('FB_PAGE_TOKEN'), ver = env('FB_GRAPH_VERSION') || 'v25.0';
   const fail = async (note: string) => {
     if (act === 'pull') await admin.from('fb_meta').upsert({ id: 1, refreshed_at: new Date().toISOString(), ok: false, note: note.slice(0, 1000) });
-    return json({ ok: false, error: note });
+    return json(anon ? { ok: false } : { ok: false, error: note });
   };
   if (!pageId || !token) return fail('Not set up yet: add FB_PAGE_ID and FB_PAGE_TOKEN in Edge Functions > Secrets.');
   if (!/^\d{5,25}$/.test(pageId)) return fail('FB_PAGE_ID should be the numeric Page id.');
@@ -104,7 +113,7 @@ Deno.serve(async (req) => {
 
   // ---- pull numbers and new comments
   try {
-    const days = Math.max(1, Math.min(60, Math.floor(+body?.days || 7)));
+    const days = anon ? 7 : Math.max(1, Math.min(60, Math.floor(+body?.days || 7)));
     const until = new Date(), since = new Date(until.getTime() - days * DAY);
     const notes: string[] = [];
     const rows = new Map<string, { day: string; metric: string; value: number }>();
@@ -173,7 +182,7 @@ Deno.serve(async (req) => {
     await admin.from('fb_insights_daily').delete().lt('day', new Date(until.getTime() - 730 * DAY).toISOString().slice(0, 10));
     await admin.from('fb_meta').upsert({ id: 1, refreshed_at: new Date().toISOString(), ok: true,
       note: `${list.length} daily numbers, ${items.length} comments or posts seen${notes.length ? '. ' + notes.join(' | ') : ''}`.slice(0, 1000) });
-    return json({ ok: true, numbers: list.length, items: items.length, notes });
+    return json(anon ? { ok: true } : { ok: true, numbers: list.length, items: items.length, notes });
   } catch (e) {
     return await fail(String((e as Error).message || e));
   }
