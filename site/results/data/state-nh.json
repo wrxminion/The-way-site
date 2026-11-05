@@ -1,12 +1,12 @@
 {
  "schema": "theway-results/1",
  "scope": "state-nh",
- "label": "New Hampshire (unofficial, partial: governor, U.S. House 1, Executive Council; others not posted by the state yet)",
+ "label": "New Hampshire (unofficial, partial: Governor, U.S. Senate, U.S. House, Executive Council, State Senate 1-9; State Senate 10-24, State House and county offices not posted yet)",
  "source_ids": [
   "nh-gov",
   "nh-sos"
  ],
- "updated_at": "2026-11-05T21:14:11Z",
+ "updated_at": "2026-11-05T21:22:48Z",
  "certified": false,
  "contests": [
   {
@@ -53,6 +53,218 @@
     "total": 10,
     "unit": "counties"
    },
+   "counties": [
+    {
+     "name": "Belknap",
+     "choices": [
+      {
+       "id": "cinde-warmington",
+       "votes": 11152
+      },
+      {
+       "id": "kelly-ayotte",
+       "votes": 18836
+      },
+      {
+       "id": "stephen-villee",
+       "votes": 486
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Carroll",
+     "choices": [
+      {
+       "id": "cinde-warmington",
+       "votes": 12062
+      },
+      {
+       "id": "kelly-ayotte",
+       "votes": 15524
+      },
+      {
+       "id": "stephen-villee",
+       "votes": 352
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Cheshire",
+     "choices": [
+      {
+       "id": "cinde-warmington",
+       "votes": 18772
+      },
+      {
+       "id": "kelly-ayotte",
+       "votes": 15262
+      },
+      {
+       "id": "stephen-villee",
+       "votes": 596
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Coos",
+     "choices": [
+      {
+       "id": "cinde-warmington",
+       "votes": 4880
+      },
+      {
+       "id": "kelly-ayotte",
+       "votes": 7784
+      },
+      {
+       "id": "stephen-villee",
+       "votes": 196
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Grafton",
+     "choices": [
+      {
+       "id": "cinde-warmington",
+       "votes": 24234
+      },
+      {
+       "id": "kelly-ayotte",
+       "votes": 18954
+      },
+      {
+       "id": "stephen-villee",
+       "votes": 619
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Hillsborough",
+     "choices": [
+      {
+       "id": "cinde-warmington",
+       "votes": 82546
+      },
+      {
+       "id": "kelly-ayotte",
+       "votes": 91079
+      },
+      {
+       "id": "stephen-villee",
+       "votes": 2665
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Merrimack",
+     "choices": [
+      {
+       "id": "cinde-warmington",
+       "votes": 35619
+      },
+      {
+       "id": "kelly-ayotte",
+       "votes": 35242
+      },
+      {
+       "id": "stephen-villee",
+       "votes": 1200
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Rockingham",
+     "choices": [
+      {
+       "id": "cinde-warmington",
+       "votes": 67915
+      },
+      {
+       "id": "kelly-ayotte",
+       "votes": 86131
+      },
+      {
+       "id": "stephen-villee",
+       "votes": 2134
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Strafford",
+     "choices": [
+      {
+       "id": "cinde-warmington",
+       "votes": 30771
+      },
+      {
+       "id": "kelly-ayotte",
+       "votes": 25869
+      },
+      {
+       "id": "stephen-villee",
+       "votes": 1012
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Sullivan",
+     "choices": [
+      {
+       "id": "cinde-warmington",
+       "votes": 8883
+      },
+      {
+       "id": "kelly-ayotte",
+       "votes": 10053
+      },
+      {
+       "id": "stephen-villee",
+       "votes": 370
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    }
+   ],
    "called": {
     "winner": "kelly-ayotte",
     "by": "AP (not certified)",
@@ -338,6 +550,218 @@
     "total": 10,
     "unit": "counties"
    },
+   "counties": [
+    {
+     "name": "Belknap",
+     "choices": [
+      {
+       "id": "chris-pappas",
+       "votes": 14884
+      },
+      {
+       "id": "john-e-sununu",
+       "votes": 15867
+      },
+      {
+       "id": "edmond-laplante",
+       "votes": 623
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Carroll",
+     "choices": [
+      {
+       "id": "chris-pappas",
+       "votes": 14680
+      },
+      {
+       "id": "john-e-sununu",
+       "votes": 13015
+      },
+      {
+       "id": "edmond-laplante",
+       "votes": 445
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Cheshire",
+     "choices": [
+      {
+       "id": "chris-pappas",
+       "votes": 20886
+      },
+      {
+       "id": "john-e-sununu",
+       "votes": 13124
+      },
+      {
+       "id": "edmond-laplante",
+       "votes": 880
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Coos",
+     "choices": [
+      {
+       "id": "chris-pappas",
+       "votes": 6225
+      },
+      {
+       "id": "john-e-sununu",
+       "votes": 6398
+      },
+      {
+       "id": "edmond-laplante",
+       "votes": 335
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Grafton",
+     "choices": [
+      {
+       "id": "chris-pappas",
+       "votes": 27735
+      },
+      {
+       "id": "john-e-sununu",
+       "votes": 15157
+      },
+      {
+       "id": "edmond-laplante",
+       "votes": 815
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Hillsborough",
+     "choices": [
+      {
+       "id": "chris-pappas",
+       "votes": 99773
+      },
+      {
+       "id": "john-e-sununu",
+       "votes": 74212
+      },
+      {
+       "id": "edmond-laplante",
+       "votes": 3422
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Merrimack",
+     "choices": [
+      {
+       "id": "chris-pappas",
+       "votes": 41830
+      },
+      {
+       "id": "john-e-sununu",
+       "votes": 29012
+      },
+      {
+       "id": "edmond-laplante",
+       "votes": 1563
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Rockingham",
+     "choices": [
+      {
+       "id": "chris-pappas",
+       "votes": 83554
+      },
+      {
+       "id": "john-e-sununu",
+       "votes": 72412
+      },
+      {
+       "id": "edmond-laplante",
+       "votes": 2438
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Strafford",
+     "choices": [
+      {
+       "id": "chris-pappas",
+       "votes": 35983
+      },
+      {
+       "id": "john-e-sununu",
+       "votes": 21067
+      },
+      {
+       "id": "edmond-laplante",
+       "votes": 1031
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    },
+    {
+     "name": "Sullivan",
+     "choices": [
+      {
+       "id": "chris-pappas",
+       "votes": 10426
+      },
+      {
+       "id": "john-e-sununu",
+       "votes": 8418
+      },
+      {
+       "id": "edmond-laplante",
+       "votes": 529
+      },
+      {
+       "id": "write-in",
+       "votes": 0
+      }
+     ]
+    }
+   ],
    "called": {
     "winner": "chris-pappas",
     "by": "AP (not certified)",
