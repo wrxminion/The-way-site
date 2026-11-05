@@ -18,14 +18,23 @@
  ['tarp','H.R. 1424 · Emergency Economic Stabilization Act','Federal bill · 110th Congress','The enacted bill and Treasury investment reports are separate records. The Treasury reports are the next source for program investments, repayments, and recipient-level entries.', [
  ['Congress · enacted bill text','https://www.congress.gov/110/bills/hr1424/BILLS-110hr1424enr.pdf'],
  ['Treasury · TARP investment transaction reports','https://home.treasury.gov/data/troubled-assets-relief-program/reports/tarp-investment-program-transaction-reports'],
- ['The Way · 2008 rescue case study','/cases/tarp.html']]],
+ ['The Way · 2008 rescue case study','/cases/tarp.html']], [
+ [700000000000,'Most the law allowed outstanding at one time (Sec. 115)','H.R. 1424 enacted text','https://www.congress.gov/110/bills/hr1424/BILLS-110hr1424enr.pdf','Oct 3, 2008'],
+ [250000000000,'Allowed at first, before the President’s certifications (Sec. 115)','H.R. 1424 enacted text','https://www.congress.gov/110/bills/hr1424/BILLS-110hr1424enr.pdf','Oct 3, 2008']]],
  ['corecivic','CoreCivic, Inc.','Federal contractor','Start with the award record and its transaction history. Compare obligations and deobligations within the same award or fiscal period.', [
  ['USAspending · recipient profile','https://www.usaspending.gov/recipient/b7ab6cd4-f511-cfe7-c92f-b20d45921e9c-P/all'],
- ['USAspending · ICE award 70CDCR26FR0000058','https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000058_7012_70CDCR26D00000029_7012/']]],
+ ['USAspending · ICE award 70CDCR26FR0000058','https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000058_7012_70CDCR26D00000029_7012/']], [
+ [14085950,'Obligated · ICE award 70CDCR26FR0000058, Torrance County Detention Facility','USAspending award record','https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000058_7012_70CDCR26D00000029_7012/','Nov 5, 2026'],
+ [4572383.65,'Paid out so far on that award','USAspending award record','https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000058_7012_70CDCR26D00000029_7012/','Nov 5, 2026'],
+ [633050538.74,'All federal award transactions, latest fiscal year','USAspending recipient profile','https://www.usaspending.gov/recipient/b7ab6cd4-f511-cfe7-c92f-b20d45921e9c-P/latest','Nov 5, 2026']]],
  ['geo','The GEO Group, Inc.','Federal contractor','This award is a procurement record. Campaign disclosures require a separate filing and a documented match of the legal entity.', [
- ['USAspending · ICE award 70CDCR26FR0000042','https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000042_7012_70CDCR20D00000008_7012/']]],
- ['ice','U.S. Immigration and Customs Enforcement','Federal agency','Start with the individual award records. The archive has no agency-wide procurement ledger.', [
- ['USAspending · federal award search','https://www.usaspending.gov/search']]],
+ ['USAspending · ICE award 70CDCR26FR0000042','https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000042_7012_70CDCR20D00000008_7012/']], [
+ [77625819.39,'Obligated · ICE award 70CDCR26FR0000042, Mesa Verde and Golden State','USAspending award record','https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000042_7012_70CDCR20D00000008_7012/','Nov 5, 2026'],
+ [32881742,'Paid out so far on that award','USAspending award record','https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000042_7012_70CDCR20D00000008_7012/','Nov 5, 2026']]],
+ ['ice','U.S. Immigration and Customs Enforcement','Federal agency','Start with the individual award records. The amounts above are the two awards in this trail, not ICE’s total spending. The archive has no agency-wide procurement ledger.', [
+ ['USAspending · federal award search','https://www.usaspending.gov/search']], [
+ [14085950,'Obligated to CoreCivic · award 70CDCR26FR0000058','USAspending award record','https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000058_7012_70CDCR26D00000029_7012/','Nov 5, 2026'],
+ [77625819.39,'Obligated to The GEO Group · award 70CDCR26FR0000042','USAspending award record','https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000042_7012_70CDCR20D00000008_7012/','Nov 5, 2026']]],
  ];
  const subjects = new Map();
  const add = (id, entry) => subjects.set(id, entry);
@@ -36,7 +45,8 @@
  }
  }
  for (const [id,name,state,date,url] of data.ballots) add('ballot:'+id,{id,name:id+' · '+name,type:state+' ballot measure',note:'Election '+date+'. Positions and reporting are shown as context. This archive has no itemized transaction directly tagged to this measure.',kind:'ballot',links:[['Official ballot source',url]]});
- for (const [id,name,type,note,links] of supplemental) add(id,{id,name,type,note,links,kind:'source'});
+ // optional 6th item: dollar amounts from the linked public record, as [amount, what it is, source, url, as of]
+ for (const [id,name,type,note,links,amounts] of supplemental) add(id,{id,name,type,note,links,amounts:amounts||[],kind:'source'});
  const featured = ['fec:C00559740','ballot:CO-87','leo','marble','tarp','corecivic','geo','ice'];
  const ordered = [...featured.filter(id=>subjects.has(id)), ...[...subjects.keys()].filter(id=>!featured.includes(id)).sort((a,b)=>subjects.get(a).name.localeCompare(subjects.get(b).name))];
  const categories = ['candidate','measure','bill','group','contractor','agency','person'];
@@ -170,7 +180,23 @@
  // the fact people came for: the money in and out, first and largest
  const big = get('#trail-big');
  big.replaceChildren();
- big.hidden = !rows.length;
+ big.hidden = false;
+ if (!rows.length && s.amounts && s.amounts.length) {
+ const whole = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+ for (const [value,label,source,url,asOf] of s.amounts) {
+ const box = node('div');
+ box.append(node('b',whole.format(value)),node('span',label));
+ const from = node('p');
+ from.append(document.createTextNode('Source: '),link(source,url),document.createTextNode(asOf?' · as of '+asOf:''));
+ box.append(from);
+ big.append(box);
+ }
+ } else if (!rows.length) {
+ const box = node('div');
+ box.className = 'trail-none';
+ box.append(node('b','No dollar amount loaded yet'),node('p',s.kind==='source'?'No amount checked against an original filing is loaded for this trail yet. Any figures in the note below come from archived summaries.':s.kind==='ballot'?'No itemized money record in this archive is tied to this measure yet. Related records below are context and are not added up.':'No itemized money record for this trail is in the archive yet. The public sources below have the details.'));
+ big.append(box);
+ }
  if (rows.length) {
  const sum = index => rows.filter(r=>r[index]===s.id).reduce((t,r)=>t+Number(r[6]),0);
  const whole = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
