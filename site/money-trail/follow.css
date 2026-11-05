@@ -34,5 +34,8 @@ body{margin:0;background:#06141c}
 #way-trail .trail-big b{display:block;font:800 clamp(30px,5vw,44px)/1.1 system-ui,sans-serif;color:#7ff0d4;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 #way-trail .trail-big span{display:block;margin-top:4px;color:#e9d59d;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
 #way-trail .trail-big p{grid-column:1/-1;margin:0;font-size:13px}
+#way-trail .trail-big div p{margin-top:8px}
+#way-trail .trail-big .trail-none{grid-column:1/-1}
+#way-trail .trail-big .trail-none b{font-size:clamp(22px,3.4vw,30px);color:#e9d59d}
 #way-trail #trail-totals span:nth-child(2),#way-trail #trail-totals span:nth-child(3){font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
 @media(max-width:480px){#way-trail .trail-big{grid-template-columns:1fr}}

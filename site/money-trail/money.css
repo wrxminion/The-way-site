@@ -35,3 +35,13 @@ footer{border-top:1px solid #315363;padding:23px 0 15px;margin-top:28px;display:
 .event-amount{font-size:24px;font-weight:800;color:#7ff0d4;line-height:1.1}
 .event-amount.mt-big{font-size:clamp(28px,2.3vw,34px);margin:10px 0 6px;color:#7ff0d4;white-space:normal;overflow-wrap:anywhere}
 @media(max-width:760px){.event-top{flex-direction:column-reverse;gap:4px}.event-amount{font-size:28px}}
+/* Nov 2026: the three views look and act like real tabs, bigger and easier to see */
+.tabs{gap:10px;border-bottom:2px solid #2f6a6c;padding:0;flex-wrap:wrap}
+.tab{font-size:18px;font-weight:600;padding:14px 26px;color:var(--text);background:var(--card);border:2px solid #2f6a6c;border-bottom:0;border-radius:12px 12px 0 0;margin-bottom:-2px;cursor:pointer;min-height:56px}
+.tab:hover{background:#163a4a;color:var(--mint)}
+.tab:focus-visible{outline:none;box-shadow:var(--ring)}
+.tab.active{background:var(--mint);color:#06141e;border-color:var(--mint);font-weight:800}
+@media(max-width:760px){.tabs{gap:6px;flex-wrap:nowrap}.tab{flex:1;font-size:15px;padding:12px 6px;min-height:52px;border-radius:10px 10px 0 0;text-align:center;line-height:1.2}}
+.graph-node .graph-sub{font-size:11px;font-weight:400;fill:#a5c2c8}
+/* keep the filters and the Evidence Inspector clear of the floating side buttons on wide screens */
+@media(min-width:1251px){main{padding-left:max(clamp(16px,3.2vw,52px),118px);padding-right:max(clamp(16px,3.2vw,52px),118px)}}
