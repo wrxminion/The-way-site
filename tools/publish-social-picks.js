@@ -35,12 +35,17 @@ function norm(p, mtime) {
   let link = clean(p.link);
   if (link && !/^https:\/\/[^\s]+$/.test(link)) link = '';
   // the site adds the link on its own line, so the whole post must fit
-  const total = text.length + (link ? link.length + 1 : 0);
+  const total = [...text].length + (link ? [...link].length + 1 : 0);
   if (total > MAX_LEN) return null;
-  if (platform !== 'facebook' && total > 300) return null; // Bluesky limit
+  // Bluesky allows 300, and Post online adds the AI label ("\n\n(AI-written)", 15 characters) to AI posts
+  let plat = platform;
+  if (plat !== 'facebook' && total + 15 > 300) {
+    if (plat === 'bluesky') return null;
+    plat = 'facebook'; // too long for Bluesky: keep it for Facebook only
+  }
   const source = clean(p.source).slice(0, 200);
-  const id = crypto.createHash('sha1').update(platform + '|' + text + '|' + link).digest('hex').slice(0, 12);
-  return { id, platform, text, link, source, created: mtime.toISOString().slice(0, 10) };
+  const id = crypto.createHash('sha1').update(plat + '|' + text + '|' + link).digest('hex').slice(0, 12);
+  return { id, platform: plat, text, link, source, created: mtime.toISOString().slice(0, 10) };
 }
 
 function fromText(raw) {
