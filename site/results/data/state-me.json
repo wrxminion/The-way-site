@@ -5,7 +5,7 @@
  "source_ids": [
   "ap-votes"
  ],
- "updated_at": "2026-11-05T17:20:38Z",
+ "updated_at": "2026-11-05T17:28:58Z",
  "certified": false,
  "contests": [
   {
@@ -154,6 +154,13 @@
      "party": "Independent",
      "party_code": "I",
      "votes": 162
+    },
+    {
+     "id": "blank-votes",
+     "name": "Blank Votes",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
     }
    ],
    "precincts": {
