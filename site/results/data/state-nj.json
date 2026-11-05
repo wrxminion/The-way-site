@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-05T21:15:34Z",
+ "updated_at": "2026-11-05T21:23:55Z",
  "certified": false,
  "contests": [
   {
@@ -102340,8 +102340,8 @@
     {
      "id": "mullock",
      "name": "Zack Mullock",
-     "party": null,
-     "party_code": "O",
+     "party": "Democratic (per AP)",
+     "party_code": "D",
      "votes": 9935
     },
     {
@@ -102379,7 +102379,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "mullock",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T21:29:00.736Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-bergen-0002-chris-hedges-1-0-00",
