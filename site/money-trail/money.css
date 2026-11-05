@@ -45,3 +45,15 @@ footer{border-top:1px solid #315363;padding:23px 0 15px;margin-top:28px;display:
 .graph-node .graph-sub{font-size:11px;font-weight:400;fill:#a5c2c8}
 /* keep the filters and the Evidence Inspector clear of the floating side buttons on wide screens */
 @media(min-width:1251px){main{padding-left:max(clamp(16px,3.2vw,52px),118px);padding-right:max(clamp(16px,3.2vw,52px),118px)}}
+/* Passed / Failed on measures: color plus a word, never color alone */
+.mt-outcome{border-radius:12px;padding:14px 16px;margin:10px 0 14px;border:2px solid #315362;background:#0f2a36}
+.mt-outcome b{display:block;font:800 clamp(24px,3vw,30px)/1.1 system-ui,sans-serif;letter-spacing:.04em}
+.mt-outcome span{display:block;margin-top:4px;font-size:13px;color:var(--muted)}
+.mt-outcome p{margin:8px 0 0;font-size:14px;color:var(--text)}
+.mt-outcome.passed{border-color:#3ddc84;background:#0f3a2a}.mt-outcome.passed b{color:#3ddc84}
+.mt-outcome.failed{border-color:#ff6b6b;background:#3a1518}.mt-outcome.failed b{color:#ff8080}
+.mt-outcome.open b{color:var(--warn)}
+.graph-node .graph-status{font-size:19px;font-weight:800;letter-spacing:.05em;fill:#e9d59d}
+.graph-node .graph-status.passed{fill:#3ddc84}.graph-node .graph-status.failed{fill:#ff8080}
+.dot-sample{display:inline-block;width:11px;height:11px;border-radius:50%;background:#4c9ba5;margin-right:6px;vertical-align:-1px}
+.dot-sample.passed{background:#3ddc84}.dot-sample.failed{background:#ff6b6b}
