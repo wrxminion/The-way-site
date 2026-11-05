@@ -386,6 +386,16 @@ function countyPicker(){
   });
   form.after(el('div',{cls:'note',id:'countypick'},[el('div',{text:'Address search not working, or you live outside a city? Pick your county:'}),sel]));
 }
+/* Handoff from the nationwide lookup page: .../map-xx/#at=lat,lng opens the map on that spot. */
+function jumpFromHash(){
+  const m=/^#at=(-?\d{1,3}(?:\.\d+)?),(-?\d{1,3}(?:\.\d+)?)$/.exec(location.hash);
+  if(!m)return;
+  const lat=+m[1],lng=+m[2];
+  if(!(lat>15&&lat<72&&lng>-180&&lng<-60))return;
+  map.setView([lat,lng],12);
+  lookup(lat,lng,'Your address');
+}
+
 /* ---------- load data ---------- */
 async function getJSON(p){const r=await fetch(p,{cache:'no-cache'});if(!r.ok)throw new Error(p+' '+r.status);return r.json();}
 getJSON('data/config.json').then(cfg=>{
@@ -407,6 +417,7 @@ getJSON('data/config.json').then(cfg=>{
   drawLayer('us_house');
   countyPicker();
   status.textContent='Click anywhere in '+C.name+' to get started.';
+  jumpFromHash();
 }).catch(()=>{status.textContent='The district files did not load. Please reload the page.';});
 
 })();
