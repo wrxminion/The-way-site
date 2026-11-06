@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "3fefbfe5862cce9a",
+   "kind": "news",
+   "title": "California voters approve Proposition 37 to assist homebuyers with down payments",
+   "source": "KCRA",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQ2RpZy1HM0lEV2JVdC13MnZnWFNYbjhSaFR0QW9mY1pCNVRmc3Y2M0NzOC10SU9GaXl0MXMwWm1FQXoyNlR3WURYU2FZdTcwdzBpWVNmTjdHX1hFRXl0UVROd0FfUE9VQUpWMjVVTVFYdXNvd0lFS0VBdEVlaVJ6SzMzUF84d3loVDE1SGNpeUVxdUQ2TDF4ZFZiNkctdw?oc=5",
+   "published_at": "2026-11-05",
+   "first_seen_at": "2026-11-06T09:50:56Z",
+   "states": [
+    "ca"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "ca-prop-37",
+     "kind": "measure",
+     "label": "Proposition 37: Home buyer loans: State-backed loans to help middle-income buyers of new homes, California",
+     "page": "guide-ca/measures/prop-37.html"
+    }
+   ]
+  },
+  {
    "id": "a127ac89bdf9d0ec",
    "kind": "news",
    "title": "Election results: Prop. 1 California housing bond, Prop. 37 new-home loan measure lead in early returns",
@@ -542,5 +569,5 @@
    ]
   }
  ],
- "generated_at": "2026-11-05T03:03:19Z"
+ "generated_at": "2026-11-06T10:00:50Z"
 }
