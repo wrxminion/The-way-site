@@ -194,6 +194,76 @@ $('#detail-close').addEventListener('click',()=>$('#detail-panel').classList.rem
 $('#filter-toggle').addEventListener('click',()=>{let p=$('#filter-panel');p.classList.toggle('expanded');$('#filter-toggle').setAttribute('aria-expanded',p.classList.contains('expanded')?'true':'false')});
 $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#filter-toggle').click()}});
 
+// ---- D198 (Nov 2026): Organization, Person and Department trackers. They list only names already in this data.
+// Each row says how many lines it has in the Money web and opens it there. Text goes in with textContent.
+(function () {
+  const lines = new Map();
+  [...networkVerified, ...networkContext].forEach(x => { for (const nm of new Set([norm(x.from_name), norm(x.to_name)])) if (nm) lines.set(nm, (lines.get(nm) || 0) + 1); });
+  const ORG_WORD = /\b(INC|LLC|PAC|FUND|COMMITTEE|COMM|ASSOC|ASSOCIATION|UNION|COUNCIL|PARTY|CAUCUS|CHURCH|PROJECT|FOUNDATION|TRUST|CAMPAIGN|NETWORK|ACTION|LEAGUE|COALITION|CORP|CORPORATION|SOCIETY|CENTER|ALLIANCE|COLORADO|AMERICA|LOCAL)\b/i;
+  // Filings write a person's name as "LAST, FIRST". Two short parts with no organization word count as a person.
+  const looksPerson = n => { const p = String(n).split(','); return p.length === 2 && !ORG_WORD.test(n) && p.every(x => { const w = x.trim().split(/\s+/); return w[0] && w.length <= 3; }); };
+  const kindOf = e => {
+    const t = e.entity_type || '';
+    if (/ballot measure/i.test(t)) return null;
+    if (/municipal_public_body|election authority|federal agency/i.test(t)) return 'departments';
+    if (/candidate_named/i.test(t) || looksPerson(e.legal_or_reported_name)) return 'people';
+    return 'orgs';
+  };
+  const lists = { orgs: [], people: [], departments: [] };
+  const seen = new Set();
+  RESEARCH.entities.forEach(e => {
+    const k = kindOf(e), key = norm(e.legal_or_reported_name) + '|' + (e.jurisdiction || '');
+    if (!k || seen.has(key)) return; seen.add(key);
+    lists[k].push({ name: e.legal_or_reported_name, type: tidy(e.entity_type), jur: e.jurisdiction || '', count: lines.get(norm(e.legal_or_reported_name)) || 0,
+      entity: { record_kind: 'entity', name: e.legal_or_reported_name, entity_type: e.entity_type, id: e.registry_identifier || e.entity_id, jurisdiction: e.jurisdiction, source_url: e.source_url, notes: e.notes } });
+  });
+  // Trails on the Follow one trail page that are not in the entity list above
+  lists.people.push({ name: 'Leonard A. Leo', type: 'Person', jur: 'US', count: 0, trail: 'follow.html?person=leonard-leo' });
+  lists.departments.push({ name: 'U.S. Immigration and Customs Enforcement', type: 'Federal agency', jur: 'US', count: 0, trail: 'follow.html?agency=ice' });
+  Object.values(lists).forEach(a => a.sort((x, y) => y.count - x.count || x.name.localeCompare(y.name)));
+  const TEXT = {
+    orgs: { title: 'The organization tracker', sub: n => n + ' organizations named in this data', lead: 'Every committee, company, union, church and other group named in this archive. Names are as reported; two rows with the same name are not proven to be the same legal group. Groups with more lines in the Money web are listed first.' },
+    people: { title: 'The person tracker', sub: n => n + ' people named in this data', lead: 'People named in this archive: candidates named in spending summaries, and donors that filings list by a person’s name (last, first). Names are as reported and the person’s identity is not verified. Being listed does not imply wrongdoing.' },
+    departments: { title: 'The department tracker', sub: n => n + ' government departments and agencies in this data', lead: 'Government departments, agencies and public bodies named in this archive. Department budgets are not in this data yet, so this list is short. It shows only the agencies our records already name.' }
+  };
+  const el = (tag, cls, text) => { const d = document.createElement(tag); if (cls) d.className = cls; if (text != null) d.textContent = text; return d; };
+  const query = { orgs: '', people: '', departments: '' };
+  function openWeb(name) { graphHub = name; if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; graphScale = 1; setView('network'); $('.center-panel').scrollIntoView({ block: 'start', behavior: 'smooth' }); }
+  function render(k) {
+    const box = $('#' + k + '-view'); if (!box) return;
+    let area = box.querySelector('.tracker-area');
+    if (!area) {
+      area = el('div', 'tracker-area'); box.append(area);
+      area.append(el('p', 'state-lead', TEXT[k].lead));
+      const lab = el('label', 'tracker-search'); const sp = el('span', null, 'Find a name'); const inp = el('input'); inp.type = 'search'; inp.autocomplete = 'off'; inp.placeholder = 'Type part of a name…';
+      inp.addEventListener('input', () => { query[k] = inp.value; draw(k); }); lab.append(sp, inp); area.append(lab, el('div', 'tracker-list'));
+    }
+    draw(k);
+  }
+  function draw(k) {
+    const list = $('#' + k + '-view .tracker-list'); list.replaceChildren();
+    const q = norm(query[k]); const rows = lists[k].filter(r => !q || norm(r.name).includes(q));
+    rows.forEach(r => {
+      const card = el('div', 'tracker-row');
+      const info = el('div', 'tracker-info'); info.append(el('strong', null, r.name), el('small', null, [r.type, r.jur].filter(Boolean).join(' · ')));
+      const cnt = el('div', 'tracker-count' + (r.count ? '' : ' none'), r.count ? r.count + (r.count === 1 ? ' line' : ' lines') + ' in the web' : 'No lines in the web yet');
+      const act = el('div', 'tracker-actions');
+      if (r.count) { const b = el('button', 'tracker-web', 'See in the Money web'); b.addEventListener('click', () => openWeb(r.name)); act.append(b); }
+      if (r.trail) { const a = el('a', 'tracker-web', 'Follow this trail →'); a.href = r.trail; act.append(a); }
+      if (r.entity) { const b = el('button', 'tracker-inspect', 'Inspect'); b.addEventListener('click', () => pick(r.entity)); act.append(b); }
+      card.append(info, cnt, act); list.append(card);
+    });
+    if (!rows.length) list.append(el('div', 'empty', 'No names match. Try fewer letters.'));
+    $('#feed-sub').textContent = TEXT[k].sub(lists[k].length);
+  }
+  const baseSetView = setView;
+  setView = function (v) {
+    baseSetView(v);
+    for (const k of Object.keys(lists)) { const box = $('#' + k + '-view'); if (box) box.hidden = v !== k; }
+    if (lists[v]) { $('#feed-title').textContent = TEXT[v].title; render(v); }
+  };
+})();
+
 // ---- The Way additions (Nov 2026): a US map in the state tracker, "Follow the money" links to one-trail pages,
 // links to results and ballot guides, and links into this page (?view=, ?hub=, ?state=, ?q=). Text goes in with textContent.
 (function () {
@@ -284,8 +354,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   if (q.get('hub')) { graphHub = q.get('hub').toUpperCase(); if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; }
   if (q.get('q')) { settings.search = q.get('q'); $('#search').value = settings.search; }
   const vw = q.get('view');
-  // The page opens on the Money web. ?view=timeline or a search (?q=) opens the Timeline.
-  if (vw === 'states' || vw === 'timeline' || (q.get('q') && vw !== 'network')) setView(vw === 'states' ? 'states' : 'timeline'); else setView('network');
+  // The page opens on the Money web. ?view=timeline (or a search, ?q=), states, orgs, people or departments opens that tab.
+  if (['timeline', 'states', 'orgs', 'people', 'departments'].includes(vw)) setView(vw); else if (q.get('q') && vw !== 'network') setView('timeline'); else setView('network');
 })();
 
 // ---- Full screen web (Nov 2026): the Money network web fills the page by itself (not browser full screen).

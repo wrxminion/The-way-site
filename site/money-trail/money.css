@@ -123,3 +123,30 @@ body.mt-webfull .detail-close{display:block}
 .mt-stats>summary:hover,.mt-stats>summary:focus-visible{border-color:var(--mint);outline:none}
 .mt-stats[open]>summary{margin-bottom:12px}
 .mt-stats .kpis{margin-bottom:6px}
+/* D198: Organization, Person and Department trackers, and room for six tabs */
+@media(min-width:761px){.tabs .tab{font-size:16px;padding:12px 18px;min-height:52px}}
+.tracker-area{padding:20px}
+.tracker-search{display:flex;flex-direction:column;gap:6px;margin:0 0 14px;max-width:420px}
+.tracker-search span{color:#a6c4c8;font-size:11px;text-transform:uppercase;letter-spacing:.11em}
+.tracker-search input{background:#071722;border:1px solid var(--edge);border-radius:10px;color:var(--text);padding:10px 12px;font-size:15px}
+.tracker-search input:focus{outline:none;border-color:var(--mint)}
+.tracker-list{display:flex;flex-direction:column;gap:8px}
+.tracker-row{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:'info act' 'count act';align-items:center;gap:6px 16px;border:1px solid var(--edge);border-radius:12px;background:#0c202dda;padding:12px 14px}
+.tracker-info{grid-area:info}.tracker-count{grid-area:count}.tracker-actions{grid-area:act}
+.tracker-info strong{display:block;font-size:15px;color:#eefaf6;overflow-wrap:anywhere}
+.tracker-info small{display:block;margin-top:4px;color:var(--muted);font-size:12px;line-height:1.4}
+.tracker-count{font-size:13px;font-weight:700;color:var(--mint);white-space:nowrap}
+.tracker-count.none{color:var(--muted);font-weight:500}
+.tracker-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.tracker-web,.tracker-inspect{font:inherit;font-size:13px;font-weight:700;border-radius:999px;padding:8px 14px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.tracker-web{background:var(--mint);color:#06141e;border:1px solid var(--mint)}
+.tracker-inspect{background:transparent;color:var(--text);border:1px solid var(--edge)}
+.tracker-web:hover,.tracker-inspect:hover,.tracker-web:focus-visible,.tracker-inspect:focus-visible{outline:none;box-shadow:var(--ring)}
+@media(max-width:760px){
+ .tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;border-bottom:0;padding-bottom:10px}
+ .tabs .tab{border-radius:10px;border-bottom:2px solid #2f6a6c;margin-bottom:0;font-size:13px;padding:10px 4px;min-height:52px}
+ .tabs .tab.active{border-color:var(--mint)}
+ .tracker-area{padding:13px}
+ .tracker-row{grid-template-columns:minmax(0,1fr);grid-template-areas:'info' 'count' 'act';gap:8px}
+ .tracker-actions{justify-content:flex-start}
+}
