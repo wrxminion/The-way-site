@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-06T20:24:05Z",
+ "updated_at": "2026-11-06T20:32:51Z",
  "certified": false,
  "contests": [
   {
@@ -1949,7 +1949,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "smith",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:23:29.661Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-5",
@@ -35510,7 +35516,7 @@
    "state": "nj",
    "county": "Cape May",
    "office": "Member of the House of Representatives",
-   "district": 2,
+   "district": null,
    "title": "Member of the House of Representatives",
    "vote_for": 1,
    "choices": [
@@ -37236,7 +37242,7 @@
    "state": "nj",
    "county": "Cumberland",
    "office": "United States House of Representatives",
-   "district": null,
+   "district": 12,
    "title": "United States House of Representatives",
    "vote_for": 1,
    "choices": [
@@ -67284,7 +67290,13 @@
    },
    "category": "FEDERAL",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-ocean-0005-house-of-representatives-2nd-congressional-district",
@@ -67332,7 +67344,13 @@
    },
    "category": "FEDERAL",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "zack-mullock",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T21:29:00.736Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-ocean-0006-house-of-representatives-4th-congressional-district",
@@ -67373,7 +67391,13 @@
    },
    "category": "FEDERAL",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "christopher-h-smith",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:23:29.661Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-ocean-0007-member-of-the-board-of-commissioners",
@@ -80190,7 +80214,7 @@
    "state": "nj",
    "county": "Salem",
    "office": "United States House of Representatives",
-   "district": 2,
+   "district": null,
    "title": "United States House of Representatives",
    "vote_for": 1,
    "choices": [
@@ -112955,7 +112979,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "mullock",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T21:29:00.736Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-bergen-0002-chris-hedges-1-0-00",
@@ -121044,6 +121074,67 @@
     "total": 21
    },
    "partial": true
+  },
+  {
+   "id": "nj-member-of-the-house-of-representatives",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nj",
+   "office": "Member of the House of Representatives",
+   "district": null,
+   "title": "Member of the House of Representatives",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "drew",
+     "name": "Jeff Van Drew",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 21805
+    },
+    {
+     "id": "mullock",
+     "name": "Zack Mullock",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 17856
+    },
+    {
+     "id": "mora",
+     "name": "Ramon Mora, Jr.",
+     "party": null,
+     "party_code": "O",
+     "votes": 192
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 27
+    }
+   ],
+   "precincts": {
+    "reporting": 127,
+    "total": 129
+   },
+   "counties": [
+    {
+     "county": "Cape May",
+     "precincts": {
+      "reporting": 127,
+      "total": 129
+     },
+     "votes": {
+      "drew": 21805,
+      "mullock": 17856,
+      "mora": 192,
+      "write-in": 27
+     }
+    }
+   ],
+   "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
+   "partial": true
   }
  ],
  "notice": "UNOFFICIAL results from county election-night reporting. Not certified.",
@@ -121058,7 +121149,6 @@
   "Mercer",
   "Monmouth",
   "Morris",
-  "Ocean",
   "Passaic",
   "Salem",
   "Somerset",
@@ -121070,6 +121160,7 @@
   "Essex",
   "Gloucester",
   "Middlesex",
+  "Ocean",
   "Union",
   "Warren"
  ]
