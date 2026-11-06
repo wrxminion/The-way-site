@@ -1,19 +1,41 @@
-/* Buoys (buoys.js). The footer depth counter buoy on its chain, and the floating buoys on the home and Teacher? Parent? pages. Decorative art; the count is also in the link's label. */
+/* Buoys (buoys.js). The footer depth counter buoy on its chain (with its rising bubbles and its own ARTICLES bubble), and the floating buoys on the home and Teacher? Parent? pages. Decorative art; the count is also in the link's label. */
 .michi-buoy-img{display:block;width:100%;height:auto}
-.michi-buoy-still{display:none}
-html.wb-motion-off .michi-buoy-anim{display:none}html.wb-motion-off .michi-buoy-still{display:block}
-@media (prefers-reduced-motion:reduce){.michi-buoy-anim{display:none}.michi-buoy-still{display:block}}
 /* the counter buoy: off to the side of the footer, its chain running down to the bottom of the page */
 .michi-footer-depth.has-buoy{display:none}
 .michi-buoy{position:absolute;z-index:3;width:190px;pointer-events:none}
-.michi-buoy-link{position:relative;display:block;pointer-events:auto;border-radius:40% 40% 30% 30%}
+.michi-buoy-link{position:relative;display:block;pointer-events:auto;border-radius:40% 40% 30% 30%;font-size:10px}
 .michi-buoy-link:focus-visible{outline:3px solid #a7f0e9;outline-offset:2px}
-.michi-buoy-art{display:block;animation:michi-buoy-tug 4.2s ease-in-out infinite}
-/* the window is held still inside every frame of the art, so the number stays locked in it; the whole buoy (art and number together) bobs */
+/* every motion is its own smooth back-and-forth on its own clock, so nothing steps and the parts never move in lockstep:
+   the buoy bobs (art), sways from the chain shackle (sway), the lamp glows, bubbles rise from the lamp, and the ARTICLES bubble drifts and wobbles */
+.michi-buoy-art{display:block;animation:michi-buoy-bob 3.1s ease-in-out infinite alternate;will-change:transform}
+.michi-buoy-sway{position:relative;display:block;transform-origin:50% 96%;animation:michi-buoy-sway 4.6s ease-in-out infinite alternate;will-change:transform}
+/* the number sits in the window of the art and moves with it */
 .michi-buoy-num{position:absolute;left:25.4%;width:48.5%;top:47.9%;height:9.3%;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(#0b0d10,#1a1c1f 50%,#0b0d10);border-radius:5px;box-shadow:inset 0 2px 4px #000c,inset 0 -1px 2px #fff1;color:#f4ecd6;font:700 15px/1 ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;letter-spacing:.04em;white-space:nowrap}
+.michi-buoy-glow{position:absolute;left:36%;width:28%;top:19.5%;height:17%;border-radius:50%;background:radial-gradient(closest-side,#c8fff0e6,#5fe6c899 45%,#5fe6c800);mix-blend-mode:screen;opacity:.35;animation:michi-buoy-glow 2.4s ease-in-out infinite alternate;pointer-events:none}
+/* rising bubbles: they start behind the lamp cap and float up out of the top, wobbling side to side */
+.michi-buoy-bubs{position:absolute;left:30.4%;width:40%;top:0;height:19%;pointer-events:none}
+.michi-buoy-bub{position:absolute;left:calc(50% - .5em);top:calc(100% - .5em);width:1em;height:1em;border-radius:50%;border:1px solid #9fefe2a6;background:radial-gradient(circle at 34% 30%,#f2fffc 0 .12em,#6fd9cb80 .2em,#0f565c59 70%);box-shadow:0 0 .3em #5fe6c833;opacity:0;animation:michi-buoy-rise 3.4s cubic-bezier(.35,0,.65,1) infinite}
+.michi-buoy-bub:nth-child(1){--rest:translate(.1em,-1.4em) scale(.95)}
+.michi-buoy-bub:nth-child(2){width:.6em;height:.6em;animation-duration:2.9s;animation-delay:-.9s;animation-name:michi-buoy-rise-l;--rest:translate(-.5em,-3.2em) scale(1)}
+.michi-buoy-bub:nth-child(3){width:1.3em;height:1.3em;left:calc(50% - .65em);animation-duration:4.1s;animation-delay:-2.1s;--rest:translate(.4em,-5em) scale(1)}
+.michi-buoy-bub:nth-child(4){width:.45em;height:.45em;animation-duration:2.6s;animation-delay:-1.6s;animation-name:michi-buoy-rise-l}
+.michi-buoy-bub:nth-child(5){width:.8em;height:.8em;animation-duration:3.7s;animation-delay:-3s}
+.michi-buoy-bub:nth-child(6){width:.55em;height:.55em;animation-duration:3.2s;animation-delay:-.3s;animation-name:michi-buoy-rise-l}
+/* the ARTICLES bubble floats beside the lamp on its own slow path */
+.michi-buoy-tag{position:absolute;left:68.1%;top:19.2%;width:27.3%;animation:michi-buoy-drift 7.4s ease-in-out infinite;will-change:transform;pointer-events:none}
+.michi-buoy-tag-img{animation:michi-buoy-wobble 2.7s ease-in-out infinite alternate}
+.michi-buoy.is-narrow{width:118px}.michi-buoy.is-narrow .michi-buoy-num{font-size:11px;letter-spacing:0;border-radius:3px}.michi-buoy.is-narrow .michi-buoy-link{font-size:7px}
+/* on phones the footer links sit just above the buoy: the bubbles fade out before they reach them */
+.michi-buoy.is-narrow .michi-buoy-bubs,.michi-buoy.is-tiny .michi-buoy-bubs{overflow:hidden;-webkit-mask-image:linear-gradient(to top,#000 50%,#0000);mask-image:linear-gradient(to top,#000 50%,#0000)}
+.michi-buoy.is-tiny{width:100px}.michi-buoy.is-tiny .michi-buoy-num{font-size:9px}.michi-buoy.is-tiny .michi-buoy-link{font-size:6px}
 .michi-buoy-chain{position:absolute;left:49.2%;width:15.4%;transform:translateX(-50%);background:url(/art/buoy-chain.webp) center top/100% auto repeat-y;pointer-events:none}
-.michi-buoy.is-narrow{width:118px}.michi-buoy.is-narrow .michi-buoy-num{font-size:11px;letter-spacing:0;border-radius:3px}
-.michi-buoy.is-tiny{width:100px}.michi-buoy.is-tiny .michi-buoy-num{font-size:9px}
+@keyframes michi-buoy-bob{from{transform:translateY(1px)}to{transform:translateY(-4px)}}
+@keyframes michi-buoy-sway{from{transform:rotate(-1.1deg)}to{transform:rotate(1.1deg)}}
+@keyframes michi-buoy-glow{from{opacity:.25}to{opacity:.75}}
+@keyframes michi-buoy-rise{0%{transform:translate(0,0) scale(.35);opacity:0}12%{opacity:.95}35%{transform:translate(.35em,-3em) scale(.7)}65%{transform:translate(-.3em,-6.2em) scale(.9)}88%{opacity:.85}100%{transform:translate(.25em,-9.5em) scale(1.05);opacity:0}}
+@keyframes michi-buoy-rise-l{0%{transform:translate(0,0) scale(.35);opacity:0}12%{opacity:.95}35%{transform:translate(-.4em,-2.6em) scale(.7)}65%{transform:translate(.3em,-5.6em) scale(.9)}88%{opacity:.8}100%{transform:translate(-.2em,-8.5em) scale(1.05);opacity:0}}
+@keyframes michi-buoy-drift{0%,100%{transform:translate(0,0) rotate(0)}22%{transform:translate(.35em,-.7em) rotate(3deg)}47%{transform:translate(.9em,-.15em) rotate(1deg)}71%{transform:translate(.4em,.6em) rotate(-3deg)}88%{transform:translate(-.3em,.25em) rotate(-1deg)}}
+@keyframes michi-buoy-wobble{from{transform:scale(1.03,.97)}to{transform:scale(.97,1.03)}}
 /* on narrow screens the chain runs behind the footer tentacles */
 .wb-tent-sea{z-index:4}
 @keyframes michi-buoy-tug{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
@@ -26,6 +48,7 @@ html.wb-motion-off .michi-buoy-anim{display:none}html.wb-motion-off .michi-buoy-
 @keyframes michi-float-bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
 @keyframes michi-float-bub{0%{transform:translate(0,0) scale(.5);opacity:0}15%{opacity:.9}100%{transform:translate(-6px,-74px) scale(1);opacity:0}}
 @keyframes michi-float-bub-r{0%{transform:translate(0,0) scale(.5);opacity:0}15%{opacity:.9}100%{transform:translate(7px,-62px) scale(1);opacity:0}}
-html.wb-motion-off .michi-buoy-art,html.wb-motion-off .michi-float{animation:none}
+html.wb-motion-off .michi-buoy-art,html.wb-motion-off .michi-buoy-sway,html.wb-motion-off .michi-buoy-glow,html.wb-motion-off .michi-buoy-tag,html.wb-motion-off .michi-buoy-tag-img,html.wb-motion-off .michi-buoy-bub,html.wb-motion-off .michi-float{animation:none}
+html.wb-motion-off .michi-buoy-bub{opacity:.85;transform:var(--rest)}html.wb-motion-off .michi-buoy-bub:nth-child(n+4){display:none}
 html.wb-motion-off .michi-float-bub{display:none}
-@media (prefers-reduced-motion:reduce){.michi-buoy-art,.michi-float{animation:none}.michi-float-bub{display:none}}
+@media (prefers-reduced-motion:reduce){.michi-buoy-art,.michi-buoy-sway,.michi-buoy-glow,.michi-buoy-tag,.michi-buoy-tag-img,.michi-buoy-bub,.michi-float{animation:none}.michi-float-bub{display:none}.michi-buoy-bub{opacity:.85;transform:var(--rest)}.michi-buoy-bub:nth-child(n+4){display:none}}
