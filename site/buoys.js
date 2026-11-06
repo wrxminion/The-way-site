@@ -2,16 +2,18 @@
 //  1. Footer depth counter: when footer-quick.js has added "Depth: N articles saved" (.michi-footer-depth), that line is replaced by the depth buoy.
 //     The live count sits in the buoy's DEPTH window; the buoy links to the news archive and its label reads the count. It sits off to the side of the footer
 //     (left of the tentacle scene on wide screens) and its chain runs down to the very bottom of the page. If the art fails to load, the text line comes back.
+//     All of its motion is CSS (smooth at the screen's own frame rate): the buoy bobs and sways on its chain, the lamp glows, bubbles rise out of the top,
+//     and the ARTICLES bubble drifts on its own, out of step with the buoy.
 //  2. Floating buoys at random heights on the pages in FLOAT_PAGES: they bob and little bubbles rise from the lamp. Side margins on wide screens,
 //     wherever a buoy covers no text, picture or card on wide screens (never under the side bubbles), the gaps between sections on narrow ones.
-// Pause motion (html.wb-motion-off) and reduced motion show still art: no bob, no bubbles.
+// Pause motion (html.wb-motion-off) and reduced motion hold everything still (the counter buoy keeps a few resting bubbles over its lamp).
 (function () {
   'use strict';
   if (window.MichiBuoys) return; window.MichiBuoys = true;
   // Floating buoys are off for now (Frank, Nov 6 2026: far too many on the front page). To bring them back, list pages here, e.g. ['/teacher-parent.html'].
   var FLOAT_PAGES = [];
   var WIDE = 1100;
-  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/buoys.css?v=2'; document.head.appendChild(css);
+  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/buoys.css?v=3'; document.head.appendChild(css);
   function el(tag, cls) { var e = document.createElement(tag); if (cls) e.className = cls; return e; }
   function img(src, cls) { var i = el('img', 'michi-buoy-img ' + cls); i.src = src; i.alt = ''; i.decoding = 'async'; i.setAttribute('loading', 'lazy'); return i; }
   function docTop(e) { return e.getBoundingClientRect().top + window.pageYOffset; }
@@ -21,15 +23,18 @@
     if (document.querySelector('.michi-buoy')) return;
     var strong = depth.querySelector('strong'); if (!strong) return;
     var n = strong.textContent, nav = depth.closest('.michi-footer-nav') || depth.parentNode;
-    var wrap = el('div', 'michi-buoy'), a = el('a', 'michi-buoy-link'), art = el('span', 'michi-buoy-art'), num = el('span', 'michi-buoy-num'), chain = el('span', 'michi-buoy-chain');
+    var wrap = el('div', 'michi-buoy'), a = el('a', 'michi-buoy-link'), art = el('span', 'michi-buoy-art'), sway = el('span', 'michi-buoy-sway'), num = el('span', 'michi-buoy-num'), chain = el('span', 'michi-buoy-chain');
     a.href = depth.getAttribute('href') || '/news/'; a.setAttribute('aria-label', 'Depth: ' + n + ' articles saved. Open the news archive.');
-    var anim = img('/art/buoy-counter.webp?v=2', 'michi-buoy-anim'), still = img('/art/buoy-counter-still.webp?v=2', 'michi-buoy-still');
-    art.appendChild(anim); art.appendChild(still);
-    num.textContent = n; num.setAttribute('aria-hidden', 'true'); art.appendChild(num);
-    chain.setAttribute('aria-hidden', 'true');
-    a.appendChild(art); wrap.appendChild(a); wrap.appendChild(chain);
+    // bubbles first so the lamp cap covers where they start; the buoy art (no bubbles or ARTICLES bubble baked in); the ARTICLES bubble on its own
+    var bubs = el('span', 'michi-buoy-bubs'); for (var i = 0; i < 6; i++) bubs.appendChild(el('span', 'michi-buoy-bub'));
+    var base = img('/art/buoy-counter-base.webp', ''), tag = el('span', 'michi-buoy-tag'), tagImg = img('/art/buoy-articles.webp', 'michi-buoy-tag-img');
+    sway.appendChild(base); sway.appendChild(el('span', 'michi-buoy-glow'));
+    num.textContent = n; num.setAttribute('aria-hidden', 'true'); sway.appendChild(num);
+    art.appendChild(sway); tag.appendChild(tagImg);
+    [bubs, chain, tag].forEach(function (e) { e.setAttribute('aria-hidden', 'true'); });
+    a.appendChild(bubs); a.appendChild(art); a.appendChild(tag); wrap.appendChild(a); wrap.appendChild(chain);
     function giveUp() { if (wrap.parentNode) wrap.parentNode.removeChild(wrap); depth.classList.remove('has-buoy'); }
-    still.addEventListener('error', giveUp); anim.addEventListener('error', function () { if (!window.matchMedia || !matchMedia('(prefers-reduced-motion: reduce)').matches) giveUp(); });
+    base.addEventListener('error', giveUp); tagImg.addEventListener('error', function () { tag.style.display = 'none'; });
     document.body.appendChild(wrap); depth.classList.add('has-buoy');
     var queued = false;
     function place() {
