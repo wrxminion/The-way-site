@@ -82,3 +82,12 @@ details.fold[open]{padding-bottom:12px}
 #myths .tag{margin-left:6px}
 #why h3{margin:18px 0 6px}
 .news .pill{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;border-radius:99px;padding:1px 7px;border:1px solid #a6f0e755;color:#c6f3ee;text-decoration:none;vertical-align:1px}.news .pill.unchecked{border-color:#eac690;color:#f1dcb2}.news .pill.snapped{border-color:#9fe3b0;color:#c9f5d4}.news .pill.notsnapped{border-color:#7f99a1;color:#a8bec5}
+/* "Heard this? Here are the facts" opens and closes (Nov 2026). Starts closed; a link to #myths opens it. */
+details.myths>summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:6px 0}
+details.myths>summary::-webkit-details-marker{display:none}
+details.myths>summary h2{margin:10px 0 4px}
+details.myths>summary .myths-more{font-size:.95rem;color:#a7f0e9;white-space:nowrap}
+details.myths>summary .myths-more::after{content:"\25BE";display:inline-block;margin-left:.4em;transition:transform .2s}
+details.myths[open]>summary .myths-more::after{transform:rotate(180deg)}
+details.myths>summary:focus-visible{outline:3px solid #91dfdc;outline-offset:3px;border-radius:6px}
+details.myths:not([open]){padding-bottom:6px}

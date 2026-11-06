@@ -435,10 +435,12 @@
 
   // The one top header for everyone: left links, THE WAY, right links (the same for signed-in and signed-out visitors).
   // On a wide screen they sit in one row; on a narrower desktop the two groups sit in one line under the name.
-  function sectionNav(cur, guide) {
+  // VOTE! always opens the VOTE! page (/vote/): guide, your ballot, map and results in one place (Frank, Nov 2026).
+  // It still shows as the current section on a voter guide or your ballot page.
+  function sectionNav(cur) {
     var pub = el('nav', { class: 'wb-pub', 'aria-label': 'Sections' });
     var pubL = el('div', { class: 'wb-pub-l' }), pubR = el('div', { class: 'wb-pub-r' });
-    pubL.appendChild(link(guide, 'VOTE!', 'ballot', cur));
+    pubL.appendChild(link('/vote/', 'VOTE!', /^(vote|ballot|myballot)$/.test(cur) ? cur : 'vote', cur));
     pubL.appendChild(link('/news/', 'News', 'news', cur));
     pubL.appendChild(link(GOV, 'Government', 'govworks', cur));
     pubR.appendChild(link('/cases/', 'History', 'cases', cur));
@@ -658,7 +660,7 @@
     if (data) {
       panels = memberPanels(data);
       // Desktop: the same section links as the signed-out header (a phone shows the bottom bar instead).
-      var mid = sectionNav(cur, data.ballot || STATES);
+      var mid = sectionNav(cur);
       var right = el('nav', { class: 'wb-right', 'aria-label': 'You' });
       // The Invite pill moved to the bottom-left stack (help-panel.js); it is still in the Menu under Community.
       var sb = el('button', { type: 'button', class: 'wb-search-toggle', 'aria-label': 'Search', 'aria-expanded': searchOpen ? 'true' : 'false', 'aria-controls': 'wb-q' });
@@ -694,7 +696,7 @@
       kids.push(mid, right); // no Home pill: the name at the top is the Home link
     } else if (!pending) {
       panels = { menu: publicPanel() };
-      var pub = sectionNav(cur, STATES);
+      var pub = sectionNav(cur);
       var menuBtn = panelButton('menu', 'Menu', 'wb-menu-btn', 'menu');
       var tools = el('div', { class: 'wb-tools' });
       tools.appendChild(searchForm('wb-top-q'));

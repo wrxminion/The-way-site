@@ -1,4 +1,5 @@
 :root{color-scheme:dark;--aqua:#a7f0e9;--text:#e9ffff;--muted:#bcd7df}
+[hidden]{display:none!important}
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;background:#020b13;color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
 body{background:radial-gradient(ellipse 100% 320px at 50% 0,rgba(183,253,255,.33),transparent 75%),linear-gradient(#062a3c,#020b13 60%)}
@@ -34,4 +35,24 @@ h1{font:normal clamp(44px,7vw,80px)/1.04 Georgia,serif;letter-spacing:-.03em;mar
 .has-state .c-map section{display:flex;flex-direction:column;align-items:center;justify-content:center}
 .us-st.mine path{fill:#fff;stroke:#a7f0e9;stroke-width:2}
 .has-state .us-lab{font-size:0}
-@media(max-width:760px){.cards>li,.cards>li.c-map,.has-state .cards>li,.has-state .cards>li.c-map{grid-column:1/-1}.has-state .cards>li.c-map{order:4}}
+@media(max-width:760px){.next .count-clock span{min-width:50px}.cards>li,.cards>li.c-map,.has-state .cards>li,.has-state .cards>li.c-map{grid-column:1/-1}.has-state .cards>li.c-map{order:4}}
+/* Voter guide card with "Your next upcoming vote" under it (Nov 2026). The card is a box: the link on top, the date and countdown below. */
+.cards>li>.box{display:flex;flex-direction:column;width:100%;background:#061b2bde;border:1px solid #abedf536;border-radius:18px;overflow:hidden}
+.cards>li>.box:hover{border-color:#a7f0e9aa}
+.box-link{display:block;padding:20px 20px 14px;text-decoration:none;color:var(--text)}
+.box-link:hover{background:#0a3248}
+.next{padding:16px 18px 20px;border-top:1px solid #abedf536;background:#04141fcc}
+.next h3{margin:0 0 6px;font:600 12px/1.4 Inter,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--aqua)}
+.next .next-date{font:normal 26px/1.25 Georgia,serif;color:#ddffff;margin:0 auto 4px}
+.next .next-name{font-size:16px;margin-bottom:4px}
+.next .count-clock{margin:12px 0 6px!important}
+.next .next-src{font-size:14px}
+.next-pick{display:flex;flex-wrap:wrap;gap:6px 10px;justify-content:center;align-items:center;margin:14px 0 0}
+.next-pick label{color:var(--muted);font-size:15px}
+.next select{max-width:100%;min-height:40px;padding:6px 10px;border-radius:10px;border:1px solid #abedf55a;background:#0a3248;color:var(--text);font:inherit;font-size:16px}
+.next select:focus-visible,.next-scope input:focus-visible{outline:3px solid #91dfdc;outline-offset:2px}
+.next-scope{border:0;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;min-width:0}
+.next-scope legend{width:100%;padding:0;margin:0 0 6px;color:var(--muted);font-size:14px;text-align:center}
+.next-scope label{display:inline-flex;align-items:center;gap:7px;min-height:32px;cursor:pointer;color:var(--text);font-size:15px}
+.next-scope input{width:18px;height:18px;accent-color:#a7f0e9;margin:0}
+.next .next-note{font-size:13px;margin-top:12px;line-height:1.45}
