@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "3d412b61b2591c35",
+   "kind": "news",
+   "title": "Arizona voters reject Prop. 144, Republican-backed election overhaul",
+   "source": "KJZZ",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNMDNXRllKRDBVRV9FamFLbjdoNlpDOVZlTTE1Ym41dWlLcGxWaEdZSkYxS0duMGI3ejl2NFloSW1FVzBvWGZxdF9CZWtDajRXenh1bFB1TmhYODBzdE4wVjlIQW5pUHEzMy1qeng2M2tJMl84c29zOFczQ3hYaHBsVzVfNTltb1FsdnpjLUR1czJGQ0ExRlVwTzZOTU5Pb1ZQN1ZhZnBHcGM0b0ZPWkZZdmxOVQ?oc=5",
+   "published_at": "2026-11-06",
+   "first_seen_at": "2026-11-06T05:50:28Z",
+   "states": [
+    "az"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "az-prop-144-election-requirements",
+     "kind": "measure",
+     "label": "Proposition 144: Government-issued proof of identity for every voter, including by mail, and other election rules, Arizona",
+     "page": "guide-az/measures/prop-144-election-requirements.html"
+    }
+   ]
+  },
+  {
    "id": "93779948fb9c2eac",
    "kind": "news",
    "title": "Arizonans vote no on Prop. 144, rejecting significant changes to the state’s voting procedures",
@@ -1271,5 +1298,5 @@
    ]
   }
  ],
- "generated_at": "2026-11-06T04:03:34Z"
+ "generated_at": "2026-11-06T06:00:49Z"
 }
