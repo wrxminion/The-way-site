@@ -42,7 +42,7 @@
   "vt-sos",
   "wy-sos"
  ],
- "updated_at": "2026-11-06T22:05:47Z",
+ "updated_at": "2026-11-06T22:14:15Z",
  "certified": false,
  "contests": [
   {
@@ -9839,6 +9839,13 @@
    "vote_for": 1,
    "choices": [
     {
+     "id": "bo-whitehead",
+     "name": "Bo Whitehead",
+     "party": "GRE",
+     "party_code": "O",
+     "votes": 2890
+    },
+    {
      "id": "colby-watson",
      "name": "Colby Watson",
      "party": "DEM",
@@ -9851,13 +9858,6 @@
      "party": "REP",
      "party_code": "R",
      "votes": 147094
-    },
-    {
-     "id": "bo-whitehead",
-     "name": "Bo Whitehead",
-     "party": "GRE",
-     "party_code": "O",
-     "votes": 2890
     }
    ],
    "precincts": {},
@@ -9866,16 +9866,16 @@
      "name": "Anson",
      "choices": [
       {
+       "id": "bo-whitehead",
+       "votes": 74
+      },
+      {
        "id": "colby-watson",
        "votes": 4164
       },
       {
        "id": "mark-harris",
        "votes": 3751
-      },
-      {
-       "id": "bo-whitehead",
-       "votes": 74
       }
      ]
     },
@@ -9883,16 +9883,16 @@
      "name": "Cabarrus",
      "choices": [
       {
+       "id": "bo-whitehead",
+       "votes": 611
+      },
+      {
        "id": "colby-watson",
        "votes": 26075
       },
       {
        "id": "mark-harris",
        "votes": 23751
-      },
-      {
-       "id": "bo-whitehead",
-       "votes": 611
       }
      ]
     },
@@ -9900,16 +9900,16 @@
      "name": "Mecklenburg",
      "choices": [
       {
+       "id": "bo-whitehead",
+       "votes": 501
+      },
+      {
        "id": "colby-watson",
        "votes": 33301
       },
       {
        "id": "mark-harris",
        "votes": 23056
-      },
-      {
-       "id": "bo-whitehead",
-       "votes": 501
       }
      ]
     },
@@ -9917,16 +9917,16 @@
      "name": "Montgomery",
      "choices": [
       {
+       "id": "bo-whitehead",
+       "votes": 78
+      },
+      {
        "id": "colby-watson",
        "votes": 3547
       },
       {
        "id": "mark-harris",
        "votes": 5353
-      },
-      {
-       "id": "bo-whitehead",
-       "votes": 78
       }
      ]
     },
@@ -9934,16 +9934,16 @@
      "name": "Richmond",
      "choices": [
       {
+       "id": "bo-whitehead",
+       "votes": 134
+      },
+      {
        "id": "colby-watson",
        "votes": 6277
       },
       {
        "id": "mark-harris",
        "votes": 6943
-      },
-      {
-       "id": "bo-whitehead",
-       "votes": 134
       }
      ]
     },
@@ -9951,16 +9951,16 @@
      "name": "Robeson",
      "choices": [
       {
+       "id": "bo-whitehead",
+       "votes": 135
+      },
+      {
        "id": "colby-watson",
        "votes": 9233
       },
       {
        "id": "mark-harris",
        "votes": 9874
-      },
-      {
-       "id": "bo-whitehead",
-       "votes": 135
       }
      ]
     },
@@ -9968,16 +9968,16 @@
      "name": "Scotland",
      "choices": [
       {
+       "id": "bo-whitehead",
+       "votes": 106
+      },
+      {
        "id": "colby-watson",
        "votes": 5491
       },
       {
        "id": "mark-harris",
        "votes": 4742
-      },
-      {
-       "id": "bo-whitehead",
-       "votes": 106
       }
      ]
     },
@@ -9985,16 +9985,16 @@
      "name": "Stanly",
      "choices": [
       {
+       "id": "bo-whitehead",
+       "votes": 222
+      },
+      {
        "id": "colby-watson",
        "votes": 7630
       },
       {
        "id": "mark-harris",
        "votes": 16486
-      },
-      {
-       "id": "bo-whitehead",
-       "votes": 222
       }
      ]
     },
@@ -10002,16 +10002,16 @@
      "name": "Union",
      "choices": [
       {
+       "id": "bo-whitehead",
+       "votes": 1029
+      },
+      {
        "id": "colby-watson",
        "votes": 46197
       },
       {
        "id": "mark-harris",
        "votes": 53138
-      },
-      {
-       "id": "bo-whitehead",
-       "votes": 1029
       }
      ]
     }
@@ -10034,18 +10034,18 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "tim-moore",
-     "name": "Tim Moore",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 140973
-    },
-    {
      "id": "lakesha-womack",
      "name": "Lakesha Womack",
      "party": "DEM",
      "party_code": "D",
      "votes": 147388
+    },
+    {
+     "id": "tim-moore",
+     "name": "Tim Moore",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 140973
     }
    ],
    "precincts": {},
@@ -10054,12 +10054,12 @@
      "name": "Burke",
      "choices": [
       {
-       "id": "tim-moore",
-       "votes": 18954
-      },
-      {
        "id": "lakesha-womack",
        "votes": 11071
+      },
+      {
+       "id": "tim-moore",
+       "votes": 18954
       }
      ]
     },
@@ -10067,12 +10067,12 @@
      "name": "Cleveland",
      "choices": [
       {
-       "id": "tim-moore",
-       "votes": 21230
-      },
-      {
        "id": "lakesha-womack",
        "votes": 13252
+      },
+      {
+       "id": "tim-moore",
+       "votes": 21230
       }
      ]
     },
@@ -10080,12 +10080,12 @@
      "name": "Gaston",
      "choices": [
       {
-       "id": "tim-moore",
-       "votes": 43928
-      },
-      {
        "id": "lakesha-womack",
        "votes": 38718
+      },
+      {
+       "id": "tim-moore",
+       "votes": 43928
       }
      ]
     },
@@ -10093,12 +10093,12 @@
      "name": "Mecklenburg",
      "choices": [
       {
-       "id": "tim-moore",
-       "votes": 37712
-      },
-      {
        "id": "lakesha-womack",
        "votes": 73515
+      },
+      {
+       "id": "tim-moore",
+       "votes": 37712
       }
      ]
     },
@@ -10106,12 +10106,12 @@
      "name": "Polk",
      "choices": [
       {
-       "id": "tim-moore",
-       "votes": 3773
-      },
-      {
        "id": "lakesha-womack",
        "votes": 3334
+      },
+      {
+       "id": "tim-moore",
+       "votes": 3773
       }
      ]
     },
@@ -10119,12 +10119,12 @@
      "name": "Rutherford",
      "choices": [
       {
-       "id": "tim-moore",
-       "votes": 15376
-      },
-      {
        "id": "lakesha-womack",
        "votes": 7498
+      },
+      {
+       "id": "tim-moore",
+       "votes": 15376
       }
      ]
     }
@@ -10147,6 +10147,13 @@
    "vote_for": 1,
    "choices": [
     {
+     "id": "steven-feldman",
+     "name": "Steven Feldman",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 4673
+    },
+    {
      "id": "ashley-bell",
      "name": "Ashley Bell",
      "party": "DEM",
@@ -10159,13 +10166,6 @@
      "party": "REP",
      "party_code": "R",
      "votes": 146166
-    },
-    {
-     "id": "steven-feldman",
-     "name": "Steven Feldman",
-     "party": "LIB",
-     "party_code": "O",
-     "votes": 4673
     }
    ],
    "precincts": {},
@@ -10174,16 +10174,16 @@
      "name": "Catawba",
      "choices": [
       {
+       "id": "steven-feldman",
+       "votes": 877
+      },
+      {
        "id": "ashley-bell",
        "votes": 23096
       },
       {
        "id": "pat-harrigan",
        "votes": 35959
-      },
-      {
-       "id": "steven-feldman",
-       "votes": 877
       }
      ]
     },
@@ -10191,16 +10191,16 @@
      "name": "Forsyth",
      "choices": [
       {
+       "id": "steven-feldman",
+       "votes": 1874
+      },
+      {
        "id": "ashley-bell",
        "votes": 72465
       },
       {
        "id": "pat-harrigan",
        "votes": 32197
-      },
-      {
-       "id": "steven-feldman",
-       "votes": 1874
       }
      ]
     },
@@ -10208,16 +10208,16 @@
      "name": "Iredell",
      "choices": [
       {
+       "id": "steven-feldman",
+       "votes": 1106
+      },
+      {
        "id": "ashley-bell",
        "votes": 31372
       },
       {
        "id": "pat-harrigan",
        "votes": 43242
-      },
-      {
-       "id": "steven-feldman",
-       "votes": 1106
       }
      ]
     },
@@ -10225,16 +10225,16 @@
      "name": "Lincoln",
      "choices": [
       {
+       "id": "steven-feldman",
+       "votes": 544
+      },
+      {
        "id": "ashley-bell",
        "votes": 12850
       },
       {
        "id": "pat-harrigan",
        "votes": 24863
-      },
-      {
-       "id": "steven-feldman",
-       "votes": 544
       }
      ]
     },
@@ -10242,16 +10242,16 @@
      "name": "Yadkin",
      "choices": [
       {
+       "id": "steven-feldman",
+       "votes": 272
+      },
+      {
        "id": "ashley-bell",
        "votes": 3354
       },
       {
        "id": "pat-harrigan",
        "votes": 9905
-      },
-      {
-       "id": "steven-feldman",
-       "votes": 272
       }
      ]
     }
@@ -10268,6 +10268,13 @@
    "vote_for": 1,
    "choices": [
     {
+     "id": "laurie-buckhout",
+     "name": "Laurie Buckhout",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 146287
+    },
+    {
      "id": "tom-bailey",
      "name": "Tom Bailey",
      "party": "LIB",
@@ -10280,13 +10287,6 @@
      "party": "DEM",
      "party_code": "D",
      "votes": 156572
-    },
-    {
-     "id": "laurie-buckhout",
-     "name": "Laurie Buckhout",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 146287
     }
    ],
    "precincts": {},
@@ -10295,16 +10295,16 @@
      "name": "Beaufort",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 11369
+      },
+      {
        "id": "tom-bailey",
        "votes": 720
       },
       {
        "id": "don-davis",
        "votes": 7730
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 11369
       }
      ]
     },
@@ -10312,16 +10312,16 @@
      "name": "Bertie",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 2349
+      },
+      {
        "id": "tom-bailey",
        "votes": 96
       },
       {
        "id": "don-davis",
        "votes": 4225
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 2349
       }
      ]
     },
@@ -10329,16 +10329,16 @@
      "name": "Camden",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 2902
+      },
+      {
        "id": "tom-bailey",
        "votes": 190
       },
       {
        "id": "don-davis",
        "votes": 1415
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 2902
       }
      ]
     },
@@ -10346,16 +10346,16 @@
      "name": "Carteret",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 21884
+      },
+      {
        "id": "tom-bailey",
        "votes": 1433
       },
       {
        "id": "don-davis",
        "votes": 11645
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 21884
       }
      ]
     },
@@ -10363,16 +10363,16 @@
      "name": "Chowan",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 3254
+      },
+      {
        "id": "tom-bailey",
        "votes": 136
       },
       {
        "id": "don-davis",
        "votes": 2549
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 3254
       }
      ]
     },
@@ -10380,16 +10380,16 @@
      "name": "Craven",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 21291
+      },
+      {
        "id": "tom-bailey",
        "votes": 1524
       },
       {
        "id": "don-davis",
        "votes": 18951
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 21291
       }
      ]
     },
@@ -10397,16 +10397,16 @@
      "name": "Currituck",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 8210
+      },
+      {
        "id": "tom-bailey",
        "votes": 484
       },
       {
        "id": "don-davis",
        "votes": 3964
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 8210
       }
      ]
     },
@@ -10414,16 +10414,16 @@
      "name": "Dare",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 9524
+      },
+      {
        "id": "tom-bailey",
        "votes": 697
       },
       {
        "id": "don-davis",
        "votes": 8835
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 9524
       }
      ]
     },
@@ -10431,16 +10431,16 @@
      "name": "Edgecombe",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 5227
+      },
+      {
        "id": "tom-bailey",
        "votes": 443
       },
       {
        "id": "don-davis",
        "votes": 12272
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 5227
       }
      ]
     },
@@ -10448,16 +10448,16 @@
      "name": "Gates",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 2095
+      },
+      {
        "id": "tom-bailey",
        "votes": 137
       },
       {
        "id": "don-davis",
        "votes": 1930
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 2095
       }
      ]
     },
@@ -10465,16 +10465,16 @@
      "name": "Granville",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 1328
+      },
+      {
        "id": "tom-bailey",
        "votes": 103
       },
       {
        "id": "don-davis",
        "votes": 3121
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 1328
       }
      ]
     },
@@ -10482,16 +10482,16 @@
      "name": "Halifax",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 5733
+      },
+      {
        "id": "tom-bailey",
        "votes": 444
       },
       {
        "id": "don-davis",
        "votes": 11470
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 5733
       }
      ]
     },
@@ -10499,16 +10499,16 @@
      "name": "Hertford",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 2062
+      },
+      {
        "id": "tom-bailey",
        "votes": 150
       },
       {
        "id": "don-davis",
        "votes": 4847
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 2062
       }
      ]
     },
@@ -10516,16 +10516,16 @@
      "name": "Hyde",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 948
+      },
+      {
        "id": "tom-bailey",
        "votes": 80
       },
       {
        "id": "don-davis",
        "votes": 922
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 948
       }
      ]
     },
@@ -10533,16 +10533,16 @@
      "name": "Martin",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 4049
+      },
+      {
        "id": "tom-bailey",
        "votes": 275
       },
       {
        "id": "don-davis",
        "votes": 4822
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 4049
       }
      ]
     },
@@ -10550,16 +10550,16 @@
      "name": "Nash",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 16966
+      },
+      {
        "id": "tom-bailey",
        "votes": 1025
       },
       {
        "id": "don-davis",
        "votes": 22735
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 16966
       }
      ]
     },
@@ -10567,16 +10567,16 @@
      "name": "Northampton",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 2409
+      },
+      {
        "id": "tom-bailey",
        "votes": 180
       },
       {
        "id": "don-davis",
        "votes": 4376
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 2409
       }
      ]
     },
@@ -10584,16 +10584,16 @@
      "name": "Onslow",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 1324
+      },
+      {
        "id": "tom-bailey",
        "votes": 101
       },
       {
        "id": "don-davis",
        "votes": 744
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 1324
       }
      ]
     },
@@ -10601,16 +10601,16 @@
      "name": "Pamlico",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 3514
+      },
+      {
        "id": "tom-bailey",
        "votes": 189
       },
       {
        "id": "don-davis",
        "votes": 2395
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 3514
       }
      ]
     },
@@ -10618,16 +10618,16 @@
      "name": "Pasquotank",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 6229
+      },
+      {
        "id": "tom-bailey",
        "votes": 527
       },
       {
        "id": "don-davis",
        "votes": 8098
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 6229
       }
      ]
     },
@@ -10635,16 +10635,16 @@
      "name": "Perquimans",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 3445
+      },
+      {
        "id": "tom-bailey",
        "votes": 143
       },
       {
        "id": "don-davis",
        "votes": 1997
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 3445
       }
      ]
     },
@@ -10652,16 +10652,16 @@
      "name": "Tyrrell",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 666
+      },
+      {
        "id": "tom-bailey",
        "votes": 61
       },
       {
        "id": "don-davis",
        "votes": 630
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 666
       }
      ]
     },
@@ -10669,16 +10669,16 @@
      "name": "Vance",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 5135
+      },
+      {
        "id": "tom-bailey",
        "votes": 413
       },
       {
        "id": "don-davis",
        "votes": 9043
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 5135
       }
      ]
     },
@@ -10686,16 +10686,16 @@
      "name": "Warren",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 2644
+      },
+      {
        "id": "tom-bailey",
        "votes": 237
       },
       {
        "id": "don-davis",
        "votes": 5152
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 2644
       }
      ]
     },
@@ -10703,16 +10703,16 @@
      "name": "Washington",
      "choices": [
       {
+       "id": "laurie-buckhout",
+       "votes": 1730
+      },
+      {
        "id": "tom-bailey",
        "votes": 93
       },
       {
        "id": "don-davis",
        "votes": 2704
-      },
-      {
-       "id": "laurie-buckhout",
-       "votes": 1730
       }
      ]
     }
@@ -10742,18 +10742,18 @@
      "votes": 195637
     },
     {
-     "id": "travis-groo",
-     "name": "Travis Groo",
-     "party": "LIB",
-     "party_code": "O",
-     "votes": 5345
-    },
-    {
      "id": "jennifer-capps-balkcom",
      "name": "Jennifer Capps Balkcom",
      "party": "REP",
      "party_code": "R",
      "votes": 141427
+    },
+    {
+     "id": "travis-groo",
+     "name": "Travis Groo",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 5345
     }
    ],
    "precincts": {},
@@ -10766,12 +10766,12 @@
        "votes": 2099
       },
       {
-       "id": "travis-groo",
-       "votes": 141
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 4412
+      },
+      {
+       "id": "travis-groo",
+       "votes": 141
       }
      ]
     },
@@ -10783,12 +10783,12 @@
        "votes": 96478
       },
       {
-       "id": "travis-groo",
-       "votes": 1440
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 33137
+      },
+      {
+       "id": "travis-groo",
+       "votes": 1440
       }
      ]
     },
@@ -10800,12 +10800,12 @@
        "votes": 3566
       },
       {
-       "id": "travis-groo",
-       "votes": 327
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 8383
+      },
+      {
+       "id": "travis-groo",
+       "votes": 327
       }
      ]
     },
@@ -10817,12 +10817,12 @@
        "votes": 1904
       },
       {
-       "id": "travis-groo",
-       "votes": 129
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 3679
+      },
+      {
+       "id": "travis-groo",
+       "votes": 129
       }
      ]
     },
@@ -10834,12 +10834,12 @@
        "votes": 1046
       },
       {
-       "id": "travis-groo",
-       "votes": 95
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 2537
+      },
+      {
+       "id": "travis-groo",
+       "votes": 95
       }
      ]
     },
@@ -10851,12 +10851,12 @@
        "votes": 14196
       },
       {
-       "id": "travis-groo",
-       "votes": 572
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 13432
+      },
+      {
+       "id": "travis-groo",
+       "votes": 572
       }
      ]
     },
@@ -10868,12 +10868,12 @@
        "votes": 29947
       },
       {
-       "id": "travis-groo",
-       "votes": 782
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 26192
+      },
+      {
+       "id": "travis-groo",
+       "votes": 782
       }
      ]
     },
@@ -10885,12 +10885,12 @@
        "votes": 9466
       },
       {
-       "id": "travis-groo",
-       "votes": 260
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 6331
+      },
+      {
+       "id": "travis-groo",
+       "votes": 260
       }
      ]
     },
@@ -10902,12 +10902,12 @@
        "votes": 6618
       },
       {
-       "id": "travis-groo",
-       "votes": 357
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 9210
+      },
+      {
+       "id": "travis-groo",
+       "votes": 357
       }
      ]
     },
@@ -10919,12 +10919,12 @@
        "votes": 5620
       },
       {
-       "id": "travis-groo",
-       "votes": 226
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 4633
+      },
+      {
+       "id": "travis-groo",
+       "votes": 226
       }
      ]
     },
@@ -10936,12 +10936,12 @@
        "votes": 5977
       },
       {
-       "id": "travis-groo",
-       "votes": 309
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 10056
+      },
+      {
+       "id": "travis-groo",
+       "votes": 309
       }
      ]
     },
@@ -10953,12 +10953,12 @@
        "votes": 2090
       },
       {
-       "id": "travis-groo",
-       "votes": 124
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 4024
+      },
+      {
+       "id": "travis-groo",
+       "votes": 124
       }
      ]
     },
@@ -10970,12 +10970,12 @@
        "votes": 1196
       },
       {
-       "id": "travis-groo",
-       "votes": 48
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 1718
+      },
+      {
+       "id": "travis-groo",
+       "votes": 48
       }
      ]
     },
@@ -10987,12 +10987,12 @@
        "votes": 2583
       },
       {
-       "id": "travis-groo",
-       "votes": 118
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 2403
+      },
+      {
+       "id": "travis-groo",
+       "votes": 118
       }
      ]
     },
@@ -11004,12 +11004,12 @@
        "votes": 8887
       },
       {
-       "id": "travis-groo",
-       "votes": 247
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 7098
+      },
+      {
+       "id": "travis-groo",
+       "votes": 247
       }
      ]
     },
@@ -11021,12 +11021,12 @@
        "votes": 3964
       },
       {
-       "id": "travis-groo",
-       "votes": 170
-      },
-      {
        "id": "jennifer-capps-balkcom",
        "votes": 4182
+      },
+      {
+       "id": "travis-groo",
+       "votes": 170
       }
      ]
     }
@@ -11423,18 +11423,18 @@
      "votes": 6961
     },
     {
-     "id": "valerie-p-foushee",
-     "name": "Valerie P. Foushee",
-     "party": "DEM",
-     "party_code": "D",
-     "votes": 283255
-    },
-    {
      "id": "mahesh-max-ganorkar",
      "name": "Mahesh (Max) Ganorkar",
      "party": "REP",
      "party_code": "R",
      "votes": 67799
+    },
+    {
+     "id": "valerie-p-foushee",
+     "name": "Valerie P. Foushee",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 283255
     }
    ],
    "precincts": {},
@@ -11447,12 +11447,12 @@
        "votes": 501
       },
       {
-       "id": "valerie-p-foushee",
-       "votes": 19701
-      },
-      {
        "id": "mahesh-max-ganorkar",
        "votes": 7074
+      },
+      {
+       "id": "valerie-p-foushee",
+       "votes": 19701
       }
      ]
     },
@@ -11464,12 +11464,12 @@
        "votes": 2636
       },
       {
-       "id": "valerie-p-foushee",
-       "votes": 128478
-      },
-      {
        "id": "mahesh-max-ganorkar",
        "votes": 18407
+      },
+      {
+       "id": "valerie-p-foushee",
+       "votes": 128478
       }
      ]
     },
@@ -11481,12 +11481,12 @@
        "votes": 1416
       },
       {
-       "id": "valerie-p-foushee",
-       "votes": 58566
-      },
-      {
        "id": "mahesh-max-ganorkar",
        "votes": 11684
+      },
+      {
+       "id": "valerie-p-foushee",
+       "votes": 58566
       }
      ]
     },
@@ -11498,12 +11498,12 @@
        "votes": 2408
       },
       {
-       "id": "valerie-p-foushee",
-       "votes": 76510
-      },
-      {
        "id": "mahesh-max-ganorkar",
        "votes": 30634
+      },
+      {
+       "id": "valerie-p-foushee",
+       "votes": 76510
       }
      ]
     }
@@ -11526,6 +11526,13 @@
    "vote_for": 1,
    "choices": [
     {
+     "id": "david-rouzer",
+     "name": "David Rouzer",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 159985
+    },
+    {
      "id": "maad-abu-ghazalah",
      "name": "Maad Abu-Ghazalah",
      "party": "LIB",
@@ -11538,13 +11545,6 @@
      "party": "DEM",
      "party_code": "D",
      "votes": 157560
-    },
-    {
-     "id": "david-rouzer",
-     "name": "David Rouzer",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 159985
     }
    ],
    "precincts": {},
@@ -11553,16 +11553,16 @@
      "name": "Bladen",
      "choices": [
       {
+       "id": "david-rouzer",
+       "votes": 6656
+      },
+      {
        "id": "maad-abu-ghazalah",
        "votes": 81
       },
       {
        "id": "kimberly-hardy",
        "votes": 5246
-      },
-      {
-       "id": "david-rouzer",
-       "votes": 6656
       }
      ]
     },
@@ -11570,16 +11570,16 @@
      "name": "Brunswick",
      "choices": [
       {
+       "id": "david-rouzer",
+       "votes": 49312
+      },
+      {
        "id": "maad-abu-ghazalah",
        "votes": 600
       },
       {
        "id": "kimberly-hardy",
        "votes": 36840
-      },
-      {
-       "id": "david-rouzer",
-       "votes": 49312
       }
      ]
     },
@@ -11587,16 +11587,16 @@
      "name": "Columbus",
      "choices": [
       {
+       "id": "david-rouzer",
+       "votes": 10265
+      },
+      {
        "id": "maad-abu-ghazalah",
        "votes": 108
       },
       {
        "id": "kimberly-hardy",
        "votes": 6594
-      },
-      {
-       "id": "david-rouzer",
-       "votes": 10265
       }
      ]
     },
@@ -11604,16 +11604,16 @@
      "name": "Cumberland",
      "choices": [
       {
+       "id": "david-rouzer",
+       "votes": 25124
+      },
+      {
        "id": "maad-abu-ghazalah",
        "votes": 674
       },
       {
        "id": "kimberly-hardy",
        "votes": 36890
-      },
-      {
-       "id": "david-rouzer",
-       "votes": 25124
       }
      ]
     },
@@ -11621,16 +11621,16 @@
      "name": "New Hanover",
      "choices": [
       {
+       "id": "david-rouzer",
+       "votes": 44414
+      },
+      {
        "id": "maad-abu-ghazalah",
        "votes": 1335
       },
       {
        "id": "kimberly-hardy",
        "votes": 56851
-      },
-      {
-       "id": "david-rouzer",
-       "votes": 44414
       }
      ]
     },
@@ -11638,16 +11638,16 @@
      "name": "Pender",
      "choices": [
       {
+       "id": "david-rouzer",
+       "votes": 15274
+      },
+      {
        "id": "maad-abu-ghazalah",
        "votes": 241
       },
       {
        "id": "kimberly-hardy",
        "votes": 10133
-      },
-      {
-       "id": "david-rouzer",
-       "votes": 15274
       }
      ]
     },
@@ -11655,16 +11655,16 @@
      "name": "Robeson",
      "choices": [
       {
+       "id": "david-rouzer",
+       "votes": 5752
+      },
+      {
        "id": "maad-abu-ghazalah",
        "votes": 74
       },
       {
        "id": "kimberly-hardy",
        "votes": 3979
-      },
-      {
-       "id": "david-rouzer",
-       "votes": 5752
       }
      ]
     },
@@ -11672,16 +11672,16 @@
      "name": "Sampson",
      "choices": [
       {
+       "id": "david-rouzer",
+       "votes": 3188
+      },
+      {
        "id": "maad-abu-ghazalah",
        "votes": 22
       },
       {
        "id": "kimberly-hardy",
        "votes": 1027
-      },
-      {
-       "id": "david-rouzer",
-       "votes": 3188
       }
      ]
     }
@@ -11698,11 +11698,11 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "write-in-miscellaneous",
-     "name": "Write-In (Miscellaneous)",
-     "party": "\u0000",
+     "id": "matthew-laszacs",
+     "name": "Matthew Laszacs",
+     "party": "LIB",
      "party_code": "O",
-     "votes": 530
+     "votes": 4267
     },
     {
      "id": "deborah-k-ross",
@@ -11712,18 +11712,18 @@
      "votes": 245402
     },
     {
-     "id": "matthew-laszacs",
-     "name": "Matthew Laszacs",
-     "party": "LIB",
-     "party_code": "O",
-     "votes": 4267
-    },
-    {
      "id": "eugene-f-douglass",
      "name": "Eugene F. Douglass",
      "party": "REP",
      "party_code": "R",
      "votes": 76763
+    },
+    {
+     "id": "write-in-miscellaneous",
+     "name": "Write-In (Miscellaneous)",
+     "party": "\u0000",
+     "party_code": "O",
+     "votes": 530
     }
    ],
    "precincts": {},
@@ -11732,20 +11732,20 @@
      "name": "Wake",
      "choices": [
       {
-       "id": "write-in-miscellaneous",
-       "votes": 530
+       "id": "matthew-laszacs",
+       "votes": 4267
       },
       {
        "id": "deborah-k-ross",
        "votes": 245402
       },
       {
-       "id": "matthew-laszacs",
-       "votes": 4267
-      },
-      {
        "id": "eugene-f-douglass",
        "votes": 76763
+      },
+      {
+       "id": "write-in-miscellaneous",
+       "votes": 530
       }
      ]
     }
@@ -11894,18 +11894,18 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "robert-b-luffman",
-     "name": "Robert B. Luffman",
-     "party": "LIB",
-     "party_code": "O",
-     "votes": 7529
-    },
-    {
      "id": "chuck-hubbard",
      "name": "Chuck Hubbard",
      "party": "DEM",
      "party_code": "D",
      "votes": 139034
+    },
+    {
+     "id": "robert-b-luffman",
+     "name": "Robert B. Luffman",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 7529
     },
     {
      "id": "virginia-foxx",
@@ -11921,12 +11921,12 @@
      "name": "Alexander",
      "choices": [
       {
-       "id": "robert-b-luffman",
-       "votes": 388
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 3415
+      },
+      {
+       "id": "robert-b-luffman",
+       "votes": 388
       },
       {
        "id": "virginia-foxx",
@@ -11938,12 +11938,12 @@
      "name": "Alleghany",
      "choices": [
       {
-       "id": "robert-b-luffman",
-       "votes": 157
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 1399
+      },
+      {
+       "id": "robert-b-luffman",
+       "votes": 157
       },
       {
        "id": "virginia-foxx",
@@ -11955,12 +11955,12 @@
      "name": "Ashe",
      "choices": [
       {
-       "id": "robert-b-luffman",
-       "votes": 384
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 4171
+      },
+      {
+       "id": "robert-b-luffman",
+       "votes": 384
       },
       {
        "id": "virginia-foxx",
@@ -11972,12 +11972,12 @@
      "name": "Caldwell",
      "choices": [
       {
-       "id": "robert-b-luffman",
-       "votes": 779
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 8547
+      },
+      {
+       "id": "robert-b-luffman",
+       "votes": 779
       },
       {
        "id": "virginia-foxx",
@@ -11989,12 +11989,12 @@
      "name": "Guilford",
      "choices": [
       {
-       "id": "robert-b-luffman",
-       "votes": 1822
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 75614
+      },
+      {
+       "id": "robert-b-luffman",
+       "votes": 1822
       },
       {
        "id": "virginia-foxx",
@@ -12006,12 +12006,12 @@
      "name": "Rockingham",
      "choices": [
       {
-       "id": "robert-b-luffman",
-       "votes": 1075
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 12736
+      },
+      {
+       "id": "robert-b-luffman",
+       "votes": 1075
       },
       {
        "id": "virginia-foxx",
@@ -12023,12 +12023,12 @@
      "name": "Stokes",
      "choices": [
       {
-       "id": "robert-b-luffman",
-       "votes": 652
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 4568
+      },
+      {
+       "id": "robert-b-luffman",
+       "votes": 652
       },
       {
        "id": "virginia-foxx",
@@ -12040,12 +12040,12 @@
      "name": "Surry",
      "choices": [
       {
-       "id": "robert-b-luffman",
-       "votes": 754
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 7466
+      },
+      {
+       "id": "robert-b-luffman",
+       "votes": 754
       },
       {
        "id": "virginia-foxx",
@@ -12057,12 +12057,12 @@
      "name": "Watauga",
      "choices": [
       {
-       "id": "robert-b-luffman",
-       "votes": 661
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 14802
+      },
+      {
+       "id": "robert-b-luffman",
+       "votes": 661
       },
       {
        "id": "virginia-foxx",
@@ -12074,12 +12074,12 @@
      "name": "Wilkes",
      "choices": [
       {
-       "id": "robert-b-luffman",
-       "votes": 857
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 6316
+      },
+      {
+       "id": "robert-b-luffman",
+       "votes": 857
       },
       {
        "id": "virginia-foxx",
