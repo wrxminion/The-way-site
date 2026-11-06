@@ -1,0 +1,5 @@
+/* "Show a president" dropdown on the executive branch page (pick.js). */
+.gv-pick{margin:4px 0 18px}
+.gv-pick select{font:inherit;color:var(--ink);background:#102c39;border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:min(100%,520px);min-height:46px}
+.gv-pick select:focus{outline:2px solid var(--sea);outline-offset:2px}
+#gv-vcard .gv-list strong{display:block}
