@@ -5,7 +5,7 @@
  "source_ids": [
   "wi-counties"
  ],
- "updated_at": "2026-11-06T09:54:19Z",
+ "updated_at": "2026-11-06T10:04:09Z",
  "certified": false,
  "contests": [
   {
@@ -66,7 +66,12 @@
     "unit": "precincts"
    },
    "note": "Sum of 2 county report(s) read so far; not every county is in.",
-   "called": null,
+   "called": {
+    "winner": "berman",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:48:24.571Z",
+    "kind": "ap"
+   },
    "partial": true
   },
   {
@@ -162,21 +167,21 @@
      "name": "Scott Fitzgerald",
      "party": "REP",
      "party_code": "R",
-     "votes": 150776
+     "votes": 147983
     },
     {
      "id": "beck",
      "name": "Andrew Beck",
      "party": "DEM",
      "party_code": "D",
-     "votes": 109832
+     "votes": 108220
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": "",
      "party_code": "O",
-     "votes": 209
+     "votes": 207
     }
    ],
    "by_county": {
@@ -189,15 +194,6 @@
      "reporting": 32,
      "total": 32
     },
-    "Walworth": {
-     "votes": {
-      "Scott Fitzgerald": 2793,
-      "Andrew Beck": 1612,
-      "Write-in": 2
-     },
-     "reporting": 4,
-     "total": 4
-    },
     "Waukesha": {
      "votes": {
       "Scott Fitzgerald": 127307,
@@ -209,11 +205,11 @@
     }
    },
    "precincts": {
-    "reporting": 220,
-    "total": 220,
+    "reporting": 216,
+    "total": 216,
     "unit": "precincts"
    },
-   "note": "Sum of 3 county report(s) read so far; not every county is in.",
+   "note": "Sum of 2 county report(s) read so far; not every county is in.",
    "called": null,
    "partial": true
   },
@@ -1559,25 +1555,17 @@
      "name": "Chuck Wichgers",
      "party": "REP",
      "party_code": "R",
-     "votes": 16599
+     "votes": 16533
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": "",
      "party_code": "O",
-     "votes": 428
+     "votes": 426
     }
    ],
    "by_county": {
-    "Walworth": {
-     "votes": {
-      "Chuck Wichgers": 66,
-      "Write-in": 2
-     },
-     "reporting": 1,
-     "total": 1
-    },
     "Waukesha": {
      "votes": {
       "Chuck Wichgers": 16533,
@@ -1588,11 +1576,11 @@
     }
    },
    "precincts": {
-    "reporting": 13,
-    "total": 13,
+    "reporting": 12,
+    "total": 12,
     "unit": "precincts"
    },
-   "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "note": "Sum of 1 county report(s) read so far; not every county is in.",
    "called": null,
    "partial": true
   },
@@ -2176,7 +2164,12 @@
     "unit": "precincts"
    },
    "note": "Sum of 9 county report(s) read so far; not every county is in.",
-   "called": null,
+   "called": {
+    "winner": "kaul",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:41:02.767Z",
+    "kind": "ap"
+   },
    "partial": true
   },
   {
@@ -2389,7 +2382,12 @@
     "unit": "precincts"
    },
    "note": "Sum of 11 county report(s) read so far; not every county is in.",
-   "called": null,
+   "called": {
+    "winner": "crowley",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:28:00.184Z",
+    "kind": "ap"
+   },
    "partial": true
   },
   {
@@ -2536,7 +2534,12 @@
     "unit": "precincts"
    },
    "note": "Sum of 9 county report(s) read so far; not every county is in.",
-   "called": null,
+   "called": {
+    "winner": "zamarripa",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T05:38:09.368Z",
+    "kind": "ap"
+   },
    "partial": true
   },
   {
