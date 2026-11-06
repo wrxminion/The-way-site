@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-06T15:16:52Z",
+ "updated_at": "2026-11-06T15:25:09Z",
  "certified": false,
  "contests": [
   {
@@ -23,35 +23,35 @@
      "name": "Cory Booker",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1741553
+     "votes": 1675770
     },
     {
      "id": "murphy",
      "name": "Justin Murphy",
      "party": "REP",
      "party_code": "R",
-     "votes": 962769
+     "votes": 917576
     },
     {
      "id": "fernandez",
      "name": "Veronica Fernandez",
      "party": "N-C",
      "party_code": "O",
-     "votes": 45934
+     "votes": 44676
     },
     {
      "id": "kuniansky",
      "name": "Joanne KUNIANSKY",
      "party": "SOC",
      "party_code": "O",
-     "votes": 23950
+     "votes": 23171
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 6230
+     "votes": 6047
     },
     {
      "id": "choice",
@@ -440,8 +440,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5485,
-    "total": 5630
+    "reporting": 5256,
+    "total": 5399
    },
    "counties": [
     {
@@ -551,20 +551,6 @@
       "booker": 172077,
       "kuniansky": 2677,
       "fernandez": 3052
-     }
-    },
-    {
-     "county": "Gloucester",
-     "precincts": {
-      "reporting": 229,
-      "total": 231
-     },
-     "votes": {
-      "booker": 65783,
-      "murphy": 45193,
-      "kuniansky": 779,
-      "fernandez": 1258,
-      "write-in": 183
      }
     },
     {
@@ -960,7 +946,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "norcross",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:17:19.543Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-10",
@@ -42311,7 +42303,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-gloucester-0005-house-of-representatives-cd-1",
@@ -42352,7 +42350,13 @@
    },
    "category": "State",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "donald-norcross",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:17:19.543Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-gloucester-0006-house-of-representatives-cd-2",
@@ -42400,7 +42404,13 @@
    },
    "category": "State",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "zack-mullock",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T21:29:00.736Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-gloucester-0007-county-commissioner",
@@ -118189,7 +118199,6 @@
   "Cape May",
   "Cumberland",
   "Essex",
-  "Gloucester",
   "Hudson",
   "Hunterdon",
   "Mercer",
@@ -118205,6 +118214,7 @@
  ],
  "counties_missing": [
   "Atlantic",
+  "Gloucester",
   "Warren"
  ]
 }
