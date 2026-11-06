@@ -1,6 +1,6 @@
 // The Way: one top bar for every page (member area, Findings, guides, maps, case pages, splash).
 // Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=25"> in <head>,
-//          <header id="waybar" class="waybar">â€¦fallback linksâ€¦</header> first in <body>,
+//          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
 //          <script src="/members/waybar.js?v=48" defer></script>.
 // Desktop, signed in or out: the same header. VOTE!, News, Government | THE WAY | History, Elections, Money (one simple word each; Research is in the footer),
 //   then Pull a thread, search and the account (Log in and Sign up, or a small Menu button, the bell and your name).
@@ -465,6 +465,52 @@
     });
     return b;
   }
+  // News scroll (full bar, wide screens only): the newest headlines from the News page's feed, each a direct link to the story.
+  // Loaded once per page, only when it shows. Hover or keyboard focus stops it; reduced motion shows a still line you can scroll.
+  var NEWS = '/news/data/election/national.json', newsBox = null;
+  function wideScreen() { return !window.matchMedia || window.matchMedia('(min-width:1100px)').matches; }
+  function newsScroll() {
+    if (newsBox) return newsBox;
+    newsBox = el('section', { class: 'wb-news', 'aria-label': 'Latest news' });
+    var head = link('/news/', 'Latest news');
+    head.className = 'wb-news-head';
+    var strip = el('div', { class: 'wb-news-strip' });
+    newsBox.appendChild(head); newsBox.appendChild(strip);
+    fetch(NEWS, { credentials: 'omit' }).then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); }).then(function (d) {
+      var seen = {}, list = [];
+      (Array.isArray(d && d.items) ? d.items : []).forEach(function (it) {
+        if (list.length >= 12 || !it || typeof it.title !== 'string' || typeof it.url !== 'string' || !/^https:\/\//.test(it.url)) return;
+        var t = it.title.replace(/\s+/g, ' ').trim().slice(0, 160), k = t.toLowerCase().slice(0, 50);
+        if (!t || seen[k]) return;
+        seen[k] = 1;
+        list.push({ t: t, u: it.url, s: typeof it.source === 'string' ? it.source.trim().slice(0, 60) : '' });
+      });
+      if (!list.length) { newsBox.classList.add('wb-news-empty'); return; }
+      // two copies side by side so the loop has no gap; the second copy is hidden from screen readers and the Tab key
+      [0, 1].forEach(function (copy) {
+        var ul = el('ul', { class: 'wb-news-track', 'aria-hidden': copy ? 'true' : null });
+        list.forEach(function (n) {
+          var li = el('li'), a = el('a', { href: n.u, target: '_blank', rel: 'noopener noreferrer', tabindex: copy ? '-1' : null }, n.t);
+          li.appendChild(a);
+          if (n.s) li.appendChild(el('span', { class: 'wb-news-src' }, n.s));
+          ul.appendChild(li);
+        });
+        strip.appendChild(ul);
+      });
+      // about 60 pixels a second, whatever the headlines' length (sets the CSS animation time, not a style attribute)
+      requestAnimationFrame(function () {
+        var w = strip.firstChild ? strip.firstChild.offsetWidth : 0;
+        if (w) strip.style.setProperty('--wb-news-time', Math.max(30, Math.round(w / 60)) + 's');
+      });
+    }).catch(function () { newsBox.classList.add('wb-news-empty'); });
+    return newsBox;
+  }
+  window.addEventListener('resize', function () {
+    var bar = document.getElementById('waybar');
+    if (!bar || bar.classList.contains('wb-compact')) return;
+    var on = !!(newsBox && newsBox.parentNode === bar);
+    if (on !== wideScreen()) render();
+  });
   function render(d, opts) {
     var bar = document.getElementById('waybar');
     if (!bar) return;
@@ -480,9 +526,19 @@
     var isFront = path === '/' || path === '/index.html';
     var compact = isFront || smallBar();
     bar.classList.toggle('wb-compact', compact);
+    bar.classList.toggle('wb-mini-home', compact && !isFront);
     var logo = link(data ? route('') : '/', 'The Way'); // signed in: member Home; signed out: the public front page
     logo.className = 'wb-logo';
+    // Small bar on an inner page: just the logo picture, small and centred above the arrow, as a Home button.
+    if (compact && !isFront) {
+      logo.className = 'wb-logo wb-logo-mini';
+      logo.textContent = '';
+      logo.title = 'Home';
+      logo.appendChild(el('span', { class: 'wb-sr' }, 'The Way, home'));
+    }
     var kids = [logo];
+    // Full bar on a wide screen: a slow scroll of the latest headlines in the empty spot left of the logo.
+    if (!compact && wideScreen()) kids.push(newsScroll());
     // Pull a Thread sits on the right of the top row (desktop), first in the group with the search and account, so THE WAY stays dead centre.
     var pat = null;
     if (data || !pending) {
@@ -516,7 +572,7 @@
         'aria-label': 'Account: ' + data.name, 'aria-current': cur === 'me' ? 'page' : null, title: 'Your account' });
       btn.appendChild(el('span', { class: 'wb-avatar', 'aria-hidden': 'true' }, Array.from(data.name)[0].toUpperCase()));
       btn.appendChild(el('span', { class: 'wb-name-text' }, data.name));
-      btn.appendChild(el('span', { class: 'wb-caret', 'aria-hidden': 'true' }, 'â–¾'));
+      btn.appendChild(el('span', { class: 'wb-caret', 'aria-hidden': 'true' }, '\u25BE'));
       var menu = el('ul', { class: 'wb-menu', hidden: '' });
       var item = function (href, label) { var li = el('li'); li.appendChild(link(href, label)); menu.appendChild(li); };
       menu.appendChild(el('li', { class: 'wb-menu-name' }, data.name));
