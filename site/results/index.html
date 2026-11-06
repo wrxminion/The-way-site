@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#176b85">
-<title>Election Results — The Way</title>
+<title>Election Results | The Way</title>
 <meta name="description" content="Unofficial, automatically collected results for the November 3, 2026 election, U.S. Congress first. Not checked by a person, and not final until certified.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="/news/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="results.css?v=r1">
+<link rel="stylesheet" href="results.css?v=d204">
 <link rel="stylesheet" href="/members/waybar.css?v=29">
 <link rel="canonical" href="https://michiinstitute.com/results/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Election Results — The Way">
+<meta property="og:title" content="Election Results | The Way">
 <meta property="og:description" content="Unofficial, automatically collected results for the November 3, 2026 election. Not checked by a person, and not final until certified.">
 <meta property="og:url" content="https://michiinstitute.com/results/">
 <meta property="og:site_name" content="The Way | Michi Institute">
@@ -21,21 +21,34 @@
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-mid wb-pub" aria-label="Sections"><a href="/states/">Ballot</a><a href="/news/">News</a><a href="/cases/">Civics &amp; History</a><a href="/foundation.html">Why?</a></nav><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-mid wb-pub" aria-label="Sections"><a href="/results/" aria-current="page">Election Results</a><a href="/states/">Voter Guides</a><a href="/research/">Research</a><a href="/search/">Search</a></nav><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
 
 <header class="top">
-  <div class="eyebrow">The Way / Ballot / Election night</div>
-  <h1>Election results</h1>
-  <p>November 3, 2026. U.S. Senate and House first, then every state by name. Counts are copied from the official sources named below and are shown as they were last collected. A race marked "What AP is calling" is AP's call, not a certified result; "State shows leader" is a mark on the state's own page, also not certified.</p>
+  <div class="eyebrow">The Way / Election Results</div>
+  <h1>Election Results</h1>
+  <p>November 3, 2026. U.S. Senate and House first, then each state by name. Counts are copied from the official sources named on this page and are shown as they were last collected.</p>
+  <p class="jump"><a href="#official">Official results for every state</a> <span aria-hidden="true">&middot;</span> <a href="#read">How to read a result</a></p>
 </header>
 
 <div class="wrap">
   <div class="notice" role="note">
     <p><b>Unofficial until certified.</b> Election night counts change as ballots are counted. Only the results your state or county certifies are final.</p>
     <p><b>Collected automatically, not checked by a person.</b> A program copies these numbers from official sites. No one at The Way has looked at them. If this page and the official site ever differ, the official site is right.</p>
+    <p><b>What this page covers.</b> Not every race. The program reads U.S. Senate and House races and the statewide and local contests it can read from each state's official results site. Some states have only some of their races here, and some have none yet. The <a href="#official">official links below</a> cover every race.</p>
   </div>
 
-  <p class="status" id="status" aria-live="polite">Loading…</p>
+  <section class="readkey" id="read" aria-labelledby="read-h">
+    <h2 id="read-h">How to read a result</h2>
+    <ul class="keylist">
+      <li><span class="cstat cs-cert">Certified by the state</span> The official, final result. Only the state or county can certify.</li>
+      <li><span class="cstat cs-ap">What AP is calling (not certified)</span> The Associated Press expects this side to win. It is a news call, not an official result.</li>
+      <li><span class="cstat cs-lead">State shows leader (not certified)</span> The state's own results page marks who is ahead in the count so far. It is not a call.</li>
+      <li><span class="cstat cs-none">Not called, not certified</span> No one has called it yet. The numbers are the count so far.</li>
+    </ul>
+  </section>
+
+  <p class="status" id="status" aria-live="polite">Loading the collected results. If nothing appears here, your browser may have scripts turned off or the data did not load. The <a href="#official">official results for every state</a> are linked below.</p>
+  <div class="feed-error" id="feederr" role="alert" hidden></div>
   <p class="callout" id="stale" hidden></p>
 
   <section id="balance" class="balance" aria-label="Congress count" hidden></section>
@@ -50,10 +63,69 @@
 
   <main id="panel" role="tabpanel" tabindex="-1"></main>
 
+  <section class="official" id="official" aria-labelledby="off-h">
+    <h2 id="off-h">Official results for every state</h2>
+    <p class="muted">Each link opens that state's election office or its official results site. These pages are the final word, and they list every race, including ones this page does not have.</p>
+    <ul class="offlist">
+      <li><a href="https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305" data-official="al" rel="noopener">Alabama</a></li>
+      <li><a href="https://www.elections.alaska.gov/results/26GENR/" data-official="ak" rel="noopener">Alaska</a></li>
+      <li><a href="https://results.arizona.vote/" data-official="az" rel="noopener">Arizona</a></li>
+      <li><a href="https://enr.sos.arkansas.gov/" data-official="ar" rel="noopener">Arkansas</a></li>
+      <li><a href="https://electionresults.sos.ca.gov/" data-official="ca" rel="noopener">California</a></li>
+      <li><a href="https://results.enr.clarityelections.com/CO/127407/" data-official="co" rel="noopener">Colorado</a></li>
+      <li><a href="https://ctemspublic.tgstg.net/" data-official="ct" rel="noopener">Connecticut</a></li>
+      <li><a href="https://elections.delaware.gov/results/enr/GE2026.html" data-official="de" rel="noopener">Delaware</a></li>
+      <li><a href="https://electionresults.dcboe.org/" data-official="dc" rel="noopener">District of Columbia</a></li>
+      <li><a href="https://floridaelectionwatch.gov/" data-official="fl" rel="noopener">Florida</a></li>
+      <li><a href="https://results.sos.ga.gov/results/public/Georgia/elections/11032026GeneralAndSpecialElection" data-official="ga" rel="noopener">Georgia</a></li>
+      <li><a href="https://elections.hawaii.gov/election-results/" data-official="hi" rel="noopener">Hawaii</a></li>
+      <li><a href="https://results.voteidaho.gov/" data-official="id" rel="noopener">Idaho</a></li>
+      <li><a href="https://elections.il.gov/electionoperations/ElectionVoteTotals.aspx" data-official="il" rel="noopener">Illinois</a></li>
+      <li><a href="https://enr.indianavoters.in.gov/" data-official="in" rel="noopener">Indiana</a></li>
+      <li><a href="https://results.enr.clarityelections.com/IA/127077/" data-official="ia" rel="noopener">Iowa</a></li>
+      <li><a href="https://ent.sos.ks.gov/kssos_ent.html" data-official="ks" rel="noopener">Kansas</a></li>
+      <li><a href="https://vrsws.sos.ky.gov/liveresults/" data-official="ky" rel="noopener">Kentucky</a></li>
+      <li><a href="https://voterportal.sos.la.gov/graphical" data-official="la" rel="noopener">Louisiana</a></li>
+      <li><a href="https://www.maine.gov/sos/elections-voting" data-official="me" rel="noopener">Maine</a></li>
+      <li><a href="https://elections.maryland.gov/elections/2026/general_results/" data-official="md" rel="noopener">Maryland</a></li>
+      <li><a href="https://electionstats.state.ma.us/" data-official="ma" rel="noopener">Massachusetts</a></li>
+      <li><a href="https://www.michigan.gov/sos/elections" data-official="mi" rel="noopener">Michigan</a></li>
+      <li><a href="https://electionresults.sos.mn.gov/" data-official="mn" rel="noopener">Minnesota</a></li>
+      <li><a href="https://www.sos.ms.gov/elections-voting/election-results" data-official="ms" rel="noopener">Mississippi</a></li>
+      <li><a href="https://enr.sos.mo.gov/" data-official="mo" rel="noopener">Missouri</a></li>
+      <li><a href="https://electionresults.mt.gov/" data-official="mt" rel="noopener">Montana</a></li>
+      <li><a href="https://electionresults.nebraska.gov/" data-official="ne" rel="noopener">Nebraska</a></li>
+      <li><a href="https://silverstateelection.nv.gov/" data-official="nv" rel="noopener">Nevada</a></li>
+      <li><a href="https://www.sos.nh.gov/2026-general-election-results" data-official="nh" rel="noopener">New Hampshire</a></li>
+      <li><a href="https://nj.gov/state/elections/election-night-results.shtml" data-official="nj" rel="noopener">New Jersey</a></li>
+      <li><a href="https://electionresults.sos.nm.gov/" data-official="nm" rel="noopener">New Mexico</a></li>
+      <li><a href="https://nyenr.elections.ny.gov/" data-official="ny" rel="noopener">New York</a></li>
+      <li><a href="https://er.ncsbe.gov/?election_dt=11/03/2026&amp;county_id=0&amp;office=FED&amp;contest=0" data-official="nc" rel="noopener">North Carolina</a></li>
+      <li><a href="https://results.sos.nd.gov/" data-official="nd" rel="noopener">North Dakota</a></li>
+      <li><a href="https://liveresults.ohiosos.gov/" data-official="oh" rel="noopener">Ohio</a></li>
+      <li><a href="https://results.okelections.gov/OKER/?elecDate=20261103" data-official="ok" rel="noopener">Oklahoma</a></li>
+      <li><a href="https://results.oregonvotes.gov/" data-official="or" rel="noopener">Oregon</a></li>
+      <li><a href="https://www.electionreturns.pa.gov/" data-official="pa" rel="noopener">Pennsylvania</a></li>
+      <li><a href="https://electionresults.ri.gov/" data-official="ri" rel="noopener">Rhode Island</a></li>
+      <li><a href="https://www.enr-scvotes.org/SC/127300/" data-official="sc" rel="noopener">South Carolina</a></li>
+      <li><a href="https://electionresults.sd.gov/" data-official="sd" rel="noopener">South Dakota</a></li>
+      <li><a href="https://elections.tn.gov/" data-official="tn" rel="noopener">Tennessee</a></li>
+      <li><a href="https://goelect.txelections.civixapps.com/ivis-enr-ui/races" data-official="tx" rel="noopener">Texas</a></li>
+      <li><a href="https://electionresults.utah.gov/results/public/Utah/General11032026" data-official="ut" rel="noopener">Utah</a></li>
+      <li><a href="https://electionresults.vermont.gov/" data-official="vt" rel="noopener">Vermont</a></li>
+      <li><a href="https://enr.elections.virginia.gov/results/public/Virginia/elections/2026-November-General" data-official="va" rel="noopener">Virginia</a></li>
+      <li><a href="https://results.votewa.gov/results/public/washington/20261103" data-official="wa" rel="noopener">Washington</a></li>
+      <li><a href="https://results.enr.clarityelections.com/WV/127496/" data-official="wv" rel="noopener">West Virginia</a></li>
+      <li><a href="https://elections.wi.gov/" data-official="wi" rel="noopener">Wisconsin</a></li>
+      <li><a href="https://sos.wyo.gov/Elections/Docs/2026/2026GeneralResults.aspx" data-official="wy" rel="noopener">Wyoming</a></li>
+    </ul>
+    <p class="muted">Colorado: the <a href="https://www.coloradosos.gov/pubs/elections/main.html" rel="noopener">Colorado Secretary of State elections page</a> links to the same official results site. Its <a href="https://www.coloradosos.gov/pubs/elections/Results/ENR/countyMapStatuses.html" rel="noopener">county status guide</a> says results are not official until each county canvass board certifies them, on or before the 22nd day after election day.</p>
+  </section>
+
   <section class="sources" aria-labelledby="src-h">
     <h2 id="src-h">Where the numbers come from</h2>
     <p class="muted">Each line shows when the program last looked, and when the official source says it was last updated.</p>
-    <ul id="sources" class="srclist"></ul>
+    <ul id="sources" class="srclist"><li class="muted">This list fills in when the collected results load. If it stays empty, use the official links above.</li></ul>
   </section>
 
   <section class="mail" aria-labelledby="mail-h">
@@ -63,8 +135,8 @@
 </div>
 <footer class="bottom"><p>Not left. Not right. We are The Way. · A nonpartisan project, not a political party.</p></footer>
 <script src="ap-map-paths.js?v=d116"></script>
-<script src="ap-map.js?v=r1"></script>
-<script src="results.js?v=r1"></script>
+<script src="ap-map.js?v=d204"></script>
+<script src="results.js?v=d204"></script>
 <script src="/members/waybar.js?v=75" defer></script>
 </body>
 </html>

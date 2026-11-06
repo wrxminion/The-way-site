@@ -74,11 +74,12 @@ function ext() {
   if (y1 && y2) parts.push(y1 + ' ' + y2); else if (y1) parts.push(y1); else if (y2) parts.push(y2);
   const text = parts.join(' ');
   $('qtext').textContent = text || '(nothing yet)';
+  $('qtext2').textContent = text || '(nothing yet)';
   const e = encodeURIComponent(text);
   $('x-bp').href = text ? 'https://ballotpedia.org/wiki/index.php?search=' + e : 'https://ballotpedia.org/';
 }
 $('copyq').addEventListener('click', async () => {
-  const t = $('qtext').textContent;
+  const t = $('qtext2').textContent;
   try { await navigator.clipboard.writeText(t); $('copyq').textContent = 'Copied'; } catch (err) { $('copyq').textContent = 'Select the query and copy it'; }
   setTimeout(() => { $('copyq').textContent = 'Copy query'; }, 2500);
 });

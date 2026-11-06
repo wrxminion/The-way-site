@@ -18,4 +18,7 @@
 .mo-fine a,.mo a{color:#aaf0e8}
 .mo-chip{display:inline-block;margin:0 0 0 8px;padding:1px 10px;border:1px solid #eaf8fa;border-radius:999px;font-size:12.5px;font-weight:700;color:#eaf8fa;vertical-align:middle;white-space:nowrap}
 .mo-chip.mo-wait{border-color:#eac690;color:#f4e8d0;font-weight:600}
+.mo-asof{margin:0 0 10px;font-size:14px;color:#eaf8fa}
+.mo-links{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0 0;font-size:14.5px}
+.mo-links a{font-weight:700}
 @media(max-width:640px){.mo{padding:14px 14px 12px;margin:10px 0 14px}.mo-num{font-size:19px}.mo-chip{white-space:normal}}

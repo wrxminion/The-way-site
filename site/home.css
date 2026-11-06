@@ -178,3 +178,7 @@
 .mw-key .mw-out:before{background:#7ff0d4}
 .mw-note{font-size:13px!important;color:#a9c6cc!important;margin:18px 0 0!important}
 @media(max-width:800px){.mw-amt{font-size:40px}.mw-name{font-size:25px}}
+/* D204: Money Trail card labels and snapshot date */
+.mw-lab{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a9c6cc;margin-bottom:4px}
+.mw-none{font-size:15px;color:#d9f2f2;max-width:16em;line-height:1.35}
+.mw-asof{display:block;flex-basis:100%;font-size:13px;color:#a9c6cc}

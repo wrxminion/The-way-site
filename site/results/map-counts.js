@@ -73,7 +73,7 @@
       box.appendChild(html('p', 'rp-line', (k === 'house' ? 'U.S. House' : 'U.S. Senate') + ': ' + label(c)));
     });
     box.appendChild(html('p', 'rp-note', 'Seats AP is calling, so far (what AP reports, not certified). Not a prediction. Stripes lean right where more called seats are for Democratic candidates, left for Republican candidates, and are vertical where tied or other. Unofficial until certified, collected automatically and not checked by a person. '));
-    var more = html('a', null, 'See every race'); more.href = '/results/'; box.lastChild.appendChild(more);
+    var more = html('a', null, 'See the collected races'); more.href = '/results/'; box.lastChild.appendChild(more);
     var det = html('details', 'rp-det'); det.appendChild(html('summary', null, 'Counts by state (text)'));
     var ul = html('ul', 'rp-list');
     rows.sort(function (x, y) { return x.name < y.name ? -1 : 1; }).forEach(function (r) {

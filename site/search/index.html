@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="/water-depth.css?v=1">
 </head>
 <body class="water-depth">
-<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-mid wb-pub" aria-label="Sections"><a href="/results/">Election Results</a><a href="/states/">Voter Guides</a><a href="/research/">Research</a><a href="/search/" aria-current="page">Search</a></nav><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
 <main class="sr-page" id="top">
 <h1>Search</h1>
 <p class="lede">Search the pages on this site: candidates, races, ballot measures, election studies, research packages and more.</p>
@@ -38,12 +38,18 @@
 
 <section class="ext" aria-labelledby="ext-h">
 <h2 id="ext-h">Search research resources</h2>
-<p>These links leave this site and open another service's own search. Michi does not index their results, and what you see there is not reviewed by us. Your search above (and any place or years you pick) is carried into each link.</p>
+<p>These links leave this site and open another service's own search. Michi does not index their results, and what you see there is not reviewed by us.</p>
+<h3 id="ext-auto">Your search goes into the link</h3>
 <p class="qpreview">Query sent: <code id="qtext"></code></p>
 <ul class="ext-links">
-<li><a id="x-sci" target="_blank" rel="noopener" href="https://www.science.gov/scigov/desktop/en/search.html">Open Science.gov search</a> <button type="button" id="copyq">Copy query</button><span> U.S. government science and research. Free. A discovery tool, not proof of peer review. Science.gov does not take a query in the link, so copy the query above and paste it into its Full Record box.</span></li>
-<li><a id="x-bp" target="_blank" rel="noopener" href="https://ballotpedia.org/">Search Ballotpedia</a><span> Elections, ballot measures and officeholders. Free. Check legal and election claims against official records.</span></li>
-<li><a id="x-cq" target="_blank" rel="noopener" href="https://library.cqpress.com/cqresearcher/">Open CQ Researcher</a><span> Issue reports with bibliographies. Needs a library or institutional login. The link opens CQ Press (Sage), and you reach CQ Researcher by signing in through your library, then searching inside it. We cannot pass a query to it.</span></li>
+<li><a id="x-bp" target="_blank" rel="noopener" href="https://ballotpedia.org/">Search Ballotpedia</a><span> Elections, ballot measures and officeholders. Free. Your search above (and any place or years you pick) is already in this link. Check legal and election claims against official records.</span></li>
+</ul>
+<h3 id="ext-manual">You type the search yourself</h3>
+<p>These services do not take a search from a link. The link opens the service, and you enter the words there. Copy the query below to paste it in.</p>
+<p class="qpreview">Query to copy: <code id="qtext2"></code> <button type="button" id="copyq">Copy query</button></p>
+<ul class="ext-links">
+<li><a id="x-sci" target="_blank" rel="noopener" href="https://www.science.gov/scigov/desktop/en/search.html">Open Science.gov</a><span> U.S. government science and research. Free. A discovery tool, not proof that a study was independently reviewed. Paste the query into its Full Record box.</span></li>
+<li><a id="x-cq" target="_blank" rel="noopener" href="https://library.cqpress.com/cqresearcher/">Open CQ Researcher</a><span> Issue reports with bibliographies. Needs a library or institutional login. The link opens CQ Press (Sage); sign in through your library, then type the query into CQ Researcher's own search.</span></li>
 </ul>
 <h3>Ideas for wording a search</h3>
 <ul>
@@ -57,6 +63,6 @@
 </main>
 <script src="/members/waybar.js?v=75" defer></script>
 <script src="search-index.js?v=1" defer></script>
-<script src="search.js?v=1" defer></script>
+<script src="search.js?v=d204" defer></script>
 </body>
 </html>

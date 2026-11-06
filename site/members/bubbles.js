@@ -60,7 +60,10 @@
       { href: '/cases/', label: 'Civics and history' },
       { href: '/how-government-works.html', label: 'Government' },
       { href: '/case-studies/', label: 'Election Studies' },
-      { href: '/research/', label: 'Research' }
+      { href: '/results/', label: 'Election Results' },
+      { href: '/states/', label: 'Voter Guides' },
+      { href: '/research/', label: 'Research' },
+      { href: '/search/', label: 'Search' }
     ] }];
     if (d) {
       var mine = [];

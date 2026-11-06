@@ -142,7 +142,7 @@
   // (results.js picks the link up; without script it reloads the page with ?state=).
   function pin(c) {
     pinned = c; detail.textContent = info(c).text + ' ';
-    var a = el('a', 'apm-open', 'See every ' + (NAMES[c] || c.toUpperCase()) + ' race');
+    var a = el('a', 'apm-open', 'See the collected ' + (NAMES[c] || c.toUpperCase()) + ' races');
     a.href = '/results/?state=' + c + '#tabs'; a.setAttribute('data-state-results', c);
     detail.appendChild(a);
   }

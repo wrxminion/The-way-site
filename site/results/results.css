@@ -104,3 +104,38 @@ button,select,input{font:inherit}
 .apm-detail .apm-open{display:inline-block;margin-left:6px;font-weight:600;color:#a7f0e9;text-decoration:underline;text-underline-offset:3px;min-height:24px}
 .apm-list{margin-top:8px}.apm-list summary{cursor:pointer;color:#aaf0e8;font-size:14px;padding:6px 0}
 .apm-list ul{margin:6px 0 0;padding-left:18px;font-size:13px;line-height:1.6;color:#c8e0e5;columns:2 320px}
+
+/* D204: post-election fixes. Status labels (four kinds, each looks different, no party colors), official links, error box, deep link. */
+.jump{font-size:15px}
+.readkey{margin:14px 0;padding:14px 18px;border:1px solid var(--line);border-radius:16px;background:#061b2bb0}
+.readkey h2{font:normal 22px Georgia,serif;margin:0 0 8px}
+.keylist{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px;line-height:1.5;color:#c8e0e5}
+.keylist .cstat{margin-right:8px}
+.cstat{display:inline-block;margin:0 0 8px;padding:2px 10px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.02em;line-height:1.5}
+.cs-cert{background:#eaf8fa;color:#052230;border:2px solid #eaf8fa}
+.cs-ap{background:transparent;color:#c6f3ee;border:2px solid #a6f0e7}
+.cs-lead{background:transparent;color:#f1dcb2;border:2px dashed var(--amber)}
+.cs-none{background:#0d2c3b;color:#c8e0e5;border:2px dotted #86d4d35a}
+.srcline{font-size:12.5px;color:#a8c3ca;margin:8px 0 0;line-height:1.55;overflow-wrap:anywhere}
+.morelinks{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13.5px;margin:8px 0 0}
+.morelinks a{font-weight:650}
+.morelinks .permalink{font-weight:400;color:#9cdddf}
+.card.hit{border:2px solid #f0c36a;box-shadow:0 0 0 4px #f0c36a33}
+.card:focus{outline:none}
+.card:focus-visible{outline:2px solid #91dfdc;outline-offset:2px}
+.statehead{margin:4px 0 6px;padding:12px 16px;border-left:3px solid var(--aqua);background:#0a2a3a99;border-radius:0 12px 12px 0}
+.statehead h2{font:normal 24px Georgia,serif;margin:0 0 4px}
+.statehead p{margin:4px 0;line-height:1.55;font-size:15px}
+.feed-error,.feed-error-in{border:2px solid #f1b9a6;background:#2a141099;color:#fbe6de;border-radius:14px;padding:12px 16px;margin:10px 0;line-height:1.55}
+.feed-error .feed-error-in{border:0;background:none;padding:0;margin:0}
+.fe-h{font-weight:800;font-size:17px;margin:0 0 4px}
+.feed-error-in p{margin:4px 0}
+.fe-acts{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:8px!important}
+.fe-acts a{color:#ffe3a3;font-weight:700}
+.fe-retry{border:0;border-radius:100px;background:#f1b9a6;color:#2a1410;font-weight:700;padding:8px 18px;cursor:pointer;min-height:40px}
+.fe-retry:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.official{margin-top:30px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:#061b2bb0}
+.official h2{font:normal 24px Georgia,serif;margin:0 0 6px}
+.offlist{list-style:none;margin:12px 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:4px 14px;font-size:15px}
+.offlist a{display:inline-block;padding:6px 0;min-height:32px}
+@media(max-width:520px){.offlist{grid-template-columns:1fr 1fr}}
