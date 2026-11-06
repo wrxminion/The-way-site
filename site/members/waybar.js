@@ -2,7 +2,7 @@
 // Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=25"> in <head>,
 //          <header id="waybar" class="waybar">â€¦fallback linksâ€¦</header> first in <body>,
 //          <script src="/members/waybar.js?v=48" defer></script>.
-// Desktop, signed in or out: the same header. Voter Guide, News, Civics & History | THE WAY | Government, Election Studies, Money Trail (Research is in the footer),
+// Desktop, signed in or out: the same header. VOTE!, News, Government | THE WAY | History, Elections, Money (one simple word each; Research is in the footer),
 //   then Pull a thread, search and the account (Log in and Sign up, or a small Menu button, the bell and your name).
 // Signed in, phone: a compact header (logo, search, account). The bottom bar is gone: the two bubble menus replace it.
 // Signed out phone: a Menu panel holds the sections, search, "Log in" and "Sign up".
@@ -438,12 +438,12 @@
   function sectionNav(cur, guide) {
     var pub = el('nav', { class: 'wb-pub', 'aria-label': 'Sections' });
     var pubL = el('div', { class: 'wb-pub-l' }), pubR = el('div', { class: 'wb-pub-r' });
-    pubL.appendChild(link(guide, 'Voter Guide', 'ballot', cur));
+    pubL.appendChild(link(guide, 'VOTE!', 'ballot', cur));
     pubL.appendChild(link('/news/', 'News', 'news', cur));
-    pubL.appendChild(link('/cases/', 'Civics & History', 'cases', cur));
-    pubR.appendChild(link(GOV, 'Government', 'govworks', cur));
-    pubR.appendChild(link('/case-studies/', 'Election Studies', 'casestudies', cur));
-    pubR.appendChild(link('/money-trail/', 'Money Trail', 'money', cur));
+    pubL.appendChild(link(GOV, 'Government', 'govworks', cur));
+    pubR.appendChild(link('/cases/', 'History', 'cases', cur));
+    pubR.appendChild(link('/case-studies/', 'Elections', 'casestudies', cur));
+    pubR.appendChild(link('/money-trail/', 'Money', 'money', cur));
     pub.appendChild(pubL); pub.appendChild(pubR);
     return pub;
   }
@@ -459,6 +459,8 @@
     bar.classList.add('waybar');
     bar.classList.toggle('wb-in', !!data);
     bar.classList.toggle('wb-search-open', searchOpen);
+    // Front page only: no logo or THE WAY in the bar (the page itself opens with the big logo), and a one-line bar (waybar.css .wb-front).
+    bar.classList.toggle('wb-front', path === '/' || path === '/index.html');
     var logo = link(data ? route('') : '/', 'The Way'); // signed in: member Home; signed out: the public front page
     logo.className = 'wb-logo';
     var kids = [logo];
