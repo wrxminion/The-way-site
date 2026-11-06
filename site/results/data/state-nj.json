@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-06T13:16:17Z",
+ "updated_at": "2026-11-06T13:26:35Z",
  "certified": false,
  "contests": [
   {
@@ -777,7 +777,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-1",
@@ -1049,7 +1055,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "mciver",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:22:28.493Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-11",
@@ -1379,7 +1391,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "mullock",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T21:29:00.736Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-3",
@@ -2250,7 +2268,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "menendez",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:11:12.519Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-9",
@@ -2337,7 +2361,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "pou",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:22:06.948Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-atlantic-0004-united-states-senate",
@@ -2385,7 +2415,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-atlantic-0005-house-of-representatives-2nd-cong",
@@ -2426,7 +2462,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "zack-mullock",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T21:29:00.736Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-atlantic-0006-sheriff",
@@ -46064,7 +46106,13 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-hudson-0005-member-of-the-house-of-representatives-8th-congressional",
@@ -46119,7 +46167,13 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "rob-menendez",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:11:12.519Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-hudson-0006-member-of-the-house-of-representatives-9th-congressional",
@@ -46167,7 +46221,13 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "nelida-pou",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:22:06.948Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-hudson-0007-member-of-the-house-of-representatives-10th-congressional",
@@ -46208,7 +46268,13 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "lamonica-r-mciver",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:22:28.493Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-hudson-0008-county-register",
@@ -118178,7 +118244,6 @@
  "notice": "UNOFFICIAL results from county election-night reporting. Not certified.",
  "official": false,
  "counties_covered": [
-  "Atlantic",
   "Bergen",
   "Burlington",
   "Camden",
@@ -118186,7 +118251,6 @@
   "Cumberland",
   "Essex",
   "Gloucester",
-  "Hudson",
   "Hunterdon",
   "Mercer",
   "Middlesex",
@@ -118200,6 +118264,8 @@
   "Union"
  ],
  "counties_missing": [
+  "Atlantic",
+  "Hudson",
   "Warren"
  ]
 }
