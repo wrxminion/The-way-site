@@ -1,0 +1,30 @@
+/* Buoys (buoys.js). The footer depth counter buoy on its chain, and the floating buoys on the home and Teacher? Parent? pages. Decorative art; the count is also in the link's label. */
+.michi-buoy-img{display:block;width:100%;height:auto}
+.michi-buoy-still{display:none}
+html.wb-motion-off .michi-buoy-anim{display:none}html.wb-motion-off .michi-buoy-still{display:block}
+@media (prefers-reduced-motion:reduce){.michi-buoy-anim{display:none}.michi-buoy-still{display:block}}
+/* the counter buoy: off to the side of the footer, its chain running down to the bottom of the page */
+.michi-footer-depth.has-buoy{display:none}
+.michi-buoy{position:absolute;z-index:3;width:190px;pointer-events:none}
+.michi-buoy-link{position:relative;display:block;pointer-events:auto;border-radius:40% 40% 30% 30%}
+.michi-buoy-link:focus-visible{outline:3px solid #a7f0e9;outline-offset:2px}
+.michi-buoy-art{display:block;animation:michi-buoy-tug 4.2s ease-in-out infinite}
+.michi-buoy-num{position:absolute;left:26.2%;width:46.2%;top:48.6%;height:9%;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(#0b0d10,#1a1c1f 50%,#0b0d10);border-radius:5px;box-shadow:inset 0 2px 4px #000c,inset 0 -1px 2px #fff1;color:#f4ecd6;font:700 15px/1 ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;letter-spacing:.04em;white-space:nowrap}
+.michi-buoy-chain{position:absolute;left:49.2%;width:15.4%;transform:translateX(-50%);background:url(/art/buoy-chain.webp) center top/100% auto repeat-y;pointer-events:none}
+.michi-buoy.is-narrow{width:118px}.michi-buoy.is-narrow .michi-buoy-num{font-size:11px;letter-spacing:0;border-radius:3px}
+.michi-buoy.is-tiny{width:100px}.michi-buoy.is-tiny .michi-buoy-num{font-size:9px}
+/* on narrow screens the chain runs behind the footer tentacles */
+.wb-tent-sea{z-index:4}
+@keyframes michi-buoy-tug{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+/* floating buoys at random heights: they bob and little bubbles rise from the lamp */
+.michi-float{position:absolute;z-index:2;pointer-events:none;animation:michi-float-bob 5.4s ease-in-out infinite}
+.michi-float-gap{position:relative;height:90px;pointer-events:none}
+.michi-float-bub{position:absolute;left:50%;top:2%;width:7px;height:7px;margin-left:-3px;border-radius:50%;border:1px solid #c9f6ffb3;background:radial-gradient(circle at 34% 32%,#fff 0 1px,#ffffff00 2px);opacity:0;animation:michi-float-bub 3.6s ease-in infinite}
+.michi-float-bub:nth-child(3){width:5px;height:5px;animation-delay:1.2s;animation-name:michi-float-bub-r}
+.michi-float-bub:nth-child(4){width:9px;height:9px;animation-delay:2.4s}
+@keyframes michi-float-bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
+@keyframes michi-float-bub{0%{transform:translate(0,0) scale(.5);opacity:0}15%{opacity:.9}100%{transform:translate(-6px,-74px) scale(1);opacity:0}}
+@keyframes michi-float-bub-r{0%{transform:translate(0,0) scale(.5);opacity:0}15%{opacity:.9}100%{transform:translate(7px,-62px) scale(1);opacity:0}}
+html.wb-motion-off .michi-buoy-art,html.wb-motion-off .michi-float{animation:none}
+html.wb-motion-off .michi-float-bub{display:none}
+@media (prefers-reduced-motion:reduce){.michi-buoy-art,.michi-float{animation:none}.michi-float-bub{display:none}}
