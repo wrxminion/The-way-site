@@ -1,0 +1,15 @@
+/* Follow the money tag (follow-money.js). Art and motion from the ChatGPT hover logo (Nov 5, 2026). Moves only on hover or keyboard focus. */
+.ftm-tag{display:block;box-sizing:border-box;width:calc(100% - 32px);max-width:520px;margin:36px auto 24px;border:1px solid #a4ffe259;border-radius:12px;overflow:hidden;background:#061124;text-decoration:none;color:#a4ffe2;clear:both}
+.ftm-tag .ftm-art{display:block;width:100%;height:auto}
+.ftm-tag .ftm-cap{display:block;margin-top:-6px;padding:0 16px 13px;font:600 15px/1.4 Inter,system-ui,Arial,sans-serif;color:#a4ffe2;text-align:center}
+.ftm-tag:hover,.ftm-tag:focus-visible{border-color:#a4ffe2}
+.ftm-tag:hover .ftm-cap,.ftm-tag:focus-visible .ftm-cap{color:#fff;text-decoration:underline}
+.ftm-tag:focus-visible{outline:2px solid #a4ffe2;outline-offset:4px}
+.ftm-tag:is(:hover,:focus-visible) .ftm-node{animation:ftm-blink 1.85s ease-in-out infinite}
+.ftm-tag:is(:hover,:focus-visible) .ftm-glint{animation:ftm-shimmer 1.85s .72s ease-in-out infinite}
+.ftm-tag .ftm-n2{animation-delay:120ms!important}.ftm-tag .ftm-n3{animation-delay:240ms!important}.ftm-tag .ftm-n4{animation-delay:360ms!important}
+.ftm-tag .ftm-n5{animation-delay:480ms!important}.ftm-tag .ftm-n6{animation-delay:600ms!important}.ftm-tag .ftm-n7{animation-delay:720ms!important}
+@keyframes ftm-blink{0%,30%,100%{opacity:1}8%{opacity:.4}17%{stroke:#ecfff9;filter:url(#ftm-glow)}}
+@keyframes ftm-shimmer{0%,35%,100%{opacity:.55}15%{opacity:1;stroke-width:4}}
+@media (prefers-reduced-motion:reduce){.ftm-tag .ftm-node,.ftm-tag .ftm-glint{animation:none!important}}
+@media print{.ftm-tag{display:none}}

@@ -828,6 +828,13 @@
     followScript.defer = true;
     document.head.appendChild(followScript);
   }
+  // "Follow the money" tag at the end of the page, linked to the matching Money Trail page (the script decides; see /follow-money.js)
+  if (!inMembers && !/^\/money-trail\//.test(path) && !document.querySelector('script[src^="/follow-money.js"]')) {
+    var ftmScript = document.createElement('script');
+    ftmScript.src = '/follow-money.js?v=1';
+    ftmScript.defer = true;
+    document.head.appendChild(ftmScript);
+  }
   // Review-status label on pages the AI wrote (the script decides which pages; see /ai-label.js)
   if (!inMembers && (path.indexOf('/') === 0 || path.indexOf('/research/') === 0) && !document.querySelector('script[src^="/ai-label.js"]')) {
     var labelScript = document.createElement('script');
