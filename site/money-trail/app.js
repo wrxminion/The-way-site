@@ -226,7 +226,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   const TEXT = {
     orgs: { title: 'The organization tracker', sub: n => n + ' organizations named in this data', lead: 'Every committee, company, union, church and other group named in this archive. Names are as reported; two rows with the same name are not proven to be the same legal group. Groups with more lines in the Money web are listed first.' },
     people: { title: 'The person tracker', sub: n => n + ' people named in this data', lead: 'People named in this archive: candidates named in spending summaries, and donors that filings list by a person’s name (last, first). Names are as reported and the person’s identity is not verified. Being listed does not imply wrongdoing.' },
-    departments: { title: 'The department tracker', sub: n => n + ' government departments and agencies in this data', lead: 'Government departments, agencies and public bodies named in this archive. Department budgets are not in this data yet, so this list is short. It shows only the agencies our records already name.' }
+    departments: { title: 'The department tracker', sub: n => n + ' government departments and agencies in this data', lead: 'Government departments, agencies and public bodies that our money records name. Their budgets are above.' }
   };
   const el = (tag, cls, text) => { const d = document.createElement(tag); if (cls) d.className = cls; if (text != null) d.textContent = text; return d; };
   const query = { orgs: '', people: '', departments: '' };

@@ -1,0 +1,41 @@
+/* D201 (Nov 2026): department budgets, where federal money comes from, one law followed. Biggest number first. */
+.bud-area{padding:20px 20px 0;display:flex;flex-direction:column;gap:18px}
+.bud-block{border:1px solid var(--edge);border-radius:14px;background:#0a1d29;padding:16px 18px}
+.bud-h{font:normal 24px/1.2 Georgia,serif;margin:0 0 8px;color:#eefaf6}
+.bud-lead{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 14px;max-width:72ch}
+.bud-list{display:flex;flex-direction:column;gap:8px}
+.bud-row{border:1px solid #234757;border-radius:12px;background:#0c202dda;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.bud-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.bud-big{font:800 22px/1.1 system-ui,sans-serif;color:var(--mint)}
+.bud-mid{font:800 17px/1.2 system-ui,sans-serif;color:var(--mint);min-width:9.5em}
+.bud-name{font-size:15px;color:#eefaf6;overflow-wrap:anywhere}
+.bud-top span{font-size:13px;color:#d7ebe9;overflow-wrap:anywhere}
+.bud-small{font-size:12px;color:var(--muted);line-height:1.45}
+.bud-bar{display:block;height:6px;border-radius:99px;background:#163240;overflow:hidden}
+.bud-bar i{display:block;height:100%;background:linear-gradient(90deg,#3ca7a0,#6be3c9);border-radius:99px}
+.bud-act{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.bud-src{color:var(--mint);font-size:13px;font-weight:700}
+.bud-years summary,.bud-sub summary{cursor:pointer;color:#cfe7e4;font-size:13px;font-weight:700}
+.bud-years ul{margin:6px 0 0;padding-left:18px;font-size:12px;color:var(--muted);line-height:1.6}
+.bud-more{margin-top:10px;font:inherit;font-size:13px;font-weight:700;color:var(--text);background:transparent;border:1px solid var(--edge);border-radius:999px;padding:8px 14px;cursor:pointer}
+.bud-more:hover,.bud-more:focus-visible{outline:none;box-shadow:var(--ring)}
+.bud-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:4px 0 12px}
+.bud-kpi{border:1px solid #234757;border-radius:12px;padding:12px;background:#0c202d}
+.bud-kpi b{display:block;font:800 clamp(19px,1.7vw,24px)/1.1 system-ui,sans-serif;color:var(--mint)}
+.bud-kpi span{display:block;margin-top:4px;font-size:12px;color:var(--muted)}
+.bud-in{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.bud-in li{display:flex;flex-direction:column;gap:5px}
+.bud-sub{border-top:1px solid #1e3c4a;padding-top:10px;margin-top:10px}
+.bud-sub .bud-in{margin-top:10px}
+.bud-debt{font-size:13px;color:#d7ebe9;line-height:1.6;margin:14px 0 0}
+.bud-note{font-size:11px;color:var(--faint);line-height:1.6;margin:12px 0 0}
+.bud-note a{color:var(--mint)}
+.bud-law .bud-act{margin:2px 0 6px}
+@media (max-width:700px){
+ .bud-area{padding:13px 13px 0}
+ .bud-block{padding:13px}
+ .bud-kpis{grid-template-columns:minmax(0,1fr)}
+ .bud-big{font-size:20px}
+ .bud-mid{min-width:0}
+}
+.bud-votes{columns:3 14em;margin:10px 0 0;padding-left:18px;font-size:12px;color:var(--muted);line-height:1.55}
