@@ -12,13 +12,15 @@
     var mark = document.createElement('img');
     mark.src = '/the-way-logo-76.png'; mark.alt = ''; mark.width = 28; mark.height = 28; mark.className = 'michi-footer-mark';
     about.appendChild(mark);
-    // Research moved here from the top bar (Frank, Nov 6 2026), named Research methods
+    // Research moved here from the top bar (Frank, Nov 6 2026), named Research methods.
+    // Research methods and Methodology are one page and one link now; the site methods live at /research/#methods (Frank, Nov 6 2026).
     var research = document.createElement('a');
     research.href = '/research/';
     research.textContent = 'Research methods';
-    var methods = document.createElement('a');
-    methods.href = '/development/methods/';
-    methods.textContent = 'Methodology';
+    // The teacher, parent and kids material has its own link (Frank, Nov 6 2026)
+    var teach = document.createElement('a');
+    teach.href = '/teacher-parent.html';
+    teach.textContent = 'Teachers and kids';
     var art = document.createElement('a');
     art.href = '/members/submit-art.html';
     art.textContent = 'Submit your art';
@@ -27,7 +29,7 @@
     // All four links on one line, the logo on its own line under them (Frank, Nov 6 2026)
     var links = document.createElement('span');
     links.className = 'michi-footer-links';
-    links.appendChild(research); links.appendChild(methods); links.appendChild(art); links.appendChild(legal);
+    links.appendChild(research); links.appendChild(teach); links.appendChild(art); links.appendChild(legal);
     var artBox = document.createElement('span');
     artBox.className = 'michi-footer-art';
     artBox.appendChild(about);

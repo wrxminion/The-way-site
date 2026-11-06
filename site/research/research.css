@@ -22,3 +22,9 @@ button.copy{background:#0f3d57;color:var(--foam);border:1px solid var(--line);bo
 /* banner: taller on wide screens so the magnifying glass is not cut off at the top */
 @media (min-width:761px){body .page-banner{height:clamp(150px,16vw,260px)}body .page-banner img{object-position:50% 30%}}
 .page-banner + .wrap{padding-top:40px}
+
+/* Site methods: the former /development/methods/ page, merged here (Frank, Nov 6 2026) */
+.methods{scroll-margin-top:80px}
+.methods h3{margin:1.4em 0 .4em;font:600 20px Georgia,serif}
+.methods p,.methods li{max-width:70ch}
+.methods table{margin:6px 0 10px}

@@ -110,3 +110,7 @@ body.mt-webfull .detail-close{display:block}
  body.mt-webfull .web-full-title{top:auto;bottom:14px;left:14px;right:14px;font-size:13px;white-space:normal}
  body.mt-webfull .web-card:not([hidden]){left:12px;right:12px;bottom:12px;top:auto;max-width:none}
 }
+/* D192: the name of what is selected, bold, at the very top of the inspector */
+.detail-panel h2.mt-selected{font:bold 22px/1.25 Georgia,serif;margin:0 0 10px;color:#f4fffb;overflow-wrap:anywhere}
+.mt-link-with-art a{display:inline-flex;align-items:center;gap:10px}
+.mt-link-art{width:40px;height:44px;border-radius:8px;object-fit:cover;flex:none;border:1px solid #2f6b70;background:#06161d}
