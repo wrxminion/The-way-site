@@ -73,13 +73,13 @@ function loadState(abbr,withGeo){
   const c=cache[abbr]||(cache[abbr]={});
   const jobs=[];
   // Colorado's older map has no config.json: fall back to its name and the sample-ballot link in ballot.json
-  if(!c.base)c.base=Promise.all([(stateInfo(abbr).noConfig?Promise.resolve(null):getJSON(dir+'config.json').catch(()=>null)),getJSON(dir+'officials.json').catch(()=>null),getJSON(dir+'candidates.json').catch(()=>null),getJSON(dir+'ballot.json').catch(()=>null)])
-    .then(([config,officials,candidates,ballot])=>{
+  if(!c.base)c.base=Promise.all([(stateInfo(abbr).noConfig?Promise.resolve(null):getJSON(dir+'config.json').catch(()=>null)),getJSON(dir+'officials.json').catch(()=>null),getJSON(dir+'candidates.json').catch(()=>null),getJSON(dir+'ballot.json').catch(()=>null),getJSON(dir+'guide.json').catch(()=>null)])
+    .then(([config,officials,candidates,ballot,guide])=>{
       if(!config){
         const l=ballot&&ballot.links&&ballot.links.sampleBallot;
         config={abbr,name:stateInfo(abbr).name,atLarge:false,sampleBallot:l?{url:l}:null};
       }
-      return {config,officials,candidates};
+      return {config,officials,candidates,guide};
     });
   jobs.push(c.base);
   if(withGeo&&!c.geo)c.geo=Promise.all(Object.keys(CHAMBERS).map(k=>getJSON(dir+CHAMBERS[k].file).catch(()=>null)))
@@ -90,34 +90,54 @@ function loadState(abbr,withGeo){
 
 /* ---------- rendering ---------- */
 function partyText(p){return p?' ('+p+')':'';}
-function holderNode(holder){
+/* A person's name: bold, and a link to our voter-guide page for them if we have one, else to their official page. */
+function lastName(n){return String(n).replace(/[.,]/g,'').trim().split(/\s+/).pop().toLowerCase();}
+function guideHref(S,raceKey,name){
+  const g=S&&S.guide;if(!g||!g.candidates||!g.base)return null;
+  let rel=g.candidates[raceKey+'|'+name];
+  if(!rel){ // the same person is often spelled a little differently (middle initial, nickname)
+    const ln=lastName(name),fi=String(name).trim()[0].toLowerCase();
+    for(const k of Object.keys(g.candidates)){
+      if(!k.startsWith(raceKey+'|'))continue;
+      const other=k.slice(raceKey.length+1);
+      if(lastName(other)===ln&&String(other).trim()[0].toLowerCase()===fi){rel=g.candidates[k];break;}
+    }
+  }
+  return rel?g.base+rel:null;
+}
+function nameNode(name,S,raceKey,officialUrl){
+  const ours=guideHref(S,raceKey,name);
+  if(ours)return el('a',{cls:'nm',href:ours,text:name});
+  if(officialUrl&&/^https?:\/\//.test(officialUrl))return el('a',{cls:'nm',href:officialUrl,target:'_blank',rel:'noopener',text:name});
+  return el('b',{cls:'nm',text:name});
+}
+function holderNode(holder,S,raceKey){
   const d=el('div',{cls:'detail'});
   if(Array.isArray(holder)&&holder.length){
     d.append('Held today by ');
-    holder.forEach((h,i)=>{if(i)d.append(i===holder.length-1?' and ':', ');d.append(el('b',{text:h.name}),partyText(h.party));});
+    holder.forEach((h,i)=>{if(i)d.append(i===holder.length-1?' and ':', ');d.append(nameNode(h.name,S,raceKey,h.url),partyText(h.party));});
     d.append('.');
   }else if(holder&&!Array.isArray(holder)){
-    d.append('Held today by ',el('b',{text:holder.name}),partyText(holder.party));
+    d.append('Held today by ',nameNode(holder.name,S,raceKey,holder.url),partyText(holder.party));
     if(holder.termEnds)d.append(', term ends '+new Date(holder.termEnds+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}));
     d.append('.');
-    if(holder.url&&/^https?:\/\//.test(holder.url)){d.append(' ');d.append(el('a',{href:holder.url,target:'_blank',rel:'noopener',text:'Official page ↗'}));}
   }else{
     d.append('Our source lists no current member for this seat. It may be vacant or newly filled.');
   }
   return d;
 }
-function candsNode(list){
+function candsNode(list,S,raceKey){
   if(!list||!list.length)return null;
   const ul=el('ul',{cls:'cands'});
-  for(const c of list)ul.append(el('li',{},[c.name,el('span',{text:' · '+c.party}),c.writeIn?el('span',{cls:'wi',text:' · write-in'}):null]));
+  for(const c of list)ul.append(el('li',{},[nameNode(c.name,S,raceKey,null),el('span',{text:' · '+c.party}),c.writeIn?el('span',{cls:'wi',text:' · write-in'}):null]));
   return el('div',{},[el('div',{cls:'note',text:'On the Nov 3, 2026 ballot:'}),ul]);
 }
 function seatCard(S,chamber,key,extra){
   const ch=CHAMBERS[chamber],cfg=S.config||{},o=S.officials||{},cands=S.candidates&&S.candidates.races||{};
   const title=chamber==='us_house'&&cfg.atLarge?'At-large district':ch.noun+' '+key;
   const holder=(o[chamber]||{})[key];
-  const body=[el('div',{cls:'kind',text:ch.label}),el('div',{cls:'value',text:title}),holderNode(holder===undefined?null:holder)];
-  const cn=candsNode(cands[chamber+':'+key]);
+  const body=[el('div',{cls:'kind',text:ch.label}),el('div',{cls:'value',text:title}),holderNode(holder===undefined?null:holder,S,chamber+':'+key)];
+  const cn=candsNode(cands[chamber+':'+key],S,chamber+':'+key);
   if(cn)body.push(cn);
   if(extra)body.push(el('div',{cls:'note',text:extra}));
   return el('div',{cls:'result'},body);
@@ -127,7 +147,7 @@ function senateCard(S){
   if(!o.us_senate||!o.us_senate.length)return null;
   const d=el('div',{cls:'detail'});
   d.append('Held today by ');
-  o.us_senate.forEach((s,i)=>{if(i)d.append('; ');d.append(el('b',{text:s.name}),partyText(s.party));});
+  o.us_senate.forEach((s,i)=>{if(i)d.append('; ');d.append(nameNode(s.name,S,'us_senate',s.url),partyText(s.party));});
   d.append('. Both represent all of '+S.config.name+'.');
   return el('div',{cls:'result'},[el('div',{cls:'kind',text:'U.S. Senate'}),el('div',{cls:'value',text:'Statewide'}),d]);
 }

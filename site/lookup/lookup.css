@@ -19,3 +19,9 @@
 .lr-list a{word-break:break-word}
 .lr-meta{color:#93aeb6}
 .lr-quote{color:#b6cdd3;font-style:italic}
+/* names: bold, and links when we have a page for the person */
+.nm{font-weight:800;color:#fff}
+a.nm{color:#aaf0e8;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a.nm:hover,a.nm:focus-visible{color:#fff;outline:none;text-decoration-thickness:2px}
+.cands li .nm{font-size:14.5px}
+.cands li{margin-bottom:2px}
