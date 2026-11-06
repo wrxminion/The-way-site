@@ -11,7 +11,7 @@
   // Floating buoys are off for now (Frank, Nov 6 2026: far too many on the front page). To bring them back, list pages here, e.g. ['/teacher-parent.html'].
   var FLOAT_PAGES = [];
   var WIDE = 1100;
-  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/buoys.css?v=1'; document.head.appendChild(css);
+  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/buoys.css?v=2'; document.head.appendChild(css);
   function el(tag, cls) { var e = document.createElement(tag); if (cls) e.className = cls; return e; }
   function img(src, cls) { var i = el('img', 'michi-buoy-img ' + cls); i.src = src; i.alt = ''; i.decoding = 'async'; i.setAttribute('loading', 'lazy'); return i; }
   function docTop(e) { return e.getBoundingClientRect().top + window.pageYOffset; }
@@ -23,7 +23,7 @@
     var n = strong.textContent, nav = depth.closest('.michi-footer-nav') || depth.parentNode;
     var wrap = el('div', 'michi-buoy'), a = el('a', 'michi-buoy-link'), art = el('span', 'michi-buoy-art'), num = el('span', 'michi-buoy-num'), chain = el('span', 'michi-buoy-chain');
     a.href = depth.getAttribute('href') || '/news/'; a.setAttribute('aria-label', 'Depth: ' + n + ' articles saved. Open the news archive.');
-    var anim = img('/art/buoy-counter.webp', 'michi-buoy-anim'), still = img('/art/buoy-counter-still.webp', 'michi-buoy-still');
+    var anim = img('/art/buoy-counter.webp?v=2', 'michi-buoy-anim'), still = img('/art/buoy-counter-still.webp?v=2', 'michi-buoy-still');
     art.appendChild(anim); art.appendChild(still);
     num.textContent = n; num.setAttribute('aria-hidden', 'true'); art.appendChild(num);
     chain.setAttribute('aria-hidden', 'true');
