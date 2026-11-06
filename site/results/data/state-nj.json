@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-06T16:03:19Z",
+ "updated_at": "2026-11-06T16:11:43Z",
  "certified": false,
  "contests": [
   {
@@ -23,35 +23,35 @@
      "name": "Cory Booker",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1675770
+     "votes": 1675872
     },
     {
      "id": "murphy",
      "name": "Justin Murphy",
      "party": "REP",
      "party_code": "R",
-     "votes": 917576
+     "votes": 917709
     },
     {
      "id": "fernandez",
      "name": "Veronica Fernandez",
      "party": "N-C",
      "party_code": "O",
-     "votes": 44676
+     "votes": 44677
     },
     {
      "id": "kuniansky",
      "name": "Joanne KUNIANSKY",
      "party": "SOC",
      "party_code": "O",
-     "votes": 23171
+     "votes": 23174
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 6047
+     "votes": 6034
     },
     {
      "id": "choice",
@@ -65,7 +65,7 @@
      "name": "Edwardo Castillo",
      "party": null,
      "party_code": "O",
-     "votes": 4
+     "votes": 7
     },
     {
      "id": "tabor",
@@ -89,6 +89,13 @@
      "votes": 2
     },
     {
+     "id": "benavides",
+     "name": "Lily Benavides",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
      "id": "rajab",
      "name": "Hind Rajab",
      "party": null,
@@ -98,6 +105,13 @@
     {
      "id": "piker",
      "name": "Hasan Piker",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "brake",
+     "name": "Andrew Brake",
      "party": null,
      "party_code": "O",
      "votes": 2
@@ -203,13 +217,6 @@
     {
      "id": "frost",
      "name": "Scott Frost",
-     "party": null,
-     "party_code": "O",
-     "votes": 1
-    },
-    {
-     "id": "benavides",
-     "name": "Lily Benavides",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -404,15 +411,57 @@
      "votes": 1
     },
     {
-     "id": "castille",
-     "name": "Eduardo Castille",
+     "id": "rickly",
+     "name": "Geoff Rickly",
      "party": null,
      "party_code": "O",
      "votes": 1
     },
     {
-     "id": "rickly",
-     "name": "Geoff Rickly",
+     "id": "piatt",
+     "name": "Nova Piatt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "smith",
+     "name": "Edward Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "blue",
+     "name": "Johnathan Porter AKA Blue",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "dan",
+     "name": "AI Dan",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jass",
+     "name": "Hugh Jass",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "pustizzi",
+     "name": "Evan Pustizzi",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "wilford",
+     "name": "Jeremy Wilford",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -440,7 +489,7 @@
     }
    ],
    "precincts": {
-    "reporting": 5256,
+    "reporting": 5257,
     "total": 5399
    },
    "counties": [
@@ -526,18 +575,27 @@
     {
      "county": "Cumberland",
      "precincts": {
-      "reporting": 91,
+      "reporting": 92,
       "total": 106
      },
      "votes": {
-      "booker": 21394,
-      "murphy": 15538,
-      "kuniansky": 250,
-      "fernandez": 555,
-      "write-in": 27,
-      "castille": 1,
+      "booker": 21496,
+      "murphy": 15671,
+      "kuniansky": 253,
+      "fernandez": 556,
+      "write-in": 14,
+      "castillo": 3,
       "riggins": 0,
-      "rickly": 1
+      "rickly": 1,
+      "benavides": 1,
+      "piatt": 1,
+      "smith": 1,
+      "blue": 1,
+      "dan": 1,
+      "jass": 1,
+      "brake": 2,
+      "pustizzi": 1,
+      "wilford": 1
      }
     },
     {
@@ -36988,42 +37046,42 @@
      "name": "Cory BOOKER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 21394
+     "votes": 21496
     },
     {
      "id": "justin-murphy",
      "name": "Justin MURPHY",
      "party": "REP",
      "party_code": "R",
-     "votes": 15538
+     "votes": 15671
     },
     {
      "id": "joanne-kuniansky",
      "name": "Joanne KUNIANSKY",
      "party": "SOC",
      "party_code": "O",
-     "votes": 250
+     "votes": 253
     },
     {
      "id": "veronica-fernandez",
      "name": "Veronica FERNANDEZ",
      "party": null,
      "party_code": "O",
-     "votes": 555
+     "votes": 556
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 27
+     "votes": 14
     },
     {
-     "id": "eduardo-castille",
-     "name": "Eduardo Castille",
+     "id": "eduardo-castillo",
+     "name": "Eduardo Castillo",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 3
     },
     {
      "id": "shawn-riggins",
@@ -37038,10 +37096,73 @@
      "party": null,
      "party_code": "O",
      "votes": 1
+    },
+    {
+     "id": "lily-benavides",
+     "name": "Lily Benavides",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "nova-piatt",
+     "name": "Nova Piatt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "edward-smith",
+     "name": "Edward Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "johnathan-porter-aka-blue",
+     "name": "Johnathan Porter AKA Blue",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ai-dan",
+     "name": "AI Dan",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "hugh-jass",
+     "name": "Hugh Jass",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "andrew-brake",
+     "name": "Andrew Brake",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "evan-pustizzi",
+     "name": "Evan Pustizzi",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jeremy-wilford",
+     "name": "Jeremy Wilford",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
-    "reporting": 91,
+    "reporting": 92,
     "total": 106
    },
    "category": "Federal",
@@ -37055,7 +37176,7 @@
    "state": "nj",
    "county": "Cumberland",
    "office": "United States House of Representatives",
-   "district": 2,
+   "district": null,
    "title": "United States House of Representatives",
    "vote_for": 1,
    "choices": [
@@ -37064,39 +37185,67 @@
      "name": "Zack MULLOCK",
      "party": "DEM",
      "party_code": "D",
-     "votes": 21207
+     "votes": 21307
     },
     {
      "id": "jeff-van-drew",
      "name": "Jeff VAN DREW",
      "party": "REP",
      "party_code": "R",
-     "votes": 16143
+     "votes": 16282
     },
     {
      "id": "ramon-mora-jr",
      "name": "Ramon MORA, Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 472
+     "votes": 473
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 13
+     "votes": 6
     },
     {
      "id": "tim-alexander",
      "name": "Tim Alexander",
      "party": null,
      "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "andres-jinete",
+     "name": "Andres Jinete",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "layla-narzikulov",
+     "name": "Layla Narzikulov",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "joe-kent",
+     "name": "Joe Kent",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jenna-weber",
+     "name": "Jenna Weber",
+     "party": null,
+     "party_code": "O",
      "votes": 1
     }
    ],
    "precincts": {
-    "reporting": 91,
+    "reporting": 92,
     "total": 106
    },
    "category": "Federal",
@@ -37119,21 +37268,21 @@
      "name": "Robert A. AUSTINO",
      "party": "DEM",
      "party_code": "D",
-     "votes": 20563
+     "votes": 20656
     },
     {
      "id": "michael-donato",
      "name": "Michael DONATO",
      "party": "REP",
      "party_code": "R",
-     "votes": 17056
+     "votes": 17201
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 18
+     "votes": 12
     },
     {
      "id": "edmond-grennon-sr",
@@ -37148,10 +37297,80 @@
      "party": null,
      "party_code": "O",
      "votes": 1
+    },
+    {
+     "id": "rick-kott",
+     "name": "Rick Kott",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jorge-baretto",
+     "name": "Jorge Baretto",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "clancy-wiggum",
+     "name": "Clancy Wiggum",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "angel-lopez",
+     "name": "Angel Lopez",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "matt-browne",
+     "name": "Matt Browne",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "randall-v-wilhelm",
+     "name": "Randall V Wilhelm",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "gregory-kears-jr",
+     "name": "Gregory Kears Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kevin-frost",
+     "name": "Kevin Frost",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "danielle-scull",
+     "name": "Danielle Scull",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "randall-diedrichson",
+     "name": "Randall Diedrichson",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
     }
    ],
    "precincts": {
-    "reporting": 91,
+    "reporting": 92,
     "total": 106
    },
    "category": "County",
@@ -37174,49 +37393,49 @@
      "name": "Larae H. SMITH",
      "party": "DEM",
      "party_code": "D",
-     "votes": 20684
+     "votes": 20779
     },
     {
      "id": "joseph-pepitone",
      "name": "Joseph PEPITONE",
      "party": "DEM",
      "party_code": "D",
-     "votes": 21111
+     "votes": 21205
     },
     {
      "id": "ronald-j-franceschini-jr",
      "name": "Ronald J. FRANCESCHINI, Jr.",
      "party": "DEM",
      "party_code": "D",
-     "votes": 20895
+     "votes": 20988
     },
     {
      "id": "sandra-j-taylor",
      "name": "Sandra J. TAYLOR",
      "party": "REP",
      "party_code": "R",
-     "votes": 16305
+     "votes": 16447
     },
     {
      "id": "arthur-l-marchand-ii",
      "name": "Arthur L. MARCHAND II",
      "party": "REP",
      "party_code": "R",
-     "votes": 16094
+     "votes": 16237
     },
     {
      "id": "james-r-sauro",
      "name": "James R. SAURO",
      "party": "REP",
      "party_code": "R",
-     "votes": 15890
+     "votes": 16025
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 59
+     "votes": 28
     },
     {
      "id": "tracey-wells-huggins",
@@ -37266,10 +37485,122 @@
      "party": null,
      "party_code": "O",
      "votes": 1
+    },
+    {
+     "id": "neva-warren",
+     "name": "Neva Warren",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "cooper-dejean",
+     "name": "Cooper DeJean",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "dr-darlene-bryant",
+     "name": "Dr. Darlene Bryant",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jerald-l-bryant",
+     "name": "Jerald L. Bryant",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "tom-jones",
+     "name": "Tom Jones",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "sara-reed",
+     "name": "Sara Reed",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "sandra-lokuta",
+     "name": "Sandra Lokuta",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "michael-santiago",
+     "name": "Michael Santiago",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "rudolph-rossi-jr",
+     "name": "Rudolph Rossi Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "zac-landicini",
+     "name": "Zac Landicini",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "matt-williams",
+     "name": "Matt Williams",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "ryan-e-thom",
+     "name": "Ryan E Thom",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "randall-diedrichson",
+     "name": "Randall Diedrichson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "taylor-heaney",
+     "name": "Taylor Heaney",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "rita-springer",
+     "name": "Rita Springer",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "evelyn-groover",
+     "name": "Evelyn Groover",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
-    "reporting": 91,
+    "reporting": 92,
     "total": 106
    },
    "category": "County",
@@ -37306,7 +37637,21 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 4
+     "votes": 2
+    },
+    {
+     "id": "mary-peterson",
+     "name": "Mary Peterson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "tori-myrick",
+     "name": "Tori Myrick",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -37333,28 +37678,28 @@
      "name": "Edward BETHEA",
      "party": null,
      "party_code": "O",
-     "votes": 1521
+     "votes": 1522
     },
     {
      "id": "rosemary-dequinzio",
      "name": "Rosemary DeQUINZIO",
      "party": null,
      "party_code": "O",
-     "votes": 1622
+     "votes": 1623
     },
     {
      "id": "angelia-edwards",
      "name": "Angelia EDWARDS",
      "party": null,
      "party_code": "O",
-     "votes": 1645
+     "votes": 1646
     },
     {
      "id": "david-gonzalez",
      "name": "David GONZALEZ",
      "party": null,
      "party_code": "O",
-     "votes": 1783
+     "votes": 1784
     },
     {
      "id": "marian-king",
@@ -37382,21 +37727,21 @@
      "name": "William A. MATIAS",
      "party": null,
      "party_code": "O",
-     "votes": 1079
+     "votes": 1080
     },
     {
      "id": "kenny-smith-bey-jr",
      "name": "Kenny SMITH-BEY, Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 706
+     "votes": 707
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 19
+     "votes": 6
     },
     {
      "id": "james-b-begley",
@@ -37499,14 +37844,14 @@
      "name": "Fletcher JAMISON",
      "party": "DEM",
      "party_code": "D",
-     "votes": 496
+     "votes": 601
     },
     {
      "id": "ronald-l-sutton",
      "name": "Ronald L. SUTTON",
      "party": "REP",
      "party_code": "R",
-     "votes": 473
+     "votes": 603
     },
     {
      "id": "write-in",
@@ -37538,7 +37883,7 @@
     }
    ],
    "precincts": {
-    "reporting": 3,
+    "reporting": 4,
     "total": 5
    },
    "category": "Municipal",
@@ -37575,7 +37920,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 28
+     "votes": 23
     },
     {
      "id": "robert-montgomery",
@@ -37608,6 +37953,69 @@
     {
      "id": "bruce-t-peterson",
      "name": "Bruce T. Peterson",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "robert-h-biden",
+     "name": "Robert H. Biden",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "rodney-yamasaki-sr",
+     "name": "Rodney Yamasaki Sr",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "gregory-nichols",
+     "name": "Gregory Nichols",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kimberly-carter-nichols",
+     "name": "Kimberly Carter-Nichols",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "frank-manno",
+     "name": "Frank Manno",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "mark-cifaloglio",
+     "name": "Mark Cifaloglio",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "michael-lesosky",
+     "name": "Michael Lesosky",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "elizabeth-simpson",
+     "name": "Elizabeth Simpson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "alex-becker",
+     "name": "Alex Becker",
      "party": null,
      "party_code": "O",
      "votes": 0
@@ -37651,28 +38059,84 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 252
+     "votes": 243
     },
     {
      "id": "jeanna-weber",
      "name": "Jeanna Weber",
      "party": null,
      "party_code": "O",
-     "votes": 6
+     "votes": 111
     },
     {
      "id": "jeremy-wilford",
      "name": "Jeremy Wilford",
      "party": null,
      "party_code": "O",
-     "votes": 8
+     "votes": 120
     },
     {
      "id": "mark-harris-sr",
      "name": "Mark Harris Sr.",
      "party": null,
      "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "gregory-nichols",
+     "name": "Gregory Nichols",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "kimberly-carter-nichols",
+     "name": "Kimberly Carter-Nichols",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "gena-webber",
+     "name": "Gena Webber",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jeananna-butler",
+     "name": "Jeananna Butler",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "jonathan-d-springer",
+     "name": "Jonathan D Springer",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "kurt-sparks-jr",
+     "name": "Kurt Sparks Jr",
+     "party": null,
+     "party_code": "O",
      "votes": 1
+    },
+    {
+     "id": "matthew-chance",
+     "name": "Matthew Chance",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "stephen-d-garrison-jr",
+     "name": "Stephen D Garrison Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
     }
    ],
    "precincts": {
@@ -37740,7 +38204,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 9
+     "votes": 4
     },
     {
      "id": "vernon-pierce",
@@ -37748,6 +38212,55 @@
      "party": null,
      "party_code": "O",
      "votes": 0
+    },
+    {
+     "id": "david-smith",
+     "name": "David Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "todd-butcher",
+     "name": "Todd Butcher",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jim-ohara",
+     "name": "Jim Ohara",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jeremi-colle",
+     "name": "Jeremi Colle",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "david-newkirk",
+     "name": "David Newkirk",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "russ-sheppard",
+     "name": "Russ Sheppard",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "leslie-meehan",
+     "name": "Leslie Meehan",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -37781,7 +38294,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 11
+     "votes": 9
     },
     {
      "id": "kathleen-brandt",
@@ -37796,6 +38309,27 @@
      "party": null,
      "party_code": "O",
      "votes": 3
+    },
+    {
+     "id": "keith-shepperd",
+     "name": "Keith Shepperd",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jaclyn-lacerra",
+     "name": "Jaclyn Lacerra",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "bill-vanpelt",
+     "name": "Bill Vanpelt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -37843,7 +38377,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 19
+     "votes": 12
     },
     {
      "id": "j-r-carman",
@@ -37869,6 +38403,48 @@
     {
      "id": "jocelyn-valentine",
      "name": "Jocelyn Valentine",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "susan-a-taylor",
+     "name": "Susan A Taylor",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "trisha-holliday",
+     "name": "Trisha Holliday",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "mirella-piccioni",
+     "name": "Mirella Piccioni",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "casey-budd",
+     "name": "Casey Budd",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ben-watson",
+     "name": "Ben Watson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "charles-haaf",
+     "name": "Charles Haaf",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -37905,14 +38481,63 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 16
+     "votes": 12
     },
     {
      "id": "bruce-conti-sr",
      "name": "Bruce Conti Sr",
      "party": null,
      "party_code": "O",
-     "votes": 3
+     "votes": 6
+    },
+    {
+     "id": "john-rosely",
+     "name": "John Rosely",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "gabe-sherman",
+     "name": "Gabe Sherman",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "samantha-corley",
+     "name": "Samantha Corley",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "charlie-woody",
+     "name": "Charlie Woody",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "michele-meddings",
+     "name": "Michele Meddings",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "miilo-hannah",
+     "name": "Miilo Hannah",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kenneth-colon",
+     "name": "Kenneth Colon",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -37946,7 +38571,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 15
+     "votes": 14
     },
     {
      "id": "steven-chew",
@@ -37974,7 +38599,7 @@
      "name": "Jeffrey J. Rascone",
      "party": null,
      "party_code": "O",
-     "votes": 2
+     "votes": 8
     },
     {
      "id": "james-ferrar",
@@ -37986,6 +38611,13 @@
     {
      "id": "james-forest",
      "name": "James Forest",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "slade-bishop",
+     "name": "Slade Bishop",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -38030,6 +38662,20 @@
      "party": null,
      "party_code": "O",
      "votes": 2
+    },
+    {
+     "id": "mike-bonham",
+     "name": "Mike Bonham",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "andrea-fowler",
+     "name": "Andrea Fowler",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -38063,7 +38709,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 6
+     "votes": 5
     },
     {
      "id": "edwin-rupert",
@@ -38082,6 +38728,13 @@
     {
      "id": "debra-homan",
      "name": "Debra Homan",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "sean-stone",
+     "name": "Sean Stone",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -38118,7 +38771,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 51
+     "votes": 37
     },
     {
      "id": "emily-henry",
@@ -38172,6 +38825,188 @@
     {
      "id": "teresa-mason",
      "name": "Teresa Mason",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kevin-austin",
+     "name": "Kevin Austin",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "sean-hartzell",
+     "name": "Sean Hartzell",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "connor-mcdavid",
+     "name": "Connor McDavid",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "nick-walker",
+     "name": "Nick Walker",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "joseph-l-t-lee-jr",
+     "name": "Joseph L.T. Lee Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "keith-shepperd",
+     "name": "Keith Shepperd",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "ernst-d-thrbak",
+     "name": "Ernst D Thrbak",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "morgan-dubose",
+     "name": "Morgan Dubose",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "jack-smith",
+     "name": "Jack Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "david-price",
+     "name": "David Price",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "brian-glen",
+     "name": "Brian Glen",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ben-green",
+     "name": "Ben Green",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "faye-lawson",
+     "name": "Faye Lawson",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "allen-arnold",
+     "name": "Allen Arnold",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "erik-pappa",
+     "name": "Erik Pappa",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "wyatt-briggs",
+     "name": "Wyatt Briggs",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "louis-bramante",
+     "name": "Louis Bramante",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ron-overstreet",
+     "name": "Ron Overstreet",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "patricia-sanders-harris",
+     "name": "Patricia Sanders Harris",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "michael-blandino",
+     "name": "Michael Blandino",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "viola-lopez",
+     "name": "Viola Lopez",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "tyler-cain",
+     "name": "Tyler Cain",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "mary-dellomo",
+     "name": "Mary Dellomo",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "kevin-burke",
+     "name": "Kevin Burke",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "george-sherman",
+     "name": "George Sherman",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "joseph-e-agabiti",
+     "name": "Joseph E. Agabiti",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -38243,7 +39078,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 24
+     "votes": 9
     },
     {
      "id": "james-peterson",
@@ -38326,28 +39161,28 @@
      "name": "Kathryn J. HOOVER",
      "party": null,
      "party_code": "O",
-     "votes": 714
+     "votes": 881
     },
     {
      "id": "alanamarie-gagliardi",
      "name": "Alanamarie GAGLIARDI",
      "party": null,
      "party_code": "O",
-     "votes": 685
+     "votes": 853
     },
     {
      "id": "stacy-g-wilson",
      "name": "Stacy G. WILSON",
      "party": null,
      "party_code": "O",
-     "votes": 739
+     "votes": 909
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 30
+     "votes": 11
     },
     {
      "id": "david-kinsey",
@@ -38369,10 +39204,52 @@
      "party": null,
      "party_code": "O",
      "votes": 1
+    },
+    {
+     "id": "harrison-moore",
+     "name": "Harrison Moore",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ron-hundt",
+     "name": "Ron Hundt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "glen-robbins",
+     "name": "Glen Robbins",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "janet-campbell",
+     "name": "Janet Campbell",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "michael-nealis-jr",
+     "name": "Michael Nealis Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kenneth-mcgill",
+     "name": "Kenneth McGill",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
-    "reporting": 3,
+    "reporting": 4,
     "total": 5
    },
    "category": "BOE",
@@ -38395,18 +39272,46 @@
      "name": "Megan R. SHEPPARD",
      "party": null,
      "party_code": "O",
-     "votes": 740
+     "votes": 917
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 8
+     "votes": 4
+    },
+    {
+     "id": "saria-bryson",
+     "name": "Saria Bryson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "glen-robbins",
+     "name": "Glen Robbins",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "cary-cecere-jr",
+     "name": "Cary Cecere Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "luis-rodriquez-jr",
+     "name": "Luis Rodriquez Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
-    "reporting": 3,
+    "reporting": 4,
     "total": 5
    },
    "category": "BOE",
@@ -38436,11 +39341,25 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 6
+     "votes": 3
     },
     {
      "id": "lindsay-prickett",
      "name": "Lindsay Prickett",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "sheri-calabrese",
+     "name": "Sheri Calabrese",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "laura-pizzo",
+     "name": "Laura Pizzo",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -38491,7 +39410,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 3
+     "votes": 1
     },
     {
      "id": "cinthia-pacheco",
@@ -38532,7 +39451,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 4
+     "votes": 0
     }
    ],
    "precincts": {
@@ -38580,14 +39499,14 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 74
+     "votes": 58
     },
     {
-     "id": "jenna-weber",
-     "name": "Jenna Weber",
+     "id": "jeanna-weber",
+     "name": "Jeanna Weber",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 4
     },
     {
      "id": "sean-pignatelli",
@@ -38606,6 +39525,118 @@
     {
      "id": "judith-tymkiew",
      "name": "Judith Tymkiew",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "brandi-gray",
+     "name": "Brandi Gray",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "brent-daly",
+     "name": "Brent Daly",
+     "party": null,
+     "party_code": "O",
+     "votes": 9
+    },
+    {
+     "id": "taylor-heaney",
+     "name": "Taylor Heaney",
+     "party": null,
+     "party_code": "O",
+     "votes": 20
+    },
+    {
+     "id": "liz-cowley",
+     "name": "Liz Cowley",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "moureen-barret",
+     "name": "Moureen Barret",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "amanda-r-teasenfitz",
+     "name": "Amanda R Teasenfitz",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "stultz-taylor",
+     "name": "Stultz Taylor",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "jeremy-wilford",
+     "name": "Jeremy Wilford",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    },
+    {
+     "id": "mark-upham-sr",
+     "name": "Mark Upham Sr",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "matt-walder",
+     "name": "Matt Walder",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "shane-h-sparks",
+     "name": "Shane H Sparks",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "stephanie-chance",
+     "name": "Stephanie Chance",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kyle-myers",
+     "name": "Kyle Myers",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    },
+    {
+     "id": "rebecca-wilford",
+     "name": "Rebecca Wilford",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "coralie-halter",
+     "name": "Coralie Halter",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "frank-siena",
+     "name": "Frank Siena",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -38642,7 +39673,42 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 14
+     "votes": 8
+    },
+    {
+     "id": "jeanna-weber",
+     "name": "Jeanna Weber",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "brent-daly",
+     "name": "Brent Daly",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "brooke-lore",
+     "name": "Brooke Lore",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "taylor-heaney",
+     "name": "Taylor Heaney",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "jeremy-wilford",
+     "name": "Jeremy Wilford",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -38676,7 +39742,28 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 11
+     "votes": 5
+    },
+    {
+     "id": "taylor-heaney",
+     "name": "Taylor Heaney",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "jeremy-wilford",
+     "name": "Jeremy Wilford",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "jessica-chaplin",
+     "name": "Jessica Chaplin",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -38710,7 +39797,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 47
+     "votes": 39
     },
     {
      "id": "kimberly-hall",
@@ -38731,7 +39818,7 @@
      "name": "Robert A Pierce",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 2
     },
     {
      "id": "william-charlton",
@@ -38752,7 +39839,7 @@
      "name": "Viola Thomas Hughes",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 3
     },
     {
      "id": "martha-arrizon",
@@ -38773,7 +39860,105 @@
      "name": "Precious Richmond",
      "party": null,
      "party_code": "O",
-     "votes": 5
+     "votes": 10
+    },
+    {
+     "id": "kenny-brent",
+     "name": "Kenny Brent",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "angel-stephens",
+     "name": "Angel Stephens",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "hannah-butcher",
+     "name": "Hannah Butcher",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "adelina-marcacci",
+     "name": "Adelina Marcacci",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "tiffani-butcher",
+     "name": "Tiffani Butcher",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ethan-coombs",
+     "name": "Ethan Coombs",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "mike-bel",
+     "name": "Mike Bel",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "josette-carter",
+     "name": "Josette Carter",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "cyril-english-jr",
+     "name": "Cyril English Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "precious-williams",
+     "name": "Precious Williams",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "stacy-zeiger",
+     "name": "Stacy Zeiger",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "damon-pierce",
+     "name": "Damon Pierce",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "micheal-burden",
+     "name": "Micheal Burden",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "alexis-mcallister",
+     "name": "Alexis McAllister",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -38821,7 +40006,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 37
+     "votes": 20
     },
     {
      "id": "josette-carter",
@@ -38854,6 +40039,125 @@
     {
      "id": "yahayra-martinez",
      "name": "Yahayra Martinez",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "biafra-smith",
+     "name": "Biafra Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kenny-brent",
+     "name": "Kenny Brent",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "angel-stephens",
+     "name": "Angel Stephens",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "rebecca-butcher",
+     "name": "Rebecca Butcher",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kathleen-butcher",
+     "name": "Kathleen Butcher",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "todd-butcher",
+     "name": "Todd Butcher",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "tiffani-delcollo",
+     "name": "Tiffani DelCollo",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "matthew-burns",
+     "name": "Matthew Burns",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "hannah-butcher",
+     "name": "Hannah Butcher",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "chelsea-harris",
+     "name": "Chelsea Harris",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "joann-thompson-street",
+     "name": "Joann Thompson Street",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "precious-richmone",
+     "name": "Precious Richmone",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "nichole-sheppard",
+     "name": "Nichole Sheppard",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "leslie-meehan",
+     "name": "Leslie Meehan",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "damon-pierce",
+     "name": "Damon Pierce",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "cassie-prince",
+     "name": "Cassie Prince",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "alexis-mcallister",
+     "name": "Alexis McAllister",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -38890,11 +40194,32 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 14
+     "votes": 8
     },
     {
      "id": "valerie-wojcik",
      "name": "Valerie Wojcik",
+     "party": null,
+     "party_code": "O",
+     "votes": 5
+    },
+    {
+     "id": "jerald-bryant",
+     "name": "Jerald Bryant",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "megan-sheppard",
+     "name": "Megan Sheppard",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "carrie-werley",
+     "name": "Carrie Werley",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -38931,14 +40256,35 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 26
+     "votes": 20
     },
     {
      "id": "jessi-achuff",
      "name": "Jessi Achuff",
      "party": null,
      "party_code": "O",
-     "votes": 2
+     "votes": 17
+    },
+    {
+     "id": "paige-vanpelt",
+     "name": "Paige Vanpelt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "colin-sheppard",
+     "name": "Colin Sheppard",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jessica-moore",
+     "name": "Jessica Moore",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -38972,7 +40318,35 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 6
+     "votes": 5
+    },
+    {
+     "id": "jessi-achuff",
+     "name": "Jessi Achuff",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "dean-roork",
+     "name": "Dean Roork",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "colin-sheppard",
+     "name": "Colin Sheppard",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "david-bostwick-jr",
+     "name": "David Bostwick Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -39013,14 +40387,14 @@
      "name": "Sharon L. CAMPBELL",
      "party": null,
      "party_code": "O",
-     "votes": 1464
+     "votes": 1465
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 34
+     "votes": 16
     },
     {
      "id": "mark-swift",
@@ -39077,6 +40451,62 @@
      "party": null,
      "party_code": "O",
      "votes": 0
+    },
+    {
+     "id": "shannon-delcollo",
+     "name": "Shannon DelCollo",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jason-hovermann",
+     "name": "Jason Hovermann",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "mia-burton",
+     "name": "Mia Burton",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "matthew-hitchner",
+     "name": "Matthew Hitchner",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "stephen-kundera",
+     "name": "Stephen Kundera",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "joseph-griner",
+     "name": "Joseph Griner",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jason-simpkins",
+     "name": "Jason Simpkins",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "latourette",
+     "name": "Latourette",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -39110,7 +40540,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 14
+     "votes": 7
     },
     {
      "id": "zachary-swift",
@@ -39132,6 +40562,27 @@
      "party": null,
      "party_code": "O",
      "votes": 3
+    },
+    {
+     "id": "ryan-ranallo",
+     "name": "Ryan Ranallo",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "christopher-j-serata",
+     "name": "Christopher J Serata",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "dennis-snead",
+     "name": "Dennis Snead",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -39172,7 +40623,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 28
+     "votes": 16
     },
     {
      "id": "samantha-ludwig",
@@ -39184,6 +40635,62 @@
     {
      "id": "matt-mcdowell",
      "name": "Matt McDowell",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "sandy-lokuta",
+     "name": "Sandy Lokuta",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    },
+    {
+     "id": "timothy-almanza",
+     "name": "Timothy Almanza",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "adam-john",
+     "name": "Adam John",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "william-swift",
+     "name": "William Swift",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "linda-cox",
+     "name": "Linda Cox",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "erica-lor",
+     "name": "Erica Lor",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "christina-donato",
+     "name": "Christina Donato",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "maurice-cobb-jr",
+     "name": "Maurice Cobb Jr",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -39227,18 +40734,88 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 24
+     "votes": 13
     },
     {
      "id": "amy-mount",
      "name": "Amy Mount",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 2
     },
     {
      "id": "jerry-a-dilks",
      "name": "Jerry A. Dilks",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "robert-p-camp-jr",
+     "name": "Robert P Camp Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "robert-p-camp-3",
+     "name": "Robert P Camp 3",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "karen-legg",
+     "name": "Karen Legg",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jessica-humphreys",
+     "name": "Jessica Humphreys",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "patricia-spencer",
+     "name": "Patricia Spencer",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "heather-henderschott",
+     "name": "Heather Henderschott",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "dennis-bailey",
+     "name": "Dennis Bailey",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "karen-lee",
+     "name": "Karen Lee",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "audrey-carrano",
+     "name": "Audrey Carrano",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "norris-j-welch-jr",
+     "name": "Norris J Welch Jr",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -39268,21 +40845,21 @@
      "name": "Robert W. MCQUADE, Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 3678
+     "votes": 3680
     },
     {
      "id": "lauryn-m-van-hook",
      "name": "Lauryn M. VAN HOOK",
      "party": null,
      "party_code": "O",
-     "votes": 4621
+     "votes": 4623
     },
     {
      "id": "jeffrey-p-lambert",
      "name": "Jeffrey P. LAMBERT",
      "party": null,
      "party_code": "O",
-     "votes": 4402
+     "votes": 4404
     },
     {
      "id": "michael-j-beatty",
@@ -39296,14 +40873,14 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 662
+     "votes": 593
     },
     {
      "id": "sandy-lokuta",
      "name": "Sandy Lokuta",
      "party": null,
      "party_code": "O",
-     "votes": 94
+     "votes": 541
     },
     {
      "id": "joyce-hardy",
@@ -39320,8 +40897,8 @@
      "votes": 1
     },
     {
-     "id": "natalie-dupnick",
-     "name": "Natalie Dupnick",
+     "id": "natalie-dupnock",
+     "name": "Natalie Dupnock",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -39381,6 +40958,195 @@
      "party": null,
      "party_code": "O",
      "votes": 1
+    },
+    {
+     "id": "nikia-johnson",
+     "name": "Nikia Johnson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "duane-dare",
+     "name": "Duane Dare",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "alisa-sadler",
+     "name": "Alisa Sadler",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "bill-smith",
+     "name": "Bill Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "matthew-vannozzi",
+     "name": "Matthew Vannozzi",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "zach-ellison",
+     "name": "Zach Ellison",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "tiffani-butcher",
+     "name": "Tiffani Butcher",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "sandra-gribble",
+     "name": "Sandra Gribble",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "nina-crain",
+     "name": "Nina Crain",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "michael-a-iversen",
+     "name": "Michael A Iversen",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jeremy-glass",
+     "name": "Jeremy Glass",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "frank-miller",
+     "name": "Frank Miller",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "dan-greco",
+     "name": "Dan Greco",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ryan-keen",
+     "name": "Ryan Keen",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "sandra-colleen",
+     "name": "Sandra Colleen",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ann-simpson",
+     "name": "Ann Simpson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "cara-clase",
+     "name": "Cara Clase",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "adam-siegel",
+     "name": "Adam Siegel",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "franklin-remmey",
+     "name": "Franklin Remmey",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "david-summers",
+     "name": "David Summers",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "patricia-c-kears",
+     "name": "Patricia C Kears",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "precious-richmond",
+     "name": "Precious Richmond",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "edward-salmon",
+     "name": "Edward Salmon",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "tracey-shea",
+     "name": "Tracey Shea",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "dwayne-pierce-sr",
+     "name": "Dwayne Pierce Sr",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "robyn-hurt-richardson",
+     "name": "Robyn Hurt-Richardson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kenneth-mcgill",
+     "name": "Kenneth McGill",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
     }
    ],
    "precincts": {
@@ -39407,21 +41173,21 @@
      "name": "Charles J. FLICKINGER",
      "party": null,
      "party_code": "O",
-     "votes": 4741
+     "votes": 4742
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 102
+     "votes": 68
     },
     {
      "id": "sandy-lokuta",
      "name": "Sandy Lokuta",
      "party": null,
      "party_code": "O",
-     "votes": 7
+     "votes": 46
     },
     {
      "id": "jerry-hardy",
@@ -39471,6 +41237,90 @@
      "party": null,
      "party_code": "O",
      "votes": 1
+    },
+    {
+     "id": "valentina-jones",
+     "name": "Valentina Jones",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "natalie-dupnock",
+     "name": "Natalie Dupnock",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "zachary-ellison",
+     "name": "Zachary Ellison",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "ryan-ranallo",
+     "name": "Ryan Ranallo",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "teresa-marquina",
+     "name": "Teresa Marquina",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "matthew-neder",
+     "name": "Matthew Neder",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jeremy-glass",
+     "name": "Jeremy Glass",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "teresa-davis",
+     "name": "Teresa Davis",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "john-worthington",
+     "name": "John Worthington",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "jim-quinn",
+     "name": "Jim Quinn",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "marty-kavanagh",
+     "name": "Marty Kavanagh",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "rachel-green",
+     "name": "Rachel Green",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -39511,7 +41361,49 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 15
+     "votes": 12
+    },
+    {
+     "id": "jessica-achuff",
+     "name": "Jessica Achuff",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    },
+    {
+     "id": "colin-scull",
+     "name": "Colin Scull",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "rochelle-wood",
+     "name": "Rochelle Wood",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jessica-vest",
+     "name": "Jessica Vest",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "mathew-getty",
+     "name": "Mathew Getty",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "zachary-hitchner",
+     "name": "Zachary Hitchner",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
@@ -39552,7 +41444,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 155
+     "votes": 118
     },
     {
      "id": "mike-randazzo",
@@ -39643,11 +41535,291 @@
      "name": "Margaret House",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 4
     },
     {
      "id": "barbara-jackson",
      "name": "Barbara Jackson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "crystal-melody-dominguez",
+     "name": "Crystal Melody Dominguez",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "allen-arnold",
+     "name": "Allen Arnold",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "mickey-weist",
+     "name": "Mickey Weist",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "ernest-l-mccoy-jr",
+     "name": "Ernest L McCoy Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "erika-schaffer",
+     "name": "Erika Schaffer",
+     "party": null,
+     "party_code": "O",
+     "votes": 48
+    },
+    {
+     "id": "tiffanie-c-thrbak",
+     "name": "Tiffanie C Thrbak",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "michael-l-pierce-jr",
+     "name": "Michael L Pierce Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "william-taylor",
+     "name": "William Taylor",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "mary-beth-glen",
+     "name": "Mary Beth Glen",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ross-bear",
+     "name": "Ross Bear",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "julie-fleetwood",
+     "name": "Julie Fleetwood",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "erika-schaller",
+     "name": "Erika Schaller",
+     "party": null,
+     "party_code": "O",
+     "votes": 4
+    },
+    {
+     "id": "spencer-willis",
+     "name": "Spencer Willis",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ron-slade",
+     "name": "Ron Slade",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "donald-nutt",
+     "name": "Donald Nutt",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "doug-mehaffey",
+     "name": "Doug Mehaffey",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "travis-eachus",
+     "name": "Travis Eachus",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "ann-schaffer",
+     "name": "Ann Schaffer",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jose-masso",
+     "name": "Jose Masso",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "krystal-a-bennett",
+     "name": "Krystal A Bennett",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "mai-hankins",
+     "name": "Mai Hankins",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "louis-anthony-scarborough",
+     "name": "Louis Anthony Scarborough",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "lisa-bradway",
+     "name": "Lisa Bradway",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "lori-vissel",
+     "name": "Lori Vissel",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "joseph-laspada",
+     "name": "Joseph Laspada",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "richard-nichols",
+     "name": "Richard Nichols",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kevin-fallick",
+     "name": "Kevin Fallick",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "james-santora-jr",
+     "name": "James Santora Jr",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "nicole-spatola",
+     "name": "Nicole Spatola",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "andrew-titus-v",
+     "name": "Andrew Titus V",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "dulce-gomez",
+     "name": "Dulce Gomez",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "paul-beckwith",
+     "name": "Paul Beckwith",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "julian-morroni",
+     "name": "Julian Morroni",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "earl-w-padgett-iii",
+     "name": "Earl W. Padgett III",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "rachel-mcguigan",
+     "name": "Rachel McGuigan",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "michael-pastirko",
+     "name": "Michael Pastirko",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "paul-chinnici",
+     "name": "Paul Chinnici",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ed-stewart",
+     "name": "Ed Stewart",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "tersa-warburton",
+     "name": "Tersa Warburton",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "steven-buscemi",
+     "name": "Steven Buscemi",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -39684,7 +41856,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 28
+     "votes": 14
     },
     {
      "id": "vicki-vagnarelli",
@@ -39696,6 +41868,76 @@
     {
      "id": "bob-elkins",
      "name": "Bob Elkins",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "peter-berger",
+     "name": "Peter Berger",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ellington-x-thrbak",
+     "name": "Ellington X Thrbak",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "t-glenn-eachus",
+     "name": "T. Glenn Eachus",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "allera-fallick",
+     "name": "Allera Fallick",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "cameran-morroni",
+     "name": "Cameran Morroni",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "erika-schaffer",
+     "name": "Erika Schaffer",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "sara-mcguigan",
+     "name": "Sara McGuigan",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "bryan-r-huff",
+     "name": "Bryan R. Huff",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jim-santora",
+     "name": "Jim Santora",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "carol-chari",
+     "name": "Carol Chari",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -39725,21 +41967,21 @@
      "name": "Isaiah L. WHITE",
      "party": null,
      "party_code": "O",
-     "votes": 9557
+     "votes": 9559
     },
     {
      "id": "dennis-rivera",
      "name": "Dennis RIVERA",
      "party": null,
      "party_code": "O",
-     "votes": 11624
+     "votes": 11629
     },
     {
      "id": "robert-g-buono-jr",
      "name": "Robert G. BUONO, Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 10621
+     "votes": 10626
     },
     {
      "id": "paul-praful-thakkar",
@@ -39753,14 +41995,14 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 258
+     "votes": 152
     },
     {
      "id": "eugine-medio",
      "name": "Eugine Medio",
      "party": null,
      "party_code": "O",
-     "votes": 2
+     "votes": 3
     },
     {
      "id": "darwin-cooper-jr",
@@ -39774,7 +42016,7 @@
      "name": "Cedric Holmes",
      "party": null,
      "party_code": "O",
-     "votes": 5
+     "votes": 8
     },
     {
      "id": "anthony-carter",
@@ -39893,7 +42135,7 @@
      "name": "F. John Sbrana",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 2
     },
     {
      "id": "sterling-rainier",
@@ -39935,7 +42177,7 @@
      "name": "Daisy Mercado",
      "party": null,
      "party_code": "O",
-     "votes": 2
+     "votes": 3
     },
     {
      "id": "john-casadia",
@@ -39984,7 +42226,7 @@
      "name": "Ashley Alfe",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 2
     },
     {
      "id": "lisa-tabolski",
@@ -40033,7 +42275,7 @@
      "name": "Ruben A. Salido",
      "party": null,
      "party_code": "O",
-     "votes": 1
+     "votes": 2
     },
     {
      "id": "jack-daniels",
@@ -40045,6 +42287,454 @@
     {
      "id": "fred-hurtz",
      "name": "Fred Hurtz",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "michael-zimmerman",
+     "name": "Michael Zimmerman",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "alex-baldosaro",
+     "name": "Alex Baldosaro",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "rivera-dennis",
+     "name": "Rivera Dennis",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "leonides-niegron",
+     "name": "Leonides Niegron",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jasmine-demby",
+     "name": "Jasmine Demby",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "nichole-gardner",
+     "name": "Nichole Gardner",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "gene-medio",
+     "name": "Gene Medio",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "anna-dellagatta",
+     "name": "Anna Dellagatta",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "joseph-dellagatta",
+     "name": "Joseph Dellagatta",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "vicki-schwartz",
+     "name": "Vicki Schwartz",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "elizabeth-burgess",
+     "name": "Elizabeth Burgess",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "eric-johnson",
+     "name": "Eric Johnson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "dave-heck",
+     "name": "Dave Heck",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "melissa-capelli",
+     "name": "Melissa Capelli",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "nunzio-tomasso",
+     "name": "Nunzio Tomasso",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "steven-solof",
+     "name": "Steven Solof",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "lebron-james",
+     "name": "Lebron James",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jeff-bordley",
+     "name": "Jeff Bordley",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "omar-perez",
+     "name": "Omar Perez",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "mackenzie-joslin",
+     "name": "Mackenzie Joslin",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "bob-craft",
+     "name": "Bob Craft",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "nicole-keller",
+     "name": "Nicole Keller",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "anthony-mackenzie",
+     "name": "Anthony Mackenzie",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "aundra-thomas",
+     "name": "Aundra Thomas",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "louis-profera",
+     "name": "Louis Profera",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "debra-quinn",
+     "name": "Debra Quinn",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jerald-bryant",
+     "name": "Jerald Bryant",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "nicole-kinsey",
+     "name": "Nicole Kinsey",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "bonnie-martinez-goertz",
+     "name": "Bonnie Martinez-Goertz",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "jennifer-hainley",
+     "name": "Jennifer Hainley",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "lauren-sherma",
+     "name": "Lauren Sherma",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jose-barriero",
+     "name": "Jose Barriero",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "sharon-twaddell",
+     "name": "Sharon Twaddell",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "dale-doback",
+     "name": "Dale Doback",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "michael-roman",
+     "name": "Michael Roman",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "zachary-landicini",
+     "name": "Zachary Landicini",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "stephen-bowers",
+     "name": "Stephen Bowers",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "r-alan-mounier",
+     "name": "R. Alan Mounier",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "ds-nyce",
+     "name": "DS Nyce",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "matt-stabile",
+     "name": "Matt Stabile",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "lee-dottavio",
+     "name": "Lee Dottavio",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "rochelle-petit",
+     "name": "Rochelle Petit",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "danielle-carroll",
+     "name": "Danielle Carroll",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "scott-english",
+     "name": "Scott English",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "matthew-pritchett",
+     "name": "Matthew Pritchett",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "joshua-torres",
+     "name": "Joshua Torres",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "nabil-billy-pena",
+     "name": "Nabil Billy Pena",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "makema-edwards-douglas",
+     "name": "Makema Edwards Douglas",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "lori-cummines",
+     "name": "Lori Cummines",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "sefgei-nenasheff",
+     "name": "Sefgei Nenasheff",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "leo-letushko",
+     "name": "Leo Letushko",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "david-letushko",
+     "name": "David Letushko",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "shawn-riggins",
+     "name": "Shawn Riggins",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "megan-spinelli",
+     "name": "Megan Spinelli",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "rocky-saull",
+     "name": "Rocky Saull",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "roberto-pitocchi",
+     "name": "Roberto Pitocchi",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "steve-simpson",
+     "name": "Steve Simpson",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "dixie-bacon",
+     "name": "Dixie Bacon",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "christina-arbona",
+     "name": "Christina Arbona",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jason-digregorio",
+     "name": "Jason Digregorio",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "will-turner",
+     "name": "Will Turner",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "sheila-dargis",
+     "name": "Sheila Dargis",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "thomas-banks",
+     "name": "Thomas Banks",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "josiah-clark",
+     "name": "Josiah Clark",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -110045,61 +112735,95 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "drew",
-     "name": "Jeff Van Drew",
-     "party": null,
-     "party_code": "O",
-     "votes": 10768
+     "id": "mullock",
+     "name": "Zack MULLOCK",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 21307
     },
     {
-     "id": "mullock",
-     "name": "Zack Mullock",
-     "party": "Democratic (per AP)",
-     "party_code": "D",
-     "votes": 9935
+     "id": "drew",
+     "name": "Jeff VAN DREW",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 16282
     },
     {
      "id": "mora",
-     "name": "Ramon Mora, Jr.",
+     "name": "Ramon MORA, Jr.",
      "party": null,
      "party_code": "O",
-     "votes": 352
+     "votes": 473
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 13
+     "votes": 6
+    },
+    {
+     "id": "alexander",
+     "name": "Tim Alexander",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "jinete",
+     "name": "Andres Jinete",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "narzikulov",
+     "name": "Layla Narzikulov",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kent",
+     "name": "Joe Kent",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "weber",
+     "name": "Jenna Weber",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
     }
    ],
    "precincts": {
-    "reporting": 0,
-    "total": 0
+    "reporting": 92,
+    "total": 106
    },
    "counties": [
     {
-     "county": "Salem",
+     "county": "Cumberland",
      "precincts": {
-      "reporting": 0,
-      "total": 0
+      "reporting": 92,
+      "total": 106
      },
      "votes": {
-      "drew": 10768,
-      "mullock": 9935,
-      "mora": 352,
-      "write-in": 13
+      "mullock": 21307,
+      "drew": 16282,
+      "mora": 473,
+      "write-in": 6,
+      "alexander": 2,
+      "jinete": 1,
+      "narzikulov": 1,
+      "kent": 1,
+      "weber": 1
      }
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true,
-   "called": {
-    "winner": "mullock",
-    "by": "AP (not certified)",
-    "at": "2026-11-05T21:29:00.736Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-bergen-0002-chris-hedges-1-0-00",
