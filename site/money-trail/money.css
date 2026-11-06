@@ -57,3 +57,25 @@ footer{border-top:1px solid #315363;padding:23px 0 15px;margin-top:28px;display:
 .graph-node .graph-status.passed{fill:#3ddc84}.graph-node .graph-status.failed{fill:#ff8080}
 .dot-sample{display:inline-block;width:11px;height:11px;border-radius:50%;background:#4c9ba5;margin-right:6px;vertical-align:-1px}
 .dot-sample.passed{background:#3ddc84}.dot-sample.failed{background:#ff6b6b}
+/* Follow the money block under a measure's result in the Evidence Inspector (same look as the site's Follow the money tag) */
+.mt-ftm{margin:0 0 16px;border:1px solid #a4ffe259;border-radius:12px;background:#061124;padding:14px 16px}
+.mt-ftm h3{display:flex;align-items:center;gap:10px;margin:0 0 10px;font:800 17px/1.2 Inter,system-ui,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#a4ffe2}
+.mt-ftm .mt-ftm-art{display:block;width:64px;height:12px;margin:0;opacity:1;flex:none}
+.mt-ftm-list{list-style:none;margin:0;padding:0}
+.mt-ftm-list>li{padding:10px 0;border-top:1px solid #a4ffe226}
+.mt-ftm-list>li:first-child{border-top:0;padding-top:2px}
+.mt-ftm-who{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.mt-ftm-who a{color:var(--text);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.mt-ftm-who em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:999px;border:1px solid #91aeb6;color:#91aeb6;flex:none}
+.mt-ftm-who em.yes{border-color:#3ddc84;color:#3ddc84}.mt-ftm-who em.no{border-color:#ff8080;color:#ff8080}
+.mt-ftm-amt{display:block;margin-top:6px;font:800 24px/1.1 system-ui,sans-serif;color:#7ff0d4;font-variant-numeric:tabular-nums}
+.mt-ftm-list span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.mt-ftm-rep{list-style:none;margin:6px 0 0;padding:0}
+.mt-ftm-rep li{font-size:13px;margin-top:4px;color:var(--text)}
+.mt-ftm-rep li b{color:#7ff0d4;font-size:18px;font-variant-numeric:tabular-nums}
+.mt-ftm-rep a{color:#a4ffe2;font-size:12px}
+.mt-ftm-list .mt-ftm-note{font-size:11px;color:var(--faint)}
+.mt-ftm-none{font-size:13px;color:var(--warn)}
+.mt-ftm-links{list-style:none;margin:10px 0 0;padding:10px 0 0;border-top:1px solid #a4ffe226;font-size:13px}
+.mt-ftm-links li{margin-top:4px}.mt-ftm-links a{color:#a4ffe2}
+.mt-ftm-lead{margin:0 0 10px;font-size:12px;color:var(--muted)}
