@@ -40,7 +40,7 @@ Districts to counties is worked out by code from each state map's own district f
 ## Install on the home computer
 
 1. Copy this folder to `D:\theway\local-resources\` (or the machine's own work folder).
-2. Copy `config.example.json` to `config.json`. Set `repo` (the site repo on that machine), the two model names (`ollama list`), and the busy check path if there is one.
+2. Copy `config.example.json` to `config.json`. Set `repo` to a clone of the site repo used only by this job (for example `D:\theway\local-resources\site-repo`), so its commits never mix with the news or results jobs, the two model names (`ollama list`), and the busy check path if there is one.
 3. `python local_resources.py --config config.json seed`
 4. `python local_resources.py --config config.json run` once by hand. Read `local-resources.log` and `review.md`, and look at `outbox\`.
 5. `install-task.ps1` registers the hourly task. It looks for a real `pythonw.exe` (for example `C:\Program Files\Python311`), not the Microsoft Store stub. Windows may ask a person to run it, because a Claude session on the machine is not allowed to create scheduled tasks.
