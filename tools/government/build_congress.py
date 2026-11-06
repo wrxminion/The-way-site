@@ -27,7 +27,7 @@ import yaml
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 OUT = os.path.join(ROOT, 'site', 'government', 'congress')
 SITE_URL = 'https://michiinstitute.com'
-CSS_V = '1'
+CSS_V = '2'
 JS_V = '1'
 
 STATES = {
@@ -128,6 +128,19 @@ def ballot_tile(year):
     if day <= datetime.date.today():
         return ('Seat was on the ballot', when + '. The winner takes office January 3, %d.' % (year + 1))
     return ('Seat is next on the ballot', when)
+
+
+def member_slugs(L):
+    """bioguide id -> page slug (name-state), stable across builds."""
+    slugs, used = {}, set()
+    for m in sorted(L, key=lambda m: m['id']['bioguide']):
+        t = m['terms'][-1]
+        s = slugify(full_name(m).split(',')[0]) + '-' + t['state'].lower()
+        if s in used:
+            s += '-' + m['id']['bioguide'].lower()
+        used.add(s)
+        slugs[m['id']['bioguide']] = s
+    return slugs
 
 
 def git_info(path):
@@ -247,15 +260,7 @@ def main():
     M = load('committee-membership-current.yaml')
     data_long = long_date(data_date)
 
-    # slugs
-    slugs, used = {}, set()
-    for m in sorted(L, key=lambda m: m['id']['bioguide']):
-        t = m['terms'][-1]
-        s = slugify(full_name(m).split(',')[0]) + '-' + t['state'].lower()
-        if s in used:
-            s += '-' + m['id']['bioguide'].lower()
-        used.add(s)
-        slugs[m['id']['bioguide']] = s
+    slugs = member_slugs(L)
     by_id = {m['id']['bioguide']: m for m in L}
 
     sen = [m for m in L if m['terms'][-1]['type'] == 'sen']
