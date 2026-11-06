@@ -74,3 +74,13 @@
     ul.after(key);
   }).catch(function () {});
 })();
+// "Heard this? Here are the facts" starts closed. Opening the page at #myths (or following a link to it) opens it.
+(function () {
+  function openMyths() {
+    if (location.hash !== '#myths') return;
+    var d = document.getElementById('myths');
+    if (d && d.tagName === 'DETAILS') d.open = true;
+  }
+  openMyths();
+  window.addEventListener('hashchange', openMyths);
+})();
