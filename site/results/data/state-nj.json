@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-06T13:43:00Z",
+ "updated_at": "2026-11-06T13:51:23Z",
  "certified": false,
  "contests": [
   {
@@ -20,31 +20,31 @@
    "choices": [
     {
      "id": "booker",
-     "name": "Cory BOOKER",
+     "name": "Cory Booker",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1792931
+     "votes": 1741553
     },
     {
      "id": "murphy",
-     "name": "Justin MURPHY",
+     "name": "Justin Murphy",
      "party": "REP",
      "party_code": "R",
-     "votes": 1001305
+     "votes": 962769
     },
     {
      "id": "fernandez",
-     "name": "Veronica FERNANDEZ",
-     "party": "NPC",
+     "name": "Veronica Fernandez",
+     "party": "N-C",
      "party_code": "O",
-     "votes": 47340
+     "votes": 45934
     },
     {
      "id": "kuniansky",
-     "name": "NPD Joanne KUNIANSKY",
-     "party": "NPD",
+     "name": "Joanne KUNIANSKY",
+     "party": "SOC",
      "party_code": "O",
-     "votes": 24635
+     "votes": 23950
     },
     {
      "id": "write-in",
@@ -440,23 +440,10 @@
     }
    ],
    "precincts": {
-    "reporting": 5630,
-    "total": 5775
+    "reporting": 5485,
+    "total": 5630
    },
    "counties": [
-    {
-     "county": "Atlantic",
-     "precincts": {
-      "reporting": 145,
-      "total": 145
-     },
-     "votes": {
-      "murphy": 38536,
-      "booker": 51378,
-      "fernandez": 1406,
-      "kuniansky": 685
-     }
-    },
     {
      "county": "Burlington",
      "precincts": {
@@ -777,13 +764,7 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true,
-   "called": {
-    "winner": "booker",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:00:53.549Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-u-s-house-district-1",
@@ -1055,13 +1036,7 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true,
-   "called": {
-    "winner": "mciver",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:22:28.493Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-u-s-house-district-11",
@@ -2268,13 +2243,7 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true,
-   "called": {
-    "winner": "menendez",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:11:12.519Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-u-s-house-district-9",
@@ -2361,13 +2330,7 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true,
-   "called": {
-    "winner": "pou",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T03:22:06.948Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-atlantic-0004-united-states-senate",
@@ -46106,13 +46069,7 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true,
-   "called": {
-    "winner": "cory-booker",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:00:53.549Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-hudson-0005-member-of-the-house-of-representatives-8th-congressional",
@@ -46167,13 +46124,7 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true,
-   "called": {
-    "winner": "rob-menendez",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:11:12.519Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-hudson-0006-member-of-the-house-of-representatives-9th-congressional",
@@ -46221,13 +46172,7 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true,
-   "called": {
-    "winner": "nelida-pou",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T03:22:06.948Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-hudson-0007-member-of-the-house-of-representatives-10th-congressional",
@@ -46268,13 +46213,7 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true,
-   "called": {
-    "winner": "lamonica-r-mciver",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:22:28.493Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-hudson-0008-county-register",
@@ -118251,6 +118190,7 @@
   "Cumberland",
   "Essex",
   "Gloucester",
+  "Hudson",
   "Hunterdon",
   "Mercer",
   "Middlesex",
@@ -118265,7 +118205,6 @@
  ],
  "counties_missing": [
   "Atlantic",
-  "Hudson",
   "Warren"
  ]
 }
