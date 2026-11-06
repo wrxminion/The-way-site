@@ -80,8 +80,10 @@ function filtered(){let q=settings.search.toLowerCase();return events.filter(e=>
 function summary(){const m=RESEARCH.meta;$('#kpis').innerHTML=`<div class="kpi"><div class="kpi-value">${m.transactions}</div><div class="kpi-label">Itemized finance records</div></div><div class="kpi"><div class="kpi-value">${m.ballot_events}</div><div class="kpi-label">Statewide ballot events</div></div><div class="kpi"><div class="kpi-value">${m.states_with_ballot_events} / 50</div><div class="kpi-label">States with recorded measures</div></div><div class="kpi"><div class="kpi-value">0 / 50</div><div class="kpi-label">States fully investigated</div></div>`;
  const opts=Object.entries(stName).sort((a,b)=>a[1].localeCompare(b[1]));$('#state').innerHTML='<option value="ALL">All states</option>'+opts.map(([code,name])=>`<option value="${code}">${escapeHtml(name)}</option>`).join('')+'<option value="US">Federal / unresolved jurisdiction</option>';
 }
-function getTitle(e){if(e.record_kind==='transaction')return `${e.source_name} → ${e.recipient_name}`;if(e.record_kind==='ballot')return `${measureName(e)}: ${e.short_title}`;if(e.record_kind==='reported')return `${e.source_name} → ${e.recipient_name}`;return e.event_id;}
-function kindLabel(e){return e.record_kind==='transaction'?'Itemized finance record':e.record_kind==='ballot'?'Statewide ballot event':e.record_kind==='reported'?'Reported disclosure · NOT a unique transfer':'Research graph connection · mixed evidence'}
+function getTitle(e){if(e.record_kind==='transaction')return `${e.source_name} → ${e.recipient_name}`;if(e.record_kind==='ballot')return `${measureName(e)}: ${e.short_title}`;if(e.record_kind==='reported')return `${e.source_name} → ${e.recipient_name}`;if(e.record_kind==='entity')return e.name||'';if(e.from_name||e.to_name)return `${e.from_name||'Unknown'} → ${e.to_name||'Unknown'}`;return e.event_id||e.id||'';}
+// The name of what is selected, shown first and in bold at the top of the inspector: a line reads 'FROM to TO', a dot reads its name.
+function selName(e){if(e.record_kind==='ballot')return `${measureName(e)}: ${e.short_title}`;if(e.record_kind==='entity')return e.name||'';const f=e.source_name||e.from_name,t=e.recipient_name||e.to_name;if(f||t)return `${f||'Unknown'} to ${t||'Unknown'}`;return getTitle(e);}
+function kindLabel(e){return e.record_kind==='entity'?'Organization in the money web':e.record_kind==='transaction'?'Itemized finance record':e.record_kind==='ballot'?'Statewide ballot event':e.record_kind==='reported'?'Reported disclosure · NOT a unique transfer':'Research graph connection · mixed evidence'}
 function eventMarkup(e){let active=selected&&selected.event_id===e.event_id,kind=e.record_kind;let label=kind==='ballot'?e.state+' · statewide':(stateOf(e)==='US'?'US / context unresolved':stateOf(e));
  const sub=kind==='transaction'?(e.activity_type||'Filed transaction'):(kind==='ballot'?`${dateText(e.election_date)} · ${e.source_status||'Official record'}`:`Report date ${dateText(e.date)} · transfer date not verified`);
  return `<div class="timeline-item ${kind}"><div class="event-date">${timeDay(e.event_date)}</div><div class="rail"></div><button class="event-card ${active?'selected':''}" data-event="${escapeHtml(e.event_id)}" aria-label="Inspect ${escapeHtml(getTitle(e))}"><div class="event-top"><span class="event-kind ${kind}">${kindLabel(e)}</span>${kind!=='ballot'?`<span class="event-amount">${shortMoney(e.amount_usd)}</span>`:''}</div><div class="event-title">${escapeHtml(getTitle(e))}</div><div class="event-sub">${escapeHtml(sub.replace(/_/g,' '))}</div><div class="event-foot"><span class="chip">${escapeHtml(label)}</span>${kind==='transaction'?'<span class="chip green">Source-linked itemized</span>':kind==='ballot'?'<span class="chip amber">Finance review incomplete</span>':'<span class="chip amber">Non-additive · observed</span>'}</div></button></div>`}
@@ -95,7 +97,7 @@ function renderTimeline(){const a=filtered(),shown=a.slice(0,visible);let month=
 function datum(key,val){if(val===undefined||val===null||val==='')return '';return `<div class="datum"><div class="key">${escapeHtml(key)}</div><div class="val">${escapeHtml(val)}</div></div>`}
 function sourceButton(url,label='Open original filing / source'){url=safeUrl(url);return url?`<a class="detail-link" href="${escapeHtml(url)}" rel="noopener noreferrer" target="_blank">${escapeHtml(label)} ↗</a>`:''}
 function positionPanel(mid){let ps=positionsByMeasure[mid]||[];let sides={support:[],oppose:[],other:[]};for(let p of ps){let side=/support|yes|favor/i.test(p.stance||'')?'support':/oppose|no|against/i.test(p.stance||'')?'oppose':'other';sides[side].push(p)};return `<div class="side-group"><h4>Campaign sides · documented positions</h4><p><strong>Support:</strong> ${sides.support.length?sides.support.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p><strong>Opposition:</strong> ${sides.oppose.length?sides.oppose.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p>These positions do not prove how any particular donation was allocated.</p></div>`}
-function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<span class="event-kind ${kind}">${escapeHtml(kindLabel(e)||'Graph connection')}</span>`+(kind==='ballot'?outcomeBox(e.measure_id)+ftmBlock(e):'')+`<h2>${escapeHtml(getTitle(e))}</h2>`;
+function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<h2 class="mt-selected">${escapeHtml(selName(e))}</h2><span class="event-kind ${kind}">${escapeHtml(kindLabel(e)||'Graph connection')}</span>`+(kind==='ballot'?outcomeBox(e.measure_id)+ftmBlock(e):'');
  if(kind==='transaction'){
  h+=`<div class="event-amount mt-big">${money(e.amount_usd)}</div>`;
  h+=datum('Reported transaction date',dateText(e.transaction_date))+datum('Date semantics',e.date_kind)+datum('Source',e.source_name)+datum('Recipient',e.recipient_name)+datum('Source entity ID',e.source_entity_id)+datum('Recipient entity ID',e.recipient_entity_id)+datum('Election cycle',e.cycle)+datum('Jurisdiction / attribution',e.jurisdiction)+datum('Filing classification',e.activity_type)+datum('Confidence as recorded',e.confidence)+datum('Amendment status',e.amendment_status)+datum('Filing identifier',e.filing_id);
@@ -110,6 +112,9 @@ function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<span cl
  h+=`<div class="detail-caution">This is a reported disclosure observation. It is NOT confirmed as one uniquely itemized transfer and may overlap other reports.</div>`;
  h+=datum('Report date (not necessarily transfer date)',dateText(e.date))+datum('Recorded date type',e.date_kind)+datum('Source as reported',e.source_name)+datum('Recipient as reported',e.recipient_name)+datum('Reported figure',money(e.amount_usd))+datum('Confidence',e.confidence)+datum('Reconciliation flag',e.reconciliation_flag)+datum('Recipient registration',e.recipient_registry_id);
  h+=sourceButton(e.source_url,'Open reported disclosure')+datum('Notes',e.notes);
+ }else if(kind==='entity'){
+ h+=datum('Name as reported',e.name)+datum('Entity type',e.entity_type)+datum('Registry ID',e.id)+datum('Jurisdiction',e.jurisdiction)+sourceButton(e.source_url,'Open registry record');
+ h+=`<div class="detail-caution">This is one dot in the money web. Click a line to see one connection and its filing.</div>`+datum('Notes',e.notes);
  }else{
  h+=datum('Connection type',e.edge_type)+datum('From (as reported)',e.from_name)+datum('To (as reported)',e.to_name)+datum('Amount or aggregate figure',e.amount_usd!=null?money(e.amount_usd):'Not a money link')+datum('Date',dateText(e.date))+datum('Date semantics',e.date_kind)+datum('Jurisdiction',e.jurisdiction)+datum('Confidence',e.confidence)+sourceButton(e.source_url,'Open source evidence');
  h+=`<div class="detail-caution">Graph observations can duplicate itemized ledger records or be nonfinancial. Never sum graph edges as additional transactions.</div>`+datum('Notes',e.notes||e.note);
@@ -154,7 +159,7 @@ function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const n
  if(isRoot||n.count>=2||other.indexOf(n)<17){let text=svgEl('text',{x:P.x,y:P.y+(isRoot?42:24),'text-anchor':'middle'},group);const mb=ballotById[n.name];let label=mb?mb.state+' '+measureName(mb).slice((stName[mb.state]||mb.state).length+1):n.name;label=label.length>24?label.slice(0,22)+'…':label;text.textContent=label;
  if(mb){let sub=svgEl('text',{x:P.x,y:P.y+(isRoot?60:40),'text-anchor':'middle',class:'graph-sub'},group);sub.textContent=mb.short_title.length>34?mb.short_title.slice(0,32)+'…':mb.short_title;const mo=measureOutcome[n.name];if(mo){let st=svgEl('text',{x:P.x,y:P.y+(isRoot?84:62),'text-anchor':'middle',class:'graph-status '+mo.status},group);st.textContent=mo.status==='passed'?'✓ PASSED':mo.status==='failed'?'✗ FAILED':'Not yet called';}}}
  group.addEventListener('click',()=>{const mb=ballotById[n.name];if(mb){pick({...mb});if(n.name!==graphHub){graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()}return;}
- if(n.name===graphHub){const ent=entityById[n.id];if(ent){pick({record_kind:'graph',from_name:ent.legal_or_reported_name,to_name:'registered entity',edge_type:ent.entity_type,source_url:ent.source_url,notes:ent.notes,jurisdiction:ent.jurisdiction,confidence:'registry identifier shown',id:ent.entity_id})}return;}
+ if(n.name===graphHub){const ent=entityById[n.id];if(ent){pick({record_kind:'entity',name:ent.legal_or_reported_name,entity_type:tidy(ent.entity_type),source_url:ent.source_url,notes:ent.notes,jurisdiction:ent.jurisdiction,id:ent.entity_id})}return;}
  graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()});}
 }
 function prepareHubRefresh(){$('#hub').innerHTML=hubs.map(x=>`<option value="${escapeHtml(x)}">${escapeHtml(hubLabel(x))}</option>`).join('')}
@@ -163,7 +168,7 @@ function renderStates(){const sel=$('#state-pick');if(!sel)return renderStateFoc
 // The evidence inspector for one state: its review status, its ballot events and its source.
 const tidy=t=>{t=String(t||'').replace(/_/g,' ').trim();return t?t[0].toUpperCase()+t.slice(1):''};
 function inspectState(code){const s=RESEARCH.coverage.find(x=>x.state===code);if(!s)return;selected=null;const bb=(byState[code]||[]).slice().sort((a,b)=>a.election_date.localeCompare(b.election_date)||a.measure_id.localeCompare(b.measure_id));
- let h=`<span class="event-kind ballot">State</span><h2>${escapeHtml(stName[code]||code)}</h2><div class="event-amount mt-big">${bb.length} ballot ${bb.length===1?'event':'events'}</div>`;
+ let h=`<h2 class="mt-selected">${escapeHtml(stName[code]||code)}</h2><span class="event-kind ballot">State</span><div class="event-amount mt-big">${bb.length} ballot ${bb.length===1?'event':'events'}</div>`;
  h+=datum('Ballot review',tidy(s.ballot_review_status)||'No comprehensive inventory verified')+datum('Finance review',tidy(s.finance_review_status)||'Not reviewed')+datum('Local measures review',tidy(s.local_measures_review_status)||'Not reviewed')+datum('State complete','NO');
  h+=bb.map(b=>`<button class="mt-state-measure" data-inspectmeasure="${escapeHtml(b.measure_id)}">${escapeHtml(b.measure_number)} · ${escapeHtml(b.short_title)}</button>`).join('')||'<div class="mini-warning">No statewide measures identified in the current archive. This does not establish that none existed.</div>';
  h+=sourceButton(s.source_url,'Open state inventory reference')+`<div class="detail-caution">${escapeHtml(s.notes||'Review pending.')}</div>`;
@@ -234,21 +239,31 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
       a(stName[c] + ' ballot guide', guide(c)), document.createTextNode(' · '), a('District map', '/map' + (c === 'CO' ? '' : '-' + c.toLowerCase()) + '/'));
     $('#state-focus').prepend(p);
   };
+  // Money web links: a measure with lines in the web opens centered on it; a measure with no lines yet opens its state's busiest dot.
+  const webNames = new Set();
+  [...networkVerified, ...networkContext].forEach(x => { webNames.add(norm(x.from_name)); webNames.add(norm(x.to_name)); });
+  function webHref(mid, st, name) {
+    if (webNames.has(norm(mid))) return { href: '?view=network&hub=' + encodeURIComponent(mid), label: 'See ' + name + ' on the money web' };
+    return { href: '?view=network&state=' + st, label: 'See ' + (stName[st] || st) + '’s money web (no lines for ' + name + ' yet)' };
+  }
   const baseDetails = details;
   details = function (e) {
     baseDetails(e);
     if (!e) return;
-    // the amount is the fact people came for: put it first, above the names
-    const big = $('#detail-content .mt-big'), h2 = $('#detail-content h2');
-    if (big && h2) h2.before(big);
     const box = document.createElement('div'); box.className = 'mt-follow-box';
     const h = document.createElement('h4'); h.textContent = 'Follow the money'; box.append(h);
     const ul = document.createElement('ul');
-    const add = (label, href) => { if (!href) return; const li = document.createElement('li'); li.append(a(label, href)); ul.append(li); };
+    const add = (label, href, art) => { if (!href) return; const li = document.createElement('li'); const l = a(label, href); if (art) { const im = document.createElement('img'); im.src = art; im.alt = ''; im.className = 'mt-link-art'; im.width = 40; im.height = 44; l.prepend(im); li.className = 'mt-link-with-art'; } li.append(l); ul.append(li); };
     if (e.record_kind === 'ballot') {
       add('Open the trail for ' + e.state + ' ' + e.measure_number, 'follow.html?measure=' + encodeURIComponent(e.measure_id));
+      const w = webHref(e.measure_id, e.state, e.state + ' ' + e.measure_number);
+      add(w.label, w.href, 'art/money-web-link.webp');
+      add('Money web full screen', w.href + '&full=1');
       add(stName[e.state] + ' election results', '/results/?state=' + e.state.toLowerCase() + '#tabs');
       add(stName[e.state] + ' ballot guide', guide(e.state));
+    } else if (e.record_kind === 'entity') {
+      add('Open the trail for ' + e.name, trailHref(e.id));
+      add('Money web full screen', '?view=network&hub=' + encodeURIComponent(e.name) + '&full=1');
     } else {
       const from = e.source_entity_id || e.from_entity_id, to = e.recipient_entity_id || e.to_entity_id;
       add('Follow ' + (e.source_name || e.from_name || 'the giver'), trailHref(from));
@@ -259,6 +274,13 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (ul.children.length) { if (ftm) { ul.className = 'mt-ftm-links'; ftm.append(ul); } else { box.append(ul); $('#detail-content').append(box); } }
   };
   if (q.get('state') && stName[q.get('state').toUpperCase()]) stateFocus = q.get('state').toUpperCase();
+  if (q.get('view') === 'network' && !q.get('hub') && stName[(q.get('state') || '').toUpperCase()]) {
+    // the busiest dot in that state's part of the web becomes the center
+    const st = q.get('state').toUpperCase(), count = new Map();
+    [...networkVerified, ...networkContext].forEach(x => { if (stateOf(x) !== st) return; for (const nm of [x.from_name, x.to_name]) if (nm) count.set(nm, (count.get(nm) || 0) + 1); });
+    const top = [...count].sort((x, y) => y[1] - x[1])[0];
+    if (top) { graphHub = top[0]; if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; }
+  }
   if (q.get('hub')) { graphHub = q.get('hub').toUpperCase(); if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; }
   if (q.get('q')) { settings.search = q.get('q'); $('#search').value = settings.search; }
   const vw = q.get('view');
@@ -326,6 +348,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   const basePick = pick;
   pick = function (e) { basePick(e); if (full) $('#detail-panel').classList.add('open'); };
   btn.addEventListener('click', () => setFull(!full));
+  if (new URLSearchParams(location.search).get('full') === '1' && !$('#network-view').hidden) setFull(true);
   document.addEventListener('keydown', e => {
     if (e.key !== 'Escape' || !full) return;
     if ($('#detail-panel').classList.contains('open')) { $('#detail-panel').classList.remove('open'); return; }

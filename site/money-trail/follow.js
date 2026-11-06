@@ -79,6 +79,60 @@
  const param = categories.find(type=>params.has(type));
  const requested = param ? params.get(param) : '';
  let selected = param ? resolve(param,requested) : featured[0];
+ // names that have lines in the money web (same rule as the web: a dot exists when a record names it)
+ const webNames = new Set();
+ for (const r of data.edges) { webNames.add(r[0]); webNames.add(r[1]); }
+ for (const r of data.tx) { webNames.add(r[4]); webNames.add(r[5]); }
+ const STATE_NAMES = {AK:'Alaska',AL:'Alabama',AR:'Arkansas',AZ:'Arizona',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',IA:'Iowa',ID:'Idaho',IL:'Illinois',IN:'Indiana',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',MA:'Massachusetts',MD:'Maryland',ME:'Maine',MI:'Michigan',MN:'Minnesota',MO:'Missouri',MS:'Mississippi',MT:'Montana',NC:'North Carolina',ND:'North Dakota',NE:'Nebraska',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NV:'Nevada',NY:'New York',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VA:'Virginia',VT:'Vermont',WA:'Washington',WI:'Wisconsin',WV:'West Virginia',WY:'Wyoming',DC:'District of Columbia'};
+ // Related news: our own news feed for this measure (from its guide page), else our news for its state. Newest three, then all.
+ let guides = null, newsTicket = 0;
+ const getJSON = url => fetch(url,{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null);
+ function newsSlug(guide) {
+ const m = /^\/guide(?:-([a-z]{2}))?\/measures\/([a-z0-9-]+)\.html$/.exec(guide||'');
+ return m ? (m[1]?m[1]+'-':'')+m[2] : '';
+ }
+ async function showNews(s) {
+ const box = get('#trail-news'), ticket = ++newsTicket;
+ box.hidden = true;
+ box.replaceChildren();
+ if (s.kind !== 'ballot') return;
+ const st = s.id.slice(0,2);
+ if (!guides) guides = (await getJSON('/money-trail/measure-results.json')) || {measures:{}};
+ const slug = newsSlug(((guides.measures||{})[s.id]||{}).guide);
+ let feed = slug ? await getJSON('/news/data/measures/'+slug+'.json') : null, about = st+' '+s.id.slice(3);
+ if (!feed || !(feed.items||[]).length) { feed = await getJSON('/news/data/states/'+st.toLowerCase()+'.json'); about = STATE_NAMES[st] || st; }
+ if (ticket !== newsTicket) return;
+ const seen = new Set();
+ const items = ((feed && feed.items) || []).filter(it => it && it.title && it.url && !seen.has(it.url) && seen.add(it.url))
+ .sort((a,b) => String(b.published_at||b.first_seen_at||'').localeCompare(String(a.published_at||a.first_seen_at||'')));
+ if (!items.length) return;
+ box.append(node('h3','Related news about '+about));
+ const item = it => {
+ const li = node('li');
+ li.append(node('span',String(it.published_at||it.first_seen_at||'').slice(0,10)), document.createTextNode(' '+(it.source?it.source+': ':'')), link(it.title,it.url));
+ return li;
+ };
+ const top = node('ol');
+ top.className = 'trail-news-list';
+ items.slice(0,3).forEach(it => top.append(item(it)));
+ box.append(top);
+ if (items.length > 3) {
+ const more = node('button','See all '+items.length+' related articles');
+ more.type = 'button';
+ more.className = 'trail-news-more';
+ const rest = node('ol');
+ rest.className = 'trail-news-list';
+ rest.start = 4;
+ rest.hidden = true;
+ items.slice(3).forEach(it => rest.append(item(it)));
+ more.addEventListener('click', () => { rest.hidden = !rest.hidden; more.textContent = rest.hidden ? 'See all '+items.length+' related articles' : 'Show only the newest three'; more.setAttribute('aria-expanded', String(!rest.hidden)); });
+ more.setAttribute('aria-expanded','false');
+ box.append(more, rest);
+ }
+ box.append(node('p','News items are links to other outlets, collected by our news feed. They are not checked line by line.'));
+ box.lastChild.className = 'trail-small';
+ box.hidden = false;
+ }
  function node(tag, text) {
  const element = document.createElement(tag);
  if (text) element.textContent = text;
@@ -125,6 +179,8 @@
  get('#trail-permalink').textContent = '';
  get('#trail-links').replaceChildren();
  get('#trail-big').hidden = true;
+ get('#trail-news').hidden = true;
+ newsTicket++;
  get('#trail-compare').hidden = get('#trail-context').hidden = true;
  return;
  }
@@ -161,7 +217,20 @@
  li.append(link('The Way · Colorado Amendment 87','/guide/measures/amendment-87.html'));
  links.append(li);
  }
+ // the money web: centered on this measure when it has lines, otherwise on its state's busiest dot
+ const st = s.id.slice(0,2), short = st+' '+s.id.slice(3);
+ const web = webNames.has(s.id) ? ['See '+short+' on the money web','/money-trail/?view=network&hub='+encodeURIComponent(s.id)]
+ : ['See '+(STATE_NAMES[st]||st)+'’s money web (no lines for '+short+' yet)','/money-trail/?view=network&state='+st];
+ const li = node('li');
+ li.className = 'trail-web';
+ const wl = link(web[0],web[1]);
+ const art = node('img');
+ Object.assign(art,{src:'/money-trail/art/money-web-link.webp',alt:'',width:40,height:44,className:'trail-link-art'});
+ wl.prepend(art);
+ li.append(wl,document.createTextNode(' · '),link('Full screen',web[1]+'&full=1'));
+ links.append(li);
  }
+ showNews(s);
  if (selected === 'leo' || selected === 'marble') {
  const li = node('li','Related filing trail ');
  li.append(jump(selected === 'leo'?'Marble Freedom Trust':'Leonard A. Leo',selected === 'leo'?'marble':'leo'));
