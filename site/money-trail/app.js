@@ -448,3 +448,23 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (fillCard(g, true)) { armed = g; const r = g.getBoundingClientRect(); place(r.right, r.bottom); }
   }, true);
 })();
+
+// ---- D199 (Nov 2026): "Filter the evidence" and the Evidence inspector can be hidden so the web gets the width.
+// The inspector comes back by itself when something is picked. The choice is remembered on this device only.
+(function () {
+  const wb = $('#workbench'), bf = $('#toggle-filter'), bi = $('#toggle-inspector'), content = $('#detail-content');
+  if (!wb || !bf || !bi) return;
+  const KEY = 'tw-mt-hidden-panels';
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify({ f: wb.classList.contains('no-filter'), i: wb.classList.contains('no-inspector') })); } catch (e) {} };
+  function set(cls, btn, hide, word) {
+    wb.classList.toggle(cls, hide);
+    btn.textContent = (hide ? 'Show ' : 'Hide ') + word;
+    btn.setAttribute('aria-pressed', hide ? 'true' : 'false');
+    if (view === 'network') renderGraph();
+  }
+  try { const s = JSON.parse(localStorage.getItem(KEY) || '{}'); if (s.f) set('no-filter', bf, true, 'filters'); if (s.i) set('no-inspector', bi, true, 'inspector'); } catch (e) {}
+  bf.addEventListener('click', () => { set('no-filter', bf, !wb.classList.contains('no-filter'), 'filters'); save(); });
+  bi.addEventListener('click', () => { set('no-inspector', bi, !wb.classList.contains('no-inspector'), 'inspector'); save(); });
+  // Anything new in the inspector (a dot, a line, a row, a state) brings it back.
+  if (content) new MutationObserver(() => { if (wb.classList.contains('no-inspector')) { set('no-inspector', bi, false, 'inspector'); save(); } }).observe(content, { childList: true });
+})();
