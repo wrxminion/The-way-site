@@ -20,7 +20,7 @@
       st.hidden=!any;
       if(q) st.open=any; else st.open=false;
     });
-    count.textContent=q?(shown+(shown===1?" member":" members")):"";
+    var unit=box.getAttribute("data-unit")||"member";count.textContent=q?(shown+" "+unit+(shown===1?"":"s")):"";
   }
   input.addEventListener("input",run);
 })();
