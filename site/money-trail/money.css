@@ -84,3 +84,29 @@ footer>.wb-motion-btn{flex:1 1 100%;max-width:max-content;align-self:center;marg
 footer>.michi-footer-nav{flex:1 1 100%;order:2}
 .state-pickbox{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 0}.state-pickbox label{color:#a6c4c8;font-size:11px;text-transform:uppercase;letter-spacing:.11em}.state-pickbox select{background:#061924;border:1px solid #315365;color:#e3f0f1;border-radius:9px;padding:10px 11px;font-size:14px;min-width:220px;max-width:100%}.state-pickbox select:focus{border-color:#6ad9bd}
 .mt-state-measure{display:block;width:100%;text-align:left;margin:6px 0;padding:9px 11px;border:1px solid #285464;border-radius:9px;background:#0c2634;color:#dcebec;font-size:12px}.mt-state-measure:hover{border-color:var(--mint);background:#143b46}
+/* Full screen web (Nov 2026): only the Money network web fills the page; a small card shows on hover.
+   The z-index values sit above every site layer (banners, bubbles, fact pop-ups go up to 2147483000). */
+.bubble .web-full-btn{width:auto;padding:0 11px;font-size:13px;font-weight:600;white-space:nowrap}
+.web-full-title,.web-card{display:none}
+body.mt-webfull{overflow:hidden}
+body.mt-webfull main{isolation:auto} /* whale.css and shark-silhouette.css isolate main, which would keep the web under the banners */
+body.mt-webfull .graph-wrap{position:fixed;inset:0;z-index:2147483200;border:0;border-radius:0;min-height:0;overflow:auto;background:radial-gradient(ellipse 65% 65% at 50% 50%,#123c4a,#06141e 78%)}
+body.mt-webfull .graph-wrap svg{width:100%;height:100vh;height:100dvh;touch-action:auto}
+body.mt-webfull .bubble{position:fixed;top:12px;right:12px;z-index:2147483300}
+body.mt-webfull .bubble button{background:#0c2836ee}
+body.mt-webfull .web-full-title{display:block;position:fixed;top:14px;left:16px;right:330px;z-index:2147483300;font:600 15px/1.3 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#e0f2ed;text-shadow:0 1px 3px #000;pointer-events:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+body.mt-webfull .web-card:not([hidden]){display:block;position:fixed;z-index:2147483400;max-width:290px;padding:11px 13px;border:1px solid #3c7a85;border-radius:10px;background:#0a2230f2;box-shadow:0 14px 40px #000a;pointer-events:none;font-size:12px;line-height:1.45;color:#cfe3e5}
+.web-card-name{font-weight:700;font-size:14px;color:#f0fbf8;overflow-wrap:anywhere}
+.web-card-sub{color:#a5c2c8;margin-top:2px}
+.web-card-status{font-weight:800;letter-spacing:.04em;color:#e9d59d;margin-top:3px}.web-card-status.passed{color:#3ddc84}.web-card-status.failed{color:#ff8080}
+.web-card-row{margin-top:5px}
+.web-card-faint{color:var(--faint);font-size:11px;margin-top:3px;overflow-wrap:anywhere}
+.web-card-hint{color:var(--mint);font-size:11px;margin-top:7px}
+body.mt-webfull .detail-panel{display:none}
+body.mt-webfull .detail-panel.open{display:block;position:fixed;z-index:2147483500;top:56px;right:12px;width:min(400px,calc(100vw - 24px));max-height:calc(100vh - 70px);box-shadow:0 25px 75px #000b}
+body.mt-webfull .detail-close{display:block}
+@media(max-width:760px){
+ body.mt-webfull .graph-wrap svg{width:1100px;max-width:none;height:auto;min-height:100dvh}
+ body.mt-webfull .web-full-title{top:auto;bottom:14px;left:14px;right:14px;font-size:13px;white-space:normal}
+ body.mt-webfull .web-card:not([hidden]){left:12px;right:12px;bottom:12px;top:auto;max-width:none}
+}

@@ -137,7 +137,7 @@ function makeNetwork(){let edges=settings.includeContext?[...networkVerified,...
  for(let e of shown){let a=nodeKey(e.from_name,e.from_entity_id,e.jurisdiction),b=nodeKey(e.to_name,e.to_entity_id,e.jurisdiction);
  for(const [id,name] of [[a,e.from_name],[b,e.to_name]])if(!nodes.has(id))nodes.set(id,{id,name:name||id,jur:e.jurisdiction||'',amount:0,count:0,central:norm(name)===f});
  nodes.get(a).count++;nodes.get(b).count++;
- nodes.get(a).amount+=num(e.amount_usd)||0;nodes.get(b).amount+=num(e.amount_usd)||0;
+ nodes.get(a).amount+=num(e.amount_usd)||0;nodes.get(b).amount+=num(e.amount_usd)||0;if(e.tier==='itemized'){nodes.get(a).itemized=(nodes.get(a).itemized||0)+(num(e.amount_usd)||0);nodes.get(b).itemized=(nodes.get(b).itemized||0)+(num(e.amount_usd)||0)}
  display.push({a,b,e});}
  return {edges:display,nodes:[...nodes.values()],total:edges.length};}
 const NS='http://www.w3.org/2000/svg';
@@ -150,7 +150,7 @@ function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const n
  other.forEach((n,i)=>{const inner=i<Math.min(16,total);const sameName=n.central;const radius=sameName?68:inner?200:290;const idx=sameName?i:(inner?i: i-16);const span=sameName?Math.max(roots.length-1,1):inner?Math.min(16,total):Math.max(total-16,1);let angle=2*Math.PI*(idx/Math.max(span,1))-.5*Math.PI;pos[n.id]={x:cx+Math.cos(angle)*radius+(i%2?2:-2),y:cy+Math.sin(angle)*radius*.86};});
  let pan=svgEl('g',{transform:`translate(${cx*(1-graphScale)} ${cy*(1-graphScale)}) scale(${graphScale})`},svg);
  for(let {a,b,e} of net.edges){let A=pos[a],B=pos[b];if(!A||!B)continue;let tier=e.tier;let line=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:tier==='itemized'?'#57c2ad':tier==='reported'?'#ad946c':'#659eb3','stroke-width':tier==='itemized'?'1.8':'1.3','stroke-dasharray':tier==='itemized'?'none':tier==='reported'?'7 5':'2 5',class:'graph-edge',opacity:'.7'},pan);svgEl('title',{},line).textContent=`${e.from_name} → ${e.to_name}\n${e.amount_usd!=null?money(e.amount_usd):'Non-financial'}\n${e.edge_type}`;line.addEventListener('click',()=>pick(e.record_ref||e));}
- for(let n of net.nodes){let P=pos[n.id],isRoot=n.id===root.id;let group=svgEl('g',{class:'graph-node'},pan);let circ=svgEl('circle',{cx:P.x,cy:P.y,r:isRoot?'24':n.central?'11':ballotById[n.name]?'13':Math.max(6,Math.min(14,7+n.count/4)),fill:(ballotById[n.name]&&outcomeColor(n.name))||(isRoot?'#6be3c9':n.central?'#c4b18a':'#4c9ba5')},group);if(ballotById[n.name]&&outcomeColor(n.name))circ.setAttribute('stroke','#ffffff'),circ.setAttribute('stroke-width','3');svgEl('title',{},group).textContent=`${n.name}\n${n.id}\n${n.count} connections`;
+ for(let n of net.nodes){let P=pos[n.id],isRoot=n.id===root.id;let group=svgEl('g',{class:'graph-node'},pan);group.__n=n;group.__root=isRoot;let circ=svgEl('circle',{cx:P.x,cy:P.y,r:isRoot?'24':n.central?'11':ballotById[n.name]?'13':Math.max(6,Math.min(14,7+n.count/4)),fill:(ballotById[n.name]&&outcomeColor(n.name))||(isRoot?'#6be3c9':n.central?'#c4b18a':'#4c9ba5')},group);if(ballotById[n.name]&&outcomeColor(n.name))circ.setAttribute('stroke','#ffffff'),circ.setAttribute('stroke-width','3');svgEl('title',{},group).textContent=`${n.name}\n${n.id}\n${n.count} connections`;
  if(isRoot||n.count>=2||other.indexOf(n)<17){let text=svgEl('text',{x:P.x,y:P.y+(isRoot?42:24),'text-anchor':'middle'},group);const mb=ballotById[n.name];let label=mb?mb.state+' '+measureName(mb).slice((stName[mb.state]||mb.state).length+1):n.name;label=label.length>24?label.slice(0,22)+'…':label;text.textContent=label;
  if(mb){let sub=svgEl('text',{x:P.x,y:P.y+(isRoot?60:40),'text-anchor':'middle',class:'graph-sub'},group);sub.textContent=mb.short_title.length>34?mb.short_title.slice(0,32)+'…':mb.short_title;const mo=measureOutcome[n.name];if(mo){let st=svgEl('text',{x:P.x,y:P.y+(isRoot?84:62),'text-anchor':'middle',class:'graph-status '+mo.status},group);st.textContent=mo.status==='passed'?'✓ PASSED':mo.status==='failed'?'✗ FAILED':'Not yet called';}}}
  group.addEventListener('click',()=>{const mb=ballotById[n.name];if(mb){pick({...mb});if(n.name!==graphHub){graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()}return;}
@@ -263,4 +263,94 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   if (q.get('q')) { settings.search = q.get('q'); $('#search').value = settings.search; }
   const vw = q.get('view');
   if (vw === 'network' || vw === 'states') setView(vw); else if (q.get('q')) renderTimeline();
+})();
+
+// ---- Full screen web (Nov 2026): the Money network web fills the page by itself (not browser full screen).
+// In this view, hovering a dot shows a small card. On a phone the first tap shows the card and a second tap follows the dot.
+(function () {
+  const wrap = $('#graph-wrap'), svg = $('#network-svg'), btn = $('#web-full'), card = $('#web-card'), title = $('#web-full-title');
+  if (!wrap || !svg || !btn || !card) return;
+  let full = false, lastPointer = 'mouse', armed = null;
+  const isFull = () => full;
+  function hideCard() { card.hidden = true; card.replaceChildren(); armed = null; }
+  function line(cls, text) { const d = document.createElement('div'); d.className = cls; d.textContent = text; card.append(d); return d; }
+  function fillCard(g, touch) {
+    const n = g.__n; if (!n) return false;
+    card.replaceChildren();
+    const mb = ballotById[n.name];
+    line('web-card-name', mb ? measureName(mb) : n.name);
+    if (mb) {
+      line('web-card-sub', mb.short_title);
+      const mo = measureOutcome[n.name];
+      if (mo) line('web-card-status ' + mo.status, mo.status === 'passed' ? '✓ Passed' : mo.status === 'failed' ? '✗ Failed' : 'Not yet called');
+    }
+    line('web-card-row', n.count + (n.count === 1 ? ' connection' : ' connections') + ' in this web');
+    if (n.itemized > 0) line('web-card-row', money_(n.itemized) + ' in itemized filings on these lines');
+    if (n.jur) line('web-card-faint', n.jur);
+    if (!/reported[-_]name/.test(n.id)) line('web-card-faint', 'ID ' + n.id);
+    let hint = g.__root ? 'This is the center of the web.' : mb ? 'opens this measure and its money' : 'puts this dot in the center';
+    if (!g.__root) hint = (touch ? 'Tap the dot again: ' : 'Click: ') + hint + '.';
+    line('web-card-hint', hint);
+    card.hidden = false;
+    return true;
+  }
+  function place(x, y) {
+    if (window.innerWidth <= 760) { card.style.left = ''; card.style.top = ''; return; }
+    const w = card.offsetWidth, h = card.offsetHeight, vw = window.innerWidth, vh = window.innerHeight;
+    let L = x + 16, T = y + 16;
+    if (L + w > vw - 10) L = x - w - 16;
+    if (T + h > vh - 10) T = y - h - 16;
+    card.style.left = Math.max(10, L) + 'px'; card.style.top = Math.max(10, T) + 'px';
+  }
+  function stripTitles() {
+    // The browser's own tooltip would sit on top of the card, so it moves to aria-label while the web is full screen.
+    svg.querySelectorAll('.graph-node').forEach(g => { const t = g.querySelector(':scope > title'); if (t) { g.setAttribute('aria-label', t.textContent.replace(/\n/g, ', ')); t.remove(); } });
+  }
+  function setFull(on) {
+    full = on;
+    document.body.classList.toggle('mt-webfull', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? 'Close full screen ✕' : 'Full screen';
+    hideCard();
+    renderGraph();
+    if (on) { wrap.scrollLeft = (wrap.scrollWidth - wrap.clientWidth) / 2; wrap.scrollTop = (wrap.scrollHeight - wrap.clientHeight) / 2; btn.focus(); }
+    else { $('#detail-panel').classList.remove('open'); btn.focus(); }
+  }
+  const baseRender = renderGraph;
+  renderGraph = function () {
+    baseRender();
+    if (!full) return;
+    stripTitles();
+    if (title) title.textContent = hubLabel(graphHub);
+  };
+  const basePick = pick;
+  pick = function (e) { basePick(e); if (full) $('#detail-panel').classList.add('open'); };
+  btn.addEventListener('click', () => setFull(!full));
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape' || !full) return;
+    if ($('#detail-panel').classList.contains('open')) { $('#detail-panel').classList.remove('open'); return; }
+    setFull(false);
+  });
+  svg.addEventListener('pointerdown', e => { lastPointer = e.pointerType || 'mouse'; }, true);
+  svg.addEventListener('pointerover', e => {
+    if (!isFull() || e.pointerType === 'touch') return;
+    const g = e.target.closest && e.target.closest('.graph-node');
+    if (g && fillCard(g, false)) place(e.clientX, e.clientY);
+  });
+  svg.addEventListener('pointermove', e => { if (isFull() && e.pointerType !== 'touch' && !card.hidden) place(e.clientX, e.clientY); });
+  svg.addEventListener('pointerout', e => {
+    if (!isFull() || e.pointerType === 'touch') return;
+    const g = e.target.closest && e.target.closest('.graph-node');
+    if (g && !(e.relatedTarget && g.contains(e.relatedTarget))) hideCard();
+  });
+  // Touch: the first tap on a dot only shows its card. Tapping the same dot again does what a click does.
+  svg.addEventListener('click', e => {
+    if (!isFull()) return;
+    const g = e.target.closest && e.target.closest('.graph-node');
+    if (lastPointer !== 'touch') { hideCard(); return; }
+    if (!g) { hideCard(); return; }
+    if (armed === g && !g.__root) { hideCard(); return; }
+    e.stopPropagation();
+    if (fillCard(g, true)) { armed = g; const r = g.getBoundingClientRect(); place(r.right, r.bottom); }
+  }, true);
 })();
