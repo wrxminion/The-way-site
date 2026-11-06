@@ -236,17 +236,21 @@ def main():
         'cared for by the National Park Service.</p>%s</div></details>'
         '</div></div></section>') % (src(wh), src(wh), src(wh), src(wh), src(wh), src('https://www.nps.gov/whho/index.htm'))
 
+    from build_presidents import PRESIDENTS  # page slugs (imported here: build_presidents imports this file)
     rows = []
     for p in reversed(pres):
         party = ' / '.join(dict.fromkeys(x for x in p['parties'] if x))
         how = p['hows'][0]
         how_w = {'election': 'Elected', 'succession': 'Succeeded to the office', 'appointment': 'Appointed'}.get(how, how)
         rows.append('<tr><td>%d</td><td>%s</td><td>%s to %s</td><td>%s</td><td>%s</td></tr>' % (
-            p['n'], e(full_name(p['person'])), e(p['start'][:4]), e(p['end'][:4]) if p['end'] > today else e(p['end'][:4]),
+            p['n'], '<a href="/government/presidents/%s.html">%s</a>' % (PRESIDENTS[p['person']['id']['govtrack']][0], e(full_name(p['person']))),
+            e(p['start'][:4]), e(p['end'][:4]) if p['end'] > today else e(p['end'][:4]),
             e(party.capitalize() if party == 'no party' else party), e(how_w)))
     every = ('<section id="presidents" class="gv-sec"><div class="gw-heading"><span>Layer 4 / History</span>'
              '<h2>%d presidencies, %d people.</h2><p>Grover Cleveland and Donald J. Trump each served two terms that were not back to back, so '
-             'each holds two numbers. “Succeeded” means a vice president took over after a president died or resigned.</p></div>'
+             'each holds two numbers. “Succeeded” means a vice president took over after a president died or resigned.</p>'
+             '<p><a href="/government/presidents/">Open any president</a> for the national debt, the budget and the judges from their years, '
+             'or follow the money to <a href="/government/federal-reserve/">the Federal Reserve</a>.</p></div>'
              '<details><summary>Show every president</summary><div class="gw-detail gv-scroll"><table class="gv-table"><thead><tr><th>No.</th>'
              '<th>President</th><th>Years</th><th>Party</th><th>How they took office</th></tr></thead><tbody>%s</tbody></table>%s</div></details></section>') % (
         len(pres), people, ''.join(rows), ds)

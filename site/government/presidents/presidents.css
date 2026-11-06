@@ -1,0 +1,17 @@
+/* Presidents layer and Federal Reserve page. Builds on /government/government.css (.gv). */
+.gv-tile em{display:block;font-style:normal;color:var(--muted);font-size:.86rem;margin-top:4px;line-height:1.35}
+.pr-chart{margin:16px 0 8px}
+.pr-chart svg{display:block;width:100%;height:auto;max-height:260px}
+.pr-chart .pr-axis{stroke:#aec6ce;stroke-width:1}
+.pr-chart .pr-up{fill:var(--sea)}
+.pr-chart .pr-down{fill:#b9bbf5}
+.pr-chart rect:hover{fill:#fff}
+.pr-chart text{fill:var(--muted);font-size:11px;text-anchor:middle}
+.pr-chart figcaption{font-size:.86rem;color:var(--muted)}
+.pr-table td:first-child{white-space:nowrap}
+.pr-table td .gv-muted{display:block;white-space:normal;font-size:.78rem}
+.pr-banks{columns:2 160px;column-gap:18px}
+.pr-banks li{break-inside:avoid}
+.pr-gap{margin-top:18px}
+.gw-card h3+.gv-list,.gv-sec h3{margin-top:14px}
+@media(max-width:600px){.pr-idx th:nth-child(4),.pr-idx td:nth-child(4){display:none}}
