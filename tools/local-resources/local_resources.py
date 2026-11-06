@@ -25,6 +25,13 @@ KINDS = {
     'library': 'Public library',
     'state_election_office': 'State election office',
 }
+KIND_WORDS = {
+    'election_office': 'elections or voter registration office',
+    'clerk': 'clerk or recorder office',
+    'government': 'government home page',
+    'library': 'public library',
+    'state_election_office': 'elections office',
+}
 # Words in link text or address that make a page worth checking, per kind.
 LINK_WORDS = {
     'election_office': r'\belect|\bvot(e|er|ing)\b|\bballot|registrar|supervisor of elections|board of elections',
@@ -132,8 +139,11 @@ def must_yield(cfg):
         try:
             r = subprocess.run(['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', ps1],
                                capture_output=True, text=True, timeout=60)
-            if r.returncode != 0:
-                return 'busy check says busy: ' + (r.stdout or r.stderr).strip()[:200]
+            # FRAK's busy check prints a reason ("game ...") and exits 0, so printed text that is
+            # not a plain "free" or "idle" also counts as busy. A nonzero exit is busy too.
+            said = (r.stdout or '').strip()
+            if r.returncode != 0 or (said and not re.match(r'^(free|idle|ok|not busy)\b', said, re.I)):
+                return 'busy check says busy: ' + (said or r.stderr or 'exit ' + str(r.returncode)).strip()[:200]
         except (OSError, subprocess.TimeoutExpired) as e:
             return 'busy check failed (treated as busy): ' + str(e)
     hours = cfg.get('quiet_hours_local')  # for example [[6, 14]] = do not run 06:00 to 13:59 machine time
@@ -320,9 +330,11 @@ Page text:
 """
 
 CHECK_KIND_PROMPT = """Check one claim about a web page. Answer only from the page text below.
-Claim: this page is the official {kind_label} for {place}, {state}.
+Code has already checked that this address belongs to a government (or is linked from a government site), so do not ask whether the page calls itself "official".
+Claim: this page belongs to {place}, {state}, and it is mainly about its {kind_label}.
 Page address: {url}
 Page title: {title}
+Say "yes" if the page text or title shows both parts of the claim. Say "no" if it is about a different place or a different office.
 Reply with JSON only: {{"answer": "yes" or "no", "why": "one short sentence"}}
 
 Page text:
@@ -479,7 +491,7 @@ def check_page(cfg, fetcher, item, place, state_name, allowed_sites, notes):
     found = []
     if kind != 'none':
         try:
-            c = ask(cfg, cfg['checker_model'], CHECK_KIND_PROMPT.format(kind_label=KINDS[kind].lower(), place=place, state=state_name, url=final, title=title, text=excerpt))
+            c = ask(cfg, cfg['checker_model'], CHECK_KIND_PROMPT.format(kind_label=KIND_WORDS[kind], place=place, state=state_name, url=final, title=title, text=excerpt))
         except (FetchError, ValueError) as e:
             c = {'answer': 'no', 'why': 'checker failed: ' + str(e)}
         if str(c.get('answer', '')).lower() == 'yes':
@@ -695,6 +707,34 @@ def _bbox(polys):
     xs = [pt[0] for p in polys for pt in p[0]]; ys = [pt[1] for p in polys for pt in p[0]]
     return (min(xs), min(ys), max(xs), max(ys)) if xs else None
 
+def map_data_dir(cfg, s):
+    """The state map's district files. They are not in git, so if the repo copy lacks them,
+    copy them from the live site (public files) into the work folder once a month."""
+    local = os.path.join(cfg['repo'], 'site', s['map'], 'data')
+    if os.path.exists(os.path.join(local, 'us-house.geojson')):
+        return local
+    base = cfg.get('map_data_url')
+    if not base:
+        return None
+    cache = os.path.join(cfg['work'], 'mapdata', s['abbr'].lower())
+    os.makedirs(cache, exist_ok=True)
+    for fn in ('us-house.geojson', 'state-senate.geojson', 'state-house.geojson'):
+        p = os.path.join(cache, fn)
+        if os.path.exists(p) and time.time() - os.path.getmtime(p) < 30 * 86400:
+            continue
+        url = base.rstrip('/') + '/' + s['map'].strip('/') + '/data/' + fn
+        try:
+            req = urllib.request.Request(url, headers={'User-Agent': cfg['user_agent']})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                data = r.read(60000000)
+            json.loads(data.decode('utf-8'))
+            with open(p + '.tmp', 'wb') as fh:
+                fh.write(data)
+            os.replace(p + '.tmp', p)
+        except (urllib.error.URLError, OSError, ValueError) as e:
+            log(cfg, 'map data not copied:', url, str(e)[:100])
+    return cache if os.path.exists(os.path.join(cache, 'us-house.geojson')) else None
+
 def district_counties(cfg, abbr, map_dir):
     """Which counties each district touches: sample a grid of points in every county."""
     files = {'us_house': 'us-house.geojson', 'state_senate': 'state-senate.geojson', 'state_house': 'state-house.geojson'}
@@ -757,8 +797,8 @@ def publish(cfg):
                 counties[fips] = {'name': seedrec['counties'][fips]['name'], 'links': links, 'elections': els}
         districts = {}
         if s.get('map'):
-            map_dir = os.path.join(cfg['repo'], 'site', s['map'], 'data')
-            if os.path.isdir(map_dir):
+            map_dir = map_data_dir(cfg, s)
+            if map_dir:
                 districts = district_counties(cfg, s['abbr'], map_dir)
         data = {'schema': SCHEMA, 'state': s['abbr'], 'name': s['name'], 'updated_at': now_utc().isoformat(),
                 'note': 'Links and dates found on official sites by an automatic check on a home computer, then checked by code and a second model. Each shows the day it was last checked. Your election office has the final word.',

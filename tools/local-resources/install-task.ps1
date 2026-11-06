@@ -5,9 +5,13 @@ param(
   [string]$Dir = "D:\theway\local-resources",
   [string]$Config = "D:\theway\local-resources\config.json"
 )
-$py = (Get-Command python -ErrorAction Stop).Source
-$pyw = Join-Path (Split-Path $py) "pythonw.exe"
-if (-not (Test-Path $pyw)) { throw "pythonw.exe not found next to $py" }
+# "python" can be the Microsoft Store stub (WindowsApps), which has no pythonw.exe. Prefer a real install.
+$pyw = Get-ChildItem "C:\Program Files\Python3*\pythonw.exe", "$env:LOCALAPPDATA\Programs\Python\Python3*\pythonw.exe" -ErrorAction SilentlyContinue | Sort-Object FullName -Descending | Select-Object -First 1 -ExpandProperty FullName
+if (-not $pyw) {
+  $py = (Get-Command python -ErrorAction Stop).Source
+  $pyw = Join-Path (Split-Path $py) "pythonw.exe"
+}
+if (-not (Test-Path $pyw) -or $pyw -like "*WindowsApps*") { throw "No real pythonw.exe found (only the Store stub)" }
 $script = Join-Path $Dir "local_resources.py"
 $action = New-ScheduledTaskAction -Execute $pyw -Argument "`"$script`" --config `"$Config`" run" -WorkingDirectory $Dir
 $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(5) -RepetitionInterval (New-TimeSpan -Hours 1)
