@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-06T18:56:54Z",
+ "updated_at": "2026-11-06T19:05:52Z",
  "certified": false,
  "contests": [
   {
@@ -1092,7 +1092,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "mciver",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:22:28.493Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-11",
@@ -1178,7 +1184,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "mejia",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:18:49.311Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-12",
@@ -1289,7 +1301,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "hamawy",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:26:52.699Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-2",
@@ -2083,7 +2101,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "pallone",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:06:31.009Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-7",
@@ -2305,7 +2329,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "menendez",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:11:12.519Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-9",
@@ -42824,7 +42854,13 @@
    },
    "category": "Results",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-essex-2-member-of-the-house-of-representatives-8th-congressional-district",
@@ -42872,7 +42908,13 @@
    },
    "category": "Results",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "rob-menendez",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:11:12.519Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-essex-3-member-of-the-house-of-representatives-10th-congressional-district",
@@ -42906,7 +42948,13 @@
    },
    "category": "Results",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "lamonica-r-mciver",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:22:28.493Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-essex-4-member-of-the-house-of-representatives-11th-congressional-district",
@@ -42947,7 +42995,13 @@
    },
    "category": "Results",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "analilia-mejia",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:18:49.311Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-essex-5-county-executive",
@@ -52236,7 +52290,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-middlesex-0005-house-of-representatives-cd6",
@@ -52277,7 +52337,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "frank-pallone-jr",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:06:31.009Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-middlesex-0006-house-of-representatives-cd12",
@@ -52332,7 +52398,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "adam-hamawy",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:26:52.699Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-middlesex-0007-county-surrogate",
@@ -120951,11 +121023,9 @@
   "Camden",
   "Cape May",
   "Cumberland",
-  "Essex",
   "Hudson",
   "Hunterdon",
   "Mercer",
-  "Middlesex",
   "Monmouth",
   "Morris",
   "Ocean",
@@ -120968,7 +121038,9 @@
  "counties_missing": [
   "Atlantic",
   "Burlington",
+  "Essex",
   "Gloucester",
+  "Middlesex",
   "Warren"
  ]
 }
