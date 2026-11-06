@@ -32,6 +32,33 @@ async function act(p, okText) { try { await p; note.textContent = okText; await 
 function parts(list) {
   return h('ul', { class: 'pt-parts' }, list.map((p) => h('li', { class: p.pts < 0 ? 'neg' : '' }, `${p.pts > 0 ? '+' : ''}${p.pts}  ${p.label}`)));
 }
+// A short title for each item, made only from what is already there: the page's own title for a link, the words of
+// the question, or the first line of the screenshot text. A link with no page title uses the words in its address,
+// then the site name. Nothing is made up. Long titles are cut at a word and end with "...".
+function itemTitle(r) {
+  const clean = (t) => String(t || '').replace(/\s+/g, ' ').trim();
+  let t = '';
+  if (r.kind === 'url') {
+    t = clean(r.page_title).replace(/\s+\|\s+[^|]{1,40}$/, '');   // drop a trailing " | Site name"
+    if (!t && r.question) t = clean(r.question);
+    if (!t && r.url) {
+      try {
+        const u = new URL(r.url);
+        const seg = decodeURIComponent(u.pathname).split('/').filter(Boolean).pop() || '';
+        const words = seg.replace(/\.[a-z0-9]{2,5}$/i, '').split(/[-_+\s]+/).filter((w) => w && !/^\d{5,}$/.test(w));
+        t = words.filter((w) => /[a-z]/i.test(w)).length >= 3 ? words.join(' ') : u.hostname.replace(/^www\./, '');
+      } catch { t = ''; }
+    }
+  } else if (r.kind === 'question') t = clean(r.question);
+  else t = clean(String(r.ocr_text || '').split(/\n/).find((l) => l.trim()) || r.question || '');
+  if (t.length <= 80) return t;
+  const cut = t.slice(0, 80); const sp = cut.lastIndexOf(' ');
+  return (sp > 40 ? cut.slice(0, sp) : cut).replace(/[\s,;:.]+$/, '') + '...';
+}
+function titlePart(r) {
+  const t = itemTitle(r);
+  return t ? `\u201c${t}\u201d · ` : '';
+}
 function safeLink(url) {
   return /^https?:\/\//i.test(url) ? h('a', { href: url, rel: 'noopener noreferrer nofollow', target: '_blank', text: url }) : h('span', { text: url });
 }
@@ -114,7 +141,7 @@ function item(r, mineId) {
   const shotBox = h('div');
   li.append(...[   // empty parts are null; append(null) would print the word null, so they are dropped
     h('div', { class: 'row' },
-      h('strong', {}, `#${r.rank} · item ${r.id} · `, r.kind === 'url' ? 'link' : r.kind === 'screenshot' ? 'screenshot' : 'question'),
+      h('strong', { class: 'pt-head' }, `#${r.rank} · item ${r.id} · `, titlePart(r), r.kind === 'url' ? 'link' : r.kind === 'screenshot' ? 'screenshot' : 'question'),
       h('span', { class: 'pt-score' }, h('span', { class: 'tag ok', text: `score ${r.score}` }), ' ', h('span', { class: `tag ${r.status === 'in_review' ? 'warn' : ''}`, text: r.status.replace('_', ' ') }))),
     h('p', { class: 'muted small', text: `Sent ${when(r.created_at)}${r.times_sent > 1 ? ` · ${r.times_sent} sends` : ''}${r.claimed_by_name ? ` · picked by ${r.claimed_by_name}` : ''}` }),
     r.url ? h('p', {}, safeLink(r.url)) : null,
@@ -215,7 +242,7 @@ function researchItem(r) {
     ...projects.map((p) => h('option', { value: String(p.id), text: p.title, selected: p.id === r.project_id ? '' : null }))]);
   const summary = h('input', { placeholder: 'What we found (shown to the sender, up to 500 characters)', maxlength: '500' });
   const link = h('input', { placeholder: 'Page on this site with the result, like /research/ (optional)', maxlength: '250' });
-  li.append(h('div', { class: 'row' }, h('strong', { text: `#${r.id} ${r.kind}` }),
+  li.append(h('div', { class: 'row' }, h('strong', { class: 'pt-head', text: `item ${r.id} · ${titlePart(r)}${r.kind === 'url' ? 'link' : r.kind}` }),
       h('span', { class: 'tag', text: st === 'finished' ? `finished ${when(r.research_done_at)}` : `${STEP[st] || 'Accepted'} · accepted ${when(r.resolved_at)}` })),
     r.url ? h('p', {}, safeLink(r.url)) : null, r.question ? h('p', { text: r.question }) : null, r.note ? h('p', { class: 'muted small', text: r.note }) : null,
     r.project_title ? h('p', { class: 'small', text: `Project: ${r.project_title}` }) : null,

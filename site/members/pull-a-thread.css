@@ -5,6 +5,7 @@
 .pt-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .pt-match{border-left:3px solid #7fe3d9;padding:6px 12px;margin:8px 0}
 .pt-score{font-variant-numeric:tabular-nums}
+.pt-head{flex:1 1 20em;min-width:0;overflow-wrap:anywhere}
 .pt-parts{margin:6px 0 0;padding-left:18px;font-size:15px}
 .pt-parts .neg{color:var(--warn)}
 .pt-excerpt{white-space:pre-wrap;overflow-wrap:anywhere;border:1px dashed var(--line);border-radius:10px;padding:8px 10px;font-size:15px;margin:8px 0}
