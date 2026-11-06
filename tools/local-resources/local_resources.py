@@ -34,7 +34,7 @@ KIND_WORDS = {
 }
 # Words in link text or address that make a page worth checking, per kind.
 LINK_WORDS = {
-    'election_office': r'\belect|\bvot(e|er|ing)\b|\bballot|registrar|supervisor of elections|board of elections',
+    'election_office': r'\belections?\b|\bvot(e|er|ers|ing)\b|\bballots?\b|registrar|supervisor of elections|board of elections',
     'clerk': r'\bclerk\b|\brecorder\b|\bauditor\b|\bregister of deeds\b',
     'library': r'\blibrar',
 }
@@ -469,6 +469,28 @@ def seed(cfg):
 
 # ---------------------------------------------------------------- one county
 
+# A page's title or address must say what it is, so a news story or a results page is never listed as an office.
+KIND_MUST = {
+    'election_office': r'\belections?\b|\bvot(e|er|ers|ing)\b|registrar|supervisor of elections|board of elections',
+    'state_election_office': r'\belections?\b|\bvot(e|er|ers|ing)\b|secretary of state|\bsos\b|department of state',
+    'clerk': r'\bclerk\b|\brecorder\b|\bauditor\b|register of deeds',
+    'library': r'\blibrar',
+}
+KIND_NEVER = r'\bresults?\b|clarity|canvass|\bnews\b|press release|\bclosures?\b|engagement|calendar of events|/news/|/blog/'
+
+def kind_refused(kind, title, url, item):
+    """Code check on what the finder says a page is. Returns a reason, or '' when the page is fine."""
+    hay = (title + ' ' + urllib.parse.unquote(urllib.parse.urlsplit(url).path).replace('-', ' ').replace('_', ' ')).lower()
+    if re.search(KIND_NEVER, hay):
+        return 'title or address looks like news, results or an event, not an office page'
+    pat = KIND_MUST.get(kind)
+    if pat and not re.search(pat, hay):
+        return 'title and address do not name the office'
+    if kind == 'government':
+        if urllib.parse.urlsplit(url).path.strip('/') not in ('', 'index.html', 'index.php', 'home'):
+            return 'not the home page of the site'
+    return ''
+
 def check_page(cfg, fetcher, item, place, state_name, allowed_sites, notes):
     """Fetch one candidate page, ask the finder, then the checker. Returns found items."""
     url = item['url']
@@ -489,6 +511,10 @@ def check_page(cfg, fetcher, item, place, state_name, allowed_sites, notes):
         return [], links
     kind = f.get('kind') if f.get('kind') in KINDS else 'none'
     found = []
+    why_not = kind_refused(kind, title, final, item) if kind != 'none' else ''
+    if why_not:
+        notes.append({'url': final, 'place': place, 'result': 'refused by code as ' + kind + ': ' + why_not})
+        kind = 'none'
     if kind != 'none':
         try:
             c = ask(cfg, cfg['checker_model'], CHECK_KIND_PROMPT.format(kind_label=KIND_WORDS[kind], place=place, state=state_name, url=final, title=title, text=excerpt))
@@ -778,6 +804,16 @@ def district_counties(cfg, abbr, map_dir):
 
 # ---------------------------------------------------------------- publish
 
+def same_page_once(links):
+    """One entry per page: www and no www, http and https, and a trailing slash count as the same page."""
+    seen, out = set(), []
+    for i in links:
+        p = urllib.parse.urlsplit(i['u'])
+        key = (p.netloc.lower().removeprefix('www.'), p.path.rstrip('/').lower(), p.query)
+        if key not in seen:
+            seen.add(key); out.append(i)
+    return out
+
 def publish(cfg):
     """Write site/lookup/local/xx.json from checked items. hold mode writes to work/outbox for a person to look at first."""
     live = cfg['publish_mode'] == 'live'
@@ -792,6 +828,7 @@ def publish(cfg):
         counties = {}
         for fips, items in found.get('counties', {}).items():
             links = sorted([i for i in items if i['k'] != 'election'], key=lambda i: (list(KINDS).index(i['k']) if i['k'] in KINDS else 9, i['t']))
+            links = same_page_once(links)
             els = sorted([i for i in items if i['k'] == 'election' and i['d'] >= today().isoformat()], key=lambda i: i['d'])
             if links or els:
                 counties[fips] = {'name': seedrec['counties'][fips]['name'], 'links': links, 'elections': els}
