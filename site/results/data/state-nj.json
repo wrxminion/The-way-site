@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-06T09:36:28Z",
+ "updated_at": "2026-11-06T09:45:44Z",
  "certified": false,
  "contests": [
   {
@@ -777,7 +777,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-1",
@@ -1963,7 +1969,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "gottheimer",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:12:11.123Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-6",
@@ -2337,7 +2349,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "pou",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:22:06.948Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-atlantic-0004-united-states-senate",
@@ -78741,7 +78759,13 @@
     "reporting": 0,
     "total": 0
    },
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-bergen-0002-5th-congressional-district",
@@ -110155,7 +110179,13 @@
     "reporting": 0,
     "total": 0
    },
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "josh-gottheimer",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:12:11.123Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-bergen-0004-member-of-the-house-of-representatives-9th-congressional-district",
@@ -110201,7 +110231,13 @@
     "reporting": 0,
     "total": 0
    },
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "nelida-pou",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:22:06.948Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-bergen-0005-county-executive",
@@ -118179,7 +118215,6 @@
  "official": false,
  "counties_covered": [
   "Atlantic",
-  "Bergen",
   "Burlington",
   "Camden",
   "Cape May",
@@ -118200,6 +118235,7 @@
   "Union"
  ],
  "counties_missing": [
+  "Bergen",
   "Warren"
  ]
 }
