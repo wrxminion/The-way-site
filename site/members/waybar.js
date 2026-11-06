@@ -452,11 +452,33 @@
   // The arrow under the bar: shrink it to the small front page bar, or bring the full one back. Kept per browser (localStorage), nothing sent anywhere.
   var SMALL = 'theway.smallbar';
   function smallBar() { try { return localStorage.getItem(SMALL) === '1'; } catch (e) { return false; } }
+  // A quick glimpse (Nov 2026): for visitors who keep the small bar, an inner page opens with the full bar and its banner for a moment,
+  // then folds to the small bar (after about two seconds, or at once on the first scroll, click or key). Not with reduced motion.
+  var glimpseDone = false, glimpseTimer = null;
+  function glimpseNow(isFront) {
+    if (glimpseDone || isFront || !smallBar()) return false;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || window.scrollY > 40) { glimpseDone = true; return false; }
+    if (!glimpseTimer) {
+      glimpseTimer = setTimeout(endGlimpse, 2200);
+      ['scroll', 'keydown', 'pointerdown', 'wheel', 'touchstart'].forEach(function (ev) { window.addEventListener(ev, endGlimpse, { passive: true, once: true }); });
+    }
+    return true;
+  }
+  function endGlimpse() {
+    if (glimpseDone) return;
+    glimpseDone = true;
+    clearTimeout(glimpseTimer);
+    var bar = document.getElementById('waybar');
+    if (bar) { bar.classList.add('wb-fold'); setTimeout(function () { bar.classList.remove('wb-fold'); }, 700); }
+    render();
+  }
   function shrinkButton(compact) {
     var b = el('button', { type: 'button', class: 'wb-shrink', 'aria-pressed': compact ? 'true' : 'false',
       'aria-label': compact ? 'Show the full header' : 'Shrink the header', title: compact ? 'Show the full header' : 'Shrink the header' });
     b.appendChild(el('span', { class: 'wb-shrink-arrow', 'aria-hidden': 'true' }));
     b.addEventListener('click', function () {
+      glimpseDone = true; clearTimeout(glimpseTimer);
       try { compact ? localStorage.removeItem(SMALL) : localStorage.setItem(SMALL, '1'); } catch (e) { /* private mode: this page only */ }
       var bar = document.getElementById('waybar');
       bar.classList.toggle('wb-compact', !compact);
@@ -468,11 +490,12 @@
   }
   // Drop-down banners (Nov 2026): the full bar shows one of Frank's underwater pictures behind it. Each main section has its own picture
   // (SECTION_BANNER below; change a name there to swap one). The Commons and every other page rotate through the four water pictures:
-  // the next one each page and each time the arrow opens the bar, so opening it feels like going deeper. The two Anansi spiders belong
-  // to the money: they show only on Money pages, taking turns there. Pictures only (members/art/banners, no words in them); the links stay real text.
+  // the next one each page and each time the arrow opens the bar, so opening it feels like going deeper. Anansi belongs to the money:
+  // the two spider pictures (the real spider in its web, and the cartoon spider with its money bag on the same web) show only on
+  // Money pages, taking turns there. Pictures only (members/art/banners, no words in them); the links stay real text.
   // Three pictures have art on the left (the buoy and the two spiders), so the news scroll moves right on those (the 1 below).
   var ROTATE = [['the-current', 0], ['the-waterline', 0], ['pull-a-thread', 0], ['the-buoy', 1]];
-  var SPIDERS = [['anansis-web-cartoon', 1], ['anansis-web-orb-weaver', 1]];
+  var SPIDERS = [['anansis-web-orb-weaver', 1], ['anansis-web-cartoon', 1]];
   var BANNER_KEY = 'theway.banner', SPIDER_KEY = 'theway.banner.money', bannerAt = -1, spiderAt = -1;
   function turn(key, len) {
     var n = -1;
@@ -609,7 +632,7 @@
     // Small bar (waybar.css .wb-compact): no logo or THE WAY, one line. Always on the front page (it opens with the big logo);
     // on other pages the visitor chooses it with the arrow under the bar, remembered in this browser only.
     var isFront = path === '/' || path === '/index.html';
-    var compact = isFront || smallBar();
+    var compact = isFront || (smallBar() && !glimpseNow(isFront));
     bar.classList.toggle('wb-compact', compact);
     bar.classList.toggle('wb-mini-home', compact && !isFront);
     var logo = link(data ? route('') : '/', 'The Way'); // signed in: member Home; signed out: the public front page
