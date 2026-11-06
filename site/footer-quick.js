@@ -24,10 +24,14 @@
     art.textContent = 'Submit your art';
     var legal = document.createElement('a');
     legal.href = '/legal.html'; legal.textContent = 'Legal';
+    // All four links on one line, the logo on its own line under them (Frank, Nov 6 2026)
+    var links = document.createElement('span');
+    links.className = 'michi-footer-links';
+    links.appendChild(research); links.appendChild(methods); links.appendChild(art); links.appendChild(legal);
     var artBox = document.createElement('span');
     artBox.className = 'michi-footer-art';
-    artBox.appendChild(about); artBox.appendChild(art);
-    nav.appendChild(research); nav.appendChild(methods); nav.appendChild(artBox); nav.appendChild(legal);
+    artBox.appendChild(about);
+    nav.appendChild(links); nav.appendChild(artBox);
     footer.appendChild(nav);
     addDepth(nav);
   }
@@ -84,6 +88,6 @@
     function visibility() { bar.hidden = window.scrollY <= 80; }
     window.addEventListener('scroll', visibility, { passive: true }); visibility();
   }
-  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=4'; document.head.appendChild(css);
+  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=5'; document.head.appendChild(css);
   appendFooter(); updateEssayBar();
 })();
