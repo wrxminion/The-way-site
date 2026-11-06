@@ -103,19 +103,34 @@ def circuit_map():
 
 def main():
     today = datetime.date.today()
+    jd = None
+    if len(sys.argv) > 1:
+        import build_judges
+        jd = build_judges.build(sys.argv[1], CIRCUITS, NAMES, {n.split(',')[0].split()[-1] for n, _, _, _ in JUSTICES})
+    jslug = {}
+    if jd:
+        for j in jd['judges']:
+            if j['type'] == 'Supreme Court' and not j.get('retired'):
+                jslug[j['r']['Last Name'].strip()] = j['slug']
 
     def years_on(d):
         y = int((today - datetime.date.fromisoformat(d)).days // 365.25)
         return '%d year%s' % (y, '' if y == 1 else 's')
 
+    def page_link(name):
+        last = name.split(',')[0].split()[-1]
+        if last in jslug:
+            return '<a class="gv-mini" href="judges/%s.html">Full page: confirmation, education, career →</a>' % jslug[last]
+        return ''
+
     jcards = []
     for name, title, by, took in JUSTICES:
         slug = re.sub(r'[^a-z]+', '-', name.lower().split(',')[0]).strip('-')
         jcards.append(
-            '<li id="j-%s"><span class="gv-role">%s</span><strong>%s</strong>'
+            '<li id="j-%s"><span class="gv-role">%s</span><strong>%s</strong>%s'
             '<details><summary>More</summary><div class="gw-detail"><p>Appointed by President %s. Took the judicial oath on %s, '
             'about %s on the Court.</p>%s</div></details></li>' % (
-                slug, e(title), e(name), e(by), e(long_date(took)), e(years_on(took)), src(BIOS, 'Supreme Court biographies')))
+                slug, e(title), e(name), page_link(name), e(by), e(long_date(took)), e(years_on(took)), src(BIOS, 'Supreme Court biographies')))
 
     supreme = (
         '<section id="supreme-court" class="gv-sec"><div class="gw-heading"><span>Layer 2 / The top court</span>'
@@ -138,6 +153,16 @@ def main():
         src('https://www.supremecourt.gov/about/buildinghistory.aspx', 'Supreme Court building history'),
         src('https://www.supremecourt.gov/about/buildinghistory.aspx', 'Supreme Court building history'))
 
+    def court_link(cid):
+        if not jd or cid not in jd['appeals']:
+            return ''
+        import build_judges
+        c = jd['appeals'][cid]
+        n = len(jd['courts'][c])
+        d = len(jd['by_circuit'].get(cid, []))
+        more = (' and its %d district court%s' % (d, '' if d == 1 else 's')) if d else ''
+        return '<a class="gv-open" href="court/%s.html">Meet its %d judges%s →</a>' % (build_judges.court_slug(c), n, more)
+
     ccards = []
     for cid, name, sts, terr, judges in CIRCUITS:
         if cid == 'fed':
@@ -146,8 +171,8 @@ def main():
             places = [NAMES[s] for s in sts] + terr
             where = ', '.join(places) + '.'
         ccards.append('<article class="gw-card gv-circuit gv-c%s-card" id="circuit-%s"><p class="gw-eyebrow">Court of appeals</p><h3>%s</h3>'
-                      '<p class="gv-big">%d <span>judgeships set by law</span></p><p>%s</p></article>' % (
-                          cid, cid, e(name), judges, e(where)))
+                      '<p class="gv-big">%d <span>judgeships set by law</span></p><p>%s</p>%s</article>' % (
+                          cid, cid, e(name), judges, e(where), court_link(cid)))
     circuits = (
         '<section id="circuits" class="gv-sec"><div class="gw-heading"><span>Layer 3 / Where appeals go</span>'
         '<h2>13 courts of appeals.</h2><p>The 94 district courts are organized into 12 regional circuits. The 13th, the Federal Circuit, '
@@ -174,21 +199,74 @@ def main():
         src('https://www.uscourts.gov/about-federal-courts/about-federal-judges/authorized-judgeships', 'uscourts.gov: judgeships'),
         src(STRUCT, 'uscourts.gov: court structure'))
 
+    def leaving_html():
+        import build_judges as bj
+        rows = bj.FUTURE_META.get('rows') or []
+        if not rows:
+            return ''
+        lis = []
+        for f in sorted(rows, key=lambda f: (f['date'] or '9999', f['court'])):
+            who = ('<a href="judges/%s.html">%s</a>' % (f['slug'], e(f['name']))) if f['slug'] else e(f['name'])
+            court = ('<a href="court/%s.html">%s</a>' % (bj.court_slug(f['court']), e(bj.court_short(f['court'])))) if f['court'] else e(f['raw_court'])
+            lis.append('<li>%s, %s: <span class="gv-muted">%s</span></li>' % (who, court, e(f['words'])))
+        return ('<details class="gv-leaving-box" open><summary>Announced departures: %d judges</summary><div class="gw-detail">'
+                '<p>These judges have told the courts they will retire, take senior status or move to another court. Each departure '
+                'opens a seat for the president to fill, with Senate confirmation.</p><ul class="gv-list">%s</ul>'
+                '<p class="gv-small">As of %s. <a class="gw-source" href="%s">Source: U.S. Courts, future judicial vacancies ↗</a></p></div></details>') % (
+            len(rows), ''.join(lis), e(long_date(bj.FUTURE_META['as_of']) if re.match(r'\d{4}-', bj.FUTURE_META['as_of']) else bj.FUTURE_META['as_of']),
+            e(bj.FUTURE_META['source']))
+
+    def every_judge():
+        if not jd:
+            return ''
+        import build_judges as bj
+        courts = jd['courts']
+        cnum = {v: i for i, v in enumerate(['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh', 'Eighth', 'Ninth',
+                                            'Tenth', 'Eleventh', 'District of Columbia', 'Federal'])}
+
+        def circ_rank(c):
+            m = re.match(r'U\.S\. Court of Appeals for the (.+) Circuit$', c)
+            return cnum.get(m.group(1), 99) if m else 0
+        order = sorted(courts, key=lambda c: (0 if c.startswith('Supreme') else 1 if 'Appeals' in c else 3 if 'District Court' in c else 2,
+                                              circ_rank(c), bj.court_state(c) or '', bj.court_short(c)))
+        groups = []
+        for c in order:
+            js = sorted(courts[c], key=lambda j: (j['senior'] != '', j['r']['Last Name'], j['name']))
+            items = ''.join('<li data-q="%s"><a href="judges/%s.html">%s</a> <span class="gv-muted">%s%s</span></li>' % (
+                e((j['name'] + ' ' + c + ' ' + j['president']).lower()), j['slug'], e(j['name']),
+                e('Appointed by ' + j['president']) if j['president'] and not j['president'].startswith('None') else '',
+                ', retired' if j.get('retired') else ', senior status' if j['senior'] else '') for j in js)
+            nret = sum(1 for j in js if j.get('retired'))
+            groups.append('<details class="gv-state" data-place="%s"><summary>%s <span class="gv-muted">%s</span></summary>'
+                          '<ul class="gv-list">%s</ul><p class="gv-small"><a href="court/%s.html">Open the %s page →</a></p></details>' % (
+                              e(c.lower()), e(bj.court_short(c) if not c.startswith('Supreme') else 'Supreme Court'),
+                              ('%d + %d retired' % (len(js) - nret, nret)) if nret else str(len(js)), items,
+                              bj.court_slug(c), e(bj.court_short(c) if not c.startswith('Supreme') else 'Supreme Court')))
+        nj = sum(1 for j in jd['judges'] if not j.get('retired'))
+        senior = sum(1 for j in jd['judges'] if j['senior'] and not j.get('retired'))
+        return ('<section id="judges" class="gv-sec"><div class="gw-heading"><span>Layer 4 / Every federal judge</span>'
+                '<h2>%s judges serving now.</h2><p>%s active and %d on senior status, on %d courts. Open a court, or type a name, a court, a state '
+                'or the president who appointed them. Every name opens a page with their Senate confirmation, education and career.</p></div>'
+                '<div class="gv-search" data-unit="judge" hidden><label for="gv-q">Search judges</label><input id="gv-q" type="search" autocomplete="off" '
+                'placeholder="Name, court, state or president"><span class="gv-muted" aria-live="polite" id="gv-count"></span></div>'
+                '%s<div class="gv-states">%s</div><p class="gw-status">%s</p></section>') % (
+            '{:,}'.format(nj), '{:,}'.format(nj - senior), senior, len(courts), leaving_html(), ''.join(groups), e(jd['note']))
+
     body = ('<header class="gv-hero"><p class="gw-eyebrow">The federal courts · Interpret federal laws</p>'
             '<p class="gv-huge">9 <span>Supreme Court justices</span></p><h1>The federal courts</h1>'
             '<p class="gv-lede">94 district courts, 13 courts of appeals and one Supreme Court. Each click goes one layer deeper.</p>'
             '<p class="gw-status">Article III of the Constitution sets up the federal courts. Checked against supremecourt.gov, uscourts.gov '
             'and the U.S. Code on %s.</p></header>'
             '<nav class="gw-jumps" aria-label="On this page"><a href="#levels">How a case moves</a><a href="#supreme-court">The Supreme Court</a>'
-            '<a href="#circuits">Circuit map</a></nav>%s%s%s'
+            '<a href="#circuits">Circuit map</a>%s</nav>%s%s%s%s'
             '<section class="gw-record"><h2>Where this comes from.</h2><p>Justices and the building: supremecourt.gov. Court structure: uscourts.gov. '
-            'Circuits and judgeships: 28 U.S.C. §§ 1, 41 and 44. Checked %s. The 179 total is our sum of the counts in § 44. The map reuses the '
+            'Circuits and judgeships: 28 U.S.C. §§ 1, 41 and 44. Checked %s. Individual judges: the Federal Judicial Center’s judge directory. The 179 total is our sum of the counts in § 44. The map reuses the '
             'state outlines from our district lookup. Nothing here rates or ranks a judge.</p>'
             '<nav aria-label="Keep exploring"><a href="/how-government-works.html">How government works</a> · <a href="/government/congress/">Congress</a> · '
             '<a href="/government/executive/">The executive branch</a> · <a href="#top">Return to surface ↑</a></nav></section>') % (
-        CHECKED, ladder, supreme, circuits, CHECKED)
+        CHECKED, '<a href="#judges">Every federal judge</a>' if jd else '', ladder, supreme, circuits, every_judge(), CHECKED)
     os.makedirs(OUT, exist_ok=True)
-    with open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8') as fh:
+    with open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8', newline='\n') as fh:
         fh.write(page('The federal courts', 'The Supreme Court, the 13 courts of appeals and the 94 district courts, layer by layer: '
                       'the nine justices, the circuit map, the Supreme Court Building and how a case moves. Official sources.',
                       SITE_URL + '/government/courts/',

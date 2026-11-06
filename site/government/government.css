@@ -109,3 +109,11 @@
 .gv-line{align-items:start}
 .gv-usmap-dc text{fill:#ffffff;font:800 17px system-ui,sans-serif;text-anchor:middle}
 .gv-usmap-dc:hover text,.gv-usmap-dc:focus text{fill:#f4d78f}
+.gv-mini{display:inline-block;font-size:.86rem;margin-top:4px}
+.gv-steps{list-style:none;padding:0;margin:4px 0;border-left:2px solid var(--line)}
+.gv-steps li{position:relative;padding:6px 0 10px 18px}
+.gv-steps li::before{content:"";position:absolute;left:-6px;top:12px;width:10px;height:10px;border-radius:50%;background:var(--sea)}
+.gv-steps .gv-role{display:block;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sea);font-weight:700}
+.gv-lead-role{margin:4px}
+.gv-leaving{color:#f4d78f!important}
+.gv-leaving-box{background:#122f3c;border:1px solid #d6bd7c!important;border-radius:14px;padding:0 16px;margin:0 0 18px!important}
