@@ -75,6 +75,17 @@
     a.href = '/results/?state=' + st + '#tabs';
     return a;
   }
+  // D204: the official source, this result on our results page, and the matching study or original guide entry.
+  function linksRow(entry, src, otherPage) {
+    var row = el('p', 'mo-links');
+    if (src && /^https:\/\//.test(src.url || '')) {
+      var o = el('a', null, 'Official result: ' + (src.name || 'state results site')); o.href = src.url; o.rel = 'noopener'; row.appendChild(o);
+    }
+    if (entry.contest) { var r = el('a', null, 'This result on our results page'); r.href = '/results/?state=' + entry.state + '&race=' + encodeURIComponent(entry.contest); row.appendChild(r); }
+    if (otherPage && otherPage.indexOf('/case-studies/') === 0) { var s1 = el('a', null, 'Election study'); s1.href = otherPage; row.appendChild(s1); }
+    else if (otherPage) { var g = el('a', null, 'Original 2026 voter guide entry'); g.href = otherPage; row.appendChild(g); }
+    return row;
+  }
 
   function countRow(label, x, total, lead) {
     var row = el('div', 'mo-row' + (lead ? ' mo-lead' : ''));
@@ -90,7 +101,7 @@
     return row;
   }
 
-  function block(entry, data) {
+  function block(entry, data, src, otherPage) {
     var st = entry.state;
     var box = el('section', 'mo');
     box.setAttribute('aria-label', 'Election result');
@@ -101,6 +112,7 @@
       var p0 = el('p', 'mo-fine', 'We have not collected vote counts for this measure yet. When we do, the result shows here on its own. ');
       p0.appendChild(resultsLink(st));
       box.appendChild(p0);
+      box.appendChild(linksRow(entry, src, otherPage));
       return box;
     }
     var o = data;
@@ -108,6 +120,9 @@
     box.appendChild(el('p', 'mo-word', o.word));
     if (o.who) box.appendChild(el('p', 'mo-who', o.who + (o.at && when(o.at) ? ', ' + when(o.at) : '')));
     else box.appendChild(el('p', 'mo-who', 'Neither AP nor the state has called this measure yet. This changes on its own when one of them does.'));
+    var asOf = src && when(src.data_updated_at);
+    box.appendChild(el('p', 'mo-asof', (asOf ? 'As of ' + asOf + ' (when the official source last updated)' : 'Latest collected count') + ': ' +
+      (o.who === 'Certified by the state' ? 'certified by the state.' : o.winSide ? o.who.replace(/^W/, 'w') + '.' : 'not called and not certified.')));
     if (o.winSide && entry[o.winSide]) {
       var m = el('p', 'mo-means');
       m.appendChild(el('b', null, (o.winSide === 'yes' ? 'YES' : 'NO') + ' won: '));
@@ -131,6 +146,7 @@
     var pf = el('p', 'mo-fine', fine.join(' ') + ' ');
     pf.appendChild(resultsLink(st));
     box.appendChild(pf);
+    box.appendChild(linksRow(entry, src, otherPage));
     return box;
   }
 
@@ -152,7 +168,23 @@
   getJSON('/results/measure-pages.json').then(function (map) {
     var pages = map && map.pages;
     if (!pages) return;
-    var cache = {};
+    var cache = {}, man = null;
+    function manifest() { return man || (man = getJSON('/results/data/manifest.json')); }
+    // the one official source behind a results file (the file names it in source_ids), or null
+    function sourceFor(entry) {
+      return Promise.all([file(entry.file), manifest()]).then(function (v) {
+        var ids = v[0] && v[0].source_ids, srcs = v[1] && v[1].sources;
+        if (!Array.isArray(ids) || ids.length !== 1 || !Array.isArray(srcs)) return null;
+        return srcs.filter(function (x) { return x && x.id === ids[0]; })[0] || null;
+      });
+    }
+    // the other page for the same contest: a study's original guide entry, or a guide entry's study
+    function otherPageFor(entry, here) {
+      if (here.indexOf('/case-studies/') === 0) return entry.guide || null;
+      var found = null;
+      Object.keys(pages).forEach(function (k) { if (!found && k.indexOf('/case-studies/') === 0 && pages[k].contest === entry.contest) found = k; });
+      return found;
+    }
     function file(name) {
       if (!/^[a-z0-9-]+\.json$/.test(name || '')) return Promise.resolve(null);
       if (!cache[name]) cache[name] = getJSON('/results/data/' + name);
@@ -170,10 +202,15 @@
     if (entry && !isIndex) {
       var h1 = document.querySelector('main h1') || document.querySelector('h1');
       if (!h1) return;
-      lookup(entry).then(function (o) {
-        var b = block(entry, o);
-        h1.parentNode.insertBefore(b, h1.nextSibling);
-        if (path.indexOf('/case-studies/') === 0) badge(o);
+      Promise.all([lookup(entry), sourceFor(entry)]).then(function (v) {
+        // a dated summary written into the page (tools/build-study-outcomes.py) is replaced by the live one,
+        // but kept when the results data did not load (the live box would only say "No count yet")
+        var old = document.querySelector('.mo-static');
+        if (old && !v[0]) return;
+        var b = block(entry, v[0], v[1], otherPageFor(entry, path));
+        if (old) old.parentNode.replaceChild(b, old);
+        else h1.parentNode.insertBefore(b, h1.nextSibling);
+        if (path.indexOf("/case-studies/") === 0) badge(v[0]);
       });
       return;
     }

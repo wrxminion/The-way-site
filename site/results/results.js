@@ -5,6 +5,10 @@
   var BASE = '/results/';
   var $ = function (id) { return document.getElementById(id); };
   var cfg = {}, manifest = null, cache = {}, tab = 'senate', timer = null;
+  // ?race=<contest id> (with ?state=xx) opens that one result, scrolled into view and marked (deep link from studies and guides).
+  var wantRace = String(new URLSearchParams(location.search).get('race') || '').toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 120), raceDone = false;
+  // contest id -> {study, guide}: which Election Study and voter-guide page belong to a ballot measure (results/measure-pages.json).
+  var pagesFor = {}, mapDone = false;
 
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -80,10 +84,29 @@
     ch.sort(function (a, b) { return (b.votes || 0) - (a.votes || 0); });
     return { ch: ch, total: total };
   }
-  function card(c) {
+  // Who says where a race stands. Four different labels, styled differently, so a call is never mistaken for a certified result.
+  function statusOf(c) {
+    var cl = c.called;
+    if (cl && cl.kind === 'certified') return ['cs-cert', 'Certified by the state'];
+    if (cl && cl.kind === 'ap') return ['cs-ap', 'What AP is calling (not certified)'];
+    if (cl && cl.kind === 'state_leader') return ['cs-lead', 'State shows leader (not certified)'];
+    if (cl && cl.winner) return ['cs-ap', 'Called by ' + (cl.by || 'the source') + ' (not certified)'];
+    return ['cs-none', 'Not called, not certified'];
+  }
+  function stateName(code) { var n = ''; STATES.forEach(function (x) { if (x[0] === code) n = x[1]; }); return n; }
+  function sourceOf(file) {
+    var ids = file && file.source_ids;
+    if (!manifest || !Array.isArray(ids) || ids.length !== 1) return null;
+    return (manifest.sources || []).filter(function (s) { return s.id === ids[0]; })[0] || null;
+  }
+  function outLink(href, text) { var a = el('a', null, text); a.href = href; a.rel = 'noopener'; return a; }
+  function card(c, file) {
     var li = el('li', 'card');
+    if (c.id) { li.id = 'r-' + String(c.id).replace(/[^A-Za-z0-9-]/g, ''); li.tabIndex = -1; }
     var h = el('h3', null, c.title || c.office || 'Contest');
     li.appendChild(h);
+    var stx = statusOf(c);
+    li.appendChild(el('p', 'cstat ' + stx[0], stx[1]));
     var sub = [];
     if (c.kind === 'candidate' && c.office && c.title !== c.office) sub.push(c.office);
     if (c.level === 'federal' && c.state) sub.push(c.state.toUpperCase());
@@ -109,8 +132,28 @@
     var p = c.precincts;
     if (p && p.total) meta.push(fmtNum(p.reporting) + ' of ' + fmtNum(p.total) + ' ' + (p.unit || 'precincts') + ' reporting (' + Math.round(p.reporting / p.total * 100) + '%)');
     meta.push(fmtNum(s.total) + ' votes counted');
-    if (!calledId) meta.push('No call yet');
     li.appendChild(el('div', 'meta', meta.join(' · ')));
+    // Where the numbers come from: the state's own results site, and when it says it last updated.
+    var src = sourceOf(file), offc = c.state && OFFICIAL[c.state];
+    var sl = el('p', 'srcline');
+    if (src && /^https:\/\//.test(src.url || '')) {
+      sl.appendChild(document.createTextNode('Official source: '));
+      sl.appendChild(outLink(src.url, src.name || src.id));
+      sl.appendChild(document.createTextNode('. Source last updated ' + fmtTime(src.data_updated_at) + '.'));
+    } else if (offc) {
+      sl.appendChild(document.createTextNode('Official source: '));
+      sl.appendChild(outLink(offc, stateName(c.state) + ' official results'));
+      sl.appendChild(document.createTextNode('.'));
+    }
+    if (sl.childNodes.length) li.appendChild(sl);
+    var pg = c.id && pagesFor[c.id];
+    if (pg || (tab === 'states' && c.id)) {
+      var more = el('p', 'morelinks');
+      if (pg && pg.study) { var a1 = el('a', null, 'Election study'); a1.href = pg.study; more.appendChild(a1); }
+      if (pg && pg.guide) { var a2 = el('a', null, 'Original 2026 voter guide entry'); a2.href = pg.guide; more.appendChild(a2); }
+      if (tab === 'states' && c.state) { var a3 = el('a', 'permalink', 'Link to this result'); a3.href = '/results/?state=' + c.state + '&race=' + encodeURIComponent(c.id); more.appendChild(a3); }
+      li.appendChild(more);
+    }
     li.appendChild(countyBlock(c, s.ch));
     return li;
   }
@@ -193,8 +236,27 @@
     if (c.kind === 'local') return 'Local';
     return c.office || 'Races';
   }
+  // One state's header: its official results site, when that site last updated, and the certification status.
+  function stateHead(data, code) {
+    var box = el('div', 'statehead');
+    var name = stateName(code) || data.label || code.toUpperCase();
+    box.appendChild(el('h2', null, name + ' results'));
+    var src = sourceOf(data), p1 = el('p');
+    var href = (src && /^https:\/\//.test(src.url || '')) ? src.url : OFFICIAL[code];
+    p1.appendChild(document.createTextNode('Official results: '));
+    p1.appendChild(outLink(href, src ? (src.name || name + ' official results') : name + ' official results'));
+    p1.appendChild(document.createTextNode('.'));
+    box.appendChild(p1);
+    var bits = [];
+    if (src) bits.push('Source last updated ' + fmtTime(src.data_updated_at) + '. We last checked ' + fmtTime(src.checked_at) + '.');
+    else if (data.updated_at) bits.push('Collected ' + fmtTime(data.updated_at) + '.');
+    bits.push(data.certified === true ? 'The state has certified these results.' : 'Status: not certified. These are counts so far, and they can change until the state certifies them.');
+    box.appendChild(el('p', 'muted', bits.join(' ')));
+    return box;
+  }
   function renderScope(data) {
     var p = $('panel'); p.textContent = '';
+    if (tab === 'states' && $('st').value) p.appendChild(stateHead(data, $('st').value));
     var q = ($('q').value || '').toLowerCase().trim();
     var list = (data.contests || []).filter(function (c) {
       if (!q) return true;
@@ -202,26 +264,76 @@
       return hay.indexOf(q) >= 0;
     });
     if (!list.length) { p.appendChild(el('p', 'empty', q ? 'No race matches that search.' : 'No results for this group have been collected yet. They appear here as the official source publishes them.')); return; }
+    if (wantRace && !raceDone && !q && !list.some(function (c) { return c.id === wantRace; })) {
+      raceDone = true;
+      p.appendChild(el('p', 'callout', 'The result you followed a link to is not in the collected data. The official results link above has every race.'));
+    }
     var order = [], groups = {};
     list.forEach(function (c) { var g = groupName(c); if (!groups[g]) { groups[g] = []; order.push(g); } groups[g].push(c); });
     order.forEach(function (g) {
       p.appendChild(el('div', 'grp', g));
       var ul = el('ul', 'cards');
-      groups[g].forEach(function (c) { ul.appendChild(card(c)); });
+      groups[g].forEach(function (c) { ul.appendChild(card(c, data)); });
       p.appendChild(ul);
     });
+    if (wantRace && !raceDone) {
+      var hit = document.getElementById('r-' + wantRace);
+      if (hit) {
+        raceDone = true;
+        hit.classList.add('hit');
+        hit.scrollIntoView({ block: 'start' });
+        // keep it clear of anything pinned to the top of the screen (the top bar, a notice banner)
+        var cover = 0;
+        Array.prototype.forEach.call(document.elementsFromPoint(innerWidth / 2, 4), function (n) {
+          for (var e = n; e && e !== document.body; e = e.parentElement) {
+            var pos = getComputedStyle(e).position;
+            if (pos === 'fixed' || pos === 'sticky') { cover = Math.max(cover, e.getBoundingClientRect().bottom); break; }
+          }
+        });
+        if (cover > 0 && cover < innerHeight / 2) window.scrollBy(0, -(cover + 12));
+        try { hit.focus({ preventScroll: true }); } catch (e) { hit.focus(); }
+      }
+    }
   }
   function filesFor(scope) { return (manifest.files || []).filter(function (f) { return f.scope === scope || (scope === 'states' && /^state-/.test(f.scope)) || (scope === 'cities' && /^city-/.test(f.scope)); }); }
   function loadFile(f) {
     return getJSON('data/' + f.path).then(function (d) { cache[f.scope] = d; return d; });
   }
   var STATES = [['al','Alabama'],['ak','Alaska'],['az','Arizona'],['ar','Arkansas'],['ca','California'],['co','Colorado'],['ct','Connecticut'],['de','Delaware'],['dc','District of Columbia'],['fl','Florida'],['ga','Georgia'],['hi','Hawaii'],['id','Idaho'],['il','Illinois'],['in','Indiana'],['ia','Iowa'],['ks','Kansas'],['ky','Kentucky'],['la','Louisiana'],['me','Maine'],['md','Maryland'],['ma','Massachusetts'],['mi','Michigan'],['mn','Minnesota'],['ms','Mississippi'],['mo','Missouri'],['mt','Montana'],['ne','Nebraska'],['nv','Nevada'],['nh','New Hampshire'],['nj','New Jersey'],['nm','New Mexico'],['ny','New York'],['nc','North Carolina'],['nd','North Dakota'],['oh','Ohio'],['ok','Oklahoma'],['or','Oregon'],['pa','Pennsylvania'],['ri','Rhode Island'],['sc','South Carolina'],['sd','South Dakota'],['tn','Tennessee'],['tx','Texas'],['ut','Utah'],['vt','Vermont'],['va','Virginia'],['wa','Washington'],['wv','West Virginia'],['wi','Wisconsin'],['wy','Wyoming']];
-  var OFFICIAL = {al:'https://www.sos.alabama.gov/alabama-votes',ak:'https://www.elections.alaska.gov/',az:'https://results.arizona.vote/',ar:'https://www.sos.arkansas.gov/elections/research/election-results',ca:'https://electionresults.sos.ca.gov/',co:'https://results.enr.clarityelections.com/CO/',ct:'https://portal.ct.gov/sots/election-services/election-results',de:'https://elections.delaware.gov/',dc:'https://electionresults.dcboe.org/',fl:'https://results.elections.myflorida.com/',ga:'https://results.sos.ga.gov/',hi:'https://elections.hawaii.gov/election-results/',id:'https://voteidaho.gov/',il:'https://elections.il.gov/electionoperations/ElectionVoteTotals.aspx',in:'https://enr.indianavoters.in.gov/',ia:'https://electionresults.iowa.gov/',ks:'https://sos.ks.gov/elections/election-results.html',ky:'https://vrsws.sos.ky.gov/liveresults/',la:'https://voterportal.sos.la.gov/graphical',me:'https://www.maine.gov/sos/elections-voting',md:'https://elections.maryland.gov/elections/2026/index.html',ma:'https://electionstats.state.ma.us/',mi:'https://www.michigan.gov/sos/elections',mn:'https://electionresults.sos.mn.gov/',ms:'https://www.sos.ms.gov/elections-voting/election-results',mo:'https://www.sos.mo.gov/elections/results',mt:'https://sosmt.gov/elections/results/',ne:'https://electionresults.nebraska.gov/',nv:'https://www.nvsos.gov/sos/elections/election-information/election-results',nh:'https://www.sos.nh.gov/elections/election-results',nj:'https://www.nj.gov/state/elections/election-information-results.shtml',nm:'https://electionresults.sos.nm.gov/',ny:'https://elections.ny.gov/',nc:'https://er.ncsbe.gov/',nd:'https://results.sos.nd.gov/',oh:'https://liveresults.ohiosos.gov/',ok:'https://oklahoma.gov/elections.html',or:'https://results.oregonvotes.gov/',pa:'https://www.electionreturns.pa.gov/',ri:'https://www.ri.gov/election/results/',sc:'https://www.enr-scvotes.org/',sd:'https://electionresults.sd.gov/',tn:'https://elections.tn.gov/',tx:'https://results.texas-election.com/',ut:'https://electionresults.utah.gov/results/public/Utah',vt:'https://electionarchive.vermont.gov/',va:'https://www.elections.virginia.gov/results/',wa:'https://results.votewa.gov/results/public/washington',wv:'https://apps.sos.wv.gov/elections/results/',wi:'https://elections.wi.gov/',wy:'https://sos.wyo.gov/Elections/'};
+  var OFFICIAL = {al:'https://www2.alabamavotes.gov/electionNight/statewideResultsByContest.aspx?ecode=1001305',ak:'https://www.elections.alaska.gov/results/26GENR/',az:'https://results.arizona.vote/',ar:'https://enr.sos.arkansas.gov/',ca:'https://electionresults.sos.ca.gov/',co:'https://results.enr.clarityelections.com/CO/127407/',ct:'https://ctemspublic.tgstg.net/',de:'https://elections.delaware.gov/results/enr/GE2026.html',dc:'https://electionresults.dcboe.org/',fl:'https://floridaelectionwatch.gov/',ga:'https://results.sos.ga.gov/results/public/Georgia/elections/11032026GeneralAndSpecialElection',hi:'https://elections.hawaii.gov/election-results/',id:'https://results.voteidaho.gov/',il:'https://elections.il.gov/electionoperations/ElectionVoteTotals.aspx',in:'https://enr.indianavoters.in.gov/',ia:'https://results.enr.clarityelections.com/IA/127077/',ks:'https://ent.sos.ks.gov/kssos_ent.html',ky:'https://vrsws.sos.ky.gov/liveresults/',la:'https://voterportal.sos.la.gov/graphical',me:'https://www.maine.gov/sos/elections-voting',md:'https://elections.maryland.gov/elections/2026/general_results/',ma:'https://electionstats.state.ma.us/',mi:'https://www.michigan.gov/sos/elections',mn:'https://electionresults.sos.mn.gov/',ms:'https://www.sos.ms.gov/elections-voting/election-results',mo:'https://enr.sos.mo.gov/',mt:'https://electionresults.mt.gov/',ne:'https://electionresults.nebraska.gov/',nv:'https://silverstateelection.nv.gov/',nh:'https://www.sos.nh.gov/2026-general-election-results',nj:'https://nj.gov/state/elections/election-night-results.shtml',nm:'https://electionresults.sos.nm.gov/',ny:'https://nyenr.elections.ny.gov/',nc:'https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=0&office=FED&contest=0',nd:'https://results.sos.nd.gov/',oh:'https://liveresults.ohiosos.gov/',ok:'https://results.okelections.gov/OKER/?elecDate=20261103',or:'https://results.oregonvotes.gov/',pa:'https://www.electionreturns.pa.gov/',ri:'https://electionresults.ri.gov/',sc:'https://www.enr-scvotes.org/SC/127300/',sd:'https://electionresults.sd.gov/',tn:'https://elections.tn.gov/',tx:'https://goelect.txelections.civixapps.com/ivis-enr-ui/races',ut:'https://electionresults.utah.gov/results/public/Utah/General11032026',vt:'https://electionresults.vermont.gov/',va:'https://enr.elections.virginia.gov/results/public/Virginia/elections/2026-November-General',wa:'https://results.votewa.gov/results/public/washington/20261103',wv:'https://results.enr.clarityelections.com/WV/127496/',wi:'https://elections.wi.gov/',wy:'https://sos.wyo.gov/Elections/Docs/2026/2026GeneralResults.aspx'};
+  // The page's own list of official links (#official, in the HTML so it works with scripts off) wins over the list above.
+  Array.prototype.forEach.call(document.querySelectorAll('a[data-official]'), function (a) {
+    var k = a.getAttribute('data-official');
+    if (/^[a-z]{2}$/.test(k) && /^https:\/\//.test(a.href)) OFFICIAL[k] = a.href;
+  });
   function officialLink(code) {
-    var name = ''; STATES.forEach(function (x) { if (x[0] === code) name = x[1]; });
+    var name = stateName(code);
     var p = el('p', 'empty', 'Numbers for ' + name + ' have not been collected here yet. ');
     var a = el('a', null, 'Official results from ' + name + ' election office'); a.href = OFFICIAL[code]; a.target = '_blank'; a.rel = 'noopener';
     p.appendChild(a); return p;
+  }
+  // A clear message when the data does not load, with the official links and a way to try again.
+  function failBox(head, body, code) {
+    var box = el('div', 'feed-error-in');
+    box.appendChild(el('p', 'fe-h', head));
+    box.appendChild(el('p', null, body));
+    var acts = el('p', 'fe-acts');
+    if (code && OFFICIAL[code]) acts.appendChild(outLink(OFFICIAL[code], 'Official ' + stateName(code) + ' results'));
+    var all = el('a', null, 'Official results for every state'); all.href = '#official'; acts.appendChild(all);
+    var again = el('button', 'fe-retry', 'Try again'); again.type = 'button';
+    again.addEventListener('click', function () { again.disabled = true; again.textContent = 'Trying again'; load(); });
+    acts.appendChild(again);
+    box.appendChild(acts);
+    return box;
+  }
+  function feedError(on) {
+    var box = $('feederr');
+    if (!on) { box.hidden = true; box.textContent = ''; return; }
+    box.textContent = '';
+    box.appendChild(manifest
+      ? failBox('The latest update did not load.', 'The numbers below are from the last time the data loaded, ' + fmtTime(manifest.generated_at) + '. They may be out of date.', null)
+      : failBox('The election results data did not load.', 'This page could not get the collected numbers just now. The official results sites are not affected.', null));
+    box.hidden = false;
   }
   function stateScope(code) { return code === 'co' ? 'co' : 'state-' + code; }
   function fillStates(sel) {
@@ -251,8 +363,10 @@
     }
     if (!fs.length && tab === 'states' && OFFICIAL[sel.value]) { $('panel').textContent = ''; $('panel').appendChild(officialLink(sel.value)); return; }
     if (!fs.length) { $('panel').textContent = ''; $('panel').appendChild(el('p', 'empty', 'Nothing collected for this group yet. It appears here as soon as the official source publishes it.')); return; }
+    var scodeNow = tab === 'states' ? sel.value : '';
     loadFile(fs[0]).then(renderScope).catch(function () {
-      $('panel').textContent = ''; $('panel').appendChild(el('p', 'empty', 'These results could not be loaded just now. Try again in a minute, or use the official sites listed below.'));
+      $('panel').textContent = '';
+      $('panel').appendChild(failBox('These results did not load.', 'The page could not get this group of results just now. Try again in a minute, or use the official results.', scodeNow));
     });
   }
   var TABS = [['senate', 'U.S. Senate'], ['house', 'U.S. House'], ['states', 'States'], ['cities', 'Cities']];
@@ -326,12 +440,26 @@
   }
   function load() {
     return getJSON('data/manifest.json').then(function (m) {
-      manifest = m; renderStatus(); renderSources(); renderBalance(); if (window.TWMap) TWMap.update(m, getJSON);
+      if (!m || !Array.isArray(m.files)) throw new Error('manifest');
+      manifest = m; feedError(false); renderStatus(); renderSources(); renderBalance(); if (window.TWMap) TWMap.update(m, getJSON);
+      // /results/#apmap (the "Election Results map" menu link): the map only shows once the data is in, so scroll to it then
+      if (!mapDone && location.hash === '#apmap') { mapDone = true; setTimeout(function () { var mp = $('apmap'); if (mp && !mp.hidden) mp.scrollIntoView({ block: 'start' }); }, 50); }
       if (!$('tabs').childNodes.length) renderTabs();
       show();
     }).catch(function () {
-      $('status').textContent = 'Results could not be loaded just now. Try again in a minute.';
+      $('status').textContent = manifest ? 'The latest update did not load. Showing the last numbers that did.' : 'The collected results did not load.';
+      feedError(true);
     });
+  }
+  function loadPages() {
+    return getJSON('measure-pages.json').then(function (m) {
+      var pages = m && m.pages; if (!pages) return;
+      Object.keys(pages).forEach(function (k) {
+        var e = pages[k]; if (!e || !e.contest || !/^\/[a-z0-9\/-]+\.html$/.test(k)) return;
+        var slot = pagesFor[e.contest] || (pagesFor[e.contest] = {});
+        if (k.indexOf('/case-studies/') === 0) slot.study = k; else slot.guide = k;
+      });
+    }).catch(function () { /* the cards just show no study links */ });
   }
   // Open one state's results in the States tab: from /results/?state=co, or a "See every ... race" link on the AP map.
   function openState(code, scroll) {
@@ -353,7 +481,7 @@
     });
     $('q').addEventListener('input', function () { if (cache[tab] || tab === 'states' || tab === 'cities') show(); });
     $('st').addEventListener('change', show);
-    load();
+    loadPages().then(load);
     timer = setInterval(load, 60000);
   }
   fetch(BASE + 'config.json?t=' + Math.floor(Date.now() / 60000), { cache: 'no-store' })

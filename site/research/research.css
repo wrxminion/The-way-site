@@ -28,3 +28,13 @@ button.copy{background:#0f3d57;color:var(--foam);border:1px solid var(--line);bo
 .methods h3{margin:1.4em 0 .4em;font:600 20px Georgia,serif}
 .methods p,.methods li{max-width:70ch}
 .methods table{margin:6px 0 10px}
+
+/* D204: the inventory of what is available, with review status */
+.inventory{margin:8px 0 26px}
+.inv-scroll{overflow-x:auto}
+.inv th[scope=row]{font-weight:600;width:52%}
+.inv th[scope=row] a{color:var(--aqua);font-size:1rem}
+.inv-sub{display:block;font-weight:400;color:var(--muted);font-size:.86rem;margin-top:2px}
+.inv td{color:var(--foam)}
+@media(max-width:600px){.inv,.inv tbody,.inv tr,.inv th,.inv td{display:block;width:auto}.inv thead{display:none}.inv tr{border-bottom:1px solid var(--line);padding:8px 0}.inv th[scope=row],.inv td{border:0;padding:4px 0}.inv th[scope=row]{width:auto}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}

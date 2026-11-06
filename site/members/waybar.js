@@ -226,9 +226,10 @@
   function memberPanels(d) {
     var st = d.state;
     var vote = [{ items: [
-      { href: d.ballot || STATES, label: st ? st + ' voter guide' : 'Voter guide', desc: d.ballot ? 'What is on your ballot, from official sources' : 'Pick your state to see its ballot', icon: 'ballot', key: 'ballot' },
+      { href: d.ballot || STATES, label: st ? st + ' voter guide' : 'Voter Guides', desc: d.ballot ? 'Your archived 2026 ballot, from official sources' : 'The archived 2026 guides, state by state', icon: 'ballot', key: 'ballot' },
       { href: '/members/my-ballot.html', label: 'My ballot', desc: 'Your picks and notes, saved in this browser', icon: 'myballot', key: 'myballot' },
-      { href: STATES, label: 'Other states', desc: 'Voter guides for every state', icon: 'states', key: 'states' }
+      { href: STATES, label: 'Voter Guides', desc: 'The archived 2026 guides for every state', icon: 'states', key: 'states' },
+      { href: '/results/', label: 'Election Results', desc: 'Collected counts and official links for every state', icon: 'ballot', key: 'results' }
     ] }];
     var contribute = [];
     if (can(d, 'moderator')) contribute.push({ href: route('review'), label: 'Review sources', desc: 'Check each claim in a case against its sources', icon: 'review', key: 'review' });
@@ -237,12 +238,14 @@
     contribute.push({ href: route('private'), label: 'Private research', desc: 'Your own notes and team files, never published', icon: 'private', key: 'private' });
     var explore = [
       { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news', dup: true },
-      { href: '/results/', label: 'Election results', desc: 'Unofficial, auto-fed, updated as counts come in', icon: 'ballot', key: 'results' },
-      { href: STATES + '#pick', label: 'Map', desc: 'Every state at a glance', icon: 'map', key: 'map' },
+      { href: '/results/', label: 'Election Results', desc: 'Unofficial, collected automatically, with official links', icon: 'ballot', key: 'results' },
+      { href: '/results/#apmap', label: 'Election Results map', desc: 'What AP is calling, state by state (not certified)', icon: 'map', key: 'resultsmap' },
+      { href: STATES + '#pick', label: 'Voter Guide map', desc: 'Pick a state to open its archived 2026 voter guide', icon: 'map', key: 'map' },
+      { href: '/search/', label: 'Search', desc: 'This site, plus outside research services', icon: 'search', key: 'search' },
       { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
       { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
       { href: '/case-studies/', label: 'Election Studies', icon: 'casestudies', key: 'casestudies' },
-      { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
+      { href: '/research/', label: 'Research', desc: 'What is available, with each item\'s review status', icon: 'research-lib', key: 'research-lib' },
         { href: '/money-trail/', label: 'Money Trail', desc: 'Follow campaign money through the public filings', icon: 'money', key: 'money' },
       { href: TEACH, label: 'Teacher? Parent? Like to have fun?', desc: 'Meet Scuba Steve, who hunts the hallucination shark', icon: 'teacherparent', key: 'teacherparent' }
     ];
@@ -283,14 +286,17 @@
     return { title: 'Menu', search: true, groups: [
       { heading: 'Explore', items: [
         { href: THREAD, label: 'Pull a Thread', icon: 'thread', key: 'thread', art: true },
-        { href: STATES, label: 'Voter Guide', desc: 'Your state, your ballot', icon: 'ballot', key: 'ballot' },
+        { href: '/results/', label: 'Election Results', desc: 'Unofficial, collected automatically, with official links', icon: 'ballot', key: 'results' },
+        { href: '/results/#apmap', label: 'Election Results map', desc: 'What AP is calling, state by state (not certified)', icon: 'map', key: 'resultsmap' },
+        { href: STATES, label: 'Voter Guides', desc: 'The archived 2026 guides, state by state', icon: 'ballot', key: 'ballot' },
+        { href: STATES + '#pick', label: 'Voter Guide map', desc: 'Pick a state to open its archived 2026 voter guide', icon: 'map', key: 'map' },
+        { href: '/research/', label: 'Research', desc: 'What is available, with each item\'s review status', icon: 'research-lib', key: 'research-lib' },
+        { href: '/search/', label: 'Search', desc: 'This site, plus outside research services', icon: 'search', key: 'search' },
         { href: '/members/my-ballot.html', label: 'My ballot', desc: 'Your picks and notes, saved in this browser', icon: 'myballot', key: 'myballot' },
-        { href: '/results/', label: 'Election results', desc: 'Unofficial, auto-fed, updated as counts come in', icon: 'ballot', key: 'results' },
       { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
         { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
         { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
         { href: '/case-studies/', label: 'Election Studies', icon: 'casestudies', key: 'casestudies' },
-        { href: '/research/', label: 'Research', desc: 'The public research library', icon: 'research-lib', key: 'research-lib' },
         { href: '/money-trail/', label: 'Money Trail', desc: 'Follow campaign money through the public filings', icon: 'money', key: 'money' },
         { href: TEACH, label: 'Teacher? Parent? Like to have fun?', desc: 'Meet Scuba Steve, who hunts the hallucination shark', icon: 'teacherparent', key: 'teacherparent' }
       ] },
@@ -731,7 +737,7 @@
     // draw the bubbles only when the styles AND the script are in, so neither side shows up bare and then jumps into place
     var waiting = 3, ready = function () { if (--waiting === 0) syncBubbles(); };
     ['bubbles.css?v=8', 'bubbles-look.css?v=12'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=19'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=20'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -902,8 +908,8 @@
 
   // Passed / Failed / Not yet called on ballot measure pages and Election Studies, read from the live results files.
   if (!inMembers && /^\/(case-studies\/|guide(-[a-z]{2})?\/measures\/)/.test(path)) {
-    var ocss = document.createElement('link'); ocss.rel = 'stylesheet'; ocss.href = '/results/outcome.css?v=1'; document.head.appendChild(ocss);
-    var oj = document.createElement('script'); oj.src = '/results/outcome.js?v=1'; document.body.appendChild(oj);
+    var ocss = document.createElement('link'); ocss.rel = 'stylesheet'; ocss.href = '/results/outcome.css?v=d204'; document.head.appendChild(ocss);
+    var oj = document.createElement('script'); oj.src = '/results/outcome.js?v=d204'; document.body.appendChild(oj);
   }
 
   // Help is now a bubble on the left (bubbles.js); the old floating "What do I do here?" button and the Invite and My ballot pills are gone.
@@ -935,11 +941,19 @@
   var archived = BALLOTS_ARCHIVED && !inMembers && /^\/(guide|map)(-[a-z]{2})?\//.exec(path);
   function archiveBanner() {
     if (!archived || document.querySelector('.wb-archive')) return;
-    var st = archived[2] || 'co';
+    var st = (archived[2] || '-co').slice(1);
+    var NAMES = { al: 'Alabama', ak: 'Alaska', az: 'Arizona', ar: 'Arkansas', ca: 'California', co: 'Colorado', ct: 'Connecticut', de: 'Delaware',
+      dc: 'D.C.', fl: 'Florida', ga: 'Georgia', hi: 'Hawaii', id: 'Idaho', il: 'Illinois', in: 'Indiana', ia: 'Iowa', ks: 'Kansas', ky: 'Kentucky',
+      la: 'Louisiana', me: 'Maine', md: 'Maryland', ma: 'Massachusetts', mi: 'Michigan', mn: 'Minnesota', ms: 'Mississippi', mo: 'Missouri',
+      mt: 'Montana', ne: 'Nebraska', nv: 'Nevada', nh: 'New Hampshire', nj: 'New Jersey', nm: 'New Mexico', ny: 'New York', nc: 'North Carolina',
+      nd: 'North Dakota', oh: 'Ohio', ok: 'Oklahoma', or: 'Oregon', pa: 'Pennsylvania', ri: 'Rhode Island', sc: 'South Carolina', sd: 'South Dakota',
+      tn: 'Tennessee', tx: 'Texas', ut: 'Utah', vt: 'Vermont', va: 'Virginia', wa: 'Washington', wv: 'West Virginia', wi: 'Wisconsin', wy: 'Wyoming' };
+    var name = NAMES[st] || st.toUpperCase();
     var note = el('div', { class: 'wb-archive', role: 'note' });
-    note.appendChild(el('b', null, 'Archived guide. '));
-    note.appendChild(document.createTextNode('This is The Way\'s voter guide for the November 3, 2026 election, kept as a record. Picks are closed. '));
-    var a = el('a', { href: '/results/?state=' + st + '#tabs' }, 'See the results');
+    // Dated (D204): the day the guides were archived, and that the wording and deadlines below are the original ones.
+    note.appendChild(el('b', null, 'Archived November 5, 2026. '));
+    note.appendChild(document.createTextNode('This is The Way\'s ' + name + ' voter guide for the November 3, 2026 election, kept as a record. The ballot wording and the deadlines on it are the original ones from before the election and have not been updated. Picks are closed. '));
+    var a = el('a', { href: '/results/?state=' + st + '#tabs' }, 'See the ' + name + ' Election Results');
     note.appendChild(a);
     var bar = document.getElementById('waybar');
     if (bar && bar.parentNode) bar.parentNode.insertBefore(note, bar.nextSibling); else document.body.insertBefore(note, document.body.firstChild);
