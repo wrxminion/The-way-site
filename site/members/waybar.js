@@ -449,6 +449,22 @@
   }
 
   var data = null, pending = false, searchOpen = false;
+  // The arrow under the bar: shrink it to the small front page bar, or bring the full one back. Kept per browser (localStorage), nothing sent anywhere.
+  var SMALL = 'theway.smallbar';
+  function smallBar() { try { return localStorage.getItem(SMALL) === '1'; } catch (e) { return false; } }
+  function shrinkButton(compact) {
+    var b = el('button', { type: 'button', class: 'wb-shrink', 'aria-pressed': compact ? 'true' : 'false',
+      'aria-label': compact ? 'Show the full header' : 'Shrink the header', title: compact ? 'Show the full header' : 'Shrink the header' });
+    b.appendChild(el('span', { class: 'wb-shrink-arrow', 'aria-hidden': 'true' }));
+    b.addEventListener('click', function () {
+      try { compact ? localStorage.removeItem(SMALL) : localStorage.setItem(SMALL, '1'); } catch (e) { /* private mode: this page only */ }
+      var bar = document.getElementById('waybar');
+      bar.classList.toggle('wb-compact', !compact);
+      render();
+      var again = bar.querySelector('.wb-shrink'); if (again) again.focus();
+    });
+    return b;
+  }
   function render(d, opts) {
     var bar = document.getElementById('waybar');
     if (!bar) return;
@@ -459,8 +475,11 @@
     bar.classList.add('waybar');
     bar.classList.toggle('wb-in', !!data);
     bar.classList.toggle('wb-search-open', searchOpen);
-    // Front page only: no logo or THE WAY in the bar (the page itself opens with the big logo), and a one-line bar (waybar.css .wb-front).
-    bar.classList.toggle('wb-front', path === '/' || path === '/index.html');
+    // Small bar (waybar.css .wb-compact): no logo or THE WAY, one line. Always on the front page (it opens with the big logo);
+    // on other pages the visitor chooses it with the arrow under the bar, remembered in this browser only.
+    var isFront = path === '/' || path === '/index.html';
+    var compact = isFront || smallBar();
+    bar.classList.toggle('wb-compact', compact);
     var logo = link(data ? route('') : '/', 'The Way'); // signed in: member Home; signed out: the public front page
     logo.className = 'wb-logo';
     var kids = [logo];
@@ -521,6 +540,7 @@
       if (pat) tools.insertBefore(pat, tools.firstChild);
       kids.push(pub, menuBtn, tools);
     }
+    if (!isFront && (data || !pending)) kids.push(shrinkButton(compact));
     bar.replaceChildren.apply(bar, kids);
     if (bottom) { bottom.remove(); bottom = null; }
     signedOutNow = !data && !pending;
@@ -550,7 +570,8 @@
     if (!bar || !w) return;
     document.body.classList.toggle('wb-in-page', !!data);
     var phone = window.matchMedia && window.matchMedia('(max-width:760px)').matches;
-    w.style.top = phone || data ? Math.max(40, bar.offsetHeight - 6) + 'px' : '';
+    var small = bar.classList.contains('wb-compact') && !/^\/(index\.html)?$/.test(location.pathname); // the small bar on an inner page: crest just under it too
+    w.style.top = phone || data || small ? Math.max(40, bar.offsetHeight - 6) + 'px' : '';
   }
   window.addEventListener('resize', function () { syncWave(); });
   // One small "Back to surface" button after scrolling (search and Log in / Sign up live in the header).

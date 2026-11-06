@@ -460,36 +460,42 @@ html.wb-bubs-building .wb-dock > :not(.wb-bubbles-toggle),html.wb-bubs-building 
   .waybar .wb-pub-l,.waybar .wb-pub-r{column-gap:36px}
 }
 
-/* FRONT PAGE BAR (Nov 2026). Only on / (waybar.js adds .wb-front). No logo, no THE WAY and no logo picture behind the bar:
+/* SMALL BAR (Nov 2026). Always on / ; on other pages when the visitor presses the arrow (waybar.js adds .wb-compact). No logo, no THE WAY and no logo picture behind the bar:
    the page opens with the big logo right under it. One row on a wide screen: the six links on the left,
    Pull a thread, search, Log in and Sign up on the right as one set of matching pills. Every other page keeps the bar above. */
-#waybar.waybar.wb-front{min-height:0;background:#052b3c;border-bottom:1px solid #c7ffff22;grid-template-columns:minmax(0,1fr) auto;padding-top:14px;padding-bottom:14px}
-#waybar.waybar.wb-front .wb-logo{display:none}
+#waybar.waybar.wb-compact{min-height:0;background:#052b3c;border-bottom:1px solid #c7ffff22;grid-template-columns:minmax(0,1fr) auto;padding-top:14px;padding-bottom:14px}
+#waybar.waybar.wb-compact .wb-logo{display:none}
 @media (min-width:761px){
-  .waybar.wb-front .wb-pub{display:flex;grid-column:1;grid-row:1;justify-content:flex-start;column-gap:30px}
-  .waybar.wb-front .wb-pub-l,.waybar.wb-front .wb-pub-r{display:contents}
-  .waybar.wb-front .wb-tools,.waybar.wb-front.wb-in .wb-right{grid-column:2;grid-row:1;gap:10px}
+  .waybar.wb-compact .wb-pub{display:flex;grid-column:1;grid-row:1;justify-content:flex-start;column-gap:30px}
+  .waybar.wb-compact .wb-pub-l,.waybar.wb-compact .wb-pub-r{display:contents}
+  .waybar.wb-compact .wb-tools,.waybar.wb-compact.wb-in .wb-right{grid-column:2;grid-row:1;gap:10px}
   /* one height for every control on the right */
-  .waybar.wb-front .wb-pat-right{height:46px;padding:0 16px;border:2px solid #a7f0e9;background:#0a3a50}
-  .waybar.wb-front .wb-pat-right .wb-pat-img{height:34px}
-  .waybar.wb-front .wb-pat-right:hover,.waybar.wb-front .wb-pat-right:focus-visible{background:#0f4d6a}
-  .waybar.wb-front .wb-search{border-width:2px;border-color:#c7ffff77}
-  .waybar.wb-front .wb-search button{width:42px;height:42px}
-  .waybar.wb-front .wb-login,.waybar.wb-front .wb-signup{min-height:46px;padding:0 22px;font-size:15px;letter-spacing:.1em;font-weight:800;border-width:2px}
+  .waybar.wb-compact .wb-pat-right{height:46px;padding:0 16px;border:2px solid #a7f0e9;background:#0a3a50}
+  .waybar.wb-compact .wb-pat-right .wb-pat-img{height:34px}
+  .waybar.wb-compact .wb-pat-right:hover,.waybar.wb-compact .wb-pat-right:focus-visible{background:#0f4d6a}
+  .waybar.wb-compact .wb-search{border-width:2px;border-color:#c7ffff77}
+  .waybar.wb-compact .wb-search button{width:42px;height:42px}
+  .waybar.wb-compact .wb-login,.waybar.wb-compact .wb-signup{min-height:46px;padding:0 22px;font-size:15px;letter-spacing:.1em;font-weight:800;border-width:2px}
 }
 /* middle widths: the buttons on top right, the six links in one centred line under them */
 @media (min-width:761px) and (max-width:1239px){
-  .waybar.wb-front .wb-pub{grid-column:1/-1;grid-row:2;justify-content:center}
-  .waybar.wb-front .wb-tools,.waybar.wb-front.wb-in .wb-right{grid-column:1/-1;grid-row:1;justify-self:end}
+  .waybar.wb-compact .wb-pub{grid-column:1/-1;grid-row:2;justify-content:center}
+  .waybar.wb-compact .wb-tools,.waybar.wb-compact.wb-in .wb-right{grid-column:1/-1;grid-row:1;justify-self:end}
 }
 @media (min-width:761px) and (max-width:899px){
-  .waybar.wb-front .wb-pub{column-gap:20px}
-  .waybar.wb-front .wb-login,.waybar.wb-front .wb-signup{padding:0 14px;font-size:13px}
+  .waybar.wb-compact .wb-pub{column-gap:20px}
+  .waybar.wb-compact .wb-login,.waybar.wb-compact .wb-signup{padding:0 14px;font-size:13px}
 }
-@media (min-width:1700px){.waybar.wb-front .wb-search input{display:block;width:9em;font-size:15px}}
+@media (min-width:1700px){.waybar.wb-compact .wb-search input{display:block;width:9em;font-size:15px}}
 /* phone: just the Menu button (and the signed-in tools), no logo */
 @media (max-width:760px){
-  #waybar.waybar.wb-front{min-height:62px;padding-top:9px;padding-bottom:9px}
-  .waybar.wb-front:not(.wb-in) .wb-menu-btn{grid-column:1/-1;justify-self:end}
+  #waybar.waybar.wb-compact{min-height:62px;padding-top:9px;padding-bottom:9px}
+  .waybar.wb-compact:not(.wb-in) .wb-menu-btn{grid-column:1/-1;justify-self:end}
 }
-
+/* The arrow: a small tab hanging under the middle of the bar. Up = shrink to the small bar, down = the full bar again. */
+.waybar .wb-shrink{position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);z-index:2;display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:24px;border:1px solid #a7f0e980;border-radius:100px;background:#052b3c;opacity:1;box-shadow:0 3px 10px #0007}
+.waybar .wb-shrink:hover,.waybar .wb-shrink:focus-visible{background:#0a3a50;border-color:#a7f0e9}
+.waybar .wb-shrink-arrow{width:8px;height:8px;border-left:2px solid #e9ffff;border-top:2px solid #e9ffff;transform:translateY(2px) rotate(45deg)}
+.waybar .wb-shrink[aria-pressed=true] .wb-shrink-arrow{transform:translateY(-2px) rotate(225deg)}
+@media print{.waybar .wb-shrink{display:none}}
