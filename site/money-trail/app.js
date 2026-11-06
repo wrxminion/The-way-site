@@ -159,7 +159,17 @@ function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const n
 }
 function prepareHubRefresh(){$('#hub').innerHTML=hubs.map(x=>`<option value="${escapeHtml(x)}">${escapeHtml(hubLabel(x))}</option>`).join('')}
 function setScale(n){graphScale=Math.min(2,Math.max(.65,graphScale*n));renderGraph()}
-function renderStates(){const arr=RESEARCH.coverage.map(x=>({...x,count:(byState[x.state]||[]).length}));$('#state-grid').innerHTML=arr.map(s=>`<button class="state-card ${s.state===stateFocus?'active':''}" data-statepick="${escapeHtml(s.state)}"><div><strong>${escapeHtml(stName[s.state]||s.state)}</strong><span>Research in progress · ${escapeHtml(s.state)}</span></div><div class="state-pill ${s.count?'':'unknown'}">${s.count} events</div></button>`).join('');$$('[data-statepick]').forEach(el=>el.addEventListener('click',()=>{stateFocus=el.dataset.statepick;renderStates();renderStateFocus()}));renderStateFocus()}
+function renderStates(){const sel=$('#state-pick');if(!sel)return renderStateFocus();const arr=RESEARCH.coverage.map(x=>({...x,count:(byState[x.state]||[]).length})).sort((a,b)=>(stName[a.state]||a.state).localeCompare(stName[b.state]||b.state));sel.innerHTML=arr.map(s=>`<option value="${escapeHtml(s.state)}"${s.state===stateFocus?' selected':''}>${escapeHtml(stName[s.state]||s.state)} (${s.count})</option>`).join('');if(!sel.dataset.wired){sel.dataset.wired='1';sel.addEventListener('change',()=>{stateFocus=sel.value;renderStates();inspectState(stateFocus)})}renderStateFocus()}
+// The evidence inspector for one state: its review status, its ballot events and its source.
+const tidy=t=>{t=String(t||'').replace(/_/g,' ').trim();return t?t[0].toUpperCase()+t.slice(1):''};
+function inspectState(code){const s=RESEARCH.coverage.find(x=>x.state===code);if(!s)return;selected=null;const bb=(byState[code]||[]).slice().sort((a,b)=>a.election_date.localeCompare(b.election_date)||a.measure_id.localeCompare(b.measure_id));
+ let h=`<span class="event-kind ballot">State</span><h2>${escapeHtml(stName[code]||code)}</h2><div class="event-amount mt-big">${bb.length} ballot ${bb.length===1?'event':'events'}</div>`;
+ h+=datum('Ballot review',tidy(s.ballot_review_status)||'No comprehensive inventory verified')+datum('Finance review',tidy(s.finance_review_status)||'Not reviewed')+datum('Local measures review',tidy(s.local_measures_review_status)||'Not reviewed')+datum('State complete','NO');
+ h+=bb.map(b=>`<button class="mt-state-measure" data-inspectmeasure="${escapeHtml(b.measure_id)}">${escapeHtml(b.measure_number)} · ${escapeHtml(b.short_title)}</button>`).join('')||'<div class="mini-warning">No statewide measures identified in the current archive. This does not establish that none existed.</div>';
+ h+=sourceButton(s.source_url,'Open state inventory reference')+`<div class="detail-caution">${escapeHtml(s.notes||'Review pending.')}</div>`;
+ $('#detail-content').innerHTML=h;
+ $$('[data-inspectmeasure]').forEach(el=>el.addEventListener('click',()=>pick(RESEARCH.ballots.find(b=>b.measure_id===el.dataset.inspectmeasure))));
+ if(window.innerWidth<=1250)$('#detail-panel').classList.add('open')}
 function renderStateFocus(){let s=RESEARCH.coverage.find(x=>x.state===stateFocus),bb=(byState[stateFocus]||[]).slice().sort((a,b)=>a.election_date.localeCompare(b.election_date)||a.measure_id.localeCompare(b.measure_id));let h=`<h3>${escapeHtml(stName[stateFocus]||stateFocus)} · ${bb.length} statewide ballot events</h3><p>${escapeHtml(s.ballot_review_status||'No comprehensive inventory verified')} · Finance: ${escapeHtml(s.finance_review_status||'not reviewed')} · <strong>State complete: NO</strong></p>`;
  h+=bb.map(b=>`<div class="measure-card"><div><strong>${escapeHtml(b.measure_number)} · ${escapeHtml(b.short_title)}</strong><small>${dateText(b.election_date)} · ${escapeHtml(b.source_status||'source-linked')}</small></div><button data-measurepick="${escapeHtml(b.measure_id)}">Inspect</button></div>`).join('')||'<div class="mini-warning">No statewide measures identified in the current archive. This does not establish that none existed or that research is complete.</div>';
  h+=`<div class="detail-caution">${escapeHtml(s.notes||'Review pending.')}</div>${sourceButton(s.source_url,'Open state inventory reference')}`;
@@ -203,7 +213,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
       const n = (byState[code] || []).length, on = code === stateFocus;
       const p = svgEl('path', { d: P[k].d, fill: shade(n), stroke: on ? '#f0ce77' : '#06141e', 'stroke-width': on ? '3' : '0.8', tabindex: '0', role: 'button', class: 'mt-state', 'aria-label': stName[code] + ', ' + n + ' ballot records' }, svg);
       svgEl('title', {}, p).textContent = stName[code] + ': ' + n + ' ballot records';
-      const go = () => { stateFocus = code; renderStates(); $('#state-focus').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); };
+      const go = () => { stateFocus = code; renderStates(); inspectState(code); $('#state-focus').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); };
       p.addEventListener('click', go);
       p.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
     });
