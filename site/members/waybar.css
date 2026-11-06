@@ -499,3 +499,115 @@ html.wb-bubs-building .wb-dock > :not(.wb-bubbles-toggle),html.wb-bubs-building 
 .waybar .wb-shrink-arrow{width:8px;height:8px;border-left:2px solid #e9ffff;border-top:2px solid #e9ffff;transform:translateY(2px) rotate(45deg)}
 .waybar .wb-shrink[aria-pressed=true] .wb-shrink-arrow{transform:translateY(-2px) rotate(225deg)}
 @media print{.waybar .wb-shrink{display:none}}
+/* HOME LOGO ON THE SMALL BAR (Nov 2026): on inner pages the small bar shows just the logo picture, small, centred above the arrow, linked to Home.
+   Middle widths (two rows up to 1399px, links centred under the buttons) and phones: the same small logo at the top left instead.
+   1400 to 1699px: the six links a little smaller so they end before the logo. */
+#waybar.waybar.wb-compact .wb-logo-mini{display:inline-flex;gap:0;opacity:1;border-radius:6px}
+/* the small logo is its own picture (Frank's Nov 6 logo, the square without the words); the big header keeps /the-way-logo-*.png */
+#waybar.waybar.wb-compact .wb-logo-mini:before{width:40px;height:40px;border-radius:6px;box-shadow:0 2px 10px #0006;
+  background:url(/members/art/home-logo-small-2x.webp) center/contain no-repeat;
+  background-image:image-set(url(/members/art/home-logo-small-1x.webp) 1x,url(/members/art/home-logo-small-2x.webp) 2x)}
+#waybar.waybar.wb-compact .wb-logo-mini:hover:before,#waybar.waybar.wb-compact .wb-logo-mini:focus-visible:before{box-shadow:0 0 0 2px #a7f0e9,0 2px 10px #0006}
+@media (min-width:1400px){
+  #waybar.waybar.wb-compact .wb-logo-mini{grid-area:auto;position:absolute;left:50%;top:calc(50% - 5px);transform:translate(-50%,-50%);z-index:2}
+}
+/* 1240 to 1399px on inner pages: two rows like the middle widths, so the six links never run under the logo (the front page keeps one row) */
+@media (min-width:1240px) and (max-width:1399px){
+  .waybar.wb-compact.wb-mini-home .wb-pub{grid-column:1/-1;grid-row:2;justify-content:center}
+  .waybar.wb-compact.wb-mini-home .wb-tools,.waybar.wb-compact.wb-mini-home.wb-in .wb-right{grid-column:1/-1;grid-row:1;justify-self:end}
+}
+@media (min-width:1400px) and (max-width:1699px){
+  .waybar.wb-compact .wb-pub{column-gap:24px}
+  .waybar.wb-compact .wb-pub a{font-size:15px;letter-spacing:.09em}
+}
+@media (max-width:1399px){
+  #waybar.waybar.wb-compact .wb-logo-mini{grid-column:1;grid-row:1;justify-self:start;align-self:center;z-index:1}
+}
+/* NEWS SCROLL (Nov 2026): the newest headlines slide by in the empty spot left of the logo on the full bar (wide screens; waybar.js adds it). */
+.waybar .wb-news{grid-column:1;grid-row:1;justify-self:stretch;align-self:center;min-width:0;max-width:560px;margin-right:14px;display:flex;flex-direction:column;gap:7px;
+  text-transform:none;letter-spacing:.01em}
+.waybar .wb-news-empty{display:none}
+.waybar .wb-news-head{align-self:flex-start;font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#a7f0e9;opacity:1}
+.waybar .wb-news-head:hover{text-decoration:underline}
+.waybar .wb-news-strip{display:flex;overflow:hidden;min-height:22px;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 92%,transparent)}
+.waybar .wb-news-track{list-style:none;margin:0;padding:0;display:flex;flex:none;align-items:baseline;animation:wb-news-go var(--wb-news-time,90s) linear infinite}
+.waybar .wb-news-track li{flex:none;display:inline-flex;align-items:baseline;gap:8px;padding-right:34px;white-space:nowrap;font-size:14px;font-weight:600}
+.waybar .wb-news-track li:before{content:"";width:6px;height:6px;border-radius:50%;background:#a7f0e9;align-self:center;margin-right:2px}
+.waybar .wb-news-track a{opacity:.95}
+.waybar .wb-news-track a:hover{text-decoration:underline;opacity:1}
+.waybar .wb-news-src{font-size:12px;font-weight:500;opacity:.62}
+.waybar .wb-news-strip:hover .wb-news-track,.waybar .wb-news-strip:focus-within .wb-news-track{animation-play-state:paused}
+.waybar .wb-news-strip:focus-within{overflow-x:auto}
+.waybar .wb-news-strip:focus-within .wb-news-track{animation:none}
+@keyframes wb-news-go{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){
+  .waybar .wb-news-strip{overflow-x:auto}
+  .waybar .wb-news-track{animation:none}
+  .waybar .wb-news-track[aria-hidden=true]{display:none}
+}
+@media (max-width:1099px){.waybar .wb-news{display:none}}
+@media print{.waybar .wb-news{display:none}}
+/* DROP-DOWN BANNERS (Nov 2026, Frank's ChatGPT pictures): one of six underwater pictures behind the full bar, the next one each page and each time the
+   arrow opens it. The picture fills the bar's height from the left; the rest is the same deep blue as the picture's right edge. Behind every link (z-index -1). */
+.waybar .wb-banner{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:#000f1a}
+.waybar .wb-banner:before{content:"";position:absolute;inset:0;background-repeat:no-repeat;background-position:left center;background-size:auto 100%}
+.waybar .wb-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#000f1a00 55%,#000f1a99)}
+.waybar .wb-banner-the-current:before{background-image:url(/members/art/banners/the-current.webp)}
+.waybar .wb-banner-the-waterline:before{background-image:url(/members/art/banners/the-waterline.webp)}
+.waybar .wb-banner-pull-a-thread:before{background-image:url(/members/art/banners/pull-a-thread.webp)}
+.waybar .wb-banner-the-buoy:before{background-image:url(/members/art/banners/the-buoy.webp)}
+.waybar .wb-banner-anansis-web-orb-weaver:before{background-image:url(/members/art/banners/anansis-web-orb-weaver.webp)}
+.waybar .wb-banner-anansis-web-cartoon:before{background-image:url(/members/art/banners/anansis-web-cartoon.webp)}
+#waybar.waybar[data-banner]{background:#000f1a}
+.waybar[data-banner] .wb-pub a,.waybar[data-banner] .wb-logo{text-shadow:0 1px 3px #000c,0 0 12px #000a}
+/* going deeper: when the arrow opens the bar, the picture drops in from above and settles */
+.waybar.wb-dive .wb-banner:before{animation:wb-dive 1.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes wb-dive{from{transform:translateY(-38%) scale(1.12);opacity:0;filter:brightness(1.6)}to{transform:none;opacity:1;filter:none}}
+@media (prefers-reduced-motion:reduce){.waybar.wb-dive .wb-banner:before{animation:none}}
+@media print{.waybar .wb-banner{display:none}}
+/* news scroll in the banner style: a gold line on the left, a mint label, headlines in bold Georgia; moved right past the art on three pictures */
+.waybar .wb-news{border-left:2px solid #d6a640;padding-left:14px}
+.waybar .wb-news-head{color:#a9f0d7;letter-spacing:.18em}
+.waybar .wb-news-track li{font:700 17px/1.3 Georgia,"Times New Roman",serif;text-shadow:0 1px 3px #000c}
+.waybar .wb-news-src{font:500 12px/1.3 Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.waybar.wb-banner-left .wb-news{margin-left:clamp(60px,6vw,96px)}
+/* phone: the bar is short and the logo sits on the left, so the picture stays a soft backdrop behind it */
+@media (max-width:760px){.waybar .wb-banner:before{opacity:.5}}
+/* STICKY LINK ROW (Nov 2026, desktop, full bar only): the bar scrolls up until its row of section links is left at the top (waybar.js sets the
+   negative top). Once stuck, a small Home logo (and Commons) appears on the left of the row, and search and Log in (or Menu) on the right. */
+.waybar .wb-stuck-l,.waybar .wb-stuck-r{display:none}
+@media (min-width:761px){
+  #waybar.waybar.wb-stick{position:sticky}
+  .waybar.wb-stuck .wb-stuck-l,.waybar.wb-stuck .wb-stuck-r{display:flex;align-items:center;gap:8px;position:absolute;bottom:9px;z-index:3;
+    text-transform:none;letter-spacing:.02em;animation:wb-stuck-in .25s ease-out both}
+  .waybar.wb-stuck .wb-stuck-l{left:clamp(16px,2.4vw,40px)}
+  .waybar.wb-stuck .wb-stuck-r{right:clamp(16px,2.4vw,40px)}
+  .waybar .wb-stuck-home{display:block;width:34px;height:34px;border-radius:6px;opacity:1;box-shadow:0 2px 8px #0008;
+    background:url(/members/art/home-logo-small-2x.webp) center/contain no-repeat;background-image:image-set(url(/members/art/home-logo-small-1x.webp) 1x,url(/members/art/home-logo-small-2x.webp) 2x)}
+  .waybar .wb-stuck-home:hover,.waybar .wb-stuck-home:focus-visible{box-shadow:0 0 0 2px #a7f0e9,0 2px 8px #0008}
+  .waybar .wb-stuck-pill{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 13px;border:1px solid #a7f0e9aa;border-radius:100px;
+    background:#052b3ccc;font-size:12.5px;font-weight:700;letter-spacing:.04em;opacity:1;white-space:nowrap}
+  .waybar .wb-stuck-pill .wb-ico{width:16px;height:16px}
+  .waybar .wb-stuck-pill:hover,.waybar .wb-stuck-pill:focus-visible,.waybar .wb-stuck-pill[aria-current=page]{background:#0f4d6a;border-color:#a7f0e9}
+  .waybar .wb-stuck-login{background:#a7f0e9;color:#052b3c}
+  .waybar .wb-stuck-login:hover,.waybar .wb-stuck-login:focus-visible{background:#d2fff9;color:#052b3c}
+  .waybar .wb-stuck-search{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid #a7f0e9aa;border-radius:50%;background:#052b3ccc;opacity:1}
+  .waybar .wb-stuck-search .wb-ico{width:17px;height:17px}
+  .waybar .wb-stuck-search:hover,.waybar .wb-stuck-search:focus-visible{background:#0f4d6a}
+  /* links row needs room for the two groups at the sides while stuck */
+  .waybar.wb-stuck .wb-pub{padding:0 clamp(150px,16vw,240px)}
+}
+/* narrower desktop: just the logo on the left (no Commons word), so the links stay on one line */
+@media (min-width:761px) and (max-width:1239px){
+  .waybar.wb-stuck .wb-stuck-l .wb-stuck-pill{display:none}
+  .waybar.wb-stuck .wb-pub{padding:0 150px;column-gap:22px}
+  .waybar.wb-stuck .wb-pub-l,.waybar.wb-stuck .wb-pub-r{column-gap:22px}
+  .waybar.wb-stuck .wb-pub a{font-size:14px}
+}
+/* stuck: the picture fades back so the row reads clean */
+.waybar .wb-banner:before{transition:opacity .3s}
+.waybar.wb-stuck .wb-banner:before{opacity:.2}
+@keyframes wb-stuck-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.waybar.wb-stuck .wb-stuck-l,.waybar.wb-stuck .wb-stuck-r{animation:none}}
+@media print{#waybar.waybar.wb-stick{position:relative}.waybar .wb-stuck-l,.waybar .wb-stuck-r{display:none}}
