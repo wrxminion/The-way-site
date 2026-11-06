@@ -27,13 +27,13 @@ Until the job has checked a county, the page says so in plain words. Nothing is 
    - Anything that fails goes to `review.md` in the work folder, never to the site.
 3. `publish`: writes `site/lookup/local/xx.json` (one per state) and `index.json`. In `hold` mode it writes to `work\outbox\` instead, so a person can look first. `push: true` commits only `site/lookup/local/` to `main`, the same way the results and news data are published.
 
-Districts to counties is worked out by code from each state map's own district files and the county outlines in `site/lookup/data/counties/`. It is cached and only redone when a district file changes.
+Districts to counties is worked out by code from each state map's own district files and the county outlines in `site/lookup/data/counties/`. The district files are not in git, so when the repo copy has none the job copies them from the live site (`map_data_url`) into `work\mapdata\` once a month. It is cached and only redone when a district file changes.
 
 ## Being polite and safe
 
 - One request every 3 seconds, robots.txt respected, a clear user agent naming the site.
 - A 403, 429, 503, captcha or challenge page pauses that site for a week. Never worked around.
-- Before every county it stops if: `local-resources.off` or `idle-research.off` exists, Ollama has a model loaded that is not ours (someone else is using it), the busy check (games, GPU) says busy, or it is inside `quiet_hours_local`.
+- Before every county it stops if: `local-resources.off` or `idle-research.off` exists, Ollama has a model loaded that is not ours (someone else is using it), the busy check (games, GPU) says busy (a nonzero exit, or any printed reason other than free or idle), or it is inside `quiet_hours_local`.
 - One run at a time (lock file), 45 minutes at most, below-normal priority, no window.
 - Its own scheduled task, "TheWay Local Resources". It never touches any other task.
 
@@ -43,7 +43,7 @@ Districts to counties is worked out by code from each state map's own district f
 2. Copy `config.example.json` to `config.json`. Set `repo` (the site repo on that machine), the two model names (`ollama list`), and the busy check path if there is one.
 3. `python local_resources.py --config config.json seed`
 4. `python local_resources.py --config config.json run` once by hand. Read `local-resources.log` and `review.md`, and look at `outbox\`.
-5. `install-task.ps1` registers the hourly task.
+5. `install-task.ps1` registers the hourly task. It looks for a real `pythonw.exe` (for example `C:\Program Files\Python311`), not the Microsoft Store stub. Windows may ask a person to run it, because a Claude session on the machine is not allowed to create scheduled tasks.
 6. After a person has looked at the first outbox, set `"publish_mode": "live"` (and `"push": true` on a machine with a git login).
 
 To stop it: create the file `local-resources.off` in the work folder. Delete it to start again.
