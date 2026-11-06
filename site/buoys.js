@@ -8,7 +8,8 @@
 (function () {
   'use strict';
   if (window.MichiBuoys) return; window.MichiBuoys = true;
-  var FLOAT_PAGES = ['/', '/index.html', '/teacher-parent.html'];
+  // Floating buoys are off for now (Frank, Nov 6 2026: far too many on the front page). To bring them back, list pages here, e.g. ['/teacher-parent.html'].
+  var FLOAT_PAGES = [];
   var WIDE = 1100;
   var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/buoys.css?v=1'; document.head.appendChild(css);
   function el(tag, cls) { var e = document.createElement(tag); if (cls) e.className = cls; return e; }

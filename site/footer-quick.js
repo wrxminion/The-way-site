@@ -91,5 +91,5 @@
   var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=5'; document.head.appendChild(css);
   appendFooter(); updateEssayBar();
   // Buoys: the depth counter buoy on its chain and the floating buoys (see /buoys.js)
-  if (!document.querySelector('script[src^="/buoys.js"]')) { var buoys = document.createElement('script'); buoys.src = '/buoys.js?v=1'; buoys.defer = true; document.head.appendChild(buoys); }
+  if (!document.querySelector('script[src^="/buoys.js"]')) { var buoys = document.createElement('script'); buoys.src = '/buoys.js?v=2'; buoys.defer = true; document.head.appendChild(buoys); }
 })();
