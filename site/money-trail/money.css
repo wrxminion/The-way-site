@@ -82,3 +82,5 @@ footer{border-top:1px solid #315363;padding:23px 0 15px;margin-top:28px;display:
 /* site footer pieces (Pause motion, footer links) each get their own centred row inside this page's two-column footer */
 footer>.wb-motion-btn{flex:1 1 100%;max-width:max-content;align-self:center;margin:4px auto 0;order:1;font-size:13px}
 footer>.michi-footer-nav{flex:1 1 100%;order:2}
+.state-pickbox{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 0}.state-pickbox label{color:#a6c4c8;font-size:11px;text-transform:uppercase;letter-spacing:.11em}.state-pickbox select{background:#061924;border:1px solid #315365;color:#e3f0f1;border-radius:9px;padding:10px 11px;font-size:14px;min-width:220px;max-width:100%}.state-pickbox select:focus{border-color:#6ad9bd}
+.mt-state-measure{display:block;width:100%;text-align:left;margin:6px 0;padding:9px 11px;border:1px solid #285464;border-radius:9px;background:#0c2634;color:#dcebec;font-size:12px}.mt-state-measure:hover{border-color:var(--mint);background:#143b46}
