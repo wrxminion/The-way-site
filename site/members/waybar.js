@@ -452,11 +452,33 @@
   // The arrow under the bar: shrink it to the small front page bar, or bring the full one back. Kept per browser (localStorage), nothing sent anywhere.
   var SMALL = 'theway.smallbar';
   function smallBar() { try { return localStorage.getItem(SMALL) === '1'; } catch (e) { return false; } }
+  // A quick glimpse (Nov 2026): for visitors who keep the small bar, an inner page opens with the full bar and its banner for a moment,
+  // then folds to the small bar (after about two seconds, or at once on the first scroll, click or key). Not with reduced motion.
+  var glimpseDone = false, glimpseTimer = null;
+  function glimpseNow(isFront) {
+    if (glimpseDone || isFront || !smallBar()) return false;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || window.scrollY > 40) { glimpseDone = true; return false; }
+    if (!glimpseTimer) {
+      glimpseTimer = setTimeout(endGlimpse, 2200);
+      ['scroll', 'keydown', 'pointerdown', 'wheel', 'touchstart'].forEach(function (ev) { window.addEventListener(ev, endGlimpse, { passive: true, once: true }); });
+    }
+    return true;
+  }
+  function endGlimpse() {
+    if (glimpseDone) return;
+    glimpseDone = true;
+    clearTimeout(glimpseTimer);
+    var bar = document.getElementById('waybar');
+    if (bar) { bar.classList.add('wb-fold'); setTimeout(function () { bar.classList.remove('wb-fold'); }, 700); }
+    render();
+  }
   function shrinkButton(compact) {
     var b = el('button', { type: 'button', class: 'wb-shrink', 'aria-pressed': compact ? 'true' : 'false',
       'aria-label': compact ? 'Show the full header' : 'Shrink the header', title: compact ? 'Show the full header' : 'Shrink the header' });
     b.appendChild(el('span', { class: 'wb-shrink-arrow', 'aria-hidden': 'true' }));
     b.addEventListener('click', function () {
+      glimpseDone = true; clearTimeout(glimpseTimer);
       try { compact ? localStorage.removeItem(SMALL) : localStorage.setItem(SMALL, '1'); } catch (e) { /* private mode: this page only */ }
       var bar = document.getElementById('waybar');
       bar.classList.toggle('wb-compact', !compact);
@@ -466,54 +488,84 @@
     });
     return b;
   }
-  // Drop-down banners (Nov 2026): the full bar shows one of six underwater pictures behind it. Each main section has its own picture
-  // (SECTION_BANNER below; change a name there to swap one). The Commons and every other page rotate: the next picture each page and
-  // each time the arrow opens the bar, so opening it feels like going deeper. Pictures only (members/art/banners, no words in them); the links stay real text.
-  // Three pictures have art on the left (the buoy and the two Anansi spiders), so the news scroll moves right on those.
-  var BANNERS = [['the-current', 0], ['the-waterline', 0], ['pull-a-thread', 0], ['the-buoy', 1], ['anansis-web-orb-weaver', 1], ['anansis-web-cartoon', 1]];
-  var BANNER_KEY = 'theway.banner', bannerAt = -1;
-  function nextBanner() {
+  // Drop-down banners (Nov 2026): the full bar shows one of Frank's underwater pictures behind it. Each main section has its own picture
+  // (SECTION_BANNER below; change a name there to swap one). The Commons and every other page rotate through the four water pictures:
+  // the next one each page and each time the arrow opens the bar, so opening it feels like going deeper. Anansi belongs to the money:
+  // the two spider pictures (the real spider in its web, and the cartoon spider with its money bag on the same web) show only on
+  // Money pages, taking turns there. Pictures only (members/art/banners, no words in them); the links stay real text.
+  // Three pictures have art on the left (the buoy and the two spiders), so the news scroll moves right on those (the 1 below).
+  var ROTATE = [['the-current', 0], ['the-waterline', 0], ['pull-a-thread', 0], ['the-buoy', 1]];
+  var SPIDERS = [['anansis-web-orb-weaver', 1], ['anansis-web-cartoon', 1]];
+  var BANNER_KEY = 'theway.banner', SPIDER_KEY = 'theway.banner.money', bannerAt = -1, spiderAt = -1;
+  function turn(key, len) {
     var n = -1;
-    try { n = parseInt(localStorage.getItem(BANNER_KEY), 10); } catch (e) { /* private mode: start at the first */ }
-    bannerAt = ((isFinite(n) ? n : -1) + 1) % BANNERS.length;
-    try { localStorage.setItem(BANNER_KEY, String(bannerAt)); } catch (e) { /* this page only */ }
+    try { n = parseInt(localStorage.getItem(key), 10); } catch (e) { /* private mode: start at the first */ }
+    var at = ((isFinite(n) ? n : -1) + 1) % len;
+    try { localStorage.setItem(key, String(at)); } catch (e) { /* this page only */ }
+    return at;
   }
+  function nextBanner() { if (section() === 'money') spiderAt = turn(SPIDER_KEY, SPIDERS.length); else bannerAt = turn(BANNER_KEY, ROTATE.length); }
+  // which section a page belongs to for its banner and "New in" line (the /government/ pages count as Government)
+  function section() { return /^\/government\//.test(path) ? 'govworks' : here(); }
   var SECTION_BANNER = { ballot: 'the-buoy', vote: 'the-buoy', myballot: 'the-buoy', news: 'the-current', govworks: 'the-waterline',
-    cases: 'anansis-web-orb-weaver', casestudies: 'pull-a-thread', results: 'pull-a-thread', money: 'anansis-web-cartoon', thread: 'pull-a-thread' };
+    cases: 'the-waterline', casestudies: 'pull-a-thread', results: 'pull-a-thread', thread: 'pull-a-thread' };
   function bannerLayer(bar) {
-    var fixed = SECTION_BANNER[here()], b = null;
-    for (var i = 0; fixed && i < BANNERS.length; i++) if (BANNERS[i][0] === fixed) b = BANNERS[i];
-    if (!b) { if (bannerAt < 0) nextBanner(); b = BANNERS[bannerAt]; }
+    var fixed = SECTION_BANNER[section()], b = null;
+    for (var i = 0; fixed && i < ROTATE.length; i++) if (ROTATE[i][0] === fixed) b = ROTATE[i];
+    if (!b && section() === 'money') { if (spiderAt < 0) spiderAt = turn(SPIDER_KEY, SPIDERS.length); b = SPIDERS[spiderAt]; }
+    if (!b) { if (bannerAt < 0) bannerAt = turn(BANNER_KEY, ROTATE.length); b = ROTATE[bannerAt]; }
     bar.setAttribute('data-banner', b[0]);
     bar.classList.toggle('wb-banner-left', !!b[1]);
     return el('div', { class: 'wb-banner wb-banner-' + b[0], 'aria-hidden': 'true' });
   }
   // News scroll (full bar, wide screens only): the newest headlines from the News page's feed, each a direct link to the story.
   // Loaded once per page, only when it shows. Hover or keyboard focus stops it; reduced motion shows a still line you can scroll.
-  var NEWS = '/news/data/election/national.json', newsBox = null;
+  // History, Elections, Government and Money show what is new in that section instead (site/whats-new.json, made by tools/build-whats-new.js);
+  // every other page, and any section with nothing listed, shows the latest election news.
+  var NEWS = '/news/data/election/national.json', WHATS_NEW = '/whats-new.json', newsBox = null;
+  var SECTION_NEW = { cases: ['New in History', '/cases/'], casestudies: ['New in Elections', '/case-studies/'],
+    govworks: ['New in Government', GOV], money: ['New money threads', '/money-trail/'] };
   function wideScreen() { return !window.matchMedia || window.matchMedia('(min-width:1100px)').matches; }
+  function getJSON(u) { return fetch(u, { credentials: 'omit' }).then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); }); }
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function shortDate(d) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d || ''); return m ? MONTHS[+m[2] - 1] + ' ' + (+m[3]) : ''; }
   function newsScroll() {
     if (newsBox) return newsBox;
-    newsBox = el('section', { class: 'wb-news', 'aria-label': 'Latest news' });
-    var head = link('/news/', 'Latest news');
+    var sec = SECTION_NEW[section()];
+    newsBox = el('section', { class: 'wb-news', 'aria-label': sec ? sec[0] : 'Latest news' });
+    var head = link(sec ? sec[1] : '/news/', sec ? sec[0] : 'Latest news');
     head.className = 'wb-news-head';
     var strip = el('div', { class: 'wb-news-strip' });
     newsBox.appendChild(head); newsBox.appendChild(strip);
-    fetch(NEWS, { credentials: 'omit' }).then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); }).then(function (d) {
-      var seen = {}, list = [];
-      (Array.isArray(d && d.items) ? d.items : []).forEach(function (it) {
-        if (list.length >= 12 || !it || typeof it.title !== 'string' || typeof it.url !== 'string' || !/^https:\/\//.test(it.url)) return;
-        var t = it.title.replace(/\s+/g, ' ').trim().slice(0, 160), k = t.toLowerCase().slice(0, 50);
-        if (!t || seen[k]) return;
-        seen[k] = 1;
-        list.push({ t: t, u: it.url, s: typeof it.source === 'string' ? it.source.trim().slice(0, 60) : '' });
+    function fromNews() {
+      return getJSON(NEWS).then(function (d) {
+        var seen = {}, list = [];
+        (Array.isArray(d && d.items) ? d.items : []).forEach(function (it) {
+          if (list.length >= 12 || !it || typeof it.title !== 'string' || typeof it.url !== 'string' || !/^https:\/\//.test(it.url)) return;
+          var t = it.title.replace(/\s+/g, ' ').trim().slice(0, 160), k = t.toLowerCase().slice(0, 50);
+          if (!t || seen[k]) return;
+          seen[k] = 1;
+          list.push({ t: t, u: it.url, s: typeof it.source === 'string' ? it.source.trim().slice(0, 60) : '', out: true });
+        });
+        return list;
       });
+    }
+    function fromSection(key) {
+      return getJSON(WHATS_NEW).then(function (d) {
+        var rows = d && d.sections && Array.isArray(d.sections[key]) ? d.sections[key] : [];
+        return rows.filter(function (r) { return r && typeof r.t === 'string' && typeof r.u === 'string' && /^\/[^/]/.test(r.u); })
+          .slice(0, 12).map(function (r) { return { t: r.t.slice(0, 160), u: r.u, s: shortDate(r.d), out: false }; });
+      });
+    }
+    var load = sec ? fromSection(section()).then(function (l) { return l.length ? l : fromNews(); }, fromNews) : fromNews();
+    load.then(function (list) {
       if (!list.length) { newsBox.classList.add('wb-news-empty'); return; }
+      if (sec && !list[0].out) { /* section list loaded */ } else if (sec) { head.textContent = 'Latest news'; head.href = '/news/'; newsBox.setAttribute('aria-label', 'Latest news'); }
       // two copies side by side so the loop has no gap; the second copy is hidden from screen readers and the Tab key
       [0, 1].forEach(function (copy) {
         var ul = el('ul', { class: 'wb-news-track', 'aria-hidden': copy ? 'true' : null });
         list.forEach(function (n) {
-          var li = el('li'), a = el('a', { href: n.u, target: '_blank', rel: 'noopener noreferrer', tabindex: copy ? '-1' : null }, n.t);
+          var li = el('li'), a = el('a', { href: n.u, target: n.out ? '_blank' : null, rel: n.out ? 'noopener noreferrer' : null, tabindex: copy ? '-1' : null }, n.t);
           li.appendChild(a);
           if (n.s) li.appendChild(el('span', { class: 'wb-news-src' }, n.s));
           ul.appendChild(li);
@@ -580,7 +632,7 @@
     // Small bar (waybar.css .wb-compact): no logo or THE WAY, one line. Always on the front page (it opens with the big logo);
     // on other pages the visitor chooses it with the arrow under the bar, remembered in this browser only.
     var isFront = path === '/' || path === '/index.html';
-    var compact = isFront || smallBar();
+    var compact = isFront || (smallBar() && !glimpseNow(isFront));
     bar.classList.toggle('wb-compact', compact);
     bar.classList.toggle('wb-mini-home', compact && !isFront);
     var logo = link(data ? route('') : '/', 'The Way'); // signed in: member Home; signed out: the public front page

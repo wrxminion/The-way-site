@@ -611,3 +611,7 @@ html.wb-bubs-building .wb-dock > :not(.wb-bubbles-toggle),html.wb-bubs-building 
 @keyframes wb-stuck-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.waybar.wb-stuck .wb-stuck-l,.waybar.wb-stuck .wb-stuck-r{animation:none}}
 @media print{#waybar.waybar.wb-stick{position:relative}.waybar .wb-stuck-l,.waybar .wb-stuck-r{display:none}}
+/* the quick glimpse folding to the small bar: the small bar settles in from a little above */
+.waybar.wb-fold.wb-compact{animation:wb-fold .45s ease-out both}
+@keyframes wb-fold{from{transform:translateY(-10px);opacity:.6}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.waybar.wb-fold.wb-compact{animation:none}}
