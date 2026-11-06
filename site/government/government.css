@@ -83,3 +83,29 @@
 .gv-line li:first-child::before{background:var(--sea);color:#102c39}
 .gv-line .gv-role{display:block;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sea);font-weight:700}
 .gv-top{align-items:start}
+.gv-justices li{padding-left:58px}
+.gv-justices strong{display:block;font-size:1.1rem}
+.gv-justices details{border-top:0!important;margin-top:0!important}
+.gv-justices summary{padding:6px 0 0;font-size:.9rem}
+.gv-ladder{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 10px}
+.gv-ladder li{background:#122f3c;border:1px solid var(--line);border-radius:16px;padding:18px}
+.gv-ladder strong{display:block;font-size:1.25rem;margin:4px 0}
+.gv-ladder li>span:last-child{color:#cfdee3}
+.gv-ladder .gv-big{display:block}
+.gv-mapfig{margin:0 0 18px}
+.gv-usmap{width:100%;height:auto;display:block}
+.gv-usmap path{stroke:#0b222e;stroke-width:1;vector-effect:non-scaling-stroke}
+.gv-usmap a:hover path,.gv-usmap a:focus path{fill:#fff}
+.gv-usmap-tags text{fill:#0b222e;font:800 17px system-ui,sans-serif;text-anchor:middle;pointer-events:none}
+.gv-c1 path{fill:#8cddd0}.gv-c2 path{fill:#e7c98a}.gv-c3 path{fill:#b9bbf5}.gv-c4 path{fill:#f2a98f}
+.gv-c5 path{fill:#a8d68a}.gv-c6 path{fill:#d7a8e0}.gv-c7 path{fill:#f4d78f}.gv-c8 path{fill:#8fc3f2}
+.gv-c9 path{fill:#e3b6a0}.gv-c10 path{fill:#9fe0b8}.gv-c11 path{fill:#c9c2f2}.gv-cdc path{fill:#ffffff}
+.gv-circuit{border-top:6px solid var(--line)}
+.gv-c1-card{border-top-color:#8cddd0}.gv-c2-card{border-top-color:#e7c98a}.gv-c3-card{border-top-color:#b9bbf5}.gv-c4-card{border-top-color:#f2a98f}
+.gv-c5-card{border-top-color:#a8d68a}.gv-c6-card{border-top-color:#d7a8e0}.gv-c7-card{border-top-color:#f4d78f}.gv-c8-card{border-top-color:#8fc3f2}
+.gv-c9-card{border-top-color:#e3b6a0}.gv-c10-card{border-top-color:#9fe0b8}.gv-c11-card{border-top-color:#c9c2f2}.gv-cdc-card{border-top-color:#fff}
+.gv-circuit:target{outline:3px solid #f4d78f;outline-offset:3px}
+@media(max-width:800px){.gv-ladder{grid-template-columns:1fr}}
+.gv-line{align-items:start}
+.gv-usmap-dc text{fill:#ffffff;font:800 17px system-ui,sans-serif;text-anchor:middle}
+.gv-usmap-dc:hover text,.gv-usmap-dc:focus text{fill:#f4d78f}
