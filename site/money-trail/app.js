@@ -37,6 +37,25 @@ function outcomeBox(mid){const o=measureOutcome[mid];if(!o)return `<div class="m
  const means=o.status==='passed'?'You are following the money around a measure that passed.':o.status==='failed'?'You are following the money around a measure that failed.':'';
  const votes=o.yesPct!=null&&o.noPct!=null?`<span>YES ${o.yesPct}% · NO ${o.noPct}%</span>`:'';
  return `<div class="mt-outcome ${o.status}"><b>${word}</b><span>${escapeHtml(o.who)}</span>${votes}${means?`<p>${means}</p>`:''}</div>`}
+// Follow the money for a measure (Nov 2026): each committee with a recorded position, and the money recorded into it.
+// Itemized filings are added up. Reported figures are listed one by one and never added, because they can overlap.
+function ftmBlock(e){const ps=positionsByMeasure[e.measure_id]||[];const up=s=>String(s||'').trim().toUpperCase();
+ const trail=`<svg class="mt-ftm-art" viewBox="0 0 120 16" aria-hidden="true"><path d="M4 8 C24 2 36 14 56 8 S92 2 116 8" fill="none" stroke="#a4ffe2" stroke-width="2" stroke-dasharray="4 5"/><circle cx="4" cy="8" r="3" fill="#a4ffe2"/><circle cx="56" cy="8" r="3" fill="#a4ffe2"/><circle cx="116" cy="8" r="3" fill="#a4ffe2"/></svg>`;
+ let h=`<section class="mt-ftm" aria-label="Follow the money"><h3>${trail}<span>Follow the money</span></h3>`;
+ if(!ps.length)return h+`<p class="mt-ftm-none">No committee for or against this measure is in our records yet, so no dollar amount is loaded.</p></section>`;
+ h+=`<p class="mt-ftm-lead">Committees on record for or against this measure, and the money recorded going into each one. A committee can work on more than one measure, so this is not all spent on this one.</p><ul class="mt-ftm-list">`;
+ const seen=new Set();
+ for(const p of ps){const n=up(p.entity_name);if(seen.has(n))continue;seen.add(n);
+  const stance=/support|yes|favor/i.test(p.stance||'')?'Supports':/oppose|no|against/i.test(p.stance||'')?'Opposes':'Position';
+  const tx=RESEARCH.transactions.filter(t=>up(t.recipient_name)===n);const sum=tx.reduce((a,t)=>a+num(t.amount_usd),0);
+  const rep=[...RESEARCH.reported_observations.filter(r=>up(r.recipient_name)===n&&num(r.amount_usd)>0)].sort((a,b)=>num(b.amount_usd)-num(a.amount_usd));
+  let money='';
+  if(tx.length)money+=`<b class="mt-ftm-amt">${money_(sum)}</b><span>received in ${tx.length} itemized filing${tx.length>1?'s':''}</span>`;
+  if(rep.length){money+=`<ul class="mt-ftm-rep">`+rep.slice(0,4).map(r=>`<li><b>${money_(r.amount_usd)}</b> from ${escapeHtml(r.source_name)}${safeUrl(r.source_url)?` <a href="${escapeHtml(safeUrl(r.source_url))}" target="_blank" rel="noopener noreferrer">report ↗</a>`:''}</li>`).join('')+`</ul>`+(tx.length?`<span class="mt-ftm-note">Reported figures can repeat the filings above and are not added.</span>`:`<span class="mt-ftm-note">Reported on state disclosure reports. Listed one by one, not added, because they can overlap.</span>`);}
+  if(!money)money=`<span class="mt-ftm-none">No dollar amount loaded yet.</span>`;
+  h+=`<li><div class="mt-ftm-who"><a href="/money-trail/?view=network&amp;hub=${encodeURIComponent(n)}">${escapeHtml(p.entity_name)}</a><em class="${stance==='Supports'?'yes':stance==='Opposes'?'no':''}">${stance}</em></div>${money}</li>`;}
+ return h+`</ul></section>`}
+function money_(v){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(num(v))}
 function outcomeColor(mid){const o=measureOutcome[mid];return o&&o.status==='passed'?'#3ddc84':o&&o.status==='failed'?'#ff6b6b':null}
 fetch('measure-results.json?t='+Math.floor(Date.now()/60000),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(map=>{if(!map||!map.measures)return;
  const files={};Object.entries(map.measures).forEach(([mid,e])=>{if(e.guide)measureGuide[mid]=e.guide;if(/^[a-z0-9-]+\.json$/.test(e.file||''))(files[e.file]=files[e.file]||[]).push([mid,e.contest])});
@@ -76,7 +95,7 @@ function renderTimeline(){const a=filtered(),shown=a.slice(0,visible);let month=
 function datum(key,val){if(val===undefined||val===null||val==='')return '';return `<div class="datum"><div class="key">${escapeHtml(key)}</div><div class="val">${escapeHtml(val)}</div></div>`}
 function sourceButton(url,label='Open original filing / source'){url=safeUrl(url);return url?`<a class="detail-link" href="${escapeHtml(url)}" rel="noopener noreferrer" target="_blank">${escapeHtml(label)} ↗</a>`:''}
 function positionPanel(mid){let ps=positionsByMeasure[mid]||[];let sides={support:[],oppose:[],other:[]};for(let p of ps){let side=/support|yes|favor/i.test(p.stance||'')?'support':/oppose|no|against/i.test(p.stance||'')?'oppose':'other';sides[side].push(p)};return `<div class="side-group"><h4>Campaign sides · documented positions</h4><p><strong>Support:</strong> ${sides.support.length?sides.support.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p><strong>Opposition:</strong> ${sides.oppose.length?sides.oppose.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p>These positions do not prove how any particular donation was allocated.</p></div>`}
-function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<span class="event-kind ${kind}">${escapeHtml(kindLabel(e)||'Graph connection')}</span>`+(kind==='ballot'?outcomeBox(e.measure_id):'')+`<h2>${escapeHtml(getTitle(e))}</h2>`;
+function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<span class="event-kind ${kind}">${escapeHtml(kindLabel(e)||'Graph connection')}</span>`+(kind==='ballot'?outcomeBox(e.measure_id)+ftmBlock(e):'')+`<h2>${escapeHtml(getTitle(e))}</h2>`;
  if(kind==='transaction'){
  h+=`<div class="event-amount mt-big">${money(e.amount_usd)}</div>`;
  h+=datum('Reported transaction date',dateText(e.transaction_date))+datum('Date semantics',e.date_kind)+datum('Source',e.source_name)+datum('Recipient',e.recipient_name)+datum('Source entity ID',e.source_entity_id)+datum('Recipient entity ID',e.recipient_entity_id)+datum('Election cycle',e.cycle)+datum('Jurisdiction / attribution',e.jurisdiction)+datum('Filing classification',e.activity_type)+datum('Confidence as recorded',e.confidence)+datum('Amendment status',e.amendment_status)+datum('Filing identifier',e.filing_id);
@@ -226,7 +245,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
       add('Follow ' + (e.recipient_name || e.to_name || 'the receiver'), trailHref(to));
       const st = stateOf(e); if (stName[st]) add(stName[st] + ' election results', '/results/?state=' + st.toLowerCase() + '#tabs');
     }
-    if (ul.children.length) { box.append(ul); $('#detail-content').append(box); }
+    const ftm = e.record_kind === 'ballot' && $('#detail-content .mt-ftm');
+    if (ul.children.length) { if (ftm) { ul.className = 'mt-ftm-links'; ftm.append(ul); } else { box.append(ul); $('#detail-content').append(box); } }
   };
   if (q.get('state') && stName[q.get('state').toUpperCase()]) stateFocus = q.get('state').toUpperCase();
   if (q.get('hub')) { graphHub = q.get('hub').toUpperCase(); if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; }
