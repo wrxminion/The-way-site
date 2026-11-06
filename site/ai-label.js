@@ -61,10 +61,10 @@
   }
 
   // Reviewers get a second copy at the end of the page so they do not have to scroll back up. The two pickers stay in sync.
+  // Both copies start closed, showing only the status line; Details opens the text and the picker.
   function addBottom(key, top, host) {
     var bot = build(key, true);
     bot.classList.add('ai-label-bottom');
-    bot.open = true;
     top.onpick = function (v) { bot.setPick(v); };
     bot.onpick = function (v) { top.setPick(v); };
     if (/flex/.test(getComputedStyle(host).display)) host.insertAdjacentElement('afterend', bot);
