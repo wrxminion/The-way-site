@@ -476,13 +476,17 @@ KIND_MUST = {
     'clerk': r'\bclerk\b|\brecorder\b|\bauditor\b|register of deeds',
     'library': r'\blibrar',
 }
-KIND_NEVER = r'\bresults?\b|clarity|canvass|\bnews\b|press release|\bclosures?\b|engagement|calendar of events|/news/|/blog/'
+KIND_NEVER = r'\bresults?\b|clarity|canvass|\bnews\b|press release|\bclosures?\b|engagement|calendar of events|connect with us|/news/|/blog/|/category/|/tag/'
+# Extra refusals per kind: a library board or a clinic held at the library is not the library.
+KIND_NEVER_FOR = {'library': r'\bboard\b|advisory|clinic|\bfriends of\b'}
 
 def kind_refused(kind, title, url, item):
     """Code check on what the finder says a page is. Returns a reason, or '' when the page is fine."""
     hay = (title + ' ' + urllib.parse.unquote(urllib.parse.urlsplit(url).path).replace('-', ' ').replace('_', ' ')).lower()
     if re.search(KIND_NEVER, hay):
         return 'title or address looks like news, results or an event, not an office page'
+    if kind in KIND_NEVER_FOR and re.search(KIND_NEVER_FOR[kind], title.lower()):
+        return 'a board, clinic or group connected to the office, not the office itself'
     pat = KIND_MUST.get(kind)
     if pat and not re.search(pat, hay):
         return 'title and address do not name the office'
@@ -804,6 +808,25 @@ def district_counties(cfg, abbr, map_dir):
 
 # ---------------------------------------------------------------- publish
 
+# The page title that best names each kind, so the main office page wins over its sub-pages.
+KIND_BEST = {
+    'election_office': r'^(\w+ county )?elections?( department| division| office)?$',
+    'clerk': r'^(\w+ county )?(city and county )?clerk',
+    'library': r'librar',
+}
+
+def best_per_kind(links):
+    """One link per kind for each county: the main office page, not Motor Vehicle or Marriage Licenses.
+    Best = title that names the office plainly, then the shortest address."""
+    best = {}
+    for i in links:
+        title = i['t'].lower().replace('&amp;', '&').strip()
+        pat = KIND_BEST.get(i['k'])
+        rank = (0 if pat and re.search(pat, title) else 1, len(urllib.parse.urlsplit(i['u']).path.strip('/')))
+        if i['k'] not in best or rank < best[i['k']][0]:
+            best[i['k']] = (rank, i)
+    return [b[1] for b in best.values()]
+
 def same_page_once(links):
     """One entry per page: www and no www, http and https, and a trailing slash count as the same page."""
     seen, out = set(), []
@@ -828,7 +851,7 @@ def publish(cfg):
         counties = {}
         for fips, items in found.get('counties', {}).items():
             links = sorted([i for i in items if i['k'] != 'election'], key=lambda i: (list(KINDS).index(i['k']) if i['k'] in KINDS else 9, i['t']))
-            links = same_page_once(links)
+            links = best_per_kind(same_page_once(links))
             els = sorted([i for i in items if i['k'] == 'election' and i['d'] >= today().isoformat()], key=lambda i: i['d'])
             if links or els:
                 counties[fips] = {'name': seedrec['counties'][fips]['name'], 'links': links, 'elections': els}
