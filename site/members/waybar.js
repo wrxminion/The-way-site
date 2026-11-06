@@ -2,7 +2,7 @@
 // Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=25"> in <head>,
 //          <header id="waybar" class="waybar">â€¦fallback linksâ€¦</header> first in <body>,
 //          <script src="/members/waybar.js?v=48" defer></script>.
-// Desktop, signed in or out: the same header. Voter Guide, News, Civics & History | THE WAY | Government, Election Studies, Research,
+// Desktop, signed in or out: the same header. Voter Guide, News, Civics & History | THE WAY | Government, Election Studies, Money Trail (Research is in the footer),
 //   then Pull a thread, search and the account (Log in and Sign up, or a small Menu button, the bell and your name).
 // Signed in, phone: a compact header (logo, search, account). The bottom bar is gone: the two bubble menus replace it.
 // Signed out phone: a Menu panel holds the sections, search, "Log in" and "Sign up".
@@ -443,7 +443,6 @@
     pubL.appendChild(link('/cases/', 'Civics & History', 'cases', cur));
     pubR.appendChild(link(GOV, 'Government', 'govworks', cur));
     pubR.appendChild(link('/case-studies/', 'Election Studies', 'casestudies', cur));
-    pubR.appendChild(link('/research/', 'Research', 'research-lib', cur));
     pubR.appendChild(link('/money-trail/', 'Money Trail', 'money', cur));
     pub.appendChild(pubL); pub.appendChild(pubR);
     return pub;
@@ -775,7 +774,7 @@
     }
     if (!document.querySelector('script[src^="/footer-quick.js"]')) {
       var footerScript = document.createElement('script');
-      footerScript.src = '/footer-quick.js?v=3';
+      footerScript.src = '/footer-quick.js?v=4';
       document.head.appendChild(footerScript);
     }
     if (!document.querySelector('script[src^="/motion-pause.js"]')) {

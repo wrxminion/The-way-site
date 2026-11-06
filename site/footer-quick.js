@@ -12,6 +12,10 @@
     var mark = document.createElement('img');
     mark.src = '/the-way-logo-76.png'; mark.alt = ''; mark.width = 28; mark.height = 28; mark.className = 'michi-footer-mark';
     about.appendChild(mark);
+    // Research moved here from the top bar (Frank, Nov 6 2026), named Research methods
+    var research = document.createElement('a');
+    research.href = '/research/';
+    research.textContent = 'Research methods';
     var methods = document.createElement('a');
     methods.href = '/development/methods/';
     methods.textContent = 'Methodology';
@@ -23,7 +27,7 @@
     var artBox = document.createElement('span');
     artBox.className = 'michi-footer-art';
     artBox.appendChild(about); artBox.appendChild(art);
-    nav.appendChild(methods); nav.appendChild(artBox); nav.appendChild(legal);
+    nav.appendChild(research); nav.appendChild(methods); nav.appendChild(artBox); nav.appendChild(legal);
     footer.appendChild(nav);
     addDepth(nav);
   }
