@@ -1,6 +1,6 @@
 // The Way: one top bar for every page (member area, Findings, guides, maps, case pages, splash).
 // Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=25"> in <head>,
-//          <header id="waybar" class="waybar">â€¦fallback linksâ€¦</header> first in <body>,
+//          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
 //          <script src="/members/waybar.js?v=48" defer></script>.
 // Desktop, signed in or out: the same header. VOTE!, News, Government | THE WAY | History, Elections, Money (one simple word each; Research is in the footer),
 //   then Pull a thread, search and the account (Log in and Sign up, or a small Menu button, the bell and your name).
@@ -460,11 +460,113 @@
       try { compact ? localStorage.removeItem(SMALL) : localStorage.setItem(SMALL, '1'); } catch (e) { /* private mode: this page only */ }
       var bar = document.getElementById('waybar');
       bar.classList.toggle('wb-compact', !compact);
+      if (compact) { nextBanner(); bar.classList.add('wb-dive'); setTimeout(function () { bar.classList.remove('wb-dive'); }, 1400); } // opening: the next picture drops in
       render();
       var again = bar.querySelector('.wb-shrink'); if (again) again.focus();
     });
     return b;
   }
+  // Drop-down banners (Nov 2026): the full bar shows one of six underwater pictures behind it. Each main section has its own picture
+  // (SECTION_BANNER below; change a name there to swap one). The Commons and every other page rotate: the next picture each page and
+  // each time the arrow opens the bar, so opening it feels like going deeper. Pictures only (members/art/banners, no words in them); the links stay real text.
+  // Three pictures have art on the left (the buoy and the two Anansi spiders), so the news scroll moves right on those.
+  var BANNERS = [['the-current', 0], ['the-waterline', 0], ['pull-a-thread', 0], ['the-buoy', 1], ['anansis-web-orb-weaver', 1], ['anansis-web-cartoon', 1]];
+  var BANNER_KEY = 'theway.banner', bannerAt = -1;
+  function nextBanner() {
+    var n = -1;
+    try { n = parseInt(localStorage.getItem(BANNER_KEY), 10); } catch (e) { /* private mode: start at the first */ }
+    bannerAt = ((isFinite(n) ? n : -1) + 1) % BANNERS.length;
+    try { localStorage.setItem(BANNER_KEY, String(bannerAt)); } catch (e) { /* this page only */ }
+  }
+  var SECTION_BANNER = { ballot: 'the-buoy', vote: 'the-buoy', myballot: 'the-buoy', news: 'the-current', govworks: 'the-waterline',
+    cases: 'anansis-web-orb-weaver', casestudies: 'pull-a-thread', results: 'pull-a-thread', money: 'anansis-web-cartoon', thread: 'pull-a-thread' };
+  function bannerLayer(bar) {
+    var fixed = SECTION_BANNER[here()], b = null;
+    for (var i = 0; fixed && i < BANNERS.length; i++) if (BANNERS[i][0] === fixed) b = BANNERS[i];
+    if (!b) { if (bannerAt < 0) nextBanner(); b = BANNERS[bannerAt]; }
+    bar.setAttribute('data-banner', b[0]);
+    bar.classList.toggle('wb-banner-left', !!b[1]);
+    return el('div', { class: 'wb-banner wb-banner-' + b[0], 'aria-hidden': 'true' });
+  }
+  // News scroll (full bar, wide screens only): the newest headlines from the News page's feed, each a direct link to the story.
+  // Loaded once per page, only when it shows. Hover or keyboard focus stops it; reduced motion shows a still line you can scroll.
+  var NEWS = '/news/data/election/national.json', newsBox = null;
+  function wideScreen() { return !window.matchMedia || window.matchMedia('(min-width:1100px)').matches; }
+  function newsScroll() {
+    if (newsBox) return newsBox;
+    newsBox = el('section', { class: 'wb-news', 'aria-label': 'Latest news' });
+    var head = link('/news/', 'Latest news');
+    head.className = 'wb-news-head';
+    var strip = el('div', { class: 'wb-news-strip' });
+    newsBox.appendChild(head); newsBox.appendChild(strip);
+    fetch(NEWS, { credentials: 'omit' }).then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); }).then(function (d) {
+      var seen = {}, list = [];
+      (Array.isArray(d && d.items) ? d.items : []).forEach(function (it) {
+        if (list.length >= 12 || !it || typeof it.title !== 'string' || typeof it.url !== 'string' || !/^https:\/\//.test(it.url)) return;
+        var t = it.title.replace(/\s+/g, ' ').trim().slice(0, 160), k = t.toLowerCase().slice(0, 50);
+        if (!t || seen[k]) return;
+        seen[k] = 1;
+        list.push({ t: t, u: it.url, s: typeof it.source === 'string' ? it.source.trim().slice(0, 60) : '' });
+      });
+      if (!list.length) { newsBox.classList.add('wb-news-empty'); return; }
+      // two copies side by side so the loop has no gap; the second copy is hidden from screen readers and the Tab key
+      [0, 1].forEach(function (copy) {
+        var ul = el('ul', { class: 'wb-news-track', 'aria-hidden': copy ? 'true' : null });
+        list.forEach(function (n) {
+          var li = el('li'), a = el('a', { href: n.u, target: '_blank', rel: 'noopener noreferrer', tabindex: copy ? '-1' : null }, n.t);
+          li.appendChild(a);
+          if (n.s) li.appendChild(el('span', { class: 'wb-news-src' }, n.s));
+          ul.appendChild(li);
+        });
+        strip.appendChild(ul);
+      });
+      // about 60 pixels a second, whatever the headlines' length (sets the CSS animation time, not a style attribute)
+      requestAnimationFrame(function () {
+        var w = strip.firstChild ? strip.firstChild.offsetWidth : 0;
+        if (w) strip.style.setProperty('--wb-news-time', Math.max(30, Math.round(w / 60)) + 's');
+      });
+    }).catch(function () { newsBox.classList.add('wb-news-empty'); });
+    return newsBox;
+  }
+  window.addEventListener('resize', function () {
+    var bar = document.getElementById('waybar');
+    if (!bar || bar.classList.contains('wb-compact')) return;
+    var on = !!(newsBox && newsBox.parentNode === bar);
+    if (on !== wideScreen()) render();
+  });
+  // Sticky link row (Nov 2026): on a desktop, the full bar scrolls up until only its row of section links is left, which stays at the top.
+  // Then a small Home logo (and Commons, signed in) shows on the left of that row, and a small search and Log in (signed out) or Menu
+  // (signed in) on the right. No Pull a thread there: its bubble is always on screen. The small bar (the arrow) has no sticky row. waybar.css: .wb-stuck.
+  function stuckHome() {
+    var box = el('div', { class: 'wb-stuck-l' });
+    var home = link(data ? route('') : '/', '');
+    home.className = 'wb-stuck-home'; home.title = 'Home';
+    home.appendChild(el('span', { class: 'wb-sr' }, 'The Way, home'));
+    box.appendChild(home);
+    if (data) { var c = link(route('commons'), 'Commons', 'commons', here()); c.className = 'wb-stuck-pill'; box.appendChild(c); }
+    return box;
+  }
+  function stuckTools() {
+    var box = el('div', { class: 'wb-stuck-r' });
+    var sq = el('a', { href: '/search/', class: 'wb-stuck-search', 'aria-label': 'Search', title: 'Search' });
+    sq.appendChild(icon('search')); box.appendChild(sq);
+    if (data) box.appendChild(panelButton('more', 'Menu', 'wb-stuck-pill wb-stuck-menu', 'menu'));
+    else { var li = link('/members/', 'Log in', 'login', here()); li.className = 'wb-stuck-pill wb-stuck-login'; box.appendChild(li); }
+    return box;
+  }
+  function syncStick() {
+    var bar = document.getElementById('waybar');
+    if (!bar) return;
+    var pub = bar.querySelector('.wb-pub');
+    var on = !bar.classList.contains('wb-compact') && pub && window.matchMedia && window.matchMedia('(min-width:761px)').matches;
+    if (!on) { bar.classList.remove('wb-stick', 'wb-stuck'); bar.style.removeProperty('top'); return; }
+    var lift = Math.max(0, pub.offsetTop - 10); // everything above the link row scrolls away
+    bar.classList.add('wb-stick');
+    bar.style.top = -lift + 'px';
+    bar.classList.toggle('wb-stuck', window.scrollY > lift + 2);
+  }
+  window.addEventListener('scroll', syncStick, { passive: true });
+  window.addEventListener('resize', syncStick);
   function render(d, opts) {
     var bar = document.getElementById('waybar');
     if (!bar) return;
@@ -480,9 +582,20 @@
     var isFront = path === '/' || path === '/index.html';
     var compact = isFront || smallBar();
     bar.classList.toggle('wb-compact', compact);
+    bar.classList.toggle('wb-mini-home', compact && !isFront);
     var logo = link(data ? route('') : '/', 'The Way'); // signed in: member Home; signed out: the public front page
     logo.className = 'wb-logo';
-    var kids = [logo];
+    // Small bar on an inner page: just the logo picture, small and centred above the arrow, as a Home button.
+    if (compact && !isFront) {
+      logo.className = 'wb-logo wb-logo-mini';
+      logo.textContent = '';
+      logo.title = 'Home';
+      logo.appendChild(el('span', { class: 'wb-sr' }, 'The Way, home'));
+    }
+    var kids = compact ? [logo] : [bannerLayer(bar), logo];
+    if (compact) { bar.removeAttribute('data-banner'); bar.classList.remove('wb-banner-left'); }
+    // Full bar on a wide screen: a slow scroll of the latest headlines in the empty spot left of the logo.
+    if (!compact && wideScreen()) kids.push(newsScroll());
     // Pull a Thread sits on the right of the top row (desktop), first in the group with the search and account, so THE WAY stays dead centre.
     var pat = null;
     if (data || !pending) {
@@ -516,7 +629,7 @@
         'aria-label': 'Account: ' + data.name, 'aria-current': cur === 'me' ? 'page' : null, title: 'Your account' });
       btn.appendChild(el('span', { class: 'wb-avatar', 'aria-hidden': 'true' }, Array.from(data.name)[0].toUpperCase()));
       btn.appendChild(el('span', { class: 'wb-name-text' }, data.name));
-      btn.appendChild(el('span', { class: 'wb-caret', 'aria-hidden': 'true' }, 'â–¾'));
+      btn.appendChild(el('span', { class: 'wb-caret', 'aria-hidden': 'true' }, '\u25BE'));
       var menu = el('ul', { class: 'wb-menu', hidden: '' });
       var item = function (href, label) { var li = el('li'); li.appendChild(link(href, label)); menu.appendChild(li); };
       menu.appendChild(el('li', { class: 'wb-menu-name' }, data.name));
@@ -541,12 +654,14 @@
       kids.push(pub, menuBtn, tools);
     }
     if (!isFront && (data || !pending)) kids.push(shrinkButton(compact));
+    if (!compact && (data || !pending)) kids.push(stuckHome(), stuckTools());
     bar.replaceChildren.apply(bar, kids);
     if (bottom) { bottom.remove(); bottom = null; }
     signedOutNow = !data && !pending;
     syncFloating();
     syncBubbles();
     syncWave();
+    syncStick();
     if (wasOpen && panels[wasOpen]) {
       var again = document.querySelector('[data-wb-panel="' + wasOpen + '"]');
       openPanel(wasOpen, again);
