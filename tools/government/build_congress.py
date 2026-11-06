@@ -27,7 +27,7 @@ import yaml
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 OUT = os.path.join(ROOT, 'site', 'government', 'congress')
 SITE_URL = 'https://michiinstitute.com'
-CSS_V = '2'
+CSS_V = '3'
 JS_V = '1'
 
 STATES = {
