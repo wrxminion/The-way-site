@@ -150,3 +150,19 @@ body.mt-webfull .detail-close{display:block}
  .tracker-row{grid-template-columns:minmax(0,1fr);grid-template-areas:'info' 'count' 'act';gap:8px}
  .tracker-actions{justify-content:flex-start}
 }
+/* D199: hide "Filter the evidence" and the Evidence inspector to give the web more room */
+.mt-panel-toggles{display:flex;justify-content:flex-end;gap:8px;margin:-8px 0 12px}
+.mt-panel-toggle{font:inherit;font-size:13px;font-weight:700;color:var(--text);background:#0c202dda;border:1px solid var(--edge);border-radius:999px;padding:8px 14px;cursor:pointer}
+.mt-panel-toggle:hover,.mt-panel-toggle:focus-visible{outline:none;border-color:var(--mint);color:var(--mint)}
+.mt-panel-toggle[aria-pressed="true"]{background:var(--mint);color:#06141e;border-color:var(--mint)}
+@media(min-width:1251px){
+ .workbench.no-filter{grid-template-columns:minmax(380px,1fr) 324px}
+ .workbench.no-inspector{grid-template-columns:245px minmax(380px,1fr)}
+ .workbench.no-filter.no-inspector{grid-template-columns:minmax(380px,1fr)}
+ .workbench.no-inspector .detail-panel{display:none}
+}
+@media(min-width:761px){.workbench.no-filter .filter-panel{display:none}}
+@media(min-width:761px) and (max-width:1250px){.workbench.no-filter{grid-template-columns:minmax(360px,1fr)}#toggle-inspector{display:none}}
+/* on a phone the filter already folds up and the inspector only opens when something is picked */
+@media(max-width:760px){.mt-panel-toggles{display:none}}
+@media(min-width:761px){body:not(.mt-webfull) .workbench:is(.no-filter,.no-inspector) .graph-wrap svg{height:auto;aspect-ratio:1120/640;max-height:calc(100vh - 140px);min-height:530px}}
