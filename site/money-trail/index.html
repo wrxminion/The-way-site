@@ -9,7 +9,7 @@
 <meta name="description" content="Follow disclosed campaign-finance records, connected committees, and state ballot questions through source-linked evidence. A nonpartisan research map.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="/news/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="money.css?v=11">
+<link rel="stylesheet" href="money.css?v=12">
 <link rel="stylesheet" href="/members/waybar.css?v=29">
 <link rel="canonical" href="https://michiinstitute.com/money-trail/">
 <meta property="og:type" content="website">
@@ -22,8 +22,8 @@
 <header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-mid wb-pub" aria-label="Sections"><a href="/states/">Ballot</a><a href="/news/">News</a><a href="/cases/">Civics &amp; History</a><a href="/foundation.html">Why?</a></nav><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
 <main>
 <section class="hero"><div class="eyebrow">The Way / Research / Money Trail</div><h1>Where the money <em>flows.</em></h1><p>An explorable record of campaign contributions, committee relationships, vendors, and statewide ballot questions. Follow a source, inspect a filing, and separate documented payments from reported leads.</p><div class="hero-meta"><span class="line-accent"></span> 50-state investigation · All states remain open</div></section>
-<section class="kpis" id="kpis" aria-label="Research coverage summary"></section>
-<nav class="tabs" aria-label="Visualization modes"><button class="tab active" data-view="timeline">◷ &nbsp; Timeline</button><button class="tab" data-view="network">◇ &nbsp; Money network</button><button class="tab" data-view="states">▦ &nbsp; State tracker</button><a class="tabs-helper mt-follow" href="follow.html">Follow one trail: a group, person, bill or contractor →</a></nav>
+<details class="mt-stats" id="mt-stats"><summary>Stats</summary><section class="kpis" id="kpis" aria-label="Research coverage summary"></section></details>
+<nav class="tabs" aria-label="Visualization modes"><button class="tab" data-view="timeline">◷ &nbsp; Timeline</button><button class="tab active" data-view="network">◇ &nbsp; Money web</button><button class="tab" data-view="states">▦ &nbsp; State tracker</button><a class="tabs-helper mt-follow" href="follow.html">Follow one trail: a group, person, bill or contractor →</a></nav>
 <div class="workbench">
 <aside class="panel filter-panel" id="filter-panel"><div class="panel-heading" id="filter-toggle" role="button" tabindex="0" aria-expanded="false">Filter the evidence</div><div class="filter-body">
  <div class="field"><label for="search">Name, donor, committee, measure</label><input id="search" type="search" placeholder="Search the trail…" autocomplete="off"></div>
@@ -47,7 +47,7 @@
 </main>
 <script src="/results/ap-map-paths.js?v=d116"></script>
 <script src="data.js?v=1"></script>
-<script src="app.js?v=8"></script>
+<script src="app.js?v=9"></script>
 <script src="/members/waybar.js?v=75" defer></script>
 </body>
 </html>

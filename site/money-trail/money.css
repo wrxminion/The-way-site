@@ -114,3 +114,12 @@ body.mt-webfull .detail-close{display:block}
 .detail-panel h2.mt-selected{font:bold 22px/1.25 Georgia,serif;margin:0 0 10px;color:#f4fffb;overflow-wrap:anywhere}
 .mt-link-with-art a{display:inline-flex;align-items:center;gap:10px}
 .mt-link-art{width:40px;height:44px;border-radius:8px;object-fit:cover;flex:none;border:1px solid #2f6b70;background:#06161d}
+/* D197: the four stat cards sit in a "Stats" dropdown that starts closed */
+.mt-stats{margin:0 0 16px}
+.mt-stats>summary{display:inline-flex;align-items:center;gap:10px;cursor:pointer;list-style:none;padding:9px 16px;border:1px solid var(--edge);border-radius:999px;background:#0c202dda;color:#eefaf6;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;user-select:none}
+.mt-stats>summary::-webkit-details-marker{display:none}
+.mt-stats>summary::after{content:"▾";color:var(--mint);font-size:14px;transition:transform .2s}
+.mt-stats[open]>summary::after{transform:rotate(180deg)}
+.mt-stats>summary:hover,.mt-stats>summary:focus-visible{border-color:var(--mint);outline:none}
+.mt-stats[open]>summary{margin-bottom:12px}
+.mt-stats .kpis{margin-bottom:6px}

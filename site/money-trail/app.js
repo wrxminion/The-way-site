@@ -284,7 +284,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   if (q.get('hub')) { graphHub = q.get('hub').toUpperCase(); if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; }
   if (q.get('q')) { settings.search = q.get('q'); $('#search').value = settings.search; }
   const vw = q.get('view');
-  if (vw === 'network' || vw === 'states') setView(vw); else if (q.get('q')) renderTimeline();
+  // The page opens on the Money web. ?view=timeline or a search (?q=) opens the Timeline.
+  if (vw === 'states' || vw === 'timeline' || (q.get('q') && vw !== 'network')) setView(vw === 'states' ? 'states' : 'timeline'); else setView('network');
 })();
 
 // ---- Full screen web (Nov 2026): the Money network web fills the page by itself (not browser full screen).
