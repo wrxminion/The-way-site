@@ -22,13 +22,12 @@ import subprocess
 import sys
 import unicodedata
 
-import yaml
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 OUT = os.path.join(ROOT, 'site', 'government', 'congress')
 SITE_URL = 'https://michiinstitute.com'
-CSS_V = '3'
-JS_V = '1'
+CSS_V = '5'
+JS_V = '2'
 
 STATES = {
     'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California', 'CO': 'Colorado',
@@ -254,6 +253,7 @@ def main():
         sys.exit('usage: build_congress.py <path to congress-legislators checkout>')
     src = sys.argv[1]
     commit, data_date = git_info(src)
+    import yaml  # only needed for the Congress build
     load = lambda f: yaml.safe_load(open(os.path.join(src, f), encoding='utf-8'))
     L = load('legislators-current.yaml')
     C = load('committees-current.yaml')
@@ -407,7 +407,7 @@ def main():
                         [('The Way', '/'), ('Government', '/how-government-works.html'), ('Congress', '../'), (name, None)],
                         body, 3)
         fn = slugs[bid] + '.html'
-        with open(os.path.join(OUT, 'members', fn), 'w', encoding='utf-8') as fh:
+        with open(os.path.join(OUT, 'members', fn), 'w', encoding='utf-8', newline='\n') as fh:
             fh.write(html_out)
         written.add(fn)
     for fn in os.listdir(os.path.join(OUT, 'members')):
@@ -590,7 +590,7 @@ def main():
             '<nav aria-label="Keep exploring"><a href="/how-government-works.html">How government works</a> · '
             '<a href="/lookup/">Find your district</a> · <a href="#top">Return to surface ↑</a></nav></section>') % (
         total_voting, e(data_long), chambers, finder, leadership, committees, capitol, e(source_note))
-    with open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8') as fh:
+    with open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8', newline='\n') as fh:
         fh.write(page('Congress', 'The House and Senate, layer by layer: chamber maps, every member of Congress with their own page, '
                                   'leaders, committees and the Capitol building. Official public data.',
                       SITE_URL + '/government/congress/',

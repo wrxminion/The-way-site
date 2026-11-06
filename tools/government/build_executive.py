@@ -265,7 +265,7 @@ def main():
             '<a href="#top">Return to surface ↑</a></nav></section>') % (
         CHECKED, leaders, depts, succession, house, every, e(long_date(data_date)), e(commit), CHECKED)
     os.makedirs(OUT, exist_ok=True)
-    with open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8') as fh:
+    with open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8', newline='\n') as fh:
         fh.write(page('The executive branch', 'The president, vice president and 15 executive departments, layer by layer: who leads each one, '
                       'what it does, the line of succession, the White House and every president. Official sources.',
                       SITE_URL + '/government/executive/',
