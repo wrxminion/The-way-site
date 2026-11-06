@@ -1,0 +1,42 @@
+/* Election results at the top of the VOTE! page (vote-results.js). The bar and map rules are copied from /results/results.css
+   and kept under .vres so they do not touch the cards below. Stripes and plain shades only, no party colors. */
+.vres{margin:0 auto 26px;padding:20px 20px 16px;background:#061b2bde;border:1px solid #abedf536;border-radius:18px;text-align:left}
+.vres h2{font:normal 28px Georgia,serif;margin:0 0 6px;color:#ddffff;text-align:center}
+.vres .apmap h2{font-size:22px;margin:18px 0 4px}
+.vres p{margin:6px 0;line-height:1.5}
+.vres .muted{color:#a9cdd3;font-size:14px}
+.vres .vr-warn{text-align:center;color:#d3eded;font-size:15px;max-width:44em;margin:0 auto 6px}
+.vres .vr-warn b{color:#eac690}
+.vres #vr-status{text-align:center}
+.vres .bal{margin-top:14px}
+.vres .bal h3{font:normal 18px Georgia,serif;margin:0 0 6px;color:#ddffff}
+.vres .balbar{display:flex;height:18px;border-radius:6px;overflow:hidden;border:1px solid #86d4d35a;background:#0d2c3b}
+.vres .balbar i,.vres .sw{display:block;height:100%}
+.vres .p-d{background:repeating-linear-gradient(45deg,#cfeff0 0 3px,#4f8fa0 3px 6px)}
+.vres .p-r{background:repeating-linear-gradient(135deg,#f0e6cf 0 3px,#9a8a5c 3px 6px)}
+.vres .p-o{background:#8fa6ad}
+.vres .p-u{background:#0d2c3b}
+.vres .p-n{background:#050f17;border:1px solid #86d4d35a}
+.vres .balkey{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:8px;font-size:14px;color:#e9ffff}
+.vres .balkey span{display:inline-flex;align-items:center;gap:6px}
+.vres .sw{width:16px;height:16px;border-radius:3px;border:1px solid #86d4d35a}
+.vres .modes{display:flex;flex-wrap:wrap;gap:4px;padding:4px;border:1px solid #abedf536;border-radius:22px;background:#061b28;width:fit-content;max-width:100%}
+.vres .modes button{border:0;background:transparent;color:#e9ffff;border-radius:100px;padding:10px 18px;font-weight:650;font-size:14px;cursor:pointer;font-family:inherit}
+.vres .modes button[aria-selected="true"]{background:#a7f0e9;color:#052230}
+.vres .modes button:focus-visible{outline:2px solid #91dfdc;outline-offset:2px}
+.vres .apm-tabs{margin:10px 0}
+.vres .apm-svg{display:block;width:100%;height:auto;max-width:1060px;margin:6px auto}
+.vres .apm-st{cursor:pointer;outline:none}
+.vres .apm-sh{stroke:#071f2e;stroke-width:.8;stroke-linejoin:round}
+.vres .apm-st:hover .apm-sh,.vres .apm-st:focus .apm-sh{stroke:#fff;stroke-width:2}
+.vres .apm-st:focus-visible .apm-sh{stroke:#91dfdc;stroke-width:3}
+.vres .apm-tile .apm-sh{fill:none;stroke:#86d4d37a;stroke-width:1.2}
+.vres .apm-lab{font:700 15px Inter,system-ui,sans-serif;fill:#fff;stroke:#021018;stroke-width:3px;paint-order:stroke;pointer-events:none}
+.vres .apm-cap{font:12px Inter,system-ui,sans-serif;fill:#93d6da;letter-spacing:.1em}
+.vres .apm-detail{min-height:3em;margin:8px 0;padding:10px 14px;border:1px solid #abedf536;border-radius:12px;background:#051b28b0;font-size:15px;line-height:1.5}
+.vres .apm-detail .apm-open{display:inline-block;margin-left:6px;font-weight:600;color:#a7f0e9;text-decoration:underline;text-underline-offset:3px;min-height:24px}
+.vres .apm-list{margin-top:8px}
+.vres .apm-list summary{cursor:pointer;color:#aaf0e8;font-size:14px;padding:6px 0}
+.vres .apm-list ul{margin:6px 0 0;padding-left:18px;font-size:13px;line-height:1.6;color:#c8e0e5;columns:2 320px}
+.vres .vr-more{text-align:center;margin-top:12px;font-weight:600}
+@media(max-width:520px){.vres{padding:16px 14px 12px}.vres .modes button{padding:10px 12px}}
