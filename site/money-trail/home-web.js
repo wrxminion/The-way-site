@@ -1,4 +1,4 @@
-// Front page money web (Nov 2026): the six biggest groups by number of records, one tab each. Without this script the first one shows.
+// Front page money web (Nov 2026): the two groups with the most records from each kind of group, one tab each. Without this script the first one shows.
 (function () {
   'use strict';
   var tabs = Array.prototype.slice.call(document.querySelectorAll('#followmoney .mw-tab'));
