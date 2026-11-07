@@ -177,11 +177,13 @@ function svgEl(tag,attrs,parent){let x=document.createElementNS(NS,tag);Object.e
 function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const net=makeNetwork();lastNet=net;const names=new Map(net.nodes.map(n=>[n.id,n]));let roots=net.nodes.filter(n=>n.central).sort((a,b)=>b.count-a.count),root=roots[0];
  const meta=`${net.total} eligible connections · ${net.edges.length} drawn (limit 85) · ${roots.length} separate ID nodes sharing hub name`;$('#graph-count').textContent=meta+' · Connections may refer to different legal entities with identical reported names.';
  if(!root||!net.edges.length){$('#network-desc').textContent='No connections match this hub and state filter. Clear the state filter or choose another hub.';svgEl('text',{x:560,y:320,'text-anchor':'middle',fill:'#a5c2c8'},svg).textContent='No documented connections in the selected filter';return;}
- $('#network-desc').textContent=`Showing ${net.edges.length} connections adjacent to ${hubLabel(graphHub)}. Point at a dot or a line to see it in the Evidence inspector. Click a line to keep it there, or a dot to explore its neighbors.`;
+ $('#network-desc').textContent=`Showing ${net.edges.length} connections adjacent to ${hubLabel(graphHub)}. Point at a dot or a line to see a short card about it. Click a line to open its filing in the Evidence inspector, or a dot to explore its neighbors.`;
  const cx=560,cy=312,pos={};pos[root.id]={x:cx,y:cy};const other=net.nodes.filter(n=>n.id!==root.id).sort((a,b)=>b.count-a.count||b.amount-a.amount),total=other.length;
  other.forEach((n,i)=>{const inner=i<Math.min(16,total);const sameName=n.central;const radius=sameName?68:inner?200:290;const idx=sameName?i:(inner?i: i-16);const span=sameName?Math.max(roots.length-1,1):inner?Math.min(16,total):Math.max(total-16,1);let angle=2*Math.PI*(idx/Math.max(span,1))-.5*Math.PI;pos[n.id]={x:cx+Math.cos(angle)*radius+(i%2?2:-2),y:cy+Math.sin(angle)*radius*.86};});
  let pan=svgEl('g',{transform:`translate(${cx*(1-graphScale)} ${cy*(1-graphScale)}) scale(${graphScale})`},svg);
- for(let {a,b,e} of net.edges){let A=pos[a],B=pos[b];if(!A||!B)continue;let tier=e.tier;let line=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:tier==='itemized'?'#57c2ad':tier==='fec'?'#b9a7f2':tier==='reported'?'#ad946c':'#659eb3','stroke-width':tier==='itemized'||tier==='fec'?'1.8':'1.3','stroke-dasharray':tier==='itemized'||tier==='fec'?'none':tier==='reported'?'7 5':'2 5',class:'graph-edge',opacity:'.7'},pan);svgEl('title',{},line).textContent=`${e.from_name} → ${e.to_name}\n${e.amount_usd!=null?money(e.amount_usd):'Non-financial'}\n${e.edge_type}`;line.__rec=e.record_ref||e;line.addEventListener('click',()=>pick(e.record_ref||e));}
+ for(let {a,b,e} of net.edges){let A=pos[a],B=pos[b];if(!A||!B)continue;let tier=e.tier;let line=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:tier==='itemized'?'#57c2ad':tier==='fec'?'#b9a7f2':tier==='reported'?'#ad946c':'#659eb3','stroke-width':tier==='itemized'||tier==='fec'?'2.6':'2','stroke-dasharray':tier==='itemized'||tier==='fec'?'none':tier==='reported'?'7 5':'2 5',class:'graph-edge',opacity:'.7'},pan);svgEl('title',{},line).textContent=`${e.from_name} → ${e.to_name}\n${e.amount_usd!=null?money(e.amount_usd):'Non-financial'}\n${e.edge_type}`;line.__rec=e.record_ref||e;line.__e=e;line.__pair=a<b?a+'|'+b:b+'|'+a;
+ // D218: a wide see-through line on top makes each line easy to point at and click. The visible line stays thin.
+ const hit=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:'transparent','stroke-width':'16',class:'graph-edge-hit'},pan);hit.__vis=line;hit.addEventListener('click',()=>pick(e.record_ref||e));}
  // D214: the dollar amount along each line. Two dots with more than one filing between them show the sum of those filings.
  {const pairs=new Map();for(let {a,b,e} of net.edges){if(!pos[a]||!pos[b])continue;const k=a<b?a+'|'+b:b+'|'+a;const p=pairs.get(k)||{a,b,item:0,itemN:0,fec:0,rep:0};/* reported figures on one pair: the largest, not a sum */const amt=num(e.amount_usd)||0;if(e.tier==='itemized'||e.tier==='fec'){p.item+=amt;p.itemN++;if(e.tier==='fec')p.fec++}else if(e.tier==='reported')p.rep=Math.max(p.rep,amt);pairs.set(k,p)}
  const lg=svgEl('g',{class:'graph-amounts'},pan);
@@ -393,15 +395,34 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
 })();
 
 // ---- Full screen web (Nov 2026): the Money network web fills the page by itself (not browser full screen).
-// In this view, hovering a dot shows a small card. On a phone the first tap shows the card and a second tap follows the dot.
+// Hovering a dot or line shows a small card (D218: in every view). In full screen on a phone the first tap shows the card and a second tap follows it.
 (function () {
   const wrap = $('#graph-wrap'), svg = $('#network-svg'), btn = $('#web-full'), card = $('#web-card'), title = $('#web-full-title');
   if (!wrap || !svg || !btn || !card) return;
   let full = false, lastPointer = 'mouse', armed = null;
   const isFull = () => full;
-  function hideCard() { card.hidden = true; card.replaceChildren(); armed = null; }
+  function hideCard() { card.hidden = true; card.replaceChildren(); armed = null; svg.querySelectorAll('.mt-hovered').forEach(x => x.classList.remove('mt-hovered')); }
   function line(cls, text) { const d = document.createElement('div'); d.className = cls; d.textContent = text; card.append(d); return d; }
+  // D218: a line gets the same card: giver to receiver, amount, kind of record, date, and how many filings join the two dots.
+  function fillLineCard(g, touch) {
+    const e = g.__e; if (!e) return false;
+    card.replaceChildren();
+    line('web-card-name', (e.from_name || 'Unknown') + ' to ' + (e.to_name || 'Unknown'));
+    const solid = e.tier === 'itemized' || e.tier === 'fec', amt = e.amount_usd;
+    line('web-card-status', e.tier === 'fec' ? 'FEC filing' : e.tier === 'itemized' ? 'Itemized filing' : e.tier === 'reported' ? 'Reported figure, not one single payment' : 'Context link, not a payment');
+    if (amt != null && amt !== '') line('web-card-row', money_(amt));
+    if (e.date) line('web-card-row', (solid ? 'Date: ' : 'Report date: ') + dateText(e.date));
+    if (solid && lastNet) {
+      const same = lastNet.edges.filter(x => (x.a < x.b ? x.a + '|' + x.b : x.b + '|' + x.a) === g.__pair && (x.e.tier === 'itemized' || x.e.tier === 'fec'));
+      if (same.length > 1) line('web-card-row', same.length + ' filings between these two dots: ' + money_(same.reduce((t, x) => t + (num(x.e.amount_usd) || 0), 0)) + ' in all');
+    }
+    if (e.jurisdiction) line('web-card-faint', e.jurisdiction);
+    line('web-card-hint', (touch ? 'Tap the line again' : 'Click') + ': ' + (solid ? 'opens this filing' : 'opens this record') + ' in the Evidence inspector.');
+    card.hidden = false;
+    return true;
+  }
   function fillCard(g, touch) {
+    if (g.__e) return fillLineCard(g, touch);
     const n = g.__n; if (!n) return false;
     card.replaceChildren();
     const mb = ballotById[n.name];
@@ -430,8 +451,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     card.style.left = Math.max(10, L) + 'px'; card.style.top = Math.max(10, T) + 'px';
   }
   function stripTitles() {
-    // The browser's own tooltip would sit on top of the card, so it moves to aria-label while the web is full screen.
-    svg.querySelectorAll('.graph-node').forEach(g => { const t = g.querySelector(':scope > title'); if (t) { g.setAttribute('aria-label', t.textContent.replace(/\n/g, ', ')); t.remove(); } });
+    // The browser's own tooltip would sit on top of the card, so it moves to aria-label.
+    svg.querySelectorAll('.graph-node, .graph-edge').forEach(g => { const t = g.querySelector(':scope > title'); if (t) { g.setAttribute('aria-label', t.textContent.replace(/\n/g, ', ')); t.remove(); } });
   }
   function setFull(on) {
     full = on;
@@ -446,8 +467,9 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   const baseRender = renderGraph;
   renderGraph = function () {
     baseRender();
-    if (!full) return;
+    hideCard();
     stripTitles();
+    if (!full) return;
     if (title) title.textContent = hubLabel(graphHub);
   };
   const basePick = pick;
@@ -460,21 +482,24 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     setFull(false);
   });
   svg.addEventListener('pointerdown', e => { lastPointer = e.pointerType || 'mouse'; }, true);
+  // D218: the dot, or the visible line under its wide see-through hit line.
+  const hoverEl = t => t && t.closest ? (t.closest('.graph-node') || (t.closest('.graph-edge-hit') || {}).__vis || null) : null;
+  // D218: with a mouse, the card shows on hover in the normal view too, not only in full screen.
   svg.addEventListener('pointerover', e => {
-    if (!isFull() || e.pointerType === 'touch') return;
-    const g = e.target.closest && e.target.closest('.graph-node');
-    if (g && fillCard(g, false)) place(e.clientX, e.clientY);
+    if (e.pointerType === 'touch') return;
+    const g = hoverEl(e.target);
+    if (g && fillCard(g, false)) { svg.querySelectorAll('.mt-hovered').forEach(x => x.classList.remove('mt-hovered')); g.classList.add('mt-hovered'); place(e.clientX, e.clientY); }
   });
-  svg.addEventListener('pointermove', e => { if (isFull() && e.pointerType !== 'touch' && !card.hidden) place(e.clientX, e.clientY); });
+  svg.addEventListener('pointermove', e => { if (e.pointerType !== 'touch' && !card.hidden) place(e.clientX, e.clientY); });
   svg.addEventListener('pointerout', e => {
-    if (!isFull() || e.pointerType === 'touch') return;
-    const g = e.target.closest && e.target.closest('.graph-node');
+    if (e.pointerType === 'touch') return;
+    const g = hoverEl(e.target);
     if (g && !(e.relatedTarget && g.contains(e.relatedTarget))) hideCard();
   });
-  // Touch: the first tap on a dot only shows its card. Tapping the same dot again does what a click does.
+  // Touch: the first tap on a dot or line only shows its card. Tapping the same one again does what a click does.
   svg.addEventListener('click', e => {
     if (!isFull()) return;
-    const g = e.target.closest && e.target.closest('.graph-node');
+    const g = hoverEl(e.target);
     if (lastPointer !== 'touch') { hideCard(); return; }
     if (!g) { hideCard(); return; }
     if (armed === g && !g.__root) { hideCard(); return; }
@@ -510,62 +535,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   el.textContent = f.records + ' more records come straight from FEC filings of ' + f.committees + ' committees (' + (RESEARCH.meta.fec_committees || []).join(', ') + '), pulled from the FEC public data on ' + dateText(f.updated) + '. Each one links to its filing. Individuals are not included.';
 })();
 
-// ---- D212 (Nov 2026): pointing the mouse at a dot or a line in the Money web shows it in the Evidence inspector.
-// It is a preview: clicking still keeps a pick, and when the mouse leaves the web the inspector goes back to what was clicked.
-// Touch is unchanged (a tap works as before). Nothing happens when the inspector is hidden or closed, or in full screen (that view has its own hover card).
-(function () {
-  const svg = $('#network-svg'), content = $('#detail-content'), panel = $('#detail-panel'), wb = $('#workbench');
-  if (!svg || !content || !panel) return;
-  let stash = null, stashTop = 0, shownFor = null, timer = 0, outTimer = 0;
-  const canShow = () => !document.body.classList.contains('mt-webfull') && !(wb && wb.classList.contains('no-inspector')) && getComputedStyle(panel).display !== 'none';
-  function nodeRecord(n) {
-    const mb = ballotById[n.name]; if (mb) return { ...mb };
-    const ent = entityById[n.id], web = webTotals(n);
-    if (ent) return { record_kind: 'entity', name: ent.legal_or_reported_name, entity_type: tidy(ent.entity_type), source_url: ent.source_url, notes: ent.notes, jurisdiction: ent.jurisdiction, id: ent.entity_id, web };
-    return { record_kind: 'entity', name: n.name, jurisdiction: n.jur, id: /reported[-_]name/.test(n.id) ? '' : n.id, notes: n.count + (n.count === 1 ? ' connection' : ' connections') + ' in this web.', web };
-  }
-  function show(target) {
-    if (target === shownFor || !canShow()) return;
-    const rec = target.__rec || (target.__n && nodeRecord(target.__n)); if (!rec) return;
-    // The first preview puts the clicked content aside (buttons and all) so it can come back unchanged.
-    if (!stash) { stash = document.createDocumentFragment(); stashTop = panel.scrollTop; while (content.firstChild) stash.append(content.firstChild); }
-    shownFor = target;
-    details(rec);
-    const note = document.createElement('div'); note.className = 'mt-preview-note';
-    note.textContent = target.__rec ? 'Preview. Click the line to keep it here.' : target.__root ? 'Preview. Click the dot to keep it here.' : 'Preview. Click the dot to put it in the center.';
-    content.prepend(note); panel.scrollTop = 0;
-    svg.querySelectorAll('.mt-hovered').forEach(x => x.classList.remove('mt-hovered')); target.classList.add('mt-hovered');
-  }
-  function restore() {
-    clearTimeout(outTimer);
-    clearTimeout(timer); shownFor = null;
-    svg.querySelectorAll('.mt-hovered').forEach(x => x.classList.remove('mt-hovered'));
-    if (!stash) return;
-    content.replaceChildren(stash); stash = null; panel.scrollTop = stashTop;
-  }
-  svg.addEventListener('pointerover', e => {
-    if (e.pointerType === 'touch') return;
-    const t = e.target.closest && (e.target.closest('.graph-node') || e.target.closest('.graph-edge'));
-    if (!t) return;
-    clearTimeout(outTimer); clearTimeout(timer); timer = setTimeout(() => show(t), 60);
-  });
-  // D217: when the mouse moves off the dot or line, the inspector goes back to what was clicked.
-  // A short wait lets the mouse slide from one line straight onto the next without a flash in between.
-  svg.addEventListener('pointerout', e => {
-    if (e.pointerType === 'touch') return;
-    const t = e.target.closest && (e.target.closest('.graph-node') || e.target.closest('.graph-edge'));
-    if (!t || (e.relatedTarget && t.contains(e.relatedTarget))) return;
-    clearTimeout(outTimer); outTimer = setTimeout(restore, 120);
-  });
-  svg.addEventListener('pointerleave', e => { if (e.pointerType !== 'touch') restore(); });
-  // A click keeps what it picked: the put-aside content is dropped, not brought back.
-  const basePick = pick;
-  pick = function (e) { clearTimeout(timer); stash = null; shownFor = null; basePick(e); };
-  // A new web (new center, zoom, filters) means the old preview no longer points at anything.
-  const baseRender = renderGraph;
-  // D217: a new web (a dot clicked into the center, zoom, filters) also brings back what was clicked.
-  renderGraph = function () { restore(); baseRender(); };
-})();
+// D218 (Nov 2026): hovering no longer changes the Evidence inspector (D212, D217 removed). The hover card below does that job; the inspector changes only on a click.
 
 // ---- D215 (Nov 2026): the Money Web list can be sorted (largest first, A to Z, Z to A, most connections),
 // a search box finds any name in the web, and the web opens on the largest one in the list.
