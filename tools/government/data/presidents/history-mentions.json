@@ -1,0 +1,91 @@
+{
+ "note": "Which president each History case names, picked by hand (Nov 7, 2026) so a surname never links to the wrong person (two Johnsons, two Roosevelts, two Bushes, Justice Kennedy, Hillary Clinton, Ford Motor, Washington the city). 'text' is the words on the case page; the part in [brackets] becomes the link (no brackets: the whole text). Only the first match on each page is linked. tools/government/build_presidents.py stops with an error if a text is not found.",
+ "cases": {
+  "acid-rain-program": [{"president": "george-h-w-bush", "text": "President [George H. W. Bush]"}],
+  "auto-safety": [{"president": "lyndon-b-johnson", "text": "President [Lyndon Johnson]"}],
+  "blair-mountain": [{"president": "warren-g-harding", "text": "President [Harding]"}],
+  "bolsonaro-coup-case": [
+   {"president": "john-f-kennedy", "text": "[Kennedy] administration"},
+   {"president": "lyndon-b-johnson", "text": "President [Johnson]"},
+   {"president": "joseph-r-biden-jr", "text": "President [Biden]"},
+   {"president": "donald-j-trump", "text": "President [Trump]"}
+  ],
+  "bonus-army": [
+   {"president": "calvin-coolidge", "text": "President [Coolidge]"},
+   {"president": "herbert-hoover", "text": "President [Hoover]"},
+   {"president": "franklin-d-roosevelt", "text": "Hoover and [Roosevelt] both vetoed"},
+   {"president": "dwight-d-eisenhower", "text": "Maj. [Dwight D. Eisenhower]", "role": "named as an Army officer in 1932, before he was president"}
+  ],
+  "china-us-electric-cars": [{"president": "donald-j-trump", "text": "President [Trump]"}],
+  "chip": [{"president": "george-w-bush", "text": "President [Bush]"}],
+  "church-committee": [
+   {"president": "franklin-d-roosevelt", "text": "Franklin D. Roosevelt"},
+   {"president": "lyndon-b-johnson", "text": "President [Johnson]"},
+   {"president": "richard-nixon", "text": "Richard Nixon"}
+  ],
+  "civilian-conservation-corps": [{"president": "franklin-d-roosevelt", "text": "President [Franklin Roosevelt]"}],
+  "clean-air-act": [{"president": "richard-nixon", "text": "President [Nixon]"}],
+  "deinstitutionalization": [{"president": "john-f-kennedy", "text": "President [Kennedy]"}],
+  "dust-bowl": [{"president": "franklin-d-roosevelt", "text": "[Roosevelt] signed"}],
+  "epstein-record": [
+   {"president": "george-w-bush", "text": "President [George W. Bush]"},
+   {"president": "donald-j-trump", "text": "President [Trump]"}
+  ],
+  "flint-water": [{"president": "barack-obama", "text": "President [Obama]"}],
+  "gi-bill": [
+   {"president": "franklin-d-roosevelt", "text": "President [Roosevelt]"},
+   {"president": "harry-s-truman", "text": "President [Truman]"}
+  ],
+  "hava": [
+   {"president": "jimmy-carter", "text": "former President [Jimmy Carter]", "role": "named as a former president who co-chaired an election reform commission"},
+   {"president": "george-w-bush", "text": "President [Bush] signed"}
+  ],
+  "iran-contra": [
+   {"president": "ronald-reagan", "text": "President [Reagan]"},
+   {"president": "george-h-w-bush", "text": "President [George H. W. Bush]"},
+   {"president": "william-j-clinton", "text": "then-President-elect [Clinton]"}
+  ],
+  "iraq-wmd": [{"president": "george-w-bush", "text": "President [George W. Bush]"}],
+  "japanese-american-incarceration": [
+   {"president": "franklin-d-roosevelt", "text": "President [Franklin Roosevelt]"},
+   {"president": "harry-s-truman", "text": "President [Truman]"},
+   {"president": "gerald-r-ford", "text": "President [Ford]"},
+   {"president": "ronald-reagan", "text": "President [Reagan]"}
+  ],
+  "love-canal": [{"president": "jimmy-carter", "text": "President [Carter]"}],
+  "ludlow": [{"president": "woodrow-wilson", "text": "President [Woodrow Wilson]"}],
+  "montreal-protocol": [{"president": "ronald-reagan", "text": "President [Reagan]"}],
+  "pentagon-papers": [
+   {"president": "harry-s-truman", "text": "Presidents [Truman], Eisenhower"},
+   {"president": "dwight-d-eisenhower", "text": "[Eisenhower], Kennedy and Johnson misled"},
+   {"president": "john-f-kennedy", "text": "[Kennedy] and Johnson misled"},
+   {"president": "lyndon-b-johnson", "text": "[Johnson] misled"},
+   {"president": "richard-nixon", "text": "[Nixon] administration"}
+  ],
+  "polio-vaccine": [{"president": "dwight-d-eisenhower", "text": "President [Eisenhower]"}],
+  "private-prisons": [{"president": "joseph-r-biden-jr", "text": "a [Biden] executive order"}],
+  "sand-creek": [{"president": "andrew-johnson", "text": "President [Andrew Johnson]"}],
+  "school-lunch": [
+   {"president": "harry-s-truman", "text": "President [Truman]"},
+   {"president": "ronald-reagan", "text": "President [Reagan]"}
+  ],
+  "snap": [{"president": "john-f-kennedy", "text": "President [John F. Kennedy]"}],
+  "social-security": [
+   {"president": "harry-s-truman", "text": "President [Truman]"},
+   {"president": "dwight-d-eisenhower", "text": "President [Eisenhower]"}
+  ],
+  "tarp": [{"president": "george-w-bush", "text": "President [George W. Bush]"}],
+  "tennessee-valley-authority": [
+   {"president": "franklin-d-roosevelt", "text": "[Roosevelt] signed"},
+   {"president": "dwight-d-eisenhower", "text": "[Eisenhower] administration"}
+  ],
+  "title-ix": [{"president": "richard-nixon", "text": "President [Richard Nixon]"}],
+  "tuskegee-study": [{"president": "william-j-clinton", "text": "President [Clinton]"}],
+  "urban-renewal": [{"president": "harry-s-truman", "text": "[Truman] signed"}],
+  "watergate": [
+   {"president": "richard-nixon", "text": "President [Richard Nixon]"},
+   {"president": "gerald-r-ford", "text": "[Ford]'s Sept. 8, 1974 pardon"}
+  ],
+  "welfare-reform-1996": [{"president": "william-j-clinton", "text": "President [Clinton]"}]
+ }
+}

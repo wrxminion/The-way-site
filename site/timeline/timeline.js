@@ -37,6 +37,13 @@ function drawRail() {
     'aria-selected': String(current && current.id === e.id), onclick: () => select(e.id, true) },
     h('span', { class: 'kind', text: e.kind }), h('span', { class: 'yr', text: e.year }), h('span', { class: 'nm', text: e.name }))));
 }
+// Who was president during the event's years (built by tools/government/build_presidents.py), each linked to their page.
+function presLine(e) {
+  const list = (e.presidents || []).filter((p) => p && p.name);
+  if (!list.length) return null;
+  return h('p', { class: 'tl-pres' }, h('strong', { text: (list.length === 1 ? 'President' : 'Presidents') + ' in office during these years: ' }),
+    list.flatMap((p, i) => [i ? ', ' : '', /^\/government\/presidents\/[a-z0-9-]+\.html$/.test(p.url) ? h('a', { href: p.url, text: p.name }) : p.name]));
+}
 function select(id, push) {
   const list = visible(); const e = events.find((x) => x.id === id) || list[0];
   if (!e) return; current = e;
@@ -54,7 +61,7 @@ function select(id, push) {
     chk.unverified.length ? h('ul', {}, chk.unverified.map((v) => h('li', { text: v }))) : h('p', { text: 'Nothing flagged.' }),
     h('p', { text: 'Sources:' }),
     h('ul', {}, (e.sources || []).map((s) => { const u = safeUrl(s.url); return h('li', {}, u ? h('a', { href: u, rel: 'noopener noreferrer', target: '_blank', text: s.name }) : s.name); })));
-  detail.replaceChildren(
+  detail.replaceChildren(...[
     h('h2', { text: e.year + ': ' + e.name }),
     h('span', { class: 'pill warn', text: e.status }),
     h('div', { class: 'pair' },
@@ -62,10 +69,11 @@ function select(id, push) {
       h('div', { class: 'lane obs' }, h('h3', { text: 'What the records show' }), h('p', { text: e.outcome }),
         h('p', {}, h('strong', { text: 'Gain: ' }), e.benefit), h('p', {}, h('strong', { text: 'Cost or risk: ' }), e.tradeoff))),
     h('p', { class: 'banner', text: 'Caution: ' + e.caveat }),
+    presLine(e),
     h('div', { class: 'nav2' },
       h('button', { type: 'button', disabled: !prev, onclick: () => select(prev.id, true) }, 'Earlier: why did this happen?'),
       h('button', { type: 'button', disabled: !next, onclick: () => select(next.id, true) }, 'Later: what happened next?')),
-    drawer);
+    drawer].filter(Boolean));
 }
 rail.addEventListener('keydown', (ev) => {
   if (ev.key !== 'ArrowRight' && ev.key !== 'ArrowLeft') return;

@@ -5,6 +5,12 @@ Writes:
   site/government/presidents/index.html          every presidency, with the money during its budget years
   site/government/presidents/<slug>.html         one page per president (Cleveland and Trump: one page, two presidencies)
   site/government/federal-reserve/index.html     what the Fed is, who owns the Reserve Banks, who picks whom, every chair
+  site/cases/<case>.html                         (stage 3) the first mention of each president listed in
+                                                 data/presidents/history-mentions.json becomes a link to their page
+  site/timeline/data/*.json and data.js          (stage 3) each event gets "presidents": everyone in office during its years
+Each president page also gets "Layer 3 / In History": the History cases and Timeline events that name them, and one
+thing to research from data/presidents/research.json (one major act or event, both sides, with its own sources).
+After it links new case pages, rebuild their packets: python3 tools/build-case-packets.py <case> ...
 
 Run from the repo root:
   python3 tools/government/build_presidents.py ../congress-legislators [judges.csv]
@@ -36,7 +42,7 @@ from photos import figure_html  # noqa: E402  D230: building photos
 DATA = os.path.join(ROOT, 'tools', 'government', 'data', 'presidents')
 OUT = os.path.join(ROOT, 'site', 'government', 'presidents')
 FED_OUT = os.path.join(ROOT, 'site', 'government', 'federal-reserve')
-EXTRA_CSS = '/government/presidents/presidents.css?v=2'
+EXTRA_CSS = '/government/presidents/presidents.css?v=3'
 LAST_BUDGET_FY = 2025
 CHECKED = 'November 6, 2026'
 
@@ -386,7 +392,163 @@ def fed_chairs_during(p):
     return out
 
 
-def president_page(gt, plist, all_pres, debt, omb, cbo, fjc, jpages, today, vps):
+# ---------- History links (stage 3) ----------
+
+CASES_DIR = os.path.join(ROOT, 'site', 'cases')
+TL_DIR = os.path.join(ROOT, 'site', 'timeline', 'data')
+LINK_CLASS = 'pres-link'
+
+
+def load_history():
+    mentions = json.load(open(os.path.join(DATA, 'history-mentions.json'), encoding='utf-8'))['cases']
+    research = json.load(open(os.path.join(DATA, 'research.json'), encoding='utf-8'))['items']
+    return mentions, research
+
+
+def case_title(slug):
+    t = open(os.path.join(CASES_DIR, slug + '.html'), encoding='utf-8').read()
+    m = re.search(r'<title>(.*?)</title>', t, re.S)
+    title = re.sub(r'\s+', ' ', m.group(1)).strip() if m else slug
+    title = re.sub(r'\s+-\s+The Way$', '', title)
+    import html as _html
+    return _html.unescape(title)
+
+
+def _mention_regex(text):
+    """'President [Reagan]' -> regex with the bracketed part as group 'name' (spaces may be any whitespace)."""
+    if '[' not in text:
+        text = '[' + text + ']'
+    before, rest = text.split('[', 1)
+    name, after = rest.split(']', 1)
+    sp = lambda x: r'\s+'.join(re.escape(w) for w in x.split(' ')) if x.strip() else ''
+    b = sp(before.rstrip()) + (r'\s+' if before.endswith(' ') else '')
+    a = (r'\s+' if after.startswith(' ') else '') + sp(after.lstrip())
+    return re.compile(r'(?<![\w-])' + b + r'(?P<name>' + sp(name) + r')' + a + r'(?![\w-])')
+
+
+def link_cases(mentions, slugs):
+    """Link the first mention of each listed president on each case page (only plain text inside <main>, never inside a link,
+    heading, script or the page's own source list). Running it again changes nothing. Returns the files changed."""
+    changed = []
+    skip_tags = ('a', 'h1', 'h2', 'script', 'style', 'title', 'button', 'summary')
+    for slug, items in sorted(mentions.items()):
+        path = os.path.join(CASES_DIR, slug + '.html')
+        html_src = open(path, encoding='utf-8').read()
+        out = html_src
+        for it in items:
+            pres = it['president']
+            if pres not in slugs:
+                sys.exit('history-mentions.json: unknown president slug %s' % pres)
+            href = '/government/presidents/%s.html' % pres
+            if 'href="%s"' % href in out:
+                continue
+            start = out.find('<main')
+            end = out.find('</main>')
+            if start < 0 or end < 0:
+                sys.exit('%s: no <main> element' % slug)
+            rx = _mention_regex(it['text'])
+            # walk text nodes inside main, tracking tags we must not touch
+            pos, depth, done = start, {t: 0 for t in skip_tags}, False
+            for m in re.finditer(r'<(/?)([a-zA-Z0-9]+)[^>]*>', out[start:end]):
+                tag_start = start + m.start()
+                if not done and not any(depth.values()):
+                    seg = out[pos:tag_start]
+                    hit = rx.search(seg)
+                    if hit:
+                        a, b = pos + hit.start('name'), pos + hit.end('name')
+                        out = out[:a] + '<a class="%s" href="%s">%s</a>' % (LINK_CLASS, href, out[a:b]) + out[b:]
+                        done = True
+                        break
+                t = m.group(2).lower()
+                if t in depth:
+                    depth[t] += -1 if m.group(1) else 1
+                    depth[t] = max(depth[t], 0)
+                pos = start + m.end()
+            if not done:
+                sys.exit('%s: could not find "%s" in plain text (history-mentions.json)' % (slug, it['text']))
+        if out != html_src:
+            with open(path, 'w', encoding='utf-8', newline='') as fh:
+                fh.write(out)
+            changed.append(slug)
+    return changed
+
+
+def _event_years(y):
+    nums = [int(x) for x in re.findall(r'\d{4}', y)]
+    return (min(nums), max(nums)) if nums else None
+
+
+def annotate_timeline(pres, slug_of):
+    """Add 'presidents' (everyone in office during the event's years) to each timeline event; rebuild data/data.js.
+    Returns {president slug: [(chapter title, event id, year, name)]}."""
+    found = {}
+    idx = json.load(open(os.path.join(TL_DIR, 'chapters.json'), encoding='utf-8'))
+    bundle = {'data/chapters.json': idx}
+    for ch in idx['chapters']:
+        fn = os.path.join(TL_DIR, os.path.basename(ch['file']))
+        data = json.load(open(fn, encoding='utf-8'))
+        for ev in data['events']:
+            span = _event_years(ev.get('year', ''))
+            if not span:
+                continue
+            lo, hi = '%d-01-01' % span[0], '%d-12-31' % span[1]
+            names = []
+            for p in pres:
+                if p['start'] <= hi and p['end'] > lo:
+                    sl = slug_of(p)
+                    if sl not in [n['slug'] for n in names]:
+                        names.append({'slug': sl, 'name': full_name(p['person']), 'url': '/government/presidents/%s.html' % sl})
+            ev['presidents'] = names
+            for n in names:
+                found.setdefault(n['slug'], []).append((data['title'], ev['id'], ev['year'], ev['name']))
+        with open(fn, 'w', encoding='utf-8', newline='') as fh:
+            fh.write(json.dumps(data, indent=1, ensure_ascii=False))
+        bundle[ch['file']] = data
+    with open(os.path.join(TL_DIR, 'data.js'), 'w', encoding='utf-8', newline='') as fh:
+        fh.write('window.TL_DATA=' + json.dumps(bundle, separators=(',', ':'), ensure_ascii=False) + ';\n')
+    return found
+
+
+def research_card(item):
+    if not item or item.get('pending'):
+        return ''
+    if item.get('none'):
+        return ('<article class="gw-card pr-research"><h3>One thing to research</h3><p>%s</p></article>' % e(item['none']))
+    side = lambda label, text: '<div class="pr-side"><h4>%s</h4><p>%s</p></div>' % (e(label), e(text)) if text else ''
+    sides = side(item.get('for_label', 'Supporters said'), item.get('for')) + side(item.get('against_label', 'Critics said'), item.get('against'))
+    links = ''.join('<li><a href="%s">%s</a></li>' % (e(h), e(t)) for t, h in item.get('links', []))
+    srcs = ' '.join('<a class="gw-source" href="%s">%s ↗</a>' % (e(u), e(t)) for t, u in item['sources'])
+    return ('<article class="gw-card pr-research"><h3>One thing to research</h3><p class="pr-topic">%s</p><p class="gv-muted">%s</p>'
+            '<p>%s</p>%s%s<p class="gv-small">Sources: %s</p></article>') % (
+        e(item['topic']), e(item['when']), e(item['what']), '<div class="pr-sides">%s</div>' % sides if sides else '',
+        '<ul class="gv-list">%s</ul>' % links if links else '', srcs)
+
+
+def history_section(slug, mentions, titles, tl_found, research):
+    cases = []
+    for c, items in sorted(mentions.items(), key=lambda kv: titles[kv[0]].lower()):
+        for it in items:
+            if it['president'] == slug:
+                role = (' <span class="gv-muted">%s</span>' % e(it['role'])) if it.get('role') else ''
+                cases.append('<li><a href="/cases/%s.html">%s</a>%s</li>' % (e(c), e(titles[c]), role))
+                break
+    tl = ['<li><a href="/timeline/#%s">%s: %s</a> <span class="gv-muted">in office during these years</span></li>' % (
+        e(i), e(y), e(n)) for _, i, y, n in tl_found.get(slug, [])]
+    card = research_card(research.get(slug))
+    lists = ''
+    if cases:
+        lists += '<h4 class="pr-sub">History cases that name them</h4><ul class="gv-list">%s</ul>' % ''.join(cases)
+    if tl:
+        lists += '<h4 class="pr-sub">On the Timeline</h4><ul class="gv-list">%s</ul>' % ''.join(tl)
+    if not lists:
+        lists = '<p>No History case or Timeline event names this president yet.</p>'
+    lists += '<p class="gv-small"><a href="/cases/">Every History case</a> · <a href="/timeline/">The Timeline</a></p>'
+    return ('<section id="history" class="gv-sec"><div class="gw-heading"><span>Layer 3 / In History</span><h2>In History.</h2>'
+            '<p>Where this president appears in the History section, and one major act or event to dig into, with what each side said.</p></div>'
+            '<div class="gv-two">%s<article class="gw-card"><h3>Named in History</h3>%s</article></div></section>') % (card, lists)
+
+
+def president_page(gt, plist, all_pres, debt, omb, cbo, fjc, jpages, today, vps, history=''):
     slug, _, app_paths, library = PRESIDENTS[gt]
     person = plist[0]['person']
     name = full_name(person)
@@ -476,13 +638,13 @@ def president_page(gt, plist, all_pres, debt, omb, cbo, fjc, jpages, today, vps)
     body = ('<header class="gv-hero"><p class="gw-eyebrow">%s president of the United States · %s</p>%s<h1>%s</h1>'
             '<p class="gv-lede">Who they were in office, the money during their budget years, and who they appointed. The same numbers, '
             'from the same sources, are on every president’s page.</p></header>'
-            '<nav class="gw-jumps" aria-label="On this page"><a href="#money">Follow the money</a><a href="#threads">Threads to pull</a></nav>'
-            '%s<div id="threads">%s</div>'
+            '<nav class="gw-jumps" aria-label="On this page"><a href="#money">Follow the money</a><a href="#history">In History</a><a href="#threads">Threads to pull</a></nav>'
+            '%s%s<div id="threads">%s</div>'
             '<section class="gw-record"><h2>Where this comes from.</h2><p>Terms, party and vice presidents: the congress-legislators dataset. '
             'Debt: U.S. Treasury, Historical Debt Outstanding. Receipts, outlays and surplus or deficit: OMB Historical Tables, as published by '
             'FRED. Shares of the economy: CBO Historical Budget Data, February 2026. Judges: Federal Judicial Center. Fed chairs: Federal Reserve '
-            'Board. Checked %s. Nothing here rates or ranks anyone.</p><nav class="gv-next" aria-label="Keep exploring">%s</nav></section>') % (
-        e(nums.capitalize()), e(yrs), key_fact, e(name), ''.join(sections), threads, CHECKED, ' · '.join(nav))
+            'Board. In History: the site\'s own History cases and Timeline; the research item lists its own sources. Checked %s. Nothing here rates or ranks anyone.</p><nav class="gv-next" aria-label="Keep exploring">%s</nav></section>') % (
+        e(nums.capitalize()), e(yrs), key_fact, e(name), ''.join(sections), history, threads, CHECKED, ' · '.join(nav))
     desc = '%s, %s president (%s): the national debt, receipts, outlays and deficit or surplus in each budget year, and who they appointed. Official sources.' % (
         name, nums, yrs)
     crumbs = [('The Way', '/'), ('Government', '/how-government-works.html'), ('Executive branch', '/government/executive/'),
@@ -671,10 +833,19 @@ def main():
     for p in pres:
         by_person.setdefault(p['person']['id']['govtrack'], []).append(p)
     written = {'index.html', 'presidents.css'}
+    mentions, research = load_history()
+    slugs = {v[0] for v in PRESIDENTS.values()}
+    missing_r = slugs - set(research)
+    if missing_r:
+        sys.exit('research.json has no entry for %s' % sorted(missing_r))
+    linked = link_cases(mentions, slugs)
+    titles = {c: case_title(c) for c in mentions}
+    tl_found = annotate_timeline(pres, lambda p: PRESIDENTS[p['person']['id']['govtrack']][0])
     for gt, plist in by_person.items():
         fn = PRESIDENTS[gt][0] + '.html'
+        hist = history_section(PRESIDENTS[gt][0], mentions, titles, tl_found, research)
         with open(os.path.join(OUT, fn), 'w', encoding='utf-8', newline='\n') as fh:
-            fh.write(president_page(gt, plist, pres, debt, omb, cbo, fjc, jpages, today, vps))
+            fh.write(president_page(gt, plist, pres, debt, omb, cbo, fjc, jpages, today, vps, hist))
         written.add(fn)
     for f in os.listdir(OUT):
         if f.endswith('.html') and f not in written:
@@ -685,6 +856,7 @@ def main():
     with open(os.path.join(FED_OUT, 'index.html'), 'w', encoding='utf-8', newline='\n') as fh:
         fh.write(fed_page(pres, fed_extra))
     print('wrote %d president pages, the presidents index and the Federal Reserve page' % len(by_person))
+    print('linked presidents on %d History case pages%s' % (len(linked), (': ' + ', '.join(linked)) if linked else ''))
 
 
 if __name__ == '__main__':
