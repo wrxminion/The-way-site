@@ -152,11 +152,11 @@ function svgEl(tag,attrs,parent){let x=document.createElementNS(NS,tag);Object.e
 function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const net=makeNetwork();const names=new Map(net.nodes.map(n=>[n.id,n]));let roots=net.nodes.filter(n=>n.central).sort((a,b)=>b.count-a.count),root=roots[0];
  const meta=`${net.total} eligible connections · ${net.edges.length} drawn (limit 85) · ${roots.length} separate ID nodes sharing hub name`;$('#graph-count').textContent=meta+' · Connections may refer to different legal entities with identical reported names.';
  if(!root||!net.edges.length){$('#network-desc').textContent='No connections match this hub and state filter. Clear the state filter or choose another hub.';svgEl('text',{x:560,y:320,'text-anchor':'middle',fill:'#a5c2c8'},svg).textContent='No documented connections in the selected filter';return;}
- $('#network-desc').textContent=`Showing ${net.edges.length} connections adjacent to ${hubLabel(graphHub)}. Click a line to inspect its filing or a node to explore its neighbors.`;
+ $('#network-desc').textContent=`Showing ${net.edges.length} connections adjacent to ${hubLabel(graphHub)}. Point at a dot or a line to see it in the Evidence inspector. Click a line to keep it there, or a dot to explore its neighbors.`;
  const cx=560,cy=312,pos={};pos[root.id]={x:cx,y:cy};const other=net.nodes.filter(n=>n.id!==root.id).sort((a,b)=>b.count-a.count||b.amount-a.amount),total=other.length;
  other.forEach((n,i)=>{const inner=i<Math.min(16,total);const sameName=n.central;const radius=sameName?68:inner?200:290;const idx=sameName?i:(inner?i: i-16);const span=sameName?Math.max(roots.length-1,1):inner?Math.min(16,total):Math.max(total-16,1);let angle=2*Math.PI*(idx/Math.max(span,1))-.5*Math.PI;pos[n.id]={x:cx+Math.cos(angle)*radius+(i%2?2:-2),y:cy+Math.sin(angle)*radius*.86};});
  let pan=svgEl('g',{transform:`translate(${cx*(1-graphScale)} ${cy*(1-graphScale)}) scale(${graphScale})`},svg);
- for(let {a,b,e} of net.edges){let A=pos[a],B=pos[b];if(!A||!B)continue;let tier=e.tier;let line=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:tier==='itemized'?'#57c2ad':tier==='fec'?'#b9a7f2':tier==='reported'?'#ad946c':'#659eb3','stroke-width':tier==='itemized'||tier==='fec'?'1.8':'1.3','stroke-dasharray':tier==='itemized'||tier==='fec'?'none':tier==='reported'?'7 5':'2 5',class:'graph-edge',opacity:'.7'},pan);svgEl('title',{},line).textContent=`${e.from_name} → ${e.to_name}\n${e.amount_usd!=null?money(e.amount_usd):'Non-financial'}\n${e.edge_type}`;line.addEventListener('click',()=>pick(e.record_ref||e));}
+ for(let {a,b,e} of net.edges){let A=pos[a],B=pos[b];if(!A||!B)continue;let tier=e.tier;let line=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:tier==='itemized'?'#57c2ad':tier==='fec'?'#b9a7f2':tier==='reported'?'#ad946c':'#659eb3','stroke-width':tier==='itemized'||tier==='fec'?'1.8':'1.3','stroke-dasharray':tier==='itemized'||tier==='fec'?'none':tier==='reported'?'7 5':'2 5',class:'graph-edge',opacity:'.7'},pan);svgEl('title',{},line).textContent=`${e.from_name} → ${e.to_name}\n${e.amount_usd!=null?money(e.amount_usd):'Non-financial'}\n${e.edge_type}`;line.__rec=e.record_ref||e;line.addEventListener('click',()=>pick(e.record_ref||e));}
  for(let n of net.nodes){let P=pos[n.id],isRoot=n.id===root.id;let group=svgEl('g',{class:'graph-node'},pan);group.__n=n;group.__root=isRoot;let circ=svgEl('circle',{cx:P.x,cy:P.y,r:isRoot?'24':n.central?'11':ballotById[n.name]?'13':Math.max(6,Math.min(14,7+n.count/4)),fill:(ballotById[n.name]&&outcomeColor(n.name))||(isRoot?'#6be3c9':n.central?'#c4b18a':'#4c9ba5')},group);if(ballotById[n.name]&&outcomeColor(n.name))circ.setAttribute('stroke','#ffffff'),circ.setAttribute('stroke-width','3');svgEl('title',{},group).textContent=`${n.name}\n${n.id}\n${n.count} connections`;
  if(isRoot||n.count>=2||other.indexOf(n)<17){let text=svgEl('text',{x:P.x,y:P.y+(isRoot?42:24),'text-anchor':'middle'},group);const mb=ballotById[n.name];let label=mb?mb.state+' '+measureName(mb).slice((stName[mb.state]||mb.state).length+1):n.name;label=label.length>24?label.slice(0,22)+'…':label;text.textContent=label;
  if(mb){let sub=svgEl('text',{x:P.x,y:P.y+(isRoot?60:40),'text-anchor':'middle',class:'graph-sub'},group);sub.textContent=mb.short_title.length>34?mb.short_title.slice(0,32)+'…':mb.short_title;const mo=measureOutcome[n.name];if(mo){let st=svgEl('text',{x:P.x,y:P.y+(isRoot?84:62),'text-anchor':'middle',class:'graph-status '+mo.status},group);st.textContent=mo.status==='passed'?'✓ PASSED':mo.status==='failed'?'✗ FAILED':'Not yet called';}}}
@@ -476,4 +476,52 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   const f = RESEARCH.meta.fec, el = document.getElementById('fec-note');
   if (!f || !el) return;
   el.textContent = f.records + ' more records come straight from FEC filings of ' + f.committees + ' committees (' + (RESEARCH.meta.fec_committees || []).join(', ') + '), pulled from the FEC public data on ' + dateText(f.updated) + '. Each one links to its filing. Individuals are not included.';
+})();
+
+// ---- D212 (Nov 2026): pointing the mouse at a dot or a line in the Money web shows it in the Evidence inspector.
+// It is a preview: clicking still keeps a pick, and when the mouse leaves the web the inspector goes back to what was clicked.
+// Touch is unchanged (a tap works as before). Nothing happens when the inspector is hidden or closed, or in full screen (that view has its own hover card).
+(function () {
+  const svg = $('#network-svg'), content = $('#detail-content'), panel = $('#detail-panel'), wb = $('#workbench');
+  if (!svg || !content || !panel) return;
+  let stash = null, stashTop = 0, shownFor = null, timer = 0;
+  const canShow = () => !document.body.classList.contains('mt-webfull') && !(wb && wb.classList.contains('no-inspector')) && getComputedStyle(panel).display !== 'none';
+  function nodeRecord(n) {
+    const mb = ballotById[n.name]; if (mb) return { ...mb };
+    const ent = entityById[n.id];
+    if (ent) return { record_kind: 'entity', name: ent.legal_or_reported_name, entity_type: tidy(ent.entity_type), source_url: ent.source_url, notes: ent.notes, jurisdiction: ent.jurisdiction, id: ent.entity_id };
+    return { record_kind: 'entity', name: n.name, jurisdiction: n.jur, id: /reported[-_]name/.test(n.id) ? '' : n.id, notes: n.count + (n.count === 1 ? ' connection' : ' connections') + ' in this web.' };
+  }
+  function show(target) {
+    if (target === shownFor || !canShow()) return;
+    const rec = target.__rec || (target.__n && nodeRecord(target.__n)); if (!rec) return;
+    // The first preview puts the clicked content aside (buttons and all) so it can come back unchanged.
+    if (!stash) { stash = document.createDocumentFragment(); stashTop = panel.scrollTop; while (content.firstChild) stash.append(content.firstChild); }
+    shownFor = target;
+    details(rec);
+    const note = document.createElement('div'); note.className = 'mt-preview-note';
+    note.textContent = target.__rec ? 'Preview. Click the line to keep it here.' : target.__root ? 'Preview. Click the dot to keep it here.' : 'Preview. Click the dot to put it in the center.';
+    content.prepend(note); panel.scrollTop = 0;
+    svg.querySelectorAll('.mt-hovered').forEach(x => x.classList.remove('mt-hovered')); target.classList.add('mt-hovered');
+  }
+  function restore() {
+    clearTimeout(timer); shownFor = null;
+    svg.querySelectorAll('.mt-hovered').forEach(x => x.classList.remove('mt-hovered'));
+    if (!stash) return;
+    content.replaceChildren(stash); stash = null; panel.scrollTop = stashTop;
+  }
+  svg.addEventListener('pointerover', e => {
+    if (e.pointerType === 'touch') return;
+    const t = e.target.closest && (e.target.closest('.graph-node') || e.target.closest('.graph-edge'));
+    if (!t) return;
+    clearTimeout(timer); timer = setTimeout(() => show(t), 60);
+  });
+  // Moving from one dot or line onto empty space keeps the last preview, so the inspector does not flicker.
+  svg.addEventListener('pointerleave', e => { if (e.pointerType !== 'touch') restore(); });
+  // A click keeps what it picked: the put-aside content is dropped, not brought back.
+  const basePick = pick;
+  pick = function (e) { clearTimeout(timer); stash = null; shownFor = null; basePick(e); };
+  // A new web (new center, zoom, filters) means the old preview no longer points at anything.
+  const baseRender = renderGraph;
+  renderGraph = function () { shownFor = null; baseRender(); };
 })();
