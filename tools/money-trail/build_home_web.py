@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
-"""Front page money web (site/index.html, section #followmoney).
+"""Front page money web (site/index.html, section #followmoney): a search box first, then one group's web.
 
 Usage (from repo root):
   python3 -I tools/money-trail/build_home_web.py site
 
 Re-run it after every new batch of records (FEC batches, state filings), so the front page stays accurate.
 
-What it shows: the two groups with the most records from each kind of group, so one kind cannot fill the list.
+What it makes:
+- A big search box. Typing shows names from the archive (site/money-trail/home-names.json, made here).
+  A name from the list opens its money web on the Money Trail page; anything else opens a Money Trail search.
+- A web for one group, picked at random each time the page opens (site/money-trail/home-web.js).
+  The random pick is fair by side: it first picks a side at random (Democratic side, Republican side,
+  ballot measure Yes, ballot measure No), then a group on that side, so a side with more groups in the
+  archive does not show up more often. Groups with no known side are searchable but not in the random pick.
 - The records are the same ones the Money Trail page loads: money-trail/data.js (the Nov 5 archive),
   money-trail/fec-data.js (FEC batches) and money-trail/mi-filings.js (Michigan state filings).
-- Only groups whose own filings are in the archive can be picked. Vendors, banks and donors that only
-  show up on someone else's filing are not picked, because the archive holds only part of their records.
-- Kinds: ballot measure committees, party committees, super PACs (and hybrid PACs), other PACs.
-- Ranking inside a kind: the number of records the group appears in, as giver or receiver. Ties go to more dollars.
+- A group can be picked only when its own filings are in the archive and its web has at least 6 names.
 - Each web shows up to 8 of the largest amounts in or out, by dollars. People are never shown.
-Styles live in site/home.css (.mw-*), tab switching in site/money-trail/home-web.js.
+Styles live in site/home.css (.mw-*).
 """
-import collections, html, json, math, sys, urllib.parse
+import collections, hashlib, html, json, math, sys, urllib.parse
 from datetime import date
 
 ROOT = (sys.argv[1] if len(sys.argv) > 1 else 'site').rstrip('/') + '/'
@@ -57,33 +60,45 @@ READABLE = {'fec:C00000935': 'DCCC', 'fec:C00042366': 'DSCC', 'fec:C00010603': '
             'fec:C00075820': 'NRCC', 'fec:C00027466': 'NRSC', 'fec:C00003418': 'Republican National Committee',
             'fec:C00571703': 'Senate Leadership Fund', 'fec:C00504530': 'Congressional Leadership Fund'}
 
-# Which groups have their own filings in the archive, what kind each is, and the date its records were pulled.
-KINDS = [('ballot', 'Ballot measure committees', 'Ballot measure committee'),
-         ('party', 'Party committees', 'Party committee'),
-         ('super', 'Super PACs', 'Super PAC'),
-         ('pac', 'Other PACs', 'PAC')]
-
-
-def kind_of(t):
+# Which groups have their own filings in the archive, and the date their records were pulled.
+def own_filer(t):
     t = (t or '').lower()
-    if 'party' in t: return 'party'
-    if 'super pac' in t or 'hybrid pac' in t: return 'super'
-    if 'referendum committee' in t or 'ballot committee' in t or 'issue committee' in t or 'ballot question committee' in t \
-            or 'ballot support committee' in t or 'ballot opposition committee' in t: return 'ballot'
-    if 'pac' in t or 'political action committee' in t: return 'pac'
-    return None
+    return any(k in t for k in ('party', 'super pac', 'hybrid pac', 'referendum committee', 'ballot committee', 'issue committee',
+                                'ballot question committee', 'ballot support committee', 'ballot opposition committee',
+                                'political action committee', ' pac'))
 
 
 ARCHIVE_DAY = R['meta']['generated_on']
-filer = {}  # entity id -> (kind, as-of date)
+filer = {}  # entity id -> as-of date
 for e in R['entities']:
-    k = kind_of(e['entity_type'])
-    if k: filer[e['entity_id']] = (k, ARCHIVE_DAY)
+    if own_filer(e['entity_type']): filer[e['entity_id']] = ARCHIVE_DAY
 for c in F['committees']:
-    k = kind_of(c['committee_type'])
-    if k: filer['fec:' + c['committee_id']] = (k, c['retrieved'][:10])
+    filer['fec:' + c['committee_id']] = c['retrieved'][:10]
 for c in M['committees']:
-    filer[mi_id(c)] = ('ballot', M['meta']['updated'])
+    filer[mi_id(c)] = M['meta']['updated']
+
+# Sides, used only to keep the random pick fair. Federal: the two lists the FEC pull was built from
+# (money-trail-research/fec_pull.py, TARGETS and OTHER_SIDES; Fairshake is cross-party and left out), plus GOPAC.
+# Ballot measures: the committee's own stance in the archive (positions) or the Michigan filing.
+DEM = {'C00484642', 'C00495028', 'C00669259', 'C00000935', 'C00042366', 'C00010603', 'C00492140', 'C00495861', 'C00530766',
+       'C00193433', 'C00486845', 'C00004036'}
+REP = {'C00571703', 'C00504530', 'C00003418', 'C00075820', 'C00027466', 'C00487470', 'C00687103', 'C00559740'}
+SIDES = [('D', 'Democratic side'), ('R', 'Republican side'), ('yes', 'Ballot measure, Yes side'), ('no', 'Ballot measure, No side')]
+stance = {}
+for p_ in R['positions']:
+    stance.setdefault(p_['entity_name'].upper(), set()).add(p_['stance'])
+for c in M['committees']:
+    stance.setdefault(c['name'].upper(), set()).add(c['stance'])
+
+
+def side_of(i, name):
+    if i.startswith('fec:') and i[4:] in DEM: return 'D'
+    if i.startswith('fec:') and i[4:] in REP: return 'R'
+    st = stance.get(name.upper(), set())
+    if st == {'support'}: return 'yes'
+    if st == {'oppose'}: return 'no'
+    return None
+
 
 # follow.html has its own record list; ids not in it open on the Money Trail web instead.
 fh = open(MT + 'follow.html', encoding='utf-8').read()
@@ -94,12 +109,6 @@ cnt = collections.Counter(); amt = collections.Counter(); names = {}
 for t in TX:
     for k in ('source', 'recipient'):
         i = t[k + '_entity_id']; cnt[i] += 1; amt[i] += t['amount_usd']; names.setdefault(i, t[k + '_name'])
-
-GROUPS = []  # (kind key, plural label, singular label, [hub ids])
-for key, plural, single in KINDS:
-    ranked = sorted((i for i in cnt if filer.get(i, (None,))[0] == key), key=lambda i: (-cnt[i], -amt[i]))
-    if ranked: GROUPS.append((key, plural, single, ranked[:2]))
-
 
 def person(n):
     return ', ' in n or ' MR.' in n or ' MS.' in n or ' MRS.' in n
@@ -127,7 +136,7 @@ def when(d):
     return date(y, m, dd).strftime('%B ') + str(dd) + ', ' + str(y)
 
 
-def web(hub, single):
+def web(hub):
     agg = {}
     rec = sent = 0
     for t in TX:
@@ -167,37 +176,52 @@ def web(hub, single):
     svg = f'<svg class="moneyweb-svg" viewBox="-130 0 1020 {H}" role="group" aria-label="Money web for {hn}: the largest itemized amounts it received and sent in this research archive. Choose a name to follow its trail.">' + ''.join(lines) + hubnode + ''.join(nodes) + '</svg>'
     tin = f'<span class="mw-tin"><span class="mw-lab">Recorded in</span><b>{short(rec)}</b></span>' if rec else '<span class="mw-tin mw-none"><span class="mw-lab">Recorded in</span>No incoming records in this archive.</span>'
     tout = f'<span class="mw-tout"><span class="mw-lab">Recorded out</span><b>{short(sent)}</b></span>' if sent else '<span class="mw-tout mw-none"><span class="mw-lab">Recorded out</span>No outgoing records in this archive.</span>'
-    head = (f'<div class="mw-head"><span class="mw-kindtag">{html.escape(single)}</span><a class="mw-hubname" href="{hh}">{hn}</a>'
+    head = (f'<div class="mw-head"><a class="mw-hubname" href="{hh}">{hn}</a>'
             f'<div class="mw-totals">{tin}{tout}<span class="mw-recs">{cnt[hub]:,} records in the archive</span>'
-            f'<span class="mw-asof">Records as of {when(filer[hub][1])}</span></div></div>')
-    return head + svg
+            f'<span class="mw-asof">Records as of {when(filer[hub])}</span></div></div>')
+    return head + svg, len(orgs)
 
 
-panels = []; tabgroups = []; k = 0
-for key, plural, single, hubs in GROUPS:
-    tabs = []
-    for hub in hubs:
-        k += 1; hid = 'mw-p' + str(k)
-        tabs.append(f'<button type="button" class="mw-tab" role="tab" id="{hid}-t" aria-controls="{hid}" aria-selected="{"true" if k == 1 else "false"}"><span>{k}</span>{html.escape(title(names[hub], hub))}</button>')
-        panels.append(f'<div class="mw-panel" role="tabpanel" id="{hid}" aria-labelledby="{hid}-t"' + ('' if k == 1 else ' hidden') + '>' + web(hub, single) + '</div>')
-    gid = 'mw-k-' + key
-    tabgroups.append(f'<p class="mw-kind" id="{gid}">{html.escape(plural)}</p><div class="mw-tabs" role="tablist" aria-labelledby="{gid}">' + ''.join(tabs) + '</div>')
+pool = []  # (side, hub) for every group that can be the random pick
+for i in sorted(cnt, key=lambda i: (-cnt[i], -amt[i])):
+    if i not in filer: continue
+    sd = side_of(i, names[i])
+    if not sd: continue
+    w, n_spokes = web(i)
+    if n_spokes >= 6: pool.append((sd, i, w))
+order = [k for k, _ in SIDES]
+pool.sort(key=lambda x: order.index(x[0]))  # without JavaScript the first one shows
+panels = []
+for k, (sd, hub, w) in enumerate(pool):
+    panels.append(f'<div class="mw-panel" id="mw-p{k + 1}" data-side="{sd}"' + ('' if k == 0 else ' hidden') + '>' + w + '</div>')
 
-low = lambda x: x[0].lower() + x[1:]  # 'Super PACs' -> 'super PACs'
-kinds_text = ', '.join(low(p) for _, p, _, _ in GROUPS[:-1]) + ' and ' + low(GROUPS[-1][1])
+# Names for the search box: every group in the records, people left out.
+seen_n = set(); search_names = []
+for i in sorted(cnt, key=lambda i: (-cnt[i], -amt[i])):
+    n = names[i]
+    if person(n) or not n.strip(): continue
+    key = ''.join(ch for ch in n.upper() if ch.isalnum())
+    if key in seen_n: continue
+    seen_n.add(key); search_names.append(n)
+names_json = json.dumps(search_names, ensure_ascii=False, separators=(',', ':')) + '\n'
+open(MT + 'home-names.json', 'w', encoding='utf-8').write(names_json)
+NAMES_V = hashlib.sha1(names_json.encode('utf-8')).hexdigest()[:8]  # cache stamp, changes when the list does
+
 band = ('<section class="mapband moneyband" id="followmoney" aria-labelledby="fm-h"><div class="mapband-text"><div class="depth">Follow the money</div><h2 id="fm-h">Where the money flows.</h2>'
-        f'<p>Who gave, who received, and the public filing behind each line. For each kind of group ({html.escape(kinds_text)}), these are the two with the most records in Michi’s archive. They are ranked by the number of records, not by dollars. Choose a name to follow its trail.</p>'
-        + ''.join(tabgroups) +
+        '<p>Who gave, who received, and the public filing behind each line. Type a name to open its money web.</p>'
+        '<form class="mw-search" action="/money-trail/" method="get" role="search" data-v="' + NAMES_V + '"><label for="mw-q">Type any name: a politician, a company, a PAC</label>'
+        '<div class="mw-search-row"><input id="mw-q" name="q" type="search" list="mw-names" autocomplete="off" spellcheck="false" placeholder="Try GOPAC or DCCC"><button type="submit">Follow</button></div>'
+        '<datalist id="mw-names"></datalist></form>'
         '</div>\n'
-        '<div class="moneyweb">' + ''.join(panels) + '<p class="mw-key"><span class="mw-in">Recorded in</span> <span class="mw-out">Recorded out</span></p>'
+        '<div class="moneyweb"><p class="mw-random"><span>A group picked at random</span><button type="button" class="mw-another" hidden>Show another</button></p>' + ''.join(panels) + '<p class="mw-key"><span class="mw-in">Recorded in</span> <span class="mw-out">Recorded out</span></p>'
         '<a class="cta join-cta" href="/money-trail/">Open the Money Trail <span aria-hidden="true">&rarr;</span></a><a class="text-link" href="/money-trail/?view=network">See the full money web</a>'
         '<p class="mw-note">Amounts are the itemized records in Michi’s research archive, added up. They are not each group’s full totals. '
-        'Only groups whose own filings are in the archive are ranked, by the number of records only. For federal committees the archive holds up to 100 of the largest gifts in and 100 of the largest payments out from each committee’s own filings. '
-        'More committees are still being added. A link between two names does not mean anyone did anything wrong.</p></div></section>\n')
+        'The random pick takes turns fairly between sides, not by size. More committees are still being added. A link between two names does not mean anyone did anything wrong.</p></div></section>\n')
 
 p = ROOT + 'index.html'; t = open(p, encoding='utf-8').read()
 a = t.index('<section class="mapband moneyband"'); b = t.index('</section>\n', a) + len('</section>\n')
 t = t[:a] + band + t[b:]
 open(p, 'w', encoding='utf-8').write(t)
-for key, plural, single, hubs in GROUPS:
-    print(plural + ':', '; '.join(f'{title(names[h], h)} ({cnt[h]} records, {short(amt[h])})' for h in hubs))
+for sd, hub, w in pool:
+    print(sd, title(names[hub], hub), cnt[hub])
+print(len(search_names), 'names for the search box')
