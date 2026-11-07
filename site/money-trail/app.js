@@ -825,3 +825,54 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
+
+// ---- D224 (Nov 2026): the browser Back button steps back through the Money web instead of leaving the page.
+// Each new center, full screen on or off, and each tab change adds a step to the browser history (with a matching address,
+// so a step can be shared or reloaded). Back restores the step before it. Steps the page takes by itself while it loads
+// replace the first step instead of adding new ones.
+(function () {
+  if (!window.history || !history.pushState) return;
+  const fullBtn = $('#web-full');
+  const isFull = () => document.body.classList.contains('mt-webfull');
+  const now = () => ({ mt: 1, view, hub: view === 'network' ? graphHub : '', full: view === 'network' && isFull() });
+  const same = (a, b) => a && b && a.view === b.view && a.hub === b.hub && a.full === b.full;
+  function urlOf(s) {
+    const u = new URLSearchParams(location.search);
+    ['view', 'hub', 'full'].forEach(k => u.delete(k));
+    u.set('view', s.view);
+    if (s.hub) u.set('hub', s.hub);
+    if (s.full) u.set('full', '1');
+    return location.pathname + '?' + u.toString() + location.hash;
+  }
+  let user = false, restoring = false;
+  const arm = () => { user = true; };
+  document.addEventListener('pointerdown', arm, true);
+  document.addEventListener('keydown', arm, true);
+  document.addEventListener('change', arm, true);
+  document.addEventListener('click', arm, true);
+  function record() {
+    if (restoring) return;
+    const s = now(), cur = history.state;
+    if (same(s, cur)) return;
+    if (user && cur && cur.mt) history.pushState(s, '', urlOf(s)); else history.replaceState(s, '', urlOf(s));
+  }
+  const baseRender = renderGraph;
+  renderGraph = function () { baseRender.apply(this, arguments); record(); };
+  const baseView = setView;
+  setView = function (v) { baseView(v); record(); };
+  if (fullBtn) fullBtn.addEventListener('click', () => setTimeout(record, 0));
+  window.addEventListener('popstate', e => {
+    const s = e.state; if (!s || !s.mt) return;
+    restoring = true;
+    try {
+      if (s.view === 'network' && s.hub && s.hub !== graphHub) {
+        graphHub = s.hub; if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); }
+        $('#hub').value = graphHub; graphScale = 1;
+      }
+      if (view !== s.view) setView(s.view); else if (s.view === 'network') renderGraph();
+      if (fullBtn && s.view === 'network' && isFull() !== !!s.full) fullBtn.click();
+      if (s.view !== 'network' && isFull() && fullBtn) fullBtn.click();
+    } finally { restoring = false; }
+  });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => setTimeout(record, 0)); else setTimeout(record, 0);
+})();
