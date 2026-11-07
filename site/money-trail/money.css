@@ -205,3 +205,6 @@ body:not(.mt-webfull) .web-card:not([hidden]){display:block;position:fixed;z-ind
 .graph-edge-hit{pointer-events:stroke;cursor:pointer}
 /* D219: Kind list next to the center list */
 .mt-hub-pick #hub-kind{flex:0 1 auto;max-width:100%;background:#071c28;color:#e0f2ed;border:1px solid #315a64;padding:10px;border-radius:8px}
+/* D221: small pictures on the tracker buttons */
+.tracker-web,.tracker-inspect{display:inline-flex;align-items:center;gap:8px}
+.tracker-btn-art{width:22px;height:24px;border-radius:5px;flex:none;border:1px solid #2f6b70;background:#06161d}
