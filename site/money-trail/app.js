@@ -1268,6 +1268,36 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     baseRender.apply(this, arguments);
     peeking = false;
     if (sel && paint(sel) === false) sel = null;
-    if (sel && sel.kind === 'node') { const g = parts().nodes.get(sel.id); if (g) { const c = $('#detail-content'); const old = c && c.querySelector('.mt-conn'); if (old) { old.remove(); nodeCard(g); } } }
+    /* D248: no refresh while the inspector is hidden, or the refresh would bring it back */if (sel && sel.kind === 'node' && !($('#workbench') && $('#workbench').classList.contains('no-inspector'))) { const g = parts().nodes.get(sel.id); if (g) { const c = $('#detail-content'); const old = c && c.querySelector('.mt-conn'); if (old) { old.remove(); nodeCard(g); } } }
   };
+})();
+
+// ---- D248 (Nov 2026): "Hide" on top of the Evidence inspector (Frank). Where the inspector floats over the page (smaller
+// screens, full screen, the phone's bottom sheet) it closes it, as the × did. Where it is a column beside the web it does
+// what "Hide inspector" does, so the web gets the width. Clicking a dot, a line or a row brings it back (D199, D241).
+(function () {
+  const btn = $('#detail-close'), panel = $('#detail-panel'), bi = $('#toggle-inspector'), wb = $('#workbench');
+  if (!btn || !panel) return;
+  btn.addEventListener('click', () => {
+    if (getComputedStyle(panel).position === 'fixed') return; // the older listener already closed it
+    if (bi && wb && !wb.classList.contains('no-inspector')) bi.click();
+  });
+  // The "We need help" bar stays at the top of the screen, and it covered the top of the inspector (and its Hide button).
+  // The inspector now starts below the bar while the bar is on screen. Full screen and the phone's bottom sheet are not changed.
+  let queued = false;
+  function fit() {
+    queued = false;
+    if (document.body.classList.contains('mt-webfull') || innerWidth <= 760) { panel.style.top = ''; panel.style.maxHeight = ''; return; }
+    const bar = document.querySelector('.hb-bar'), base = innerWidth <= 1250 ? 80 : 89;
+    let top = base;
+    if (bar) { const r = bar.getBoundingClientRect(); if (r.height && r.bottom > 0) top = Math.max(base, Math.round(r.bottom) + 10); }
+    if (top === base) { panel.style.top = ''; panel.style.maxHeight = ''; return; }
+    panel.style.top = top + 'px'; panel.style.maxHeight = 'calc(100vh - ' + (top + 16) + 'px)';
+  }
+  const soon = () => { if (!queued) { queued = true; requestAnimationFrame(fit); } };
+  addEventListener('scroll', soon, { passive: true });
+  addEventListener('resize', soon);
+  new MutationObserver(soon).observe(panel, { attributes: true, attributeFilter: ['class'] });
+  new MutationObserver(soon).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  soon();
 })();
