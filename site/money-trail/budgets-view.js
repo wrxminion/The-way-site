@@ -10,6 +10,7 @@
   if (!B || typeof RESEARCH === 'undefined') return;
   // D208: the followed laws come from laws.js (window.TW_LAWS), built by tools/money-trail/follow_laws.py.
   const LAWS = ((window.TW_LAWS || {}).laws || []).filter(l => l && l.agencies);
+  const PAGES = window.TW_MEMBER_PAGES || {}; // D225: Bioguide ID -> member page slug (member-pages.js)
   const hubOf = law => String(law.name || law.bill).toUpperCase();
   const codesOf = law => 'spending code' + ((law.codes || []).length > 1 ? 's ' : ' ') + (law.codes || []).join(' and ');
   const seenEntity = new Set((RESEARCH.entities || []).map(e => e.entity_id));
@@ -181,6 +182,27 @@
     document.getElementById('hub').value = name; graphScale = 1; setView('network');
     document.querySelector('.center-panel').scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
+  // D225: one House member in the Evidence inspector: the vote on this law, party and state, votes on the other laws
+  // on this page (matched by Bioguide ID), and where the member's page is. Nothing here is matched by name.
+  const voteWord = v => v === 'Yea' || v === 'Aye' ? 'yes' : v === 'Nay' || v === 'No' ? 'no' : v;
+  let shownMember = '';
+  function inspectMember(m, law, h) {
+    const box = document.getElementById('detail-content');
+    if (!box || typeof escapeHtml !== 'function' || typeof datum !== 'function') return;
+    const key = m[0] + '|' + law.key; if (shownMember === key && box.querySelector('.mt-member')) return; shownMember = key;
+    const page = PAGES[m[0]], party = { D: 'Democrat', R: 'Republican', I: 'Independent' }[m[2]] || m[2];
+    const other = LAWS.filter(l => l !== law).map(l => { const hh = (l.votes || {}).house, x = hh && (hh.members || []).find(y => y[0] === m[0]); return x ? l.name + ': ' + voteWord(x[4]) : ''; }).filter(Boolean);
+    let html = '<h2 class="mt-selected mt-member">' + escapeHtml(m[1] + ' (' + m[2] + '-' + m[3] + ')') + '</h2><span class="event-kind">House member</span>';
+    html += '<div class="event-amount mt-big">Voted ' + escapeHtml(voteWord(m[4])) + '</div>';
+    html += datum('On', law.name + (h.roll ? ', House roll call ' + h.roll : '') + (h.date ? ', ' + day(h.date) : ''));
+    html += datum('Party and state', party + ', ' + m[3]) + datum('Bioguide ID', m[0]);
+    html += datum('Votes on the other laws on this page', other.length ? other.join('; ') : 'Not in the House votes of the other laws here.');
+    html += datum('Money lines', 'No money line in this data is matched to this member yet. Lines are matched by ID, never by name alone.');
+    const go = page ? '/government/congress/members/' + encodeURIComponent(page) + '.html' : 'https://bioguide.congress.gov/search/bio/' + encodeURIComponent(m[0]);
+    html += '<a class="detail-link" href="' + escapeHtml(go) + '"' + (page ? '' : ' target="_blank" rel="noopener noreferrer"') + '>' + (page ? 'Open this member\u2019s page on this site' : 'Official Congress biography \u2197') + '</a>';
+    if (h.source && typeof sourceButton === 'function') html += sourceButton(h.source, 'House Clerk roll call ' + (h.roll || ''));
+    box.innerHTML = html;
+  }
   function lawDetail(law) {
     const box = el('div', 'bud-lawone');
     box.append(el('h4', 'bud-h4', law.name));
@@ -218,8 +240,21 @@
     if (h && (h.members || []).length) {
       const det = el('details', 'bud-sub'); det.append(el('summary', null, 'How each House member voted (' + h.members.length + ')'));
       const ul = el('ul', 'bud-votes');
-      h.members.slice().sort((a, b) => String(a[4]).localeCompare(String(b[4])) || String(a[1]).localeCompare(String(b[1]))).forEach(m => ul.append(el('li', null, m[1] + ' (' + m[2] + '-' + m[3] + '): ' + (m[4] === 'Yea' || m[4] === 'Aye' ? 'yes' : m[4] === 'Nay' || m[4] === 'No' ? 'no' : m[4]))));
-      const src = el('p', 'bud-note'); src.append(link('House Clerk roll call ' + h.roll + ' \u2197', h.source));
+      h.members.slice().sort((a, b) => String(a[4]).localeCompare(String(b[4])) || String(a[1]).localeCompare(String(b[1]))).forEach(m => {
+        // D225: each name links to the member's page on this site (government/congress/members, current members),
+        // or else to the member's official biography in the Congress Biographical Directory (bioguide.congress.gov).
+        const li = el('li'), page = PAGES[m[0]];
+        const a = el('a', 'bud-member', m[1] + (page ? '' : ' ↗'));
+        if (page) a.href = '/government/congress/members/' + encodeURIComponent(page) + '.html';
+        else { a.href = 'https://bioguide.congress.gov/search/bio/' + encodeURIComponent(m[0]); a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+        a.__m = m;
+        li.append(a, document.createTextNode(' (' + m[2] + '-' + m[3] + '): ' + (m[4] === 'Yea' || m[4] === 'Aye' ? 'yes' : m[4] === 'Nay' || m[4] === 'No' ? 'no' : m[4])));
+        ul.append(li);
+      });
+      // D225: hovering a name (or moving to it with the keyboard) shows that member in the Evidence inspector. Clicking still follows the link.
+      const hover = e => { const a = e.target && e.target.closest && e.target.closest('a.bud-member'); if (a && a.__m && e.pointerType !== 'touch') inspectMember(a.__m, law, h); };
+      ul.addEventListener('pointerover', hover); ul.addEventListener('focusin', hover);
+      const src = el('p', 'bud-note'); src.append(document.createTextNode('Names without \u2197 open the member\u2019s page on this site. Names with \u2197 are members not serving now: they open the official Congress biography. '), link('House Clerk roll call ' + h.roll + ' \u2197', h.source));
       det.append(ul, src); box.append(det);
     }
     const note = el('p', 'bud-note');
