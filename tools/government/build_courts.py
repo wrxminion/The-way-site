@@ -246,16 +246,17 @@ def main():
                                               circ_rank(c), bj.court_state(c) or '', bj.court_short(c)))
         groups = []
         for c in order:
-            js = sorted(courts[c], key=lambda j: (j['senior'] != '', j['r']['Last Name'], j['name']))
+            # D242: Frank, Nov 7 2026: retired justices are not serving, so this list leaves them out.
+            # They still have their own pages and are listed on the Supreme Court page.
+            js = sorted([j for j in courts[c] if not j.get('retired')], key=lambda j: (j['senior'] != '', j['r']['Last Name'], j['name']))
             items = ''.join('<li data-q="%s"><a href="judges/%s.html">%s</a> <span class="gv-muted">%s%s</span></li>' % (
                 e((j['name'] + ' ' + c + ' ' + j['president']).lower()), j['slug'], e(j['name']),
                 e('Appointed by ' + j['president']) if j['president'] and not j['president'].startswith('None') else '',
-                ', retired' if j.get('retired') else ', senior status' if j['senior'] else '') for j in js)
-            nret = sum(1 for j in js if j.get('retired'))
+                ', senior status' if j['senior'] else '') for j in js)
             groups.append('<details class="gv-state" data-place="%s"><summary>%s <span class="gv-muted">%s</span></summary>'
                           '<ul class="gv-list">%s</ul><p class="gv-small"><a href="court/%s.html">Open the %s page →</a></p></details>' % (
                               e(c.lower()), e(bj.court_short(c) if not c.startswith('Supreme') else 'Supreme Court'),
-                              ('%d + %d retired' % (len(js) - nret, nret)) if nret else str(len(js)), items,
+                              str(len(js)), items,
                               bj.court_slug(c), e(bj.court_short(c) if not c.startswith('Supreme') else 'Supreme Court')))
         nj = sum(1 for j in jd['judges'] if not j.get('retired'))
         senior = sum(1 for j in jd['judges'] if j['senior'] and not j.get('retired'))
