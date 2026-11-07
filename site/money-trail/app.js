@@ -234,7 +234,7 @@ function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const n
  {const pairs=new Map();for(let {a,b,e} of net.edges){if(!pos[a]||!pos[b])continue;const k=a<b?a+'|'+b:b+'|'+a;const p=pairs.get(k)||{a,b,item:0,itemN:0,fec:0,rep:0};/* reported figures on one pair: the largest, not a sum */const amt=num(e.amount_usd)||0;if(e.tier==='itemized'||e.tier==='fec'){p.item+=amt;p.itemN++;if(e.tier==='fec')p.fec++}else if(e.tier==='reported')p.rep=Math.max(p.rep,amt);pairs.set(k,p)}
  const lg=svgEl('g',{class:'graph-amounts'},pan);
  for(const p of pairs.values()){const amt=p.itemN?p.item:p.rep;if(!(amt>0))continue;let A=pos[p.a],B=pos[p.b];if(Math.hypot(B.x-cx,B.y-cy)<Math.hypot(A.x-cx,A.y-cy))[A,B]=[B,A];const t=.6;
- const tx=svgEl('text',{x:A.x+(B.x-A.x)*t,y:A.y+(B.y-A.y)*t+4,'text-anchor':'middle',class:'graph-amount '+(p.itemN?(p.fec===p.itemN?'fec':'itemized'):'reported')},lg);tx.textContent=webShort(amt);tx.__amt=amt;tx.__A=A;tx.__B=B}}
+ const tx=svgEl('text',{x:A.x+(B.x-A.x)*t,y:A.y+(B.y-A.y)*t+4,'text-anchor':'middle',class:'graph-amount '+(p.itemN?(p.fec===p.itemN?'fec':'itemized'):'reported')},lg);tx.textContent=webShort(amt);tx.__amt=amt;tx.__A=A;tx.__B=B;tx.__ends=[p.a,p.b]}}
  for(let n of net.nodes){let P=pos[n.id],isRoot=n.id===root.id;let group=svgEl('g',{class:'graph-node'},pan);group.__n=n;group.__root=isRoot;let circ=svgEl('circle',{cx:P.x,cy:P.y,r:isRoot?'24':n.central?'11':ballotById[n.name]?'13':Math.max(6,Math.min(14,7+n.count/4)),fill:(ballotById[n.name]&&outcomeColor(n.name))||(isRoot?'#6be3c9':n.central?'#c4b18a':'#4c9ba5')},group);if(ballotById[n.name]&&outcomeColor(n.name))circ.setAttribute('stroke','#ffffff'),circ.setAttribute('stroke-width','3');svgEl('title',{},group).textContent=`${n.name}\n${n.id}\n${n.count} connections`;
  if(isRoot||n.count>=2||other.indexOf(n)<17){let text=svgEl('text',{x:P.x,y:P.y+(isRoot?42:24),'text-anchor':'middle'},group);const mb=ballotById[n.name];let label=mb?mb.state+' '+measureName(mb).slice((stName[mb.state]||mb.state).length+1):n.name;label=label.length>24?label.slice(0,22)+'…':label;text.textContent=label;
  if(mb){let sub=svgEl('text',{x:P.x,y:P.y+(isRoot?60:40),'text-anchor':'middle',class:'graph-sub'},group);sub.textContent=mb.short_title.length>34?mb.short_title.slice(0,32)+'…':mb.short_title;const mo=measureOutcome[n.name];if(mo){let st=svgEl('text',{x:P.x,y:P.y+(isRoot?84:62),'text-anchor':'middle',class:'graph-status '+mo.status},group);st.textContent=mo.status==='passed'?'✓ PASSED':mo.status==='failed'?'✗ FAILED':'Not yet called';}}}
@@ -245,22 +245,32 @@ function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const n
  graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()});}
  const crowded=thinWebLabels(pan);if(crowded)$('#graph-count').textContent+=` · ${crowded} dollar ${crowded===1?'number was':'numbers were'} left off where they would cover other words. Point at a line or dot to see its number.`;
 }
-// D231: on a busy web the dollar numbers piled on top of each other and on the names. Names and dots stay. Each number
-// (the biggest first) tries a few spots along its line and is left off only when every spot would cover a name, a dot
-// or another number. The sizes are estimates in web units, so this works before the web is on screen.
+// D231: on a busy web the dollar numbers piled on top of each other and on the names. Names and dots stay.
+// D232: every dot keeps its number where it can: a dot's number tries below, above, right and left of the dot before it
+// is left off. A line's number is not repeated when the dot at its end already shows the same number. A line keeps its
+// number even when crowded if the dot at its end could not show one, so no amount drops out of the web.
+// Sizes are estimates in web units, so this works before the web is on screen.
 function thinWebLabels(pan){const boxes=[],em=t=>parseFloat(getComputedStyle(t).fontSize)||12;
  const box=(t,x,y)=>{const f=em(t),w=String(t.textContent).length*f*.58+4;return {x0:x-w/2,x1:x+w/2,y0:y-f*.8,y1:y+f*.25}};
  const hits=b=>boxes.some(o=>b.x0<o.x1&&b.x1>o.x0&&b.y0<o.y1&&b.y1>o.y0);
- const at=(t,k)=>parseFloat(t.getAttribute(k))||0;let gone=0;
+ const at=(t,k)=>parseFloat(t.getAttribute(k))||0;let gone=0;const shown=new Map(),dropped=new Set();
  pan.querySelectorAll('.graph-node circle').forEach(c=>{const x=at(c,'cx'),y=at(c,'cy'),r=at(c,'r')+1;boxes.push({x0:x-r,x1:x+r,y0:y-r,y1:y+r})});
  pan.querySelectorAll('.graph-node text:not(.graph-money), .graph-money.root').forEach(t=>boxes.push(box(t,at(t,'x'),at(t,'y'))));
  const nodeMoney=[...pan.querySelectorAll('.graph-money:not(.root)')].sort((a,b)=>(b.__amt||0)-(a.__amt||0));
- for(const t of nodeMoney){const b=box(t,at(t,'x'),at(t,'y'));if(hits(b)){t.remove();gone++}else boxes.push(b)}
+ for(const t of nodeMoney){const g=t.parentNode,n=g&&g.__n,c=g&&g.querySelector('circle');let ok=null;
+  const spots=[[at(t,'x'),at(t,'y'),'middle']];
+  if(c){const cx=at(c,'cx'),cy=at(c,'cy'),r=at(c,'r'),f=em(t),w=String(t.textContent).length*f*.58+4;spots.push([cx,cy-r-5,'middle'],[cx+r+5+w/2,cy+f*.35,'middle'],[cx-r-5-w/2,cy+f*.35,'middle'])}
+  for(const [x,y] of spots){const b=box(t,x,y);if(!hits(b)){ok={x,y,b};break}}
+  if(ok){t.setAttribute('x',ok.x);t.setAttribute('y',ok.y);boxes.push(ok.b);if(n)shown.set(n.id,{text:t.textContent,count:n.count})}else{t.remove();if(n)dropped.add(n.id)}}
  const lineMoney=[...pan.querySelectorAll('.graph-amount')].sort((a,b)=>(b.__amt||0)-(a.__amt||0));
- for(const t of lineMoney){const A=t.__A,B=t.__B;let ok=null;
+ for(const t of lineMoney){const A=t.__A,B=t.__B,ends=t.__ends||[];
+  if(ends.some(id=>{const s=shown.get(id);return s&&s.count===1&&s.text===t.textContent})){t.remove();continue}
+  let ok=null;
   if(A&&B)for(const f of [.6,.5,.7,.42,.78]){const x=A.x+(B.x-A.x)*f,y=A.y+(B.y-A.y)*f+4,b=box(t,x,y);if(!hits(b)){ok={x,y,b};break}}
   else{const b=box(t,at(t,'x'),at(t,'y'));if(!hits(b))ok={x:at(t,'x'),y:at(t,'y'),b}}
-  if(ok){t.setAttribute('x',ok.x);t.setAttribute('y',ok.y);boxes.push(ok.b)}else{t.remove();gone++}}
+  if(ok){t.setAttribute('x',ok.x);t.setAttribute('y',ok.y);boxes.push(ok.b)}
+  else if(ends.some(id=>dropped.has(id))){boxes.push(box(t,at(t,'x'),at(t,'y')))}
+  else{t.remove();gone++}}
  return gone}
 function prepareHubRefresh(){$('#hub').innerHTML=hubs.map(x=>`<option value="${escapeHtml(x)}">${escapeHtml(hubLabel(x))}</option>`).join('')}
 function setScale(n){graphScale=Math.min(2,Math.max(.65,graphScale*n));renderGraph()}
