@@ -280,6 +280,9 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   };
   const el = (tag, cls, text) => { const d = document.createElement(tag); if (cls) d.className = cls; if (text != null) d.textContent = text; return d; };
   const query = { orgs: '', people: '', departments: '' };
+  // D221: the blue web on "See in the Money web", the blue filing cabinet on "Inspect" and on trail links.
+  const WEB_ART = '/money-trail/art/money-web-link-blue.webp';
+  const btnArt = src => { const im = document.createElement('img'); im.src = src; im.alt = ''; im.width = 22; im.height = 24; im.className = 'tracker-btn-art'; im.decoding = 'async'; return im; };
   function openWeb(name) { graphHub = name; if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; graphScale = 1; setView('network'); $('.center-panel').scrollIntoView({ block: 'start', behavior: 'smooth' }); }
   function render(k) {
     const box = $('#' + k + '-view'); if (!box) return;
@@ -305,9 +308,9 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
       const info = el('div', 'tracker-info'); info.append(el('strong', null, r.name), el('small', null, [r.type, r.jur].filter(Boolean).join(' · ')));
       const cnt = el('div', 'tracker-count' + (r.count ? '' : ' none'), r.count ? r.count + (r.count === 1 ? ' line' : ' lines') + ' in the web' : 'No lines in the web yet');
       const act = el('div', 'tracker-actions');
-      if (r.count) { const b = el('button', 'tracker-web', 'See in the Money web'); b.addEventListener('click', () => openWeb(r.name)); act.append(b); }
-      if (r.trail) { const a = el('a', 'tracker-web', 'Follow this trail →'); a.href = r.trail; act.append(a); }
-      if (r.entity) { const b = el('button', 'tracker-inspect', 'Inspect'); b.addEventListener('click', () => pick(r.entity)); act.append(b); }
+      if (r.count) { const b = el('button', 'tracker-web', 'See in the Money web'); b.prepend(btnArt(WEB_ART)); b.addEventListener('click', () => openWeb(r.name)); act.append(b); }
+      if (r.trail) { const a = el('a', 'tracker-web', 'Follow this trail →'); a.prepend(btnArt(CABINET)); a.href = r.trail; act.append(a); }
+      if (r.entity) { const b = el('button', 'tracker-inspect', 'Inspect'); b.prepend(btnArt(CABINET)); b.addEventListener('click', () => pick(r.entity)); act.append(b); }
       card.append(info, cnt, act); list.append(card);
     });
     if (!rows.length) list.append(el('div', 'empty', on ? 'No names match these filters. Reset filters to see them all.' : 'No names match. Try fewer letters.'));
