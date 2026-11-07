@@ -20,6 +20,10 @@ from build_congress import (ROOT, SITE_URL, e, full_name, git_info, long_date, m
 
 OUT = os.path.join(ROOT, 'site', 'government', 'executive')
 CHECKED = 'November 6, 2026'
+# Past heads of each department, built by tools/government/build_cabinet.py.
+HEADS = __import__('json').load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'cabinet', 'heads.json'), encoding='utf-8'))
+DEPT_KEYS = ['state', 'treasury', 'defense', 'justice', 'interior', 'agriculture', 'commerce', 'labor', 'hhs', 'hud', 'dot', 'energy',
+             'education', 'va', 'dhs']
 WH_CABINET = 'https://www.whitehouse.gov/administration/cabinet/'
 SUCCESSION = 'https://www.law.cornell.edu/uscode/text/3/19'
 
@@ -171,9 +175,10 @@ def main():
             else:
                 merged.append(v)
         how = {'election': 'Elected', 'succession': 'Succeeded to the office', 'appointment': 'Appointed'}.get(p['hows'][0], p['hows'][0])
-        opts.append('<option value="%d"%s data-name="%s" data-slug="%s" data-start="%s" data-end="%s" data-party="%s" data-how="%s" '
+        opts.append('<option value="%d"%s data-name="%s" data-slug="%s" data-s="%s" data-e="%s" data-start="%s" data-end="%s" data-party="%s" data-how="%s" '
                     'data-vps="%s">%d. %s (%s)</option>' % (
                         p['n'], ' selected' if p is cur else '', e(full_name(p['person'])), PRESIDENTS[p['person']['id']['govtrack']][0],
+                        p['start'], min(p['end'], today),
                         e(long_date(p['start'])), e(long_date(p['end'])) if p['end'] <= today else ('now|' + e(long_date(p['end']))),
                         e('No party' if party == 'no party' else party), e(how), e('~'.join(merged)), p['n'],
                         e(full_name(p['person'])), e(p['start'][:4] + ' to ' + (p['end'][:4] if p['end'] <= today else 'now'))))
@@ -202,8 +207,8 @@ def main():
         '<details><summary>What does the vice president do?</summary><div class="gw-detail"><p>The vice president is first in line '
         'to become president and is President of the Senate, with a vote only to break a tie. See the Senate on the '
         '<a href="/government/congress/#chambers">Congress page</a>.</p>%s %s</div></details>'
-        '</article></div><p class="gw-status" id="gv-pick-note" hidden>Only these two cards change. The departments, the line of '
-        'succession and the White House below always show today’s officials.</p><p>%s</p></section>') % (
+        '</article></div><p class="gw-status" id="gv-pick-note" hidden>The department cards below change too. The line of '
+        'succession and the White House always show today’s officials.</p><p>%s</p></section>') % (
         pick, e(ordinal(cur['n'])), '<a href="/government/presidents/%s.html">%s</a>' % (
             PRESIDENTS[cur['person']['id']['govtrack']][0], e(full_name(cur['person']))),
         e(' · '.join(x for x in [cur_party, cur_how] if x)), e(long_date(cur['start'])), e(long_date(cur['end'])), more(cur),
@@ -213,6 +218,8 @@ def main():
         src(const, 'Constitution, Article I, Section 3'), src(amend, 'Twenty-fifth Amendment'), ds)
 
     cards = []
+    for d, k in zip(DEPARTMENTS, DEPT_KEYS):
+        d['key'] = k
     for i, d in enumerate(DEPARTMENTS):
         bits = []
         if d.get('mission'):
@@ -221,21 +228,39 @@ def main():
         if d.get('year'):
             bits.append('<details><summary>When was it created?</summary><div class="gw-detail"><p>%s</p>%s</div></details>' % (
                 e(d['year_note']), src(d['year_src'])))
-        bits.append('<details><summary>Who leads it?</summary><div class="gw-detail"><p>%s, %s. Cabinet secretaries are nominated by the '
+        bits.append('<details data-k="who"><summary>Who leads it?</summary><div class="gw-detail"><p>%s, %s. Cabinet secretaries are nominated by the '
                     'president and confirmed by the Senate.</p>%s%s</div></details>' % (
                         '<a href="%s">%s ↗</a>' % (e(d['head_url']), e(d['head'])), e(d['title']), ('<p>%s</p>' % e(d['note'])) if d.get('note') else '', src(d['head_src'])))
         bits.append('<details><summary>Where is it in the line of succession?</summary><div class="gw-detail"><p>%s in the line to act as '
                     'president, after the vice president, the Speaker and the President pro tempore.</p><p><a href="#succession">See the whole line</a></p>%s</div></details>' % (
                         e(ordinal(i + 4)).capitalize(), src(SUCCESSION, '3 U.S.C. § 19')))
-        cards.append('<article class="gw-card gv-dept" id="d-%d"><p class="gw-eyebrow">%s</p><h3>%s</h3>'
-                     '<p class="gv-dept-head"><span>%s</span>%s</p>%s<a class="gv-open" href="%s">Official website ↗</a></article>' % (
-                         i + 1, ('Created ' + e(d['year'])) if d.get('year') else 'Executive department', e(d['name']),
-                         e(d['title']), '<a href="%s">%s</a>' % (e(d['head_url']), e(d['head'])), ''.join(bits), e(d['url'])))
+        hd = HEADS[d['key']]
+        offices = list(dict.fromkeys(r['office'] for r in hd['rows']))
+        enc = '~'.join('%d|%s|%s|%s|%s|%s|%s|%s' % (offices.index(r['office']), r['name'], r['start'], r['end'], r['chk'],
+                                                    {'dataset': 'd', 'wikipedia': 'w', 'official': 'o'}[r['src']], r.get('agree', 0), r.get('note', ''))
+                       for r in hd['rows'])
+        lists = ' '.join('<a href="%s">%s ↗</a>' % (e(u), 'Official list' if len(hd['official']) == 1 else 'Official source %d' % (j + 1))
+                         for j, u in enumerate(hd['official'])) or 'No official list of past heads could be read for this office.'
+        cards.append('<article class="gw-card gv-dept" id="d-%d" data-title="%s" data-offices="%s" data-heads="%s"><p class="gw-eyebrow">%s</p><h3>%s</h3>'
+                     '<p class="gv-dept-head"><span>%s</span>%s</p><div class="gv-past" data-k="past" hidden><p class="gv-past-h" data-k="pasth"></p>'
+                     '<ul class="gv-list" data-k="plist"></ul><p class="gv-src">%s</p></div>%s<a class="gv-open" href="%s">Official website ↗</a></article>' % (
+                         i + 1, e(d['title']), e('~'.join(offices)), e(enc),
+                         ('Created ' + e(d['year'])) if d.get('year') else 'Executive department', e(d['name']),
+                         e(d['title']), '<a href="%s">%s</a>' % (e(d['head_url']), e(d['head'])), lists, ''.join(bits), e(d['url'])))
     depts = ('<section id="departments" class="gv-sec"><div class="gw-heading"><span>Layer 2 / The departments</span>'
              '<h2>15 departments do most of the work.</h2><p>Their heads form most of the president’s Cabinet. The heads shown are '
-             'today’s, serving under the current president. They are listed in the '
+             'today’s. Pick a president above to see who led each department in that president’s years. They are listed in the '
              'order of the presidential line of succession. Open a question for the next layer.</p>'
-             '<p class="gw-status" id="gv-dept-note" hidden></p></div>'
+             '<p class="gw-status" id="gv-dept-note" hidden></p>'
+             '<details class="gv-how"><summary>Where the past heads come from</summary><div class="gw-detail">'
+             '<p>Each department’s own list of past heads is used wherever it could be read, and each card links to it. '
+             'Where that list gives only names or years, or could not be read, the dates come from the United States Cabinet '
+             'Appointments Dataset by Tait Chamberlain, built from Congressional Research Service records (CC BY 3.0), and, '
+             'from 2017 on, from Wikipedia. Those rows say so in small print.</p>'
+             '<p>Acting heads who filled in between appointments are not shown, so a gap means no appointed head is listed for those days. '
+             'Where the sources disagree, the department’s own list is shown. Every disagreement and correction is written down in '
+             '<a href="https://github.com/wrxminion/The-way-site/blob/main/tools/government/data/cabinet/check.txt">check.txt ↗</a>.</p>'
+             '</div></details></div>'
              '<div class="gw-grid gv-top">%s</div><p class="gw-status">Department heads checked against the White House cabinet page and the departments’ '
              'own sites on %s. Where a founding year could not be confirmed on an official page, it is left out.</p></section>') % (''.join(cards), CHECKED)
 
@@ -317,8 +342,8 @@ def main():
                       'what it does, the line of succession, the White House and every president. Official sources.',
                       SITE_URL + '/government/executive/',
                       [('The Way', '/'), ('Government', '/how-government-works.html'), ('Executive branch', None)], body, 2)
-        html_out = html_out.replace('<link rel="canonical"', '<link rel="stylesheet" href="/government/executive/pick.css?v=1">\n<link rel="canonical"', 1)
-        fh.write(html_out.replace('<script src="/members/waybar.js', '<script src="/government/executive/pick.js?v=2" defer></script><script src="/members/waybar.js', 1))
+        html_out = html_out.replace('<link rel="canonical"', '<link rel="stylesheet" href="/government/executive/pick.css?v=2">\n<link rel="canonical"', 1)
+        fh.write(html_out.replace('<script src="/members/waybar.js', '<script src="/government/executive/pick.js?v=3" defer></script><script src="/members/waybar.js', 1))
     print('wrote the executive page (%d presidencies)' % len(pres))
 
 
