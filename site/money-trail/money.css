@@ -211,6 +211,6 @@ body:not(.mt-webfull) .web-card:not([hidden]){display:block;position:fixed;z-ind
 /* D222: Organization, Person and State trackers use the department budget card style (budgets.css .bud-row). */
 .tracker-card .bud-big.none{font-size:16px;color:var(--muted);font-weight:600}
 .tracker-card .bud-bar.reported i{background:repeating-linear-gradient(90deg,#3ca7a0 0 8px,transparent 8px 12px)}
-.tracker-card .bud-act .tracker-web,.tracker-card .bud-act .tracker-inspect{font-size:12px;padding:6px 12px}
+.bud-row .bud-act .tracker-web,.bud-row .bud-act .tracker-inspect{font-size:12px;padding:5px 12px 5px 6px;gap:6px}
 .tracker-card.on{border-color:var(--mint)}
 .state-cards{margin:14px 0 16px}
