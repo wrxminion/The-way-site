@@ -166,7 +166,56 @@ body.mt-webfull .detail-close{display:block}
 /* on a phone the filter already folds up and the inspector only opens when something is picked */
 @media(max-width:760px){.mt-panel-toggles{display:none}}
 @media(min-width:761px){body:not(.mt-webfull) .workbench:is(.no-filter,.no-inspector) .graph-wrap svg{height:auto;aspect-ratio:1120/640;max-height:calc(100vh - 140px);min-height:530px}}
-/* D212: hover preview in the Evidence inspector */
-.mt-preview-note{font-size:12px;font-weight:700;color:#071c28;background:#e9d59d;border-radius:6px;padding:6px 10px;margin:0 0 10px}
-.graph-edge.mt-hovered{opacity:1;stroke-width:3.2}
+/* D212, D218: the dot or line under the mouse */
+.graph-edge.mt-hovered{stroke:#d4e8de!important;stroke-width:4!important;opacity:1}
 .graph-node.mt-hovered circle{stroke:#f4fffb;stroke-width:3}
+/* D214: dollar totals on the Money web dots and lines, and in the inspector */
+.graph-node text.graph-money{font-size:12px;font-weight:800;fill:#e9d59d}
+.graph-node text.graph-money.reported{font-weight:600;fill:#c9b48c}
+.graph-amounts{pointer-events:none}
+.graph-amount{font-size:10.5px;font-weight:700;paint-order:stroke;stroke:#071824;stroke-width:3px;stroke-linejoin:round;fill:#8fe3d1}
+.graph-amount.fec{fill:#cfc2f7}.graph-amount.reported{fill:#d8bf8f;font-style:italic}
+.mt-web-total{border:1px solid #315a64;border-radius:10px;padding:12px 14px;margin:6px 0 14px;background:#0b2532}
+.mt-web-total .key{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mt-web-total .mt-big{margin:4px 0 8px}
+.mt-web-total p{margin:6px 0}.mt-web-total p b{color:#edf9f7}
+.mt-web-total .mt-web-total-note{font-size:11px;opacity:.85}
+/* D215: Money Web search and sorted list */
+.mt-web-search{position:relative;flex:1 1 260px;max-width:420px}
+.mt-web-search input{width:100%;box-sizing:border-box;background:#071c28;color:#e0f2ed;border:1px solid #315a64;padding:10px 12px;border-radius:8px;font:inherit;font-size:14px}
+.mt-web-search input:focus{outline:2px solid #57c2ad;outline-offset:1px}
+.mt-web-results{position:absolute;z-index:30;left:0;right:0;top:calc(100% + 4px);background:#0a2230;border:1px solid #315a64;border-radius:8px;box-shadow:0 18px 40px #0009;max-height:360px;overflow:auto}
+.mt-web-hit{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid #1b3d48;color:#e0f2ed;padding:9px 12px;cursor:pointer;font:inherit}
+.mt-web-hit:last-child{border-bottom:0}
+.mt-web-hit:hover,.mt-web-hit.active{background:#123445}
+.mt-web-hit-name{display:block;font-weight:700;font-size:13px;overflow-wrap:anywhere}
+.mt-web-hit-size{display:block;font-size:12px;color:#e9d59d;margin-top:2px}
+.mt-web-none{padding:10px 12px;font-size:13px;color:var(--muted)}
+.mt-hub-pick{display:flex;gap:8px;flex-wrap:wrap;align-items:center;flex:1 1 320px}
+.mt-hub-pick #hub{flex:1 1 220px;max-width:none}
+.mt-hub-pick #hub-sort{flex:0 0 auto;background:#071c28;color:#e0f2ed;border:1px solid #315a64;padding:10px;border-radius:8px}
+@media(max-width:760px){.mt-web-search{max-width:none;flex-basis:100%}.mt-hub-pick{flex-basis:100%}}
+/* D216: blue filing cabinet on evidence and record links */
+.detail-link.mt-evidence-link{display:flex;align-items:center;justify-content:center;gap:10px}
+.mt-evidence-art{width:22px;height:24px;border-radius:5px;flex:none;border:1px solid #2f6b70;background:#06161d}
+/* D218: the hover card also shows outside full screen (mouse only) */
+body:not(.mt-webfull) .web-card:not([hidden]){display:block;position:fixed;z-index:60;max-width:290px;padding:11px 13px;border:1px solid #3c7a85;border-radius:10px;background:#0a2230f2;box-shadow:0 14px 40px #000a;pointer-events:none;font-size:12px;line-height:1.45;color:#cfe3e5}
+/* D218: lines are clicked through their wide see-through hit line */
+.graph-edge{pointer-events:none}
+.graph-edge-hit{pointer-events:stroke;cursor:pointer}
+/* D219: Kind list next to the center list */
+.mt-hub-pick #hub-kind{flex:0 1 auto;max-width:100%;background:#071c28;color:#e0f2ed;border:1px solid #315a64;padding:10px;border-radius:8px}
+/* D221: small pictures on the tracker buttons */
+.tracker-web,.tracker-inspect{display:inline-flex;align-items:center;gap:8px}
+.tracker-btn-art{width:22px;height:24px;border-radius:5px;flex:none;border:1px solid #2f6b70;background:#06161d}
+/* D222: Organization, Person and State trackers use the department budget card style (budgets.css .bud-row). */
+.tracker-card .bud-big.none{font-size:16px;color:var(--muted);font-weight:600}
+.tracker-card .bud-bar.reported i{background:repeating-linear-gradient(90deg,#3ca7a0 0 8px,transparent 8px 12px)}
+.bud-row .bud-act .tracker-web,.bud-row .bud-act .tracker-inspect{font-size:12px;padding:5px 12px 5px 6px;gap:6px}
+.tracker-card.on{border-color:var(--mint)}
+.state-cards{margin:14px 0 16px}
+/* D231: Hide numbers button. With numbers hidden, only the center dot keeps its total. */
+.mt-nonums .graph-amounts,.mt-nonums .graph-money:not(.root){display:none}
+.bubble .web-nums-btn[aria-pressed="true"]{background:#1d4a52;border-color:var(--mint)}
+@media(max-width:760px){.bubble{left:10px;right:10px;gap:5px;flex-wrap:wrap;justify-content:flex-end}.bubble .web-full-btn{padding:0 7px;font-size:12px}}
+.mt-web-total .mt-not-added{display:block;margin-top:2px;font-size:14px;font-weight:600;color:#c9b48c}

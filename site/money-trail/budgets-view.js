@@ -1,4 +1,6 @@
 // D201 (Nov 2026): department budgets, where federal money comes from, and one law followed through the money web.
+// D223 (Nov 2026): every department in the budget list is a dot in the Money web, and each department card opens it there.
+// D230 (Nov 2026): department cards show a free photo of the headquarters building with its credit line.
 // D208 (Nov 2026): every law in laws.js (window.TW_LAWS) can be followed, picked from a list.
 // Data: budgets.js (window.TW_BUDGETS) and laws.js, built from public USAspending, Treasury, Library of Congress and House Clerk records.
 // Loaded after data.js and before app.js, so the law's lines join the Money web like any other record.
@@ -9,6 +11,8 @@
   if (!B || typeof RESEARCH === 'undefined') return;
   // D208: the followed laws come from laws.js (window.TW_LAWS), built by tools/money-trail/follow_laws.py.
   const LAWS = ((window.TW_LAWS || {}).laws || []).filter(l => l && l.agencies);
+  const PHOTOS = window.TW_BUILDING_PHOTOS || {}; // D230: building photos by agency abbreviation (/government/photos/photos.js)
+  const PAGES = window.TW_MEMBER_PAGES || {}; // D225: Bioguide ID -> member page slug (member-pages.js)
   const hubOf = law => String(law.name || law.bill).toUpperCase();
   const codesOf = law => 'spending code' + ((law.codes || []).length > 1 ? 's ' : ' ') + (law.codes || []).join(' and ');
   const seenEntity = new Set((RESEARCH.entities || []).map(e => e.entity_id));
@@ -46,6 +50,113 @@
     });
   });
 
+  // D226: members of Congress in the Money web and the Person tracker. Each member who voted on a law (House Clerk roll call,
+  // and the Senate roll call once the pull adds it), sponsored it or cosponsored it gets a line to that law. Lines carry no dollars:
+  // a vote is not a payment. Everyone is matched by Bioguide ID, never by name. Through the law, a member's web reaches its money.
+  const NAMES = window.TW_MEMBER_NAMES || {};
+  const people = new Map(), labels = new Map();
+  const clean = nm => String(nm || '').replace(/\s*\([A-Z]{2}\)$/, '').trim();
+  function person(id, nm, party, st, chamber) {
+    let p = people.get(id);
+    if (!p) {
+      let label = (NAMES[id] || clean(nm) || id) + ' (' + party + '-' + st + ')';
+      if (labels.has(label) && labels.get(label) !== id) label += ' ' + id;
+      labels.set(label, id);
+      p = { id, label, st, party, chambers: new Set(), lines: 0 }; people.set(id, p);
+    }
+    if (chamber) p.chambers.add(chamber);
+    p.lines++; return p;
+  }
+  const voteWord = v => v === 'Yea' || v === 'Aye' ? 'yes' : v === 'Nay' || v === 'No' ? 'no' : String(v || '').toLowerCase();
+  LAWS.forEach(law => {
+    const HUB = hubOf(law), id = 'LAW-' + law.key + '-';
+    for (const [ch, tag, word] of [['house', 'MV', 'House'], ['senate', 'MS', 'Senate']]) {
+      const v = (law.votes || {})[ch];
+      if (!v || !(v.members || []).length) continue;
+      v.members.forEach(m => {
+        const p = person(m[0], m[1], m[2], m[3], word);
+        RESEARCH.graph_edges.push({ id: id + tag + '-' + m[0], from_name: p.label, from_entity_id: 'bioguide:' + m[0], to_name: HUB, amount_usd: null,
+          date: String(v.date || '').slice(0, 10), date_kind: 'roll_call_vote_date', jurisdiction: 'US', edge_type: 'member_roll_call_vote_nonfinancial',
+          confidence: 'official_roll_call;matched_by_bioguide_id', source_url: v.source || law.bill_page,
+          notes: p.label + ' voted ' + voteWord(m[4]) + ' on the ' + law.name + ', ' + word + ' roll call ' + (v.roll || '') + '. A vote is not a payment.' });
+      });
+    }
+    // Sponsor and cosponsors, once tools/money-trail/follow_laws.py saves them with Bioguide IDs: [id, name, party, state, date, original].
+    [['sponsors', 'SP', 'sponsored', 'bill_sponsor_nonfinancial'], ['cosponsors', 'CS', 'cosponsored', 'bill_cosponsor_nonfinancial']].forEach(([k, tag, verb, type]) => (law[k] || []).forEach(m => {
+      if (!/^[A-Z][0-9]{6}$/.test(m[0] || '')) return;
+      const p = person(m[0], m[1], m[2], m[3], '');
+      RESEARCH.graph_edges.push({ id: id + tag + '-' + m[0], from_name: p.label, from_entity_id: 'bioguide:' + m[0], to_name: HUB, amount_usd: null,
+        date: String(m[4] || '').slice(0, 10), date_kind: 'sponsorship_date', jurisdiction: 'US', edge_type: type,
+        confidence: 'official_bill_record;matched_by_bioguide_id', source_url: law.bill_page + (k === 'cosponsors' ? '/cosponsors' : ''),
+        notes: p.label + ' ' + verb + ' ' + law.bill + ' (' + law.name + ')' + (m[5] ? ', an original cosponsor' : '') + ', from the Library of Congress bill record.' });
+    }));
+  });
+  people.forEach(p => {
+    const page = PAGES[p.id];
+    RESEARCH.entities.push({ entity_id: 'bioguide:' + p.id, legal_or_reported_name: p.label, entity_type: 'member_of_Congress', jurisdiction: p.st,
+      registry_identifier: 'Bioguide ' + p.id, source_url: 'https://bioguide.congress.gov/search/bio/' + p.id,
+      notes: 'Member of Congress' + (p.chambers.size ? ' (' + [...p.chambers].join(' and ') + ')' : '') + ' with ' + p.lines + (p.lines === 1 ? ' vote or sponsorship' : ' votes or sponsorships') + ' on the laws followed on this page.' + (page ? ' Page on this site: /government/congress/members/' + page + '.html' : '') });
+  });
+
+  // D229: the nine Supreme Court justices in the Money web and the Person tracker (justices.js, built by
+  // tools/money-trail/build_justices.py from the Federal Judicial Center records on the justice pages of this site).
+  // Each justice has three lines, none with dollars: the president who nominated them, the Senate that confirmed them
+  // (the same Senate dot as the law votes, so the 116th and 117th reach the laws and their money), and the Court.
+  const J = (window.TW_JUSTICES || {}).justices || [];
+  if (J.length) {
+    const COURT = 'SUPREME COURT OF THE UNITED STATES', CID = 'court:supreme-court-of-the-united-states';
+    const longDate = d => { const t = new Date(d + 'T12:00:00Z'); return isNaN(t) ? d : t.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }); };
+    const presidents = new Map(); // name -> [count, page on this site]
+    J.forEach(j => {
+      const jid = 'justice:' + String(j.page || j.name).replace(/^.*\//, '').replace(/\.html$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      const id = 'SCOTUS-' + jid.slice(8) + '-';
+      const src = j.fjc || j.bio_source;
+      const seat = j.commission || j.oath;
+      RESEARCH.graph_edges.push({ id: id + 'SEAT', from_name: j.name, from_entity_id: jid, to_name: COURT, to_entity_id: CID, amount_usd: null,
+        date: seat || '', date_kind: 'commission_date', jurisdiction: 'US', edge_type: 'court_seat_nonfinancial', confidence: 'official_record',
+        source_url: j.bio_source, notes: j.name + ' serves as ' + j.title + (seat ? ', commissioned ' + longDate(seat) : '') + '. A seat on the Court is not a payment.' });
+      if (j.president) {
+        const pn = 'PRESIDENT ' + String(j.president).toUpperCase();
+        presidents.set(pn, [((presidents.get(pn) || [0])[0]) + 1, j.president_page || src]);
+        RESEARCH.graph_edges.push({ id: id + 'NOM', from_name: pn, to_name: j.name, to_entity_id: jid, amount_usd: null,
+          date: j.nominated || '', date_kind: 'nomination_date', jurisdiction: 'US', edge_type: 'judicial_nomination_nonfinancial', confidence: 'official_record',
+          source_url: src, notes: 'President ' + j.president + ' nominated ' + j.name + ' to the Supreme Court' + (j.nominated ? ' on ' + longDate(j.nominated) : '') + ' (Federal Judicial Center record). A nomination is not a payment.' });
+      }
+      if (j.confirmed && j.congress) {
+        RESEARCH.graph_edges.push({ id: id + 'CONF', from_name: chamberName('senate', j.congress), to_name: j.name, to_entity_id: jid, amount_usd: null,
+          date: j.confirmed, date_kind: 'roll_call_vote_date', jurisdiction: 'US', edge_type: 'confirmation_vote_nonfinancial', confidence: 'official_record',
+          source_url: src, notes: 'The Senate confirmed ' + j.name + ' on ' + longDate(j.confirmed) + ', roll call ' + j.yea + ' to ' + j.nay + ' (Federal Judicial Center record). A vote is not a payment.' });
+      }
+      RESEARCH.entities.push({ entity_id: jid, legal_or_reported_name: j.name, entity_type: 'supreme_court_justice', jurisdiction: 'US',
+        registry_identifier: 'Federal Judicial Center directory', source_url: src,
+        notes: j.title + ' of the Supreme Court, nominated by President ' + j.president + '.' + (j.page ? ' Page on this site: ' + j.page : '') });
+    });
+    RESEARCH.entities.push({ entity_id: CID, legal_or_reported_name: COURT, entity_type: 'federal court', jurisdiction: 'US', registry_identifier: 'Article III, U.S. Constitution',
+      source_url: J[0].bio_source || '', notes: 'The highest federal court: a Chief Justice and eight associate justices. Page on this site: /government/courts/court/supreme-court.html' });
+    presidents.forEach(([n, page], pn) => RESEARCH.entities.push({ entity_id: 'president:' + pn.slice(10).toLowerCase().replace(/[^a-z0-9]+/g, '-'), legal_or_reported_name: pn,
+      entity_type: 'president_of_the_united_states', jurisdiction: 'US', registry_identifier: '', source_url: page,
+      notes: 'President of the United States. Nominated ' + n + (n === 1 ? ' justice' : ' justices') + ' now on the Supreme Court (Federal Judicial Center records).' }));
+  }
+
+  // D223: every department and agency in the budget list is a dot in the Money web. One line runs from the federal budget
+  // to each one, carrying its budget resources (money it had available) for the fiscal year. These are official totals, not
+  // single payments, so they are drawn as reported lines and never added up. A department with no figure yet gets a line with no amount.
+  const DEPTS = (B.departments || {}).rows || [];
+  const BUDGET_HUB = 'U.S. FEDERAL BUDGET, FISCAL YEAR ' + ((B.departments || {}).fiscal_year || '');
+  window.TW_BUDGET_HUB = BUDGET_HUB;
+  {
+    const D = B.departments, asOf = String(D.retrieved || '').slice(0, 10);
+    DEPTS.forEach((r, i) => {
+      const page = r.slug ? 'https://www.usaspending.gov/agency/' + encodeURIComponent(r.slug) + '?fy=' + D.fiscal_year : 'https://www.usaspending.gov/agency';
+      RESEARCH.graph_edges.push({ id: 'BUDGET-FY' + D.fiscal_year + '-' + (r.code || i), from_name: BUDGET_HUB, to_name: String(r.name || '').toUpperCase(),
+        amount_usd: r.resources > 0 ? r.resources : null, date: asOf, date_kind: 'total_to_date_as_of_pull_date_NOT_a_payment_date', jurisdiction: 'US',
+        edge_type: r.resources > 0 ? 'federal_budget_aggregate_department_resources' : 'federal_budget_department_listed_no_figure_yet',
+        confidence: 'official_aggregate;not_itemized_transaction', source_url: page,
+        notes: r.resources > 0 ? 'Budget resources (money available to spend) for ' + r.name + ' in fiscal year ' + D.fiscal_year + ', as the agency reported it to USAspending.gov through quarter ' + D.quarter + '. Promised (obligated): ' + fmt(r.obligated) + '. Paid out: ' + fmt(r.outlays) + '. Available money can include money carried over from earlier years.'
+          : r.name + ' is in the USAspending agency list for fiscal year ' + D.fiscal_year + ', but no budget figure was reported yet.' });
+    });
+  }
+
   // 2. Words and numbers
   function fmt(n) {
     if (n == null || !isFinite(n)) return 'not reported';
@@ -60,6 +171,15 @@
   const link = (text, href) => { const a = el('a', 'bud-src', text); a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; };
   const bar = (part, whole) => { const o = el('span', 'bud-bar'); const i = el('i'); i.style.width = Math.max(0.5, Math.min(100, 100 * part / whole)).toFixed(1) + '%'; o.append(i); return o; };
 
+  // D223: the record Inspect shows for one department card.
+  function deptRecord(r) {
+    const up = String(r.name || '').toUpperCase(), D = B.departments;
+    const e = (RESEARCH.entities || []).find(x => String(x.legal_or_reported_name || '').toUpperCase() === up);
+    const page = r.slug ? 'https://www.usaspending.gov/agency/' + encodeURIComponent(r.slug) + '?fy=' + D.fiscal_year : 'https://www.usaspending.gov/agency';
+    const budget = r.resources ? 'Fiscal year ' + D.fiscal_year + ' (through quarter ' + D.quarter + '): available ' + fmt(r.resources) + ', promised ' + fmt(r.obligated) + ', paid out ' + fmt(r.outlays) + ', as reported to USAspending.gov.' : 'No fiscal year ' + D.fiscal_year + ' budget figure was reported yet.';
+    return { record_kind: 'entity', name: up, entity_type: e ? e.entity_type : 'federal agency', id: e ? (e.registry_identifier || e.entity_id) : 'USAspending agency ' + (r.code || ''),
+      jurisdiction: 'US', source_url: page, notes: (e && e.notes ? e.notes + ' ' : '') + budget };
+  }
   function deptBlock() {
     const D = B.departments, box = el('section', 'bud-block');
     box.setAttribute('aria-label', 'Department budgets');
@@ -76,6 +196,13 @@
       const rows = D.rows.filter(r => !q || (r.name + ' ' + r.abbr).toLowerCase().includes(q));
       rows.slice(0, all || q ? rows.length : 12).forEach(r => {
         const row = el('div', 'bud-row');
+        const ph = PHOTOS[r.abbr]; // D230: a free photo of the headquarters building, with its credit line
+        if (ph) {
+          row.classList.add('bud-has-photo');
+          const fig = el('figure', 'bud-photo'), im = el('img');
+          im.src = ph.src; im.alt = ph.alt; im.width = ph.w; im.height = ph.h; im.loading = 'lazy'; im.decoding = 'async';
+          fig.append(im); row.append(fig);
+        }
         const top = el('div', 'bud-top');
         top.append(el('b', 'bud-big', r.resources ? fmt(r.resources) : 'Not reported yet'), el('strong', 'bud-name', r.name + (r.abbr ? ' (' + r.abbr + ')' : '')));
         row.append(top);
@@ -83,13 +210,29 @@
         row.append(el('small', 'bud-small', 'Promised ' + fmt(r.obligated) + ' · Paid out ' + fmt(r.outlays) + (r.share ? ' · ' + (100 * r.share).toLocaleString('en-US', { maximumFractionDigits: 2 }) + '% of all federal budget resources' : '')));
         const act = el('div', 'bud-act');
         if (r.slug) act.append(link('USAspending agency page ↗', 'https://www.usaspending.gov/agency/' + encodeURIComponent(r.slug) + '?fy=' + D.fiscal_year));
+        { // D223: open the Money web centered on this department.
+          const b = el('button', 'tracker-web', 'See in the Money web'); b.type = 'button';
+          const im = el('img', 'tracker-btn-art'); im.src = '/money-trail/art/money-web-link-blue.webp'; im.alt = ''; im.width = 22; im.height = 24; im.decoding = 'async';
+          b.prepend(im); b.addEventListener('click', () => openHub(String(r.name || '').toUpperCase())); act.append(b);
+          // Inspect opens its record in the Evidence inspector: the entity record when our data has one, else this budget row.
+          const ins = el('button', 'tracker-inspect', 'Inspect'); ins.type = 'button';
+          const ic = el('img', 'tracker-btn-art'); ic.src = '/money-trail/art/records-cabinet.webp'; ic.alt = ''; ic.width = 22; ic.height = 24; ic.decoding = 'async'; ins.prepend(ic);
+          ins.addEventListener('click', () => { if (typeof pick === 'function') pick(deptRecord(r)); }); act.append(ins);
+        }
         if ((r.years || []).length) {
           const det = el('details', 'bud-years'); det.append(el('summary', null, 'Past years'));
           const ul = el('ul');
           r.years.slice().reverse().forEach(y => ul.append(el('li', null, 'FY ' + y[0] + ': available ' + fmt(y[1]) + ', promised ' + fmt(y[2]) + ', paid out ' + fmt(y[3]))));
           det.append(ul); act.append(det);
         }
-        row.append(act); list.append(row);
+        row.append(act);
+        if (ph) { // D230: credit line. Creative Commons photos name the author, the license and the source.
+          const cr = el('small', 'bud-credit', 'Photo: ');
+          if (ph.license === 'Public domain') { cr.append(link(ph.author + ' ↗', ph.page), document.createTextNode('. Public domain.')); }
+          else { cr.append(document.createTextNode(ph.author + ', '), link(ph.license + ' ↗', ph.license_url), document.createTextNode(', via '), link('Wikimedia Commons ↗', ph.page), document.createTextNode('.')); }
+          row.append(cr);
+        }
+        list.append(row);
       });
       if (!rows.length) list.append(el('div', 'empty', 'No department matches. Try fewer letters.'));
       more.hidden = !!q || rows.length <= 12;
@@ -143,6 +286,26 @@
     document.getElementById('hub').value = name; graphScale = 1; setView('network');
     document.querySelector('.center-panel').scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
+  // D225: one House member in the Evidence inspector: the vote on this law, party and state, votes on the other laws
+  // on this page (matched by Bioguide ID), and where the member's page is. Nothing here is matched by name.
+  let shownMember = '';
+  function inspectMember(m, law, h) {
+    const box = document.getElementById('detail-content');
+    if (!box || typeof escapeHtml !== 'function' || typeof datum !== 'function') return;
+    const key = m[0] + '|' + law.key; if (shownMember === key && box.querySelector('.mt-member')) return; shownMember = key;
+    const page = PAGES[m[0]], party = { D: 'Democrat', R: 'Republican', I: 'Independent' }[m[2]] || m[2];
+    const other = LAWS.filter(l => l !== law).map(l => { const hh = (l.votes || {}).house, x = hh && (hh.members || []).find(y => y[0] === m[0]); return x ? l.name + ': ' + voteWord(x[4]) : ''; }).filter(Boolean);
+    let html = '<h2 class="mt-selected mt-member">' + escapeHtml(m[1] + ' (' + m[2] + '-' + m[3] + ')') + '</h2><span class="event-kind">House member</span>';
+    html += '<div class="event-amount mt-big">Voted ' + escapeHtml(voteWord(m[4])) + '</div>';
+    html += datum('On', law.name + (h.roll ? ', House roll call ' + h.roll : '') + (h.date ? ', ' + day(h.date) : ''));
+    html += datum('Party and state', party + ', ' + m[3]) + datum('Bioguide ID', m[0]);
+    html += datum('Votes on the other laws on this page', other.length ? other.join('; ') : 'Not in the House votes of the other laws here.');
+    html += datum('Money lines', 'No money line in this data is matched to this member yet. Lines are matched by ID, never by name alone.');
+    const go = page ? '/government/congress/members/' + encodeURIComponent(page) + '.html' : 'https://bioguide.congress.gov/search/bio/' + encodeURIComponent(m[0]);
+    html += '<a class="detail-link" href="' + escapeHtml(go) + '"' + (page ? '' : ' target="_blank" rel="noopener noreferrer"') + '>' + (page ? 'Open this member\u2019s page on this site' : 'Official Congress biography \u2197') + '</a>';
+    if (h.source && typeof sourceButton === 'function') html += sourceButton(h.source, 'House Clerk roll call ' + (h.roll || ''));
+    box.innerHTML = html;
+  }
   function lawDetail(law) {
     const box = el('div', 'bud-lawone');
     box.append(el('h4', 'bud-h4', law.name));
@@ -180,8 +343,21 @@
     if (h && (h.members || []).length) {
       const det = el('details', 'bud-sub'); det.append(el('summary', null, 'How each House member voted (' + h.members.length + ')'));
       const ul = el('ul', 'bud-votes');
-      h.members.slice().sort((a, b) => String(a[4]).localeCompare(String(b[4])) || String(a[1]).localeCompare(String(b[1]))).forEach(m => ul.append(el('li', null, m[1] + ' (' + m[2] + '-' + m[3] + '): ' + (m[4] === 'Yea' || m[4] === 'Aye' ? 'yes' : m[4] === 'Nay' || m[4] === 'No' ? 'no' : m[4]))));
-      const src = el('p', 'bud-note'); src.append(link('House Clerk roll call ' + h.roll + ' \u2197', h.source));
+      h.members.slice().sort((a, b) => String(a[4]).localeCompare(String(b[4])) || String(a[1]).localeCompare(String(b[1]))).forEach(m => {
+        // D225: each name links to the member's page on this site (government/congress/members, current members),
+        // or else to the member's official biography in the Congress Biographical Directory (bioguide.congress.gov).
+        const li = el('li'), page = PAGES[m[0]];
+        const a = el('a', 'bud-member', m[1] + (page ? '' : ' ↗'));
+        if (page) a.href = '/government/congress/members/' + encodeURIComponent(page) + '.html';
+        else { a.href = 'https://bioguide.congress.gov/search/bio/' + encodeURIComponent(m[0]); a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+        a.__m = m;
+        li.append(a, document.createTextNode(' (' + m[2] + '-' + m[3] + '): ' + (m[4] === 'Yea' || m[4] === 'Aye' ? 'yes' : m[4] === 'Nay' || m[4] === 'No' ? 'no' : m[4])));
+        ul.append(li);
+      });
+      // D225: hovering a name (or moving to it with the keyboard) shows that member in the Evidence inspector. Clicking still follows the link.
+      const hover = e => { const a = e.target && e.target.closest && e.target.closest('a.bud-member'); if (a && a.__m && e.pointerType !== 'touch') inspectMember(a.__m, law, h); };
+      ul.addEventListener('pointerover', hover); ul.addEventListener('focusin', hover);
+      const src = el('p', 'bud-note'); src.append(document.createTextNode('Names without \u2197 open the member\u2019s page on this site. Names with \u2197 are members not serving now: they open the official Congress biography. '), link('House Clerk roll call ' + h.roll + ' \u2197', h.source));
       det.append(ul, src); box.append(det);
     }
     const note = el('p', 'bud-note');
@@ -226,7 +402,8 @@
     box.prepend(area);
     if (typeof hubs !== 'undefined') {
       LAWS.forEach(law => { if (!hubs.includes(hubOf(law))) hubs.push(hubOf(law)); });
-      if (LAWS.length && typeof prepareHubRefresh === 'function') prepareHubRefresh();
+      if (DEPTS.length && !hubs.includes(BUDGET_HUB)) hubs.push(BUDGET_HUB);
+      if ((LAWS.length || DEPTS.length) && typeof prepareHubRefresh === 'function') prepareHubRefresh();
     }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount); else mount();

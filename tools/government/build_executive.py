@@ -17,6 +17,7 @@ import yaml
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_congress import (ROOT, SITE_URL, e, full_name, git_info, long_date, member_slugs, ordinal,  # noqa: E402
                             page)
+from photos import figure_html  # noqa: E402  D230: building photos
 
 OUT = os.path.join(ROOT, 'site', 'government', 'executive')
 CHECKED = 'November 6, 2026'
@@ -241,10 +242,10 @@ def main():
                        for r in hd['rows'])
         lists = ' '.join('<a href="%s">%s ↗</a>' % (e(u), 'Official list' if len(hd['official']) == 1 else 'Official source %d' % (j + 1))
                          for j, u in enumerate(hd['official'])) or 'No official list of past heads could be read for this office.'
-        cards.append('<article class="gw-card gv-dept" id="d-%d" data-title="%s" data-offices="%s" data-heads="%s"><p class="gw-eyebrow">%s</p><h3>%s</h3>'
+        cards.append('<article class="gw-card gv-dept" id="d-%d" data-title="%s" data-offices="%s" data-heads="%s">%s<p class="gw-eyebrow">%s</p><h3>%s</h3>'
                      '<p class="gv-dept-head"><span>%s</span>%s</p><div class="gv-past" data-k="past" hidden><p class="gv-past-h" data-k="pasth"></p>'
                      '<ul class="gv-list" data-k="plist"></ul><p class="gv-src">%s</p></div>%s<a class="gv-open" href="%s">Official website ↗</a></article>' % (
-                         i + 1, e(d['title']), e('~'.join(offices)), e(enc),
+                         i + 1, e(d['title']), e('~'.join(offices)), e(enc), figure_html(d['key']),
                          ('Created ' + e(d['year'])) if d.get('year') else 'Executive department', e(d['name']),
                          e(d['title']), '<a href="%s">%s</a>' % (e(d['head_url']), e(d['head'])), lists, ''.join(bits), e(d['url'])))
     depts = ('<section id="departments" class="gv-sec"><div class="gw-heading"><span>Layer 2 / The departments</span>'
@@ -280,6 +281,7 @@ def main():
     house = (
         '<section id="white-house" class="gv-sec"><div class="gw-heading"><span>Layer 3 / The building</span>'
         '<h2>The White House.</h2><p>The president’s home and office, at 1600 Pennsylvania Avenue in Washington, D.C.</p></div>'
+        + figure_html('white-house', 'gv-photo gv-photo-wide') +
         '<div class="gv-two"><figure class="gv-capitol"><svg viewBox="0 0 600 300" role="img" aria-labelledby="wh-t"><title id="wh-t">Simple diagram of the White '
         'House: the Residence in the center, the West Wing with the Oval Office on one side, and the East Wing on the other.</title>'
         '<path class="gv-cap-ground" d="M20 262h560"/>'

@@ -22,11 +22,13 @@ import subprocess
 import sys
 import unicodedata
 
+from photos import figure_html  # D230: building photos (tools/government/photos.py)
+
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 OUT = os.path.join(ROOT, 'site', 'government', 'congress')
 SITE_URL = 'https://michiinstitute.com'
-CSS_V = '5'
+CSS_V = '7'  # D229: 6 adds the 3 by 3 justice cards and their Money web links. D230: 7 adds building photos
 JS_V = '2'
 
 STATES = {
@@ -544,6 +546,7 @@ def main():
     capitol = (
         '<section id="capitol" class="gv-sec"><div class="gw-heading"><span>Layer 3 / The building</span>'
         '<h2>The U.S. Capitol.</h2><p>Both chambers meet in one building on Capitol Hill in Washington, D.C.</p></div>'
+        + figure_html('capitol', 'gv-photo gv-photo-wide') +  # D230: building photo
         '<div class="gv-two"><figure class="gv-capitol">'
         '<svg viewBox="0 0 600 300" role="img" aria-labelledby="cap-t"><title id="cap-t">Simple diagram of the Capitol: the Senate chamber '
         'is in the north wing, the House chamber is in the south wing, and the dome is in the center.</title>'
