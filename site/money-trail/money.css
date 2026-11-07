@@ -91,7 +91,7 @@ footer>.michi-footer-nav{flex:1 1 100%;order:2}
 body.mt-webfull{overflow:hidden}
 body.mt-webfull main{isolation:auto} /* whale.css and shark-silhouette.css isolate main, which would keep the web under the banners */
 body.mt-webfull .graph-wrap{position:fixed;inset:0;z-index:2147483200;border:0;border-radius:0;min-height:0;overflow:auto;background:radial-gradient(ellipse 65% 65% at 50% 50%,#123c4a,#06141e 78%)}
-body.mt-webfull .graph-wrap svg{width:100%;height:100vh;height:100dvh;touch-action:auto}
+body.mt-webfull .graph-wrap svg{width:100%;height:100vh;height:100dvh;touch-action:none}
 body.mt-webfull .bubble{position:fixed;top:12px;right:12px;z-index:2147483300}
 body.mt-webfull .bubble button{background:#0c2836ee}
 body.mt-webfull .web-full-title{display:block;position:fixed;top:14px;left:16px;right:330px;z-index:2147483300;font:600 15px/1.3 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#e0f2ed;text-shadow:0 1px 3px #000;pointer-events:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -239,3 +239,38 @@ body:not(.mt-webfull) .web-card:not([hidden]){display:block;position:fixed;z-ind
 .network-controls .mt-web-checks{grid-column:2;grid-row:1;display:flex;flex-direction:column;gap:6px}
 @media(max-width:760px){.network-controls .mt-web-checks{grid-column:1;grid-row:3}.network-controls .mt-web-checks .checks.mt-flat{white-space:normal}.graph-node text.graph-name2{font-size:11.5px}}
 
+
+/* D241: drag to move the web, pinch to zoom. On a phone in the page one finger up and down still scrolls the page. */
+.graph-wrap svg#network-svg{touch-action:none;cursor:grab}
+.graph-wrap.mt-dragging svg#network-svg{cursor:grabbing}
+.graph-wrap.mt-dragging .graph-node,.graph-wrap.mt-dragging .graph-edge-hit{cursor:grabbing}
+@media(max-width:760px){body:not(.mt-webfull) .graph-wrap svg#network-svg{touch-action:pan-y}}
+/* D241: a lit trail. The rest of the web fades. Dashes still show the kind of record. */
+#network-svg.mt-trail-on .graph-edge:not(.mt-trail){opacity:.06!important}
+#network-svg.mt-trail-on .graph-node:not(.mt-trail){opacity:.16}
+#network-svg.mt-trail-on .graph-amount:not(.mt-trail){opacity:.06}
+#network-svg.mt-trail-on .graph-edge.mt-trail{stroke:#3fe6f5;stroke-width:3;opacity:1!important}
+#network-svg.mt-trail-on .graph-edge.mt-picked{stroke:#b8fdff;stroke-width:5}
+#network-svg .graph-node.mt-picked circle{stroke:#3fe6f5;stroke-width:4;opacity:1}
+#network-svg.mt-trail-on .graph-node2.mt-trail circle{opacity:1}
+#network-svg.mt-trail-on .graph-node2.mt-trail text.graph-name2{fill:#d9f3f4}
+.mt-arrow{fill:#3fe6f5;stroke:#06141e;stroke-width:1;pointer-events:none}
+/* D241: the line card and the dot's list of lines in the Evidence inspector */
+.mt-evcard,.mt-conn{margin:12px 0;padding:12px;border:1px solid #2f6a74;border-radius:10px;background:#0a2230}
+.mt-evcard-head{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#3fe6f5;font-weight:700;margin-bottom:6px}
+.mt-evcard-row{display:flex;gap:10px;justify-content:space-between;padding:5px 0;border-top:1px solid #1d4450;font-size:12px}
+.mt-evcard-row:first-of-type{border-top:0}
+.mt-evcard-row .key{color:var(--faint)}.mt-evcard-row .val{color:#e8f7f4;text-align:right;overflow-wrap:anywhere}
+.mt-evcard-list,.mt-conn-list{list-style:none;margin:8px 0 0;padding:0;max-height:300px;overflow:auto}
+.mt-evcard-list li,.mt-conn-list li{margin:0 0 5px}
+.mt-evcard-rec,.mt-conn-row{display:block;width:100%;text-align:left;background:#0e2b3a;border:1px solid #24525e;border-radius:8px;padding:8px 10px;color:#e0f2ed;cursor:pointer;font:inherit}
+.mt-evcard-rec:hover,.mt-conn-row:hover,.mt-evcard-rec:focus-visible,.mt-conn-row:focus-visible{border-color:#3fe6f5}
+.mt-evcard-amt,.mt-conn-name{display:block;font-weight:700;font-size:13px;overflow-wrap:anywhere}
+.mt-evcard-sub,.mt-conn-sub{display:block;font-size:11px;color:#a5c2c8;margin-top:2px}
+.detail-panel p.mt-evcard-note,.detail-panel p.mt-conn-count{font-size:11px;margin:8px 0 0}
+.mt-conn-btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.mt-conn-btns .detail-action{margin:0;width:auto}
+.mt-conn-btns .mt-conn-more{border-color:#3fe6f5;color:#bffcff}
+.mt-conn-btns .mt-conn-clear{opacity:.8}
+/* D241: on a phone the inspector comes up from the bottom, so the web stays in view above it */
+@media(max-width:760px){.detail-panel,body.mt-webfull .detail-panel.open{top:auto;bottom:0;left:0;right:0;width:auto;max-height:62vh;border-radius:16px 16px 0 0}}
