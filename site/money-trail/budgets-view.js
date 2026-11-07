@@ -96,6 +96,46 @@
       notes: 'Member of Congress' + (p.chambers.size ? ' (' + [...p.chambers].join(' and ') + ')' : '') + ' with ' + p.lines + (p.lines === 1 ? ' vote or sponsorship' : ' votes or sponsorships') + ' on the laws followed on this page.' + (page ? ' Page on this site: /government/congress/members/' + page + '.html' : '') });
   });
 
+  // D229: the nine Supreme Court justices in the Money web and the Person tracker (justices.js, built by
+  // tools/money-trail/build_justices.py from the Federal Judicial Center records on the justice pages of this site).
+  // Each justice has three lines, none with dollars: the president who nominated them, the Senate that confirmed them
+  // (the same Senate dot as the law votes, so the 116th and 117th reach the laws and their money), and the Court.
+  const J = (window.TW_JUSTICES || {}).justices || [];
+  if (J.length) {
+    const COURT = 'SUPREME COURT OF THE UNITED STATES', CID = 'court:supreme-court-of-the-united-states';
+    const longDate = d => { const t = new Date(d + 'T12:00:00Z'); return isNaN(t) ? d : t.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }); };
+    const presidents = new Map(); // name -> [count, page on this site]
+    J.forEach(j => {
+      const jid = 'justice:' + String(j.page || j.name).replace(/^.*\//, '').replace(/\.html$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      const id = 'SCOTUS-' + jid.slice(8) + '-';
+      const src = j.fjc || j.bio_source;
+      const seat = j.commission || j.oath;
+      RESEARCH.graph_edges.push({ id: id + 'SEAT', from_name: j.name, from_entity_id: jid, to_name: COURT, to_entity_id: CID, amount_usd: null,
+        date: seat || '', date_kind: 'commission_date', jurisdiction: 'US', edge_type: 'court_seat_nonfinancial', confidence: 'official_record',
+        source_url: j.bio_source, notes: j.name + ' serves as ' + j.title + (seat ? ', commissioned ' + longDate(seat) : '') + '. A seat on the Court is not a payment.' });
+      if (j.president) {
+        const pn = 'PRESIDENT ' + String(j.president).toUpperCase();
+        presidents.set(pn, [((presidents.get(pn) || [0])[0]) + 1, j.president_page || src]);
+        RESEARCH.graph_edges.push({ id: id + 'NOM', from_name: pn, to_name: j.name, to_entity_id: jid, amount_usd: null,
+          date: j.nominated || '', date_kind: 'nomination_date', jurisdiction: 'US', edge_type: 'judicial_nomination_nonfinancial', confidence: 'official_record',
+          source_url: src, notes: 'President ' + j.president + ' nominated ' + j.name + ' to the Supreme Court' + (j.nominated ? ' on ' + longDate(j.nominated) : '') + ' (Federal Judicial Center record). A nomination is not a payment.' });
+      }
+      if (j.confirmed && j.congress) {
+        RESEARCH.graph_edges.push({ id: id + 'CONF', from_name: chamberName('senate', j.congress), to_name: j.name, to_entity_id: jid, amount_usd: null,
+          date: j.confirmed, date_kind: 'roll_call_vote_date', jurisdiction: 'US', edge_type: 'confirmation_vote_nonfinancial', confidence: 'official_record',
+          source_url: src, notes: 'The Senate confirmed ' + j.name + ' on ' + longDate(j.confirmed) + ', roll call ' + j.yea + ' to ' + j.nay + ' (Federal Judicial Center record). A vote is not a payment.' });
+      }
+      RESEARCH.entities.push({ entity_id: jid, legal_or_reported_name: j.name, entity_type: 'supreme_court_justice', jurisdiction: 'US',
+        registry_identifier: 'Federal Judicial Center directory', source_url: src,
+        notes: j.title + ' of the Supreme Court, nominated by President ' + j.president + '.' + (j.page ? ' Page on this site: ' + j.page : '') });
+    });
+    RESEARCH.entities.push({ entity_id: CID, legal_or_reported_name: COURT, entity_type: 'federal court', jurisdiction: 'US', registry_identifier: 'Article III, U.S. Constitution',
+      source_url: J[0].bio_source || '', notes: 'The highest federal court: a Chief Justice and eight associate justices. Page on this site: /government/courts/court/supreme-court.html' });
+    presidents.forEach(([n, page], pn) => RESEARCH.entities.push({ entity_id: 'president:' + pn.slice(10).toLowerCase().replace(/[^a-z0-9]+/g, '-'), legal_or_reported_name: pn,
+      entity_type: 'president_of_the_united_states', jurisdiction: 'US', registry_identifier: '', source_url: page,
+      notes: 'President of the United States. Nominated ' + n + (n === 1 ? ' justice' : ' justices') + ' now on the Supreme Court (Federal Judicial Center records).' }));
+  }
+
   // D223: every department and agency in the budget list is a dot in the Money web. One line runs from the federal budget
   // to each one, carrying its budget resources (money it had available) for the fiscal year. These are official totals, not
   // single payments, so they are drawn as reported lines and never added up. A department with no figure yet gets a line with no amount.

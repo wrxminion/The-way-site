@@ -305,8 +305,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   const kindOf = e => {
     const t = e.entity_type || '';
     if (/ballot measure/i.test(t)) return null;
-    if (/municipal_public_body|election authority|federal agency/i.test(t)) return 'departments';
-    if (/candidate_named|member_of_congress/i.test(t) || looksPerson(e.legal_or_reported_name)) return 'people';
+    if (/municipal_public_body|election authority|federal agency|federal court/i.test(t)) return 'departments';
+    if (/candidate_named|member_of_congress|supreme_court_justice|president_of_the_united_states/i.test(t) || looksPerson(e.legal_or_reported_name)) return 'people';
     return 'orgs';
   };
   const lists = { orgs: [], people: [], departments: [] };
@@ -536,7 +536,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     const top = [...count].sort((x, y) => y[1] - x[1])[0];
     if (top) { graphHub = top[0]; if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; }
   }
-  if (q.get('hub')) { graphHub = q.get('hub').toUpperCase(); if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; }
+  // D229: a name in the link keeps its own spelling when the web has it (justices and members are not all capitals).
+  if (q.get('hub')) { const want = norm(q.get('hub')); graphHub = [...networkVerified, ...networkContext].reduce((f, x) => f || [x.from_name, x.to_name].find(nm => nm && norm(nm) === want), '') || q.get('hub').toUpperCase(); if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; }
   if (q.get('q')) { settings.search = q.get('q'); $('#search').value = settings.search; }
   const vw = q.get('view');
   // The page opens on the Money web. ?view=timeline (or a search, ?q=), states, orgs, people or departments opens that tab.
@@ -705,6 +706,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
       if (side === 'to' && /^LAW-.*-RC-/.test(e.id || '')) t.flags.add('recipient');
       if (side === 'from' && e.edge_type === 'vote_nonfinancial_context') t.flags.add('congress');
       if (side === 'from' && /^LAW-.*-(MV|MS|SP|CS)-/.test(e.id || '')) t.flags.add('member'); // D226
+      // D229: justices, the Court and the presidents who nominated them. The Senate end of a confirmation stays with Congress.
+      if (/^SCOTUS-/.test(e.id || '')) t.flags.add(e.edge_type === 'confirmation_vote_nonfinancial' && side === 'from' ? 'congress' : 'court');
     }
   });
   (RESEARCH.entities || []).forEach(x => { if (x.entity_type === 'federal agency') { const t = info.get(norm(x.legal_or_reported_name)); if (t) t.flags.add('agency'); } });
@@ -719,6 +722,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     ['recipient', 'Recipients of federal law money'],
     ['congress', 'Congress (votes on the laws)'],
     ['member', 'Members of Congress (votes and sponsors)'],
+    ['court', 'Supreme Court (justices and who chose them)'],
     ['measure', 'Ballot measures'],
     ['party', 'Party committees'],
     ['candidate', 'Candidates and candidate committees'],
@@ -747,7 +751,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (lawOf(up)) return 'law';
     if (ballotById[nm]) return 'measure';
     const t = info.get(norm(nm)); if (!t) return 'other';
-    for (const f of ['agency', 'congress', 'member', 'recipient']) if (t.flags.has(f)) return f;
+    for (const f of ['agency', 'congress', 'member', 'court', 'recipient']) if (t.flags.has(f)) return f;
     const order = KINDS.map(k => k[0]); let best = '';
     for (const ty of t.types) { const k = typeKind(ty); if (k && (!best || order.indexOf(k) < order.indexOf(best))) best = k; }
     if ([...t.types].some(ty => /candidate_named/i.test(ty)) || looksPerson2(nm)) return 'person';

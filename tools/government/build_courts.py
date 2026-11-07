@@ -7,9 +7,11 @@ Justices, circuits and building facts are typed below from official pages, each 
 and the date it was checked. The U.S. map reuses the state outlines already drawn for /lookup/.
 """
 import datetime
+import json
 import os
 import re
 import sys
+import urllib.parse
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_congress import ROOT, SITE_URL, e, long_date, page  # noqa: E402
@@ -123,14 +125,30 @@ def main():
             return '<a class="gv-mini" href="judges/%s.html">Full page: confirmation, education, career →</a>' % jslug[last]
         return ''
 
+    # D229: "See in the Money web" for each justice who is a dot in the Money web (site/money-trail/justices.js,
+    # built by tools/money-trail/build_justices.py). A justice with no real line there gets no link.
+    in_web = set()
+    jpath = os.path.join(ROOT, 'site', 'money-trail', 'justices.js')
+    if os.path.exists(jpath):
+        js = open(jpath, encoding='utf-8').read()
+        for j in json.loads(js[js.index('{'):js.rindex('}') + 1]).get('justices', []):
+            if j.get('president') or j.get('confirmed'):
+                in_web.add(j['name'])
+
+    def web_link(name):
+        if name not in in_web:
+            return ''
+        return ('<a class="gv-web" href="/money-trail/?view=network&amp;hub=%s"><img src="/money-trail/art/money-web-link-blue.webp" alt="" '
+                'width="22" height="24" decoding="async">See in the Money web</a>' % urllib.parse.quote(name))
+
     jcards = []
     for name, title, by, took in JUSTICES:
         slug = re.sub(r'[^a-z]+', '-', name.lower().split(',')[0]).strip('-')
         jcards.append(
-            '<li id="j-%s"><span class="gv-role">%s</span><strong>%s</strong>%s'
+            '<li id="j-%s"><span class="gv-role">%s</span><strong>%s</strong>%s%s'
             '<details><summary>More</summary><div class="gw-detail"><p>Appointed by President %s. Took the judicial oath on %s, '
             'about %s on the Court.</p>%s</div></details></li>' % (
-                slug, e(title), e(name), page_link(name), e(by), e(long_date(took)), e(years_on(took)), src(BIOS, 'Supreme Court biographies')))
+                slug, e(title), e(name), page_link(name), web_link(name), e(by), e(long_date(took)), e(years_on(took)), src(BIOS, 'Supreme Court biographies')))
 
     supreme = (
         '<section id="supreme-court" class="gv-sec"><div class="gw-heading"><span>Layer 2 / The top court</span>'
