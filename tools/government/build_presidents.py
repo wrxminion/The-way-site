@@ -36,7 +36,7 @@ from photos import figure_html  # noqa: E402  D230: building photos
 DATA = os.path.join(ROOT, 'tools', 'government', 'data', 'presidents')
 OUT = os.path.join(ROOT, 'site', 'government', 'presidents')
 FED_OUT = os.path.join(ROOT, 'site', 'government', 'federal-reserve')
-EXTRA_CSS = '/government/presidents/presidents.css?v=1'
+EXTRA_CSS = '/government/presidents/presidents.css?v=2'
 LAST_BUDGET_FY = 2025
 CHECKED = 'November 6, 2026'
 
@@ -456,6 +456,7 @@ def president_page(gt, plist, all_pres, debt, omb, cbo, fjc, jpages, today, vps)
                '<article class="gw-card"><h3>Where the money goes next</h3><ul class="gv-list">'
                '<li><a href="/government/federal-reserve/">The Federal Reserve: a federal agency and 12 banks set up as corporations</a></li>'
                '<li><a href="/government/presidents/">Every president, the same numbers side by side</a></li>'
+               '<li><a href="/government/presidents/costs/">What a president costs: travel, protection and the White House budget</a></li>'
                '<li><a href="/money-trail/">The Money Trail: who funds campaigns and ballot measures</a></li></ul></article>'
                '<article class="gw-card"><h3>Read more</h3><ul class="gv-list">%s</ul></article></div></section>') % ''.join(reads)
     i0 = all_pres.index(plist[0])
@@ -515,6 +516,7 @@ def index_page(pres, debt, omb, cbo, today):
             '<p class="gv-small">Yearly receipts and outlays start in fiscal 1901, so earlier totals are blank. Fiscal %d and later wait for final OMB totals. '
             '%s %s %s</p></section>'
             '<section class="gv-sec"><div class="gw-heading"><span>Threads to pull</span><h2>Keep following.</h2></div><ul class="gv-list">'
+            '<li><a href="/government/presidents/costs/">What a president costs: travel, protection, money paid to their own property</a></li>'
             '<li><a href="/government/federal-reserve/">The Federal Reserve: what it is and who owns the Reserve Banks</a></li>'
             '<li><a href="/government/executive/">The executive branch today</a></li>'
             '<li><a href="/government/courts/">The federal courts and every judge</a></li>'

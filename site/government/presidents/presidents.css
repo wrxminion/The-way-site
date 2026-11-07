@@ -15,3 +15,25 @@
 .pr-gap{margin-top:18px}
 .gw-card h3+.gv-list,.gv-sec h3{margin-top:14px}
 @media(max-width:600px){.pr-idx th:nth-child(4),.pr-idx td:nth-child(4){display:none}}
+/* D236: What a president costs (/government/presidents/costs/) */
+.pc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin:12px 0 16px}
+.pc-grid-2{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.pc-item{background:#122f3c;border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.pc-item p{margin:0}
+.pc-fig{display:block;color:var(--sea);font-size:clamp(1.5rem,4.5vw,2rem);font-weight:850;line-height:1.1;letter-spacing:-.02em;overflow-wrap:anywhere}
+.pc-meta{margin-top:auto!important;padding-top:4px;font-size:.86rem;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.pc-kind{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:20px;padding:2px 9px;border:1px solid currentColor;white-space:nowrap}
+.pc-k-record{color:var(--sea)}
+.pc-k-news{color:#cfdee3}
+.pc-k-advocacy{color:#b9bbf5}
+.pc-k-estimate{color:#d6bd7c}
+.pc-k-statement{color:#e0a3a3}
+.pc-kinds li{margin:6px 0}
+.pc-pres{margin:14px 0 6px}
+.pc-pres>h3{margin:0 0 4px}
+.pc-by{margin-top:22px}
+.pc-cols{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin:12px 0}
+.pc-payees li{margin:6px 0;overflow-wrap:anywhere}
+.pc-payees strong{color:var(--sea)}
+.pc-payees .gv-muted{display:block}
+.pr-costs{margin-top:10px}

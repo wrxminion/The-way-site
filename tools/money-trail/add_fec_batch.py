@@ -20,9 +20,18 @@ import glob, io, json, os, re, sys, zipfile
 from collections import Counter
 from urllib.parse import urlparse, parse_qs
 
-if len(sys.argv) < 3:
-    sys.exit(__doc__ or 'usage: add_fec_batch.py site INPUT [INPUT ...]')
-site = sys.argv[1].rstrip('/') + '/'
+# --skip CID leaves a committee out (for example a wrong ID in the pull list). It is also removed from
+# fec-data.js if an earlier batch added it.
+argv, SKIP = [], set()
+_a = iter(sys.argv[1:])
+for _x in _a:
+    if _x == '--skip':
+        SKIP.add(next(_a))
+    else:
+        argv.append(_x)
+if len(argv) < 2:
+    sys.exit('usage: add_fec_batch.py site INPUT [INPUT ...] [--skip CID ...]')
+site = argv[0].rstrip('/') + '/'
 OUT = site + 'money-trail/fec-data.js'
 INDEX = site + 'money-trail/index.html'
 
@@ -62,7 +71,7 @@ pulled = {}
 
 
 def add_committee(cid, name, ctype, sched, rows, retrieved):
-    c = pulled.setdefault(cid, {'name': None, 'type': None, 'receipts': None, 'disbursements': None, 'retrieved': ''})
+    c = pulled.setdefault(cid, {'name': None, 'type': None, 'receipts': None, 'disbursements': None, 'retrieved': '', 'failed': set()})
     c['name'] = c['name'] or name
     c['type'] = c['type'] or ctype
     if c[sched] is None or len(rows) > len(c[sched]):
@@ -88,7 +97,7 @@ def read_cache_doc(d):
     add_committee(cid, name, ctype, 'receipts' if m.group(1) == 'a' else 'disbursements', rows, d.get('_retrieved'))
 
 
-for path in sys.argv[2:]:
+for path in argv[1:]:
     if os.path.isdir(path):
         for f in sorted(glob.glob(os.path.join(path, '**', '*.json'), recursive=True)):
             read_cache_doc(json.load(open(f, encoding='utf-8')))
@@ -105,8 +114,13 @@ for path in sys.argv[2:]:
                 continue
             first = (c.get('receipts') or c.get('disbursements') or [{}])[0]
             add_committee(cid, c.get('committee_name') or first.get('committee_name'), first.get('committee_type_full'),
-                          'receipts', c.get('receipts') or [], c.get('receipts_retrieved'))
-            add_committee(cid, None, None, 'disbursements', c.get('disbursements') or [], c.get('disbursements_retrieved'))
+                          'disbursements', c.get('disbursements') or [], c.get('disbursements_retrieved'))
+            # A schedule whose request failed (for example HTTP 429) has no request recorded: mark it missing.
+            for sched, key in (('receipts', 'receipts_request'), ('disbursements', 'disbursements_request')):
+                if c.get(key):
+                    add_committee(cid, None, None, sched, c.get(sched) or [], c.get(key.replace('request', 'retrieved')))
+                else:
+                    pulled[cid]['failed'].add(sched)
 
 # ---------- existing state ----------
 s = open(site + 'money-trail/data.js', encoding='utf-8').read()
@@ -137,17 +151,27 @@ def display_name(cid, reported):
 
 stats = Counter()
 for cid, c in sorted(pulled.items()):
-    if c['receipts'] is None or c['disbursements'] is None:
+    if cid in SKIP:
+        print(f'skip {cid}: --skip'); continue
+    missing = sorted(k for k in ('receipts', 'disbursements') if c[k] is None)
+    if len(missing) == 2 or (missing and not set(missing) <= c['failed']):
         print(f'skip {cid}: only one of receipts / disbursements is in this batch')
         continue
+    if missing:
+        print(f'note {cid}: {missing[0]} failed to download in the pull; adding the other schedule only')
+        c[missing[0]] = []
     cname = display_name(cid, c['name'])
     committees[cid] = {'committee_id': cid, 'name': cname, 'fec_name': c['name'], 'committee_type': c['type'],
-                       'retrieved': c['retrieved'] or committees.get(cid, {}).get('retrieved', '')}
+                       'retrieved': c['retrieved'] or committees.get(cid, {}).get('retrieved', ''), 'missing': missing}
     ents['fec:' + cid] = {'entity_id': 'fec:' + cid, 'legal_or_reported_name': cname,
                           'entity_type': c['type'] or 'Political committee (FEC)', 'jurisdiction': 'US',
                           'registry_identifier': 'FEC ' + cid, 'source_url': f'https://www.fec.gov/data/committee/{cid}/',
                           'notes': 'Committee whose FEC filings were pulled for the Money Trail. Records are the largest '
                                    'itemized receipts from groups and the largest disbursements, with the same depth for every committee.'}
+    if missing:
+        ents['fec:' + cid]['notes'] += (' Its ' + ('receipts' if missing[0] == 'receipts' else 'payments') +
+                                        ' did not download in this pull (the FEC data service said too many requests), so only its '
+                                        + ('payments' if missing[0] == 'receipts' else 'receipts') + ' are shown for now.')
     for sched, rows in (('a', c['receipts']), ('b', c['disbursements'])):
         for r in rows:
             sub = str(r.get('sub_id') or '')
@@ -215,6 +239,10 @@ for cid, c in sorted(pulled.items()):
                 stats['added'] += 1
             tx[tid] = rec
 
+for cid in SKIP:
+    committees.pop(cid, None)
+    tx = {k: v for k, v in tx.items() if v['fec_committee_id'] != cid}
+
 # keep only entities a record or a pulled committee uses
 used = {t['source_entity_id'] for t in tx.values()} | {t['recipient_entity_id'] for t in tx.values()} | {'fec:' + c for c in committees}
 ents = {k: v for k, v in ents.items() if k in used}
@@ -233,7 +261,7 @@ js = ('// FEC filing records for the Money Trail. Made by tools/money-trail/add_
       '(function(){if(typeof RESEARCH==="undefined")return;'
       'const t=new Set(RESEARCH.transactions.map(x=>x.transaction_id));FEC_FILINGS.transactions.forEach(x=>{if(!t.has(x.transaction_id))RESEARCH.transactions.push(x)});'
       'const e=new Set(RESEARCH.entities.map(x=>x.entity_id));FEC_FILINGS.entities.forEach(x=>{if(!e.has(x.entity_id))RESEARCH.entities.push(x)});'
-      'RESEARCH.meta.fec=FEC_FILINGS.meta;RESEARCH.meta.fec_committees=FEC_FILINGS.committees.map(c=>c.name);})();\n')
+      'RESEARCH.meta.fec=FEC_FILINGS.meta;RESEARCH.meta.fec_committees=FEC_FILINGS.committees.map(c=>c.name);RESEARCH.meta.fec_missing=FEC_FILINGS.committees.filter(c=>c.missing&&c.missing.length).map(c=>({name:c.name,missing:c.missing}));})();\n')
 open(OUT, 'w', encoding='utf-8').write(js)
 
 # bump the cache stamp so browsers load the new batch
