@@ -1,0 +1,58 @@
+/* Results inside the "Election results" card on the members home (season-results.js). Bar shades and stripes are the ones
+   /results/results.css and /vote/vote-results.css use. Stripes and plain shades only, no party colors. */
+.season-res{margin:4px 0 10px;display:grid;gap:10px;container-type:inline-size}
+.season-res[hidden]{display:none}
+.season-res .sr-part:empty{display:none}
+.season-res .sr-part{padding-top:10px;border-top:1px solid #a7f0e933}
+.season-res .sr-part:first-child{padding-top:0;border-top:0}
+.season-res .sr-h{margin:0 0 4px;font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#a7f0e9}
+.season-res .sr-meta{margin:4px 0 0;font-size:13px;color:#c9e1e5}
+.season-res .sr-upd{margin:0;font-size:12px}
+.season-res .sr-all{display:inline-block;margin-top:4px;font-weight:600;color:#a7f0e9;text-decoration:underline;text-underline-offset:3px;min-height:24px}
+/* one race: the same vote-share bars as a results card */
+.season-res .sr-race{margin:0 0 8px}
+.season-res .sr-race-h{display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px}
+.season-res .sr-race-t{color:#fff;font:normal 17px/1.25 var(--serif);text-decoration:none}
+.season-res .sr-race-t:hover{text-decoration:underline}
+.season-res .sr-stat{display:inline-block;padding:1px 8px;border-radius:100px;font:600 11px var(--sans)}
+.season-res .cs-cert{background:#eaf8fa;color:#052230;border:2px solid #eaf8fa}
+.season-res .cs-ap{background:transparent;color:#c6f3ee;border:2px solid #a6f0e7}
+.season-res .cs-lead{background:transparent;color:#f1dcb2;border:2px dashed #eac690}
+.season-res .cs-none{background:#0d2c3b;color:#c8e0e5;border:2px dotted #86d4d35a}
+.season-res .sr-choice{margin-top:4px}
+.season-res .sr-row{display:flex;justify-content:space-between;gap:10px;font-size:14px}
+.season-res .sr-name{min-width:0;overflow-wrap:anywhere}
+.season-res .sr-choice.lead .sr-name{font-weight:700}
+.season-res .sr-num{white-space:nowrap;font-variant-numeric:tabular-nums;color:#e9ffff}
+.season-res .sr-called{margin-left:6px;padding:0 6px;border:1px solid #a6f0e7;border-radius:100px;font:600 11px var(--sans);color:#c6f3ee;vertical-align:1px;white-space:nowrap}
+.season-res .sr-bar{height:6px;border-radius:4px;background:#0d2c3b;margin-top:2px;overflow:hidden}
+.season-res .sr-bar i{display:block;height:100%;background:#6fc7c6}
+/* Congress count bars and the little map: stacked in a narrow card, side by side in a wide one */
+.season-res .sr-cong-grid{display:grid;gap:10px 18px;align-items:start;margin-top:6px}
+@container (min-width:520px){.season-res .sr-cong-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}}
+.season-res .sr-bal{margin-top:4px}
+.season-res .sr-bal:first-child{margin-top:0}
+.season-res .sr-bal-t{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 10px;margin:0 0 3px;font:normal 15px var(--serif);color:#ddffff}
+.season-res .sr-bal-n{font:13px var(--sans);color:#e9ffff;font-variant-numeric:tabular-nums}
+.season-res .sr-balbar{display:flex;height:14px;border-radius:6px;overflow:hidden;border:1px solid #86d4d35a;background:#0d2c3b}
+.season-res .sr-balbar i,.season-res .sr-sw{display:block;height:100%}
+.season-res .p-d{background:repeating-linear-gradient(45deg,#cfeff0 0 3px,#4f8fa0 3px 6px)}
+.season-res .p-r{background:repeating-linear-gradient(135deg,#f0e6cf 0 3px,#9a8a5c 3px 6px)}
+.season-res .p-o{background:#8fa6ad}
+.season-res .p-u{background:#0d2c3b}
+.season-res .p-n{background:#050f17}
+.season-res .sr-key{display:flex;flex-wrap:wrap;gap:2px 12px;margin:6px 0 0;font-size:12px;color:#e9ffff}
+.season-res .sr-key span{display:inline-flex;align-items:center;gap:5px}
+.season-res .sr-sw{width:12px;height:12px;border-radius:3px;border:1px solid #86d4d35a;box-sizing:border-box}
+.season-res .sr-sw-mine{background:transparent;border:2px solid #fff}
+/* the little map */
+.season-res .sr-map{margin:0}
+.season-res .sr-map figcaption{margin:0 0 4px}
+.season-res .sr-svg{display:block;width:100%;max-width:300px;height:auto;margin:0 auto}
+.season-res .sr-sh{stroke:#071f2e;stroke-width:1.2;stroke-linejoin:round}
+.season-res .sr-st:hover .sr-sh,.season-res .sr-st:focus .sr-sh{stroke:#fff;stroke-width:3}
+.season-res .sr-st:focus{outline:none}
+.season-res .sr-st:focus-visible .sr-sh{stroke:#91dfdc;stroke-width:4}
+.season-res .sr-mine{fill:none;stroke-linejoin:round;pointer-events:none}
+.season-res .sr-mine-o{stroke:#021018;stroke-width:9}
+.season-res .sr-mine-i{stroke:#fff;stroke-width:4}
