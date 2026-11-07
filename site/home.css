@@ -155,13 +155,6 @@
 .mw-node:hover circle,.mw-node:focus-visible circle{stroke:#fff;stroke-width:4}
 .mw-amt{font:800 38px/1 system-ui,-apple-system,Segoe UI,sans-serif;font-variant-numeric:tabular-nums;paint-order:stroke;stroke:#08263a;stroke-width:6px}
 .mw-name{font:600 22px/1 system-ui,-apple-system,Segoe UI,sans-serif;fill:#e4f4f4;paint-order:stroke;stroke:#08263a;stroke-width:5px}
-.mw-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
-.mw-tab{display:inline-flex;align-items:center;gap:8px;font:600 14px/1.2 system-ui,-apple-system,Segoe UI,sans-serif;color:#d9f2f2;background:#03192ab8;border:1px solid #c7ffff55;border-radius:99px;padding:8px 14px;cursor:pointer;text-align:left}
-.mw-tab span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#c7ffff22;font-weight:800;font-size:12px}
-.mw-tab:hover{background:#0c3346}
-.mw-tab[aria-selected="true"]{background:#b9f6ed;color:#052b3b;border-color:#b9f6ed}
-.mw-tab[aria-selected="true"] span{background:#052b3b22}
-.mw-tab:focus-visible{outline:2px solid #e4ffff;outline-offset:2px}
 .mw-head{margin:0 0 6px}
 .mw-hubname{display:inline-block;font:normal clamp(22px,2.4vw,30px)/1.15 Georgia,serif;color:#e9ffff;text-decoration:none;border-bottom:1px solid #c7ffff55}
 .mw-hubname:hover{color:#fff;border-bottom-color:#fff}
@@ -182,7 +175,18 @@
 .mw-lab{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a9c6cc;margin-bottom:4px}
 .mw-none{font-size:15px;color:#d9f2f2;max-width:16em;line-height:1.35}
 .mw-asof{display:block;flex-basis:100%;font-size:13px;color:#a9c6cc}
-/* D244: front page money web, the top two groups from each kind of group */
-.mw-kind{font-size:12px!important;letter-spacing:.1em;text-transform:uppercase;color:#a9c6cc!important;margin:0 0 8px!important;font-weight:700}
-.mw-kind~.mw-tabs{margin-bottom:16px}
-.mw-kindtag{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#a9c6cc;margin:0 0 6px;font-weight:700}
+/* D245: front page money web, search box first and one group picked at random */
+.mw-search{margin:6px 0 0}
+.mw-search label{display:block;font:600 clamp(18px,1.8vw,22px)/1.3 system-ui,-apple-system,Segoe UI,sans-serif;color:#e9ffff;margin:0 0 10px}
+.mw-search-row{display:flex;gap:10px;max-width:560px}
+.mw-search input{flex:1;min-width:0;font:500 20px/1.2 system-ui,-apple-system,Segoe UI,sans-serif;color:#052b3b;background:#e9fffb;border:2px solid #b9f6ed;border-radius:14px;padding:16px 18px}
+.mw-search input::placeholder{color:#4d6f78}
+.mw-search input:focus-visible{outline:3px solid #e9c97f;outline-offset:2px}
+.mw-search button{font:700 18px/1 system-ui,-apple-system,Segoe UI,sans-serif;color:#052b3b;background:#b9f6ed;border:0;border-radius:14px;padding:0 22px;cursor:pointer}
+.mw-search button:hover{background:#fff}
+.mw-search button:focus-visible{outline:3px solid #e9c97f;outline-offset:2px}
+.mw-random{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:12px!important;letter-spacing:.1em;text-transform:uppercase;color:#a9c6cc!important;font-weight:700;margin:0 0 8px!important}
+.mw-another{font:600 13px/1 system-ui,-apple-system,Segoe UI,sans-serif;letter-spacing:0;text-transform:none;color:#d9f2f2;background:#03192ab8;border:1px solid #c7ffff55;border-radius:99px;padding:7px 14px;cursor:pointer}
+.mw-another:hover{background:#0c3346}
+.mw-another:focus-visible{outline:2px solid #e4ffff;outline-offset:2px}
+@media(max-width:600px){.mw-search-row{flex-direction:column}.mw-search button{padding:14px 22px}}
