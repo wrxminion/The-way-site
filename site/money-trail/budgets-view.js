@@ -48,6 +48,54 @@
     });
   });
 
+  // D226: members of Congress in the Money web and the Person tracker. Each member who voted on a law (House Clerk roll call,
+  // and the Senate roll call once the pull adds it), sponsored it or cosponsored it gets a line to that law. Lines carry no dollars:
+  // a vote is not a payment. Everyone is matched by Bioguide ID, never by name. Through the law, a member's web reaches its money.
+  const NAMES = window.TW_MEMBER_NAMES || {};
+  const people = new Map(), labels = new Map();
+  const clean = nm => String(nm || '').replace(/\s*\([A-Z]{2}\)$/, '').trim();
+  function person(id, nm, party, st, chamber) {
+    let p = people.get(id);
+    if (!p) {
+      let label = (NAMES[id] || clean(nm) || id) + ' (' + party + '-' + st + ')';
+      if (labels.has(label) && labels.get(label) !== id) label += ' ' + id;
+      labels.set(label, id);
+      p = { id, label, st, party, chambers: new Set(), lines: 0 }; people.set(id, p);
+    }
+    if (chamber) p.chambers.add(chamber);
+    p.lines++; return p;
+  }
+  const voteWord = v => v === 'Yea' || v === 'Aye' ? 'yes' : v === 'Nay' || v === 'No' ? 'no' : String(v || '').toLowerCase();
+  LAWS.forEach(law => {
+    const HUB = hubOf(law), id = 'LAW-' + law.key + '-';
+    for (const [ch, tag, word] of [['house', 'MV', 'House'], ['senate', 'MS', 'Senate']]) {
+      const v = (law.votes || {})[ch];
+      if (!v || !(v.members || []).length) continue;
+      v.members.forEach(m => {
+        const p = person(m[0], m[1], m[2], m[3], word);
+        RESEARCH.graph_edges.push({ id: id + tag + '-' + m[0], from_name: p.label, from_entity_id: 'bioguide:' + m[0], to_name: HUB, amount_usd: null,
+          date: String(v.date || '').slice(0, 10), date_kind: 'roll_call_vote_date', jurisdiction: 'US', edge_type: 'member_roll_call_vote_nonfinancial',
+          confidence: 'official_roll_call;matched_by_bioguide_id', source_url: v.source || law.bill_page,
+          notes: p.label + ' voted ' + voteWord(m[4]) + ' on the ' + law.name + ', ' + word + ' roll call ' + (v.roll || '') + '. A vote is not a payment.' });
+      });
+    }
+    // Sponsor and cosponsors, once tools/money-trail/follow_laws.py saves them with Bioguide IDs: [id, name, party, state, date, original].
+    [['sponsors', 'SP', 'sponsored', 'bill_sponsor_nonfinancial'], ['cosponsors', 'CS', 'cosponsored', 'bill_cosponsor_nonfinancial']].forEach(([k, tag, verb, type]) => (law[k] || []).forEach(m => {
+      if (!/^[A-Z][0-9]{6}$/.test(m[0] || '')) return;
+      const p = person(m[0], m[1], m[2], m[3], '');
+      RESEARCH.graph_edges.push({ id: id + tag + '-' + m[0], from_name: p.label, from_entity_id: 'bioguide:' + m[0], to_name: HUB, amount_usd: null,
+        date: String(m[4] || '').slice(0, 10), date_kind: 'sponsorship_date', jurisdiction: 'US', edge_type: type,
+        confidence: 'official_bill_record;matched_by_bioguide_id', source_url: law.bill_page + (k === 'cosponsors' ? '/cosponsors' : ''),
+        notes: p.label + ' ' + verb + ' ' + law.bill + ' (' + law.name + ')' + (m[5] ? ', an original cosponsor' : '') + ', from the Library of Congress bill record.' });
+    }));
+  });
+  people.forEach(p => {
+    const page = PAGES[p.id];
+    RESEARCH.entities.push({ entity_id: 'bioguide:' + p.id, legal_or_reported_name: p.label, entity_type: 'member_of_Congress', jurisdiction: p.st,
+      registry_identifier: 'Bioguide ' + p.id, source_url: 'https://bioguide.congress.gov/search/bio/' + p.id,
+      notes: 'Member of Congress' + (p.chambers.size ? ' (' + [...p.chambers].join(' and ') + ')' : '') + ' with ' + p.lines + (p.lines === 1 ? ' vote or sponsorship' : ' votes or sponsorships') + ' on the laws followed on this page.' + (page ? ' Page on this site: /government/congress/members/' + page + '.html' : '') });
+  });
+
   // D223: every department and agency in the budget list is a dot in the Money web. One line runs from the federal budget
   // to each one, carrying its budget resources (money it had available) for the fiscal year. These are official totals, not
   // single payments, so they are drawn as reported lines and never added up. A department with no figure yet gets a line with no amount.
@@ -184,7 +232,6 @@
   }
   // D225: one House member in the Evidence inspector: the vote on this law, party and state, votes on the other laws
   // on this page (matched by Bioguide ID), and where the member's page is. Nothing here is matched by name.
-  const voteWord = v => v === 'Yea' || v === 'Aye' ? 'yes' : v === 'Nay' || v === 'No' ? 'no' : v;
   let shownMember = '';
   function inspectMember(m, law, h) {
     const box = document.getElementById('detail-content');

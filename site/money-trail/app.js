@@ -182,6 +182,8 @@ function makeNetwork(){let edges=settings.includeContext?[...networkVerified,...
  // Include only edges directly touching the selected hub, without assuming the same legal entity across jurisdictions.
  edges=edges.filter(e=>norm(e.from_name)===f||norm(e.to_name)===f);
  edges=edges.filter(e=>lineOk(e));
+ // D226: a law's own web keeps its money lines and its chamber vote lines; how each member voted is in each member's web.
+ if(lawOf(String(graphHub).toUpperCase()))edges=edges.filter(e=>e.edge_type!=='member_roll_call_vote_nonfinancial');
  const solid=e=>e.tier==='itemized'||e.tier==='fec'?1:0;edges.sort((a,b)=>solid(a)===solid(b)?(num(b.amount_usd)-num(a.amount_usd)):(solid(b)-solid(a)));
  let shown=edges.slice(0,85),nodes=new Map(),display=[];
  for(let e of shown){let a=nodeKey(e.from_name,e.from_entity_id,e.jurisdiction),b=nodeKey(e.to_name,e.to_entity_id,e.jurisdiction);
@@ -210,7 +212,7 @@ function lawOf(name){const L=((window.TW_LAWS||{}).laws||[]).find(l=>String(l.na
 function webMoney(v){const a=Math.abs(num(v));return a>=1e12?'$'+(a/1e12).toLocaleString('en-US',{maximumFractionDigits:2})+' trillion':a>=1e9?'$'+(a/1e9).toLocaleString('en-US',{maximumFractionDigits:1})+' billion':shortMoney(v)}
 // On the web itself space is tight: $1.43T, $4.8B, $203.1m.
 function webShort(v){const a=Math.abs(num(v));return a>=1e12?'$'+(a/1e12).toLocaleString('en-US',{maximumFractionDigits:2})+'T':a>=1e9?'$'+(a/1e9).toLocaleString('en-US',{maximumFractionDigits:1})+'B':shortMoney(v)}
-function webTotalsBox(w){if(!w)return '';if(w.budget)return `<div class="mt-web-total"><div class="key">Money the federal government spent in fiscal year ${escapeHtml(String(w.budget.fy))}</div><div class="event-amount mt-big">${webMoney(w.budget.total)}</div><p>Exactly ${money_(w.budget.total)}, from the Monthly Treasury Statement through ${escapeHtml(dateText(w.budget.through))}. Each line in the web is one department's budget resources (money it had available), as reported to USAspending.gov. Available money can include money carried over from earlier years, so the lines are not added up.</p></div>`;if(w.law)return `<div class="mt-web-total"><div class="key">Money promised under this law</div><div class="event-amount mt-big">${webMoney(w.law.total)}</div><p>Exactly ${money_(w.law.total)}: the total USAspending tags to this law's spending codes, as of ${escapeHtml(dateText(w.law.asOf))}. The lines in the web show the agencies and the largest recipients. They overlap, so they are not added up.</p></div>`;let h=`<div class="mt-web-total"><div class="key">${w.hub?'Money on all its lines in this web':'Money on its lines with '+escapeHtml(w.name)}</div><div class="event-amount mt-big">${money_(w.total)}</div>`;
+function webTotalsBox(w){if(!w)return '';if(w.budget)return `<div class="mt-web-total"><div class="key">Money the federal government spent in fiscal year ${escapeHtml(String(w.budget.fy))}</div><div class="event-amount mt-big">${webMoney(w.budget.total)}</div><p>Exactly ${money_(w.budget.total)}, from the Monthly Treasury Statement through ${escapeHtml(dateText(w.budget.through))}. Each line in the web is one department's budget resources (money it had available), as reported to USAspending.gov. Available money can include money carried over from earlier years, so the lines are not added up.</p></div>`;if(w.law)return `<div class="mt-web-total"><div class="key">Money promised under this law</div><div class="event-amount mt-big">${webMoney(w.law.total)}</div><p>Exactly ${money_(w.law.total)}: the total USAspending tags to this law's spending codes, as of ${escapeHtml(dateText(w.law.asOf))}. The lines in the web show the agencies and the largest recipients. They overlap, so they are not added up. How each member of Congress voted on it is in that member's own web and in the Person tracker.</p></div>`;let h=`<div class="mt-web-total"><div class="key">${w.hub?'Money on all its lines in this web':'Money on its lines with '+escapeHtml(w.name)}</div><div class="event-amount mt-big">${money_(w.total)}</div>`;
  if(w.hub){const parts=[];if(w.inN)parts.push(`Received: <b>${money_(w.inAmt)}</b> in ${filings(w.inN)}.`);if(w.outN)parts.push(`Sent: <b>${money_(w.outAmt)}</b> in ${filings(w.outN)}.`);if(parts.length)h+=`<p>${parts.join(' ')}</p>`;else if(!w.sameN)h+=`<p>No itemized filing on its lines.</p>`;if(w.sameN)h+=`<p>Between records that share this name: <b>${money_(w.sameAmt)}</b> in ${filings(w.sameN)}.</p>`;if(w.ids>1)h+=`<p>Lines from ${w.ids} separate ID records that share this name are counted here. They may not be the same legal entity.</p>`}
  else{if(w.outN)h+=`<p>Sent to ${escapeHtml(w.name)}: <b>${money_(w.outAmt)}</b> in ${filings(w.outN)}.</p>`;if(w.inN)h+=`<p>Received from ${escapeHtml(w.name)}: <b>${money_(w.inAmt)}</b> in ${filings(w.inN)}.</p>`;if(!w.outN&&!w.inN)h+=`<p>No itemized filing on these lines.</p>`}
  if(w.repN)h+=`<p>Reported figures: ${w.repN} report${w.repN===1?'':'s'}, the largest <b>${money_(w.repMax)}</b>. They are not added to the total or to each other, because they may repeat the same money.</p>`;
@@ -236,7 +238,7 @@ function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const n
  if(isRoot||n.count>=2||other.indexOf(n)<17){let text=svgEl('text',{x:P.x,y:P.y+(isRoot?42:24),'text-anchor':'middle'},group);const mb=ballotById[n.name];let label=mb?mb.state+' '+measureName(mb).slice((stName[mb.state]||mb.state).length+1):n.name;label=label.length>24?label.slice(0,22)+'…':label;text.textContent=label;
  if(mb){let sub=svgEl('text',{x:P.x,y:P.y+(isRoot?60:40),'text-anchor':'middle',class:'graph-sub'},group);sub.textContent=mb.short_title.length>34?mb.short_title.slice(0,32)+'…':mb.short_title;const mo=measureOutcome[n.name];if(mo){let st=svgEl('text',{x:P.x,y:P.y+(isRoot?84:62),'text-anchor':'middle',class:'graph-status '+mo.status},group);st.textContent=mo.status==='passed'?'✓ PASSED':mo.status==='failed'?'✗ FAILED':'Not yet called';}}}
  {const t=n.tot||{},mb=ballotById[n.name],mo=mb&&measureOutcome[n.name];const labeled=isRoot||n.count>=2||other.indexOf(n)<17;const dy=!labeled?(isRoot?42:24):mb?(mo?(isRoot?106:82):(isRoot?80:58)):(isRoot?62:40);
- const law=n.central&&lawOf(n.name),bud=n.central&&budgetOf(n.name);const amt=law?law.total:bud?bud.total:t.item>0?t.item:t.repMax;if(amt>0){let m=svgEl('text',{x:P.x,y:P.y+dy,'text-anchor':'middle',class:'graph-money'+(law||bud||t.item>0?'':' reported')},group);m.textContent=law?webMoney(amt)+' promised':bud?webMoney(amt)+' spent':webShort(amt)}}
+ const law=lawOf(String(n.name).toUpperCase()),bud=n.central&&budgetOf(n.name);/* D226: a law dot always shows the money promised under it */const amt=law?law.total:bud?bud.total:t.item>0?t.item:t.repMax;if(amt>0){let m=svgEl('text',{x:P.x,y:P.y+dy,'text-anchor':'middle',class:'graph-money'+(law||bud||t.item>0?'':' reported')},group);m.textContent=law?webMoney(amt)+' promised':bud?webMoney(amt)+' spent':webShort(amt)}}
  group.addEventListener('click',()=>{const mb=ballotById[n.name];if(mb){pick({...mb});if(n.name!==graphHub){graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()}return;}
  if(n.name===graphHub){const ent=entityById[n.id];if(ent){pick({record_kind:'entity',name:ent.legal_or_reported_name,entity_type:tidy(ent.entity_type),source_url:ent.source_url,notes:ent.notes,jurisdiction:ent.jurisdiction,id:ent.entity_id,web:webTotals(n)})}else pick({record_kind:'entity',name:n.name,jurisdiction:n.jur,id:/reported[-_]name/.test(n.id)?'':n.id,web:webTotals(n)});return;}
  graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()});}
@@ -285,7 +287,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     const t = e.entity_type || '';
     if (/ballot measure/i.test(t)) return null;
     if (/municipal_public_body|election authority|federal agency/i.test(t)) return 'departments';
-    if (/candidate_named/i.test(t) || looksPerson(e.legal_or_reported_name)) return 'people';
+    if (/candidate_named|member_of_congress/i.test(t) || looksPerson(e.legal_or_reported_name)) return 'people';
     return 'orgs';
   };
   const lists = { orgs: [], people: [], departments: [] };
@@ -683,6 +685,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
       if (side === 'to' && /^(LAW-.*-AG-|BUDGET-FY)/.test(e.id || '')) t.flags.add('agency');
       if (side === 'to' && /^LAW-.*-RC-/.test(e.id || '')) t.flags.add('recipient');
       if (side === 'from' && e.edge_type === 'vote_nonfinancial_context') t.flags.add('congress');
+      if (side === 'from' && /^LAW-.*-(MV|MS|SP|CS)-/.test(e.id || '')) t.flags.add('member'); // D226
     }
   });
   (RESEARCH.entities || []).forEach(x => { if (x.entity_type === 'federal agency') { const t = info.get(norm(x.legal_or_reported_name)); if (t) t.flags.add('agency'); } });
@@ -696,6 +699,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     ['agency', 'Federal departments and agencies'],
     ['recipient', 'Recipients of federal law money'],
     ['congress', 'Congress (votes on the laws)'],
+    ['member', 'Members of Congress (votes and sponsors)'],
     ['measure', 'Ballot measures'],
     ['party', 'Party committees'],
     ['candidate', 'Candidates and candidate committees'],
@@ -724,7 +728,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (lawOf(up)) return 'law';
     if (ballotById[nm]) return 'measure';
     const t = info.get(norm(nm)); if (!t) return 'other';
-    for (const f of ['agency', 'congress', 'recipient']) if (t.flags.has(f)) return f;
+    for (const f of ['agency', 'congress', 'member', 'recipient']) if (t.flags.has(f)) return f;
     const order = KINDS.map(k => k[0]); let best = '';
     for (const ty of t.types) { const k = typeKind(ty); if (k && (!best || order.indexOf(k) < order.indexOf(best))) best = k; }
     if ([...t.types].some(ty => /candidate_named/i.test(ty)) || looksPerson2(nm)) return 'person';
