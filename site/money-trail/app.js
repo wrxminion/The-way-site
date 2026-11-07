@@ -693,6 +693,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   const f = RESEARCH.meta.fec, el = document.getElementById('fec-note');
   if (!f || !el) return;
   el.textContent = f.records + ' more records come straight from FEC filings of ' + f.committees + ' committees (' + (RESEARCH.meta.fec_committees || []).join(', ') + '), pulled from the FEC public data on ' + dateText(f.updated) + '. Each one links to its filing. Individuals are not included.';
+  (RESEARCH.meta.fec_missing || []).forEach(m => { el.textContent += ' ' + m.name + ': ' + (m.missing[0] === 'receipts' ? 'only payments so far; its receipts did not download yet.' : 'only receipts so far; its payments did not download yet.'); });
 })();
 
 // D218 (Nov 2026): hovering no longer changes the Evidence inspector (D212, D217 removed). The hover card below does that job; the inspector changes only on a click.
