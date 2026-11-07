@@ -188,7 +188,7 @@ function trackerCard(o){const el=(t,c,x)=>{const d=document.createElement(t);if(
  const ys=[...t.years].sort((a,b)=>b[0].localeCompare(a[0]));
  if(ys.length){const det=el('details','bud-years');det.append(el('summary',null,'Past years'));const ul=el('ul');ys.forEach(([y,[amt,n]])=>ul.append(el('li',null,y+': '+bigMoney(amt)+' in '+n+(n===1?' itemized filing':' itemized filings'))));det.append(ul);act.append(det)}
  (o.buttons||[]).forEach(b=>act.append(b));card.append(act);return card}
-function makeNetwork(){let edges=settings.includeContext?[...networkVerified,...networkContext]:networkVerified;
+function makeNetwork(){let edges=settings.includeContext?[...networkVerified,...networkContext]:networkVerified;const pool=edges;
  let f=norm(graphHub);
  // Include only edges directly touching the selected hub, without assuming the same legal entity across jurisdictions.
  edges=edges.filter(e=>norm(e.from_name)===f||norm(e.to_name)===f);
@@ -210,7 +210,34 @@ function makeNetwork(){let edges=settings.includeContext?[...networkVerified,...
  const fh=norm(e.from_name)===f,th=norm(e.to_name)===f;if(fh)hub.ids.add(a);if(th)hub.ids.add(b);
  if(s){if(fh&&th){hub.sameAmt+=amt;hub.sameN++}else if(th){hub.inAmt+=amt;hub.inN++}else{hub.outAmt+=amt;hub.outN++}}else if(rp){hub.rep+=amt;hub.repN++;hub.repMax=Math.max(hub.repMax,amt)}}
  for(const n of nodes.values())n.tot=tot[n.id]||{item:0,itemN:0,in:0,inN:0,out:0,outN:0,rep:0,repN:0,repMax:0};
- return {edges:display,nodes:[...nodes.values()],total:edges.length,hub};}
+ return {edges:display,nodes:[...nodes.values()],total:edges.length,hub,web2:web2Links(pool,nodes,f)};}
+// D239: second-level links. Frank: the web looked like one point with spokes, so the names the center's neighbors are
+// linked to are drawn too, lighter, one ring further out. Only lines that pass the same filters count. A neighbor is
+// matched by its own ID (or its reported name and place when it has no ID), never by a look-alike name, so distinct IDs
+// stay distinct. The center's own lines are not repeated here. Member roll call votes stay in each member's own web
+// (as on law webs, D226). Names linked to more of the neighbors and lines with money come first; the count is capped
+// (24 dots, 12 on a phone; one neighbor gets an even share, at least 4) so the web stays readable. Lines between two of
+// the center's neighbors are drawn too, lighter. Reported figures are never added up.
+const WEB2_KEY='mt-web-second';let web2On=true;try{web2On=localStorage.getItem(WEB2_KEY)!=='off'}catch(e){web2On=true}
+function web2Links(pool,nodes,f){const out={nodes:[],lines:[],cross:[],more:0};if(!web2On)return out;
+ const first=new Map();for(const n of nodes.values())if(!n.central)first.set(n.id,n);if(!first.size)return out;
+ const cand=new Map(),cross=new Map(),solid=e=>e.tier==='itemized'||e.tier==='fec';
+ for(const e of pool){const fa=norm(e.from_name),fb=norm(e.to_name);if(!fa||!fb||fa===f||fb===f||e.edge_type==='member_roll_call_vote_nonfinancial')continue;
+  const a=nodeKey(e.from_name,e.from_entity_id,e.jurisdiction),b=nodeKey(e.to_name,e.to_entity_id,e.jurisdiction);if(a===b)continue;
+  const A=first.get(a),B=first.get(b);if(!A&&!B)continue;if(!lineOk(e))continue;
+  if(A&&B){const k=a<b?a+'|'+b:b+'|'+a;let p=cross.get(k);if(!p)cross.set(k,p={a,b,edges:[]});p.edges.push(e);continue}
+  const par=A?a:b,id=A?b:a,name=(A?e.to_name:e.from_name)||id;let c=cand.get(id);if(!c)cand.set(id,c={id,name,jur:e.jurisdiction||'',level:2,count:0,itemized:0,repMax:0,links:new Map()});
+  let p=c.links.get(par);if(!p)c.links.set(par,p={a:par,b:id,edges:[]});p.edges.push(e)}
+ const weigh=p=>{let item=0,rep=0;for(const e of p.edges){const amt=num(e.amount_usd)||0;if(solid(e))item+=amt;else if(e.tier==='reported')rep=Math.max(rep,amt)}p.item=item;p.rep=rep;return p};
+ const strong=(x,y)=>(y.item-x.item)||(y.rep-x.rep)||(y.edges.length-x.edges.length);
+ const list=[...cand.values()].map(c=>{const ls=[...c.links.values()].map(weigh).sort(strong);c.via=ls;c.count=ls.reduce((t,p)=>t+p.edges.length,0);c.itemized=ls.reduce((t,p)=>t+p.item,0);c.repMax=Math.max(0,...ls.map(p=>p.rep));c.score=c.itemized||c.repMax;return c})
+  .sort((x,y)=>((y.score>0)-(x.score>0))||(y.via.length-x.via.length)||(y.score-x.score)||(y.count-x.count)||String(x.name).localeCompare(String(y.name)));
+ const cap=window.innerWidth<=760?12:24,per=Math.max(4,Math.ceil(cap/Math.max(1,new Set(list.map(c=>c.via[0].a)).size))),perN=new Map();
+ const take=c=>{const main=c.via[0].a;perN.set(main,(perN.get(main)||0)+1);c.parent=main;c.via=c.via.slice(0,4);c.viaNames=c.via.map(p=>first.get(p.a).name);out.nodes.push(c);out.lines.push(...c.via)},left=[];
+ for(const c of list){if(out.nodes.length<cap&&(perN.get(c.via[0].a)||0)<per)take(c);else left.push(c)}
+ /* room left over goes to the next strongest names, even on a busy neighbor */for(const c of left){if(out.nodes.length<cap)take(c);else out.more++}
+ out.cross=[...cross.values()].map(weigh).sort(strong).slice(0,40);
+ return out}
 // D214: what a dot's money total means, for the Evidence inspector. The hub (center name) gets its totals over all its lines; any other dot gets its lines with the hub.
 function webTotals(n){const net=lastNet;if(!net||!n)return null;if(n.central){const h=net.hub;return {hub:true,name:hubLabel(graphHub),ids:h.ids.size,total:h.inAmt+h.outAmt+h.sameAmt,inAmt:h.inAmt,inN:h.inN,outAmt:h.outAmt,outN:h.outN,sameAmt:h.sameAmt,sameN:h.sameN,rep:h.rep,repN:h.repN,repMax:h.repMax,law:lawOf(graphHub),budget:budgetOf(graphHub)}}
  const t=n.tot||{};return {hub:false,name:hubLabel(graphHub),total:t.item||0,inAmt:t.in||0,inN:t.inN||0,outAmt:t.out||0,outN:t.outN||0,rep:t.rep||0,repN:t.repN||0,repMax:t.repMax||0}}
@@ -234,10 +261,23 @@ function svgEl(tag,attrs,parent){let x=document.createElementNS(NS,tag);Object.e
 function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const net=makeNetwork();lastNet=net;const names=new Map(net.nodes.map(n=>[n.id,n]));let roots=net.nodes.filter(n=>n.central).sort((a,b)=>b.count-a.count),root=roots[0];
  const meta=`${net.total} eligible connections · ${net.edges.length} drawn (limit 85) · ${roots.length} separate ID nodes sharing hub name`;$('#graph-count').textContent=meta+' · Connections may refer to different legal entities with identical reported names.';
  if(!root||!net.edges.length){$('#network-desc').textContent='No connections match this hub and state filter. Clear the state filter or choose another hub.';svgEl('text',{x:560,y:320,'text-anchor':'middle',fill:'#a5c2c8'},svg).textContent='No documented connections in the selected filter';return;}
- $('#network-desc').textContent=`Showing ${net.edges.length} connections adjacent to ${hubLabel(graphHub)}. Point at a dot or a line to see a short card about it. Click a line to open its filing in the Evidence inspector, or a dot to explore its neighbors.`;
+ $('#network-desc').textContent=`Showing ${net.edges.length} connections adjacent to ${hubLabel(graphHub)}. Point at a dot or a line to see a short card about it. Click a line to open its filing in the Evidence inspector, or a dot to explore its neighbors.`+(net.web2&&net.web2.nodes.length?' Lighter dots and lines further out are second-level links: who the center\'s neighbors are linked to.':'');
  const cx=560,cy=312,pos={};pos[root.id]={x:cx,y:cy};const other=net.nodes.filter(n=>n.id!==root.id).sort((a,b)=>b.count-a.count||b.amount-a.amount),total=other.length;
- other.forEach((n,i)=>{const inner=i<Math.min(16,total);const sameName=n.central;const radius=sameName?68:inner?200:290;const idx=sameName?i:(inner?i: i-16);const span=sameName?Math.max(roots.length-1,1):inner?Math.min(16,total):Math.max(total-16,1);let angle=2*Math.PI*(idx/Math.max(span,1))-.5*Math.PI;pos[n.id]={x:cx+Math.cos(angle)*radius+(i%2?2:-2),y:cy+Math.sin(angle)*radius*.86};});
+ other.forEach((n,i)=>{const inner=i<Math.min(16,total);const sameName=n.central;const radius=sameName?68:inner?200:290;const idx=sameName?i:(inner?i: i-16);const span=sameName?Math.max(roots.length-1,1):inner?Math.min(16,total):Math.max(total-16,1);let angle=2*Math.PI*(idx/Math.max(span,1))-.5*Math.PI;pos[n.id]={x:cx+Math.cos(angle)*radius+(i%2?2:-2),y:cy+Math.sin(angle)*radius*.86,a:angle};});
+ // D239: second-level dots sit on a wider ring, near the neighbor they hang off, pushed apart so they do not pile up.
+ const W2=net.web2||{nodes:[],lines:[],cross:[],more:0};if(W2.nodes.length){const big=total>16,rx=big?470:385,ry=big?298:262,kids=new Map();
+  W2.nodes.forEach(c=>{const k=kids.get(c.parent)||[];k.push(c);kids.set(c.parent,k)});
+  const want=[];for(const [par,list] of kids){const P=pos[par],base=P&&P.a!=null?P.a:-Math.PI/2;list.forEach((c,i)=>want.push({c,a:base+(i-(list.length-1)/2)*.14}))}
+  const m=want.length,gap=Math.min(.2,2*Math.PI/m);
+  for(let pass=0;pass<60&&m>1;pass++){want.sort((x,y)=>x.a-y.a);let moved=false;for(let i=0;i<m;i++){const A=want[i],B=want[(i+1)%m];let d=B.a-A.a;if(i===m-1)d+=2*Math.PI;if(d<gap-1e-6){const s=(gap-d)/2;A.a-=s;B.a+=s;moved=true}}if(!moved)break}
+  want.forEach(w=>{pos[w.c.id]={x:cx+Math.cos(w.a)*rx,y:cy+Math.sin(w.a)*ry,a:w.a}})}
  let pan=svgEl('g',{transform:`translate(${cx*(1-graphScale)} ${cy*(1-graphScale)}) scale(${graphScale})`},svg);
+ {const L2=svgEl('g',{class:'graph-web2-lines'},pan),solid=e=>e.tier==='itemized'||e.tier==='fec';
+ for(const p of [...W2.cross,...W2.lines]){const A=pos[p.a],B=pos[p.b];if(!A||!B)continue;const S=p.edges.filter(solid),e=(S.length?S:p.edges).slice().sort((x,y)=>(num(y.amount_usd)||0)-(num(x.amount_usd)||0))[0];
+  const tier=S.length?(S.every(x=>x.tier==='fec')?'fec':'itemized'):p.edges.some(x=>x.tier==='reported')?'reported':'context';
+  const line=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:tier==='itemized'?'#57c2ad':tier==='fec'?'#b9a7f2':tier==='reported'?'#ad946c':'#659eb3','stroke-width':'1.6','stroke-dasharray':tier==='itemized'||tier==='fec'?'none':tier==='reported'?'6 5':'2 5',class:'graph-edge graph-edge2'},L2);
+  svgEl('title',{},line).textContent=`${e.from_name} → ${e.to_name}\n${e.amount_usd!=null?money(e.amount_usd):'Non-financial'}\n${e.edge_type}`;line.__rec=e.record_ref||e;line.__e=e;line.__pair=p.a<p.b?p.a+'|'+p.b:p.b+'|'+p.a;line.__pairEdges=p.edges;line.__lvl2=true;
+  const hit=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:'transparent','stroke-width':'12',class:'graph-edge-hit'},L2);hit.__vis=line;hit.addEventListener('click',()=>pick(e.record_ref||e))}}
  for(let {a,b,e} of net.edges){let A=pos[a],B=pos[b];if(!A||!B)continue;let tier=e.tier;let line=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:tier==='itemized'?'#57c2ad':tier==='fec'?'#b9a7f2':tier==='reported'?'#ad946c':'#659eb3','stroke-width':tier==='itemized'||tier==='fec'?'2.6':'2','stroke-dasharray':tier==='itemized'||tier==='fec'?'none':tier==='reported'?'7 5':'2 5',class:'graph-edge',opacity:'.7'},pan);svgEl('title',{},line).textContent=`${e.from_name} → ${e.to_name}\n${e.amount_usd!=null?money(e.amount_usd):'Non-financial'}\n${e.edge_type}`;line.__rec=e.record_ref||e;line.__e=e;line.__pair=a<b?a+'|'+b:b+'|'+a;
  // D218: a wide see-through line on top makes each line easy to point at and click. The visible line stays thin.
  const hit=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:'transparent','stroke-width':'16',class:'graph-edge-hit'},pan);hit.__vis=line;hit.addEventListener('click',()=>pick(e.record_ref||e));}
@@ -246,6 +286,10 @@ function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const n
  const lg=svgEl('g',{class:'graph-amounts'},pan);
  for(const p of pairs.values()){const amt=p.itemN?p.item:p.rep;if(!(amt>0))continue;let A=pos[p.a],B=pos[p.b];if(Math.hypot(B.x-cx,B.y-cy)<Math.hypot(A.x-cx,A.y-cy))[A,B]=[B,A];const t=.6;
  const tx=svgEl('text',{x:A.x+(B.x-A.x)*t,y:A.y+(B.y-A.y)*t+4,'text-anchor':'middle',class:'graph-amount '+(p.itemN?(p.fec===p.itemN?'fec':'itemized'):'reported')},lg);tx.textContent=webShort(amt);tx.__amt=amt;tx.__A=A;tx.__B=B;tx.__ends=[p.a,p.b]}}
+ {const N2=svgEl('g',{class:'graph-web2-nodes'},pan);for(const c of W2.nodes){const P=pos[c.id];if(!P)continue;const g=svgEl('g',{class:'graph-node graph-node2'},N2);g.__n=c;
+  const mb=ballotById[c.name],oc=mb&&outcomeColor(c.name);svgEl('circle',{cx:P.x,cy:P.y,r:'5.5',fill:oc||'#8fb3b8'},g);svgEl('title',{},g).textContent=`${c.name}\n${c.id}\n${c.count} connections`;
+  let label=mb?mb.state+' '+measureName(mb).slice((stName[mb.state]||mb.state).length+1):c.name;label=label.length>22?label.slice(0,20)+'…':label;svgEl('text',{x:P.x,y:P.y+17,'text-anchor':'middle',class:'graph-name2'},g).textContent=label;
+  g.addEventListener('click',()=>{if(mb)pick({...mb});graphHub=c.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()})}}
  for(let n of net.nodes){let P=pos[n.id],isRoot=n.id===root.id;let group=svgEl('g',{class:'graph-node'},pan);group.__n=n;group.__root=isRoot;let circ=svgEl('circle',{cx:P.x,cy:P.y,r:isRoot?'24':n.central?'11':ballotById[n.name]?'13':Math.max(6,Math.min(14,7+n.count/4)),fill:(ballotById[n.name]&&outcomeColor(n.name))||(isRoot?'#6be3c9':n.central?'#c4b18a':'#4c9ba5')},group);if(ballotById[n.name]&&outcomeColor(n.name))circ.setAttribute('stroke','#ffffff'),circ.setAttribute('stroke-width','3');svgEl('title',{},group).textContent=`${n.name}\n${n.id}\n${n.count} connections`;
  if(isRoot||n.count>=2||other.indexOf(n)<17){let text=svgEl('text',{x:P.x,y:P.y+(isRoot?42:24),'text-anchor':'middle'},group);const mb=ballotById[n.name];let label=mb?mb.state+' '+measureName(mb).slice((stName[mb.state]||mb.state).length+1):n.name;label=label.length>24?label.slice(0,22)+'…':label;text.textContent=label;
  if(mb){let sub=svgEl('text',{x:P.x,y:P.y+(isRoot?60:40),'text-anchor':'middle',class:'graph-sub'},group);sub.textContent=mb.short_title.length>34?mb.short_title.slice(0,32)+'…':mb.short_title;const mo=measureOutcome[n.name];if(mo){let st=svgEl('text',{x:P.x,y:P.y+(isRoot?84:62),'text-anchor':'middle',class:'graph-status '+mo.status},group);st.textContent=mo.status==='passed'?'✓ PASSED':mo.status==='failed'?'✗ FAILED':'Not yet called';}}}
@@ -255,6 +299,7 @@ function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const n
  if(n.name===graphHub){const ent=entityById[n.id];if(ent){pick({record_kind:'entity',name:ent.legal_or_reported_name,entity_type:tidy(ent.entity_type),source_url:ent.source_url,notes:ent.notes,jurisdiction:ent.jurisdiction,id:ent.entity_id,web:webTotals(n)})}else pick({record_kind:'entity',name:n.name,jurisdiction:n.jur,id:/reported[-_]name/.test(n.id)?'':n.id,web:webTotals(n)});return;}
  graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()});}
  const crowded=thinWebLabels(pan);if(crowded)$('#graph-count').textContent+=` · ${crowded} dollar ${crowded===1?'number was':'numbers were'} left off where they would cover other words. Point at a line or dot to see its number.`;
+ if(W2.nodes.length||W2.cross.length){const k=W2.lines.length+W2.cross.length;$('#graph-count').textContent+=` · Second-level links, drawn lighter: ${W2.nodes.length} more ${W2.nodes.length===1?'name':'names'} and ${k} ${k===1?'line':'lines'}`+(W2.more?` (${W2.more} more not drawn)`:'')+'. Their dollar numbers show when you point at them.'}
 }
 // D231: on a busy web the dollar numbers piled on top of each other and on the names. Names and dots stay.
 // D232: every dot keeps its number where it can: a dot's number tries below, above, right and left of the dot before it
@@ -266,7 +311,12 @@ function thinWebLabels(pan){const boxes=[],em=t=>parseFloat(getComputedStyle(t).
  const hits=b=>boxes.some(o=>b.x0<o.x1&&b.x1>o.x0&&b.y0<o.y1&&b.y1>o.y0);
  const at=(t,k)=>parseFloat(t.getAttribute(k))||0;let gone=0;const shown=new Map(),dropped=new Set();
  pan.querySelectorAll('.graph-node circle').forEach(c=>{const x=at(c,'cx'),y=at(c,'cy'),r=at(c,'r')+1;boxes.push({x0:x-r,x1:x+r,y0:y-r,y1:y+r})});
- pan.querySelectorAll('.graph-node text:not(.graph-money), .graph-money.root').forEach(t=>boxes.push(box(t,at(t,'x'),at(t,'y'))));
+ pan.querySelectorAll('.graph-node:not(.graph-node2) text:not(.graph-money), .graph-money.root').forEach(t=>boxes.push(box(t,at(t,'x'),at(t,'y'))));
+ // D239: a second-level name tries below, above, right and left of its dot and is left off (hover still names it) if all four cover other words.
+ // With the numbers hidden they go before the numbers; with the numbers shown, the numbers keep their places first.
+ const names2=()=>pan.querySelectorAll('.graph-name2').forEach(t=>{const c=t.parentNode.querySelector('circle');if(!c)return;const x=at(c,'cx'),y=at(c,'cy'),f=em(t),w=String(t.textContent).length*f*.58+4;
+  for(const [X,Y] of [[x,y+17],[x,y-10],[x+9+w/2,y+f*.35],[x-9-w/2,y+f*.35]]){const b=box(t,X,Y);if(!hits(b)){t.setAttribute('x',X);t.setAttribute('y',Y);boxes.push(b);return}}t.remove()});
+ const numsOff=!!pan.closest('.mt-nonums');if(numsOff)names2();
  const nodeMoney=[...pan.querySelectorAll('.graph-money:not(.root)')].sort((a,b)=>(b.__amt||0)-(a.__amt||0));
  for(const t of nodeMoney){const g=t.parentNode,n=g&&g.__n,c=g&&g.querySelector('circle');let ok=null;
   const spots=[[at(t,'x'),at(t,'y'),'middle']];
@@ -282,6 +332,7 @@ function thinWebLabels(pan){const boxes=[],em=t=>parseFloat(getComputedStyle(t).
   if(ok){t.setAttribute('x',ok.x);t.setAttribute('y',ok.y);boxes.push(ok.b)}
   else if(ends.some(id=>dropped.has(id))){boxes.push(box(t,at(t,'x'),at(t,'y')))}
   else{t.remove();gone++}}
+ if(!numsOff)names2();
  return gone}
 function prepareHubRefresh(){$('#hub').innerHTML=hubs.map(x=>`<option value="${escapeHtml(x)}">${escapeHtml(hubLabel(x))}</option>`).join('')}
 function setScale(n){graphScale=Math.min(2,Math.max(.65,graphScale*n));renderGraph()}
@@ -583,11 +634,15 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     line('web-card-status', e.tier === 'fec' ? 'FEC filing' : e.tier === 'itemized' ? 'Itemized filing' : e.tier === 'reported' ? 'Reported figure, not one single payment' : 'Context link, not a payment');
     if (amt != null && amt !== '') line('web-card-row', money_(amt));
     if (e.date) line('web-card-row', (solid ? 'Date: ' : 'Report date: ') + dateText(e.date));
-    if (solid && lastNet) {
+    if (solid && g.__pairEdges) {
+      const same = g.__pairEdges.filter(x => x.tier === 'itemized' || x.tier === 'fec');
+      if (same.length > 1) line('web-card-row', same.length + ' filings between these two dots: ' + money_(same.reduce((t, x) => t + (num(x.amount_usd) || 0), 0)) + ' in all');
+    } else if (solid && lastNet) {
       const same = lastNet.edges.filter(x => (x.a < x.b ? x.a + '|' + x.b : x.b + '|' + x.a) === g.__pair && (x.e.tier === 'itemized' || x.e.tier === 'fec'));
       if (same.length > 1) line('web-card-row', same.length + ' filings between these two dots: ' + money_(same.reduce((t, x) => t + (num(x.e.amount_usd) || 0), 0)) + ' in all');
     }
     if (e.jurisdiction) line('web-card-faint', e.jurisdiction);
+    if (g.__lvl2) line('web-card-faint', 'Second-level link: it does not touch the center of the web.');
     line('web-card-hint', (touch ? 'Tap the line again' : 'Click') + ': ' + (solid ? 'opens this filing' : 'opens this record') + ' in the Evidence inspector.');
     card.hidden = false;
     return true;
@@ -605,6 +660,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     }
     line('web-card-row', n.count + (n.count === 1 ? ' connection' : ' connections') + ' in this web');
     if (n.itemized > 0) line('web-card-row', money_(n.itemized) + ' in itemized filings on these lines');
+    else if (n.level === 2 && n.repMax > 0) line('web-card-row', 'Largest reported figure on these lines: ' + money_(n.repMax) + ' (not added up)');
+    if (n.level === 2 && n.viaNames) line('web-card-faint', 'Second-level: linked to ' + n.viaNames.join(', '));
     if (n.jur) line('web-card-faint', n.jur);
     if (!/reported[-_]name/.test(n.id)) line('web-card-faint', 'ID ' + n.id);
     let hint = g.__root ? 'This is the center of the web.' : mb ? 'opens this measure and its money' : 'puts this dot in the center';
@@ -939,9 +996,19 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     btn.textContent = hide ? 'Show numbers' : 'Hide numbers';
     btn.setAttribute('aria-pressed', hide ? 'true' : 'false');
     if (save) { try { localStorage.setItem(KEY, hide ? 'off' : 'on'); } catch (e) { /* private window: not remembered */ } }
+    if (save && view === 'network') renderGraph(); // D239: the lighter second-level names get the room the numbers leave
   }
   let start = false;
   try { start = localStorage.getItem(KEY) === 'off'; } catch (e) { start = false; }
   set(start, false);
   btn.addEventListener('click', () => set(!wrap.classList.contains('mt-nonums'), true));
+})();
+
+// D239: "Show second-level links" next to "Include reported context" turns the lighter ring on and off. On by default,
+// remembered on this device.
+(function () {
+  const box = $('#web-second');
+  if (!box) return;
+  box.checked = web2On;
+  box.addEventListener('change', () => { web2On = box.checked; try { localStorage.setItem(WEB2_KEY, web2On ? 'on' : 'off'); } catch (e) { /* private window: not remembered */ } if (view === 'network') renderGraph(); });
 })();
