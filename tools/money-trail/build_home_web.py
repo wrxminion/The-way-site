@@ -11,11 +11,12 @@ What it makes:
   A name from the list opens its money web on the Money Trail page; anything else opens a Money Trail search.
 - A web for one group, picked at random each time the page opens (site/money-trail/home-web.js).
   The random pick is fair by side: it first picks a side at random (Democratic side, Republican side,
-  ballot measure Yes, ballot measure No), then a group on that side, so a side with more groups in the
-  archive does not show up more often. Groups with no known side are searchable but not in the random pick.
+  ballot measure Yes, ballot measure No, no side recorded), then a group on that side, so a side with more
+  groups in the archive does not show up more often. "Show another" then takes turns between the sides and
+  goes through every group once before any group repeats.
 - The records are the same ones the Money Trail page loads: money-trail/data.js (the Nov 5 archive),
   money-trail/fec-data.js (FEC batches) and money-trail/mi-filings.js (Michigan state filings).
-- A group can be picked only when its own filings are in the archive and its web has at least 6 names.
+- A group can be picked only when its own filings are in the archive and its web has at least 4 names.
 - Each web shows up to 8 of the largest amounts in or out, by dollars. People are never shown.
 Styles live in site/home.css (.mw-*).
 """
@@ -83,7 +84,7 @@ for c in M['committees']:
 DEM = {'C00484642', 'C00495028', 'C00669259', 'C00000935', 'C00042366', 'C00010603', 'C00492140', 'C00495861', 'C00530766',
        'C00193433', 'C00486845', 'C00004036'}
 REP = {'C00571703', 'C00504530', 'C00003418', 'C00075820', 'C00027466', 'C00487470', 'C00687103', 'C00559740'}
-SIDES = [('D', 'Democratic side'), ('R', 'Republican side'), ('yes', 'Ballot measure, Yes side'), ('no', 'Ballot measure, No side')]
+SIDES = [('D', 'Democratic side'), ('R', 'Republican side'), ('yes', 'Ballot measure, Yes side'), ('no', 'Ballot measure, No side'), ('x', 'No side recorded')]
 stance = {}
 for p_ in R['positions']:
     stance.setdefault(p_['entity_name'].upper(), set()).add(p_['stance'])
@@ -185,10 +186,9 @@ def web(hub):
 pool = []  # (side, hub) for every group that can be the random pick
 for i in sorted(cnt, key=lambda i: (-cnt[i], -amt[i])):
     if i not in filer: continue
-    sd = side_of(i, names[i])
-    if not sd: continue
+    sd = side_of(i, names[i]) or 'x'  # no guessing: a group with no known side gets its own turn
     w, n_spokes = web(i)
-    if n_spokes >= 6: pool.append((sd, i, w))
+    if n_spokes >= 4: pool.append((sd, i, w))
 order = [k for k, _ in SIDES]
 pool.sort(key=lambda x: order.index(x[0]))  # without JavaScript the first one shows
 panels = []
@@ -213,10 +213,10 @@ band = ('<section class="mapband moneyband" id="followmoney" aria-labelledby="fm
         '<div class="mw-search-row"><input id="mw-q" name="q" type="search" list="mw-names" autocomplete="off" spellcheck="false" placeholder="Try GOPAC or DCCC"><button type="submit">Follow</button></div>'
         '<datalist id="mw-names"></datalist></form>'
         '</div>\n'
-        '<div class="moneyweb"><p class="mw-random"><span>A group picked at random</span><button type="button" class="mw-another" hidden>Show another</button></p>' + ''.join(panels) + '<p class="mw-key"><span class="mw-in">Recorded in</span> <span class="mw-out">Recorded out</span></p>'
+        '<div class="moneyweb"><p class="mw-random"><span>A group picked at random from ' + str(len(pool)) + '</span><button type="button" class="mw-another" hidden>Show another</button></p>' + ''.join(panels) + '<p class="mw-key"><span class="mw-in">Recorded in</span> <span class="mw-out">Recorded out</span></p>'
         '<a class="cta join-cta" href="/money-trail/">Open the Money Trail <span aria-hidden="true">&rarr;</span></a><a class="text-link" href="/money-trail/?view=network">See the full money web</a>'
         '<p class="mw-note">Amounts are the itemized records in Michi’s research archive, added up. They are not each group’s full totals. '
-        'The random pick takes turns fairly between sides, not by size. More committees are still being added. A link between two names does not mean anyone did anything wrong.</p></div></section>\n')
+        'The first group is picked fairly between sides, not by size. Show another goes through all ' + str(len(pool)) + ' groups before any repeats. More committees are still being added. A link between two names does not mean anyone did anything wrong.</p></div></section>\n')
 
 p = ROOT + 'index.html'; t = open(p, encoding='utf-8').read()
 a = t.index('<section class="mapband moneyband"'); b = t.index('</section>\n', a) + len('</section>\n')
