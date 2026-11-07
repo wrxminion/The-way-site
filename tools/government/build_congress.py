@@ -26,7 +26,7 @@ import unicodedata
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 OUT = os.path.join(ROOT, 'site', 'government', 'congress')
 SITE_URL = 'https://michiinstitute.com'
-CSS_V = '5'
+CSS_V = '6'  # D229: 6 adds the 3 by 3 justice cards and their Money web links
 JS_V = '2'
 
 STATES = {
