@@ -182,3 +182,7 @@
 .mw-lab{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a9c6cc;margin-bottom:4px}
 .mw-none{font-size:15px;color:#d9f2f2;max-width:16em;line-height:1.35}
 .mw-asof{display:block;flex-basis:100%;font-size:13px;color:#a9c6cc}
+/* D244: front page money web, the top two groups from each kind of group */
+.mw-kind{font-size:12px!important;letter-spacing:.1em;text-transform:uppercase;color:#a9c6cc!important;margin:0 0 8px!important;font-weight:700}
+.mw-kind~.mw-tabs{margin-bottom:16px}
+.mw-kindtag{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#a9c6cc;margin:0 0 6px;font-weight:700}
