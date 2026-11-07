@@ -545,17 +545,77 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   const sel = $('#hub'), sortSel = $('#hub-sort'), box = $('#web-search'), list = $('#web-search-results');
   if (!sel) return;
   const info = new Map();
-  const get = nm => { const k = norm(nm); let t = info.get(k); if (!t) info.set(k, t = { name: nm, item: 0, links: 0, repMax: 0 }); return t; };
+  const get = nm => { const k = norm(nm); let t = info.get(k); if (!t) info.set(k, t = { name: nm, item: 0, links: 0, repMax: 0, types: new Set(), flags: new Set() }); return t; };
   [...networkVerified, ...networkContext].forEach(e => {
     const amt = num(e.amount_usd) || 0, solid = e.tier === 'itemized' || e.tier === 'fec';
-    for (const nm of [e.from_name, e.to_name]) { if (!nm) continue; const t = get(nm); t.links++; if (solid) t.item += amt; else if (e.tier === 'reported') t.repMax = Math.max(t.repMax, amt); }
+    for (const [nm, id, side] of [[e.from_name, e.from_entity_id, 'from'], [e.to_name, e.to_entity_id, 'to']]) {
+      if (!nm) continue; const t = get(nm); t.links++; if (solid) t.item += amt; else if (e.tier === 'reported') t.repMax = Math.max(t.repMax, amt);
+      const ent = id && entityById[id]; if (ent && ent.entity_type) t.types.add(String(ent.entity_type));
+      // D219: lines built from the laws (budgets-view.js) say which end is an agency and which is a recipient.
+      if (side === 'to' && /^LAW-.*-AG-/.test(e.id || '')) t.flags.add('agency');
+      if (side === 'to' && /^LAW-.*-RC-/.test(e.id || '')) t.flags.add('recipient');
+      if (side === 'from' && e.edge_type === 'vote_nonfinancial_context') t.flags.add('congress');
+    }
   });
+  (RESEARCH.entities || []).forEach(x => { if (x.entity_type === 'federal agency') { const t = info.get(norm(x.legal_or_reported_name)); if (t) t.flags.add('agency'); } });
+
+  // ---- D219 (Nov 2026): a "Kind" list next to the center list. Picking a kind lists every name of that kind in the web.
+  // Kinds come from the entity types already in the data (and from the law lines). A name with no entity record is sorted
+  // by plain words in its name, and anything still unclear goes to "Other names", never guessed into a kind.
+  const KINDS = [
+    ['law', 'Federal laws'],
+    ['agency', 'Federal departments and agencies'],
+    ['recipient', 'Recipients of federal law money'],
+    ['congress', 'Congress (votes on the laws)'],
+    ['measure', 'Ballot measures'],
+    ['party', 'Party committees'],
+    ['candidate', 'Candidates and candidate committees'],
+    ['pac', 'PACs and Super PACs'],
+    ['ballotcmte', 'Ballot measure committees'],
+    ['union', 'Unions and teacher groups'],
+    ['person', 'People named in filings'],
+    ['payee', 'Payees and vendors'],
+    ['donor', 'Donors not yet matched to a legal ID'],
+    ['gov', 'State and local government offices'],
+    ['other', 'Other names']
+  ];
+  const typeKind = ty => /party/i.test(ty) ? 'party' : /candidate/i.test(ty) ? 'candidate' : /ballot measure$/i.test(ty) ? 'measure'
+    : /ballot (support |opposition )?committee|issue committee|referendum committee|ballot_group|campaign committee/i.test(ty) ? 'ballotcmte'
+    : /labor|education association|NEA/i.test(ty) ? 'union' : /\bPAC\b|political action|political committee|Committee \(FEC\)|hybrid|super pac/i.test(ty) ? 'pac'
+    : /payee|vendor/i.test(ty) ? 'payee' : /municipal|public body|election authority/i.test(ty) ? 'gov'
+    : /donor|contributor|electioneering/i.test(ty) ? 'donor' : '';
+  const nameKind = nm => /^(YES|NO)\b|\b(YES|NO) ON\b|\bVOTE (YES|NO)\b/i.test(nm) ? 'ballotcmte' : /\bPARTY\b|\bDCCC\b|\bDSCC\b|\bNRCC\b|\bNRSC\b|DEMOCRATIC NATIONAL|REPUBLICAN NATIONAL/i.test(nm) ? 'party'
+    : /\bSEIU\b|\bAFL-CIO\b|\bUNION\b|TEACHERS ASSOC|EDUCATION ASSOC|\bAFSCME\b|\bTEAMSTERS\b/i.test(nm) ? 'union' : /\bPAC\b|SUPER PAC|ACTION FUND|VICTORY FUND|MAJORITY FUND/i.test(nm) ? 'pac' : '';
+  // Same person rule as the Person tracker (D198): "LAST, FIRST" with no organization word, or a candidate named in a summary.
+  const ORG_WORD2 = /\b(INC|LLC|PAC|FUND|COMMITTEE|COMM|ASSOC|ASSOCIATION|UNION|COUNCIL|PARTY|CAUCUS|CHURCH|PROJECT|FOUNDATION|TRUST|CAMPAIGN|NETWORK|ACTION|LEAGUE|COALITION|CORP|CORPORATION|SOCIETY|CENTER|ALLIANCE|COLORADO|AMERICA|LOCAL)\b/i;
+  const looksPerson2 = n => { const p = String(n).split(','); return p.length === 2 && !ORG_WORD2.test(n) && p.every(x => { const w = x.trim().split(/\s+/); return w[0] && w.length <= 3; }); };
+  const kindOf = nm => {
+    const up = String(nm).toUpperCase();
+    if (lawOf(up)) return 'law';
+    if (ballotById[nm]) return 'measure';
+    const t = info.get(norm(nm)); if (!t) return 'other';
+    for (const f of ['agency', 'congress', 'recipient']) if (t.flags.has(f)) return f;
+    const order = KINDS.map(k => k[0]); let best = '';
+    for (const ty of t.types) { const k = typeKind(ty); if (k && (!best || order.indexOf(k) < order.indexOf(best))) best = k; }
+    if ([...t.types].some(ty => /candidate_named/i.test(ty)) || looksPerson2(nm)) return 'person';
+    // "Donor" and "payee" only say how a name showed up on a filing, so plain words in the name (YES ON, SEIU, PAC) win over them.
+    if (!best || best === 'donor' || best === 'payee') return nameKind(up) || best || 'other';
+    return best;
+  };
+  let kind = 'all';
+  const kindNames = k => { const out = []; for (const t of info.values()) if (kindOf(t.name) === k) out.push(t.name); if (k === 'law') ((window.TW_LAWS || {}).laws || []).forEach(l => { const nm = String(l.name || l.bill || '').toUpperCase(); if (lawOf(nm) && !out.some(x => x.toUpperCase() === nm)) out.push(nm); }); return out; };
+  const kindSel = $('#hub-kind');
+  if (kindSel) {
+    const counts = {}; for (const t of info.values()) { const k = kindOf(t.name); counts[k] = (counts[k] || 0) + 1; }
+    counts.law = kindNames('law').length;
+    kindSel.replaceChildren(...[['all', 'Main list']].concat(KINDS.filter(([k]) => counts[k]).map(([k, l]) => [k, l + ' (' + counts[k] + ')'])).map(([v, l]) => { const o = document.createElement('option'); o.value = v; o.textContent = l; return o; }));
+  }
   const sizeOf = nm => { const law = lawOf(String(nm).toUpperCase()); if (law) return { v: law.total, how: 'promised' }; const t = info.get(norm(nm)) || {}; if (t.item > 0) return { v: t.item, how: 'in filings' }; if (t.repMax > 0) return { v: t.repMax, how: 'reported' }; return { v: 0, how: '' }; };
   const linksOf = nm => (info.get(norm(nm)) || {}).links || 0;
   const sizeText = nm => { const z = sizeOf(nm); return z.v > 0 ? webMoney(z.v) + ' ' + z.how : 'no dollar lines'; };
   let order = 'size';
   const sorted = () => {
-    const a = hubs.slice();
+    const a = kind === 'all' ? hubs.slice() : kindNames(kind);
     if (order === 'az') a.sort((x, y) => hubLabel(x).localeCompare(hubLabel(y)));
     else if (order === 'za') a.sort((x, y) => hubLabel(y).localeCompare(hubLabel(x)));
     else if (order === 'links') a.sort((x, y) => linksOf(y) - linksOf(x) || hubLabel(x).localeCompare(hubLabel(y)));
@@ -564,8 +624,11 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   };
   // The list is rebuilt the same way everywhere, and keeps showing the dot in the center.
   prepareHubRefresh = function () {
-    sel.replaceChildren(...sorted().map(x => { const o = document.createElement('option'); o.value = x; o.textContent = hubLabel(x) + ' · ' + (order === 'links' ? linksOf(x) + ' connections' : sizeText(x)); return o; }));
-    if (!hubs.includes(graphHub)) { hubs.push(graphHub); return prepareHubRefresh(); }
+    const list = sorted(), opt = x => { const o = document.createElement('option'); o.value = x; o.textContent = hubLabel(x) + ' · ' + (order === 'links' ? linksOf(x) + ' connections' : sizeText(x)); return o; };
+    if (kind === 'all' && !hubs.includes(graphHub)) { hubs.push(graphHub); return prepareHubRefresh(); }
+    // A center from another kind (a dot clicked in the web) stays on top of the list so it is still shown.
+    if (kind !== 'all' && !list.includes(graphHub)) list.unshift(graphHub);
+    sel.replaceChildren(...list.map(opt));
     sel.value = graphHub;
   };
   function go(name) {
@@ -574,6 +637,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if ($('#network-view').hidden) setView('network'); else renderGraph();
   }
   if (sortSel) sortSel.addEventListener('change', () => { order = sortSel.value; prepareHubRefresh(); });
+  // D219: picking a kind fills the center list with that kind and puts the first one (by the chosen sort) in the center.
+  if (kindSel) kindSel.addEventListener('change', () => { kind = kindSel.value; const first = sorted()[0]; if (first && kind !== 'all') go(first); else prepareHubRefresh(); });
 
   // Search: any name with a line in the web. Words can be in any order. Best matches first, then the largest.
   if (box && list) {

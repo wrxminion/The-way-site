@@ -203,3 +203,5 @@ body:not(.mt-webfull) .web-card:not([hidden]){display:block;position:fixed;z-ind
 /* D218: lines are clicked through their wide see-through hit line */
 .graph-edge{pointer-events:none}
 .graph-edge-hit{pointer-events:stroke;cursor:pointer}
+/* D219: Kind list next to the center list */
+.mt-hub-pick #hub-kind{flex:0 1 auto;max-width:100%;background:#071c28;color:#e0f2ed;border:1px solid #315a64;padding:10px;border-radius:8px}
