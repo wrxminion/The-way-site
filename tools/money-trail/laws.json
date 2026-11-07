@@ -1,0 +1,15 @@
+{
+ "note": "Laws the Money Trail follows. Each one has its own USAspending spending code (disaster emergency fund code). follow_laws.py checks every code against USAspending's official list and against the Library of Congress bill record before anything is used. recipients: 'infrastructure' = award search ranked by Infrastructure Obligations, 'disaster' = the disaster recipient page (it counts only the code's dollars; works for COVID-19 codes), 'none' = no public source counts only this law's dollars per recipient.",
+ "laws": [
+  {"key": "iija", "congress": 117, "type": "hr", "number": 3684, "codes": ["1", "Z"], "recipients": "infrastructure", "start": "2021-11-15"},
+  {"key": "arpa", "congress": 117, "type": "hr", "number": 1319, "codes": ["V"], "recipients": "disaster"},
+  {"key": "cares", "congress": 116, "type": "hr", "number": 748, "codes": ["N"], "recipients": "disaster",
+   "code_note": "Spending code O also carries some CARES Act money, but code O is shared with three other laws, so it is left out."},
+  {"key": "ffcra", "congress": 116, "type": "hr", "number": 6201, "codes": ["M"], "recipients": "disaster"},
+  {"key": "ppphcea", "congress": 116, "type": "hr", "number": 266, "codes": ["P"], "recipients": "disaster"},
+  {"key": "cprsaa", "congress": 116, "type": "hr", "number": 6074, "codes": ["L"], "recipients": "disaster"},
+  {"key": "bsca", "congress": 117, "type": "s", "number": 2938, "codes": ["7"], "recipients": "none"},
+  {"key": "ukraine-2022", "congress": 117, "type": "hr", "number": 7691, "codes": ["6"], "recipients": "none"},
+  {"key": "relief-2025", "congress": 118, "type": "hr", "number": 10545, "codes": ["AAK"], "recipients": "none"}
+ ]
+}

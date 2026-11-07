@@ -36,18 +36,28 @@
  [14085950,'Obligated to CoreCivic · award 70CDCR26FR0000058','USAspending award record','https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000058_7012_70CDCR26D00000029_7012/','Nov 5, 2026'],
  [77625819.39,'Obligated to The GEO Group · award 70CDCR26FR0000042','USAspending award record','https://www.usaspending.gov/award/CONT_AWD_70CDCR26FR0000042_7012_70CDCR20D00000008_7012/','Nov 5, 2026']]],
  ];
- // D201: one law followed, from budgets.js (public USAspending and House Clerk records). Only dollars tagged to the law.
- const LAW = window.TW_BUDGETS && window.TW_BUDGETS.law;
- if (LAW && LAW.overview) {
-  const ov = LAW.overview, sp = ov.spending || {}, asOf = new Date(String(LAW.retrieved).slice(0,10)+'T12:00:00Z').toLocaleDateString('en-US',{timeZone:'UTC',month:'short',day:'numeric',year:'numeric'});
-  const h = (LAW.votes||{}).house, us = 'https://www.usaspending.gov/search';
-  const amounts = [[ov.total_budget_authority,'Given to agencies by the law (budget authority, spending codes '+LAW.codes.join(' and ')+')','USAspending',us,asOf],
-   [sp.total_obligations,'Promised so far (obligated)','USAspending',us,asOf],[sp.total_outlays,'Paid out so far (outlays)','USAspending',us,asOf]];
+ // D201, D208: laws followed, from laws.js (Library of Congress, House Clerk and USAspending records). Only dollars tagged to each law.
+ const LAWS = ((window.TW_LAWS||{}).laws||[]).filter(l=>l&&l.overview);
+ const lawAlias = {}, lawSlug = {};
+ const PARTY = {Democratic:'Democrats',Republican:'Republicans',Independent:'Independents'};
+ for (const LAW of LAWS) {
+  const ov = LAW.overview, asOf = new Date(String(LAW.retrieved).slice(0,10)+'T12:00:00Z').toLocaleDateString('en-US',{timeZone:'UTC',month:'short',day:'numeric',year:'numeric'});
+  const signed = LAW.signed ? new Date(LAW.signed+'T12:00:00Z').toLocaleDateString('en-US',{timeZone:'UTC',month:'long',day:'numeric',year:'numeric'}) : '';
+  const v = LAW.votes||{}, h = v.house, s = v.senate, us = 'https://www.usaspending.gov/search';
+  const amounts = [[ov.total_budget_authority,'Given to agencies by the law (budget authority, spending code'+(LAW.codes.length>1?'s ':' ')+LAW.codes.join(' and ')+')','USAspending',us,asOf],
+   [ov.total_obligations,'Promised so far (obligated)','USAspending',us,asOf],[ov.total_outlays,'Paid out so far (outlays)','USAspending',us,asOf]];
   (LAW.agencies||[]).filter(a=>a.obligation>0).slice(0,6).forEach(a=>amounts.push([a.obligation,'Promised by '+a.description,'USAspending',us,asOf]));
-  (LAW.recipients||[]).slice(0,8).forEach(r=>amounts.push([r.obligation,'Promised to '+r.description+(r.award_count>1?' ('+r.award_count+' awards)':''),'USAspending recipient',r.id?'https://www.usaspending.gov/recipient/'+encodeURIComponent(r.id)+'/latest':us,asOf]));
-  supplemental.push(['iija','H.R. 3684 · Infrastructure Investment and Jobs Act','Federal law · P.L. 117-58 · 117th Congress',
-   'Signed November 15, 2021.'+(h?' Final House vote '+h.totals.Yea+' to '+h.totals.Nay+': Democrats '+h.by_party.Democratic.Yea+' yes and '+h.by_party.Democratic.Nay+' no, Republicans '+h.by_party.Republican.Yea+' yes and '+h.by_party.Republican.Nay+' no.':'')+' The Senate vote is not loaded yet. Amounts count only dollars USAspending tags to this law. The recipients are the largest awards found, not every award. What the money accomplished is not in this data yet.',
-   [['Congress · H.R. 3684 bill page',LAW.bill_page],['Enacted law text (P.L. 117-58)',LAW.law_text]].concat(h?[['House Clerk · roll call '+h.roll,h.source]]:[]), amounts]);
+  ((LAW.recipients||{}).rows||[]).slice(0,8).forEach(r=>amounts.push([r.obligation,'Promised to '+r.description+(r.award_count>1?' ('+r.award_count+' awards)':''),'USAspending recipient',r.id?'https://www.usaspending.gov/recipient/'+encodeURIComponent(r.id)+'/latest':us,asOf]));
+  const parties = x => Object.entries(x.by_party||{}).filter(([,q])=>q.Yea+q.Nay>0).map(([n,q])=>(PARTY[n]||n)+' '+q.Yea+' yes and '+q.Nay+' no').join(', ');
+  const house = !h ? '' : h.how==='roll call' ? ' Final House vote '+h.totals.Yea+' to '+h.totals.Nay+(parties(h)?': '+parties(h):'')+'.' : ' The House passed it by '+h.how+', with no member-by-member record.';
+  const senate = !s ? '' : s.how==='roll call' ? ' Final Senate vote '+s.totals.Yea+' to '+s.totals.Nay+' (record vote '+s.roll+').' : ' The Senate passed it by '+s.how+'.';
+  const n = String(LAW.bill).replace(/[^A-Za-z0-9]/g,'').toLowerCase(), num = LAW.public_law.replace('P.L. ','');
+  supplemental.push([LAW.key, LAW.bill+' · '+LAW.name, 'Federal law · '+LAW.public_law+' · '+LAW.congress+'th Congress',
+   'Signed '+signed+'.'+house+senate+' Amounts count only dollars USAspending tags to this law.'+(LAW.recipients?' The recipients are the largest found, not every one.':'')+' What the money accomplished is not in this data yet.',
+   [['Congress · '+LAW.bill+' bill page',LAW.bill_page],['Library of Congress · bill record',LAW.bill_record]].concat(LAW.law_text?[['Enacted law text ('+LAW.public_law+')',LAW.law_text]]:[])
+    .concat(h&&h.source?[['House Clerk · roll call '+h.roll,h.source]]:[]).concat(s&&s.source?[['Senate · record vote '+s.roll,s.source]]:[]), amounts]);
+  for (const a of [LAW.key, LAW.slug, n, LAW.congress+'-'+LAW.slug, LAW.congress+'-'+n, 'pl-'+num, 'pl'+num.replace('-','')]) lawAlias[a] = LAW.key;
+  lawSlug[LAW.key] = LAW.slug;
  }
  const subjects = new Map();
  const add = (id, entry) => subjects.set(id, entry);
@@ -60,11 +70,11 @@
  for (const [id,name,state,date,url] of data.ballots) add('ballot:'+id,{id,name:id+' · '+name,type:state+' ballot measure',note:'Election '+date+'. Positions and reporting are shown as context. This archive has no itemized transaction directly tagged to this measure.',kind:'ballot',links:[['Official ballot source',url]]});
  // optional 6th item: dollar amounts from the linked public record, as [amount, what it is, source, url, as of]
  for (const [id,name,type,note,links,amounts] of supplemental) add(id,{id,name,type,note,links,amounts:amounts||[],kind:'source'});
- const featured = ['fec:C00559740','ballot:CO-87','leo','marble','tarp','iija','corecivic','geo','ice'];
+ const featured = ['fec:C00559740','ballot:CO-87','leo','marble','tarp',...LAWS.map(l=>l.key),'corecivic','geo','ice'];
  const ordered = [...featured.filter(id=>subjects.has(id)), ...[...subjects.keys()].filter(id=>!featured.includes(id)).sort((a,b)=>subjects.get(a).name.localeCompare(subjects.get(b).name))];
  const categories = ['candidate','measure','bill','group','contractor','agency','person'];
  const aliases = {
- bill:{'hr-1424':'tarp','hr1424':'tarp','110-hr1424':'tarp','110-hr-1424':'tarp','tarp':'tarp','hr-3684':'iija','hr3684':'iija','117-hr-3684':'iija','iija':'iija','pl-117-58':'iija'},
+ bill:{'hr-1424':'tarp','hr1424':'tarp','110-hr1424':'tarp','110-hr-1424':'tarp','tarp':'tarp',...lawAlias},
  group:{'gopac':'fec:C00559740','c00559740':'fec:C00559740','marble-freedom-trust':'marble','85-0784793':'marble'},
  contractor:{'corecivic-inc':'corecivic','the-geo-group':'geo','the-geo-group-inc':'geo'},
  agency:{'immigration-and-customs-enforcement':'ice','us-immigration-and-customs-enforcement':'ice'},
@@ -73,7 +83,8 @@
  function category(key, subject) {
  if (subject.kind === 'ballot') return 'measure';
  if (subject.kind === 'entity') return /candidate_named/.test(subject.type)?'candidate':'group';
- return {tarp:'bill',iija:'bill',leo:'person',marble:'group',corecivic:'contractor',geo:'contractor',ice:'agency'}[key];
+ if (lawSlug[key]) return 'bill';
+ return {tarp:'bill',leo:'person',marble:'group',corecivic:'contractor',geo:'contractor',ice:'agency'}[key];
  }
  function slug(value) {
  return normalize(value).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
@@ -199,7 +210,7 @@
  }
  get('#trail-title').textContent = s.name;
  const type = category(selected,s);
- const value = type==='measure'?s.id.toLowerCase():selected==='tarp'?'110-hr1424':selected==='leo'?'leonard-leo':selected;
+ const value = type==='measure'?s.id.toLowerCase():selected==='tarp'?'110-hr1424':selected==='leo'?'leonard-leo':lawSlug[selected]||selected;
  get('#trail-permalink').textContent = 'Link to this trail: michiinstitute.com/money-trail/follow.html?'+type+'='+encodeURIComponent(value);
  get('#trail-note').textContent = s.type + '. ' + (s.note || 'Itemized ledger matches the archive’s entity ID. Name matches and other relationships appear separately below.');
  const links = get('#trail-links');
