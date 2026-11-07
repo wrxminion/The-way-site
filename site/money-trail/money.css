@@ -170,3 +170,14 @@ body.mt-webfull .detail-close{display:block}
 .mt-preview-note{font-size:12px;font-weight:700;color:#071c28;background:#e9d59d;border-radius:6px;padding:6px 10px;margin:0 0 10px}
 .graph-edge.mt-hovered{opacity:1;stroke-width:3.2}
 .graph-node.mt-hovered circle{stroke:#f4fffb;stroke-width:3}
+/* D214: dollar totals on the Money web dots and lines, and in the inspector */
+.graph-node text.graph-money{font-size:12px;font-weight:800;fill:#e9d59d}
+.graph-node text.graph-money.reported{font-weight:600;fill:#c9b48c}
+.graph-amounts{pointer-events:none}
+.graph-amount{font-size:10.5px;font-weight:700;paint-order:stroke;stroke:#071824;stroke-width:3px;stroke-linejoin:round;fill:#8fe3d1}
+.graph-amount.fec{fill:#cfc2f7}.graph-amount.reported{fill:#d8bf8f;font-style:italic}
+.mt-web-total{border:1px solid #315a64;border-radius:10px;padding:12px 14px;margin:6px 0 14px;background:#0b2532}
+.mt-web-total .key{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mt-web-total .mt-big{margin:4px 0 8px}
+.mt-web-total p{margin:6px 0}.mt-web-total p b{color:#edf9f7}
+.mt-web-total .mt-web-total-note{font-size:11px;opacity:.85}

@@ -63,7 +63,7 @@ fetch('measure-results.json?t='+Math.floor(Date.now()/60000),{cache:'no-store'})
   list.forEach(([mid,id])=>{const c=(d.contests||[]).find(k=>k.id===id);if(c)measureOutcome[mid]=readOutcome(c,d)})})))}).catch(()=>null).then(()=>{if(view==='network')renderGraph();if(selected&&selected.record_kind==='ballot')details(selected)});
 const events=[...RESEARCH.transactions,...RESEARCH.ballots,...RESEARCH.reported_observations];
 const eventMap=Object.fromEntries(events.map(e=>[e.event_id,e]));
-let view='timeline',selected=null,visible=30,graphHub='GOPAC ELECTION FUND',stateFocus='CO',graphScale=1;
+let lastNet=null,view='timeline',selected=null,visible=30,graphHub='GOPAC ELECTION FUND',stateFocus='CO',graphScale=1;
 const settings={search:'',state:'ALL',kind:'all',direction:'desc',minimum:0,showReported:true,includeContext:true};
 function stateOf(e){if(e.record_kind==='ballot')return e.state;
  let j=String(e.jurisdiction||'').toUpperCase();let a=j.match(/\b(CO|OK|CA|MA|VA|NC|MO|MI|NY|TX|FL|AZ|MN|GA|OH|WI|WA|KS|IA|NH|AK|NV|UT|OR|TN|PA|IL|NJ|SC|MD|IN|KY|LA|AL|CT|DE|HI|ID|ME|MS|MT|NE|NM|ND|RI|SD|VT|WV|WY|AR)\b/);
@@ -113,7 +113,7 @@ function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<h2 clas
  h+=datum('Report date (not necessarily transfer date)',dateText(e.date))+datum('Recorded date type',e.date_kind)+datum('Source as reported',e.source_name)+datum('Recipient as reported',e.recipient_name)+datum('Reported figure',money(e.amount_usd))+datum('Confidence',e.confidence)+datum('Reconciliation flag',e.reconciliation_flag)+datum('Recipient registration',e.recipient_registry_id);
  h+=sourceButton(e.source_url,'Open reported disclosure')+datum('Notes',e.notes);
  }else if(kind==='entity'){
- h+=datum('Name as reported',e.name)+datum('Entity type',e.entity_type)+datum('Registry ID',e.id)+datum('Jurisdiction',e.jurisdiction)+sourceButton(e.source_url,'Open registry record');
+ h+=webTotalsBox(e.web)+datum('Name as reported',e.name)+datum('Entity type',e.entity_type)+datum('Registry ID',e.id)+datum('Jurisdiction',e.jurisdiction)+sourceButton(e.source_url,'Open registry record');
  h+=`<div class="detail-caution">This is one dot in the money web. Click a line to see one connection and its filing.</div>`+datum('Notes',e.notes);
  }else{
  h+=datum('Connection type',e.edge_type)+datum('From (as reported)',e.from_name)+datum('To (as reported)',e.to_name)+datum('Amount or aggregate figure',e.amount_usd!=null?money(e.amount_usd):'Not a money link')+datum('Date',dateText(e.date))+datum('Date semantics',e.date_kind)+datum('Jurisdiction',e.jurisdiction)+datum('Confidence',e.confidence)+sourceButton(e.source_url,'Open source evidence');
@@ -146,10 +146,27 @@ function makeNetwork(){let edges=settings.includeContext?[...networkVerified,...
  nodes.get(a).count++;nodes.get(b).count++;
  nodes.get(a).amount+=num(e.amount_usd)||0;nodes.get(b).amount+=num(e.amount_usd)||0;if(e.tier==='itemized'||e.tier==='fec'){nodes.get(a).itemized=(nodes.get(a).itemized||0)+(num(e.amount_usd)||0);nodes.get(b).itemized=(nodes.get(b).itemized||0)+(num(e.amount_usd)||0)}
  display.push({a,b,e});}
- return {edges:display,nodes:[...nodes.values()],total:edges.length};}
+ // D214: dollar totals for each dot and for the hub, from every eligible line (not only the 85 drawn).
+ // Itemized and FEC filings are added up. Reported disclosures are kept apart and never added to them. Context links have no dollars here.
+ const tot={},hub={inAmt:0,inN:0,outAmt:0,outN:0,sameAmt:0,sameN:0,rep:0,repN:0,ids:new Set()};
+ for(let e of edges){const a=nodeKey(e.from_name,e.from_entity_id,e.jurisdiction),b=nodeKey(e.to_name,e.to_entity_id,e.jurisdiction),amt=num(e.amount_usd)||0,s=solid(e),rp=e.tier==='reported'&&amt>0;
+ for(const [id,side] of [[a,'out'],[b,'in']]){const t=tot[id]||(tot[id]={item:0,itemN:0,in:0,inN:0,out:0,outN:0,rep:0,repN:0});if(s){t.item+=amt;t.itemN++;t[side]+=amt;t[side+'N']++}else if(rp){t.rep+=amt;t.repN++}}
+ const fh=norm(e.from_name)===f,th=norm(e.to_name)===f;if(fh)hub.ids.add(a);if(th)hub.ids.add(b);
+ if(s){if(fh&&th){hub.sameAmt+=amt;hub.sameN++}else if(th){hub.inAmt+=amt;hub.inN++}else{hub.outAmt+=amt;hub.outN++}}else if(rp){hub.rep+=amt;hub.repN++}}
+ for(const n of nodes.values())n.tot=tot[n.id]||{item:0,itemN:0,in:0,inN:0,out:0,outN:0,rep:0,repN:0};
+ return {edges:display,nodes:[...nodes.values()],total:edges.length,hub};}
+// D214: what a dot's money total means, for the Evidence inspector. The hub (center name) gets its totals over all its lines; any other dot gets its lines with the hub.
+function webTotals(n){const net=lastNet;if(!net||!n)return null;if(n.central){const h=net.hub;return {hub:true,name:hubLabel(graphHub),ids:h.ids.size,total:h.inAmt+h.outAmt+h.sameAmt,inAmt:h.inAmt,inN:h.inN,outAmt:h.outAmt,outN:h.outN,sameAmt:h.sameAmt,sameN:h.sameN,rep:h.rep,repN:h.repN}}
+ const t=n.tot||{};return {hub:false,name:hubLabel(graphHub),total:t.item||0,inAmt:t.in||0,inN:t.inN||0,outAmt:t.out||0,outN:t.outN||0,rep:t.rep||0,repN:t.repN||0}}
+function filings(k){return k+' itemized filing'+(k===1?'':'s')}
+function webTotalsBox(w){if(!w)return '';let h=`<div class="mt-web-total"><div class="key">${w.hub?'Money on all its lines in this web':'Money on its lines with '+escapeHtml(w.name)}</div><div class="event-amount mt-big">${money_(w.total)}</div>`;
+ if(w.hub){h+=`<p>Received: <b>${money_(w.inAmt)}</b> in ${filings(w.inN)}. Sent: <b>${money_(w.outAmt)}</b> in ${filings(w.outN)}.</p>`;if(w.sameN)h+=`<p>Between records that share this name: <b>${money_(w.sameAmt)}</b> in ${filings(w.sameN)}.</p>`;if(w.ids>1)h+=`<p>Lines from ${w.ids} separate ID records that share this name are counted here. They may not be the same legal entity.</p>`}
+ else{if(w.outN)h+=`<p>Sent to ${escapeHtml(w.name)}: <b>${money_(w.outAmt)}</b> in ${filings(w.outN)}.</p>`;if(w.inN)h+=`<p>Received from ${escapeHtml(w.name)}: <b>${money_(w.inAmt)}</b> in ${filings(w.inN)}.</p>`;if(!w.outN&&!w.inN)h+=`<p>No itemized filing on these lines.</p>`}
+ if(w.repN)h+=`<p>Reported disclosures: <b>${money_(w.rep)}</b> in ${w.repN} report${w.repN===1?'':'s'}. Not added to the total, because they may repeat the same money.</p>`;
+ return h+`<p class="mt-web-total-note">Counts only the records in this page's data, with the filters now set. It is not the full amount this group raised or spent.</p></div>`}
 const NS='http://www.w3.org/2000/svg';
 function svgEl(tag,attrs,parent){let x=document.createElementNS(NS,tag);Object.entries(attrs||{}).forEach(([k,v])=>x.setAttribute(k,v));if(parent)parent.appendChild(x);return x}
-function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const net=makeNetwork();const names=new Map(net.nodes.map(n=>[n.id,n]));let roots=net.nodes.filter(n=>n.central).sort((a,b)=>b.count-a.count),root=roots[0];
+function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const net=makeNetwork();lastNet=net;const names=new Map(net.nodes.map(n=>[n.id,n]));let roots=net.nodes.filter(n=>n.central).sort((a,b)=>b.count-a.count),root=roots[0];
  const meta=`${net.total} eligible connections · ${net.edges.length} drawn (limit 85) · ${roots.length} separate ID nodes sharing hub name`;$('#graph-count').textContent=meta+' · Connections may refer to different legal entities with identical reported names.';
  if(!root||!net.edges.length){$('#network-desc').textContent='No connections match this hub and state filter. Clear the state filter or choose another hub.';svgEl('text',{x:560,y:320,'text-anchor':'middle',fill:'#a5c2c8'},svg).textContent='No documented connections in the selected filter';return;}
  $('#network-desc').textContent=`Showing ${net.edges.length} connections adjacent to ${hubLabel(graphHub)}. Point at a dot or a line to see it in the Evidence inspector. Click a line to keep it there, or a dot to explore its neighbors.`;
@@ -157,11 +174,18 @@ function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const n
  other.forEach((n,i)=>{const inner=i<Math.min(16,total);const sameName=n.central;const radius=sameName?68:inner?200:290;const idx=sameName?i:(inner?i: i-16);const span=sameName?Math.max(roots.length-1,1):inner?Math.min(16,total):Math.max(total-16,1);let angle=2*Math.PI*(idx/Math.max(span,1))-.5*Math.PI;pos[n.id]={x:cx+Math.cos(angle)*radius+(i%2?2:-2),y:cy+Math.sin(angle)*radius*.86};});
  let pan=svgEl('g',{transform:`translate(${cx*(1-graphScale)} ${cy*(1-graphScale)}) scale(${graphScale})`},svg);
  for(let {a,b,e} of net.edges){let A=pos[a],B=pos[b];if(!A||!B)continue;let tier=e.tier;let line=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:tier==='itemized'?'#57c2ad':tier==='fec'?'#b9a7f2':tier==='reported'?'#ad946c':'#659eb3','stroke-width':tier==='itemized'||tier==='fec'?'1.8':'1.3','stroke-dasharray':tier==='itemized'||tier==='fec'?'none':tier==='reported'?'7 5':'2 5',class:'graph-edge',opacity:'.7'},pan);svgEl('title',{},line).textContent=`${e.from_name} → ${e.to_name}\n${e.amount_usd!=null?money(e.amount_usd):'Non-financial'}\n${e.edge_type}`;line.__rec=e.record_ref||e;line.addEventListener('click',()=>pick(e.record_ref||e));}
+ // D214: the dollar amount along each line. Two dots with more than one filing between them show the sum of those filings.
+ {const pairs=new Map();for(let {a,b,e} of net.edges){if(!pos[a]||!pos[b])continue;const k=a<b?a+'|'+b:b+'|'+a;const p=pairs.get(k)||{a,b,item:0,itemN:0,fec:0,rep:0};const amt=num(e.amount_usd)||0;if(e.tier==='itemized'||e.tier==='fec'){p.item+=amt;p.itemN++;if(e.tier==='fec')p.fec++}else if(e.tier==='reported')p.rep+=amt;pairs.set(k,p)}
+ const lg=svgEl('g',{class:'graph-amounts'},pan);
+ for(const p of pairs.values()){const amt=p.itemN?p.item:p.rep;if(!(amt>0))continue;let A=pos[p.a],B=pos[p.b];if(Math.hypot(B.x-cx,B.y-cy)<Math.hypot(A.x-cx,A.y-cy))[A,B]=[B,A];const t=.6;
+ const tx=svgEl('text',{x:A.x+(B.x-A.x)*t,y:A.y+(B.y-A.y)*t+4,'text-anchor':'middle',class:'graph-amount '+(p.itemN?(p.fec===p.itemN?'fec':'itemized'):'reported')},lg);tx.textContent=shortMoney(amt)}}
  for(let n of net.nodes){let P=pos[n.id],isRoot=n.id===root.id;let group=svgEl('g',{class:'graph-node'},pan);group.__n=n;group.__root=isRoot;let circ=svgEl('circle',{cx:P.x,cy:P.y,r:isRoot?'24':n.central?'11':ballotById[n.name]?'13':Math.max(6,Math.min(14,7+n.count/4)),fill:(ballotById[n.name]&&outcomeColor(n.name))||(isRoot?'#6be3c9':n.central?'#c4b18a':'#4c9ba5')},group);if(ballotById[n.name]&&outcomeColor(n.name))circ.setAttribute('stroke','#ffffff'),circ.setAttribute('stroke-width','3');svgEl('title',{},group).textContent=`${n.name}\n${n.id}\n${n.count} connections`;
  if(isRoot||n.count>=2||other.indexOf(n)<17){let text=svgEl('text',{x:P.x,y:P.y+(isRoot?42:24),'text-anchor':'middle'},group);const mb=ballotById[n.name];let label=mb?mb.state+' '+measureName(mb).slice((stName[mb.state]||mb.state).length+1):n.name;label=label.length>24?label.slice(0,22)+'…':label;text.textContent=label;
  if(mb){let sub=svgEl('text',{x:P.x,y:P.y+(isRoot?60:40),'text-anchor':'middle',class:'graph-sub'},group);sub.textContent=mb.short_title.length>34?mb.short_title.slice(0,32)+'…':mb.short_title;const mo=measureOutcome[n.name];if(mo){let st=svgEl('text',{x:P.x,y:P.y+(isRoot?84:62),'text-anchor':'middle',class:'graph-status '+mo.status},group);st.textContent=mo.status==='passed'?'✓ PASSED':mo.status==='failed'?'✗ FAILED':'Not yet called';}}}
+ {const t=n.tot||{},mb=ballotById[n.name],mo=mb&&measureOutcome[n.name];const labeled=isRoot||n.count>=2||other.indexOf(n)<17;const dy=!labeled?(isRoot?42:24):mb?(mo?(isRoot?106:82):(isRoot?80:58)):(isRoot?62:40);
+ const amt=t.item>0?t.item:t.rep;if(amt>0){let m=svgEl('text',{x:P.x,y:P.y+dy,'text-anchor':'middle',class:'graph-money'+(t.item>0?'':' reported')},group);m.textContent=shortMoney(amt)+(t.item>0?'':' reported')}}
  group.addEventListener('click',()=>{const mb=ballotById[n.name];if(mb){pick({...mb});if(n.name!==graphHub){graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()}return;}
- if(n.name===graphHub){const ent=entityById[n.id];if(ent){pick({record_kind:'entity',name:ent.legal_or_reported_name,entity_type:tidy(ent.entity_type),source_url:ent.source_url,notes:ent.notes,jurisdiction:ent.jurisdiction,id:ent.entity_id})}return;}
+ if(n.name===graphHub){const ent=entityById[n.id];if(ent){pick({record_kind:'entity',name:ent.legal_or_reported_name,entity_type:tidy(ent.entity_type),source_url:ent.source_url,notes:ent.notes,jurisdiction:ent.jurisdiction,id:ent.entity_id,web:webTotals(n)})}else pick({record_kind:'entity',name:n.name,jurisdiction:n.jur,id:/reported[-_]name/.test(n.id)?'':n.id,web:webTotals(n)});return;}
  graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()});}
 }
 function prepareHubRefresh(){$('#hub').innerHTML=hubs.map(x=>`<option value="${escapeHtml(x)}">${escapeHtml(hubLabel(x))}</option>`).join('')}
@@ -488,9 +512,9 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   const canShow = () => !document.body.classList.contains('mt-webfull') && !(wb && wb.classList.contains('no-inspector')) && getComputedStyle(panel).display !== 'none';
   function nodeRecord(n) {
     const mb = ballotById[n.name]; if (mb) return { ...mb };
-    const ent = entityById[n.id];
-    if (ent) return { record_kind: 'entity', name: ent.legal_or_reported_name, entity_type: tidy(ent.entity_type), source_url: ent.source_url, notes: ent.notes, jurisdiction: ent.jurisdiction, id: ent.entity_id };
-    return { record_kind: 'entity', name: n.name, jurisdiction: n.jur, id: /reported[-_]name/.test(n.id) ? '' : n.id, notes: n.count + (n.count === 1 ? ' connection' : ' connections') + ' in this web.' };
+    const ent = entityById[n.id], web = webTotals(n);
+    if (ent) return { record_kind: 'entity', name: ent.legal_or_reported_name, entity_type: tidy(ent.entity_type), source_url: ent.source_url, notes: ent.notes, jurisdiction: ent.jurisdiction, id: ent.entity_id, web };
+    return { record_kind: 'entity', name: n.name, jurisdiction: n.jur, id: /reported[-_]name/.test(n.id) ? '' : n.id, notes: n.count + (n.count === 1 ? ' connection' : ' connections') + ' in this web.', web };
   }
   function show(target) {
     if (target === shownFor || !canShow()) return;
