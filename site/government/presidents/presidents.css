@@ -37,3 +37,12 @@
 .pc-payees strong{color:var(--sea)}
 .pc-payees .gv-muted{display:block}
 .pr-costs{margin-top:10px}
+/* Layer 3 / In History (stage 3) */
+.pr-research .pr-topic{font-size:1.25rem;font-weight:800;line-height:1.25;margin:6px 0 2px}
+.pr-sides{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.pr-side{border-left:3px solid var(--sea);padding:2px 0 2px 10px}
+.pr-side+.pr-side{border-left-color:#b9bbf5}
+.pr-side h4{margin:0 0 4px;font-size:.95rem}
+.pr-side p{margin:0}
+@media(max-width:600px){.pr-sides{grid-template-columns:1fr}}
+.pr-sub{margin:14px 0 4px;font-size:.95rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
