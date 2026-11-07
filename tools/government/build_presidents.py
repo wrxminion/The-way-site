@@ -31,6 +31,7 @@ import yaml
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_congress import ROOT, SITE_URL, e, full_name, git_info, long_date, ordinal, page  # noqa: E402
 from build_executive import presidencies  # noqa: E402
+from photos import figure_html  # noqa: E402  D230: building photos
 
 DATA = os.path.join(ROOT, 'tools', 'government', 'data', 'presidents')
 OUT = os.path.join(ROOT, 'site', 'government', 'presidents')
@@ -585,7 +586,7 @@ def fed_page(pres, fed_extra):
         '<a href="#picks">Who picks whom</a><a href="#money">Where the profits go</a><a href="#chairs">Every chair</a></nav>'
         # layer 1
         '<section id="parts" class="gv-sec"><div class="gw-heading"><span>Layer 1 / The two parts</span><h2>One agency, 12 banks.</h2></div>'
-        '<div class="gv-two"><article class="gw-card"><p class="gw-eyebrow">Washington, D.C.</p><h3>The Board of Governors</h3>'
+        '<div class="gv-two"><article class="gw-card">' + figure_html('fed') + '<p class="gw-eyebrow">Washington, D.C.</p><h3>The Board of Governors</h3>'
         '<p>A federal agency. The Fed says the Board “is an agency of the federal government that reports to and is directly accountable to Congress.”</p>'
         '<ul class="gv-list"><li>7 governors, each for a staggered 14-year term</li><li>Nominated by the President, confirmed by the Senate</li>'
         '<li>The Chair and Vice Chair serve four-year terms and can be appointed again</li></ul><p>%s</p></article>'

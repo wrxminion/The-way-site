@@ -124,3 +124,10 @@
 .gv-web{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:.84rem;font-weight:700;line-height:1.2;color:#06141e!important;background:var(--sea);border:1px solid var(--sea);border-radius:999px;padding:5px 12px 5px 6px;text-decoration:none}
 .gv-web img{width:22px;height:24px;border-radius:5px;flex:none;border:1px solid #2f6b70;background:#06161d}
 .gv-web:hover,.gv-web:focus-visible{color:#06141e!important;background:#c2f0e7;border-color:#c2f0e7}
+/* D230: building photos (tools/government/photos.py). Credit line under each photo. */
+.gv-photo{margin:0 0 14px}
+.gv-photo img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:#102c39}
+.gv-photo figcaption{font-size:.72rem;line-height:1.4;color:var(--muted);margin-top:6px}
+.gv-photo figcaption a{color:var(--muted)}
+.gv-photo-wide{margin:0 0 22px}
+.gv-photo-wide img{aspect-ratio:auto;max-height:460px}
