@@ -134,18 +134,21 @@ def must_yield(cfg):
                 return 'another model is loaded in Ollama: ' + str(m.get('name'))
     except (urllib.error.URLError, OSError, ValueError) as e:
         return 'Ollama not reachable: ' + str(e)
-    ps1 = cfg.get('busy_check_ps1')
-    if ps1 and os.path.exists(ps1):
+    # The machine's busy check runs in this process: busy_check_py is a Python file whose check() returns ''
+    # when the machine is free, else a short reason. No PowerShell or console program is started, because a
+    # console started from a windowless scheduled job flashes a window over whatever is on the screen.
+    py = cfg.get('busy_check_py')
+    if py:
         try:
-            r = subprocess.run(['powershell', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', ps1],
-                               capture_output=True, text=True, timeout=60)
-            # FRAK's busy check prints a reason ("game ...") and exits 0, so printed text that is
-            # not a plain "free" or "idle" also counts as busy. A nonzero exit is busy too.
-            said = (r.stdout or '').strip()
-            if r.returncode != 0 or (said and not re.match(r'^(free|idle|ok|not busy)\b', said, re.I)):
-                return 'busy check says busy: ' + (said or r.stderr or 'exit ' + str(r.returncode)).strip()[:200]
-        except (OSError, subprocess.TimeoutExpired) as e:
-            return 'busy check failed (treated as busy): ' + str(e)
+            import importlib.util
+            spec = importlib.util.spec_from_file_location('busy_check', py)
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            said = mod.check()
+        except Exception as e:
+            return 'busy check failed (treated as busy): %s: %s' % (type(e).__name__, e)
+        if said:
+            return 'busy check says busy: ' + said[:200]
     hours = cfg.get('quiet_hours_local')  # for example [[6, 14]] = do not run 06:00 to 13:59 machine time
     if hours:
         h = dt.datetime.now().hour
@@ -875,7 +878,9 @@ def publish(cfg):
 def push(cfg):
     repo, data = cfg['repo'], 'site/lookup/local'
     def git(*a):
-        return subprocess.run(['git', '-C', repo] + list(a), capture_output=True, text=True)
+        # CREATE_NO_WINDOW (Windows only): git started from a windowless job would otherwise open a console window
+        flags = 0x08000000 if os.name == 'nt' else 0
+        return subprocess.run(['git', '-C', repo] + list(a), capture_output=True, text=True, creationflags=flags)
     git('add', '--', data)
     if git('diff', '--cached', '--quiet', '--', data).returncode == 0:
         log(cfg, 'push: no change'); return
