@@ -31,6 +31,14 @@
 .bud-note{font-size:11px;color:var(--faint);line-height:1.6;margin:12px 0 0}
 .bud-note a{color:var(--mint)}
 .bud-law .bud-act{margin:2px 0 6px}
+/* D208: pick a law */
+.bud-pick{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.bud-chip{font:inherit;font-size:13px;font-weight:700;color:var(--text);background:transparent;border:1px solid var(--edge);border-radius:999px;padding:7px 12px;cursor:pointer;text-align:left}
+.bud-chip[aria-pressed="true"]{background:#163a45;border-color:var(--mint);color:#eefaf6}
+.bud-chip:hover,.bud-chip:focus-visible{outline:none;box-shadow:var(--ring)}
+.bud-lawone{border-top:1px solid #1e3c4a;padding-top:12px}
+.bud-h4{font:normal 20px/1.25 Georgia,serif;margin:0 0 8px;color:#eefaf6}
+.bud-sum{font-size:13px;color:#d7ebe9;line-height:1.6;margin:0 0 12px;max-width:72ch}
 @media (max-width:700px){
  .bud-area{padding:13px 13px 0}
  .bud-block{padding:13px}
