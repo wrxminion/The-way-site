@@ -516,7 +516,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
 (function () {
   const svg = $('#network-svg'), content = $('#detail-content'), panel = $('#detail-panel'), wb = $('#workbench');
   if (!svg || !content || !panel) return;
-  let stash = null, stashTop = 0, shownFor = null, timer = 0;
+  let stash = null, stashTop = 0, shownFor = null, timer = 0, outTimer = 0;
   const canShow = () => !document.body.classList.contains('mt-webfull') && !(wb && wb.classList.contains('no-inspector')) && getComputedStyle(panel).display !== 'none';
   function nodeRecord(n) {
     const mb = ballotById[n.name]; if (mb) return { ...mb };
@@ -537,6 +537,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     svg.querySelectorAll('.mt-hovered').forEach(x => x.classList.remove('mt-hovered')); target.classList.add('mt-hovered');
   }
   function restore() {
+    clearTimeout(outTimer);
     clearTimeout(timer); shownFor = null;
     svg.querySelectorAll('.mt-hovered').forEach(x => x.classList.remove('mt-hovered'));
     if (!stash) return;
@@ -546,16 +547,24 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (e.pointerType === 'touch') return;
     const t = e.target.closest && (e.target.closest('.graph-node') || e.target.closest('.graph-edge'));
     if (!t) return;
-    clearTimeout(timer); timer = setTimeout(() => show(t), 60);
+    clearTimeout(outTimer); clearTimeout(timer); timer = setTimeout(() => show(t), 60);
   });
-  // Moving from one dot or line onto empty space keeps the last preview, so the inspector does not flicker.
+  // D217: when the mouse moves off the dot or line, the inspector goes back to what was clicked.
+  // A short wait lets the mouse slide from one line straight onto the next without a flash in between.
+  svg.addEventListener('pointerout', e => {
+    if (e.pointerType === 'touch') return;
+    const t = e.target.closest && (e.target.closest('.graph-node') || e.target.closest('.graph-edge'));
+    if (!t || (e.relatedTarget && t.contains(e.relatedTarget))) return;
+    clearTimeout(outTimer); outTimer = setTimeout(restore, 120);
+  });
   svg.addEventListener('pointerleave', e => { if (e.pointerType !== 'touch') restore(); });
   // A click keeps what it picked: the put-aside content is dropped, not brought back.
   const basePick = pick;
   pick = function (e) { clearTimeout(timer); stash = null; shownFor = null; basePick(e); };
   // A new web (new center, zoom, filters) means the old preview no longer points at anything.
   const baseRender = renderGraph;
-  renderGraph = function () { shownFor = null; baseRender(); };
+  // D217: a new web (a dot clicked into the center, zoom, filters) also brings back what was clicked.
+  renderGraph = function () { restore(); baseRender(); };
 })();
 
 // ---- D215 (Nov 2026): the Money Web list can be sorted (largest first, A to Z, Z to A, most connections),
