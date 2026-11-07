@@ -249,7 +249,7 @@
  li.className = 'trail-web';
  const wl = link(web[0],web[1]);
  const art = node('img');
- Object.assign(art,{src:'/money-trail/art/money-web-link.svg',alt:'',width:40,height:44,className:'trail-link-art'});
+ Object.assign(art,{src:'/money-trail/art/money-web-link-blue.webp',alt:'',width:40,height:44,className:'trail-link-art'});
  wl.prepend(art);
  li.append(wl,document.createTextNode(' · '),link('Full screen',web[1]+'&full=1'));
  links.append(li);

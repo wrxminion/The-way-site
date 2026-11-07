@@ -359,7 +359,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (e.record_kind === 'ballot') {
       add('Open the trail for ' + e.state + ' ' + e.measure_number, 'follow.html?measure=' + encodeURIComponent(e.measure_id));
       const w = webHref(e.measure_id, e.state, e.state + ' ' + e.measure_number);
-      add(w.label, w.href, 'art/money-web-link.svg');
+      add(w.label, w.href, 'art/money-web-link-blue.webp');
       add('Money web full screen', w.href + '&full=1');
       add(stName[e.state] + ' election results', '/results/?state=' + e.state.toLowerCase() + '#tabs');
       add(stName[e.state] + ' ballot guide', guide(e.state));
