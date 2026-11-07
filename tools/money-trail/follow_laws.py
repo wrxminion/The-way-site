@@ -8,6 +8,11 @@ Which laws: tools/money-trail/laws.json. Sources, all public:
     the official summary, and every floor action with its vote count.
   * House Clerk roll call XML: how each House member voted. Checked to be the same bill and the same count as the
     Library of Congress record before use.
+  * D226: the sponsor and cosponsors with their Bioguide IDs (same Library of Congress bill record), and how each
+    senator voted (senate.gov roll call XML, same checks as the House). Senate files name senators by their Senate
+    (LIS) ID, so the congress-legislators list (unitedstates.github.io) turns that into the Bioguide ID. A senator
+    whose ID cannot be turned into a Bioguide ID stops the Senate list for that law: nobody is matched by name.
+    A Senate list that fails a check is left out and noted in report.json; the rest of the law still saves.
   * USAspending.gov: the spending code list, and the dollars tagged to each law's codes (given to agencies, promised,
     paid out, by agency, by account, and by recipient where a page counts only the law's dollars).
 A law is saved only when every check passes. When a check fails, the last good file for that law stays and the
@@ -173,6 +178,69 @@ def house_roll(law, v, raw_dir, checks, problems):
     checks.append("House roll call %d (House Clerk) is %s and matches the Library of Congress count %d-%d" % (v["roll"], want, tot["Yea"], tot["Nay"]))
 
 
+def people_of(b, tag):
+    """D226: sponsors or cosponsors from the bill record: [Bioguide ID, name, party, state, date, original cosponsor]."""
+    out = []
+    for it in b.findall(tag + "/item"):
+        bid = (it.findtext("bioguideId") or "").strip()
+        if not re.match(r"^[A-Z][0-9]{6}$", bid) or (it.findtext("sponsorshipWithdrawnDate") or "").strip():
+            continue
+        nm = " ".join(x for x in [it.findtext("firstName"), it.findtext("middleName"), it.findtext("lastName")] if x and x.strip())
+        out.append([bid, nm or it.findtext("fullName"), it.findtext("party"), it.findtext("state"), (it.findtext("sponsorshipDate") or "")[:10],
+                    (it.findtext("isOriginalCosponsor") or "").lower() == "true"])
+    return out
+
+
+LIS = {}
+
+
+def lis_map(data_dir):
+    """D226: Senate (LIS) ID -> Bioguide ID, from the congress-legislators current and historical lists."""
+    if LIS:
+        return LIS
+    for f in ("legislators-current.json", "legislators-historical.json"):
+        d = jget("https://unitedstates.github.io/congress-legislators/" + f, raw_path=os.path.join(data_dir, "raw", f))
+        for p in d or []:
+            i = p.get("id") or {}
+            if i.get("lis") and i.get("bioguide"):
+                LIS[i["lis"]] = i["bioguide"]
+    return LIS
+
+
+def senate_roll(law, v, raw_dir, data_dir, checks, problems):
+    """D226: how each senator voted, from senate.gov. Used only if it is the same vote and the same count."""
+    url = v.get("record_url") or ""
+    if "senate.gov" not in url or not url.endswith(".xml"):
+        problems.append("Senate roll call link missing from the bill record")
+        return
+    s, t = fetch(url, raw_path=os.path.join(raw_dir, "senate_roll.xml"))
+    if s != 200:
+        problems.append("Senate roll call %s not readable (%s)" % (v["roll"], s))
+        return
+    root = ET.fromstring(t.encode("utf-8"))
+    num, cong = int(root.findtext("vote_number") or 0), root.findtext("congress")
+    yea, nay = int(root.findtext("count/yeas") or -1), int(root.findtext("count/nays") or -1)
+    if num != v["roll"] or cong != str(law["congress"]):
+        problems.append("Senate roll %s is vote %s in Congress %s" % (v["roll"], num, cong))
+        return
+    if (yea, nay) != (v["totals"]["Yea"], v["totals"]["Nay"]):
+        problems.append("Senate roll %s count %s-%s differs from the bill record %s-%s" % (v["roll"], yea, nay, v["totals"]["Yea"], v["totals"]["Nay"]))
+        return
+    ids = lis_map(data_dir)
+    members, missing = [], []
+    for m in root.iter("member"):
+        lis = (m.findtext("lis_member_id") or "").strip()
+        bid = ids.get(lis)
+        if not bid:
+            missing.append(lis or m.findtext("member_full") or "?"); continue
+        members.append([bid, m.findtext("last_name"), m.findtext("party"), m.findtext("state"), m.findtext("vote_cast")])
+    if missing:
+        problems.append("Senate roll %s: no Bioguide ID for %s, so no senator list" % (v["roll"], ", ".join(missing[:5])))
+        return
+    v.update({"members": members, "data": url})
+    checks.append("Senate roll call %d (senate.gov) matches the Library of Congress count %d-%d; %d senators matched by ID" % (v["roll"], yea, nay, len(members)))
+
+
 # ---------- USAspending ----------
 def code_list(data_dir):
     d = jget(US + "/references/def_codes/", raw_path=os.path.join(data_dir, "raw", "def_codes.json"))
@@ -292,6 +360,12 @@ def follow(law, codes, data_dir):
     if sv:
         sv["source"] = sv.get("record_url")
         checks.append("Senate final action %s: %s" % (sv["date"], sv["text"][:140]))
+        if sv["how"] == "roll call":
+            soft = []  # a Senate list that fails its checks is left out; the law's money still updates
+            senate_roll(law, sv, raw_dir, data_dir, checks, soft)
+            checks.extend("Senate members left out: " + x for x in soft)
+    out["sponsors"], out["cosponsors"] = people_of(b, "sponsors"), people_of(b, "cosponsors")
+    checks.append("Bill record: %d sponsor, %d cosponsors with Bioguide IDs" % (len(out["sponsors"]), len(out["cosponsors"])))
     out["votes"] = votes
     # money
     sp = spending(law, raw_dir)
