@@ -136,11 +136,27 @@ function prepareHub(){let h=$('#hub');h.innerHTML=hubs.map(x=>`<option value="${
 const networkVerified=RESEARCH.transactions.map(t=>({id:t.transaction_id,from_name:t.source_name,to_name:t.recipient_name,from_entity_id:t.source_entity_id,to_entity_id:t.recipient_entity_id,amount_usd:t.amount_usd,date:t.transaction_date,date_kind:t.date_kind,jurisdiction:t.jurisdiction,edge_type:t.activity_type,confidence:t.confidence,source_url:t.filing_url,notes:t.notes,record_kind:'transaction',record_ref:t,tier:t.evidence_tier==='fec_filing'?'fec':'itemized'}));
 const networkContext=RESEARCH.graph_edges.filter(e=> !/itemized|verified_.*(contribution|payment)|state_ballot_cash_receipt|state_ballot_in_kind_receipt|state_party_receipt/i.test(e.edge_type||'')).map(e=>({...e,record_kind:'graph',tier:/reported|aggregate|major_contribution|attestation|snapshot/i.test(e.edge_type||'')?'reported':'context'}));
 function nodeKey(name,id,jur){if(id)return String(id);return 'reported-name:'+String(jur||'unknown')+':'+norm(name)}
+// D220: the Filter the evidence panel also narrows the Money web and the Organization, Person and Department trackers.
+// A line passes the same tests a Timeline record does: reported toggle, record type, state, minimum itemized amount and the name/word search.
+function edgeInState(e,st){return String(e.jurisdiction||'').includes(st)||String(e.notes||'').includes(st+' ')||stateOf(e)===st}
+function lineOk(e,noSearch){const solidE=e.tier==='itemized'||e.tier==='fec';
+ if(e.tier==='reported'&&!settings.showReported)return false;
+ if(settings.kind==='transaction'&&!solidE)return false;
+ if(settings.kind==='reported'&&e.tier!=='reported')return false;
+ if(settings.kind==='ballot'&&!(ballotById[e.from_name]||ballotById[e.to_name]))return false;
+ if(solidE&&num(e.amount_usd)<settings.minimum)return false;
+ if(settings.state!=='ALL'&&!edgeInState(e,settings.state))return false;
+ const q=noSearch?'':String(settings.search||'').toLowerCase().trim();if(q&&!searchText(e).includes(q))return false;
+ return true}
+function filtersOn(noSearch){return (!noSearch&&!!String(settings.search||'').trim())||settings.state!=='ALL'||settings.kind!=='all'||settings.minimum>0||!settings.showReported}
+const flcCache={};
+// How many lines each name has once the filters are applied (every web, not one center). noSearch leaves the word search out.
+function filteredLineCounts(noSearch){const key=JSON.stringify([noSearch?'':settings.search,settings.state,settings.kind,settings.minimum,settings.showReported]);if(flcCache[key])return flcCache[key];const m=new Map();for(const e of [...networkVerified,...networkContext])if(lineOk(e,noSearch))for(const nm of new Set([norm(e.from_name),norm(e.to_name)]))if(nm)m.set(nm,(m.get(nm)||0)+1);return flcCache[key]=m}
 function makeNetwork(){let edges=settings.includeContext?[...networkVerified,...networkContext]:networkVerified;
  let f=norm(graphHub);
  // Include only edges directly touching the selected hub, without assuming the same legal entity across jurisdictions.
  edges=edges.filter(e=>norm(e.from_name)===f||norm(e.to_name)===f);
- if(settings.state!=='ALL')edges=edges.filter(e=>String(e.jurisdiction||'').includes(settings.state)||String(e.notes||'').includes(settings.state+' ')||stateOf(e)===settings.state);
+ edges=edges.filter(e=>lineOk(e));
  const solid=e=>e.tier==='itemized'||e.tier==='fec'?1:0;edges.sort((a,b)=>solid(a)===solid(b)?(num(b.amount_usd)-num(a.amount_usd)):(solid(b)-solid(a)));
  let shown=edges.slice(0,85),nodes=new Map(),display=[];
  for(let e of shown){let a=nodeKey(e.from_name,e.from_entity_id,e.jurisdiction),b=nodeKey(e.to_name,e.to_entity_id,e.jurisdiction);
@@ -221,7 +237,7 @@ summary();prepareHub();renderTimeline();
 $$('[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
 const fields={search:'search',state:'state',kind:'kind',direction:'direction',minimum:'minimum'};
 Object.entries(fields).forEach(([setting,id])=>{let e=$('#'+id);e.addEventListener(setting==='search'?'input':'change',()=>{settings[setting]=setting==='minimum'?Number(e.value):e.value;visible=30;if(view==='timeline')renderTimeline();if(view==='network')renderGraph();if(view==='states')renderStates()})});
-$('#show-reported').addEventListener('change',e=>{settings.showReported=e.target.checked;visible=30;renderTimeline()});
+$('#show-reported').addEventListener('change',e=>{settings.showReported=e.target.checked;visible=30;renderTimeline();if(view==='network')renderGraph()});
 $('#clear-filters').addEventListener('click',()=>{Object.assign(settings,{search:'',state:'ALL',kind:'all',direction:'desc',minimum:0,showReported:true,includeContext:true});Object.keys(fields).forEach(k=>$('#'+fields[k]).value=k==='minimum'?'0':k==='direction'?'desc':k==='kind'?'all':k==='state'?'ALL':'');$('#show-reported').checked=true;$('#include-context').checked=true;visible=30;if(view==='timeline')renderTimeline();if(view==='network')renderGraph()});
 $('#today-top').addEventListener('click',()=>{settings.direction='desc';$('#direction').value='desc';visible=30;renderTimeline();$('.center-panel').scrollIntoView({block:'start',behavior:'smooth'})});
 $('#zoom-in').addEventListener('click',()=>setScale(1.2));$('#zoom-out').addEventListener('click',()=>setScale(1/1.2));$('#zoom-reset').addEventListener('click',()=>{graphScale=1;renderGraph()});
@@ -278,7 +294,12 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   }
   function draw(k) {
     const list = $('#' + k + '-view .tracker-list'); list.replaceChildren();
-    const q = norm(query[k]); const rows = lists[k].filter(r => !q || norm(r.name).includes(q));
+    const q = norm(query[k]); let rows = lists[k].filter(r => !q || norm(r.name).includes(q));
+    // D220: the Filter the evidence panel narrows this list too. Its name search matches the name itself; the other filters
+    // keep a row only when it has a line that passes them, and the line count then counts only those lines.
+    const fq = norm(settings.search || ''), lineOn = filtersOn(true), on = lineOn || !!fq;
+    if (fq) rows = rows.filter(r => norm(r.name).includes(fq));
+    if (lineOn) { const fl = filteredLineCounts(true); rows = rows.map(r => ({ ...r, count: fl.get(norm(r.name)) || 0 })).filter(r => r.count > 0); }
     rows.forEach(r => {
       const card = el('div', 'tracker-row');
       const info = el('div', 'tracker-info'); info.append(el('strong', null, r.name), el('small', null, [r.type, r.jur].filter(Boolean).join(' · ')));
@@ -289,9 +310,14 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
       if (r.entity) { const b = el('button', 'tracker-inspect', 'Inspect'); b.addEventListener('click', () => pick(r.entity)); act.append(b); }
       card.append(info, cnt, act); list.append(card);
     });
-    if (!rows.length) list.append(el('div', 'empty', 'No names match. Try fewer letters.'));
-    $('#feed-sub').textContent = TEXT[k].sub(lists[k].length);
+    if (!rows.length) list.append(el('div', 'empty', on ? 'No names match these filters. Reset filters to see them all.' : 'No names match. Try fewer letters.'));
+    $('#feed-sub').textContent = on ? rows.length + ' of ' + TEXT[k].sub(lists[k].length) + ' match the filters' : TEXT[k].sub(lists[k].length);
   }
+  // D220: redraw the open tracker when a filter changes (the filter's own listener has already updated settings).
+  const redraw = () => { if (lists[view] && $('#' + view + '-view .tracker-list')) draw(view); };
+  ['#state', '#kind', '#direction', '#minimum', '#show-reported'].forEach(id => { const c = $(id); if (c) c.addEventListener('change', redraw); });
+  { const c = $('#search'); if (c) c.addEventListener('input', redraw); }
+  { const c = $('#clear-filters'); if (c) c.addEventListener('click', redraw); }
   const baseSetView = setView;
   setView = function (v) {
     baseSetView(v);
@@ -624,10 +650,13 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   };
   // The list is rebuilt the same way everywhere, and keeps showing the dot in the center.
   prepareHubRefresh = function () {
-    const list = sorted(), opt = x => { const o = document.createElement('option'); o.value = x; o.textContent = hubLabel(x) + ' · ' + (order === 'links' ? linksOf(x) + ' connections' : sizeText(x)); return o; };
+    // D220: with filters on, the list keeps only names that still have a line that passes them.
+    let list = sorted();
+    if (filtersOn()) { const fl = filteredLineCounts(); list = list.filter(x => (fl.get(norm(x)) || 0) > 0); }
+    const opt = x => { const o = document.createElement('option'); o.value = x; o.textContent = hubLabel(x) + ' · ' + (order === 'links' ? linksOf(x) + ' connections' : sizeText(x)); return o; };
     if (kind === 'all' && !hubs.includes(graphHub)) { hubs.push(graphHub); return prepareHubRefresh(); }
     // A center from another kind (a dot clicked in the web) stays on top of the list so it is still shown.
-    if (kind !== 'all' && !list.includes(graphHub)) list.unshift(graphHub);
+    if (!list.includes(graphHub)) list.unshift(graphHub);
     sel.replaceChildren(...list.map(opt));
     sel.value = graphHub;
   };
@@ -637,6 +666,10 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if ($('#network-view').hidden) setView('network'); else renderGraph();
   }
   if (sortSel) sortSel.addEventListener('change', () => { order = sortSel.value; prepareHubRefresh(); });
+  // D220: the center list follows the Filter the evidence panel.
+  ['#state', '#kind', '#minimum', '#show-reported'].forEach(id => { const c = $(id); if (c) c.addEventListener('change', () => prepareHubRefresh()); });
+  { const c = $('#search'); if (c) c.addEventListener('input', () => prepareHubRefresh()); }
+  { const c = $('#clear-filters'); if (c) c.addEventListener('click', () => prepareHubRefresh()); }
   // D219: picking a kind fills the center list with that kind and puts the first one (by the chosen sort) in the center.
   if (kindSel) kindSel.addEventListener('change', () => { kind = kindSel.value; const first = sorted()[0]; if (first && kind !== 'all') go(first); else prepareHubRefresh(); });
 
