@@ -282,18 +282,7 @@ def main():
         '<section id="white-house" class="gv-sec"><div class="gw-heading"><span>Layer 3 / The building</span>'
         '<h2>The White House.</h2><p>The president’s home and office, at 1600 Pennsylvania Avenue in Washington, D.C.</p></div>'
         + figure_html('white-house', 'gv-photo gv-photo-wide') +
-        '<div class="gv-two"><figure class="gv-capitol"><svg viewBox="0 0 600 300" role="img" aria-labelledby="wh-t"><title id="wh-t">Simple diagram of the White '
-        'House: the Residence in the center, the West Wing with the Oval Office on one side, and the East Wing on the other.</title>'
-        '<path class="gv-cap-ground" d="M20 262h560"/>'
-        '<rect class="gv-cap-wing" x="30" y="196" width="150" height="66" rx="4"/>'
-        '<rect class="gv-cap-wing" x="420" y="196" width="150" height="66" rx="4"/>'
-        '<rect class="gv-cap-center" x="180" y="120" width="240" height="142" rx="4"/>'
-        '<path class="gv-cap-dome" d="M260 120h80v-16h-80Z"/><path class="gv-cap-dome" d="M300 104v-18"/>'
-        '<ellipse class="gv-cap-dome" cx="105" cy="250" rx="22" ry="9"/>'
-        '<text x="300" y="186">Residence</text><text x="300" y="210" class="gv-cap-sm">132 rooms, 6 levels</text>'
-        '<text x="105" y="228">West Wing</text><text x="105" y="282" class="gv-cap-sm">Oval Office</text>'
-        '<text x="495" y="228">East Wing</text><text x="495" y="282" class="gv-cap-sm">being replaced</text></svg>'
-        '<figcaption>A simple diagram, not to scale.</figcaption></figure><div class="gv-facts">'
+        '<div class="gv-facts">'
         '<details open><summary>When was it built?</summary><div class="gw-detail"><p>George Washington selected the site in 1791, and the '
         'cornerstone was laid the following year. President John Adams and Abigail Adams moved into the still-unfinished house.</p>%s</div></details>'
         '<details><summary>Was it ever burned?</summary><div class="gw-detail"><p>Yes. During the War of 1812 the British set fire to the '
@@ -305,7 +294,7 @@ def main():
         'Wing, which was built in 1902. It says construction began in September 2025.</p>%s</div></details>'
         '<details><summary>Who takes care of it?</summary><div class="gw-detail"><p>The White House is owned by the American people and '
         'cared for by the National Park Service.</p>%s</div></details>'
-        '</div></div></section>') % (src(wh), src(wh), src(wh), src(wh), src(wh), src('https://www.nps.gov/whho/index.htm'))
+        '</div></section>') % (src(wh), src(wh), src(wh), src(wh), src(wh), src('https://www.nps.gov/whho/index.htm'))
 
     rows = []
     for p in reversed(pres):

@@ -28,7 +28,7 @@ from photos import figure_html  # D230: building photos (tools/government/photos
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 OUT = os.path.join(ROOT, 'site', 'government', 'congress')
 SITE_URL = 'https://michiinstitute.com'
-CSS_V = '7'  # D229: 6 adds the 3 by 3 justice cards and their Money web links. D230: 7 adds building photos
+CSS_V = '8'  # D229: 6 adds the 3 by 3 justice cards and their Money web links. D230: 7 adds building photos. D243: 8 drops the building diagrams
 JS_V = '2'
 
 STATES = {
@@ -547,19 +547,6 @@ def main():
         '<section id="capitol" class="gv-sec"><div class="gw-heading"><span>Layer 3 / The building</span>'
         '<h2>The U.S. Capitol.</h2><p>Both chambers meet in one building on Capitol Hill in Washington, D.C.</p></div>'
         + figure_html('capitol', 'gv-photo gv-photo-wide') +  # D230: building photo
-        '<div class="gv-two"><figure class="gv-capitol">'
-        '<svg viewBox="0 0 600 300" role="img" aria-labelledby="cap-t"><title id="cap-t">Simple diagram of the Capitol: the Senate chamber '
-        'is in the north wing, the House chamber is in the south wing, and the dome is in the center.</title>'
-        '<path class="gv-cap-ground" d="M20 262h560"/>'
-        '<rect class="gv-cap-wing" x="40" y="170" width="190" height="92" rx="4"/>'
-        '<rect class="gv-cap-wing" x="370" y="170" width="190" height="92" rx="4"/>'
-        '<rect class="gv-cap-center" x="230" y="150" width="140" height="112" rx="4"/>'
-        '<path class="gv-cap-dome" d="M250 150q0-78 50-90q50 12 50 90Z"/><path class="gv-cap-dome" d="M292 60h16v-18h-16Z"/>'
-        '<path class="gv-cap-dome" d="M300 42v-20"/>'
-        '<text x="135" y="212">Senate</text><text x="135" y="236" class="gv-cap-sm">north wing</text>'
-        '<text x="465" y="212">House</text><text x="465" y="236" class="gv-cap-sm">south wing</text>'
-        '<text x="300" y="212">Rotunda</text><text x="300" y="236" class="gv-cap-sm">under the dome</text></svg>'
-        '<figcaption>A simple diagram, not to scale. The two chambers are on the second floor.</figcaption></figure>'
         '<div class="gv-facts">'
         '<details open><summary>When was it built?</summary><div class="gw-detail"><p>President George Washington selected the design in 1793, '
         'and construction began shortly after. British troops burned the building in 1814, and it was rebuilt.</p>'
@@ -576,7 +563,7 @@ def main():
         '<a class="gw-source" href="%s">Source: Architect of the Capitol ↗</a> <a class="gw-source" href="%s/senate-wing">Senate wing ↗</a></div></details>'
         '<details><summary>Can I visit?</summary><div class="gw-detail"><p>Tours of the Capitol are free and start at the Capitol Visitor Center. '
         'Your senators’ or representative’s office can also help arrange a tour.</p><a class="gw-source" href="https://www.visitthecapitol.gov/">Source: Capitol Visitor Center ↗</a></div></details>'
-        '</div></div></section>') % (aoc, aoc, aoc, aoc, aoc, aoc)
+        '</div></section>') % (aoc, aoc, aoc, aoc, aoc, aoc)
 
     total_voting = len(sen) + len(house_voting)
     body = ('<header class="gv-hero"><p class="gw-eyebrow">Congress · Makes federal laws</p>'

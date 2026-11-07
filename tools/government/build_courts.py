@@ -158,17 +158,12 @@ def main():
         '<ol class="gv-line gv-justices">%s</ol>'
         '<p>%s %s %s</p>'
         + figure_html('supreme-court', 'gv-photo gv-photo-wide') +  # D230: building photo
-        '<div class="gv-two"><figure class="gv-capitol"><svg viewBox="0 0 600 300" role="img" aria-labelledby="sc-t"><title id="sc-t">Simple '
-        'diagram of the Supreme Court Building: a wide stairway leads to a row of columns under a triangular roof.</title>'
-        '<path class="gv-cap-ground" d="M20 270h560"/><path class="gv-cap-wing" d="M90 270h420v-14H90Zm20-14h380v-12H110Z"/>'
-        '<path class="gv-cap-center" d="M140 244h320V110H140Z"/><path class="gv-cap-dome" d="M128 110h344L300 50Z"/>'
-        '<path class="gv-cap-ground" d="M165 240V122m30 118V122m30 118V122m30 118V122m30 118V122m30 118V122m30 118V122m30 118V122m30 118V122"/>'
-        '</svg><figcaption>A simple diagram, not to scale. One First Street NE, Washington, D.C.</figcaption></figure><div class="gv-facts">'
+        '<div class="gv-facts">'
         '<details open><summary>When was it built?</summary><div class="gw-detail"><p>The cornerstone was laid on October 13, 1932. The building '
         'was completed in 1935, when the Court was finally able to occupy its own building.</p>%s</div></details>'
         '<details><summary>Who designed it?</summary><div class="gw-detail"><p>Architect Cass Gilbert, at the request of Chief Justice William '
         'Howard Taft. A classical Corinthian style was chosen.</p>%s</div></details>'
-        '</div></div></section>') % (
+        '</div></section>') % (
         ''.join(jcards), src(S1, '28 U.S.C. § 1'), src(MEMBERS, 'Supreme Court members'), src(CONST, 'Constitution, Articles II and III'),
         src('https://www.supremecourt.gov/about/buildinghistory.aspx', 'Supreme Court building history'),
         src('https://www.supremecourt.gov/about/buildinghistory.aspx', 'Supreme Court building history'))

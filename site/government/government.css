@@ -59,12 +59,6 @@
 .gv-capitol{margin:0;background:#102c39;border:1px solid var(--line);border-radius:20px;padding:18px}
 .gv-capitol svg{width:100%;height:auto;display:block}
 .gv-capitol figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}
-.gv-cap-ground{stroke:#5f8590;stroke-width:2}
-.gv-cap-wing{fill:#204754;stroke:#88c7c7}
-.gv-cap-center{fill:#25505d;stroke:#88c7c7}
-.gv-cap-dome{fill:#2b5a66;stroke:#cfeee9;stroke-width:1.5}
-.gv-capitol text{fill:#eaf5f6;font:600 20px system-ui,sans-serif;text-anchor:middle}
-.gv-capitol text.gv-cap-sm{font:400 14px system-ui,sans-serif;fill:#aec6ce}
 .gv-facts details:first-child{border-top:0;margin-top:0}
 .gv-next{padding:30px 0 0;text-align:center}
 .gv-open{display:inline-block;margin-top:14px;padding:10px 16px;border-radius:30px;border:1px solid var(--sea);font-weight:700;text-decoration:none}
