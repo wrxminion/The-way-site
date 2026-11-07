@@ -219,3 +219,14 @@ body:not(.mt-webfull) .web-card:not([hidden]){display:block;position:fixed;z-ind
 .bubble .web-nums-btn[aria-pressed="true"]{background:#1d4a52;border-color:var(--mint)}
 @media(max-width:760px){.bubble{left:10px;right:10px;gap:5px;flex-wrap:wrap;justify-content:flex-end}.bubble .web-full-btn{padding:0 7px;font-size:12px}}
 .mt-web-total .mt-not-added{display:block;margin-top:2px;font-size:14px;font-weight:600;color:#c9b48c}
+/* D232: Money Web controls in two tidy rows at every width: search and "Include reported context" on top,
+   then kind, center and sort. Before, with the side panels hidden, the lists split into odd blocks. */
+.network-controls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 14px;align-items:center}
+.network-controls .mt-web-search{grid-column:1;grid-row:1;max-width:560px;width:100%}
+.network-controls .checks.mt-flat{grid-column:2;grid-row:1;white-space:nowrap}
+.network-controls .mt-hub-pick{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:8px}
+.mt-hub-pick #hub-kind{flex:0 1 210px;width:auto;max-width:100%}
+.mt-hub-pick #hub{flex:1 1 280px;width:auto;max-width:none;min-width:0}
+.mt-hub-pick #hub-sort{flex:0 1 170px;width:auto}
+.workbench.no-filter.no-inspector .network-desc{max-width:760px}
+@media(max-width:760px){.network-controls{grid-template-columns:minmax(0,1fr)}.network-controls .mt-web-search{max-width:none}.network-controls .checks.mt-flat{grid-column:1;grid-row:3;white-space:normal}.mt-hub-pick #hub-kind,.mt-hub-pick #hub-sort{flex:1 1 140px;min-width:0}.mt-hub-pick #hub{flex:1 1 100%;order:3}}
