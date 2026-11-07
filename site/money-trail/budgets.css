@@ -50,3 +50,11 @@
 /* D225: House member names link to their pages */
 .bud-votes a.bud-member{color:#cfe7e4;text-decoration:underline;text-decoration-color:#3c7a85;text-underline-offset:2px}
 .bud-votes a.bud-member:hover,.bud-votes a.bud-member:focus-visible{color:var(--mint)}
+/* D230: headquarters photo on a department card, credit line at the bottom */
+.bud-row.bud-has-photo{display:grid;grid-template-columns:150px minmax(0,1fr);column-gap:14px;row-gap:6px;align-items:start}
+.bud-has-photo>*{grid-column:2}
+.bud-has-photo>.bud-photo{grid-column:1;grid-row:1/span 5;margin:0}
+.bud-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:10px;border:1px solid #234757;background:#102c39}
+.bud-credit{font-size:11px;color:var(--muted);line-height:1.4}
+.bud-credit .bud-src{font-size:11px;font-weight:600;color:var(--muted)}
+@media(max-width:600px){.bud-row.bud-has-photo{grid-template-columns:88px minmax(0,1fr);column-gap:10px}.bud-has-photo>.bud-photo{grid-row:1/span 2}.bud-has-photo>.bud-act,.bud-has-photo>.bud-credit,.bud-has-photo>.bud-small{grid-column:1/-1}}

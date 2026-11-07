@@ -1,5 +1,6 @@
 // D201 (Nov 2026): department budgets, where federal money comes from, and one law followed through the money web.
 // D223 (Nov 2026): every department in the budget list is a dot in the Money web, and each department card opens it there.
+// D230 (Nov 2026): department cards show a free photo of the headquarters building with its credit line.
 // D208 (Nov 2026): every law in laws.js (window.TW_LAWS) can be followed, picked from a list.
 // Data: budgets.js (window.TW_BUDGETS) and laws.js, built from public USAspending, Treasury, Library of Congress and House Clerk records.
 // Loaded after data.js and before app.js, so the law's lines join the Money web like any other record.
@@ -10,6 +11,7 @@
   if (!B || typeof RESEARCH === 'undefined') return;
   // D208: the followed laws come from laws.js (window.TW_LAWS), built by tools/money-trail/follow_laws.py.
   const LAWS = ((window.TW_LAWS || {}).laws || []).filter(l => l && l.agencies);
+  const PHOTOS = window.TW_BUILDING_PHOTOS || {}; // D230: building photos by agency abbreviation (/government/photos/photos.js)
   const PAGES = window.TW_MEMBER_PAGES || {}; // D225: Bioguide ID -> member page slug (member-pages.js)
   const hubOf = law => String(law.name || law.bill).toUpperCase();
   const codesOf = law => 'spending code' + ((law.codes || []).length > 1 ? 's ' : ' ') + (law.codes || []).join(' and ');
@@ -194,6 +196,13 @@
       const rows = D.rows.filter(r => !q || (r.name + ' ' + r.abbr).toLowerCase().includes(q));
       rows.slice(0, all || q ? rows.length : 12).forEach(r => {
         const row = el('div', 'bud-row');
+        const ph = PHOTOS[r.abbr]; // D230: a free photo of the headquarters building, with its credit line
+        if (ph) {
+          row.classList.add('bud-has-photo');
+          const fig = el('figure', 'bud-photo'), im = el('img');
+          im.src = ph.src; im.alt = ph.alt; im.width = ph.w; im.height = ph.h; im.loading = 'lazy'; im.decoding = 'async';
+          fig.append(im); row.append(fig);
+        }
         const top = el('div', 'bud-top');
         top.append(el('b', 'bud-big', r.resources ? fmt(r.resources) : 'Not reported yet'), el('strong', 'bud-name', r.name + (r.abbr ? ' (' + r.abbr + ')' : '')));
         row.append(top);
@@ -216,7 +225,14 @@
           r.years.slice().reverse().forEach(y => ul.append(el('li', null, 'FY ' + y[0] + ': available ' + fmt(y[1]) + ', promised ' + fmt(y[2]) + ', paid out ' + fmt(y[3]))));
           det.append(ul); act.append(det);
         }
-        row.append(act); list.append(row);
+        row.append(act);
+        if (ph) { // D230: credit line. Creative Commons photos name the author, the license and the source.
+          const cr = el('small', 'bud-credit', 'Photo: ');
+          if (ph.license === 'Public domain') { cr.append(link(ph.author + ' ↗', ph.page), document.createTextNode('. Public domain.')); }
+          else { cr.append(document.createTextNode(ph.author + ', '), link(ph.license + ' ↗', ph.license_url), document.createTextNode(', via '), link('Wikimedia Commons ↗', ph.page), document.createTextNode('.')); }
+          row.append(cr);
+        }
+        list.append(row);
       });
       if (!rows.length) list.append(el('div', 'empty', 'No department matches. Try fewer letters.'));
       more.hidden = !!q || rows.length <= 12;

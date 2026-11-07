@@ -15,6 +15,7 @@ import urllib.parse
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_congress import ROOT, SITE_URL, e, long_date, page  # noqa: E402
+from photos import figure_html  # noqa: E402  D230: building photos
 
 OUT = os.path.join(ROOT, 'site', 'government', 'courts')
 CHECKED = 'November 6, 2026'
@@ -156,6 +157,7 @@ def main():
         'Justices are nominated by the president, confirmed by the Senate, and serve during good behavior.</p></div>'
         '<ol class="gv-line gv-justices">%s</ol>'
         '<p>%s %s %s</p>'
+        + figure_html('supreme-court', 'gv-photo gv-photo-wide') +  # D230: building photo
         '<div class="gv-two"><figure class="gv-capitol"><svg viewBox="0 0 600 300" role="img" aria-labelledby="sc-t"><title id="sc-t">Simple '
         'diagram of the Supreme Court Building: a wide stairway leads to a row of columns under a triangular roof.</title>'
         '<path class="gv-cap-ground" d="M20 270h560"/><path class="gv-cap-wing" d="M90 270h420v-14H90Zm20-14h380v-12H110Z"/>'
