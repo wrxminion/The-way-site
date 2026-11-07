@@ -1,4 +1,5 @@
 // D201 (Nov 2026): department budgets, where federal money comes from, and one law followed through the money web.
+// D223 (Nov 2026): every department in the budget list is a dot in the Money web, and each department card opens it there.
 // D208 (Nov 2026): every law in laws.js (window.TW_LAWS) can be followed, picked from a list.
 // Data: budgets.js (window.TW_BUDGETS) and laws.js, built from public USAspending, Treasury, Library of Congress and House Clerk records.
 // Loaded after data.js and before app.js, so the law's lines join the Money web like any other record.
@@ -46,6 +47,25 @@
     });
   });
 
+  // D223: every department and agency in the budget list is a dot in the Money web. One line runs from the federal budget
+  // to each one, carrying its budget resources (money it had available) for the fiscal year. These are official totals, not
+  // single payments, so they are drawn as reported lines and never added up. A department with no figure yet gets a line with no amount.
+  const DEPTS = (B.departments || {}).rows || [];
+  const BUDGET_HUB = 'U.S. FEDERAL BUDGET, FISCAL YEAR ' + ((B.departments || {}).fiscal_year || '');
+  window.TW_BUDGET_HUB = BUDGET_HUB;
+  {
+    const D = B.departments, asOf = String(D.retrieved || '').slice(0, 10);
+    DEPTS.forEach((r, i) => {
+      const page = r.slug ? 'https://www.usaspending.gov/agency/' + encodeURIComponent(r.slug) + '?fy=' + D.fiscal_year : 'https://www.usaspending.gov/agency';
+      RESEARCH.graph_edges.push({ id: 'BUDGET-FY' + D.fiscal_year + '-' + (r.code || i), from_name: BUDGET_HUB, to_name: String(r.name || '').toUpperCase(),
+        amount_usd: r.resources > 0 ? r.resources : null, date: asOf, date_kind: 'total_to_date_as_of_pull_date_NOT_a_payment_date', jurisdiction: 'US',
+        edge_type: r.resources > 0 ? 'federal_budget_aggregate_department_resources' : 'federal_budget_department_listed_no_figure_yet',
+        confidence: 'official_aggregate;not_itemized_transaction', source_url: page,
+        notes: r.resources > 0 ? 'Budget resources (money available to spend) for ' + r.name + ' in fiscal year ' + D.fiscal_year + ', as the agency reported it to USAspending.gov through quarter ' + D.quarter + '. Promised (obligated): ' + fmt(r.obligated) + '. Paid out: ' + fmt(r.outlays) + '. Available money can include money carried over from earlier years.'
+          : r.name + ' is in the USAspending agency list for fiscal year ' + D.fiscal_year + ', but no budget figure was reported yet.' });
+    });
+  }
+
   // 2. Words and numbers
   function fmt(n) {
     if (n == null || !isFinite(n)) return 'not reported';
@@ -60,6 +80,15 @@
   const link = (text, href) => { const a = el('a', 'bud-src', text); a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; };
   const bar = (part, whole) => { const o = el('span', 'bud-bar'); const i = el('i'); i.style.width = Math.max(0.5, Math.min(100, 100 * part / whole)).toFixed(1) + '%'; o.append(i); return o; };
 
+  // D223: the record Inspect shows for one department card.
+  function deptRecord(r) {
+    const up = String(r.name || '').toUpperCase(), D = B.departments;
+    const e = (RESEARCH.entities || []).find(x => String(x.legal_or_reported_name || '').toUpperCase() === up);
+    const page = r.slug ? 'https://www.usaspending.gov/agency/' + encodeURIComponent(r.slug) + '?fy=' + D.fiscal_year : 'https://www.usaspending.gov/agency';
+    const budget = r.resources ? 'Fiscal year ' + D.fiscal_year + ' (through quarter ' + D.quarter + '): available ' + fmt(r.resources) + ', promised ' + fmt(r.obligated) + ', paid out ' + fmt(r.outlays) + ', as reported to USAspending.gov.' : 'No fiscal year ' + D.fiscal_year + ' budget figure was reported yet.';
+    return { record_kind: 'entity', name: up, entity_type: e ? e.entity_type : 'federal agency', id: e ? (e.registry_identifier || e.entity_id) : 'USAspending agency ' + (r.code || ''),
+      jurisdiction: 'US', source_url: page, notes: (e && e.notes ? e.notes + ' ' : '') + budget };
+  }
   function deptBlock() {
     const D = B.departments, box = el('section', 'bud-block');
     box.setAttribute('aria-label', 'Department budgets');
@@ -83,6 +112,15 @@
         row.append(el('small', 'bud-small', 'Promised ' + fmt(r.obligated) + ' · Paid out ' + fmt(r.outlays) + (r.share ? ' · ' + (100 * r.share).toLocaleString('en-US', { maximumFractionDigits: 2 }) + '% of all federal budget resources' : '')));
         const act = el('div', 'bud-act');
         if (r.slug) act.append(link('USAspending agency page ↗', 'https://www.usaspending.gov/agency/' + encodeURIComponent(r.slug) + '?fy=' + D.fiscal_year));
+        { // D223: open the Money web centered on this department.
+          const b = el('button', 'tracker-web', 'See in the Money web'); b.type = 'button';
+          const im = el('img', 'tracker-btn-art'); im.src = '/money-trail/art/money-web-link-blue.webp'; im.alt = ''; im.width = 22; im.height = 24; im.decoding = 'async';
+          b.prepend(im); b.addEventListener('click', () => openHub(String(r.name || '').toUpperCase())); act.append(b);
+          // Inspect opens its record in the Evidence inspector: the entity record when our data has one, else this budget row.
+          const ins = el('button', 'tracker-inspect', 'Inspect'); ins.type = 'button';
+          const ic = el('img', 'tracker-btn-art'); ic.src = '/money-trail/art/records-cabinet.webp'; ic.alt = ''; ic.width = 22; ic.height = 24; ic.decoding = 'async'; ins.prepend(ic);
+          ins.addEventListener('click', () => { if (typeof pick === 'function') pick(deptRecord(r)); }); act.append(ins);
+        }
         if ((r.years || []).length) {
           const det = el('details', 'bud-years'); det.append(el('summary', null, 'Past years'));
           const ul = el('ul');
@@ -226,7 +264,8 @@
     box.prepend(area);
     if (typeof hubs !== 'undefined') {
       LAWS.forEach(law => { if (!hubs.includes(hubOf(law))) hubs.push(hubOf(law)); });
-      if (LAWS.length && typeof prepareHubRefresh === 'function') prepareHubRefresh();
+      if (DEPTS.length && !hubs.includes(BUDGET_HUB)) hubs.push(BUDGET_HUB);
+      if ((LAWS.length || DEPTS.length) && typeof prepareHubRefresh === 'function') prepareHubRefresh();
     }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount); else mount();
