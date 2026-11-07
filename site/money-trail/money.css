@@ -214,3 +214,8 @@ body:not(.mt-webfull) .web-card:not([hidden]){display:block;position:fixed;z-ind
 .bud-row .bud-act .tracker-web,.bud-row .bud-act .tracker-inspect{font-size:12px;padding:5px 12px 5px 6px;gap:6px}
 .tracker-card.on{border-color:var(--mint)}
 .state-cards{margin:14px 0 16px}
+/* D231: Hide numbers button. With numbers hidden, only the center dot keeps its total. */
+.mt-nonums .graph-amounts,.mt-nonums .graph-money:not(.root){display:none}
+.bubble .web-nums-btn[aria-pressed="true"]{background:#1d4a52;border-color:var(--mint)}
+@media(max-width:760px){.bubble{left:10px;right:10px;gap:5px;flex-wrap:wrap;justify-content:flex-end}.bubble .web-full-btn{padding:0 7px;font-size:12px}}
+.mt-web-total .mt-not-added{display:block;margin-top:2px;font-size:14px;font-weight:600;color:#c9b48c}

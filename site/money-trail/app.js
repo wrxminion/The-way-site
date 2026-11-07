@@ -212,7 +212,8 @@ function lawOf(name){const L=((window.TW_LAWS||{}).laws||[]).find(l=>String(l.na
 function webMoney(v){const a=Math.abs(num(v));return a>=1e12?'$'+(a/1e12).toLocaleString('en-US',{maximumFractionDigits:2})+' trillion':a>=1e9?'$'+(a/1e9).toLocaleString('en-US',{maximumFractionDigits:1})+' billion':shortMoney(v)}
 // On the web itself space is tight: $1.43T, $4.8B, $203.1m.
 function webShort(v){const a=Math.abs(num(v));return a>=1e12?'$'+(a/1e12).toLocaleString('en-US',{maximumFractionDigits:2})+'T':a>=1e9?'$'+(a/1e9).toLocaleString('en-US',{maximumFractionDigits:1})+'B':shortMoney(v)}
-function webTotalsBox(w){if(!w)return '';if(w.budget)return `<div class="mt-web-total"><div class="key">Money the federal government spent in fiscal year ${escapeHtml(String(w.budget.fy))}</div><div class="event-amount mt-big">${webMoney(w.budget.total)}</div><p>Exactly ${money_(w.budget.total)}, from the Monthly Treasury Statement through ${escapeHtml(dateText(w.budget.through))}. Each line in the web is one department's budget resources (money it had available), as reported to USAspending.gov. Available money can include money carried over from earlier years, so the lines are not added up.</p></div>`;if(w.law)return `<div class="mt-web-total"><div class="key">Money promised under this law</div><div class="event-amount mt-big">${webMoney(w.law.total)}</div><p>Exactly ${money_(w.law.total)}: the total USAspending tags to this law's spending codes, as of ${escapeHtml(dateText(w.law.asOf))}. The lines in the web show the agencies and the largest recipients. They overlap, so they are not added up. How each member of Congress voted on it is in that member's own web and in the Person tracker.</p></div>`;let h=`<div class="mt-web-total"><div class="key">${w.hub?'Money on all its lines in this web':'Money on its lines with '+escapeHtml(w.name)}</div><div class="event-amount mt-big">${money_(w.total)}</div>`;
+function webTotalsBox(w){if(!w)return '';if(w.budget)return `<div class="mt-web-total"><div class="key">Money the federal government spent in fiscal year ${escapeHtml(String(w.budget.fy))}</div><div class="event-amount mt-big">${webMoney(w.budget.total)}</div><p>Exactly ${money_(w.budget.total)}, from the Monthly Treasury Statement through ${escapeHtml(dateText(w.budget.through))}. Each line in the web is one department's budget resources (money it had available), as reported to USAspending.gov. Available money can include money carried over from earlier years, so the lines are not added up.</p></div>`;if(w.law)return `<div class="mt-web-total"><div class="key">Money promised under this law</div><div class="event-amount mt-big">${webMoney(w.law.total)}</div><p>Exactly ${money_(w.law.total)}: the total USAspending tags to this law's spending codes, as of ${escapeHtml(dateText(w.law.asOf))}. The lines in the web show the agencies and the largest recipients. They overlap, so they are not added up. How each member of Congress voted on it is in that member's own web and in the Person tracker.</p></div>`;/* D231: no itemized filing but a reported figure: the big number is the largest reported figure, marked not added up (as on the tracker cards), never $0 */const repOnly=!(w.total>0)&&w.repMax>0;
+ let h=`<div class="mt-web-total"><div class="key">${repOnly?(w.hub?'Largest reported figure on its lines':'Largest reported figure on its lines with '+escapeHtml(w.name)):(w.hub?'Money on all its lines in this web':'Money on its lines with '+escapeHtml(w.name))}</div><div class="event-amount mt-big">${repOnly?webMoney(w.repMax)+'<span class="mt-not-added">not added up</span>':w.total>0?money_(w.total):'No dollar amount yet'}</div>`;
  if(w.hub){const parts=[];if(w.inN)parts.push(`Received: <b>${money_(w.inAmt)}</b> in ${filings(w.inN)}.`);if(w.outN)parts.push(`Sent: <b>${money_(w.outAmt)}</b> in ${filings(w.outN)}.`);if(parts.length)h+=`<p>${parts.join(' ')}</p>`;else if(!w.sameN)h+=`<p>No itemized filing on its lines.</p>`;if(w.sameN)h+=`<p>Between records that share this name: <b>${money_(w.sameAmt)}</b> in ${filings(w.sameN)}.</p>`;if(w.ids>1)h+=`<p>Lines from ${w.ids} separate ID records that share this name are counted here. They may not be the same legal entity.</p>`}
  else{if(w.outN)h+=`<p>Sent to ${escapeHtml(w.name)}: <b>${money_(w.outAmt)}</b> in ${filings(w.outN)}.</p>`;if(w.inN)h+=`<p>Received from ${escapeHtml(w.name)}: <b>${money_(w.inAmt)}</b> in ${filings(w.inN)}.</p>`;if(!w.outN&&!w.inN)h+=`<p>No itemized filing on these lines.</p>`}
  if(w.repN)h+=`<p>Reported figures: ${w.repN} report${w.repN===1?'':'s'}, the largest <b>${money_(w.repMax)}</b>. They are not added to the total or to each other, because they may repeat the same money.</p>`;
@@ -233,16 +234,34 @@ function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const n
  {const pairs=new Map();for(let {a,b,e} of net.edges){if(!pos[a]||!pos[b])continue;const k=a<b?a+'|'+b:b+'|'+a;const p=pairs.get(k)||{a,b,item:0,itemN:0,fec:0,rep:0};/* reported figures on one pair: the largest, not a sum */const amt=num(e.amount_usd)||0;if(e.tier==='itemized'||e.tier==='fec'){p.item+=amt;p.itemN++;if(e.tier==='fec')p.fec++}else if(e.tier==='reported')p.rep=Math.max(p.rep,amt);pairs.set(k,p)}
  const lg=svgEl('g',{class:'graph-amounts'},pan);
  for(const p of pairs.values()){const amt=p.itemN?p.item:p.rep;if(!(amt>0))continue;let A=pos[p.a],B=pos[p.b];if(Math.hypot(B.x-cx,B.y-cy)<Math.hypot(A.x-cx,A.y-cy))[A,B]=[B,A];const t=.6;
- const tx=svgEl('text',{x:A.x+(B.x-A.x)*t,y:A.y+(B.y-A.y)*t+4,'text-anchor':'middle',class:'graph-amount '+(p.itemN?(p.fec===p.itemN?'fec':'itemized'):'reported')},lg);tx.textContent=webShort(amt)}}
+ const tx=svgEl('text',{x:A.x+(B.x-A.x)*t,y:A.y+(B.y-A.y)*t+4,'text-anchor':'middle',class:'graph-amount '+(p.itemN?(p.fec===p.itemN?'fec':'itemized'):'reported')},lg);tx.textContent=webShort(amt);tx.__amt=amt;tx.__A=A;tx.__B=B}}
  for(let n of net.nodes){let P=pos[n.id],isRoot=n.id===root.id;let group=svgEl('g',{class:'graph-node'},pan);group.__n=n;group.__root=isRoot;let circ=svgEl('circle',{cx:P.x,cy:P.y,r:isRoot?'24':n.central?'11':ballotById[n.name]?'13':Math.max(6,Math.min(14,7+n.count/4)),fill:(ballotById[n.name]&&outcomeColor(n.name))||(isRoot?'#6be3c9':n.central?'#c4b18a':'#4c9ba5')},group);if(ballotById[n.name]&&outcomeColor(n.name))circ.setAttribute('stroke','#ffffff'),circ.setAttribute('stroke-width','3');svgEl('title',{},group).textContent=`${n.name}\n${n.id}\n${n.count} connections`;
  if(isRoot||n.count>=2||other.indexOf(n)<17){let text=svgEl('text',{x:P.x,y:P.y+(isRoot?42:24),'text-anchor':'middle'},group);const mb=ballotById[n.name];let label=mb?mb.state+' '+measureName(mb).slice((stName[mb.state]||mb.state).length+1):n.name;label=label.length>24?label.slice(0,22)+'…':label;text.textContent=label;
  if(mb){let sub=svgEl('text',{x:P.x,y:P.y+(isRoot?60:40),'text-anchor':'middle',class:'graph-sub'},group);sub.textContent=mb.short_title.length>34?mb.short_title.slice(0,32)+'…':mb.short_title;const mo=measureOutcome[n.name];if(mo){let st=svgEl('text',{x:P.x,y:P.y+(isRoot?84:62),'text-anchor':'middle',class:'graph-status '+mo.status},group);st.textContent=mo.status==='passed'?'✓ PASSED':mo.status==='failed'?'✗ FAILED':'Not yet called';}}}
  {const t=n.tot||{},mb=ballotById[n.name],mo=mb&&measureOutcome[n.name];const labeled=isRoot||n.count>=2||other.indexOf(n)<17;const dy=!labeled?(isRoot?42:24):mb?(mo?(isRoot?106:82):(isRoot?80:58)):(isRoot?62:40);
- const law=lawOf(String(n.name).toUpperCase()),bud=n.central&&budgetOf(n.name);/* D226: a law dot always shows the money promised under it */const amt=law?law.total:bud?bud.total:t.item>0?t.item:t.repMax;if(amt>0){let m=svgEl('text',{x:P.x,y:P.y+dy,'text-anchor':'middle',class:'graph-money'+(law||bud||t.item>0?'':' reported')},group);m.textContent=law?webMoney(amt)+' promised':bud?webMoney(amt)+' spent':webShort(amt)}}
+ const law=lawOf(String(n.name).toUpperCase()),bud=n.central&&budgetOf(n.name);/* D226: a law dot always shows the money promised under it */const amt=law?law.total:bud?bud.total:t.item>0?t.item:t.repMax;if(amt>0){let m=svgEl('text',{x:P.x,y:P.y+dy,'text-anchor':'middle',class:'graph-money'+(law||bud||t.item>0?'':' reported')+(isRoot?' root':'')},group);m.textContent=law?webMoney(amt)+' promised':bud?webMoney(amt)+' spent':webShort(amt);m.__amt=amt}}
  group.addEventListener('click',()=>{const mb=ballotById[n.name];if(mb){pick({...mb});if(n.name!==graphHub){graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()}return;}
  if(n.name===graphHub){const ent=entityById[n.id];if(ent){pick({record_kind:'entity',name:ent.legal_or_reported_name,entity_type:tidy(ent.entity_type),source_url:ent.source_url,notes:ent.notes,jurisdiction:ent.jurisdiction,id:ent.entity_id,web:webTotals(n)})}else pick({record_kind:'entity',name:n.name,jurisdiction:n.jur,id:/reported[-_]name/.test(n.id)?'':n.id,web:webTotals(n)});return;}
  graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()});}
+ const crowded=thinWebLabels(pan);if(crowded)$('#graph-count').textContent+=` · ${crowded} dollar ${crowded===1?'number was':'numbers were'} left off where they would cover other words. Point at a line or dot to see its number.`;
 }
+// D231: on a busy web the dollar numbers piled on top of each other and on the names. Names and dots stay. Each number
+// (the biggest first) tries a few spots along its line and is left off only when every spot would cover a name, a dot
+// or another number. The sizes are estimates in web units, so this works before the web is on screen.
+function thinWebLabels(pan){const boxes=[],em=t=>parseFloat(getComputedStyle(t).fontSize)||12;
+ const box=(t,x,y)=>{const f=em(t),w=String(t.textContent).length*f*.58+4;return {x0:x-w/2,x1:x+w/2,y0:y-f*.8,y1:y+f*.25}};
+ const hits=b=>boxes.some(o=>b.x0<o.x1&&b.x1>o.x0&&b.y0<o.y1&&b.y1>o.y0);
+ const at=(t,k)=>parseFloat(t.getAttribute(k))||0;let gone=0;
+ pan.querySelectorAll('.graph-node circle').forEach(c=>{const x=at(c,'cx'),y=at(c,'cy'),r=at(c,'r')+1;boxes.push({x0:x-r,x1:x+r,y0:y-r,y1:y+r})});
+ pan.querySelectorAll('.graph-node text:not(.graph-money), .graph-money.root').forEach(t=>boxes.push(box(t,at(t,'x'),at(t,'y'))));
+ const nodeMoney=[...pan.querySelectorAll('.graph-money:not(.root)')].sort((a,b)=>(b.__amt||0)-(a.__amt||0));
+ for(const t of nodeMoney){const b=box(t,at(t,'x'),at(t,'y'));if(hits(b)){t.remove();gone++}else boxes.push(b)}
+ const lineMoney=[...pan.querySelectorAll('.graph-amount')].sort((a,b)=>(b.__amt||0)-(a.__amt||0));
+ for(const t of lineMoney){const A=t.__A,B=t.__B;let ok=null;
+  if(A&&B)for(const f of [.6,.5,.7,.42,.78]){const x=A.x+(B.x-A.x)*f,y=A.y+(B.y-A.y)*f+4,b=box(t,x,y);if(!hits(b)){ok={x,y,b};break}}
+  else{const b=box(t,at(t,'x'),at(t,'y'));if(!hits(b))ok={x:at(t,'x'),y:at(t,'y'),b}}
+  if(ok){t.setAttribute('x',ok.x);t.setAttribute('y',ok.y);boxes.push(ok.b)}else{t.remove();gone++}}
+ return gone}
 function prepareHubRefresh(){$('#hub').innerHTML=hubs.map(x=>`<option value="${escapeHtml(x)}">${escapeHtml(hubLabel(x))}</option>`).join('')}
 function setScale(n){graphScale=Math.min(2,Math.max(.65,graphScale*n));renderGraph()}
 function renderStates(){const sel=$('#state-pick');if(!sel)return renderStateFocus();const arr=RESEARCH.coverage.map(x=>({...x,count:(byState[x.state]||[]).length})).sort((a,b)=>(stName[a.state]||a.state).localeCompare(stName[b.state]||b.state));sel.innerHTML=arr.map(s=>`<option value="${escapeHtml(s.state)}"${s.state===stateFocus?' selected':''}>${escapeHtml(stName[s.state]||s.state)} (${s.count})</option>`).join('');if(!sel.dataset.wired){sel.dataset.wired='1';sel.addEventListener('change',()=>{stateFocus=sel.value;renderStates();inspectState(stateFocus)})}renderStateFocus()}
@@ -879,4 +898,22 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     } finally { restoring = false; }
   });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => setTimeout(record, 0)); else setTimeout(record, 0);
+})();
+
+// D231: "Hide numbers" next to zoom and full screen takes the dollar numbers off the lines and the dots, so only the
+// names are left. The center dot keeps its total. The choice is remembered on this device. Hover cards still show the numbers.
+(function () {
+  const btn = $('#web-nums'), wrap = $('#graph-wrap');
+  if (!btn || !wrap) return;
+  const KEY = 'mt-web-numbers';
+  function set(hide, save) {
+    wrap.classList.toggle('mt-nonums', hide);
+    btn.textContent = hide ? 'Show numbers' : 'Hide numbers';
+    btn.setAttribute('aria-pressed', hide ? 'true' : 'false');
+    if (save) { try { localStorage.setItem(KEY, hide ? 'off' : 'on'); } catch (e) { /* private window: not remembered */ } }
+  }
+  let start = false;
+  try { start = localStorage.getItem(KEY) === 'off'; } catch (e) { start = false; }
+  set(start, false);
+  btn.addEventListener('click', () => set(!wrap.classList.contains('mt-nonums'), true));
 })();
