@@ -3,3 +3,14 @@
 .gv-pick select{font:inherit;color:var(--ink);background:#102c39;border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:min(100%,520px);min-height:46px}
 .gv-pick select:focus{outline:2px solid var(--sea);outline-offset:2px}
 #gv-vcard .gv-list strong{display:block}
+/* Department cards in a picked presidency */
+.gv-past{margin:4px 0 8px}
+.gv-past-h{margin:0 0 2px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.gv-past .gv-list strong{display:block;color:var(--ink);font-size:1.05rem}
+.gv-past .gv-list span{display:block}
+.gv-past .gv-office{font-size:.85rem;color:var(--sea);font-weight:700}
+.gv-past .gv-mark{display:block;font-size:.78rem;color:var(--muted);margin-top:2px}
+.gv-past .gv-gap{color:var(--muted);font-style:italic}
+.gv-past .gv-src{margin:4px 0 0;font-size:.85rem}
+.gv-how{margin-top:8px}
+.gv-past .gv-past-none{margin:4px 0 2px;color:var(--ink);font-size:.95rem}
