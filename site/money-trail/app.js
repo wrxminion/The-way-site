@@ -83,7 +83,7 @@ function summary(){const m=RESEARCH.meta;const fecN=(m.fec&&m.fec.records)||0;$(
 function getTitle(e){if(e.record_kind==='transaction')return `${e.source_name} → ${e.recipient_name}`;if(e.record_kind==='ballot')return `${measureName(e)}: ${e.short_title}`;if(e.record_kind==='reported')return `${e.source_name} → ${e.recipient_name}`;if(e.record_kind==='entity')return e.name||'';if(e.from_name||e.to_name)return `${e.from_name||'Unknown'} → ${e.to_name||'Unknown'}`;return e.event_id||e.id||'';}
 // The name of what is selected, shown first and in bold at the top of the inspector: a line reads 'FROM to TO', a dot reads its name.
 function selName(e){if(e.record_kind==='ballot')return `${measureName(e)}: ${e.short_title}`;if(e.record_kind==='entity')return e.name||'';const f=e.source_name||e.from_name,t=e.recipient_name||e.to_name;if(f||t)return `${f||'Unknown'} to ${t||'Unknown'}`;return getTitle(e);}
-function kindLabel(e){return e.record_kind==='entity'?'Organization in the money web':e.record_kind==='transaction'?(e.evidence_tier==='fec_filing'?'FEC filing record':'Itemized finance record'):e.record_kind==='ballot'?'Statewide ballot event':e.record_kind==='reported'?'Reported disclosure · NOT a unique transfer':'Research graph connection · mixed evidence'}
+function kindLabel(e){if(e.record_kind==='entity'&&e.web&&e.web.law)return 'Federal law followed on this page';return e.record_kind==='entity'?'Organization in the money web':e.record_kind==='transaction'?(e.evidence_tier==='fec_filing'?'FEC filing record':'Itemized finance record'):e.record_kind==='ballot'?'Statewide ballot event':e.record_kind==='reported'?'Reported disclosure · NOT a unique transfer':'Research graph connection · mixed evidence'}
 function eventMarkup(e){let active=selected&&selected.event_id===e.event_id,kind=e.record_kind;let label=kind==='ballot'?e.state+' · statewide':e.evidence_tier==='fec_filing'?'US · FEC filing':(stateOf(e)==='US'?'US / context unresolved':stateOf(e));
  const sub=kind==='transaction'?(e.activity_type||'Filed transaction'):(kind==='ballot'?`${dateText(e.election_date)} · ${e.source_status||'Official record'}`:`Report date ${dateText(e.date)} · transfer date not verified`);
  return `<div class="timeline-item ${kind}"><div class="event-date">${timeDay(e.event_date)}</div><div class="rail"></div><button class="event-card ${active?'selected':''}" data-event="${escapeHtml(e.event_id)}" aria-label="Inspect ${escapeHtml(getTitle(e))}"><div class="event-top"><span class="event-kind ${kind}">${kindLabel(e)}</span>${kind!=='ballot'?`<span class="event-amount">${shortMoney(e.amount_usd)}</span>`:''}</div><div class="event-title">${escapeHtml(getTitle(e))}</div><div class="event-sub">${escapeHtml(sub.replace(/_/g,' '))}</div><div class="event-foot"><span class="chip">${escapeHtml(label)}</span>${kind==='transaction'?'<span class="chip green">Source-linked itemized</span>':kind==='ballot'?'<span class="chip amber">Finance review incomplete</span>':'<span class="chip amber">Non-additive · observed</span>'}</div></button></div>`}
@@ -123,7 +123,7 @@ function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<h2 clas
  const bt=$('#to-graph');if(bt)bt.addEventListener('click',()=>{graphHub=e.source_name;setView('network');$('#hub').value=graphHub;renderGraph()});
 }
 function pick(e){selected=e;details(e);if(view==='timeline')renderTimeline();if(window.innerWidth<=1250)$('#detail-panel').classList.add('open')}
-function setView(v){view=v;$$('[data-view]').forEach(b=>{const active=b.dataset.view===v;b.classList.toggle('active',active);b.setAttribute('aria-selected',active)});$('#timeline-view').hidden=v!=='timeline';$('#network-view').hidden=v!=='network';$('#states-view').hidden=v!=='states';$('#feed-title').textContent=v==='timeline'?'The chronological trail':v==='network'?'Connected money & institutions':'The 50-state tracker';$('#feed-tools').hidden=v!=='timeline';
+function setView(v){view=v;$$('[data-view]').forEach(b=>{const active=b.dataset.view===v;b.classList.toggle('active',active);b.setAttribute('aria-selected',active)});$('#timeline-view').hidden=v!=='timeline';$('#network-view').hidden=v!=='network';$('#states-view').hidden=v!=='states';$('#feed-title').textContent=v==='timeline'?'The chronological trail':v==='network'?'Money Web':'The 50-state tracker';$('#feed-tools').hidden=v!=='timeline';
  if(v==='timeline')renderTimeline();if(v==='network'){renderGraph()}if(v==='states'){renderStates()}
  if(v!=='timeline')$('#feed-sub').textContent=v==='network'?'Entity links kept separate by ID and evidence tier':'No state is marked fully researched';
 }
@@ -148,21 +148,27 @@ function makeNetwork(){let edges=settings.includeContext?[...networkVerified,...
  display.push({a,b,e});}
  // D214: dollar totals for each dot and for the hub, from every eligible line (not only the 85 drawn).
  // Itemized and FEC filings are added up. Reported disclosures are kept apart and never added to them. Context links have no dollars here.
- const tot={},hub={inAmt:0,inN:0,outAmt:0,outN:0,sameAmt:0,sameN:0,rep:0,repN:0,ids:new Set()};
+ const tot={},hub={inAmt:0,inN:0,outAmt:0,outN:0,sameAmt:0,sameN:0,rep:0,repN:0,repMax:0,ids:new Set()};
  for(let e of edges){const a=nodeKey(e.from_name,e.from_entity_id,e.jurisdiction),b=nodeKey(e.to_name,e.to_entity_id,e.jurisdiction),amt=num(e.amount_usd)||0,s=solid(e),rp=e.tier==='reported'&&amt>0;
- for(const [id,side] of [[a,'out'],[b,'in']]){const t=tot[id]||(tot[id]={item:0,itemN:0,in:0,inN:0,out:0,outN:0,rep:0,repN:0});if(s){t.item+=amt;t.itemN++;t[side]+=amt;t[side+'N']++}else if(rp){t.rep+=amt;t.repN++}}
+ for(const [id,side] of [[a,'out'],[b,'in']]){const t=tot[id]||(tot[id]={item:0,itemN:0,in:0,inN:0,out:0,outN:0,rep:0,repN:0,repMax:0});if(s){t.item+=amt;t.itemN++;t[side]+=amt;t[side+'N']++}else if(rp){t.rep+=amt;t.repN++;t.repMax=Math.max(t.repMax,amt)}}
  const fh=norm(e.from_name)===f,th=norm(e.to_name)===f;if(fh)hub.ids.add(a);if(th)hub.ids.add(b);
- if(s){if(fh&&th){hub.sameAmt+=amt;hub.sameN++}else if(th){hub.inAmt+=amt;hub.inN++}else{hub.outAmt+=amt;hub.outN++}}else if(rp){hub.rep+=amt;hub.repN++}}
- for(const n of nodes.values())n.tot=tot[n.id]||{item:0,itemN:0,in:0,inN:0,out:0,outN:0,rep:0,repN:0};
+ if(s){if(fh&&th){hub.sameAmt+=amt;hub.sameN++}else if(th){hub.inAmt+=amt;hub.inN++}else{hub.outAmt+=amt;hub.outN++}}else if(rp){hub.rep+=amt;hub.repN++;hub.repMax=Math.max(hub.repMax,amt)}}
+ for(const n of nodes.values())n.tot=tot[n.id]||{item:0,itemN:0,in:0,inN:0,out:0,outN:0,rep:0,repN:0,repMax:0};
  return {edges:display,nodes:[...nodes.values()],total:edges.length,hub};}
 // D214: what a dot's money total means, for the Evidence inspector. The hub (center name) gets its totals over all its lines; any other dot gets its lines with the hub.
-function webTotals(n){const net=lastNet;if(!net||!n)return null;if(n.central){const h=net.hub;return {hub:true,name:hubLabel(graphHub),ids:h.ids.size,total:h.inAmt+h.outAmt+h.sameAmt,inAmt:h.inAmt,inN:h.inN,outAmt:h.outAmt,outN:h.outN,sameAmt:h.sameAmt,sameN:h.sameN,rep:h.rep,repN:h.repN}}
- const t=n.tot||{};return {hub:false,name:hubLabel(graphHub),total:t.item||0,inAmt:t.in||0,inN:t.inN||0,outAmt:t.out||0,outN:t.outN||0,rep:t.rep||0,repN:t.repN||0}}
+function webTotals(n){const net=lastNet;if(!net||!n)return null;if(n.central){const h=net.hub;return {hub:true,name:hubLabel(graphHub),ids:h.ids.size,total:h.inAmt+h.outAmt+h.sameAmt,inAmt:h.inAmt,inN:h.inN,outAmt:h.outAmt,outN:h.outN,sameAmt:h.sameAmt,sameN:h.sameN,rep:h.rep,repN:h.repN,repMax:h.repMax,law:lawOf(graphHub)}}
+ const t=n.tot||{};return {hub:false,name:hubLabel(graphHub),total:t.item||0,inAmt:t.in||0,inN:t.inN||0,outAmt:t.out||0,outN:t.outN||0,rep:t.rep||0,repN:t.repN||0,repMax:t.repMax||0}}
 function filings(k){return k+' itemized filing'+(k===1?'':'s')}
-function webTotalsBox(w){if(!w)return '';let h=`<div class="mt-web-total"><div class="key">${w.hub?'Money on all its lines in this web':'Money on its lines with '+escapeHtml(w.name)}</div><div class="event-amount mt-big">${money_(w.total)}</div>`;
- if(w.hub){h+=`<p>Received: <b>${money_(w.inAmt)}</b> in ${filings(w.inN)}. Sent: <b>${money_(w.outAmt)}</b> in ${filings(w.outN)}.</p>`;if(w.sameN)h+=`<p>Between records that share this name: <b>${money_(w.sameAmt)}</b> in ${filings(w.sameN)}.</p>`;if(w.ids>1)h+=`<p>Lines from ${w.ids} separate ID records that share this name are counted here. They may not be the same legal entity.</p>`}
+// D215: a law followed on this page (laws.js) has its own official total: money promised (obligated) under it, from USAspending.
+function lawOf(name){const L=((window.TW_LAWS||{}).laws||[]).find(l=>String(l.name||l.bill||'').toUpperCase()===name);return L&&L.overview&&L.overview.total_obligations>0?{total:L.overview.total_obligations,asOf:String(L.retrieved||'').slice(0,10)}:null}
+// Big numbers read as words on the web: $1.43 trillion, $12.3 billion, $203.1m.
+function webMoney(v){const a=Math.abs(num(v));return a>=1e12?'$'+(a/1e12).toLocaleString('en-US',{maximumFractionDigits:2})+' trillion':a>=1e9?'$'+(a/1e9).toLocaleString('en-US',{maximumFractionDigits:1})+' billion':shortMoney(v)}
+// On the web itself space is tight: $1.43T, $4.8B, $203.1m.
+function webShort(v){const a=Math.abs(num(v));return a>=1e12?'$'+(a/1e12).toLocaleString('en-US',{maximumFractionDigits:2})+'T':a>=1e9?'$'+(a/1e9).toLocaleString('en-US',{maximumFractionDigits:1})+'B':shortMoney(v)}
+function webTotalsBox(w){if(!w)return '';if(w.law)return `<div class="mt-web-total"><div class="key">Money promised under this law</div><div class="event-amount mt-big">${webMoney(w.law.total)}</div><p>Exactly ${money_(w.law.total)}: the total USAspending tags to this law's spending codes, as of ${escapeHtml(dateText(w.law.asOf))}. The lines in the web show the agencies and the largest recipients. They overlap, so they are not added up.</p></div>`;let h=`<div class="mt-web-total"><div class="key">${w.hub?'Money on all its lines in this web':'Money on its lines with '+escapeHtml(w.name)}</div><div class="event-amount mt-big">${money_(w.total)}</div>`;
+ if(w.hub){const parts=[];if(w.inN)parts.push(`Received: <b>${money_(w.inAmt)}</b> in ${filings(w.inN)}.`);if(w.outN)parts.push(`Sent: <b>${money_(w.outAmt)}</b> in ${filings(w.outN)}.`);if(parts.length)h+=`<p>${parts.join(' ')}</p>`;else if(!w.sameN)h+=`<p>No itemized filing on its lines.</p>`;if(w.sameN)h+=`<p>Between records that share this name: <b>${money_(w.sameAmt)}</b> in ${filings(w.sameN)}.</p>`;if(w.ids>1)h+=`<p>Lines from ${w.ids} separate ID records that share this name are counted here. They may not be the same legal entity.</p>`}
  else{if(w.outN)h+=`<p>Sent to ${escapeHtml(w.name)}: <b>${money_(w.outAmt)}</b> in ${filings(w.outN)}.</p>`;if(w.inN)h+=`<p>Received from ${escapeHtml(w.name)}: <b>${money_(w.inAmt)}</b> in ${filings(w.inN)}.</p>`;if(!w.outN&&!w.inN)h+=`<p>No itemized filing on these lines.</p>`}
- if(w.repN)h+=`<p>Reported disclosures: <b>${money_(w.rep)}</b> in ${w.repN} report${w.repN===1?'':'s'}. Not added to the total, because they may repeat the same money.</p>`;
+ if(w.repN)h+=`<p>Reported figures: ${w.repN} report${w.repN===1?'':'s'}, the largest <b>${money_(w.repMax)}</b>. They are not added to the total or to each other, because they may repeat the same money.</p>`;
  return h+`<p class="mt-web-total-note">Counts only the records in this page's data, with the filters now set. It is not the full amount this group raised or spent.</p></div>`}
 const NS='http://www.w3.org/2000/svg';
 function svgEl(tag,attrs,parent){let x=document.createElementNS(NS,tag);Object.entries(attrs||{}).forEach(([k,v])=>x.setAttribute(k,v));if(parent)parent.appendChild(x);return x}
@@ -175,15 +181,15 @@ function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const n
  let pan=svgEl('g',{transform:`translate(${cx*(1-graphScale)} ${cy*(1-graphScale)}) scale(${graphScale})`},svg);
  for(let {a,b,e} of net.edges){let A=pos[a],B=pos[b];if(!A||!B)continue;let tier=e.tier;let line=svgEl('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,stroke:tier==='itemized'?'#57c2ad':tier==='fec'?'#b9a7f2':tier==='reported'?'#ad946c':'#659eb3','stroke-width':tier==='itemized'||tier==='fec'?'1.8':'1.3','stroke-dasharray':tier==='itemized'||tier==='fec'?'none':tier==='reported'?'7 5':'2 5',class:'graph-edge',opacity:'.7'},pan);svgEl('title',{},line).textContent=`${e.from_name} → ${e.to_name}\n${e.amount_usd!=null?money(e.amount_usd):'Non-financial'}\n${e.edge_type}`;line.__rec=e.record_ref||e;line.addEventListener('click',()=>pick(e.record_ref||e));}
  // D214: the dollar amount along each line. Two dots with more than one filing between them show the sum of those filings.
- {const pairs=new Map();for(let {a,b,e} of net.edges){if(!pos[a]||!pos[b])continue;const k=a<b?a+'|'+b:b+'|'+a;const p=pairs.get(k)||{a,b,item:0,itemN:0,fec:0,rep:0};const amt=num(e.amount_usd)||0;if(e.tier==='itemized'||e.tier==='fec'){p.item+=amt;p.itemN++;if(e.tier==='fec')p.fec++}else if(e.tier==='reported')p.rep+=amt;pairs.set(k,p)}
+ {const pairs=new Map();for(let {a,b,e} of net.edges){if(!pos[a]||!pos[b])continue;const k=a<b?a+'|'+b:b+'|'+a;const p=pairs.get(k)||{a,b,item:0,itemN:0,fec:0,rep:0};/* reported figures on one pair: the largest, not a sum */const amt=num(e.amount_usd)||0;if(e.tier==='itemized'||e.tier==='fec'){p.item+=amt;p.itemN++;if(e.tier==='fec')p.fec++}else if(e.tier==='reported')p.rep=Math.max(p.rep,amt);pairs.set(k,p)}
  const lg=svgEl('g',{class:'graph-amounts'},pan);
  for(const p of pairs.values()){const amt=p.itemN?p.item:p.rep;if(!(amt>0))continue;let A=pos[p.a],B=pos[p.b];if(Math.hypot(B.x-cx,B.y-cy)<Math.hypot(A.x-cx,A.y-cy))[A,B]=[B,A];const t=.6;
- const tx=svgEl('text',{x:A.x+(B.x-A.x)*t,y:A.y+(B.y-A.y)*t+4,'text-anchor':'middle',class:'graph-amount '+(p.itemN?(p.fec===p.itemN?'fec':'itemized'):'reported')},lg);tx.textContent=shortMoney(amt)}}
+ const tx=svgEl('text',{x:A.x+(B.x-A.x)*t,y:A.y+(B.y-A.y)*t+4,'text-anchor':'middle',class:'graph-amount '+(p.itemN?(p.fec===p.itemN?'fec':'itemized'):'reported')},lg);tx.textContent=webShort(amt)}}
  for(let n of net.nodes){let P=pos[n.id],isRoot=n.id===root.id;let group=svgEl('g',{class:'graph-node'},pan);group.__n=n;group.__root=isRoot;let circ=svgEl('circle',{cx:P.x,cy:P.y,r:isRoot?'24':n.central?'11':ballotById[n.name]?'13':Math.max(6,Math.min(14,7+n.count/4)),fill:(ballotById[n.name]&&outcomeColor(n.name))||(isRoot?'#6be3c9':n.central?'#c4b18a':'#4c9ba5')},group);if(ballotById[n.name]&&outcomeColor(n.name))circ.setAttribute('stroke','#ffffff'),circ.setAttribute('stroke-width','3');svgEl('title',{},group).textContent=`${n.name}\n${n.id}\n${n.count} connections`;
  if(isRoot||n.count>=2||other.indexOf(n)<17){let text=svgEl('text',{x:P.x,y:P.y+(isRoot?42:24),'text-anchor':'middle'},group);const mb=ballotById[n.name];let label=mb?mb.state+' '+measureName(mb).slice((stName[mb.state]||mb.state).length+1):n.name;label=label.length>24?label.slice(0,22)+'…':label;text.textContent=label;
  if(mb){let sub=svgEl('text',{x:P.x,y:P.y+(isRoot?60:40),'text-anchor':'middle',class:'graph-sub'},group);sub.textContent=mb.short_title.length>34?mb.short_title.slice(0,32)+'…':mb.short_title;const mo=measureOutcome[n.name];if(mo){let st=svgEl('text',{x:P.x,y:P.y+(isRoot?84:62),'text-anchor':'middle',class:'graph-status '+mo.status},group);st.textContent=mo.status==='passed'?'✓ PASSED':mo.status==='failed'?'✗ FAILED':'Not yet called';}}}
  {const t=n.tot||{},mb=ballotById[n.name],mo=mb&&measureOutcome[n.name];const labeled=isRoot||n.count>=2||other.indexOf(n)<17;const dy=!labeled?(isRoot?42:24):mb?(mo?(isRoot?106:82):(isRoot?80:58)):(isRoot?62:40);
- const amt=t.item>0?t.item:t.rep;if(amt>0){let m=svgEl('text',{x:P.x,y:P.y+dy,'text-anchor':'middle',class:'graph-money'+(t.item>0?'':' reported')},group);m.textContent=shortMoney(amt)+(t.item>0?'':' reported')}}
+ const law=n.central&&lawOf(n.name);const amt=law?law.total:t.item>0?t.item:t.repMax;if(amt>0){let m=svgEl('text',{x:P.x,y:P.y+dy,'text-anchor':'middle',class:'graph-money'+(law||t.item>0?'':' reported')},group);m.textContent=law?webMoney(amt)+' promised':webShort(amt)}}
  group.addEventListener('click',()=>{const mb=ballotById[n.name];if(mb){pick({...mb});if(n.name!==graphHub){graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()}return;}
  if(n.name===graphHub){const ent=entityById[n.id];if(ent){pick({record_kind:'entity',name:ent.legal_or_reported_name,entity_type:tidy(ent.entity_type),source_url:ent.source_url,notes:ent.notes,jurisdiction:ent.jurisdiction,id:ent.entity_id,web:webTotals(n)})}else pick({record_kind:'entity',name:n.name,jurisdiction:n.jur,id:/reported[-_]name/.test(n.id)?'':n.id,web:webTotals(n)});return;}
  graphHub=n.name;if(!hubs.includes(graphHub)){hubs.push(graphHub);prepareHubRefresh()}$('#hub').value=graphHub;graphScale=1;renderGraph()});}
@@ -353,7 +359,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (e.record_kind === 'ballot') {
       add('Open the trail for ' + e.state + ' ' + e.measure_number, 'follow.html?measure=' + encodeURIComponent(e.measure_id));
       const w = webHref(e.measure_id, e.state, e.state + ' ' + e.measure_number);
-      add(w.label, w.href, 'art/money-web-link.webp');
+      add(w.label, w.href, 'art/money-web-link-blue.webp');
       add('Money web full screen', w.href + '&full=1');
       add(stName[e.state] + ' election results', '/results/?state=' + e.state.toLowerCase() + '#tabs');
       add(stName[e.state] + ' ballot guide', guide(e.state));
@@ -548,4 +554,91 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   // A new web (new center, zoom, filters) means the old preview no longer points at anything.
   const baseRender = renderGraph;
   renderGraph = function () { shownFor = null; baseRender(); };
+})();
+
+// ---- D215 (Nov 2026): the Money Web list can be sorted (largest first, A to Z, Z to A, most connections),
+// a search box finds any name in the web, and the web opens on the largest one in the list.
+// "Largest" = money promised under a law (laws.js), else the itemized filings on its lines, else its largest reported figure.
+// Reported figures are never added up.
+(function () {
+  const sel = $('#hub'), sortSel = $('#hub-sort'), box = $('#web-search'), list = $('#web-search-results');
+  if (!sel) return;
+  const info = new Map();
+  const get = nm => { const k = norm(nm); let t = info.get(k); if (!t) info.set(k, t = { name: nm, item: 0, links: 0, repMax: 0 }); return t; };
+  [...networkVerified, ...networkContext].forEach(e => {
+    const amt = num(e.amount_usd) || 0, solid = e.tier === 'itemized' || e.tier === 'fec';
+    for (const nm of [e.from_name, e.to_name]) { if (!nm) continue; const t = get(nm); t.links++; if (solid) t.item += amt; else if (e.tier === 'reported') t.repMax = Math.max(t.repMax, amt); }
+  });
+  const sizeOf = nm => { const law = lawOf(String(nm).toUpperCase()); if (law) return { v: law.total, how: 'promised' }; const t = info.get(norm(nm)) || {}; if (t.item > 0) return { v: t.item, how: 'in filings' }; if (t.repMax > 0) return { v: t.repMax, how: 'reported' }; return { v: 0, how: '' }; };
+  const linksOf = nm => (info.get(norm(nm)) || {}).links || 0;
+  const sizeText = nm => { const z = sizeOf(nm); return z.v > 0 ? webMoney(z.v) + ' ' + z.how : 'no dollar lines'; };
+  let order = 'size';
+  const sorted = () => {
+    const a = hubs.slice();
+    if (order === 'az') a.sort((x, y) => hubLabel(x).localeCompare(hubLabel(y)));
+    else if (order === 'za') a.sort((x, y) => hubLabel(y).localeCompare(hubLabel(x)));
+    else if (order === 'links') a.sort((x, y) => linksOf(y) - linksOf(x) || hubLabel(x).localeCompare(hubLabel(y)));
+    else a.sort((x, y) => sizeOf(y).v - sizeOf(x).v || hubLabel(x).localeCompare(hubLabel(y)));
+    return a;
+  };
+  // The list is rebuilt the same way everywhere, and keeps showing the dot in the center.
+  prepareHubRefresh = function () {
+    sel.replaceChildren(...sorted().map(x => { const o = document.createElement('option'); o.value = x; o.textContent = hubLabel(x) + ' · ' + (order === 'links' ? linksOf(x) + ' connections' : sizeText(x)); return o; }));
+    if (!hubs.includes(graphHub)) { hubs.push(graphHub); return prepareHubRefresh(); }
+    sel.value = graphHub;
+  };
+  function go(name) {
+    graphHub = name; if (!hubs.includes(name)) hubs.push(name);
+    prepareHubRefresh(); graphScale = 1;
+    if ($('#network-view').hidden) setView('network'); else renderGraph();
+  }
+  if (sortSel) sortSel.addEventListener('change', () => { order = sortSel.value; prepareHubRefresh(); });
+
+  // Search: any name with a line in the web. Words can be in any order. Best matches first, then the largest.
+  if (box && list) {
+    const names = [...info.values()].map(t => t.name);
+    let hits = [], active = -1;
+    const close = () => { list.hidden = true; list.replaceChildren(); hits = []; active = -1; box.setAttribute('aria-expanded', 'false'); };
+    const show = () => {
+      const q = box.value.trim().toUpperCase(), words = q.split(/\s+/).filter(Boolean);
+      if (q.length < 2) return close();
+      hits = names.map(nm => ({ nm, lab: hubLabel(nm).toUpperCase() }))
+        .filter(x => words.every(w => x.lab.includes(w) || x.nm.toUpperCase().includes(w)))
+        .sort((a, b) => (b.lab.startsWith(q) - a.lab.startsWith(q)) || (sizeOf(b.nm).v - sizeOf(a.nm).v) || a.lab.localeCompare(b.lab))
+        .slice(0, 8).map(x => x.nm);
+      list.replaceChildren();
+      if (!hits.length) { const d = document.createElement('div'); d.className = 'mt-web-none'; d.textContent = 'No name in the web matches.'; list.append(d); }
+      hits.forEach((nm, i) => {
+        const b = document.createElement('button'); b.type = 'button'; b.className = 'mt-web-hit'; b.id = 'web-hit-' + i; b.setAttribute('role', 'option');
+        const n1 = document.createElement('span'); n1.className = 'mt-web-hit-name'; n1.textContent = hubLabel(nm);
+        const n2 = document.createElement('span'); n2.className = 'mt-web-hit-size'; n2.textContent = sizeText(nm) + ' · ' + linksOf(nm) + (linksOf(nm) === 1 ? ' connection' : ' connections');
+        b.append(n1, n2);
+        b.addEventListener('click', () => { go(nm); box.value = ''; close(); });
+        list.append(b);
+      });
+      active = -1; list.hidden = false; box.setAttribute('aria-expanded', 'true');
+    };
+    const mark = () => list.querySelectorAll('.mt-web-hit').forEach((b, i) => { b.classList.toggle('active', i === active); if (i === active) box.setAttribute('aria-activedescendant', b.id); });
+    box.addEventListener('input', show);
+    box.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key === 'ArrowDown' && hits.length) { e.preventDefault(); active = (active + 1) % hits.length; mark(); }
+      else if (e.key === 'ArrowUp' && hits.length) { e.preventDefault(); active = (active - 1 + hits.length) % hits.length; mark(); }
+      else if (e.key === 'Enter' && hits.length) { e.preventDefault(); go(hits[Math.max(active, 0)]); box.value = ''; close(); }
+    });
+    document.addEventListener('click', e => { if (!e.target.closest || !e.target.closest('.mt-web-search')) close(); });
+  }
+
+  // Open on the largest name in the list, unless the address asks for a hub (?hub=) or a state's web (?view=network&state=).
+  const q = new URLSearchParams(location.search);
+  const start = () => {
+    if (!q.get('hub') && !(q.get('view') === 'network' && q.get('state'))) {
+      // The laws followed on this page join the list later (budgets-view.js), so they are counted here too.
+      ((window.TW_LAWS || {}).laws || []).forEach(l => { const nm = String(l.name || l.bill || '').toUpperCase(); if (nm && lawOf(nm) && !hubs.includes(nm)) hubs.push(nm); });
+      const top = hubs.slice().sort((x, y) => sizeOf(y).v - sizeOf(x).v)[0];
+      if (top && top !== graphHub) { graphHub = top; graphScale = 1; prepareHubRefresh(); if (!$('#network-view').hidden) renderGraph(); return; }
+    }
+    prepareHubRefresh();
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
