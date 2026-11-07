@@ -1,6 +1,7 @@
 """Follow laws from the vote to the money (D208, Nov 2026). Standard library only. Public data only, no keys.
 
   python -I tools/money-trail/follow_laws.py pull  DATA_DIR    fetch, check and save one file per law
+  python -I tools/money-trail/follow_laws.py senate DATA_DIR   add how each senator voted to the laws already saved
   python -I tools/money-trail/follow_laws.py build DATA_DIR    write site/money-trail/laws.js from the saved laws
 
 Which laws: tools/money-trail/laws.json. Sources, all public:
@@ -8,10 +9,12 @@ Which laws: tools/money-trail/laws.json. Sources, all public:
     the official summary, and every floor action with its vote count.
   * House Clerk roll call XML: how each House member voted. Checked to be the same bill and the same count as the
     Library of Congress record before use.
-  * D226: the sponsor and cosponsors with their Bioguide IDs (same Library of Congress bill record), and how each
-    senator voted (senate.gov roll call XML, same checks as the House). Senate files name senators by their Senate
-    (LIS) ID, so the congress-legislators list (unitedstates.github.io) turns that into the Bioguide ID. A senator
-    whose ID cannot be turned into a Bioguide ID stops the Senate list for that law: nobody is matched by name.
+  * D226: the sponsor and cosponsors with their Bioguide IDs (same Library of Congress bill record).
+  * D233: how each senator voted, from Voteview's public Senate roll call files (voteview.com, UCLA), because senate.gov
+    refuses its files to scripts. Voteview gives each senator's Bioguide ID. The roll call must be the same record vote,
+    day and count as the Library of Congress record, the senators' rows must add up to that count, and every Bioguide ID
+    must have a Senate term for that state on that day in the congress-legislators list (unitedstates.github.io).
+    One senator who fails stops the Senate list for that law: nobody is matched by name.
     A Senate list that fails a check is left out and noted in report.json; the rest of the law still saves.
   * USAspending.gov: the spending code list, and the dollars tagged to each law's codes (given to agencies, promised,
     paid out, by agency, by account, and by recipient where a page counts only the law's dollars).
@@ -191,54 +194,140 @@ def people_of(b, tag):
     return out
 
 
-LIS = {}
+# D233: senate.gov refuses its roll call files to scripts (HTTP 403), and this does not work around that. Voteview
+# (voteview.com, UCLA) publishes every Senate roll call as public CSV files, with each senator's Bioguide ID. Each list
+# is checked three ways before use: Voteview's roll call must be the same Senate record vote on the same day with the
+# same count as the Library of Congress record; the senators' own Yea and Nay rows must add up to that count; and every
+# senator's Bioguide ID must be in the congress-legislators list with a Senate term for that state, in that party, on that day.
+VV = "https://voteview.com/static/data/out"
+VV_CAST = {"1": "Yea", "2": "Not Voting", "3": "Not Voting", "4": "Not Voting", "5": "Not Voting", "6": "Nay",
+           "7": "Present", "8": "Present", "9": "Not Voting"}  # 2-5 are paired or announced votes: not counted in the total
+VV_PARTY = {"100": "D", "200": "R", "328": "I"}
+VVF, LEG = {}, {}
 
 
-def lis_map(data_dir):
-    """D226: Senate (LIS) ID -> Bioguide ID, from the congress-legislators current and historical lists."""
-    if LIS:
-        return LIS
+def voteview(congress, kind, data_dir):
+    """One Voteview Senate file (rollcalls, votes or members) for a Congress, as a list of rows. Saved under raw/voteview."""
+    import csv, io
+    key = (congress, kind)
+    if key not in VVF:
+        name = "S%d_%s.csv" % (congress, kind)
+        s, t = fetch("%s/%s/%s" % (VV, kind, name), raw_path=os.path.join(data_dir, "raw", "voteview", name + ".json"))
+        VVF[key] = list(csv.DictReader(io.StringIO(t))) if s == 200 and t else None
+    return VVF[key]
+
+
+def legislators(data_dir):
+    """Bioguide ID -> {last name, Senate terms}, from the congress-legislators current and historical lists."""
+    if LEG:
+        return LEG
     for f in ("legislators-current.json", "legislators-historical.json"):
         d = jget("https://unitedstates.github.io/congress-legislators/" + f, raw_path=os.path.join(data_dir, "raw", f))
-        for p in d or []:
-            i = p.get("id") or {}
-            if i.get("lis") and i.get("bioguide"):
-                LIS[i["lis"]] = i["bioguide"]
-    return LIS
+        if d is None:
+            LEG.clear()
+            return LEG
+        for p in d:
+            bid = (p.get("id") or {}).get("bioguide")
+            if bid:
+                LEG[bid] = {"last": (p.get("name") or {}).get("last"), "sen": [t for t in p.get("terms") or [] if t.get("type") == "sen"]}
+    return LEG
 
 
 def senate_roll(law, v, raw_dir, data_dir, checks, problems):
-    """D226: how each senator voted, from senate.gov. Used only if it is the same vote and the same count."""
-    url = v.get("record_url") or ""
-    if "senate.gov" not in url or not url.endswith(".xml"):
-        problems.append("Senate roll call link missing from the bill record")
+    """D226/D233: how each senator voted, from Voteview. Used only if every check passes."""
+    if not v.get("roll") or not v.get("totals"):
+        problems.append("Senate record vote number or count missing from the bill record")
         return
-    s, t = fetch(url, raw_path=os.path.join(raw_dir, "senate_roll.xml"))
-    if s != 200:
-        problems.append("Senate roll call %s not readable (%s)" % (v["roll"], s))
+    rcs, votes, mems = (voteview(law["congress"], k, data_dir) for k in ("rollcalls", "votes", "members"))
+    if not (rcs and votes and mems):
+        problems.append("Voteview Senate files for Congress %d not readable" % law["congress"])
         return
-    root = ET.fromstring(t.encode("utf-8"))
-    num, cong = int(root.findtext("vote_number") or 0), root.findtext("congress")
-    yea, nay = int(root.findtext("count/yeas") or -1), int(root.findtext("count/nays") or -1)
-    if num != v["roll"] or cong != str(law["congress"]):
-        problems.append("Senate roll %s is vote %s in Congress %s" % (v["roll"], num, cong))
+    year = int(v["date"][:4])
+    hit = [r for r in rcs if r.get("chamber") == "Senate" and r.get("clerk_rollnumber") == str(v["roll"]) and r.get("date") == v["date"]]
+    if len(hit) != 1:
+        problems.append("Voteview has %d Senate roll calls numbered %s on %s" % (len(hit), v["roll"], v["date"]))
         return
+    rc = hit[0]
+    yea, nay = int(rc.get("yea_count") or -1), int(rc.get("nay_count") or -1)
     if (yea, nay) != (v["totals"]["Yea"], v["totals"]["Nay"]):
-        problems.append("Senate roll %s count %s-%s differs from the bill record %s-%s" % (v["roll"], yea, nay, v["totals"]["Yea"], v["totals"]["Nay"]))
+        problems.append("Voteview Senate roll %s count %s-%s differs from the bill record %s-%s" % (v["roll"], yea, nay, v["totals"]["Yea"], v["totals"]["Nay"]))
         return
-    ids = lis_map(data_dir)
-    members, missing = [], []
-    for m in root.iter("member"):
-        lis = (m.findtext("lis_member_id") or "").strip()
-        bid = ids.get(lis)
-        if not bid:
-            missing.append(lis or m.findtext("member_full") or "?"); continue
-        members.append([bid, m.findtext("last_name"), m.findtext("party"), m.findtext("state"), m.findtext("vote_cast")])
-    if missing:
-        problems.append("Senate roll %s: no Bioguide ID for %s, so no senator list" % (v["roll"], ", ".join(missing[:5])))
+    bill = re.sub(r"\W", "", rc.get("bill_number") or "").upper()
+    want = (law["type"] + str(law["number"])).upper()
+    if bill and bill != want:
+        problems.append("Voteview Senate roll %s is about %s, not %s" % (v["roll"], bill, want))
         return
-    v.update({"members": members, "data": url})
-    checks.append("Senate roll call %d (senate.gov) matches the Library of Congress count %d-%d; %d senators matched by ID" % (v["roll"], yea, nay, len(members)))
+    who = {r["icpsr"]: r for r in mems if r.get("chamber") == "Senate"}
+    president = {r["icpsr"] for r in mems if r.get("chamber") == "President"}  # Voteview also files the President's position
+    leg = legislators(data_dir)
+    if not leg:
+        problems.append("congress-legislators list not readable, so senators' IDs cannot be checked")
+        return
+    members, bad = [], []
+    for r in votes:
+        if r.get("chamber") != "Senate" or r.get("rollnumber") != rc["rollnumber"]:
+            continue
+        cast = VV_CAST.get(str(r.get("cast_code", "")).split(".")[0])
+        if cast is None or r.get("icpsr") in president:  # 0: not a member at the time of this vote
+            continue
+        m = who.get(r.get("icpsr")) or {}
+        bid, st = (m.get("bioguide_id") or "").strip(), m.get("state_abbrev")
+        term = next((t for t in (leg.get(bid) or {}).get("sen") or [] if t.get("state") == st and t.get("start", "") <= v["date"] <= t.get("end", "")), None)
+        if not re.match(r"^[A-Z][0-9]{6}$", bid) or not term:
+            bad.append(bid or "ICPSR " + str(r.get("icpsr"))); continue
+        # the party on the day of the vote (a term's "party" is its last one; Manchin and Sinema changed during a term)
+        aff = next((a for a in term.get("party_affiliations") or [] if a.get("start", "") <= v["date"] <= a.get("end", "")), term)
+        pty = (aff.get("party") or "?")[:1]
+        if VV_PARTY.get(str(m.get("party_code", "")).split(".")[0]) != pty:
+            bad.append(bid + " (party %s here, %s in Voteview)" % (pty, m.get("party_code"))); continue
+        members.append([bid, leg[bid]["last"], pty, st, cast])
+    if bad:
+        problems.append("Senate roll %s: %s not confirmed as a senator for that state and party on that day, so no senator list" % (v["roll"], ", ".join(bad[:5])))
+        return
+    tally = {k: sum(1 for m in members if m[4] == k) for k in ("Yea", "Nay", "Present", "Not Voting")}
+    if (tally["Yea"], tally["Nay"]) != (yea, nay) or len(members) > 100 or len({m[0] for m in members}) != len(members):
+        problems.append("Senate roll %s: senators' rows add to %d-%d (%d rows), not %d-%d" % (v["roll"], tally["Yea"], tally["Nay"], len(members), yea, nay))
+        return
+    party = {}
+    for m in members:
+        q = party.setdefault({"D": "Democratic", "R": "Republican", "I": "Independent"}.get(m[2], m[2]), {"Yea": 0, "Nay": 0, "Present": 0, "Not Voting": 0})
+        q[m[4]] += 1
+    vid = "RS%03d%04d" % (law["congress"], int(rc["rollnumber"]))
+    v.update({"members": members, "by_party": party, "totals": dict(v["totals"], **{"Present": tally["Present"], "Not Voting": tally["Not Voting"]}),
+              "data": "https://voteview.com/rollcall/" + vid, "data_files": "%s/votes/S%d_votes.csv" % (VV, law["congress"]),
+              "members_from": "Voteview (voteview.com)"})
+    checks.append("Senate record vote %d (Voteview %s) matches the Library of Congress count %d-%d; %d senators, every Bioguide ID confirmed in congress-legislators" % (v["roll"], vid, yea, nay, len(members)))
+
+
+def add_senate(data_dir):
+    """D233: add the senators' list to laws already saved, without pulling the money again."""
+    cfg = json.load(open(os.path.join(HERE, "laws.json"), encoding="utf-8"))
+    report = {"started": NOW(), "laws": {}}
+    for law in cfg["laws"]:
+        dest = os.path.join(data_dir, "laws", law["key"] + ".json")
+        if not os.path.exists(dest):
+            continue
+        d = json.load(open(dest, encoding="utf-8"))
+        sv = (d.get("votes") or {}).get("senate")
+        if not sv or sv.get("how") != "roll call":
+            continue
+        checks, problems = [], []
+        try:
+            senate_roll(law, sv, os.path.join(data_dir, "raw", law["key"]), data_dir, checks, problems)
+        except Exception as e:
+            problems.append("%s: %s" % (type(e).__name__, e))
+        if not problems:
+            d["checks"] = [c for c in d.get("checks") or [] if not c.startswith("Senate members left out:")] + checks
+            tmp = dest + ".tmp"
+            with open(tmp, "w", encoding="utf-8") as f:
+                json.dump(d, f, ensure_ascii=False, indent=1)
+            os.replace(tmp, dest)
+        report["laws"][law["key"]] = {"saved": not problems, "problems": problems, "checks": checks}
+        print(law["key"], "senators saved" if not problems else "NOT saved", "; ".join(problems or checks)[:300], flush=True)
+    report["finished"] = NOW()
+    with open(os.path.join(data_dir, "report-senate.json"), "w", encoding="utf-8") as f:
+        json.dump(report, f, ensure_ascii=False, indent=1)
+    return report
 
 
 # ---------- USAspending ----------
@@ -358,7 +447,7 @@ def follow(law, codes, data_dir):
         checks.append("House final action was by %s (no member-by-member record): %s" % (h["how"], h["text"][:120]))
     sv = votes.get("senate")
     if sv:
-        sv["source"] = sv.get("record_url")
+        sv["source"] = sv.get("record_url")  # the official senate.gov record, for people to open; the list comes from Voteview
         checks.append("Senate final action %s: %s" % (sv["date"], sv["text"][:140]))
         if sv["how"] == "roll call":
             soft = []  # a Senate list that fails its checks is left out; the law's money still updates
@@ -472,7 +561,7 @@ def build(data_dir):
     dest = os.path.join(ROOT, "site", "money-trail", "laws.js")
     old = open(dest, encoding="utf-8").read() if os.path.exists(dest) else ""
     new = ("// Money Trail laws followed (D208, Nov 2026). Built by tools/money-trail/follow_laws.py from the Library of Congress\n"
-           "// bill records, House Clerk roll calls and USAspending.gov. Do not edit by hand.\n"
+           "// bill records, House Clerk roll calls, Voteview Senate roll calls and USAspending.gov. Do not edit by hand.\n"
            "window.TW_LAWS=" + body + ";\n")
     # the build date alone is not a change
     strip = lambda s: re.sub(r'"built":"[^"]*",', "", s)
@@ -486,9 +575,6 @@ def build(data_dir):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3 or sys.argv[1] not in ("pull", "build"):
+    if len(sys.argv) != 3 or sys.argv[1] not in ("pull", "senate", "build"):
         sys.exit(__doc__)
-    if sys.argv[1] == "pull":
-        pull(sys.argv[2])
-    else:
-        build(sys.argv[2])
+    {"pull": pull, "senate": add_senate, "build": build}[sys.argv[1]](sys.argv[2])

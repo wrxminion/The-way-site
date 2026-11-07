@@ -278,7 +278,9 @@
   function senateLine(s) {
     if (!s) return 'No final Senate vote was found in the bill record. ';
     if (s.how !== 'roll call') return 'The Senate passed it by ' + s.how + ' on ' + day(s.date) + '. ';
-    return 'Final Senate vote, ' + day(s.date) + ': ' + s.totals.Yea + ' yes, ' + s.totals.Nay + ' no (record vote ' + s.roll + '). ';
+    // D233: the party split comes with the senators' list (Voteview), when the pull has it
+    const parties = Object.entries(s.by_party || {}).filter(([, q]) => q.Yea + q.Nay > 0).map(([nm, q]) => (PARTY[nm] || nm) + ' ' + q.Yea + ' yes, ' + q.Nay + ' no').join('; ');
+    return 'Final Senate vote, ' + day(s.date) + ': ' + s.totals.Yea + ' yes, ' + s.totals.Nay + ' no in record vote ' + s.roll + (parties ? ' (' + parties + ')' : '') + '. ';
   }
   function openHub(name) {
     if (typeof graphHub === 'undefined') return;
@@ -288,22 +290,26 @@
   }
   // D225: one House member in the Evidence inspector: the vote on this law, party and state, votes on the other laws
   // on this page (matched by Bioguide ID), and where the member's page is. Nothing here is matched by name.
+  // D233: senators the same way (ch 'senate').
   let shownMember = '';
-  function inspectMember(m, law, h) {
+  function inspectMember(m, law, h, ch) {
+    ch = ch || 'house';
     const box = document.getElementById('detail-content');
     if (!box || typeof escapeHtml !== 'function' || typeof datum !== 'function') return;
-    const key = m[0] + '|' + law.key; if (shownMember === key && box.querySelector('.mt-member')) return; shownMember = key;
+    const key = m[0] + '|' + law.key + '|' + ch; if (shownMember === key && box.querySelector('.mt-member')) return; shownMember = key;
     const page = PAGES[m[0]], party = { D: 'Democrat', R: 'Republican', I: 'Independent' }[m[2]] || m[2];
-    const other = LAWS.filter(l => l !== law).map(l => { const hh = (l.votes || {}).house, x = hh && (hh.members || []).find(y => y[0] === m[0]); return x ? l.name + ': ' + voteWord(x[4]) : ''; }).filter(Boolean);
-    let html = '<h2 class="mt-selected mt-member">' + escapeHtml(m[1] + ' (' + m[2] + '-' + m[3] + ')') + '</h2><span class="event-kind">House member</span>';
+    const word = ch === 'senate' ? 'Senate' : 'House', what = ch === 'senate' ? 'record vote' : 'roll call';
+    const other = LAWS.filter(l => l !== law).map(l => { const hh = (l.votes || {})[ch], x = hh && (hh.members || []).find(y => y[0] === m[0]); return x ? l.name + ': ' + voteWord(x[4]) : ''; }).filter(Boolean);
+    let html = '<h2 class="mt-selected mt-member">' + escapeHtml(m[1] + ' (' + m[2] + '-' + m[3] + ')') + '</h2><span class="event-kind">' + (ch === 'senate' ? 'Senator' : 'House member') + '</span>';
     html += '<div class="event-amount mt-big">Voted ' + escapeHtml(voteWord(m[4])) + '</div>';
-    html += datum('On', law.name + (h.roll ? ', House roll call ' + h.roll : '') + (h.date ? ', ' + day(h.date) : ''));
+    html += datum('On', law.name + (h.roll ? ', ' + word + ' ' + what + ' ' + h.roll : '') + (h.date ? ', ' + day(h.date) : ''));
     html += datum('Party and state', party + ', ' + m[3]) + datum('Bioguide ID', m[0]);
-    html += datum('Votes on the other laws on this page', other.length ? other.join('; ') : 'Not in the House votes of the other laws here.');
+    html += datum('Votes on the other laws on this page', other.length ? other.join('; ') : 'Not in the ' + word + ' votes of the other laws here.');
     html += datum('Money lines', 'No money line in this data is matched to this member yet. Lines are matched by ID, never by name alone.');
     const go = page ? '/government/congress/members/' + encodeURIComponent(page) + '.html' : 'https://bioguide.congress.gov/search/bio/' + encodeURIComponent(m[0]);
     html += '<a class="detail-link" href="' + escapeHtml(go) + '"' + (page ? '' : ' target="_blank" rel="noopener noreferrer"') + '>' + (page ? 'Open this member\u2019s page on this site' : 'Official Congress biography \u2197') + '</a>';
-    if (h.source && typeof sourceButton === 'function') html += sourceButton(h.source, 'House Clerk roll call ' + (h.roll || ''));
+    if (ch === 'senate' && h.data && typeof sourceButton === 'function') html += sourceButton(h.data, 'Voteview Senate roll call ' + (h.roll || ''));
+    else if (h.source && typeof sourceButton === 'function') html += sourceButton(h.source, 'House Clerk roll call ' + (h.roll || ''));
     box.innerHTML = html;
   }
   function lawDetail(law) {
@@ -340,10 +346,13 @@
       det.append(ul); box.append(det);
     });
     if (!rec) box.append(el('p', 'bud-note', 'Recipients are not shown for this law: no USAspending page counts only this law\u2019s dollars for each recipient yet.'));
-    if (h && (h.members || []).length) {
-      const det = el('details', 'bud-sub'); det.append(el('summary', null, 'How each House member voted (' + h.members.length + ')'));
+    // D225/D233: how each House member and each senator voted. The House list is from the House Clerk; the Senate list is
+    // from Voteview (senate.gov refuses its files to scripts), checked against the Library of Congress count by the pull.
+    [['house', h, 'How each House member voted', 'House member'], ['senate', s, 'How each senator voted', 'senator']].forEach(([ch, vv, title, who]) => {
+      if (!vv || !(vv.members || []).length) return;
+      const det = el('details', 'bud-sub'); det.append(el('summary', null, title + ' (' + vv.members.length + ')'));
       const ul = el('ul', 'bud-votes');
-      h.members.slice().sort((a, b) => String(a[4]).localeCompare(String(b[4])) || String(a[1]).localeCompare(String(b[1]))).forEach(m => {
+      vv.members.slice().sort((a, b) => String(a[4]).localeCompare(String(b[4])) || String(a[1]).localeCompare(String(b[1]))).forEach(m => {
         // D225: each name links to the member's page on this site (government/congress/members, current members),
         // or else to the member's official biography in the Congress Biographical Directory (bioguide.congress.gov).
         const li = el('li'), page = PAGES[m[0]];
@@ -355,11 +364,16 @@
         ul.append(li);
       });
       // D225: hovering a name (or moving to it with the keyboard) shows that member in the Evidence inspector. Clicking still follows the link.
-      const hover = e => { const a = e.target && e.target.closest && e.target.closest('a.bud-member'); if (a && a.__m && e.pointerType !== 'touch') inspectMember(a.__m, law, h); };
+      const hover = e => { const a = e.target && e.target.closest && e.target.closest('a.bud-member'); if (a && a.__m && e.pointerType !== 'touch') inspectMember(a.__m, law, vv, ch); };
       ul.addEventListener('pointerover', hover); ul.addEventListener('focusin', hover);
-      const src = el('p', 'bud-note'); src.append(document.createTextNode('Names without \u2197 open the member\u2019s page on this site. Names with \u2197 are members not serving now: they open the official Congress biography. '), link('House Clerk roll call ' + h.roll + ' \u2197', h.source));
+      const src = el('p', 'bud-note'); src.append(document.createTextNode('Names without \u2197 open the ' + who + '\u2019s page on this site. Names with \u2197 are members not serving now: they open the official Congress biography. '));
+      if (ch === 'house') src.append(link('House Clerk roll call ' + vv.roll + ' \u2197', vv.source));
+      else {
+        src.append(document.createTextNode('Each senator\u2019s vote is from '), link('Voteview\u2019s copy of Senate record vote ' + vv.roll + ' \u2197', vv.data),
+          document.createTextNode(' (UCLA), matched by Bioguide ID and checked against the Library of Congress count. '), link('Official Senate record \u2197', vv.source));
+      }
       det.append(ul, src); box.append(det);
-    }
+    });
     const note = el('p', 'bud-note');
     note.append(document.createTextNode('Sources: USAspending.gov disaster and emergency fund pages for ' + codesOf(law) + ', pulled ' + day(law.retrieved) + '; '), link('Library of Congress bill record \u2197', law.bill_record), document.createTextNode('; '));
     if (s && s.source) note.append(link('Senate vote record \u2197', s.source), document.createTextNode('; '));
@@ -374,7 +388,7 @@
     const box = el('section', 'bud-block bud-law');
     box.setAttribute('aria-label', 'Follow a law');
     box.append(el('h3', 'bud-h', 'Follow a law from the vote to the money'));
-    box.append(el('p', 'bud-lead', 'Pick a law. Each one has its own spending code at USAspending.gov, so its money can be followed from the agencies to who was promised it and what has been paid out. Votes come from the Library of Congress bill record and, for the House, the House Clerk\u2019s roll call. The laws are never added together.'));
+    box.append(el('p', 'bud-lead', 'Pick a law. Each one has its own spending code at USAspending.gov, so its money can be followed from the agencies to who was promised it and what has been paid out. Votes come from the Library of Congress bill record, the House Clerk\u2019s roll call for each House member, and Voteview\u2019s copy of the Senate record vote for each senator. The laws are never added together.'));
     const pick = el('div', 'bud-pick'); pick.setAttribute('role', 'group'); pick.setAttribute('aria-label', 'Laws');
     const slot = el('div');
     const btns = LAWS.map(law => {
