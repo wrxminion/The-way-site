@@ -166,3 +166,7 @@ body.mt-webfull .detail-close{display:block}
 /* on a phone the filter already folds up and the inspector only opens when something is picked */
 @media(max-width:760px){.mt-panel-toggles{display:none}}
 @media(min-width:761px){body:not(.mt-webfull) .workbench:is(.no-filter,.no-inspector) .graph-wrap svg{height:auto;aspect-ratio:1120/640;max-height:calc(100vh - 140px);min-height:530px}}
+/* D212: hover preview in the Evidence inspector */
+.mt-preview-note{font-size:12px;font-weight:700;color:#071c28;background:#e9d59d;border-radius:6px;padding:6px 10px;margin:0 0 10px}
+.graph-edge.mt-hovered{opacity:1;stroke-width:3.2}
+.graph-node.mt-hovered circle{stroke:#f4fffb;stroke-width:3}
