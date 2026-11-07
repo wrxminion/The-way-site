@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-07T15:05:57Z",
+ "updated_at": "2026-11-07T15:13:52Z",
  "certified": false,
  "contests": [
   {
@@ -74024,7 +74024,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-somerset-0005-u-s-representative-7th",
@@ -74072,7 +74078,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "rebecca-bennett",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:48:17.933Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-somerset-0006-u-s-representative-12th",
@@ -74127,7 +74139,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "adam-hamawy",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:26:52.699Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-somerset-0007-county-commissioner",
@@ -121351,7 +121369,6 @@
   "Morris",
   "Passaic",
   "Salem",
-  "Somerset",
   "Sussex"
  ],
  "counties_missing": [
@@ -121361,6 +121378,7 @@
   "Gloucester",
   "Middlesex",
   "Ocean",
+  "Somerset",
   "Union",
   "Warren"
  ]
