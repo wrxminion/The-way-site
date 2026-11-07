@@ -166,9 +166,8 @@ body.mt-webfull .detail-close{display:block}
 /* on a phone the filter already folds up and the inspector only opens when something is picked */
 @media(max-width:760px){.mt-panel-toggles{display:none}}
 @media(min-width:761px){body:not(.mt-webfull) .workbench:is(.no-filter,.no-inspector) .graph-wrap svg{height:auto;aspect-ratio:1120/640;max-height:calc(100vh - 140px);min-height:530px}}
-/* D212: hover preview in the Evidence inspector */
-.mt-preview-note{font-size:12px;font-weight:700;color:#071c28;background:#e9d59d;border-radius:6px;padding:6px 10px;margin:0 0 10px}
-.graph-edge.mt-hovered{opacity:1;stroke-width:3.2}
+/* D212, D218: the dot or line under the mouse */
+.graph-edge.mt-hovered{stroke:#d4e8de!important;stroke-width:4!important;opacity:1}
 .graph-node.mt-hovered circle{stroke:#f4fffb;stroke-width:3}
 /* D214: dollar totals on the Money web dots and lines, and in the inspector */
 .graph-node text.graph-money{font-size:12px;font-weight:800;fill:#e9d59d}
@@ -199,3 +198,8 @@ body.mt-webfull .detail-close{display:block}
 /* D216: blue filing cabinet on evidence and record links */
 .detail-link.mt-evidence-link{display:flex;align-items:center;justify-content:center;gap:10px}
 .mt-evidence-art{width:22px;height:24px;border-radius:5px;flex:none;border:1px solid #2f6b70;background:#06161d}
+/* D218: the hover card also shows outside full screen (mouse only) */
+body:not(.mt-webfull) .web-card:not([hidden]){display:block;position:fixed;z-index:60;max-width:290px;padding:11px 13px;border:1px solid #3c7a85;border-radius:10px;background:#0a2230f2;box-shadow:0 14px 40px #000a;pointer-events:none;font-size:12px;line-height:1.45;color:#cfe3e5}
+/* D218: lines are clicked through their wide see-through hit line */
+.graph-edge{pointer-events:none}
+.graph-edge-hit{pointer-events:stroke;cursor:pointer}
