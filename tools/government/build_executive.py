@@ -202,7 +202,8 @@ def main():
         '<details><summary>What does the vice president do?</summary><div class="gw-detail"><p>The vice president is first in line '
         'to become president and is President of the Senate, with a vote only to break a tie. See the Senate on the '
         '<a href="/government/congress/#chambers">Congress page</a>.</p>%s %s</div></details>'
-        '</article></div><p>%s</p></section>') % (
+        '</article></div><p class="gw-status" id="gv-pick-note" hidden>Only these two cards change. The departments, the line of '
+        'succession and the White House below always show today’s officials.</p><p>%s</p></section>') % (
         pick, e(ordinal(cur['n'])), '<a href="/government/presidents/%s.html">%s</a>' % (
             PRESIDENTS[cur['person']['id']['govtrack']][0], e(full_name(cur['person']))),
         e(' · '.join(x for x in [cur_party, cur_how] if x)), e(long_date(cur['start'])), e(long_date(cur['end'])), more(cur),
@@ -231,8 +232,10 @@ def main():
                          i + 1, ('Created ' + e(d['year'])) if d.get('year') else 'Executive department', e(d['name']),
                          e(d['title']), '<a href="%s">%s</a>' % (e(d['head_url']), e(d['head'])), ''.join(bits), e(d['url'])))
     depts = ('<section id="departments" class="gv-sec"><div class="gw-heading"><span>Layer 2 / The departments</span>'
-             '<h2>15 departments do most of the work.</h2><p>Their heads form most of the president’s Cabinet. They are listed in the '
-             'order of the presidential line of succession. Open a question for the next layer.</p></div>'
+             '<h2>15 departments do most of the work.</h2><p>Their heads form most of the president’s Cabinet. The heads shown are '
+             'today’s, serving under the current president. They are listed in the '
+             'order of the presidential line of succession. Open a question for the next layer.</p>'
+             '<p class="gw-status" id="gv-dept-note" hidden></p></div>'
              '<div class="gw-grid gv-top">%s</div><p class="gw-status">Department heads checked against the White House cabinet page and the departments’ '
              'own sites on %s. Where a founding year could not be confirmed on an official page, it is left out.</p></section>') % (''.join(cards), CHECKED)
 
@@ -315,7 +318,7 @@ def main():
                       SITE_URL + '/government/executive/',
                       [('The Way', '/'), ('Government', '/how-government-works.html'), ('Executive branch', None)], body, 2)
         html_out = html_out.replace('<link rel="canonical"', '<link rel="stylesheet" href="/government/executive/pick.css?v=1">\n<link rel="canonical"', 1)
-        fh.write(html_out.replace('<script src="/members/waybar.js', '<script src="/government/executive/pick.js?v=1" defer></script><script src="/members/waybar.js', 1))
+        fh.write(html_out.replace('<script src="/members/waybar.js', '<script src="/government/executive/pick.js?v=2" defer></script><script src="/members/waybar.js', 1))
     print('wrote the executive page (%d presidencies)' % len(pres))
 
 

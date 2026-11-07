@@ -24,6 +24,9 @@
     var m=q(pc,"pmore").querySelector("a");
     m.textContent="Open "+d.name+"’s page: the money during their years and who they appointed →";
     m.href="/government/presidents/"+d.slug+".html";
+    var pn=document.getElementById("gv-pick-note"), dn=document.getElementById("gv-dept-note");
+    if(pn) pn.hidden=cur;
+    if(dn){dn.hidden=cur; dn.textContent=cur?"":"You picked "+d.name+". These department heads are today’s, not the ones who served with "+d.name+". Each president’s cabinet is not on this page yet.";}
     if(cur){
       vname.replaceChildren.apply(vname,Array.prototype.slice.call(orig.vname.cloneNode(true).childNodes)); vn.textContent=orig.vn; vtiles.hidden=false; vlist.hidden=true; return;
     }
