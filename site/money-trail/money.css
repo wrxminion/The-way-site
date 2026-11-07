@@ -196,3 +196,6 @@ body.mt-webfull .detail-close{display:block}
 .mt-hub-pick #hub{flex:1 1 220px;max-width:none}
 .mt-hub-pick #hub-sort{flex:0 0 auto;background:#071c28;color:#e0f2ed;border:1px solid #315a64;padding:10px;border-radius:8px}
 @media(max-width:760px){.mt-web-search{max-width:none;flex-basis:100%}.mt-hub-pick{flex-basis:100%}}
+/* D216: blue filing cabinet on evidence and record links */
+.detail-link.mt-evidence-link{display:flex;align-items:center;justify-content:center;gap:10px}
+.mt-evidence-art{width:22px;height:24px;border-radius:5px;flex:none;border:1px solid #2f6b70;background:#06161d}
