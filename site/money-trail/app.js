@@ -95,7 +95,9 @@ function renderTimeline(){const a=filtered(),shown=a.slice(0,visible);let month=
  $$('#timeline-feed [data-event]').forEach(el=>el.addEventListener('click',()=>pick(eventMap[el.dataset.event])));
 }
 function datum(key,val){if(val===undefined||val===null||val==='')return '';return `<div class="datum"><div class="key">${escapeHtml(key)}</div><div class="val">${escapeHtml(val)}</div></div>`}
-function sourceButton(url,label='Open original filing / source'){url=safeUrl(url);return url?`<a class="detail-link" href="${escapeHtml(url)}" rel="noopener noreferrer" target="_blank">${escapeHtml(label)} ↗</a>`:''}
+// D216: evidence and record links carry the blue filing cabinet picture.
+const CABINET='/money-trail/art/records-cabinet.webp';
+function sourceButton(url,label='Open original filing / source'){url=safeUrl(url);return url?`<a class="detail-link mt-evidence-link" href="${escapeHtml(url)}" rel="noopener noreferrer" target="_blank"><img class="mt-evidence-art" src="${CABINET}" alt="" width="22" height="24">${escapeHtml(label)} ↗</a>`:''}
 function positionPanel(mid){let ps=positionsByMeasure[mid]||[];let sides={support:[],oppose:[],other:[]};for(let p of ps){let side=/support|yes|favor/i.test(p.stance||'')?'support':/oppose|no|against/i.test(p.stance||'')?'oppose':'other';sides[side].push(p)};return `<div class="side-group"><h4>Campaign sides · documented positions</h4><p><strong>Support:</strong> ${sides.support.length?sides.support.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p><strong>Opposition:</strong> ${sides.oppose.length?sides.oppose.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p>These positions do not prove how any particular donation was allocated.</p></div>`}
 function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<h2 class="mt-selected">${escapeHtml(selName(e))}</h2><span class="event-kind ${kind}">${escapeHtml(kindLabel(e)||'Graph connection')}</span>`+(kind==='ballot'?outcomeBox(e.measure_id)+ftmBlock(e):'');
  if(kind==='transaction'){
@@ -357,19 +359,19 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     const ul = document.createElement('ul');
     const add = (label, href, art) => { if (!href) return; const li = document.createElement('li'); const l = a(label, href); if (art) { const im = document.createElement('img'); im.src = art; im.alt = ''; im.className = 'mt-link-art'; im.width = 40; im.height = 44; l.prepend(im); li.className = 'mt-link-with-art'; } li.append(l); ul.append(li); };
     if (e.record_kind === 'ballot') {
-      add('Open the trail for ' + e.state + ' ' + e.measure_number, 'follow.html?measure=' + encodeURIComponent(e.measure_id));
+      add('Open the trail for ' + e.state + ' ' + e.measure_number, 'follow.html?measure=' + encodeURIComponent(e.measure_id), CABINET);
       const w = webHref(e.measure_id, e.state, e.state + ' ' + e.measure_number);
       add(w.label, w.href, 'art/money-web-link-blue.webp');
       add('Money web full screen', w.href + '&full=1');
       add(stName[e.state] + ' election results', '/results/?state=' + e.state.toLowerCase() + '#tabs');
       add(stName[e.state] + ' ballot guide', guide(e.state));
     } else if (e.record_kind === 'entity') {
-      add('Open the trail for ' + e.name, trailHref(e.id));
+      add('Open the trail for ' + e.name, trailHref(e.id), CABINET);
       add('Money web full screen', '?view=network&hub=' + encodeURIComponent(e.name) + '&full=1');
     } else {
       const from = e.source_entity_id || e.from_entity_id, to = e.recipient_entity_id || e.to_entity_id;
-      add('Follow ' + (e.source_name || e.from_name || 'the giver'), trailHref(from));
-      add('Follow ' + (e.recipient_name || e.to_name || 'the receiver'), trailHref(to));
+      add('Follow ' + (e.source_name || e.from_name || 'the giver'), trailHref(from), CABINET);
+      add('Follow ' + (e.recipient_name || e.to_name || 'the receiver'), trailHref(to), CABINET);
       const st = stateOf(e); if (stName[st]) add(stName[st] + ' election results', '/results/?state=' + st.toLowerCase() + '#tabs');
     }
     const ftm = e.record_kind === 'ballot' && $('#detail-content .mt-ftm');
