@@ -152,6 +152,31 @@ function filtersOn(noSearch){return (!noSearch&&!!String(settings.search||'').tr
 const flcCache={};
 // How many lines each name has once the filters are applied (every web, not one center). noSearch leaves the word search out.
 function filteredLineCounts(noSearch){const key=JSON.stringify([noSearch?'':settings.search,settings.state,settings.kind,settings.minimum,settings.showReported]);if(flcCache[key])return flcCache[key];const m=new Map();for(const e of [...networkVerified,...networkContext])if(lineOk(e,noSearch))for(const nm of new Set([norm(e.from_name),norm(e.to_name)]))if(nm)m.set(nm,(m.get(nm)||0)+1);return flcCache[key]=m}
+// D222: money on each name's lines (and each state's lines) for the tracker cards, with the filters applied.
+// Itemized and FEC filings are added up, by year too. Reported figures are kept apart: only the largest one is kept, never a sum.
+const cardCache={};
+function cardMoney(byState){const key=(byState?'st':'nm')+JSON.stringify([settings.state,settings.kind,settings.minimum,settings.showReported]);if(cardCache[key])return cardCache[key];
+ const m=new Map(),get=k=>{let t=m.get(k);if(!t)m.set(k,t={item:0,itemN:0,repMax:0,lines:0,years:new Map()});return t};
+ for(const e of [...networkVerified,...networkContext]){if(!lineOk(e,true))continue;const amt=num(e.amount_usd)||0,solid=e.tier==='itemized'||e.tier==='fec';
+  const keys=byState?[stateOf(e)]:[...new Set([norm(e.from_name),norm(e.to_name)])];
+  for(const k of keys){if(!k)continue;const t=get(k);t.lines++;
+   if(solid){t.item+=amt;t.itemN++;const y=/^\d{4}/.test(e.date||'')?String(e.date).slice(0,4):'';if(y){const v=t.years.get(y)||[0,0];v[0]+=amt;v[1]++;t.years.set(y,v)}}
+   else if(e.tier==='reported')t.repMax=Math.max(t.repMax,amt)}}
+ return cardCache[key]=m}
+// Dollars in words, the same way the department budget cards write them.
+function bigMoney(n){const a=Math.abs(num(n)),s=num(n)<0?'-$':'$';if(a>=1e12)return s+(a/1e12).toLocaleString('en-US',{maximumFractionDigits:2})+' trillion';if(a>=1e9)return s+(a/1e9).toLocaleString('en-US',{maximumFractionDigits:1})+' billion';if(a>=1e6)return s+(a/1e6).toLocaleString('en-US',{maximumFractionDigits:1})+' million';return s+Math.round(a).toLocaleString('en-US')}
+// One card in the department style: big dollar figure, name, size bar, details line, then links and Past years.
+function trackerCard(o){const el=(t,c,x)=>{const d=document.createElement(t);if(c)d.className=c;if(x!=null)d.textContent=x;return d};
+ const t=o.money||{item:0,itemN:0,repMax:0,years:new Map()},v=t.item>0?t.item:t.repMax,card=el('div','tracker-card bud-row'),top=el('div','bud-top');
+ top.append(el('b','bud-big'+(v>0?'':' none'),v>0?bigMoney(v):'No dollar amount yet'),el('strong','bud-name',o.name));card.append(top);
+ if(v>0&&o.max>0){const b=el('span','bud-bar'+(t.item>0?'':' reported')),i=el('i');i.style.width=Math.max(0.5,Math.min(100,100*v/o.max)).toFixed(1)+'%';b.append(i);card.append(b)}
+ const bits=[];if(t.item>0)bits.push(bigMoney(t.item)+' in '+t.itemN+(t.itemN===1?' itemized filing':' itemized filings'));
+ if(t.repMax>0)bits.push((t.item>0?'largest reported figure ':'Largest reported figure ')+bigMoney(t.repMax)+' (not added up)');
+ card.append(el('small','bud-small',[...bits,...(o.details||[])].filter(Boolean).join(' · ')));
+ const act=el('div','bud-act');if(o.source){const a=el('a','bud-src',o.sourceLabel||'Source record ↗');a.href=o.source;a.target='_blank';a.rel='noopener noreferrer';act.append(a)}
+ const ys=[...t.years].sort((a,b)=>b[0].localeCompare(a[0]));
+ if(ys.length){const det=el('details','bud-years');det.append(el('summary',null,'Past years'));const ul=el('ul');ys.forEach(([y,[amt,n]])=>ul.append(el('li',null,y+': '+bigMoney(amt)+' in '+n+(n===1?' itemized filing':' itemized filings'))));det.append(ul);act.append(det)}
+ (o.buttons||[]).forEach(b=>act.append(b));card.append(act);return card}
 function makeNetwork(){let edges=settings.includeContext?[...networkVerified,...networkContext]:networkVerified;
  let f=norm(graphHub);
  // Include only edges directly touching the selected hub, without assuming the same legal entity across jurisdictions.
@@ -284,17 +309,24 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   const WEB_ART = '/money-trail/art/money-web-link-blue.webp';
   const btnArt = src => { const im = document.createElement('img'); im.src = src; im.alt = ''; im.width = 22; im.height = 24; im.className = 'tracker-btn-art'; im.decoding = 'async'; return im; };
   function openWeb(name) { graphHub = name; if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; graphScale = 1; setView('network'); $('.center-panel').scrollIntoView({ block: 'start', behavior: 'smooth' }); }
+  // D222: each tracker looks like the department budget cards: a "Find a ..." box, then one card per name with a big dollar
+  // figure, the name, a size bar, a details line, the source link and Past years. The 12 largest show first.
+  const FIND = { orgs: ['Find an organization', 'Type part of an organization name…'], people: ['Find a person', 'Type part of a person’s name…'], departments: ['Find a department or agency', 'Type part of a name…'] };
+  const showAll = { orgs: false, people: false, departments: false };
   function render(k) {
     const box = $('#' + k + '-view'); if (!box) return;
     let area = box.querySelector('.tracker-area');
     if (!area) {
       area = el('div', 'tracker-area'); box.append(area);
       area.append(el('p', 'state-lead', TEXT[k].lead));
-      const lab = el('label', 'tracker-search'); const sp = el('span', null, 'Find a name'); const inp = el('input'); inp.type = 'search'; inp.autocomplete = 'off'; inp.placeholder = 'Type part of a name…';
-      inp.addEventListener('input', () => { query[k] = inp.value; draw(k); }); lab.append(sp, inp); area.append(lab, el('div', 'tracker-list'));
+      const lab = el('label', 'tracker-search'); const sp = el('span', null, FIND[k][0]); const inp = el('input'); inp.type = 'search'; inp.autocomplete = 'off'; inp.placeholder = FIND[k][1];
+      inp.addEventListener('input', () => { query[k] = inp.value; draw(k); }); lab.append(sp, inp);
+      const more = el('button', 'bud-more tracker-more'); more.type = 'button'; more.addEventListener('click', () => { showAll[k] = !showAll[k]; draw(k); });
+      area.append(lab, el('div', 'tracker-list bud-list'), more);
     }
     draw(k);
   }
+  const sizeOfRow = r => { const t = r.money; return t ? (t.item > 0 ? t.item : t.repMax) : 0; };
   function draw(k) {
     const list = $('#' + k + '-view .tracker-list'); list.replaceChildren();
     const q = norm(query[k]); let rows = lists[k].filter(r => !q || norm(r.name).includes(q));
@@ -302,18 +334,24 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     // keep a row only when it has a line that passes them, and the line count then counts only those lines.
     const fq = norm(settings.search || ''), lineOn = filtersOn(true), on = lineOn || !!fq;
     if (fq) rows = rows.filter(r => norm(r.name).includes(fq));
+    const cm = cardMoney(false);
+    rows = rows.map(r => ({ ...r, money: cm.get(norm(r.name)) }));
     if (lineOn) { const fl = filteredLineCounts(true); rows = rows.map(r => ({ ...r, count: fl.get(norm(r.name)) || 0 })).filter(r => r.count > 0); }
-    rows.forEach(r => {
-      const card = el('div', 'tracker-row');
-      const info = el('div', 'tracker-info'); info.append(el('strong', null, r.name), el('small', null, [r.type, r.jur].filter(Boolean).join(' · ')));
-      const cnt = el('div', 'tracker-count' + (r.count ? '' : ' none'), r.count ? r.count + (r.count === 1 ? ' line' : ' lines') + ' in the web' : 'No lines in the web yet');
-      const act = el('div', 'tracker-actions');
-      if (r.count) { const b = el('button', 'tracker-web', 'See in the Money web'); b.prepend(btnArt(WEB_ART)); b.addEventListener('click', () => openWeb(r.name)); act.append(b); }
-      if (r.trail) { const a = el('a', 'tracker-web', 'Follow this trail →'); a.prepend(btnArt(CABINET)); a.href = r.trail; act.append(a); }
-      if (r.entity) { const b = el('button', 'tracker-inspect', 'Inspect'); b.prepend(btnArt(CABINET)); b.addEventListener('click', () => pick(r.entity)); act.append(b); }
-      card.append(info, cnt, act); list.append(card);
+    // Largest first: itemized filings, else the largest reported figure, then the most lines.
+    rows.sort((x, y) => sizeOfRow(y) - sizeOfRow(x) || y.count - x.count || x.name.localeCompare(y.name));
+    const max = rows.reduce((m, r) => Math.max(m, sizeOfRow(r)), 0);
+    const cut = showAll[k] || q || on ? rows.length : 12;
+    rows.slice(0, cut).forEach(r => {
+      const btns = [];
+      if (r.count) { const b = el('button', 'tracker-web', 'See in the Money web'); b.type = 'button'; b.prepend(btnArt(WEB_ART)); b.addEventListener('click', () => openWeb(r.name)); btns.push(b); }
+      if (r.trail) { const a = el('a', 'tracker-web', 'Follow this trail →'); a.prepend(btnArt(CABINET)); a.href = r.trail; btns.push(a); }
+      if (r.entity) { const b = el('button', 'tracker-inspect', 'Inspect'); b.type = 'button'; b.prepend(btnArt(CABINET)); b.addEventListener('click', () => pick(r.entity)); btns.push(b); }
+      const lineWords = r.count ? r.count + (r.count === 1 ? ' line' : ' lines') + ' in the web' : 'No lines in the web yet';
+      list.append(trackerCard({ name: r.name, money: r.money, max, details: [lineWords, r.type, r.jur], source: r.entity && /^https?:/.test(r.entity.source_url || '') ? r.entity.source_url : '', buttons: btns }));
     });
     if (!rows.length) list.append(el('div', 'empty', on ? 'No names match these filters. Reset filters to see them all.' : 'No names match. Try fewer letters.'));
+    const more = $('#' + k + '-view .tracker-more');
+    if (more) { more.hidden = !!q || on || rows.length <= 12; more.textContent = showAll[k] ? 'Show the 12 largest' : 'Show all ' + rows.length; }
     $('#feed-sub').textContent = on ? rows.length + ' of ' + TEXT[k].sub(lists[k].length) + ' match the filters' : TEXT[k].sub(lists[k].length);
   }
   // D220: redraw the open tracker when a filter changes (the filter's own listener has already updated settings).
@@ -327,6 +365,61 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     for (const k of Object.keys(lists)) { const box = $('#' + k + '-view'); if (box) box.hidden = v !== k; }
     if (lists[v]) { $('#feed-title').textContent = TEXT[v].title; render(v); }
   };
+})();
+
+// ---- D222 (Nov 2026): the State tracker gets the department card style too: a "Find a state" box and one card per state
+// with the itemized money on its lines in the web, a size bar, its ballot measures and review status, the source and Past years.
+// "Inspect" opens the state below the cards and in the Evidence inspector, as the old "Choose a state" list did.
+(function () {
+  const el = (tag, cls, text) => { const d = document.createElement(tag); if (cls) d.className = cls; if (text != null) d.textContent = text; return d; };
+  const art = src => { const im = document.createElement('img'); im.src = src; im.alt = ''; im.width = 22; im.height = 24; im.className = 'tracker-btn-art'; im.decoding = 'async'; return im; };
+  let q = '', all = false, box = null;
+  function busiest(st) {
+    const count = new Map();
+    [...networkVerified, ...networkContext].forEach(x => { if (stateOf(x) !== st || !lineOk(x, true)) return; for (const nm of [x.from_name, x.to_name]) if (nm) count.set(nm, (count.get(nm) || 0) + 1); });
+    return ([...count].sort((x, y) => y[1] - x[1])[0] || [])[0];
+  }
+  function openState(st) {
+    const top = busiest(st); if (!top) return;
+    graphHub = top; if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; graphScale = 1; setView('network');
+    $('.center-panel').scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+  function build() {
+    const map = $('#state-map'); if (!map || box) return;
+    box = el('div', 'state-cards');
+    const lab = el('label', 'tracker-search'); const inp = el('input'); inp.type = 'search'; inp.autocomplete = 'off'; inp.placeholder = 'Type part of a state name…';
+    inp.addEventListener('input', () => { q = inp.value.trim().toLowerCase(); draw(); });
+    lab.append(el('span', null, 'Find a state'), inp);
+    const more = el('button', 'bud-more state-more'); more.type = 'button'; more.addEventListener('click', () => { all = !all; draw(); });
+    box.append(lab, el('div', 'bud-list state-card-list'), more);
+    map.after(box);
+  }
+  function draw() {
+    build(); if (!box) return;
+    const list = box.querySelector('.state-card-list'); list.replaceChildren();
+    const cm = cardMoney(true), size = t => t ? (t.item > 0 ? t.item : t.repMax) : 0;
+    let rows = RESEARCH.coverage.filter(s => stName[s.state]).map(s => ({ s, name: stName[s.state], money: cm.get(s.state), n: (byState[s.state] || []).length }));
+    if (settings.state !== 'ALL') rows = rows.filter(r => r.s.state === settings.state);
+    if (q) rows = rows.filter(r => (r.name + ' ' + r.s.state).toLowerCase().includes(q));
+    rows.sort((x, y) => size(y.money) - size(x.money) || y.n - x.n || x.name.localeCompare(y.name));
+    const max = rows.reduce((m, r) => Math.max(m, size(r.money)), 0);
+    rows.slice(0, all || q ? rows.length : 12).forEach(r => {
+      const st = r.s.state, lines = (r.money || {}).lines || 0, btns = [];
+      if (lines) { const b = el('button', 'tracker-web', 'See in the Money web'); b.type = 'button'; b.prepend(art('/money-trail/art/money-web-link-blue.webp')); b.addEventListener('click', () => openState(st)); btns.push(b); }
+      const i = el('button', 'tracker-inspect', 'Inspect'); i.type = 'button'; i.prepend(art(CABINET));
+      i.addEventListener('click', () => { stateFocus = st; renderStates(); inspectState(st); $('#state-focus').scrollIntoView({ block: 'start', behavior: 'smooth' }); });
+      btns.push(i);
+      const card = trackerCard({ name: r.name + ' (' + st + ')', money: r.money, max, source: /^https?:/.test(r.s.source_url || '') ? r.s.source_url : '', sourceLabel: 'State ballot measure list ↗', buttons: btns,
+        details: [r.n + (r.n === 1 ? ' statewide ballot measure' : ' statewide ballot measures') + ' in this archive', lines ? lines + (lines === 1 ? ' line' : ' lines') + ' in the web' : 'No lines in the web yet', 'Finance review: ' + (tidy(r.s.finance_review_status) || 'Not reviewed').toLowerCase()] });
+      if (st === stateFocus) card.classList.add('on');
+      list.append(card);
+    });
+    if (!rows.length) list.append(el('div', 'empty', 'No state matches. Try fewer letters.'));
+    const more = box.querySelector('.state-more');
+    more.hidden = !!q || rows.length <= 12; more.textContent = all ? 'Show the 12 largest' : 'Show all ' + rows.length + ' states';
+  }
+  const baseStates = renderStates;
+  renderStates = function () { baseStates(); draw(); };
 })();
 
 // ---- The Way additions (Nov 2026): a US map in the state tracker, "Follow the money" links to one-trail pages,
