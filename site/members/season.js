@@ -128,7 +128,13 @@
 
       var fine = el('p', 'season-fine', which === 'election_day' ? (pollsOwn && row.note ? row.note + ' ' : '') + 'Confirm your polling place and closing time with your state election office.' : '');
       var picks = which === 'results' || which === 'accountability' ? null : picksBox();   // after the polls close, no "mark your ballot" prompts
-      card.append(title, sub, count, fine); if (picks) card.append(picks); card.append(btns);
+      // After the polls close: the results themselves (season-results.js): your state's races, the Congress bars and a little map.
+      var res = null;
+      if ((which === 'results' || which === 'accountability') && window.WaySeasonResults) {
+        res = el('div', 'season-res'); res.setAttribute('aria-label', 'Election results so far');
+        try { window.WaySeasonResults.mount(res, { abbr: abbr, stateName: o.stateName }); } catch (e) { res = null; }
+      }
+      card.append(title, sub); if (res) card.append(res); card.append(count, fine); if (picks) card.append(picks); card.append(btns);
       var ups = upcoming(clock());
       if (ups.length) {
         var ul = el('ul', 'season-ups');
