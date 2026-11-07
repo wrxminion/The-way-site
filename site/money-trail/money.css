@@ -230,3 +230,12 @@ body:not(.mt-webfull) .web-card:not([hidden]){display:block;position:fixed;z-ind
 .mt-hub-pick #hub-sort{flex:0 1 170px;width:auto}
 .workbench.no-filter.no-inspector .network-desc{max-width:760px}
 @media(max-width:760px){.network-controls{grid-template-columns:minmax(0,1fr)}.network-controls .mt-web-search{max-width:none}.network-controls .checks.mt-flat{grid-column:1;grid-row:3;white-space:normal}.mt-hub-pick #hub-kind,.mt-hub-pick #hub-sort{flex:1 1 140px;min-width:0}.mt-hub-pick #hub{flex:1 1 100%;order:3}}
+/* D239: second-level links, lighter and one ring further out */
+.graph-edge.graph-edge2:not(.mt-hovered){opacity:.5}
+.graph-node2 circle{stroke:#071924;stroke-width:1.5;opacity:.8;filter:none}
+.graph-node2:hover circle,.graph-node2.mt-hovered circle{opacity:1}
+.graph-node text.graph-name2{font-size:10.5px;font-weight:400;fill:#93b4b9}
+.dot-sample.web2{width:8px;height:8px;background:#8fb3b8;opacity:.8;vertical-align:0}
+.network-controls .mt-web-checks{grid-column:2;grid-row:1;display:flex;flex-direction:column;gap:6px}
+@media(max-width:760px){.network-controls .mt-web-checks{grid-column:1;grid-row:3}.network-controls .mt-web-checks .checks.mt-flat{white-space:normal}.graph-node text.graph-name2{font-size:11.5px}}
+
