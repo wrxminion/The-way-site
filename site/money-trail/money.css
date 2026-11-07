@@ -274,3 +274,8 @@ body:not(.mt-webfull) .web-card:not([hidden]){display:block;position:fixed;z-ind
 .mt-conn-btns .mt-conn-clear{opacity:.8}
 /* D241: on a phone the inspector comes up from the bottom, so the web stays in view above it */
 @media(max-width:760px){.detail-panel,body.mt-webfull .detail-panel.open{top:auto;bottom:0;left:0;right:0;width:auto;max-height:62vh;border-radius:16px 16px 0 0}}
+/* D248: a Hide button on top of the Evidence inspector, always in view while the inspector scrolls. Clicking a dot, line or row opens it again. */
+.detail-panel .mt-detail-head{position:sticky;top:-20px;z-index:3;margin:-20px -20px 6px;padding:14px 20px 10px;align-items:center;background:#0e2534;border-bottom:1px solid #1d4450}
+.detail-panel .mt-detail-head .panel-heading{margin:0}
+.mt-detail-head .detail-close.mt-detail-hide{display:block;margin-left:auto;font:inherit;font-size:13px;font-weight:700;color:var(--text);background:#0c202dda;border:1px solid var(--edge);border-radius:999px;padding:6px 13px;cursor:pointer;line-height:1.2}
+.mt-detail-head .detail-close.mt-detail-hide:hover,.mt-detail-head .detail-close.mt-detail-hide:focus-visible{border-color:#3fe6f5;color:#bffcff}
