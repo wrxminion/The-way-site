@@ -109,7 +109,9 @@ function datum(key,val){if(val===undefined||val===null||val==='')return '';retur
 const CABINET='/money-trail/art/records-cabinet.webp';
 // D251: the full screen money web link shows the web alone, no cabinet.
 const WEB_ART='/money-trail/art/money-web-link-blue.webp';
-function sourceButton(url,label='Open original filing / source'){url=safeUrl(url);return url?`<a class="detail-link mt-evidence-link" href="${escapeHtml(url)}" rel="noopener noreferrer" target="_blank"><img class="mt-evidence-art" src="${CABINET}" alt="" width="22" height="24">${escapeHtml(label)} ↗</a>`:''}
+// D256: "Open registry record" shows an official record page with a seal, so it no longer looks like the cabinet on the trail links.
+const RECORD_ART='/money-trail/art/registry-record.webp';
+function sourceButton(url,label='Open original filing / source',artSrc=CABINET){url=safeUrl(url);return url?`<a class="detail-link mt-evidence-link" href="${escapeHtml(url)}" rel="noopener noreferrer" target="_blank"><img class="mt-evidence-art" src="${escapeHtml(artSrc)}" alt="" width="22" height="24">${escapeHtml(label)} ↗</a>`:''}
 function positionPanel(mid){let ps=positionsByMeasure[mid]||[];let sides={support:[],oppose:[],other:[]};for(let p of ps){let side=/support|yes|favor/i.test(p.stance||'')?'support':/oppose|no|against/i.test(p.stance||'')?'oppose':'other';sides[side].push(p)};return `<div class="side-group"><h4>Campaign sides · documented positions</h4><p><strong>Support:</strong> ${sides.support.length?sides.support.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p><strong>Opposition:</strong> ${sides.oppose.length?sides.oppose.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p>These positions do not prove how any particular donation was allocated.</p></div>`}
 function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<h2 class="mt-selected">${escapeHtml(selName(e))}</h2><span class="event-kind ${kind}">${escapeHtml(kindLabel(e)||'Graph connection')}</span>`+(kind==='ballot'?outcomeBox(e.measure_id)+ftmBlock(e):'');
  if(kind==='transaction'){
@@ -127,7 +129,7 @@ function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<h2 clas
  h+=datum('Report date (not necessarily transfer date)',dateText(e.date))+datum('Recorded date type',e.date_kind)+datum('Source as reported',e.source_name)+datum('Recipient as reported',e.recipient_name)+datum('Reported figure',money(e.amount_usd))+datum('Confidence',e.confidence)+datum('Reconciliation flag',e.reconciliation_flag)+datum('Recipient registration',e.recipient_registry_id);
  h+=sourceButton(e.source_url,'Open reported disclosure')+datum('Notes',e.notes);
  }else if(kind==='entity'){
- h+=webTotalsBox(e.web)+datum('Name as reported',e.name)+datum('Entity type',e.entity_type)+datum('Registry ID',e.id)+datum('Jurisdiction',e.jurisdiction)+sourceButton(e.source_url,'Open registry record');
+ h+=webTotalsBox(e.web)+datum('Name as reported',e.name)+datum('Entity type',e.entity_type)+datum('Registry ID',e.id)+datum('Jurisdiction',e.jurisdiction)+sourceButton(e.source_url,'Open registry record',RECORD_ART);
  h+=`<div class="detail-caution">This is one dot in the money web. Click a line to see one connection and its filing.</div>`+datum('Notes',e.notes);
  }else{
  h+=datum('Connection type',e.edge_type)+datum('From (as reported)',e.from_name)+datum('To (as reported)',e.to_name)+datum('Amount or aggregate figure',e.amount_usd!=null?money(e.amount_usd):'Not a money link')+datum('Date',dateText(e.date))+datum('Date semantics',e.date_kind)+datum('Jurisdiction',e.jurisdiction)+datum('Confidence',e.confidence)+sourceButton(e.source_url,'Open source evidence');
