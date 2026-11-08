@@ -384,7 +384,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     const t = e.entity_type || '';
     if (/ballot measure/i.test(t)) return null;
     if (/municipal_public_body|election authority|federal agency|federal court/i.test(t)) return 'departments';
-    if (/candidate_named|member_of_congress|supreme_court_justice|president_of_the_united_states/i.test(t) || looksPerson(e.legal_or_reported_name)) return 'people';
+    if (/candidate_named|member_of_congress|supreme_court_justice|president_of_the_united_states|media_owner_person/i.test(t) || looksPerson(e.legal_or_reported_name)) return 'people';
     return 'orgs';
   };
   const lists = { orgs: [], people: [], departments: [] };
@@ -619,7 +619,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   if (q.get('q')) { settings.search = q.get('q'); $('#search').value = settings.search; }
   const vw = q.get('view');
   // The page opens on the Money web. ?view=timeline (or a search, ?q=), states, orgs, people or departments opens that tab.
-  if (['timeline', 'states', 'orgs', 'people', 'departments'].includes(vw)) setView(vw); else if (q.get('q') && vw !== 'network') setView('timeline'); else setView('network');
+  if (['timeline', 'states', 'orgs', 'people', 'departments'].includes(vw)) /* D249: ?view=media is opened by media-tracker.js */ setView(vw); else if (q.get('q') && vw !== 'network') setView('timeline'); else setView('network');
 })();
 
 // ---- Full screen web (Nov 2026): the Money network web fills the page by itself (not browser full screen).
@@ -768,6 +768,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   if (!f || !el) return;
   el.textContent = f.records + ' more records come straight from FEC filings of ' + f.committees + ' committees (' + (RESEARCH.meta.fec_committees || []).join(', ') + '), pulled from the FEC public data on ' + dateText(f.updated) + '. Each one links to its filing. Individuals are not included.';
   (RESEARCH.meta.fec_missing || []).forEach(m => { el.textContent += ' ' + m.name + ': ' + (m.missing[0] === 'receipts' ? 'only payments so far; its receipts did not download yet.' : 'only receipts so far; its payments did not download yet.'); });
+  const md = RESEARCH.meta.media; // D249
+  if (md) el.textContent += ' Media companies: payments to them and gifts by their company PACs come from the FEC 2025-2026 bulk files, pulled on ' + dateText(String(md.retrieved || '').slice(0, 10)) + '.';
   const mi = RESEARCH.meta.mi;
   if (mi) el.textContent += ' ' + mi.records + ' records for Michigan Proposal 2 come from the two ballot committees\' own state reports (Michigan MiTN public search), pulled on ' + dateText(mi.updated) + '. People who gave are counted but not named.';
 })();
@@ -813,6 +815,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     ['measure', 'Ballot measures'],
     ['party', 'Party committees'],
     ['candidate', 'Candidates and candidate committees'],
+    ['media', 'Media companies, outlets and owners'],
     ['pac', 'PACs and Super PACs'],
     ['ballotcmte', 'Ballot measure committees'],
     ['union', 'Unions and teacher groups'],
@@ -822,7 +825,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     ['gov', 'State and local government offices'],
     ['other', 'Other names']
   ];
-  const typeKind = ty => /party/i.test(ty) ? 'party' : /candidate/i.test(ty) ? 'candidate' : /ballot measure$/i.test(ty) ? 'measure'
+  // D249: media companies, the outlets they own, their owners and their company PACs (media-view.js).
+  const typeKind = ty => /^media|company PAC of a media/i.test(ty) ? 'media' : /party/i.test(ty) ? 'party' : /candidate/i.test(ty) ? 'candidate' : /ballot measure$/i.test(ty) ? 'measure'
     : /ballot (support |opposition )?committee|issue committee|referendum committee|ballot_group|campaign committee/i.test(ty) ? 'ballotcmte'
     : /labor|education association|NEA/i.test(ty) ? 'union' : /\bPAC\b|political action|political committee|Committee \(FEC\)|hybrid|super pac/i.test(ty) ? 'pac'
     : /payee|vendor/i.test(ty) ? 'payee' : /municipal|public body|election authority/i.test(ty) ? 'gov'
