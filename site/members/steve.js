@@ -1,6 +1,7 @@
 // "Scuba Steve": the diver in the Back to surface bubble swims up while the page scrolls up and fades out from the head down as he nears the top.
 // Also slows the Back to surface scroll (about 1.5 to 2.5 s, eased) instead of jumping. Loaded by bubbles.js. Style is in steve.css.
-// Reduced motion: the link jumps at once as before, and Steve does not wiggle. No inline scripts or styles (properties are set through the CSS object model).
+// Going down (the page scrolls down): Steve lets air out of his buoyancy vest (BCD) to sink, so small air bubbles rise from his shoulder only while the page moves down.
+// Reduced motion: the link jumps at once as before, Steve does not wiggle and lets out no air bubbles. No inline scripts or styles (properties are set through the CSS object model).
 (function () {
   'use strict';
   var FADE_FROM = 400, FADE_TO = 80;   // Steve is whole below 400 px and gone at 80 px (the bubble itself hides at 80)
@@ -14,10 +15,31 @@
     var f = Math.max(0, Math.min(1, (FADE_FROM - (window.scrollY || 0)) / (FADE_FROM - FADE_TO)));
     a.style.setProperty('--steve-f', f.toFixed(3));
   }
+  // Air out of the BCD while the page scrolls down: one small bubble at a time (at most 8 rising at once), each removed when its rise ends.
+  // Stop scrolling or go up and no new ones start; the ones already out finish rising. Only transform and opacity animate (steve.css).
+  var lastPuff = 0, alive = 0;
+  function puff() {
+    var a = link(), now = Date.now();
+    if (!a || alive >= 8 || now - lastPuff < 110 || !a.getClientRects().length) return;
+    if (parseFloat(a.style.getPropertyValue('--steve-f') || '0') > .5) return;   // Steve is mostly faded out near the top
+    var stack = a.querySelector('.wb-art-stack'); if (!stack) return;
+    var air = stack.querySelector('.wb-steve-air');
+    if (!air) { air = document.createElement('span'); air.className = 'wb-steve-air'; air.setAttribute('aria-hidden', 'true'); stack.appendChild(air); }
+    lastPuff = now; alive++;
+    var b = document.createElement('i'), r = Math.random;
+    b.style.setProperty('--s', (3 + r() * 4).toFixed(1) + 'px');
+    b.style.setProperty('--dx', ((r() - .5) * 14).toFixed(1) + 'px');
+    b.style.setProperty('--d', Math.round(900 + r() * 500) + 'ms');
+    var done = function () { if (b.parentNode) { b.parentNode.removeChild(b); alive--; } };
+    b.addEventListener('animationend', done);
+    setTimeout(done, 2000);   // fail safe: never left behind if the animation does not run
+    air.appendChild(b);
+  }
   function swim(on) { var a = link(); if (a) a.classList.toggle('wb-steve-swim', on); }
   window.addEventListener('scroll', function () {
     var y = window.scrollY || 0;
     fade();
+    if (!reduced() && y > lastY + 1 && !raf) puff();
     if (!reduced() && y < lastY - 1) { swim(true); clearTimeout(calm); calm = setTimeout(function () { if (!raf) swim(false); }, 260); }
     lastY = y;
   }, { passive: true });

@@ -19,4 +19,10 @@
 .wb-floating-return.wb-steve-pop::after{content:"";position:absolute;inset:8%;pointer-events:none;background:var(--wb-drops);opacity:0;animation:droplets-out 480ms ease-out forwards}
 /* if the swim is stopped part way (wheel, touch, key) the glass forms again */
 .wb-dock .wb-floating-return.wb-steve-reform .wb-art-stack .wb-art:not(.wb-diver){animation:shell-reform 450ms ease-out}
+/* going down: air bubbles from his BCD (steve.js adds one <i> at a time while the page scrolls down). They start at his shoulder, wobble up and fade out above the glass. */
+.wb-dock .wb-art-stack .wb-steve-air{position:absolute;left:43%;top:33%;width:0;height:0;pointer-events:none;z-index:1}
+.wb-dock .wb-steve-air i{position:absolute;left:calc(var(--s) / -2);top:calc(var(--s) / -2);width:var(--s);height:var(--s);border-radius:50%;border:1px solid #d8fff6d9;background:radial-gradient(circle at 34% 30%,#ffffffe6 0 18%,#c9fff066 34%,#7fe3d91f 62%,transparent 72%);box-shadow:0 0 3px #a7f0e966;opacity:0;animation:steve-air var(--d) ease-out forwards;will-change:transform,opacity}
+@keyframes steve-air{0%{transform:translate(0,0) scale(.5);opacity:0}12%{opacity:.95}45%{transform:translate(calc(var(--dx) * -.4),-20px) scale(.85)}75%{opacity:.8}100%{transform:translate(var(--dx),-48px) scale(1.15);opacity:0}}
+@media (max-width:760px){@keyframes steve-air{0%{transform:translate(0,0) scale(.5);opacity:0}12%{opacity:.95}45%{transform:translate(calc(var(--dx) * -.4),-18px) scale(.85)}75%{opacity:.8}100%{transform:translate(var(--dx),-42px) scale(1.15);opacity:0}}}
+@media (prefers-reduced-motion:reduce){.wb-dock .wb-steve-air{display:none}}
 @media (prefers-reduced-motion:reduce){.wb-dock .wb-floating-return.wb-steve-swim .wb-diver,.wb-dock .wb-floating-return.wb-steve-pop .wb-art,.wb-floating-return.wb-steve-pop::after,.wb-dock .wb-floating-return.wb-steve-reform .wb-art{animation:none!important}}
