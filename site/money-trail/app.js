@@ -1315,3 +1315,31 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   new MutationObserver(soon).observe(document.body, { attributes: true, attributeFilter: ['class'] });
   soon();
 })();
+
+// ---- D253 (Nov 2026): "Hide" on top of "Filter the evidence" (Frank), like the inspector's (D248). On a wide screen it does
+// what "Hide filters" does (D199), so the choice is remembered and "Show filters" brings the panel back. On a phone it folds the
+// filters up again. The panel also starts below the "We need help" bar while that bar is on screen, so the button is not covered.
+(function () {
+  const btn = $('#filter-hide'), panel = $('#filter-panel'), bf = $('#toggle-filter'), wb = $('#workbench'), head = $('#filter-toggle');
+  if (!btn || !panel) return;
+  const phone = matchMedia('(max-width:760px)');
+  btn.addEventListener('click', () => {
+    if (phone.matches) { if (head && panel.classList.contains('expanded')) { head.click(); head.focus(); } return; }
+    if (bf && wb && !wb.classList.contains('no-filter')) { bf.click(); bf.focus(); }
+  });
+  let queued = false;
+  function fit() {
+    queued = false;
+    const base = 89;
+    let top = base;
+    if (!phone.matches) { const bar = document.querySelector('.hb-bar'); if (bar) { const r = bar.getBoundingClientRect(); if (r.height && r.bottom > 0) top = Math.max(base, Math.round(r.bottom) + 10); } }
+    if (top === base) { panel.style.top = ''; panel.style.maxHeight = ''; return; }
+    panel.style.top = top + 'px'; panel.style.maxHeight = 'calc(100vh - ' + (top + 16) + 'px)';
+  }
+  const soon = () => { if (!queued) { queued = true; requestAnimationFrame(fit); } };
+  addEventListener('scroll', soon, { passive: true });
+  addEventListener('resize', soon);
+  addEventListener('transitionend', soon); // the help bar folds away slowly when it is closed
+  new MutationObserver(soon).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  soon();
+})();

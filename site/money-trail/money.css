@@ -285,3 +285,19 @@ body:not(.mt-webfull) .web-card:not([hidden]){display:block;position:fixed;z-ind
 .graph-wrap.mt-wheel-on .mt-wheel-hint{color:var(--mint);border-color:#6be3c980}
 @media (hover:none),(pointer:coarse){.mt-wheel-hint{display:none}}
 body.mt-webfull .mt-wheel-hint{display:none}
+/* D253: a Hide button on top of "Filter the evidence", like the inspector's (D248). On a wide screen it does what "Hide filters" does
+   and "Show filters" brings it back. On a phone it folds the filters up again. */
+.mt-filter-head{display:flex;align-items:center;gap:10px}
+.mt-filter-head .panel-heading{margin:0;flex:1;min-width:0}
+.mt-filter-hide{flex:none;font:inherit;font-size:13px;font-weight:700;color:var(--text);background:#0c202dda;border:1px solid var(--edge);border-radius:999px;padding:6px 13px;cursor:pointer;line-height:1.2}
+.mt-filter-hide:hover,.mt-filter-hide:focus-visible{outline:none;border-color:#3fe6f5;color:#bffcff}
+@media(min-width:761px){
+ .filter-panel{max-height:calc(100vh - 110px);overflow:auto}
+ .filter-panel .mt-filter-head{position:sticky;top:-20px;z-index:3;margin:-20px -20px 4px;padding:14px 14px 10px 20px;background:#0e2534;border-bottom:1px solid #1d4450}
+}
+@media(max-width:760px){
+ .mt-filter-hide{display:none}
+ .filter-panel.expanded .mt-filter-hide{display:block}
+ .filter-panel.expanded .mt-filter-head .panel-heading:after{content:none}
+ .filter-panel.expanded .mt-filter-head{margin-bottom:4px}
+}
