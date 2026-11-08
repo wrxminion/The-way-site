@@ -301,3 +301,12 @@ body.mt-webfull .mt-wheel-hint{display:none}
  .filter-panel.expanded .mt-filter-head .panel-heading:after{content:none}
  .filter-panel.expanded .mt-filter-head{margin-bottom:4px}
 }
+/* D259: "About, in its own words" and "Who it gave money to" in the Evidence inspector */
+.mt-about{margin:12px 0;padding:12px;border:1px solid #2f6a74;border-radius:10px;background:#0a2230}
+.mt-about-quote{margin:4px 0 8px;padding:2px 0 2px 12px;border-left:3px solid #3fe6f5;font:normal 14px/1.55 Georgia,serif;color:#edf9f7}
+.detail-panel p.mt-about-src,.detail-panel p.mt-about-note{font-size:11px;margin:6px 0 0;line-height:1.55}
+.mt-about-src a,.mt-gave-links a{color:var(--mint);overflow-wrap:anywhere}
+.mt-about .mt-about-site{margin:10px 0 4px}
+.mt-gave-row{cursor:default}
+.mt-gave-links{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:5px;font-size:11px;font-weight:600}
+.mt-gave-more{color:#a5c2c8;font-weight:400}

@@ -1346,3 +1346,120 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   new MutationObserver(soon).observe(document.body, { attributes: true, attributeFilter: ['class'] });
   soon();
 })();
+
+// ---- D259 (Nov 2026): what a dot in the Evidence inspector says about itself (Frank).
+// 1) "About, in its own words": for groups we checked by hand, a link to the group's own website and one or two sentences the
+//    group publishes about itself, quoted exactly, with the page it came from. Data: org-about.js (window.TW_ORG_ABOUT), built by
+//    tools/money-trail/build_org_about.py from tools/money-trail/org_about.json. A dot with no checked entry shows nothing.
+// 2) "Who it gave money to": every line in this page's data that starts at the dot, grouped by who got the money, with the
+//    amount and a link to each filing. Itemized filings are added up; reported figures are not, because they may repeat.
+// 3) A dot that filings name as a person ("LAST, FIRST") now reads "Person named in the money web", and a dot that is only a
+//    name on a line, with no registry record, reads "Name in the money web" instead of "Organization in the money web".
+(function () {
+  const el = (tag, cls, text) => { const d = document.createElement(tag); if (cls) d.className = cls; if (text != null) d.textContent = text; return d; };
+  const ORG_WORD = /\b(INC|LLC|PAC|FUND|COMMITTEE|COMM|ASSOC|ASSOCIATION|UNION|COUNCIL|PARTY|CAUCUS|CHURCH|PROJECT|FOUNDATION|TRUST|CAMPAIGN|NETWORK|ACTION|LEAGUE|COALITION|CORP|CORPORATION|SOCIETY|CENTER|ALLIANCE|COLORADO|AMERICA|LOCAL)\b/i;
+  const PERSON_TYPE = /candidate_named|member_of_congress|supreme_court_justice|president_of_the_united_states|media_owner_person/i;
+  const looksPerson = n => { const p = String(n || '').split(','); return p.length === 2 && !ORG_WORD.test(n) && p.every(x => { const w = x.trim().split(/\s+/); return w[0] && w.length <= 3; }); };
+  const isPerson = e => PERSON_TYPE.test(e.entity_type || '') || looksPerson(e.name);
+  const isSpecial = e => !!(e.web && (e.web.law || e.web.budget)) || /^media:/.test(e.id || '');
+
+  const baseKind = kindLabel;
+  kindLabel = function (e) {
+    if (e && e.record_kind === 'entity' && !isSpecial(e)) {
+      if (isPerson(e)) return 'Person named in the money web';
+      if (!e.entity_type) return 'Name in the money web';
+    }
+    return baseKind(e);
+  };
+
+  // ---- About, in its own words
+  const ABOUT = new Map();
+  ((window.TW_ORG_ABOUT || {}).orgs || []).forEach(o => (o.names || []).forEach(n => ABOUT.set(norm(n), o)));
+  const host = u => { try { const x = new URL(u); return x.hostname.replace(/^www\./, '') + (x.pathname.length > 1 ? x.pathname.replace(/\/$/, '') : ''); } catch (_) { return u; } };
+  const extLink = (url, text, cls) => { const a = el('a', cls, text + ' ↗'); a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; };
+  function aboutBox(e) {
+    if (isPerson(e)) return null; // people are never matched to a website: the filings do not prove who they are
+    const o = ABOUT.get(norm(e.name)); if (!o) return null;
+    const site = safeUrl(o.site), page = safeUrl(o.about_url);
+    if (!site || !page || !o.quote) return null;
+    const box = el('div', 'mt-about');
+    box.append(el('div', 'mt-evcard-head', 'About, in its own words'));
+    const q = el('blockquote', 'mt-about-quote', '“' + o.quote + (/[.!?]$/.test(o.quote) ? '' : ' …') + '”'); box.append(q); // a quote that stops mid-sentence ends with …
+    const src = el('p', 'mt-about-src', 'From its own website, ');
+    src.append(extLink(page, host(page)), document.createTextNode(', checked ' + dateText(o.checked || (window.TW_ORG_ABOUT || {}).checked) + '.'));
+    box.append(src);
+    box.append(extLink(site, 'Official website: ' + host(site), 'detail-link mt-about-site'));
+    const own = (o.note_for || {})[Object.keys(o.note_for || {}).find(k => norm(k) === norm(e.name))];
+    box.append(el('p', 'mt-about-note', own || 'Matched to this dot by its name as reported.'));
+    box.append(el('p', 'mt-about-note', 'This is how the group describes itself. The Way does not check or endorse what it says.'));
+    return box;
+  }
+
+  // ---- Who it gave money to
+  const TIER_WORD = { fec: 'FEC filing', itemized: 'itemized filing', reported: 'reported figure', context: 'context link' };
+  function gaveTo(name) {
+    const key = norm(name), by = new Map();
+    [...networkVerified, ...networkContext].forEach(x => {
+      if (norm(x.from_name) !== key || !x.to_name || norm(x.to_name) === key) return;
+      if (x.amount_usd == null || !(num(x.amount_usd) > 0)) return;
+      const k = norm(x.to_name);
+      let g = by.get(k); if (!g) { g = { name: x.to_name, item: 0, itemN: 0, repMax: 0, repN: 0, urls: [] }; by.set(k, g); }
+      const v = num(x.amount_usd);
+      if (x.tier === 'fec' || x.tier === 'itemized') { g.item += v; g.itemN++; } else { g.repMax = Math.max(g.repMax, v); g.repN++; }
+      const u = safeUrl(x.source_url);
+      if (u && !g.urls.some(y => y.u === u)) g.urls.push({ u, filing: x.tier === 'fec' || x.tier === 'itemized' });
+    });
+    return [...by.values()].sort((a, b) => (b.item || b.repMax) - (a.item || a.repMax) || a.name.localeCompare(b.name));
+  }
+  const showAllGave = new Set();
+  function gaveBox(e) {
+    const rows = gaveTo(e.name); if (!rows.length) return null;
+    const person = isPerson(e);
+    const box = el('div', 'mt-conn mt-gave');
+    box.append(el('div', 'mt-evcard-head', 'Who it gave money to'));
+    box.append(el('p', 'mt-conn-count', rows.length + (rows.length === 1 ? ' name' : ' names') + ' got money from it in this page’s data, largest first. Names are as reported.'));
+    const ul = el('ul', 'mt-conn-list'), all = showAllGave.has(norm(e.name)), cut = all ? rows.length : 8;
+    rows.slice(0, cut).forEach(g => {
+      const li = el('li'), card = el('div', 'mt-conn-row mt-gave-row');
+      card.append(el('span', 'mt-conn-name', g.name));
+      const bits = [];
+      if (g.itemN) bits.push(money_(g.item) + ' in ' + g.itemN + (g.itemN === 1 ? ' itemized filing' : ' itemized filings'));
+      if (g.repN) bits.push((g.itemN ? 'also ' : '') + 'reported figure ' + money_(g.repMax) + (g.repN > 1 ? ', the largest of ' + g.repN : '') + ' (not added up)');
+      card.append(el('span', 'mt-conn-sub', bits.join('; ')));
+      if (g.urls.length) {
+        const links = el('span', 'mt-gave-links');
+        g.urls.slice(0, 4).forEach((y, i) => { links.append(extLink(y.u, y.filing ? (g.urls.length > 1 ? 'Filing ' + (i + 1) : 'Filing') : (g.urls.length > 1 ? 'Source ' + (i + 1) : 'Source'))); });
+        if (g.urls.length > 4) links.append(el('span', 'mt-gave-more', '+' + (g.urls.length - 4) + ' more on its lines in the web'));
+        card.append(links);
+      }
+      li.append(card); ul.append(li);
+    });
+    box.append(ul);
+    const btns = el('div', 'mt-conn-btns');
+    if (rows.length > 8) {
+      const b = el('button', 'detail-action mt-conn-more', all ? 'Show the 8 largest' : 'Show all ' + rows.length); b.type = 'button';
+      b.addEventListener('click', () => { if (all) showAllGave.delete(norm(e.name)); else showAllGave.add(norm(e.name)); details(e); });
+      btns.append(b);
+    }
+    if (!(view === 'network' && graphHub === e.name)) {
+      const b = el('button', 'detail-action', 'See these lines in the Money web'); b.type = 'button';
+      b.addEventListener('click', () => { graphHub = e.name; if (typeof hubs !== 'undefined' && !hubs.includes(graphHub)) { hubs.push(graphHub); if (typeof prepareHubRefresh === 'function') prepareHubRefresh(); } const h = $('#hub'); if (h) h.value = graphHub; graphScale = 1; setView('network'); const c = $('.center-panel'); if (c) c.scrollIntoView({ block: 'start', behavior: 'smooth' }); });
+      btns.append(b);
+    }
+    if (btns.childNodes.length) box.append(btns);
+    box.append(el('p', 'mt-evcard-note', 'Itemized filings are added up for each name. Reported figures are not, because they may repeat the same money. A source marked “Source” is a news or summary page, not the filing itself.' + (person ? ' The person’s identity is not verified, and being listed does not imply wrongdoing.' : ' No connection implies wrongdoing.')));
+    return box;
+  }
+
+  const baseDetails = details;
+  details = function (e) {
+    baseDetails(e);
+    if (!e || e.record_kind !== 'entity' || isSpecial(e)) return;
+    const c = $('#detail-content'); if (!c) return;
+    const head = c.querySelector('.event-kind');
+    const about = aboutBox(e);
+    if (about && head) head.after(about);
+    const gave = gaveBox(e);
+    if (gave) { const caution = c.querySelector('.detail-caution'); if (caution) caution.before(gave); else c.append(gave); }
+  };
+})();
