@@ -34,7 +34,7 @@
   "va-scytl",
   "wy-sos"
  ],
- "updated_at": "2026-11-08T18:51:08Z",
+ "updated_at": "2026-11-08T19:00:27Z",
  "certified": false,
  "contests": [
   {
@@ -24151,6 +24151,1049 @@
     "at": "2026-11-04T01:20:51.833Z",
     "kind": "ap"
    }
+  },
+  {
+   "id": "ma-ap-ma24467",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ma",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "edward-j-markey",
+     "name": "Edward J. Markey",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 1650772
+    },
+    {
+     "id": "john-deaton",
+     "name": "John Deaton",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 837152
+    },
+    {
+     "id": "shiva-ayyadurai",
+     "name": "Shiva Ayyadurai",
+     "party": "Independent",
+     "party_code": "I",
+     "votes": 59837
+    },
+    {
+     "id": "joe-tache",
+     "name": "Joe Tache",
+     "party": null,
+     "party_code": "O",
+     "votes": 56530
+    }
+   ],
+   "precincts": {
+    "reporting": 99,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "edward-j-markey",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:01:27.995Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "me-ap-me20643",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "me",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "troy-d-jackson",
+     "name": "Troy D. Jackson",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 375516
+    },
+    {
+     "id": "susan-m-collins",
+     "name": "Susan M. Collins",
+     "party": "Republican",
+     "party_code": "R",
+     "votes": 330994
+    },
+    {
+     "id": "brent-andrews-write-in",
+     "name": "Brent Andrews (write-in)",
+     "party": null,
+     "party_code": "O",
+     "votes": 221
+    },
+    {
+     "id": "ashley-j-webb-write-in",
+     "name": "Ashley J. Webb (write-in)",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 82
+    },
+    {
+     "id": "gina-oswald-write-in",
+     "name": "Gina Oswald (write-in)",
+     "party": "Independent",
+     "party_code": "I",
+     "votes": 67
+    },
+    {
+     "id": "sigrid-ann-olson-write-in",
+     "name": "Sigrid Ann Olson (write-in)",
+     "party": "Democratic",
+     "party_code": "D",
+     "votes": 50
+    },
+    {
+     "id": "michael-turcotte-write-in",
+     "name": "Michael Turcotte (write-in)",
+     "party": null,
+     "party_code": "O",
+     "votes": 43
+    },
+    {
+     "id": "joseph-steinberger-write-in",
+     "name": "Joseph Steinberger (write-in)",
+     "party": null,
+     "party_code": "O",
+     "votes": 27
+    }
+   ],
+   "precincts": {
+    "reporting": 94,
+    "total": 100,
+    "unit": "% of expected vote (AP estimate)"
+   },
+   "called": {
+    "winner": "troy-d-jackson",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T06:02:01.517Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ms-u-s-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ms",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate (partial: counties reporting so far)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cindy-hyde-smith",
+     "name": "Cindy Hyde-Smith",
+     "party": null,
+     "party_code": "R",
+     "votes": 78798
+    },
+    {
+     "id": "scott-colom",
+     "name": "Scott Colom",
+     "party": null,
+     "party_code": "D",
+     "votes": 69328
+    },
+    {
+     "id": "ty-pinkins",
+     "name": "Ty Pinkins",
+     "party": null,
+     "party_code": "I",
+     "votes": 3155
+    },
+    {
+     "id": "write-ins",
+     "name": "Write-ins",
+     "party": null,
+     "party_code": "O",
+     "votes": 133
+    }
+   ],
+   "by_county": {
+    "DeSoto": {
+     "scott-colom": 28103,
+     "cindy-hyde-smith": 24780,
+     "ty-pinkins": 1301,
+     "write-ins": 68
+    },
+    "Madison": {
+     "scott-colom": 22712,
+     "cindy-hyde-smith": 22364,
+     "ty-pinkins": 690,
+     "write-ins": 65
+    },
+    "Rankin": {
+     "cindy-hyde-smith": 31654,
+     "scott-colom": 18513,
+     "ty-pinkins": 1164
+    }
+   },
+   "precincts": {
+    "reporting": 3,
+    "total": 82,
+    "unit": "counties"
+   },
+   "partial": true,
+   "note": "Unofficial totals summed only across the counties listed in by_county; not statewide."
+  },
+  {
+   "id": "nj-u-s-senate",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "nj",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate (partial: counties reporting so far)",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "booker",
+     "name": "Cory Booker",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 1675872
+    },
+    {
+     "id": "murphy",
+     "name": "Justin Murphy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 917709
+    },
+    {
+     "id": "fernandez",
+     "name": "Veronica Fernandez",
+     "party": "N-C",
+     "party_code": "O",
+     "votes": 44677
+    },
+    {
+     "id": "kuniansky",
+     "name": "Joanne KUNIANSKY",
+     "party": "SOC",
+     "party_code": "O",
+     "votes": 23174
+    },
+    {
+     "id": "write-in",
+     "name": "Write-In",
+     "party": null,
+     "party_code": "O",
+     "votes": 6034
+    },
+    {
+     "id": "choice",
+     "name": "Personal Choice",
+     "party": null,
+     "party_code": "O",
+     "votes": 127
+    },
+    {
+     "id": "castillo",
+     "name": "Edwardo Castillo",
+     "party": null,
+     "party_code": "O",
+     "votes": 7
+    },
+    {
+     "id": "tabor",
+     "name": "Richard tabor",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "massie",
+     "name": "Thomas Massie",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "sheridan",
+     "name": "Adam Sheridan",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "benavides",
+     "name": "Lily Benavides",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "rajab",
+     "name": "Hind Rajab",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "piker",
+     "name": "Hasan Piker",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "brake",
+     "name": "Andrew Brake",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "stout",
+     "name": "Gary Stout",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "heier",
+     "name": "Heier",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "state",
+     "name": "Someone From Out of State",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "hunt",
+     "name": "William Hunt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kim",
+     "name": "Andy Kim",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "harper",
+     "name": "Bryce Harper",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "palestine",
+     "name": "Free Palestine",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "porter",
+     "name": "Fred Porter",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "god",
+     "name": "God",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kelly",
+     "name": "Loretta Kelly",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "wallace",
+     "name": "Emily Wallace",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "prime",
+     "name": "optimus prime",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "case",
+     "name": "Clifford P. Case",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "drew",
+     "name": "Jeff Van Drew",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "frost",
+     "name": "Scott Frost",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "bansil",
+     "name": "Katie Bansil",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "lima",
+     "name": "Lucca Lima",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "clay",
+     "name": "Michael Clay",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "isreal",
+     "name": "Death to Isreal",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "pallone",
+     "name": "Frank Pallone",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "head",
+     "name": "Mr. Potato Head",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "naphy",
+     "name": "Steven P Naphy",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "mejia",
+     "name": "Analia Mejia",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "fitzgerald",
+     "name": "Laura Fitzgerald",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "serrentino",
+     "name": "Dominic Serrentino",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "undecided",
+     "name": "Undecided",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "quinn",
+     "name": "Joseph D. Quinn II",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "garza",
+     "name": "John Garza",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "dewey",
+     "name": "Dan A. Dewey",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "mukul",
+     "name": "Nurul Mukul",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "o-leary",
+     "name": "Leah O'Leary",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "akanbi",
+     "name": "Ayishat Akanbi",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "curtin",
+     "name": "William Curtin",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "tellirico",
+     "name": "Tellirico",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "walker",
+     "name": "Mario  Walker",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "melman",
+     "name": "Carole Melman",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "niculescu",
+     "name": "Patricia Niculescu",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "mom",
+     "name": "Mom",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "o-toole",
+     "name": "Seamus O'toole ",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "berkley",
+     "name": "Nancy Berkley",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "green",
+     "name": "Troy Green",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "fields",
+     "name": "Chris Fields",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "rickly",
+     "name": "Geoff Rickly",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "piatt",
+     "name": "Nova Piatt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "smith",
+     "name": "Edward Smith",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "blue",
+     "name": "Johnathan Porter AKA Blue",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "dan",
+     "name": "AI Dan",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "jass",
+     "name": "Hugh Jass",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "pustizzi",
+     "name": "Evan Pustizzi",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "wilford",
+     "name": "Jeremy Wilford",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "personal",
+     "name": "Personal",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "fantasia",
+     "name": "Dawn Fantasia",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    },
+    {
+     "id": "riggins",
+     "name": "Shawn Riggins",
+     "party": null,
+     "party_code": "O",
+     "votes": 0
+    }
+   ],
+   "precincts": {
+    "reporting": 5257,
+    "total": 5399
+   },
+   "counties": [
+    {
+     "county": "Burlington",
+     "precincts": {
+      "reporting": 400,
+      "total": 445
+     },
+     "votes": {
+      "murphy": 54387,
+      "booker": 110030,
+      "kuniansky": 1369,
+      "fernandez": 1759,
+      "choice": 127,
+      "stout": 1,
+      "heier": 1,
+      "state": 1,
+      "hunt": 1,
+      "kim": 1,
+      "harper": 1,
+      "tabor": 2,
+      "massie": 2,
+      "palestine": 1,
+      "porter": 1,
+      "personal": 0,
+      "god": 1,
+      "kelly": 1,
+      "wallace": 1,
+      "fantasia": 0,
+      "sheridan": 2,
+      "prime": 1,
+      "case": 1,
+      "drew": 1,
+      "frost": 1,
+      "benavides": 1,
+      "bansil": 1,
+      "lima": 1,
+      "clay": 1,
+      "isreal": 1,
+      "rajab": 2,
+      "pallone": 1,
+      "head": 1,
+      "naphy": 1,
+      "mejia": 1,
+      "fitzgerald": 1,
+      "serrentino": 1,
+      "undecided": 1,
+      "castillo": 4,
+      "quinn": 1,
+      "garza": 1,
+      "dewey": 1,
+      "piker": 2,
+      "mukul": 1,
+      "o'leary": 1,
+      "akanbi": 1,
+      "curtin": 1,
+      "tellirico": 1,
+      "walker": 1,
+      "melman": 1,
+      "niculescu": 1,
+      "mom": 1,
+      "o'toole": 1,
+      "berkley": 1,
+      "green": 1,
+      "fields": 1
+     }
+    },
+    {
+     "county": "Cape May",
+     "precincts": {
+      "reporting": 127,
+      "total": 129
+     },
+     "votes": {
+      "murphy": 20803,
+      "booker": 17497,
+      "kuniansky": 208,
+      "fernandez": 301,
+      "write-in": 31
+     }
+    },
+    {
+     "county": "Cumberland",
+     "precincts": {
+      "reporting": 92,
+      "total": 106
+     },
+     "votes": {
+      "booker": 21496,
+      "murphy": 15671,
+      "kuniansky": 253,
+      "fernandez": 556,
+      "write-in": 14,
+      "castillo": 3,
+      "riggins": 0,
+      "rickly": 1,
+      "benavides": 1,
+      "piatt": 1,
+      "smith": 1,
+      "blue": 1,
+      "dan": 1,
+      "jass": 1,
+      "brake": 2,
+      "pustizzi": 1,
+      "wilford": 1
+     }
+    },
+    {
+     "county": "Essex",
+     "precincts": {
+      "reporting": 557,
+      "total": 578
+     },
+     "votes": {
+      "murphy": 37829,
+      "booker": 172077,
+      "kuniansky": 2677,
+      "fernandez": 3052
+     }
+    },
+    {
+     "county": "Hudson",
+     "precincts": {
+      "reporting": 468,
+      "total": 468
+     },
+     "votes": {
+      "murphy": 26162,
+      "booker": 114708,
+      "fernandez": 4359,
+      "kuniansky": 3160,
+      "write-in": 525
+     }
+    },
+    {
+     "county": "Mercer",
+     "precincts": {
+      "reporting": 249,
+      "total": 266
+     },
+     "votes": {
+      "booker": 85607,
+      "murphy": 25849,
+      "fernandez": 2155,
+      "kuniansky": 1146,
+      "write-in": 149
+     }
+    },
+    {
+     "county": "Middlesex",
+     "precincts": {
+      "reporting": 617,
+      "total": 649
+     },
+     "votes": {
+      "booker": 160579,
+      "murphy": 73910,
+      "fernandez": 5053,
+      "kuniansky": 3019,
+      "write-in": 687
+     }
+    },
+    {
+     "county": "Monmouth",
+     "precincts": {
+      "reporting": 485,
+      "total": 488
+     },
+     "votes": {
+      "booker": 122670,
+      "murphy": 107876,
+      "fernandez": 3178,
+      "kuniansky": 1484,
+      "write-in": 306
+     }
+    },
+    {
+     "county": "Morris",
+     "precincts": {
+      "reporting": 398,
+      "total": 400
+     },
+     "votes": {
+      "murphy": 83659,
+      "booker": 107503,
+      "kuniansky": 1749,
+      "fernandez": 2698,
+      "write-in": 304
+     }
+    },
+    {
+     "county": "Ocean",
+     "precincts": {
+      "reporting": 418,
+      "total": 420
+     },
+     "votes": {
+      "murphy": 114206,
+      "booker": 95735,
+      "fernandez": 2707,
+      "kuniansky": 1253,
+      "write-in": 326
+     }
+    },
+    {
+     "county": "Passaic",
+     "precincts": {
+      "reporting": 283,
+      "total": 283
+     },
+     "votes": {
+      "murphy": 45097,
+      "booker": 81830,
+      "fernandez": 3080,
+      "kuniansky": 1395,
+      "write-in": 287
+     }
+    },
+    {
+     "county": "Somerset",
+     "precincts": {
+      "reporting": 267,
+      "total": 267
+     },
+     "votes": {
+      "booker": 82263,
+      "murphy": 42905,
+      "kuniansky": 1109,
+      "fernandez": 2062,
+      "write-in": 329
+     }
+    },
+    {
+     "county": "Union",
+     "precincts": {
+      "reporting": 434,
+      "total": 438
+     },
+     "votes": {
+      "booker": 122526,
+      "murphy": 44630,
+      "fernandez": 3305,
+      "kuniansky": 1481,
+      "write-in": 426
+     }
+    },
+    {
+     "county": "Bergen",
+     "precincts": {
+      "reporting": 0,
+      "total": 0
+     },
+     "votes": {
+      "booker": 190856,
+      "murphy": 114027,
+      "fernandez": 5930,
+      "write-in": 2292
+     }
+    },
+    {
+     "county": "Camden",
+     "precincts": {
+      "reporting": 343,
+      "total": 343
+     },
+     "votes": {
+      "booker": 122843,
+      "murphy": 43114,
+      "fernandez": 2173,
+      "kuniansky": 1655,
+      "write-in": 177
+     }
+    },
+    {
+     "county": "Hunterdon",
+     "precincts": {
+      "reporting": 0,
+      "total": 0
+     },
+     "votes": {
+      "booker": 32258,
+      "murphy": 27774,
+      "fernandez": 1022,
+      "kuniansky": 543,
+      "write-in": 88
+     }
+    },
+    {
+     "county": "Salem",
+     "precincts": {
+      "reporting": 0,
+      "total": 0
+     },
+     "votes": {
+      "murphy": 10664,
+      "booker": 9882,
+      "fernandez": 369,
+      "kuniansky": 138,
+      "write-in": 25
+     }
+    },
+    {
+     "county": "Sussex",
+     "precincts": {
+      "reporting": 119,
+      "total": 119
+     },
+     "votes": {
+      "murphy": 29146,
+      "booker": 25512,
+      "fernandez": 918,
+      "kuniansky": 535,
+      "write-in": 68
+     }
+    }
+   ],
+   "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
+   "partial": true,
+   "called": {
+    "winner": "booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "wv-100",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "wv",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "precincts": {
+    "reporting": 52,
+    "total": 55,
+    "unit": "precincts"
+   },
+   "called": null,
+   "choices": [
+    {
+     "id": "shelley-moore-capito",
+     "name": "Shelley Moore Capito",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 266067
+    },
+    {
+     "id": "rachel-fetty-anderson",
+     "name": "Rachel Fetty Anderson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 172922
+    },
+    {
+     "id": "s-marshall-wilson",
+     "name": "S. Marshall Wilson",
+     "party": "CST",
+     "party_code": "O",
+     "votes": 17139
+    }
+   ]
   }
  ]
 }
