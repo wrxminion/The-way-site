@@ -16,7 +16,11 @@
   lane.appendChild(sil); host.appendChild(lane);
   var near = false, timer = 0, swimming = false;
   function rnd(a, b) { return a + Math.random() * (b - a); }
-  lane.style.top = Math.round(rnd(Math.min(160, host.scrollHeight / 4), Math.max(160, host.scrollHeight - 200))) + 'px';
+  // Depth inside the host's own box (offsetHeight: the lane never changes it). When the page gets shorter later (the Money Trail tabs,
+  // lists that load late), a lane left below the end of the page stretched it into a tall empty strip, so it picks a new depth then.
+  function chooseDepth() { var h = host.offsetHeight; lane.style.top = Math.round(rnd(Math.min(160, h / 4), Math.max(160, h - 200))) + 'px'; }
+  chooseDepth();
+  if (window.ResizeObserver) new ResizeObserver(function () { if ((parseFloat(lane.style.top) || 0) + 200 > host.offsetHeight) chooseDepth(); }).observe(host);
   function fit() {
     if (document.body.classList.contains('home')) return;
     lane.style.left = Math.round(-host.getBoundingClientRect().left) + 'px'; lane.style.right = 'auto'; lane.style.width = document.documentElement.clientWidth + 'px';
@@ -36,7 +40,7 @@
   window.WaySilhouette = { now: function () {
     if (swimming || document.documentElement.classList.contains('wb-motion-off')) return false;
     var top = window.scrollY + window.innerHeight * .45 - (host.getBoundingClientRect().top + window.scrollY);
-    lane.style.top = Math.round(Math.max(0, Math.min(top, host.scrollHeight - 200))) + 'px';
+    lane.style.top = Math.round(Math.max(0, Math.min(top, host.offsetHeight - 200))) + 'px';
     near = true; clearTimeout(timer); swim(); return true;
   } };
   if ('IntersectionObserver' in window) {
