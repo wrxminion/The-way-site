@@ -23,11 +23,19 @@
 
   var near = false, timer = 0, swimming = false;
   function rnd(a, b) { return a + Math.random() * (b - a); }
+  // The lane is 220px tall and sits inside the host's own box (offsetHeight: the lane itself never changes it).
   function chooseDepth() {
-    var height = host.scrollHeight;
+    var height = host.offsetHeight;
     lane.style.top = Math.round(rnd(Math.min(180, height / 4), Math.max(180, height - 220))) + 'px';
   }
   chooseDepth();
+  // Pages that change height after load (the Money Trail tabs, lists that load later) could leave the lane below the
+  // end of the page, where it stretched the page into a tall empty strip (and the footer buoy's chain ran down it).
+  // When the host gets shorter than the lane's spot, pick a new depth inside it.
+  function keepInside() {
+    if ((parseFloat(lane.style.top) || 0) + 220 > host.offsetHeight) chooseDepth();
+  }
+  if (window.ResizeObserver) new ResizeObserver(keepInside).observe(host);
   // Inner pages: the host is a centered column, so widen the lane to the viewport or the whale gets clipped at the column edge.
   function fit() {
     if (document.body.classList.contains('home')) return;
