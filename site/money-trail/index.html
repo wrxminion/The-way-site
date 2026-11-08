@@ -24,7 +24,7 @@
 <main>
 <section class="hero"><div class="eyebrow">The Way / Research / Money Trail</div><h1>Where the money <em>flows.</em></h1><p>An explorable record of campaign contributions, committee relationships, vendors, and statewide ballot questions. Follow a source, inspect a filing, and separate documented payments from reported leads.</p><div class="hero-meta"><span class="line-accent"></span> 50-state investigation · All states remain open</div></section>
 <details class="mt-stats" id="mt-stats"><summary>Stats</summary><section class="kpis" id="kpis" aria-label="Research coverage summary"></section></details>
-<nav class="tabs" aria-label="Visualization modes"><button class="tab" data-view="timeline">◷ &nbsp; Timeline</button><button class="tab active" data-view="network">◇ &nbsp; Money web</button><button class="tab" data-view="states">▦ &nbsp; State tracker</button><button class="tab" data-view="orgs">◈ &nbsp; Organization tracker</button><button class="tab" data-view="people">◉ &nbsp; Person tracker</button><button class="tab" data-view="departments">⌂ &nbsp; Department tracker</button><a class="tabs-helper mt-follow" href="follow.html">Follow one trail: a group, person, bill or contractor →</a></nav>
+<nav class="tabs" aria-label="Visualization modes"><button class="tab" data-view="timeline">◷ &nbsp; Timeline</button><button class="tab active" data-view="network">◇ &nbsp; Money web</button><button class="tab" data-view="states">▦ &nbsp; State tracker</button><button class="tab" data-view="orgs">◈ &nbsp; Organization tracker</button><button class="tab" data-view="people">◉ &nbsp; Person tracker</button><button class="tab" data-view="departments">⌂ &nbsp; Department tracker</button><button class="tab" data-view="media">▣ &nbsp; Media tracker</button><a class="tabs-helper mt-follow" href="follow.html">Follow one trail: a group, person, bill or contractor →</a></nav>
 <div class="mt-panel-toggles" id="mt-panel-toggles"><button type="button" class="mt-panel-toggle" id="toggle-filter" aria-controls="filter-panel" aria-pressed="false">Hide filters</button><button type="button" class="mt-panel-toggle" id="toggle-inspector" aria-controls="detail-panel" aria-pressed="false">Hide inspector</button></div>
 <div class="workbench" id="workbench">
 <aside class="panel filter-panel" id="filter-panel"><div class="panel-heading" id="filter-toggle" role="button" tabindex="0" aria-expanded="false">Filter the evidence</div><div class="filter-body">
@@ -45,6 +45,7 @@
  <div id="orgs-view" hidden></div>
  <div id="people-view" hidden></div>
  <div id="departments-view" hidden></div>
+ <div id="media-view" hidden></div>
 </section>
 <aside class="panel detail-panel" id="detail-panel"><div class="mt-detail-head"><div class="panel-heading">Evidence inspector</div><button type="button" class="detail-close mt-detail-hide" id="detail-close" aria-label="Hide the evidence inspector">Hide ✕</button></div><div id="detail-content" class="detail-placeholder"><svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="49" cy="50" r="28" stroke="#62beba" stroke-width="1"/><circle cx="49" cy="50" r="16" stroke="#497f8b" stroke-width="1"/><path d="M3 55C18 34 30 79 53 48S79 35 98 49" stroke="#75d6b9" stroke-width="1.7"/></svg><h2>Every thread has a source.</h2><p>Select a transaction, event, graph connection, or state to see source links, confidence, and outstanding verification questions.</p><div class="detail-caution">This tool follows the research archive, not a live feed. A matching name alone never proves that two organizations are legally identical.</div></div></aside>
 </div>
@@ -58,9 +59,12 @@
 <script src="laws.js?v=2"></script>
 <script src="member-pages.js?v=3"></script>
 <script src="justices.js?v=1"></script>
+<script src="media.js?v=d249"></script>
+<script src="media-view.js?v=d249"></script>
 <script src="/government/photos/photos.js?v=1"></script>
 <script src="budgets-view.js?v=9"></script>
-<script src="app.js?v=d248"></script>
+<script src="app.js?v=d249"></script>
+<script src="media-tracker.js?v=d249"></script>
 <script src="/members/waybar.js?v=75" defer></script>
 </body>
 </html>
