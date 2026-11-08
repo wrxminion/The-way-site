@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-08T09:43:50Z",
+ "updated_at": "2026-11-08T09:52:13Z",
  "certified": false,
  "contests": [
   {
@@ -35507,7 +35507,13 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-cape-may-0005-member-of-the-house-of-representatives",
@@ -35555,7 +35561,13 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "zack-mullock",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T21:29:00.736Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-cape-may-0006-sheriff",
@@ -121134,7 +121146,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "mullock",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T21:29:00.736Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-camden-0042-members-of-local-board-of-education-bellmawr-school-district-maria-romano-1-707-",
@@ -121342,7 +121360,6 @@
  "counties_covered": [
   "Bergen",
   "Camden",
-  "Cape May",
   "Cumberland",
   "Hudson",
   "Hunterdon",
@@ -121357,6 +121374,7 @@
  "counties_missing": [
   "Atlantic",
   "Burlington",
+  "Cape May",
   "Essex",
   "Gloucester",
   "Middlesex",
