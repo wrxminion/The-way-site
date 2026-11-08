@@ -43,7 +43,7 @@
   "vt-sos",
   "wy-sos"
  ],
- "updated_at": "2026-11-08T19:29:05Z",
+ "updated_at": "2026-11-08T19:38:44Z",
  "certified": false,
  "contests": [
   {
@@ -5033,14 +5033,14 @@
      "name": "Tom S. P. Perriello",
      "party": "D",
      "party_code": "D",
-     "votes": 174010
+     "votes": 174017
     },
     {
      "id": "john-j-mcguire-iii",
      "name": "John J. McGuire III",
      "party": "R",
      "party_code": "R",
-     "votes": 181480
+     "votes": 181484
     },
     {
      "id": "cooke-c-harvey",
@@ -5054,7 +5054,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 715
+     "votes": 716
     }
    ],
    "precincts": {
@@ -5093,11 +5093,11 @@
      "choices": [
       {
        "id": "tom-s-p-perriello",
-       "votes": 1938
+       "votes": 1945
       },
       {
        "id": "john-j-mcguire-iii",
-       "votes": 4364
+       "votes": 4368
       },
       {
        "id": "cooke-c-harvey",
@@ -5105,7 +5105,7 @@
       },
       {
        "id": "write-in",
-       "votes": 9
+       "votes": 10
       }
      ],
      "precincts": {
@@ -39228,9 +39228,9 @@
    "kind": "candidate",
    "level": "federal",
    "state": "nv",
-   "office": "U.S. House",
+   "office": "Representative In Congress, District 1",
    "district": "1",
-   "title": "U.S. House District 1",
+   "title": "Representative In Congress, District 1",
    "vote_for": 1,
    "choices": [
     {
@@ -39278,9 +39278,9 @@
    "kind": "candidate",
    "level": "federal",
    "state": "nv",
-   "office": "U.S. House",
+   "office": "Representative In Congress, District 2",
    "district": "2",
-   "title": "U.S. House District 2",
+   "title": "Representative In Congress, District 2",
    "vote_for": 1,
    "choices": [
     {
@@ -39321,9 +39321,9 @@
    "kind": "candidate",
    "level": "federal",
    "state": "nv",
-   "office": "U.S. House",
+   "office": "Representative In Congress, District 3",
    "district": "3",
-   "title": "U.S. House District 3",
+   "title": "Representative In Congress, District 3",
    "vote_for": 1,
    "choices": [
     {
@@ -39358,9 +39358,9 @@
    "kind": "candidate",
    "level": "federal",
    "state": "nv",
-   "office": "U.S. House",
+   "office": "Representative In Congress, District 4",
    "district": "4",
-   "title": "U.S. House District 4",
+   "title": "Representative In Congress, District 4",
    "vote_for": 1,
    "choices": [
     {
@@ -40211,13 +40211,13 @@
     "unit": "precincts"
    },
    "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "partial": true,
    "called": {
     "winner": "berman",
     "by": "AP (not certified)",
     "at": "2026-11-04T05:48:24.571Z",
     "kind": "ap"
-   },
-   "partial": true
+   }
   },
   {
    "id": "wi-us-house-3",
@@ -40294,13 +40294,13 @@
     "unit": "precincts"
    },
    "note": "Sum of 2 county report(s) read so far; not every county is in.",
+   "partial": true,
    "called": {
     "winner": "cooke",
     "by": "AP (not certified)",
     "at": "2026-11-04T05:48:40.114Z",
     "kind": "ap"
-   },
-   "partial": true
+   }
   },
   {
    "id": "wi-us-house-5",
@@ -40369,13 +40369,13 @@
     "unit": "precincts"
    },
    "note": "Sum of 3 county report(s) read so far; not every county is in.",
+   "partial": true,
    "called": {
     "winner": "fitzgerald",
     "by": "AP (not certified)",
     "at": "2026-11-04T03:14:43.861Z",
     "kind": "ap"
-   },
-   "partial": true
+   }
   },
   {
    "id": "wi-us-house-7",
@@ -40443,13 +40443,13 @@
     "unit": "precincts"
    },
    "note": "Sum of 3 county report(s) read so far; not every county is in.",
+   "partial": true,
    "called": {
     "winner": "alfonso",
     "by": "AP (not certified)",
     "at": "2026-11-04T04:02:12.771Z",
     "kind": "ap"
-   },
-   "partial": true
+   }
   },
   {
    "id": "wi-us-house-8",
@@ -40500,13 +40500,13 @@
     "unit": "precincts"
    },
    "note": "Sum of 1 county report(s) read so far; not every county is in.",
+   "partial": true,
    "called": {
     "winner": "wied",
     "by": "AP (not certified)",
     "at": "2026-11-04T04:01:22.295Z",
     "kind": "ap"
-   },
-   "partial": true
+   }
   },
   {
    "id": "wv-150",
@@ -40521,12 +40521,6 @@
     "reporting": 26,
     "total": 28,
     "unit": "precincts"
-   },
-   "called": {
-    "winner": "carol-miller",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T02:20:50.935Z",
-    "kind": "ap"
    },
    "choices": [
     {
@@ -40550,7 +40544,13 @@
      "party_code": "O",
      "votes": 6904
     }
-   ]
+   ],
+   "called": {
+    "winner": "carol-miller",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:20:50.935Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "wv-200",
@@ -40565,12 +40565,6 @@
     "reporting": 26,
     "total": 27,
     "unit": "precincts"
-   },
-   "called": {
-    "winner": "riley-moore",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T02:22:21.433Z",
-    "kind": "ap"
    },
    "choices": [
     {
@@ -40587,7 +40581,13 @@
      "party_code": "D",
      "votes": 98235
     }
-   ]
+   ],
+   "called": {
+    "winner": "riley-moore",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:22:21.433Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "co-representative-to-the-120th-united-states-congress-district-1",
