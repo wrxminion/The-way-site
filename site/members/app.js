@@ -75,6 +75,7 @@ const STATS = window.TheWayStats ? window.TheWayStats.make({ sb, h, q, when, hid
 const FB = window.TheWayFb ? window.TheWayFb.make({ sb, h, q, when, action }) : null;
 const LEDGER = window.TheWayLedger ? window.TheWayLedger.make({ sb, h, q }) : null;
 const TODO = window.TheWayTodo ? window.TheWayTodo.make({ sb, h, q, render, notice }) : null;
+const READING = window.TheWayReadingRoom ? window.TheWayReadingRoom.make({ sb, h, q, render, notice, action }) : null;
 const CSTAT = window.TheWayContentStatus ? window.TheWayContentStatus.make({ sb, h, q, render, notice, when }) : null;
 const ROLETREE = window.TheWayRoles ? window.TheWayRoles.make({ h }) : null;
 const MEDIA = window.TheWayMedia ? window.TheWayMedia.make({ sb, h, IMAGES: window.TheWayImageCopy && window.TheWayImageCopy.make({ h }), q, notice, action, ask, STATS, canWrite: () => can('admin') || state.roles.has('super_admin'), canReview: () => can('admin') || state.roles.has('super_admin') || state.roles.has('marketing'), uid: () => state.user && state.user.id }) : null;
@@ -2289,6 +2290,7 @@ async function adminView() {
     can('admin') && ROLETREE ? sec('roles', 'Admin roles', ROLETREE.panel()) : null,
     can('admin') && LEDGER ? sec('ledger', 'Ledger checks', LEDGER.panel()) : null,
     can('admin') && CSTAT ? sec('review-status', 'Review status of AI-written pages', CSTAT.panel()) : null,
+    state.roles.has('super_admin') && READING ? sec('reading', 'Reading room', h('div', { class: 'panel' }, h('p', { class: 'muted small', text: 'Internal drafts to read and make notes on. Not public. Super admins only.' }), h('a', { class: 'button primary', href: '#/reading', text: 'Open the reading room' }))) : null,
     state.roles.has('super_admin') && TODO ? sec('todo', 'Research to-do', h('div', { class: 'panel' }, h('p', { class: 'muted small', text: 'Every research list in one place, highest priority first. Super admins only.' }), h('a', { class: 'button primary', href: '#/todo', text: 'Open the research to-do' }))) : null,
     sec('invite', 'Invite someone to The Way', h('div', { class: 'panel' },
       h('p', { class: 'muted', text: 'Admins invite people the same way every member does, from the Invite page in the top bar. Every invitation shows in the list below.' }),
@@ -2876,6 +2878,7 @@ async function route() {
       case 'projects': return CL && (can('researcher') || can('reviewer')) ? await CL.projectsView() : render(notice('Research desk members only.'));
       case 'media': return canMedia() ? mediaView() : render(notice('Not available.'));
       case 'todo': return isSuper() && TODO ? await TODO.view() : render(notice('Super admins only.'));
+      case 'reading': return isSuper() && READING ? await READING.view(parts[1] || '', parts[2] || '') : render(notice('Super admins only.'));
       case 'admin': return can('admin') ? await adminView() : state.roles.has('marketing') ? mediaView() : render(notice('Admins only.'));
       case 'account': return accountView();
       case 'password': return passwordView(false);
