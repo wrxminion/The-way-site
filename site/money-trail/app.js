@@ -1367,14 +1367,25 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   const PERSON_TYPE = /candidate_named|member_of_congress|supreme_court_justice|president_of_the_united_states|media_owner_person/i;
   const looksPerson = n => { const p = String(n || '').split(','); return p.length === 2 && !ORG_WORD.test(n) && p.every(x => { const w = x.trim().split(/\s+/); return w[0] && w.length <= 3; }); };
   const isPerson = e => PERSON_TYPE.test(e.entity_type || '') || looksPerson(e.name);
-  const isSpecial = e => !!(e.web && (e.web.law || e.web.budget)) || /^media:/.test(e.id || '');
-
+  // D261: every kind of dot is told apart the same way wherever it is clicked (center, neighbor, tracker card).
+  const up = s => String(s || '').toUpperCase();
+  const LAW_BY = new Map(((window.TW_LAWS || {}).laws || []).map(l => [up(l.name || l.bill), l]));
+  const DEPT_BY = new Map((((window.TW_BUDGETS || {}).departments || {}).rows || []).map(r => [up(r.name), r]));
+  const MEDIA_HUBS = new Set(Object.values(window.TW_MEDIA_HUB || {}).map(up));
+  const GOV_TYPE = /municipal_public_body|election authority|federal agency|federal court|federal department/i;
+  function typeOf(e) {
+    const n = up(e.name);
+    if (LAW_BY.has(n) || (e.web && e.web.law)) return 'law';
+    if ((e.web && e.web.budget) || (window.TW_BUDGET_HUB && n === up(window.TW_BUDGET_HUB))) return 'budget';
+    if (DEPT_BY.has(n) || GOV_TYPE.test(e.entity_type || '') || /^U\.S\. (HOUSE|SENATE) \(/.test(n)) return 'gov';
+    if (MEDIA_HUBS.has(n) || /^media:/.test(e.id || '') || /media company/i.test(e.entity_type || '')) return 'media';
+    if (isPerson(e)) return 'person';
+    return e.entity_type ? 'org' : 'name';
+  }
+  const LABEL = { law: 'Federal law followed on this page', budget: 'The federal budget', gov: 'Government office in the money web', media: 'Media company in the money web', person: 'Person named in the money web', name: 'Name in the money web' };
   const baseKind = kindLabel;
   kindLabel = function (e) {
-    if (e && e.record_kind === 'entity' && !isSpecial(e)) {
-      if (isPerson(e)) return 'Person named in the money web';
-      if (!e.entity_type) return 'Name in the money web';
-    }
+    if (e && e.record_kind === 'entity') { const t = typeOf(e); if (LABEL[t]) return LABEL[t]; }
     return baseKind(e);
   };
 
@@ -1383,8 +1394,34 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   ((window.TW_ORG_ABOUT || {}).orgs || []).forEach(o => (o.names || []).forEach(n => ABOUT.set(norm(n), o)));
   const host = u => { try { const x = new URL(u); return x.hostname.replace(/^www\./, '') + (x.pathname.length > 1 ? x.pathname.replace(/\/$/, '') : ''); } catch (_) { return u; } };
   const extLink = (url, text, cls) => { const a = el('a', cls, text + ' ↗'); a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; };
+  // D261: a law gets the official summary from the Library of Congress; a federal office gets its budget from USAspending.gov.
+  const words = (t, n) => { const w = String(t || '').replace(/\s*…\s*$/, '').split(/\s+/); return w.length > n ? w.slice(0, n).join(' ') + ' …' : w.join(' ') + (/[.!?]$/.test(w[w.length - 1] || '') ? '' : ' …'); };
+  function lawAbout(L) {
+    const box = el('div', 'mt-about');
+    box.append(el('div', 'mt-evcard-head', 'About this law, from the Library of Congress'));
+    if (L.summary && L.summary.text) box.append(el('blockquote', 'mt-about-quote', '“' + words(L.summary.text, 60) + '”'));
+    const facts = [L.bill, L.public_law, L.signed ? 'signed ' + dateText(L.signed) : ''].filter(Boolean).join(', ');
+    box.append(el('p', 'mt-about-src', 'Official bill summary' + (L.summary && L.summary.version ? ' (' + L.summary.version + ' version)' : '') + '. ' + facts + '.'));
+    if (safeUrl(L.bill_page)) box.append(extLink(L.bill_page, 'Bill page on Congress.gov', 'detail-link mt-about-site'));
+    if (safeUrl(L.law_text)) box.append(extLink(L.law_text, 'Text of the law on GovInfo', 'detail-link mt-about-site'));
+    return box;
+  }
+  function deptAbout(r) {
+    const D = ((window.TW_BUDGETS || {}).departments) || {}, box = el('div', 'mt-about');
+    box.append(el('div', 'mt-evcard-head', 'About this office, from USAspending.gov'));
+    box.append(el('p', 'mt-about-src', r.resources > 0
+      ? 'Fiscal year ' + D.fiscal_year + ' (through quarter ' + D.quarter + '): it had ' + money_(r.resources) + ' available to spend, promised ' + money_(r.obligated) + ' and paid out ' + money_(r.outlays) + ', as the agency reported it. Available money can include money carried over from earlier years.'
+      : 'USAspending.gov lists it for fiscal year ' + D.fiscal_year + ' with no budget figure reported yet.'));
+    const page = r.slug ? 'https://www.usaspending.gov/agency/' + encodeURIComponent(r.slug) + '?fy=' + D.fiscal_year : '';
+    if (page) box.append(extLink(page, 'Agency page on USAspending.gov', 'detail-link mt-about-site'));
+    return box;
+  }
   function aboutBox(e) {
-    if (isPerson(e)) return null; // people are never matched to a website: the filings do not prove who they are
+    const t = typeOf(e);
+    if (t === 'person') return null; // people are never matched to a website: the filings do not prove who they are
+    if (t === 'law') { const L = LAW_BY.get(up(e.name)); return L ? lawAbout(L) : null; }
+    if (t === 'gov') { const r = DEPT_BY.get(up(e.name)); return r ? deptAbout(r) : null; }
+    if (t === 'budget') return null; // its total box already says where the figure comes from
     const o = ABOUT.get(norm(e.name)); if (!o) return null;
     const site = safeUrl(o.site), page = safeUrl(o.about_url);
     if (!site || !page || !o.quote) return null;
@@ -1418,23 +1455,39 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     return [...by.values()].sort((a, b) => (b.item || b.repMax) - (a.item || a.repMax) || a.name.localeCompare(b.name));
   }
   const showAllGave = new Set();
+  // D261: a law's lines are money promised under it, and the budget's lines are money each office had to spend, so they get
+  // their own words. People and groups with no money going out say so instead of showing nothing.
+  const WORDS = {
+    law: { head: 'Where money under this law was promised', count: n => n + (n === 1 ? ' agency or recipient' : ' agencies and recipients') + ' in this page’s data, largest first.', amt: v => money_(v) + ' promised (a total to date)', link: 'USAspending', note: 'Money promised (obligated) under this law, as reported to USAspending.gov. Each figure is a total to date, not one payment, so they are not added up.' },
+    budget: { head: 'Where the budget went', count: n => n + (n === 1 ? ' office' : ' offices') + ' in this page’s data, largest first.', amt: v => money_(v) + ' available to spend', link: 'USAspending', note: 'Money each office had available to spend this fiscal year, as reported to USAspending.gov. Available money can include money carried over from earlier years.' },
+    gov: { head: 'Where its money went' }
+  };
   function gaveBox(e) {
-    const rows = gaveTo(e.name); if (!rows.length) return null;
-    const person = isPerson(e);
+    const t = typeOf(e), W = WORDS[t] || {};
+    const rows = gaveTo(e.name);
+    if (!rows.length) {
+      if (!/^(person|org|name)$/.test(t)) return null;
+      const box = el('div', 'mt-conn mt-gave');
+      box.append(el('div', 'mt-evcard-head', 'Who it gave money to'));
+      box.append(el('p', 'mt-conn-count', 'No filing in this page’s data shows money going from it to anyone. It may still have given money that this page has not collected.'));
+      return box;
+    }
+    const person = t === 'person';
     const box = el('div', 'mt-conn mt-gave');
-    box.append(el('div', 'mt-evcard-head', 'Who it gave money to'));
-    box.append(el('p', 'mt-conn-count', rows.length + (rows.length === 1 ? ' name' : ' names') + ' got money from it in this page’s data, largest first. Names are as reported.'));
+    box.append(el('div', 'mt-evcard-head', W.head || 'Who it gave money to'));
+    box.append(el('p', 'mt-conn-count', W.count ? W.count(rows.length) : rows.length + (rows.length === 1 ? ' name' : ' names') + ' got money from it in this page’s data, largest first. Names are as reported.'));
     const ul = el('ul', 'mt-conn-list'), all = showAllGave.has(norm(e.name)), cut = all ? rows.length : 8;
     rows.slice(0, cut).forEach(g => {
       const li = el('li'), card = el('div', 'mt-conn-row mt-gave-row');
       card.append(el('span', 'mt-conn-name', g.name));
       const bits = [];
-      if (g.itemN) bits.push(money_(g.item) + ' in ' + g.itemN + (g.itemN === 1 ? ' itemized filing' : ' itemized filings'));
-      if (g.repN) bits.push((g.itemN ? 'also ' : '') + 'reported figure ' + money_(g.repMax) + (g.repN > 1 ? ', the largest of ' + g.repN : '') + ' (not added up)');
+      if (W.amt && !g.itemN) bits.push(W.amt(g.repMax));
+      else if (g.itemN) bits.push(money_(g.item) + ' in ' + g.itemN + (g.itemN === 1 ? ' itemized filing' : ' itemized filings'));
+      if (g.repN && !(W.amt && !g.itemN)) bits.push((g.itemN ? 'also ' : '') + 'reported figure ' + money_(g.repMax) + (g.repN > 1 ? ', the largest of ' + g.repN : '') + ' (not added up)');
       card.append(el('span', 'mt-conn-sub', bits.join('; ')));
       if (g.urls.length) {
         const links = el('span', 'mt-gave-links');
-        g.urls.slice(0, 4).forEach((y, i) => { links.append(extLink(y.u, y.filing ? (g.urls.length > 1 ? 'Filing ' + (i + 1) : 'Filing') : (g.urls.length > 1 ? 'Source ' + (i + 1) : 'Source'))); });
+        g.urls.slice(0, 4).forEach((y, i) => { links.append(extLink(y.u, y.filing ? (g.urls.length > 1 ? 'Filing ' + (i + 1) : 'Filing') : (W.link || 'Source') + (g.urls.length > 1 ? ' ' + (i + 1) : ''))); });
         if (g.urls.length > 4) links.append(el('span', 'mt-gave-more', '+' + (g.urls.length - 4) + ' more on its lines in the web'));
         card.append(links);
       }
@@ -1453,6 +1506,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
       btns.append(b);
     }
     if (btns.childNodes.length) box.append(btns);
+    if (W.note) { box.append(el('p', 'mt-evcard-note', W.note)); return box; }
     box.append(el('p', 'mt-evcard-note', 'Itemized filings are added up for each name. Reported figures are not, because they may repeat the same money. A source marked “Source” is a news or summary page, not the filing itself.' + (person ? ' The person’s identity is not verified, and being listed does not imply wrongdoing.' : ' No connection implies wrongdoing.')));
     return box;
   }
@@ -1460,7 +1514,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   const baseDetails = details;
   details = function (e) {
     baseDetails(e);
-    if (!e || e.record_kind !== 'entity' || isSpecial(e)) return;
+    if (!e || e.record_kind !== 'entity') return;
     const c = $('#detail-content'); if (!c) return;
     const head = c.querySelector('.event-kind');
     const about = aboutBox(e);
