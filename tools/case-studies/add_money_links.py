@@ -22,7 +22,7 @@ from collections import defaultdict
 SITE = pathlib.Path('site')
 PAGE = SITE / 'case-studies' / 'index.html'
 CABINET = '/money-trail/art/records-cabinet.webp'
-WEB_CABINET = '/money-trail/art/money-web-cabinet.webp'
+WEB_ART = '/money-trail/art/money-web-link-blue.webp'  # D251: the web alone, no cabinet
 NAMED = {  # guide page -> trail ID, where the file name does not carry the number
     ('nc', 'income-tax-cap-amendment'): 'NC-INCOME-2026',
     ('nc', 'photo-id-amendment'): 'NC-ID-2026',
@@ -82,11 +82,11 @@ def links(mids):
         web = '/money-trail/?view=network&amp;hub=' + H.escape(mid) + '&amp;full=1'
         if len(mids) == 1:
             rows.append('<li><a href="%s">%sOpen the trail for %s</a></li>' % (trail, img % CABINET, short))
-            rows.append('<li><a href="%s">%sMoney web full screen</a></li>' % (web, img % WEB_CABINET))
+            rows.append('<li><a href="%s">%sMoney web full screen</a></li>' % (web, img % WEB_ART))
         else:  # a card with several measures: one short row each
             rows.append('<li class="cs-money-row"><span>%s</span><a href="%s" aria-label="Open the trail for %s">%sTrail</a>'
                         '<a href="%s" aria-label="Money web full screen for %s">%sMoney web</a></li>'
-                        % (short, trail, short, img % CABINET, web, short, img % WEB_CABINET))
+                        % (short, trail, short, img % CABINET, web, short, img % WEB_ART))
     return '<div class="cs-money"><p class="cs-money-h">Follow the money</p><ul>' + ''.join(rows) + '</ul></div>'
 
 
