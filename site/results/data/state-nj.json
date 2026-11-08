@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-08T09:52:13Z",
+ "updated_at": "2026-11-08T10:01:15Z",
  "certified": false,
  "contests": [
   {
@@ -2428,7 +2428,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "pou",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:22:06.948Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-atlantic-0004-united-states-senate",
@@ -35507,13 +35513,7 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true,
-   "called": {
-    "winner": "cory-booker",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:00:53.549Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-cape-may-0005-member-of-the-house-of-representatives",
@@ -35561,13 +35561,7 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true,
-   "called": {
-    "winner": "zack-mullock",
-    "by": "AP (not certified)",
-    "at": "2026-11-05T21:29:00.736Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-cape-may-0006-sheriff",
@@ -48871,7 +48865,13 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-hudson-0005-member-of-the-house-of-representatives-8th-congressional",
@@ -48926,7 +48926,13 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "rob-menendez",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:11:12.519Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-hudson-0006-member-of-the-house-of-representatives-9th-congressional",
@@ -48974,7 +48980,13 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "nelida-pou",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:22:06.948Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-hudson-0007-member-of-the-house-of-representatives-10th-congressional",
@@ -49015,7 +49027,13 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "lamonica-r-mciver",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:22:28.493Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-hudson-0008-county-register",
@@ -121146,13 +121164,7 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true,
-   "called": {
-    "winner": "mullock",
-    "by": "AP (not certified)",
-    "at": "2026-11-05T21:29:00.736Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-camden-0042-members-of-local-board-of-education-bellmawr-school-district-maria-romano-1-707-",
@@ -121360,8 +121372,8 @@
  "counties_covered": [
   "Bergen",
   "Camden",
+  "Cape May",
   "Cumberland",
-  "Hudson",
   "Hunterdon",
   "Mercer",
   "Monmouth",
@@ -121374,9 +121386,9 @@
  "counties_missing": [
   "Atlantic",
   "Burlington",
-  "Cape May",
   "Essex",
   "Gloucester",
+  "Hudson",
   "Middlesex",
   "Ocean",
   "Union",
