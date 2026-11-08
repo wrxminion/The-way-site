@@ -3,9 +3,10 @@
  "scope": "state-ny",
  "label": "New York",
  "source_ids": [
-  "ny-boe"
+  "ny-boe",
+  "ny-house"
  ],
- "updated_at": "2026-11-08T19:00:18Z",
+ "updated_at": "2026-11-08T19:09:35Z",
  "certified": false,
  "contests": [
   {
@@ -2534,6 +2535,1017 @@
     "winner": "letitia-a-james",
     "by": "AP (not certified)",
     "at": "2026-11-04T05:31:33.896Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-1",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 1",
+   "district": "1",
+   "title": "U.S. House District 1",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "christopher-j-gallant",
+     "name": "Christopher J. Gallant",
+     "party": "D",
+     "party_code": "D",
+     "votes": 145869
+    },
+    {
+     "id": "nicholas-j-lalota",
+     "name": "Nicholas J. Lalota",
+     "party": "R",
+     "party_code": "R",
+     "votes": 152546
+    }
+   ],
+   "precincts": {
+    "reporting": 560,
+    "total": 561,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "nicholas-j-lalota",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T17:00:41.053Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-2",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 2",
+   "district": "2",
+   "title": "U.S. House District 2",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "patrick-halpin",
+     "name": "Patrick Halpin",
+     "party": "D",
+     "party_code": "D",
+     "votes": 118680
+    },
+    {
+     "id": "andrew-r-garbarino",
+     "name": "Andrew R. Garbarino",
+     "party": "R",
+     "party_code": "R",
+     "votes": 124271
+    }
+   ],
+   "precincts": {
+    "reporting": 521,
+    "total": 527,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "andrew-r-garbarino",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T17:00:30.832Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-3",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 3",
+   "district": "3",
+   "title": "U.S. House District 3",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "thomas-r-suozzi",
+     "name": "Thomas R. Suozzi",
+     "party": "D",
+     "party_code": "D",
+     "votes": 141870
+    },
+    {
+     "id": "michael-j-lipetri-jr",
+     "name": "Michael J. LiPetri Jr",
+     "party": "R",
+     "party_code": "R",
+     "votes": 115330
+    }
+   ],
+   "precincts": {
+    "reporting": 548,
+    "total": 571,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "thomas-r-suozzi",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T19:04:10.881Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-4",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 4",
+   "district": "4",
+   "title": "U.S. House District 4",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "laura-a-gillen",
+     "name": "Laura A. Gillen",
+     "party": "D",
+     "party_code": "D",
+     "votes": 146755
+    },
+    {
+     "id": "jeanine-c-driscoll",
+     "name": "Jeanine C. Driscoll",
+     "party": "R",
+     "party_code": "R",
+     "votes": 111878
+    },
+    {
+     "id": "blay-tarnoff",
+     "name": "Blay Tarnoff",
+     "party": null,
+     "party_code": "O",
+     "votes": 637
+    }
+   ],
+   "precincts": {
+    "reporting": 537,
+    "total": 587,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "laura-a-gillen",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T19:04:26.176Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-5",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 5",
+   "district": "5",
+   "title": "U.S. House District 5",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "gregory-w-meeks",
+     "name": "Gregory W. Meeks",
+     "party": "D",
+     "party_code": "D",
+     "votes": 129931
+    },
+    {
+     "id": "george-marsh",
+     "name": "George Marsh",
+     "party": "R",
+     "party_code": "R",
+     "votes": 31082
+    }
+   ],
+   "precincts": {
+    "reporting": 386,
+    "total": 386,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "gregory-w-meeks",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:05:56.054Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-6",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 6",
+   "district": "6",
+   "title": "U.S. House District 6",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "grace-meng",
+     "name": "Grace Meng",
+     "party": "D",
+     "party_code": "D",
+     "votes": 92474
+    },
+    {
+     "id": "joseph-chou",
+     "name": "Joseph Chou",
+     "party": "R",
+     "party_code": "R",
+     "votes": 41225
+    }
+   ],
+   "precincts": {
+    "reporting": 338,
+    "total": 338,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "grace-meng",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:22:27.667Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-7",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 7",
+   "district": "7",
+   "title": "U.S. House District 7",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "claire-valdez",
+     "name": "Claire Valdez",
+     "party": "D",
+     "party_code": "D",
+     "votes": 135179
+    },
+    {
+     "id": "melvin-rivera",
+     "name": "Melvin Rivera",
+     "party": "R",
+     "party_code": "R",
+     "votes": 24370
+    },
+    {
+     "id": "priscilla-ghaznavi",
+     "name": "Priscilla Ghaznavi",
+     "party": null,
+     "party_code": "O",
+     "votes": 2155
+    }
+   ],
+   "precincts": {
+    "reporting": 393,
+    "total": 393,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "claire-valdez",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:08:40.071Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-8",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 8",
+   "district": "8",
+   "title": "U.S. House District 8",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "hakeem-s-jeffries",
+     "name": "Hakeem S. Jeffries",
+     "party": "D",
+     "party_code": "D",
+     "votes": 128197
+    },
+    {
+     "id": "lewis-mizrahi",
+     "name": "Lewis Mizrahi",
+     "party": "R",
+     "party_code": "R",
+     "votes": 31969
+    }
+   ],
+   "precincts": {
+    "reporting": 393,
+    "total": 393,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "hakeem-s-jeffries",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:07:13.207Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-9",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 9",
+   "district": "9",
+   "title": "U.S. House District 9",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "yvette-d-clarke",
+     "name": "Yvette D. Clarke",
+     "party": "D",
+     "party_code": "D",
+     "votes": 146503
+    },
+    {
+     "id": "joel-azumah",
+     "name": "Joel Azumah",
+     "party": "R",
+     "party_code": "R",
+     "votes": 30378
+    }
+   ],
+   "precincts": {
+    "reporting": 376,
+    "total": 376,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "yvette-d-clarke",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:05:32.790Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-10",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 10",
+   "district": "10",
+   "title": "U.S. House District 10",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "brad-lander",
+     "name": "Brad Lander",
+     "party": "D",
+     "party_code": "D",
+     "votes": 167343
+    },
+    {
+     "id": "jennifer-e-moore",
+     "name": "Jennifer E. Moore",
+     "party": "R",
+     "party_code": "R",
+     "votes": 31912
+    }
+   ],
+   "precincts": {
+    "reporting": 417,
+    "total": 417,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "brad-lander",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:05:13.644Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-11",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 11",
+   "district": "11",
+   "title": "U.S. House District 11",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "mike-decillis",
+     "name": "Mike DeCillis",
+     "party": "D",
+     "party_code": "D",
+     "votes": 79370
+    },
+    {
+     "id": "nicole-malliotakis",
+     "name": "Nicole Malliotakis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 101719
+    }
+   ],
+   "precincts": {
+    "reporting": 377,
+    "total": 377,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "nicole-malliotakis",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:26:46.016Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-12",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 12",
+   "district": "12",
+   "title": "U.S. House District 12",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "micah-c-lasher",
+     "name": "Micah C. Lasher",
+     "party": "D",
+     "party_code": "D",
+     "votes": 193614
+    },
+    {
+     "id": "caroline-shinkle",
+     "name": "Caroline Shinkle",
+     "party": "R",
+     "party_code": "R",
+     "votes": 50212
+    },
+    {
+     "id": "wilneida-negron",
+     "name": "Wilneida Negron",
+     "party": null,
+     "party_code": "O",
+     "votes": 2894
+    },
+    {
+     "id": "karen-ortiz",
+     "name": "Karen Ortiz",
+     "party": null,
+     "party_code": "O",
+     "votes": 3429
+    }
+   ],
+   "precincts": {
+    "reporting": 410,
+    "total": 410,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "micah-c-lasher",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:04:50.543Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-13",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 13",
+   "district": "13",
+   "title": "U.S. House District 13",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "darializa-avila-chevalier",
+     "name": "Darializa Avila Chevalier",
+     "party": "D",
+     "party_code": "D",
+     "votes": 141014
+    },
+    {
+     "id": "jomo-m-williams",
+     "name": "Jomo M. Williams",
+     "party": "R",
+     "party_code": "R",
+     "votes": 18308
+    }
+   ],
+   "precincts": {
+    "reporting": 383,
+    "total": 383,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "darializa-avila-chevalier",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:07:39.132Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-14",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 14",
+   "district": "14",
+   "title": "U.S. House District 14",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alexandria-ocasio-cortez",
+     "name": "Alexandria Ocasio-Cortez",
+     "party": "D",
+     "party_code": "D",
+     "votes": 107129
+    },
+    {
+     "id": "diamant-hysenaj",
+     "name": "Diamant Hysenaj",
+     "party": "R",
+     "party_code": "R",
+     "votes": 29505
+    }
+   ],
+   "precincts": {
+    "reporting": 362,
+    "total": 362,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "alexandria-ocasio-cortez",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:06:26.257Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-15",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 15",
+   "district": "15",
+   "title": "U.S. House District 15",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "ritchie-torres",
+     "name": "Ritchie Torres",
+     "party": "D",
+     "party_code": "D",
+     "votes": 93812
+    },
+    {
+     "id": "stylo-sapaskis",
+     "name": "Stylo Sapaskis",
+     "party": "R",
+     "party_code": "R",
+     "votes": 13004
+    },
+    {
+     "id": "gonzalo-duran",
+     "name": "Gonzalo Duran",
+     "party": null,
+     "party_code": "O",
+     "votes": 2075
+    },
+    {
+     "id": "andre-easton",
+     "name": "Andre Easton",
+     "party": null,
+     "party_code": "O",
+     "votes": 10647
+    },
+    {
+     "id": "jose-vega",
+     "name": "Jose Vega",
+     "party": null,
+     "party_code": "O",
+     "votes": 2348
+    }
+   ],
+   "precincts": {
+    "reporting": 323,
+    "total": 323,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "ritchie-torres",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:08:00.258Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-16",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 16",
+   "district": "16",
+   "title": "U.S. House District 16",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "george-s-latimer",
+     "name": "George S. Latimer",
+     "party": "D",
+     "party_code": "D",
+     "votes": 169169
+    },
+    {
+     "id": "joseph-j-cinquemani",
+     "name": "Joseph J. Cinquemani",
+     "party": "R",
+     "party_code": "R",
+     "votes": 53630
+    }
+   ],
+   "precincts": {
+    "reporting": 38,
+    "total": 670,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "george-s-latimer",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:31:50.028Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-17",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 17",
+   "district": "17",
+   "title": "U.S. House District 17",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "cait-conley",
+     "name": "Cait Conley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 164256
+    },
+    {
+     "id": "mike-lawler",
+     "name": "Mike Lawler",
+     "party": "R",
+     "party_code": "R",
+     "votes": 145546
+    }
+   ],
+   "precincts": {
+    "reporting": 409,
+    "total": 679,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "cait-conley",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T23:12:39.941Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-18",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 18",
+   "district": "18",
+   "title": "U.S. House District 18",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "pat-ryan",
+     "name": "Pat Ryan",
+     "party": "D",
+     "party_code": "D",
+     "votes": 169001
+    },
+    {
+     "id": "jackie-mary-auringer",
+     "name": "Jackie Mary Auringer",
+     "party": "R",
+     "party_code": "R",
+     "votes": 99621
+    }
+   ],
+   "precincts": {
+    "reporting": 581,
+    "total": 581,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "pat-ryan",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:37:09.718Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-19",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 19",
+   "district": "19",
+   "title": "U.S. House District 19",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "josh-riley",
+     "name": "Josh Riley",
+     "party": "D",
+     "party_code": "D",
+     "votes": 167084
+    },
+    {
+     "id": "peter-k-oberacker",
+     "name": "Peter K. Oberacker",
+     "party": "R",
+     "party_code": "R",
+     "votes": 124422
+    }
+   ],
+   "precincts": {
+    "reporting": 653,
+    "total": 654,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "josh-riley",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:40:01.275Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-20",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 20",
+   "district": "20",
+   "title": "U.S. House District 20",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "paul-d-tonko",
+     "name": "Paul D. Tonko",
+     "party": "D",
+     "party_code": "D",
+     "votes": 181761
+    },
+    {
+     "id": "ralph-f-ambrosio",
+     "name": "Ralph F. Ambrosio",
+     "party": "R",
+     "party_code": "R",
+     "votes": 103904
+    }
+   ],
+   "precincts": {
+    "reporting": 575,
+    "total": 575,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "paul-d-tonko",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:40:40.251Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-21",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 21",
+   "district": "21",
+   "title": "U.S. House District 21",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "blake-gendebien",
+     "name": "Blake Gendebien",
+     "party": "D",
+     "party_code": "D",
+     "votes": 135172
+    },
+    {
+     "id": "anthony-constantino",
+     "name": "Anthony Constantino",
+     "party": "R",
+     "party_code": "R",
+     "votes": 140422
+    }
+   ],
+   "precincts": {
+    "reporting": 573,
+    "total": 573,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "anthony-constantino",
+    "by": "AP (not certified)",
+    "at": "2026-11-06T16:23:12.472Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-22",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 22",
+   "district": "22",
+   "title": "U.S. House District 22",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "john-w-mannion",
+     "name": "John W. Mannion",
+     "party": "D",
+     "party_code": "D",
+     "votes": 159563
+    },
+    {
+     "id": "kailee-buller",
+     "name": "Kailee Buller",
+     "party": "R",
+     "party_code": "R",
+     "votes": 113729
+    }
+   ],
+   "precincts": {
+    "reporting": 685,
+    "total": 685,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "john-w-mannion",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:55:35.442Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-23",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 23",
+   "district": "23",
+   "title": "U.S. House District 23",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "aaron-gies",
+     "name": "Aaron Gies",
+     "party": "D",
+     "party_code": "D",
+     "votes": 120199
+    },
+    {
+     "id": "nicholas-a-langworthy",
+     "name": "Nicholas A. Langworthy",
+     "party": "R",
+     "party_code": "R",
+     "votes": 182067
+    }
+   ],
+   "precincts": {
+    "reporting": 568,
+    "total": 606,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "nicholas-a-langworthy",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:49:43.737Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-24",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 24",
+   "district": "24",
+   "title": "U.S. House District 24",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "alissa-j-ellman",
+     "name": "Alissa J. Ellman",
+     "party": "D",
+     "party_code": "D",
+     "votes": 112261
+    },
+    {
+     "id": "claudia-tenney",
+     "name": "Claudia Tenney",
+     "party": "R",
+     "party_code": "R",
+     "votes": 171460
+    }
+   ],
+   "precincts": {
+    "reporting": 596,
+    "total": 597,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "claudia-tenney",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T04:11:11.671Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-25",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 25",
+   "district": "25",
+   "title": "U.S. House District 25",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "joseph-d-morelle",
+     "name": "Joseph D. Morelle",
+     "party": "D",
+     "party_code": "D",
+     "votes": 176401
+    },
+    {
+     "id": "virginia-e-mcintyre",
+     "name": "Virginia E. McIntyre",
+     "party": "R",
+     "party_code": "R",
+     "votes": 103430
+    }
+   ],
+   "precincts": {
+    "reporting": 673,
+    "total": 673,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "joseph-d-morelle",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:38:51.240Z",
+    "kind": "ap"
+   }
+  },
+  {
+   "id": "ny-united-states-house-of-representatives-district-26",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "ny",
+   "office": "U.S. House District 26",
+   "district": "26",
+   "title": "U.S. House District 26",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "timothy-m-kennedy",
+     "name": "Timothy M. Kennedy",
+     "party": "D",
+     "party_code": "D",
+     "votes": 163755
+    },
+    {
+     "id": "dennis-e-hannon",
+     "name": "Dennis E. Hannon",
+     "party": "R",
+     "party_code": "R",
+     "votes": 84618
+    }
+   ],
+   "precincts": {
+    "reporting": 528,
+    "total": 528,
+    "unit": "election districts"
+   },
+   "called": {
+    "winner": "timothy-m-kennedy",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:53:41.461Z",
     "kind": "ap"
    }
   }
