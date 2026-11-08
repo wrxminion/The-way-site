@@ -267,7 +267,7 @@ function svgEl(tag,attrs,parent){let x=document.createElementNS(NS,tag);Object.e
 function renderGraph(){const svg=$('#network-svg');svg.replaceChildren();const net=makeNetwork();lastNet=net;const names=new Map(net.nodes.map(n=>[n.id,n]));let roots=net.nodes.filter(n=>n.central).sort((a,b)=>b.count-a.count),root=roots[0];
  const meta=`${net.total} eligible connections · ${net.edges.length} drawn (limit 85) · ${roots.length} separate ID nodes sharing hub name`;$('#graph-count').textContent=meta+' · Connections may refer to different legal entities with identical reported names.';
  if(!root||!net.edges.length){$('#network-desc').textContent='No connections match this hub and state filter. Clear the state filter or choose another hub.';svgEl('text',{x:560,y:320,'text-anchor':'middle',fill:'#a5c2c8'},svg).textContent='No documented connections in the selected filter';return;}
- $('#network-desc').textContent=`Showing ${net.edges.length} connections adjacent to ${hubLabel(graphHub)}. Point at a dot or a line to light up its trail. Click a dot to list its lines, click it again to put it in the center. Click a line to see its filing. Drag to move the web. Pinch, or hold Ctrl and turn the mouse wheel, to zoom.`+(net.web2&&net.web2.nodes.length?' Lighter dots and lines further out are second-level links: who the center\'s neighbors are linked to.':'');
+ $('#network-desc').textContent=`Showing ${net.edges.length} connections adjacent to ${hubLabel(graphHub)}. Point at a dot or a line to light up its trail. Click a dot to list its lines, click it again to put it in the center. Click a line to see its filing. Drag to move the web. To zoom, pinch, or click the web and turn the mouse wheel.`+(net.web2&&net.web2.nodes.length?' Lighter dots and lines further out are second-level links: who the center\'s neighbors are linked to.':'');
  const cx=560,cy=312,pos={};pos[root.id]={x:cx,y:cy};const other=net.nodes.filter(n=>n.id!==root.id).sort((a,b)=>b.count-a.count||b.amount-a.amount),total=other.length;
  other.forEach((n,i)=>{const inner=i<Math.min(16,total);const sameName=n.central;const radius=sameName?68:inner?200:290;const idx=sameName?i:(inner?i: i-16);const span=sameName?Math.max(roots.length-1,1):inner?Math.min(16,total):Math.max(total-16,1);let angle=2*Math.PI*(idx/Math.max(span,1))-.5*Math.PI;pos[n.id]={x:cx+Math.cos(angle)*radius+(i%2?2:-2),y:cy+Math.sin(angle)*radius*.86,a:angle};});
  // D239: second-level dots sit on a wider ring, near the neighbor they hang off, pushed apart so they do not pile up.
@@ -1032,7 +1032,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
 // Arrowheads on the lit trail show which way the money went. Itemized and FEC filings are added up; reported figures
 // never are. Dots are matched by ID, so distinct IDs stay distinct.
 // Move and zoom: drag the web to move it, pinch on a touch screen, Ctrl + mouse wheel (or a touchpad pinch) to zoom where
-// the pointer is; in full screen the plain wheel zooms. The ↺ button puts the whole web back. On a phone in the page,
+// the pointer is; in full screen, or after a click on the web (D252), the plain wheel zooms. The ↺ button puts the whole web back. On a phone in the page,
 // one finger up and down still scrolls the page.
 (function () {
   const svg = $('#network-svg'), wrap = $('#graph-wrap');
@@ -1053,8 +1053,18 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   function place(u, v, s) { graphScale = Math.min(MAX, Math.max(MIN, s)); webPanX = v.x - graphScale * u.x - CX * (1 - graphScale); webPanY = v.y - graphScale * u.y - CY * (1 - graphScale); applyView(); }
   function zoomAt(v, s) { place(contentAt(v), v, s); }
   setScale = function (k) { zoomAt(viewCenter(), graphScale * k); };
+  // D252: click the web with a mouse and the plain wheel zooms it. Clicking outside the web, pressing Escape or
+  // moving the mouse off the web gives the wheel back to the page. Ctrl + wheel and full screen work as before.
+  let wheelOn = false;
+  const hint = el('div', 'mt-wheel-hint'); hint.setAttribute('aria-hidden', 'true'); wrap.appendChild(hint);
+  function setWheel(on) { wheelOn = on; wrap.classList.toggle('mt-wheel-on', on); hint.textContent = on ? 'Mouse wheel zooms the web. Click outside or press Esc to stop.' : 'Click the web, then turn the mouse wheel to zoom'; }
+  setWheel(false);
+  svg.addEventListener('pointerdown', e => { if (e.pointerType === 'mouse' && e.button === 0) setWheel(true); });
+  document.addEventListener('pointerdown', e => { if (wheelOn && !wrap.contains(e.target)) setWheel(false); });
+  wrap.addEventListener('pointerleave', e => { if (wheelOn && e.pointerType === 'mouse' && !isFull()) setWheel(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && wheelOn) setWheel(false); });
   svg.addEventListener('wheel', e => {
-    if (!e.ctrlKey && !isFull()) return;
+    if (!e.ctrlKey && !isFull() && !wheelOn) return;
     e.preventDefault();
     zoomAt(toView(e.clientX, e.clientY), graphScale * Math.exp(-e.deltaY * (e.deltaMode === 1 ? .05 : .0018)));
   }, { passive: false });

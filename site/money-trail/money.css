@@ -279,3 +279,9 @@ body:not(.mt-webfull) .web-card:not([hidden]){display:block;position:fixed;z-ind
 .detail-panel .mt-detail-head .panel-heading{margin:0}
 .mt-detail-head .detail-close.mt-detail-hide{display:block;margin-left:auto;font:inherit;font-size:13px;font-weight:700;color:var(--text);background:#0c202dda;border:1px solid var(--edge);border-radius:999px;padding:6px 13px;cursor:pointer;line-height:1.2}
 .mt-detail-head .detail-close.mt-detail-hide:hover,.mt-detail-head .detail-close.mt-detail-hide:focus-visible{border-color:#3fe6f5;color:#bffcff}
+/* D252: hint for mouse wheel zoom; shown only where there is a mouse, hidden in full screen */
+.mt-wheel-hint{position:absolute;left:12px;bottom:10px;max-width:calc(100% - 24px);padding:5px 10px;border:1px solid #315a64;border-radius:8px;background:#071c28cc;color:#9dbfc3;font-size:11px;line-height:1.4;pointer-events:none}
+.graph-wrap.mt-wheel-on{border-color:#6be3c9aa}
+.graph-wrap.mt-wheel-on .mt-wheel-hint{color:var(--mint);border-color:#6be3c980}
+@media (hover:none),(pointer:coarse){.mt-wheel-hint{display:none}}
+body.mt-webfull .mt-wheel-hint{display:none}
