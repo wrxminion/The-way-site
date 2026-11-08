@@ -109,8 +109,9 @@ function datum(key,val){if(val===undefined||val===null||val==='')return '';retur
 const CABINET='/money-trail/art/records-cabinet.webp';
 // D251: the full screen money web link shows the web alone, no cabinet.
 const WEB_ART='/money-trail/art/money-web-link-blue.webp';
-// D256: "Open registry record" shows an official record page with a seal, so it no longer looks like the cabinet on the trail links.
-const RECORD_ART='/money-trail/art/registry-record.webp';
+// D256: "Open registry record" gets its own picture, so it no longer looks like the cabinet on the trail links.
+// D258: the maintainer picked the record page with a magnifying glass.
+const RECORD_ART='/money-trail/art/registry-record-magnifier.webp';
 function sourceButton(url,label='Open original filing / source',artSrc=CABINET){url=safeUrl(url);return url?`<a class="detail-link mt-evidence-link" href="${escapeHtml(url)}" rel="noopener noreferrer" target="_blank"><img class="mt-evidence-art" src="${escapeHtml(artSrc)}" alt="" width="22" height="24">${escapeHtml(label)} ↗</a>`:''}
 function positionPanel(mid){let ps=positionsByMeasure[mid]||[];let sides={support:[],oppose:[],other:[]};for(let p of ps){let side=/support|yes|favor/i.test(p.stance||'')?'support':/oppose|no|against/i.test(p.stance||'')?'oppose':'other';sides[side].push(p)};return `<div class="side-group"><h4>Campaign sides · documented positions</h4><p><strong>Support:</strong> ${sides.support.length?sides.support.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p><strong>Opposition:</strong> ${sides.oppose.length?sides.oppose.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p>These positions do not prove how any particular donation was allocated.</p></div>`}
 function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<h2 class="mt-selected">${escapeHtml(selName(e))}</h2><span class="event-kind ${kind}">${escapeHtml(kindLabel(e)||'Graph connection')}</span>`+(kind==='ballot'?outcomeBox(e.measure_id)+ftmBlock(e):'');
