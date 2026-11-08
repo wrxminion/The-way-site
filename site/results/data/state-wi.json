@@ -5,7 +5,7 @@
  "source_ids": [
   "wi-counties"
  ],
- "updated_at": "2026-11-08T21:40:43Z",
+ "updated_at": "2026-11-08T21:51:39Z",
  "certified": false,
  "contests": [
   {
@@ -283,12 +283,7 @@
     "unit": "precincts"
    },
    "note": "Sum of 3 county report(s) read so far; not every county is in.",
-   "called": {
-    "winner": "alfonso",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T04:02:12.771Z",
-    "kind": "ap"
-   },
+   "called": null,
    "partial": true
   },
   {
@@ -2076,21 +2071,21 @@
      "name": "Eric Toney",
      "party": "REP",
      "party_code": "R",
-     "votes": 305650
+     "votes": 313528
     },
     {
      "id": "kaul",
      "name": "Josh Kaul",
      "party": "DEM",
      "party_code": "D",
-     "votes": 276413
+     "votes": 287699
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": "",
      "party_code": "O",
-     "votes": 343
+     "votes": 353
     }
    ],
    "by_county": {
@@ -2102,6 +2097,15 @@
      },
      "reporting": 101,
      "total": 101
+    },
+    "Douglas": {
+     "votes": {
+      "Eric Toney": 7878,
+      "Josh Kaul": 11286,
+      "Write-in": 10
+     },
+     "reporting": 26,
+     "total": 26
     },
     "Eau Claire": {
      "votes": {
@@ -2167,11 +2171,11 @@
     }
    },
    "precincts": {
-    "reporting": 496,
-    "total": 496,
+    "reporting": 522,
+    "total": 522,
     "unit": "precincts"
    },
-   "note": "Sum of 8 county report(s) read so far; not every county is in.",
+   "note": "Sum of 9 county report(s) read so far; not every county is in.",
    "called": null,
    "partial": true
   },
@@ -2190,21 +2194,21 @@
      "name": "Tom Tiffany / David Varnam",
      "party": "REP",
      "party_code": "R",
-     "votes": 354944
+     "votes": 363014
     },
     {
      "id": "crowley",
      "name": "David Crowley / Sarah Godlewski",
      "party": "DEM",
      "party_code": "D",
-     "votes": 304662
+     "votes": 315843
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": "",
      "party_code": "O",
-     "votes": 1049
+     "votes": 1084
     },
     {
      "id": "king",
@@ -2289,6 +2293,15 @@
      "reporting": 55,
      "total": 55
     },
+    "Douglas": {
+     "votes": {
+      "Tiffany / Varnam": 8070,
+      "Crowley / Godlewski": 11181,
+      "Write-in": 35
+     },
+     "reporting": 26,
+     "total": 26
+    },
     "Eau Claire": {
      "votes": {
       "Tom Tiffany / David Varnam": 19600,
@@ -2371,11 +2384,11 @@
     }
    },
    "precincts": {
-    "reporting": 583,
-    "total": 583,
+    "reporting": 609,
+    "total": 609,
     "unit": "precincts"
    },
-   "note": "Sum of 10 county report(s) read so far; not every county is in.",
+   "note": "Sum of 11 county report(s) read so far; not every county is in.",
    "called": null,
    "partial": true
   },
@@ -2394,28 +2407,28 @@
      "name": "Jay Schroeder",
      "party": "REP",
      "party_code": "R",
-     "votes": 305621
+     "votes": 313414
     },
     {
      "id": "zamarripa",
      "name": "JoCasta Zamarripa",
      "party": "DEM",
      "party_code": "D",
-     "votes": 253004
+     "votes": 263565
     },
     {
      "id": "karas",
      "name": "Pete Karas",
      "party": "WIG",
      "party_code": "O",
-     "votes": 21116
+     "votes": 21939
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": "",
      "party_code": "O",
-     "votes": 309
+     "votes": 315
     },
     {
      "id": "chianese",
@@ -2435,6 +2448,16 @@
      },
      "reporting": 101,
      "total": 101
+    },
+    "Douglas": {
+     "votes": {
+      "Jay Schroeder": 7793,
+      "JoCasta Zamarripa": 10561,
+      "Pete Karas": 823,
+      "Write-in": 6
+     },
+     "reporting": 26,
+     "total": 26
     },
     "Eau Claire": {
      "votes": {
@@ -2508,11 +2531,11 @@
     }
    },
    "precincts": {
-    "reporting": 496,
-    "total": 496,
+    "reporting": 522,
+    "total": 522,
     "unit": "precincts"
    },
-   "note": "Sum of 8 county report(s) read so far; not every county is in.",
+   "note": "Sum of 9 county report(s) read so far; not every county is in.",
    "called": null,
    "partial": true
   },
@@ -2531,14 +2554,14 @@
      "name": "Yes",
      "party": "",
      "party_code": "O",
-     "votes": 286425
+     "votes": 295417
     },
     {
      "id": "no",
      "name": "No",
      "party": "",
      "party_code": "O",
-     "votes": 227326
+     "votes": 236879
     }
    ],
    "by_county": {
@@ -2549,6 +2572,14 @@
      },
      "reporting": 101,
      "total": 101
+    },
+    "Douglas": {
+     "votes": {
+      "Yes": 8992,
+      "No": 9553
+     },
+     "reporting": 26,
+     "total": 26
     },
     "Eau Claire": {
      "votes": {
@@ -2592,11 +2623,11 @@
     }
    },
    "precincts": {
-    "reporting": 431,
-    "total": 431,
+    "reporting": 457,
+    "total": 457,
     "unit": "precincts"
    },
-   "note": "Sum of 6 county report(s) read so far; not every county is in.",
+   "note": "Sum of 7 county report(s) read so far; not every county is in.",
    "called": null,
    "partial": true
   },
@@ -2615,14 +2646,14 @@
      "name": "Yes",
      "party": "",
      "party_code": "O",
-     "votes": 271952
+     "votes": 280562
     },
     {
      "id": "no",
      "name": "No",
      "party": "",
      "party_code": "O",
-     "votes": 244830
+     "votes": 254786
     }
    ],
    "by_county": {
@@ -2633,6 +2664,14 @@
      },
      "reporting": 101,
      "total": 101
+    },
+    "Douglas": {
+     "votes": {
+      "Yes": 8610,
+      "No": 9956
+     },
+     "reporting": 26,
+     "total": 26
     },
     "Eau Claire": {
      "votes": {
@@ -2676,11 +2715,11 @@
     }
    },
    "precincts": {
-    "reporting": 431,
-    "total": 431,
+    "reporting": 457,
+    "total": 457,
     "unit": "precincts"
    },
-   "note": "Sum of 6 county report(s) read so far; not every county is in.",
+   "note": "Sum of 7 county report(s) read so far; not every county is in.",
    "called": null,
    "partial": true
   },
@@ -2699,14 +2738,14 @@
      "name": "Yes",
      "party": "",
      "party_code": "O",
-     "votes": 317267
+     "votes": 327864
     },
     {
      "id": "no",
      "name": "No",
      "party": "",
      "party_code": "O",
-     "votes": 195359
+     "votes": 203209
     }
    ],
    "by_county": {
@@ -2717,6 +2756,14 @@
      },
      "reporting": 101,
      "total": 101
+    },
+    "Douglas": {
+     "votes": {
+      "Yes": 10597,
+      "No": 7850
+     },
+     "reporting": 26,
+     "total": 26
     },
     "Eau Claire": {
      "votes": {
@@ -2760,11 +2807,11 @@
     }
    },
    "precincts": {
-    "reporting": 431,
-    "total": 431,
+    "reporting": 457,
+    "total": 457,
     "unit": "precincts"
    },
-   "note": "Sum of 6 county report(s) read so far; not every county is in.",
+   "note": "Sum of 7 county report(s) read so far; not every county is in.",
    "called": null,
    "partial": true
   },
@@ -3286,21 +3333,21 @@
      "name": "John S. Leiber",
      "party": "REP",
      "party_code": "R",
-     "votes": 320369
+     "votes": 328635
     },
     {
      "id": "xiong",
      "name": "Yee Leng Xiong",
      "party": "DEM",
      "party_code": "D",
-     "votes": 257191
+     "votes": 268017
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": "",
      "party_code": "O",
-     "votes": 444
+     "votes": 457
     },
     {
      "id": "kexel",
@@ -3319,6 +3366,15 @@
      },
      "reporting": 101,
      "total": 101
+    },
+    "Douglas": {
+     "votes": {
+      "John S. Leiber": 8266,
+      "Yee Leng Xiong": 10826,
+      "Write-in": 13
+     },
+     "reporting": 26,
+     "total": 26
     },
     "Eau Claire": {
      "votes": {
@@ -3385,11 +3441,11 @@
     }
    },
    "precincts": {
-    "reporting": 496,
-    "total": 496,
+    "reporting": 522,
+    "total": 522,
     "unit": "precincts"
    },
-   "note": "Sum of 8 county report(s) read so far; not every county is in.",
+   "note": "Sum of 9 county report(s) read so far; not every county is in.",
    "called": null,
    "partial": true
   },
