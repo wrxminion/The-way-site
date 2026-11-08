@@ -34,7 +34,7 @@
   "va-scytl",
   "wy-sos"
  ],
- "updated_at": "2026-11-08T19:09:33Z",
+ "updated_at": "2026-11-08T19:18:48Z",
  "certified": false,
  "contests": [
   {
@@ -2794,14 +2794,14 @@
      "name": "Mark R. Warner",
      "party": "D",
      "party_code": "D",
-     "votes": 2202163
+     "votes": 2202168
     },
     {
      "id": "bert-mizusawa",
      "name": "Bert Mizusawa",
      "party": "R",
      "party_code": "R",
-     "votes": 1380792
+     "votes": 1380802
     },
     {
      "id": "write-in",
@@ -2906,11 +2906,11 @@
      "choices": [
       {
        "id": "mark-r-warner",
-       "votes": 2050
+       "votes": 2055
       },
       {
        "id": "bert-mizusawa",
-       "votes": 4326
+       "votes": 4336
       },
       {
        "id": "write-in",
@@ -25170,12 +25170,6 @@
     "total": 55,
     "unit": "precincts"
    },
-   "called": {
-    "winner": "shelley-moore-capito",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:52:23.966Z",
-    "kind": "ap"
-   },
    "choices": [
     {
      "id": "shelley-moore-capito",
@@ -25198,7 +25192,13 @@
      "party_code": "O",
      "votes": 17139
     }
-   ]
+   ],
+   "called": {
+    "winner": "shelley-moore-capito",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:52:23.966Z",
+    "kind": "ap"
+   }
   }
  ]
 }
