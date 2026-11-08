@@ -34,7 +34,7 @@
   "va-scytl",
   "wy-sos"
  ],
- "updated_at": "2026-11-08T19:18:48Z",
+ "updated_at": "2026-11-08T19:29:06Z",
  "certified": false,
  "contests": [
   {
@@ -25198,6 +25198,63 @@
     "by": "AP (not certified)",
     "at": "2026-11-04T01:52:23.966Z",
     "kind": "ap"
+   }
+  },
+  {
+   "id": "dc-united-states-senator",
+   "kind": "candidate",
+   "level": "federal",
+   "state": "dc",
+   "office": "U.S. Senate",
+   "district": null,
+   "title": "U.S. Senate",
+   "vote_for": 1,
+   "choices": [
+    {
+     "id": "robert-simmons",
+     "name": "Robert Simmons",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 12470
+    },
+    {
+     "id": "paul-strauss",
+     "name": "Paul Strauss",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 171550
+    },
+    {
+     "id": "write-in",
+     "name": "Write-in",
+     "party": "NPN",
+     "party_code": "O",
+     "votes": 2160
+    },
+    {
+     "id": "votes",
+     "name": "VOTES",
+     "party": "OVER",
+     "party_code": "O",
+     "votes": 408
+    },
+    {
+     "id": "under-votes",
+     "name": "UNDER VOTES",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 10063
+    }
+   ],
+   "precincts": {
+    "reporting": 0,
+    "total": 0
+   },
+   "called": {
+    "winner": "paul-strauss",
+    "by": "State shows leader",
+    "at": null,
+    "kind": "state_leader"
    }
   }
  ]
