@@ -43,7 +43,7 @@
   "vt-sos",
   "wy-sos"
  ],
- "updated_at": "2026-11-09T20:37:18Z",
+ "updated_at": "2026-11-09T20:49:54Z",
  "certified": false,
  "contests": [
   {
@@ -3490,178 +3490,6 @@
     "total": 10,
     "unit": "counties"
    },
-   "counties": [
-    {
-     "name": "Catoosa County",
-     "choices": [
-      {
-       "id": "clay-fuller-i",
-       "votes": 16620
-      },
-      {
-       "id": "shawn-harris",
-       "votes": 7091
-      }
-     ],
-     "precincts": {
-      "reporting": 11,
-      "total": 11
-     }
-    },
-    {
-     "name": "Chattooga County",
-     "choices": [
-      {
-       "id": "clay-fuller-i",
-       "votes": 5253
-      },
-      {
-       "id": "shawn-harris",
-       "votes": 1805
-      }
-     ],
-     "precincts": {
-      "reporting": 5,
-      "total": 5
-     }
-    },
-    {
-     "name": "Cobb County",
-     "choices": [
-      {
-       "id": "clay-fuller-i",
-       "votes": 32723
-      },
-      {
-       "id": "shawn-harris",
-       "votes": 35614
-      }
-     ],
-     "precincts": {
-      "reporting": 30,
-      "total": 30
-     }
-    },
-    {
-     "name": "Dade County",
-     "choices": [
-      {
-       "id": "clay-fuller-i",
-       "votes": 4108
-      },
-      {
-       "id": "shawn-harris",
-       "votes": 1283
-      }
-     ],
-     "precincts": {
-      "reporting": 7,
-      "total": 7
-     }
-    },
-    {
-     "name": "Floyd County",
-     "choices": [
-      {
-       "id": "clay-fuller-i",
-       "votes": 19937
-      },
-      {
-       "id": "shawn-harris",
-       "votes": 12362
-      }
-     ],
-     "precincts": {
-      "reporting": 19,
-      "total": 19
-     }
-    },
-    {
-     "name": "Murray County",
-     "choices": [
-      {
-       "id": "clay-fuller-i",
-       "votes": 8758
-      },
-      {
-       "id": "shawn-harris",
-       "votes": 2564
-      }
-     ],
-     "precincts": {
-      "reporting": 7,
-      "total": 7
-     }
-    },
-    {
-     "name": "Paulding County",
-     "choices": [
-      {
-       "id": "clay-fuller-i",
-       "votes": 39027
-      },
-      {
-       "id": "shawn-harris",
-       "votes": 35487
-      }
-     ],
-     "precincts": {
-      "reporting": 20,
-      "total": 20
-     }
-    },
-    {
-     "name": "Polk County",
-     "choices": [
-      {
-       "id": "clay-fuller-i",
-       "votes": 9603
-      },
-      {
-       "id": "shawn-harris",
-       "votes": 3671
-      }
-     ],
-     "precincts": {
-      "reporting": 7,
-      "total": 7
-     }
-    },
-    {
-     "name": "Walker County",
-     "choices": [
-      {
-       "id": "clay-fuller-i",
-       "votes": 15378
-      },
-      {
-       "id": "shawn-harris",
-       "votes": 6009
-      }
-     ],
-     "precincts": {
-      "reporting": 11,
-      "total": 11
-     }
-    },
-    {
-     "name": "Whitfield County",
-     "choices": [
-      {
-       "id": "clay-fuller-i",
-       "votes": 17381
-      },
-      {
-       "id": "shawn-harris",
-       "votes": 12484
-      }
-     ],
-     "precincts": {
-      "reporting": 23,
-      "total": 23
-     }
-    }
-   ],
    "called": {
     "winner": "clay-fuller-i",
     "by": "AP (not certified)",
@@ -16552,14 +16380,14 @@
      "name": "Rachel Wallace",
      "party": "DEM",
      "party_code": "D",
-     "votes": 103699
+     "votes": 103720
     },
     {
      "id": "dan-meuser",
      "name": "Dan Meuser",
      "party": "REP",
      "party_code": "R",
-     "votes": 165576
+     "votes": 165588
     }
    ],
    "precincts": {
@@ -16700,14 +16528,14 @@
      "name": "Beth Farnham",
      "party": "DEM",
      "party_code": "D",
-     "votes": 91500
+     "votes": 91529
     },
     {
      "id": "john-joyce",
      "name": "John Joyce",
      "party": "REP",
      "party_code": "R",
-     "votes": 189808
+     "votes": 189836
     }
    ],
    "precincts": {
@@ -35141,18 +34969,18 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "cyril-jefferson",
-     "name": "Cyril Jefferson",
-     "party": "DEM",
-     "party_code": "D",
-     "votes": 140001
-    },
-    {
      "id": "addison-mcdowell",
      "name": "Addison McDowell",
      "party": "REP",
      "party_code": "R",
      "votes": 133737
+    },
+    {
+     "id": "cyril-jefferson",
+     "name": "Cyril Jefferson",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 140001
     }
    ],
    "precincts": {},
@@ -35161,12 +34989,12 @@
      "name": "Cabarrus",
      "choices": [
       {
-       "id": "cyril-jefferson",
-       "votes": 22417
-      },
-      {
        "id": "addison-mcdowell",
        "votes": 13566
+      },
+      {
+       "id": "cyril-jefferson",
+       "votes": 22417
       }
      ]
     },
@@ -35174,12 +35002,12 @@
      "name": "Davidson",
      "choices": [
       {
-       "id": "cyril-jefferson",
-       "votes": 21194
-      },
-      {
        "id": "addison-mcdowell",
        "votes": 39479
+      },
+      {
+       "id": "cyril-jefferson",
+       "votes": 21194
       }
      ]
     },
@@ -35187,12 +35015,12 @@
      "name": "Davie",
      "choices": [
       {
-       "id": "cyril-jefferson",
-       "votes": 6036
-      },
-      {
        "id": "addison-mcdowell",
        "votes": 12412
+      },
+      {
+       "id": "cyril-jefferson",
+       "votes": 6036
       }
      ]
     },
@@ -35200,12 +35028,12 @@
      "name": "Forsyth",
      "choices": [
       {
-       "id": "cyril-jefferson",
-       "votes": 24507
-      },
-      {
        "id": "addison-mcdowell",
        "votes": 20837
+      },
+      {
+       "id": "cyril-jefferson",
+       "votes": 24507
       }
      ]
     },
@@ -35213,12 +35041,12 @@
      "name": "Guilford",
      "choices": [
       {
-       "id": "cyril-jefferson",
-       "votes": 45263
-      },
-      {
        "id": "addison-mcdowell",
        "votes": 17456
+      },
+      {
+       "id": "cyril-jefferson",
+       "votes": 45263
       }
      ]
     },
@@ -35226,12 +35054,12 @@
      "name": "Rowan",
      "choices": [
       {
-       "id": "cyril-jefferson",
-       "votes": 20584
-      },
-      {
        "id": "addison-mcdowell",
        "votes": 29987
+      },
+      {
+       "id": "cyril-jefferson",
+       "votes": 20584
       }
      ]
     }
@@ -35562,13 +35390,6 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "ashley-bell",
-     "name": "Ashley Bell",
-     "party": "DEM",
-     "party_code": "D",
-     "votes": 143137
-    },
-    {
      "id": "pat-harrigan",
      "name": "Pat Harrigan",
      "party": "REP",
@@ -35581,6 +35402,13 @@
      "party": "LIB",
      "party_code": "O",
      "votes": 4673
+    },
+    {
+     "id": "ashley-bell",
+     "name": "Ashley Bell",
+     "party": "DEM",
+     "party_code": "D",
+     "votes": 143137
     }
    ],
    "precincts": {},
@@ -35589,16 +35417,16 @@
      "name": "Catawba",
      "choices": [
       {
-       "id": "ashley-bell",
-       "votes": 23096
-      },
-      {
        "id": "pat-harrigan",
        "votes": 35959
       },
       {
        "id": "steven-feldman",
        "votes": 877
+      },
+      {
+       "id": "ashley-bell",
+       "votes": 23096
       }
      ]
     },
@@ -35606,16 +35434,16 @@
      "name": "Forsyth",
      "choices": [
       {
-       "id": "ashley-bell",
-       "votes": 72465
-      },
-      {
        "id": "pat-harrigan",
        "votes": 32197
       },
       {
        "id": "steven-feldman",
        "votes": 1874
+      },
+      {
+       "id": "ashley-bell",
+       "votes": 72465
       }
      ]
     },
@@ -35623,16 +35451,16 @@
      "name": "Iredell",
      "choices": [
       {
-       "id": "ashley-bell",
-       "votes": 31372
-      },
-      {
        "id": "pat-harrigan",
        "votes": 43242
       },
       {
        "id": "steven-feldman",
        "votes": 1106
+      },
+      {
+       "id": "ashley-bell",
+       "votes": 31372
       }
      ]
     },
@@ -35640,16 +35468,16 @@
      "name": "Lincoln",
      "choices": [
       {
-       "id": "ashley-bell",
-       "votes": 12850
-      },
-      {
        "id": "pat-harrigan",
        "votes": 24863
       },
       {
        "id": "steven-feldman",
        "votes": 544
+      },
+      {
+       "id": "ashley-bell",
+       "votes": 12850
       }
      ]
     },
@@ -35657,16 +35485,16 @@
      "name": "Yadkin",
      "choices": [
       {
-       "id": "ashley-bell",
-       "votes": 3354
-      },
-      {
        "id": "pat-harrigan",
        "votes": 9905
       },
       {
        "id": "steven-feldman",
        "votes": 272
+      },
+      {
+       "id": "ashley-bell",
+       "votes": 3354
       }
      ]
     }
@@ -36150,18 +35978,18 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "travis-groo",
-     "name": "Travis Groo",
-     "party": "LIB",
-     "party_code": "O",
-     "votes": 5330
-    },
-    {
      "id": "jamie-ager",
      "name": "Jamie Ager",
      "party": "DEM",
      "party_code": "D",
      "votes": 195627
+    },
+    {
+     "id": "travis-groo",
+     "name": "Travis Groo",
+     "party": "LIB",
+     "party_code": "O",
+     "votes": 5330
     },
     {
      "id": "jennifer-capps-balkcom",
@@ -36177,12 +36005,12 @@
      "name": "Avery",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 141
-      },
-      {
        "id": "jamie-ager",
        "votes": 2099
+      },
+      {
+       "id": "travis-groo",
+       "votes": 141
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36194,12 +36022,12 @@
      "name": "Buncombe",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 1440
-      },
-      {
        "id": "jamie-ager",
        "votes": 96478
+      },
+      {
+       "id": "travis-groo",
+       "votes": 1440
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36211,12 +36039,12 @@
      "name": "Cherokee",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 327
-      },
-      {
        "id": "jamie-ager",
        "votes": 3566
+      },
+      {
+       "id": "travis-groo",
+       "votes": 327
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36228,12 +36056,12 @@
      "name": "Clay",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 129
-      },
-      {
        "id": "jamie-ager",
        "votes": 1904
+      },
+      {
+       "id": "travis-groo",
+       "votes": 129
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36245,12 +36073,12 @@
      "name": "Graham",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 80
-      },
-      {
        "id": "jamie-ager",
        "votes": 1036
+      },
+      {
+       "id": "travis-groo",
+       "votes": 80
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36262,12 +36090,12 @@
      "name": "Haywood",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 572
-      },
-      {
        "id": "jamie-ager",
        "votes": 14196
+      },
+      {
+       "id": "travis-groo",
+       "votes": 572
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36279,12 +36107,12 @@
      "name": "Henderson",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 782
-      },
-      {
        "id": "jamie-ager",
        "votes": 29947
+      },
+      {
+       "id": "travis-groo",
+       "votes": 782
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36296,12 +36124,12 @@
      "name": "Jackson",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 260
-      },
-      {
        "id": "jamie-ager",
        "votes": 9466
+      },
+      {
+       "id": "travis-groo",
+       "votes": 260
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36313,12 +36141,12 @@
      "name": "Macon",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 357
-      },
-      {
        "id": "jamie-ager",
        "votes": 6618
+      },
+      {
+       "id": "travis-groo",
+       "votes": 357
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36330,12 +36158,12 @@
      "name": "Madison",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 226
-      },
-      {
        "id": "jamie-ager",
        "votes": 5620
+      },
+      {
+       "id": "travis-groo",
+       "votes": 226
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36347,12 +36175,12 @@
      "name": "Mcdowell",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 309
-      },
-      {
        "id": "jamie-ager",
        "votes": 5977
+      },
+      {
+       "id": "travis-groo",
+       "votes": 309
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36364,12 +36192,12 @@
      "name": "Mitchell",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 124
-      },
-      {
        "id": "jamie-ager",
        "votes": 2090
+      },
+      {
+       "id": "travis-groo",
+       "votes": 124
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36381,12 +36209,12 @@
      "name": "Polk",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 48
-      },
-      {
        "id": "jamie-ager",
        "votes": 1196
+      },
+      {
+       "id": "travis-groo",
+       "votes": 48
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36398,12 +36226,12 @@
      "name": "Swain",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 118
-      },
-      {
        "id": "jamie-ager",
        "votes": 2583
+      },
+      {
+       "id": "travis-groo",
+       "votes": 118
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36415,12 +36243,12 @@
      "name": "Transylvania",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 247
-      },
-      {
        "id": "jamie-ager",
        "votes": 8887
+      },
+      {
+       "id": "travis-groo",
+       "votes": 247
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36432,12 +36260,12 @@
      "name": "Yancey",
      "choices": [
       {
-       "id": "travis-groo",
-       "votes": 170
-      },
-      {
        "id": "jamie-ager",
        "votes": 3964
+      },
+      {
+       "id": "travis-groo",
+       "votes": 170
       },
       {
        "id": "jennifer-capps-balkcom",
@@ -36642,18 +36470,18 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "greg-murphy",
-     "name": "Greg Murphy",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 117583
-    },
-    {
      "id": "daniel-cavender",
      "name": "Daniel Cavender",
      "party": "LIB",
      "party_code": "O",
      "votes": 2971
+    },
+    {
+     "id": "greg-murphy",
+     "name": "Greg Murphy",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 117583
     },
     {
      "id": "raymond-smith",
@@ -36669,12 +36497,12 @@
      "name": "Duplin",
      "choices": [
       {
-       "id": "greg-murphy",
-       "votes": 9401
-      },
-      {
        "id": "daniel-cavender",
        "votes": 177
+      },
+      {
+       "id": "greg-murphy",
+       "votes": 9401
       },
       {
        "id": "raymond-smith",
@@ -36686,12 +36514,12 @@
      "name": "Greene",
      "choices": [
       {
-       "id": "greg-murphy",
-       "votes": 3408
-      },
-      {
        "id": "daniel-cavender",
        "votes": 38
+      },
+      {
+       "id": "greg-murphy",
+       "votes": 3408
       },
       {
        "id": "raymond-smith",
@@ -36703,12 +36531,12 @@
      "name": "Jones",
      "choices": [
       {
-       "id": "greg-murphy",
-       "votes": 2324
-      },
-      {
        "id": "daniel-cavender",
        "votes": 58
+      },
+      {
+       "id": "greg-murphy",
+       "votes": 2324
       },
       {
        "id": "raymond-smith",
@@ -36720,12 +36548,12 @@
      "name": "Lenoir",
      "choices": [
       {
-       "id": "greg-murphy",
-       "votes": 9627
-      },
-      {
        "id": "daniel-cavender",
        "votes": 171
+      },
+      {
+       "id": "greg-murphy",
+       "votes": 9627
       },
       {
        "id": "raymond-smith",
@@ -36737,12 +36565,12 @@
      "name": "Onslow",
      "choices": [
       {
-       "id": "greg-murphy",
-       "votes": 28077
-      },
-      {
        "id": "daniel-cavender",
        "votes": 921
+      },
+      {
+       "id": "greg-murphy",
+       "votes": 28077
       },
       {
        "id": "raymond-smith",
@@ -36754,12 +36582,12 @@
      "name": "Pitt",
      "choices": [
       {
-       "id": "greg-murphy",
-       "votes": 25666
-      },
-      {
        "id": "daniel-cavender",
        "votes": 686
+      },
+      {
+       "id": "greg-murphy",
+       "votes": 25666
       },
       {
        "id": "raymond-smith",
@@ -36771,12 +36599,12 @@
      "name": "Sampson",
      "choices": [
       {
-       "id": "greg-murphy",
-       "votes": 7147
-      },
-      {
        "id": "daniel-cavender",
        "votes": 145
+      },
+      {
+       "id": "greg-murphy",
+       "votes": 7147
       },
       {
        "id": "raymond-smith",
@@ -36788,12 +36616,12 @@
      "name": "Wayne",
      "choices": [
       {
-       "id": "greg-murphy",
-       "votes": 19565
-      },
-      {
        "id": "daniel-cavender",
        "votes": 431
+      },
+      {
+       "id": "greg-murphy",
+       "votes": 19565
       },
       {
        "id": "raymond-smith",
@@ -36805,12 +36633,12 @@
      "name": "Wilson",
      "choices": [
       {
-       "id": "greg-murphy",
-       "votes": 12368
-      },
-      {
        "id": "daniel-cavender",
        "votes": 344
+      },
+      {
+       "id": "greg-murphy",
+       "votes": 12368
       },
       {
        "id": "raymond-smith",
@@ -36831,6 +36659,13 @@
    "vote_for": 1,
    "choices": [
     {
+     "id": "mahesh-max-ganorkar",
+     "name": "Mahesh (Max) Ganorkar",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 67799
+    },
+    {
      "id": "valerie-p-foushee",
      "name": "Valerie P. Foushee",
      "party": "DEM",
@@ -36843,13 +36678,6 @@
      "party": "LIB",
      "party_code": "O",
      "votes": 6961
-    },
-    {
-     "id": "mahesh-max-ganorkar",
-     "name": "Mahesh (Max) Ganorkar",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 67799
     }
    ],
    "precincts": {},
@@ -36858,16 +36686,16 @@
      "name": "Chatham",
      "choices": [
       {
+       "id": "mahesh-max-ganorkar",
+       "votes": 7074
+      },
+      {
        "id": "valerie-p-foushee",
        "votes": 19701
       },
       {
        "id": "guy-meilleur",
        "votes": 501
-      },
-      {
-       "id": "mahesh-max-ganorkar",
-       "votes": 7074
       }
      ]
     },
@@ -36875,16 +36703,16 @@
      "name": "Durham",
      "choices": [
       {
+       "id": "mahesh-max-ganorkar",
+       "votes": 18407
+      },
+      {
        "id": "valerie-p-foushee",
        "votes": 128478
       },
       {
        "id": "guy-meilleur",
        "votes": 2636
-      },
-      {
-       "id": "mahesh-max-ganorkar",
-       "votes": 18407
       }
      ]
     },
@@ -36892,16 +36720,16 @@
      "name": "Orange",
      "choices": [
       {
+       "id": "mahesh-max-ganorkar",
+       "votes": 11684
+      },
+      {
        "id": "valerie-p-foushee",
        "votes": 58566
       },
       {
        "id": "guy-meilleur",
        "votes": 1416
-      },
-      {
-       "id": "mahesh-max-ganorkar",
-       "votes": 11684
       }
      ]
     },
@@ -36909,16 +36737,16 @@
      "name": "Wake",
      "choices": [
       {
+       "id": "mahesh-max-ganorkar",
+       "votes": 30634
+      },
+      {
        "id": "valerie-p-foushee",
        "votes": 76510
       },
       {
        "id": "guy-meilleur",
        "votes": 2408
-      },
-      {
-       "id": "mahesh-max-ganorkar",
-       "votes": 30634
       }
      ]
     }
@@ -37113,13 +36941,6 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "eugene-f-douglass",
-     "name": "Eugene F. Douglass",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 76763
-    },
-    {
      "id": "deborah-k-ross",
      "name": "Deborah K. Ross",
      "party": "DEM",
@@ -37132,6 +36953,13 @@
      "party": "LIB",
      "party_code": "O",
      "votes": 4267
+    },
+    {
+     "id": "eugene-f-douglass",
+     "name": "Eugene F. Douglass",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 76763
     },
     {
      "id": "write-in-miscellaneous",
@@ -37147,16 +36975,16 @@
      "name": "Wake",
      "choices": [
       {
-       "id": "eugene-f-douglass",
-       "votes": 76763
-      },
-      {
        "id": "deborah-k-ross",
        "votes": 245402
       },
       {
        "id": "matthew-laszacs",
        "votes": 4267
+      },
+      {
+       "id": "eugene-f-douglass",
+       "votes": 76763
       },
       {
        "id": "write-in-miscellaneous",
@@ -37183,18 +37011,18 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "richard-hudson",
-     "name": "Richard Hudson",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 132692
-    },
-    {
      "id": "richard-n-ojeda-ii",
      "name": "Richard N. Ojeda II",
      "party": "DEM",
      "party_code": "D",
      "votes": 138707
+    },
+    {
+     "id": "richard-hudson",
+     "name": "Richard Hudson",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 132692
     }
    ],
    "precincts": {},
@@ -37203,12 +37031,12 @@
      "name": "Alamance",
      "choices": [
       {
-       "id": "richard-hudson",
-       "votes": 30539
-      },
-      {
        "id": "richard-n-ojeda-ii",
        "votes": 36962
+      },
+      {
+       "id": "richard-hudson",
+       "votes": 30539
       }
      ]
     },
@@ -37216,12 +37044,12 @@
      "name": "Chatham",
      "choices": [
       {
-       "id": "richard-hudson",
-       "votes": 7880
-      },
-      {
        "id": "richard-n-ojeda-ii",
        "votes": 7687
+      },
+      {
+       "id": "richard-hudson",
+       "votes": 7880
       }
      ]
     },
@@ -37229,12 +37057,12 @@
      "name": "Cumberland",
      "choices": [
       {
-       "id": "richard-hudson",
-       "votes": 7094
-      },
-      {
        "id": "richard-n-ojeda-ii",
        "votes": 25043
+      },
+      {
+       "id": "richard-hudson",
+       "votes": 7094
       }
      ]
     },
@@ -37242,12 +37070,12 @@
      "name": "Guilford",
      "choices": [
       {
-       "id": "richard-hudson",
-       "votes": 22461
-      },
-      {
        "id": "richard-n-ojeda-ii",
        "votes": 25702
+      },
+      {
+       "id": "richard-hudson",
+       "votes": 22461
       }
      ]
     },
@@ -37255,12 +37083,12 @@
      "name": "Hoke",
      "choices": [
       {
-       "id": "richard-hudson",
-       "votes": 5570
-      },
-      {
        "id": "richard-n-ojeda-ii",
        "votes": 10240
+      },
+      {
+       "id": "richard-hudson",
+       "votes": 5570
       }
      ]
     },
@@ -37268,12 +37096,12 @@
      "name": "Moore",
      "choices": [
       {
-       "id": "richard-hudson",
-       "votes": 26020
-      },
-      {
        "id": "richard-n-ojeda-ii",
        "votes": 18664
+      },
+      {
+       "id": "richard-hudson",
+       "votes": 26020
       }
      ]
     },
@@ -37281,12 +37109,12 @@
      "name": "Randolph",
      "choices": [
       {
-       "id": "richard-hudson",
-       "votes": 33128
-      },
-      {
        "id": "richard-n-ojeda-ii",
        "votes": 14409
+      },
+      {
+       "id": "richard-hudson",
+       "votes": 33128
       }
      ]
     }
@@ -37309,18 +37137,18 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "virginia-foxx",
-     "name": "Virginia Foxx",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 138935
-    },
-    {
      "id": "chuck-hubbard",
      "name": "Chuck Hubbard",
      "party": "DEM",
      "party_code": "D",
      "votes": 139034
+    },
+    {
+     "id": "virginia-foxx",
+     "name": "Virginia Foxx",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 138935
     },
     {
      "id": "robert-b-luffman",
@@ -37336,12 +37164,12 @@
      "name": "Alexander",
      "choices": [
       {
-       "id": "virginia-foxx",
-       "votes": 9648
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 3415
+      },
+      {
+       "id": "virginia-foxx",
+       "votes": 9648
       },
       {
        "id": "robert-b-luffman",
@@ -37353,12 +37181,12 @@
      "name": "Alleghany",
      "choices": [
       {
-       "id": "virginia-foxx",
-       "votes": 3148
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 1399
+      },
+      {
+       "id": "virginia-foxx",
+       "votes": 3148
       },
       {
        "id": "robert-b-luffman",
@@ -37370,12 +37198,12 @@
      "name": "Ashe",
      "choices": [
       {
-       "id": "virginia-foxx",
-       "votes": 7224
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 4171
+      },
+      {
+       "id": "virginia-foxx",
+       "votes": 7224
       },
       {
        "id": "robert-b-luffman",
@@ -37387,12 +37215,12 @@
      "name": "Caldwell",
      "choices": [
       {
-       "id": "virginia-foxx",
-       "votes": 17868
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 8547
+      },
+      {
+       "id": "virginia-foxx",
+       "votes": 17868
       },
       {
        "id": "robert-b-luffman",
@@ -37404,12 +37232,12 @@
      "name": "Guilford",
      "choices": [
       {
-       "id": "virginia-foxx",
-       "votes": 27964
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 75614
+      },
+      {
+       "id": "virginia-foxx",
+       "votes": 27964
       },
       {
        "id": "robert-b-luffman",
@@ -37421,12 +37249,12 @@
      "name": "Rockingham",
      "choices": [
       {
-       "id": "virginia-foxx",
-       "votes": 20248
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 12736
+      },
+      {
+       "id": "virginia-foxx",
+       "votes": 20248
       },
       {
        "id": "robert-b-luffman",
@@ -37438,12 +37266,12 @@
      "name": "Stokes",
      "choices": [
       {
-       "id": "virginia-foxx",
-       "votes": 12262
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 4568
+      },
+      {
+       "id": "virginia-foxx",
+       "votes": 12262
       },
       {
        "id": "robert-b-luffman",
@@ -37455,12 +37283,12 @@
      "name": "Surry",
      "choices": [
       {
-       "id": "virginia-foxx",
-       "votes": 15893
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 7466
+      },
+      {
+       "id": "virginia-foxx",
+       "votes": 15893
       },
       {
        "id": "robert-b-luffman",
@@ -37472,12 +37300,12 @@
      "name": "Watauga",
      "choices": [
       {
-       "id": "virginia-foxx",
-       "votes": 8258
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 14802
+      },
+      {
+       "id": "virginia-foxx",
+       "votes": 8258
       },
       {
        "id": "robert-b-luffman",
@@ -37489,12 +37317,12 @@
      "name": "Wilkes",
      "choices": [
       {
-       "id": "virginia-foxx",
-       "votes": 16422
-      },
-      {
        "id": "chuck-hubbard",
        "votes": 6316
+      },
+      {
+       "id": "virginia-foxx",
+       "votes": 16422
       },
       {
        "id": "robert-b-luffman",
@@ -37515,18 +37343,18 @@
    "vote_for": 1,
    "choices": [
     {
-     "id": "jack-codiga",
-     "name": "Jack Codiga",
-     "party": "REP",
-     "party_code": "R",
-     "votes": 50864
-    },
-    {
      "id": "alma-s-adams",
      "name": "Alma S. Adams",
      "party": "DEM",
      "party_code": "D",
      "votes": 219672
+    },
+    {
+     "id": "jack-codiga",
+     "name": "Jack Codiga",
+     "party": "REP",
+     "party_code": "R",
+     "votes": 50864
     }
    ],
    "precincts": {},
@@ -37535,12 +37363,12 @@
      "name": "Mecklenburg",
      "choices": [
       {
-       "id": "jack-codiga",
-       "votes": 50864
-      },
-      {
        "id": "alma-s-adams",
        "votes": 219672
+      },
+      {
+       "id": "jack-codiga",
+       "votes": 50864
       }
      ]
     }

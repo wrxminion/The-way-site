@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-09T20:29:56Z",
+ "updated_at": "2026-11-09T20:39:07Z",
  "certified": false,
  "contests": [
   {
@@ -1184,7 +1184,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "mejia",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:18:49.311Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-12",
@@ -1895,14 +1901,14 @@
      "name": "Christopher H. SMITH",
      "party": "REP",
      "party_code": "R",
-     "votes": 156534
+     "votes": 156607
     },
     {
      "id": "peace",
      "name": "Rachel PEACE",
      "party": "DEM",
      "party_code": "D",
-     "votes": 108653
+     "votes": 108761
     },
     {
      "id": "write-in",
@@ -1936,20 +1942,14 @@
       "total": 340
      },
      "votes": {
-      "smith": 106246,
-      "peace": 62914,
+      "smith": 106319,
+      "peace": 63022,
       "write-in": 202
      }
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true,
-   "called": {
-    "winner": "smith",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T02:23:29.661Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-u-s-house-district-5",
@@ -2101,13 +2101,7 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true,
-   "called": {
-    "winner": "pallone",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T02:06:31.009Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-u-s-house-district-7",
@@ -35507,7 +35501,13 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-cape-may-0005-member-of-the-house-of-representatives",
@@ -35555,7 +35555,13 @@
    },
    "category": "Federal",
    "subcategory": "Federal",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "zack-mullock",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T21:29:00.736Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-cape-may-0006-sheriff",
@@ -42866,7 +42872,13 @@
    },
    "category": "Results",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-essex-2-member-of-the-house-of-representatives-8th-congressional-district",
@@ -42914,7 +42926,13 @@
    },
    "category": "Results",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "rob-menendez",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:11:12.519Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-essex-3-member-of-the-house-of-representatives-10th-congressional-district",
@@ -42948,7 +42966,13 @@
    },
    "category": "Results",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "lamonica-r-mciver",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:22:28.493Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-essex-4-member-of-the-house-of-representatives-11th-congressional-district",
@@ -42989,7 +43013,13 @@
    },
    "category": "Results",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "analilia-mejia",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:18:49.311Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-essex-5-county-executive",
@@ -52320,13 +52350,7 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "cory-booker",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:00:53.549Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-middlesex-0005-house-of-representatives-cd6",
@@ -52367,13 +52391,7 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "frank-pallone-jr",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T02:06:31.009Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-middlesex-0006-house-of-representatives-cd12",
@@ -52428,13 +52446,7 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "adam-hamawy",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:26:52.699Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-middlesex-0007-county-surrogate",
@@ -55066,7 +55078,7 @@
     {
      "id": "eloy-fernandez",
      "name": "Eloy FERNANDEZ",
-     "party": "IND",
+     "party": "NP",
      "party_code": "O",
      "votes": 7234
     },
@@ -55598,13 +55610,7 @@
    },
    "category": "Federal Offices",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "cory-booker",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:00:53.549Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-monmouth-0005-us-house-of-representatives-3rd-congressional-district",
@@ -55659,13 +55665,7 @@
    },
    "category": "Federal Offices",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "herb-conaway",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:35:41.078Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-monmouth-0006-us-house-of-representatives-4th-congressional-district",
@@ -55706,13 +55706,7 @@
    },
    "category": "Federal Offices",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "christopher-h-smith",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T02:23:29.661Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-monmouth-0007-us-house-of-representatives-6th-congressional-district",
@@ -55753,13 +55747,7 @@
    },
    "category": "Federal Offices",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "frank-pallone-jr",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T02:06:31.009Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-monmouth-0008-surrogate",
@@ -67301,35 +67289,35 @@
      "name": "Justin MURPHY",
      "party": "REP",
      "party_code": "R",
-     "votes": 114206
+     "votes": 114275
     },
     {
      "id": "cory-booker",
      "name": "Cory BOOKER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 95735
+     "votes": 95880
     },
     {
      "id": "veronica-fernandez",
      "name": "Veronica FERNANDEZ",
      "party": "NOC",
      "party_code": "O",
-     "votes": 2707
+     "votes": 2714
     },
     {
      "id": "joanne-kuniansky",
      "name": "Joanne KUNIANSKY",
      "party": "NOD",
      "party_code": "O",
-     "votes": 1253
+     "votes": 1255
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 326
+     "votes": 329
     }
    ],
    "precincts": {
@@ -67338,13 +67326,7 @@
    },
    "category": "FEDERAL",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "cory-booker",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:00:53.549Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-ocean-0005-house-of-representatives-2nd-congressional-district",
@@ -67362,21 +67344,21 @@
      "name": "Jeff VAN DREW",
      "party": "REP",
      "party_code": "R",
-     "votes": 26265
+     "votes": 26282
     },
     {
      "id": "zack-mullock",
      "name": "Zack MULLOCK",
      "party": "DEM",
      "party_code": "D",
-     "votes": 18935
+     "votes": 18964
     },
     {
      "id": "ramon-mora-jr",
      "name": "Ramon MORA, JR.",
      "party": "NOC",
      "party_code": "O",
-     "votes": 455
+     "votes": 458
     },
     {
      "id": "write-in",
@@ -67392,13 +67374,7 @@
    },
    "category": "FEDERAL",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "zack-mullock",
-    "by": "AP (not certified)",
-    "at": "2026-11-05T21:29:00.736Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-ocean-0006-house-of-representatives-4th-congressional-district",
@@ -67416,14 +67392,14 @@
      "name": "Christopher H. SMITH",
      "party": "REP",
      "party_code": "R",
-     "votes": 106246
+     "votes": 106319
     },
     {
      "id": "rachel-peace",
      "name": "Rachel PEACE",
      "party": "DEM",
      "party_code": "D",
-     "votes": 62914
+     "votes": 63022
     },
     {
      "id": "write-in",
@@ -67439,13 +67415,7 @@
    },
    "category": "FEDERAL",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "christopher-h-smith",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T02:23:29.661Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-ocean-0007-member-of-the-board-of-commissioners",
@@ -67463,21 +67433,21 @@
      "name": "Frank SADEGHI",
      "party": "REP",
      "party_code": "R",
-     "votes": 124678
+     "votes": 124760
     },
     {
      "id": "kia-c-phua",
      "name": "Kia C. PHUA",
      "party": "DEM",
      "party_code": "D",
-     "votes": 81952
+     "votes": 82056
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 342
+     "votes": 343
     }
    ],
    "precincts": {
@@ -67504,28 +67474,28 @@
      "name": "Alfonso CIRULLI",
      "party": "REP",
      "party_code": "R",
-     "votes": 5519
+     "votes": 5521
     },
     {
      "id": "joseph-marte",
      "name": "Joseph MARTE",
      "party": "REP",
      "party_code": "R",
-     "votes": 5521
+     "votes": 5523
     },
     {
      "id": "cassandra-licata-link",
      "name": "Cassandra LICATA-LINK",
      "party": "DEM",
      "party_code": "D",
-     "votes": 4699
+     "votes": 4703
     },
     {
      "id": "marianne-p-clemente",
      "name": "Marianne P. CLEMENTE",
      "party": "DEM",
      "party_code": "D",
-     "votes": 4698
+     "votes": 4702
     },
     {
      "id": "write-in",
@@ -67751,14 +67721,14 @@
      "name": "Catherine 'Kitty' SNYDER",
      "party": "NOE",
      "party_code": "O",
-     "votes": 398
+     "votes": 402
     },
     {
      "id": "jaime-baumiller",
      "name": "Jaime BAUMILLER",
      "party": "NOE",
      "party_code": "O",
-     "votes": 371
+     "votes": 374
     },
     {
      "id": "write-in",
@@ -67792,14 +67762,14 @@
      "name": "Steven KOMSA",
      "party": "REP",
      "party_code": "R",
-     "votes": 2028
+     "votes": 2029
     },
     {
      "id": "thomas-prince",
      "name": "Thomas PRINCE",
      "party": "REP",
      "party_code": "R",
-     "votes": 2026
+     "votes": 2027
     },
     {
      "id": "no-nomination-made",
@@ -67820,7 +67790,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 166
+     "votes": 170
     }
    ],
    "precincts": {
@@ -67847,7 +67817,7 @@
      "name": "Michelle SYSOL",
      "party": "REP",
      "party_code": "R",
-     "votes": 474
+     "votes": 475
     },
     {
      "id": "no-nomination-made",
@@ -67888,7 +67858,7 @@
      "name": "Rolf WEBER",
      "party": "NOE",
      "party_code": "O",
-     "votes": 712
+     "votes": 714
     },
     {
      "id": "write-in",
@@ -67922,14 +67892,14 @@
      "name": "Kristofor SABEY",
      "party": "NOE",
      "party_code": "O",
-     "votes": 628
+     "votes": 629
     },
     {
      "id": "lynn-pendleton",
      "name": "Lynn PENDLETON",
      "party": "NOE",
      "party_code": "O",
-     "votes": 650
+     "votes": 652
     },
     {
      "id": "write-in",
@@ -67963,21 +67933,21 @@
      "name": "Jennifer KUHN",
      "party": "NOE",
      "party_code": "O",
-     "votes": 8891
+     "votes": 8901
     },
     {
      "id": "elliott-shem-tov",
      "name": "Elliott SHEM-TOV",
      "party": "NOE",
      "party_code": "O",
-     "votes": 10694
+     "votes": 10699
     },
     {
      "id": "brandon-a-rose",
      "name": "Brandon A. Rose",
      "party": "NOE",
      "party_code": "O",
-     "votes": 2911
+     "votes": 2917
     },
     {
      "id": "write-in",
@@ -68011,42 +67981,42 @@
      "name": "Brian McCARRON",
      "party": "NOF",
      "party_code": "O",
-     "votes": 8200
+     "votes": 8209
     },
     {
      "id": "john-pojo-pejoski",
      "name": "John 'Pojo' PEJOSKI",
      "party": "NOF",
      "party_code": "O",
-     "votes": 8248
+     "votes": 8258
     },
     {
      "id": "christopher-pollak",
      "name": "Christopher POLLAK",
      "party": "NOF",
      "party_code": "O",
-     "votes": 12235
+     "votes": 12240
     },
     {
      "id": "amanda-trombetta",
      "name": "Amanda TROMBETTA",
      "party": "NOF",
      "party_code": "O",
-     "votes": 10465
+     "votes": 10469
     },
     {
      "id": "paul-g-sarti",
      "name": "Paul G. SARTI",
      "party": "NOF",
      "party_code": "O",
-     "votes": 1920
+     "votes": 1925
     },
     {
      "id": "casey-v-jackson",
      "name": "Casey V. JACKSON",
      "party": "NOF",
      "party_code": "O",
-     "votes": 1950
+     "votes": 1955
     },
     {
      "id": "write-in",
@@ -68080,14 +68050,14 @@
      "name": "Peggy Sue JULIANO",
      "party": "REP",
      "party_code": "R",
-     "votes": 6947
+     "votes": 6948
     },
     {
      "id": "brett-murphy",
      "name": "Brett MURPHY",
      "party": "DEM",
      "party_code": "D",
-     "votes": 4487
+     "votes": 4493
     },
     {
      "id": "write-in",
@@ -68176,35 +68146,35 @@
      "name": "Deborah FUENTES",
      "party": "REP",
      "party_code": "R",
-     "votes": 14926
+     "votes": 14951
     },
     {
      "id": "moshe-b-raitzik",
      "name": "Moshe B. RAITZIK",
      "party": "REP",
      "party_code": "R",
-     "votes": 9379
+     "votes": 9402
     },
     {
      "id": "raymond-coles",
      "name": "Raymond COLES",
      "party": "DEM",
      "party_code": "D",
-     "votes": 15487
+     "votes": 15516
     },
     {
      "id": "samantha-l-stokes",
      "name": "Samantha L. STOKES",
      "party": "DEM",
      "party_code": "D",
-     "votes": 4003
+     "votes": 4006
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 434
+     "votes": 436
     }
    ],
    "precincts": {
@@ -68231,21 +68201,21 @@
      "name": "Dovid BENDER",
      "party": "NOE",
      "party_code": "O",
-     "votes": 15857
+     "votes": 15891
     },
     {
      "id": "larry-s-levi-loigman",
      "name": "Larry S. 'Levi' LOIGMAN",
      "party": "NOE",
      "party_code": "O",
-     "votes": 5577
+     "votes": 5592
     },
     {
      "id": "harrison-pfeffer",
      "name": "Harrison PFEFFER",
      "party": "NOE",
      "party_code": "O",
-     "votes": 11955
+     "votes": 11977
     },
     {
      "id": "write-in",
@@ -68375,28 +68345,28 @@
      "name": "John KEHM",
      "party": "REP",
      "party_code": "R",
-     "votes": 4800
+     "votes": 4802
     },
     {
      "id": "suzanne-a-musto-carrara",
      "name": "Suzanne A. MUSTO-CARRARA",
      "party": "REP",
      "party_code": "R",
-     "votes": 4792
+     "votes": 4794
     },
     {
      "id": "leah-poinsett",
      "name": "Leah POINSETT",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3373
+     "votes": 3375
     },
     {
      "id": "gabriel-franco",
      "name": "Gabriel FRANCO",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3344
+     "votes": 3346
     },
     {
      "id": "write-in",
@@ -68430,21 +68400,21 @@
      "name": "Kenneth SEDA",
      "party": "NOE",
      "party_code": "O",
-     "votes": 4651
+     "votes": 4652
     },
     {
      "id": "mariah-l-prokop",
      "name": "Mariah L. PROKOP",
      "party": "NOE",
      "party_code": "O",
-     "votes": 3422
+     "votes": 3425
     },
     {
      "id": "joseph-t-hankins",
      "name": "Joseph T. HANKINS",
      "party": "NOE",
      "party_code": "O",
-     "votes": 9589
+     "votes": 9590
     },
     {
      "id": "write-in",
@@ -68478,14 +68448,14 @@
      "name": "Sandra L. GRAVATT-DRAKE",
      "party": "NOF",
      "party_code": "O",
-     "votes": 12124
+     "votes": 12128
     },
     {
      "id": "judith-l-noonan",
      "name": "Judith L. NOONAN",
      "party": "NOF",
      "party_code": "O",
-     "votes": 11622
+     "votes": 11627
     },
     {
      "id": "write-in",
@@ -68615,14 +68585,14 @@
      "name": "Kenneth BAULDERSTONE",
      "party": "REP",
      "party_code": "R",
-     "votes": 2785
+     "votes": 2786
     },
     {
      "id": "janet-e-buccella",
      "name": "Janet E. BUCCELLA",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1546
+     "votes": 1548
     },
     {
      "id": "write-in",
@@ -68656,7 +68626,7 @@
      "name": "Robert CURTIN",
      "party": "REP",
      "party_code": "R",
-     "votes": 519
+     "votes": 520
     },
     {
      "id": "no-nomination-made",
@@ -68697,14 +68667,14 @@
      "name": "Mark HAUG",
      "party": "REP",
      "party_code": "R",
-     "votes": 404
+     "votes": 405
     },
     {
      "id": "richard-zieser",
      "name": "Richard ZIESER",
      "party": "REP",
      "party_code": "R",
-     "votes": 397
+     "votes": 398
     },
     {
      "id": "susan-m-mauro",
@@ -68807,7 +68777,7 @@
      "name": "Sebastian D'AMICO",
      "party": "REP",
      "party_code": "R",
-     "votes": 2363
+     "votes": 2364
     },
     {
      "id": "no-nomination-made",
@@ -68848,7 +68818,7 @@
      "name": "Ted HAEFNER",
      "party": "NOE",
      "party_code": "O",
-     "votes": 2232
+     "votes": 2234
     },
     {
      "id": "write-in",
@@ -68882,7 +68852,7 @@
      "name": "Robert A. SABOSIK",
      "party": "REP",
      "party_code": "R",
-     "votes": 5679
+     "votes": 5684
     },
     {
      "id": "no-nomination-made",
@@ -68896,7 +68866,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 147
+     "votes": 148
     }
    ],
    "precincts": {
@@ -68923,21 +68893,21 @@
      "name": "Joseph P. VENI",
      "party": "REP",
      "party_code": "R",
-     "votes": 4669
+     "votes": 4671
     },
     {
      "id": "valerie-c-coulson",
      "name": "Valerie C. COULSON",
      "party": "REP",
      "party_code": "R",
-     "votes": 5196
+     "votes": 5200
     },
     {
      "id": "megan-jedry",
      "name": "Megan JEDRY",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3435
+     "votes": 3444
     },
     {
      "id": "no-nomination-made",
@@ -69006,7 +68976,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 123
+     "votes": 127
     }
    ],
    "precincts": {
@@ -69102,14 +69072,14 @@
      "name": "Michael SPADAFINO",
      "party": "DEM",
      "party_code": "D",
-     "votes": 398
+     "votes": 399
     },
     {
      "id": "annette-r-dorman",
      "name": "Annette R. DORMAN",
      "party": "DEM",
      "party_code": "D",
-     "votes": 370
+     "votes": 371
     },
     {
      "id": "write-in",
@@ -69143,7 +69113,7 @@
      "name": "William FENIMORE",
      "party": "REP",
      "party_code": "R",
-     "votes": 390
+     "votes": 391
     },
     {
      "id": "no-nomination-made",
@@ -69253,7 +69223,7 @@
      "name": "GiGi ESPARZA",
      "party": "DEM",
      "party_code": "D",
-     "votes": 435
+     "votes": 436
     },
     {
      "id": "write-in",
@@ -69301,14 +69271,14 @@
      "name": "Christina MERTZ",
      "party": "DEM",
      "party_code": "D",
-     "votes": 452
+     "votes": 453
     },
     {
      "id": "jacqueline-a-burns",
      "name": "Jacqueline A. BURNS",
      "party": "DEM",
      "party_code": "D",
-     "votes": 458
+     "votes": 459
     },
     {
      "id": "write-in",
@@ -69493,28 +69463,28 @@
      "name": "Doreen CONTINANZA",
      "party": "NOE",
      "party_code": "O",
-     "votes": 4060
+     "votes": 4062
     },
     {
      "id": "richard-quelch",
      "name": "Richard QUELCH",
      "party": "NOE",
      "party_code": "O",
-     "votes": 3204
+     "votes": 3205
     },
     {
      "id": "sandra-churney",
      "name": "Sandra CHURNEY",
      "party": "NOE",
      "party_code": "O",
-     "votes": 3834
+     "votes": 3836
     },
     {
      "id": "george-fedorczyk-jr",
      "name": "George FEDORCZYK, JR.",
      "party": "NOE",
      "party_code": "O",
-     "votes": 3222
+     "votes": 3224
     },
     {
      "id": "ronald-tola",
@@ -69589,7 +69559,7 @@
      "name": "Paul F. SHARKEY",
      "party": "NOF",
      "party_code": "O",
-     "votes": 438
+     "votes": 442
     },
     {
      "id": "write-in",
@@ -69623,14 +69593,14 @@
      "name": "Jennifer TOMLINSON",
      "party": "NOG",
      "party_code": "O",
-     "votes": 388
+     "votes": 392
     },
     {
      "id": "deborah-harkness",
      "name": "Deborah HARKNESS",
      "party": "NOG",
      "party_code": "O",
-     "votes": 414
+     "votes": 417
     },
     {
      "id": "write-in",
@@ -69664,14 +69634,14 @@
      "name": "Thomas GUARASCIO",
      "party": "NOE",
      "party_code": "O",
-     "votes": 8725
+     "votes": 8734
     },
     {
      "id": "chloe-burris",
      "name": "Chloe BURRIS",
      "party": "NOE",
      "party_code": "O",
-     "votes": 8233
+     "votes": 8240
     },
     {
      "id": "write-in",
@@ -69705,28 +69675,28 @@
      "name": "Nicole OROZCO",
      "party": "NOE",
      "party_code": "O",
-     "votes": 9466
+     "votes": 9474
     },
     {
      "id": "stephanie-murano",
      "name": "Stephanie MURANO",
      "party": "NOE",
      "party_code": "O",
-     "votes": 9606
+     "votes": 9614
     },
     {
      "id": "alison-kennedy",
      "name": "Alison KENNEDY",
      "party": "NOE",
      "party_code": "O",
-     "votes": 9957
+     "votes": 9966
     },
     {
      "id": "robert-bob-sabo",
      "name": "Robert (Bob) SABO",
      "party": "NOE",
      "party_code": "O",
-     "votes": 5868
+     "votes": 5870
     },
     {
      "id": "write-in",
@@ -69760,14 +69730,14 @@
      "name": "Jennifer ZAPPIA",
      "party": "NOE",
      "party_code": "O",
-     "votes": 325
+     "votes": 326
     },
     {
      "id": "isabella-pharo",
      "name": "Isabella PHARO",
      "party": "NOE",
      "party_code": "O",
-     "votes": 380
+     "votes": 381
     },
     {
      "id": "write-in",
@@ -69801,14 +69771,14 @@
      "name": "A. Robert KING",
      "party": "NOF",
      "party_code": "O",
-     "votes": 311
+     "votes": 312
     },
     {
      "id": "arron-rustici",
      "name": "Arron RUSTICI",
      "party": "NOF",
      "party_code": "O",
-     "votes": 376
+     "votes": 377
     },
     {
      "id": "write-in",
@@ -69842,7 +69812,7 @@
      "name": "Maureen DeSANTO",
      "party": "NOG",
      "party_code": "O",
-     "votes": 517
+     "votes": 519
     },
     {
      "id": "ashley-e-edwards",
@@ -69856,7 +69826,7 @@
      "name": "Bob PAPAGEORGIOU",
      "party": "NOG",
      "party_code": "O",
-     "votes": 303
+     "votes": 304
     },
     {
      "id": "write-in",
@@ -69890,7 +69860,7 @@
      "name": "Ralph FLORIO",
      "party": "NOG",
      "party_code": "O",
-     "votes": 590
+     "votes": 592
     },
     {
      "id": "write-in",
@@ -69924,21 +69894,21 @@
      "name": "Tara RIVERA",
      "party": "NOG",
      "party_code": "O",
-     "votes": 12256
+     "votes": 12262
     },
     {
      "id": "corrine-lucas",
      "name": "Corrine LUCAS",
      "party": "NOG",
      "party_code": "O",
-     "votes": 11563
+     "votes": 11568
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 654
+     "votes": 659
     }
    ],
    "precincts": {
@@ -69965,21 +69935,21 @@
      "name": "Regina C. DISCENZA",
      "party": "NOE",
      "party_code": "O",
-     "votes": 5936
+     "votes": 5939
     },
     {
      "id": "paul-j-velez",
      "name": "Paul J. VELEZ",
      "party": "NOE",
      "party_code": "O",
-     "votes": 5071
+     "votes": 5075
     },
     {
      "id": "kerry-opitz",
      "name": "Kerry OPITZ",
      "party": "NOE",
      "party_code": "O",
-     "votes": 3392
+     "votes": 3395
     },
     {
      "id": "write-in",
@@ -70013,7 +69983,7 @@
      "name": "Kimberly S. KLAUS",
      "party": "NOE",
      "party_code": "O",
-     "votes": 6422
+     "votes": 6427
     },
     {
      "id": "write-in",
@@ -70088,14 +70058,14 @@
      "name": "Samuel MELNIK",
      "party": "NOF",
      "party_code": "O",
-     "votes": 15564
+     "votes": 15593
     },
     {
      "id": "harriet-goldberg",
      "name": "Harriet GOLDBERG",
      "party": "NOF",
      "party_code": "O",
-     "votes": 14820
+     "votes": 14850
     },
     {
      "id": "no-petition-filed",
@@ -70109,7 +70079,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 9197
+     "votes": 9220
     }
    ],
    "precincts": {
@@ -70211,14 +70181,14 @@
      "name": "Stephanie JOHNSON",
      "party": "NOE",
      "party_code": "O",
-     "votes": 4827
+     "votes": 4830
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 235
+     "votes": 236
     }
    ],
    "precincts": {
@@ -70252,7 +70222,7 @@
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 277
+     "votes": 278
     }
    ],
    "precincts": {
@@ -70279,14 +70249,14 @@
      "name": "Dennis S. O'KEEFE",
      "party": "NOF",
      "party_code": "O",
-     "votes": 4780
+     "votes": 4783
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 206
+     "votes": 207
     }
    ],
    "precincts": {
@@ -70313,14 +70283,14 @@
      "name": "Danielle R.W. HAGLER",
      "party": "NOE",
      "party_code": "O",
-     "votes": 1196
+     "votes": 1198
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 19
+     "votes": 20
     }
    ],
    "precincts": {
@@ -70347,21 +70317,21 @@
      "name": "Laura WINGLER",
      "party": "NOG",
      "party_code": "O",
-     "votes": 7914
+     "votes": 7919
     },
     {
      "id": "gloria-adkinson",
      "name": "Gloria ADKINSON",
      "party": "NOG",
      "party_code": "O",
-     "votes": 6870
+     "votes": 6875
     },
     {
      "id": "paulaann-fazio",
      "name": "PaulaAnn FAZIO",
      "party": "NOG",
      "party_code": "O",
-     "votes": 7107
+     "votes": 7110
     },
     {
      "id": "timothy-poss",
@@ -70375,7 +70345,7 @@
      "name": "Paula NOWAKOWSKI",
      "party": "NOG",
      "party_code": "O",
-     "votes": 5228
+     "votes": 5229
     },
     {
      "id": "steven-giordano",
@@ -70416,14 +70386,14 @@
      "name": "Patricia FUCHS",
      "party": "NOE",
      "party_code": "O",
-     "votes": 2615
+     "votes": 2617
     },
     {
      "id": "kelly-a-zuzic",
      "name": "Kelly A. ZUZIC",
      "party": "NOE",
      "party_code": "O",
-     "votes": 2324
+     "votes": 2325
     },
     {
      "id": "write-in",
@@ -70614,14 +70584,14 @@
      "name": "Angelica THOMPSON",
      "party": "NOF",
      "party_code": "O",
-     "votes": 866
+     "votes": 867
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 96
+     "votes": 98
     }
    ],
    "precincts": {
@@ -70648,7 +70618,7 @@
      "name": "Caroline CONEVERY",
      "party": "NOF",
      "party_code": "O",
-     "votes": 1750
+     "votes": 1751
     },
     {
      "id": "write-in",
@@ -70682,7 +70652,7 @@
      "name": "Natalie GAGLIARDI-LEVINE",
      "party": "NOE",
      "party_code": "O",
-     "votes": 2325
+     "votes": 2331
     },
     {
      "id": "melissa-berman",
@@ -70696,28 +70666,28 @@
      "name": "Joseph MAZZARO",
      "party": "NOE",
      "party_code": "O",
-     "votes": 2158
+     "votes": 2161
     },
     {
      "id": "john-a-dapkins-jr",
      "name": "John A. DAPKINS, JR.",
      "party": "NOE",
      "party_code": "O",
-     "votes": 1418
+     "votes": 1420
     },
     {
      "id": "daniel-gaudette",
      "name": "Daniel GAUDETTE",
      "party": "NOE",
      "party_code": "O",
-     "votes": 1496
+     "votes": 1499
     },
     {
      "id": "nicole-capoano",
      "name": "Nicole CAPOANO",
      "party": "NOE",
      "party_code": "O",
-     "votes": 2232
+     "votes": 2234
     },
     {
      "id": "write-in",
@@ -70751,14 +70721,14 @@
      "name": "Scott LEE",
      "party": "NOE",
      "party_code": "O",
-     "votes": 1179
+     "votes": 1181
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 59
+     "votes": 60
     }
    ],
    "precincts": {
@@ -70901,7 +70871,7 @@
      "name": "Jason HANRAHAN",
      "party": "NOF",
      "party_code": "O",
-     "votes": 528
+     "votes": 529
     },
     {
      "id": "write-in",
@@ -70969,14 +70939,14 @@
      "name": "Paul METZGER",
      "party": "NOE",
      "party_code": "O",
-     "votes": 6406
+     "votes": 6412
     },
     {
      "id": "heather-tatur",
      "name": "Heather TATUR",
      "party": "NOE",
      "party_code": "O",
-     "votes": 6873
+     "votes": 6881
     },
     {
      "id": "write-in",
@@ -71010,28 +70980,28 @@
      "name": "Bonnie STROUSE",
      "party": "NOF",
      "party_code": "O",
-     "votes": 6516
+     "votes": 6523
     },
     {
      "id": "brian-fenlon-jr",
      "name": "Brian FENLON, JR.",
      "party": "NOF",
      "party_code": "O",
-     "votes": 6102
+     "votes": 6109
     },
     {
      "id": "gregory-gioe",
      "name": "Gregory GIOE",
      "party": "NOF",
      "party_code": "O",
-     "votes": 5996
+     "votes": 6005
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 134
+     "votes": 136
     }
    ],
    "precincts": {
@@ -71058,14 +71028,14 @@
      "name": "Keith MOLLEMA",
      "party": "NOF",
      "party_code": "O",
-     "votes": 3173
+     "votes": 3176
     },
     {
      "id": "taylor-brennan",
      "name": "Taylor BRENNAN",
      "party": "NOF",
      "party_code": "O",
-     "votes": 3766
+     "votes": 3773
     },
     {
      "id": "write-in",
@@ -71133,56 +71103,56 @@
      "name": "Ashley LAMB",
      "party": "NOE",
      "party_code": "O",
-     "votes": 11708
+     "votes": 11714
     },
     {
      "id": "gerard-nappi",
      "name": "Gerard NAPPI",
      "party": "NOE",
      "party_code": "O",
-     "votes": 8993
+     "votes": 8997
     },
     {
      "id": "james-capone",
      "name": "James CAPONE",
      "party": "NOE",
      "party_code": "O",
-     "votes": 11598
+     "votes": 11604
     },
     {
      "id": "anthony-l-colucci",
      "name": "Anthony L. COLUCCI",
      "party": "NOE",
      "party_code": "O",
-     "votes": 9187
+     "votes": 9194
     },
     {
      "id": "laura-picurro",
      "name": "Laura PICURRO",
      "party": "NOE",
      "party_code": "O",
-     "votes": 11153
+     "votes": 11162
     },
     {
      "id": "elizabeth-huber",
      "name": "Elizabeth HUBER",
      "party": "NOE",
      "party_code": "O",
-     "votes": 9247
+     "votes": 9256
     },
     {
      "id": "kristen-hanson",
      "name": "Kristen HANSON",
      "party": "NOE",
      "party_code": "O",
-     "votes": 6145
+     "votes": 6154
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 427
+     "votes": 428
     }
    ],
    "precincts": {
@@ -71209,7 +71179,7 @@
      "name": "David HEWITT",
      "party": "NOE",
      "party_code": "O",
-     "votes": 756
+     "votes": 757
     },
     {
      "id": "write-in",
@@ -71277,14 +71247,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 108932
+     "votes": 109034
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 71988
+     "votes": 72052
     }
    ],
    "precincts": {
@@ -71311,14 +71281,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 1858
+     "votes": 1862
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 9727
+     "votes": 9731
     }
    ],
    "precincts": {
@@ -71345,14 +71315,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 5463
+     "votes": 5473
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 12048
+     "votes": 12068
     }
    ],
    "precincts": {
@@ -71386,7 +71356,7 @@
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 1923
+     "votes": 1925
     }
    ],
    "precincts": {
@@ -71413,14 +71383,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 1202
+     "votes": 1205
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 647
+     "votes": 649
     }
    ],
    "precincts": {
@@ -74072,13 +74042,7 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "cory-booker",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:00:53.549Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-somerset-0005-u-s-representative-7th",
@@ -74126,13 +74090,7 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "rebecca-bennett",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T02:48:17.933Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-somerset-0006-u-s-representative-12th",
@@ -74187,13 +74145,7 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "adam-hamawy",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:26:52.699Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-somerset-0007-county-commissioner",
@@ -76967,35 +76919,35 @@
      "name": "Cory BOOKER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 122526
+     "votes": 124660
     },
     {
      "id": "justin-murphy",
      "name": "Justin MURPHY",
      "party": "REP",
      "party_code": "R",
-     "votes": 44630
+     "votes": 45105
     },
     {
      "id": "non-veronica-fernandez",
      "name": "NON Veronica FERNANDEZ",
      "party": null,
      "party_code": "O",
-     "votes": 3305
+     "votes": 3378
     },
     {
      "id": "non-joanne-kuniansky",
      "name": "NON Joanne KUNIANSKY",
      "party": null,
      "party_code": "O",
-     "votes": 1481
+     "votes": 1518
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 426
+     "votes": 435
     }
    ],
    "precincts": {
@@ -77004,13 +76956,7 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "cory-booker",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:00:53.549Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-union-0005-member-of-house-of-representatives-7th-congressional-district",
@@ -77028,28 +76974,28 @@
      "name": "Rebecca BENNETT",
      "party": "DEM",
      "party_code": "D",
-     "votes": 54567
+     "votes": 55640
     },
     {
      "id": "thomas-h-kean-jr",
      "name": "Thomas H. KEAN, JR.",
      "party": "REP",
      "party_code": "R",
-     "votes": 26770
+     "votes": 27078
     },
     {
      "id": "non-seamus-patrick-o-toole",
      "name": "NON Seamus Patrick O'TOOLE",
      "party": null,
      "party_code": "O",
-     "votes": 1269
+     "votes": 1301
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 126
+     "votes": 128
     }
    ],
    "precincts": {
@@ -77058,13 +77004,7 @@
    },
    "category": "House of Representatives",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "rebecca-bennett",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T02:48:17.933Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-union-0006-member-of-house-of-representatives-8th-congressional-district",
@@ -77082,35 +77022,35 @@
      "name": "Rob MENENDEZ",
      "party": "DEM",
      "party_code": "D",
-     "votes": 14626
+     "votes": 14862
     },
     {
      "id": "non-da-shone-hughey",
      "name": "NON Da'Shone HUGHEY",
      "party": null,
      "party_code": "O",
-     "votes": 637
+     "votes": 644
     },
     {
      "id": "non-craig-honts",
      "name": "NON Craig HONTS",
      "party": null,
      "party_code": "O",
-     "votes": 329
+     "votes": 335
     },
     {
      "id": "non-aristotle-eliopoulos",
      "name": "NON Aristotle ELIOPOULOS",
      "party": null,
      "party_code": "O",
-     "votes": 453
+     "votes": 462
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 92
+     "votes": 94
     }
    ],
    "precincts": {
@@ -77119,13 +77059,7 @@
    },
    "category": "House of Representatives",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "rob-menendez",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:11:12.519Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-union-0007-member-of-house-of-representatives-10th-congressional-district",
@@ -77143,21 +77077,21 @@
      "name": "LaMonica R. MCIVER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 43803
+     "votes": 44518
     },
     {
      "id": "carmen-bucco",
      "name": "Carmen BUCCO",
      "party": "REP",
      "party_code": "R",
-     "votes": 14264
+     "votes": 14399
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 142
+     "votes": 144
     }
    ],
    "precincts": {
@@ -77166,13 +77100,7 @@
    },
    "category": "House of Representatives",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "lamonica-r-mciver",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:22:28.493Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-union-0008-member-of-house-of-representatives-12th-congressional-district",
@@ -77190,21 +77118,21 @@
      "name": "Adam HAMAWY",
      "party": "DEM",
      "party_code": "D",
-     "votes": 9237
+     "votes": 9384
     },
     {
      "id": "gregg-mele",
      "name": "Gregg MELE",
      "party": "REP",
      "party_code": "R",
-     "votes": 745
+     "votes": 753
     },
     {
      "id": "non-andres-jinete",
      "name": "NON Andres JINETE",
      "party": null,
      "party_code": "O",
-     "votes": 112
+     "votes": 113
     },
     {
      "id": "non-winston-jordan",
@@ -77227,13 +77155,7 @@
    },
    "category": "House of Representatives",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "adam-hamawy",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:26:52.699Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-union-0009-sheriff",
@@ -77251,21 +77173,21 @@
      "name": "Peter CORVELLI",
      "party": "DEM",
      "party_code": "D",
-     "votes": 120022
+     "votes": 122164
     },
     {
      "id": "gerardo-napolitano",
      "name": "Gerardo NAPOLITANO",
      "party": "REP",
      "party_code": "R",
-     "votes": 46386
+     "votes": 46884
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 341
+     "votes": 346
     }
    ],
    "precincts": {
@@ -77292,21 +77214,21 @@
      "name": "Tai COOPER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 118685
+     "votes": 120824
     },
     {
      "id": "jimmy-diaz-jr",
      "name": "Jimmy DIAZ, JR.",
      "party": "REP",
      "party_code": "R",
-     "votes": 47406
+     "votes": 47915
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 288
+     "votes": 290
     }
    ],
    "precincts": {
@@ -77333,49 +77255,49 @@
      "name": "Lourdes LEON",
      "party": "DEM",
      "party_code": "D",
-     "votes": 116413
+     "votes": 118519
     },
     {
      "id": "joseph-c-bodek",
      "name": "Joseph C. BODEK",
      "party": "DEM",
      "party_code": "D",
-     "votes": 115863
+     "votes": 117931
     },
     {
      "id": "michele-s-delisfort",
      "name": "Michele S. DELISFORT",
      "party": "DEM",
      "party_code": "D",
-     "votes": 115583
+     "votes": 117659
     },
     {
      "id": "cathy-jakositz",
      "name": "Cathy JAKOSITZ",
      "party": "REP",
      "party_code": "R",
-     "votes": 47089
+     "votes": 47599
     },
     {
      "id": "christopher-g-bacey",
      "name": "Christopher G. BACEY",
      "party": "REP",
      "party_code": "R",
-     "votes": 47220
+     "votes": 47747
     },
     {
      "id": "miguel-a-rodriguez",
      "name": "Miguel A. RODRIGUEZ",
      "party": "REP",
      "party_code": "R",
-     "votes": 47236
+     "votes": 47747
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 838
+     "votes": 842
     }
    ],
    "precincts": {
@@ -77402,28 +77324,28 @@
      "name": "Susan POAGE",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3338
+     "votes": 3389
     },
     {
      "id": "john-s-foster-jr",
      "name": "John S. FOSTER, JR.",
      "party": "REP",
      "party_code": "R",
-     "votes": 2799
+     "votes": 2837
     },
     {
      "id": "non-george-h-de-luna",
      "name": "NON George H. DE LUNA",
      "party": null,
      "party_code": "O",
-     "votes": 352
+     "votes": 359
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 20
+     "votes": 21
     }
    ],
    "precincts": {
@@ -77450,28 +77372,28 @@
      "name": "Margaret A. ILLIS",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3707
+     "votes": 3763
     },
     {
      "id": "william-a-machado",
      "name": "William A. MACHADO",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3879
+     "votes": 3945
     },
     {
      "id": "james-a-daoulabani",
      "name": "James A. DAOULABANI",
      "party": "REP",
      "party_code": "R",
-     "votes": 2566
+     "votes": 2602
     },
     {
      "id": "edmund-maciejewski",
      "name": "Edmund MACIEJEWSKI",
      "party": "REP",
      "party_code": "R",
-     "votes": 2491
+     "votes": 2521
     },
     {
      "id": "write-in",
@@ -77505,14 +77427,14 @@
      "name": "Mary R. SEMLER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 623
+     "votes": 628
     },
     {
      "id": "matthew-b-siessel",
      "name": "Matthew B. SIESSEL",
      "party": "REP",
      "party_code": "R",
-     "votes": 990
+     "votes": 992
     },
     {
      "id": "write-in",
@@ -77546,14 +77468,14 @@
      "name": "Michael R. SHULMAN",
      "party": "DEM",
      "party_code": "D",
-     "votes": 782
+     "votes": 789
     },
     {
      "id": "patrick-o-connor",
      "name": "Patrick O'CONNOR",
      "party": "REP",
      "party_code": "R",
-     "votes": 822
+     "votes": 827
     },
     {
      "id": "write-in",
@@ -77587,14 +77509,14 @@
      "name": "William S. GRZYB, JR.",
      "party": "DEM",
      "party_code": "D",
-     "votes": 803
+     "votes": 812
     },
     {
      "id": "steven-m-hund",
      "name": "Steven M. HUND",
      "party": "REP",
      "party_code": "R",
-     "votes": 833
+     "votes": 841
     },
     {
      "id": "write-in",
@@ -77628,14 +77550,14 @@
      "name": "Michael J. DECKER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 650
+     "votes": 662
     },
     {
      "id": "brian-p-toal",
      "name": "Brian P. TOAL",
      "party": "REP",
      "party_code": "R",
-     "votes": 983
+     "votes": 993
     },
     {
      "id": "write-in",
@@ -77669,35 +77591,35 @@
      "name": "Paul A. GALLO",
      "party": "DEM",
      "party_code": "D",
-     "votes": 6076
+     "votes": 6214
     },
     {
      "id": "susan-burke",
      "name": "Susan BURKE",
      "party": "DEM",
      "party_code": "D",
-     "votes": 6191
+     "votes": 6327
     },
     {
      "id": "sam-prince",
      "name": "Sam PRINCE",
      "party": "REP",
      "party_code": "R",
-     "votes": 4336
+     "votes": 4383
     },
     {
      "id": "dennis-miller",
      "name": "Dennis MILLER",
      "party": "REP",
      "party_code": "R",
-     "votes": 4247
+     "votes": 4294
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 24
+     "votes": 25
     }
    ],
    "precincts": {
@@ -77724,14 +77646,14 @@
      "name": "Georgette GONZALEZ LUGO",
      "party": "DEM",
      "party_code": "D",
-     "votes": 14713
+     "votes": 14954
     },
     {
      "id": "john-alves",
      "name": "John ALVES",
      "party": "REP",
      "party_code": "R",
-     "votes": 3519
+     "votes": 3561
     },
     {
      "id": "write-in",
@@ -77765,14 +77687,14 @@
      "name": "Carlos TORRES",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2009
+     "votes": 2036
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 18
+     "votes": 19
     }
    ],
    "precincts": {
@@ -77799,14 +77721,14 @@
      "name": "Isaias J. RIVERA",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2618
+     "votes": 2654
     },
     {
      "id": "glenn-maldonado",
      "name": "Glenn MALDONADO",
      "party": "REP",
      "party_code": "R",
-     "votes": 656
+     "votes": 663
     },
     {
      "id": "write-in",
@@ -77840,14 +77762,14 @@
      "name": "Kevin KINIERY",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3177
+     "votes": 3235
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 32
+     "votes": 33
     }
    ],
    "precincts": {
@@ -77874,7 +77796,7 @@
      "name": "Carlos CEDEÑO",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2725
+     "votes": 2772
     },
     {
      "id": "write-in",
@@ -77908,14 +77830,14 @@
      "name": "William GALLMAN, JR.",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2637
+     "votes": 2672
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 20
+     "votes": 21
     }
    ],
    "precincts": {
@@ -77942,14 +77864,14 @@
      "name": "Frank O. MAZZA",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2198
+     "votes": 2238
     },
     {
      "id": "non-janei-holder",
      "name": "NON Janei HOLDER",
      "party": null,
      "party_code": "O",
-     "votes": 211
+     "votes": 216
     },
     {
      "id": "write-in",
@@ -77983,28 +77905,28 @@
      "name": "Anthony CARTER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2478
+     "votes": 2522
     },
     {
      "id": "michael-lowenthal",
      "name": "Michael LOWENTHAL",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2523
+     "votes": 2567
     },
     {
      "id": "gary-morris",
      "name": "Gary MORRIS",
      "party": "REP",
      "party_code": "R",
-     "votes": 1269
+     "votes": 1287
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 136
+     "votes": 137
     }
    ],
    "precincts": {
@@ -78031,14 +77953,14 @@
      "name": "Jennifer BLUMENSTOCK",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1178
+     "votes": 1201
     },
     {
      "id": "george-diers",
      "name": "George DIERS",
      "party": "REP",
      "party_code": "R",
-     "votes": 727
+     "votes": 730
     },
     {
      "id": "write-in",
@@ -78072,28 +77994,28 @@
      "name": "Karina BOTO",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1118
+     "votes": 1138
     },
     {
      "id": "brian-tague",
      "name": "Brian TAGUE",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1113
+     "votes": 1135
     },
     {
      "id": "brenda-caffrey",
      "name": "Brenda CAFFREY",
      "party": "REP",
      "party_code": "R",
-     "votes": 768
+     "votes": 774
     },
     {
      "id": "laura-spina-thompson",
      "name": "Laura SPINA-THOMPSON",
      "party": "REP",
      "party_code": "R",
-     "votes": 762
+     "votes": 766
     },
     {
      "id": "write-in",
@@ -78127,14 +78049,14 @@
      "name": "Stephanie BIANCO",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1136
+     "votes": 1158
     },
     {
      "id": "sharon-flammia",
      "name": "Sharon FLAMMIA",
      "party": "REP",
      "party_code": "R",
-     "votes": 753
+     "votes": 756
     },
     {
      "id": "write-in",
@@ -78168,14 +78090,14 @@
      "name": "NON Anthony SALTERS",
      "party": null,
      "party_code": "O",
-     "votes": 996
+     "votes": 1010
     },
     {
      "id": "non-george-l-cook-iii",
      "name": "NON George L. COOK III",
      "party": null,
      "party_code": "O",
-     "votes": 453
+     "votes": 463
     },
     {
      "id": "write-in",
@@ -78209,28 +78131,28 @@
      "name": "Patrick BOYLE",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1387
+     "votes": 1406
     },
     {
      "id": "john-ferreira",
      "name": "John FERREIRA",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1360
+     "votes": 1379
     },
     {
      "id": "scott-pentz",
      "name": "Scott PENTZ",
      "party": "REP",
      "party_code": "R",
-     "votes": 1214
+     "votes": 1223
     },
     {
      "id": "fred-pugliese",
      "name": "Fred PUGLIESE",
      "party": "REP",
      "party_code": "R",
-     "votes": 1179
+     "votes": 1191
     },
     {
      "id": "write-in",
@@ -78264,21 +78186,21 @@
      "name": "Derek ARMSTEAD",
      "party": "DEM",
      "party_code": "D",
-     "votes": 6717
+     "votes": 6795
     },
     {
      "id": "non-carlos-a-rivas",
      "name": "NON Carlos A. RIVAS",
      "party": null,
      "party_code": "O",
-     "votes": 4908
+     "votes": 4982
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 43
+     "votes": 44
     }
    ],
    "precincts": {
@@ -78305,14 +78227,14 @@
      "name": "Michele YAMAKAITIS",
      "party": "DEM",
      "party_code": "D",
-     "votes": 7737
+     "votes": 7843
     },
     {
      "id": "victor-kaminski",
      "name": "Victor KAMINSKI",
      "party": "REP",
      "party_code": "R",
-     "votes": 3209
+     "votes": 3254
     },
     {
      "id": "write-in",
@@ -78346,14 +78268,14 @@
      "name": "Brianna ARMSTEAD",
      "party": "DEM",
      "party_code": "D",
-     "votes": 992
+     "votes": 1000
     },
     {
      "id": "non-tracy-y-nunez",
      "name": "NON Tracy Y. NUNEZ",
      "party": null,
      "party_code": "O",
-     "votes": 291
+     "votes": 295
     },
     {
      "id": "write-in",
@@ -78387,7 +78309,7 @@
      "name": "Eloy DELGADO",
      "party": "DEM",
      "party_code": "D",
-     "votes": 832
+     "votes": 846
     },
     {
      "id": "write-in",
@@ -78421,14 +78343,14 @@
      "name": "Mark ARMSTEAD",
      "party": "DEM",
      "party_code": "D",
-     "votes": 759
+     "votes": 775
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 17
+     "votes": 20
     }
    ],
    "precincts": {
@@ -78455,14 +78377,14 @@
      "name": "Christine HUDAK",
      "party": "DEM",
      "party_code": "D",
-     "votes": 630
+     "votes": 638
     },
     {
      "id": "luis-fonseca",
      "name": "Luis FONSECA",
      "party": "REP",
      "party_code": "R",
-     "votes": 760
+     "votes": 770
     },
     {
      "id": "write-in",
@@ -78496,28 +78418,28 @@
      "name": "Robert BARLETTA",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1633
+     "votes": 1655
     },
     {
      "id": "stefania-colosimo",
      "name": "Stefania COLOSIMO",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1644
+     "votes": 1666
     },
     {
      "id": "steven-matejek",
      "name": "Steven MATEJEK",
      "party": "REP",
      "party_code": "R",
-     "votes": 1834
+     "votes": 1848
     },
     {
      "id": "valerie-wass",
      "name": "Valerie WASS",
      "party": "REP",
      "party_code": "R",
-     "votes": 1814
+     "votes": 1828
     },
     {
      "id": "write-in",
@@ -78551,14 +78473,14 @@
      "name": "Kathleen DOLAN",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2938
+     "votes": 2997
     },
     {
      "id": "allen-morgan",
      "name": "Allen MORGAN",
      "party": "REP",
      "party_code": "R",
-     "votes": 3126
+     "votes": 3163
     },
     {
      "id": "write-in",
@@ -78592,28 +78514,28 @@
      "name": "Johan STARR",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3160
+     "votes": 3231
     },
     {
      "id": "tobias-rossmann",
      "name": "Tobias ROSSMANN",
      "party": "DEM",
      "party_code": "D",
-     "votes": 3212
+     "votes": 3283
     },
     {
      "id": "nadine-geoffroy",
      "name": "Nadine GEOFFROY",
      "party": "REP",
      "party_code": "R",
-     "votes": 2842
+     "votes": 2866
     },
     {
      "id": "michael-pennisi",
      "name": "Michael PENNISI",
      "party": "REP",
      "party_code": "R",
-     "votes": 2736
+     "votes": 2758
     },
     {
      "id": "write-in",
@@ -78647,14 +78569,14 @@
      "name": "Robert GRAHAM",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1959
+     "votes": 1992
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 21
+     "votes": 22
     }
    ],
    "precincts": {
@@ -78681,14 +78603,14 @@
      "name": "Richard WYATT",
      "party": "DEM",
      "party_code": "D",
-     "votes": 5625
+     "votes": 5716
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 66
+     "votes": 67
     }
    ],
    "precincts": {
@@ -78715,21 +78637,21 @@
      "name": "Raymond A. GIACOBBE, JR.",
      "party": "DEM",
      "party_code": "D",
-     "votes": 7950
+     "votes": 8057
     },
     {
      "id": "casey-e-granieri",
      "name": "Casey E. GRANIERI",
      "party": "REP",
      "party_code": "R",
-     "votes": 1464
+     "votes": 1482
     },
     {
      "id": "non-hope-moran",
      "name": "NON Hope MORAN",
      "party": null,
      "party_code": "O",
-     "votes": 584
+     "votes": 595
     },
     {
      "id": "write-in",
@@ -78763,35 +78685,35 @@
      "name": "Jeffrey BROOKS",
      "party": "DEM",
      "party_code": "D",
-     "votes": 7771
+     "votes": 7880
     },
     {
      "id": "joanna-miles",
      "name": "Joanna MILES",
      "party": "DEM",
      "party_code": "D",
-     "votes": 8006
+     "votes": 8118
     },
     {
      "id": "jeremy-e-mojica",
      "name": "Jeremy E. MOJICA",
      "party": "DEM",
      "party_code": "D",
-     "votes": 7838
+     "votes": 7947
     },
     {
      "id": "alan-levy",
      "name": "Alan LEVY",
      "party": "REP",
      "party_code": "R",
-     "votes": 1844
+     "votes": 1867
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 139
+     "votes": 147
     }
    ],
    "precincts": {
@@ -78818,14 +78740,14 @@
      "name": "Karla TIMMONS",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1516
+     "votes": 1533
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 12
+     "votes": 13
     }
    ],
    "precincts": {
@@ -78852,7 +78774,7 @@
      "name": "Cynthia A. ATKINS",
      "party": "DEM",
      "party_code": "D",
-     "votes": 889
+     "votes": 902
     },
     {
      "id": "write-in",
@@ -78886,7 +78808,7 @@
      "name": "Mario G. CORNEJO DOMINGUEZ",
      "party": "DEM",
      "party_code": "D",
-     "votes": 972
+     "votes": 987
     },
     {
      "id": "write-in",
@@ -78920,21 +78842,21 @@
      "name": "Joseph SIGNORELLO, JR.",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2732
+     "votes": 2775
     },
     {
      "id": "khanjan-patel",
      "name": "Khanjan PATEL",
      "party": "REP",
      "party_code": "R",
-     "votes": 1639
+     "votes": 1656
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 28
+     "votes": 29
     }
    ],
    "precincts": {
@@ -78961,21 +78883,21 @@
      "name": "Adolfo DICOSMO",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2821
+     "votes": 2867
     },
     {
      "id": "jorge-ramirez",
      "name": "Jorge RAMIREZ",
      "party": "REP",
      "party_code": "R",
-     "votes": 1420
+     "votes": 1433
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 24
+     "votes": 25
     }
    ],
    "precincts": {
@@ -79002,14 +78924,14 @@
      "name": "Jorge E. CASALINS",
      "party": "DEM",
      "party_code": "D",
-     "votes": 564
+     "votes": 568
     },
     {
      "id": "mariann-brenner",
      "name": "Mariann BRENNER",
      "party": "REP",
      "party_code": "R",
-     "votes": 339
+     "votes": 342
     },
     {
      "id": "write-in",
@@ -79043,42 +78965,42 @@
      "name": "Elizabeth STAMLER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 7529
+     "votes": 7673
     },
     {
      "id": "roshan-m-white",
      "name": "Roshan M. WHITE",
      "party": "DEM",
      "party_code": "D",
-     "votes": 7326
+     "votes": 7464
     },
     {
      "id": "matthew-s-adams",
      "name": "Matthew S. ADAMS",
      "party": "DEM",
      "party_code": "D",
-     "votes": 7382
+     "votes": 7525
     },
     {
      "id": "romel-d-munda",
      "name": "Romel D'MUNDA",
      "party": "REP",
      "party_code": "R",
-     "votes": 3186
+     "votes": 3221
     },
     {
      "id": "brian-johdos",
      "name": "Brian JOHDOS",
      "party": "REP",
      "party_code": "R",
-     "votes": 3229
+     "votes": 3266
     },
     {
      "id": "gabrielle-gilles",
      "name": "Gabrielle GILLES",
      "party": "REP",
      "party_code": "R",
-     "votes": 3216
+     "votes": 3252
     },
     {
      "id": "write-in",
@@ -79112,14 +79034,14 @@
      "name": "Christopher CAPODICE",
      "party": "DEM",
      "party_code": "D",
-     "votes": 4183
+     "votes": 4249
     },
     {
      "id": "michael-e-silbert",
      "name": "Michael E. SILBERT",
      "party": "REP",
      "party_code": "R",
-     "votes": 2863
+     "votes": 2905
     },
     {
      "id": "write-in",
@@ -79153,14 +79075,14 @@
      "name": "Elizabeth SKOLER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2487
+     "votes": 2554
     },
     {
      "id": "delia-hamlet",
      "name": "Delia HAMLET",
      "party": "REP",
      "party_code": "R",
-     "votes": 2117
+     "votes": 2169
     },
     {
      "id": "write-in",
@@ -79194,14 +79116,14 @@
      "name": "Emily SEELAUS",
      "party": "DEM",
      "party_code": "D",
-     "votes": 2663
+     "votes": 2722
     },
     {
      "id": "jamel-boyer",
      "name": "Jamel BOYER",
      "party": "REP",
      "party_code": "R",
-     "votes": 2202
+     "votes": 2237
     },
     {
      "id": "write-in",
@@ -79235,14 +79157,14 @@
      "name": "Joseph FRAIN",
      "party": "DEM",
      "party_code": "D",
-     "votes": 15706
+     "votes": 15962
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 171
+     "votes": 172
     }
    ],
    "precincts": {
@@ -79269,7 +79191,7 @@
      "name": "Matthew C. MILLER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 342
+     "votes": 351
     },
     {
      "id": "write-in",
@@ -79303,14 +79225,14 @@
      "name": "NON David MOORE",
      "party": null,
      "party_code": "O",
-     "votes": 4126
+     "votes": 4192
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 677
+     "votes": 698
     }
    ],
    "precincts": {
@@ -79337,28 +79259,28 @@
      "name": "NON Steven DONKERSLOOT",
      "party": null,
      "party_code": "O",
-     "votes": 3299
+     "votes": 3333
     },
     {
      "id": "non-robert-brede",
      "name": "NON Robert BREDE",
      "party": null,
      "party_code": "O",
-     "votes": 3590
+     "votes": 3628
     },
     {
      "id": "non-megan-harrison",
      "name": "NON Megan HARRISON",
      "party": null,
      "party_code": "O",
-     "votes": 3762
+     "votes": 3801
     },
     {
      "id": "non-john-greaves",
      "name": "NON John GREAVES",
      "party": null,
      "party_code": "O",
-     "votes": 1959
+     "votes": 1975
     },
     {
      "id": "write-in",
@@ -79392,28 +79314,28 @@
      "name": "NON Christopher KOLIBAS",
      "party": null,
      "party_code": "O",
-     "votes": 6530
+     "votes": 6651
     },
     {
      "id": "non-derrick-rose",
      "name": "NON Derrick ROSE",
      "party": null,
      "party_code": "O",
-     "votes": 6289
+     "votes": 6402
     },
     {
      "id": "non-kristin-cohen",
      "name": "NON Kristin COHEN",
      "party": null,
      "party_code": "O",
-     "votes": 6508
+     "votes": 6636
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 179
+     "votes": 185
     }
    ],
    "precincts": {
@@ -79440,35 +79362,35 @@
      "name": "NON Maria Z. CARVALHO",
      "party": null,
      "party_code": "O",
-     "votes": 10318
+     "votes": 10511
     },
     {
      "id": "non-jerry-d-jacobs",
      "name": "NON Jerry D. JACOBS",
      "party": null,
      "party_code": "O",
-     "votes": 10128
+     "votes": 10331
     },
     {
      "id": "non-rosa-e-moreno-ortega",
      "name": "NON Rosa E. MORENO ORTEGA",
      "party": null,
      "party_code": "O",
-     "votes": 10448
+     "votes": 10653
     },
     {
      "id": "non-maria-lorenz",
      "name": "NON Maria LORENZ",
      "party": null,
      "party_code": "O",
-     "votes": 3785
+     "votes": 3854
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 319
+     "votes": 332
     }
    ],
    "precincts": {
@@ -79495,7 +79417,7 @@
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 803
+     "votes": 820
     }
    ],
    "precincts": {
@@ -79522,21 +79444,21 @@
      "name": "NON Kristin MEZA",
      "party": null,
      "party_code": "O",
-     "votes": 1203
+     "votes": 1216
     },
     {
      "id": "non-christine-guerriero",
      "name": "NON Christine GUERRIERO",
      "party": null,
      "party_code": "O",
-     "votes": 1283
+     "votes": 1292
     },
     {
      "id": "non-albert-delconte",
      "name": "NON Albert DELCONTE",
      "party": null,
      "party_code": "O",
-     "votes": 1157
+     "votes": 1168
     },
     {
      "id": "write-in",
@@ -79570,49 +79492,49 @@
      "name": "NON JoAnn HORTON GIVENS",
      "party": null,
      "party_code": "O",
-     "votes": 2948
+     "votes": 3003
     },
     {
      "id": "non-deseree-perrin",
      "name": "NON Deseree PERRIN",
      "party": null,
      "party_code": "O",
-     "votes": 2753
+     "votes": 2807
     },
     {
      "id": "non-maurice-sean-lovell",
      "name": "NON Maurice SEAN LOVELL",
      "party": null,
      "party_code": "O",
-     "votes": 2749
+     "votes": 2800
     },
     {
      "id": "non-dane-cole",
      "name": "NON Dane COLE",
      "party": null,
      "party_code": "O",
-     "votes": 2147
+     "votes": 2169
     },
     {
      "id": "non-helen-egwaikhide",
      "name": "NON Helen EGWAIKHIDE",
      "party": null,
      "party_code": "O",
-     "votes": 2063
+     "votes": 2084
     },
     {
      "id": "non-latasha-wilson",
      "name": "NON Latasha WILSON",
      "party": null,
      "party_code": "O",
-     "votes": 2174
+     "votes": 2198
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 59
+     "votes": 60
     }
    ],
    "precincts": {
@@ -79639,56 +79561,56 @@
      "name": "NON Joseph GRUNWALD",
      "party": null,
      "party_code": "O",
-     "votes": 2538
+     "votes": 2579
     },
     {
      "id": "non-malaysia-thomas",
      "name": "NON Malaysia THOMAS",
      "party": null,
      "party_code": "O",
-     "votes": 4876
+     "votes": 4935
     },
     {
      "id": "non-kimberly-ullisse",
      "name": "NON Kimberly ULLISSE",
      "party": null,
      "party_code": "O",
-     "votes": 4666
+     "votes": 4723
     },
     {
      "id": "non-rempee-kalia",
      "name": "NON Rempee KALIA",
      "party": null,
      "party_code": "O",
-     "votes": 4242
+     "votes": 4290
     },
     {
      "id": "non-olivia-rodriguez-calderon",
      "name": "NON Olivia RODRIGUEZ-CALDERON",
      "party": null,
      "party_code": "O",
-     "votes": 4958
+     "votes": 5030
     },
     {
      "id": "non-essence-myrick",
      "name": "NON Essence MYRICK",
      "party": null,
      "party_code": "O",
-     "votes": 4216
+     "votes": 4280
     },
     {
      "id": "non-john-kaczor",
      "name": "NON John KACZOR",
      "party": null,
      "party_code": "O",
-     "votes": 4085
+     "votes": 4133
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 91
+     "votes": 92
     }
    ],
    "precincts": {
@@ -79715,14 +79637,14 @@
      "name": "NON Dana GUIDICIPIETRO",
      "party": null,
      "party_code": "O",
-     "votes": 2022
+     "votes": 2042
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 542
+     "votes": 550
     }
    ],
    "precincts": {
@@ -79749,14 +79671,14 @@
      "name": "NON Kristen Empson HAYDEN",
      "party": null,
      "party_code": "O",
-     "votes": 3706
+     "votes": 3775
     },
     {
      "id": "non-amanda-marano",
      "name": "NON Amanda MARANO",
      "party": null,
      "party_code": "O",
-     "votes": 3460
+     "votes": 3519
     },
     {
      "id": "write-in",
@@ -79790,49 +79712,49 @@
      "name": "NON Terence JOHNSON",
      "party": null,
      "party_code": "O",
-     "votes": 5270
+     "votes": 5352
     },
     {
      "id": "non-natasha-dabney",
      "name": "NON Natasha DABNEY",
      "party": null,
      "party_code": "O",
-     "votes": 5025
+     "votes": 5104
     },
     {
      "id": "non-priscila-rosas",
      "name": "NON Priscila ROSAS",
      "party": null,
      "party_code": "O",
-     "votes": 4693
+     "votes": 4763
     },
     {
      "id": "non-jansel-fuentes-jimenez",
      "name": "NON Jansel FUENTES JIMENEZ",
      "party": null,
      "party_code": "O",
-     "votes": 3689
+     "votes": 3745
     },
     {
      "id": "non-roxanne-robinson",
      "name": "NON Roxanne ROBINSON",
      "party": null,
      "party_code": "O",
-     "votes": 3783
+     "votes": 3834
     },
     {
      "id": "non-john-c-campbell",
      "name": "NON John C. CAMPBELL",
      "party": null,
      "party_code": "O",
-     "votes": 3950
+     "votes": 4010
     },
     {
      "id": "non-azim-gray",
      "name": "NON Azim GRAY",
      "party": null,
      "party_code": "O",
-     "votes": 790
+     "votes": 798
     },
     {
      "id": "write-in",
@@ -79866,35 +79788,35 @@
      "name": "NON Carlos GARAY",
      "party": null,
      "party_code": "O",
-     "votes": 6700
+     "votes": 6785
     },
     {
      "id": "non-sean-white",
      "name": "NON Sean WHITE",
      "party": null,
      "party_code": "O",
-     "votes": 6777
+     "votes": 6863
     },
     {
      "id": "non-jennifer-moteiro",
      "name": "NON Jennifer MOTEIRO",
      "party": null,
      "party_code": "O",
-     "votes": 7006
+     "votes": 7093
     },
     {
      "id": "non-leslie-rippon",
      "name": "NON Leslie RIPPON",
      "party": null,
      "party_code": "O",
-     "votes": 2357
+     "votes": 2391
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 107
+     "votes": 116
     }
    ],
    "precincts": {
@@ -79921,28 +79843,28 @@
      "name": "NON Ieesha TURNAGE",
      "party": null,
      "party_code": "O",
-     "votes": 3666
+     "votes": 3722
     },
     {
      "id": "non-antoinette-bowers",
      "name": "NON Antoinette BOWERS",
      "party": null,
      "party_code": "O",
-     "votes": 3630
+     "votes": 3687
     },
     {
      "id": "non-joseph-leconte",
      "name": "NON Joseph LECONTE",
      "party": null,
      "party_code": "O",
-     "votes": 3419
+     "votes": 3471
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 105
+     "votes": 107
     }
    ],
    "precincts": {
@@ -79969,28 +79891,28 @@
      "name": "NON Michael-Anne REGAN",
      "party": null,
      "party_code": "O",
-     "votes": 2730
+     "votes": 2761
     },
     {
      "id": "non-diana-a-valerio-acosta",
      "name": "NON Diana A. VALERIO-ACOSTA",
      "party": null,
      "party_code": "O",
-     "votes": 2518
+     "votes": 2554
     },
     {
      "id": "non-jacqueline-g-templeton",
      "name": "NON Jacqueline G. TEMPLETON",
      "party": null,
      "party_code": "O",
-     "votes": 1966
+     "votes": 1989
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 150
+     "votes": 155
     }
    ],
    "precincts": {
@@ -80017,35 +79939,35 @@
      "name": "NON Eric FELLEN",
      "party": null,
      "party_code": "O",
-     "votes": 3935
+     "votes": 3995
     },
     {
      "id": "non-christina-st-hillaire",
      "name": "NON Christina ST. HILLAIRE",
      "party": null,
      "party_code": "O",
-     "votes": 4250
+     "votes": 4328
     },
     {
      "id": "non-sonali-phatak-barve",
      "name": "NON Sonali Phatak BARVE",
      "party": null,
      "party_code": "O",
-     "votes": 3221
+     "votes": 3288
     },
     {
      "id": "non-jennifer-martinez",
      "name": "NON Jennifer MARTINEZ",
      "party": null,
      "party_code": "O",
-     "votes": 2962
+     "votes": 3012
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 138
+     "votes": 141
     }
    ],
    "precincts": {
@@ -80072,14 +79994,14 @@
      "name": "NON Adriana SILVA",
      "party": null,
      "party_code": "O",
-     "votes": 4290
+     "votes": 4354
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 802
+     "votes": 823
     }
    ],
    "precincts": {
@@ -80106,28 +80028,28 @@
      "name": "NON Michael COHAN",
      "party": null,
      "party_code": "O",
-     "votes": 11645
+     "votes": 11839
     },
     {
      "id": "non-elsie-conteh-mackey",
      "name": "NON Elsie CONTEH-MACKEY",
      "party": null,
      "party_code": "O",
-     "votes": 11398
+     "votes": 11602
     },
     {
      "id": "non-ronnie-mcdowell",
      "name": "NON Ronnie MCDOWELL",
      "party": null,
      "party_code": "O",
-     "votes": 11242
+     "votes": 11435
     },
     {
      "id": "write-in",
      "name": "Write-in",
      "party": null,
      "party_code": "O",
-     "votes": 381
+     "votes": 393
     }
    ],
    "precincts": {
@@ -80154,21 +80076,21 @@
      "name": "NON Anne Marie WEISS",
      "party": null,
      "party_code": "O",
-     "votes": 384
+     "votes": 393
     },
     {
      "id": "non-david-j-broadwell",
      "name": "NON David J. BROADWELL",
      "party": null,
      "party_code": "O",
-     "votes": 253
+     "votes": 259
     },
     {
      "id": "non-virginia-blackwell",
      "name": "NON Virginia BLACKWELL",
      "party": null,
      "party_code": "O",
-     "votes": 252
+     "votes": 258
     },
     {
      "id": "write-in",
@@ -80202,14 +80124,14 @@
      "name": "Yes",
      "party": null,
      "party_code": "O",
-     "votes": 8921
+     "votes": 9081
     },
     {
      "id": "no",
      "name": "No",
      "party": null,
      "party_code": "O",
-     "votes": 4059
+     "votes": 4115
     }
    ],
    "precincts": {
@@ -80280,7 +80202,7 @@
    "state": "nj",
    "county": "Salem",
    "office": "United States House of Representatives",
-   "district": null,
+   "district": 2,
    "title": "United States House of Representatives",
    "vote_for": 1,
    "choices": [
@@ -121200,7 +121122,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "mullock",
+    "by": "AP (not certified)",
+    "at": "2026-11-05T21:29:00.736Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-camden-0042-members-of-local-board-of-education-bellmawr-school-district-maria-romano-1-707-",
@@ -121408,26 +121336,26 @@
  "counties_covered": [
   "Bergen",
   "Camden",
-  "Cape May",
-  "Essex",
   "Hunterdon",
+  "Middlesex",
+  "Monmouth",
   "Morris",
+  "Ocean",
   "Passaic",
   "Salem",
-  "Sussex"
+  "Somerset",
+  "Sussex",
+  "Union"
  ],
  "counties_missing": [
   "Atlantic",
   "Burlington",
+  "Cape May",
   "Cumberland",
+  "Essex",
   "Gloucester",
   "Hudson",
   "Mercer",
-  "Middlesex",
-  "Monmouth",
-  "Ocean",
-  "Somerset",
-  "Union",
   "Warren"
  ]
 }
