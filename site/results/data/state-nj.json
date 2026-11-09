@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-09T04:43:48Z",
+ "updated_at": "2026-11-09T04:54:19Z",
  "certified": false,
  "contests": [
   {
@@ -55574,7 +55574,13 @@
    },
    "category": "Federal Offices",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-monmouth-0005-us-house-of-representatives-3rd-congressional-district",
@@ -55629,7 +55635,13 @@
    },
    "category": "Federal Offices",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "herb-conaway",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:35:41.078Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-monmouth-0006-us-house-of-representatives-4th-congressional-district",
@@ -55670,7 +55682,13 @@
    },
    "category": "Federal Offices",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "christopher-h-smith",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:23:29.661Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-monmouth-0007-us-house-of-representatives-6th-congressional-district",
@@ -55711,7 +55729,13 @@
    },
    "category": "Federal Offices",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "frank-pallone-jr",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:06:31.009Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-monmouth-0008-surrogate",
@@ -74024,7 +74048,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-somerset-0005-u-s-representative-7th",
@@ -74072,7 +74102,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "rebecca-bennett",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:48:17.933Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-somerset-0006-u-s-representative-12th",
@@ -74127,7 +74163,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "adam-hamawy",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:26:52.699Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-somerset-0007-county-commissioner",
@@ -121347,11 +121389,9 @@
   "Hudson",
   "Hunterdon",
   "Mercer",
-  "Monmouth",
   "Morris",
   "Passaic",
   "Salem",
-  "Somerset",
   "Sussex"
  ],
  "counties_missing": [
@@ -121360,7 +121400,9 @@
   "Essex",
   "Gloucester",
   "Middlesex",
+  "Monmouth",
   "Ocean",
+  "Somerset",
   "Union",
   "Warren"
  ]
