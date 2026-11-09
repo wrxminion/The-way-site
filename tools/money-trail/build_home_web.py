@@ -20,7 +20,7 @@ What it makes:
 - Each web shows up to 8 of the largest amounts in or out, by dollars. People are never shown.
 Styles live in site/home.css (.mw-*).
 """
-import collections, hashlib, html, json, math, sys, urllib.parse
+import collections, hashlib, html, json, math, os, sys, urllib.parse
 from datetime import date
 
 ROOT = (sys.argv[1] if len(sys.argv) > 1 else 'site').rstrip('/') + '/'
@@ -35,6 +35,9 @@ def load(name, var):
 
 R = load('data.js', 'const RESEARCH')
 F = load('fec-data.js', 'const FEC_FILINGS')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from add_fec_batch import expand  # noqa: E402  fec-data.js keeps short rows; this gives the full records
+F['transactions'], F['entities'] = expand(F)
 M = load('mi-filings.js', 'const MI_FILINGS')
 
 # The same merge the Money Trail page does in the browser (see the end of fec-data.js and mi-filings.js).
@@ -83,7 +86,12 @@ for c in M['committees']:
 # Ballot measures: the committee's own stance in the archive (positions) or the Michigan filing.
 DEM = {'C00484642', 'C00495028', 'C00669259', 'C00000935', 'C00042366', 'C00010603', 'C00492140', 'C00495861', 'C00530766',
        'C00193433', 'C00486845', 'C00004036'}
-REP = {'C00571703', 'C00504530', 'C00003418', 'C00075820', 'C00027466', 'C00487470', 'C00687103', 'C00559740'}
+REP = {'C00571703', 'C00504530', 'C00003418', 'C00075820', 'C00027466', 'C00487470', 'C00687103', 'C00559740',
+       'C00892471', 'C00571588', 'C00814152'}  # D260: + MAGA Inc., Restoration of America PAC, Turning Point PAC
+# D260: party committees (and any committee) that registered a party with the FEC take that side. No other guessing.
+for c_ in F['committees']:
+    if c_.get('party') == 'DEM': DEM.add(c_['committee_id'])
+    if c_.get('party') == 'REP': REP.add(c_['committee_id'])
 SIDES = [('D', 'Democratic side'), ('R', 'Republican side'), ('yes', 'Ballot measure, Yes side'), ('no', 'Ballot measure, No side'), ('x', 'No side recorded')]
 stance = {}
 for p_ in R['positions']:
@@ -191,9 +199,18 @@ for i in sorted(cnt, key=lambda i: (-cnt[i], -amt[i])):
     if n_spokes >= 4: pool.append((sd, i, w))
 order = [k for k, _ in SIDES]
 pool.sort(key=lambda x: order.index(x[0]))  # without JavaScript the first one shows
-panels = []
+# D260: with the FEC bulk files the pool holds hundreds of groups, too many to put in the front page itself.
+# The page carries one web per side (the first pick is a side at random, then a group on that side), and
+# home-web.js loads the rest from home-panels.json the first time "Show another" is pressed.
+first = {}
 for k, (sd, hub, w) in enumerate(pool):
-    panels.append(f'<div class="mw-panel" id="mw-p{k + 1}" data-side="{sd}"' + ('' if k == 0 else ' hidden') + '>' + w + '</div>')
+    first.setdefault(sd, k)
+panels = []
+for j, k in enumerate(sorted(first.values())):
+    panels.append(f'<div class="mw-panel" id="mw-p{k + 1}" data-k="{k}" data-side="{pool[k][0]}"' + ('' if j == 0 else ' hidden') + '>' + pool[k][2] + '</div>')
+panels_json = json.dumps([[sd, w] for sd, hub, w in pool], ensure_ascii=False, separators=(',', ':')) + '\n'
+open(MT + 'home-panels.json', 'w', encoding='utf-8').write(panels_json)
+PANELS_V = hashlib.sha1(panels_json.encode('utf-8')).hexdigest()[:8]
 
 # Names for the search box: every group in the records, people left out.
 seen_n = set(); search_names = []
@@ -213,7 +230,7 @@ band = ('<section class="mapband moneyband" id="followmoney" aria-labelledby="fm
         '<div class="mw-search-row"><input id="mw-q" name="q" type="search" list="mw-names" autocomplete="off" spellcheck="false" placeholder="Try GOPAC or DCCC"><button type="submit">Follow</button></div>'
         '<datalist id="mw-names"></datalist></form>'
         '</div>\n'
-        '<div class="moneyweb"><p class="mw-random"><span>A group picked at random from ' + str(len(pool)) + '</span><button type="button" class="mw-another" hidden>Show another</button></p>' + ''.join(panels) + '<p class="mw-key"><span class="mw-in">Recorded in</span> <span class="mw-out">Recorded out</span></p>'
+        '<div class="moneyweb" data-panels="/money-trail/home-panels.json?v=' + PANELS_V + '"><p class="mw-random"><span>A group picked at random from ' + str(len(pool)) + '</span><button type="button" class="mw-another" hidden>Show another</button></p>' + ''.join(panels) + '<p class="mw-key"><span class="mw-in">Recorded in</span> <span class="mw-out">Recorded out</span></p>'
         '<a class="cta join-cta" href="/money-trail/">Open the Money Trail <span aria-hidden="true">&rarr;</span></a><a class="text-link" href="/money-trail/?view=network">See the full money web</a>'
         '<p class="mw-note">Amounts are the itemized records in Michi’s research archive, added up. They are not each group’s full totals. '
         'The first group is picked fairly between sides, not by size. Show another goes through all ' + str(len(pool)) + ' groups before any repeats. More committees are still being added. A link between two names does not mean anyone did anything wrong.</p></div></section>\n')

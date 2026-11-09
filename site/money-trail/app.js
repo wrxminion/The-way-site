@@ -769,8 +769,14 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
 (function () {
   const f = RESEARCH.meta.fec, el = document.getElementById('fec-note');
   if (!f || !el) return;
-  el.textContent = f.records + ' more records come straight from FEC filings of ' + f.committees + ' committees (' + (RESEARCH.meta.fec_committees || []).join(', ') + '), pulled from the FEC public data on ' + dateText(f.updated) + '. Each one links to its filing. Individuals are not included.';
-  (RESEARCH.meta.fec_missing || []).forEach(m => { el.textContent += ' ' + m.name + ': ' + (m.missing[0] === 'receipts' ? 'only payments so far; its receipts did not download yet.' : 'only receipts so far; its payments did not download yet.'); });
+  // D260: with the FEC bulk files there are hundreds of committees, so the footer names them only when there are a few.
+  const fc = RESEARCH.meta.fec_committees || [];
+  el.textContent = f.records + ' more records come straight from FEC filings of ' + f.committees + ' committees' + (fc.length <= 20 ? ' (' + fc.join(', ') + ')' : '') + ', pulled from the FEC public data on ' + dateText(f.updated) + '. Each one links to its filing. Individuals are not included.';
+  if (f.method && f.files) el.textContent += ' Which committees: ' + f.method;
+  (RESEARCH.meta.fec_missing || []).forEach(m => { if (m.missing.length) el.textContent += ' ' + m.name + ': ' + (m.missing[0] === 'receipts' ? 'only payments so far; its receipts did not download yet.' : 'only receipts so far; its payments did not download yet.'); });
+  const lag = (RESEARCH.meta.fec_missing || []).filter(m => m.lag && m.lag.length).map(m => m.name);
+  if (lag.length) el.textContent += ' The FEC has not finished processing the payment lines of ' + lag.join(', ') + ', so for now they show receipts and spending for or against candidates only.';
+  if (f.no_records && f.no_records.length) el.textContent += ' No itemized lines in the FEC files yet for ' + f.no_records.map(x => x.name).join(', ') + '.';
   const md = RESEARCH.meta.media; // D249
   if (md) el.textContent += ' Media companies: payments to them and gifts by their company PACs come from the FEC 2025-2026 bulk files, pulled on ' + dateText(String(md.retrieved || '').slice(0, 10)) + '.';
   const mi = RESEARCH.meta.mi;
