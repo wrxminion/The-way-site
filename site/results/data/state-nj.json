@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-09T22:07:37Z",
+ "updated_at": "2026-11-09T22:16:23Z",
  "certified": false,
  "contests": [
   {
@@ -23,35 +23,35 @@
      "name": "Cory BOOKER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1738194
+     "votes": 1656364
     },
     {
      "id": "murphy",
      "name": "Justin MURPHY",
      "party": "REP",
      "party_code": "R",
-     "votes": 958266
+     "votes": 913169
     },
     {
      "id": "fernandez",
      "name": "Veronica FERNANDEZ",
      "party": "NPC",
      "party_code": "O",
-     "votes": 46385
+     "votes": 43305
     },
     {
      "id": "kuniansky",
      "name": "NPD Joanne KUNIANSKY",
      "party": "NPD",
      "party_code": "O",
-     "votes": 24056
+     "votes": 22661
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 6052
+     "votes": 5765
     },
     {
      "id": "choice",
@@ -783,8 +783,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5412,
-    "total": 5544
+    "reporting": 5129,
+    "total": 5261
    },
    "counties": [
     {
@@ -1043,20 +1043,6 @@
       "fernandez": 2714,
       "kuniansky": 1255,
       "write-in": 329
-     }
-    },
-    {
-     "county": "Passaic",
-     "precincts": {
-      "reporting": 283,
-      "total": 283
-     },
-     "votes": {
-      "murphy": 45097,
-      "booker": 81830,
-      "fernandez": 3080,
-      "kuniansky": 1395,
-      "write-in": 287
      }
     },
     {
@@ -1570,7 +1556,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "mejia",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:18:49.311Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-12",
@@ -2692,7 +2684,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "gottheimer",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:12:11.123Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-6",
@@ -3066,7 +3064,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "pou",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:22:06.948Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-atlantic-0004-united-states-senate",
@@ -87125,7 +87129,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-passaic-0005-member-of-the-house-of-reps-5th-cong",
@@ -87173,7 +87183,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "josh-gottheimer",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:12:11.123Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-passaic-0006-member-of-the-house-of-reps-9th-cong",
@@ -87221,7 +87237,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "nelida-pou",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T03:22:06.948Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-passaic-0007-member-of-the-house-of-reps-11th-cong",
@@ -87269,7 +87291,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "analilia-mejia",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:18:49.311Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-passaic-0008-surrogate",
@@ -137038,7 +137066,6 @@
   "Monmouth",
   "Morris",
   "Ocean",
-  "Passaic",
   "Salem",
   "Somerset",
   "Sussex",
@@ -137046,6 +137073,7 @@
  ],
  "counties_missing": [
   "Gloucester",
+  "Passaic",
   "Warren"
  ]
 }
