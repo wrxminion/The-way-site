@@ -62,6 +62,15 @@
         got.committees.forEach(c => { loaded.add(c.committee_id); (RESEARCH.meta.fec_more_loaded ??= []).push(c.name); });
       } catch (e) { /* the page still works with the large committees only */ }
     });
+    // A ?fec= link with no ?hub= centers the web on the first committee it loaded (app.js reads ?hub= from the address).
+    const first = ids.find(c => loaded.has(c));
+    if (first && !q.get('hub')) {
+      const e = RESEARCH.entities.find(x => x.entity_id === 'fec:' + first);
+      if (e && history.replaceState) {
+        q.set('hub', e.legal_or_reported_name); if (!q.get('view') && !q.get('q')) q.set('view', 'network');
+        try { history.replaceState(history.state, '', location.pathname + '?' + q.toString() + location.hash); } catch (err) { /* keep the page as it is */ }
+      }
+    }
   }
 
   // ---- 2 and 3. after the page is up
