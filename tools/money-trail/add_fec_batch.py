@@ -25,6 +25,9 @@
 # - Entity IDs stay distinct: a committee is fec:<FEC ID>; a payee or donor with no FEC ID is
 #   fecname:<NAME>_<STATE>, never merged with archive records that have the same name.
 # - A filing line already shown on a media company's dot (media.js, D249) is left out here, so it is not drawn twice.
+# - Earmarked money passed on by a conduit (D264, transaction type 24T): fec_bulk.py adds the lines together per
+#   receiving committee (each line is one person's gift, and people are never saved). Such a record says it is a
+#   total, how many lines it adds, and links the filing with the largest line.
 #
 # File format (Nov 2026, to keep the page fast on phones): records are stored as short rows plus one table of
 # words, and the end of fec-data.js turns them back into full records in the browser. expand() below does the
@@ -343,15 +346,21 @@ def main():
                        'source_name': oname if sched == 'a' else cname,
                        'recipient_name': cname if sched == 'a' else oname,
                        'amount_usd': round(float(amt), 2), 'transaction_date': date,
-                       'date_kind': 'FEC_reported_receipt_date' if sched == 'a' else 'FEC_reported_disbursement_date',
+                       'date_kind': ('Latest date among the earmarked lines added together' if r.get('added_together') else
+                                     'FEC_reported_receipt_date' if sched == 'a' else 'FEC_reported_disbursement_date'),
                        'cycle': '2026', 'jurisdiction': 'US / FEC filing',
-                       'activity_type': f'FEC Schedule {sched.upper()} line {line}' + (f': {label}' if label else ''),
+                       'activity_type': ('FEC: ' + label if r.get('added_together') else
+                                         f'FEC Schedule {sched.upper()} line {line}' + (f': {label}' if label else '')),
                        'filing_url': https(r.get('pdf_url')),
-                       'filing_id': f"FEC {r.get('filing_form') or ''} {r.get('file_number') or ''}; {r.get('report_type') or ''} {r.get('report_year') or ''}; sub_id {sub}".replace('  ', ' '),
+                       'filing_id': (f"FEC file {r['added_together']['file_number']} (largest of {r['added_together']['lines']:,} earmarked lines added together)"
+                                     if r.get('added_together') else
+                                     f"FEC {r.get('filing_form') or ''} {r.get('file_number') or ''}; {r.get('report_type') or ''} {r.get('report_year') or ''}; sub_id {sub}".replace('  ', ' ')),
                        'confidence': confidence,
                        'amendment_status': {'A': 'Filed on an amended report', 'N': 'Filed on a new report'}.get(r.get('amendment_indicator'), ''),
-                       'notes': src_note(sched.upper(), c) + (f'Address on the filing: {place}. ' if place else '')
-                                + (f'Description on the filing: {str(desc).strip()}. ' if desc and str(desc).strip() else '') + NO_INFERENCE,
+                       'notes': (f"From the FEC's public data (FEC bulk data files, individual contributions file, transaction type 24T), "
+                                 f"files dated {bulk_day}. " + r['summary_note'] + NO_INFERENCE if r.get('summary_note') else
+                                 src_note(sched.upper(), c) + (f'Address on the filing: {place}. ' if place else '')
+                                 + (f'Description on the filing: {str(desc).strip()}. ' if desc and str(desc).strip() else '') + NO_INFERENCE),
                        'evidence_tier': 'fec_filing', 'record_kind': 'transaction',
                        'event_date': date, 'event_id': tid, 'fec_committee_id': cid}
                 if tid not in tx:
@@ -437,8 +446,11 @@ def main():
                            + (f"{len(more_c):,} more committees (every other committee and candidate campaign with money in the "
                               "FEC files, every party alike) load when you search for one or open it. " if more_c else '')
                            + f"For each one, the same depth: its {bulk['depth']} largest itemized receipts from groups, its "
-                           f"{bulk['depth']} largest payments and its {bulk['depth']} largest independent expenditures, "
-                           "then memo lines, refunds and individuals removed."),
+                           f"{bulk['depth']} largest payments for its own costs, its {bulk['depth']} largest gifts to other committees "
+                           f"and candidates, and its {bulk['depth']} largest independent expenditures, "
+                           "then memo lines, refunds and individuals removed. A committee that passes on earmarked contributions "
+                           f"(for example ActBlue, WinRed or AIPAC PAC) also shows the {bulk['depth']} committees it passed the most "
+                           "earmarked money to, added together per committee, with the people who gave it left out."),
                 'files': bulk['files'], 'depth': bulk['depth'], 'no_records': empty}
     else:
         meta = {'source': 'FEC OpenFEC API v1 (api.open.fec.gov), Schedule A and Schedule B',
