@@ -12,9 +12,10 @@ What one run does:
   2. Downloads the FEC 2025-2026 bulk files that changed (fec_bulk.py --download, into --bulk). If none changed
      since the last run, it stops there ("no change").
   3. fec_bulk.py picks the committees and their largest records, the same rule for every side.
-  4. add_fec_batch.py rebuilds site/money-trail/fec-data.js, then build_home_web.py and add_money_links.py run,
+  4. add_fec_batch.py rebuilds site/money-trail/fec-data.js and the fec-more/ files (D262), then build_home_web.py and add_money_links.py run,
      the same steps as every FEC batch before.
-  5. Safety checks: fewer than 100 committees, or fewer than 60 percent of the records the site has now, stops the
+  5. Safety checks: fewer than 100 committees, fewer than 60 percent of the records the site has now, or fewer than
+     60 percent of the fec-more committees, stops the
      run with a note and nothing is published.
   6. With --push: commits only the data files below and pushes them to main, like the results data job.
      Without --push, or if the push fails: writes a patch to --drop for the push queue.
@@ -24,7 +25,7 @@ already on the computer.
 import argparse, datetime, json, os, re, subprocess, sys
 
 REPO_URL = 'https://github.com/wrxminion/The-way-site.git'
-DATA = ['site/money-trail/fec-data.js', 'site/money-trail/index.html', 'site/money-trail/home-names.json',
+DATA = ['site/money-trail/fec-data.js', 'site/money-trail/fec-more', 'site/money-trail/index.html', 'site/money-trail/home-names.json',
         'site/money-trail/home-panels.json', 'site/index.html', 'site/case-studies/index.html']
 
 ap = argparse.ArgumentParser()
@@ -95,7 +96,9 @@ run([sys.executable, os.path.join(a.repo, 'tools', 'case-studies', 'add_money_li
 
 # 5. safety checks
 after = fec_meta()
-if (after.get('committees') or 0) < 100 or (after.get('records') or 0) < 0.6 * old_records:
+old_more = (before.get('more') or {}).get('committees') or 0
+if ((after.get('committees') or 0) < 100 or (after.get('records') or 0) < 0.6 * old_records
+        or ((after.get('more') or {}).get('committees') or 0) < 0.6 * old_more):
     log('STOPPED, nothing published: committees', after.get('committees'), 'records', after.get('records'), 'before', old_records)
     git('reset', '--hard', 'origin/main')
     sys.exit(2)
