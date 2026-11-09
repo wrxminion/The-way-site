@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-09T21:39:57Z",
+ "updated_at": "2026-11-09T21:49:27Z",
  "certified": false,
  "contests": [
   {
@@ -23,53 +23,67 @@
      "name": "Cory BOOKER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1804805
+     "votes": 1738194
     },
     {
      "id": "murphy",
      "name": "Justin MURPHY",
      "party": "REP",
      "party_code": "R",
-     "votes": 1003882
+     "votes": 958266
     },
     {
      "id": "fernandez",
      "name": "Veronica FERNANDEZ",
      "party": "NPC",
      "party_code": "O",
-     "votes": 47664
+     "votes": 46385
     },
     {
      "id": "kuniansky",
      "name": "NPD Joanne KUNIANSKY",
      "party": "NPD",
      "party_code": "O",
-     "votes": 24849
+     "votes": 24056
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 6237
+     "votes": 6052
     },
     {
      "id": "choice",
      "name": "Personal Choice",
      "party": null,
      "party_code": "O",
-     "votes": 127
+     "votes": 128
     },
     {
      "id": "castillo",
      "name": "Edwardo Castillo",
      "party": null,
      "party_code": "O",
-     "votes": 7
+     "votes": 8
+    },
+    {
+     "id": "dewey",
+     "name": "Dan A. Dewey",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
     },
     {
      "id": "knezick",
      "name": "Melissa Knezick",
+     "party": null,
+     "party_code": "O",
+     "votes": 3
+    },
+    {
+     "id": "christ",
+     "name": "Jesus Christ",
      "party": null,
      "party_code": "O",
      "votes": 3
@@ -84,6 +98,13 @@
     {
      "id": "massie",
      "name": "Thomas Massie",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "palestine",
+     "name": "Free Palestine",
      "party": null,
      "party_code": "O",
      "votes": 2
@@ -112,6 +133,34 @@
     {
      "id": "piker",
      "name": "Hasan Piker",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "fields",
+     "name": "Chris Fields",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "brown",
+     "name": "Mitchell Brown",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "above",
+     "name": "None of the Above",
+     "party": null,
+     "party_code": "O",
+     "votes": 2
+    },
+    {
+     "id": "smith",
+     "name": "David Smith",
      "party": null,
      "party_code": "O",
      "votes": 2
@@ -161,13 +210,6 @@
     {
      "id": "harper",
      "name": "Bryce Harper",
-     "party": null,
-     "party_code": "O",
-     "votes": 1
-    },
-    {
-     "id": "palestine",
-     "name": "Free Palestine",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -320,13 +362,6 @@
      "votes": 1
     },
     {
-     "id": "dewey",
-     "name": "Dan A. Dewey",
-     "party": null,
-     "party_code": "O",
-     "votes": 1
-    },
-    {
      "id": "mukul",
      "name": "Nurul Mukul",
      "party": null,
@@ -406,13 +441,6 @@
     {
      "id": "green",
      "name": "Troy Green",
-     "party": null,
-     "party_code": "O",
-     "votes": 1
-    },
-    {
-     "id": "fields",
-     "name": "Chris Fields",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -523,15 +551,162 @@
      "votes": 1
     },
     {
-     "id": "brown",
-     "name": "Mitchell Brown",
+     "id": "murray",
+     "name": "Daryl Murray",
      "party": null,
      "party_code": "O",
      "votes": 1
     },
     {
-     "id": "murray",
-     "name": "Daryl Murray",
+     "id": "hammar",
+     "name": "Tom Hammar",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "flair",
+     "name": "Ric Flair",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "gualtieri",
+     "name": "Paulie Gualtieri",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "trump",
+     "name": "Impeach Trump",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "mitchell",
+     "name": "Tom Mitchell",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "combs",
+     "name": "Sean Combs",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "spicer",
+     "name": "Robert Spicer",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "carpenter",
+     "name": "Richard I. Carpenter",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "murtaza",
+     "name": "Murtaza",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "miller",
+     "name": "Aneka Miller ",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "rinella",
+     "name": "Steve Rinella",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "sd",
+     "name": "Ab E Sd",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "wu",
+     "name": "Chingchien Wu",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "h",
+     "name": "Adolf H",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "howard",
+     "name": "Tineen Howard",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "wade",
+     "name": "Khamani Wade",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "odom",
+     "name": "William L Odom Jr. ",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "holt",
+     "name": "Rush Holt",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "baker",
+     "name": "John James Baker",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kaplan",
+     "name": "Vic Kaplan",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "moses",
+     "name": "Adam Moses",
+     "party": null,
+     "party_code": "O",
+     "votes": 1
+    },
+    {
+     "id": "kahan",
+     "name": "Noah Kahan",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -546,13 +721,6 @@
     {
      "id": "piatt",
      "name": "Nova Piatt",
-     "party": null,
-     "party_code": "O",
-     "votes": 1
-    },
-    {
-     "id": "smith",
-     "name": "Edward Smith",
      "party": null,
      "party_code": "O",
      "votes": 1
@@ -615,8 +783,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5641,
-    "total": 5775
+    "reporting": 5412,
+    "total": 5544
    },
    "counties": [
     {
@@ -639,11 +807,11 @@
       "total": 445
      },
      "votes": {
-      "murphy": 54400,
-      "booker": 110121,
-      "kuniansky": 1369,
-      "fernandez": 1760,
-      "choice": 127,
+      "murphy": 54431,
+      "booker": 110353,
+      "kuniansky": 1373,
+      "fernandez": 1766,
+      "choice": 128,
       "stout": 1,
       "heier": 1,
       "state": 1,
@@ -652,7 +820,7 @@
       "harper": 1,
       "tabor": 2,
       "massie": 2,
-      "palestine": 1,
+      "palestine": 2,
       "porter": 1,
       "personal": 0,
       "god": 1,
@@ -677,10 +845,10 @@
       "fitzgerald": 1,
       "serrentino": 1,
       "undecided": 1,
-      "castillo": 4,
+      "castillo": 5,
       "quinn": 1,
       "garza": 1,
-      "dewey": 1,
+      "dewey": 3,
       "piker": 2,
       "mukul": 1,
       "o'leary": 1,
@@ -694,7 +862,7 @@
       "o'toole": 1,
       "berkley": 1,
       "green": 1,
-      "fields": 1,
+      "fields": 2,
       "bockius": 1,
       "yeat": 1,
       "elmo": 1,
@@ -711,8 +879,33 @@
       "mamdani": 1,
       "pereira": 1,
       "houthi": 1,
-      "brown": 1,
-      "murray": 1
+      "brown": 2,
+      "murray": 1,
+      "hammar": 1,
+      "flair": 1,
+      "above": 2,
+      "gualtieri": 1,
+      "trump": 1,
+      "mitchell": 1,
+      "combs": 1,
+      "spicer": 1,
+      "christ": 3,
+      "carpenter": 1,
+      "murtaza": 1,
+      "miller": 1,
+      "rinella": 1,
+      "sd": 1,
+      "wu": 1,
+      "h": 1,
+      "howard": 1,
+      "wade": 1,
+      "odom": 1,
+      "holt": 1,
+      "baker": 1,
+      "kaplan": 1,
+      "moses": 1,
+      "kahan": 1,
+      "smith": 1
      }
     },
     {
@@ -766,20 +959,6 @@
       "booker": 177612,
       "kuniansky": 2781,
       "fernandez": 3180
-     }
-    },
-    {
-     "county": "Gloucester",
-     "precincts": {
-      "reporting": 229,
-      "total": 231
-     },
-     "votes": {
-      "booker": 66866,
-      "murphy": 45655,
-      "kuniansky": 797,
-      "fernandez": 1285,
-      "write-in": 185
      }
     },
     {
@@ -928,8 +1107,8 @@
       "total": 343
      },
      "votes": {
-      "booker": 122999,
-      "murphy": 43135,
+      "booker": 123022,
+      "murphy": 43143,
       "fernandez": 2178,
       "kuniansky": 1657,
       "write-in": 177
@@ -979,13 +1158,7 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true,
-   "called": {
-    "winner": "booker",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:00:53.549Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-u-s-house-district-1",
@@ -2432,13 +2605,7 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true,
-   "called": {
-    "winner": "smith",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T02:23:29.661Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-u-s-house-district-5",
@@ -82830,13 +82997,7 @@
    },
    "category": "FEDERAL",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "cory-booker",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T01:00:53.549Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-ocean-0005-house-of-representatives-2nd-congressional-district",
@@ -82884,13 +83045,7 @@
    },
    "category": "FEDERAL",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "zack-mullock",
-    "by": "AP (not certified)",
-    "at": "2026-11-05T21:29:00.736Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-ocean-0006-house-of-representatives-4th-congressional-district",
@@ -82931,13 +83086,7 @@
    },
    "category": "FEDERAL",
    "subcategory": null,
-   "partial": true,
-   "called": {
-    "winner": "christopher-h-smith",
-    "by": "AP (not certified)",
-    "at": "2026-11-04T02:23:29.661Z",
-    "kind": "ap"
-   }
+   "partial": true
   },
   {
    "id": "nj-ocean-0007-member-of-the-board-of-commissioners",
@@ -136888,6 +137037,7 @@
   "Middlesex",
   "Monmouth",
   "Morris",
+  "Ocean",
   "Passaic",
   "Salem",
   "Somerset",
@@ -136896,7 +137046,6 @@
  ],
  "counties_missing": [
   "Gloucester",
-  "Ocean",
   "Warren"
  ]
 }
