@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "35341565f0573881",
+   "kind": "news",
+   "title": "Arizona voters approve Prop. 141, a ban on vehicle mileage taxes",
+   "source": "KJZZ",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQaWlOckExcGJmamlyMFRfakQ3eUgwcjF4bE8xbEFDcnBUVXhzc3p3WGI4aUFBX0QwbTRGeTczLVRmaUVlLS01c2pMVjJoQVc3WXZoT1NJXzZPYWE3dGtMa0t2eU5PaVhrZlllcGZlX1ZtVmpaTDZNLS1UeURnNFF6cUNpeS1yRnRGTzczVktBaC1ZRk1sWlNwbXc4eFJqQUlvd0xSVGxuWQ?oc=5",
+   "published_at": "2026-11-09",
+   "first_seen_at": "2026-11-09T17:50:16Z",
+   "states": [
+    "az"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "az-prop-141-vehicle-mileage",
+     "kind": "measure",
+     "label": "Proposition 141: Ban taxes on miles driven, and tracking or limiting miles without consent, Arizona",
+     "page": "guide-az/measures/prop-141-vehicle-mileage.html"
+    }
+   ]
+  },
+  {
    "id": "19d9425bb57e8c5e",
    "kind": "news",
    "title": "Did Prop. 141 pass in Arizona?",
@@ -326,5 +353,5 @@
    ]
   }
  ],
- "generated_at": "2026-11-05T03:03:19Z"
+ "generated_at": "2026-11-09T17:57:50Z"
 }
