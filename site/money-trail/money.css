@@ -310,3 +310,12 @@ body.mt-webfull .mt-wheel-hint{display:none}
 .mt-gave-row{cursor:default}
 .mt-gave-links{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:5px;font-size:11px;font-weight:600}
 .mt-gave-more{color:#a5c2c8;font-weight:400}
+/* D262: more FEC committees, loaded when opened (fec-more.js) */
+.fec-more-list{border-top:1px solid #315a64}
+.fec-more-head{padding:8px 12px 4px;font-size:12px;color:var(--muted)}
+a.fec-more-hit{text-decoration:none;color:#e0f2ed}
+a.fec-more-hit:focus{outline:2px solid #57c2ad;outline-offset:-2px}
+.fec-more-under .fec-more-list{margin-top:6px;background:#0a2230;border:1px solid #315a64;border-radius:8px;max-height:300px;overflow:auto}
+.fec-more-open{margin:6px 0 10px;font-size:14px}
+.fec-more-open a{color:#9fe3d3}
+.fec-more-loaded{font-size:13px;color:#e9d59d;margin:4px 0}

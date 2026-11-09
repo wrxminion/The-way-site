@@ -2,30 +2,41 @@
 """Money Trail: read the FEC bulk files and pick the records for the Money web. Standard library only, no API key.
 
 Usage (from the repo root, or anywhere):
-  python3 -I tools/money-trail/fec_bulk.py BULK_DIR OUT.json [--download] [--min-receipts 5000000] [--depth 25]
+  python3 -I tools/money-trail/fec_bulk.py BULK_DIR OUT.json [--download] [--depth 25]
+         [--min-receipts 1] [--min-ie 1] [--min-candidate 1] [--main-receipts 5000000] [--main-ie 1000000] [--main-candidate 5000000]
 
 BULK_DIR holds the FEC 2025-2026 bulk files (https://www.fec.gov/data/browse-data/?tab=bulk-data):
   cm26.zip (committees), cn26.zip (candidates), webk26.zip (committee totals), indiv26.zip (receipts),
-  oth26.zip (committee to committee), pas226.zip (to candidates, independent expenditures),
+  weball26.zip (candidate totals), oth26.zip (committee to committee), pas226.zip (to candidates, independent expenditures),
   oppexp26.zip (operating expenses), independent_expenditure_2026.csv (24 and 48 hour reports).
 --download fetches any file that is missing or changed (it compares the size the FEC server reports).
 
-Which committees (the same rule for every side, nobody is picked by hand except the ALWAYS list):
+Which committees (the same rule for every side and every party, nobody is picked by hand except the ALWAYS list).
+By default (Nov 2026, D262) that is every committee that reported money this cycle:
   - every committee that is not a candidate's own campaign (party, super PAC, hybrid PAC, PAC) with at least
-    --min-receipts dollars of total receipts this cycle in the FEC totals file (webk26), largest first;
+    --min-receipts dollars of total receipts this cycle in the FEC totals file (webk26);
   - every independent expenditure filer that is not a committee (for example a 501(c)(4), FEC IDs C9...)
     with at least --min-ie dollars of independent expenditures in the 2026 file;
+  - the main campaign committee of every candidate with at least --min-candidate dollars of total receipts this cycle
+    (FEC candidate totals file, weball26), every party and every office alike (0 or less leaves candidates out);
   - the ALWAYS list below, so a group already on the site or asked for by name is never dropped.
+Use --min-receipts 5000000 --min-ie 1000000 --min-candidate 0 for the older, smaller pull (D258).
+Each committee is marked layer "main" or "more". Main (loaded with the Money Trail page): committees that are not a
+candidate's campaign with at least --main-receipts in receipts, independent expenditure filers with at least --main-ie,
+candidate campaigns with at least --main-candidate, and the ALWAYS list. More: every other committee; add_fec_batch.py
+writes those to small files that the page loads only when someone searches for or opens that committee.
 For every committee picked, the same depth:
   - its --depth largest itemized receipts from groups (contributions and transfers; individuals never kept),
   - its --depth largest payments (operating expenses, money to other committees and candidates; refunds left out),
   - its --depth largest independent expenditures (money spent for or against a candidate, with who was paid).
-Individuals are never saved: entity type IND is dropped while reading.
+Individuals are never saved: entity types IND and CAN are dropped while reading, and a person who files independent
+expenditures under a C9 ID (name written "LAST, FIRST") is not picked.
 The result (OUT.json) is read by add_fec_batch.py.
 """
 import csv, datetime, heapq, io, json, os, re, sys, urllib.request, zipfile
 
-args, opts = [], {'--min-receipts': 5000000.0, '--min-ie': 1000000.0, '--depth': 25}
+args, opts = [], {'--min-receipts': 1.0, '--min-ie': 1.0, '--min-candidate': 1.0, '--depth': 25,
+                  '--main-receipts': 5000000.0, '--main-ie': 1000000.0, '--main-candidate': 5000000.0}
 flags = set()
 _a = iter(sys.argv[1:])
 for x in _a:
@@ -56,7 +67,7 @@ ALWAYS = {
 }
 NEVER = {'C00530766'}  # Women Speak Out PAC: was in the old pull list by mistake (wrong ID for Women Vote)
 
-FILES = ['cm26.zip', 'cn26.zip', 'webk26.zip', 'pas226.zip', 'oth26.zip', 'oppexp26.zip', 'indiv26.zip',
+FILES = ['cm26.zip', 'cn26.zip', 'webk26.zip', 'weball26.zip', 'pas226.zip', 'oth26.zip', 'oppexp26.zip', 'indiv26.zip',
          'independent_expenditure_2026.csv']
 HOSTS = ['https://www.fec.gov/files/bulk-downloads/2026/',
          'https://cg-519a459a-0ea3-42c2-b7bc-fa1143481f74.s3-us-gov-west-1.amazonaws.com/bulk-downloads/2026/']
@@ -161,6 +172,13 @@ for r in rows('webk26.zip'):
                         'independent_expenditures': money(r[23]) or 0, 'through': d8(r[26]) if '/' not in r[26] else
                         (r[26][6:10] + '-' + r[26][0:2] + '-' + r[26][3:5])}
 
+# candidate totals (weball26): CAND_ID NAME ICI PTY_CD PARTY TTL_RECEIPTS TRANS_FROM_AUTH TTL_DISB ... CVG_END_DT (27)
+cand_tot = {}
+for r in rows('weball26.zip'):
+    if len(r) >= 28:
+        cand_tot[r[0]] = {'receipts': money(r[5]) or 0, 'disbursements': money(r[7]) or 0,
+                          'through': r[27][6:10] + '-' + r[27][0:2] + '-' + r[27][3:5] if '/' in r[27] else d8(r[27])}
+
 # independent expenditure file (24 and 48 hour reports, also C9 filers that are not committees)
 ie_csv = []
 with open(os.path.join(BULK, 'independent_expenditure_2026.csv'), encoding='latin-1', newline='') as fh:
@@ -176,12 +194,41 @@ for cid, t in totals.items():
         continue
     if t['receipts'] >= opts['--min-receipts']:
         pick[cid] = 'receipts of at least $' + format(int(opts['--min-receipts']), ',')
+ORG_WORD = re.compile(r'\b(INC|LLC|PAC|FUND|COMMITTEE|COMM|ASSOC|ASSOCIATION|UNION|COUNCIL|PARTY|CAUCUS|CHURCH|PROJECT|'
+                      r'FOUNDATION|TRUST|CAMPAIGN|NETWORK|ACTION|LEAGUE|COALITION|CORP|CORPORATION|SOCIETY|CENTER|ALLIANCE|'
+                      r'AMERICA|LOCAL|LLP|LP|CO|COMPANY|GROUP|MEDIA|BANK|SERVICES|STRATEGIES|PARTNERS)\b', re.I)
+
+
+def looks_person(name):  # filings write a person as "LAST, FIRST"
+    parts = str(name or '').split(',')
+    return len(parts) == 2 and not ORG_WORD.search(name) and all(p.strip() and len(p.strip().split()) <= 3 for p in parts)
+
+
+people_ie = set()  # a person can file independent expenditures under a C9 ID: people are never kept
+ie_name = {x.get('spe_id', ''): x.get('spe_nam', '') for x in ie_csv}
 for cid, tot in ie_tot.items():
+    nm = (cm.get(cid) or {}).get('name') or ie_name.get(cid, '')
+    if cid.startswith('C9') and looks_person(nm):
+        people_ie.add(cid)
+for cid, tot in ie_tot.items():
+    if cid in people_ie:
+        continue
     if cid.startswith('C9') and tot >= opts['--min-ie'] and cid not in NEVER:
         pick.setdefault(cid, 'independent expenditures of at least $' + format(int(opts['--min-ie']), ','))
+cand_of = {}  # campaign committee -> candidate
+if opts['--min-candidate'] > 0:
+    for cand, t in cand_tot.items():
+        pcc = (cn.get(cand) or {}).get('pcc') or ''
+        if re.match(r'^C\d{8}$', pcc) and pcc not in NEVER and t['receipts'] >= opts['--min-candidate']:
+            cand_of[pcc] = cand
+            if pcc not in totals or totals[pcc]['type'] in ('H', 'S', 'P'):
+                totals[pcc] = {'name': (cm.get(pcc) or {}).get('name') or cn[cand]['name'], 'type': (cm.get(pcc) or {}).get('type') or cand[0],
+                               'receipts': t['receipts'], 'disbursements': t['disbursements'], 'independent_expenditures': 0,
+                               'through': t['through']}
+            pick.setdefault(pcc, 'candidate campaign with receipts of at least $' + format(int(opts['--min-candidate']), ','))
 for cid in ALWAYS:
     pick.setdefault(cid, 'named on the Money Trail list')
-print('committees picked', len(pick), flush=True)
+print('committees picked', len(pick), ' people left out (C9 filers):', len(people_ie), flush=True)
 
 # ---------- keep the largest N per committee and kind ----------
 heaps = {}  # (cid, kind) -> heap of (amount, sub_id, row)
@@ -220,7 +267,7 @@ def rec_line(tp):
 
 def receipt(r, src):
     # itcont / itoth: CMTE_ID AMNDT RPT_TP PGI IMAGE TRAN_TP ENTITY NAME CITY ST ZIP EMP OCC DATE AMT OTHER_ID TRAN_ID FILE MEMO MEMO_TEXT SUB_ID
-    if len(r) < 21 or r[0] not in pick or r[6] == 'IND' or r[18] == 'X':
+    if len(r) < 21 or r[0] not in pick or r[6] in ('IND', 'CAN') or r[18] == 'X':  # people (and candidates) are never kept
         return
     line = rec_line(r[5])
     if not line:
@@ -237,6 +284,8 @@ def receipt(r, src):
 
 
 def payment(cid, sub, amount, row):
+    if row.get('entity_type') == 'CAN' and not row.get('recipient_committee_id'):
+        return  # paid to a candidate as a person (for example a reimbursement): people are never kept
     keep(cid, 'disbursements', amount, sub, row)
 
 
@@ -326,7 +375,7 @@ for r in rows('oth26.zip', skip=lambda ln: '|IND|' in ln):
 print('reading oppexp26 (operating expenses)', flush=True)
 for r in rows('oppexp26.zip'):
     # CMTE_ID AMNDT RPT_YR RPT_TP IMAGE LINE FORM SCHED NAME CITY ST ZIP DATE AMT PGI PURPOSE CAT CAT_DESC MEMO MEMO_TEXT ENTITY SUB_ID FILE TRAN_ID BACK_REF
-    if len(r) < 24 or r[0] not in pick or r[18] == 'X' or r[20] == 'IND' or r[5].upper().lstrip('SB').startswith('28'):
+    if len(r) < 24 or r[0] not in pick or r[18] == 'X' or r[20] in ('IND', 'CAN') or r[5].upper().lstrip('SB').startswith('28'):
         continue
     amt = money(r[13])
     payment(r[0], r[21], amt, {
@@ -353,16 +402,34 @@ for cid, why in sorted(pick.items(), key=lambda kv: -(totals.get(kv[0], {}).get(
     t = totals.get(cid) or {}
     got = {k: [x[2] for x in sorted(heaps.get((cid, k), []), reverse=True)]
            for k in ('receipts', 'disbursements', 'independent_expenditures')}
-    out.append({'committee_id': cid, 'committee_name': c.get('name') or t.get('name') or cid,
+    t0 = totals.get(cid) or {}
+    if cid in ALWAYS:
+        layer = 'main'
+    elif cid in cand_of:
+        layer = 'main' if (t0.get('receipts') or 0) >= opts['--main-candidate'] else 'more'
+    else:
+        layer = 'main' if ((t0.get('receipts') or 0) >= opts['--main-receipts'] or
+                           (cid.startswith('C9') and ie_tot.get(cid, 0) >= opts['--main-ie'])) else 'more'
+    if layer == 'main' and why.startswith('receipts of at least'):
+        why = 'receipts of at least $' + format(int(opts['--main-receipts']), ',')
+    elif layer == 'main' and why.startswith('candidate campaign'):
+        why = 'candidate campaign with receipts of at least $' + format(int(opts['--main-candidate']), ',')
+    elif layer == 'main' and why.startswith('independent expenditures'):
+        why = 'independent expenditures of at least $' + format(int(opts['--main-ie']), ',')
+    out.append({'committee_id': cid, 'layer': layer, 'committee_name': c.get('name') or t.get('name') or cid,
                 'committee_type': c.get('type') or t.get('type') or '', 'committee_type_full': TYPE_FULL.get(c.get('type') or t.get('type') or '', ''),
                 'party': c.get('party') or '', 'connected_org': c.get('connected_org') or '', 'state': c.get('state') or '',
+                'candidate': ({'id': cand_of[cid], 'name': cn[cand_of[cid]]['name'], 'party': cn[cand_of[cid]]['party'],
+                               'office': cn[cand_of[cid]]['office'], 'state': cn[cand_of[cid]]['state'],
+                               'district': cn[cand_of[cid]]['district']} if cid in cand_of else None),
                 'why': why, 'totals': {'receipts': t.get('receipts'), 'disbursements': t.get('disbursements'),
                                        'independent_expenditures': t.get('independent_expenditures') or round(ie_tot.get(cid, 0), 2),
                                        'through': t.get('through')},
                 'receipts_request': 'fec bulk', 'disbursements_request': 'fec bulk',
                 'receipts_retrieved': now, 'disbursements_retrieved': now, **got})
 res = {'source': 'fec_bulk', 'retrieved': now, 'files': meta, 'depth': DEPTH,
-       'rule': {'min_receipts': opts['--min-receipts'], 'min_ie': opts['--min-ie'], 'always': sorted(ALWAYS), 'never': sorted(NEVER)},
+       'rule': {'min_receipts': opts['--min-receipts'], 'min_ie': opts['--min-ie'], 'min_candidate': opts['--min-candidate'],
+                'main_receipts': opts['--main-receipts'], 'main_ie': opts['--main-ie'], 'main_candidate': opts['--main-candidate'], 'always': sorted(ALWAYS), 'never': sorted(NEVER)},
        'committees': out}
 with open(OUT + '.part', 'w', encoding='utf-8') as f:
     json.dump(res, f)

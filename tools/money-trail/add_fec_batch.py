@@ -29,7 +29,7 @@
 # File format (Nov 2026, to keep the page fast on phones): records are stored as short rows plus one table of
 # words, and the end of fec-data.js turns them back into full records in the browser. expand() below does the
 # same in Python for the other builders.
-import glob, io, json, os, re, sys, zipfile
+import glob, io, json, os, re, sys, zipfile, zlib
 from collections import Counter
 from urllib.parse import parse_qs
 
@@ -39,6 +39,13 @@ CMTE_NOTE = ('Committee whose FEC filings were pulled for the Money Trail. Recor
              'groups, its largest payments and its largest independent expenditures, with the same depth for every committee.')
 OTHER_NOTE = 'Named on an FEC filing of a committee in the Money Trail.'
 NAME_NOTE = 'Name as written on the filing. A group with the same name elsewhere is not proven to be the same group.'
+MORE_NOTE = ("Committee with its own FEC filings on the Money Trail. They load when you open it: search for its name "
+             "and pick it under More FEC committees.")
+SHARDS = 256  # fec-more/NNN.json files; a committee always lands in the same file (crc32 of its FEC ID)
+
+
+def shard_of(cid):
+    return '%03d' % (zlib.crc32(cid.encode()) % SHARDS)
 
 
 def expand(F):
@@ -125,7 +132,8 @@ def main():
 
     def add_committee(cid, name, ctype, sched, rows, retrieved):
         c = pulled.setdefault(cid, {'name': None, 'type': None, 'receipts': None, 'disbursements': None, 'ies': [],
-                                    'retrieved': '', 'failed': set(), 'party': '', 'totals': None, 'why': ''})
+                                    'retrieved': '', 'failed': set(), 'party': '', 'totals': None, 'why': '',
+                                    'layer': 'main', 'candidate': None})
         c['name'] = c['name'] or name
         c['type'] = c['type'] or ctype
         if c[sched] is None or len(rows) > len(c[sched]):
@@ -175,6 +183,8 @@ def main():
                 p['party'] = c.get('party') or p['party']
                 p['totals'] = c.get('totals') or p['totals']
                 p['why'] = c.get('why') or p['why']
+                p['layer'] = c.get('layer') or p['layer']
+                p['candidate'] = c.get('candidate') or p['candidate']
                 # A schedule whose request failed (for example HTTP 429) has no request recorded: mark it missing.
                 for sched, key in (('receipts', 'receipts_request'), ('disbursements', 'disbursements_request')):
                     if c.get(key):
@@ -264,7 +274,10 @@ def main():
             print(f'note {cid}: {missing[0]} failed to download in the pull; adding the other schedule only')
             c[missing[0]] = []
         if bulk and not (c['receipts'] or c['disbursements'] or c['ies']):
-            empty.append({'committee_id': cid, 'name': display_name(cid, c['name']), 'why': c['why']})
+            if c['layer'] == 'more':
+                stats['more_no_records'] += 1
+            else:
+                empty.append({'committee_id': cid, 'name': display_name(cid, c['name']), 'why': c['why']})
             continue
         # Bulk: a committee that reported payments in its totals but has no payment lines in the bulk files yet
         # (the FEC has not finished processing them) says so, like a failed download.
@@ -276,6 +289,10 @@ def main():
                            'retrieved': c['retrieved'] or committees.get(cid, {}).get('retrieved', ''), 'missing': missing}
         if bulk:
             committees[cid].update({'party': c['party'], 'totals': c['totals'], 'why': c['why'], 'retrieved': bulk_day + 'T00:00:00Z'})
+            if c['candidate']:
+                committees[cid]['candidate'] = c['candidate']
+            if c['layer'] == 'more':
+                committees[cid]['layer'] = 'more'
             if lag:
                 committees[cid]['lag'] = ['disbursements']
         ents['fec:' + cid] = {'entity_id': 'fec:' + cid, 'legal_or_reported_name': cname,
@@ -391,14 +408,35 @@ def main():
     for t in txs:  # one spelling per entity: the name of its entity (two filings can space a name differently)
         t['source_name'] = ents[t['source_entity_id']]['legal_or_reported_name']
         t['recipient_name'] = ents[t['recipient_entity_id']]['legal_or_reported_name']
+    # ---------- two layers: main (fec-data.js, loaded with the page) and more (fec-more/, loaded when opened) ----------
+    more_c = {k: v for k, v in committees.items() if v.get('layer') == 'more'}
+    main_c = {k: v for k, v in committees.items() if v.get('layer') != 'more'}
+    for v in committees.values():
+        v.pop('layer', None)
+    main_tx = [t for t in txs if t['fec_committee_id'] not in more_c]
+    used_main = ({t['source_entity_id'] for t in main_tx} | {t['recipient_entity_id'] for t in main_tx} |
+                 {'fec:' + c for c in main_c})
+    main_ents = {}
+    for k in used_main:
+        e = ents[k]
+        if k[4:] in more_c:  # its own filings are in fec-more: say so instead of "pulled for the Money Trail"
+            e = dict(e, notes=MORE_NOTE)
+        main_ents[k] = e
+    more_tx = [t for t in txs if t['fec_committee_id'] in more_c]
+
     if bulk:
         rule = bulk['rule']
-        meta = {'source': 'FEC bulk data files (fec.gov/data/browse-data, 2025-2026): committees, totals, receipts, '
-                          'payments and independent expenditures',
-                'method': (f"Every committee that is not a candidate's own campaign with at least ${int(rule['min_receipts']):,} "
-                           f"in total receipts this cycle (FEC totals file), every independent expenditure filer with at least "
-                           f"${int(rule['min_ie']):,} in independent expenditures, and the groups already on the Money Trail. "
-                           f"For each one, the same depth: its {bulk['depth']} largest itemized receipts from groups, its "
+        cand_rule = (f"the campaign committee of every candidate with at least ${int(rule['main_candidate']):,} in receipts, "
+                     if rule.get('min_candidate', -1) > 0 and rule.get('main_candidate') else '')
+        meta = {'source': 'FEC bulk data files (fec.gov/data/browse-data, 2025-2026): committees, candidates, totals, '
+                          'receipts, payments and independent expenditures',
+                'method': (f"Loaded with the page: every committee that is not a candidate's own campaign with at least "
+                           f"${int(rule.get('main_receipts', rule['min_receipts'])):,} in total receipts this cycle (FEC totals file), "
+                           f"every independent expenditure filer with at least ${int(rule.get('main_ie', rule['min_ie'])):,} "
+                           f"in independent expenditures, {cand_rule}and the groups already on the Money Trail. "
+                           + (f"{len(more_c):,} more committees (every other committee and candidate campaign with money in the "
+                              "FEC files, every party alike) load when you search for one or open it. " if more_c else '')
+                           + f"For each one, the same depth: its {bulk['depth']} largest itemized receipts from groups, its "
                            f"{bulk['depth']} largest payments and its {bulk['depth']} largest independent expenditures, "
                            "then memo lines, refunds and individuals removed."),
                 'files': bulk['files'], 'depth': bulk['depth'], 'no_records': empty}
@@ -406,50 +444,99 @@ def main():
         meta = {'source': 'FEC OpenFEC API v1 (api.open.fec.gov), Schedule A and Schedule B',
                 'method': 'For every committee: its 100 largest itemized receipts from groups and its 100 largest disbursements '
                           'for the 2026 cycle, then memo lines, refunds and individuals removed.'}
-    meta.update({'evidence_tier': 'fec_filing', 'records': len(txs), 'entities': len(ents), 'committees': len(committees),
+    meta.update({'evidence_tier': 'fec_filing', 'records': len(main_tx), 'entities': len(main_ents), 'committees': len(main_c),
                  'updated': max([c['retrieved'] for c in committees.values()] or [''])[:10]})
+    if more_c:
+        meta['more'] = {'committees': len(more_c), 'records': len(more_tx), 'shards': SHARDS, 'index': 'fec-more/index.json'}
 
-    # ---------- compact ----------
-    S, SI = [], {}
-
-    def si(x):
-        x = '' if x is None else str(x)
-        if x not in SI:
-            SI[x] = len(S); S.append(x)
-        return SI[x]
-
-    E = {}
-    cmset = set(committees)
-    for e in sorted(ents.values(), key=lambda e: e['entity_id']):
-        c = e['entity_id'][4:] if e['entity_id'].startswith('fec:') else ''
-        default = CMTE_NOTE if c in cmset else OTHER_NOTE if c else NAME_NOTE
-        E[e['entity_id']] = [e['legal_or_reported_name'], si(e['entity_type'])] + ([si(e['notes'])] if e['notes'] != default else [])
     NOTE_RX = re.compile(r'^(From the FEC.*?\. )(?:Address on the filing: (.*?)\. )?(?:Description on the filing: (.*?)\. )?'
                          + re.escape(NO_INFERENCE) + '$', re.S)
-    rows = []
-    for t in txs:
-        sub = t['transaction_id'][4:]
-        m = NOTE_RX.match(t['notes'] or '')
-        if m:
-            nh, npl, nd = si(m.group(1)), si(m.group(2) or ''), si(m.group(3) or '')
-        else:
-            nh, npl, nd = si(t['notes']), -1, -1
-        fu = t['filing_url'] or ''
-        img = fu[len(IMG):] if fu.startswith(IMG) and fu[len(IMG):].isdigit() else fu
-        fid = t['filing_id'] or ''
-        fil = si(fid[:-len('; sub_id ' + sub)]) if fid.endswith('; sub_id ' + sub) else -1 - si(fid)
-        rows.append([sub, si(t['source_entity_id']), si(t['recipient_entity_id']), t['amount_usd'], t['transaction_date'],
-                     si(t['activity_type']), img, fil, si(t['amendment_status']), nh, npl, nd, t['fec_committee_id'],
-                     si(t['date_kind']), si(t['confidence'])])
-    data = {'meta': meta, 'committees': sorted(committees.values(), key=lambda c: c['committee_id']), 's': S, 'e': E, 'rows': rows}
-    # self-check: the compact form must give back exactly the same records
-    back, back_e = expand(json.loads(json.dumps(data)))
-    if back != txs:
-        for x, y in zip(back, txs):
-            if x != y:
-                print({k: (x.get(k), y.get(k)) for k in y if x.get(k) != y.get(k)}); break
-        sys.exit("compact rows do not expand to the same records")
-    assert sorted(back_e, key=lambda e: e['entity_id']) == sorted(ents.values(), key=lambda e: e['entity_id']), 'entities differ'
+
+    def compact(cms, txl, entd):
+        S, SI = [], {}
+
+        def si(x):
+            x = '' if x is None else str(x)
+            if x not in SI:
+                SI[x] = len(S); S.append(x)
+            return SI[x]
+
+        E = {}
+        cmset = set(cms)
+        for e in sorted(entd.values(), key=lambda e: e['entity_id']):
+            c = e['entity_id'][4:] if e['entity_id'].startswith('fec:') else ''
+            default = CMTE_NOTE if c in cmset else OTHER_NOTE if c else NAME_NOTE
+            E[e['entity_id']] = [e['legal_or_reported_name'], si(e['entity_type'])] + ([si(e['notes'])] if e['notes'] != default else [])
+        rows = []
+        for t in txl:
+            sub = t['transaction_id'][4:]
+            m = NOTE_RX.match(t['notes'] or '')
+            if m:
+                nh, npl, nd = si(m.group(1)), si(m.group(2) or ''), si(m.group(3) or '')
+            else:
+                nh, npl, nd = si(t['notes']), -1, -1
+            fu = t['filing_url'] or ''
+            img = fu[len(IMG):] if fu.startswith(IMG) and fu[len(IMG):].isdigit() else fu
+            fid = t['filing_id'] or ''
+            fil = si(fid[:-len('; sub_id ' + sub)]) if fid.endswith('; sub_id ' + sub) else -1 - si(fid)
+            rows.append([sub, si(t['source_entity_id']), si(t['recipient_entity_id']), t['amount_usd'], t['transaction_date'],
+                         si(t['activity_type']), img, fil, si(t['amendment_status']), nh, npl, nd, t['fec_committee_id'],
+                         si(t['date_kind']), si(t['confidence'])])
+        d = {'committees': sorted(cms.values(), key=lambda c: c['committee_id']), 's': S, 'e': E, 'rows': rows}
+        # self-check: the compact form must give back exactly the same records
+        back, back_e = expand(json.loads(json.dumps(d)))
+        if back != txl:
+            for x, y in zip(back, txl):
+                if x != y:
+                    print({k: (x.get(k), y.get(k)) for k in y if x.get(k) != y.get(k)}); break
+            sys.exit("compact rows do not expand to the same records")
+        assert sorted(back_e, key=lambda e: e['entity_id']) == sorted(entd.values(), key=lambda e: e['entity_id']), 'entities differ'
+        return d
+
+    data = {'meta': meta, **compact(main_c, main_tx, main_ents)}
+
+    # fec-more: one small file per group of committees, plus an index of names for the search box
+    MORE = site + 'money-trail/fec-more/'
+    if bulk:
+        os.makedirs(MORE, exist_ok=True)
+        for f in glob.glob(MORE + '*.json'):
+            os.remove(f)
+    if more_c:
+        groups = {}
+        for cid in more_c:
+            groups.setdefault(shard_of(cid), []).append(cid)
+        by_c = {}
+        for t in more_tx:
+            by_c.setdefault(t['fec_committee_id'], []).append(t)
+        OFF = {'H': 'House', 'S': 'Senate', 'P': 'President'}
+        index, kinds = [], {}
+        more_bytes = 0
+        for sh, cids in sorted(groups.items()):
+            txl = [t for cid in sorted(cids) for t in by_c.get(cid, [])]
+            used = {t['source_entity_id'] for t in txl} | {t['recipient_entity_id'] for t in txl} | {'fec:' + c for c in cids}
+            d = compact({c: more_c[c] for c in cids}, txl, {k: ents[k] for k in used})
+            b = json.dumps(d, ensure_ascii=False, separators=(',', ':'))
+            open(MORE + sh + '.json', 'w', encoding='utf-8').write(b)
+            more_bytes += len(b.encode('utf-8'))
+            for cid in cids:
+                c = more_c[cid]
+                cd = c.get('candidate')
+                if cd:
+                    where = (cd.get('state') or '') + ('-' + cd['district'] if cd.get('office') == 'H' and cd.get('district') not in ('', None, '00') else '')
+                    label = ' '.join(x for x in (OFF.get(cd.get('office'), ''), where) if x) + ' candidate campaign' + (', ' + cd['party'] if cd.get('party') else '')
+                else:
+                    label = (c.get('committee_type') or 'Committee') + (', ' + c['party'] if c.get('party') else '')
+                if label not in kinds:
+                    kinds[label] = len(kinds)
+                index.append([cid, c['name'], round((c.get('totals') or {}).get('receipts') or 0), kinds[label], len(by_c.get(cid, []))]
+                             + ([cd.get('name') or ''] if cd else []))
+        index.sort(key=lambda r: -r[2])
+        # the file of a committee is not stored: it is crc32(FEC ID) % shards, three digits (fec-more.js does the same)
+        idx = {'updated': meta['updated'], 'committees': len(index), 'records': len(more_tx), 'shards': SHARDS,
+               'columns': ['fec_id', 'name', 'receipts', 'kind', 'lines', 'candidate'], 'kinds': list(kinds), 'c': index}
+        ib = json.dumps(idx, ensure_ascii=False, separators=(',', ':'))
+        open(MORE + 'index.json', 'w', encoding='utf-8').write(ib)
+        print(f'fec-more: {len(more_c)} committees, {len(more_tx)} records, {len(groups)} files, {more_bytes} bytes, index {len(ib.encode())} bytes')
     blob = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
     js = ('// FEC filing records for the Money Trail. Made by tools/money-trail/add_fec_batch.py; do not edit by hand.\n'
           '// Every record comes from the FEC public data and links to its filing. Individuals are not included.\n'
@@ -475,21 +562,21 @@ def main():
 
     # bump the cache stamp so browsers load the new batch
     h = open(INDEX, encoding='utf-8').read()
-    stamp = 'f' + str(len(txs))
+    stamp = 'f' + re.sub(r'\D', '', meta['updated']) + 'n' + str(len(main_tx))  # date and count, so a daily change is picked up
     h2 = re.sub(r'fec-data\.js\?v=[A-Za-z0-9]+', 'fec-data.js?v=' + stamp, h)
     if h2 != h:
         open(INDEX, 'w', encoding='utf-8').write(h2)
 
-    per = Counter(t['fec_committee_id'] for t in txs)
-    print('committees:', len(committees))
+    per = Counter(t['fec_committee_id'] for t in main_tx)
+    print('committees:', len(main_c), ' (more, loaded when opened:', len(more_c), ')')
     for cid, n in sorted(per.items(), key=lambda kv: -kv[1])[:5]:
         print(f'  {cid}: {n} records')
     if empty:
         print('no records in the FEC files for:', ', '.join(f"{e['name']} ({e['committee_id']})" for e in empty))
-    lagged = [c['name'] for c in committees.values() if c.get('lag')]
+    lagged = [c['name'] for c in main_c.values() if c.get('lag')]
     if lagged:
         print('payments not processed by the FEC yet:', len(lagged), ':', ', '.join(lagged[:12]) + (' ...' if len(lagged) > 12 else ''))
-    print('records:', len(txs), ' entities:', len(ents), ' stamp:', stamp, ' file bytes:', len(js.encode('utf-8')))
+    print('records:', len(main_tx), ' entities:', len(main_ents), ' stamp:', stamp, ' file bytes:', len(js.encode('utf-8')))
     print('this run:', dict(stats))
 
 
