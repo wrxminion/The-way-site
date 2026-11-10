@@ -5,7 +5,7 @@
  "source_ids": [
   "ga-scytl"
  ],
- "updated_at": "2026-11-10T09:47:15Z",
+ "updated_at": "2026-11-10T09:58:08Z",
  "certified": false,
  "contests": [
   {
@@ -32244,6 +32244,212 @@
     "total": 12,
     "unit": "counties"
    },
+   "counties": [
+    {
+     "name": "Banks County",
+     "choices": [
+      {
+       "id": "andrew-clyde-i",
+       "votes": 6196
+      },
+      {
+       "id": "caitlyn-gegen",
+       "votes": 1060
+      }
+     ],
+     "precincts": {
+      "reporting": 13,
+      "total": 13
+     }
+    },
+    {
+     "name": "Fannin County",
+     "choices": [
+      {
+       "id": "andrew-clyde-i",
+       "votes": 9133
+      },
+      {
+       "id": "caitlyn-gegen",
+       "votes": 2463
+      }
+     ],
+     "precincts": {
+      "reporting": 12,
+      "total": 12
+     }
+    },
+    {
+     "name": "Gilmer County",
+     "choices": [
+      {
+       "id": "andrew-clyde-i",
+       "votes": 10771
+      },
+      {
+       "id": "caitlyn-gegen",
+       "votes": 3205
+      }
+     ],
+     "precincts": {
+      "reporting": 13,
+      "total": 13
+     }
+    },
+    {
+     "name": "Gwinnett County",
+     "choices": [
+      {
+       "id": "andrew-clyde-i",
+       "votes": 48802
+      },
+      {
+       "id": "caitlyn-gegen",
+       "votes": 75411
+      }
+     ],
+     "precincts": {
+      "reporting": 50,
+      "total": 50
+     }
+    },
+    {
+     "name": "Habersham County",
+     "choices": [
+      {
+       "id": "andrew-clyde-i",
+       "votes": 13457
+      },
+      {
+       "id": "caitlyn-gegen",
+       "votes": 3933
+      }
+     ],
+     "precincts": {
+      "reporting": 4,
+      "total": 4
+     }
+    },
+    {
+     "name": "Hall County",
+     "choices": [
+      {
+       "id": "andrew-clyde-i",
+       "votes": 29261
+      },
+      {
+       "id": "caitlyn-gegen",
+       "votes": 18143
+      }
+     ],
+     "precincts": {
+      "reporting": 22,
+      "total": 22
+     }
+    },
+    {
+     "name": "Jackson County",
+     "choices": [
+      {
+       "id": "andrew-clyde-i",
+       "votes": 25347
+      },
+      {
+       "id": "caitlyn-gegen",
+       "votes": 10511
+      }
+     ],
+     "precincts": {
+      "reporting": 4,
+      "total": 4
+     }
+    },
+    {
+     "name": "Rabun County",
+     "choices": [
+      {
+       "id": "andrew-clyde-i",
+       "votes": 5734
+      },
+      {
+       "id": "caitlyn-gegen",
+       "votes": 2002
+      }
+     ],
+     "precincts": {
+      "reporting": 1,
+      "total": 1
+     }
+    },
+    {
+     "name": "Stephens County",
+     "choices": [
+      {
+       "id": "andrew-clyde-i",
+       "votes": 7141
+      },
+      {
+       "id": "caitlyn-gegen",
+       "votes": 2146
+      }
+     ],
+     "precincts": {
+      "reporting": 1,
+      "total": 1
+     }
+    },
+    {
+     "name": "Towns County",
+     "choices": [
+      {
+       "id": "andrew-clyde-i",
+       "votes": 5642
+      },
+      {
+       "id": "caitlyn-gegen",
+       "votes": 1449
+      }
+     ],
+     "precincts": {
+      "reporting": 2,
+      "total": 2
+     }
+    },
+    {
+     "name": "Union County",
+     "choices": [
+      {
+       "id": "andrew-clyde-i",
+       "votes": 11332
+      },
+      {
+       "id": "caitlyn-gegen",
+       "votes": 2951
+      }
+     ],
+     "precincts": {
+      "reporting": 11,
+      "total": 11
+     }
+    },
+    {
+     "name": "White County",
+     "choices": [
+      {
+       "id": "andrew-clyde-i",
+       "votes": 10170
+      },
+      {
+       "id": "caitlyn-gegen",
+       "votes": 2379
+      }
+     ],
+     "precincts": {
+      "reporting": 10,
+      "total": 10
+     }
+    }
+   ],
    "called": {
     "winner": "andrew-clyde-i",
     "by": "AP (not certified)",
@@ -35569,43 +35775,7 @@
     "reporting": 2,
     "total": 2,
     "unit": "counties"
-   },
-   "counties": [
-    {
-     "name": "Cherokee County",
-     "choices": [
-      {
-       "id": "jason-t-dickerson-i",
-       "votes": 40302
-      },
-      {
-       "id": "kori-simmons",
-       "votes": 15632
-      }
-     ],
-     "precincts": {
-      "reporting": 18,
-      "total": 18
-     }
-    },
-    {
-     "name": "Fulton County",
-     "choices": [
-      {
-       "id": "jason-t-dickerson-i",
-       "votes": 19790
-      },
-      {
-       "id": "kori-simmons",
-       "votes": 17745
-      }
-     ],
-     "precincts": {
-      "reporting": 29,
-      "total": 29
-     }
-    }
-   ]
+   }
   },
   {
    "id": "ga-state-senate-district-22",
@@ -35629,22 +35799,7 @@
     "reporting": 1,
     "total": 1,
     "unit": "counties"
-   },
-   "counties": [
-    {
-     "name": "Richmond County",
-     "choices": [
-      {
-       "id": "harold-v-jones-ii-i",
-       "votes": 53405
-      }
-     ],
-     "precincts": {
-      "reporting": 57,
-      "total": 57
-     }
-    }
-   ]
+   }
   },
   {
    "id": "ga-state-senate-district-23",
