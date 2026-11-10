@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-10T02:05:27Z",
+ "updated_at": "2026-11-10T02:16:15Z",
  "certified": false,
  "contests": [
   {
@@ -1130,7 +1130,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-1",
@@ -2753,7 +2759,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "pallone",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:06:31.009Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-7",
@@ -68041,7 +68053,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-middlesex-0005-house-of-representatives-cd6",
@@ -68082,7 +68100,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "frank-pallone-jr",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T02:06:31.009Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-middlesex-0006-house-of-representatives-cd12",
@@ -68137,7 +68161,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "adam-hamawy",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:26:52.699Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-middlesex-0007-county-surrogate",
@@ -137077,7 +137107,6 @@
   "Essex",
   "Hudson",
   "Hunterdon",
-  "Middlesex",
   "Monmouth",
   "Morris",
   "Ocean",
@@ -137089,6 +137118,7 @@
  "counties_missing": [
   "Gloucester",
   "Mercer",
+  "Middlesex",
   "Passaic",
   "Warren"
  ]
