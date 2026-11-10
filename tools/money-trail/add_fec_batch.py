@@ -111,6 +111,12 @@ def main():
         'C00571703': 'SLF PAC (SENATE LEADERSHIP FUND)',
         'C00504530': 'CLF (CONGRESSIONAL LEADERSHIP FUND)',
         'C00687103': 'AFP ACTION (AMERICANS FOR PROSPERITY ACTION)',
+        'C00797670': 'AIPAC PAC (AMERICAN ISRAEL PUBLIC AFFAIRS COMMITTEE POLITICAL ACTION COMMITTEE)',
+    }
+    # The same for a group with no FEC ID that is known by its short name, so a search for that name finds it (D265).
+    # Only the name shown changes; the dot's ID stays the name as written on the filing.
+    READABLE_NAME = {
+        'AMERICAN ISRAEL PUBLIC AFFAIRS COMMITTEE': 'AIPAC (AMERICAN ISRAEL PUBLIC AFFAIRS COMMITTEE)',
     }
     ENTITY_TYPE = {'PAC': 'Political committee (FEC)', 'CCM': 'Candidate committee (FEC)', 'PTY': 'Party committee (FEC)',
                    'COM': 'Committee (FEC)', 'ORG': 'Organization (as named on an FEC filing)', 'CAN': 'Candidate (FEC)'}
@@ -258,6 +264,7 @@ def main():
             return oid, oname
         oid = 'fecname:' + slug(other) + ('_' + st if st else '')
         oname = str(other).upper().strip()
+        oname = READABLE_NAME.get(oname, oname)
         if oid not in ents:
             ents[oid] = {'entity_id': oid, 'legal_or_reported_name': oname,
                          'entity_type': sched_word + ' with no FEC ID (as named on an FEC filing)',
@@ -523,6 +530,7 @@ def main():
         OFF = {'H': 'House', 'S': 'Senate', 'P': 'President'}
         index, kinds = [], {}
         more_bytes = 0
+        more_crc = 0  # changes whenever any fec-more file changes, so browsers load the new files (D265)
         for sh, cids in sorted(groups.items()):
             txl = [t for cid in sorted(cids) for t in by_c.get(cid, [])]
             used = {t['source_entity_id'] for t in txl} | {t['recipient_entity_id'] for t in txl} | {'fec:' + c for c in cids}
@@ -530,6 +538,7 @@ def main():
             b = json.dumps(d, ensure_ascii=False, separators=(',', ':'))
             open(MORE + sh + '.json', 'w', encoding='utf-8').write(b)
             more_bytes += len(b.encode('utf-8'))
+            more_crc = zlib.crc32(b.encode('utf-8'), more_crc)
             for cid in cids:
                 c = more_c[cid]
                 cd = c.get('candidate')
@@ -548,6 +557,7 @@ def main():
                'columns': ['fec_id', 'name', 'receipts', 'kind', 'lines', 'candidate'], 'kinds': list(kinds), 'c': index}
         ib = json.dumps(idx, ensure_ascii=False, separators=(',', ':'))
         open(MORE + 'index.json', 'w', encoding='utf-8').write(ib)
+        meta['more']['v'] = '%08x' % zlib.crc32(ib.encode('utf-8'), more_crc)
         print(f'fec-more: {len(more_c)} committees, {len(more_tx)} records, {len(groups)} files, {more_bytes} bytes, index {len(ib.encode())} bytes')
     blob = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
     js = ('// FEC filing records for the Money Trail. Made by tools/money-trail/add_fec_batch.py; do not edit by hand.\n'
@@ -574,7 +584,8 @@ def main():
 
     # bump the cache stamp so browsers load the new batch
     h = open(INDEX, encoding='utf-8').read()
-    stamp = 'f' + re.sub(r'\D', '', meta['updated']) + 'n' + str(len(main_tx))  # date and count, so a daily change is picked up
+    # date, count and a checksum of the file, so any change (even a renamed dot, D265) is picked up
+    stamp = 'f' + re.sub(r'\D', '', meta['updated']) + 'n' + str(len(main_tx)) + 'c' + '%08x' % zlib.crc32(js.encode('utf-8'))
     h2 = re.sub(r'fec-data\.js\?v=[A-Za-z0-9]+', 'fec-data.js?v=' + stamp, h)
     if h2 != h:
         open(INDEX, 'w', encoding='utf-8').write(h2)
