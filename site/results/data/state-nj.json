@@ -5,7 +5,7 @@
  "source_ids": [
   "nj-counties"
  ],
- "updated_at": "2026-11-10T01:40:17Z",
+ "updated_at": "2026-11-10T01:53:25Z",
  "certified": false,
  "contests": [
   {
@@ -23,35 +23,35 @@
      "name": "Cory BOOKER",
      "party": "DEM",
      "party_code": "D",
-     "votes": 1656599
+     "votes": 1570992
     },
     {
      "id": "murphy",
      "name": "Justin MURPHY",
      "party": "REP",
      "party_code": "R",
-     "votes": 913195
+     "votes": 887346
     },
     {
      "id": "fernandez",
      "name": "Veronica FERNANDEZ",
      "party": "NPC",
      "party_code": "O",
-     "votes": 43320
+     "votes": 41165
     },
     {
      "id": "kuniansky",
      "name": "NPD Joanne KUNIANSKY",
      "party": "NPD",
      "party_code": "O",
-     "votes": 22666
+     "votes": 21520
     },
     {
      "id": "write-in",
      "name": "Write-In",
      "party": null,
      "party_code": "O",
-     "votes": 5766
+     "votes": 5617
     },
     {
      "id": "choice",
@@ -783,8 +783,8 @@
     }
    ],
    "precincts": {
-    "reporting": 5129,
-    "total": 5261
+    "reporting": 4880,
+    "total": 4995
    },
    "counties": [
     {
@@ -973,20 +973,6 @@
       "fernandez": 4359,
       "kuniansky": 3160,
       "write-in": 525
-     }
-    },
-    {
-     "county": "Mercer",
-     "precincts": {
-      "reporting": 249,
-      "total": 266
-     },
-     "votes": {
-      "booker": 85607,
-      "murphy": 25849,
-      "fernandez": 2155,
-      "kuniansky": 1146,
-      "write-in": 149
      }
     },
     {
@@ -1673,7 +1659,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "hamawy",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:26:52.699Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-2",
@@ -2532,7 +2524,13 @@
     }
    ],
    "text": "Sum of the county feeds listed under counties; counties not yet fetched are missing from the total.",
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "conaway",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:35:41.078Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-u-s-house-district-4",
@@ -66194,7 +66192,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "cory-booker",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:00:53.549Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-mercer-2-u-s-house-of-representatives-3rd-congressional-district",
@@ -66249,7 +66253,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "herb-conaway",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:35:41.078Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-mercer-3-u-s-house-of-representatives-12th-congressional-district",
@@ -66304,7 +66314,13 @@
    },
    "category": "Federal",
    "subcategory": null,
-   "partial": true
+   "partial": true,
+   "called": {
+    "winner": "adam-hamawy",
+    "by": "AP (not certified)",
+    "at": "2026-11-04T01:26:52.699Z",
+    "kind": "ap"
+   }
   },
   {
    "id": "nj-mercer-4-sheriff",
@@ -137061,7 +137077,6 @@
   "Essex",
   "Hudson",
   "Hunterdon",
-  "Mercer",
   "Middlesex",
   "Monmouth",
   "Morris",
@@ -137073,6 +137088,7 @@
  ],
  "counties_missing": [
   "Gloucester",
+  "Mercer",
   "Passaic",
   "Warren"
  ]
