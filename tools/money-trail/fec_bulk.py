@@ -2,7 +2,7 @@
 """Money Trail: read the FEC bulk files and pick the records for the Money web. Standard library only, no API key.
 
 Usage (from the repo root, or anywhere):
-  python3 -I tools/money-trail/fec_bulk.py BULK_DIR OUT.json [--download] [--depth 25]
+  python3 -I tools/money-trail/fec_bulk.py BULK_DIR OUT.json [--download] [--depth 50]
          [--min-receipts 1] [--min-ie 1] [--min-candidate 1] [--main-receipts 5000000] [--main-ie 1000000] [--main-candidate 5000000]
 
 BULK_DIR holds the FEC 2025-2026 bulk files (https://www.fec.gov/data/browse-data/?tab=bulk-data):
@@ -27,15 +27,21 @@ candidate campaigns with at least --main-candidate, and the ALWAYS list. More: e
 writes those to small files that the page loads only when someone searches for or opens that committee.
 For every committee picked, the same depth:
   - its --depth largest itemized receipts from groups (contributions and transfers; individuals never kept),
-  - its --depth largest payments (operating expenses, money to other committees and candidates; refunds left out),
-  - its --depth largest independent expenditures (money spent for or against a candidate, with who was paid).
+  - its --depth largest payments for its own costs (operating expenses; refunds left out),
+  - (D264) its --depth largest gifts to other committees and candidates' campaigns (its own list, so many large bills
+    never push its gifts off the web),
+  - its --depth largest independent expenditures (money spent for or against a candidate, with who was paid),
+  - (D264) for a conduit (a committee that passes on earmarked contributions, transaction type 24T, for example
+    ActBlue, WinRed, AIPAC PAC, JStreetPAC, NORPAC), the --depth committees it passed the most earmarked money to.
+    Each earmarked line is one person's gift, so the lines are added together per receiving committee and the
+    people are never kept: one record says how much in total, how many lines, and links the largest line's filing.
 Individuals are never saved: entity types IND and CAN are dropped while reading, and a person who files independent
 expenditures under a C9 ID (name written "LAST, FIRST") is not picked.
 The result (OUT.json) is read by add_fec_batch.py.
 """
 import csv, datetime, heapq, io, json, os, re, sys, urllib.request, zipfile
 
-args, opts = [], {'--min-receipts': 1.0, '--min-ie': 1.0, '--min-candidate': 1.0, '--depth': 25,
+args, opts = [], {'--min-receipts': 1.0, '--min-ie': 1.0, '--min-candidate': 1.0, '--depth': 50,
                   '--main-receipts': 5000000.0, '--main-ie': 1000000.0, '--main-candidate': 5000000.0}
 flags = set()
 _a = iter(sys.argv[1:])
@@ -286,7 +292,10 @@ def receipt(r, src):
 def payment(cid, sub, amount, row):
     if row.get('entity_type') == 'CAN' and not row.get('recipient_committee_id'):
         return  # paid to a candidate as a person (for example a reimbursement): people are never kept
-    keep(cid, 'disbursements', amount, sub, row)
+    # Money given to another committee or a candidate's campaign gets its own list, so a big run of operating bills
+    # (for example processing fees) never pushes a committee's gifts to candidates off the web (D264).
+    kind = 'gifts' if row.get('recipient_committee_id') or row.get('disbursement_type') in ('24K', '24Z', '24G', '24T') else 'disbursements'
+    keep(cid, kind, amount, sub, row)
 
 
 ie_seen = set()  # (spender, tran_id) already read from the periodic reports
@@ -387,12 +396,66 @@ for r in rows('oppexp26.zip'):
         'disbursement_description': r[15], 'disbursement_purpose_category': r[17], 'committee_id': r[0],
         'two_year_transaction_period': '2026', 'bulk_file': 'oppexp26'})
 
-print('reading indiv26 (receipts; individuals skipped while reading, this is the big one)', flush=True)
+# Earmarked contributions passed on (24T): CMTE_ID is the conduit, OTHER_ID the committee that got the money, NAME the
+# person who gave it. The person is never kept: the lines are added together per (conduit, receiving committee).
+earmark = {}  # (conduit, receiving committee) -> [total, lines, largest amount, largest row, first date, last date]
+
+
+def earmarked(r):
+    if len(r) < 21 or r[0] not in pick or r[18] == 'X' or not re.match(r'^C\d{8}$', r[15]):
+        return
+    amt = money(r[14]) or 0
+    day = d8(r[13])
+    a = earmark.get((r[0], r[15]))
+    if a is None:
+        a = earmark[(r[0], r[15])] = [0.0, 0, 0.0, None, day, day]
+    a[0] += amt
+    a[1] += 1
+    if amt > a[2] or a[3] is None:
+        a[2], a[3] = amt, (r[4], r[17], r[2], r[1])
+    if day and (not a[4] or day < a[4]):
+        a[4] = day
+    if day and day > a[5]:
+        a[5] = day
+
+
+print('reading indiv26 (receipts; individuals skipped while reading, except earmarked lines; this is the big one)', flush=True)
 n = 0
-for r in rows('indiv26.zip', member='itcont.txt', skip=lambda ln: '|IND|' in ln):
+for r in rows('indiv26.zip', member='itcont.txt', skip=lambda ln: '|IND|' in ln and '|24T|' not in ln):
+    if len(r) > 5 and r[5] == '24T':
+        earmarked(r)
+        continue
     n += 1
     receipt(r, 'indiv26')
-print('non-individual receipt rows read', n, flush=True)
+print('non-individual receipt rows read', n, ' earmarked pairs', len(earmark), flush=True)
+
+by_conduit = {}
+for (cid, rid), a in earmark.items():
+    if round(a[0], 2) > 0:
+        by_conduit.setdefault(cid, []).append((round(a[0], 2), rid, a))
+earmark_rows = {}
+for cid, lst in by_conduit.items():
+    lst.sort(key=lambda x: (-x[0], x[1]))
+    out_rows = []
+    for total, rid, a in lst[:DEPTH]:
+        img, file_num, rpt, amnd = a[3]
+        rc = cm.get(rid) or {}
+        span = a[4] + ' to ' + a[5] if a[4] and a[4] != a[5] else a[5]
+        out_rows.append({
+            'sub_id': 'ET' + cid + rid, 'image_number': img, 'pdf_url': img_url(img), 'file_number': file_num,
+            'line_number': '23', 'report_type': rpt, 'amendment_indicator': amnd,
+            'line_number_label': 'Earmarked contributions passed on, added together (transaction type 24T)',
+            'memo_code': '', 'entity_type': 'CCM' if rc.get('type') in ('H', 'S', 'P') else 'PAC',
+            'recipient_name': rc.get('name') or rid, 'recipient_committee_id': rid, 'recipient_committee_name': rc.get('name', ''),
+            'recipient_city': '', 'recipient_state': '', 'disbursement_date': a[5], 'disbursement_amount': total,
+            'disbursement_type': '24T', 'committee_id': cid, 'two_year_transaction_period': '2026', 'bulk_file': 'indiv26',
+            'added_together': {'lines': a[1], 'largest': round(a[2], 2), 'first': a[4], 'last': a[5], 'file_number': file_num},
+            'summary_note': (f'{a[1]:,} earmarked contribution' + ('s' if a[1] != 1 else '') + f' ({span}), added together here. '
+                             'An earmarked contribution is a gift from one person who names the committee it goes to; this '
+                             'committee received it and passed it on. The people are not named here. The link opens the '
+                             f'filing with the largest one (${a[2]:,.2f}). ')})
+    earmark_rows[cid] = out_rows
+print('conduits with earmarked money passed on:', len(earmark_rows), flush=True)
 
 # ---------- write ----------
 now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -402,6 +465,7 @@ for cid, why in sorted(pick.items(), key=lambda kv: -(totals.get(kv[0], {}).get(
     t = totals.get(cid) or {}
     got = {k: [x[2] for x in sorted(heaps.get((cid, k), []), reverse=True)]
            for k in ('receipts', 'disbursements', 'independent_expenditures')}
+    got['disbursements'] += [x[2] for x in sorted(heaps.get((cid, 'gifts'), []), reverse=True)] + earmark_rows.get(cid, [])
     t0 = totals.get(cid) or {}
     if cid in ALWAYS:
         layer = 'main'
