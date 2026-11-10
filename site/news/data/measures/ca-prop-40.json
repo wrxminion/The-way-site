@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "7f2e936d2a97b6fa",
+   "kind": "news",
+   "title": "Prop 40 And Other Measures Fail in California",
+   "source": "790 KABC",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNalAybld3NVpoWHh4aWZpLUVBNGVILWFJTDhYdkhmUHJqOFdVMWZFcGpwd2Fqekl2R1BtcVpQVnFQeUV1VGxYM1M5LW0zNGdsNWtNQ25PM2dPVHJRX0RkaVlhdk15RXdGSTlzWkhGUzc5ek1Nb0VZTkdGY1FRR3BUSU1KUDQ?oc=5",
+   "published_at": "2026-11-10",
+   "first_seen_at": "2026-11-10T23:50:26Z",
+   "states": [
+    "ca"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "ca-prop-40",
+     "kind": "measure",
+     "label": "Proposition 40: Billionaire tax: One-time 5% tax on the wealth of California billionaires, mainly for health care",
+     "page": "guide-ca/measures/prop-40.html"
+    }
+   ]
+  },
+  {
    "id": "a9b32bb2713d965d",
    "kind": "news",
    "title": "California's Prop 40 'billionaires' tax' measure is rejected, AP projects",
@@ -3701,5 +3728,5 @@
    ]
   }
  ],
- "generated_at": "2026-11-10T21:57:57Z"
+ "generated_at": "2026-11-10T23:58:17Z"
 }
