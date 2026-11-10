@@ -618,7 +618,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (top) { graphHub = top[0]; if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; }
   }
   // D229: a name in the link keeps its own spelling when the web has it (justices and members are not all capitals).
-  if (q.get('hub')) { const want = norm(q.get('hub')); graphHub = [...networkVerified, ...networkContext].reduce((f, x) => f || [x.from_name, x.to_name].find(nm => nm && norm(nm) === want), '') || q.get('hub').toUpperCase(); if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; }
+  // A dot shown as "SHORT (LONG NAME)" (for example AIPAC PAC, SMP, DCCC) is also found by its long name or its short name alone, so an older link that used the long name still opens it (D266).
+  if (q.get('hub')) { const want = norm(q.get('hub')), allLines = [...networkVerified, ...networkContext], part = (nm, i) => { const m = /^([^(]+)\((.+)\)$/.exec(nm || ''); return m ? norm(m[i]) : ''; }, find = test => allLines.reduce((f, x) => f || [x.from_name, x.to_name].find(nm => nm && test(nm)), ''); graphHub = find(nm => norm(nm) === want) || find(nm => part(nm, 2) === want) || find(nm => part(nm, 1) === want) || q.get('hub').toUpperCase(); if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; }
   if (q.get('q')) { settings.search = q.get('q'); $('#search').value = settings.search; }
   const vw = q.get('view');
   // The page opens on the Money web. ?view=timeline (or a search, ?q=), states, orgs, people or departments opens that tab.
