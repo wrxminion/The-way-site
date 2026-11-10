@@ -10,7 +10,7 @@
 // Text goes in with textContent. No inline script (CSP).
 (function () {
   if (typeof FEC_FILINGS === 'undefined' || !FEC_FILINGS.meta || !FEC_FILINGS.meta.more) return;
-  const F0 = FEC_FILINGS, MORE = F0.meta.more, V = String(F0.meta.updated || '').replace(/\D/g, '') + 'n' + MORE.records;
+  const F0 = FEC_FILINGS, MORE = F0.meta.more, V = MORE.v || String(F0.meta.updated || '').replace(/\D/g, '') + 'n' + MORE.records;
   const BASE = '/money-trail/fec-more/', SHARDS = MORE.shards || 256;
   const IMG = 'https://docquery.fec.gov/cgi-bin/fecimg/?', NI = 'No inference of coordination or misconduct.';
   const CN = 'Committee whose FEC filings were pulled for the Money Trail. Records are its largest itemized receipts from groups, its largest payments and its largest independent expenditures, with the same depth for every committee.';
