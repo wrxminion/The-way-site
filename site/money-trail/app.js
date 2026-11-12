@@ -1197,6 +1197,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     const row = (k, v) => { const r = el('div', 'mt-evcard-row'); r.append(el('span', 'key', k), el('span', 'val', v)); box.append(r); };
     row('Payer', top.from_name || 'Unknown'); row('Recipient', top.to_name || 'Unknown'); row('How sure', status(top));
     const s = sums(recs);
+    /* D267: a line with one record shows its money here too, not only far down in the record (Frank) */
+    if (recs.length === 1) { const a = num(top.amount_usd); row('Amount', a ? money_(a) + (top.tier === 'reported' ? ' (a reported total, not one payment)' : '') : (top.tier === 'context' ? 'No money on this link (context only)' : 'No dollar amount on this record')); }
     if (recs.length > 1) {
       row('All records between these two dots', recs.length + ' · ' + moneyWords(s));
       const ul = el('ul', 'mt-evcard-list');
@@ -1265,6 +1267,34 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (mb) pick({ ...mb });
     else { const ent = entityById[n.id], web = level2 ? null : webTotals(n); pick(ent ? { record_kind: 'entity', name: ent.legal_or_reported_name, entity_type: tidy(ent.entity_type), source_url: ent.source_url, notes: ent.notes, jurisdiction: ent.jurisdiction, id: ent.entity_id, web } : { record_kind: 'entity', name: n.name, jurisdiction: n.jur, id: /reported[-_]name/.test(n.id) ? '' : n.id, web }); }
     nodeCard(g);
+    if (level2 && !mb) level2Total(n);
+  }
+  // D267: a second-level dot (drawn lighter) gets a money box on top too, as the dots near the center do (Frank).
+  // A law followed on this page shows its own official total. Any other dot shows the money on its lines drawn here.
+  function level2Total(n) {
+    const c = $('#detail-content'); if (!c || c.querySelector('.mt-web-total')) return;
+    const box = el('div', 'mt-web-total'), law = lawOf(String(n.name || '').toUpperCase());
+    const L = linesOf(n.id), es = [], seen = new Set();
+    L.forEach(o => o.es.forEach(e => { const k = e.id || JSON.stringify([e.from_name, e.to_name, e.amount_usd, e.date]); if (!seen.has(k)) { seen.add(k); es.push(e); } }));
+    const s = sums(es), big = el('div', 'event-amount mt-big');
+    if (law) {
+      box.append(el('div', 'key', 'Money promised under this law'));
+      big.textContent = webMoney(law.total); box.append(big);
+      box.append(el('p', null, 'Exactly ' + money_(law.total) + ': the total USAspending tags to this law’s spending codes, as of ' + dateText(law.asOf) + '. Its lines here go only to the dots drawn in this web. They overlap, so they are not added up.'));
+    } else {
+      box.append(el('div', 'key', 'Money on its lines drawn here'));
+      if (s.total > 0) big.textContent = money_(s.total);
+      else if (s.rep > 0) { big.textContent = webMoney(s.rep); big.append(el('span', 'mt-not-added', 'largest reported figure, not added up')); }
+      else big.textContent = 'No dollar amount on its lines here';
+      box.append(big);
+      const p = [];
+      if (s.n) p.push('From ' + s.n + ' filing' + (s.n === 1 ? '' : 's') + ', added up.');
+      if (s.repN) p.push('Reported figures: ' + s.repN + ', the largest ' + money_(s.rep) + '. They are not added up, because they may repeat the same money.');
+      p.push('It is linked to dots near the center, not to the center itself, so only its lines drawn here are counted.');
+      box.append(el('p', null, p.join(' ')));
+    }
+    const after = c.querySelector('.mt-outcome') || c.querySelector('.event-kind');
+    if (after) after.after(box); else c.prepend(box);
   }
   function center(n) {
     const mb = ballotById[n.name]; if (mb) pick({ ...mb });
