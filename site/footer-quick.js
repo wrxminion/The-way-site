@@ -33,7 +33,14 @@
     var artBox = document.createElement('span');
     artBox.className = 'michi-footer-art';
     artBox.appendChild(about);
-    nav.appendChild(links); nav.appendChild(artBox);
+    // Reuse and source credit (Frank, Nov 12 2026): anyone may copy and publish the facts and data we found, with credit to Michi Institute.
+    var credit = document.createElement('p');
+    credit.className = 'michi-footer-credit';
+    credit.appendChild(document.createTextNode('You may copy and publish the facts and data we found. Please name Michi Institute (michiinstitute.com) as the source. Most records come from public sources such as the FEC. Images and artwork are not included; they stay with their creators. '));
+    var reuse = document.createElement('a');
+    reuse.href = '/legal.html#reuse'; reuse.textContent = 'How to reuse';
+    credit.appendChild(reuse);
+    nav.appendChild(links); nav.appendChild(credit); nav.appendChild(artBox);
     footer.appendChild(nav);
     addDepth(nav);
   }
@@ -90,7 +97,7 @@
     function visibility() { bar.hidden = window.scrollY <= 80; }
     window.addEventListener('scroll', visibility, { passive: true }); visibility();
   }
-  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=5'; document.head.appendChild(css);
+  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=6'; document.head.appendChild(css);
   appendFooter(); updateEssayBar();
   // Buoys: the depth counter buoy on its chain and the floating buoys (see /buoys.js)
   if (!document.querySelector('script[src^="/buoys.js"]')) { var buoys = document.createElement('script'); buoys.src = '/buoys.js?v=4'; buoys.defer = true; document.head.appendChild(buoys); }
