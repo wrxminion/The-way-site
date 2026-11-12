@@ -12,6 +12,27 @@
  const supplemental = [
  ['leo','Leonard A. Leo','Person', 'Marble Freedom Trust’s archived Form 990 summaries list Leo as trustee and chairman. Reported compensation was $400,000 for the return ending April 2023 and $600,000 for the return ending April 2024. These are annual disclosures, separate from the itemized ledger.', [
  ['Marble Freedom Trust · Form 990 filings and schedules','https://projects.propublica.org/nonprofits/organizations/850784793']]],
+ ['musk','Elon Musk','Person','Listed here as a donor, not a candidate. The amounts below come from two FEC sources. America PAC’s figures come from its own six FEC reports for Jan 1, 2025 to Oct 14, 2026, including the October Quarterly (FEC-2026216) and Pre-General (FEC-2038959) reports. Every other figure comes from the FEC individual contributions file dated Nov 8, 2026: rows named “MUSK, ELON” (Austin and Lakeway, Texas, employer SpaceX) and “ELON MUSK REVOCABLE TRUST” (Austin, Texas). That file does not have America PAC’s last two reports yet, and its newest Musk row is Sep 4, 2026, so other gifts filed later are not in it. Gifts that pass through WinRed are counted once, at the candidate. Not checked against a filing here: CBS News reported on Oct 16, 2026, citing FEC filings, two more gifts to Senate Leadership Fund in September 2026, $75 million and $83 million. The New York Times reported on Nov 2, 2026 that his disclosed gifts to federal and state groups since Jan 1, 2025 total $474 million. Both are news counts, not FEC records in this archive. Names on filings are as reported. Being listed does not imply wrongdoing.', [
+ ['America PAC on the Money web','/money-trail/?view=network&hub=AMERICA%20PAC'],
+ ['Elon Musk Revocable Trust on the Money web','/money-trail/?view=network&hub=ELON%20MUSK%20REVOCABLE%20TRUST'],
+ ['FEC · America PAC October Quarterly report FEC-2026216, Schedule A','https://docquery.fec.gov/cgi-bin/forms/C00879510/2026216/sa/ALL'],
+ ['FEC · America PAC Pre-General report FEC-2038959, Schedule A','https://docquery.fec.gov/cgi-bin/forms/C00879510/2038959/sa/ALL'],
+ ['FEC · America PAC committee page','https://www.fec.gov/data/committee/C00879510/?cycle=2026'],
+ ['FEC · individual contributions bulk file (indiv26.zip, about 2.5 GB)','https://www.fec.gov/files/bulk-downloads/2026/indiv26.zip'],
+ ['Reported, not checked against a filing here · CBS News, Oct 16, 2026','https://cbsnews.com/news/elon-musk-midterm-donations-texas-ken-paxton'],
+ ['Reported, not an FEC record · New York Times via The Philadelphia Inquirer, Nov 2, 2026','https://www.inquirer.com/politics/elon-musk-largest-modterm-political-donor-paxton-trump-20261102.html']], [
+ [249354300,'Not his full total. Cash given by Elon Musk and the Elon Musk Revocable Trust that FEC records checked here show, Jan 13, 2025 to Oct 14, 2026 (60 gifts): America PAC from its own filings, the rest from the FEC bulk file through Sep 4, 2026. In-kind help not counted. The $158 million to Senate Leadership Fund that CBS reported and the $474 million New York Times count are news counts, not included','FEC bulk file (indiv26) and America PAC reports FEC-2026216 and FEC-2038959','https://www.fec.gov/files/bulk-downloads/2026/indiv26.zip','Oct 14, 2026'],
+ [177700000,'Cash to America PAC (C00879510): 19 gifts, Feb 18, 2025 to Oct 14, 2026. $157.6 million of it is in the October Quarterly and Pre-General reports, which the FEC bulk file does not have yet (Oct 14, 2026 alone: $43.2 million)','America PAC’s own FEC filing, Pre-General report FEC-2038959','https://docquery.fec.gov/cgi-bin/forms/C00879510/2038959/sa/ALL','Oct 22, 2026'],
+ [38257888.96,'In-kind help America PAC credits to him (memo “partnership attribution”). The filings list it as coming from United States of America Inc ($38,237,140.29), his trust ($17,425) and Excession LLC ($3,323.67). Not added to the cash total','America PAC’s own FEC filings, six reports (October Quarterly FEC-2026216 shown)','https://docquery.fec.gov/cgi-bin/forms/C00879510/2026216/sa/ALL','Oct 22, 2026'],
+ [30000000,'To Congressional Leadership Fund (C00504530): $5 million Jun 27, 2025, $5 million Dec 15, 2025 and $20 million Sep 4, 2026','FEC filing image, $20 million gift','https://docquery.fec.gov/cgi-bin/fecimg/?202610159916068310','Nov 8, 2026'],
+ [10000000,'To Senate Leadership Fund (C00571703): $5 million Jun 27, 2025 and $5 million Dec 15, 2025. The September 2026 gifts CBS reported ($75 million and $83 million) are not in the FEC file yet and are not included','FEC · Senate Leadership Fund committee page','https://www.fec.gov/data/committee/C00571703/?cycle=2026','Nov 8, 2026'],
+ [10000000,'To Fight for Kentucky (C00898130), Jan 14, 2026','FEC filing image','https://docquery.fec.gov/cgi-bin/fecimg/?202605199867014374','Nov 8, 2026'],
+ [10000000,'From the Elon Musk Revocable Trust to Lone Star Liberty PAC (C00901223), Aug 21, 2026','FEC filing image','https://docquery.fec.gov/cgi-bin/fecimg/?202610159916021867','Nov 8, 2026'],
+ [5000000,'To MAGA Inc. (C00892471), Jun 27, 2025','FEC filing image','https://docquery.fec.gov/cgi-bin/fecimg/?202507319789366240','Nov 8, 2026'],
+ [5000000,'To V-PAC: Victors, Not Victims (C00892919), May 8, 2026','FEC filing image','https://docquery.fec.gov/cgi-bin/fecimg/?202607159875096006','Nov 8, 2026'],
+ [1500000,'To Aurora Action Network (C00907584), Jul 6, 2026','FEC filing image','https://docquery.fec.gov/cgi-bin/fecimg/?202610119908614871','Nov 8, 2026'],
+ [144400,'To 22 House and Senate candidate campaigns, mostly Mar 19 to 25, 2025, most of it through WinRed','FEC individual contributions file (indiv26)','https://www.fec.gov/files/bulk-downloads/2026/indiv26.zip','Nov 8, 2026'],
+ [215977673.63,'America PAC’s total receipts from all donors, Jan 1, 2025 to Oct 14, 2026. $215,957,888.96 of it (99.99%) is his cash plus the in-kind help credited to him','FEC · America PAC committee page','https://www.fec.gov/data/committee/C00879510/?cycle=2026','Oct 14, 2026']]],
  ['marble','Marble Freedom Trust','Nonprofit · EIN 85-0784793','Form 990 summaries report expenses of $223.6 million for the year ending April 2023 and $200.7 million for the year ending April 2024. Use Schedule I for grant recipients. Annual expenses cover more than grants.', [
  ['Archived IRS returns by fiscal year','https://projects.propublica.org/nonprofits/organizations/850784793'],
  ['IRS · Tax Exempt Organization Search','https://apps.irs.gov/app/eos/']]],
@@ -70,7 +91,7 @@
  for (const [id,name,state,date,url] of data.ballots) add('ballot:'+id,{id,name:id+' · '+name,type:state+' ballot measure',note:'Election '+date+'. Positions and reporting are shown as context. This archive has no itemized transaction directly tagged to this measure.',kind:'ballot',links:[['Official ballot source',url]]});
  // optional 6th item: dollar amounts from the linked public record, as [amount, what it is, source, url, as of]
  for (const [id,name,type,note,links,amounts] of supplemental) add(id,{id,name,type,note,links,amounts:amounts||[],kind:'source'});
- const featured = ['fec:C00559740','ballot:CO-87','leo','marble','tarp',...LAWS.map(l=>l.key),'corecivic','geo','ice'];
+ const featured = ['fec:C00559740','ballot:CO-87','leo','marble','musk','tarp',...LAWS.map(l=>l.key),'corecivic','geo','ice'];
  const ordered = [...featured.filter(id=>subjects.has(id)), ...[...subjects.keys()].filter(id=>!featured.includes(id)).sort((a,b)=>subjects.get(a).name.localeCompare(subjects.get(b).name))];
  const categories = ['candidate','measure','bill','group','contractor','agency','person'];
  const aliases = {
@@ -78,13 +99,13 @@
  group:{'gopac':'fec:C00559740','c00559740':'fec:C00559740','marble-freedom-trust':'marble','85-0784793':'marble'},
  contractor:{'corecivic-inc':'corecivic','the-geo-group':'geo','the-geo-group-inc':'geo'},
  agency:{'immigration-and-customs-enforcement':'ice','us-immigration-and-customs-enforcement':'ice'},
- person:{'leonard-leo':'leo','leonard-a-leo':'leo'}
+ person:{'leonard-leo':'leo','leonard-a-leo':'leo','elon-musk':'musk','musk-elon':'musk','elon':'musk','musk':'musk'}
  };
  function category(key, subject) {
  if (subject.kind === 'ballot') return 'measure';
  if (subject.kind === 'entity') return /candidate_named/.test(subject.type)?'candidate':'group';
  if (lawSlug[key]) return 'bill';
- return {tarp:'bill',leo:'person',marble:'group',corecivic:'contractor',geo:'contractor',ice:'agency'}[key];
+ return {tarp:'bill',leo:'person',musk:'person',marble:'group',corecivic:'contractor',geo:'contractor',ice:'agency'}[key];
  }
  function slug(value) {
  return normalize(value).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
@@ -210,7 +231,7 @@
  }
  get('#trail-title').textContent = s.name;
  const type = category(selected,s);
- const value = type==='measure'?s.id.toLowerCase():selected==='tarp'?'110-hr1424':selected==='leo'?'leonard-leo':lawSlug[selected]||selected;
+ const value = type==='measure'?s.id.toLowerCase():selected==='tarp'?'110-hr1424':selected==='leo'?'leonard-leo':selected==='musk'?'elon-musk':lawSlug[selected]||selected;
  get('#trail-permalink').textContent = 'Link to this trail: michiinstitute.com/money-trail/follow.html?'+type+'='+encodeURIComponent(value);
  get('#trail-note').textContent = s.type + '. ' + (s.note || 'Itemized ledger matches the archive’s entity ID. Name matches and other relationships appear separately below.');
  const links = get('#trail-links');

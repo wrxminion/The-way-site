@@ -400,6 +400,11 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   });
   // Trails on the Follow one trail page that are not in the entity list above
   lists.people.push({ name: 'Leonard A. Leo', type: 'Person', jur: 'US', count: 0, trail: 'follow.html?person=leonard-leo' });
+  // D270: Elon Musk. His own gifts are individual rows, which the FEC build leaves out, so the figure comes from his trail:
+  // 60 cash gifts from "MUSK, ELON" and "ELON MUSK REVOCABLE TRUST": America PAC from its own six FEC reports (through Oct 14, 2026),
+  // every other committee from the FEC individual contributions file dated Nov 8, 2026 (through Sep 4, 2026). In-kind help not counted.
+  lists.people.push({ name: 'Elon Musk', type: 'Person', jur: 'US', count: 0, trail: 'follow.html?person=elon-musk', note: 'Not his full total: cash in FEC records checked so far, America PAC through Oct 14, 2026 and other committees through Sep 4, 2026. CBS reported $158 million more to Senate Leadership Fund and the New York Times counted $474 million in all; those are news counts, not FEC records here',
+    money: { item: 249354300, itemN: 60, repMax: 0, lines: 0, years: new Map([['2026', [205100000, 17]], ['2025', [44254300, 43]]]) } });
   lists.departments.push({ name: 'U.S. Immigration and Customs Enforcement', type: 'Federal agency', jur: 'US', count: 0, trail: 'follow.html?agency=ice' });
   // D223: the department budget cards above already list every federal department and agency, with web and Inspect buttons.
   // This list keeps only the government offices that are not in that budget list (state and city offices, and ICE's trail).
@@ -443,7 +448,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     const fq = norm(settings.search || ''), lineOn = filtersOn(true), on = lineOn || !!fq;
     if (fq) rows = rows.filter(r => norm(r.name).includes(fq));
     const cm = cardMoney(false);
-    rows = rows.map(r => ({ ...r, money: cm.get(norm(r.name)) }));
+    rows = rows.map(r => ({ ...r, money: cm.get(norm(r.name)) || r.money }));
     if (lineOn) { const fl = filteredLineCounts(true); rows = rows.map(r => ({ ...r, count: fl.get(norm(r.name)) || 0 })).filter(r => r.count > 0); }
     // Largest first: itemized filings, else the largest reported figure, then the most lines.
     rows.sort((x, y) => sizeOfRow(y) - sizeOfRow(x) || y.count - x.count || x.name.localeCompare(y.name));
@@ -455,7 +460,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
       if (r.trail) { const a = el('a', 'tracker-web', 'Follow this trail →'); a.prepend(btnArt(CABINET)); a.href = r.trail; btns.push(a); }
       if (r.entity) { const b = el('button', 'tracker-inspect', 'Inspect'); b.type = 'button'; b.prepend(btnArt(CABINET)); b.addEventListener('click', () => pick(r.entity)); btns.push(b); }
       const lineWords = r.count ? r.count + (r.count === 1 ? ' line' : ' lines') + ' in the web' : 'No lines in the web yet';
-      list.append(trackerCard({ name: r.name, money: r.money, max, details: [lineWords, r.type, r.jur], source: r.entity && /^https?:/.test(r.entity.source_url || '') ? r.entity.source_url : '', buttons: btns }));
+      list.append(trackerCard({ name: r.name, money: r.money, max, details: [lineWords, r.type, r.jur, r.note], source: r.entity && /^https?:/.test(r.entity.source_url || '') ? r.entity.source_url : '', buttons: btns }));
     });
     if (!rows.length) list.append(el('div', 'empty', on ? 'No names match these filters. Reset filters to see them all.' : 'No names match. Try fewer letters.'));
     const more = $('#' + k + '-view .tracker-more');
