@@ -12,3 +12,4 @@
 @media(max-width:480px){.michi-footer-nav{padding:20px 8px}.michi-footer-links{font-size:clamp(10px,3.1vw,13px)}}
 .michi-footer-art{flex-basis:100%;display:flex;flex-direction:column;align-items:center;gap:6px;opacity:1!important}.michi-footer-mark-link{display:inline-flex}.michi-footer-mark{width:28px;height:28px;border-radius:7px}
 .michi-footer-depth{flex-basis:100%;text-align:center;font-weight:500;opacity:.9;text-decoration:none}.michi-footer-depth strong{font-weight:700}.michi-footer-depth:hover{text-decoration:underline}
+.michi-footer-credit{flex-basis:100%;max-width:640px;margin:0 auto;text-align:center;font-weight:500;line-height:1.5;opacity:.9}.michi-footer-credit a{text-decoration:underline;white-space:nowrap}

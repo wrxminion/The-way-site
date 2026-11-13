@@ -3,7 +3,7 @@
 // drawn here in script so the page keeps its strict security policy (no inline styles, no inline scripts). Styles: /follow-money.css.
 // Where it points:
 //   ballot measure pages and Election Studies -> that measure's trail (follow.html?measure=ID), from the MEASURES table below;
-//   cases with a trail (the 2008 rescue, private prisons, ICE) -> that trail;
+//   cases with a trail (the 2008 rescue, private prisons, ICE) -> that trail; cases with a dot on the Money web -> the web on that dot (CASES);
 //   anything tied to one state (its guide, races, candidates, map, state page, results for a state) -> the State tracker for that state;
 //   everything else -> the Money Trail front page.
 // Not shown on the Money Trail itself or in the member area. Moves only on hover or keyboard focus, never with reduced motion or Pause motion.
@@ -121,11 +121,39 @@
   '/guide/measures/proposition-nn.html': 'CO-NN',
   // MEASURES end
   };
-  // Case pages whose subject has its own trail.
+  // Case pages whose subject has its own trail, or a dot of its own on the Money web.
   var CASES = {
     '/cases/tarp.html': ['follow.html?bill=hr-1424', 'Money trail for the 2008 rescue law (H.R. 1424)'],
     '/cases/private-prisons.html': ['follow.html?agency=ice', 'Money trail for ICE detention awards to CoreCivic and GEO'],
-    '/cases/ice-and-local-policing.html': ['follow.html?agency=ice', 'Money trail for ICE detention awards']
+    '/cases/ice-and-local-policing.html': ['follow.html?agency=ice', 'Money trail for ICE detention awards'],
+    // D267: cases that name a company or group whose own FEC filings are on the Money web. These are the 2025-2026
+    // filings of its political action committee, not money from the events in the case.
+    '/cases/pso-rates.html': ['?view=network&fec=C00096842', 'Money web for American Electric Power, the company that owns PSO (its PAC, 2025-2026 FEC filings)'],
+    '/cases/love-canal.html': ['?view=network&fec=C00949552', 'Money web for Occidental Chemical, Hooker\u2019s successor (OxyChem PAC, 2025-2026 FEC filings)'],
+    '/cases/opioid-crisis.html': ['?view=network&fec=C00108035,C00332833,C00400929,C00010983', 'Money web for McKesson, Cardinal Health, Cencora (formerly AmerisourceBergen) and Johnson & Johnson (their PACs, 2025-2026 FEC filings)'],
+    '/cases/citizens-united.html': ['?view=network&fec=C00295527', 'Money web for Citizens United (its PAC, 2025-2026 FEC filings)'],
+    '/cases/auto-safety.html': ['?view=network&fec=C00076810', 'Money web for General Motors (GM PAC, 2025-2026 FEC filings)'],
+    '/cases/leaded-gasoline.html': ['?view=network&fec=C00076810', 'Money web for General Motors (GM PAC, 2025-2026 FEC filings)'],
+    '/cases/epstein-record.html': ['?view=network&fec=C00104299,C00428896', 'Money web for JPMorgan Chase and Deutsche Bank, which settled with victims (their PACs, 2025-2026 FEC filings)'],
+    // D267: cases about a federal program that is still paid for today. The link opens the department or agency that runs it,
+    // a dot on the Money web with its budget from USAspending.gov. That is its whole budget, not the program's own money.
+    '/cases/hava.html': ['?view=network&hub=ELECTION+ASSISTANCE+COMMISSION', 'Money web for the Election Assistance Commission, which the Help America Vote Act created (its whole budget)'],
+    '/cases/e-rate.html': ['?view=network&hub=FEDERAL+COMMUNICATIONS+COMMISSION', 'Money web for the FCC, which runs E-rate (its whole budget, not E-rate alone)'],
+    '/cases/snap.html': ['?view=network&hub=DEPARTMENT+OF+AGRICULTURE', 'Money web for the Department of Agriculture, which runs SNAP (its whole budget, not SNAP alone)'],
+    '/cases/wic.html': ['?view=network&hub=DEPARTMENT+OF+AGRICULTURE', 'Money web for the Department of Agriculture, which runs WIC (its whole budget, not WIC alone)'],
+    '/cases/school-lunch.html': ['?view=network&hub=DEPARTMENT+OF+AGRICULTURE', 'Money web for the Department of Agriculture, which runs school lunch (its whole budget, not school lunch alone)'],
+    '/cases/chip.html': ['?view=network&hub=DEPARTMENT+OF+HEALTH+AND+HUMAN+SERVICES', 'Money web for Health and Human Services, which runs CHIP (its whole budget, not CHIP alone)'],
+    '/cases/vaccines-for-children.html': ['?view=network&hub=DEPARTMENT+OF+HEALTH+AND+HUMAN+SERVICES', 'Money web for Health and Human Services, home of the CDC, which runs Vaccines for Children (its whole budget, not this program alone)'],
+    '/cases/community-health-centers.html': ['?view=network&hub=DEPARTMENT+OF+HEALTH+AND+HUMAN+SERVICES', 'Money web for Health and Human Services, home of HRSA, which funds health centers (its whole budget, not health centers alone)'],
+    '/cases/welfare-reform-1996.html': ['?view=network&hub=DEPARTMENT+OF+HEALTH+AND+HUMAN+SERVICES', 'Money web for Health and Human Services, which runs TANF (its whole budget, not TANF alone)'],
+    '/cases/pepfar.html': ['?view=network&hub=DEPARTMENT+OF+STATE', 'Money web for the State Department, which leads PEPFAR (its whole budget, not PEPFAR alone)'],
+    '/cases/earned-income-tax-credit.html': ['?view=network&hub=DEPARTMENT+OF+THE+TREASURY', 'Money web for the Treasury, home of the IRS, which pays the EITC (its whole budget, not the EITC alone)'],
+    '/cases/flood-insurance.html': ['?view=network&hub=DEPARTMENT+OF+HOMELAND+SECURITY', 'Money web for Homeland Security, home of FEMA, which runs flood insurance (its whole budget, not flood insurance alone)'],
+    '/cases/interstate-highways.html': ['?view=network&hub=DEPARTMENT+OF+TRANSPORTATION', 'Money web for the Department of Transportation (its whole budget, not highways alone)'],
+    '/cases/clean-water-act-319.html': ['?view=network&hub=ENVIRONMENTAL+PROTECTION+AGENCY', 'Money web for the EPA, which runs Section 319 grants (its whole budget, not Section 319 alone)'],
+    '/cases/tar-creek.html': ['?view=network&hub=ENVIRONMENTAL+PROTECTION+AGENCY', 'Money web for the EPA, which runs Superfund (its whole budget, not Tar Creek alone)'],
+    '/cases/title-ix.html': ['?view=network&hub=DEPARTMENT+OF+EDUCATION', 'Money web for the Department of Education, which enforces Title IX (its whole budget)'],
+    '/cases/civil-asset-forfeiture.html': ['?view=network&hub=DEPARTMENT+OF+JUSTICE', 'Money web for the Justice Department, which runs the Assets Forfeiture Fund (its whole budget, not the fund alone)']
   };
   var NAMES = { AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California', CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware',
     DC: 'District of Columbia', FL: 'Florida', GA: 'Georgia', HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois', IN: 'Indiana', IA: 'Iowa', KS: 'Kansas',

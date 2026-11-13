@@ -980,7 +980,7 @@
     }
     if (!document.querySelector('script[src^="/footer-quick.js"]')) {
       var footerScript = document.createElement('script');
-      footerScript.src = '/footer-quick.js?v=10';
+      footerScript.src = '/footer-quick.js?v=11';
       document.head.appendChild(footerScript);
     }
     if (!document.querySelector('script[src^="/motion-pause.js"]')) {
@@ -1036,7 +1036,7 @@
   // "Follow the money" tag at the end of the page, linked to the matching Money Trail page (the script decides; see /follow-money.js)
   if (!inMembers && !/^\/money-trail\//.test(path) && !document.querySelector('script[src^="/follow-money.js"]')) {
     var ftmScript = document.createElement('script');
-    ftmScript.src = '/follow-money.js?v=1';
+    ftmScript.src = '/follow-money.js?v=2';
     ftmScript.defer = true;
     document.head.appendChild(ftmScript);
   }

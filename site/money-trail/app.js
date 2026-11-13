@@ -400,6 +400,18 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   });
   // Trails on the Follow one trail page that are not in the entity list above
   lists.people.push({ name: 'Leonard A. Leo', type: 'Person', jur: 'US', count: 0, trail: 'follow.html?person=leonard-leo' });
+  // D270: Elon Musk. His own gifts are individual rows, which the FEC build leaves out, so the figure comes from his trail:
+  // 60 cash gifts from "MUSK, ELON" and "ELON MUSK REVOCABLE TRUST": America PAC from its own six FEC reports (through Oct 14, 2026),
+  // every other committee from the FEC individual contributions file dated Nov 8, 2026 (through Sep 4, 2026). In-kind help not counted.
+  lists.people.push({ name: 'Elon Musk', type: 'Person', jur: 'US', count: 0, trail: 'follow.html?person=elon-musk', note: 'Not his full total: cash in FEC records checked so far, America PAC through Oct 14, 2026 and other committees through Sep 4, 2026. CBS reported $158 million more to Senate Leadership Fund and the New York Times counted $474 million in all; those are news counts, not FEC records here',
+    money: { item: 249354300, itemN: 60, repMax: 0, lines: 0, years: new Map([['2026', [205100000, 17]], ['2025', [44254300, 43]]]) } });
+  // D271: Hakeem Jeffries. jeffries-web.js adds his FEC committees to his member of Congress dot. Those lines are
+  // registrations and votes, which carry no money, so the card shows what his campaign raised (FEC totals file) and opens his trail.
+  { const J = window.TW_JEFFRIES, j = J && J.hub && lists.people.find(r => norm(r.name) === norm(J.hub));
+    if (j && J) { const c = J.meta.committees, camp = Object.values(c).find(x => x.kind === 'principal campaign committee'), rest = Object.values(c).filter(x => x !== camp);
+      Object.assign(j, { trail: 'follow.html?person=hakeem-jeffries', handMoney: true,
+        money: { item: 0, itemN: 0, repMax: camp.receipts, lines: 0, years: new Map() },
+        note: bigMoney(camp.receipts) + ' is what his campaign, Jeffries for Congress, raised through ' + dateText(camp.through) + ' (FEC totals). His leadership PAC and ' + (rest.length - 1) + ' joint fundraising committees raised ' + bigMoney(rest.reduce((a, x) => a + x.receipts, 0)) + ' more; some of it went to his campaign, so the two are not added together' }); } }
   lists.departments.push({ name: 'U.S. Immigration and Customs Enforcement', type: 'Federal agency', jur: 'US', count: 0, trail: 'follow.html?agency=ice' });
   // D223: the department budget cards above already list every federal department and agency, with web and Inspect buttons.
   // This list keeps only the government offices that are not in that budget list (state and city offices, and ICE's trail).
@@ -443,7 +455,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     const fq = norm(settings.search || ''), lineOn = filtersOn(true), on = lineOn || !!fq;
     if (fq) rows = rows.filter(r => norm(r.name).includes(fq));
     const cm = cardMoney(false);
-    rows = rows.map(r => ({ ...r, money: cm.get(norm(r.name)) }));
+    rows = rows.map(r => ({ ...r, money: (r.handMoney && r.money) || cm.get(norm(r.name)) || r.money }));
     if (lineOn) { const fl = filteredLineCounts(true); rows = rows.map(r => ({ ...r, count: fl.get(norm(r.name)) || 0 })).filter(r => r.count > 0); }
     // Largest first: itemized filings, else the largest reported figure, then the most lines.
     rows.sort((x, y) => sizeOfRow(y) - sizeOfRow(x) || y.count - x.count || x.name.localeCompare(y.name));
@@ -455,7 +467,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
       if (r.trail) { const a = el('a', 'tracker-web', 'Follow this trail →'); a.prepend(btnArt(CABINET)); a.href = r.trail; btns.push(a); }
       if (r.entity) { const b = el('button', 'tracker-inspect', 'Inspect'); b.type = 'button'; b.prepend(btnArt(CABINET)); b.addEventListener('click', () => pick(r.entity)); btns.push(b); }
       const lineWords = r.count ? r.count + (r.count === 1 ? ' line' : ' lines') + ' in the web' : 'No lines in the web yet';
-      list.append(trackerCard({ name: r.name, money: r.money, max, details: [lineWords, r.type, r.jur], source: r.entity && /^https?:/.test(r.entity.source_url || '') ? r.entity.source_url : '', buttons: btns }));
+      list.append(trackerCard({ name: r.name, money: r.money, max, details: [lineWords, r.type, r.jur, r.note], source: r.entity && /^https?:/.test(r.entity.source_url || '') ? r.entity.source_url : '', buttons: btns }));
     });
     if (!rows.length) list.append(el('div', 'empty', on ? 'No names match these filters. Reset filters to see them all.' : 'No names match. Try fewer letters.'));
     const more = $('#' + k + '-view .tracker-more');
@@ -1197,6 +1209,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     const row = (k, v) => { const r = el('div', 'mt-evcard-row'); r.append(el('span', 'key', k), el('span', 'val', v)); box.append(r); };
     row('Payer', top.from_name || 'Unknown'); row('Recipient', top.to_name || 'Unknown'); row('How sure', status(top));
     const s = sums(recs);
+    /* D267: a line with one record shows its money here too, not only far down in the record (Frank) */
+    if (recs.length === 1) { const a = num(top.amount_usd); row('Amount', a ? money_(a) + (top.tier === 'reported' ? ' (a reported total, not one payment)' : '') : (top.tier === 'context' ? 'No money on this link (context only)' : 'No dollar amount on this record')); }
     if (recs.length > 1) {
       row('All records between these two dots', recs.length + ' · ' + moneyWords(s));
       const ul = el('ul', 'mt-evcard-list');
@@ -1265,6 +1279,34 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (mb) pick({ ...mb });
     else { const ent = entityById[n.id], web = level2 ? null : webTotals(n); pick(ent ? { record_kind: 'entity', name: ent.legal_or_reported_name, entity_type: tidy(ent.entity_type), source_url: ent.source_url, notes: ent.notes, jurisdiction: ent.jurisdiction, id: ent.entity_id, web } : { record_kind: 'entity', name: n.name, jurisdiction: n.jur, id: /reported[-_]name/.test(n.id) ? '' : n.id, web }); }
     nodeCard(g);
+    if (level2 && !mb) level2Total(n);
+  }
+  // D267: a second-level dot (drawn lighter) gets a money box on top too, as the dots near the center do (Frank).
+  // A law followed on this page shows its own official total. Any other dot shows the money on its lines drawn here.
+  function level2Total(n) {
+    const c = $('#detail-content'); if (!c || c.querySelector('.mt-web-total')) return;
+    const box = el('div', 'mt-web-total'), law = lawOf(String(n.name || '').toUpperCase());
+    const L = linesOf(n.id), es = [], seen = new Set();
+    L.forEach(o => o.es.forEach(e => { const k = e.id || JSON.stringify([e.from_name, e.to_name, e.amount_usd, e.date]); if (!seen.has(k)) { seen.add(k); es.push(e); } }));
+    const s = sums(es), big = el('div', 'event-amount mt-big');
+    if (law) {
+      box.append(el('div', 'key', 'Money promised under this law'));
+      big.textContent = webMoney(law.total); box.append(big);
+      box.append(el('p', null, 'Exactly ' + money_(law.total) + ': the total USAspending tags to this law’s spending codes, as of ' + dateText(law.asOf) + '. Its lines here go only to the dots drawn in this web. They overlap, so they are not added up.'));
+    } else {
+      box.append(el('div', 'key', 'Money on its lines drawn here'));
+      if (s.total > 0) big.textContent = money_(s.total);
+      else if (s.rep > 0) { big.textContent = webMoney(s.rep); big.append(el('span', 'mt-not-added', 'largest reported figure, not added up')); }
+      else big.textContent = 'No dollar amount on its lines here';
+      box.append(big);
+      const p = [];
+      if (s.n) p.push('From ' + s.n + ' filing' + (s.n === 1 ? '' : 's') + ', added up.');
+      if (s.repN) p.push('Reported figures: ' + s.repN + ', the largest ' + money_(s.rep) + '. They are not added up, because they may repeat the same money.');
+      p.push('It is linked to dots near the center, not to the center itself, so only its lines drawn here are counted.');
+      box.append(el('p', null, p.join(' ')));
+    }
+    const after = c.querySelector('.mt-outcome') || c.querySelector('.event-kind');
+    if (after) after.after(box); else c.prepend(box);
   }
   function center(n) {
     const mb = ballotById[n.name]; if (mb) pick({ ...mb });
