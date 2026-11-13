@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "08c90160e43274ab",
+   "kind": "news",
+   "title": "California voters overhaul recall elections, pass Democratic-backed Prop. 5",
+   "source": "The Napa Valley Register",
+   "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOT2d2ZVJpbENSVXdZdE5jTkxzbElDSnpQUEgwSVN1M1JDbnB1LWxWTUs0TGZEUUxuQ1hRa2dxbnpRY3lZMXZaaXA1U1Z6VHJmWHZBR1hELUVnbGJwNW0tM2NjTEdPUW50QmFncW9fcGlHdElYODM0TXRwNmRWY1dCUXpmWU15WmdkcE54NU45Z2RBOUFOdmtPbVFaQlRvWkNrSHJzZ2tYdU1ra21xN0FsLVltWDlpdlJiOWl3d19mejZ1Y1BETlJjbHhFUjZxRHFLOEVDWjFtdkZMdjN0blFaMkFNeXlrYk5Ua20tVmR4cF82WUVlazBZbFJzd2k?oc=5",
+   "published_at": "2026-11-13",
+   "first_seen_at": "2026-11-13T01:50:33Z",
+   "states": [
+    "ca"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "ca-prop-5",
+     "kind": "measure",
+     "label": "Proposition 5: Recall elections: Removes the replacement-candidate question from recall elections, California",
+     "page": "guide-ca/measures/prop-5.html"
+    }
+   ]
+  },
+  {
    "id": "eb29926d35edabaa",
    "kind": "news",
    "title": "California voters overhaul recall elections, pass Democratic-backed Prop. 5",
@@ -1271,5 +1298,5 @@
    ]
   }
  ],
- "generated_at": "2026-11-12T21:59:52Z"
+ "generated_at": "2026-11-13T02:04:34Z"
 }
