@@ -405,6 +405,13 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   // every other committee from the FEC individual contributions file dated Nov 8, 2026 (through Sep 4, 2026). In-kind help not counted.
   lists.people.push({ name: 'Elon Musk', type: 'Person', jur: 'US', count: 0, trail: 'follow.html?person=elon-musk', note: 'Not his full total: cash in FEC records checked so far, America PAC through Oct 14, 2026 and other committees through Sep 4, 2026. CBS reported $158 million more to Senate Leadership Fund and the New York Times counted $474 million in all; those are news counts, not FEC records here',
     money: { item: 249354300, itemN: 60, repMax: 0, lines: 0, years: new Map([['2026', [205100000, 17]], ['2025', [44254300, 43]]]) } });
+  // D271: Hakeem Jeffries. jeffries-web.js adds his FEC committees to his member of Congress dot. Those lines are
+  // registrations and votes, which carry no money, so the card shows what his campaign raised (FEC totals file) and opens his trail.
+  { const J = window.TW_JEFFRIES, j = J && J.hub && lists.people.find(r => norm(r.name) === norm(J.hub));
+    if (j && J) { const c = J.meta.committees, camp = Object.values(c).find(x => x.kind === 'principal campaign committee'), rest = Object.values(c).filter(x => x !== camp);
+      Object.assign(j, { trail: 'follow.html?person=hakeem-jeffries', handMoney: true,
+        money: { item: 0, itemN: 0, repMax: camp.receipts, lines: 0, years: new Map() },
+        note: bigMoney(camp.receipts) + ' is what his campaign, Jeffries for Congress, raised through ' + dateText(camp.through) + ' (FEC totals). His leadership PAC and ' + (rest.length - 1) + ' joint fundraising committees raised ' + bigMoney(rest.reduce((a, x) => a + x.receipts, 0)) + ' more; some of it went to his campaign, so the two are not added together' }); } }
   lists.departments.push({ name: 'U.S. Immigration and Customs Enforcement', type: 'Federal agency', jur: 'US', count: 0, trail: 'follow.html?agency=ice' });
   // D223: the department budget cards above already list every federal department and agency, with web and Inspect buttons.
   // This list keeps only the government offices that are not in that budget list (state and city offices, and ICE's trail).
@@ -448,7 +455,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     const fq = norm(settings.search || ''), lineOn = filtersOn(true), on = lineOn || !!fq;
     if (fq) rows = rows.filter(r => norm(r.name).includes(fq));
     const cm = cardMoney(false);
-    rows = rows.map(r => ({ ...r, money: cm.get(norm(r.name)) || r.money }));
+    rows = rows.map(r => ({ ...r, money: (r.handMoney && r.money) || cm.get(norm(r.name)) || r.money }));
     if (lineOn) { const fl = filteredLineCounts(true); rows = rows.map(r => ({ ...r, count: fl.get(norm(r.name)) || 0 })).filter(r => r.count > 0); }
     // Largest first: itemized filings, else the largest reported figure, then the most lines.
     rows.sort((x, y) => sizeOfRow(y) - sizeOfRow(x) || y.count - x.count || x.name.localeCompare(y.name));
