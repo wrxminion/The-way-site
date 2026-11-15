@@ -9,7 +9,9 @@
    - "you" is the same fact written to the senator it is about (used when the letter goes to that senator).
    - Plain words, no em dashes, no threats, no telling people how to vote in an election.
    - Vote counts in "summary" and "status" must link to the official roll call: [73 to 25](https://www.senate.gov/...).
-     A voice vote has no roll call; link the official record of the action instead.
+     Link to our page for that vote, /government/congress/votes.html#rc-119-S-N (made by
+     tools/contact-senator/build_votes.py), which links on to senate.gov. A voice vote has no roll call;
+     link the official record of the action instead.
    - "record" is optional: a Senate roll call with how each senator voted ("short" is the card label).
      Names are last names; add -ST when two senators share a last name (Scott-FL).
      "rest" is the vote of every senator not listed; "check" must match the official totals.
@@ -19,6 +21,8 @@
   var RC = 'https://www.senate.gov/legislative/LIS/roll_call_votes/';
   var rc = function (sess, n) { return RC + 'vote119' + sess + '/vote_119_' + sess + '_' + ('0000' + n).slice(-5) + '.htm'; };
   function c(src, date, url) { return { src: src, date: date, url: url }; }
+  /* Our own page for a tracked vote (it links to the official roll call). */
+  var ours = function (sess, n) { return '/government/congress/votes.html#rc-119-' + sess + '-' + n; };
 
   /* Sources used below. */
   var TIME = c('TIME', 'November 13, 2026', 'https://time.com/article/2026/11/13/chris-van-hollen-senate-majority-leader-chuck-schumer-progressive-democrats/');
@@ -64,6 +68,26 @@
     ],
     searched: SEARCHED + 'Searched November 15, 2026. The against side has more points because more has been reported against him since the March 2025 funding vote. Senator Schumer\'s own Senate votes are listed for either side to use.',
     subject: 'S000148',
+    about: {
+      id: 'S000148',
+      title: 'About Chuck Schumer',
+      facts: [
+        { cite: [c('Biographical Directory of Congress', 'read November 15, 2026', 'https://bioguide.congress.gov/search/bio/S000148')],
+          text: 'U.S. Senator for New York since 1999. Before that he served in the U.S. House from 1981 to 1999.' },
+        { cite: [BIO, c('Ballotpedia', 'read November 15, 2026', 'https://ballotpedia.org/Chuck_Schumer')],
+          text: 'Leader of Senate Democrats since 2017. He was Majority Leader from 2021, the first New Yorker in that job, and has been Minority Leader since 2025.' },
+        { cite: [AJ, BIO],
+          text: 'He is 75 and was born and raised in Brooklyn.' },
+        { cite: [c('congress-legislators dataset (official records)', 'snapshot November 4, 2026', 'https://github.com/unitedstates/congress-legislators')],
+          text: 'His current term ends January 3, 2029. His seat is next on the ballot in November 2028.' },
+        { cite: [c('FEC, Friends of Schumer (C00346312)', 'totals through September 30, 2026', 'https://www.fec.gov/data/committee/C00346312/')],
+          text: 'His campaign committee, Friends of Schumer, reported $1,159,716 in receipts in 2025 and 2026, through September 30, 2026.' },
+        { cite: [BIO],
+          text: 'His office lists the Inflation Reduction Act, the CHIPS and Science Act, the bipartisan infrastructure law and the American Rescue Plan as passed under his leadership.' },
+        { cite: [TIME],
+          text: 'For the next Congress he has laid out bills on tariffs and health care and efforts to end the war in Iran.' }
+      ]
+    },
     voters: 'dem',
     question: 'Are you for or against Chuck Schumer as Democratic leader?',
     labels: { for: 'For Schumer', against: 'Against Schumer' },
@@ -233,10 +257,10 @@
     id: 'permitting-baaja',
     menu: 'Permitting reform bill (BAAJA, S. 5653)',
     title: 'The permitting reform bill (BAAJA)',
-    status: 'The Senate voted [73 to 25](' + rc(2, 257) + ') on November 9 and [62 to 21](' + rc(2, 258) + ') on November 10, 2026 to take up the bill. No final vote as of November 12.',
+    status: 'The Senate voted [73 to 25](' + ours(2, 257) + ') on November 9 and [62 to 21](' + ours(2, 258) + ') on November 10, 2026 to take up the bill. No final vote as of November 12.',
     summary: [
       'The Bipartisan American Affordability and Jobs Act of 2026 (S. 5653) changes how federal permits are reviewed for energy and building projects, including power lines, pipelines, and wind and solar. It sets deadlines for reviews and limits court challenges. Sponsors: Senators Capito (R-W.Va.), Lee (R-Utah), Whitehouse (D-R.I.) and Heinrich (D-N.M.).',
-      'On November 9 the Senate voted [73 to 25](' + rc(2, 257) + ') to end debate on taking up the bill, using a House bill (H.R. 2347) as the vehicle, and on November 10 it voted [62 to 21](' + rc(2, 258) + ') to take it up. Those were first steps, not final passage. The Senate vote list through November 12 shows no final vote yet.'
+      'On November 9 the Senate voted [73 to 25](' + ours(2, 257) + ') to end debate on taking up the bill, using a House bill (H.R. 2347) as the vehicle, and on November 10 it voted [62 to 21](' + ours(2, 258) + ') to take it up. Those were first steps, not final passage. The Senate vote list through November 12 shows no final vote yet.'
     ],
     searched: SEARCHED + 'Searched November 11 to 15, 2026, including the bill text, the sponsors, industry groups, environmental groups and tribal groups.',
     voters: 'all',
@@ -308,6 +332,7 @@
       short: 'to move ahead with the bill',
       what: 'moving ahead with the permitting bill (cloture on the motion to proceed to H.R. 2347)',
       url: rc(2, 257),
+      ours: 'rc-119-2-257',
       yea: 'Blumenthal,Coons,Cortez Masto,Fetterman,Gallego,Gillibrand,Heinrich,Hickenlooper,Kim,King,Klobuchar,Ossoff,Peters,Reed,Rosen,Schatz,Schumer,Shaheen,Slotkin,Warner,Warnock,Whitehouse',
       nay: 'Alsobrooks,Baldwin,Bennet,Blunt Rochester,Booker,Cantwell,Duckworth,Durbin,Hassan,Hirono,Kaine,Kelly,Luján,Markey,Merkley,Murray,Padilla,Schiff,Smith,Van Hollen,Warren,Welch,Wyden,Sanders,Rounds',
       nv: 'Murphy,Sheehy',

@@ -10,6 +10,9 @@ Run (from the repo root, with a fresh checkout of the dataset somewhere):
   git clone --depth 1 https://github.com/unitedstates/congress-legislators ../congress-legislators
   python3 tools/government/build_congress.py ../congress-legislators
 
+After this, run tools/contact-senator/build_votes.py again: it adds the "Senate votes we track" section
+to each senator's page (D276), and this script writes the pages without it.
+
 Needs Python 3 and PyYAML. Old member pages that are no longer current are removed from
 site/government/congress/members/ so the folder always matches the dataset.
 """
