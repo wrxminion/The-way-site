@@ -130,7 +130,7 @@ function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<h2 clas
  h+=datum('Report date (not necessarily transfer date)',dateText(e.date))+datum('Recorded date type',e.date_kind)+datum('Source as reported',e.source_name)+datum('Recipient as reported',e.recipient_name)+datum('Reported figure',money(e.amount_usd))+datum('Confidence',e.confidence)+datum('Reconciliation flag',e.reconciliation_flag)+datum('Recipient registration',e.recipient_registry_id);
  h+=sourceButton(e.source_url,'Open reported disclosure')+datum('Notes',e.notes);
  }else if(kind==='entity'){
- h+=webTotalsBox(e.web)+datum('Name as reported',e.name)+datum('Entity type',e.entity_type)+datum('Registry ID',e.id)+datum('Jurisdiction',e.jurisdiction)+sourceButton(e.source_url,'Open registry record',RECORD_ART);
+ h+=webTotalsBox(e.web)+datum('Name as reported',e.name)+datum('Entity type',e.entity_type)+datum('Registry ID',e.id)+datum('Jurisdiction',e.jurisdiction)+sourceButton(e.source_url,/person who gave/i.test(e.entity_type||'')?'Open their gifts on FEC.gov':'Open registry record',RECORD_ART);
  h+=`<div class="detail-caution">This is one dot in the money web. Click a line to see one connection and its filing.</div>`+datum('Notes',e.notes);
  }else{
  h+=datum('Connection type',e.edge_type)+datum('From (as reported)',e.from_name)+datum('To (as reported)',e.to_name)+datum('Amount or aggregate figure',e.amount_usd!=null?money(e.amount_usd):'Not a money link')+datum('Date',dateText(e.date))+datum('Date semantics',e.date_kind)+datum('Jurisdiction',e.jurisdiction)+datum('Confidence',e.confidence)+sourceButton(e.source_url,'Open source evidence');
@@ -387,15 +387,18 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     const t = e.entity_type || '';
     if (/ballot measure/i.test(t)) return null;
     if (/municipal_public_body|election authority|federal agency|federal court/i.test(t)) return 'departments';
-    if (/candidate_named|member_of_congress|supreme_court_justice|president_of_the_united_states|media_owner_person/i.test(t) || looksPerson(e.legal_or_reported_name)) return 'people';
+    if (/candidate_named|member_of_congress|supreme_court_justice|president_of_the_united_states|media_owner_person|person who gave/i.test(t) || looksPerson(e.legal_or_reported_name)) return 'people';
     return 'orgs';
   };
   const lists = { orgs: [], people: [], departments: [] };
+  // D272: people who gave (donors-view.js). Every card says where the names come from and what the law allows.
+  const DONOR_NOTE = 'From FEC public filings; federal law bars using donor names to ask for money or for business (52 U.S.C. 30111(a)(4))';
   const seen = new Set();
   RESEARCH.entities.forEach(e => {
     const k = kindOf(e), key = norm(e.legal_or_reported_name) + '|' + (e.jurisdiction || '');
     if (!k || seen.has(key)) return; seen.add(key);
     lists[k].push({ name: e.legal_or_reported_name, type: tidy(e.entity_type), jur: e.jurisdiction || '', count: lines.get(norm(e.legal_or_reported_name)) || 0,
+      note: e.donor ? DONOR_NOTE : '',
       entity: { record_kind: 'entity', name: e.legal_or_reported_name, entity_type: e.entity_type, id: e.registry_identifier || e.entity_id, jurisdiction: e.jurisdiction, source_url: e.source_url, notes: e.notes } });
   });
   // Trails on the Follow one trail page that are not in the entity list above
@@ -405,6 +408,11 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   // every other committee from the FEC individual contributions file dated Nov 8, 2026 (through Sep 4, 2026). In-kind help not counted.
   lists.people.push({ name: 'Elon Musk', type: 'Person', jur: 'US', count: 0, trail: 'follow.html?person=elon-musk', note: 'Not his full total: cash in FEC records checked so far, America PAC through Oct 14, 2026 and other committees through Sep 4, 2026. CBS reported $158 million more to Senate Leadership Fund and the New York Times counted $474 million in all; those are news counts, not FEC records here',
     money: { item: 249354300, itemN: 60, repMax: 0, lines: 0, years: new Map([['2026', [205100000, 17]], ['2025', [44254300, 43]]]) } });
+  // D272: a person who has a hand row (Elon Musk) keeps that row, with its trail and money; the row also opens the person's
+  // FEC dot (made by donors-view.js) in the web, and the dot gets no second row.
+  { const HAND_DOT = { 'Elon Musk': 'MUSK, ELON' };
+    Object.entries(HAND_DOT).forEach(([hand, dot]) => { const r = lists.people.find(x => x.name === hand), i = lists.people.findIndex(x => x.entity && x.entity.entity_type && /person who gave/i.test(x.entity.entity_type) && norm(x.name) === norm(dot));
+      if (r && i >= 0) { r.web = lists.people[i].name; r.count = lists.people[i].count; lists.people.splice(i, 1); } }); }
   // D271: Hakeem Jeffries. jeffries-web.js adds his FEC committees to his member of Congress dot. Those lines are
   // registrations and votes, which carry no money, so the card shows what his campaign raised (FEC totals file) and opens his trail.
   { const J = window.TW_JEFFRIES, j = J && J.hub && lists.people.find(r => norm(r.name) === norm(J.hub));
@@ -456,18 +464,18 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (fq) rows = rows.filter(r => norm(r.name).includes(fq));
     const cm = cardMoney(false);
     rows = rows.map(r => ({ ...r, money: (r.handMoney && r.money) || cm.get(norm(r.name)) || r.money }));
-    if (lineOn) { const fl = filteredLineCounts(true); rows = rows.map(r => ({ ...r, count: fl.get(norm(r.name)) || 0 })).filter(r => r.count > 0); }
+    if (lineOn) { const fl = filteredLineCounts(true); rows = rows.map(r => ({ ...r, count: fl.get(norm(r.web || r.name)) || 0 })).filter(r => r.count > 0); }
     // Largest first: itemized filings, else the largest reported figure, then the most lines.
     rows.sort((x, y) => sizeOfRow(y) - sizeOfRow(x) || y.count - x.count || x.name.localeCompare(y.name));
     const max = rows.reduce((m, r) => Math.max(m, sizeOfRow(r)), 0);
     const cut = showAll[k] || q || on ? rows.length : 12;
     rows.slice(0, cut).forEach(r => {
       const btns = [];
-      if (r.count) { const b = el('button', 'tracker-web', 'See in the Money web'); b.type = 'button'; b.prepend(btnArt(WEB_ART)); b.addEventListener('click', () => openWeb(r.name)); btns.push(b); }
+      if (r.count) { const b = el('button', 'tracker-web', 'See in the Money web'); b.type = 'button'; b.prepend(btnArt(WEB_ART)); b.addEventListener('click', () => openWeb(r.web || r.name)); btns.push(b); }
       if (r.trail) { const a = el('a', 'tracker-web', 'Follow this trail →'); a.prepend(btnArt(CABINET)); a.href = r.trail; btns.push(a); }
       if (r.entity) { const b = el('button', 'tracker-inspect', 'Inspect'); b.type = 'button'; b.prepend(btnArt(CABINET)); b.addEventListener('click', () => pick(r.entity)); btns.push(b); }
       const lineWords = r.count ? r.count + (r.count === 1 ? ' line' : ' lines') + ' in the web' : 'No lines in the web yet';
-      list.append(trackerCard({ name: r.name, money: r.money, max, details: [lineWords, r.type, r.jur, r.note], source: r.entity && /^https?:/.test(r.entity.source_url || '') ? r.entity.source_url : '', buttons: btns }));
+      list.append(trackerCard({ name: r.name, money: r.money, max, details: [lineWords, r.type, r.jur, r.note], source: r.entity && /^https?:/.test(r.entity.source_url || '') ? r.entity.source_url : '', sourceLabel: r.entity && /person who gave/i.test(r.entity.entity_type || '') ? 'Their gifts on FEC.gov ↗' : '', buttons: btns }));
     });
     if (!rows.length) list.append(el('div', 'empty', on ? 'No names match these filters. Reset filters to see them all.' : 'No names match. Try fewer letters.'));
     const more = $('#' + k + '-view .tracker-more');
@@ -553,7 +561,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   function a(label, href) { const l = document.createElement('a'); l.textContent = label; l.href = href; return l; }
   function trailHref(id) {
     const ent = entityById[id];
-    if (!ent || !id) return '';
+    if (!ent || !id || /^fecind:/.test(id)) return ''; // D272: people who gave have no trail page; their gifts are in the web
     return 'follow.html?' + (/candidate_named/.test(ent.entity_type || '') ? 'candidate' : 'group') + '=' + encodeURIComponent(id);
   }
   function drawMap() {
@@ -784,7 +792,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   if (!f || !el) return;
   // D260: with the FEC bulk files there are hundreds of committees, so the footer names them only when there are a few.
   const fc = RESEARCH.meta.fec_committees || [];
-  el.textContent = f.records + ' more records come straight from FEC filings of ' + f.committees + ' committees' + (fc.length <= 20 ? ' (' + fc.join(', ') + ')' : '') + ', pulled from the FEC public data on ' + dateText(f.updated) + '. Each one links to its filing. Individuals are not included.';
+  el.textContent = f.records + ' more records come straight from FEC filings of ' + f.committees + ' committees' + (fc.length <= 20 ? ' (' + fc.join(', ') + ')' : '') + ', pulled from the FEC public data on ' + dateText(f.updated) + '. Each one links to its filing.' + (RESEARCH.meta.donors ? '' : ' Individuals are not included.');
   if (f.method && f.files) el.textContent += ' Which committees: ' + f.method;
   (RESEARCH.meta.fec_missing || []).forEach(m => { if (m.missing.length) el.textContent += ' ' + m.name + ': ' + (m.missing[0] === 'receipts' ? 'only payments so far; its receipts did not download yet.' : 'only receipts so far; its payments did not download yet.'); });
   const lag = (RESEARCH.meta.fec_missing || []).filter(m => m.lag && m.lag.length).map(m => m.name);
@@ -792,6 +800,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   if (f.no_records && f.no_records.length) el.textContent += ' No itemized lines in the FEC files yet for ' + f.no_records.map(x => x.name).join(', ') + '.';
   const md = RESEARCH.meta.media; // D249
   if (md) el.textContent += ' Media companies: payments to them and gifts by their company PACs come from the FEC 2025-2026 bulk files, pulled on ' + dateText(String(md.retrieved || '').slice(0, 10)) + '.';
+  const dn = RESEARCH.meta.donors; // D272
+  if (dn) el.textContent += ' People who gave: the ' + dn.people_main.toLocaleString('en-US') + ' people who gave $' + Number(dn.main_line).toLocaleString('en-US') + ' or more in all to federal committees are in the web, and ' + dn.people_search.toLocaleString('en-US') + ' more who gave $' + Number(dn.search_line).toLocaleString('en-US') + ' or more load when you search for them. The same line for every side and party. They come from the FEC individual contributions file dated ' + dateText(dn.file_date) + ', which lists a person once their gifts to one committee pass $200. Spellings of one name are put together only within one state, when the ZIP code or employer matches too. Name, city, state, employer and occupation are shown as filed; ZIP codes and addresses are not. Federal law bars using donor names from FEC filings to ask for money or for business (52 U.S.C. 30111(a)(4)).';
   const mi = RESEARCH.meta.mi;
   if (mi) el.textContent += ' ' + mi.records + ' records for Michigan Proposal 2 come from the two ballot committees\' own state reports (Michigan MiTN public search), pulled on ' + dateText(mi.updated) + '. People who gave are counted but not named.';
 })();
@@ -1407,7 +1417,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
 (function () {
   const el = (tag, cls, text) => { const d = document.createElement(tag); if (cls) d.className = cls; if (text != null) d.textContent = text; return d; };
   const ORG_WORD = /\b(INC|LLC|PAC|FUND|COMMITTEE|COMM|ASSOC|ASSOCIATION|UNION|COUNCIL|PARTY|CAUCUS|CHURCH|PROJECT|FOUNDATION|TRUST|CAMPAIGN|NETWORK|ACTION|LEAGUE|COALITION|CORP|CORPORATION|SOCIETY|CENTER|ALLIANCE|COLORADO|AMERICA|LOCAL)\b/i;
-  const PERSON_TYPE = /candidate_named|member_of_congress|supreme_court_justice|president_of_the_united_states|media_owner_person/i;
+  const PERSON_TYPE = /candidate_named|member_of_congress|supreme_court_justice|president_of_the_united_states|media_owner_person|person who gave/i;
   const looksPerson = n => { const p = String(n || '').split(','); return p.length === 2 && !ORG_WORD.test(n) && p.every(x => { const w = x.trim().split(/\s+/); return w[0] && w.length <= 3; }); };
   const isPerson = e => PERSON_TYPE.test(e.entity_type || '') || looksPerson(e.name);
   // D261: every kind of dot is told apart the same way wherever it is clicked (center, neighbor, tracker card).
