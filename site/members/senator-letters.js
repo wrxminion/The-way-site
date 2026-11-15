@@ -8,8 +8,8 @@
 'use strict';
 
 const BASE = '/members/senator-letters/';
-const FILES = ['senators.js?v=1', 'issues.js?v=1', 'letters.js?v=1'];
-const CSS = BASE + 'senator-letters.css?v=1';
+const FILES = ['senators.js?v=2', 'issues.js?v=2', 'letters.js?v=2'];
+const CSS = BASE + 'senator-letters.css?v=2';
 
 function loadScript(src) {
   return new Promise((ok, bad) => {
@@ -52,6 +52,15 @@ function make(ctx) {
     const castWord = (c) => (c === 'Yea' ? 'Voted yes' : c === 'Nay' ? 'Voted no' : 'Did not vote');
     const ext = (text, href, cls) => h('a', { class: cls || null, href, target: '_blank', rel: 'noopener', text });
     const num = (n) => h('span', { class: 'cs-num', text: String(n) });
+    // Text from issues.js may hold links written as [words](https://...). They become real links; the rest stays text.
+    const rich = (str) => {
+      const out = [], re = /\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g;
+      let last = 0, m;
+      while ((m = re.exec(str))) { out.push(str.slice(last, m.index)); out.push(ext(m[1], m[2])); last = re.lastIndex; }
+      out.push(str.slice(last));
+      return out.filter((x) => x !== '');
+    };
+    const srcLinks = (cites) => (cites || []).flatMap((x, i) => [i ? '; ' : '', ext(`${x.src}, ${x.date}`, x.url)]);
 
     // Controls
     const issueSel = h('select', { id: 'cs-issue' }, ISSUES.map((i) => h('option', { value: i.id, text: i.menu })));
@@ -81,12 +90,17 @@ function make(ctx) {
     const openForm = h('a', { class: 'cs-btn', href: '#', target: '_blank', rel: 'noopener', text: 'Open their form' });
     const callBtn = h('a', { class: 'cs-btn', href: '#', text: 'Call' });
     const field = (label, input, wide) => h('label', { class: 'cs-field' + (wide ? ' cs-wide' : '') }, h('span', { text: label }), input);
+    const picks = h('div', { class: 'cs-picks', hidden: true });
+    const pickHead = h('h3', { hidden: true }, num(4), 'Pick what goes in your letter');
+    let factBoxes = [], viewBoxes = [], recordBox = null;
+    const stance = () => (rFor.checked ? 'for' : rAgainst.checked ? 'against' : '');
 
     const step2 = h('div', { class: 'cs-step', hidden: true },
       h('h3', null, num(3), question),
       h('div', { class: 'cs-choice', role: 'radiogroup', 'aria-label': 'Your answer' },
         h('label', { class: 'cs-pill' }, rFor, labFor), h('label', { class: 'cs-pill' }, rAgainst, labAgainst)),
-      h('h3', null, num(4), 'Your reasons ', h('span', { class: 'cs-opt', text: '(optional, but it helps)' })),
+      pickHead, picks,
+      h('h3', null, num(5), 'Your own reasons ', h('span', { class: 'cs-opt', text: '(optional, but it helps)' })),
       field('Type your reasons in your own words. The letter will include them as you wrote them.', reasons, true),
       h('div', { class: 'cs-row' }, field('Your name (optional)', nameIn), field('Your town (optional)', townIn)),
       h('div', { class: 'cs-row' }, field('About you (optional)', whoSel), field('Voice', voiceSel)),
@@ -94,7 +108,7 @@ function make(ctx) {
       h('p', null, h('button', { type: 'button', class: 'cs-btn cs-main', text: 'Write my letter', onclick: () => { write(); if (!out.hidden) out.scrollIntoView({ behavior: 'smooth', block: 'start' }); } })));
 
     const out = h('div', { class: 'cs-step', hidden: true, 'aria-live': 'polite' },
-      h('h3', null, num(5), 'Your letter'), voiceLine,
+      h('h3', null, num(6), 'Your letter'), voiceLine,
       field('Subject', subject, true),
       field('Letter (you can edit it here before you copy it)', letter, true),
       h('div', { class: 'cs-actions' },
@@ -108,23 +122,64 @@ function make(ctx) {
       tip);
 
     // Issue panel
+    const factLi = (f) => h('li', null, f.text + ' ', h('span', { class: 'cs-cite' }, '(', srcLinks(f.cite), ')'));
     function factList(title, facts) {
-      return h('div', { class: 'cs-side' }, h('h4', { text: title }), h('ul', null, facts.map((f) => h('li', { text: f[0] }))));
+      return h('div', { class: 'cs-side' }, h('h4', { text: `${title} (${facts.length})` }), h('ul', null, facts.map(factLi)));
     }
     function showIssue() {
+      const either = issue.facts.either || [];
       panel.replaceChildren(...[
         h('h4', { class: 'cs-issue-title', text: issue.title }),
-        h('p', { class: 'cs-status-line', text: issue.status }),
-        issue.summary.map((p) => h('p', { text: p })),
+        h('p', { class: 'cs-status-line' }, rich(issue.status)),
+        issue.summary.map((p) => h('p', null, rich(p))),
+        issue.searched ? h('p', { class: 'cs-searched', text: issue.searched }) : null,
         h('div', { class: 'cs-sides' },
-          factList(issue.labels.for + ': facts the letters use', issue.facts.for),
-          factList(issue.labels.against + ': facts the letters use', issue.facts.against)),
-        h('details', { class: 'cs-sources' }, h('summary', { text: 'Sources for this issue' }),
-          h('ul', null, issue.sources.map((s) => h('li', null, ext(s.label, s.url)))))].flat());
+          factList(issue.labels.for, issue.facts.for),
+          factList(issue.labels.against, issue.facts.against)),
+        either.length ? h('div', { class: 'cs-side cs-either' }, h('h4', { text: `${issue.eitherLabel || 'Either side'} (${either.length})` }),
+          h('p', { class: 'cs-small', text: 'Either side can use these. They are the votes as cast, from the official record.' }),
+          h('ul', null, either.map(factLi))) : null,
+        h('details', { class: 'cs-sources' }, h('summary', { text: 'All sources for this issue' }),
+          h('ul', null, issue.sources.map((x) => h('li', null, ext(`${x.src}, ${x.date}`, x.url)))))].flat().filter(Boolean));
       question.textContent = issue.question;
       labFor.textContent = issue.labels.for;
       labAgainst.textContent = issue.labels.against;
     }
+
+    // Step 4: the reader picks the facts and reasons for the letter.
+    function box(label, checked, extra) {
+      const i = h('input', { type: 'checkbox' }); i.checked = !!checked;
+      i.addEventListener('change', () => { if (!out.hidden) write(); });
+      return { input: i, el: h('label', { class: 'cs-check' }, i, h('span', null, label, extra || null)) };
+    }
+    function group(title, items, note) {
+      const all = h('button', { type: 'button', class: 'cs-link', text: 'Check all', onclick: () => { items.forEach((b) => { b.input.checked = true; }); if (!out.hidden) write(); } });
+      const none = h('button', { type: 'button', class: 'cs-link', text: 'Clear', onclick: () => { items.forEach((b) => { b.input.checked = false; }); if (!out.hidden) write(); } });
+      return h('fieldset', { class: 'cs-group' }, h('legend', { text: title }),
+        note ? h('p', { class: 'cs-small', text: note }) : null,
+        h('p', { class: 'cs-group-tools' }, all, ' · ', none), items.map((b) => b.el));
+    }
+    function showPicks() {
+      const st = stance();
+      pickHead.hidden = picks.hidden = !st || !chosen;
+      if (!st || !chosen) return;
+      const self = issue.subject && chosen.id === issue.subject;
+      const on = new Set(L.defaultFacts(issue, st));
+      const mk = (f) => Object.assign(box((self && f.you ? f.you : f.text) + ' ', on.has(f.id), h('span', { class: 'cs-cite' }, '(', srcLinks(f.cite), ')')), { id: f.id });
+      const side = (issue.facts[st] || []).map(mk), either = (issue.facts.either || []).map(mk);
+      factBoxes = side.concat(either);
+      viewBoxes = issue.views[st].map((v, i) => Object.assign(box(v, i === 0), { text: v }));
+      const hasRecord = issue.record && !self && (issue.record.type === 'breaks' ? !!chosen.breaks : !!L.castFor(issue, chosen));
+      recordBox = hasRecord ? box(`Mention how Senator ${chosen.last} voted (from the official roll call, with the link)`, true) : null;
+      picks.replaceChildren(...[
+        h('p', { class: 'cs-small', text: 'Every checked fact goes into the letter with its source: the outlet, the date and the link, so the office can check it. Uncheck anything you do not want to use.' }),
+        group(`Facts for your side: ${issue.labels[st]}`, side),
+        either.length ? group(issue.eitherLabel || 'Either side', either, 'Votes as cast. Use any that fit your view.') : null,
+        group('Reasons (your opinion, no source needed)', viewBoxes),
+        recordBox ? group('Their own record', [recordBox]) : null].filter(Boolean));
+    }
+    rFor.addEventListener('change', showPicks);
+    rAgainst.addEventListener('change', showPicks);
 
     // Senator cards
     function card(s) {
@@ -152,6 +207,7 @@ function make(ctx) {
       showCards();
       step2.hidden = !chosen;
       if (!chosen) out.hidden = true;
+      showPicks();
       if (chosen && scroll) step2.scrollIntoView({ behavior: 'smooth', block: 'start' });
       if (chosen && !out.hidden) write();
     }
@@ -165,6 +221,7 @@ function make(ctx) {
       issueSel.value = issue.id;
       rFor.checked = false; rAgainst.checked = false;
       out.hidden = true;
+      showPicks();
       showIssue();
       autoChoose();
       try { history.replaceState(null, '', '#/senator-letters/' + encodeURIComponent(issue.id)); } catch { /* ignore */ }
@@ -182,12 +239,15 @@ function make(ctx) {
       const st = rFor.checked ? 'for' : rAgainst.checked ? 'against' : '';
       if (!chosen) { status.textContent = 'Pick a senator first.'; return; }
       if (!st) { status.textContent = 'Pick a side first.'; out.hidden = false; return; }
-      const o = { reasons: reasons.value, name: nameIn.value, town: townIn.value, who: whoSel.value, voice: voiceSel.value };
+      const o = { reasons: reasons.value, name: nameIn.value, town: townIn.value, who: whoSel.value, voice: voiceSel.value,
+        facts: factBoxes.filter((b) => b.input.checked).map((b) => b.id),
+        views: viewBoxes.filter((b) => b.input.checked).map((b) => b.text),
+        record: recordBox ? recordBox.input.checked : false };
       const r = L.build(issue, chosen, st, o, lastVoice);
       lastVoice = r.voice;
       subject.value = r.subject;
       letter.value = r.body;
-      voiceLine.textContent = `To Senator ${chosen.name} · ${issue.labels[st]} · Voice: ${r.label}${o.voice ? '' : ' (picked at random)'}`;
+      voiceLine.textContent = `To Senator ${chosen.name} · ${issue.labels[st]} · ${o.facts.length} ${o.facts.length === 1 ? 'fact' : 'facts'} with sources · Voice: ${r.label}${o.voice ? '' : ' (picked at random)'}`;
       openForm.href = chosen.form;
       callBtn.href = tel(chosen.phone);
       callBtn.textContent = 'Call ' + chosen.phone;
@@ -223,7 +283,7 @@ function make(ctx) {
       h('h1', { text: 'Contact Your Senator' }),
       h('p', { class: 'cs-preview', text: 'Preview for super admins. This is not on the public site yet. Try it, then say what to change before it goes public.' }),
       h('p', { class: 'lede', text: 'Phone and official contact form for all 100 senators. Pick an issue, say where you stand, add your own reasons, and get a letter. Every click writes a different letter, in a different voice.' }),
-      h('p', { class: 'cs-neutral' }, h('strong', { text: 'The Way takes no side. ' }), 'The tool works the same way for both answers, with the same number of facts on each side.'),
+      h('p', { class: 'cs-neutral' }, h('strong', { text: 'The Way takes no side. ' }), 'For each issue we searched for the arguments on both sides and publish every one we could tie to a source, the same way for both sides. You pick which ones go in your letter, and each one carries its source.'),
       h('div', { class: 'cs-step' }, h('h3', null, num(1), 'Pick an issue'), field('Issue or vote', issueSel, true), panel),
       h('div', { class: 'cs-step' }, h('h3', null, num(2), 'Pick your senator'),
         h('div', { class: 'cs-row' }, field('Your state', stateSel), field('Or any senator', senSel)), cards),
@@ -232,7 +292,9 @@ function make(ctx) {
       h('p', { text: 'Each senator runs a different form on their own website. Ten of them were tested on November 15, 2026 by putting text in the link, and none filled it in. Most ask for your street address and ZIP code, many say they only answer people who live in their state, and some use a robot check. So the tool gives Copy letter, Open their form and Call instead.' }),
       h('h2', { text: 'How the facts are chosen' }),
       h('ul', null,
-        h('li', { text: 'Every issue has facts for both sides, the same number on each side, and each fact names its source. Sources are listed with each issue.' }),
+        h('li', { text: 'We searched news reports, official records (Senate roll calls, bill text, FEC filings) and statements from both sides, and kept every point we could tie to a source. Some issues have more points on one side, because the record has more. We do not pad the thinner side.' }),
+        h('li', { text: 'Every fact you check goes into the letter with its source written out: outlet, date and link.' }),
+        h('li', { text: 'Every vote count links to the official roll call. A voice vote has no roll call, so it links to the official record of the action.' }),
         h('li', { text: 'When the Senate has already voted, the card and the letter can say how that senator voted, from the official roll call.' }),
         h('li', { text: 'For the Democratic leader vote, a letter can name a vote where that senator broke from most Democratic senators (nine official roll calls from 2025 and 2026; close splits left out).' }),
         h('li', { text: 'Only the Senate is covered. House members are not listed, because all 435 House contacts could not be checked yet.' }),
