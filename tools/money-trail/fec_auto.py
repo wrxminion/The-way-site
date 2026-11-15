@@ -13,7 +13,7 @@ What one run does:
      since the last run, it stops there ("no change").
   3. fec_bulk.py picks the committees and their largest records, the same rule for every side.
   4. add_fec_batch.py rebuilds site/money-trail/fec-data.js and the fec-more/ files (D262), then build_home_web.py and add_money_links.py run,
-     the same steps as every FEC batch before.
+     the same steps as every FEC batch before, then build_donors.py (D272) rebuilds donors.js and donors/ (people who gave).
   5. Safety checks: fewer than 100 committees, fewer than 60 percent of the records the site has now, or fewer than
      60 percent of the fec-more committees, stops the
      run with a note and nothing is published.
@@ -25,7 +25,7 @@ already on the computer.
 import argparse, datetime, json, os, re, subprocess, sys
 
 REPO_URL = 'https://github.com/wrxminion/The-way-site.git'
-DATA = ['site/money-trail/fec-data.js', 'site/money-trail/fec-more', 'site/money-trail/index.html', 'site/money-trail/home-names.json',
+DATA = ['site/money-trail/fec-data.js', 'site/money-trail/fec-more', 'site/money-trail/donors.js', 'site/money-trail/donors', 'site/money-trail/index.html', 'site/money-trail/home-names.json',
         'site/money-trail/home-panels.json', 'site/index.html', 'site/case-studies/index.html']
 
 ap = argparse.ArgumentParser()
@@ -92,6 +92,8 @@ if was == now and not a.force:
 r = run([sys.executable, '-I', os.path.join(tools, 'add_fec_batch.py'), 'site', out, '--skip', 'C00530766'], cwd=a.repo)
 log('add_fec_batch:', ' | '.join(x for x in r.stdout.strip().splitlines() if x.startswith(('records:', 'committees:'))))
 run([sys.executable, '-I', os.path.join(tools, 'build_home_web.py'), 'site'], cwd=a.repo)
+r = run([sys.executable, '-I', os.path.join(tools, 'build_donors.py'), a.bulk, 'site'], cwd=a.repo)  # D272: people who gave
+log('build_donors:', r.stdout.strip().splitlines()[-1] if r.stdout.strip() else 'done')
 run([sys.executable, os.path.join(a.repo, 'tools', 'case-studies', 'add_money_links.py')], cwd=a.repo)
 
 # 5. safety checks

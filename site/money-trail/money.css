@@ -319,3 +319,10 @@ a.fec-more-hit:focus{outline:2px solid #57c2ad;outline-offset:-2px}
 .fec-more-open{margin:6px 0 10px;font-size:14px}
 .fec-more-open a{color:#9fe3d3}
 .fec-more-loaded{font-size:13px;color:#e9d59d;margin:4px 0}
+/* D272: people who gave (donors-view.js): the law note under each list of people, and the Person tracker list */
+.donor-law{padding:6px 12px 8px;font-size:11.5px;line-height:1.4;color:var(--muted)}
+.donor-more-under .fec-more-list{margin-top:6px;background:#0a2230;border:1px solid #315a64;border-radius:8px;max-height:300px;overflow:auto}
+.donor-tracker-under{margin:0 0 12px}
+.donor-tracker-under .mt-web-hit{display:flex;flex-direction:column;gap:2px;padding:8px 12px;color:inherit;text-decoration:none;border-top:1px solid #1d3f4a}
+.donor-tracker-under .mt-web-hit:hover,.donor-tracker-under .mt-web-hit:focus{background:#0f3242}
+.donor-tracker-under .mt-web-hit-size{font-size:12px;color:var(--muted)}
