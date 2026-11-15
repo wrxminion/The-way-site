@@ -1,0 +1,1441 @@
+{
+ "checked": "2026-11-15",
+ "note": "Hand-checked list. Edit this file, then run: python3 tools/get-involved/build_get_involved.py",
+ "house": {
+  "week": "Week of November 16, 2026",
+  "status": "The House Clerk's site said on November 15 that the next House session is Tuesday, November 17, 2026 at 12:00 p.m.",
+  "status_src": [
+   "Office of the Clerk, U.S. House",
+   "https://clerk.house.gov/"
+  ],
+  "more": "The Majority Leader's schedule says additional legislative items are possible.",
+  "days": [
+   {
+    "label": "Tuesday, November 17",
+    "note": "The House meets at noon for morning hour and 2:00 p.m. for legislative business. Votes are postponed until 6:30 p.m.",
+    "items": [
+     {
+      "bill": "H.R. 7954",
+      "how": "suspension"
+     },
+     {
+      "bill": "H.R. 8195",
+      "how": "suspension",
+      "amended": true
+     },
+     {
+      "bill": "H.R. 8483",
+      "how": "suspension",
+      "amended": true
+     },
+     {
+      "bill": "H.R. 9600",
+      "how": "suspension"
+     },
+     {
+      "bill": "H.R. 10136",
+      "how": "suspension",
+      "amended": true
+     },
+     {
+      "bill": "H.R. 9640",
+      "how": "suspension",
+      "amended": true
+     },
+     {
+      "bill": "H.R. 9785",
+      "how": "suspension",
+      "amended": true
+     },
+     {
+      "bill": "H.R. 9269",
+      "how": "suspension",
+      "amended": true
+     },
+     {
+      "bill": "H.R. 2400",
+      "how": "suspension",
+      "amended": true,
+      "senate_amendment": true
+     },
+     {
+      "bill": "H.R. 7254",
+      "how": "suspension",
+      "amended": true
+     }
+    ],
+    "at": "2026-11-17T18:30:00-05:00",
+    "at_label": "House votes start"
+   },
+   {
+    "label": "Wednesday, November 18 to Friday, November 20",
+    "note": "On Wednesday and Thursday the House meets at 10:00 a.m. for morning hour and noon for legislative business. On Friday it meets at 9:00 a.m., and last votes are expected no later than 3:00 p.m. The schedule does not say which of these days each bill comes up.",
+    "items": [
+     {
+      "bill": "H.R. 5490",
+      "how": "suspension",
+      "amended": true
+     },
+     {
+      "bill": "H.R. 4464",
+      "how": "suspension"
+     },
+     {
+      "bill": "H.R. 7934",
+      "how": "suspension"
+     },
+     {
+      "bill": "H.R. 5267",
+      "how": "rule"
+     },
+     {
+      "bill": "H.R. 3495",
+      "how": "rule"
+     }
+    ],
+    "at": "2026-11-18T12:00:00-05:00",
+    "at_label": "Earliest these can come up"
+   }
+  ],
+  "sources": [
+   [
+    "House Majority Leader, weekly schedule (days, times and sponsors)",
+    "https://www.majorityleader.gov/schedule/weekly-schedule.htm"
+   ],
+   [
+    "House floor documents for the week of November 16, 2026 (bill text the House will vote on)",
+    "https://docs.house.gov/floor/Default.aspx?date=2026-11-16"
+   ],
+   [
+    "Office of the Clerk, U.S. House (session status and roll call votes)",
+    "https://clerk.house.gov/"
+   ]
+  ]
+ },
+ "senate": {
+  "week": "Week of November 16, 2026",
+  "status": "The Senate convenes at 3:00 p.m. on Monday, November 16, 2026. The Senate has not posted times for later days yet.",
+  "status_src": [
+   "U.S. Senate floor schedule",
+   "https://www.senate.gov/legislative/schedule/floor_schedule.htm"
+  ],
+  "days": [
+   {
+    "label": "Monday, November 16",
+    "items": [
+     {
+      "kind": "nomination",
+      "what": "Daniel Desmond Domenico, of Colorado, to be U.S. Circuit Judge for the Tenth Circuit",
+      "when": "Confirmation vote at 5:30 p.m.",
+      "src": [
+       "Senate Executive Calendar, November 16, 2026",
+       "https://www.senate.gov/legislative/LIS/executive_calendar/xcalv.pdf"
+      ],
+      "at": "2026-11-16T17:30:00-05:00",
+      "at_label": "Confirmation vote",
+      "committee": "Senate Committee on the Judiciary"
+     },
+     {
+      "kind": "nomination",
+      "what": "Four district judge nominations: Richard Wesley Bennett (Southern District of Texas), Courtney Leigh Coker (Northern District of Texas), Kyle Frederick Reardon (District of Alaska) and Daniel Lewis Ballou (Eastern District of Kentucky)",
+      "when": "The motions to end debate (cloture) on these nominations ripen at 5:30 p.m., which means the Senate can then vote on them. The Senate's order says the cloture motions filed during Wednesday's session ripen then, \"including\" these four.",
+      "src": [
+       "Senate Executive Calendar, November 16, 2026",
+       "https://www.senate.gov/legislative/LIS/executive_calendar/xcalv.pdf"
+      ],
+      "at": "2026-11-16T17:30:00-05:00",
+      "at_label": "Cloture motions ripen",
+      "committee": "Senate Committee on the Judiciary"
+     },
+     {
+      "kind": "nomination",
+      "what": "Anna St. John, of Louisiana, to be U.S. Circuit Judge for the Fifth Circuit",
+      "when": "Confirmation vote at a time the Majority Leader sets with the Democratic Leader, no earlier than Monday, November 16.",
+      "src": [
+       "Senate Executive Calendar, November 16, 2026",
+       "https://www.senate.gov/legislative/LIS/executive_calendar/xcalv.pdf"
+      ],
+      "committee": "Senate Committee on the Judiciary"
+     }
+    ]
+   }
+  ],
+  "pending": [
+   {
+    "bill": "H.R. 2347",
+    "what": "The permitting reform bill (BAAJA), carried in the Senate on H.R. 2347",
+    "when": "A motion to end debate (cloture) on the bill was filed November 11, 2026. The Senate's order says cloture motions filed during Wednesday's session ripen at 5:30 p.m. Monday, November 16. Check the Senate floor schedule for when the vote is held.",
+    "at": "2026-11-16T17:30:00-05:00",
+    "at_label": "Cloture motions from Nov 11 ripen"
+   },
+   {
+    "bill": "H.R. 9237",
+    "what": "The House veterans bill, Take Care of America's Veterans Act",
+    "when": "Passed the House November 11, 2026. No Senate vote is scheduled on the pages we read."
+   }
+  ],
+  "breaks": "The Senate's tentative 2026 schedule lists a state work period (no session) from November 23 to 27 (Thanksgiving) and from December 21 to 31.",
+  "breaks_src": [
+   "U.S. Senate, tentative 2026 legislative schedule",
+   "https://www.senate.gov/legislative/2026_schedule.htm"
+  ],
+  "sources": [
+   [
+    "U.S. Senate floor schedule",
+    "https://www.senate.gov/legislative/schedule/floor_schedule.htm"
+   ],
+   [
+    "Senate Executive Calendar for November 16, 2026 (nominations and the order for Monday's votes)",
+    "https://www.senate.gov/legislative/LIS/executive_calendar/xcalv.pdf"
+   ],
+   [
+    "Senate Democrats floor page",
+    "https://www.democrats.senate.gov/floor"
+   ],
+   [
+    "U.S. Senate roll call votes (after a vote)",
+    "https://www.senate.gov/legislative/votes_new.htm"
+   ]
+  ],
+  "not_read": "The Senate Republican floor updates page (republican.senate.gov) did not load for us, so nothing here comes from it.",
+  "breaks_dates": true
+ },
+ "bills": [
+  {
+   "number": "H.R. 7954",
+   "title": "Don Young Doug LaMalfa Indian Buffalo Management Act",
+   "introduced": "2026-03-17",
+   "sponsor": {
+    "name": "Rep. Hurd, Jeff [R-CO-3]",
+    "bioguide": "H001100"
+   },
+   "cosponsors": {
+    "total": 15,
+    "D": 7,
+    "R": 8,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Natural Resources"
+   ],
+   "policy_area": "Native Americans",
+   "latest_action": {
+    "date": "2026-10-29",
+    "text": "Placed on the Union Calendar, Calendar No. 753."
+   },
+   "actions": [
+    [
+     "2026-03-17",
+     "Introduced in House"
+    ],
+    [
+     "2026-03-17",
+     "Referred to the House Committee on Natural Resources."
+    ],
+    [
+     "2026-09-15",
+     "Ordered to be Reported by Unanimous Consent."
+    ],
+    [
+     "2026-10-29",
+     "Reported by the Committee on Natural Resources. H. Rept. 119-856."
+    ],
+    [
+     "2026-10-29",
+     "Placed on the Union Calendar, Calendar No. 753."
+    ]
+   ],
+   "summary": {
+    "version": "Reported to House",
+    "date": "2026-10-29",
+    "text": "Directs the Interior Department to work with tribes and tribal organizations on tribal ownership and management of buffalo and buffalo habitat on Indian lands, including contracts, grants, technical help, consultation on disease containment, and a buffalo management policy. Interior may also arrange transfers of surplus federal buffalo onto Indian land. The authority ends seven years after the bill becomes law."
+   },
+   "related": [
+    "S. 3478"
+   ],
+   "update_date": "2026-11-12"
+  },
+  {
+   "number": "H.R. 8195",
+   "title": "Responsible Cormorant Management and Control Act of 2026",
+   "introduced": "2026-04-02",
+   "sponsor": {
+    "name": "Rep. Walberg, Tim [R-MI-5]",
+    "bioguide": "W000798"
+   },
+   "cosponsors": {
+    "total": 6,
+    "D": 0,
+    "R": 6,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Natural Resources"
+   ],
+   "policy_area": "Animals",
+   "latest_action": {
+    "date": "2026-10-29",
+    "text": "Placed on the Union Calendar, Calendar No. 754."
+   },
+   "actions": [
+    [
+     "2026-04-02",
+     "Introduced in House"
+    ],
+    [
+     "2026-04-02",
+     "Referred to the House Committee on Natural Resources."
+    ],
+    [
+     "2026-09-15",
+     "Ordered to be Reported in the Nature of a Substitute by Unanimous Consent."
+    ],
+    [
+     "2026-10-29",
+     "Reported (Amended) by the Committee on Natural Resources. H. Rept. 119-857."
+    ],
+    [
+     "2026-10-29",
+     "Placed on the Union Calendar, Calendar No. 754."
+    ]
+   ],
+   "summary": {
+    "version": "Reported to House",
+    "date": "2026-10-29",
+    "text": "Requires the Fish and Wildlife Service to set up regional management plans for double-crested cormorants (a fish-eating water bird), working with the four Regional Flyway Councils and state and tribal wildlife agencies. The plans cover population levels, how many birds may be taken, and regional effects, and are reviewed every five years with population surveys. The Service must also report to Congress on hunting licenses. The requirements end January 1, 2034."
+   },
+   "related": [
+    "S. 5514"
+   ],
+   "update_date": "2026-11-12"
+  },
+  {
+   "number": "H.R. 8483",
+   "title": "Barona Group of Capitan Grande Band of Mission Indians Land Transfer Act of 2026",
+   "introduced": "2026-04-23",
+   "sponsor": {
+    "name": "Rep. Issa, Darrell [R-CA-48]",
+    "bioguide": "I000056"
+   },
+   "cosponsors": {
+    "total": 0,
+    "D": 0,
+    "R": 0,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Natural Resources"
+   ],
+   "policy_area": "Native Americans",
+   "latest_action": {
+    "date": "2026-10-29",
+    "text": "Placed on the Union Calendar, Calendar No. 755."
+   },
+   "actions": [
+    [
+     "2026-04-23",
+     "Introduced in House"
+    ],
+    [
+     "2026-04-23",
+     "Referred to the House Committee on Natural Resources."
+    ],
+    [
+     "2026-09-15",
+     "Ordered to be Reported in the Nature of a Substitute by Unanimous Consent."
+    ],
+    [
+     "2026-10-29",
+     "Reported (Amended) by the Committee on Natural Resources. H. Rept. 119-858."
+    ],
+    [
+     "2026-10-29",
+     "Placed on the Union Calendar, Calendar No. 755."
+    ]
+   ],
+   "summary": {
+    "version": "Reported to House",
+    "date": "2026-10-29",
+    "text": "Takes three parcels of federal land (about 847 acres) in San Diego County, California, into trust for the Barona Group as part of its reservation. One parcel is managed by the Bureau of Land Management and two are Forest Service land, which would move to the Interior Department. Existing liens, rights-of-way, permits, public access and wildfire access stay in place, the Tribe must keep a fuel break on two parcels, and gaming is not allowed on the land."
+   },
+   "related": [],
+   "update_date": "2026-11-12"
+  },
+  {
+   "number": "H.R. 9600",
+   "title": "Common Sense 250 Act of 2026",
+   "introduced": "2026-07-06",
+   "sponsor": {
+    "name": "Rep. Raskin, Jamie [D-MD-8]",
+    "bioguide": "R000606"
+   },
+   "cosponsors": {
+    "total": 1,
+    "D": 0,
+    "R": 1,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Natural Resources"
+   ],
+   "policy_area": "Public Lands and Natural Resources",
+   "latest_action": {
+    "date": "2026-10-29",
+    "text": "Placed on the Union Calendar, Calendar No. 757."
+   },
+   "actions": [
+    [
+     "2026-07-06",
+     "Introduced in House"
+    ],
+    [
+     "2026-07-06",
+     "Referred to the House Committee on Natural Resources."
+    ],
+    [
+     "2026-09-15",
+     "Ordered to be Reported by Unanimous Consent."
+    ],
+    [
+     "2026-10-29",
+     "Reported by the Committee on Natural Resources. H. Rept. 119-860."
+    ],
+    [
+     "2026-10-29",
+     "Placed on the Union Calendar, Calendar No. 757."
+    ]
+   ],
+   "summary": {
+    "version": "Reported to House",
+    "date": "2026-10-29",
+    "text": "Requires the already approved monument honoring Thomas Paine to be placed in Area 1 of the National Mall, the area kept for memorials of the highest historical importance."
+   },
+   "related": [],
+   "update_date": "2026-11-12"
+  },
+  {
+   "number": "H.R. 10136",
+   "title": "Crossett Experimental Forest Act of 2026",
+   "introduced": "2026-08-20",
+   "sponsor": {
+    "name": "Rep. Westerman, Bruce [R-AR-4]",
+    "bioguide": "W000821"
+   },
+   "cosponsors": {
+    "total": 0,
+    "D": 0,
+    "R": 0,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Natural Resources"
+   ],
+   "policy_area": "Public Lands and Natural Resources",
+   "latest_action": {
+    "date": "2026-10-29",
+    "text": "Placed on the Union Calendar, Calendar No. 761."
+   },
+   "actions": [
+    [
+     "2026-08-20",
+     "Introduced in House"
+    ],
+    [
+     "2026-08-20",
+     "Referred to the House Committee on Natural Resources."
+    ],
+    [
+     "2026-09-15",
+     "Ordered to be Reported in the Nature of a Substitute by Unanimous Consent."
+    ],
+    [
+     "2026-10-29",
+     "Reported (Amended) by the Committee on Natural Resources. H. Rept. 119-864."
+    ],
+    [
+     "2026-10-29",
+     "Placed on the Union Calendar, Calendar No. 761."
+    ]
+   ],
+   "summary": {
+    "version": "Reported to House",
+    "date": "2026-10-29",
+    "text": "Directs the Forest Service, if Arkansas asks, to give the Crossett Experimental Forest and the R.R. Reynolds Research Natural Area to the state, to become a state experimental forest. Arkansas must keep it for forest research and education and work with University of Arkansas campuses. The transfer is free, by quitclaim deed, and at Arkansas's cost."
+   },
+   "related": [],
+   "update_date": "2026-11-12"
+  },
+  {
+   "number": "H.R. 9640",
+   "title": "Earth MRI Reauthorization Act of 2026",
+   "title_note": "The official title, in our words: it changes the Infrastructure Investment and Jobs Act to renew the Earth Mapping Resources Initiative (Earth MRI).",
+   "introduced": "2026-07-09",
+   "sponsor": {
+    "name": "Rep. Wittman, Robert J. [R-VA-1]",
+    "bioguide": "W000804"
+   },
+   "cosponsors": {
+    "total": 7,
+    "D": 3,
+    "R": 4,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Natural Resources"
+   ],
+   "policy_area": "Energy",
+   "latest_action": {
+    "date": "2026-09-15",
+    "text": "Ordered to be Reported in the Nature of a Substitute by Unanimous Consent."
+   },
+   "actions": [
+    [
+     "2026-07-09",
+     "Introduced in House"
+    ],
+    [
+     "2026-07-09",
+     "Referred to the House Committee on Natural Resources."
+    ],
+    [
+     "2026-07-21",
+     "Subcommittee Hearings Held (Energy and Mineral Resources Subcommittee)"
+    ],
+    [
+     "2026-09-15",
+     "Ordered to be Reported in the Nature of a Substitute by Unanimous Consent."
+    ]
+   ],
+   "summary": {
+    "version": "Reported to House",
+    "date": "2026-10-29",
+    "text": "Renews the Earth Mapping Resources Initiative through fiscal year 2031. It is a U.S. Geological Survey program that maps the country's natural resources, with a focus on critical minerals such as lithium and titanium. Contractors must say who owns them and each subcontractor, and where it is practical the Survey must prefer companies owned and controlled in the United States, while still weighing special expertise. The program must add data from the Survey's 3D Hydrography Program and may use modern sensing tools."
+   },
+   "related": [],
+   "update_date": "2026-09-29"
+  },
+  {
+   "number": "H.R. 9785",
+   "title": "South Dakota Water Feasibility Studies Act",
+   "short_titles": [
+    "Western Dakota Regional Water System Feasibility Study Act",
+    "Western South Dakota Water Supply Project Feasibility Study Act",
+    "Dakota Mainstem Water Supply Project Feasibility Study Act",
+    "Lewis and Clark Regional Water System Expansion Feasibility Study Act"
+   ],
+   "introduced": "2026-07-20",
+   "sponsor": {
+    "name": "Rep. Johnson, Dusty [R-SD-At Large]",
+    "bioguide": "J000301"
+   },
+   "cosponsors": {
+    "total": 0,
+    "D": 0,
+    "R": 0,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Natural Resources"
+   ],
+   "policy_area": "Water Resources Development",
+   "latest_action": {
+    "date": "2026-10-29",
+    "text": "Placed on the Union Calendar, Calendar No. 760."
+   },
+   "actions": [
+    [
+     "2026-07-20",
+     "Introduced in House"
+    ],
+    [
+     "2026-07-20",
+     "Referred to the House Committee on Natural Resources."
+    ],
+    [
+     "2026-09-15",
+     "Ordered to be Reported in the Nature of a Substitute by Unanimous Consent."
+    ],
+    [
+     "2026-10-29",
+     "Reported (Amended) by the Committee on Natural Resources. H. Rept. 119-863."
+    ],
+    [
+     "2026-10-29",
+     "Placed on the Union Calendar, Calendar No. 760."
+    ]
+   ],
+   "summary": {
+    "version": "Reported to House",
+    "date": "2026-10-29",
+    "text": "Directs the Interior Department to study whether it is possible to build projects that bring city, rural and industrial water from the Missouri River to parts of Iowa, Minnesota, Nebraska and South Dakota. The studies cover water for the Western Dakota Regional Water System, the Lewis and Clark Regional Water System and the Dakota Mainstem Regional Water System."
+   },
+   "cbo": true,
+   "related": [],
+   "update_date": "2026-11-04"
+  },
+  {
+   "number": "H.R. 9269",
+   "title": "Renewing the African American Civil Rights Network Act",
+   "introduced": "2026-06-11",
+   "sponsor": {
+    "name": "Rep. Clyburn, James E. [D-SC-6]",
+    "bioguide": "C000537"
+   },
+   "cosponsors": {
+    "total": 10,
+    "D": 5,
+    "R": 5,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Natural Resources"
+   ],
+   "policy_area": "Civil Rights and Liberties, Minority Issues",
+   "latest_action": {
+    "date": "2026-10-29",
+    "text": "Placed on the Union Calendar, Calendar No. 756."
+   },
+   "actions": [
+    [
+     "2026-06-11",
+     "Introduced in House"
+    ],
+    [
+     "2026-06-11",
+     "Referred to the House Committee on Natural Resources."
+    ],
+    [
+     "2026-09-02",
+     "Subcommittee Hearings Held"
+    ],
+    [
+     "2026-09-15",
+     "Ordered to be Reported (Amended) by Unanimous Consent."
+    ],
+    [
+     "2026-10-29",
+     "Reported (Amended) by the Committee on Natural Resources. H. Rept. 119-859."
+    ],
+    [
+     "2026-10-29",
+     "Placed on the Union Calendar, Calendar No. 756."
+    ]
+   ],
+   "summary": {
+    "version": "Reported to House",
+    "date": "2026-10-29",
+    "text": "Renews the African American Civil Rights Network for seven years. The network is a National Park Service program that recognizes historic places and teaching resources tied to the civil rights movement. Its authority ran out on January 8, 2025. Places in the network may use its logo and get technical help from the Park Service."
+   },
+   "related": [
+    "S. 4767"
+   ],
+   "update_date": "2026-11-13"
+  },
+  {
+   "number": "H.R. 2400",
+   "title": "Pit River Land Transfer Act",
+   "official_title": "To take certain Federal land in the State of California into trust for the benefit of the Pit River Tribe.",
+   "senate_amendment": true,
+   "introduced": "2025-03-27",
+   "sponsor": {
+    "name": "Rep. LaMalfa, Doug [R-CA-1]",
+    "bioguide": "L000578"
+   },
+   "cosponsors": {
+    "total": 0,
+    "D": 0,
+    "R": 0,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Natural Resources",
+    "Senate Committee on Indian Affairs"
+   ],
+   "policy_area": "Native Americans",
+   "latest_action": {
+    "date": "2026-08-05",
+    "text": "Committee on Indian Affairs. Ordered to be reported with an amendment in the nature of a substitute favorably."
+   },
+   "actions": [
+    [
+     "2025-03-27",
+     "Introduced in House"
+    ],
+    [
+     "2025-09-15",
+     "Reported (Amended) by the Committee on Natural Resources. H. Rept. 119-289."
+    ],
+    [
+     "2025-12-15",
+     "Passed House: On motion to suspend the rules and pass the bill, as amended"
+    ],
+    [
+     "2025-12-16",
+     "Received in the Senate and Read twice and referred to the Committee on Indian Affairs."
+    ],
+    [
+     "2026-06-03",
+     "Committee on Indian Affairs. Hearings held."
+    ],
+    [
+     "2026-08-05",
+     "Committee on Indian Affairs. Ordered to be reported with an amendment in the nature of a substitute favorably."
+    ]
+   ],
+   "summary": {
+    "version": "Introduced in House",
+    "date": "2025-03-27",
+    "text": "Takes about 604 acres in California into trust for the Pit River Tribe: about 584 acres of Forest Service land (leaving out about 20 acres of roads and rights-of-way) and about 40 acres the Tribe already owns. The land becomes part of the reservation, and gaming is not allowed on it."
+   },
+   "related": [],
+   "update_date": "2026-08-06"
+  },
+  {
+   "number": "H.R. 7254",
+   "title": "Bay Area Ridge National Scenic Trail study",
+   "title_is_ours": true,
+   "official_title": "To amend the National Trails System Act to direct the Secretary of the Interior to conduct a study on the feasibility of designating the Bay Area Ridge National Scenic Trail, and for other purposes.",
+   "introduced": "2026-01-27",
+   "sponsor": {
+    "name": "Rep. Huffman, Jared [D-CA-2]",
+    "bioguide": "H001068"
+   },
+   "cosponsors": {
+    "total": 11,
+    "D": 11,
+    "R": 0,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Natural Resources"
+   ],
+   "policy_area": "Public Lands and Natural Resources",
+   "latest_action": {
+    "date": "2026-10-29",
+    "text": "Placed on the Union Calendar, Calendar No. 752."
+   },
+   "actions": [
+    [
+     "2026-01-27",
+     "Introduced in House"
+    ],
+    [
+     "2026-01-27",
+     "Referred to the House Committee on Natural Resources."
+    ],
+    [
+     "2026-07-01",
+     "Subcommittee Hearings Held"
+    ],
+    [
+     "2026-09-15",
+     "Ordered to be Reported (Amended) by Unanimous Consent."
+    ],
+    [
+     "2026-10-29",
+     "Reported (Amended) by the Committee on Natural Resources. H. Rept. 119-855."
+    ],
+    [
+     "2026-10-29",
+     "Placed on the Union Calendar, Calendar No. 752."
+    ]
+   ],
+   "summary": {
+    "version": "Reported to House",
+    "date": "2026-10-29",
+    "text": "Directs the Interior Department to study whether the Bay Area Ridge Trail, about 550 miles around the San Francisco Bay Area, should become a national scenic trail. The study is due within three years after the bill becomes law."
+   },
+   "related": [],
+   "update_date": "2026-11-12"
+  },
+  {
+   "number": "H.R. 5490",
+   "title": "Dismantle Foreign Scam Syndicates Act",
+   "introduced": "2025-09-18",
+   "sponsor": {
+    "name": "Rep. Shreve, Jefferson [R-IN-6]",
+    "bioguide": "S001229"
+   },
+   "cosponsors": {
+    "total": 71,
+    "D": 29,
+    "R": 42,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Foreign Affairs",
+    "House Committee on the Judiciary"
+   ],
+   "policy_area": "International Affairs",
+   "latest_action": {
+    "date": "2025-12-03",
+    "text": "Ordered to be Reported in the Nature of a Substitute (Amended) by the Yeas and Nays: 48 - 0."
+   },
+   "actions": [
+    [
+     "2025-09-18",
+     "Introduced in House"
+    ],
+    [
+     "2025-09-18",
+     "Referred to the Committee on Foreign Affairs, and in addition to the Committee on the Judiciary."
+    ],
+    [
+     "2025-12-03",
+     "Committee Consideration and Mark-up Session Held"
+    ],
+    [
+     "2025-12-03",
+     "Ordered to be Reported in the Nature of a Substitute (Amended) by the Yeas and Nays: 48 - 0."
+    ]
+   ],
+   "summary": {
+    "version": "Introduced in House",
+    "date": "2025-09-18",
+    "text": "Directs the President to put sanctions on foreign people responsible for online money scams against Americans, including a decision on 43 named foreign persons. Creates a task force across federal agencies to break up criminal groups that run large scam centers using trafficked forced labor. The task force must give Congress a plan and report every year for five years, including who was sanctioned. Lets the State Department give care, shelter and support to trafficking victims held in these centers."
+   },
+   "related": [],
+   "update_date": "2026-09-17"
+  },
+  {
+   "number": "H.R. 4464",
+   "title": "Preventive Health Savings Act",
+   "official_title": "To amend the Congressional Budget Act of 1974 respecting the scoring of preventive health savings.",
+   "introduced": "2025-07-16",
+   "sponsor": {
+    "name": "Rep. Obernolte, Jay [R-CA-23]",
+    "bioguide": "O000019"
+   },
+   "cosponsors": {
+    "total": 19,
+    "D": 8,
+    "R": 11,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on the Budget"
+   ],
+   "policy_area": "Economics and Public Finance",
+   "latest_action": {
+    "date": "2025-07-16",
+    "text": "Referred to the House Committee on the Budget."
+   },
+   "actions": [
+    [
+     "2025-07-16",
+     "Introduced in House"
+    ],
+    [
+     "2025-07-16",
+     "Referred to the House Committee on the Budget."
+    ]
+   ],
+   "summary": {
+    "version": "Introduced in House",
+    "date": "2025-07-16",
+    "text": "Lets Congress ask the Congressional Budget Office to estimate whether a bill would save money beyond the usual 10-year budget window through preventive health care, meaning actions that protect health and prevent disease, disability and early death. If the office finds savings, it must describe and estimate them and explain how. These estimates are extra information only and cannot be used to meet budget rules."
+   },
+   "related": [
+    "S. 3204 (identical bill)"
+   ],
+   "update_date": "2026-07-18"
+  },
+  {
+   "number": "H.R. 7934",
+   "title": "Settlement Agreement Information Database Act of 2026",
+   "introduced": "2026-03-16",
+   "sponsor": {
+    "name": "Rep. Palmer, Gary J. [R-AL-6]",
+    "bioguide": "P000609"
+   },
+   "cosponsors": {
+    "total": 1,
+    "D": 1,
+    "R": 0,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Oversight and Government Reform"
+   ],
+   "policy_area": "Government Operations and Politics",
+   "latest_action": {
+    "date": "2026-03-18",
+    "text": "Ordered to be Reported (Amended) by the Yeas and Nays: 40 - 0."
+   },
+   "actions": [
+    [
+     "2026-03-16",
+     "Introduced in House"
+    ],
+    [
+     "2026-03-16",
+     "Referred to the House Committee on Oversight and Government Reform."
+    ],
+    [
+     "2026-03-18",
+     "Committee Consideration and Mark-up Session Held"
+    ],
+    [
+     "2026-03-18",
+     "Ordered to be Reported (Amended) by the Yeas and Nays: 40 - 0."
+    ]
+   ],
+   "summary": {
+    "version": "Introduced in House",
+    "date": "2026-03-16",
+    "text": "Requires federal agencies to publish a searchable online list of certain legal settlements they sign, with a copy of each one and key facts: whether it settles civil or criminal claims, the date, the laws said to be broken, lawyer fees, money paid to or by the government, how long it lasts, and any government body it names. It covers settlements of at least $10 million, ones that appoint a court monitor, ones with a state or local government, and others the Office of Management and Budget picks. Personnel matters, plea deals, non-prosecution deals and tax matters are left out. It reaches back to settlements signed since January 1, 2015 that are still in effect."
+   },
+   "related": [],
+   "update_date": "2026-11-12"
+  },
+  {
+   "number": "H.R. 5267",
+   "title": "American Franchise Act",
+   "introduced": "2025-09-10",
+   "sponsor": {
+    "name": "Rep. Hern, Kevin [R-OK-1]",
+    "bioguide": "H001082"
+   },
+   "cosponsors": null,
+   "committees": [
+    "House Committee on Education and Workforce"
+   ],
+   "policy_area": null,
+   "latest_action": {
+    "date": "2026-09-08",
+    "text": "Placed on the Union Calendar, Calendar No. 702."
+   },
+   "actions": [
+    [
+     "2025-09-10",
+     "Introduced in House"
+    ],
+    [
+     "2025-09-10",
+     "Referred to the House Committee on Education and Workforce."
+    ],
+    [
+     "2026-07-21",
+     "Committee Consideration and Mark-up Session Held"
+    ],
+    [
+     "2026-07-21",
+     "Ordered to be Reported (Amended) by the Yeas and Nays: 18 - 15."
+    ],
+    [
+     "2026-09-08",
+     "Reported (Amended) by the Committee on Education and Workforce. H. Rept. 119-802."
+    ],
+    [
+     "2026-09-08",
+     "Placed on the Union Calendar, Calendar No. 702."
+    ]
+   ],
+   "summary": {
+    "version": "Reported to House",
+    "date": "2026-09-08",
+    "text": "For the National Labor Relations Act and the Fair Labor Standards Act (the federal minimum wage and overtime law), a franchise company counts as a joint employer of a franchise owner's workers only if it regularly uses direct and immediate control over their pay and working conditions, such as regularly hiring or firing them. The bill writes a 2020 National Labor Relations Board joint-employer rule into law and uses the same test for wage and overtime law. One example it gives: a franchise company setting a store's opening hours does not by itself show that control."
+   },
+   "related": [
+    "S. 3525"
+   ],
+   "update_date": "2026-10-31"
+  },
+  {
+   "number": "H.R. 3495",
+   "title": "Direct Seller and Real Estate Agent Harmonization Act",
+   "official_title": "To amend the Fair Labor Standards Act of 1938 to clarify the definition of employee as it relates to direct sellers and real estate agents, and for other purposes.",
+   "introduced": "2025-05-19",
+   "sponsor": {
+    "name": "Rep. Kiley, Kevin [R-CA-3]",
+    "bioguide": "K000401"
+   },
+   "cosponsors": {
+    "total": 31,
+    "D": 11,
+    "R": 20,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Education and Workforce"
+   ],
+   "policy_area": "Labor and Employment",
+   "latest_action": {
+    "date": "2026-09-08",
+    "text": "Supplemental report filed by the Committee on Education and Workforce, H. Rept. 119-494, Part II."
+   },
+   "actions": [
+    [
+     "2025-05-19",
+     "Introduced in House"
+    ],
+    [
+     "2025-05-19",
+     "Referred to the House Committee on Education and Workforce."
+    ],
+    [
+     "2025-09-17",
+     "Ordered to be Reported (Amended) by the Yeas and Nays: 19 - 16."
+    ],
+    [
+     "2026-02-11",
+     "Reported (Amended) by the Committee on Education and Workforce. H. Rept. 119-494."
+    ],
+    [
+     "2026-02-11",
+     "Placed on the Union Calendar, Calendar No. 420."
+    ],
+    [
+     "2026-09-08",
+     "Supplemental report filed by the Committee on Education and Workforce, H. Rept. 119-494, Part II."
+    ]
+   ],
+   "summary": {
+    "version": "Reported to House",
+    "date": "2026-02-11",
+    "text": "Takes real estate agents and direct sellers of consumer products out of the definition of \"employee\" in the Fair Labor Standards Act, the federal minimum wage and overtime law. Workers who are still employees under that law must get the minimum wage and generally get overtime pay for hours over 40 in a week."
+   },
+   "related": [
+    "S. 5646"
+   ],
+   "update_date": "2026-10-15"
+  },
+  {
+   "number": "H.R. 2347",
+   "title": "Survivor Justice Tax Prevention Act",
+   "vehicle_note": "In the Senate this House bill is the vehicle for the permitting reform bill, the Bipartisan American Affordability and Jobs Act of 2026 (BAAJA, S. 5653). On November 10, Senator Thune moved to send it to the Senate Finance Committee with instructions to report it back at once with amendment SA 6888. The Senate Democrats' floor page calls H.R. 2347 the \"legislative vehicle for the Bipartisan American Affordability and Jobs Act.\"",
+   "introduced": "2025-03-25",
+   "sponsor": {
+    "name": "Rep. Smucker, Lloyd [R-PA-11]",
+    "bioguide": "S001199"
+   },
+   "cosponsors": {
+    "total": 3,
+    "D": 2,
+    "R": 1,
+    "I": 0
+   },
+   "committees": [
+    "House Committee on Ways and Means"
+   ],
+   "policy_area": "Taxation",
+   "latest_action": {
+    "date": "2026-11-11",
+    "text": "Cloture motion on the measure presented in Senate. (CR S5568)"
+   },
+   "actions": [
+    [
+     "2026-04-27",
+     "Passed House: motion to suspend the rules and pass the bill, as amended, agreed to by voice vote."
+    ],
+    [
+     "2026-04-28",
+     "Received in the Senate."
+    ],
+    [
+     "2026-07-14",
+     "Read the second time. Placed on Senate Legislative Calendar under General Orders. Calendar No. 453."
+    ],
+    [
+     "2026-09-30",
+     "Motion to proceed to consideration of measure made in Senate."
+    ],
+    [
+     "2026-11-09",
+     "Cloture on the motion to proceed invoked in Senate by Yea-Nay Vote, 73 - 25. Record Vote Number: 257."
+    ],
+    [
+     "2026-11-10",
+     "Motion to proceed to consideration agreed to in Senate by Yea-Nay Vote, 62 - 21. Record Vote Number: 258."
+    ],
+    [
+     "2026-11-10",
+     "Motion by Senator Thune to commit to Senate Committee on Finance with instructions to report back forthwith, with amendment SA 6888."
+    ],
+    [
+     "2026-11-11",
+     "Cloture motion on the measure presented in Senate. (CR S5568)"
+    ]
+   ],
+   "summary": {
+    "version": "Reported to House",
+    "date": "2026-04-09",
+    "text": "As the House passed it, the bill keeps damages received because of a sexual act or sexual contact (other than punitive damages) from being taxed as income, even without medical records or visible injuries. Today the tax law generally leaves out only damages for physical injury or sickness. If a court ruling or settlement says the damages come from such conduct, the IRS carries the burden of proof in tax court. The IRS must also tell the public about this rule. This summary describes the House bill, not the permitting text the Senate may put in it."
+   },
+   "baaja_summary": {
+    "version": "Introduced in Senate",
+    "date": "2026-09-30",
+    "text": "S. 5653 changes federal permitting to speed up projects. It narrows environmental reviews under the National Environmental Policy Act, limits some Clean Water Act reviews and permit terms, and shortens some Endangered Species Act consultation timelines. On energy, it gives the Federal Energy Regulatory Commission more power to permit some interstate power lines, tells it to set protections for ratepayers from very large power users such as data centers, drops permit requirements for onshore oil and gas drilling on nonfederal land, and speeds up renewable, geothermal, hydropower and offshore projects. It also limits the scope of National Historic Preservation Act reviews.",
+    "sponsor": "Sen. Capito, Shelley Moore [R-WV]",
+    "cosponsors": "Lee (R-UT), Whitehouse (D-RI), Heinrich (D-NM)"
+   },
+   "rollcalls": [
+    [
+     "257",
+     "2026-11-09"
+    ],
+    [
+     "258",
+     "2026-11-10"
+    ]
+   ],
+   "related": [
+    "S. 5395 (identical bill)",
+    "S. 5653 (the permitting text)"
+   ],
+   "update_date": "2026-11-12",
+   "chamber": "senate",
+   "title_note": "In the Senate this House bill now carries the permitting reform bill (BAAJA). See below.",
+   "senate_committees": [
+    "Senate Committee on Finance",
+    "Senate Committee on Energy and Natural Resources"
+   ],
+   "senate_committees_note": "Senator Thune moved to send H.R. 2347 to the Finance Committee with instructions (Nov 10), and S. 5653 was referred to the Energy and Natural Resources Committee (Sep 30).",
+   "contact_issue": "permitting-baaja"
+  },
+  {
+   "number": "H.R. 9237",
+   "title": "Take Care of America's Veterans Act",
+   "title_source": "bill text on GovInfo and news reports; the Library of Congress record we read was cut off before its title",
+   "introduced": "2026-06-10",
+   "sponsor": {
+    "name": "Rep. Bost, Mike [R-IL-12]",
+    "bioguide": "B001295"
+   },
+   "cosponsors": null,
+   "committees": [
+    "House Committee on Veterans' Affairs",
+    "House Committee on Armed Services"
+   ],
+   "policy_area": null,
+   "latest_action": {
+    "date": "2026-11-11",
+    "text": "Motion to reconsider laid on the table Agreed to without objection."
+   },
+   "actions": [
+    [
+     "2026-06-10",
+     "Introduced in House; referred to the Committee on Veterans' Affairs and, in addition, the Committee on Armed Services."
+    ],
+    [
+     "2026-07-13",
+     "Rules Committee Resolution H. Res. 1423 reported to House."
+    ],
+    [
+     "2026-07-16",
+     "Motion to recommit failed by the Yeas and Nays: 210 - 211 (Roll no. 249)."
+    ],
+    [
+     "2026-11-11",
+     "Passed House by voice vote."
+    ]
+   ],
+   "summary": {
+    "version": "The Way, from the bill text and news reports",
+    "date": "2026-11-15",
+    "text": "H.R. 9237 bundles more than 60 veterans measures. It adds a benefit for combat-injured military retirees (the Major Richard Star Act). To help pay for it, Section 108 lowers disability ratings for sleep apnea and tinnitus on future claims. The bill says ratings already in effect are protected. The House passed it by voice vote on November 11, 2026, so there is no list of how each member voted. The Senate version is S. 4744."
+   },
+   "extra_sources": [
+    [
+     "Bill text, H.R. 9237 (GovInfo), introduced June 10, 2026",
+     "https://www.govinfo.gov/content/pkg/BILLS-119hr9237ih/xhtml/BILLS-119hr9237ih.html"
+    ],
+    [
+     "Military Times, November 12, 2026",
+     "https://www.militarytimes.com/news/2026/11/12/house-passes-sweeping-veterans-benefits-bill-with-polarizing-tactic/"
+    ],
+    [
+     "Stars and Stripes, November 12, 2026",
+     "https://www.stripes.com/veterans/2026-11-12/house-sweeping-veterans-bill-vfw-23444750.html"
+    ]
+   ],
+   "related": [
+    "S. 4744 (Senate version)"
+   ],
+   "update_date": "2026-11-12",
+   "chamber": "senate",
+   "contact_issue": "veterans-hr9237"
+  }
+ ],
+ "dates": [
+  {
+   "at": "2026-12-01T00:00:00-05:00",
+   "day": true,
+   "label": "Tuesday, December 1, 2026",
+   "what": "Senate Democrats elect their leader for the next Congress (Chuck Schumer or Chris Van Hollen) in a closed, secret-ballot caucus meeting.",
+   "note": "This is a party vote, not a Senate vote, so it is not on any official record. Source is news reporting.",
+   "src": [
+    [
+     "TIME, November 13, 2026",
+     "https://time.com/article/2026/11/13/chris-van-hollen-senate-majority-leader-chuck-schumer-progressive-democrats/"
+    ]
+   ],
+   "link": [
+    "/get-involved/contact-your-senator/",
+    "Write to your senators about it"
+   ]
+  },
+  {
+   "at": "2026-12-12T00:00:00-05:00",
+   "day": true,
+   "label": "Friday, December 11, 2026",
+   "what": "Federal government funding runs out unless Congress passes new funding. The same day ends the extensions of the National Flood Insurance Program, surface transportation (highway) programs and many other programs.",
+   "note": "From the law now in force, Public Law 119-103 (the Continuing Appropriations and Extensions Act, 2027, H.R. 6500, signed September 2, 2026), Section 106(3).",
+   "src": [
+    [
+     "Public Law 119-103 on govinfo",
+     "https://www.govinfo.gov/content/pkg/PLAW-119publ103/html/PLAW-119publ103.htm"
+    ]
+   ]
+  },
+  {
+   "at": "2027-01-03T12:00:00-05:00",
+   "day": true,
+   "label": "Sunday, January 3, 2027",
+   "what": "The new Congress (the 120th) begins at noon. House members elected on November 3 take office, and every bill that has not passed both chambers by then dies and must start over.",
+   "note": "Set by the 20th Amendment to the Constitution.",
+   "src": [
+    [
+     "20th Amendment, Constitution Annotated (Congress.gov)",
+     "https://constitution.congress.gov/constitution/amendment-20/"
+    ]
+   ]
+  }
+ ],
+ "events": [
+  {
+   "slug": "senate-judges-2026-11-16",
+   "short": "Judges",
+   "title": "Senate votes on federal judges, November 16",
+   "eyebrow": "Senate vote coming up · Nominations",
+   "at": "2026-11-16T17:30:00-05:00",
+   "at_label": "Votes start",
+   "date_label": "Monday, November 16, 2026, 5:30 p.m. Eastern",
+   "what": [
+    "At 5:30 p.m. the Senate votes on confirming Daniel Desmond Domenico, of Colorado, to be a U.S. Circuit Judge for the Tenth Circuit.",
+    "At the same time, the motions to end debate (cloture) on four district judge nominations ripen, so the Senate can then vote on them: Richard Wesley Bennett (Southern District of Texas), Courtney Leigh Coker (Northern District of Texas), Kyle Frederick Reardon (District of Alaska) and Daniel Lewis Ballou (Eastern District of Kentucky).",
+    "A confirmation vote on Anna St. John, of Louisiana, to be a U.S. Circuit Judge for the Fifth Circuit comes at a time the Majority Leader sets with the Democratic Leader, no earlier than November 16.",
+    "The president nominates federal judges, the Senate Judiciary Committee holds hearings and votes on them, and then the full Senate votes to confirm. Judges serve for life."
+   ],
+   "src": [
+    [
+     "Senate Executive Calendar, November 16, 2026",
+     "https://www.senate.gov/legislative/LIS/executive_calendar/xcalv.pdf"
+    ],
+    [
+     "U.S. Senate floor schedule",
+     "https://www.senate.gov/legislative/schedule/floor_schedule.htm"
+    ],
+    [
+     "Senate Judiciary Committee, nominations",
+     "https://www.judiciary.senate.gov/nominations"
+    ]
+   ],
+   "committees": [
+    "Senate Committee on the Judiciary"
+   ],
+   "voters": "senate",
+   "voters_text": "All 100 senators. Cloture on a nomination needs a simple majority.",
+   "after": "After the vote, the result is on the senate.gov roll call list.",
+   "after_src": [
+    "U.S. Senate roll call votes",
+    "https://www.senate.gov/legislative/votes_new.htm"
+   ],
+   "lobby": "Lobbying reports are mostly about bills and agency rules. Groups that support or oppose judges often spend through outside groups instead, which report to the FEC, not the lobbying database."
+  },
+  {
+   "slug": "senate-democratic-leader-2026-12-01",
+   "short": "Leader vote",
+   "title": "Senate Democrats elect their leader, December 1",
+   "eyebrow": "Party vote coming up · Senate Democratic caucus",
+   "at": "2026-12-01T00:00:00-05:00",
+   "day": true,
+   "date_label": "Tuesday, December 1, 2026",
+   "contact_issue": "schumer-leader",
+   "what": [
+    "Senate Democrats and the two independents who caucus with them meet to elect their leader for the next Congress. News reports say the current leader, Chuck Schumer of New York, is challenged by Chris Van Hollen of Maryland.",
+    "It is a closed meeting with a secret ballot, so there is no public record of how each senator votes. Senators often say publicly how they plan to vote, and news outlets keep lists.",
+    "This is a party vote, not a Senate vote, so it is not on senate.gov. Every fact about the date and the race comes from news reporting."
+   ],
+   "src": [
+    [
+     "TIME, November 13, 2026",
+     "https://time.com/article/2026/11/13/chris-van-hollen-senate-majority-leader-chuck-schumer-progressive-democrats/"
+    ],
+    [
+     "The Hill, Senate Democrats leadership election",
+     "https://thehill.com/homenews/senate/6220115-senate-democrats-leadership-election-update/"
+    ],
+    [
+     "U.S. Senate, party division (who caucuses with whom)",
+     "https://www.senate.gov/history/partydiv.htm"
+    ]
+   ],
+   "committees": [],
+   "voters": "dem_caucus",
+   "voters_text": "The senators in the Democratic caucus: every Democratic senator plus independents Angus King (Maine) and Bernie Sanders (Vermont).",
+   "people_links": [
+    [
+     "Chuck Schumer",
+     "charles-e-schumer-ny"
+    ],
+    [
+     "Chris Van Hollen",
+     "chris-van-hollen-md"
+    ]
+   ],
+   "lobby": "A party leadership election is not lawmaking, so it does not appear in lobbying reports. Money in party politics shows up in FEC filings: see each senator's campaign money below and the party committees on the Money web."
+  },
+  {
+   "slug": "funding-deadline-2026-12-11",
+   "short": "Funding deadline",
+   "title": "Government funding runs out, December 11",
+   "eyebrow": "Deadline · Federal funding",
+   "at": "2026-12-12T00:00:00-05:00",
+   "at_label": "Funding runs out",
+   "date_label": "Friday, December 11, 2026 (funding ends at the end of the day)",
+   "what": [
+    "The law that funds the federal government right now is a stopgap, Public Law 119-103, the Continuing Appropriations and Extensions Act, 2027 (H.R. 6500), signed September 2, 2026. Section 106(3) says the money lasts through December 11, 2026.",
+    "Unless Congress passes new funding by then, parts of the government shut down. The same law also extends the National Flood Insurance Program and surface transportation (highway) programs to December 11, so those end too unless they are extended again.",
+    "Congress can pass another stopgap, a full-year bill, or let funding lapse. Funding bills start in the Appropriations Committees of the House and Senate."
+   ],
+   "src": [
+    [
+     "Public Law 119-103, full text (govinfo)",
+     "https://www.govinfo.gov/content/pkg/PLAW-119publ103/html/PLAW-119publ103.htm"
+    ],
+    [
+     "H.R. 6500 bill record (govinfo)",
+     "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr6500.xml"
+    ],
+    [
+     "H.R. 6500 on Congress.gov",
+     "https://www.congress.gov/bill/119th-congress/house-bill/6500"
+    ]
+   ],
+   "committees": [
+    "House Committee on Appropriations",
+    "Senate Committee on Appropriations"
+   ],
+   "voters": "both",
+   "voters_text": "Any new funding must pass both the House (435 members) and the Senate (100 senators). In the Senate, most bills need 60 votes to end debate.",
+   "lobby": "Funding bills are among the most lobbied bills every year. We have not collected the lobbying reports yet.",
+   "law": {
+    "bill": "H.R. 6500",
+    "sponsor_bioguide": "S001195",
+    "sponsor_name": "Rep. Smith, Jason [R-MO-8]",
+    "votes": [
+     [
+      "2026-01-12",
+      "House passed it, 340 to 54 (two thirds needed)",
+      "House roll call 14",
+      "https://clerk.house.gov/evs/2026/roll014.xml"
+     ],
+     [
+      "2026-08-03",
+      "Senate voted to start debate (cloture on the motion to proceed), 89 to 4",
+      "Senate vote 218",
+      "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00218.htm"
+     ],
+     [
+      "2026-08-08",
+      "Senate passed it with changes, 90 to 6",
+      "Senate vote 228",
+      "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00228.htm"
+     ],
+     [
+      "2026-09-01",
+      "House agreed to the Senate's changes, 370 to 48",
+      "House roll call 286",
+      "https://clerk.house.gov/evs/2026/roll286.xml"
+     ],
+     [
+      "2026-09-02",
+      "Signed by the President: Public Law 119-103",
+      null,
+      null
+     ]
+    ]
+   }
+  },
+  {
+   "slug": "defense-bill-fy2027",
+   "short": "Defense bill",
+   "title": "The yearly defense bill (NDAA) for 2027",
+   "eyebrow": "Waiting in Congress · No vote scheduled",
+   "date_label": "No vote date set yet",
+   "what": [
+    "Every year Congress passes a National Defense Authorization Act (NDAA) that sets defense policy and spending levels. For 2027 there are two versions.",
+    "The House bill, H.R. 8800, was received in the Senate on September 14, 2026, according to the Library of Congress record.",
+    "The Senate bill, S. 4784, sponsored by Senator Roger Wicker of Mississippi, was approved by the Senate Armed Services Committee. On July 14, 2026 the Senate failed to end debate on taking it up, 50 to 46; ending debate needs three fifths of senators.",
+    "No vote is scheduled on the pages we read. News analysis expects the House and Senate committees to try to agree on one version in the coming weeks."
+   ],
+   "src": [
+    [
+     "S. 4784 bill record (govinfo)",
+     "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/s/BILLSTATUS-119s4784.xml"
+    ],
+    [
+     "H.R. 8800 bill record (govinfo)",
+     "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr8800.xml"
+    ],
+    [
+     "Senate vote 195, July 14, 2026",
+     "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00195.htm"
+    ],
+    [
+     "Senate Armed Services Committee, markup, June 11, 2026",
+     "https://www.armed-services.senate.gov/press-releases/sasc-completes-markup-of-national-defense-authorization-act-for-fiscal-year-2027"
+    ],
+    [
+     "Holland & Knight analysis, November 13, 2026 (not official)",
+     "https://www.hklaw.com/en/insights/publications/2026/11/the-2026-midterms-and-the-national-security-outlook"
+    ]
+   ],
+   "committees": [
+    "House Committee on Armed Services",
+    "Senate Committee on Armed Services"
+   ],
+   "voters": "both",
+   "voters_text": "A final defense bill must pass both the House and the Senate.",
+   "law": {
+    "bill": "S. 4784",
+    "sponsor_bioguide": "W000437",
+    "sponsor_name": "Sen. Wicker, Roger F. [R-MS]",
+    "votes": [
+     [
+      "2026-07-14",
+      "Senate failed to end debate on taking it up (cloture), 50 to 46",
+      "Senate vote 195",
+      "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00195.htm"
+     ]
+    ]
+   },
+   "lobby": "The defense bill is one of the most lobbied bills each year. We have not collected the lobbying reports yet."
+  },
+  {
+   "slug": "new-congress-2027-01-03",
+   "short": "New Congress",
+   "title": "The new Congress begins, January 3, 2027",
+   "eyebrow": "Date · The 120th Congress",
+   "at": "2027-01-03T12:00:00-05:00",
+   "at_label": "New Congress begins",
+   "date_label": "Sunday, January 3, 2027, at noon",
+   "what": [
+    "The 20th Amendment says the terms of senators and representatives end at noon on January 3 and the terms of their successors begin then.",
+    "Every House seat was on the ballot on November 3, 2026, so all 435 House terms end, and the winners take office. One third of the Senate was also up; the senators whose terms end are listed below.",
+    "Any bill that has not passed both the House and the Senate by then dies and must be introduced again in the new Congress."
+   ],
+   "src": [
+    [
+     "20th Amendment, Constitution Annotated (Congress.gov)",
+     "https://constitution.congress.gov/constitution/amendment-20/"
+    ]
+   ],
+   "committees": [],
+   "voters": "senate_term_ends",
+   "voters_text": "Senators whose current term ends January 3, 2027 (from our member pages).",
+   "lobby": "Not a vote, so there are no lobbying reports for it."
+  }
+ ]
+}
