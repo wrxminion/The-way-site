@@ -1,0 +1,101 @@
+/* Admin > Contact Your Senator (members/senator-letters.js) */
+.cs-neutral{border-left:2px solid #a9f0e8aa;padding:12px 16px;background:#a9f0e80d}
+.cs-tool{margin-top:10px}
+.cs-step{border:1px solid #c7ffff26;border-radius:18px;background:#071f31b9;padding:20px 22px;margin:22px 0}
+.cs-step h3{margin:6px 0 14px;font-size:22px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cs-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#b9f6ed;color:#052b3b;font:800 15px Inter,system-ui,Arial,sans-serif;flex:none}
+.cs-opt{font:normal 14px Inter,system-ui,Arial,sans-serif;color:#9bdddc}
+.cs-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.cs-field{display:flex;flex-direction:column;gap:6px;margin:0 0 14px;min-width:0}
+.cs-field>span{font-size:14px;color:#c9e1e5;line-height:1.45}
+.cs-wide{width:100%}
+.cs-field select,.cs-field input,.cs-field textarea{width:100%;font:16px/1.5 Inter,system-ui,Arial,sans-serif;color:#eaffff;background:#021421;border:1px solid #c7ffff40;border-radius:10px;padding:10px 12px}
+.cs-field textarea{resize:vertical;min-height:110px}
+#cs-letter{min-height:340px;white-space:pre-wrap}
+.cs-field select:focus,.cs-field input:focus,.cs-field textarea:focus{outline:2px solid #a9f0e8;outline-offset:1px}
+.cs-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:6px}
+.cs-card{border:1px solid #c7ffff2e;border-radius:16px;padding:16px 18px;background:#03192ab8}
+.cs-card.cs-on{border-color:#b9f6ed;box-shadow:0 0 0 1px #b9f6ed55}
+.cs-card h4{font:normal 22px/1.2 Georgia,serif;color:#e9ffff;margin:0 0 4px}
+.cs-admin .cs-card p{margin:0 0 10px;font-size:15px;line-height:1.55}
+.cs-admin .cs-sub{color:#9bdddc}
+.cs-links{display:flex;flex-wrap:wrap;gap:8px}
+.cs-admin .cs-note{font-size:14px;color:#e7d7ad}
+.cs-admin .cs-small{font-size:14px;line-height:1.6;color:#b9d2d8}
+.cs-choice{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.cs-pill{position:relative;cursor:pointer}
+.cs-pill input{position:absolute;opacity:0;width:1px;height:1px}
+.cs-pill span{display:inline-block;border:1px solid #c7ffff55;border-radius:99px;padding:10px 22px;font-weight:700;color:#e9ffff;background:#021421}
+.cs-pill input:checked+span{background:#b9f6ed;color:#052b3b;border-color:#b9f6ed}
+.cs-pill input:focus-visible+span{outline:2px solid #e4ffff;outline-offset:3px}
+.cs-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border:1px solid #b9f6ed88;border-radius:99px;padding:8px 16px;font:700 14px/1.2 Inter,system-ui,Arial,sans-serif;color:#e9ffff;background:transparent;text-decoration:none;cursor:pointer}
+.cs-admin a.cs-btn{color:#e9ffff;text-decoration:none}
+.cs-btn:hover{background:#0a2c40}
+.cs-btn.cs-main,.cs-admin a.cs-btn.cs-main{background:#b9f6ed;color:#052b3b;border-color:#b9f6ed}
+.cs-btn.cs-main:hover{background:#e4fffb}
+.cs-btn:focus-visible{outline:2px solid #e4ffff;outline-offset:3px}
+.cs-actions{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 10px}
+.cs-admin .cs-privacy{font-size:14px;color:#9bdddc;margin:0 0 12px}
+.cs-admin .cs-status{min-height:1.6em;font-size:15px;color:#b9f6ed;margin:0 0 8px}
+.cs-admin .cs-voice-line{font-size:14px;color:#9bdddc;margin:0 0 12px}
+.cs-admin .cs-tip{font-size:14px;color:#e7d7ad;margin:12px 0 0}
+.cs-script{margin:8px 0 0;border-top:1px solid #c7ffff1e;padding-top:10px}
+.cs-script summary{cursor:pointer;color:#a9f0e8;font-size:15px}
+.cs-table-wrap{overflow-x:auto;border:1px solid #c7ffff26;border-radius:14px}
+.cs-table{width:100%;border-collapse:collapse;font-size:14px}
+.cs-table th,.cs-table td{text-align:left;padding:8px 10px;border-bottom:1px solid #c7ffff1a;vertical-align:top}
+.cs-table th{color:#9bdddc;font-weight:700;letter-spacing:.04em;background:#071f31}
+.cs-table td{color:#daebef}
+.cs-table td a{white-space:nowrap}
+.cs-party{color:#9bdddc}
+.cs-offscreen{position:fixed;left:-9999px;top:0}
+[hidden]{display:none !important}
+@media(max-width:700px){
+  .cs-row,.cs-cards{grid-template-columns:1fr}
+  .cs-step{padding:16px 14px}
+  .cs-actions .cs-btn{flex:1 1 calc(50% - 10px)}
+  .cs-table{font-size:13px}
+  .cs-table th,.cs-table td{padding:7px 6px}
+  .cs-table thead{display:none}
+  .cs-table tr{display:grid;grid-template-columns:1fr auto;border-bottom:1px solid #c7ffff1a;padding:6px 4px}
+  .cs-table td{border:0;padding:2px 4px}
+  .cs-table td:nth-child(1){grid-column:1 / -1;color:#9bdddc;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+}
+/* v2: issues */
+.cs-issue{border-top:1px solid #c7ffff1e;padding-top:10px}
+.cs-issue h4.cs-issue-title{font:normal 24px/1.25 Georgia,serif;color:#e9ffff;margin:6px 0 6px}
+.cs-admin .cs-issue p{font-size:16px;line-height:1.65;margin:0 0 12px}
+.cs-admin .cs-status-line{color:#b9f6ed;font-weight:700}
+.cs-sides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:6px 0 12px}
+.cs-side{border:1px solid #c7ffff26;border-radius:14px;padding:12px 14px;background:#021421}
+.cs-side h4{margin:0 0 6px;font-size:14px;color:#9bdddc;letter-spacing:.03em}
+.cs-admin .cs-side ul{margin:0;padding-left:18px}
+.cs-admin .cs-side li{font-size:14px;line-height:1.55;margin:0 0 6px}
+.cs-sources summary{cursor:pointer;color:#a9f0e8;font-size:15px}
+.cs-admin .cs-sources li{font-size:14px;line-height:1.55}
+.cs-admin .cs-record{font-size:14px;color:#e9ffff;background:#a9f0e812;border-radius:8px;padding:6px 10px}
+@media(max-width:700px){.cs-sides{grid-template-columns:1fr}}
+/* v2: issues */
+.cs-issue{border-top:1px solid #c7ffff1e;padding-top:10px}
+.cs-issue h4.cs-issue-title{font:normal 24px/1.25 Georgia,serif;color:#e9ffff;margin:6px 0 6px}
+.cs-admin .cs-issue p{font-size:16px;line-height:1.65;margin:0 0 12px}
+.cs-admin .cs-status-line{color:#b9f6ed;font-weight:700}
+.cs-sides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:6px 0 12px}
+.cs-side{border:1px solid #c7ffff26;border-radius:14px;padding:12px 14px;background:#021421}
+.cs-side h4{margin:0 0 6px;font-size:14px;color:#9bdddc;letter-spacing:.03em}
+.cs-admin .cs-side ul{margin:0;padding-left:18px}
+.cs-admin .cs-side li{font-size:14px;line-height:1.55;margin:0 0 6px}
+.cs-sources summary{cursor:pointer;color:#a9f0e8;font-size:15px}
+.cs-admin .cs-sources li{font-size:14px;line-height:1.55}
+.cs-admin .cs-record{font-size:14px;color:#e9ffff;background:#a9f0e812;border-radius:8px;padding:6px 10px}
+@media(max-width:700px){.cs-sides{grid-template-columns:1fr}}
+/* admin view */
+.cs-admin .cs-preview{border-left:3px solid var(--warn,#ffe3a3);background:#ffe3a314;padding:10px 14px;border-radius:6px;color:#f3ead0}
+.cs-admin .cs-step h3{font:normal 21px/1.3 Georgia,serif}
+.cs-admin .cs-card p{margin:0 0 10px;font-size:15px;line-height:1.55}
+.cs-admin .cs-sub{color:#9bdddc}
+.cs-admin .cs-small{font-size:14px;line-height:1.6;color:#b9d2d8}
+.cs-admin a.cs-btn{color:#e9ffff;text-decoration:none}
+.cs-admin a.cs-btn.cs-main{color:#052b3b}
+.cs-admin .cs-letter{min-height:340px;white-space:pre-wrap}
+.cs-admin .cs-neutral{margin:0 0 14px}
