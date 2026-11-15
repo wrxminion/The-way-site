@@ -8,8 +8,8 @@
 'use strict';
 
 const BASE = '/members/senator-letters/';
-const FILES = ['senators.js?v=3', 'issues.js?v=3', 'letters.js?v=3'];
-const CSS = BASE + 'senator-letters.css?v=3';
+const FILES = ['senators.js?v=4', 'issues.js?v=4', 'letters.js?v=4'];
+const CSS = BASE + 'senator-letters.css?v=4';
 const MEMBER = '/government/congress/members/';
 const VOTES_PAGE = '/government/congress/votes.html';
 
@@ -128,6 +128,21 @@ function make(ctx) {
 
     // Issue panel
     const factLi = (f) => h('li', null, f.text + ' ', h('span', { class: 'cs-cite' }, '(', srcLinks(f.cite), ')'));
+    // A tracked vote as one short line: "YES: <bill> · <date> · Democratic caucus: 22 yes, 24 no", for the senator the issue
+    // centers on. The vote, the split and our page for it come from senators.js (build_votes.py, from the senate.gov roll calls).
+    const CAST_WORD = { Y: 'YES', N: 'NO', X: 'DID NOT VOTE', P: 'PRESENT' };
+    const tracked = {};
+    (D.tracked || []).forEach((v, i) => { tracked[v.id] = Object.assign({ i }, v); });
+    function voteLine(f) {
+      const v = f.vote && tracked[f.vote], s = issue.subject && byId[issue.subject];
+      const word = v && s && s.tv ? CAST_WORD[s.tv[v.i]] : null;
+      if (!word) return null;
+      return { v, parts: [h('strong', { class: 'cs-cast', text: word }), `: ${v.short} · ${v.date} · ${s.dem ? v.dem : v.rep}`] };
+    }
+    const voteLi = (f) => {
+      const l = voteLine(f);
+      return l ? h('li', { class: 'cs-vline' }, h('a', { href: l.v.ours, target: '_blank', rel: 'noopener' }, l.parts)) : factLi(f);
+    };
     function factList(title, facts) {
       return h('div', { class: 'cs-side' }, h('h4', { text: `${title} (${facts.length})` }), h('ul', null, facts.map(factLi)));
     }
@@ -142,8 +157,10 @@ function make(ctx) {
           s.page ? own(`${s.name}: his page on The Way`, pageOf(s), 'cs-btn') : null,
           s.web ? own(`${s.webName || 'Campaign committee'} on the Money web`, s.web, 'cs-btn') : null) : null);
     }
+    // Tracked votes show newest first, like the senator pages.
+    const byDate = (list) => list.slice().sort((x, y) => ((x.vote && tracked[x.vote] ? tracked[x.vote].i : 99) - (y.vote && tracked[y.vote] ? tracked[y.vote].i : 99)));
     function showIssue() {
-      const either = issue.facts.either || [];
+      const either = byDate(issue.facts.either || []);
       panel.replaceChildren(...[
         h('h4', { class: 'cs-issue-title', text: issue.title }),
         h('p', { class: 'cs-status-line' }, rich(issue.status)),
@@ -154,8 +171,8 @@ function make(ctx) {
           factList(issue.labels.for, issue.facts.for),
           factList(issue.labels.against, issue.facts.against)),
         either.length ? h('div', { class: 'cs-side cs-either' }, h('h4', { text: `${issue.eitherLabel || 'Either side'} (${either.length})` }),
-          h('p', { class: 'cs-small', text: 'Either side can use these. They are the votes as cast, from the official record.' }),
-          h('ul', null, either.map(factLi))) : null,
+          h('p', { class: 'cs-small', text: 'Either side can use these. They are the votes as cast, from the official record, with how their party voted. Each line opens our page for that vote, which says what it was and links to the official roll call.' }),
+          h('ul', null, either.map(voteLi))) : null,
         h('details', { class: 'cs-sources' }, h('summary', { text: 'All sources for this issue' }),
           h('ul', null, issue.sources.map((x) => h('li', null, ext(`${x.src}, ${x.date}`, x.url)))))].flat().filter(Boolean));
       question.textContent = issue.question;
@@ -183,7 +200,12 @@ function make(ctx) {
       const self = issue.subject && chosen.id === issue.subject;
       const on = new Set(L.defaultFacts(issue, st));
       const mk = (f) => Object.assign(box((self && f.you ? f.you : f.text) + ' ', on.has(f.id), h('span', { class: 'cs-cite' }, '(', srcLinks(f.cite), ')')), { id: f.id });
-      const side = (issue.facts[st] || []).map(mk), either = (issue.facts.either || []).map(mk);
+      // A vote shows as its short line, with a link to our page for it. The letter still uses the full sentence and its source.
+      const mkVote = (f) => {
+        const l = voteLine(f);
+        return l ? Object.assign(box(l.parts, on.has(f.id), [' ', own('the vote ↗', l.v.ours, 'cs-cite')]), { id: f.id }) : mk(f);
+      };
+      const side = (issue.facts[st] || []).map(mk), either = byDate(issue.facts.either || []).map(mkVote);
       factBoxes = side.concat(either);
       viewBoxes = issue.views[st].map((v, i) => Object.assign(box(v, i === 0), { text: v }));
       const hasRecord = issue.record && !self && (issue.record.type === 'breaks' ? !!chosen.breaks : !!L.castFor(issue, chosen));

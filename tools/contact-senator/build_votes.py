@@ -33,23 +33,39 @@ SENATE = 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote119%s/vote_
 OUT = os.path.join(ROOT, 'site', 'government', 'congress')
 e = lambda s: html.escape(str(s), quote=True)
 
-# Plain words for each tracked vote: (session, number, title, what it was about).
+# Each tracked vote: (session, number, title, what it was about, short line name).
+# The short name is what the vote lists show: "YES: <short> · date · Democratic caucus: 22 yes, 25 no".
 VOTES = [
-    (1, 7, 'Laken Riley Act, final passage', 'Final passage of the Laken Riley Act (S. 5), an immigration detention bill.'),
-    (1, 17, 'Kristi Noem, Secretary of Homeland Security', 'Confirming Kristi Noem as Secretary of Homeland Security.'),
-    (1, 128, 'March 2025 funding bill, ending debate', 'Ending debate (cloture) on H.R. 1968, the full-year funding bill for 2025. It needed 60 votes.'),
-    (1, 318, 'GENIUS Act, final passage', 'Final passage of the GENIUS Act (S. 1582), rules for payment stablecoins.'),
-    (1, 455, 'Blocking a weapons sale to Israel', 'A motion to bring up S.J.Res. 34, which would have blocked a weapons sale to Israel.'),
-    (1, 618, 'Funding bill that ended the fall 2025 shutdown', 'Passage of H.R. 5371, the funding bill that ended the fall 2025 shutdown.'),
-    (2, 203, 'Michael C. Martin, federal judge, ending debate', 'Ending debate (cloture) on Michael C. Martin, a nominee for federal judge in the Eastern District of Michigan.'),
-    (2, 205, 'Antonio M. Pozos, federal judge, ending debate', 'Ending debate (cloture) on Antonio M. Pozos, a nominee for federal judge in the Eastern District of Pennsylvania.'),
-    (2, 254, 'Who pays grid upgrades for large power users', 'Ending debate (cloture) on moving to H.R. 9340, a federal rule for who pays grid upgrades for large power users. It needed 60 votes.'),
-    (2, 257, 'Permitting reform bill (BAAJA), ending debate on taking it up', 'Ending debate (cloture) on taking up the permitting reform bill, the Bipartisan American Affordability and Jobs Act (S. 5653). The Senate used a House bill, H.R. 2347, as the vehicle; its original title is about a tax rule. It needed 60 votes.'),
-    (2, 258, 'Permitting reform bill (BAAJA), taking it up', 'Taking up H.R. 2347, the House bill used to carry the permitting reform bill (BAAJA, S. 5653).'),
+    (1, 7, 'Laken Riley Act, final passage', 'Final passage of the Laken Riley Act (S. 5), an immigration detention bill.',
+     'Laken Riley Act (S. 5), final passage'),
+    (1, 17, 'Kristi Noem, Secretary of Homeland Security', 'Confirming Kristi Noem as Secretary of Homeland Security.',
+     'Kristi Noem for Secretary of Homeland Security'),
+    (1, 128, 'March 2025 funding bill, ending debate', 'Ending debate (cloture) on H.R. 1968, the full-year funding bill for 2025. It needed 60 votes.',
+     'March 2025 funding bill (H.R. 1968), ending debate'),
+    (1, 318, 'GENIUS Act, final passage', 'Final passage of the GENIUS Act (S. 1582), rules for payment stablecoins.',
+     'GENIUS Act, stablecoin rules (S. 1582), final passage'),
+    (1, 455, 'Blocking a weapons sale to Israel', 'A motion to bring up S.J.Res. 34, which would have blocked a weapons sale to Israel.',
+     'Blocking a weapons sale to Israel (S.J.Res. 34), bringing it up'),
+    (1, 618, 'Funding bill that ended the fall 2025 shutdown', 'Passage of H.R. 5371, the funding bill that ended the fall 2025 shutdown.',
+     'Funding bill that ended the 2025 shutdown (H.R. 5371), passage'),
+    (2, 203, 'Michael C. Martin, federal judge, ending debate', 'Ending debate (cloture) on Michael C. Martin, a nominee for federal judge in the Eastern District of Michigan.',
+     'Judge nominee Michael C. Martin (Michigan), ending debate'),
+    (2, 205, 'Antonio M. Pozos, federal judge, ending debate', 'Ending debate (cloture) on Antonio M. Pozos, a nominee for federal judge in the Eastern District of Pennsylvania.',
+     'Judge nominee Antonio M. Pozos (Pennsylvania), ending debate'),
+    (2, 254, 'Who pays grid upgrades for large power users', 'Ending debate (cloture) on moving to H.R. 9340, a federal rule for who pays grid upgrades for large power users. It needed 60 votes.',
+     'Grid upgrade costs for large power users (H.R. 9340), ending debate'),
+    (2, 257, 'Permitting reform bill (BAAJA), ending debate on taking it up', 'Ending debate (cloture) on taking up the permitting reform bill, the Bipartisan American Affordability and Jobs Act (S. 5653). The Senate used a House bill, H.R. 2347, as the vehicle; its original title is about a tax rule. It needed 60 votes.',
+     'Permitting reform bill (BAAJA, S. 5653), ending debate'),
+    (2, 258, 'Permitting reform bill (BAAJA), taking it up', 'Taking up H.R. 2347, the House bill used to carry the permitting reform bill (BAAJA, S. 5653).',
+     'Permitting reform bill (BAAJA, S. 5653), taking it up'),
 ]
 # Former senators on these roll calls, named in full where a current senator shares the last name and state.
 # The senate.gov file for roll call 128 gives first_name Lindsey for Graham (SC); from roll call 203 on it is Darline.
 FORMER = {('Graham', 'SC'): 'Lindsey Graham'}
+# Party of the former senators on these roll calls, as the senate.gov files list them.
+FORMER_PARTY = {('Graham', 'SC'): 'R', ('Rubio', 'FL'): 'R', ('Mullin', 'OK'): 'R'}
+GROUPS = (('dem', 'Democratic caucus'), ('rep', 'Republicans'))
+SHORT_CAST = {'Yea': 'YES', 'Nay': 'NO', 'Not Voting': 'DID NOT VOTE', 'Present': 'PRESENT'}
 CAST = {'Yea': 'Yes', 'Nay': 'No', 'Not Voting': 'Did not vote', 'Present': 'Present'}
 
 
@@ -100,9 +116,9 @@ def iso_date(text):
     return '%s-%02d-%02d' % (m.group(3), mon, int(m.group(2))), '%s %d, %s' % (MONTHS[mon - 1], int(m.group(2)), m.group(3))
 
 
-def main(yaml_path):
+def load(yaml_path):
+    """Senators, the tracked votes (with each caucus's split) and each senator's votes."""
     leg = yaml.safe_load(open(yaml_path, encoding='utf-8'))
-    pages = member_pages()
     sens = {}
     for p in leg:
         terms = [t for t in p['terms'] if t['type'] == 'sen']
@@ -111,8 +127,8 @@ def main(yaml_path):
         sens[p['id']['bioguide']] = {
             'name': p['name'].get('official_full') or (p['name']['first'] + ' ' + p['name']['last']),
             'last': norm(p['name']['last']), 'st': terms[-1]['state'], 'terms': [(t['start'], t['end']) for t in terms],
-            'fec': p['id'].get('fec', [])}
-    web = money_links({b: s['fec'] for b, s in sens.items()})
+            'fec': p['id'].get('fec', []),
+            'group': 'dem' if terms[-1]['party'] == 'Democrat' or terms[-1].get('caucus') == 'Democrat' else 'rep'}
     rolls = parse_rollcalls(os.path.join(os.path.dirname(__file__), 'rollcalls.txt'))
 
     def who(last, st, day):
@@ -126,17 +142,45 @@ def main(yaml_path):
         return None
 
     votes, by_sen = [], {b: [] for b in sens}
-    for sess, n, title, what in VOTES:
+    for sess, n, title, what, short in VOTES:
         r = rolls[n]
         day, long_day = iso_date(r['date_text'])
         rows = []
+        split = {g: {'Yea': 0, 'Nay': 0, 'Not Voting': 0, 'Present': 0} for g, _ in GROUPS}
         for (last, st), cast in sorted(r['casts'].items(), key=lambda x: (x[0][1], x[0][0])):
             b = who(last, st, day)
             rows.append((last, st, cast, b))
             if b:
                 by_sen[b].append((sess, n, cast))
-        votes.append({'sess': sess, 'n': n, 'title': title, 'what': what, 'day': day, 'date': long_day, 'r': r, 'rows': rows,
-                      'id': 'rc-119-%d-%d' % (sess, n), 'url': SENATE % (sess, sess, n)})
+                g = sens[b]['group']
+            else:
+                g = 'rep' if FORMER_PARTY[(last, st)] == 'R' else 'dem'
+            split[g][cast] += 1
+        votes.append({'sess': sess, 'n': n, 'title': title, 'what': what, 'short': short, 'day': day, 'date': long_day, 'r': r, 'rows': rows,
+                      'id': 'rc-119-%d-%d' % (sess, n), 'url': SENATE % (sess, sess, n), 'split': split})
+    return sens, votes, by_sen
+
+
+def split_text(v, group):
+    """'Democratic caucus: 22 yes, 25 no, 1 did not vote'"""
+    c = v['split'][group]
+    parts = ['%d yes' % c['Yea'], '%d no' % c['Nay']]
+    if c['Not Voting']:
+        parts.append('%d did not vote' % c['Not Voting'])
+    if c['Present']:
+        parts.append('%d present' % c['Present'])
+    return dict(GROUPS)[group] + ': ' + ', '.join(parts)
+
+
+def short_date(long_day):
+    m, d, y = long_day.replace(',', '').split()
+    return '%s %s, %s' % (m[:3] + ('.' if len(m) > 3 else ''), d, y) if m not in ('May', 'June', 'July') else long_day
+
+
+def main(yaml_path):
+    pages = member_pages()
+    sens, votes, by_sen = load(yaml_path)
+    web = money_links({b: s['fec'] for b, s in sens.items()})
     unmatched = [(v['n'], last, st) for v in votes for last, st, _c, b in v['rows'] if not b]
     print('names not matched to a current senator (former senators):', unmatched)
     write_votes_page(votes, pages)
@@ -204,7 +248,8 @@ def write_votes_page(votes, pages):
         out.append('<div class="gv-tiles"><div class="gv-tile"><span>Result</span><strong>%s</strong></div>'
                    '<div class="gv-tile"><span>Yes</span><strong>%d</strong></div><div class="gv-tile"><span>No</span><strong>%d</strong></div>'
                    '<div class="gv-tile"><span>Did not vote</span><strong>%d</strong></div></div>' % (e(r['result']), r['yea'], r['nay'], r['nv']))
-        out.append('<p class="gw-status">Question on the official record: %s</p>' % e(r['question']))
+        out.append('<p><strong>By party:</strong> %s. %s.</p>' % (e(split_text(v, 'dem')), e(split_text(v, 'rep'))))
+        out.append('<p class="gw-status">Bill or nomination: %s. Question on the official record: %s</p>' % (e(v['short']), e(r['question'])))
         for key in ('Yea', 'Nay', 'Not Voting', 'Present'):
             names = [name(last, st, b) for last, st, c, b in v['rows'] if c == key]
             if names:
@@ -217,6 +262,12 @@ def write_votes_page(votes, pages):
     open(os.path.join(OUT, 'votes.html'), 'w', encoding='utf-8').write(''.join(out))
 
 
+def vote_line(v, cast, group, page):
+    """One line: YES: <short name> · <date> · <party split>, all one link to our page for the vote."""
+    return '<li><a href="%s#%s"><strong>%s</strong>: %s · %s · %s</a></li>' % (
+        e(page), v['id'], SHORT_CAST[cast], e(v['short']), e(short_date(v['date'])), e(split_text(v, group)))
+
+
 START, END = '<!-- tw-votes -->', '<!-- /tw-votes -->'
 
 
@@ -225,13 +276,12 @@ def write_member_section(slug, s, mine, vote_by, web):
     page = open(path, encoding='utf-8').read()
     rows = []
     for sess, n, cast in sorted(mine, key=lambda x: (vote_by[(x[0], x[1])]['day'], x[1]), reverse=True):
-        v = vote_by[(sess, n)]
-        rows.append('<tr><td>%s</td><td><a href="../votes.html#%s">%s</a></td><td>%s</td><td><a href="%s">Roll call %d ↗</a></td></tr>' % (
-            e(v['date']), v['id'], e(v['title']), CAST[cast], e(v['url']), n))
+        rows.append(vote_line(vote_by[(sess, n)], cast, s['group'], '../votes.html'))
     parts = [START, '<section class="gv-sec" id="votes"><h2>Senate votes we track</h2>']
     if rows:
-        parts.append('<p>How this senator voted on the roll calls The Way tracks so far. Each vote links to our page for it, which shows every senator\'s vote, and to the official record on senate.gov.</p>')
-        parts.append('<div class="gv-scroll"><table class="gv-table"><thead><tr><th>Date</th><th>Vote</th><th>How they voted</th><th>Official record</th></tr></thead><tbody>%s</tbody></table></div>' % ''.join(rows))
+        parts.append('<p>How this senator voted on the roll calls The Way tracks so far, newest first, with how their party voted. '
+                     'Each line links to our page for that vote, which says what it was, shows every senator\'s vote, and links to the official record on senate.gov.</p>')
+        parts.append('<ul class="gv-list gv-votes">%s</ul>' % ''.join(rows))
     else:
         parts.append('<p>None of the roll calls The Way tracks so far took place while this senator was in office.</p>')
     parts.append('<p class="gv-links"><a href="../votes.html">All Senate votes we track →</a>')

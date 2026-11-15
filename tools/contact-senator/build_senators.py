@@ -19,6 +19,10 @@ Votes: official senate.gov roll call XML files, listed in VOTES.
 Our own pages: each senator's page in /government/congress/members/ and their campaign committee on the
 Money web (site_links.py). Run from the repo root.
 
+Tracked votes (build_votes.py, from rollcalls.txt): "tracked" lists each vote with its short name, date, our page and
+each caucus's split, and each senator's "tv" string holds their cast on each one, in the same order
+(Y yes, N no, X did not vote, P present, - not yet in office). The panel uses them for the vote lines.
+
 Usage: python3 tools/contact-senator/build_senators.py legislators-current.yaml
 """
 import json
@@ -26,6 +30,7 @@ import sys
 
 import yaml
 
+import build_votes
 from site_links import member_pages, money_links
 
 STATES = {
@@ -171,8 +176,16 @@ def main(path):
     for s in sens:
         if s["dem"]:
             s.setdefault("breaks", [])
+    _bv, tv_votes, tv_by = build_votes.load(path)
+    tv_votes = sorted(tv_votes, key=lambda v: (v["day"], v["n"]), reverse=True)
+    tracked = [{"id": v["id"], "short": v["short"], "date": build_votes.short_date(v["date"]), "ours": "/government/congress/votes.html#" + v["id"],
+                "url": v["url"], "dem": build_votes.split_text(v, "dem"), "rep": build_votes.split_text(v, "rep")} for v in tv_votes]
+    code = {"Yea": "Y", "Nay": "N", "Not Voting": "X", "Present": "P"}
+    for s in sens:
+        mine = {(sess, n): cast for sess, n, cast in tv_by[s["id"]]}
+        s["tv"] = "".join(code[mine[(v["sess"], v["n"])]] if (v["sess"], v["n"]) in mine else "-" for v in tv_votes)
     sens.sort(key=lambda s: (STATES[s["st"]], s["last"]))
-    out = {"checked": "November 15, 2026", "states": STATES, "votes": votes, "senators": sens}
+    out = {"checked": "November 15, 2026", "states": STATES, "votes": votes, "tracked": tracked, "senators": sens}
     js = ("/* Built by tools/contact-senator/build_senators.py. Do not edit by hand. */\n"
           "window.SENATE_CONTACTS=" + json.dumps(out, ensure_ascii=False, separators=(",", ":")) + ";\n")
     dest = "site/members/senator-letters/senators.js"
