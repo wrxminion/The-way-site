@@ -99,3 +99,17 @@
 .cs-admin a.cs-btn.cs-main{color:#052b3b}
 .cs-admin .cs-letter{min-height:340px;white-space:pre-wrap}
 .cs-admin .cs-neutral{margin:0 0 14px}
+/* v3: pick the facts for the letter; every fact shows its source */
+.cs-admin .cs-cite{font-size:13px;color:#9bdddc}
+.cs-admin .cs-cite a{color:#a9f0e8}
+.cs-admin .cs-searched{font-size:14px;line-height:1.6;color:#d8eef1;border-left:2px solid #a9f0e8aa;padding:10px 14px;background:#a9f0e80d}
+.cs-either{margin:0 0 12px}
+.cs-picks{margin:0 0 18px}
+.cs-group{border:1px solid #c7ffff26;border-radius:14px;padding:10px 14px 6px;margin:0 0 14px;background:#021421;min-width:0}
+.cs-group legend{padding:0 6px;font-weight:700;color:#e9ffff;font-size:15px}
+.cs-admin .cs-group-tools{margin:0 0 8px;font-size:13px;color:#9bdddc}
+.cs-link{background:none;border:0;padding:4px 2px;color:#a9f0e8;font:700 13px Inter,system-ui,Arial,sans-serif;cursor:pointer;text-decoration:underline}
+.cs-link:focus-visible{outline:2px solid #e4ffff;outline-offset:2px}
+.cs-check{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid #c7ffff14;font-size:15px;line-height:1.55;color:#e9ffff;cursor:pointer}
+.cs-check input{flex:none;width:20px;height:20px;margin:3px 0 0;accent-color:#b9f6ed}
+.cs-check span{min-width:0;overflow-wrap:anywhere}

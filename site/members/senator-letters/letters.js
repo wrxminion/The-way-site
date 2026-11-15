@@ -20,8 +20,8 @@
   function fill(s, c) { return String(s).replace(/\{(\w+)\}/g, function (_, k) { return c[k] != null ? c[k] : ''; }); }
 
   var SRC = {
-    'TIME, Nov 13, 2026': { name: 'TIME', date: 'November 13' },
-    'Al Jazeera, Nov 5, 2026': { name: 'Al Jazeera', date: 'November 5' }
+    'TIME, Nov 13, 2026': { name: 'TIME', date: 'November 13', url: 'https://time.com/article/2026/11/13/chris-van-hollen-senate-majority-leader-chuck-schumer-progressive-democrats/' },
+    'Al Jazeera, Nov 5, 2026': { name: 'Al Jazeera', date: 'November 5', url: 'https://www.aljazeera.com/amp/news/2026/11/5/division-among-us-democrats-over-schumers-leadership-role' }
   };
 
   /* Optional "about you" lines. Only used when the writer picks one. */
@@ -50,8 +50,12 @@
       name: (opts.name || '').trim() || '[Your name]',
       town: (opts.town || '').trim() || '[your town]',
       reasons: (opts.reasons || '').replace(/\r/g, '').trim(),
-      who: opts.who || ''
+      who: opts.who || '',
+      record: opts.record !== false
     };
+    c.self = !!issue.subject && sen.id === issue.subject;
+    c.facts = chosenFacts(issue, stance, opts.facts);
+    c.views = opts.views ? opts.views.slice() : issue.views[stance].slice(0, 1);
     c.Town = c.town.charAt(0) === '[' ? '[Your town]' : c.town;
     c.topic = pick(issue.topic);
     return c;
@@ -62,10 +66,33 @@
     var key = c.stance + (size === 'short' ? 'Short' : '');
     return fill(pick(src[key] || c.issue.asks[key]), c);
   }
-  function factSet(c, n) {
-    return shuffle(c.issue.facts[c.stance]).slice(0, n).map(function (f) { return fill(pick(f), c); });
+  /* Facts the reader checked. Each one goes into the letter with its source (outlet, date, link). */
+  function factPool(issue, stance) { return (issue.facts[stance] || []).concat(issue.facts.either || []); }
+  function defaultFacts(issue, stance) { return factPool(issue, stance).filter(function (f) { return f.on; }).map(function (f) { return f.id; }); }
+  function chosenFacts(issue, stance, ids) {
+    if (!ids) ids = defaultFacts(issue, stance);
+    var want = {};
+    ids.forEach(function (id) { want[id] = true; });
+    return factPool(issue, stance).filter(function (f) { return want[f.id]; });
   }
-  function view(c, n) { return shuffle(c.issue.views[c.stance]).slice(0, n || 1).map(function (x) { return fill(x, c); }); }
+  function citeText(cites) {
+    return (cites || []).map(function (s) { return s.src + ', ' + s.date + ', ' + s.url; }).join('; ');
+  }
+  function cite(cites) { var t = citeText(cites); return t ? ' (Source: ' + t + ')' : ''; }
+  function factText(c, f) { return fill(c.self && f.you ? f.you : f.text, c) + cite(f.cite); }
+  /* Every checked fact, in a new order each time. */
+  function factSet(c) { return shuffle(c.facts).map(function (f) { return factText(c, f); }); }
+  /* The checked facts as a block: each on its own line, after an optional lead line. */
+  function factsBlock(c, leads, style) {
+    var f = factSet(c);
+    if (!f.length) return '';
+    var lines = f.map(function (x, i) { return style === 'dash' ? '- ' + x : style === 'list' ? (i + 1) + '. ' + x : x; });
+    var lead = pick(leads || ['']);
+    return (lead ? lead + '\n' : '') + lines.join(style === 'plain' || !style ? '\n\n' : '\n');
+  }
+  /* Reasons the reader checked (opinions, in the writer's voice). */
+  function view(c, n) { return shuffle(c.views).slice(0, n || c.views.length).map(function (x) { return fill(x, c); }); }
+  function viewLine(c, n) { return view(c, n).join(' '); }
   function whoLine(c) { return c.who && WHO[c.who] ? fill(pick(WHO[c.who]), c) : ''; }
   function reasonsBlock(c, lead) {
     if (!c.reasons) return '';
@@ -96,11 +123,11 @@
     var src = SRC[s[1]];
     if (!src) return '';
     return pick(c.pro ? [
-      src.name + ' reported on ' + src.date + ' that you back Senator Schumer. Thank you for that.',
-      'I saw that you have said you support Senator Schumer (' + src.name + ', ' + src.date + '). I agree with you.'
+      src.name + ' reported on ' + src.date + ' that you back Senator Schumer (' + src.url + '). Thank you for that.',
+      'I saw that you have said you support Senator Schumer (Source: ' + src.name + ', ' + src.date + ', ' + src.url + '). I agree with you.'
     ] : [
-      src.name + ' reported on ' + src.date + ' that you back Senator Schumer. I ask you to think again before the vote.',
-      'I know you have said you support Senator Schumer (' + src.name + ', ' + src.date + '). I hope you will keep an open mind until December 1.'
+      src.name + ' reported on ' + src.date + ' that you back Senator Schumer (' + src.url + '). I ask you to think again before the vote.',
+      'I know you have said you support Senator Schumer (Source: ' + src.name + ', ' + src.date + ', ' + src.url + '). I hope you will keep an open mind until December 1.'
     ]);
   }
 
@@ -122,13 +149,14 @@
   }
   function recordLine(c) {
     var r = c.issue.record;
-    if (!r) return '';
+    if (!r || !c.record) return '';
     if (r.type === 'rollcall') {
       var cast = castFor(c.issue, c.sen);
       if (!cast) return '';
       var data = { what: r.what, date: r.date };
-      if (cast === 'NV') return r.lines.nv ? fill(r.lines.nv, data) : '';
-      return fill(pick(r.lines[c.stance][cast]), data);
+      var src = ' (Source: Senate roll call, ' + r.date + ', ' + r.url + ')';
+      if (cast === 'NV') return r.lines.nv ? fill(r.lines.nv, data) + src : '';
+      return fill(pick(r.lines[c.stance][cast]), data) + src;
     }
     if (r.type === 'breaks') return breaksLine(c);
     return '';
@@ -136,11 +164,12 @@
   function breaksLine(c) {
     var b = c.sen.breaks;
     if (!b) return '';
-    var isSelf = c.special && c.sen.id === 'S000148';
-    if (isSelf && c.pro) return '';
+    /* A letter to the person the vote is about uses only the votes the reader checked. */
+    if (c.self) return '';
     if (!b.length) {
       return pick(['On nine key Senate votes from 2025 and 2026, you voted with most Democratic senators each time.',
-        'I looked at your record on nine key votes from 2025 and 2026. You voted with most Democratic senators on all of them.']) + ' ' +
+        'I looked at your record on nine key votes from 2025 and 2026. You voted with most Democratic senators on all of them.']) +
+        ' (Source: Senate roll call votes, senate.gov, https://www.senate.gov/legislative/votes_new.htm)' + ' ' +
         pick(c.pro ? ['I hope you stay with the caucus on this one too.', 'You know the caucus well, and I trust you to keep it steady.'] :
           ['I hope you will help the caucus choose its next leader with the same care.', 'You know this caucus well. I hope you choose what is best for its future.']);
     }
@@ -154,8 +183,7 @@
       'I noticed that on ' + v.date + ' you voted ' + mine + ' on ' + v.what + '. Most Democratic senators voted ' + most + '.',
       'Your record shows independence. On ' + v.date + ', you voted ' + mine + ' on ' + v.what + ', while most of your Democratic colleagues voted ' + most + '.'
     ];
-    var line = pick(isSelf ? lines.slice(0, 2) : lines);
-    if (isSelf) return line + ' ' + pick(['Many Democratic voters remember votes like that one.', 'Votes like that are part of why I am writing.']);
+    var line = pick(lines) + ' (Source: Senate roll call, ' + v.date + ', ' + v.url + ')';
     return line + ' ' + pick(['That tells me you make up your own mind.', 'I respect that you vote your own judgment.',
       'I hope you bring that same independence to this vote.']);
   }
@@ -167,21 +195,22 @@
   /* Voices. Each one builds a letter with its own shape. */
   var VOICES = [
     { key: 'formal', label: 'Formal', build: function (c) {
-      var f = factSet(c, 2);
       return join([
         pick(['Dear ' + c.full + ',', 'Dear ' + c.S + ':', 'The Honorable ' + c.sen.name + ',']),
         para([pick(['I am writing as a constituent from ' + c.town + ', ' + c.state + '.', 'I write to you as a resident of ' + c.town + ', ' + c.state + '.']), whoLine(c), ask(c)]),
-        para([stanceLine(c), f[0], f[1]]),
+        stanceLine(c),
+        factsBlock(c, ['I ask you to consider the following.', 'The record supports my view:', 'Please consider these facts.', '']),
         recordLine(c),
         reasonsBlock(c),
-        para([view(c)[0], pick(['I appreciate your attention to this matter.', 'Thank you for considering my view.', 'Thank you for your time and your service.'])]),
+        para([viewLine(c), pick(['I appreciate your attention to this matter.', 'Thank you for considering my view.', 'Thank you for your time and your service.'])]),
         sign(c, pick(['Respectfully,', 'Sincerely,', 'Respectfully yours,']))
       ]);
     } },
     { key: 'short', label: 'Short and plain', build: function (c) {
       return join([
         pick([c.S + ',', 'Dear ' + c.S + ',', 'Hello ' + c.S + ',']),
-        para([constituent(c), ask(c, 'short'), view(c)[0]]),
+        para([constituent(c), ask(c, 'short'), viewLine(c)]),
+        factsBlock(c, ['Why:', 'A few facts:', 'For the record:'], 'dash'),
         c.reasons,
         sign(c, pick(['Thank you,', 'Thanks,', 'Best,']))
       ]);
@@ -192,16 +221,17 @@
         para([c.name.charAt(0) === '[' ? 'I live in ' + c.town + ', ' + c.state + '.' : 'My name is ' + c.name + ', and I live in ' + c.town + '.', whoLine(c), sinceLine(c)]),
         para([pick(['I wanted to reach out about ' + c.topic + '.', 'I have been thinking a lot about ' + c.topic + ', and I wanted you to hear from me.', 'I am writing about something I care about: ' + c.topic + '.']), ask(c)]),
         reasonsBlock(c, pick(['Here is what is on my mind:', 'This is where I am coming from:', ''])),
-        para([stanceLine(c), view(c)[0]]),
+        para([stanceLine(c), viewLine(c)]),
+        factsBlock(c, ['A few things I read that stuck with me:', 'Here is some of what I have read:', 'Some of what shaped my view:']),
         pick(['Thank you for reading this. I know your office hears from a lot of people.', 'Thanks for listening. It means a lot to know my voice gets to you.', 'I appreciate you, and I appreciate you reading this.']),
         sign(c, pick(['Warmly,', 'All the best,', 'With thanks,']))
       ]);
     } },
     { key: 'points', label: 'Point by point', build: function (c) {
-      var items = factSet(c, 2).concat(view(c, 1));
+      var items = factSet(c).concat(view(c));
       reasonLines(c).forEach(function (r) { items.push(r); });
       var rec = recordLine(c);
-      if (rec && chance(0.6)) items.push(rec);
+      if (rec) items.push(rec);
       var list = items.map(function (x, i) { return (i + 1) + '. ' + x; }).join('\n');
       return join([
         pick(['Dear ' + c.S + ',', c.S + ',']),
@@ -212,13 +242,12 @@
       ]);
     } },
     { key: 'numbers', label: 'Facts first', build: function (c) {
-      var f = factSet(c, 3);
       return join([
         pick(['Dear ' + c.S + ',', c.full + ',']),
-        para([pick(['I want to start with the facts.', 'A few facts first.', 'Let me lead with what the record shows.']), f[0]]),
-        para([f[1], f[2]]),
+        factsBlock(c, ['I want to start with the facts.', 'A few facts first.', 'Let me lead with what the record shows.']),
         recordLine(c),
         para([constituent(c), ask(c)]),
+        viewLine(c),
         reasonsBlock(c),
         sign(c, pick(['Sincerely,', 'Thank you,', 'Respectfully,']))
       ]);
@@ -230,7 +259,8 @@
         shuffle(c.issue.questions[c.stance]).slice(0, 2).join('\n'),
         para([pick(['For me, the answer is clear.', 'I have thought about these, and here is where I land.', 'My own answer is simple.']), ask(c)]),
         reasonsBlock(c),
-        para([factSet(c, 1)[0]]),
+        factsBlock(c, ['What I base that on:', 'Here is what I have read:', '']),
+        viewLine(c),
         sign(c, pick(['Thank you,', 'Best regards,', 'Sincerely,']))
       ]);
     } },
@@ -239,7 +269,8 @@
         pick(['Dear ' + c.S + ',', 'Dear ' + c.full + ',']),
         para([constituent(c), whoLine(c), pick(['I know good people disagree about ' + c.topic + '.', 'I have tried to look at ' + c.topic + ' from both sides.', 'This is not a simple question, and I do not think it should be treated like one.'])]),
         para([fill(c.issue.otherSide[c.stance], c), pick(['Still, I come down on one side.', 'After thinking it over, here is where I stand.', 'But on balance, my view is this.']), ask(c)]),
-        para([factSet(c, 1)[0], view(c)[0]]),
+        factsBlock(c, ['What tipped it for me:', 'These facts weigh most with me:', '']),
+        viewLine(c),
         reasonsBlock(c),
         recordLine(c),
         pick(['Whatever you decide, thank you for weighing it carefully.', 'I trust you to weigh this seriously.', 'Thank you for hearing me out.']),
@@ -250,8 +281,9 @@
       return join([
         pick(['Dear ' + c.S + ',', c.S + ',']),
         para([pick(['The next two years matter a great deal.', 'I am thinking about what comes next.', 'What the Senate does now will shape the years ahead.']), constituent(c), whoLine(c)]),
-        para([ask(c), view(c)[0]]),
-        para([factSet(c, 1)[0], stanceLine(c)]),
+        para([ask(c), viewLine(c)]),
+        stanceLine(c),
+        factsBlock(c, ['Here is what I am looking at:', 'What I have read so far:', '']),
         reasonsBlock(c, pick(['What I hope for:', 'What matters to me going forward:', ''])),
         pick(['I am hopeful about what the Senate can do next.', 'I look forward to seeing what you do with this moment.', 'Thank you for helping shape what comes next.']),
         sign(c, pick(['Hopefully,', 'Thank you,', 'Best,']))
@@ -261,6 +293,7 @@
       return join([
         pick([c.S + ',', 'Dear ' + c.S + ',']),
         para([ask(c, 'short'), pick(['That is my view as your constituent in ' + c.town + '.', 'I live in ' + c.state + ' and wanted you to know.', 'Just wanted you to hear it from someone in ' + c.state + '.'])]),
+        factsBlock(c, ['Why:', 'In short:', ''], 'dash'),
         c.reasons,
         sign(c, pick(['Thanks,', 'Thank you,']))
       ]);
@@ -271,7 +304,8 @@
         para([constituent(c), whoLine(c), fill(civicLine(c), c)]),
         ask(c),
         para([sinceLine(c), stanceLine(c)]),
-        para(factSet(c, 2)),
+        factsBlock(c, ['I have looked at the record, and here is what I found:', 'These facts are part of the public record:', '']),
+        viewLine(c),
         reasonsBlock(c),
         pick(['Thank you for taking the views of the people you represent into account.', 'Please carry the views of people in ' + c.state + ' with you into that vote.', 'Thank you for listening to the people you represent.']),
         sign(c, pick(['Sincerely,', 'Respectfully,', 'Thank you,']))
@@ -281,7 +315,8 @@
       return join([
         pick([c.S + ',', 'Hello ' + c.S + ',']),
         para([pick(['I will keep this simple.', 'I will get right to it.', 'Straight to the point.']), ask(c)]),
-        para([whoLine(c), view(c)[0], pick(['That is how I see it.', 'Simple as that.', ''])]),
+        para([whoLine(c), viewLine(c), pick(['That is how I see it.', 'Simple as that.', ''])]),
+        factsBlock(c, ['The facts:', 'Here is what I am going on:', ''], 'dash'),
         reasonsBlock(c, pick(['Here is why:', 'Why:', ''])),
         recordLine(c),
         pick(['Appreciate you reading this.', 'Thanks for your time.', 'Thanks for hearing me out.']),
@@ -311,7 +346,7 @@
     var c = ctx(issue, sen, stance, opts || {});
     var me = c.name.charAt(0) === '[' ? 'I am a constituent' : 'My name is ' + c.name + ', and I am a constituent';
     var want = fill(((c.special && c.special.call) || issue.call)[stance], c);
-    var why = reasonLines(c)[0] || view(c)[0];
+    var why = reasonLines(c)[0] || view(c, 1)[0] || '';
     return 'Hello, ' + me + ' from ' + c.town + ', ' + c.state + '. ' + want + ' ' + why + ' Thank you.';
   }
 
@@ -322,6 +357,9 @@
     callScript: callScript,
     canVote: canVote,
     castFor: castFor,
+    defaultFacts: defaultFacts,
+    factPool: factPool,
+    citeText: citeText,
     voices: VOICES.map(function (v) { return { key: v.key, label: v.label }; })
   };
 })();

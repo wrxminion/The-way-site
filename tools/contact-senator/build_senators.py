@@ -103,7 +103,7 @@ VOTES = [
 
 def vote_url(vid):
     sess, num = vid.split("-")
-    return ("https://www.senate.gov/legislative/LIS/roll_call_votes/vote%s/vote_119_%s_%s.xml"
+    return ("https://www.senate.gov/legislative/LIS/roll_call_votes/vote%s/vote_119_%s_%s.htm"
             % (sess, sess[-1], num))
 
 
