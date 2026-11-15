@@ -8,8 +8,10 @@
 'use strict';
 
 const BASE = '/members/senator-letters/';
-const FILES = ['senators.js?v=2', 'issues.js?v=2', 'letters.js?v=2'];
-const CSS = BASE + 'senator-letters.css?v=2';
+const FILES = ['senators.js?v=3', 'issues.js?v=3', 'letters.js?v=3'];
+const CSS = BASE + 'senator-letters.css?v=3';
+const MEMBER = '/government/congress/members/';
+const VOTES_PAGE = '/government/congress/votes.html';
 
 function loadScript(src) {
   return new Promise((ok, bad) => {
@@ -52,14 +54,17 @@ function make(ctx) {
     const castWord = (c) => (c === 'Yea' ? 'Voted yes' : c === 'Nay' ? 'Voted no' : 'Did not vote');
     const ext = (text, href, cls) => h('a', { class: cls || null, href, target: '_blank', rel: 'noopener', text });
     const num = (n) => h('span', { class: 'cs-num', text: String(n) });
-    // Text from issues.js may hold links written as [words](https://...). They become real links; the rest stays text.
+    // Text from issues.js may hold links written as [words](https://...) or [words](/our/page). They become real links; the rest stays text.
     const rich = (str) => {
-      const out = [], re = /\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g;
+      const out = [], re = /\[([^\]]+)\]\(((?:https:\/\/|\/)[^)\s]+)\)/g;
       let last = 0, m;
       while ((m = re.exec(str))) { out.push(str.slice(last, m.index)); out.push(ext(m[1], m[2])); last = re.lastIndex; }
       out.push(str.slice(last));
       return out.filter((x) => x !== '');
     };
+    const own = (text, href, cls) => h('a', { class: cls || null, href, target: '_blank', rel: 'noopener', text });
+    const pageOf = (s) => (s && s.page ? MEMBER + s.page + '.html' : '');
+    const nameLink = (s, cls) => (s.page ? own(s.name, pageOf(s), cls) : s.name);
     const srcLinks = (cites) => (cites || []).flatMap((x, i) => [i ? '; ' : '', ext(`${x.src}, ${x.date}`, x.url)]);
 
     // Controls
@@ -126,6 +131,17 @@ function make(ctx) {
     function factList(title, facts) {
       return h('div', { class: 'cs-side' }, h('h4', { text: `${title} (${facts.length})` }), h('ul', null, facts.map(factLi)));
     }
+    // A short, sourced box about the person an issue centers on, with links to their page and the Money web.
+    function aboutBox(a) {
+      if (!a) return null;
+      const s = byId[a.id];
+      return h('div', { class: 'cs-about' },
+        h('h4', { text: a.title }),
+        h('ul', null, a.facts.map(factLi)),
+        s ? h('p', { class: 'cs-links' },
+          s.page ? own(`${s.name}: his page on The Way`, pageOf(s), 'cs-btn') : null,
+          s.web ? own(`${s.webName || 'Campaign committee'} on the Money web`, s.web, 'cs-btn') : null) : null);
+    }
     function showIssue() {
       const either = issue.facts.either || [];
       panel.replaceChildren(...[
@@ -133,6 +149,7 @@ function make(ctx) {
         h('p', { class: 'cs-status-line' }, rich(issue.status)),
         issue.summary.map((p) => h('p', null, rich(p))),
         issue.searched ? h('p', { class: 'cs-searched', text: issue.searched }) : null,
+        aboutBox(issue.about),
         h('div', { class: 'cs-sides' },
           factList(issue.labels.for, issue.facts.for),
           factList(issue.labels.against, issue.facts.against)),
@@ -186,11 +203,13 @@ function make(ctx) {
       const cast = L.castFor(issue, s);
       const on = chosen && chosen.id === s.id;
       return h('div', { class: 'cs-card' + (on ? ' cs-on' : '') },
-        h('h4', { text: s.name }),
+        h('h4', null, nameLink(s)),
         h('p', { class: 'cs-sub', text: `${partyWord(s.party)}, ${D.states[s.st]}${s.since ? ' · in the Senate since ' + s.since : ''}` }),
         h('p', { class: 'cs-links' }, h('a', { class: 'cs-btn', href: tel(s.phone), text: 'Call ' + s.phone }), ext('Contact form', s.form, 'cs-btn')),
         h('p', { class: 'cs-small', text: s.office + ', Washington, DC 20510' }),
-        cast ? h('p', { class: 'cs-record' }, `${castWord(cast)}${issue.record.short ? ' ' + issue.record.short : ''} on ${issue.record.date}: `, ext('Senate roll call', issue.record.url)) : null,
+        h('p', { class: 'cs-small' }, s.page ? own('Their page and votes', pageOf(s) + '#votes') : null, s.page && s.web ? ' · ' : '', s.web ? own('Money web', s.web) : null),
+        cast ? h('p', { class: 'cs-record' }, `${castWord(cast)}${issue.record.short ? ' ' + issue.record.short : ''} on ${issue.record.date}: `,
+          issue.record.ours ? own('the vote on The Way', VOTES_PAGE + '#' + issue.record.ours) : null, issue.record.ours ? ' · ' : '', ext('Senate roll call ↗', issue.record.url)) : null,
         L.canVote(issue, s)
           ? h('button', { type: 'button', class: 'cs-btn cs-main', text: (on ? 'Writing to ' : 'Write to ') + s.last, onclick: () => choose(s, true) })
           : h('p', { class: 'cs-note', text: `Senator ${s.last} is a Republican. Only Democratic senators and the two independents who work with them vote on this. You can still call or write about anything else, or pick another issue above.` }));
@@ -274,7 +293,7 @@ function make(ctx) {
       h('thead', null, h('tr', null, ['State', 'Senator', 'Phone', 'Contact'].map((t) => h('th', { scope: 'col', text: t })))),
       h('tbody', null, D.senators.map((s) => h('tr', null,
         h('td', { text: D.states[s.st] }),
-        h('td', null, s.name + ' ', h('span', { class: 'cs-party', text: `(${s.party})` })),
+        h('td', null, nameLink(s), ' ', h('span', { class: 'cs-party', text: `(${s.party})` })),
         h('td', null, h('a', { href: tel(s.phone), text: s.phone })),
         h('td', null, ext('Contact form', s.form)))))));
 
@@ -294,13 +313,13 @@ function make(ctx) {
       h('ul', null,
         h('li', { text: 'We searched news reports, official records (Senate roll calls, bill text, FEC filings) and statements from both sides, and kept every point we could tie to a source. Some issues have more points on one side, because the record has more. We do not pad the thinner side.' }),
         h('li', { text: 'Every fact you check goes into the letter with its source written out: outlet, date and link.' }),
-        h('li', { text: 'Every vote count links to the official roll call. A voice vote has no roll call, so it links to the official record of the action.' }),
+        h('li', null, 'Every vote count links to ', own('our page for that vote', VOTES_PAGE), ', which shows how every senator voted and links to the official roll call on senate.gov so you can check us. A voice vote has no roll call, so it links to the official record of the action.'),
         h('li', { text: 'When the Senate has already voted, the card and the letter can say how that senator voted, from the official roll call.' }),
         h('li', { text: 'For the Democratic leader vote, a letter can name a vote where that senator broke from most Democratic senators (nine official roll calls from 2025 and 2026; close splits left out).' }),
         h('li', { text: 'Only the Senate is covered. House members are not listed, because all 435 House contacts could not be checked yet.' }),
         h('li', { text: 'To add an issue, copy one block in /members/senator-letters/issues.js.' })),
       h('h2', { text: 'All 100 senators' }),
-      h('p', { class: 'muted small', text: `Washington office phone and official contact page, checked on senate.gov on ${D.checked}. No senator lists a public email address.` }),
+      h('p', { class: 'muted small', text: `Washington office phone and official contact page, checked on senate.gov on ${D.checked}. No senator lists a public email address. Each name opens that senator's page on The Way, with the Senate votes we track.` }),
       table));
 
     if (startId && byIssue[startId]) issueSel.value = startId;

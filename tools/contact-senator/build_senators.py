@@ -16,12 +16,17 @@ linked from that senator's own home page (opened Nov 15, 2026).
 
 Votes: official senate.gov roll call XML files, listed in VOTES.
 
-Usage: python3 build_senators.py legislators-current.yaml
+Our own pages: each senator's page in /government/congress/members/ and their campaign committee on the
+Money web (site_links.py). Run from the repo root.
+
+Usage: python3 tools/contact-senator/build_senators.py legislators-current.yaml
 """
 import json
 import sys
 
 import yaml
+
+from site_links import member_pages, money_links
 
 STATES = {
     "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California",
@@ -113,6 +118,8 @@ def key(last):
 
 def main(path):
     data = yaml.safe_load(open(path, encoding="utf-8"))
+    pages = member_pages()
+    web = money_links({p["id"]["bioguide"]: p["id"].get("fec", []) for p in data if p["terms"][-1]["type"] == "sen"})
     sens = []
     for p in data:
         sen_terms = [t for t in p["terms"] if t["type"] == "sen"]
@@ -139,8 +146,12 @@ def main(path):
             "office": t.get("address", "").split(" Washington")[0],
             "since": int(sen_terms[0]["start"][:4]),
             "stance": STANCE.get(bid),
+            "page": pages.get(bid),
+            "web": web.get(bid, {}).get("url"),
+            "webName": web.get(bid, {}).get("name"),
         })
     assert len(sens) == 100, len(sens)
+    assert all(s["page"] for s in sens), [s["last"] for s in sens if not s["page"]]
     caucus_keys = {key(s["last"]): s for s in sens if s["dem"]}
     assert len(caucus_keys) == 47, len(caucus_keys)
     votes = []
