@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "ba0c6fb8e9bfc15b",
+   "kind": "news",
+   "title": "California voters overhaul recall elections, pass Democratic-backed Prop 5",
+   "source": "LAist",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOTDV1MGtLaTZsNU5wZjVYNjRzbkNLMDI2QjdoMWs0VUFsandoUVVocXpyZlJPSUQ1QUFYRkp0SjBVU3NIOHpMdzdidTljWFJWQlVmQ2kydDVldWJTeXVFRkVXRjJxOGdHUnBTMlR2VXE4UWRRZTY4cWFzRVRBV1QzN0RtZERsNzRMU0xlSkszRzFHZDBLZDJBM094M01DNDJqbU8wZHljNVo?oc=5",
+   "published_at": "2026-11-13",
+   "first_seen_at": "2026-11-15T01:50:28Z",
+   "states": [
+    "ca"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "ca-prop-5",
+     "kind": "measure",
+     "label": "Proposition 5: Recall elections: Removes the replacement-candidate question from recall elections, California",
+     "page": "guide-ca/measures/prop-5.html"
+    }
+   ]
+  },
+  {
    "id": "398bb22566734a27",
    "kind": "news",
    "title": "Proposition 5 passes, rewriting the rules for California recall elections",
@@ -1325,5 +1352,5 @@
    ]
   }
  ],
- "generated_at": "2026-11-13T04:00:40Z"
+ "generated_at": "2026-11-15T02:01:34Z"
 }
