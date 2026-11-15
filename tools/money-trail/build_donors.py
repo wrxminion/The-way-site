@@ -24,7 +24,7 @@ the employer matches too. Two people with the same name in the same state stay a
 
 Privacy (52 U.S.C. 30111(a)(4), 11 CFR 104.15): what is published is the name, city, state, employer and occupation as
 filed, the amounts, the dates and the filing links, the same facts fec.gov shows. ZIP codes are used only to match
-spellings and are never written to the site files. Street addresses are not in the bulk file. There is no download of
+spellings and are never written to the site files. Street addresses are not in the bulk file; a ZIP code or street a filer typed into the employer, occupation or city box is dropped (D274). There is no download of
 the donor list.
 """
 import argparse, collections, io, json, os, re, sys, time, zipfile, zlib
@@ -79,6 +79,34 @@ def parse(raw):
     last, first = ' '.join(lw), rw[0]
     mid = rw[1][0] if len(rw) > 1 else ''
     return (last + ', ' + ' '.join(rw), last, first, mid)
+
+
+# D274: a filer sometimes types a ZIP code or a street address into the employer, occupation or city box. Those are never
+# published: a value that is only a ZIP code (5 digits or ZIP+4) or a street address is dropped, and a ZIP code at the end
+# of a longer value is cut off ("PENSKE TRANSPORTATION 19607" becomes "PENSKE TRANSPORTATION"). A suite number, a value of
+# only numbers, and a house number with one or two words and no business word ("310 DEVILS BIGHT") are dropped too; when in
+# doubt the value is dropped. A number that starts a group's name ("80000 HOURS", "1970 GROUP") stays, and so does a company
+# whose registered name holds a street ("... STREET REALTY LLC").
+ZIP_ONLY = re.compile(r'^\s*\d{5}(?:[- ]?\d{4})?\s*$')
+ZIP_END = re.compile(r'[\s,]+\d{5}(?:[- ]?\d{4})?\s*$')
+STREET = re.compile(r'^\s*(?:P\.? ?O\.? ?BOX\b.*|\d{1,6}\s+(?:[A-Z0-9.\']+\s+){0,4}(?:ST|STREET|AVE|AVENUE|RD|ROAD|BLVD|BOULEVARD|DR|DRIVE|LN|LANE|CT|COURT|'
+                    r'WAY|PL|PLACE|PKWY|PARKWAY|HWY|HIGHWAY|CIR|CIRCLE|TER|TERRACE)\b\.?(?:\s*(?:SUITE|STE|APT|UNIT|#)\s*\S+)?\s*)$')
+
+
+SUITE = re.compile(r'^\s*(?:(?:STE|SUITE|APT|UNIT)\b\.?\s*#?|#)\s*\d[\w-]*\s*$')  # "STE 400", "APT 2B", "#12"; not STEEL or APTOS
+DIGITS = re.compile(r'^[\d\s/.-]+$')  # only numbers ("1955", "3 18 2025"): not an employer or occupation
+# a house number and one or two words with no business word in them ("310 DEVILS BIGHT", "3123 WINCHESTER") reads as a street
+NUM_WORDS = re.compile(r"^\d{1,6}(?: [A-Z']+){1,2}$")
+BIZ = re.compile(r'\b(INN|GROUP|CAPITAL|PARTNERS|VENTURES|BRANDS|STUDIOS|PROPERTIES|MANAGEMENT|HOLDINGS|BANK|FUNDS?|FOUNDATION|SOLUTIONS|'
+                 r'STRATEGIES|PRODUCTIONS|INVESTMENTS|DEVELOPMENT|ENTERTAINMENT|ENT|MORTGAGE|HEALTHCARE|ONCOLOGY|TECHNOLOGIES|POWER|'
+                 r'LLC|INC|CORP|CO|LTD|HOURS|MEDIA|LABS|SYSTEMS|SERVICES|CONSULTING|REALTY|CENTURY|NATIONAL|FINANCIAL|AUTO)\b')
+
+
+def no_zip(v):
+    v = re.sub(r'\s+', ' ', (v or '').strip().upper())
+    if ZIP_ONLY.match(v) or STREET.match(v) or SUITE.match(v) or DIGITS.match(v) or (NUM_WORDS.match(v) and not BIZ.search(v)):
+        return ''
+    return ZIP_END.sub('', v).strip(' ,')
 
 
 def emp_key(e):
@@ -227,8 +255,8 @@ for r in indiv_rows():
     if day > t[5]:
         t[5] = day
     if day >= latest.get(c, ('',))[0]:
-        latest[c] = (day, r[8].strip().upper(), r[11].strip().upper(), r[12].strip().upper())
-    spell[c][re.sub(r'\s+', ' ', raw.strip().upper())] += 1
+        latest[c] = (day, no_zip(r[8]), no_zip(r[11]), no_zip(r[12]))
+    spell[c][no_zip(raw)] += 1
 log('pass 2 done: person, committee and year lines', len(lines))
 parsed = None
 
@@ -250,7 +278,7 @@ for c, ls in per.items():
     day, city, emp, occ = latest.get(c, ('', '', '', ''))
     ls.sort(key=lambda x: (-x[2], x[0], x[1]))
     people.append({'name': name, 'st': st, 'city': city, 'emp': emp, 'occ': occ, 'total': total, 'gifts': sum(x[3] for x in ls),
-                   'spell': [s for s, _ in spell[c].most_common(5)], 'lines': ls})
+                   'spell': [s for s, _ in spell[c].most_common(6) if s][:5], 'lines': ls})
 people.sort(key=lambda p: (-p['total'], p['name'], p['st']))
 
 # Every dot needs its own name, because the web joins lines by name. A name that more than one person has (in any state)
@@ -302,8 +330,9 @@ main = [p for p in people if p['total'] >= a.main]
 more = [p for p in people if p['total'] < a.main]
 meta['people_main'], meta['people_search'] = len(main), len(more)
 meta['dollars_main'] = round(sum(p['total'] for p in main), 2)
-meta['v'] = format(zlib.crc32(json.dumps([meta['file_date'], len(main), len(more), meta['dollars_main']]).encode()) & 0xFFFFFFFF, '08x')
 recs = [rec(p) for p in main]
+# the stamp changes whenever anything in the files changes, so browsers ask for the new files (D274)
+meta['v'] = format(zlib.crc32(json.dumps([meta['file_date'], recs, [rec(p, a.cap) for p in more]], separators=(',', ':')).encode()) & 0xFFFFFFFF, '08x')
 D = {'meta': meta, 'c': ctable(recs), 'd': recs}
 head = ('// People who gave money to federal committees, for the Money web (D272). Made by tools/money-trail/build_donors.py '
         'from the FEC individual contributions file; do not edit by hand.\n'

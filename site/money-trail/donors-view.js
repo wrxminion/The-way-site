@@ -43,7 +43,7 @@
         notes: 'Gave ' + money(total) + ' in ' + gifts + (gifts === 1 ? ' itemized gift' : ' itemized gifts') + ' to ' + ncm + (ncm === 1 ? ' federal committee' : ' federal committees') +
           ' in 2025 and 2026, as filed with the FEC (individual contributions file dated ' + day(M.file_date) + ').' +
           (lines.length < ncm ? ' The web shows the ' + new Set(lines.map(x => x[0])).size + ' committees that got the most.' : '') +
-          ' City and state: ' + (where || 'not on the filing') + '. Employer as filed: ' + (emp || 'not on the filing') + '. Occupation as filed: ' + (occ || 'not on the filing') + '.' +
+          ' City and state: ' + (where || 'not on the filing') + '. Employer as filed: ' + (emp || 'not shown') + '. Occupation as filed: ' + (occ || 'not shown') + '.' +
           (spell && spell.length > 1 ? ' Spellings on the filings: ' + spell.join('; ') + '.' : '') + ' ' + MATCH + ' ' + LAW };
       ents.set(eid, e); RESEARCH.entities.push(e);
     }
