@@ -342,18 +342,48 @@
     return { voice: v.key, label: v.label, subject: subject(c), body: tidy(v.build(c)) };
   }
 
-  function callScript(issue, sen, stance, opts) {
-    var c = ctx(issue, sen, stance, opts || {});
-    var me = c.name.charAt(0) === '[' ? 'I am a constituent' : 'My name is ' + c.name + ', and I am a constituent';
-    var want = fill(((c.special && c.special.call) || issue.call)[stance], c);
-    var why = reasonLines(c)[0] || view(c, 1)[0] || '';
-    return 'Hello, ' + me + ' from ' + c.town + ', ' + c.state + '. ' + want + ' ' + why + ' Thank you.';
+  /* Phone version: the same choices as the letter, made short enough to say out loud.
+     points: what to say if a person answers. voicemail: a short script to read if no one does.
+     Each point keeps its source (outlet and date, no link) in case the office asks; the voicemail is read out, so it leaves them off. */
+  function spoken(f) {
+    var s = (f.cite || [])[0];
+    return s ? ' (' + s.src + ', ' + s.date + ')' : '';
   }
+  /* The senator's own roll call vote, said about them (the caller is talking to their staff). */
+  function phoneRecord(c) {
+    var r = c.issue.record;
+    if (!r || r.type !== 'rollcall' || !c.record || c.self) return '';
+    var cast = castFor(c.issue, c.sen);
+    if (cast !== 'Yea' && cast !== 'Nay') return '';
+    return 'Senator ' + c.last + ' voted ' + (cast === 'Yea' ? 'yes' : 'no') + ' on ' + r.what + ' on ' + r.date + ' (Senate roll call).';
+  }
+  function callBuild(issue, sen, stance, opts) {
+    opts = opts || {};
+    var c = ctx(issue, sen, stance, opts);
+    var want = fill(((c.special && c.special.call) || issue.call)[stance], c);
+    var me = c.name.charAt(0) === '[' ? '[Your name]' : c.name;
+    var hello = 'Hello, my name is ' + me + ', and I am a constituent from ' + c.town + ', ' + c.state + '.';
+    var facts = c.facts.map(function (f) { return fill(f.text, c) + spoken(f); });
+    var views = c.views.map(function (x) { return fill(x, c); });
+    var own = reasonLines(c);
+    var rec = phoneRecord(c);
+    var points = clean([hello + (c.who && WHO[c.who] ? ' ' + whoLine(c) : ''), 'My ask: ' + want]
+      .concat(facts, rec ? [rec] : [], views, own, ['Thank you. Could you please pass my view on to Senator ' + c.last + '?']));
+    /* Voicemail: who you are, the ask, one or two key points, thank you. */
+    var key = c.facts.slice(0, 2).map(function (f) { return fill(f.text, c); });
+    if (!key.length) key = own.slice(0, 1).concat(views).slice(0, 2);
+    var voicemail = para([hello, whoLine(c), 'I am calling about ' + c.topic + '.', want].concat(key, [
+      'My ZIP code is [your ZIP code].', 'Thank you for passing my message on to Senator ' + c.last + '.']));
+    return { points: points, voicemail: tidy(voicemail).trim(), want: want };
+  }
+  /* The short script in the letter section is the same voicemail. */
+  function callScript(issue, sen, stance, opts) { return callBuild(issue, sen, stance, opts).voicemail; }
 
   function canVote(issue, sen) { return issue.voters === 'all' || (issue.voters === 'dem' && sen.dem); }
 
   window.CSLetters = {
     build: build,
+    callBuild: callBuild,
     callScript: callScript,
     canVote: canVote,
     castFor: castFor,

@@ -1,8 +1,9 @@
 // The Way: one top bar for every page (member area, Findings, guides, maps, case pages, splash).
 // Drop-in: <link rel="stylesheet" href="/members/waybar.css?v=25"> in <head>,
 //          <header id="waybar" class="waybar">…fallback links…</header> first in <body>,
-//          <script src="/members/waybar.js?v=48" defer></script>.
-// Desktop, signed in or out: the same header. VOTE!, News, Government | THE WAY | History, Elections, Money (one simple word each; Research is in the footer),
+//          <script src="/members/waybar.js?v=79" defer></script>.
+// Desktop, signed in or out: the same header. VOTE!, News, Get Involved | THE WAY | History, Elections, Money (one simple word each; Research is in the footer;
+//   Government is reached from History since Nov 15 2026, Frank),
 //   then Pull a thread, search and the account (Log in and Sign up, or a small Menu button, the bell and your name).
 // Signed in, phone: a compact header (logo, search, account). The bottom bar is gone: the two bubble menus replace it.
 // Signed out phone: a Menu panel holds the sections, search, "Log in" and "Sign up".
@@ -19,6 +20,7 @@
   var STATES = '/states/';
   var GOV = '/how-government-works.html';
   var TEACH = '/teacher-parent.html';
+  var INVOLVED = '/get-involved/';
   var path = location.pathname;
   var inMembers = path.indexOf('/members/') === 0;
   var appPage = /^\/members\/(index\.html)?$/.test(path); // the member app itself (hash routes)
@@ -90,7 +92,8 @@
     menu: 'M4 7h16 M4 12h16 M4 17h16',
     home: 'M4 11l8-7 8 7 M6 10v10h12V10 M10 20v-6h4v6',
     login: 'M14 4h5v16h-5 M4 12h11 M11 8l4 4-4 4',
-    about: 'M12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18z M12 11v6 M12 7.5h.01'
+    about: 'M12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18z M12 11v6 M12 7.5h.01',
+    involved: 'M3 10v4h4l6 4V6L7 10z M16.5 8.5a5 5 0 0 1 0 7 M19 6a8.5 8.5 0 0 1 0 12'
   };
   function icon(name) {
     var ns = 'http://www.w3.org/2000/svg';
@@ -148,6 +151,7 @@
     var h = appPage ? (location.hash || '#/') : '';
     if (/^#\/cases/.test(h) || /^\/cases/.test(path)) return 'cases';
     if (/^\/how-government-works/.test(path)) return 'govworks';
+    if (/^\/get-involved\//.test(path)) return 'involved';
     if (/^\/teacher-parent/.test(path)) return 'teacherparent';
     if (/^\/case-studies/.test(path)) return 'casestudies';
     if (/^\/research\//.test(path)) return 'research-lib';
@@ -243,7 +247,7 @@
       { href: STATES + '#pick', label: 'Voter Guide map', desc: 'Pick a state to open its archived 2026 voter guide', icon: 'map', key: 'map' },
       { href: '/search/', label: 'Search', desc: 'This site, plus outside research services', icon: 'search', key: 'search' },
       { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
-      { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
+      { href: INVOLVED, label: 'Get Involved', desc: 'Call or write your senators, with sourced facts on both sides', icon: 'involved', key: 'involved' },
       { href: '/case-studies/', label: 'Election Studies', icon: 'casestudies', key: 'casestudies' },
       { href: '/research/', label: 'Research', desc: 'What is available, with each item\'s review status', icon: 'research-lib', key: 'research-lib' },
         { href: '/money-trail/', label: 'Money Trail', desc: 'Follow campaign money through the public filings', icon: 'money', key: 'money' },
@@ -295,7 +299,7 @@
         { href: '/members/my-ballot.html', label: 'My ballot', desc: 'Your picks and notes, saved in this browser', icon: 'myballot', key: 'myballot' },
       { href: '/news/', label: 'News', desc: 'The feed and the time machine', icon: 'news', key: 'news' },
         { href: '/cases/', label: 'Civics & History', desc: 'History cases, every source shown', icon: 'cases', key: 'cases' },
-        { href: GOV, label: 'Government', desc: 'Who does what, and where to go', icon: 'govworks', key: 'govworks' },
+        { href: INVOLVED, label: 'Get Involved', desc: 'Call or write your senators, with sourced facts on both sides', icon: 'involved', key: 'involved' },
         { href: '/case-studies/', label: 'Election Studies', icon: 'casestudies', key: 'casestudies' },
         { href: '/money-trail/', label: 'Money Trail', desc: 'Follow campaign money through the public filings', icon: 'money', key: 'money' },
         { href: TEACH, label: 'Teacher? Parent? Like to have fun?', desc: 'Meet Scuba Steve, who hunts the hallucination shark', icon: 'teacherparent', key: 'teacherparent' }
@@ -448,8 +452,9 @@
     var pubL = el('div', { class: 'wb-pub-l' }), pubR = el('div', { class: 'wb-pub-r' });
     pubL.appendChild(link('/vote/', 'VOTE!', /^(vote|ballot|myballot)$/.test(cur) ? cur : 'vote', cur));
     pubL.appendChild(link('/news/', 'News', 'news', cur));
-    pubL.appendChild(link(GOV, 'Government', 'govworks', cur));
-    pubR.appendChild(link('/cases/', 'History', 'cases', cur));
+    pubL.appendChild(link(INVOLVED, 'Get Involved', 'involved', cur));
+    // Government pages sit under History now (its "How does government work?" card), so History shows as current there.
+    pubR.appendChild(link('/cases/', 'History', cur === 'govworks' ? cur : 'cases', cur));
     pubR.appendChild(link('/case-studies/', 'Elections', 'casestudies', cur));
     pubR.appendChild(link('/money-trail/', 'Money', 'money', cur));
     pub.appendChild(pubL); pub.appendChild(pubR);
@@ -737,7 +742,7 @@
     // draw the bubbles only when the styles AND the script are in, so neither side shows up bare and then jumps into place
     var waiting = 3, ready = function () { if (--waiting === 0) syncBubbles(); };
     ['bubbles.css?v=8', 'bubbles-look.css?v=12'].forEach(function (f) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/members/' + f; l.onload = l.onerror = ready; document.head.appendChild(l); });
-    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=21'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
+    var sc = document.createElement('script'); sc.src = '/members/bubbles.js?v=22'; sc.onload = ready; sc.onerror = function () { document.documentElement.classList.remove('wb-bubs-building'); ready(); }; document.head.appendChild(sc);
   }
   // The water's crest sits just under the bar so waves never cover navigation text (on a phone the bar is taller).
   function syncWave() {
@@ -980,7 +985,7 @@
     }
     if (!document.querySelector('script[src^="/footer-quick.js"]')) {
       var footerScript = document.createElement('script');
-      footerScript.src = '/footer-quick.js?v=11';
+      footerScript.src = '/footer-quick.js?v=12';
       document.head.appendChild(footerScript);
     }
     if (!document.querySelector('script[src^="/motion-pause.js"]')) {

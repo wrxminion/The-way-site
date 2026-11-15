@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build site/members/senator-letters/senators.js (Admin > Contact Your Senator preview).
+"""Build site/get-involved/contact-your-senator/senators.js (Get Involved > Contact Your Senator).
 
 Input: legislators-current.yaml from the unitedstates/congress-legislators
 project (https://github.com/unitedstates/congress-legislators), used for names,
@@ -188,7 +188,7 @@ def main(path):
     out = {"checked": "November 15, 2026", "states": STATES, "votes": votes, "tracked": tracked, "senators": sens}
     js = ("/* Built by tools/contact-senator/build_senators.py. Do not edit by hand. */\n"
           "window.SENATE_CONTACTS=" + json.dumps(out, ensure_ascii=False, separators=(",", ":")) + ";\n")
-    dest = "site/members/senator-letters/senators.js"
+    dest = "site/get-involved/contact-your-senator/senators.js"
     open(dest, "w", encoding="utf-8").write(js)
     print("wrote", dest, len(js), "bytes")
     for s in sens:

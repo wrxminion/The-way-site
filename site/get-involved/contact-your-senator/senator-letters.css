@@ -1,4 +1,4 @@
-/* Admin > Contact Your Senator (members/senator-letters.js) */
+/* Get Involved > Contact Your Senator (/get-involved/contact-your-senator/tool.js) */
 .cs-neutral{border-left:2px solid #a9f0e8aa;padding:12px 16px;background:#a9f0e80d}
 .cs-tool{margin-top:10px}
 .cs-step{border:1px solid #c7ffff26;border-radius:18px;background:#071f31b9;padding:20px 22px;margin:22px 0}
@@ -124,3 +124,10 @@
 .cs-admin .cs-vline a{color:#e9ffff;text-decoration:underline;text-decoration-color:#b9f6ed55;text-underline-offset:3px;overflow-wrap:anywhere}
 .cs-admin .cs-vline a:hover{text-decoration-color:#b9f6ed}
 .cs-cast{color:#b9f6ed;letter-spacing:.04em}
+/* v6: call script beside each Write button */
+.cs-admin .cs-card-go{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.cs-admin .cs-card-go .cs-btn{flex:1 1 auto}
+.cs-admin .cs-call-h{margin:16px 0 4px;font:700 16px/1.4 Inter,system-ui,Arial,sans-serif;color:#e9ffff}
+.cs-admin .cs-points{margin:6px 0 12px;padding-left:20px}
+.cs-admin .cs-points li{font-size:15px;line-height:1.6;margin:0 0 8px;color:#e9ffff;overflow-wrap:anywhere}
+.cs-admin a.cs-phone{font-size:18px;padding:12px 22px}

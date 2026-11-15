@@ -180,7 +180,7 @@ def page(title, desc, canonical, crumbs, body, depth):
             '<a class="gw-skip" href="#top">Skip to content</a><main class="gw gv" id="top">\n'
             '<nav class="crumbs" aria-label="Breadcrumb">%s</nav>\n%s\n</main>'
             '<script src="/government/government.js?v=%s" defer></script>'
-            '<script src="/members/waybar.js?v=75" defer></script></body></html>\n') % (
+            '<script src="/members/waybar.js?v=79" defer></script></body></html>\n') % (
         e(title), e(desc), CSS_V, e(canonical), e(title), e(desc), e(canonical), crumb_html, body, JS_V)
 
 

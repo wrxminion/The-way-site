@@ -1,47 +1,22 @@
-// Admin > Contact Your Senator (super admins only, preview). Not linked from public pages.
-// Phone and official contact page for all 100 senators, and a letter writer for listed Senate votes:
-// pick an issue, a senator, for or against, your own reasons, and one of 11 voices.
-// The data and the letter writer live in /members/senator-letters/ and load only when this view opens.
+// Get Involved > Contact Your Senator (/get-involved/contact-your-senator/), a public page.
+// Phone and official contact page for all 100 senators, and a letter and call script writer for listed Senate votes:
+// pick an issue, a senator, for or against, the facts to use, your own reasons, and one of 11 voices.
+// The page loads senators.js, issues.js and letters.js first, then this file, then page.js.
 // Nothing typed here is saved or sent anywhere. Text from the data goes on the page with textContent only.
-// Plain JavaScript, no build step. app.js hands over its helpers once: TheWaySenatorLetters.make({ h, render, notice }).
+// Plain JavaScript, no build step. page.js hands over its helpers: TheWaySenatorLetters.make({ h, render, notice }).
 (() => {
 'use strict';
 
-const BASE = '/members/senator-letters/';
-const FILES = ['senators.js?v=4', 'issues.js?v=4', 'letters.js?v=4'];
-const CSS = BASE + 'senator-letters.css?v=4';
 const MEMBER = '/government/congress/members/';
 const VOTES_PAGE = '/government/congress/votes.html';
 
-function loadScript(src) {
-  return new Promise((ok, bad) => {
-    const s = document.createElement('script');
-    s.src = src; s.onload = ok; s.onerror = () => bad(new Error('Could not load ' + src));
-    document.head.append(s);
-  });
-}
-function loadCss(href) {
-  if (document.querySelector(`link[href="${href}"]`)) return;
-  const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = href; document.head.append(l);
-}
-
 function make(ctx) {
   const { h, render, notice } = ctx;
-  let ready = null;
-  function load() {
-    if (!ready) {
-      loadCss(CSS);
-      ready = FILES.reduce((p, f) => p.then(() => loadScript(BASE + f)), Promise.resolve());
-    }
-    return ready;
-  }
 
-  async function view(issueId) {
-    render(h('p', { class: 'muted', text: 'Loading the senator list…' }));
-    try { await load(); } catch (e) { ready = null; render(notice(e.message || 'Could not load the letter tool.')); return; }
+  function view(issueId) {
     const D = window.SENATE_CONTACTS, L = window.CSLetters, ISSUES = window.CS_ISSUES;
-    if (!D || !L || !ISSUES || !ISSUES.length) { render(notice('The letter tool did not load.')); return; }
-    tool(D, L, ISSUES, decodeURIComponent(issueId || ''));
+    if (!D || !L || !ISSUES || !ISSUES.length) { render(notice('The letter tool did not load. The page may be out of date; please reload it.')); return; }
+    tool(D, L, ISSUES, issueId || '');
   }
 
   function tool(D, L, ISSUES, startId) {
@@ -49,6 +24,8 @@ function make(ctx) {
     D.senators.forEach((s) => { byId[s.id] = s; });
     ISSUES.forEach((i) => { byIssue[i.id] = i; });
     let issue = byIssue[startId] || ISSUES[0], chosen = null, lastVoice = '';
+    // 'letter' or 'call': what the reader asked for, from the Write or Call script button.
+    let mode = 'letter';
     const partyWord = (p) => (p === 'D' ? 'Democrat' : p === 'R' ? 'Republican' : 'Independent');
     const tel = (p) => 'tel:+1' + p.replace(/-/g, '');
     const castWord = (c) => (c === 'Yea' ? 'Voted yes' : c === 'Nay' ? 'Voted no' : 'Did not vote');
@@ -91,12 +68,30 @@ function make(ctx) {
     const voiceLine = h('p', { class: 'cs-voice-line' });
     const status = h('p', { class: 'cs-status', role: 'status' });
     const tip = h('p', { class: 'cs-tip' });
-    const callScript = h('p');
+    // Call script output: tap-to-call, points to say if someone answers, and a voicemail to read.
+    const callTo = h('p', { class: 'cs-voice-line' });
+    const callPhone = h('a', { class: 'cs-btn cs-main cs-phone', href: '#', text: 'Call' });
+    const callPoints = h('ul', { class: 'cs-points' });
+    const voicemail = h('textarea', { class: 'cs-letter cs-vm', rows: '11' });
+    const callStatus = h('p', { class: 'cs-status', role: 'status' });
+    const callTip = h('p', { class: 'cs-tip' });
     const openForm = h('a', { class: 'cs-btn', href: '#', target: '_blank', rel: 'noopener', text: 'Open their form' });
     const callBtn = h('a', { class: 'cs-btn', href: '#', text: 'Call' });
     const field = (label, input, wide) => h('label', { class: 'cs-field' + (wide ? ' cs-wide' : '') }, h('span', { text: label }), input);
     const picks = h('div', { class: 'cs-picks', hidden: true });
-    const pickHead = h('h3', { hidden: true }, num(4), 'Pick what goes in your letter');
+    const pickWords = h('span', { text: 'Pick what goes in your letter' });
+    const pickHead = h('h3', { hidden: true }, num(4), pickWords);
+    const shown = () => !out.hidden || !callOut.hidden;
+    const hideOut = () => { out.hidden = true; callOut.hidden = true; };
+    function setMode(m) {
+      mode = m;
+      pickWords.textContent = m === 'call' ? 'Pick what to say on your call' : 'Pick what goes in your letter';
+      writeBtn.className = 'cs-btn' + (m === 'letter' ? ' cs-main' : '');
+      callMake.className = 'cs-btn' + (m === 'call' ? ' cs-main' : '');
+    }
+    const go = (m) => { setMode(m); write(); const o = m === 'call' ? callOut : out; if (!o.hidden) o.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+    const writeBtn = h('button', { type: 'button', class: 'cs-btn cs-main', text: 'Write my letter', onclick: () => go('letter') });
+    const callMake = h('button', { type: 'button', class: 'cs-btn', text: 'Make my call script', onclick: () => go('call') });
     let factBoxes = [], viewBoxes = [], recordBox = null;
     const stance = () => (rFor.checked ? 'for' : rAgainst.checked ? 'against' : '');
 
@@ -110,7 +105,7 @@ function make(ctx) {
       h('div', { class: 'cs-row' }, field('Your name (optional)', nameIn), field('Your town (optional)', townIn)),
       h('div', { class: 'cs-row' }, field('About you (optional)', whoSel), field('Voice', voiceSel)),
       h('p', { class: 'cs-privacy', text: 'What you type stays in your browser. This page does not save it or send it anywhere.' }),
-      h('p', null, h('button', { type: 'button', class: 'cs-btn cs-main', text: 'Write my letter', onclick: () => { write(); if (!out.hidden) out.scrollIntoView({ behavior: 'smooth', block: 'start' }); } })));
+      h('p', { class: 'cs-actions' }, writeBtn, callMake));
 
     const out = h('div', { class: 'cs-step', hidden: true, 'aria-live': 'polite' },
       h('h3', null, num(6), 'Your letter'), voiceLine,
@@ -122,9 +117,23 @@ function make(ctx) {
         h('button', { type: 'button', class: 'cs-btn', text: 'Make another', onclick: () => write() }),
         openForm, callBtn),
       status,
-      h('details', { class: 'cs-script' }, h('summary', { text: 'Calling instead? A short script' }), callScript,
-        h('p', null, h('button', { type: 'button', class: 'cs-btn', text: 'Copy script', onclick: () => copy(callScript.textContent, 'Call script copied.') }))),
+      h('p', null, h('button', { type: 'button', class: 'cs-btn', text: 'Calling instead? Make a call script', onclick: () => go('call') })),
       tip);
+
+    const callOut = h('div', { class: 'cs-step', hidden: true, 'aria-live': 'polite' },
+      h('h3', null, num(6), 'Your call script'), callTo,
+      h('p', null, callPhone),
+      h('h4', { class: 'cs-call-h', text: 'If someone answers, say these points' }),
+      h('p', { class: 'cs-small', text: 'A staff member will take your message. Each fact shows its source in case they ask.' }),
+      callPoints,
+      h('h4', { class: 'cs-call-h', text: 'If you get voicemail, read this' }),
+      field('Voicemail script (you can edit it here)', voicemail, true),
+      h('div', { class: 'cs-actions' },
+        h('button', { type: 'button', class: 'cs-btn cs-main', text: 'Copy call script', onclick: () => copy(callText(), 'Call script copied.', callStatus) }),
+        h('button', { type: 'button', class: 'cs-btn', text: 'Copy voicemail', onclick: () => copy(voicemail.value, 'Voicemail script copied.', callStatus) }),
+        h('button', { type: 'button', class: 'cs-btn', text: 'Write a letter instead', onclick: () => go('letter') })),
+      callStatus, callTip);
+    const callText = () => `If someone answers:\n${[...callPoints.children].map((li) => '- ' + li.textContent).join('\n')}\n\nIf you get voicemail:\n${voicemail.value}\n`;
 
     // Issue panel
     const factLi = (f) => h('li', null, f.text + ' ', h('span', { class: 'cs-cite' }, '(', srcLinks(f.cite), ')'));
@@ -154,7 +163,7 @@ function make(ctx) {
         h('h4', { text: a.title }),
         h('ul', null, a.facts.map(factLi)),
         s ? h('p', { class: 'cs-links' },
-          s.page ? own(`${s.name}: his page on The Way`, pageOf(s), 'cs-btn') : null,
+          s.page ? own(`${s.name} on The Way`, pageOf(s), 'cs-btn') : null,
           s.web ? own(`${s.webName || 'Campaign committee'} on the Money web`, s.web, 'cs-btn') : null) : null);
     }
     // Tracked votes show newest first, like the senator pages.
@@ -183,12 +192,12 @@ function make(ctx) {
     // Step 4: the reader picks the facts and reasons for the letter.
     function box(label, checked, extra) {
       const i = h('input', { type: 'checkbox' }); i.checked = !!checked;
-      i.addEventListener('change', () => { if (!out.hidden) write(); });
+      i.addEventListener('change', () => { if (shown()) write(); });
       return { input: i, el: h('label', { class: 'cs-check' }, i, h('span', null, label, extra || null)) };
     }
     function group(title, items, note) {
-      const all = h('button', { type: 'button', class: 'cs-link', text: 'Check all', onclick: () => { items.forEach((b) => { b.input.checked = true; }); if (!out.hidden) write(); } });
-      const none = h('button', { type: 'button', class: 'cs-link', text: 'Clear', onclick: () => { items.forEach((b) => { b.input.checked = false; }); if (!out.hidden) write(); } });
+      const all = h('button', { type: 'button', class: 'cs-link', text: 'Check all', onclick: () => { items.forEach((b) => { b.input.checked = true; }); if (shown()) write(); } });
+      const none = h('button', { type: 'button', class: 'cs-link', text: 'Clear', onclick: () => { items.forEach((b) => { b.input.checked = false; }); if (shown()) write(); } });
       return h('fieldset', { class: 'cs-group' }, h('legend', { text: title }),
         note ? h('p', { class: 'cs-small', text: note }) : null,
         h('p', { class: 'cs-group-tools' }, all, ' · ', none), items.map((b) => b.el));
@@ -233,7 +242,9 @@ function make(ctx) {
         cast ? h('p', { class: 'cs-record' }, `${castWord(cast)}${issue.record.short ? ' ' + issue.record.short : ''} on ${issue.record.date}: `,
           issue.record.ours ? own('the vote on The Way', VOTES_PAGE + '#' + issue.record.ours) : null, issue.record.ours ? ' · ' : '', ext('Senate roll call ↗', issue.record.url)) : null,
         L.canVote(issue, s)
-          ? h('button', { type: 'button', class: 'cs-btn cs-main', text: (on ? 'Writing to ' : 'Write to ') + s.last, onclick: () => choose(s, true) })
+          ? h('p', { class: 'cs-card-go' },
+            h('button', { type: 'button', class: 'cs-btn cs-main', text: (on && mode === 'letter' ? 'Writing to ' : 'Write to ') + s.last, onclick: () => { setMode('letter'); choose(s, true); } }),
+            h('button', { type: 'button', class: 'cs-btn', text: 'Call script for ' + s.last, onclick: () => { setMode('call'); choose(s, true); } }))
           : h('p', { class: 'cs-note', text: `Senator ${s.last} is a Republican. Only Democratic senators and the two independents who work with them vote on this. You can still call or write about anything else, or pick another issue above.` }));
     }
     const listForState = (st) => D.senators.filter((s) => s.st === st);
@@ -247,10 +258,10 @@ function make(ctx) {
       chosen = s && L.canVote(issue, s) ? s : null;
       showCards();
       step2.hidden = !chosen;
-      if (!chosen) out.hidden = true;
+      if (!chosen) hideOut();
       showPicks();
       if (chosen && scroll) step2.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      if (chosen && !out.hidden) write();
+      if (chosen && shown()) write();
     }
     function autoChoose() {
       const ok = currentList().filter((s) => L.canVote(issue, s));
@@ -261,29 +272,34 @@ function make(ctx) {
       issue = byIssue[id] || ISSUES[0];
       issueSel.value = issue.id;
       rFor.checked = false; rAgainst.checked = false;
-      out.hidden = true;
+      hideOut();
       showPicks();
       showIssue();
       autoChoose();
-      try { history.replaceState(null, '', '#/senator-letters/' + encodeURIComponent(issue.id)); } catch { /* ignore */ }
+      try { history.replaceState(null, '', location.pathname + '?issue=' + encodeURIComponent(issue.id)); } catch { /* ignore */ }
     }
     issueSel.addEventListener('change', () => setIssue(issueSel.value));
-    stateSel.addEventListener('change', () => { senSel.value = ''; chosen = null; out.hidden = true; autoChoose(); });
+    stateSel.addEventListener('change', () => { senSel.value = ''; chosen = null; hideOut(); autoChoose(); });
     senSel.addEventListener('change', () => {
       const s = byId[senSel.value];
       stateSel.value = s ? s.st : '';
-      chosen = null; out.hidden = true;
+      chosen = null; hideOut();
       if (s) choose(s, false); else { cards.replaceChildren(); step2.hidden = true; }
     });
 
     function write() {
       const st = rFor.checked ? 'for' : rAgainst.checked ? 'against' : '';
       if (!chosen) { status.textContent = 'Pick a senator first.'; return; }
-      if (!st) { status.textContent = 'Pick a side first.'; out.hidden = false; return; }
+      if (!st) {
+        const o = mode === 'call' ? callOut : out;
+        (mode === 'call' ? callStatus : status).textContent = 'Pick a side first.';
+        hideOut(); o.hidden = false; return;
+      }
       const o = { reasons: reasons.value, name: nameIn.value, town: townIn.value, who: whoSel.value, voice: voiceSel.value,
         facts: factBoxes.filter((b) => b.input.checked).map((b) => b.id),
         views: viewBoxes.filter((b) => b.input.checked).map((b) => b.text),
         record: recordBox ? recordBox.input.checked : false };
+      if (mode === 'call') return writeCall(st, o);
       const r = L.build(issue, chosen, st, o, lastVoice);
       lastVoice = r.voice;
       subject.value = r.subject;
@@ -292,21 +308,35 @@ function make(ctx) {
       openForm.href = chosen.form;
       callBtn.href = tel(chosen.phone);
       callBtn.textContent = 'Call ' + chosen.phone;
-      callScript.textContent = L.callScript(issue, chosen, st, o);
       tip.textContent = `Senator ${chosen.last}'s form may only accept messages from people who live in ${D.states[chosen.st]}. It will ask for your address. If you live somewhere else, a phone call works from any state. Fill in anything in [brackets], read the letter over, and change anything that does not sound like you.`;
       status.textContent = '';
+      callOut.hidden = true;
       out.hidden = false;
     }
-    function copy(text, done) {
+    function writeCall(st, o) {
+      const r = L.callBuild(issue, chosen, st, o);
+      callTo.textContent = `To Senator ${chosen.name}'s Washington office · ${issue.labels[st]} · ${o.facts.length} ${o.facts.length === 1 ? 'fact' : 'facts'}`;
+      callPhone.href = tel(chosen.phone);
+      callPhone.textContent = 'Call ' + chosen.phone;
+      callPoints.replaceChildren(...r.points.map((x) => h('li', { text: x })));
+      voicemail.value = r.voicemail;
+      callTip.textContent = `Calls work from any state. Staff may ask for your name and ZIP code. Fill in anything in [brackets], and say it in your own words if you like. Senator ${chosen.last}'s contact form is here if you would rather write: `;
+      callTip.append(ext('Open their form', chosen.form));
+      callStatus.textContent = '';
+      out.hidden = true;
+      callOut.hidden = false;
+    }
+    function copy(text, done, where) {
+      const msg = where || status;
       const fallback = () => {
         const ta = h('textarea', { readonly: true, class: 'cs-offscreen' }); ta.value = text;
         document.body.append(ta); ta.select();
         let ok = false;
         try { ok = document.execCommand('copy'); } catch { ok = false; }
         ta.remove();
-        status.textContent = ok ? done : 'Copy did not work here. Select the text and copy it yourself.';
+        msg.textContent = ok ? done : 'Copy did not work here. Select the text and copy it yourself.';
       };
-      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(() => { status.textContent = done; }, fallback);
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(() => { msg.textContent = done; }, fallback);
       else fallback();
     }
 
@@ -320,15 +350,11 @@ function make(ctx) {
         h('td', null, ext('Contact form', s.form)))))));
 
     render(h('div', { class: 'cs-admin' },
-      h('p', { class: 'small' }, h('a', { href: '#/admin', text: '← Admin' })),
-      h('h1', { text: 'Contact Your Senator' }),
-      h('p', { class: 'cs-preview', text: 'Preview for super admins. This is not on the public site yet. Try it, then say what to change before it goes public.' }),
-      h('p', { class: 'lede', text: 'Phone and official contact form for all 100 senators. Pick an issue, say where you stand, add your own reasons, and get a letter. Every click writes a different letter, in a different voice.' }),
       h('p', { class: 'cs-neutral' }, h('strong', { text: 'The Way takes no side. ' }), 'For each issue we searched for the arguments on both sides and publish every one we could tie to a source, the same way for both sides. You pick which ones go in your letter, and each one carries its source.'),
       h('div', { class: 'cs-step' }, h('h3', null, num(1), 'Pick an issue'), field('Issue or vote', issueSel, true), panel),
       h('div', { class: 'cs-step' }, h('h3', null, num(2), 'Pick your senator'),
         h('div', { class: 'cs-row' }, field('Your state', stateSel), field('Or any senator', senSel)), cards),
-      step2, out,
+      step2, out, callOut,
       h('h2', { text: 'Why it cannot fill in their form' }),
       h('p', { text: 'Each senator runs a different form on their own website. Ten of them were tested on November 15, 2026 by putting text in the link, and none filled it in. Most ask for your street address and ZIP code, many say they only answer people who live in their state, and some use a robot check. So the tool gives Copy letter, Open their form and Call instead.' }),
       h('h2', { text: 'How the facts are chosen' }),
@@ -339,7 +365,7 @@ function make(ctx) {
         h('li', { text: 'When the Senate has already voted, the card and the letter can say how that senator voted, from the official roll call.' }),
         h('li', { text: 'For the Democratic leader vote, a letter can name a vote where that senator broke from most Democratic senators (nine official roll calls from 2025 and 2026; close splits left out).' }),
         h('li', { text: 'Only the Senate is covered. House members are not listed, because all 435 House contacts could not be checked yet.' }),
-        h('li', { text: 'To add an issue, copy one block in /members/senator-letters/issues.js.' })),
+        null),
       h('h2', { text: 'All 100 senators' }),
       h('p', { class: 'muted small', text: `Washington office phone and official contact page, checked on senate.gov on ${D.checked}. No senator lists a public email address. Each name opens that senator's page on The Way, with the Senate votes we track.` }),
       table));

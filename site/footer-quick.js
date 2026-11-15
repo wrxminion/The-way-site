@@ -14,6 +14,10 @@
     about.appendChild(mark);
     // Research moved here from the top bar (Frank, Nov 6 2026), named Research methods.
     // Research methods and Methodology are one page and one link now; the site methods live at /research/#methods (Frank, Nov 6 2026).
+    // Get Involved: calling and writing your senators (Frank, Nov 15 2026)
+    var involved = document.createElement('a');
+    involved.href = '/get-involved/';
+    involved.textContent = 'Get Involved';
     var research = document.createElement('a');
     research.href = '/research/';
     research.textContent = 'Research methods';
@@ -26,10 +30,10 @@
     art.textContent = 'Submit your art';
     var legal = document.createElement('a');
     legal.href = '/legal.html'; legal.textContent = 'Legal';
-    // All four links on one line, the logo on its own line under them (Frank, Nov 6 2026)
+    // The links on one line, the logo on its own line under them (Frank, Nov 6 2026)
     var links = document.createElement('span');
     links.className = 'michi-footer-links';
-    links.appendChild(research); links.appendChild(teach); links.appendChild(art); links.appendChild(legal);
+    links.appendChild(involved); links.appendChild(research); links.appendChild(teach); links.appendChild(art); links.appendChild(legal);
     var artBox = document.createElement('span');
     artBox.className = 'michi-footer-art';
     artBox.appendChild(about);
@@ -97,7 +101,7 @@
     function visibility() { bar.hidden = window.scrollY <= 80; }
     window.addEventListener('scroll', visibility, { passive: true }); visibility();
   }
-  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=6'; document.head.appendChild(css);
+  var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = '/footer-quick.css?v=7'; document.head.appendChild(css);
   appendFooter(); updateEssayBar();
   // Buoys: the depth counter buoy on its chain and the floating buoys (see /buoys.js)
   if (!document.querySelector('script[src^="/buoys.js"]')) { var buoys = document.createElement('script'); buoys.src = '/buoys.js?v=4'; buoys.defer = true; document.head.appendChild(buoys); }
