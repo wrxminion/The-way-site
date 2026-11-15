@@ -56,3 +56,6 @@ h1{font:normal clamp(44px,7vw,80px)/1.04 Georgia,serif;letter-spacing:-.03em;mar
 .next-scope label{display:inline-flex;align-items:center;gap:7px;min-height:32px;cursor:pointer;color:var(--text);font-size:15px}
 .next-scope input{width:18px;height:18px;accent-color:#a7f0e9;margin:0}
 .next .next-note{font-size:13px;margin-top:12px;line-height:1.45}
+/* Get Involved card stacked above Your ballot in one grid cell (Frank, Nov 15 2026) */
+.cards>li.c-stack{flex-direction:column;gap:16px}
+.cards>li.c-stack>a{height:auto;flex:1 1 auto}
