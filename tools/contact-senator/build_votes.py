@@ -221,7 +221,7 @@ HEAD = '''<!doctype html>
 <a class="gw-skip" href="#top">Skip to content</a><main class="gw gv" id="top">
 '''
 FOOT = '''<nav class="gv-next" aria-label="Keep exploring"><a href="./">← All of Congress</a> · <a href="/how-government-works.html">How government works</a></nav>
-</main><script src="/government/government.js?v=2" defer></script><script src="/members/waybar.js?v=75" defer></script></body></html>
+</main><script src="/government/government.js?v=2" defer></script><script src="/members/waybar.js?v=79" defer></script></body></html>
 '''
 
 

@@ -58,7 +58,7 @@
     var d = c.data, r = c.route, can = c.can;
     var g = [{ heading: null, items: [
       { href: '/cases/', label: 'Civics and history' },
-      { href: '/how-government-works.html', label: 'Government' },
+      { href: '/get-involved/', label: 'Get Involved' },
       { href: '/case-studies/', label: 'Election Studies' },
       { href: '/results/', label: 'Election Results' },
       { href: '/states/', label: 'Voter Guides' },
