@@ -9,7 +9,8 @@ After an address search, under the districts: **Local resources for <county>**.
 
 1. Your local election help: the county election office (biggest, on top), then the clerk or recorder, the official county site and the public library. Each link says the day it was last checked.
 2. Upcoming local elections: date, name, the exact sentence from the official page, the source link and the check date.
-3. State election office links.
+3. Upcoming public meetings (D282): county board, commission, council and school board meetings in the next 90 days, with the exact sentence, the source link and the check date. The same dates show on the Get Involved state pages (/get-involved/states/).
+4. State election office links.
 
 In "Know your district number?": a card listing the counties the district covers, each with its election office link and next election date.
 
@@ -20,9 +21,9 @@ Until the job has checked a county, the page says so in plain words. Nothing is 
 1. `seed` (once, and again monthly): downloads CISA's official .gov domain registry (github.com/cisagov/dotgov-data) and matches each county's government to its .gov sites. About 1,936 of 3,142 counties match. State election sites come from the same registry plus the official links already on our state voting-rules pages (site/states/). Sites for sheriffs, courts, health and the like are skipped.
 2. `run` (every hour, about 20 counties a run, oldest check first):
    - Reads the state election site and looks for its county clerk or election office directory, which fills in many counties the registry misses.
-   - For each county, opens its official sites, then follows links whose words say elections, voting, clerk, recorder, auditor or library.
+   - For each county, opens its official sites, then follows links whose words say elections, voting, clerk, recorder, auditor, library, agendas, meetings, commissioners or council (up to 10 pages a county).
    - The finder model reads each page and says what it is and lists upcoming elections with the exact sentence that gives the date.
-   - Code checks: the page loaded, the address is official (.gov, .us, a registry site, or linked from one), the quoted sentence is word for word on the page, the date is in that sentence, the date is real and in the next 400 days.
+   - Code checks: the page loaded, the address is official (.gov, .us, a registry site, or linked from one), the quoted sentence is word for word on the page, the date is in that sentence, the date is real and in the next 400 days (90 days for a meeting).
    - The checker model (a different model) must agree, on its own, with each link and each date.
    - Anything that fails goes to `review.md` in the work folder, never to the site.
 3. `publish`: writes `site/lookup/local/xx.json` (one per state) and `index.json`. In `hold` mode it writes to `work\outbox\` instead, so a person can look first. `push: true` commits only `site/lookup/local/` to `main`, the same way the results and news data are published.
@@ -62,8 +63,9 @@ To stop it: create the file `local-resources.off` in the work folder. Delete it 
   "counties": {
     "08013": {
       "name": "Boulder County",
-      "links": [{"k": "election_office | clerk | government | library", "t": "page title", "u": "https://...", "c": "YYYY-MM-DD checked", "s": "where we found it"}],
-      "elections": [{"k": "election", "d": "YYYY-MM-DD", "n": "name as on the page", "q": "exact sentence from the page", "u": "https://...", "c": "YYYY-MM-DD checked"}]
+      "links": [{"k": "election_office | clerk | government | library | meetings", "t": "page title", "u": "https://...", "c": "YYYY-MM-DD checked", "s": "where we found it"}],
+      "elections": [{"k": "election", "d": "YYYY-MM-DD", "n": "name as on the page", "q": "exact sentence from the page", "u": "https://...", "c": "YYYY-MM-DD checked"}],
+      "meetings": [{"k": "meeting", "d": "YYYY-MM-DD", "n": "Board of County Commissioners Regular Meeting", "q": "exact sentence", "u": "https://...", "c": "YYYY-MM-DD checked"}]
     }
   },
   "districts": {"us_house:2": ["08013", "08069"], "state_senate:18": ["08013"]}

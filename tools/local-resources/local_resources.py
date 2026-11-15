@@ -23,6 +23,7 @@ KINDS = {
     'clerk': 'Clerk or recorder',
     'government': 'Official government website',
     'library': 'Public library',
+    'meetings': 'Public meetings and agendas',
     'state_election_office': 'State election office',
 }
 KIND_WORDS = {
@@ -30,6 +31,7 @@ KIND_WORDS = {
     'clerk': 'clerk or recorder office',
     'government': 'government home page',
     'library': 'public library',
+    'meetings': 'page where its governing board or council posts public meetings or agendas',
     'state_election_office': 'elections office',
 }
 # Words in link text or address that make a page worth checking, per kind.
@@ -37,8 +39,11 @@ LINK_WORDS = {
     'election_office': r'\belections?\b|\bvot(e|er|ers|ing)\b|\bballots?\b|registrar|supervisor of elections|board of elections',
     'clerk': r'\bclerk\b|\brecorder\b|\bauditor\b|\bregister of deeds\b',
     'library': r'\blibrar',
+    # D282: where the county board, commission or council posts its public meetings
+    'meetings': r'\bagendas?\b|\bmeetings?\b|board of (county )?commissioners|commissioners.? court|board of supervisors|county council|city council|public notices?',
 }
 UPCOMING_MAX_DAYS = 400
+MEETING_MAX_DAYS = 90
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 
 # ---------------------------------------------------------------- basics
@@ -322,11 +327,12 @@ Place: {place}, {state}.
 Page address: {url}
 Page title: {title}
 
-1. kind: which ONE of these is this page? "election_office" (the official office that runs elections or voter registration for this place), "clerk" (the official clerk or recorder office for this place, not mainly about elections), "library" (an official public library for this place), "government" (the official home page of this place's government), or "none".
+1. kind: which ONE of these is this page? "election_office" (the official office that runs elections or voter registration for this place), "clerk" (the official clerk or recorder office for this place, not mainly about elections), "library" (an official public library for this place), "meetings" (the official page where this place's governing board, commission or council lists its public meetings or agendas), "government" (the official home page of this place's government), or "none".
 2. serves: the name of the county, parish, city or town this office serves, copied from the page, or "".
 3. elections: upcoming elections the page names for this place, with a full date. For each give "date" as YYYY-MM-DD, "name" copied from the page, and "quote": the exact words from the page (one sentence, copied word for word) that give the date. If none, give [].
+4. meetings: upcoming public meetings of this place's governing board, commission, council or school board that the page lists with a full date (not past meetings, not minutes). For each give "date" as YYYY-MM-DD, "name" copied from the page (for example "Board of County Commissioners Regular Meeting"), and "quote": the exact words from the page that give the date. If none, give [].
 
-Reply with JSON only: {{"kind": "...", "serves": "...", "elections": [{{"date": "...", "name": "...", "quote": "..."}}]}}
+Reply with JSON only: {{"kind": "...", "serves": "...", "elections": [{{"date": "...", "name": "...", "quote": "..."}}], "meetings": [{{"date": "...", "name": "...", "quote": "..."}}]}}
 
 Page text:
 {text}
@@ -342,6 +348,12 @@ Reply with JSON only: {{"answer": "yes" or "no", "why": "one short sentence"}}
 
 Page text:
 {text}
+"""
+
+CHECK_MEETING_PROMPT = """Check one claim. Answer only from the quoted words.
+Claim: a public meeting ("{name}") of {place}, {state} is held on {date_words}.
+Quoted from {url}: "{quote}"
+Does the quote itself say this? Reply with JSON only: {{"answer": "yes" or "no", "why": "one short sentence"}}
 """
 
 CHECK_ELECTION_PROMPT = """Check one claim. Answer only from the quoted words.
@@ -368,16 +380,16 @@ def quote_has_date(quote, d):
     # The year must be in the quote, unless it uses a numeric form that already has it.
     return str(d.year) in q or ('%02d' % (d.year % 100)) in q
 
-def check_election(e, page_text):
-    """Code checks. Returns (ok, why)."""
+def check_election(e, page_text, max_days=UPCOMING_MAX_DAYS, what='election'):
+    """Code checks for an election or a meeting date. Returns (ok, why)."""
     try:
         d = dt.date.fromisoformat(str(e.get('date', ''))[:10])
     except ValueError:
         return False, 'date is not YYYY-MM-DD'
     if d < today():
         return False, 'date is in the past'
-    if (d - today()).days > UPCOMING_MAX_DAYS:
-        return False, 'date is more than 400 days away'
+    if (d - today()).days > max_days:
+        return False, 'date is more than %d days away' % max_days
     quote = squash(e.get('quote', ''))
     if len(quote) < 12 or len(quote) > 400:
         return False, 'quote missing or too long'
@@ -387,7 +399,7 @@ def check_election(e, page_text):
         return False, 'quote does not contain the date'
     name = squash(e.get('name', ''))[:120]
     if not name or norm(name) not in norm(page_text):
-        return False, 'election name is not on the page'
+        return False, what + ' name is not on the page'
     return True, ''
 
 # ---------------------------------------------------------------- seed from the official .gov registry
@@ -478,6 +490,7 @@ KIND_MUST = {
     'state_election_office': r'\belections?\b|\bvot(e|er|ers|ing)\b|secretary of state|\bsos\b|department of state',
     'clerk': r'\bclerk\b|\brecorder\b|\bauditor\b|register of deeds',
     'library': r'\blibrar',
+    'meetings': r'agenda|meeting|commission|council|supervisors|\bboard\b|notices?',
 }
 KIND_NEVER = r'\bresults?\b|clarity|canvass|\bnews\b|press release|\bclosures?\b|engagement|calendar of events|connect with us|/news/|/blog/|/category/|/tag/'
 # Extra refusals per kind: a library board or a clinic held at the library is not the library.
@@ -547,6 +560,23 @@ def check_page(cfg, fetcher, item, place, state_name, allowed_sites, notes):
             found.append({'k': 'election', 'd': d.isoformat(), 'n': squash(e['name'])[:120], 'q': squash(e['quote']), 'u': final, 'c': today().isoformat()})
         else:
             notes.append({'url': final, 'place': place, 'result': 'models disagree on election date: ' + str(c.get('why', ''))[:160], 'quote': squash(e['quote'])[:200]})
+    # D282: upcoming public meetings (county board, commission, council, school board), same checks, next 90 days only.
+    for e in (f.get('meetings') or [])[:8]:
+        if not isinstance(e, dict):
+            continue
+        ok, why = check_election(e, body, MEETING_MAX_DAYS, 'meeting')
+        if not ok:
+            notes.append({'url': final, 'place': place, 'result': 'meeting refused by code: ' + why, 'quote': str(e.get('quote', ''))[:200]})
+            continue
+        d = dt.date.fromisoformat(e['date'][:10])
+        try:
+            c = ask(cfg, cfg['checker_model'], CHECK_MEETING_PROMPT.format(name=squash(e['name']), place=place, state=state_name, date_words=date_words(d), url=final, quote=squash(e['quote'])))
+        except (FetchError, ValueError) as ex:
+            c = {'answer': 'no', 'why': 'checker failed: ' + str(ex)}
+        if str(c.get('answer', '')).lower() == 'yes':
+            found.append({'k': 'meeting', 'd': d.isoformat(), 'n': squash(e['name'])[:120], 'q': squash(e['quote']), 'u': final, 'c': today().isoformat()})
+        else:
+            notes.append({'url': final, 'place': place, 'result': 'models disagree on meeting date: ' + str(c.get('why', ''))[:160], 'quote': squash(e['quote'])[:200]})
     return found, links
 
 def pick_links(links, home, limit_per_kind=2):
@@ -568,8 +598,8 @@ def pick_links(links, home, limit_per_kind=2):
             out.append({'url': u, 'src': 'linked from ' + home})
     return out
 
-def do_place(cfg, fetcher, rec, place, state_name, notes, max_pages=8):
-    """Check a county or city: its home pages, then election, clerk and library pages linked from them."""
+def do_place(cfg, fetcher, rec, place, state_name, notes, max_pages=10):
+    """Check a county or city: its home pages, then election, clerk, library and public meeting pages linked from them."""
     allowed = set(site_of(c['url']) for c in rec.get('candidates', []))
     items, queue, done = [], list(rec.get('candidates', []))[:4], set()
     pages = 0
@@ -695,13 +725,13 @@ def _run(cfg):
                 old = found['counties'].get(fips, [])
                 # Keep a link we found before if it was not re-checked this time; it ages out after recheck_days * 3.
                 keep_until = (today() - dt.timedelta(days=cfg['recheck_days'] * 3)).isoformat()
-                urls = set(i['u'] for i in items if i['k'] != 'election')
+                urls = set(i['u'] for i in items if i['k'] not in ('election', 'meeting'))
                 for o in old:
-                    if o['k'] != 'election' and o['u'] not in urls and o['c'] >= keep_until:
+                    if o['k'] not in ('election', 'meeting') and o['u'] not in urls and o['c'] >= keep_until:
                         items.append(o)
                 found['counties'][fips] = items
                 found['checked'][fips] = now_utc().isoformat()
-                log(cfg, s['abbr'], rec['name'] + ':', len([i for i in items if i['k'] != 'election']), 'links,', len([i for i in items if i['k'] == 'election']), 'election dates')
+                log(cfg, s['abbr'], rec['name'] + ':', len([i for i in items if i['k'] not in ('election', 'meeting')]), 'links,', len([i for i in items if i['k'] == 'election']), 'election dates,', len([i for i in items if i['k'] == 'meeting']), 'meeting dates')
         write_json(fpath, found)
         if notes:
             npath = os.path.join(cfg['work'], 'notes', abbr + '.json')
@@ -816,6 +846,7 @@ KIND_BEST = {
     'election_office': r'^(\w+ county )?elections?( department| division| office)?$',
     'clerk': r'^(\w+ county )?(city and county )?clerk',
     'library': r'librar',
+    'meetings': r'agenda|meeting',
 }
 
 def best_per_kind(links):
@@ -853,11 +884,12 @@ def publish(cfg):
             continue
         counties = {}
         for fips, items in found.get('counties', {}).items():
-            links = sorted([i for i in items if i['k'] != 'election'], key=lambda i: (list(KINDS).index(i['k']) if i['k'] in KINDS else 9, i['t']))
+            links = sorted([i for i in items if i['k'] not in ('election', 'meeting')], key=lambda i: (list(KINDS).index(i['k']) if i['k'] in KINDS else 9, i['t']))
             links = best_per_kind(same_page_once(links))
             els = sorted([i for i in items if i['k'] == 'election' and i['d'] >= today().isoformat()], key=lambda i: i['d'])
-            if links or els:
-                counties[fips] = {'name': seedrec['counties'][fips]['name'], 'links': links, 'elections': els}
+            mts = sorted([i for i in items if i['k'] == 'meeting' and i['d'] >= today().isoformat()], key=lambda i: i['d'])[:10]
+            if links or els or mts:
+                counties[fips] = {'name': seedrec['counties'][fips]['name'], 'links': links, 'elections': els, 'meetings': mts}
         districts = {}
         if s.get('map'):
             map_dir = map_data_dir(cfg, s)
@@ -868,7 +900,8 @@ def publish(cfg):
                 'state_links': found.get('state', []), 'counties': counties, 'districts': districts}
         write_json(os.path.join(out_dir, abbr + '.json'), data, compact=True)
         index['states'][s['abbr']] = {'counties': len(counties), 'links': sum(len(c['links']) for c in counties.values()) + len(data['state_links']),
-                                      'elections': sum(len(c['elections']) for c in counties.values())}
+                                      'elections': sum(len(c['elections']) for c in counties.values()),
+                                      'meetings': sum(len(c['meetings']) for c in counties.values())}
     write_json(os.path.join(out_dir, 'index.json'), index)
     log(cfg, 'published to', out_dir, json.dumps({k: v['links'] for k, v in index['states'].items() if v['links']})[:300])
     report(cfg)

@@ -203,7 +203,7 @@ async function lookupPoint(lat,lng,label,abbrHint,general,addr){
    lookup/local/xx.json is written by the local-resources job on a home computer
    (tools/local-resources/). Every link and date there passed code checks and two
    local models. lookup/data/counties/xx.json holds coarse county outlines. */
-const KIND_LABEL={election_office:'Election office',clerk:'Clerk or recorder',government:'Official government site',library:'Public library',state_election_office:'State election office'};
+const KIND_LABEL={election_office:'Election office',clerk:'Clerk or recorder',government:'Official government site',library:'Public library',meetings:'Public meetings and agendas',state_election_office:'State election office'};
 const localCache={};
 let localSeq=0;
 function loadLocal(abbr){
@@ -267,6 +267,20 @@ function electionsCard(L,p){
   }
   return el('div',{cls:'result lr'},body);
 }
+/* D282: upcoming public meetings (county board, commission, council, school board) found by the same job. */
+function meetingsCard(L,p){
+  const C=L.local&&L.local.counties?L.local.counties[p.f]:null;
+  if(!C||!C.meetings)return null;
+  const t=todayISO();
+  const ms=C.meetings.filter(m=>m.d>=t&&okUrl(m.u));
+  if(!ms.length)return null;
+  const ul=el('ul',{cls:'lr-list'});
+  for(const m of ms)ul.append(el('li',{},[el('b',{text:fmtDate(m.d)}),' '+m.n+'. ',
+    el('span',{cls:'lr-quote',text:'"'+m.q+'"'}),' ',el('a',{href:m.u,target:'_blank',rel:'noopener',text:'Source ↗'}),
+    el('span',{cls:'lr-meta',text:' · checked '+fmtDate(m.c)})]));
+  return el('div',{cls:'result lr'},[el('div',{cls:'kind',text:'Upcoming public meetings'}),el('div',{cls:'value',text:fmtDate(ms[0].d)}),ul,
+    el('div',{cls:'note',text:'Found on official pages and confirmed word for word. Meetings get moved or canceled: check the page before you go.'})]);
+}
 function stateLinksCard(L,stateName){
   const links=L.local&&L.local.state_links?L.local.state_links.filter(i=>okUrl(i.u)):[];
   if(!links.length)return null;
@@ -281,6 +295,7 @@ async function showLocal(abbr,lat,lng,addr){
   if(p){
     cards.push(localCard(L,p));
     const ec=electionsCard(L,p);if(ec)cards.push(ec);
+    const mc=meetingsCard(L,p);if(mc)cards.push(mc);
   }
   const sl=stateLinksCard(L,stateInfo(abbr).name);if(sl)cards.push(sl);
   if(!cards.length)return;

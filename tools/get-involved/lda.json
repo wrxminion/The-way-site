@@ -1,0 +1,111 @@
+{
+ "source": "https://lda.gov/api/v1/filings/",
+ "note": "Lobbying Disclosure Act filings that name the bill in their lobbying issue text, read from the official lda.gov API with no key. tools/get-involved/fetch_lda.py refreshes this file on a home computer.",
+ "status": {
+  "H.R. 7954": {
+   "checked": "2026-11-15",
+   "complete": false,
+   "note": "2 more 2026 filings were found but not yet read word for word, so they are left out."
+  },
+  "H.R. 8195": {
+   "checked": "2026-11-15",
+   "complete": true
+  },
+  "H.R. 8483": {
+   "checked": "2026-11-15",
+   "complete": true,
+   "note": "No 2025 or 2026 filings name it."
+  },
+  "H.R. 9600": {
+   "checked": "2026-11-15",
+   "complete": false,
+   "note": "One search form not yet run."
+  }
+ },
+ "filings": [
+  {
+   "bill": "H.R. 7954",
+   "registrant": "BLANK ROME GOVERNMENT RELATIONS",
+   "client": "OLD HARBOR NATIVE CORPORATION",
+   "year": 2026,
+   "period": "first_quarter",
+   "income": 40000.0,
+   "expenses": null,
+   "issue": "Indian/Native American Affairs",
+   "text": "Indian Buffalo Management Act (H.R. 7954).",
+   "uuid": "db63f730-7a67-4207-bdce-2ab760e88e83",
+   "url": "https://lda.gov/filings/public/filing/db63f730-7a67-4207-bdce-2ab760e88e83/print/",
+   "checked": "2026-11-15"
+  },
+  {
+   "bill": "H.R. 7954",
+   "registrant": "WORLD WILDLIFE FUND, INC.",
+   "client": "WORLD WILDLIFE FUND, INC.",
+   "year": 2026,
+   "period": "first_quarter",
+   "income": null,
+   "expenses": 130000.0,
+   "issue": "Natural Resources",
+   "text": "Indian Buffalo Management Act (H.R. 7954 / S. 3478) - support",
+   "uuid": "360040af-4ff9-4a58-bddf-65b421dad8d5",
+   "url": "https://lda.gov/filings/public/filing/360040af-4ff9-4a58-bddf-65b421dad8d5/print/",
+   "checked": "2026-11-15"
+  },
+  {
+   "bill": "H.R. 7954",
+   "registrant": "BLANK ROME GOVERNMENT RELATIONS",
+   "client": "OLD HARBOR NATIVE CORPORATION",
+   "year": 2026,
+   "period": "second_quarter",
+   "income": 40000.0,
+   "expenses": null,
+   "issue": "Indian/Native American Affairs",
+   "text": "Indian Buffalo Management Act (H.R. 7954).",
+   "uuid": "d76cf38c-955b-49fe-8539-cdf1e4c6d262",
+   "url": "https://lda.gov/filings/public/filing/d76cf38c-955b-49fe-8539-cdf1e4c6d262/print/",
+   "checked": "2026-11-15"
+  },
+  {
+   "bill": "H.R. 7954",
+   "registrant": "WORLD WILDLIFE FUND, INC.",
+   "client": "WORLD WILDLIFE FUND, INC.",
+   "year": 2026,
+   "period": "second_quarter",
+   "income": null,
+   "expenses": 220000.0,
+   "issue": "Natural Resources",
+   "text": "Indian Buffalo Management Act (H.R. 7954 / S. 3478) - support",
+   "uuid": "4f4d22a6-69bc-41d1-bcaa-16778cfd6ab8",
+   "url": "https://lda.gov/filings/public/filing/4f4d22a6-69bc-41d1-bcaa-16778cfd6ab8/print/",
+   "checked": "2026-11-15"
+  },
+  {
+   "bill": "H.R. 8195",
+   "registrant": "AMERICAN SPORTFISHING ASSOCIATION",
+   "client": "AMERICAN SPORTFISHING ASSOCIATION",
+   "year": 2026,
+   "period": "first_quarter",
+   "income": null,
+   "expenses": 60000.0,
+   "issue": "Natural Resources",
+   "text": "Support for H.R. 8195, the Responsible Cormorant Management and Control Act of 2026",
+   "uuid": "cab72009-e101-4cc1-baf4-c74827616a90",
+   "url": "https://lda.gov/filings/public/filing/cab72009-e101-4cc1-baf4-c74827616a90/print/",
+   "checked": "2026-11-15"
+  },
+  {
+   "bill": "H.R. 9600",
+   "registrant": "FFRF ACTION FUND",
+   "client": "FFRF ACTION FUND",
+   "year": 2026,
+   "period": "registration",
+   "income": null,
+   "expenses": null,
+   "issue": "Constitution",
+   "text": "Support for the H.R.9600 - Common Sense 250 Act of 2026 - (Raskin-MD)",
+   "uuid": "18b49e5d-b6d6-48a3-9937-e8e5ed67c4ac",
+   "url": "https://lda.gov/filings/public/filing/18b49e5d-b6d6-48a3-9937-e8e5ed67c4ac/print/",
+   "checked": "2026-11-15"
+  }
+ ]
+}

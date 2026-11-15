@@ -62,3 +62,7 @@
 .gi-web-phone{display:none;max-width:420px}
 .gi-edge{fill:none}
 @media (max-width:600px){.gi-web-wide{display:none}.gi-web-phone{display:block}}
+/* D282: state list */
+.gi-statelist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem 1.25rem}
+.gi-statelist li{padding:.35rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.gi-statelist .gv-muted{display:block;font-size:.85rem}
