@@ -1,0 +1,20 @@
+/* D280: the Nonprofit Trail page. Builds on follow.css (#way-trail). */
+#way-trail .np-id{color:#e9d59d;font-size:14px;overflow-wrap:anywhere}
+#way-trail .np-big{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* Whole numbers never break inside: the big money stays on one line and the card grows instead. */
+#way-trail .np-big b{white-space:nowrap;overflow-wrap:normal;word-break:keep-all;font-size:clamp(26px,4.4vw,40px)}
+#way-trail .np-sec{border-top:1px solid #456870;padding:14px 0 6px}
+#way-trail .np-list{margin:6px 0 10px}
+#way-trail .np-list li{margin-bottom:7px}
+#way-trail .np-list b{color:#7ff0d4;font-variant-numeric:tabular-nums;white-space:nowrap}
+#way-trail .np-quote{margin:4px 0 8px;padding:8px 12px;border-left:3px solid #f0ce77;background:#10323b;color:#edf6ef}
+#way-trail .np-donor{background:#1d2a2f;border:1px solid #6b5f3a;border-radius:6px;padding:9px 12px;color:#f3e3b5}
+#way-trail .np-links{margin:6px 0 4px -21px;gap:6px 18px}
+#way-trail .np-cards{list-style:none;padding:0;margin:10px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#way-trail .np-card{background:#10323b;border:1px solid #2f6a6c;border-radius:6px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;margin:0}
+#way-trail .np-card a{font:400 19px/1.25 Georgia,serif}
+#way-trail .np-card-id{color:#e9d59d;font-size:13px}
+#way-trail .np-card-num{font-size:14px;font-variant-numeric:tabular-nums}
+#way-trail .np-sources{border-top:1px solid #456870;margin-top:14px;padding-top:12px}
+#way-trail details summary{cursor:pointer}
+@media(max-width:640px){#way-trail .np-cards{grid-template-columns:1fr}#way-trail .np-big{grid-template-columns:1fr}}

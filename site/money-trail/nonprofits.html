@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#071722">
+<title>The Nonprofit Trail | The Way</title>
+<meta name="description" content="Follow politically active nonprofits through their IRS Form 990 returns: money in, money out, grants, political spending, officers and pay, with a link to every return.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="/news/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="follow.css?v=4">
+<link rel="stylesheet" href="nonprofits.css?v=d280">
+<link rel="stylesheet" href="/members/waybar.css?v=29">
+<link rel="canonical" href="https://michiinstitute.com/money-trail/nonprofits.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Nonprofit Trail | The Way">
+<meta property="og:description" content="Follow politically active nonprofits through their IRS Form 990 returns: money in, money out, grants, political spending, officers and pay.">
+<meta property="og:site_name" content="The Way | Michi Institute">
+<meta property="og:image" content="https://michiinstitute.com/og-logo.png">
+</head>
+<body>
+<header id="waybar" class="waybar"><a class="wb-logo" href="/">The Way</a><nav class="wb-mid wb-pub" aria-label="Sections"><a href="/results/">Election Results</a><a href="/states/">Voter Guides</a><a href="/research/">Research</a><a href="/search/">Search</a><a href="/news/">News</a></nav><nav class="wb-right" aria-label="Sign in"><a class="wb-pill" href="/members/">Sign in</a></nav></header>
+<main class="trail-wrap">
+<section id="way-trail" class="np-trail" aria-label="The Nonprofit Trail">
+ <header class="trail-head">
+ <span>THE WAY · RESEARCH · <a href="./">MONEY TRAIL</a></span>
+ <h1>The Nonprofit Trail</h1>
+ <p>Follow nonprofits through their own IRS Form 990 returns: money in, money out, grants to other groups, political spending, and who runs them.</p>
+ </header>
+ <div class="trail-body">
+ <div class="trail-controls">
+ <label>Find a nonprofit <input id="np-find" type="search" placeholder="Try Sixteen Thirty, Concord, an EIN or an officer" autocomplete="off"></label>
+ <label>Open a nonprofit <select id="np-pick"></select></label>
+ </div>
+ <div id="np-out" aria-live="polite"></div>
+ <section class="np-sources" id="np-sources" aria-label="Where the numbers come from"></section>
+ <p class="trail-small"><a href="./?view=nonprofits">Nonprofit tracker on the Money Trail map</a> · <a href="./">Back to the full Money Trail map</a></p>
+ </div>
+</section>
+</main>
+<script src="nonprofits.js?v=d280"></script>
+<script src="nonprofits-page.js?v=d280"></script>
+<script src="/members/waybar.js?v=76" defer></script>
+</body>
+</html>

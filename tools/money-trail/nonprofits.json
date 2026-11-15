@@ -1,0 +1,233 @@
+{
+ "meta": {
+  "checked": "2026-11-15",
+  "sources": [
+   {
+    "name": "IRS Form 990 e-file XML",
+    "url": "https://www.irs.gov/charities-non-profits/form-990-series-downloads",
+    "covers": "The full return as the group filed it: totals, officers and pay, political spending (Schedule C), grants to U.S. groups (Schedule I), related groups (Schedule R).",
+    "not": "Donor names of 501(c)(3) and 501(c)(4) groups (the IRS public copy leaves them out). Grants to people. Money given to the group after the end of the tax year. Returns take months to arrive: most groups file 10 to 11 months after their year ends."
+   },
+   {
+    "name": "GivingTuesday 990 data lake (copy of the IRS XML files on Amazon S3)",
+    "url": "https://990data.givingtuesday.org/",
+    "covers": "The same IRS XML files, one per return, unchanged. Each file is checked: the EIN inside must match.",
+    "not": "Newer returns appear here some weeks after the IRS releases them."
+   },
+   {
+    "name": "ProPublica Nonprofit Explorer",
+    "url": "https://projects.propublica.org/nonprofits/",
+    "covers": "A readable view of each return, built from the IRS files. Used to find which return is newest, and linked on every card.",
+    "not": "It is not the IRS. Its summary numbers can lag the newest return."
+   },
+   {
+    "name": "IRS Tax Exempt Organization Search",
+    "url": "https://apps.irs.gov/app/eos/",
+    "covers": "Whether the IRS lists the group as tax-exempt, and copies of its returns and letters.",
+    "not": "It does not show the numbers inside a return."
+   }
+  ],
+  "rule": "The first set: groups already named on the Money Trail, and large politically active groups from across the spectrum, the same number from each side. Every group is read with the same rules and the same depth: the latest return we could reach, its 50 largest grants, every political organization it paid, and every officer listed.",
+  "donors": "Donors to 501(c)(3) and 501(c)(4) groups are not public. The IRS public copy of Schedule B leaves out donor names, so this page never names or guesses them. 527 political groups and super PACs do report donors (IRS Form 8872 and the FEC).",
+  "fec_alias": {
+   "NRA POLITICAL VICTORY FUND": "C00053553"
+  },
+  "fec_alias_note": "Hand matches of a name written on a return to an FEC committee, used only when the return names the committee by a short name: NRA Political Victory Fund is the FEC committee NATIONAL RIFLE ASSOCIATION OF AMERICA POLITICAL VICTORY FUND (C00053553)."
+ },
+ "orgs": [
+  {
+   "ein": "753148958",
+   "label": "Americans for Prosperity",
+   "object_id": "202533219349310913",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:AMERICANS_FOR_PROSPERITY_VA",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group."
+  },
+  {
+   "ein": "271937961",
+   "label": "One Nation",
+   "object_id": "202513189349312806",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:ONE_NATION_VA",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group."
+  },
+  {
+   "ein": "270730508",
+   "label": "American Action Network",
+   "object_id": "202511359349304506",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:AMERICAN_ACTION_NETWORK_DC",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group.",
+   "note": "A newer return, for the year ending June 2025, was filed in May 2026. Its XML copy could not be reached yet, so this page shows the year ending June 2024."
+  },
+  {
+   "ein": "204681603",
+   "label": "Club for Growth",
+   "object_id": "202503219349324265",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:CLUB_FOR_GROWTH_DC",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group."
+  },
+  {
+   "ein": "202303252",
+   "label": "The Concord Fund",
+   "object_id": "202541359349307549",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "note": "A newer return, for the year ending June 2025, was filed in May 2026. Its XML copy could not be reached yet, so this page shows the year ending June 2024."
+  },
+  {
+   "ein": "202466871",
+   "label": "The 85 Fund",
+   "object_id": "202533219349303288",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026"
+  },
+  {
+   "ein": "237327730",
+   "label": "The Heritage Foundation",
+   "object_id": "202523199349302027",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026"
+  },
+  {
+   "ein": "272244700",
+   "label": "Heritage Action for America",
+   "object_id": "202513189349313311",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026"
+  },
+  {
+   "ein": "530116130",
+   "label": "National Rifle Association of America",
+   "object_id": "202523179349308667",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:NATIONAL_RIFLE_ASSOCIATION_OF_AMERICA_VA",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group."
+  },
+  {
+   "ein": "541850126",
+   "label": "Susan B. Anthony List",
+   "object_id": "202533039349301328",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026"
+  },
+  {
+   "ein": "800835023",
+   "label": "Turning Point USA",
+   "object_id": "202601359349313190",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026"
+  },
+  {
+   "ein": "464331510",
+   "label": "Turning Point Action",
+   "object_id": "202521359349303947",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "note": "A newer return, for the year ending June 2025, was filed in May 2026. Its XML copy could not be reached yet, so this page shows the year ending June 2024. FEC filings name a TURNING POINT ACTION INC with an Arizona address; this IRS return lists Indianapolis, Indiana, so the two are not joined on the web."
+  },
+  {
+   "ein": "522166327",
+   "label": "DonorsTrust",
+   "object_id": "202513179349312256",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026"
+  },
+  {
+   "ein": "264486735",
+   "label": "Sixteen Thirty Fund",
+   "object_id": "202533159349305888",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:SIXTEEN_THIRTY_FUND_DC",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group."
+  },
+  {
+   "ein": "205806345",
+   "label": "New Venture Fund",
+   "object_id": "202513159349305596",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026"
+  },
+  {
+   "ein": "833690373",
+   "label": "Majority Forward",
+   "object_id": "202601359349310865",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:MAJORITY_FORWARD_DC",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group."
+  },
+  {
+   "ein": "834185105",
+   "label": "House Majority Forward",
+   "object_id": "202533209349301008",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:HOUSE_MAJORITY_FORWARD_DC",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group."
+  },
+  {
+   "ein": "824170762",
+   "label": "Future Forward USA Action",
+   "object_id": "202513219349327366",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:FUTURE_FORWARD_USA_ACTION_DC",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group."
+  },
+  {
+   "ein": "300126510",
+   "label": "Center for American Progress",
+   "object_id": "202513009349300336",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026"
+  },
+  {
+   "ein": "300192708",
+   "label": "Center for American Progress Action Fund",
+   "object_id": "202513169349303991",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026"
+  },
+  {
+   "ein": "208802884",
+   "label": "Everytown for Gun Safety Action Fund",
+   "object_id": "202543189349303624",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:EVERYTOWN_FOR_GUN_SAFETY_ACTION_FUND_INC_NY",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group."
+  },
+  {
+   "ein": "133539048",
+   "label": "Planned Parenthood Action Fund",
+   "object_id": "202541259349302274",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:PLANNED_PARENTHOOD_ACTION_FUND_INC_NY",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group.",
+   "note": "A newer return, for the year ending June 2025, was filed in May 2026. Its XML copy could not be reached yet, so this page shows the year ending June 2024."
+  },
+  {
+   "ein": "521733698",
+   "label": "League of Conservation Voters",
+   "object_id": "202533149349300748",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:LEAGUE_OF_CONSERVATION_VOTERS_INC_DC",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group."
+  },
+  {
+   "ein": "061553389",
+   "label": "MoveOn.org Civic Action",
+   "object_id": "202612479349300806",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "note": "FEC filings name a MOVEON.ORG CIVIC ACTION with a Washington, D.C. address; this IRS return lists Beaverton, Oregon, so the two are not joined on the web."
+  },
+  {
+   "ein": "834011547",
+   "label": "North Fund",
+   "object_id": "202543159349306199",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026"
+  },
+  {
+   "ein": "264568349",
+   "label": "America Votes",
+   "object_id": "202501339349302530",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "note": "A newer return, for the year ending June 2025, was filed in May 2026. Its XML copy could not be reached yet, so this page shows the year ending June 2024."
+  },
+  {
+   "ein": "530217164",
+   "label": "American Israel Public Affairs Committee (AIPAC)",
+   "object_id": "202622329349301312",
+   "object_id_source": "ProPublica Nonprofit Explorer filing list, checked Nov 15 2026",
+   "web_id": "fecname:AMERICAN_ISRAEL_PUBLIC_AFFAIRS_COMMITTEE_DC",
+   "web_note": "FEC filings already on the Money web name this group with the same name and state as this IRS return, so its FEC lines and its Form 990 lines meet at one dot. A matching name and state is strong but not legal proof that it is the same group."
+  }
+ ]
+}
