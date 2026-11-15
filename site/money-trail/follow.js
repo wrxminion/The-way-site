@@ -109,18 +109,28 @@
  for (const [id,name,state,date,url] of data.ballots) add('ballot:'+id,{id,name:id+' · '+name,type:state+' ballot measure',note:'Election '+date+'. Positions and reporting are shown as context. This archive has no itemized transaction directly tagged to this measure.',kind:'ballot',links:[['Official ballot source',url]]});
  // optional 6th item: dollar amounts from the linked public record, as [amount, what it is, source, url, as of]
  for (const [id,name,type,note,links,amounts] of supplemental) add(id,{id,name,type,note,links,amounts:amounts||[],kind:'source'});
+ // Company tracker: one trail per company, from companies.js (window.TW_COMPANIES). Every figure links to its record.
+ const COMPANIES = ((window.TW_COMPANIES||{}).companies)||[];
+ const companyAlias = {};
+ for (const c of COMPANIES) {
+ add('co:'+c.slug,{id:'co:'+c.slug,name:c.name,type:'Company · '+c.sector,kind:'company',company:c,links:[],amounts:[],
+ note:'On the Company tracker because its PAC is one of the three that raised the most in its sector in 2025-2026 (FEC totals). Below: what its PAC gave, what people who list it as their employer gave on their own, what it spent lobbying, and the federal money it got. Every number links to the filing or record it comes from. Names on filings are as reported. Being listed does not imply wrongdoing.'});
+ companyAlias[c.slug] = 'co:'+c.slug;
+ }
  const featured = ['fec:C00559740','ballot:CO-87','leo','marble','musk','jeffries','tarp',...LAWS.map(l=>l.key),'corecivic','geo','ice'];
  const ordered = [...featured.filter(id=>subjects.has(id)), ...[...subjects.keys()].filter(id=>!featured.includes(id)).sort((a,b)=>subjects.get(a).name.localeCompare(subjects.get(b).name))];
- const categories = ['candidate','measure','bill','group','contractor','agency','person'];
+ const categories = ['candidate','measure','bill','group','contractor','agency','person','company'];
  const aliases = {
  bill:{'hr-1424':'tarp','hr1424':'tarp','110-hr1424':'tarp','110-hr-1424':'tarp','tarp':'tarp',...lawAlias},
  group:{'gopac':'fec:C00559740','c00559740':'fec:C00559740','marble-freedom-trust':'marble','85-0784793':'marble'},
  contractor:{'corecivic-inc':'corecivic','the-geo-group':'geo','the-geo-group-inc':'geo'},
  agency:{'immigration-and-customs-enforcement':'ice','us-immigration-and-customs-enforcement':'ice'},
+ company:companyAlias,
  person:{'leonard-leo':'leo','leonard-a-leo':'leo','elon-musk':'musk','musk-elon':'musk','elon':'musk','musk':'musk','hakeem-jeffries':'jeffries','jeffries-hakeem':'jeffries','jeffries':'jeffries','h2ny10092':'jeffries'}
  };
  function category(key, subject) {
  if (subject.kind === 'ballot') return 'measure';
+ if (subject.kind === 'company') return 'company';
  if (subject.kind === 'entity') return /candidate_named/.test(subject.type)?'candidate':'group';
  if (lawSlug[key]) return 'bill';
  return {tarp:'bill',leo:'person',musk:'person',jeffries:'person',marble:'group',corecivic:'contractor',geo:'contractor',ice:'agency'}[key];
@@ -234,6 +244,71 @@
  button.addEventListener('click',()=>follow(id));
  return button;
  }
+ // Company tracker trail: four sections, each with its key numbers, its largest items and its sources.
+ function companyRecord(big, c) {
+ const whole = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+ const day = d => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(d||''); return m ? ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m[2]-1]+' '+(+m[3])+', '+m[1] : (d||''); };
+ const many = (n, one, more) => Number(n).toLocaleString('en-US')+' '+(n===1?one:more);
+ const SIDE = {REP:'Republican',DEM:'Democratic',other:'no party on the FEC record'};
+ const section = (title, lead) => { const sec = node('section'); sec.className = 'co-sec'; sec.append(node('h3',title)); if (lead) sec.append(node('p',lead)); big.append(sec); return sec; };
+ const nums = (sec, items) => { const row = node('div'); row.className = 'co-nums'; for (const [v,label,src,url] of items) { const b = node('div'); b.append(node('b',typeof v==='number'?whole.format(v):v),node('span',label)); if (src) { const p = node('p'); p.append(link(src+' ↗',url)); b.append(p); } row.append(b); } sec.append(row); };
+ const list = (sec, title, items) => { if (!items.length) return; sec.append(node('h4',title)); const ol = node('ol'); ol.className = 'co-list'; for (const [amt,text,lab,url] of items) { const li = node('li'); if (amt!=null) li.append(node('strong',whole.format(amt))); li.append(document.createTextNode(' '+text+' ')); if (url) li.append(link(lab||'Filing ↗',url)); ol.append(li); } sec.append(ol); };
+ const small = (sec, text, links) => { const p = node('p',text); p.className = 'trail-small'; for (const [lab,url] of links||[]) { p.append(document.createTextNode(' ')); p.append(link(lab,url)); } sec.append(p); };
+ const P = c.pac||{}, pac = (P.committees||[])[0], CM = 'https://www.fec.gov/data/committee/';
+ const META = (window.TW_COMPANIES||{}).meta||{};
+ // 1. the company's PAC
+ {
+ const sec = section('1. Its PAC (political action committee)', pac ? (P.committees.length>1?'The FEC lists '+P.committees.length+' PACs for this company; they are added together: '+P.committees.map(x=>x.name).join('; ')+'.':pac.name+' (FEC '+pac.id+').')+' A company may pay its PAC’s running costs, but the money the PAC gives comes from employees and shareholders who chose to give to it.' : 'No company PAC found in the FEC committee file.');
+ if (pac) {
+ nums(sec,[[P.receipts,'Raised, 2025-2026 through '+day(pac.through),'FEC committee page',CM+pac.id+'/?cycle=2026'],
+ [P.gave,'Given to candidates and committees ('+many(P.gifts,'gift','gifts')+')','FEC list of its payments','https://www.fec.gov/data/disbursements/?committee_id='+pac.id+'&two_year_transaction_period=2026'],
+ [P.to_rep,'To Republican candidates and committees'],[P.to_dem,'To Democratic candidates and committees'],[P.to_other,'To committees with no party on the FEC record']]);
+ const kinds = Object.entries(P.kinds||{}).map(([k,v])=>whole.format(v)+' to '+k).join(' · ');
+ if (kinds) small(sec,'By kind of recipient: '+kinds+'.');
+ list(sec,'Largest recipients',(P.top||[]).map(g=>[g.amt,g.name+(g.cand?' · '+g.cand:'')+' · '+(g.party==='other'?SIDE.other:SIDE[g.party])+' · '+many(g.n,'gift','gifts')+', '+day(g.first)+(g.last!==g.first?' to '+day(g.last):''),'Largest filing ↗',g.link]));
+ small(sec,'Gift lines from the FEC files for PAC gifts to candidates (pas226) and to committees (oth26), memo lines left out, refunds not subtracted. The PAC’s own reports total '+whole.format(P.committees.reduce((t,x)=>t+x.gave_reported,0))+' in gifts to committees through '+day(pac.through)+'. Party is the party the FEC lists for the candidate or committee.');
+ }
+ }
+ // 2. people who list it as their employer
+ {
+ const E = c.emp||{};
+ const sec = section('2. Gifts from people who list it as their employer','These are people’s own gifts, not the company’s money. Counted: rows in the FEC individual contributions file whose employer box '+E.pattern+' (subsidiaries with other names are not counted). People who give under $200 to a committee in the cycle are not listed by the FEC. Names are not shown here: federal law bars using them to ask for money.');
+ if (E.amt) {
+ nums(sec,[[E.amt,'Given by '+many(E.people,'person','people')+' in '+many(E.gifts,'gift','gifts'),'FEC search by employer',E.search_url],[E.own_pac,'Of it, to the company’s own PAC'],[E.to_rep,'To Republican candidates and committees'],[E.to_dem,'To Democratic candidates and committees'],[E.to_other,'To other committees with no party on the FEC record']]);
+ if (E.largest_is_musk) { const p = node('p','Most of this is Elon Musk, whose filings list SpaceX as his employer: one person gave '+whole.format(E.largest_person)+' of it. '); p.className='trail-small'; p.append(link('Elon Musk’s trail','/money-trail/follow.html?person=elon-musk')); sec.append(p); }
+ else if (E.largest_person > E.amt*0.25) small(sec,'One person gave '+whole.format(E.largest_person)+' of this total.');
+ list(sec,'Largest recipients',(E.top||[]).map(g=>[g.amt,g.name+' · '+(g.kind==='this company’s own PAC'?g.kind:(g.party==='other'?SIDE.other:SIDE[g.party]))+' · '+many(g.n,'gift','gifts'),'FEC committee ↗',CM+g.cmte+'/?cycle=2026']));
+ small(sec,'Newest gift in the file: '+day(E.newest)+'.');
+ } else small(sec,'No gifts found under that employer name in the FEC file.');
+ }
+ // 3. lobbying
+ {
+ const L = c.lobby;
+ const sec = section('3. Lobbying Congress and federal agencies', 'From quarterly LD-2 reports filed under the Lobbying Disclosure Act, 2025 through '+META.lobby_through+' (reports pulled from lda.gov on '+day(META.lda_fetched)+'). Own staff: what the company reported spending on its own lobbyists. Outside firms: fees the firms it hired reported. By law each amount is rounded to the nearest $10,000, and a quarter under $5,000 shows no amount.');
+ if (L && L.reports) {
+ nums(sec,[[L.total,'Spent on lobbying, all reports added together','LDA.gov reports for this client',L.search_url],[L.in_house,'With its own staff'],[L.outside,'Fees to '+many(L.firm_count,'outside firm','outside firms')],[Number(L.reports).toLocaleString('en-US'),'Quarterly reports']]);
+ if (L.by_year) small(sec,'By year: '+Object.entries(L.by_year).map(([y,v])=>y+' '+whole.format(v)).join(' · ')+'.');
+ list(sec,'Outside lobbying firms it paid',(L.firms||[]).map(x=>[x.amt,x.name+' · '+many(x.reports,'report','reports'),'Largest report ↗',x.link]));
+ if ((L.issues||[]).length) { sec.append(node('h4','Issues it listed (number of reports)')); const p = node('p',(L.issues||[]).map(x=>x.issue+' ('+x.n+')').join(' · ')); sec.append(p); }
+ if ((L.bills||[]).length) { list(sec,'Bills its reports name most often (119th Congress)',L.bills.map(b=>[null,b.bill+' · named in '+many(b.n,'report','reports'),'Congress.gov ↗',b.url])); small(sec,'Bill numbers are read from the report text. A report can name a bill to support it, oppose it or ask for changes; the reports do not say which.'); }
+ if ((L.gov||[]).length) small(sec,'Offices lobbied most: '+L.gov.slice(0,8).map(x=>x.name+' ('+x.n+')').join(' · ')+'.');
+ if (L.lobbyists) small(sec,many(L.lobbyists,'lobbyist is','lobbyists are')+' named on these reports; '+many(L.covered,'lists','list')+' a past government job (a “covered position”).');
+ } else small(sec,'Our pull from lda.gov on '+day(META.lda_fetched)+' found no LD-2 report for 2025-2026 that names this company as the client under the name we searched. Its lobbying may be filed under another company name; that is not checked yet.');
+ }
+ // 4. federal money
+ {
+ const F = c.fed;
+ const sec = section('4. Federal money it got', F ? 'From USAspending.gov, the official record of federal spending. Recipient: '+F.recipient.name+', with the companies USAspending lists under it. Fiscal year '+F.fy+' runs Oct 1, '+(F.fy-1)+' to Sep 30, '+F.fy+'. Amounts are money obligated (promised) in that year, and can be negative when an award is cut back.' : '');
+ if (F) {
+ if (F.subsidiary_only) small(sec,'Only a record for one part of the company matched the name we searched: '+F.recipient.name+'. No record for the whole company was found, so these numbers are not the whole company.');
+ if (!F.amt && !F.n) small(sec,'USAspending shows no federal awards to this recipient in fiscal '+F.fy+'.');
+ nums(sec,[[F.amt,'All federal awards, fiscal '+F.fy,'USAspending recipient profile',F.url],[F.contract_amt,'Contracts, fiscal '+F.fy+(F.contracts_complete===false?' (largest agencies only)':'')],[F.grant_amt,'Grants and other aid, fiscal '+F.fy],[F.prev_amt,'All federal awards, fiscal '+(F.fy-1)]]);
+ list(sec,'Contracts by agency, fiscal '+F.fy,(F.contracts||[]).filter(a=>a.amt).map(a=>[a.amt,a.agency]));
+ list(sec,'Grants and other aid by agency, fiscal '+F.fy,(F.grants||[]).filter(a=>a.amt).map(a=>[a.amt,a.agency]));
+ small(sec,'USAspending can list more than one record for one company. This page uses the largest record whose name matches. The total counts every kind of award (contracts, grants, loans and other aid), so it can be more than contracts and grants added together. Pulled '+day(F.as_of)+'.');
+ } else small(sec,'Our USAspending search on '+day(META.lda_fetched)+' found no recipient record under this company’s name.');
+ }
+ }
  function render() {
  const s = subjects.get(selected);
  if (!s) {
@@ -249,7 +324,7 @@
  }
  get('#trail-title').textContent = s.name;
  const type = category(selected,s);
- const value = type==='measure'?s.id.toLowerCase():selected==='tarp'?'110-hr1424':selected==='leo'?'leonard-leo':selected==='musk'?'elon-musk':selected==='jeffries'?'hakeem-jeffries':lawSlug[selected]||selected;
+ const value = type==='measure'?s.id.toLowerCase():selected==='tarp'?'110-hr1424':selected==='leo'?'leonard-leo':selected==='musk'?'elon-musk':selected==='jeffries'?'hakeem-jeffries':s.kind==='company'?s.company.slug:lawSlug[selected]||selected;
  get('#trail-permalink').textContent = 'Link to this trail: michiinstitute.com/money-trail/follow.html?'+type+'='+encodeURIComponent(value);
  get('#trail-note').textContent = s.type + '. ' + (s.note || 'Itemized ledger matches the archive’s entity ID. Name matches and other relationships appear separately below.');
  const links = get('#trail-links');
@@ -263,6 +338,7 @@
  const li = node('li');
  if (s.kind === 'ballot') li.append(link('See '+s.id.slice(0,2)+' on the Money Trail map','/money-trail/?view=states&state='+s.id.slice(0,2)));
  else if (s.kind === 'entity') li.append(link('See '+s.name+' on the money web','/money-trail/?view=network&hub='+encodeURIComponent(s.name)));
+ else if (s.kind === 'company') li.append(link('See '+s.name+' on the money web','/money-trail/?view=network&hub='+encodeURIComponent(s.company.hub)),document.createTextNode(' · '),link('All companies on the Company tracker','/money-trail/?view=companies'));
  else li.append(link('Back to the full Money Trail map','/money-trail/'));
  links.prepend(li);
  }
@@ -313,7 +389,8 @@
  const big = get('#trail-big');
  big.replaceChildren();
  big.hidden = false;
- if (!rows.length && s.amounts && s.amounts.length) {
+ if (s.kind === 'company') companyRecord(big, s.company);
+ else if (!rows.length && s.amounts && s.amounts.length) {
  const whole = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
  for (const [value,label,source,url,asOf] of s.amounts) {
  const box = node('div');
