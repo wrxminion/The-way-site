@@ -1,0 +1,64 @@
+/* Get Involved section (D278). Builds on government-works.css and government/government.css. */
+.gi .gv-hero h1{margin-top:10px}
+.gi-cards{margin-top:6px}
+.gi-cards .gw-card{display:flex;flex-direction:column}
+.gi-cards .gw-card h2{font-size:1.35rem;margin:6px 0 8px}
+.gi-cards .gw-card .gv-open{margin-top:auto}
+.gi-soon{opacity:.82;border-style:dashed}
+.gi-badge{margin-top:auto;display:inline-block;align-self:flex-start;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#d6bd7c!important;border:1px solid #6b5d3a;border-radius:20px;padding:3px 10px}
+.gi-jump{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:4px 0 18px}
+.gi-jump a{padding:7px 14px;border:1px solid var(--line);border-radius:30px;text-decoration:none;background:#122f3c}
+.gi-bills{list-style:none;padding:0;margin:8px 0 18px}
+.gi-bills li{padding:12px 0;border-bottom:1px solid rgba(52,83,95,.55)}
+.gi-bills li:last-child{border-bottom:0}
+.gi-bills a{text-decoration:none}
+.gi-bills a strong{text-decoration:underline;text-underline-offset:3px}
+.gi-num{display:inline-block;min-width:6.4em;font-weight:700;color:var(--sea);font-variant-numeric:tabular-nums}
+.gi-meta{display:block;font-size:.9rem;color:var(--muted);margin-top:2px}
+.gi-meta a{color:var(--sea)}
+.gi-when .gv-note{font-size:1.05rem}
+.gi-pick{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 14px}
+.gi-pick label{font-weight:700}
+.gi-pick select{font:inherit;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:#122f3c;color:var(--ink);min-width:220px;max-width:100%}
+.gi-state{border-bottom:1px solid rgba(52,83,95,.55)}
+.gi-state>summary{cursor:pointer;padding:10px 0;font-weight:700;font-size:1.05rem}
+.gi-state h3{margin:10px 0 4px;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sea)}
+.gi-state.gi-picked{background:rgba(140,221,208,.06);border-radius:10px;padding:0 10px}
+.gi-people{list-style:none;padding:0;margin:0 0 10px}
+.gi-people li{padding:8px 0;border-bottom:1px solid rgba(52,83,95,.4)}
+.gi-people li:last-child{border-bottom:0}
+.gi-people p{margin:0}
+.gi-ways{font-size:.92rem;overflow-wrap:anywhere}
+.gi .gv-tile p.gv-muted{font-size:.88rem;margin:6px 0 0}
+.gi .gv-tile strong{overflow-wrap:anywhere}
+.gi-act{text-align:center}
+@media (max-width:600px){
+  .gi-num{min-width:0;margin-right:6px}
+  .gi-pick select{min-width:0;width:100%}
+  .gi .gv-hero h1{font-size:2rem}
+}
+.gi-count{display:inline-block;font-weight:700;color:#f4d78f;font-size:.92rem}
+.gi-count:empty{display:none}
+.gi-count.gi-past{color:var(--muted);font-weight:600}
+.gi-dates{list-style:none;padding:0;margin:8px 0}
+.gi-dates li{padding:14px 0;border-bottom:1px solid rgba(52,83,95,.55)}
+.gi-dates li:last-child{border-bottom:0}
+.gi-dates p{margin:4px 0}
+.gi-date strong{font-size:1.1rem;margin-right:8px}
+.gi-go{font-weight:700;white-space:nowrap}
+.gi-why{margin:2px 0 0;font-size:.92rem;color:#cfdee3}
+.gi-member .gi-bills li p{margin:0}
+.gi-web{display:block;width:100%;max-width:760px;height:auto;margin:6px auto 4px}
+.gi-edge{stroke:#34535f;stroke-width:2}
+.gi-n-bill{fill:#8cddd0}
+.gi-t-bill{fill:#052b3c;font:800 17px system-ui,sans-serif}
+.gi-node{fill:#122f3c;stroke:#34535f;stroke-width:1.5}
+.gi-web a:hover .gi-node,.gi-web a:focus .gi-node{stroke:#8cddd0;stroke-width:2.5}
+.gi-n-person{stroke:#8cddd0}
+.gi-n-money{stroke:#d6bd7c}
+.gi-n-lobby{stroke-dasharray:5 4}
+.gi-t-k{fill:#aec6ce;font:700 11px system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.gi-t-v{fill:#eaf5f6;font:600 14px system-ui,sans-serif}
+.gi-web-phone{display:none;max-width:420px}
+.gi-edge{fill:none}
+@media (max-width:600px){.gi-web-wide{display:none}.gi-web-phone{display:block}}
