@@ -1,0 +1,175 @@
+{
+ "checked": "2026-11-15",
+ "note": "Only facts read on an official state page are here. A state with nothing here has not been checked yet.",
+ "states": {
+  "CA": {
+   "elections_note": "The state page for county-run elections said \"No elections scheduled at this time\" for every county when we checked. Some city elections may not be listed there.",
+   "elections_src": "https://www.sos.ca.gov/elections/upcoming-elections/county-administered-elections",
+   "local": "https://www.sos.ca.gov/elections/voting-resources/county-elections-offices"
+  },
+  "DE": {
+   "elections": [
+    {
+     "date": "2026-12-08",
+     "what": "Special election for New Castle County Council District 10",
+     "src": "https://elections.delaware.gov/"
+    }
+   ],
+   "leg": {
+    "home": "https://legis.delaware.gov/",
+    "bills": "https://legis.delaware.gov/Legislation"
+   }
+  },
+  "MS": {
+   "elections": [
+    {
+     "date": "2026-12-01",
+     "what": "General election runoff, if one is needed, for state supreme court, court of appeals, chancery, circuit and county court judges and school board members",
+     "src": "https://www.sos.ms.gov/sites/default/files/elections/2026%20Elections%20Calendar.pdf"
+    }
+   ],
+   "local": "https://www.sos.ms.gov/elections-voting/county-election-information"
+  },
+  "OK": {
+   "elections": [
+    {
+     "date": "2027-02-09",
+     "what": "Board of Education primary elections",
+     "src": "https://oklahoma.gov/elections.html"
+    }
+   ],
+   "elections_note": "From the \"Next Election\" box on the state election board home page. We have not read the full list yet.",
+   "leg": {
+    "home": "https://www.oklegislature.gov/"
+   },
+   "local": "https://oklahoma.gov/elections/about-us/county-election-boards.html"
+  },
+  "UT": {
+   "leg": {
+    "start": "2027-01-19",
+    "note": "2027 General Session: January 19 to March 5, 2027",
+    "home": "https://le.utah.gov/",
+    "bills": "https://le.utah.gov/solrsearch.jsp?ktype=Bill",
+    "src": "https://le.utah.gov/"
+   },
+   "local": "https://vote.utah.gov/contact-your-county-election-officials/"
+  },
+  "MN": {
+   "leg": {
+    "start": "2027-01-12",
+    "note": "\"The 2027-2028 session will convene on January 12, 2027.\"",
+    "home": "https://www.leg.mn.gov/",
+    "bills": "https://www.leg.mn.gov/leg/legis.aspx",
+    "src": "https://www.leg.mn.gov/"
+   },
+   "local": "https://www.sos.mn.gov/elections-voting/find-county-election-office/"
+  },
+  "NE": {
+   "leg": {
+    "start": "2027-01-06",
+    "note": "\"The 110th Legislature, First Session will convene January 6, 2027\"",
+    "home": "https://nebraskalegislature.gov/",
+    "bills": "https://nebraskalegislature.gov/bills/",
+    "src": "https://nebraskalegislature.gov/"
+   },
+   "local": "https://sos.nebraska.gov/election-officials-contact-information"
+  },
+  "NM": {
+   "leg": {
+    "start": "2027-01-19",
+    "note": "Opening day January 19, 2027, at noon",
+    "home": "https://www.nmlegis.gov/",
+    "bills": "https://www.nmlegis.gov/Legislation/Bill_Finder",
+    "src": "https://www.nmlegis.gov/"
+   },
+   "local": "https://www.sos.nm.gov/voting-and-elections/"
+  },
+  "ID": {
+   "leg": {
+    "home": "https://legislature.idaho.gov/"
+   }
+  },
+  "MD": {
+   "leg": {
+    "home": "https://mgaleg.maryland.gov/mgawebsite/",
+    "bills": "https://mgaleg.maryland.gov/mgawebsite/Search/Legislation"
+   },
+   "local": "https://elections.maryland.gov/about/county_boards.html"
+  },
+  "NY": {
+   "leg": {
+    "home": "https://www.nysenate.gov/",
+    "bills": "https://www.nysenate.gov/search/legislation"
+   }
+  },
+  "AR": {
+   "leg": {
+    "home": "https://www.arkleg.state.ar.us/",
+    "bills": "https://www.arkleg.state.ar.us/Bills/Search"
+   }
+  },
+  "IA": {
+   "leg": {
+    "home": "https://www.legis.iowa.gov/",
+    "bills": "https://www.legis.iowa.gov/legislation"
+   }
+  },
+  "ME": {
+   "leg": {
+    "home": "https://legislature.maine.gov/"
+   }
+  },
+  "OH": {
+   "leg": {
+    "home": "https://www.legislature.ohio.gov/"
+   }
+  },
+  "RI": {
+   "leg": {
+    "home": "https://www.rilegislature.gov/",
+    "bills": "https://www.rilegislature.gov/pages/legislation.aspx"
+   }
+  },
+  "TX": {
+   "leg": {
+    "home": "https://capitol.texas.gov/",
+    "bills": "https://capitol.texas.gov/Search/BillSearch.aspx"
+   }
+  },
+  "WA": {
+   "leg": {
+    "home": "https://leg.wa.gov/",
+    "bills": "https://leg.wa.gov/bills-meetings-and-session/bills/"
+   }
+  },
+  "CT": {
+   "meetings": "https://egov.ct.gov/PMC/"
+  },
+  "ND": {
+   "meetings": "https://www.sos.nd.gov/services/public-meeting-notices",
+   "local": "https://www.sos.nd.gov/elections/voter/current-officials/county-election-officials"
+  },
+  "WV": {
+   "meetings": "https://apps.sos.wv.gov/adlaw/meetingnotices/",
+   "local": "https://sos.wv.gov/west-virginia-county-clerk-directory"
+  },
+  "KY": {
+   "local": "https://elect.ky.gov/About-Us/Pages/County-Boards-of-Elections.aspx"
+  },
+  "SD": {
+   "local": "https://vip.sdsos.gov/CountyAuditors.aspx"
+  },
+  "MT": {
+   "local": "https://sosmt.gov/elections/election-administrators-contact-list/"
+  },
+  "SC": {
+   "local": "https://scvotes.gov/contact/county-voter-registration-election-offices/"
+  },
+  "WY": {
+   "local": "https://sos.wyo.gov/Elections/Docs/WYCountyClerks.pdf"
+  },
+  "MI": {
+   "local": "https://mvic.sos.state.mi.us/"
+  }
+ }
+}

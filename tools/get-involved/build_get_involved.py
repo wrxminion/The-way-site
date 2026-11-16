@@ -37,8 +37,9 @@ MEMBERS = os.path.join(SITE, 'government', 'congress', 'members')
 SITE_URL = 'https://michiinstitute.com'
 WAYBAR_JS = '79'
 WAYBAR_CSS = '29'
-GI_CSS = '1'
-GI_JS = '1'
+GI_CSS = '2'
+GI_JS = '2'
+WEB_V = 'd282'
 
 e = lambda s: html.escape(str(s), quote=True)
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
@@ -219,7 +220,32 @@ def find_schedule(data, number):
     return None, None, None
 
 
-LDA_SEARCH = 'https://lda.senate.gov/filings/public/filing/search/'
+LDA_SEARCH = 'https://lda.gov/'
+PERIOD = {'first_quarter': ('1st quarter', '-03-31'), 'second_quarter': ('2nd quarter', '-06-30'),
+          'third_quarter': ('3rd quarter', '-09-30'), 'fourth_quarter': ('4th quarter', '-12-31'),
+          'mid_year': ('first half', '-06-30'), 'year_end': ('second half', '-12-31'), 'registration': ('registration', '')}
+
+
+def hub_of(b):
+    """The bill's name on the Money web (no parentheses, so the web's name matching stays simple)."""
+    return re.sub(r'\s*\([^)]*\)', '', '%s: %s' % (b['number'], b['title'])).upper().strip()
+
+
+def hub_url(b):
+    return '/money-trail/?view=network&hub=' + urllib.parse.quote(hub_of(b))
+
+
+def lda_for(num):
+    d = CTX.get('lda') or {}
+    return (d.get('status') or {}).get(num), [x for x in d.get('filings', []) if x['bill'] == num]
+
+
+def lda_money(x):
+    if x.get('income'):
+        return 'The lobbying firm reported %s in income from this client for the %s, for every issue on the report, not only this bill.' % (money_txt(x['income']), PERIOD.get(x['period'], (x['period'],))[0])
+    if x.get('expenses'):
+        return 'The group reported spending %s on its own lobbying in the %s, for every issue on the report, not only this bill.' % (money_txt(x['expenses']), PERIOD.get(x['period'], (x['period'],))[0])
+    return 'No amount on this filing.'
 CTX = {}  # filled in main(): people, money, by_bio
 
 
@@ -241,11 +267,13 @@ def web_svg(b, chamber, sponsor, comms):
     if m:
         nodes.append(('Sponsor\'s campaign money', money_txt(m['receipts']), m['web'], 'gi-n-money'))
     nodes.append(('Who votes', 'All 100 senators' if chamber == 'senate' else 'All House members', '../reps.html', 'gi-n-people'))
-    nodes.append(('Lobby groups', 'Not collected yet', '#lobby', 'gi-n-lobby'))
-    return draw_web(b['number'], nodes)
+    st, fl = lda_for(b['number'])
+    groups = sorted(set(x['client'] for x in fl))
+    nodes.append(('Lobby groups', ('%d found so far' % len(groups) if not st.get('complete') else '%d found' % len(groups)) if st else 'Not checked yet', '#lobby', 'gi-n-lobby'))
+    return draw_web(b['number'], nodes, hub_url(b))
 
 
-def draw_web(center, nodes):
+def draw_web(center, nodes, center_href=None):
     import math
     W, H, cx, cy, r = 720, 380, 360, 190, 135
     out = ['<svg class="gi-web gi-web-wide" viewBox="0 0 %d %d" role="img" aria-labelledby="gi-web-t"><title id="gi-web-t">%s and the people and money around it</title>' % (W, H, e(center))]
@@ -255,7 +283,8 @@ def draw_web(center, nodes):
         x, y = cx + r * 1.75 * math.cos(ang), cy + r * math.sin(ang)
         pts.append((x, y))
         out.append('<line class="gi-edge" x1="%d" y1="%d" x2="%d" y2="%d"/>' % (cx, cy, x, y))
-    out.append('<circle class="gi-n-bill" cx="%d" cy="%d" r="52"/><text class="gi-t-bill" x="%d" y="%d" text-anchor="middle">%s</text>' % (cx, cy, cx, cy + 6, e(center)))
+    mid = '<circle class="gi-n-bill" cx="%d" cy="%d" r="52"/><text class="gi-t-bill" x="%d" y="%d" text-anchor="middle">%s</text>' % (cx, cy, cx, cy + 6, e(center))
+    out.append('<a href="%s">%s</a>' % (e(center_href), mid) if center_href else mid)
     for (k, v, href, cls), (x, y) in zip(nodes, pts):
         v2 = v if len(v) <= 27 else v[:26] + '…'
         out.append('<a href="%s"><rect class="gi-node %s" x="%d" y="%d" width="210" height="50" rx="12"/><text class="gi-t-k" x="%d" y="%d" text-anchor="middle">%s</text><text class="gi-t-v" x="%d" y="%d" text-anchor="middle">%s</text></a>' % (
@@ -268,7 +297,8 @@ def draw_web(center, nodes):
     for i in range(len(nodes)):
         y = 120 + rowh * i + 25
         out.append('<path class="gi-edge" d="M180 92 C 40 %d, 40 %d, 60 %d"/>' % (y - 30, y, y))
-    out.append('<circle class="gi-n-bill" cx="180" cy="52" r="46"/><text class="gi-t-bill" x="180" y="58" text-anchor="middle">%s</text>' % e(center))
+    mid = '<circle class="gi-n-bill" cx="180" cy="52" r="46"/><text class="gi-t-bill" x="180" y="58" text-anchor="middle">%s</text>' % e(center)
+    out.append('<a href="%s">%s</a>' % (e(center_href), mid) if center_href else mid)
     for i, (k, v, href, cls) in enumerate(nodes):
         y = 120 + rowh * i
         v2 = v if len(v) <= 30 else v[:29] + '…'
@@ -285,7 +315,8 @@ def chain_html(b, chamber, ctx):
     out = []
     # 1. web
     out.append('<section class="gv-sec" id="web"><h2>Its spot on the web</h2><p>The bill in the middle, with the people, money and groups around it. Tap any box to follow it.</p>%s'
-               '<p class="gw-status">This picture is made from the sections below. This bill does not have its own spot on the main Money web yet; the sponsor and committee members link to theirs.</p></section>' % web_svg(b, chamber, sponsor, comms))
+               '<p class="gv-links"><a href="%s">See %s on the Money web →</a></p>'
+               '<p class="gw-status">This picture is made from the sections below. On the Money web, the bill is a dot with lines to its sponsor, its committees and the groups that lobbied on it, and from the sponsor to their campaign money.</p></section>' % (web_svg(b, chamber, sponsor, comms), e(hub_url(b)), e(b['number'])))
     # 2. money
     out.append('<section class="gv-sec" id="money"><h2>The money</h2>')
     m = money.get(b['sponsor'].get('bioguide'))
@@ -334,10 +365,27 @@ def chain_html(b, chamber, ctx):
     if b.get('senate_committees_note'):
         out.append('<p class="gw-status">%s</p>' % e(b['senate_committees_note']))
     out.append('<p class="gw-status">Committee seats come from our member pages (congress-legislators dataset). Each member\'s page also lists this vote under Upcoming votes.</p></section>')
-    # 4. lobby groups
-    out.append('<section class="gv-sec" id="lobby"><h2>Lobby groups</h2><p>Groups that pay lobbyists must report which bills they lobbied on to the Senate and the House under the Lobbying Disclosure Act. We have not collected the reports that name %s yet: the Senate\'s lobbying database does not allow automated reading from our research tools, so this will be gathered another way. Until then, you can search it yourself.</p>'
-               '<p class="gv-links"><a href="%s">Search Senate lobbying reports ↗</a> <a href="https://lobbyingdisclosure.house.gov/">House lobbying disclosure ↗</a></p>'
-               '<p class="gw-status">Tip: search the lobbying issue text for "%s".</p></section>' % (e(b['number']), LDA_SEARCH, e(b['number'])))
+    # 4. lobby groups (Lobbying Disclosure Act reports from lda.gov, collected by fetch_lda.py)
+    st, fl = lda_for(b['number'])
+    out.append('<section class="gv-sec" id="lobby"><h2>Lobby groups</h2><p>Groups that pay lobbyists must report which bills they lobbied on, under the Lobbying Disclosure Act. These are the reports that name %s.</p>' % e(b['number']))
+    if not st:
+        out.append('<p>We have not checked the lobbying reports for this bill yet. Our home computer checks them from the official lobbying database; until then you can search it yourself.</p>')
+    else:
+        if fl:
+            tr = ''.join('<tr><td>%s</td><td>%s</td><td>%s %s</td><td>%s</td><td>&quot;%s&quot; <a href="%s">Report ↗</a></td></tr>' % (
+                e(x['client']), e(x['registrant'] if x['registrant'] != x['client'] else 'Itself'), e(PERIOD.get(x['period'], (x['period'],))[0]), e(str(x.get('year', ''))),
+                e(money_txt(x['income']) + ' fee' if x.get('income') else money_txt(x['expenses']) + ' spent' if x.get('expenses') else 'None given'), e(x['text']), e(x['url'])) for x in fl)
+            out.append('<div class="gv-scroll"><table class="gv-table"><thead><tr><th>Group or company</th><th>Lobbying firm</th><th>Report</th><th>Amount on the report</th><th>What it says</th></tr></thead><tbody>%s</tbody></table></div>' % tr)
+            out.append('<p class="gw-status">An amount is for the whole report, every issue on it, not money spent on this one bill. A lobbying report does not say whether the group is for or against a bill unless its own words say so.</p>')
+        else:
+            out.append('<p>No lobbying reports for 2025 or 2026 name this bill so far.</p>')
+        msg = 'Checked %s.' % nice_date(st['checked'])
+        if not st.get('complete'):
+            msg += ' Not finished yet: ' + (st.get('note') or 'some searches are still to run.')
+        elif st.get('note'):
+            msg += ' ' + st['note']
+        out.append('<p class="gw-status">%s From the official lobbying database at lda.gov, read with no key.</p>' % e(msg))
+    out.append('<p class="gv-links"><a href="%s">Search lobbying reports on LDA.gov ↗</a></p><p class="gw-status">Tip: search the lobbying issue text for &quot;%s&quot;.</p></section>' % (LDA_SEARCH, e(b['number'])))
     return '\n'.join(out)
 
 
@@ -633,7 +681,12 @@ def event_page(ev, data):
         tot = sum(money[p['bioguide']]['receipts'] for c in comm_people for p in comm_people[c] if p['bioguide'] in money)
         nodes.append(('Committee campaign money', money_txt(tot), '#money', 'gi-n-money'))
         nodes.append(('Who votes', 'House and Senate', '../reps.html', 'gi-n-people'))
-    nodes.append(('Lobby groups', 'Not collected yet', '#lobby', 'gi-n-lobby'))
+    lb = (ev.get('law') or {}).get('bill')
+    if lb:
+        st, fl = lda_for(lb)
+        nodes.append(('Lobby groups', ('%d found' % len(set(x['client'] for x in fl))) if st else 'Not checked yet', '#lobby', 'gi-n-lobby'))
+    else:
+        nodes.append(('Lobby groups', 'See below', '#lobby', 'gi-n-lobby'))
     out.append('<section class="gv-sec" id="web"><h2>Its spot on the web</h2><p>This vote or date in the middle, with the people, money and groups around it. Tap any box to follow it.</p>%s</section>' % draw_web(ev['short'], nodes))
     # money
     out.append('<section class="gv-sec" id="money"><h2>The money</h2>')
@@ -657,7 +710,7 @@ def event_page(ev, data):
         out.append('<details><summary>Members of the %s (%d)</summary><div class="gw-detail"><p>%s</p></div></details>' % (e(c), len(mem), ', '.join(
             '<a href="/government/congress/members/%s.html">%s</a> (%s)' % (e(p['slug']), e(p['name']), e(p['party'][:1])) for p in sorted(mem, key=lambda p: (p['party'], p['name'])))))
     out.append('<p class="gw-status">Names, parties and committee seats come from our member pages (congress-legislators dataset).</p></section>')
-    out.append('<section class="gv-sec" id="lobby"><h2>Lobby groups</h2><p>%s</p><p class="gv-links"><a href="%s">Search Senate lobbying reports ↗</a> <a href="https://www.fec.gov/data/">FEC data ↗</a></p></section>' % (e(ev['lobby']), LDA_SEARCH))
+    out.append('<section class="gv-sec" id="lobby"><h2>Lobby groups</h2><p>%s</p><p class="gv-links"><a href="%s">Search lobbying reports on LDA.gov ↗</a> <a href="https://www.fec.gov/data/">FEC data ↗</a></p></section>' % (e(ev['lobby']), LDA_SEARCH))
     act = '<a href="../reps.html">Find and contact your representatives →</a>'
     if ev.get('contact_issue'):
         act = '<a href="../contact-your-senator/?issue=%s">Write to your senators about this →</a> ' % e(ev['contact_issue']) + act
@@ -697,12 +750,12 @@ def landing(data, bills):
          'contact-your-representative/', 'Write to your House member'),
         ('Your voice', 'Contact your representatives', 'Phone numbers, contact forms and websites for your two senators and your member of the House, state by state.',
          'reps.html', 'Find your representatives'),
-        ('Your area', 'Votes where you live', 'Coming next: upcoming state and local votes for your state, county and district. For now, find your district and your county election office.',
-         '/lookup/', 'Find your district'),
-        ('Your area', 'Groups on all sides', 'Coming later: political groups active in your area, from every side, listed the same way with their own words and sources. No endorsements.',
-         None, None),
-        ('Your area', 'Town halls and public meetings', 'Coming later: town halls, school board and city council meetings that are open to the public, from official calendars.',
-         None, None),
+        ('Your area', 'Where you live', 'Your state: your members of Congress and their upcoming votes, elections, the state legislature and public meetings. Then find your county and districts.',
+         'states/', 'Pick your state'),
+        ('Your area', 'Groups on all sides', 'Political party committees registered in your state, from every party, listed the same way with their campaign money and official filings. No endorsements.',
+         'states/', 'See groups by state'),
+        ('Your area', 'Town halls and public meetings', 'Hearings in Congress this week, federal agency meetings open to the public, and how to find your county and city meetings.',
+         'meetings.html', 'See public meetings'),
     ]
     out = ['<header class="gv-hero"><p class="gw-eyebrow">Get Involved</p><h1>Get Involved</h1>'
            '<p class="gv-lede">What is coming up for a vote, who represents you, and how to reach them. Every fact links to an official record so you can check us. The Way does not tell you how to vote or which side to take.</p></header>']
@@ -846,11 +899,233 @@ def update_member_pages(people, data, bills):
     return n
 
 
+# ---- D282: Money web spots for every upcoming bill ----
+def write_web_data(bills, by_bio):
+    out = []
+    for b in bills:
+        p = by_bio.get(b['sponsor'].get('bioguide'))
+        m = CTX['money'].get(b['sponsor'].get('bioguide'))
+        party = {'Democrat': 'D', 'Republican': 'R'}.get(p['party'], 'I') if p else ''
+        abbr = STATE_ABBR.get(p['state'], '') if p else ''
+        st, fl = lda_for(b['number'])
+        lobby = []
+        for x in fl:
+            per, end = PERIOD.get(x['period'], (x['period'], ''))
+            lobby.append({'client': x['client'], 'registrant': x['registrant'], 'income': x.get('income'), 'period': '%s %s' % (per, x.get('year', '')),
+                          'end': (str(x.get('year')) + end) if end else '', 'url': x['url'], 'text': x['text'], 'money': lda_money(x)})
+        out.append({'slug': slug_of(b['number']), 'number': b['number'], 'hub': hub_of(b), 'page': '/get-involved/bills/%s.html' % slug_of(b['number']),
+                    'record': govinfo_url(b['number']), 'introduced': b.get('introduced', ''),
+                    'sponsor': {'bioguide': p['bioguide'], 'name': p['name'], 'party': party, 'st': abbr,
+                                'page': '/government/congress/members/%s.html' % p['slug']} if p else None,
+                    'campaign': {'name': m['name'], 'receipts': money_txt(m['receipts']), 'through': m.get('through') or '', 'fec': m['fec']} if (p and m) else None,
+                    'committees': list(b['committees']) + [c for c in b.get('senate_committees', []) if c not in b['committees']],
+                    'lobby': lobby})
+    js = ('// Upcoming bills on the Money web (D282). Built by tools/get-involved/build_get_involved.py. Do not edit by hand.\n'
+          'window.TW_UPCOMING_WEB=' + json.dumps({'built': datetime.date.today().isoformat(), 'bills': out}, ensure_ascii=False, separators=(',', ':')) + ';\n')
+    open(os.path.join(SITE, 'money-trail', 'upcoming-web-data.js'), 'w', encoding='utf-8').write(js)
+    # load it on the Money Trail page, after budgets-view.js and before app.js (idempotent)
+    ix = os.path.join(SITE, 'money-trail', 'index.html')
+    t = open(ix, encoding='utf-8').read()
+    t2 = re.sub(r'<script src="upcoming-web(-data)?\.js\?v=[^"]*"></script>\n', '', t)
+    tag = '<script src="upcoming-web-data.js?v=%s"></script>\n<script src="upcoming-web.js?v=%s"></script>\n' % (WEB_V, WEB_V)
+    t2 = re.sub(r'(<script src="app\.js\?v=[^"]*"></script>)', lambda m: tag + m.group(1), t2, count=1)
+    assert 'upcoming-web.js' in t2
+    if t2 != t:
+        open(ix, 'w', encoding='utf-8').write(t2)
+
+
+# ---- D282: public meetings (Congress committees and federal agencies) ----
+def meetings_page(mt):
+    out = ['<header class="gv-hero"><p class="gw-eyebrow">Get Involved · Public meetings</p><h1>Public meetings and hearings</h1>'
+           '<p class="gv-lede">Meetings the public can watch or attend: committee hearings in Congress and federal agency meetings. Most hearings stream live on the committee\'s website. For town halls with your own members of Congress, check their websites, which you can find on the contact page.</p></header>']
+    out.append('<p class="gv-links"><a href="#senate">Senate committees</a> <a href="#house">House committees</a> <a href="#agency">Federal agencies</a> <a href="#local">Local meetings</a></p>')
+    def day(d):
+        return nice_date(d)
+    S = mt['senate']
+    out.append('<section class="gv-sec" id="senate"><h2>Senate committee hearings, week of November 16</h2><div class="gv-scroll"><table class="gv-table"><thead><tr><th>Day</th><th>Time (Eastern)</th><th>Committee</th><th>What</th><th>Room</th></tr></thead><tbody>%s</tbody></table></div><p class="gw-status">%s %s</p></section>' % (
+        ''.join('<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (e(day(x['date'])), e(x['time']), e(x['committee']), e(x['what']), e(x['room'])) for x in S['items']),
+        e(S['note']), src_link('Senate committee hearings and meetings', S['src'])))
+    H = mt['house']
+    out.append('<section class="gv-sec" id="house"><h2>House committee meetings, week of November 16</h2><div class="gv-scroll"><table class="gv-table"><thead><tr><th>Day</th><th>Time (Eastern)</th><th>Committee</th><th>Details</th></tr></thead><tbody>%s</tbody></table></div><p class="gw-status">%s %s</p></section>' % (
+        ''.join('<tr><td>%s</td><td>%s</td><td>%s%s</td><td><a href="%s">Title, room and video ↗</a></td></tr>' % (e(day(x['date'])), e(x['time']), e(x['committee']), (' · ' + e(x['sub'])) if x['sub'] else '', e(x['url'])) for x in H['items']),
+        e(H['note']), src_link('House committee calendar', H['src'])))
+    A = mt['agency']
+    out.append('<section class="gv-sec" id="agency"><h2>Federal agency meetings open to the public</h2><div class="gv-scroll"><table class="gv-table"><thead><tr><th>Day</th><th>Time</th><th>Who</th><th>What</th><th>How to attend</th></tr></thead><tbody>%s</tbody></table></div><p class="gw-status">%s %s</p></section>' % (
+        ''.join('<tr><td>%s</td><td>%s</td><td>%s</td><td><a href="%s">%s ↗</a></td><td>%s</td></tr>' % (e(day(x['date'])), e(x['time']), e(x['agency']), e(x['url']), e(x['what']), e(x['how'])) for x in A['items']),
+        e(A['note']), src_link('Federal Register', A['src'])))
+    out.append('<section class="gv-sec" id="local"><h2>Local meetings: county boards, councils and school boards</h2>'
+               '<p>City councils, county commissions and school boards post their meetings on their own websites. Our district lookup finds your county\'s official sites, and its home computer job is adding their public meeting pages and dates, each checked against the official page.</p>'
+               '<p class="gv-links"><a href="/lookup/">Find your county →</a> <a href="states/">Your state on Get Involved →</a></p></section>')
+    out.append('<p class="gw-status">Checked %s. Meetings change or get canceled; the official page has the final word.</p>' % e(nice_date(mt['checked'])))
+    return page('meetings.html', 'Public meetings and hearings',
+                'Congressional committee hearings and federal agency meetings open to the public, with times and official links.',
+                [('The Way', '/'), ('Get Involved', '/get-involved/'), ('Public meetings', None)], '\n'.join(out))
+
+
+# ---- D282: a Get Involved page for each state ----
+STATE_ABBR = {}
+ABBR_STATE = {}
+FEC_PARTY = {'DEM': 'Democratic', 'REP': 'Republican', 'LIB': 'Libertarian', 'GRE': 'Green', 'GRN': 'Green', 'CON': 'Constitution',
+             'WOR': 'Working Families', 'WFP': 'Working Families', 'WF': 'Working Families', 'CRV': 'Conservative', 'FWD': 'Forward',
+             'IND': 'Independent', 'AIP': 'American Independent', 'DFL': 'Democratic-Farmer-Labor', 'REF': 'Reform', 'PRG': 'Progressive',
+             'NPA': 'No party affiliation', 'UN': 'Unaffiliated', 'OTH': 'Other', 'SUB': 'Other', '': 'Party not given'}
+
+
+def place_by_name(name, states):
+    """The state named in a committee's registered name, or ''. A county or city with a state's name does not count."""
+    up = ' ' + re.sub(r'[^A-Z ]', ' ', name.upper()) + ' '
+    for st in sorted(states, key=len, reverse=True):
+        for m in re.finditer(r'(?<= )' + re.escape(st.upper()) + r'(?= )', up):
+            after = up[m.end():].lstrip()
+            before = up[:m.start()].rstrip()
+            if re.match(r'(COUNTY|CITY|PARISH|TOWNSHIP|TOWN)\b', after) or (st in ('Virginia',) and before.endswith('WEST')) \
+                    or (st in ('Kansas',) and before.endswith('AR')):
+                continue
+            return st
+    # A name that starts with a state's postal code and a party word (DC REPUBLICAN PARTY, NY REPUBLICAN ...).
+    m = re.match(r'^([A-Z]{2}) (DEMOCRATIC|DEMOCRATS|REPUBLICAN|REPUBLICANS|GOP|LIBERTARIAN|GREEN|STATEHOOD)\b', name.upper())
+    if m and m.group(1) in ABBR_STATE:
+        return ABBR_STATE[m.group(1)]
+    return ''
+
+
+def party_groups(states):
+    by = {}
+    unplaced = 0
+    for c, loaded in fec_committees():
+        if not str(c.get('committee_type', '')).startswith('Party'):
+            continue
+        tot = c.get('totals') if isinstance(c.get('totals'), dict) else {}
+        # The FEC mailing state when the daily FEC job has saved it (add_fec_batch.py, D282), else the state the name says.
+        # National party committees (DNC, RNC, DCCC and the like) are national, wherever their office is.
+        national = re.search(r'NATIONAL|\bDCCC\b|\bNRCC\b|\bDSCC\b|\bNRSC\b|\bDNC\b|\bRNC\b|OF THE UNITED STATES|OF AMERICA', c['name'].upper())
+        st = '' if national else (ABBR_STATE.get(c.get('state') or '') or place_by_name(c['name'], states))
+        if not st:
+            unplaced += 1
+            continue
+        q = 'view=network&hub=' + urllib.parse.quote(c['name']) if loaded else 'fec=' + c['committee_id']
+        by.setdefault(st, []).append({'name': c['name'], 'party': FEC_PARTY.get(c.get('party') or '', 'Other'), 'id': c['committee_id'],
+                                      'receipts': tot.get('receipts') or 0, 'through': tot.get('through'), 'web': '/money-trail/?' + q})
+    return by, unplaced
+
+
+def person_li(p, show_seat):
+    bits = []
+    if p['phone']:
+        bits.append('<a href="tel:%s">Call %s</a>' % (e(p['phone'][0]), e(p['phone'][1])))
+    if p['form']:
+        bits.append('<a href="%s">Contact form ↗</a>' % e(p['form']))
+    if p['web']:
+        bits.append('<a href="%s">Website ↗</a>' % e(p['web']))
+    bits.append('<a href="/government/congress/members/%s.html#upcoming">Their upcoming votes</a>' % e(p['slug']))
+    m = CTX['money'].get(p['bioguide'])
+    if m:
+        bits.append('<a href="%s">Campaign money: %s</a>' % (e(m['web']), e(money_txt(m['receipts']))))
+    seat = p['seat'].replace('U.S. Representative for ', '').replace('U.S. Senator for ', '')
+    return '<li><p class="gi-who"><strong>%s</strong> <span class="gv-muted">%s · %s</span></p><p class="gi-ways">%s</p></li>' % (
+        e(p['name']), e(p['party']), e(seat if show_seat else p['role']), ' · '.join(bits))
+
+
+def official_links(state_slug):
+    f = os.path.join(SITE, 'states', state_slug + '.html')
+    if not os.path.exists(f):
+        return []
+    t = open(f, encoding='utf-8').read()
+    m = re.search(r'id="links".*?</ul>', t, re.S)
+    found = re.findall(r'href="(https://[^"]+)"[^>]*>([^<]+)</a>', m.group(0)) if m else []
+    return [(u, t) for u, t in found if not t.strip().startswith('http')][:5]
+
+
+def state_page(st, abbr, slug, people, groups, info, checked):
+    sen = [p for p in people if p['role'] == 'U.S. Senator']
+    house = sorted([p for p in people if p['role'] != 'U.S. Senator'], key=lambda p: p['dist'] or 0)
+    out = ['<header class="gv-hero"><p class="gw-eyebrow">Get Involved · %s</p><h1>Get involved in %s</h1>'
+           '<p class="gv-lede">Who represents %s in Congress and what they vote on next, elections and the state legislature, public meetings, and the political party groups registered here from every side, each with official records to check.</p></header>' % (e(abbr), e(st), e(st))]
+    out.append('<p class="gv-links"><a href="#members">Your members of Congress</a> <a href="#elections">Elections</a> <a href="#legislature">State legislature</a> <a href="#meetings">Public meetings</a> <a href="#groups">Groups on all sides</a></p>')
+    out.append('<section class="gv-sec" id="members"><h2>Your members of Congress</h2>')
+    for label, g in (('Senators', sen), ('House', house)):
+        if g:
+            out.append('<h3>%s</h3><ul class="gi-people">%s</ul>' % (label, ''.join(person_li(p, label == 'House') for p in g)))
+    out.append('<p class="gv-links"><a href="/get-involved/bills/">All upcoming votes in Congress →</a> <a href="/get-involved/dates/">Dates to watch →</a></p></section>')
+    # elections
+    out.append('<section class="gv-sec" id="elections"><h2>Elections coming up</h2>')
+    els = [x for x in info.get('elections', []) if x['date'] >= datetime.date.today().isoformat()]
+    if els:
+        out.append('<ul class="gi-dates">%s</ul>' % ''.join('<li><p class="gi-date"><strong>%s</strong> %s</p><p>%s</p><p class="gi-meta">%s</p></li>' % (
+            e(nice_date(x['date'])), countdown(x['date'] + 'T00:00:00-05:00', 'Countdown', True), e(x['what']), src_link('official state page', x['src'])) for x in els))
+    if info.get('elections_note'):
+        out.append('<p class="gw-status">%s %s</p>' % (e(info['elections_note']), src_link('official state page', info['elections_src']) if info.get('elections_src') else ''))
+    if not els and not info.get('elections_note'):
+        out.append('<p>We have not checked the state election calendar for upcoming elections yet. Your state and county election offices have the dates.</p>')
+    out.append('<h3>County and city elections and meetings</h3><div id="gi-local" data-state="%s"><p class="gi-local-wait">Loading what our county checker has found on official county sites…</p></div>' % e(abbr.lower()))
+    links = official_links(slug)
+    lk = ['<a href="/lookup/">Find your county and districts →</a>']
+    if info.get('local'):
+        lk.append('<a href="%s">County election offices (state list) ↗</a>' % e(info['local']))
+    lk += ['<a href="%s">%s ↗</a>' % (e(u), e(t)) for u, t in links]
+    lk.append('<a href="/states/%s.html">Voting rules in %s →</a>' % (e(slug), e(st)))
+    out.append('<p class="gv-links">%s</p></section>' % ' '.join(lk))
+    # legislature
+    lg = info.get('leg') or {}
+    out.append('<section class="gv-sec" id="legislature"><h2>State legislature</h2>')
+    if lg.get('start'):
+        out.append('<p class="gv-note"><strong>Next session begins %s.</strong> %s %s</p>' % (e(nice_date(lg['start'])), countdown(lg['start'] + 'T00:00:00-05:00', 'Countdown', True), e(lg.get('note', ''))))
+    else:
+        out.append('<p>We have not checked when the next session begins yet.</p>')
+    ll = []
+    if lg.get('home'):
+        ll.append('<a href="%s">Legislature website ↗</a>' % e(lg['home']))
+    if lg.get('bills'):
+        ll.append('<a href="%s">Search state bills ↗</a>' % e(lg['bills']))
+    if ll:
+        out.append('<p class="gv-links">%s</p>' % ' '.join(ll))
+    out.append('<p class="gw-status">From the legislature\'s own website%s. State bills will get their own pages here later.</p></section>' % (', checked ' + e(nice_date(checked)) if lg else ''))
+    # meetings
+    out.append('<section class="gv-sec" id="meetings"><h2>Public meetings</h2>')
+    if info.get('meetings'):
+        out.append('<p>%s posts meetings of state boards and agencies on one official calendar.</p><p class="gv-links"><a href="%s">State public meetings calendar ↗</a></p>' % (e(st), e(info['meetings'])))
+    out.append('<p>County commissions, city councils and school boards post their own meetings. Find your county\'s official site with the district lookup.</p><p class="gv-links"><a href="/lookup/">Find your county →</a> <a href="/get-involved/meetings.html">Hearings in Congress and federal meetings this week →</a></p></section>')
+    # groups
+    out.append('<section class="gv-sec" id="groups"><h2>Groups on all sides</h2>'
+               '<p>Political party committees in %s registered with the Federal Election Commission, from every party, listed the same way. Amounts are what each committee reported taking in for 2025 to 2026. The Way does not endorse any party or group.</p>' % e(st))
+    if groups:
+        parties = {}
+        for g in groups:
+            parties.setdefault(g['party'], []).append(g)
+        for pn in sorted(parties):
+            gs = sorted(parties[pn], key=lambda g: -g['receipts'])
+            out.append('<h3>%s</h3><ul class="gv-list">%s</ul>' % (e(pn), ''.join(
+                '<li><a href="%s">%s</a> · %s%s · <a href="https://www.fec.gov/data/committee/%s/">FEC ↗</a></li>' % (
+                    e(g['web']), e(g['name']), e(money_txt(g['receipts'])), (' through ' + e(nice_date(g['through']))) if g.get('through') else '', e(g['id'])) for g in gs)))
+    else:
+        out.append('<p>No party committee in our FEC data has %s in its name.</p>' % e(st))
+    out.append('<p class="gw-status">From FEC bulk data in the Money Trail. A committee is placed in a state by the mailing address it gives the FEC, or, until our daily FEC update has saved that address, only when its registered name names the state, so some county and city party committees are not listed yet. National party committees are not on state pages. Issue groups and PACs from every side will be added the same way.</p></section>')
+    out.append('<nav class="gv-next" aria-label="Keep exploring"><a href="/get-involved/states/">All states</a> · <a href="/get-involved/">Get Involved</a> · <a href="/states/%s.html">Voting in %s</a></nav>' % (e(slug), e(st)))
+    return page('states/%s.html' % slug, 'Get involved in %s' % st,
+                'Members of Congress for %s and their upcoming votes, elections, the state legislature, public meetings and party groups from every side.' % st,
+                [('The Way', '/'), ('Get Involved', '/get-involved/'), ('States', '/get-involved/states/'), (st, None)], '\n'.join(out))
+
+
+def states_index(rows, unplaced):
+    out = ['<header class="gv-hero"><p class="gw-eyebrow">Get Involved · Where you live</p><h1>Get involved where you live</h1>'
+           '<p class="gv-lede">Pick your state for your members of Congress and their upcoming votes, elections, the state legislature, public meetings and party groups from every side.</p></header>']
+    out.append('<section class="gv-sec"><ul class="gi-statelist">%s</ul></section>' % ''.join(
+        '<li><a href="%s.html">%s</a> <span class="gv-muted">%d party groups</span></li>' % (e(slug), e(st), n) for st, slug, n in rows))
+    out.append('<p class="gw-status">%d party committees in our FEC data are national, or are county and city parties whose state we do not have yet, so they are not on a state page yet.</p>' % unplaced)
+    return page('states/index.html', 'Get involved where you live', 'Every state and D.C.: members of Congress, upcoming votes, elections, legislature, public meetings and party groups from every side.',
+                [('The Way', '/'), ('Get Involved', '/get-involved/'), ('States', None)], '\n'.join(out))
+
+
 def main():
     data = json.load(open(os.path.join(os.path.dirname(__file__), 'upcoming.json'), encoding='utf-8'))
     people = read_members()
     by_bio = {p['bioguide']: p for p in people if p['bioguide']}
-    CTX.update(people=people, by_bio=by_bio, money=money_for(people), events=data['events'])
+    here = os.path.dirname(__file__)
+    lda = json.load(open(os.path.join(here, 'lda.json'), encoding='utf-8')) if os.path.exists(os.path.join(here, 'lda.json')) else {}
+    CTX.update(people=people, by_bio=by_bio, money=money_for(people), events=data['events'], lda=lda)
+    st_list = json.load(open(os.path.join(SITE, 'lookup', 'data', 'states.json'), encoding='utf-8'))
+    STATE_ABBR.update({x['name']: x['abbr'] for x in st_list})
+    ABBR_STATE.update({x['abbr']: x['name'] for x in st_list})
     bills = data['bills']
     os.makedirs(os.path.join(OUT, 'bills'), exist_ok=True)
     for old in glob.glob(os.path.join(OUT, 'bills', '*.html')):
@@ -867,6 +1142,22 @@ def main():
     for ev in data['events']:
         open(os.path.join(OUT, 'dates', ev['slug'] + '.html'), 'w', encoding='utf-8').write(event_page(ev, data))
     open(os.path.join(OUT, 'dates', 'index.html'), 'w', encoding='utf-8').write(dates_index(data))
+    write_web_data(bills, by_bio)
+    mt = json.load(open(os.path.join(here, 'meetings.json'), encoding='utf-8'))
+    open(os.path.join(OUT, 'meetings.html'), 'w', encoding='utf-8').write(meetings_page(mt))
+    sj = json.load(open(os.path.join(here, 'states.json'), encoding='utf-8'))
+    names = [x['name'] for x in st_list]
+    groups, unplaced = party_groups(names)
+    os.makedirs(os.path.join(OUT, 'states'), exist_ok=True)
+    rows = []
+    for x in st_list:
+        st, abbr = x['name'], x['abbr']
+        slug = re.sub(r'[^a-z]+', '-', st.lower()).strip('-')
+        ps = [p for p in people if p['state'] == st]
+        open(os.path.join(OUT, 'states', slug + '.html'), 'w', encoding='utf-8').write(
+            state_page(st, abbr, slug, ps, groups.get(st, []), sj['states'].get(abbr, {}), sj['checked']))
+        rows.append((st, slug, len(groups.get(st, []))))
+    open(os.path.join(OUT, 'states', 'index.html'), 'w', encoding='utf-8').write(states_index(rows, unplaced))
     n = update_member_pages(people, data, bills)
     print('Get Involved: %d bill pages, %d members, %d member pages updated' % (len(bills), len(people), n))
 

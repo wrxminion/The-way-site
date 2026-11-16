@@ -141,7 +141,7 @@ def main():
 
     def add_committee(cid, name, ctype, sched, rows, retrieved):
         c = pulled.setdefault(cid, {'name': None, 'type': None, 'receipts': None, 'disbursements': None, 'ies': [],
-                                    'retrieved': '', 'failed': set(), 'party': '', 'totals': None, 'why': '',
+                                    'retrieved': '', 'failed': set(), 'party': '', 'state': '', 'totals': None, 'why': '',
                                     'layer': 'main', 'candidate': None})
         c['name'] = c['name'] or name
         c['type'] = c['type'] or ctype
@@ -190,6 +190,7 @@ def main():
                                   'disbursements', c.get('disbursements') or [], c.get('disbursements_retrieved'))
                 p['ies'] = c.get('independent_expenditures') or p['ies']
                 p['party'] = c.get('party') or p['party']
+                p['state'] = c.get('state') or p['state']   # D282: the committee's mailing state, for Get Involved state pages
                 p['totals'] = c.get('totals') or p['totals']
                 p['why'] = c.get('why') or p['why']
                 p['layer'] = c.get('layer') or p['layer']
@@ -299,6 +300,8 @@ def main():
                            'retrieved': c['retrieved'] or committees.get(cid, {}).get('retrieved', ''), 'missing': missing}
         if bulk:
             committees[cid].update({'party': c['party'], 'totals': c['totals'], 'why': c['why'], 'retrieved': bulk_day + 'T00:00:00Z'})
+            if c.get('state'):
+                committees[cid]['state'] = c['state']
             if c['candidate']:
                 committees[cid]['candidate'] = c['candidate']
             if c['layer'] == 'more':
