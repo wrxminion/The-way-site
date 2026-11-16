@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "8abc1d60129daf4f",
+   "kind": "news",
+   "title": "Proposition 42 Leads in California’s Preliminary Vote Count-www.tokenpost.com",
+   "source": "www.tokenpost.com",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9DUGpCa2VLckdLNjZwOHBxMEN6a2pfWTVleTI4SUZHdGNNNXA2b1B6MjdsY2pvRkZYWXI4Nm16ejljX3REb2VVejlua1hsSUxVbnRNMkFnM1I3VDQ?oc=5",
+   "published_at": "2026-11-16",
+   "first_seen_at": "2026-11-16T15:50:25Z",
+   "states": [
+    "ca"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "ca-prop-42",
+     "kind": "measure",
+     "label": "Proposition 42: Ban on new property-ownership taxes: Bans new state taxes on owning financial assets and other personal property, and some retroactive taxes, California",
+     "page": "guide-ca/measures/prop-42.html"
+    }
+   ]
+  },
+  {
    "id": "7b02b7d9f59dd41d",
    "kind": "news",
    "title": "Voters pass Proposition 42, barring new taxes on personal assets",
@@ -650,5 +677,5 @@
    ]
   }
  ],
- "generated_at": "2026-11-14T06:06:58Z"
+ "generated_at": "2026-11-16T15:57:56Z"
 }
