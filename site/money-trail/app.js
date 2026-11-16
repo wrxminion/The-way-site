@@ -148,6 +148,7 @@ const hubs=['GOPAC ELECTION FUND','COMMON SENSE AMERICA ELECTION FUND','COMMON S
 // Committees whose FEC filings were pulled (fec-data.js) are hubs too.
 (RESEARCH.meta.fec_committees||[]).forEach(n=>{if(!hubs.includes(n))hubs.push(n)});
 (RESEARCH.meta.state_committees||[]).forEach(c=>{if(!hubs.includes(c.name))hubs.push(c.name)});
+(RESEARCH.meta.nonprofit_hubs||[]).forEach(n=>{if(!hubs.includes(n))hubs.push(n)}); // D280: nonprofits (nonprofits-view.js)
 function prepareHub(){let h=$('#hub');h.innerHTML=hubs.map(x=>`<option value="${escapeHtml(x)}">${escapeHtml(hubLabel(x))}</option>`).join('');h.value=graphHub;h.addEventListener('change',()=>{graphHub=h.value;graphScale=1;renderGraph()});$('#include-context').addEventListener('change',e=>{settings.includeContext=e.target.checked;renderGraph()})}
 const networkVerified=RESEARCH.transactions.map(t=>({id:t.transaction_id,from_name:t.source_name,to_name:t.recipient_name,from_entity_id:t.source_entity_id,to_entity_id:t.recipient_entity_id,amount_usd:t.amount_usd,date:t.transaction_date,date_kind:t.date_kind,jurisdiction:t.jurisdiction,edge_type:t.activity_type,confidence:t.confidence,source_url:t.filing_url,notes:t.notes,record_kind:'transaction',record_ref:t,tier:t.evidence_tier==='fec_filing'?'fec':'itemized'}));
 const networkContext=RESEARCH.graph_edges.filter(e=> !/itemized|verified_.*(contribution|payment)|state_ballot_cash_receipt|state_ballot_in_kind_receipt|state_party_receipt/i.test(e.edge_type||'')).map(e=>({...e,record_kind:'graph',tier:/reported|aggregate|major_contribution|attestation|snapshot/i.test(e.edge_type||'')?'reported':'context'}));
@@ -847,6 +848,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     ['measure', 'Ballot measures'],
     ['party', 'Party committees'],
     ['candidate', 'Candidates and candidate committees'],
+    ['nonprofit', 'Nonprofits and groups in IRS Form 990 returns'],
     ['media', 'Media companies, outlets and owners'],
     ['pac', 'PACs and Super PACs'],
     ['ballotcmte', 'Ballot measure committees'],
@@ -858,7 +860,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     ['other', 'Other names']
   ];
   // D249: media companies, the outlets they own, their owners and their company PACs (media-view.js).
-  const typeKind = ty => /^media|company PAC of a media/i.test(ty) ? 'media' : /party/i.test(ty) ? 'party' : /candidate/i.test(ty) ? 'candidate' : /ballot measure$/i.test(ty) ? 'measure'
+  // D280: nonprofits from IRS Form 990 returns (nonprofits-view.js), and the groups their returns name.
+  const typeKind = ty => /^Nonprofit, IRS|named on an IRS Form 990/i.test(ty) ? 'nonprofit' : /^media|company PAC of a media/i.test(ty) ? 'media' : /party/i.test(ty) ? 'party' : /candidate/i.test(ty) ? 'candidate' : /ballot measure$/i.test(ty) ? 'measure'
     : /ballot (support |opposition )?committee|issue committee|referendum committee|ballot_group|campaign committee/i.test(ty) ? 'ballotcmte'
     : /labor|education association|NEA/i.test(ty) ? 'union' : /\bPAC\b|political action|political committee|Committee \(FEC\)|hybrid|super pac/i.test(ty) ? 'pac'
     : /payee|vendor/i.test(ty) ? 'payee' : /municipal|public body|election authority/i.test(ty) ? 'gov'
@@ -1432,10 +1435,11 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if ((e.web && e.web.budget) || (window.TW_BUDGET_HUB && n === up(window.TW_BUDGET_HUB))) return 'budget';
     if (DEPT_BY.has(n) || GOV_TYPE.test(e.entity_type || '') || /^U\.S\. (HOUSE|SENATE) \(/.test(n)) return 'gov';
     if (MEDIA_HUBS.has(n) || /^media:/.test(e.id || '') || /media company/i.test(e.entity_type || '')) return 'media';
+    if (/^Nonprofit, IRS/.test(e.entity_type || '')) return 'nonprofit'; // D280
     if (isPerson(e)) return 'person';
     return e.entity_type ? 'org' : 'name';
   }
-  const LABEL = { law: 'Federal law followed on this page', budget: 'The federal budget', gov: 'Government office in the money web', media: 'Media company in the money web', person: 'Person named in the money web', name: 'Name in the money web' };
+  const LABEL = { law: 'Federal law followed on this page', budget: 'The federal budget', gov: 'Government office in the money web', media: 'Media company in the money web', nonprofit: 'Nonprofit in the money web (IRS Form 990)', person: 'Person named in the money web', name: 'Name in the money web' };
   const baseKind = kindLabel;
   kindLabel = function (e) {
     if (e && e.record_kind === 'entity') { const t = typeOf(e); if (LABEL[t]) return LABEL[t]; }
