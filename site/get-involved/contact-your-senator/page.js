@@ -1,5 +1,6 @@
 // Starts the Contact Your Senator tool (tool.js) on its public page. Gives it the small DOM helpers it uses.
 // The issue can be picked by link: ?issue=schumer-leader (or #schumer-leader).
+// data-chamber="house" on #cys runs it for the House (Contact Your Representative).
 (function () {
   'use strict';
   var box = document.getElementById('cys');
@@ -28,5 +29,5 @@
   var id = '';
   try { id = new URLSearchParams(location.search).get('issue') || ''; } catch (e) { id = ''; }
   if (!id && location.hash.length > 1) id = decodeURIComponent(location.hash.slice(1));
-  window.TheWaySenatorLetters.make({ h: h, render: render, notice: notice }).view(id);
+  window.TheWaySenatorLetters.make({ h: h, render: render, notice: notice, chamber: box.getAttribute('data-chamber') || 'senate' }).view(id);
 })();

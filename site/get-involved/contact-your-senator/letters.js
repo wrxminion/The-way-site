@@ -1,11 +1,12 @@
-/* Letter writer for the Contact Your Senator page.
+/* Letter writer for the Contact Your Senator and Contact Your Representative pages.
    Works for any issue in issues.js. Everything runs in the browser.
    Nothing is saved or sent. Facts and sources live in issues.js. */
 (function () {
   'use strict';
-  var D = window.SENATE_CONTACTS;
+  // The House page loads representatives.js only, so either data file may be the one here.
+  var D = window.SENATE_CONTACTS || window.HOUSE_CONTACTS || { states: {} };
   var VOTES = {};
-  D.votes.forEach(function (v) { VOTES[v.id] = v; });
+  (D.votes || []).forEach(function (v) { VOTES[v.id] = v; });
 
   function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
   function chance(p) { return Math.random() < p; }
@@ -26,17 +27,17 @@
 
   /* Optional "about you" lines. Only used when the writer picks one. */
   var WHO = {
-    veteran: ['As a veteran, I care a great deal about what happens in Washington.', 'I served in the military, and I take this seriously.', 'I am a veteran, and I pay close attention to how the Senate votes.'],
+    veteran: ['As a veteran, I care a great deal about what happens in Washington.', 'I served in the military, and I take this seriously.', 'I am a veteran, and I pay close attention to how {body} votes.'],
     parent: ['As a parent, I think about the country my kids will grow up in.', 'I am a parent, and I want leaders who think about the next generation.', 'I have kids at home, and I pay attention to decisions made for them.'],
-    business: ['I run a small business in {town}.', 'As a small business owner, I watch closely what the Senate does.', 'I own a small business, and what the Senate does reaches my bottom line.'],
-    retiree: ['I am retired, and I have voted in a lot of elections.', 'As a retiree, I have seen a lot of Senates come and go.', 'I am retired and follow the Senate closely.'],
+    business: ['I run a small business in {town}.', 'As a small business owner, I watch closely what {body} does.', 'I own a small business, and what {body} does reaches my bottom line.'],
+    retiree: ['I am retired, and I have voted in a lot of elections.', 'As a retiree, I have seen a lot of Congresses come and go.', 'I am retired and follow {body} closely.'],
     student: ['I am a student, and this is the future I will live in.', 'As a student, I am paying close attention.', 'I am a student, and I care about where the country goes next.'],
-    teacher: ['I am a teacher, and I teach my students that leaders answer to the people.', 'As a teacher, I care about what kind of country my students inherit.', 'I teach school, and I follow what happens in the Senate.'],
-    health: ['I work in health care, and I see every day how Senate decisions reach real people.', 'As a nurse and health worker, I care about what the Senate does.', 'I work in health care in {state}.'],
-    farmer: ['I farm and ranch in {state}, and Washington decisions reach us fast.', 'As a farmer, I care about what the Senate does.', 'I work the land here in {state}.'],
-    union: ['I am a union member, and I care about who speaks for working people.', 'As a union member, I follow how the Senate votes.', 'I belong to a union here in {state}.'],
+    teacher: ['I am a teacher, and I teach my students that leaders answer to the people.', 'As a teacher, I care about what kind of country my students inherit.', 'I teach school, and I follow what happens in {body}.'],
+    health: ['I work in health care, and I see every day how decisions in Congress reach real people.', 'As a nurse and health worker, I care about what {body} does.', 'I work in health care in {state}.'],
+    farmer: ['I farm and ranch in {state}, and Washington decisions reach us fast.', 'As a farmer, I care about what {body} does.', 'I work the land here in {state}.'],
+    union: ['I am a union member, and I care about who speaks for working people.', 'As a union member, I follow how {body} votes.', 'I belong to a union here in {state}.'],
     worker: ['I work hard for a living, and I want leaders who remember people like me.', 'I am a working person in {state}.', 'I punch a clock like a lot of people in {state}.'],
-    firstvote: ['I am a new voter, and this is one of my first letters to a senator.', 'I just started voting, and I want my voice heard.', 'I am new to voting, and I want to be part of this decision.']
+    firstvote: ['I am a new voter, and this is one of my first letters to {aone}.', 'I just started voting, and I want my voice heard.', 'I am new to voting, and I want to be part of this decision.']
   };
 
   var REASON_LEAD = ['In my own words:', 'Here is why this matters to me:', 'My reasons:', 'What I want you to know:', 'Why I feel this way:', 'This is what I think:', ''];
@@ -45,8 +46,9 @@
     var c = {
       issue: issue, sen: sen, stance: stance, pro: stance === 'for',
       special: (issue.special || {})[sen.id] || null,
-      S: 'Senator ' + sen.last, full: 'Senator ' + sen.name, last: sen.last,
-      state: D.states[sen.st], since: sen.since,
+      T: sen.title || 'Senator', S: (sen.title || 'Senator') + ' ' + sen.last, full: (sen.title || 'Senator') + ' ' + sen.name, last: sen.last,
+      body: sen.title ? 'the House' : 'the Senate', aone: sen.title ? 'a member of Congress' : 'a senator',
+      state: sen.stateName || (D.states || {})[sen.st], since: sen.since,
       name: (opts.name || '').trim() || '[Your name]',
       town: (opts.town || '').trim() || '[your town]',
       reasons: (opts.reasons || '').replace(/\r/g, '').trim(),
@@ -110,9 +112,9 @@
   }
   function sinceLine(c) {
     if (c.special || !c.since) return '';
-    return pick(['Thank you for serving ' + c.state + ' in the Senate since ' + c.since + '.',
+    return pick(['Thank you for serving ' + c.state + ' in ' + c.body + ' since ' + c.since + '.',
       'You have represented ' + c.state + ' since ' + c.since + ', and I appreciate your work.',
-      'I have followed your work for ' + c.state + ' since you joined the Senate in ' + c.since + '.']);
+      'I have followed your work for ' + c.state + ' since you joined ' + c.body + ' in ' + c.since + '.']);
   }
 
   /* What a senator has said in public on this issue, when a source reported it. */
@@ -280,12 +282,12 @@
     { key: 'forward', label: 'Looking ahead', build: function (c) {
       return join([
         pick(['Dear ' + c.S + ',', c.S + ',']),
-        para([pick(['The next two years matter a great deal.', 'I am thinking about what comes next.', 'What the Senate does now will shape the years ahead.']), constituent(c), whoLine(c)]),
+        para([pick(['The next two years matter a great deal.', 'I am thinking about what comes next.', 'What ' + c.body + ' does now will shape the years ahead.']), constituent(c), whoLine(c)]),
         para([ask(c), viewLine(c)]),
         stanceLine(c),
         factsBlock(c, ['Here is what I am looking at:', 'What I have read so far:', '']),
         reasonsBlock(c, pick(['What I hope for:', 'What matters to me going forward:', ''])),
-        pick(['I am hopeful about what the Senate can do next.', 'I look forward to seeing what you do with this moment.', 'Thank you for helping shape what comes next.']),
+        pick(['I am hopeful about what ' + c.body + ' can do next.', 'I look forward to seeing what you do with this moment.', 'Thank you for helping shape what comes next.']),
         sign(c, pick(['Hopefully,', 'Thank you,', 'Best,']))
       ]);
     } },
@@ -355,7 +357,7 @@
     if (!r || r.type !== 'rollcall' || !c.record || c.self) return '';
     var cast = castFor(c.issue, c.sen);
     if (cast !== 'Yea' && cast !== 'Nay') return '';
-    return 'Senator ' + c.last + ' voted ' + (cast === 'Yea' ? 'yes' : 'no') + ' on ' + r.what + ' on ' + r.date + ' (Senate roll call).';
+    return c.S + ' voted ' + (cast === 'Yea' ? 'yes' : 'no') + ' on ' + r.what + ' on ' + r.date + ' (Senate roll call).';
   }
   function callBuild(issue, sen, stance, opts) {
     opts = opts || {};
@@ -368,12 +370,12 @@
     var own = reasonLines(c);
     var rec = phoneRecord(c);
     var points = clean([hello + (c.who && WHO[c.who] ? ' ' + whoLine(c) : ''), 'My ask: ' + want]
-      .concat(facts, rec ? [rec] : [], views, own, ['Thank you. Could you please pass my view on to Senator ' + c.last + '?']));
+      .concat(facts, rec ? [rec] : [], views, own, ['Thank you. Could you please pass my view on to ' + c.S + '?']));
     /* Voicemail: who you are, the ask, one or two key points, thank you. */
     var key = c.facts.slice(0, 2).map(function (f) { return fill(f.text, c); });
     if (!key.length) key = own.slice(0, 1).concat(views).slice(0, 2);
     var voicemail = para([hello, whoLine(c), 'I am calling about ' + c.topic + '.', want].concat(key, [
-      'My ZIP code is [your ZIP code].', 'Thank you for passing my message on to Senator ' + c.last + '.']));
+      'My ZIP code is [your ZIP code].', 'Thank you for passing my message on to ' + c.S + '.']));
     return { points: points, voicemail: tidy(voicemail).trim(), want: want };
   }
   /* The short script in the letter section is the same voicemail. */

@@ -693,6 +693,8 @@ def landing(data, bills):
          'bills/', 'See upcoming votes'),
         ('Your voice', 'Contact Your Senator', 'Pick an issue and where you stand, and build a letter to your senators with sourced facts. Copy it, then send it through their contact form or call their office.',
          'contact-your-senator/', 'Write to your senators'),
+        ('Your voice', 'Contact Your Representative', 'The same letter and call script writer for your member of the House. First issue: should Hakeem Jeffries lead House Democrats as Speaker? Yes or no, with sourced facts on both sides.',
+         'contact-your-representative/', 'Write to your House member'),
         ('Your voice', 'Contact your representatives', 'Phone numbers, contact forms and websites for your two senators and your member of the House, state by state.',
          'reps.html', 'Find your representatives'),
         ('Your area', 'Votes where you live', 'Coming next: upcoming state and local votes for your state, county and district. For now, find your district and your county election office.',

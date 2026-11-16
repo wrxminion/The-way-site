@@ -12,16 +12,25 @@ const VOTES_PAGE = '/government/congress/votes.html';
 
 function make(ctx) {
   const { h, render, notice } = ctx;
+  // One tool, two pages: the Senate page (senators.js) and the House page (representatives.js, ctx.chamber 'house').
+  // Each issue in issues.js says its chamber ('senate' when not set); each page shows only its own issues.
+  const HOUSE = ctx.chamber === 'house';
+  const W = HOUSE
+    ? { title: 'Representative', one: 'representative', pick: 'Pick your representative', any: 'Or any House member', choose: 'Choose a House member', since: 'in the House since', form: 'Website' }
+    : { title: 'Senator', one: 'senator', pick: 'Pick your senator', any: 'Or any senator', choose: 'Choose a senator', since: 'in the Senate since', form: 'Contact form' };
 
   function view(issueId) {
-    const D = window.SENATE_CONTACTS, L = window.CSLetters, ISSUES = window.CS_ISSUES;
+    const D = HOUSE ? window.HOUSE_CONTACTS : window.SENATE_CONTACTS, L = window.CSLetters;
+    const ISSUES = (window.CS_ISSUES || []).filter((i) => (i.chamber || 'senate') === (HOUSE ? 'house' : 'senate'));
     if (!D || !L || !ISSUES || !ISSUES.length) { render(notice('The letter tool did not load. The page may be out of date; please reload it.')); return; }
     tool(D, L, ISSUES, issueId || '');
   }
 
   function tool(D, L, ISSUES, startId) {
+    const MEMBERS = D.members || D.senators;
+    const titleOf = (s) => s.title || W.title;
     const byId = {}, byIssue = {};
-    D.senators.forEach((s) => { byId[s.id] = s; });
+    MEMBERS.forEach((s) => { byId[s.id] = s; });
     ISSUES.forEach((i) => { byIssue[i.id] = i; });
     let issue = byIssue[startId] || ISSUES[0], chosen = null, lastVoice = '';
     // 'letter' or 'call': what the reader asked for, from the Write or Call script button.
@@ -48,8 +57,8 @@ function make(ctx) {
     const issueSel = h('select', { id: 'cs-issue' }, ISSUES.map((i) => h('option', { value: i.id, text: i.menu })));
     const stateSel = h('select', { id: 'cs-state' }, h('option', { value: '', text: 'Choose a state' }),
       Object.keys(D.states).sort((a, b) => D.states[a].localeCompare(D.states[b])).map((k) => h('option', { value: k, text: D.states[k] })));
-    const senSel = h('select', { id: 'cs-senator' }, h('option', { value: '', text: 'Choose a senator' }),
-      D.senators.slice().sort((a, b) => a.last.localeCompare(b.last)).map((s) => h('option', { value: s.id, text: `${s.name} (${s.party}-${s.st})` })));
+    const senSel = h('select', { id: 'cs-senator' }, h('option', { value: '', text: W.choose }),
+      MEMBERS.slice().sort((a, b) => a.last.localeCompare(b.last)).map((s) => h('option', { value: s.id, text: `${s.name} (${s.party}-${s.st}${HOUSE && s.title === 'Representative' ? '-' + (s.district || 'AL') : ''})` })));
     const panel = h('div', { class: 'cs-issue', 'aria-live': 'polite' });
     const cards = h('div', { class: 'cs-cards', 'aria-live': 'polite' });
     const question = h('span', { text: '' });
@@ -218,7 +227,7 @@ function make(ctx) {
       factBoxes = side.concat(either);
       viewBoxes = issue.views[st].map((v, i) => Object.assign(box(v, i === 0), { text: v }));
       const hasRecord = issue.record && !self && (issue.record.type === 'breaks' ? !!chosen.breaks : !!L.castFor(issue, chosen));
-      recordBox = hasRecord ? box(`Mention how Senator ${chosen.last} voted (from the official roll call, with the link)`, true) : null;
+      recordBox = hasRecord ? box(`Mention how ${titleOf(chosen)} ${chosen.last} voted (from the official roll call, with the link)`, true) : null;
       picks.replaceChildren(...[
         h('p', { class: 'cs-small', text: 'Every checked fact goes into the letter with its source: the outlet, the date and the link, so the office can check it. Uncheck anything you do not want to use.' }),
         group(`Facts for your side: ${issue.labels[st]}`, side),
@@ -235,8 +244,8 @@ function make(ctx) {
       const on = chosen && chosen.id === s.id;
       return h('div', { class: 'cs-card' + (on ? ' cs-on' : '') },
         h('h4', null, nameLink(s)),
-        h('p', { class: 'cs-sub', text: `${partyWord(s.party)}, ${D.states[s.st]}${s.since ? ' · in the Senate since ' + s.since : ''}` }),
-        h('p', { class: 'cs-links' }, h('a', { class: 'cs-btn', href: tel(s.phone), text: 'Call ' + s.phone }), ext('Contact form', s.form, 'cs-btn')),
+        h('p', { class: 'cs-sub', text: `${partyWord(s.party)}, ${s.seat || D.states[s.st]}${s.since ? ' · ' + W.since + ' ' + s.since : ''}` }),
+        h('p', { class: 'cs-links' }, h('a', { class: 'cs-btn', href: tel(s.phone), text: 'Call ' + s.phone }), ext(W.form, s.form, 'cs-btn')),
         h('p', { class: 'cs-small', text: s.office + ', Washington, DC 20510' }),
         h('p', { class: 'cs-small' }, s.page ? own('Their page and votes', pageOf(s) + '#votes') : null, s.page && s.web ? ' · ' : '', s.web ? own('Money web', s.web) : null),
         cast ? h('p', { class: 'cs-record' }, `${castWord(cast)}${issue.record.short ? ' ' + issue.record.short : ''} on ${issue.record.date}: `,
@@ -245,9 +254,9 @@ function make(ctx) {
           ? h('p', { class: 'cs-card-go' },
             h('button', { type: 'button', class: 'cs-btn cs-main', text: (on && mode === 'letter' ? 'Writing to ' : 'Write to ') + s.last, onclick: () => { setMode('letter'); choose(s, true); } }),
             h('button', { type: 'button', class: 'cs-btn', text: 'Call script for ' + s.last, onclick: () => { setMode('call'); choose(s, true); } }))
-          : h('p', { class: 'cs-note', text: `Senator ${s.last} is a Republican. Only Democratic senators and the two independents who work with them vote on this. You can still call or write about anything else, or pick another issue above.` }));
+          : h('p', { class: 'cs-note', text: HOUSE ? `${titleOf(s)} ${s.last} is a Republican. Only House Democrats vote on this. You can still call or write about anything else.` : `Senator ${s.last} is a Republican. Only Democratic senators and the two independents who work with them vote on this. You can still call or write about anything else, or pick another issue above.` }));
     }
-    const listForState = (st) => D.senators.filter((s) => s.st === st);
+    const listForState = (st) => MEMBERS.filter((s) => s.st === st);
     function currentList() {
       if (stateSel.value) return listForState(stateSel.value);
       const s = byId[senSel.value];
@@ -289,7 +298,7 @@ function make(ctx) {
 
     function write() {
       const st = rFor.checked ? 'for' : rAgainst.checked ? 'against' : '';
-      if (!chosen) { status.textContent = 'Pick a senator first.'; return; }
+      if (!chosen) { status.textContent = `Pick a ${W.one} first.`; return; }
       if (!st) {
         const o = mode === 'call' ? callOut : out;
         (mode === 'call' ? callStatus : status).textContent = 'Pick a side first.';
@@ -304,24 +313,24 @@ function make(ctx) {
       lastVoice = r.voice;
       subject.value = r.subject;
       letter.value = r.body;
-      voiceLine.textContent = `To Senator ${chosen.name} · ${issue.labels[st]} · ${o.facts.length} ${o.facts.length === 1 ? 'fact' : 'facts'} with sources · Voice: ${r.label}${o.voice ? '' : ' (picked at random)'}`;
+      voiceLine.textContent = `To ${titleOf(chosen)} ${chosen.name} · ${issue.labels[st]} · ${o.facts.length} ${o.facts.length === 1 ? 'fact' : 'facts'} with sources · Voice: ${r.label}${o.voice ? '' : ' (picked at random)'}`;
       openForm.href = chosen.form;
       callBtn.href = tel(chosen.phone);
       callBtn.textContent = 'Call ' + chosen.phone;
-      tip.textContent = `Senator ${chosen.last}'s form may only accept messages from people who live in ${D.states[chosen.st]}. It will ask for your address. If you live somewhere else, a phone call works from any state. Fill in anything in [brackets], read the letter over, and change anything that does not sound like you.`;
+      tip.textContent = HOUSE ? `Most House offices take messages only through the contact page on their website, and only from people who live in their district. It will ask for your address. ${titleOf(chosen)} ${chosen.last}'s website: ${chosen.site}. A phone call works too. Fill in anything in [brackets], read the letter over, and change anything that does not sound like you.` : `Senator ${chosen.last}'s form may only accept messages from people who live in ${D.states[chosen.st]}. It will ask for your address. If you live somewhere else, a phone call works from any state. Fill in anything in [brackets], read the letter over, and change anything that does not sound like you.`;
       status.textContent = '';
       callOut.hidden = true;
       out.hidden = false;
     }
     function writeCall(st, o) {
       const r = L.callBuild(issue, chosen, st, o);
-      callTo.textContent = `To Senator ${chosen.name}'s Washington office · ${issue.labels[st]} · ${o.facts.length} ${o.facts.length === 1 ? 'fact' : 'facts'}`;
+      callTo.textContent = `To ${titleOf(chosen)} ${chosen.name}'s Washington office · ${issue.labels[st]} · ${o.facts.length} ${o.facts.length === 1 ? 'fact' : 'facts'}`;
       callPhone.href = tel(chosen.phone);
       callPhone.textContent = 'Call ' + chosen.phone;
       callPoints.replaceChildren(...r.points.map((x) => h('li', { text: x })));
       voicemail.value = r.voicemail;
-      callTip.textContent = `Calls work from any state. Staff may ask for your name and ZIP code. Fill in anything in [brackets], and say it in your own words if you like. Senator ${chosen.last}'s contact form is here if you would rather write: `;
-      callTip.append(ext('Open their form', chosen.form));
+      callTip.textContent = `Calls work from any state. Staff may ask for your name and ZIP code. Fill in anything in [brackets], and say it in your own words if you like. ${titleOf(chosen)} ${chosen.last}'s ${HOUSE ? 'website' : 'contact form'} is here if you would rather write: `;
+      callTip.append(ext(HOUSE ? 'Open their website' : 'Open their form', chosen.form));
       callStatus.textContent = '';
       out.hidden = true;
       callOut.hidden = false;
@@ -340,34 +349,46 @@ function make(ctx) {
       else fallback();
     }
 
-    // All 100 senators
+    // Everyone in this chamber
     const table = h('div', { class: 'cs-table-wrap' }, h('table', { class: 'cs-table' },
-      h('thead', null, h('tr', null, ['State', 'Senator', 'Phone', 'Contact'].map((t) => h('th', { scope: 'col', text: t })))),
-      h('tbody', null, D.senators.map((s) => h('tr', null,
-        h('td', { text: D.states[s.st] }),
+      h('thead', null, h('tr', null, ['State', HOUSE ? 'Member' : 'Senator', 'Phone', 'Contact'].map((t) => h('th', { scope: 'col', text: t })))),
+      h('tbody', null, MEMBERS.map((s) => h('tr', null,
+        h('td', { text: HOUSE ? s.seat : D.states[s.st] }),
         h('td', null, nameLink(s), ' ', h('span', { class: 'cs-party', text: `(${s.party})` })),
         h('td', null, h('a', { href: tel(s.phone), text: s.phone })),
-        h('td', null, ext('Contact form', s.form)))))));
+        h('td', null, ext(W.form, s.form)))))));
 
-    render(h('div', { class: 'cs-admin' },
-      h('p', { class: 'cs-neutral' }, h('strong', { text: 'The Way takes no side. ' }), 'For each issue we searched for the arguments on both sides and publish every one we could tie to a source, the same way for both sides. You pick which ones go in your letter, and each one carries its source.'),
-      h('div', { class: 'cs-step' }, h('h3', null, num(1), 'Pick an issue'), field('Issue or vote', issueSel, true), panel),
-      h('div', { class: 'cs-step' }, h('h3', null, num(2), 'Pick your senator'),
-        h('div', { class: 'cs-row' }, field('Your state', stateSel), field('Or any senator', senSel)), cards),
-      step2, out, callOut,
-      h('h2', { text: 'Why it cannot fill in their form' }),
-      h('p', { text: 'Each senator runs a different form on their own website. Ten of them were tested on November 15, 2026 by putting text in the link, and none filled it in. Most ask for your street address and ZIP code, many say they only answer people who live in their state, and some use a robot check. So the tool gives Copy letter, Open their form and Call instead.' }),
-      h('h2', { text: 'How the facts are chosen' }),
-      h('ul', null,
+    const formWhy = HOUSE
+      ? h('p', { text: 'House offices take messages through the contact page on their own website. Most ask for your street address and ZIP code and answer only people who live in their district. So the tool gives Copy letter, Open their website and Call instead.' })
+      : h('p', { text: 'Each senator runs a different form on their own website. Ten of them were tested on November 15, 2026 by putting text in the link, and none filled it in. Most ask for your street address and ZIP code, many say they only answer people who live in their state, and some use a robot check. So the tool gives Copy letter, Open their form and Call instead.' });
+    const howList = HOUSE
+      ? h('ul', null,
+        h('li', { text: 'We searched news reports, official records (House roll calls, FEC filings) and statements from both sides, and kept every point we could tie to a source. Some issues have more points on one side, because the record has more. We do not pad the thinner side.' }),
+        h('li', { text: 'Every fact you check goes into the letter with its source written out: outlet, date and link.' }),
+        h('li', null, 'Do not know your district? The House has a lookup by ZIP code: ', ext('Find your representative (house.gov) ↗', 'https://www.house.gov/representatives/find-your-representative'), '.'),
+        h('li', { text: 'This list shows the House members in office now (the 119th Congress). Members elected on November 3 who are not in office yet have no Washington office until January; reach them through their campaign.' }))
+      : h('ul', null,
         h('li', { text: 'We searched news reports, official records (Senate roll calls, bill text, FEC filings) and statements from both sides, and kept every point we could tie to a source. Some issues have more points on one side, because the record has more. We do not pad the thinner side.' }),
         h('li', { text: 'Every fact you check goes into the letter with its source written out: outlet, date and link.' }),
         h('li', null, 'Every vote count links to ', own('our page for that vote', VOTES_PAGE), ', which shows how every senator voted and links to the official roll call on senate.gov so you can check us. A voice vote has no roll call, so it links to the official record of the action.'),
         h('li', { text: 'When the Senate has already voted, the card and the letter can say how that senator voted, from the official roll call.' }),
         h('li', { text: 'For the Democratic leader vote, a letter can name a vote where that senator broke from most Democratic senators (nine official roll calls from 2025 and 2026; close splits left out).' }),
-        h('li', { text: 'Only the Senate is covered. House members are not listed, because all 435 House contacts could not be checked yet.' }),
-        null),
-      h('h2', { text: 'All 100 senators' }),
-      h('p', { class: 'muted small', text: `Washington office phone and official contact page, checked on senate.gov on ${D.checked}. No senator lists a public email address. Each name opens that senator's page on The Way, with the Senate votes we track.` }),
+        h('li', null, 'For the House, use ', own('Contact Your Representative', '/get-involved/contact-your-representative/'), '.'));
+
+    render(h('div', { class: 'cs-admin' },
+      h('p', { class: 'cs-neutral' }, h('strong', { text: 'The Way takes no side. ' }), 'For each issue we searched for the arguments on both sides and publish every one we could tie to a source, the same way for both sides. You pick which ones go in your letter, and each one carries its source.'),
+      h('div', { class: 'cs-step' }, h('h3', null, num(1), 'Pick an issue'), field('Issue or vote', issueSel, true), panel),
+      h('div', { class: 'cs-step' }, h('h3', null, num(2), W.pick),
+        h('div', { class: 'cs-row' }, field('Your state', stateSel), field(W.any, senSel)), cards),
+      step2, out, callOut,
+      h('h2', { text: HOUSE ? 'Why it cannot fill in their contact page' : 'Why it cannot fill in their form' }),
+      formWhy,
+      h('h2', { text: 'How the facts are chosen' }),
+      howList,
+      h('h2', { text: HOUSE ? `All ${MEMBERS.length} House members` : 'All 100 senators' }),
+      h('p', { class: 'muted small', text: HOUSE
+        ? `Washington office phone and website for every House member, from the congress-legislators public dataset (checked ${D.checked}). Each name opens that member's page on The Way.`
+        : `Washington office phone and official contact page, checked on senate.gov on ${D.checked}. No senator lists a public email address. Each name opens that senator's page on The Way, with the Senate votes we track.` }),
       table));
 
     if (startId && byIssue[startId]) issueSel.value = startId;

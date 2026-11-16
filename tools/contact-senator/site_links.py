@@ -32,15 +32,15 @@ def _fec_data():
     return json.JSONDecoder().raw_decode(t[i:])[0]
 
 
-def money_links(fec_ids):
-    """fec_ids: Bioguide ID -> list of FEC candidate IDs (from congress-legislators)."""
+def money_links(fec_ids, office='S'):
+    """fec_ids: Bioguide ID -> list of FEC candidate IDs (from congress-legislators). office: 'S' senators, 'H' House."""
     cand = {f: b for b, ids in fec_ids.items() for f in ids}
     found = {}
 
     def take(c, loaded):
         ca = c.get('candidate') or {}
         b = cand.get(ca.get('id'))
-        if not b or ca.get('office') != 'S' or c.get('committee_type') != 'Senate':
+        if not b or ca.get('office') != office or c.get('committee_type') != ('Senate' if office == 'S' else 'House'):
             return
         rec = (c.get('totals') or {}).get('receipts') or 0
         if b not in found or rec > found[b][2]:

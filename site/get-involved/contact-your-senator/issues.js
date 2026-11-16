@@ -54,9 +54,155 @@
   var MILCOM = c('Military.com', 'November 12, 2026', 'https://www.military.com/major-richard-star-act-passes-house-all-democrats-support-18-republicans-oppose');
   var ACTIONS_9237 = 'https://www.congress.gov/bill/119th-congress/house-bill/9237/all-actions';
 
+  /* House Speaker: Hakeem Jeffries (House page). */
+  var NW_REVOLT = c('Newsweek', 'November 2026', 'https://www.newsweek.com/jeffries-path-to-house-speaker-raises-specter-of-mccarthy-style-revolt-12697313');
+  var NW_PET = c('Newsweek', 'November 5, 2026', 'https://www.newsweek.com/petition-to-replace-jeffries-hits-500k-as-ruffalo-wades-in-12668658');
+  var PUNCH = c('Punchbowl News', 'November 4, 2026', 'https://punchbowl.news/article/house/jeffries-speaker/');
+  var ABC7 = c('ABC News live updates via ABC7', 'November 4, 2026', 'https://abc7news.com/live-updates/midterm-elections-2026-live-updates-election-results-key-races-us/20001292/entry/20016171/');
+  var REUTERS = c('Reuters via GV Wire', 'November 3, 2026', 'https://gvwire.com/2026/11/03/hakeem-jeffries-poised-to-become-speaker-of-us-house-of-representatives/');
+  var UPRISE = c('Uprise RI', 'November 10, 2026', 'https://upriseri.com/article/as-dem-house-leader-faces-fierce-opposition-incoming-congressman-says-jeffries-allies-threatened-him/');
+  var SEMAFOR = c('Semafor', 'July 7, 2026', 'https://www.semafor.com/article/07/07/2026/why-hakeem-jeffries-may-not-have-a-vote-problem');
+  var NEWARAB = c('The New Arab', 'November 6, 2026', 'https://www.newarab.com/news/mamdani-speaks-out-us-petition-against-hakeem-jeffries-surges');
+  var CDJ = c('Common Dreams', 'November 7, 2026', 'https://www.commondreams.org/news/petition-opposing-hakeem-jeffries-for-speaker');
+  var SLUDGE_J = c('Sludge', 'November 4, 2026', 'https://readsludge.com/2026/11/04/the-money-behind-hakeem-jeffries/');
+  var PETITION = c('Change.org petition page', 'read November 8, 2026', 'https://www.change.org/p/house-democrats-choose-a-new-speaker');
+  var house = function (year, n, date) { return c('House roll call ' + n + ' of ' + year + ' (Office of the Clerk)', date, 'https://clerk.house.gov/evs/' + year + '/roll' + ('00' + n).slice(-3) + '.xml'); };
+
   var SEARCHED = 'How we built this list: we searched news reports from outlets across the spectrum, official records (Senate roll calls, bill text, FEC filings) and statements from people on both sides, and we kept every point we could tie to a source. We publish both sides the same way and do not take a side. ';
 
   window.CS_ISSUES = [
+
+  {
+    id: 'jeffries-speaker',
+    chamber: 'house',
+    menu: 'House Speaker: Hakeem Jeffries (Yes Jeffries / No Jeffries)',
+    title: 'Should Hakeem Jeffries lead House Democrats as Speaker?',
+    status: 'House Democrats vote on their leader on November 18, 2026 (closed vote). The full House elects the Speaker on January 3, 2027.',
+    summary: [
+      'Democrats won the House majority on November 3. Representative Hakeem Jeffries, who leads House Democrats now, asked his colleagues on November 4 to back him for Speaker (ABC News, Punchbowl News).',
+      'House Democrats pick their leader in a closed vote on November 18 (Punchbowl News, Newsweek). Then the whole House, both parties, elects the Speaker when the new Congress meets on January 3, 2027 (Newsweek). No one has said they will run against him (Newsweek, Reuters).'
+    ],
+    searched: 'How we built this list: we searched news reports from outlets across the spectrum, House roll calls and FEC filings, and statements from people on both sides, and we kept every point we could tie to a source. We publish both sides the same way and do not take a side. Searched November 8 to 16, 2026. Representative Jeffries\'s own House votes are listed for either side to use. Some reports below quote other outlets; we say so where they do.',
+    subject: 'J000294',
+    about: {
+      id: 'J000294',
+      title: 'About Hakeem Jeffries',
+      facts: [
+        { cite: [c('congress-legislators dataset (official records)', 'snapshot November 15, 2026', 'https://github.com/unitedstates/congress-legislators')],
+          text: 'U.S. Representative for New York\'s 8th District, in Brooklyn and Queens, since January 2013.' },
+        { cite: [NW_REVOLT],
+          text: 'He has led House Democrats as minority leader since January 2023.' },
+        { cite: [REUTERS],
+          text: 'He is 56. Reuters describes him as known as a consensus-builder.' },
+        { cite: [SLUDGE_J],
+          text: 'Sludge reports that executives at Anduril and Palantir, crypto industry advocates and investors giving through AIPAC helped fund him as he prepares to become Speaker.' }
+      ]
+    },
+    voters: 'all',
+    question: 'Are you for or against Hakeem Jeffries as Speaker?',
+    labels: { for: 'Yes Jeffries', against: 'No Jeffries' },
+    eitherLabel: 'Representative Jeffries\'s House votes (official roll calls)',
+    topic: ['the vote for House Speaker', 'who should lead House Democrats', 'the Speaker vote'],
+    asks: {
+      for: ['Please support Hakeem Jeffries for Speaker, in the House Democratic leader vote on November 18 and on the House floor on January 3.',
+        'I ask you to vote for Hakeem Jeffries for Speaker of the House.',
+        'When the House chooses its Speaker, I hope you will vote for Hakeem Jeffries.',
+        'I am writing to ask you to back Hakeem Jeffries as the next Speaker.'],
+      forShort: ['Please vote for Hakeem Jeffries for Speaker.', 'Back Jeffries for Speaker.'],
+      against: ['Please do not vote for Hakeem Jeffries for Speaker, in the House Democratic leader vote on November 18 or on the House floor on January 3.',
+        'I ask you to support someone other than Hakeem Jeffries for Speaker.',
+        'When the House chooses its Speaker, I hope you will choose someone other than Hakeem Jeffries.',
+        'I am writing to ask you to support a change in House Democratic leadership.'],
+      againstShort: ['Please do not vote for Jeffries for Speaker.', 'Choose someone else for Speaker.']
+    },
+    special: {
+      J000294: {
+        for: ['I support you for Speaker, and I hope your colleagues back you on November 18 and January 3.', 'Please keep leading House Democrats. I am behind you for Speaker.'],
+        forShort: ['I support you for Speaker.', 'I want you to lead the House.'],
+        against: ['I respectfully ask you not to seek the Speaker job, and to let someone new lead House Democrats.', 'I ask you to step aside as leader of House Democrats.'],
+        againstShort: ['I think it is time for someone new to lead House Democrats.', 'Please step aside as leader.'],
+        subject: { for: ['I support you for Speaker', 'Behind you for Speaker'], against: ['Please step aside as leader', 'Time for new House Democratic leadership'] },
+        call: { for: 'I support Representative Jeffries becoming Speaker.', against: 'I would like Representative Jeffries to step aside as leader of House Democrats.' }
+      }
+    },
+    subjects: {
+      for: ['Please vote for Hakeem Jeffries for Speaker', 'Yes on Jeffries for Speaker', 'The Speaker vote', 'From a constituent in {state}: support Jeffries', 'My view on the Speaker vote'],
+      against: ['Please choose someone other than Jeffries for Speaker', 'No on Jeffries for Speaker', 'The Speaker vote', 'From a constituent in {state}: new House leadership', 'My view on the Speaker vote']
+    },
+    call: { for: 'I would like {S} to vote for Hakeem Jeffries for Speaker.', against: 'I would like {S} to vote for someone other than Hakeem Jeffries for Speaker.' },
+    facts: {
+      for: [
+        { id: 'jmajority', on: true, cite: [NW_REVOLT],
+          text: 'Democrats won the House majority on November 3 under his leadership. Newsweek counted at least 254 Democrats to 165 Republicans, with some races still undecided.',
+          you: 'Democrats won the House majority on November 3 under your leadership. Newsweek counted at least 254 Democrats to 165 Republicans, with some races still undecided.' },
+        { id: 'jnochallenger', on: true, cite: [NW_REVOLT, REUTERS],
+          text: 'No one has said they will run against him. Newsweek calls him uncontested so far and expected to win the nomination, and Reuters reports that no one is seen posing a serious threat, according to multiple Democratic aides.',
+          you: 'No one has said they will run against you. Newsweek calls you uncontested so far and expected to win the nomination, and Reuters reports that no one is seen posing a serious threat, according to multiple Democratic aides.' },
+        { id: 'jletter', cite: [NW_PET],
+          text: 'In his letter asking for votes, he wrote: "Against all odds, House Democrats were consistently successful in the minority. We must now deliver the dramatic change the American people are demanding in the majority." (Politico, as quoted by Newsweek)',
+          you: 'In your letter asking for votes, you wrote that House Democrats "were consistently successful in the minority" and must now "deliver the dramatic change the American people are demanding in the majority." (Politico, as quoted by Newsweek)' },
+        { id: 'jhimes', cite: [UPRISE],
+          text: 'Representative Jim Himes said Jeffries "absolutely will be speaker." (Axios, as quoted by Uprise RI)' },
+        { id: 'jmamdani', cite: [NEWARAB, NW_PET],
+          text: 'New York City Mayor Zohran Mamdani said: "I continue to support Congressman Jeffries and his bid to become the leader."' },
+        { id: 'jcasar', cite: [UPRISE],
+          text: 'Progressive Caucus chair Greg Casar said the caucus would deliver votes for Jeffries. (Drop Site News, as quoted by Uprise RI)' },
+        { id: 'jjstreet', cite: [SEMAFOR],
+          text: 'J Street endorsed Jeffries and his leadership team in July 2026, for the first time this Congress.' },
+        { id: 'jconsensus', cite: [REUTERS],
+          text: 'Reuters describes him as a consensus-builder, and his first speech after the election said: "Today begins the great American comeback."' }
+      ],
+      against: [
+        { id: 'jpetition', on: true, cite: [NW_REVOLT, PETITION],
+          text: 'A Change.org petition asking House Democrats to choose a different Speaker has passed 1.1 million signatures. It says: "Hakeem Jeffries is simply not the right choice."' },
+        { id: 'jpoll', on: true, cite: [UPRISE, c('Newsweek', 'November 6, 2026', 'https://www.newsweek.com/jeffries-approval-rating-worse-than-mike-johnson-as-democratic-voters-rebel-12679163')],
+          text: 'In an Economist/YouGov poll of registered voters from October 23 to 26, 2026, 26 percent approved of Jeffries and 47 percent disapproved.',
+          you: 'In an Economist/YouGov poll of registered voters from October 23 to 26, 2026, 26 percent approved of you and 47 percent disapproved.' },
+        { id: 'jaipac', cite: [SLUDGE_J],
+          text: 'Sludge reports that AIPAC\'s PAC routed more than $427,000 in donor contributions to his campaign and fundraising committees this cycle, based on FEC filings.',
+          you: 'Sludge reports that AIPAC\'s PAC routed more than $427,000 in donor contributions to your campaign and fundraising committees this cycle, based on FEC filings.' },
+        { id: 'jdefense', cite: [SLUDGE_J],
+          text: 'Sludge reports that executives at the defense companies Anduril and Palantir gave to his fundraising committees. FEC filings show $144,300 from Anduril\'s chief executive and chief operating officer and $44,300 from a Palantir manager.',
+          you: 'Sludge reports that executives at the defense companies Anduril and Palantir gave to your fundraising committees. FEC filings show $144,300 from Anduril\'s chief executive and chief operating officer and $44,300 from a Palantir manager.' },
+        { id: 'jleonard', cite: [UPRISE],
+          text: 'Ohio Representative-elect Don Leonard said senior House Democrats threatened to make his life "a living hell" over the conditions he set for backing Jeffries. Drop Site News, which first reported it, described them as Jeffries allies. (Uprise RI)' },
+        { id: 'juncommitted', cite: [NW_REVOLT, REUTERS],
+          text: 'Newsweek lists incoming members Claire Valdez, Darializa Avila Chevalier and Melat Kiros as uncertain whether they will support him. Reuters reports Avila Chevalier would not commit to voting for him.' },
+        { id: 'jtrent', cite: [CDJ],
+          text: 'Corbin Trent, a former top aide to Representative Ocasio-Cortez, said: "the Democratic leadership we have today is completely ill-suited for this moment."' },
+        { id: 'jleft', cite: [NW_REVOLT, SEMAFOR],
+          text: 'Criticism of his stance on Israel and his donors comes mainly from the progressive wing of the caucus, according to Newsweek and Semafor.' }
+      ],
+      either: [
+        { id: 'jv200', cite: [house(2025, 200, 'July 17, 2025')],
+          text: 'On July 17, 2025, Representative Jeffries voted yes on the GENIUS Act (S. 1582), rules for stablecoins. 102 House Democrats voted yes and 110 voted no.',
+          you: 'On July 17, 2025, you voted yes on the GENIUS Act (S. 1582), rules for stablecoins. 102 House Democrats voted yes and 110 voted no.' },
+        { id: 'jv500', cite: [house(2024, 500, 'December 11, 2024')],
+          text: 'On December 11, 2024, Representative Jeffries voted yes on the final defense bill for 2025 (H.R. 5009). 81 House Democrats voted yes and 124 voted no.',
+          you: 'On December 11, 2024, you voted yes on the final defense bill for 2025 (H.R. 5009). 81 House Democrats voted yes and 124 voted no.' },
+        { id: 'jv164', cite: [house(2026, 164, 'May 13, 2026')],
+          text: 'On May 13, 2026, Representative Jeffries voted yes on H.R. 1346, year-round sales of E15 ethanol fuel. 95 House Democrats voted yes and 113 voted no.',
+          you: 'On May 13, 2026, you voted yes on H.R. 1346, year-round sales of E15 ethanol fuel. 95 House Democrats voted yes and 113 voted no.' },
+        { id: 'jv305', cite: [house(2025, 305, 'November 21, 2025')],
+          text: 'On November 21, 2025, Representative Jeffries voted yes on H.Con.Res. 58, a resolution denouncing socialism. 86 House Democrats voted yes and 98 voted no.',
+          you: 'On November 21, 2025, you voted yes on H.Con.Res. 58, a resolution denouncing socialism. 86 House Democrats voted yes and 98 voted no.' },
+        { id: 'jv697', cite: [house(2023, 697, 'December 5, 2023')],
+          text: 'On December 5, 2023, Representative Jeffries voted present on H.Res. 894, which said anti-Zionism is antisemitism.',
+          you: 'On December 5, 2023, you voted present on H.Res. 894, which said anti-Zionism is antisemitism.' }
+      ]
+    },
+    views: {
+      for: ['I value steady, experienced leadership.', 'He just led the party to a House majority, and that should count.', 'A fight over the Speaker job would cost time the country does not have.', 'I want a Speaker who can hold a big, diverse caucus together.'],
+      against: ['I want a younger generation to take over leadership.', 'After so many progressive candidates won, I do not want a centrist leading the caucus.', 'I do not want our leader tied to AIPAC money.', 'I want leaders who will push back harder.', 'Leadership should change when voters ask for change.']
+    },
+    questions: {
+      for: ['Why change leaders right after winning the House?', 'Who else in the caucus has the experience to run the House on day one?', 'What would the caucus gain by starting over now?'],
+      against: ['What message does it send to keep the same leader after voters asked for change?', 'Who will connect best with the voters who just showed up?', 'What would new leadership make possible in the next two years?']
+    },
+    otherSide: { for: 'Some people want a new face at the top, and I understand why.', against: 'Representative Jeffries has led the caucus through hard years, and I respect that.' },
+    civic: ['The House Democratic leader vote is a closed caucus vote, so letters like this are one of the few ways people back home can weigh in.', 'Voters do not get a ballot in the Speaker race. This letter is my way to take part.'],
+    sources: [NW_REVOLT, NW_PET, PUNCH, ABC7, REUTERS, UPRISE, SEMAFOR, NEWARAB, CDJ, SLUDGE_J, PETITION]
+  },
   {
     id: 'schumer-leader',
     menu: 'Senate Democratic leader: Chuck Schumer',
