@@ -54,9 +54,166 @@
   var MILCOM = c('Military.com', 'November 12, 2026', 'https://www.military.com/major-richard-star-act-passes-house-all-democrats-support-18-republicans-oppose');
   var ACTIONS_9237 = 'https://www.congress.gov/bill/119th-congress/house-bill/9237/all-actions';
 
+  /* House Speaker: Hakeem Jeffries (House page). */
+  var NW_REVOLT = c('Newsweek', 'November 2026', 'https://www.newsweek.com/jeffries-path-to-house-speaker-raises-specter-of-mccarthy-style-revolt-12697313');
+  var NW_PET = c('Newsweek', 'November 5, 2026', 'https://www.newsweek.com/petition-to-replace-jeffries-hits-500k-as-ruffalo-wades-in-12668658');
+  var PUNCH = c('Punchbowl News', 'November 4, 2026', 'https://punchbowl.news/article/house/jeffries-speaker/');
+  var ABC7 = c('ABC News live updates via ABC7', 'November 4, 2026', 'https://abc7news.com/live-updates/midterm-elections-2026-live-updates-election-results-key-races-us/20001292/entry/20016171/');
+  var REUTERS = c('Reuters via GV Wire', 'November 3, 2026', 'https://gvwire.com/2026/11/03/hakeem-jeffries-poised-to-become-speaker-of-us-house-of-representatives/');
+  var UPRISE = c('Uprise RI', 'November 10, 2026', 'https://upriseri.com/article/as-dem-house-leader-faces-fierce-opposition-incoming-congressman-says-jeffries-allies-threatened-him/');
+  var SEMAFOR = c('Semafor', 'July 7, 2026', 'https://www.semafor.com/article/07/07/2026/why-hakeem-jeffries-may-not-have-a-vote-problem');
+  var NEWARAB = c('The New Arab', 'November 6, 2026', 'https://www.newarab.com/news/mamdani-speaks-out-us-petition-against-hakeem-jeffries-surges');
+  var CDJ = c('Common Dreams', 'November 7, 2026', 'https://www.commondreams.org/news/petition-opposing-hakeem-jeffries-for-speaker');
+  var SLUDGE_J = c('Sludge', 'November 4, 2026', 'https://readsludge.com/2026/11/04/the-money-behind-hakeem-jeffries/');
+  var PETITION = c('Change.org petition page', 'read November 8, 2026', 'https://www.change.org/p/house-democrats-choose-a-new-speaker');
+  var house = function (year, n, date) { return c('House roll call ' + n + ' of ' + year + ' (Office of the Clerk)', date, 'https://clerk.house.gov/evs/' + year + '/roll' + ('00' + n).slice(-3) + '.xml'); };
+
+  var ABC_VH = c('ABC News', 'November 13, 2026', 'https://abcnews.com/Politics/schumer-van-hollen-facing-off-senate-majority-leader/story?id=138111386');
+  var NW_VH = c('Newsweek', 'November 9, 2026', 'https://newsweek.com/chuck-schumer-chris-van-hollen-senate-majority-leader-challenge-12687780');
+  var FOX5_VH = c('FOX 5 DC', 'November 5, 2026', 'https://www.fox5dc.com/news/maryland-sen-van-hollen-eyes-2028-presidential-bid-declines-endorse-schumer-senate-majority-leader');
+  var TRACKER = c('On Point Politics Majority Tracker (estimates, updated November 12, 2026)', 'read November 16, 2026', 'https://www.onpointpolitics.us/majority-tracker');
+  var GRIO = c('theGrio', 'November 12, 2026', 'https://thegrio.com/2026/11/12/progressives-want-ayanna-pressley-not-hakeem-jeffries-as-next-house-speaker/');
+  var CD_PRESSLEY = c('Common Dreams', 'November 11, 2026', 'https://www.commondreams.org/news/ayanna-pressley-for-speaker');
   var SEARCHED = 'How we built this list: we searched news reports from outlets across the spectrum, official records (Senate roll calls, bill text, FEC filings) and statements from people on both sides, and we kept every point we could tie to a source. We publish both sides the same way and do not take a side. ';
 
   window.CS_ISSUES = [
+
+  {
+    id: 'jeffries-speaker',
+    chamber: 'house',
+    menu: 'House Speaker: Hakeem Jeffries (Yes Jeffries / No Jeffries)',
+    title: 'Should Hakeem Jeffries lead House Democrats as Speaker?',
+    status: 'House Democrats vote on their leader on November 18, 2026 (closed vote). The full House elects the Speaker on January 3, 2027.',
+    summary: [
+      'Democrats won the House majority on November 3. Representative Hakeem Jeffries, who leads House Democrats now, asked his colleagues on November 4 to back him for Speaker (ABC News, Punchbowl News).',
+      'House Democrats pick their leader in a closed vote on November 18 (Punchbowl News, Newsweek). Then the whole House, both parties, elects the Speaker when the new Congress meets on January 3, 2027 (Newsweek). No one has said they will run against him (Newsweek, Reuters).',
+      'Some progressives are circulating a petition to draft Representative Ayanna Pressley for Speaker, but she has not said she will run, and no House Democrat has said they will challenge him (theGrio, Common Dreams).'
+    ],
+    searched: 'How we built this list: we searched news reports from outlets across the spectrum, House roll calls and FEC filings, and statements from people on both sides, and we kept every point we could tie to a source. We publish both sides the same way and do not take a side. Searched November 8 to 16, 2026. Representative Jeffries\'s own House votes are listed for either side to use. Some reports below quote other outlets; we say so where they do.',
+    subject: 'J000294',
+    about: {
+      id: 'J000294',
+      title: 'About Hakeem Jeffries',
+      facts: [
+        { cite: [c('congress-legislators dataset (official records)', 'snapshot November 15, 2026', 'https://github.com/unitedstates/congress-legislators')],
+          text: 'U.S. Representative for New York\'s 8th District, in Brooklyn and Queens, since January 2013.' },
+        { cite: [NW_REVOLT],
+          text: 'He has led House Democrats as minority leader since January 2023.' },
+        { cite: [REUTERS],
+          text: 'He is 56. Reuters describes him as known as a consensus-builder.' },
+        { cite: [SLUDGE_J],
+          text: 'Sludge reports that executives at Anduril and Palantir, crypto industry advocates and investors giving through AIPAC helped fund him as he prepares to become Speaker.' }
+      ]
+    },
+    voters: 'all',
+    question: 'Are you for or against Hakeem Jeffries as Speaker?',
+    labels: { for: 'Yes Jeffries', against: 'No Jeffries' },
+    // For a letter about several issues: a short name, where the writer stands (any office), and the ask (members who vote on it).
+    short: 'Hakeem Jeffries for Speaker',
+    stand: { for: 'I support Hakeem Jeffries for Speaker.', against: 'I want House Democrats to choose someone other than Hakeem Jeffries for Speaker.' },
+    also: { for: 'Please vote for Hakeem Jeffries for Speaker.', against: 'Please vote for someone other than Hakeem Jeffries for Speaker.' },
+    eitherLabel: 'Representative Jeffries\'s House votes (official roll calls)',
+    topic: ['the vote for House Speaker', 'who should lead House Democrats', 'the Speaker vote'],
+    asks: {
+      for: ['Please support Hakeem Jeffries for Speaker, in the House Democratic leader vote on November 18 and on the House floor on January 3.',
+        'I ask you to vote for Hakeem Jeffries for Speaker of the House.',
+        'When the House chooses its Speaker, I hope you will vote for Hakeem Jeffries.',
+        'I am writing to ask you to back Hakeem Jeffries as the next Speaker.'],
+      forShort: ['Please vote for Hakeem Jeffries for Speaker.', 'Back Jeffries for Speaker.'],
+      against: ['Please do not vote for Hakeem Jeffries for Speaker, in the House Democratic leader vote on November 18 or on the House floor on January 3.',
+        'I ask you to support someone other than Hakeem Jeffries for Speaker.',
+        'When the House chooses its Speaker, I hope you will choose someone other than Hakeem Jeffries.',
+        'I am writing to ask you to support a change in House Democratic leadership.'],
+      againstShort: ['Please do not vote for Jeffries for Speaker.', 'Choose someone else for Speaker.']
+    },
+    special: {
+      J000294: {
+        for: ['I support you for Speaker, and I hope your colleagues back you on November 18 and January 3.', 'Please keep leading House Democrats. I am behind you for Speaker.'],
+        forShort: ['I support you for Speaker.', 'I want you to lead the House.'],
+        against: ['I respectfully ask you not to seek the Speaker job, and to let someone new lead House Democrats.', 'I ask you to step aside as leader of House Democrats.'],
+        againstShort: ['I think it is time for someone new to lead House Democrats.', 'Please step aside as leader.'],
+        subject: { for: ['I support you for Speaker', 'Behind you for Speaker'], against: ['Please step aside as leader', 'Time for new House Democratic leadership'] },
+        call: { for: 'I support Representative Jeffries becoming Speaker.', against: 'I would like Representative Jeffries to step aside as leader of House Democrats.' }
+      }
+    },
+    subjects: {
+      for: ['Please vote for Hakeem Jeffries for Speaker', 'Yes on Jeffries for Speaker', 'The Speaker vote', 'From a constituent in {state}: support Jeffries', 'My view on the Speaker vote'],
+      against: ['Please choose someone other than Jeffries for Speaker', 'No on Jeffries for Speaker', 'The Speaker vote', 'From a constituent in {state}: new House leadership', 'My view on the Speaker vote']
+    },
+    call: { for: 'I would like {S} to vote for Hakeem Jeffries for Speaker.', against: 'I would like {S} to vote for someone other than Hakeem Jeffries for Speaker.' },
+    facts: {
+      for: [
+        { id: 'jmajority', on: true, cite: [NW_REVOLT],
+          text: 'Democrats won the House majority on November 3 under his leadership. Newsweek counted at least 254 Democrats to 165 Republicans, with some races still undecided.',
+          you: 'Democrats won the House majority on November 3 under your leadership. Newsweek counted at least 254 Democrats to 165 Republicans, with some races still undecided.' },
+        { id: 'jnochallenger', on: true, cite: [NW_REVOLT, REUTERS],
+          text: 'No one has said they will run against him. Newsweek calls him uncontested so far and expected to win the nomination, and Reuters reports that no one is seen posing a serious threat, according to multiple Democratic aides.',
+          you: 'No one has said they will run against you. Newsweek calls you uncontested so far and expected to win the nomination, and Reuters reports that no one is seen posing a serious threat, according to multiple Democratic aides.' },
+        { id: 'jletter', cite: [NW_PET],
+          text: 'In his letter asking for votes, he wrote: "Against all odds, House Democrats were consistently successful in the minority. We must now deliver the dramatic change the American people are demanding in the majority." (Politico, as quoted by Newsweek)',
+          you: 'In your letter asking for votes, you wrote that House Democrats "were consistently successful in the minority" and must now "deliver the dramatic change the American people are demanding in the majority." (Politico, as quoted by Newsweek)' },
+        { id: 'jhimes', cite: [UPRISE],
+          text: 'Representative Jim Himes said Jeffries "absolutely will be speaker." (Axios, as quoted by Uprise RI)' },
+        { id: 'jmamdani', cite: [NEWARAB, NW_PET],
+          text: 'New York City Mayor Zohran Mamdani said: "I continue to support Congressman Jeffries and his bid to become the leader."' },
+        { id: 'jcasar', cite: [UPRISE],
+          text: 'Progressive Caucus chair Greg Casar said the caucus would deliver votes for Jeffries. (Drop Site News, as quoted by Uprise RI)' },
+        { id: 'jjstreet', cite: [SEMAFOR],
+          text: 'J Street endorsed Jeffries and his leadership team in July 2026, for the first time this Congress.' },
+        { id: 'jconsensus', cite: [REUTERS],
+          text: 'Reuters describes him as a consensus-builder, and his first speech after the election said: "Today begins the great American comeback."' }
+      ],
+      against: [
+        { id: 'jpetition', on: true, cite: [NW_REVOLT, PETITION],
+          text: 'A Change.org petition asking House Democrats to choose a different Speaker has passed 1.1 million signatures. It says: "Hakeem Jeffries is simply not the right choice."' },
+        { id: 'jpoll', on: true, cite: [UPRISE, c('Newsweek', 'November 6, 2026', 'https://www.newsweek.com/jeffries-approval-rating-worse-than-mike-johnson-as-democratic-voters-rebel-12679163')],
+          text: 'In an Economist/YouGov poll of registered voters from October 23 to 26, 2026, 26 percent approved of Jeffries and 47 percent disapproved.',
+          you: 'In an Economist/YouGov poll of registered voters from October 23 to 26, 2026, 26 percent approved of you and 47 percent disapproved.' },
+        { id: 'jaipac', cite: [SLUDGE_J],
+          text: 'Sludge reports that AIPAC\'s PAC routed more than $427,000 in donor contributions to his campaign and fundraising committees this cycle, based on FEC filings.',
+          you: 'Sludge reports that AIPAC\'s PAC routed more than $427,000 in donor contributions to your campaign and fundraising committees this cycle, based on FEC filings.' },
+        { id: 'jdefense', cite: [SLUDGE_J],
+          text: 'Sludge reports that executives at the defense companies Anduril and Palantir gave to his fundraising committees. FEC filings show $144,300 from Anduril\'s chief executive and chief operating officer and $44,300 from a Palantir manager.',
+          you: 'Sludge reports that executives at the defense companies Anduril and Palantir gave to your fundraising committees. FEC filings show $144,300 from Anduril\'s chief executive and chief operating officer and $44,300 from a Palantir manager.' },
+        { id: 'jleonard', cite: [UPRISE],
+          text: 'Ohio Representative-elect Don Leonard said senior House Democrats threatened to make his life "a living hell" over the conditions he set for backing Jeffries. Drop Site News, which first reported it, described them as Jeffries allies. (Uprise RI)' },
+        { id: 'juncommitted', cite: [NW_REVOLT, REUTERS],
+          text: 'Newsweek lists incoming members Claire Valdez, Darializa Avila Chevalier and Melat Kiros as uncertain whether they will support him. Reuters reports Avila Chevalier would not commit to voting for him.' },
+        { id: 'jtrent', cite: [CDJ],
+          text: 'Corbin Trent, a former top aide to Representative Ocasio-Cortez, said: "the Democratic leadership we have today is completely ill-suited for this moment."' },
+        { id: 'jleft', cite: [NW_REVOLT, SEMAFOR],
+          text: 'Criticism of his stance on Israel and his donors comes mainly from the progressive wing of the caucus, according to Newsweek and Semafor.' }
+      ],
+      either: [
+        { id: 'jv200', cite: [house(2025, 200, 'July 17, 2025')],
+          text: 'On July 17, 2025, Representative Jeffries voted yes on the GENIUS Act (S. 1582), rules for stablecoins. 102 House Democrats voted yes and 110 voted no.',
+          you: 'On July 17, 2025, you voted yes on the GENIUS Act (S. 1582), rules for stablecoins. 102 House Democrats voted yes and 110 voted no.' },
+        { id: 'jv500', cite: [house(2024, 500, 'December 11, 2024')],
+          text: 'On December 11, 2024, Representative Jeffries voted yes on the final defense bill for 2025 (H.R. 5009). 81 House Democrats voted yes and 124 voted no.',
+          you: 'On December 11, 2024, you voted yes on the final defense bill for 2025 (H.R. 5009). 81 House Democrats voted yes and 124 voted no.' },
+        { id: 'jv164', cite: [house(2026, 164, 'May 13, 2026')],
+          text: 'On May 13, 2026, Representative Jeffries voted yes on H.R. 1346, year-round sales of E15 ethanol fuel. 95 House Democrats voted yes and 113 voted no.',
+          you: 'On May 13, 2026, you voted yes on H.R. 1346, year-round sales of E15 ethanol fuel. 95 House Democrats voted yes and 113 voted no.' },
+        { id: 'jv305', cite: [house(2025, 305, 'November 21, 2025')],
+          text: 'On November 21, 2025, Representative Jeffries voted yes on H.Con.Res. 58, a resolution denouncing socialism. 86 House Democrats voted yes and 98 voted no.',
+          you: 'On November 21, 2025, you voted yes on H.Con.Res. 58, a resolution denouncing socialism. 86 House Democrats voted yes and 98 voted no.' },
+        { id: 'jv697', cite: [house(2023, 697, 'December 5, 2023')],
+          text: 'On December 5, 2023, Representative Jeffries voted present on H.Res. 894, which said anti-Zionism is antisemitism.',
+          you: 'On December 5, 2023, you voted present on H.Res. 894, which said anti-Zionism is antisemitism.' }
+      ]
+    },
+    views: {
+      for: ['I value steady, experienced leadership.', 'He just led the party to a House majority, and that should count.', 'A fight over the Speaker job would cost time the country does not have.', 'I want a Speaker who can hold a big, diverse caucus together.'],
+      against: ['I want a younger generation to take over leadership.', 'After so many progressive candidates won, I do not want a centrist leading the caucus.', 'I do not want our leader tied to AIPAC money.', 'I want leaders who will push back harder.', 'Leadership should change when voters ask for change.']
+    },
+    questions: {
+      for: ['Why change leaders right after winning the House?', 'Who else in the caucus has the experience to run the House on day one?', 'What would the caucus gain by starting over now?'],
+      against: ['What message does it send to keep the same leader after voters asked for change?', 'Who will connect best with the voters who just showed up?', 'What would new leadership make possible in the next two years?']
+    },
+    otherSide: { for: 'Some people want a new face at the top, and I understand why.', against: 'Representative Jeffries has led the caucus through hard years, and I respect that.' },
+    civic: ['The House Democratic leader vote is a closed caucus vote, so letters like this are one of the few ways people back home can weigh in.', 'Voters do not get a ballot in the Speaker race. This letter is my way to take part.'],
+    sources: [NW_REVOLT, NW_PET, PUNCH, ABC7, REUTERS, UPRISE, SEMAFOR, NEWARAB, CDJ, SLUDGE_J, PETITION, GRIO, CD_PRESSLEY]
+  },
   {
     id: 'schumer-leader',
     menu: 'Senate Democratic leader: Chuck Schumer',
@@ -91,6 +248,9 @@
     voters: 'dem',
     question: 'Are you for or against Chuck Schumer as Democratic leader?',
     labels: { for: 'For Schumer', against: 'Against Schumer' },
+    short: 'the Senate Democratic leader vote',
+    stand: { for: 'I support Chuck Schumer as the Senate Democratic leader.', against: 'I want Senate Democrats to choose a new leader on December 1.' },
+    also: { for: 'Please vote for Chuck Schumer as Democratic leader on December 1.', against: 'Please vote for new Democratic leadership on December 1.' },
     eitherLabel: 'Senator Schumer\'s Senate votes (official roll calls)',
     topic: ['the vote for Democratic leader', 'the December 1 leader vote', 'who should lead Senate Democrats'],
     asks: {
@@ -254,6 +414,126 @@
   },
 
   {
+    id: 'van-hollen-leader',
+    menu: 'Senate Democratic leader: Chris Van Hollen (Yes Van Hollen / No Van Hollen)',
+    title: 'Should Chris Van Hollen lead Senate Democrats?',
+    status: 'Closed, secret-ballot vote of Democratic senators on December 1, 2026 (TIME). ABC News and the AP say early December, with no date announced.',
+    summary: [
+      'Senator Chris Van Hollen of Maryland announced on November 12 that he is running against Senator Chuck Schumer for Senate Democratic leader (TIME, AP). He is the only declared challenger (On Point Politics tracker).',
+      'Senator Elissa Slotkin has called for new leadership but has not endorsed him, and Senator Brian Schatz is running for whip, the number two job (TIME, On Point Politics tracker). A winner needs a majority of the 55 or 56 Democratic votes, 28 or 29 (ABC News).',
+      'Only the Democratic senators and the two independents who work with them vote. Newly elected senators vote; outgoing senators do not (ABC News).'
+    ],
+    searched: SEARCHED + 'Searched November 16, 2026. CNN, The Hill, Axios and the Washington Times did not load for us, so their reporting is not used. No poll of this race was found.',
+    subject: 'V000128',
+    about: {
+      id: 'V000128',
+      title: 'About Chris Van Hollen',
+      facts: [
+        { cite: [TIME], text: 'Elected to the Senate from Maryland in 2016 and reelected in 2022. Before that he served seven terms in the House.' },
+        { cite: [TIME], text: 'He chaired the House Democrats\' campaign committee (DCCC) in 2008 and the Senate Democrats\' campaign committee (DSCC) in the 2018 cycle.' },
+        { cite: [AP], text: 'He is 67. Senator Schumer is 75.' },
+        { cite: [NW_VH, TIME], text: 'Before he entered the race, he said he was "kicking the tires" on a 2028 run for president.' }
+      ]
+    },
+    voters: 'dem',
+    question: 'Are you for or against Chris Van Hollen as Democratic leader?',
+    labels: { for: 'Yes Van Hollen', against: 'No Van Hollen' },
+    short: 'Chris Van Hollen for Senate Democratic leader',
+    stand: { for: 'I support Chris Van Hollen for Senate Democratic leader.', against: 'I do not want Chris Van Hollen as Senate Democratic leader.' },
+    also: { for: 'Please vote for Chris Van Hollen as Democratic leader on December 1.', against: 'Please do not vote for Chris Van Hollen as Democratic leader on December 1.' },
+    topic: ['the vote for Democratic leader', 'Senator Van Hollen\'s run for leader', 'who should lead Senate Democrats'],
+    asks: {
+      for: ['Please vote for Chris Van Hollen for Democratic leader when the caucus meets on December 1.',
+        'I ask you to support Senator Van Hollen for Democratic leader on December 1.',
+        'When Senate Democrats choose their leader on December 1, I hope you will vote for Chris Van Hollen.'],
+      forShort: ['Please vote for Senator Van Hollen.', 'Back Van Hollen for leader.'],
+      against: ['Please do not vote for Chris Van Hollen for Democratic leader on December 1.',
+        'I ask you not to support Senator Van Hollen for Democratic leader on December 1.',
+        'When Senate Democrats choose their leader on December 1, I hope you will not vote for Chris Van Hollen.'],
+      againstShort: ['Please do not vote for Senator Van Hollen.', 'Do not back Van Hollen for leader.']
+    },
+    special: {
+      V000128: {
+        for: ['I support your run for Democratic leader, and I hope the caucus picks you on December 1.', 'Thank you for running for leader. I am behind you for December 1.'],
+        forShort: ['I back your run for leader.', 'I am glad you are running for leader.'],
+        against: ['I respect your choice to run, but I ask you to step back from the race for Democratic leader.', 'I do not support your run for Democratic leader, and I ask you to reconsider.'],
+        againstShort: ['I do not support your run for leader.', 'Please reconsider your run for leader.'],
+        subject: { for: ['I support your run for leader', 'Behind your run for Democratic leader'], against: ['Your run for Democratic leader', 'Please reconsider your run for leader'] },
+        call: { for: 'I support the Senator\'s run for Democratic leader.', against: 'I do not support the Senator\'s run for Democratic leader.' }
+      },
+      S000148: {
+        for: ['I respect your years as leader, but I hope Senator Van Hollen wins the December 1 vote.', 'I support Senator Van Hollen for Democratic leader on December 1.'],
+        forShort: ['I support Senator Van Hollen for leader.', 'I hope Senator Van Hollen wins.'],
+        against: ['I do not support Senator Van Hollen for Democratic leader.', 'I hope the caucus does not choose Senator Van Hollen on December 1.'],
+        againstShort: ['I do not support Senator Van Hollen for leader.', 'I hope Senator Van Hollen does not win.'],
+        subject: { for: ['The December 1 leader vote', 'I support Senator Van Hollen for leader'], against: ['The December 1 leader vote', 'My view on the leader race'] },
+        call: { for: 'I support Senator Van Hollen for Democratic leader.', against: 'I do not support Senator Van Hollen for Democratic leader.' }
+      }
+    },
+    subjects: {
+      for: ['Please vote for Senator Van Hollen on December 1', 'Chris Van Hollen for Democratic leader', 'The December 1 leader vote', 'From a constituent in {state}: Van Hollen for leader'],
+      against: ['Please do not vote for Senator Van Hollen on December 1', 'The December 1 leader vote', 'My view on the Democratic leader vote', 'From a constituent in {state}: not Van Hollen']
+    },
+    call: { for: 'I would like Senator {last} to vote for Chris Van Hollen as Democratic leader on December 1.', against: 'I would like Senator {last} not to vote for Chris Van Hollen as Democratic leader on December 1.' },
+    facts: {
+      for: [
+        { id: 'vh-why', on: true, cite: [TIME],
+          text: 'Senator Van Hollen says the race is "not about any one individual" and that "a little democracy in the Senate Democratic Caucus is a good thing."',
+          you: 'You have said the race is "not about any one individual" and that "a little democracy in the Senate Democratic Caucus is a good thing."' },
+        { id: 'vh-agenda', on: true, cite: [TIME, FOX5_VH],
+          text: 'He has pledged to use the Senate\'s full power to end the war in Iran and to lower the cost of living, which he calls a "kitchen table agenda."',
+          you: 'You have pledged to use the Senate\'s full power to end the war in Iran and to lower the cost of living, which you call a "kitchen table agenda."' },
+        { id: 'vh-backers', on: true, cite: [ABC_VH, TIME],
+          text: 'Senator Bernie Sanders, Senator-elect Abdul El-Sayed of Michigan and Senator-elect Peggy Flanagan of Minnesota back him, and so does the Working Families Party.',
+          you: 'Senator Bernie Sanders, Senator-elect Abdul El-Sayed of Michigan and Senator-elect Peggy Flanagan of Minnesota back you, and so does the Working Families Party.' },
+        { id: 'vh-campaigns', cite: [TIME],
+          text: 'He has run both party campaign committees: the DCCC in 2008 and the DSCC in the 2018 cycle.',
+          you: 'You have run both party campaign committees: the DCCC in 2008 and the DSCC in the 2018 cycle.' },
+        { id: 'vh-aipac', cite: [TIME],
+          text: 'He has said the DSCC should not take AIPAC money. A tracker TIME cites shows the DSCC took $15,000 from AIPAC\'s PAC in the 2025 to 2026 cycle.',
+          you: 'You have said the DSCC should not take AIPAC money. A tracker TIME cites shows the DSCC took $15,000 from AIPAC\'s PAC in the 2025 to 2026 cycle.' },
+        { id: 'vh-coronation', cite: [NW_VH],
+          text: 'Before he entered, he said: "There should be no coronation of the next Democratic leader."',
+          you: 'Before you entered, you said: "There should be no coronation of the next Democratic leader."' },
+        { id: 'vh-contest', cite: [TIME],
+          text: 'TIME reports the last contested race for this job was in 1994.' }
+      ],
+      against: [
+        { id: 'vh-schumer-votes', on: true, cite: [TIME, ABC_VH],
+          text: 'Senator Schumer says he has "the votes to continue serving as Democratic Leader," and TIME counted 14 senators and senators-elect who publicly back him.' },
+        { id: 'vh-underdog', on: true, cite: [TIME, ABC_VH],
+          text: 'Senator Van Hollen calls himself the underdog and says he has more than 10 votes. A winner needs 28 or 29.',
+          you: 'You call yourself the underdog and say you have more than 10 votes. A winner needs 28 or 29.' },
+        { id: 'vh-king', on: true, cite: [ABC_VH],
+          text: 'Senator Angus King, backing Senator Schumer, asked: "Why would you fire the manager when you just won the World Series?"' },
+        { id: 'vh-2028', cite: [NW_VH],
+          text: 'On November 9, before he entered, Newsweek reported he was "kicking the tires" on a 2028 run for president and "not looking to be the next Democratic leader."',
+          you: 'On November 9, before you entered, Newsweek reported you were "kicking the tires" on a 2028 run for president and "not looking to be the next Democratic leader."' },
+        { id: 'vh-plan', cite: [AP],
+          text: 'The Associated Press reported on November 13 that he had not yet laid out his own agenda.',
+          you: 'The Associated Press reported on November 13 that you had not yet laid out your own agenda.' },
+        { id: 'vh-age', cite: [AP],
+          text: 'He is 67. The Associated Press notes he is "not that much younger than Schumer, 75."',
+          you: 'You are 67. The Associated Press notes you are "not that much younger than Schumer, 75."' },
+        { id: 'vh-slotkin', cite: [TIME],
+          text: 'Senator Elissa Slotkin, who will not back Senator Schumer, has not endorsed Senator Van Hollen either. She says she wants "a concrete plan that\'s definitely different."' }
+      ],
+      either: []
+    },
+    views: {
+      for: ['I want new leadership in the Senate.', 'I want a leader who will fight harder for working families.', 'A contested race is good for the caucus.', 'I agree with his priorities.'],
+      against: ['I value steady, experienced leadership.', 'I do not think now is the time to change leaders.', 'I want to hear a full plan before backing a new leader.', 'I would rather see a different candidate for leader.']
+    },
+    questions: {
+      for: ['What would new leadership make possible in the next two years?', 'Who will push hardest on the cost of living?', 'Should the caucus have a real choice for leader?'],
+      against: ['Why change leaders right after a strong election?', 'What is the full plan for the caucus?', 'Who has the votes to lead from day one?']
+    },
+    otherSide: { for: 'Senator Schumer has long experience and just helped win a bigger majority, and I respect that.', against: 'Some people want a new face at the top, and I understand why.' },
+    civic: ['The leader vote is a closed caucus vote, so letters like this are one of the few ways people back home can weigh in.', 'Voters do not get a ballot in the leader race. This letter is my way to take part.'],
+    sources: [TIME, AP, ABC_VH, NW_VH, FOX5_VH, TRACKER]
+  },
+
+  {
     id: 'permitting-baaja',
     menu: 'Permitting reform bill (BAAJA, S. 5653)',
     title: 'The permitting reform bill (BAAJA)',
@@ -266,6 +546,9 @@
     voters: 'all',
     question: 'Are you for or against the permitting reform bill (BAAJA)?',
     labels: { for: 'For the bill', against: 'Against the bill' },
+    short: 'the permitting reform bill (BAAJA, S. 5653)',
+    stand: { for: 'I support the permitting reform bill, BAAJA (S. 5653).', against: 'I oppose the permitting reform bill, BAAJA (S. 5653).' },
+    also: { for: 'Please vote yes on the permitting reform bill, BAAJA (S. 5653).', against: 'Please vote no on the permitting reform bill, BAAJA (S. 5653).' },
     topic: ['the permitting reform bill (BAAJA)', 'the Bipartisan American Affordability and Jobs Act', 'S. 5653, the permitting bill'],
     asks: {
       for: ['Please vote yes on the permitting reform bill, the Bipartisan American Affordability and Jobs Act (S. 5653).',
@@ -367,6 +650,9 @@
     voters: 'all',
     question: 'Are you for or against the Senate passing H.R. 9237 as the House passed it?',
     labels: { for: 'For the bill', against: 'Against the bill' },
+    short: "H.R. 9237, the Take Care of America's Veterans Act",
+    stand: { for: "I support H.R. 9237, the Take Care of America's Veterans Act.", against: 'I oppose H.R. 9237 unless the sleep apnea and tinnitus rating cuts are removed.' },
+    also: { for: "Please vote yes on H.R. 9237, the Take Care of America's Veterans Act.", against: 'Please vote no on H.R. 9237 unless the sleep apnea and tinnitus rating cuts are removed.' },
     topic: ['the House veterans bill, H.R. 9237', 'the Take Care of America\'s Veterans Act', 'H.R. 9237 and its sleep apnea and tinnitus changes'],
     asks: {
       for: ['Please vote yes on H.R. 9237, the Take Care of America\'s Veterans Act, as the House passed it.',
