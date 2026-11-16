@@ -10,7 +10,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="/states/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="vote.css?v=4">
-<link rel="stylesheet" href="vote-results.css?v=1">
+<link rel="stylesheet" href="vote-results.css?v=2">
 <link rel="stylesheet" href="/states/states-map.css?v=1">
 <link rel="stylesheet" href="/members/waybar.css?v=29">
 <link rel="canonical" href="https://michiinstitute.com/vote/">
@@ -27,12 +27,14 @@
 <main class="wrap">
   <p class="eyebrow">The Way / Vote</p>
   <h1>VOTE!</h1>
-  <section class="vres" id="vote-results" aria-labelledby="vr-h" hidden>
+  <section class="vres" id="vote-results" aria-labelledby="vr-h" aria-busy="true">
     <h2 id="vr-h">Election results</h2>
     <p class="vr-warn"><b>What AP is calling, not certified.</b> Counts change as ballots are counted. Only the results your state certifies are final.</p>
-    <p class="muted" id="vr-status"></p>
-    <div id="vr-bars"></div>
-    <section id="apmap" class="apmap" aria-label="What AP is calling, map" hidden></section>
+    <p class="muted" id="vr-status">Loading the latest count.</p>
+    <!-- The parts below are drawn in the page itself so the first paint already shows this section (Frank, Nov 15 2026: the page used to flash the older layout).
+         vote-results.js and /results/ap-map.js replace them with the real counts and map as soon as the data arrives. -->
+    <div id="vr-bars"><div class="bal"><h3>U.S. House</h3><div class="balbar vr-skel"></div><div class="balkey"><span><i class="sw p-d"></i>Democratic: --</span><span><i class="sw p-r"></i>Republican: --</span><span><i class="sw p-o"></i>Other: --</span><span><i class="sw p-u"></i>Not called yet: --</span></div><p class="muted">Loading the latest count.</p></div><div class="bal"><h3>U.S. Senate</h3><div class="balbar vr-skel"></div><div class="balkey"><span><i class="sw p-d"></i>Democratic: --</span><span><i class="sw p-r"></i>Republican: --</span><span><i class="sw p-o"></i>Other: --</span><span><i class="sw p-u"></i>Not called yet: --</span></div><p class="muted">Loading the latest count.</p></div></div>
+    <section id="apmap" class="apmap" aria-label="What AP is calling, map"><h2>What AP is calling (not certified)</h2><p class="muted">A map of AP calls so far. Not a prediction and not a certified result. Uncalled states stay dark. Tap or hover a state for details.</p><div class="vr-skel vr-skel-tabs"></div><div class="vr-skel vr-skel-map"></div><div class="balkey apm-key"><span><i class="sw p-d"></i>Democratic</span><span><i class="sw p-r"></i>Republican</span><span><i class="sw p-o"></i>Other</span><span><i class="sw p-u"></i>Not called yet</span><span><i class="sw p-n"></i>No race / no data</span></div><p class="apm-detail">Tap or hover a state to see what AP is calling.</p><div class="vr-skel-list"></div></section>
     <p class="vr-more"><a href="/results/">See the collected races and where the numbers come from</a></p>
   </section>
   <p class="lead">Pick what you need. Each one is short and uses official sources.</p>
@@ -47,6 +49,6 @@
 <script src="vote.js?v=3" defer></script>
 <script src="/results/ap-map-paths.js?v=d116" defer></script>
 <script src="/results/ap-map.js?v=d204" defer></script>
-<script src="vote-results.js?v=1" defer></script>
+<script src="vote-results.js?v=2" defer></script>
 </body>
 </html>

@@ -2,12 +2,14 @@
 // The same Congress count bars and AP map as /results/, from the same files: /results/data/manifest.json and
 // /results/data/balance.json, drawn by /results/ap-map.js with shapes from /results/ap-map-paths.js. Nothing here is new data.
 // AP calls are labeled as AP calls, never as certified results. Stripes and plain shades, no party colors.
-// Everything from the data files goes on the page with textContent. If there is no data the section stays hidden.
+// Everything from the data files goes on the page with textContent. The section and placeholder bars are in the HTML so the first
+// paint already shows it (Nov 15 2026). If the data has no seat counts the section is hidden; if the data cannot load, it says so.
 (function () {
   'use strict';
   var BASE = '/results/';
   var box = document.getElementById('vote-results');
   if (!box || !window.fetch) return;
+  var shown = false;
   var PARTY = [['D', 'Democratic', 'p-d'], ['R', 'Republican', 'p-r'], ['O', 'Other', 'p-o'], ['U', 'Not called yet', 'p-u']];
 
   function $(id) { return document.getElementById(id); }
@@ -58,11 +60,20 @@
       var b = m && m.balance;
       if (!b || (!b.house && !b.senate)) { box.hidden = true; return; }
       box.hidden = false;
+      box.removeAttribute('aria-busy');
+      shown = true;
       var mode = m.mode === 'final' ? 'Collection has stopped. Counts may still change until certified.' : m.mode === 'live' ? 'Collecting live.' : '';
       $('vr-status').textContent = (mode ? mode + ' ' : '') + (m.generated_at ? 'Updated ' + when(m.generated_at) + '.' : '');
       bars(b);
       if (window.TWMap) window.TWMap.update(m, getJSON);
-    }).catch(function () { /* the results page and the card below still link to everything */ });
+    }).catch(function () {
+      // Keep the last good counts if a refresh fails. If nothing ever loaded, say so instead of showing placeholders.
+      if (shown) return;
+      box.removeAttribute('aria-busy');
+      $('vr-status').textContent = 'The latest count could not load. The results page below has every race and its source.';
+      $('vr-bars').textContent = '';
+      var map = $('apmap'); if (map) map.hidden = true;
+    });
   }
   load();
   setInterval(load, 60000);
