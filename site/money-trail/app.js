@@ -848,6 +848,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     ['measure', 'Ballot measures'],
     ['party', 'Party committees'],
     ['candidate', 'Candidates and candidate committees'],
+    ['war', 'Wars, military actions and missions (War tracker)'],
     ['nonprofit', 'Nonprofits and groups in IRS Form 990 returns'],
     ['media', 'Media companies, outlets and owners'],
     ['pac', 'PACs and Super PACs'],
@@ -861,7 +862,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   ];
   // D249: media companies, the outlets they own, their owners and their company PACs (media-view.js).
   // D280: nonprofits from IRS Form 990 returns (nonprofits-view.js), and the groups their returns name.
-  const typeKind = ty => /^Nonprofit, IRS|named on an IRS Form 990/i.test(ty) ? 'nonprofit' : /^media|company PAC of a media/i.test(ty) ? 'media' : /party/i.test(ty) ? 'party' : /candidate/i.test(ty) ? 'candidate' : /ballot measure$/i.test(ty) ? 'measure'
+  // D287: wars, military actions and missions, and the laws that authorized them (war-view.js).
+  const typeKind = ty => /\(War tracker\)$|^federal law authorizing military force$/i.test(ty) ? 'war' : /^Nonprofit, IRS|named on an IRS Form 990/i.test(ty) ? 'nonprofit' : /^media|company PAC of a media/i.test(ty) ? 'media' : /party/i.test(ty) ? 'party' : /candidate/i.test(ty) ? 'candidate' : /ballot measure$/i.test(ty) ? 'measure'
     : /ballot (support |opposition )?committee|issue committee|referendum committee|ballot_group|campaign committee/i.test(ty) ? 'ballotcmte'
     : /labor|education association|NEA/i.test(ty) ? 'union' : /\bPAC\b|political action|political committee|Committee \(FEC\)|hybrid|super pac/i.test(ty) ? 'pac'
     : /payee|vendor/i.test(ty) ? 'payee' : /municipal|public body|election authority/i.test(ty) ? 'gov'

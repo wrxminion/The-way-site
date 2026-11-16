@@ -1,0 +1,43 @@
+/* D287 (Nov 2026): War tracker tab (war-tracker.js). Lives lost use the brass color, never the mint money color, so a life never reads like a dollar figure. */
+.war-rule{margin:0 0 16px;padding:12px 14px;border:1px solid #6d5a3c;border-left:4px solid var(--brass);border-radius:10px;background:#2a22152e;color:#f1e6d2;font-size:13px;line-height:1.55;max-width:900px}
+.war-rule strong{color:var(--brass)}
+.war-tools{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 16px;margin:0 0 14px}
+.war-tools .tracker-search{margin:0;flex:1 1 260px}
+.war-pick{flex:0 1 220px}
+.war-pick select{background:#071722;border:1px solid var(--edge);border-radius:10px;color:var(--text);padding:10px 12px;font-size:15px;width:100%}
+.war-chips{display:flex;flex-wrap:wrap;gap:6px;flex:1 1 100%}
+.war-chip{background:none;border:1px solid #315465;border-radius:999px;color:#bfe1dc;font-size:12px;padding:6px 12px}
+.war-chip.on{border-color:var(--mint);color:var(--mint);background:#143b45}
+.war-cards{display:flex;flex-direction:column;gap:12px}
+.war-card{gap:10px;scroll-margin-top:220px}
+.war-card.war-help{border-color:#2f5a4f}
+.war-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 18px;align-items:start}
+.war-head{display:flex;flex-direction:column;gap:4px;min-width:0}
+.war-kind{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.war-help .war-kind{color:var(--mint)}
+.war-name{margin:0;font:normal 19px/1.25 Georgia,serif;color:#eefaf6;overflow-wrap:anywhere}
+.war-pres a{color:var(--mint)}
+.war-lives{min-width:150px;max-width:230px;padding:10px 12px;border:1px solid #6d5a3c;border-radius:10px;background:#2a22152e;text-align:right;display:flex;flex-direction:column;gap:2px}
+.war-lives-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);font-weight:700}
+.war-count{font:800 26px/1.1 system-ui,sans-serif;color:#f4e7cf;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.war-lives-note{font-size:11px;color:#c8b896;line-height:1.35}
+.war-what{margin:0;font-size:13px;line-height:1.55;color:#d3e5e6}
+.war-sec{border-top:1px solid #234757;padding-top:8px}
+.war-h{margin:0 0 6px;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#a6c4c8}
+.war-list{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1.5;color:#c6dadd}
+.war-list b.war-n{color:#eefaf6;font-variant-numeric:tabular-nums}
+.war-sec:first-of-type .war-list b.war-n{color:#f4e7cf}
+.war-g{color:#eefaf6}
+.war-label{color:var(--muted)}
+.war-dim{color:var(--faint)}
+.war-gap{font-style:italic}
+.war-src{overflow-wrap:anywhere}
+.war-about .war-count{font-size:22px;margin:2px 0 6px}
+.war-about .mt-evcard-head{color:var(--brass)}
+@media(max-width:600px){
+ .war-top{grid-template-columns:minmax(0,1fr)}
+ .war-lives{max-width:none;text-align:left}
+ .war-count{font-size:23px}
+ .war-name{font-size:17px}
+ .war-pick{flex:1 1 100%}
+}
