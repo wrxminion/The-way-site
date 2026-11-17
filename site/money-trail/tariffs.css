@@ -1,0 +1,60 @@
+/* D289 (Nov 2026): Tariff tracker tab (tariff-tracker.js). Refunds use the mint money color. What a company did with its refund has its own color per kind, named in words too, so color is never the only signal. */
+.tar-rule{margin:0 0 16px;padding:12px 14px;border:1px solid #2f6a62;border-left:4px solid var(--mint);border-radius:10px;background:#0f2e3330;color:#d9efec;font-size:13px;line-height:1.55;max-width:900px}
+.tar-rule strong{color:var(--mint)}
+.tar-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:0 0 16px}
+.tar-stat{padding:12px 14px;border:1px solid #2f6a62;border-radius:10px;background:#0f2e3330;display:flex;flex-direction:column;gap:4px;min-width:0}
+.tar-stat-stuck{border-color:#6b5a3a;background:#2a221522}
+.tar-stat-n{font:800 26px/1.1 system-ui,sans-serif;color:var(--mint);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.tar-stat-stuck .tar-stat-n{color:#f0c987}
+.tar-box-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mint);font-weight:700}
+.tar-box-note{font-size:11px;color:#a9c7c4;line-height:1.4;overflow-wrap:anywhere}
+.tar-sec{border-top:1px solid #234757;padding-top:10px;margin:0 0 16px}
+.tar-h{margin:0 0 8px;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#a6c4c8}
+.tar-list{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1.5;color:#c6dadd}
+.tar-list b{color:#eefaf6}
+.tar-n{font-variant-numeric:tabular-nums;color:var(--mint)!important}
+.tar-dim{color:var(--faint)}
+.tar-src{overflow-wrap:anywhere}
+.tar-tools{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 16px;margin:8px 0 14px}
+.tar-tools .tracker-search{margin:0;flex:1 1 260px}
+.tar-chips{display:flex;flex-wrap:wrap;gap:6px;flex:1 1 100%}
+.tar-chip{background:none;border:1px solid #315465;border-radius:999px;color:#bfe1dc;font-size:12px;padding:6px 12px}
+.tar-chip.on{border-color:var(--mint);color:var(--mint);background:#143b45}
+.tar-cards{display:flex;flex-direction:column;gap:12px}
+.tar-card{gap:10px;scroll-margin-top:220px}
+.tar-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 18px;align-items:start}
+.tar-head{display:flex;flex-direction:column;gap:6px;min-width:0}
+.tar-kind{align-self:flex-start;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:999px;border:1px solid currentColor}
+.tar-kind-bonuses,.tar-use-bonuses .tar-box-label,.tar-use-bonuses .tar-box-n{color:#f2a96a}
+.tar-kind-customers,.tar-use-customers .tar-box-label,.tar-use-customers .tar-box-n{color:#86e0c8}
+.tar-kind-prices,.tar-use-prices .tar-box-label,.tar-use-prices .tar-box-n{color:#93c8ff}
+.tar-kind-sold,.tar-use-sold .tar-box-label,.tar-use-sold .tar-box-n{color:#cdb0ff}
+.tar-kind-unsaid,.tar-use-unsaid .tar-box-label,.tar-use-unsaid .tar-box-n{color:#b3c4c6}
+.tar-name{margin:0;font:normal 19px/1.25 Georgia,serif;color:#eefaf6;overflow-wrap:anywhere}
+.tar-side{display:flex;flex-direction:column;gap:8px;min-width:170px;max-width:250px}
+.tar-box{padding:10px 12px;border:1px solid #2f6a62;border-radius:10px;background:#0f2e3330;text-align:right;display:flex;flex-direction:column;gap:2px}
+.tar-use{border-color:#3a5560;background:#11222b40}
+.tar-use-bonuses{border-color:#7a5434}
+.tar-box-n{font:800 22px/1.15 system-ui,sans-serif;color:var(--mint);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.tar-box-n.none{font-size:15px;font-weight:700}
+.tar-refund .tar-box-n.none{color:#bcd6d3}
+.tar-resp b{color:#eefaf6}
+.tar-law b{color:#f0c987!important}
+.tar-progs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.tar-prog{display:flex;flex-direction:column;gap:4px;min-width:0}
+.tar-prog-name{font:normal 16px/1.3 Georgia,serif;color:#eefaf6}
+.tar-prog-status{color:#d9efec}
+.tar-time{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1.5;color:#c6dadd}
+.tar-date{color:#eefaf6}
+.tar-about .tar-boxes{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin:4px 0 8px}
+.tar-about .tar-box{text-align:left}
+.tar-about .tar-box-n{font-size:18px}
+@media(max-width:600px){
+ .tar-stats{grid-template-columns:minmax(0,1fr)}
+ .tar-top{grid-template-columns:minmax(0,1fr)}
+ .tar-side{max-width:none;min-width:0}
+ .tar-box{text-align:left}
+ .tar-name{font-size:17px}
+ .tar-stat-n{font-size:23px}
+ .tar-about .tar-boxes{grid-template-columns:minmax(0,1fr)}
+}

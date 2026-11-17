@@ -1,0 +1,692 @@
+{
+ "checked": "2026-11-17",
+ "rule": "Same rules for every company and every President. Every dollar figure names who gives it, with a date and a link to where it is written. A company's own filing comes first; news reports and outside groups are named as such.",
+ "who_gets_it": "By law a tariff refund goes to the importer of record: the business that paid the tariff to U.S. Customs and Border Protection (CBP). Shoppers who paid higher prices are not owed anything by CBP, and no court has ordered a company to pass its refund on. What each company does with its refund is its own choice. This page shows what each one has said in its own filings and statements, and what others say about it.",
+ "totals": [
+  {
+   "key": "collected",
+   "label": "IEEPA tariffs collected",
+   "amount": 166000000000,
+   "asof": "2026-08-20",
+   "who": "Congressional Budget Office (CBO). Collected from Feb 2025 until the Supreme Court ruling, before interest.",
+   "url": "https://www.cbo.gov/publication/62704",
+   "url2": "https://www.supplychaindive.com/news/cbp-has-paid-100b-in-ieepa-tariff-refunds/827257/"
+  },
+  {
+   "key": "sent",
+   "label": "Refunds sent for payment",
+   "amount": 122000000000,
+   "asof": "2026-09-11",
+   "who": "CBP, in a court filing by Brandon Lord of its Trade Programs Directorate. Includes interest. Certified and sent to the Treasury to be paid out.",
+   "url": "https://www.supplychaindive.com/news/cbp-to-expand-ieepa-tariff-processing-in-october/830618/",
+   "url2": "https://www.chrobinson.com/en-us/resources/insights-and-advisories/client-advisories/2026q3/09-17-26-cbp-cape-phase-3-ieepa-refunds/"
+  },
+  {
+   "key": "stuck",
+   "label": "Closed-out entries, still in court",
+   "amount": 11400000000,
+   "asof": "2026-08-07",
+   "who": "Entries that were finally closed out (liquidated) before the ruling, about 7 percent of IEEPA tariffs. The government appealed the order to refund them. CAPE Phase 3 opened for them on Oct 6, 2026, only for importers in the court case.",
+   "url": "https://www.supplychaindive.com/news/cbp-has-paid-100b-in-ieepa-tariff-refunds/827257/",
+   "url2": "https://www.cato.org/blog/ieepa-refunds-update-good-progress-still-ways-go"
+  }
+ ],
+ "progress": [
+  {
+   "asof": "2026-06-29",
+   "amount": 71060000000,
+   "text": "Paid out, including interest. CBP had authorized $104.29 billion by then.",
+   "who": "CBP figures, as summed by the Cato Institute",
+   "url": "https://www.cato.org/blog/ieepa-refunds-update-good-progress-still-ways-go"
+  },
+  {
+   "asof": "2026-07-31",
+   "amount": 100000000000,
+   "text": "Paid in IEEPA tariff refunds.",
+   "who": "CBP, court filing by Brandon Lord",
+   "url": "https://www.supplychaindive.com/news/cbp-has-paid-100b-in-ieepa-tariff-refunds/827257/",
+   "url2": "https://www.courtlistener.com/docket/72304044/24/freestyle-world-inc-v-united-states-of-america/"
+  },
+  {
+   "asof": "2026-09-11",
+   "amount": 122000000000,
+   "text": "Certified and sent to the Treasury for payment, including interest. $134.7 billion accepted for processing, from more than 201,000 accepted refund requests covering about 27.2 million import entries.",
+   "who": "CBP, court filing by Brandon Lord",
+   "url": "https://www.supplychaindive.com/news/cbp-to-expand-ieepa-tariff-processing-in-october/830618/",
+   "url2": "https://www.chrobinson.com/en-us/resources/insights-and-advisories/client-advisories/2026q3/09-17-26-cbp-cape-phase-3-ieepa-refunds/"
+  }
+ ],
+ "programs": [
+  {
+   "slug": "ieepa",
+   "name": "Emergency tariffs under IEEPA",
+   "short": "IEEPA TARIFFS",
+   "law": "International Emergency Economic Powers Act (50 U.S.C. 1701 and after)",
+   "rate": "Different rates by country, from the Feb 2025 orders on Canada, Mexico and China and the April 2, 2025 tariffs on most countries",
+   "start": "2025-02-01",
+   "end": "2026-02-23",
+   "status": "Struck down by the Supreme Court on Feb 20, 2026. Collection stopped Feb 24, 2026. Being refunded to importers, with interest.",
+   "collected": 166000000000,
+   "url": "https://www.supremecourt.gov/opinions/25pdf/24-1287_4gcj.pdf",
+   "collected_who": "Congressional Budget Office",
+   "collected_url": "https://www.cbo.gov/publication/62704"
+  },
+  {
+   "slug": "section-122",
+   "name": "Section 122 tariff",
+   "short": "SECTION 122 TARIFF 2026",
+   "law": "Section 122 of the Trade Act of 1974 (limited to 150 days)",
+   "rate": "10 percent on most imports",
+   "start": "2026-02-24",
+   "end": "2026-07-24",
+   "status": "Expired July 24, 2026. Lawsuits challenge it. No refund process.",
+   "url": "https://www.cbo.gov/publication/62704",
+   "url2": "https://www.supplychaindive.com/news/cbp-has-paid-100b-in-ieepa-tariff-refunds/827257/"
+  },
+  {
+   "slug": "section-301",
+   "name": "Section 301 tariffs",
+   "short": "SECTION 301 TARIFFS 2026",
+   "law": "Section 301 of the Trade Act of 1974",
+   "rate": "10 to 12.5 percent",
+   "start": "2026-07-24",
+   "end": "",
+   "status": "In place. CBO says these raise less money than the IEEPA tariffs did.",
+   "url": "https://www.cbo.gov/publication/62704"
+  }
+ ],
+ "programs_note": "Other tariffs, such as Section 232 tariffs on steel and aluminum, were not part of the Supreme Court case and are not refunded. How much the Section 122 and Section 301 tariffs have collected is not yet sourced here. CBO puts the average tariff rate on imports at about 10 percent after July 31, 2026.",
+ "timeline": [
+  {
+   "date": "2025-02-01",
+   "text": "First tariff orders under IEEPA, an emergency powers law, on goods from Canada, Mexico and China.",
+   "url": "https://www.supremecourt.gov/opinions/25pdf/24-1287_4gcj.pdf"
+  },
+  {
+   "date": "2025-04-02",
+   "text": "IEEPA tariffs announced on imports from most countries.",
+   "url": "https://www.supremecourt.gov/opinions/25pdf/24-1287_4gcj.pdf"
+  },
+  {
+   "date": "2025-05-28",
+   "text": "The Court of International Trade rules the IEEPA tariffs unlawful (V.O.S. Selections v. Trump). The tariffs stay in place during appeals.",
+   "url": "https://en.wikipedia.org/wiki/Learning_Resources,_Inc._v._Trump"
+  },
+  {
+   "date": "2025-08-29",
+   "text": "The Federal Circuit, all 11 judges, agrees 7 to 4.",
+   "url": "https://en.wikipedia.org/wiki/Learning_Resources,_Inc._v._Trump"
+  },
+  {
+   "date": "2025-11-05",
+   "text": "The Supreme Court hears the case (Learning Resources v. Trump, Nos. 24-1287 and 25-250).",
+   "url": "https://www.supremecourt.gov/opinions/25pdf/24-1287_4gcj.pdf"
+  },
+  {
+   "date": "2026-02-20",
+   "text": "The Supreme Court rules 6 to 3: \"IEEPA does not authorize the President to impose tariffs.\" The ruling does not say how money already collected is paid back.",
+   "url": "https://www.supremecourt.gov/opinions/25pdf/24-1287_4gcj.pdf"
+  },
+  {
+   "date": "2026-02-24",
+   "text": "IEEPA tariffs stop. A 10 percent Section 122 tariff starts the same day.",
+   "url": "https://www.cbo.gov/publication/62704"
+  },
+  {
+   "date": "2026-03-04",
+   "text": "Judge Richard K. Eaton of the Court of International Trade rules that every importer who paid IEEPA tariffs is due a refund with interest.",
+   "url": "https://en.wikipedia.org/wiki/Learning_Resources,_Inc._v._Trump"
+  },
+  {
+   "date": "2026-04-20",
+   "text": "CBP opens its refund system, CAPE (Consolidated Administration and Processing of Entries).",
+   "url": "https://www.supplychaindive.com/news/cbp-has-paid-100b-in-ieepa-tariff-refunds/827257/"
+  },
+  {
+   "date": "2026-05",
+   "text": "The first refunds are paid.",
+   "url": "https://www.cbo.gov/publication/62704"
+  },
+  {
+   "date": "2026-06-02",
+   "text": "The government appeals the part of the order that covers entries already finally closed out.",
+   "url": "https://www.cato.org/blog/ieepa-refunds-update-good-progress-still-ways-go"
+  },
+  {
+   "date": "2026-07-24",
+   "text": "The Section 122 tariff expires. Section 301 tariffs of 10 to 12.5 percent begin.",
+   "url": "https://www.cbo.gov/publication/62704"
+  },
+  {
+   "date": "2026-10-06",
+   "text": "CAPE Phase 3 opens for finally closed-out entries, for importers in the court case.",
+   "url": "https://www.chrobinson.com/en-us/resources/insights-and-advisories/client-advisories/2026q3/09-17-26-cbp-cape-phase-3-ieepa-refunds/"
+  },
+  {
+   "date": "2026-11-16",
+   "text": "ProPublica reports that at least nine large companies said in filings that part of their refunds went to bonuses or incentive pay.",
+   "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses",
+   "url2": "https://www.forbes.com/sites/maryroeloffs/2026/11/16/some-corporations-reportedly-using-tariff-refunds-for-executive-bonuses-instead-of-repaying-shoppers/"
+  }
+ ],
+ "uses": {
+  "bonuses": "Part went to bonuses or incentive pay",
+  "customers": "Paying some customers back",
+  "prices": "Says it is lowering prices",
+  "sold": "Sold its refund claim",
+  "unsaid": "Has not said how it will use it"
+ },
+ "companies": [
+  {
+   "slug": "tjx",
+   "name": "TJX Companies (T.J. Maxx, Marshalls, HomeGoods)",
+   "use": "bonuses",
+   "refund": {
+    "amount": 331000000,
+    "label": "Refunds received, second quarter of fiscal 2027",
+    "asof": "2026-08-19",
+    "who": "TJX earnings release, filed with the SEC",
+    "url": "https://www.sec.gov/Archives/edgar/data/109198/000010919826000045/tjxq2fy27earningspressrele.htm"
+   },
+   "use_box": {
+    "amount": 112000000,
+    "label": "Bonuses and incentive pay",
+    "text": "Accrued \"$112 million for year-end incentive compensation and discretionary bonuses for eligible Associates globally.\" TJX calls its employees Associates. It has not said how much goes to top managers.",
+    "url": "https://www.sec.gov/Archives/edgar/data/109198/000010919826000045/tjxq2fy27earningspressrele.htm"
+   },
+   "lines": [
+    {
+     "text": "Net benefit of the refunds to pretax profit: $219 million. TJX expects more refunds, and says the amount and timing are uncertain.",
+     "url": "https://www.sec.gov/Archives/edgar/data/109198/000010919826000045/tjxq2fy27earningspressrele.htm"
+    },
+    {
+     "text": "TJX told ProPublica the rest \"will be used to support our future growth.\" It did not say whether it would lower prices or repay customers.",
+     "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses"
+    }
+   ],
+   "response": {
+    "text": "A TJX spokesperson: \"Given that this is an accrual, and we have not reached the end of our current fiscal year, we have not disclosed any breakout beyond this.\"",
+    "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses"
+   }
+  },
+  {
+   "slug": "stanley-black-decker",
+   "name": "Stanley Black & Decker",
+   "use": "bonuses",
+   "refund": {
+    "amount": 298700000,
+    "label": "Pre-tax gain from IEEPA tariff refunds, first nine months of 2026",
+    "asof": "2026-10-03",
+    "who": "Stanley Black & Decker quarterly report (10-Q), Note A",
+    "url": "https://www.sec.gov/Archives/edgar/data/93556/000009355626000039/swk-20261003.htm"
+   },
+   "use_box": {
+    "amount": 131600000,
+    "label": "Incentive pay and growth spending, together",
+    "text": "The gain was \"partially offset by directly attributable costs for variable incentive compensation and growth investments\": $131.6 million over nine months. The filing does not split incentive pay from growth spending.",
+    "url": "https://www.sec.gov/Archives/edgar/data/93556/000009355626000039/swk-20261003.htm",
+    "mixed": true
+   },
+   "lines": [
+    {
+     "text": "Its earnings release counts a benefit of about $0.67 a share from net tariff refunds.",
+     "url": "https://www.sec.gov/Archives/edgar/data/93556/000009355626000036/ex991q32026.htm"
+    }
+   ],
+   "response": {
+    "text": "Did not answer ProPublica's questions about who gets the bonuses, how much they are worth, and whether customers should be repaid.",
+    "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses"
+   },
+   "lawsuit": {
+    "text": "A lawsuit asks the court to make the company share some of its refund with buyers. The company has not answered it in court yet.",
+    "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses"
+   }
+  },
+  {
+   "slug": "american-eagle",
+   "name": "American Eagle Outfitters",
+   "use": "bonuses",
+   "refund": {
+    "amount": 196000000,
+    "label": "Refunds received, including interest, second quarter 2026",
+    "asof": "2026-09-09",
+    "who": "American Eagle earnings release, filed with the SEC",
+    "url": "https://www.sec.gov/Archives/edgar/data/919012/000119312526386510/aeo-ex99_1.htm"
+   },
+   "use_box": {
+    "amount": 18000000,
+    "hi": 35000000,
+    "label": "Incentive pay tied to the refund",
+    "text": "The filing lists \"$18 million ... of tariff refund related incentive compensation expense\" in overhead, and $35 million of added incentive pay accrued in the quarter across costs and overhead.",
+    "url": "https://www.sec.gov/Archives/edgar/data/919012/000119312526386510/aeo-ex99_1.htm"
+   },
+   "lines": [
+    {
+     "text": "\"The net operating income benefit of tariff refunds was $161 million for the second quarter 2026.\"",
+     "url": "https://www.sec.gov/Archives/edgar/data/919012/000119312526386510/aeo-ex99_1.htm"
+    },
+    {
+     "text": "Recorded $45 million of interest expense tied to selling some refund claims to a third-party buyer. Says it has received substantially all the refunds it claimed.",
+     "url": "https://www.sec.gov/Archives/edgar/data/919012/000119312526386510/aeo-ex99_1.htm"
+    }
+   ]
+  },
+  {
+   "slug": "acushnet",
+   "name": "Acushnet (Titleist, FootJoy)",
+   "use": "bonuses",
+   "refund": {
+    "amount": 45000000,
+    "label": "Refund, as reported",
+    "asof": "2026-11-16",
+    "who": "Forbes, from ProPublica's review of filings. We have not yet found this figure in the filing text ourselves.",
+    "url": "https://www.forbes.com/sites/maryroeloffs/2026/11/16/some-corporations-reportedly-using-tariff-refunds-for-executive-bonuses-instead-of-repaying-shoppers/"
+   },
+   "use_box": {
+    "amount": 12000000,
+    "label": "Incentive pay, as reported",
+    "text": "ProPublica quotes its quarterly report: \"incentive compensation expense of approximately $12.0 million\" from the refund. We could not yet read that part of the filing ourselves.",
+    "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses",
+    "url2": "https://www.sec.gov/Archives/edgar/data/1672013/000167201326000181/golf-20260930.htm"
+   },
+   "lines": [],
+   "response": {
+    "text": "Declined to answer ProPublica's questions.",
+    "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses"
+   }
+  },
+  {
+   "slug": "burlington",
+   "name": "Burlington Stores",
+   "use": "prices",
+   "refund": {
+    "amount": 55000000,
+    "label": "Refunds received, second quarter 2026",
+    "asof": "2026-08-27",
+    "who": "Burlington earnings release",
+    "url": "https://www.burlingtoninvestors.com/news-releases/news-release-details/burlington-stores-reports-strong-second-quarter-sales-and"
+   },
+   "use_box": null,
+   "lines": [
+    {
+     "text": "\"We intend to fully invest these refunds back into the business in the back-half of the year\": about 40 percent in the third quarter and 60 percent in the fourth.",
+     "url": "https://www.burlingtoninvestors.com/news-releases/news-release-details/burlington-stores-reports-strong-second-quarter-sales-and"
+    },
+    {
+     "text": "\"We believe it is important to pass on those savings to our customers.\"",
+     "url": "https://www.burlingtoninvestors.com/news-releases/news-release-details/burlington-stores-reports-strong-second-quarter-sales-and"
+    }
+   ],
+   "response": {
+    "text": "A spokesperson told ProPublica that none of the refund will go to bonuses.",
+    "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses"
+   }
+  },
+  {
+   "slug": "ups",
+   "company_slug": "ups",
+   "name": "UPS (United Parcel Service)",
+   "use": "customers",
+   "refund": {
+    "amount": 500000000,
+    "label": "Refunds applied for in the first phase",
+    "asof": "2026-08-21",
+    "who": "Yahoo Finance (Moneywise)",
+    "url": "https://finance.yahoo.com/economy/policy/articles/ups-fedex-dhl-giving-back-123500871.html"
+   },
+   "use_box": {
+    "amount": 0,
+    "label": "Paid back to customers",
+    "text": "UPS paid tariffs for customers as their customs broker and billed them for it. Customers billed an IEEPA charge should generally get their money within one to three months after UPS is repaid. It has a refund page.",
+    "url": "https://finance.yahoo.com/economy/policy/articles/ups-fedex-dhl-giving-back-123500871.html"
+   },
+   "lines": [
+    {
+     "text": "Expects to recover roughly $5 billion in refunds in total.",
+     "url": "https://finance.yahoo.com/economy/policy/articles/ups-fedex-dhl-giving-back-123500871.html"
+    },
+    {
+     "text": "ProPublica: UPS and FedEx are \"itemizing how much customers paid in tariffs and reimbursing them.\"",
+     "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses"
+    }
+   ]
+  },
+  {
+   "slug": "fedex",
+   "name": "FedEx",
+   "use": "customers",
+   "refund": null,
+   "use_box": {
+    "amount": 800000000,
+    "label": "Being paid back to customers",
+    "text": "\"In the process of issuing $800 million in refunds to customers who were billed for the affected duties.\" It has a refund status page.",
+    "url": "https://finance.yahoo.com/economy/policy/articles/ups-fedex-dhl-giving-back-123500871.html"
+   },
+   "lines": [],
+   "lawsuit": {
+    "text": "Named in a proposed class action by shoppers over tariff charges.",
+    "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+   }
+  },
+  {
+   "slug": "dhl",
+   "name": "DHL",
+   "use": "customers",
+   "refund": null,
+   "use_box": {
+    "amount": 0,
+    "label": "Paid back to whoever paid",
+    "text": "Once CBP repays it, DHL says it will \"return those funds to the party that originally paid the duties.\"",
+    "url": "https://finance.yahoo.com/economy/policy/articles/ups-fedex-dhl-giving-back-123500871.html"
+   },
+   "lines": []
+  },
+  {
+   "slug": "amazon",
+   "company_slug": "amazon",
+   "name": "Amazon",
+   "use": "customers",
+   "refund": {
+    "amount": 600000000,
+    "label": "Refund, roughly, as reported",
+    "asof": "2026-11-16",
+    "who": "Forbes",
+    "url": "https://www.forbes.com/sites/maryroeloffs/2026/11/16/some-corporations-reportedly-using-tariff-refunds-for-executive-bonuses-instead-of-repaying-shoppers/"
+   },
+   "use_box": {
+    "amount": 0,
+    "label": "Some customers, where it can trace the charge",
+    "text": "Its finance chief, Brian Olsavsky, said Amazon found cases where it could trace import charges passed straight to shoppers, and plans to refund those customers automatically.",
+    "url": "https://finance.yahoo.com/economy/policy/articles/ups-fedex-dhl-giving-back-123500871.html"
+   },
+   "lines": [
+    {
+     "text": "Forbes: Amazon \"hasn't publicly confirmed that customer payouts have started.\"",
+     "url": "https://www.forbes.com/sites/maryroeloffs/2026/11/16/some-corporations-reportedly-using-tariff-refunds-for-executive-bonuses-instead-of-repaying-shoppers/"
+    }
+   ],
+   "lawsuit": {
+    "text": "Named in a proposed class action by shoppers over tariff charges.",
+    "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+   }
+  },
+  {
+   "slug": "varex-imaging",
+   "name": "Varex Imaging",
+   "use": "customers",
+   "refund": null,
+   "use_box": {
+    "amount": 0,
+    "label": "Sharing some with customers",
+    "text": "Will split at least some of its refund with its customers, which are mostly other businesses, not shoppers.",
+    "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses"
+   },
+   "lines": []
+  },
+  {
+   "slug": "costco",
+   "name": "Costco",
+   "use": "customers",
+   "refund": null,
+   "use_box": {
+    "amount": 0,
+    "label": "Some customers",
+    "text": "Said it would refund some customers.",
+    "url": "https://www.supplychaindive.com/news/cbp-has-paid-100b-in-ieepa-tariff-refunds/827257/"
+   },
+   "lines": [],
+   "lawsuit": {
+    "text": "Named in a proposed class action by shoppers over tariff charges.",
+    "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+   }
+  },
+  {
+   "slug": "walmart",
+   "company_slug": "walmart",
+   "name": "Walmart",
+   "use": "prices",
+   "refund": null,
+   "use_box": {
+    "amount": 0,
+    "label": "Lower prices",
+    "text": "Supply Chain Dive reports Walmart is using refunds to cut prices.",
+    "url": "https://www.supplychaindive.com/news/cbp-has-paid-100b-in-ieepa-tariff-refunds/827257/"
+   },
+   "lines": [
+    {
+     "text": "Its finance chief, John Rainey, said refunds would be \"recognized in earnings from an accounting perspective.\" (Quoted by Groundwork Collaborative.)",
+     "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+    }
+   ],
+   "lawsuit": {
+    "text": "Named in a consumer lawsuit that asks for refunds to be passed to customers.",
+    "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses"
+   }
+  },
+  {
+   "slug": "target",
+   "name": "Target",
+   "use": "prices",
+   "refund": null,
+   "use_box": {
+    "amount": 0,
+    "label": "Lower prices",
+    "text": "Has said it will use its refund to reduce prices.",
+    "url": "https://www.forbes.com/sites/maryroeloffs/2026/11/16/some-corporations-reportedly-using-tariff-refunds-for-executive-bonuses-instead-of-repaying-shoppers/"
+   },
+   "lines": [],
+   "lawsuit": {
+    "text": "Named in a consumer lawsuit that asks for refunds to be passed to customers.",
+    "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses"
+   }
+  },
+  {
+   "slug": "bjs-wholesale",
+   "name": "BJ's Wholesale Club",
+   "use": "prices",
+   "refund": null,
+   "use_box": {
+    "amount": 0,
+    "label": "Lower prices",
+    "text": "Reported to be using refunds to cut prices.",
+    "url": "https://www.supplychaindive.com/news/cbp-has-paid-100b-in-ieepa-tariff-refunds/827257/"
+   },
+   "lines": []
+  },
+  {
+   "slug": "elf-beauty",
+   "name": "e.l.f. Beauty",
+   "use": "prices",
+   "refund": null,
+   "use_box": {
+    "amount": 0,
+    "label": "Lower prices",
+    "text": "Reported to be using refunds to cut prices.",
+    "url": "https://www.supplychaindive.com/news/cbp-has-paid-100b-in-ieepa-tariff-refunds/827257/",
+    "url2": "https://www.forbes.com/sites/maryroeloffs/2026/11/16/some-corporations-reportedly-using-tariff-refunds-for-executive-bonuses-instead-of-repaying-shoppers/"
+   },
+   "lines": []
+  },
+  {
+   "slug": "tractor-supply",
+   "name": "Tractor Supply",
+   "use": "prices",
+   "refund": null,
+   "use_box": {
+    "amount": 0,
+    "label": "Lower prices",
+    "text": "Has said it will use its refund to reduce prices.",
+    "url": "https://www.forbes.com/sites/maryroeloffs/2026/11/16/some-corporations-reportedly-using-tariff-refunds-for-executive-bonuses-instead-of-repaying-shoppers/"
+   },
+   "lines": []
+  },
+  {
+   "slug": "childrens-place",
+   "name": "The Children's Place",
+   "use": "sold",
+   "refund": null,
+   "use_box": {
+    "amount": 0,
+    "label": "Sold the claim",
+    "text": "Sold its right to the refund to a buyer, who collects it instead.",
+    "url": "https://www.supplychaindive.com/news/cbp-has-paid-100b-in-ieepa-tariff-refunds/827257/"
+   },
+   "lines": []
+  },
+  {
+   "slug": "capri-holdings",
+   "name": "Capri Holdings (Michael Kors, Versace, Jimmy Choo)",
+   "use": "unsaid",
+   "refund": {
+    "amount": 65000000,
+    "label": "Refund recorded, fiscal 2026 tariffs",
+    "asof": "2026-07-02",
+    "who": "Groundwork Collaborative, an advocacy group that opposes the tariffs, quoting the company's earnings call",
+    "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+   },
+   "use_box": null,
+   "lines": [
+    {
+     "text": "Raised prices in February 2026. A price rise can have other causes, such as tariffs still in place.",
+     "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+    }
+   ]
+  },
+  {
+   "slug": "vita-coco",
+   "name": "Vita Coco",
+   "use": "unsaid",
+   "refund": {
+    "amount": 15600000,
+    "label": "Refund claims filed",
+    "asof": "2026-07-02",
+    "who": "Groundwork Collaborative, an advocacy group that opposes the tariffs, quoting the company's earnings call",
+    "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+   },
+   "use_box": null,
+   "lines": [
+    {
+     "text": "Expects a full-year price increase \"of low single digits.\" A price rise can have other causes.",
+     "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+    }
+   ]
+  },
+  {
+   "slug": "build-a-bear",
+   "name": "Build-A-Bear Workshop",
+   "use": "unsaid",
+   "refund": {
+    "amount": 13000000,
+    "label": "Expected refunds booked",
+    "asof": "2026-07-02",
+    "who": "Groundwork Collaborative, an advocacy group that opposes the tariffs, quoting the company's earnings call",
+    "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+   },
+   "use_box": null,
+   "lines": [
+    {
+     "text": "Also made \"selective price increases.\" A price rise can have other causes.",
+     "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+    }
+   ]
+  },
+  {
+   "slug": "energizer",
+   "name": "Energizer",
+   "use": "unsaid",
+   "refund": {
+    "amount": 48000000,
+    "label": "Refund counted in second-quarter results, about",
+    "asof": "2026-07-02",
+    "who": "Groundwork Collaborative, an advocacy group that opposes the tariffs, quoting the company's earnings call",
+    "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+   },
+   "use_box": null,
+   "lines": []
+  },
+  {
+   "slug": "columbia-sportswear",
+   "name": "Columbia Sportswear",
+   "use": "unsaid",
+   "refund": null,
+   "paid": {
+    "amount": 80000000,
+    "label": "IEEPA tariffs it paid, about",
+    "asof": "2026-07-02",
+    "who": "Groundwork Collaborative, an advocacy group that opposes the tariffs, quoting the company's earnings call",
+    "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+   },
+   "use_box": null,
+   "lines": [
+    {
+     "text": "Also made \"targeted price increases.\" A price rise can have other causes.",
+     "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+    }
+   ]
+  },
+  {
+   "slug": "newell-brands",
+   "name": "Newell Brands",
+   "use": "unsaid",
+   "refund": null,
+   "paid": {
+    "amount": 120000000,
+    "label": "IEEPA tariffs it paid in 2025, about",
+    "asof": "2026-07-02",
+    "who": "Groundwork Collaborative, an advocacy group that opposes the tariffs, quoting the company's earnings call",
+    "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+   },
+   "use_box": null,
+   "lines": [
+    {
+     "text": "Had not booked a refund yet when it spoke.",
+     "url": "https://groundworkcollaborative.org/work/trumps-two-way-tariff-rip-off-consumers-pay-more-corporations-get-paid-back/"
+    }
+   ]
+  }
+ ],
+ "says": [
+  {
+   "who": "Chief Justice John Roberts, for the Court (6 justices)",
+   "text": "\"IEEPA contains no reference to tariffs or duties.\"",
+   "url": "https://www.supremecourt.gov/opinions/25pdf/24-1287_4gcj.pdf"
+  },
+  {
+   "who": "Justices Kavanaugh, Thomas and Alito, dissenting",
+   "text": "Would have upheld the tariffs. Justice Kavanaugh wrote the main dissent; Justice Thomas also wrote his own.",
+   "url": "https://www.supremecourt.gov/opinions/25pdf/24-1287_4gcj.pdf"
+  },
+  {
+   "who": "Gregory Germain, corporate law professor, Syracuse University",
+   "text": "\"Executive bonuses are probably the least just way to use this money.\" (to ProPublica)",
+   "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses"
+  },
+  {
+   "who": "Senators Elizabeth Warren, Cory Booker and Peter Welch",
+   "text": "Pushed for rules that would make large companies pass refunds on to consumers and small businesses. Senator Warren wrote to CBP Commissioner Rodney S. Scott about refunds on June 29, 2026.",
+   "url": "https://www.forbes.com/sites/maryroeloffs/2026/11/16/some-corporations-reportedly-using-tariff-refunds-for-executive-bonuses-instead-of-repaying-shoppers/",
+   "url2": "https://www.warren.senate.gov/wp-content/uploads/2026/06/2026.06.29-Letter-to-CBP-on-tariff-refunds-final.pdf"
+  },
+  {
+   "who": "TJX, American Eagle and Stanley Black & Decker, in their filings",
+   "text": "Report the refunds as gains, and the incentive pay as a cost tied to them. The law sends the refund to the importer who paid the tariff, and none of these companies has said it plans to repay customers.",
+   "url": "https://www.propublica.org/article/trump-tariff-refunds-corporate-bonuses"
+  },
+  {
+   "who": "Burlington Stores",
+   "text": "\"Rather than taking a one-time boost to earnings,\" it plans to use the refunds to make its deals better for shoppers.",
+   "url": "https://www.burlingtoninvestors.com/news-releases/news-release-details/burlington-stores-reports-strong-second-quarter-sales-and"
+  }
+ ],
+ "trigger": {
+  "text": "Forbes, Nov 16, 2026: \"Tariff Refunds Are Going To Executive Bonuses At These Companies, Report Says,\" on ProPublica's report.",
+  "url": "https://www.forbes.com/sites/maryroeloffs/2026/11/16/some-corporations-reportedly-using-tariff-refunds-for-executive-bonuses-instead-of-repaying-shoppers/"
+ },
+ "uses_short": {
+  "bonuses": "Bonuses",
+  "customers": "Customers repaid",
+  "prices": "Lower prices",
+  "sold": "Claim sold",
+  "unsaid": "Not said"
+ }
+}
