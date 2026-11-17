@@ -14,6 +14,13 @@ Checks before it writes, and stops on any failure:
 
 "Lives lost, at least" for each entry is the sum of the LOW end of the counts marked total: true. Counts that overlap
 (for example U.S. deaths inside an all-sides count) are marked total: false so nothing is counted twice.
+
+D288 (Nov 2026): the lives total is the TOTAL OF ALL SIDES. Every count names its side: us, allies, opposing, civilians,
+mixed (one count that covers more than one side; it lists them in covers) or disaster (relief and Army Corps entries). For
+wars and strikes, the sides U.S. forces, opposing forces and civilians are expected; any of them with no count is listed in
+sides_missing so the page can say so under the total. The cost shown under the lives total is the first money line that is not
+marked headline: false; with none, the page says "Cost not yet sourced". The cost is its own sourced figure and is never
+added to, or computed from, any count of lives.
 """
 import json
 import os
@@ -28,6 +35,16 @@ KINDS = {
     'engineering': 'Army Corps of Engineers work',
 }
 COMBAT = {'war', 'strikes', 'raid', 'peacekeeping'}
+SIDES = {
+    'us': 'U.S. forces',
+    'allies': 'Allied forces and U.S. contractors',
+    'opposing': 'Opposing forces',
+    'civilians': 'Civilians',
+    'mixed': 'Counts that cover more than one side',
+    'disaster': 'Lives lost in the disaster',
+}
+SIDE_ORDER = ['us', 'allies', 'opposing', 'civilians', 'mixed', 'disaster']
+EXPECTED = ['us', 'opposing', 'civilians']
 PRESIDENT_NAMES = {
     'harry-s-truman': 'Harry S. Truman', 'dwight-d-eisenhower': 'Dwight D. Eisenhower', 'lyndon-b-johnson': 'Lyndon B. Johnson',
     'richard-nixon': 'Richard Nixon', 'ronald-reagan': 'Ronald Reagan', 'george-h-w-bush': 'George H. W. Bush',
@@ -89,6 +106,17 @@ def main():
                 check_url(l['url2'], w)
             if not l.get('asof') or not l.get('who'):
                 fail(w + ': who and asof are required')
+            side = l.get('side')
+            if side not in SIDES:
+                fail(w + ': side must be one of ' + ', '.join(SIDES))
+            if (side == 'disaster') == it['combat']:
+                fail(w + ': disaster is the side for relief and Army Corps entries only')
+            if side == 'mixed':
+                cv = l.get('covers')
+                if not isinstance(cv, list) or len(cv) < 2 or any(c not in EXPECTED + ['allies'] for c in cv):
+                    fail(w + ': a mixed count needs covers, two or more of us, allies, opposing, civilians')
+            elif 'covers' in l:
+                fail(w + ': only a mixed count has covers')
             if l.get('total', True):
                 low += l['n']
                 high += l.get('hi', l['n'])
@@ -97,10 +125,36 @@ def main():
         it['lives_low'] = low
         it['lives_high'] = high
         it['lives_range'] = not exact
+        covered = set()
+        sides = []
+        for k in SIDE_ORDER:
+            rows = [l for l in it.get('lives', []) if l['side'] == k]
+            if not rows:
+                continue
+            counted = [l for l in rows if l.get('total', True)] or rows
+            sl = sum(l['n'] for l in counted)
+            sh = sum(l.get('hi', l['n']) for l in counted)
+            sides.append({'side': k, 'label': SIDES[k], 'low': sl, 'high': sh})
+            for l in rows:
+                covered.update(l.get('covers') or [k])
+        it['sides'] = sides
+        it['sides_missing'] = [SIDES[k] for k in EXPECTED if k not in covered] if it['combat'] else []
+        cost = None
+        for m in it.get('money', []):
+            if m.get('headline', True):
+                cost = {'amount': m['amount'], 'label': m['label'], 'asof': m.get('asof', ''), 'url': m['url']}
+                if 'hi' in m:
+                    cost['hi'] = m['hi']
+                break
+        it['cost'] = cost
         for i, m in enumerate(it.get('money', [])):
             w = s + ' money[' + str(i) + ']'
             if not isinstance(m.get('amount'), (int, float)) or m['amount'] <= 0:
                 fail(w + ': amount must be a positive number')
+            if 'hi' in m and (not isinstance(m['hi'], (int, float)) or m['hi'] < m['amount']):
+                fail(w + ': hi must be a number at least amount')
+            if not m.get('asof'):
+                fail(w + ': asof is required')
             check_url(m.get('url'), w)
             if m.get('url2'):
                 check_url(m['url2'], w)

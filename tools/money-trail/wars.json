@@ -25,6 +25,7 @@
       "lives": [
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 23,
           "who": "Pentagon, Defense Casualty Analysis System: 15 under Operation Epic Fury (7 hostile, 8 non-hostile) and 8 under Overseas Operations (4 hostile, 4 non-hostile). 868 wounded in action.",
           "asof": "2026-11-16",
@@ -34,6 +35,11 @@
         },
         {
           "group": "People killed in Iran",
+          "side": "mixed",
+          "covers": [
+            "opposing",
+            "civilians"
+          ],
           "n": 3468,
           "hi": 3636,
           "who": "Iran's government: 3,468. HRANA, a human rights group: 3,636 (1,221 military, 1,701 civilians, 714 not identified). Counts as listed in about late June 2026; later counts not yet checked.",
@@ -42,17 +48,37 @@
           "total": true
         },
         {
-          "group": "People killed in Israel",
-          "n": 69,
-          "who": "Israeli figures: 40 soldiers, 1 contractor and 28 civilians.",
+          "group": "Israeli soldiers and a contractor",
+          "side": "allies",
+          "n": 41,
+          "who": "Israeli figures: 40 soldiers and 1 contractor.",
           "asof": "2026-06-30",
           "url": "https://en.wikipedia.org/wiki/2026_Iran_war",
           "total": true
         },
         {
-          "group": "People killed in Gulf states",
-          "n": 41,
-          "who": "Saudi Arabia 17 civilians; United Arab Emirates 2 soldiers and 11 civilians; Kuwait 4 soldiers and 7 civilians, as each government reported.",
+          "group": "Israeli civilians",
+          "side": "civilians",
+          "n": 28,
+          "who": "Israeli figures: 28 civilians.",
+          "asof": "2026-06-30",
+          "url": "https://en.wikipedia.org/wiki/2026_Iran_war",
+          "total": true
+        },
+        {
+          "group": "Gulf state soldiers",
+          "side": "allies",
+          "n": 6,
+          "who": "United Arab Emirates 2 soldiers and Kuwait 4 soldiers, as each government reported.",
+          "asof": "2026-06-30",
+          "url": "https://en.wikipedia.org/wiki/2026_Iran_war",
+          "total": true
+        },
+        {
+          "group": "Gulf state civilians",
+          "side": "civilians",
+          "n": 35,
+          "who": "Saudi Arabia 17 civilians, United Arab Emirates 11 and Kuwait 7, as each government reported.",
           "asof": "2026-06-30",
           "url": "https://en.wikipedia.org/wiki/2026_Iran_war",
           "total": true
@@ -112,6 +138,12 @@
       "lives": [
         {
           "group": "People on the boats",
+          "side": "mixed",
+          "covers": [
+            "opposing",
+            "civilians"
+          ],
+          "side_note": "The government calls them narco-terrorists; critics say many were civilians. Not proven either way, so this count is not put under one side.",
           "n": 223,
           "hi": 230,
           "who": "New York Times tracker: at least 230 killed (17 missing and presumed dead) in at least 68 strikes on 69 boats, as of Sep 9, 2026. UN special rapporteur Ben Saul: 68 attacks killed 223.",
@@ -150,6 +182,7 @@
       "lives": [
         {
           "group": "Cuban military and security personnel",
+          "side": "opposing",
           "n": 32,
           "who": "Cuba's government.",
           "asof": "2026-01-04",
@@ -158,6 +191,7 @@
         },
         {
           "group": "Venezuelan military",
+          "side": "opposing",
           "n": 23,
           "hi": 47,
           "who": "Venezuelan officials to AP: at least 23. Defense Minister Padrino Lopez to Reuters, Jan 16: 47.",
@@ -167,6 +201,7 @@
         },
         {
           "group": "Venezuelan civilians",
+          "side": "civilians",
           "n": 2,
           "who": "As listed from news reports; a Venezuelan official told the New York Times about 80 people died in all.",
           "asof": "2026-01-04",
@@ -175,6 +210,7 @@
         },
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 0,
           "who": "Department of Defense: no U.S. deaths, 7 injured.",
           "asof": "2026-01-04",
@@ -202,6 +238,12 @@
       "lives": [
         {
           "group": "Deaths from the U.S. strikes",
+          "side": "mixed",
+          "covers": [
+            "us",
+            "opposing",
+            "civilians"
+          ],
           "n": 0,
           "who": "None reported for the U.S. strikes themselves. Deaths in the wider 12 day Israel and Iran war are not counted here.",
           "asof": "2025-06-22",
@@ -209,10 +251,22 @@
           "total": true
         }
       ],
-      "money": [],
-      "money_gap": "No official cost found yet.",
+      "money": [
+        {
+          "from": "",
+          "amount": 2038502000,
+          "hi": 2255220000,
+          "label": "Research estimate",
+          "what": "Brown University Costs of War estimate for U.S. military action tied to the June 2025 Iran strikes, fiscal 2025. Most of it ($1.8 to $1.95 billion) is THAAD missile defense sent to protect Israel; the bombing mission itself was not priced on its own.",
+          "asof": "2025-10-07",
+          "url": "https://costsofwar.watson.brown.edu/sites/default/files/2025-10/Wider-Middle-East-Costs_Costs-of-War_Bilmes_10.7.25.pdf",
+          "web": false,
+          "headline": false
+        }
+      ],
       "says": [],
-      "short": "Iran nuclear site strikes, 2025"
+      "short": "Iran nuclear site strikes, 2025",
+      "money_gap": "No official cost found yet. The bombing mission has not been priced on its own; the wider estimate below is mostly missile defense for Israel."
     },
     {
       "slug": "yemen-rough-rider-2025",
@@ -229,6 +283,7 @@
       "lives": [
         {
           "group": "Civilians in Yemen",
+          "side": "civilians",
           "n": 224,
           "who": "Airwars, a civilian harm monitor. A Pentagon assessment listed 153 civilians killed.",
           "asof": "2025-05-06",
@@ -237,6 +292,7 @@
         },
         {
           "group": "Houthi fighters",
+          "side": "opposing",
           "n": 500,
           "hi": 600,
           "who": "U.S. and Yemeni government estimate, to Apr 22, 2025.",
@@ -246,6 +302,7 @@
         },
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 0,
           "who": "No U.S. deaths reported. Losses: 2 F/A-18 Super Hornets and 7 MQ-9 Reaper drones.",
           "asof": "2025-05-06",
@@ -253,8 +310,29 @@
           "total": true
         }
       ],
-      "money": [],
-      "money_gap": "No official cost found yet.",
+      "money": [
+        {
+          "from": "DEPARTMENT OF DEFENSE",
+          "amount": 1000000000,
+          "label": "Reported (officials not named)",
+          "what": "\"More than $1 billion since March,\" according to two U.S. officials briefed on the cost (NBC News, May 8, 2025). The same report says a Defense Department official called its munitions figure too high. Brown University's Costs of War project cites this figure.",
+          "asof": "2025-05-08",
+          "url": "https://www.nbcnews.com/politics/national-security/trump-operation-houthis-cost-1-billion-rcna205333",
+          "url2": "https://costsofwar.watson.brown.edu/sites/default/files/2025-10/Wider-Middle-East-Costs_Costs-of-War_Bilmes_10.7.25.pdf",
+          "web": true
+        },
+        {
+          "from": "",
+          "amount": 2760806000,
+          "hi": 4945279500,
+          "label": "Research estimate",
+          "what": "Brown University Costs of War estimate for all U.S. military action against the Houthis in fiscal 2025 (Oct 2024 to Sep 2025), mostly aircraft carriers, bombs and missiles, and three lost F/A-18 jets. It covers more than these strikes, so it is not the headline figure.",
+          "asof": "2025-10-07",
+          "url": "https://costsofwar.watson.brown.edu/sites/default/files/2025-10/Wider-Middle-East-Costs_Costs-of-War_Bilmes_10.7.25.pdf",
+          "web": false,
+          "headline": false
+        }
+      ],
       "says": [],
       "short": "Yemen strikes, Operation Rough Rider, 2025"
     },
@@ -273,6 +351,11 @@
       "lives": [
         {
           "group": "People killed in Yemen",
+          "side": "mixed",
+          "covers": [
+            "opposing",
+            "civilians"
+          ],
           "n": 106,
           "who": "Houthi count: 931 strikes, 106 deaths and 314 injuries, to Jan 2, 2025. No independent full count found yet.",
           "asof": "2025-01-02",
@@ -281,7 +364,7 @@
         }
       ],
       "money": [],
-      "money_gap": "No official cost found yet.",
+      "money_gap": "No official cost found yet. Brown University's Costs of War puts all U.S. military activity in the wider Middle East from Oct 7, 2023 to Sep 30, 2024 at $4.86 to $4.87 billion. That covers much more than these strikes, so it is not shown as their cost.",
       "says": [
         {
           "who": "AP, Jan 11, 2024",
@@ -308,6 +391,7 @@
       "lives": [
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 124,
           "who": "Pentagon, Defense Casualty Analysis System: 25 hostile and 99 non-hostile deaths; 499 wounded in action.",
           "asof": "2026-11-16",
@@ -316,6 +400,7 @@
         },
         {
           "group": "Civilians in Syria",
+          "side": "civilians",
           "n": 95000,
           "who": "Brown University Costs of War, Sep 2014 to May 2021, all parties. Iraq's dead are under the Iraq war entry.",
           "asof": "2021-05-31",
@@ -324,6 +409,12 @@
         },
         {
           "group": "Syrian and allied forces and opposition fighters",
+          "side": "mixed",
+          "covers": [
+            "allies",
+            "opposing"
+          ],
+          "side_note": "Brown counts Syrian government forces, their allies and opposition fighters together.",
           "n": 171007,
           "who": "Brown University Costs of War: 80,600 national military and police, 13,407 allied troops, 77,000 opposition fighters (Syria and ISIS column).",
           "asof": "2021-05-31",
@@ -332,6 +423,7 @@
         },
         {
           "group": "U.S. contractors",
+          "side": "allies",
           "n": 19,
           "who": "Brown University Costs of War (Syria and ISIS column).",
           "asof": "2021-05-31",
@@ -359,6 +451,7 @@
       "lives": [
         {
           "group": "Civilians killed by the NATO air campaign",
+          "side": "civilians",
           "n": 60,
           "hi": 72,
           "who": "UN Human Rights Council: 60 (Mar 2012). Human Rights Watch: at least 72 (May 2012). Libya's Gaddafi government claimed far more; NATO denied those claims.",
@@ -368,6 +461,7 @@
         },
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 0,
           "who": "No U.S. combat deaths listed. One F-15E crashed from a mechanical failure; the crew was rescued.",
           "asof": "2011-10-31",
@@ -415,6 +509,7 @@
       "lives": [
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 4491,
           "who": "Pentagon, Defense Casualty Analysis System: 4,417 under Operation Iraqi Freedom and 74 under Operation New Dawn. 32,292 wounded in action.",
           "asof": "2026-11-16",
@@ -424,6 +519,7 @@
         },
         {
           "group": "Iraqi civilians",
+          "side": "civilians",
           "n": 200065,
           "hi": 226628,
           "who": "Iraq Body Count: documented civilian deaths from violence since 2003. It counts only deaths it can document, so the true number is higher.",
@@ -433,6 +529,12 @@
         },
         {
           "group": "Iraqi military and police",
+          "side": "mixed",
+          "covers": [
+            "allies",
+            "opposing"
+          ],
+          "side_note": "Brown counts the Iraqi army that fought the U.S. in 2003 and the Iraqi forces that fought beside it later together.",
           "n": 45519,
           "hi": 48719,
           "who": "Brown University Costs of War, Mar 2003 to Aug 2021.",
@@ -442,6 +544,7 @@
         },
         {
           "group": "Opposition fighters",
+          "side": "opposing",
           "n": 34806,
           "hi": 39881,
           "who": "Brown University Costs of War, Mar 2003 to Aug 2021.",
@@ -451,6 +554,12 @@
         },
         {
           "group": "U.S. contractors, allied troops, journalists, aid workers",
+          "side": "mixed",
+          "covers": [
+            "allies",
+            "civilians"
+          ],
+          "side_note": "Allied troops and contractors, plus journalists and aid workers, in one Brown count.",
           "n": 4318,
           "who": "Brown University Costs of War: 3,650 U.S. contractors, 323 allied troops, 282 journalists, 63 aid workers.",
           "asof": "2021-08-31",
@@ -511,6 +620,7 @@
       "lives": [
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 2458,
           "who": "Pentagon, Defense Casualty Analysis System: 2,350 under Operation Enduring Freedom (which also counts some deaths outside Afghanistan) and 108 under Operation Freedom's Sentinel. 20,769 wounded in action.",
           "asof": "2026-11-16",
@@ -520,6 +630,7 @@
         },
         {
           "group": "Afghan civilians",
+          "side": "civilians",
           "n": 46319,
           "who": "Brown University Costs of War, through Aug 2021.",
           "asof": "2021-08-31",
@@ -528,6 +639,7 @@
         },
         {
           "group": "Afghan military and police",
+          "side": "allies",
           "n": 69095,
           "who": "Brown University Costs of War, through Aug 2021.",
           "asof": "2021-08-31",
@@ -536,6 +648,7 @@
         },
         {
           "group": "Opposition fighters (Taliban and others)",
+          "side": "opposing",
           "n": 52893,
           "who": "Brown University Costs of War, through Aug 2021.",
           "asof": "2021-08-31",
@@ -544,6 +657,12 @@
         },
         {
           "group": "U.S. contractors, allied troops, journalists, aid workers",
+          "side": "mixed",
+          "covers": [
+            "allies",
+            "civilians"
+          ],
+          "side_note": "Allied troops and contractors, plus journalists and aid workers, in one Brown count.",
           "n": 5581,
           "who": "Brown University Costs of War: 3,917 U.S. contractors, 1,144 allied troops, 74 journalists, 446 aid workers.",
           "asof": "2021-08-31",
@@ -599,6 +718,7 @@
       "lives": [
         {
           "group": "Yugoslav civilians killed by NATO bombing",
+          "side": "civilians",
           "n": 489,
           "hi": 528,
           "who": "Human Rights Watch, \"Civilian Deaths in the NATO Air Campaign\", Feb 2000.",
@@ -608,8 +728,18 @@
         }
       ],
       "lives_gap": "Deaths of Kosovar Albanians in the conflict and Yugoslav military deaths are not yet sourced here.",
-      "money": [],
-      "money_gap": "No official U.S. cost found yet.",
+      "money": [
+        {
+          "from": "DEPARTMENT OF DEFENSE",
+          "amount": 3000000000,
+          "label": "Official estimate (CRS)",
+          "what": "Pentagon's actual extra cost of the 1999 air war, fiscal 1999: \"DOD calculated its actual FY1999 incremental costs to be $3.0 billion\" (Congressional Research Service IB10027 and RL32282). NATO gives no total for all its members.",
+          "asof": "2003-07-08",
+          "url": "https://www.everycrsreport.com/reports/IB10027.html",
+          "url2": "https://www.everycrsreport.com/reports/RL32282.html",
+          "web": true
+        }
+      ],
       "says": [],
       "short": "Kosovo air war, 1999"
     },
@@ -629,6 +759,7 @@
       "lives": [
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 43,
           "who": "Congressional Research Service from Pentagon records: 29 hostile, 14 non-hostile.",
           "asof": "2020-07-29",
@@ -665,6 +796,7 @@
       "lives": [
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 383,
           "who": "Congressional Research Service from Pentagon records: 148 battle deaths, 235 other deaths; 467 wounded.",
           "asof": "2020-07-29",
@@ -702,6 +834,7 @@
       "lives": [
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 23,
           "who": "Congressional Research Service from Pentagon records.",
           "asof": "2020-07-29",
@@ -709,15 +842,26 @@
           "total": true
         },
         {
-          "group": "Panamanians",
-          "n": 516,
-          "who": "Pentagon estimate: 314 soldiers and 202 civilians. Other counts run from about 300 civilians (Americas Watch) to 3,000 (Ramsey Clark).",
+          "group": "Panamanian soldiers",
+          "side": "opposing",
+          "n": 314,
+          "who": "Pentagon estimate: 314 Panamanian soldiers.",
+          "asof": "1990-04-01",
+          "url": "https://www.nytimes.com/1990/04/01/world/panama-and-us-strive-to-settle-on-death-toll.html",
+          "total": true
+        },
+        {
+          "group": "Panamanian civilians",
+          "side": "civilians",
+          "n": 202,
+          "who": "Pentagon estimate: 202 civilians. Other counts run from about 300 civilians (Americas Watch) to 3,000 (Ramsey Clark).",
           "asof": "1990-04-01",
           "url": "https://www.nytimes.com/1990/04/01/world/panama-and-us-strive-to-settle-on-death-toll.html",
           "total": true
         },
         {
           "group": "U.S. civilians",
+          "side": "civilians",
           "n": 3,
           "who": "As listed with the Pentagon figures.",
           "asof": "1990-04-01",
@@ -744,6 +888,7 @@
       "lives": [
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 265,
           "who": "Congressional Research Service from Pentagon records: 256 hostile, 9 non-hostile.",
           "asof": "2020-07-29",
@@ -770,14 +915,46 @@
       "lives": [
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 19,
           "who": "Congressional Research Service from Pentagon records: 18 hostile, 1 non-hostile.",
           "asof": "2020-07-29",
           "url": "https://www.everycrsreport.com/reports/RL32492.html",
           "total": true
+        },
+        {
+          "group": "Grenadian soldiers",
+          "side": "opposing",
+          "n": 21,
+          "hi": 45,
+          "who": "Britannica: 21 members of the Grenadian army killed in action. U.S. Army Center of Military History: 45 Grenadians killed and 358 wounded.",
+          "asof": "2026-11-17",
+          "url": "https://www.britannica.com/event/U-S-invasion-of-Grenada",
+          "url2": "https://history.army.mil/html/books/grenada/urgent_fury.pdf",
+          "total": true
+        },
+        {
+          "group": "Cuban personnel",
+          "side": "opposing",
+          "n": 24,
+          "hi": 25,
+          "who": "Britannica: perhaps 24 killed and 59 wounded. U.S. Army Center of Military History: 25 Cubans killed and 59 wounded.",
+          "asof": "2026-11-17",
+          "url": "https://www.britannica.com/event/U-S-invasion-of-Grenada",
+          "url2": "https://history.army.mil/html/books/grenada/urgent_fury.pdf",
+          "total": true
+        },
+        {
+          "group": "Grenadian civilians",
+          "side": "civilians",
+          "n": 24,
+          "who": "Britannica: 24 dead and 337 wounded. The U.S. Army history says a U.S. Navy air strike hit a hospital near Fort Frederick and killed 18 mental patients.",
+          "asof": "2026-11-17",
+          "url": "https://www.britannica.com/event/U-S-invasion-of-Grenada",
+          "url2": "https://history.army.mil/html/books/grenada/urgent_fury.pdf",
+          "total": true
         }
       ],
-      "lives_gap": "Grenadian and Cuban deaths are not yet sourced here.",
       "money": [],
       "says": [],
       "short": "Grenada invasion, 1983"
@@ -807,6 +984,7 @@
       "lives": [
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 58220,
           "who": "National Archives, from Pentagon records: 47,434 hostile, 10,786 non-hostile.",
           "asof": "2008-04-29",
@@ -815,6 +993,7 @@
         },
         {
           "group": "North Vietnamese and Viet Cong fighters",
+          "side": "opposing",
           "n": 1100000,
           "who": "Vietnam's government, 1995 estimate for 1955 to 1975.",
           "asof": "1995-04-23",
@@ -823,6 +1002,7 @@
         },
         {
           "group": "Vietnamese civilians, both sides",
+          "side": "civilians",
           "n": 2000000,
           "who": "Vietnam's government, 1995 estimate for 1955 to 1975.",
           "asof": "1995-04-23",
@@ -831,6 +1011,7 @@
         },
         {
           "group": "South Vietnamese military",
+          "side": "allies",
           "n": 254256,
           "who": "Recorded combat deaths 1960 to 1974 (Clarke, U.S. Army Center of Military History, 1988).",
           "asof": "1988-01-01",
@@ -869,6 +1050,7 @@
       "lives": [
         {
           "group": "U.S. service members",
+          "side": "us",
           "n": 36574,
           "who": "Congressional Research Service from Pentagon records: deaths in the theater (33,739 hostile, 2,835 non-hostile).",
           "asof": "2020-07-29",
@@ -877,6 +1059,13 @@
         },
         {
           "group": "Military deaths, all sides (includes the U.S.)",
+          "side": "mixed",
+          "covers": [
+            "us",
+            "allies",
+            "opposing"
+          ],
+          "side_note": "One count for the soldiers of every army. The U.S. deaths above are inside it and are not added again.",
           "n": 1000000,
           "who": "Around one million, as summarized from historians' counts.",
           "asof": "2026-11-16",
@@ -885,6 +1074,7 @@
         },
         {
           "group": "Korean civilians",
+          "side": "civilians",
           "n": 1500000,
           "hi": 3000000,
           "who": "Estimated 1.5 million to 3 million, as summarized from historians' counts.",
@@ -927,7 +1117,8 @@
           "asof": "2018-08-28",
           "url": "https://qz.com/1372233/puerto-ricos-official-death-toll-from-hurricane-maria-is-now-2975",
           "url2": "https://www.kunc.org/npr-news/2018-08-28/hurricane-maria-caused-2-975-deaths-in-puerto-rico-independent-study-estimates",
-          "total": true
+          "total": true,
+          "side": "disaster"
         }
       ],
       "money": [
@@ -963,7 +1154,8 @@
           "who": "CDC: more than 28,600 cases and 11,325 deaths, 2014 to 2016.",
           "asof": "2016-06-10",
           "url": "https://www.cdc.gov/vhf/ebola/history/2014-2016-outbreak/index.html",
-          "total": true
+          "total": true,
+          "side": "disaster"
         }
       ],
       "money": [
@@ -999,7 +1191,8 @@
           "who": "Japan National Police Agency, as of May 23, 2011: over 15,188 deaths confirmed and 8,742 missing (later counts are higher).",
           "asof": "2011-05-23",
           "url": "https://www.everycrsreport.com/reports/R41690.html",
-          "total": true
+          "total": true,
+          "side": "disaster"
         }
       ],
       "money": [
@@ -1035,7 +1228,8 @@
           "who": "Haitian government estimate, as reported by the Congressional Research Service (R41023). Later estimates differ.",
           "asof": "2010-02-01",
           "url": "https://www.everycrsreport.com/reports/R41023.html",
-          "total": true
+          "total": true,
+          "side": "disaster"
         }
       ],
       "money": [],
@@ -1064,7 +1258,8 @@
           "who": "National Hurricane Center, updated Jan 4, 2023: 1,392 (520 direct, 565 indirect, 307 cause not known). Older reports said more than 1,800.",
           "asof": "2023-01-04",
           "url": "https://www.nhc.noaa.gov/data/tcr/AL122005_Katrina.pdf",
-          "total": true
+          "total": true,
+          "side": "disaster"
         }
       ],
       "money": [

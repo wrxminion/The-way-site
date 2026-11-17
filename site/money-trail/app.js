@@ -387,6 +387,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   const kindOf = e => {
     const t = e.entity_type || '';
     if (/ballot measure/i.test(t)) return null;
+    // D288: war, military action and mission dots and the war laws belong to the War tracker and the Money web only.
+    if (/\(War tracker\)$|^federal law authorizing military force$/i.test(t)) return null;
     if (/municipal_public_body|election authority|federal agency|federal court/i.test(t)) return 'departments';
     if (/candidate_named|member_of_congress|supreme_court_justice|president_of_the_united_states|media_owner_person|person who gave/i.test(t) || looksPerson(e.legal_or_reported_name)) return 'people';
     return 'orgs';
