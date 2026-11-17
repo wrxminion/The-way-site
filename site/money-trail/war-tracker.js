@@ -3,6 +3,9 @@
 // lost (each count with who gives it and a link), the cost and contracts (each with a link). Data: wars.js (window.TW_WARS).
 // Loaded after app.js. Text goes in with textContent.
 // Lives lost are shown as numbers of people only. No life is given a dollar value, and lives are never added to a cost.
+// D288 (Nov 2026): the big lives number is the total of all sides (U.S., allies, opposing forces, civilians). The breakdown
+// splits it by side, with civilians on their own line, and names any side that has no sourced count yet. The cost sits in
+// its own box under the lives box: one sourced figure (it.cost, picked by build_wars.py), or "Cost not yet sourced".
 (function () {
   'use strict';
   const W = window.TW_WARS, HUB = window.TW_WAR_HUB || {};
@@ -18,6 +21,24 @@
   const day = d => { const p = String(d || '').split('-'); if (!p[0]) return ''; if (p.length === 1) return p[0]; if (p.length === 2) return MONTHS[+p[1] - 1] + ' ' + p[0]; return MONTHS[+p[1] - 1] + ' ' + (+p[2]) + ', ' + p[0]; };
   const span = it => it.end === it.start ? day(it.start) : day(it.start) + ' to ' + (it.end ? day(it.end) : 'now');
   const livesText = it => it.lives_low === 0 && it.lives_high === 0 ? 'None reported' : it.lives_range ? n(it.lives_low) + ' to ' + n(it.lives_high) : n(it.lives_low);
+  const range = (lo, hi) => lo === hi ? n(lo) : n(lo) + ' to ' + n(hi);
+  const costText = c => c.hi ? bigMoney(c.amount) + ' to ' + bigMoney(c.hi) : bigMoney(c.amount);
+  const missText = it => (it.sides_missing || []).length ? 'No sourced count yet for: ' + it.sides_missing.map(x => /^U\.S\./.test(x) ? x : x.toLowerCase()).join(', ') + '.' : '';
+  const COST_RULE = 'A separate sourced figure. It is never added to lives lost, and no life is counted in it.';
+  // The cost box. Same box on the card and in the inspector.
+  function costBox(it, cls) {
+    const b = el('div', cls);
+    b.append(el('span', 'war-cost-label', 'Cost'));
+    if (it.cost) {
+      b.append(el('b', 'war-cost-n', costText(it.cost)));
+      b.append(el('small', 'war-cost-note', it.cost.label + ', as of ' + day(it.cost.asof) + '. ' + COST_RULE));
+    } else {
+      b.append(el('b', 'war-cost-n none', 'Cost not yet sourced'));
+      const gap = it.money_gap && !/^No (official|full official|official U\.S\.) cost found yet\.$/.test(it.money_gap) ? it.money_gap : '';
+      if (gap) b.append(el('small', 'war-cost-note', gap));
+    }
+    return b;
+  }
   const BY_HUB = new Map(W.items.map(it => [norm(it.hub), it]));
   const BY_SLUG = new Map(W.items.map(it => [it.slug, it]));
   const LIVES_RULE = 'We count the people who died as people. We do not put a dollar value on a human life, and we refuse to. No death on this page or in the Money web is turned into money, and lives are never added to a cost.';
@@ -39,10 +60,15 @@
   // ---- Evidence inspector: a war or mission dot shows its lives lost and a link to its card.
   function livesBox(it) {
     const b = el('div', 'mt-about war-about');
-    b.append(el('div', 'mt-evcard-head', it.combat ? 'Lives lost' : 'Lives lost in the disaster'));
+    b.append(el('div', 'mt-evcard-head', it.combat ? 'Lives lost, all sides' : 'Lives lost in the disaster'));
     b.append(el('div', 'war-count', livesText(it)));
+    if (it.combat) b.append(el('p', 'mt-about-src war-all', 'Total of all sides counted. ' + missText(it)));
     const ul = el('ul', 'np-about-list');
-    it.lives.forEach(l => ul.append(el('li', null, l.group + ': ' + (l.hi ? n(l.n) + ' to ' + n(l.hi) : n(l.n)) + (l.total === false ? ' (already inside a count above)' : ''))));
+    (it.sides || []).forEach(sd => {
+      if (sd.side === 'mixed' || sd.side === 'disaster') {
+        it.lives.filter(l => l.side === sd.side).forEach(l => ul.append(el('li', null, l.group + ': ' + (l.hi ? n(l.n) + ' to ' + n(l.hi) : n(l.n)) + (l.total === false ? ' (already inside a count above)' : ''))));
+      } else ul.append(el('li', null, sd.label + ': ' + range(sd.low, sd.high)));
+    });
     b.append(ul);
     b.append(el('p', 'mt-about-src', LIVES_RULE));
     const a = el('a', 'detail-link mt-about-site', 'Open it on the War tracker, with every source →'); a.href = '?view=wars#war-' + it.slug;
@@ -57,7 +83,7 @@
     const it = BY_HUB.get(norm(e.name || ''));
     if (!it) return;
     const head = document.querySelector('#detail-content .event-kind');
-    if (head) head.after(livesBox(it));
+    if (head) { const lb = livesBox(it); head.after(lb); lb.after(costBox(it, 'mt-about war-about war-cost war-cost-about')); }
   };
 
   // ---- The war dots are in the center list of the web.
@@ -88,21 +114,35 @@
     it.presidents.forEach((p, i) => { const a = el('a', 'bud-src', p.name); a.href = p.page; pres.append(a); if (i < it.presidents.length - 1) pres.append(document.createTextNode(', ')); });
     head.append(pres);
     const life = el('div', 'war-lives');
-    life.append(el('span', 'war-lives-label', it.combat ? 'Lives lost' : 'Lives lost in the disaster'), el('b', 'war-count', livesText(it)),
-      el('small', 'war-lives-note', it.lives_low > 0 ? 'At least this many, from the counts below' : 'From the counts below'));
-    top.append(head, life); c.append(top);
+    life.append(el('span', 'war-lives-label', it.combat ? 'Lives lost, all sides' : 'Lives lost in the disaster'), el('b', 'war-count', livesText(it)),
+      el('small', 'war-lives-note', (it.lives_low > 0 ? 'At least this many, from the counts below' : 'From the counts below') + (it.combat ? '. U.S., allies, opposing forces and civilians together.' : '.')));
+    const miss = missText(it);
+    if (miss) life.append(el('small', 'war-lives-miss', miss));
+    const side = el('div', 'war-side');
+    side.append(life, costBox(it, 'war-cost'));
+    top.append(head, side); c.append(top);
     c.append(el('p', 'war-what', it.what));
 
-    const ls = section('Lives lost, by who counts them');
-    const ul = el('ul', 'war-list');
-    it.lives.forEach(l => {
+    const ls = section(it.combat ? 'Lives lost, by side' : 'Lives lost, by who counts them');
+    const line = l => {
       const li = el('li');
       li.append(el('b', 'war-n', l.hi ? n(l.n) + ' to ' + n(l.hi) : n(l.n)), el('span', 'war-g', ' ' + l.group + '. '), el('span', null, l.who + ' As of ' + day(l.asof) + '. '));
+      if (l.side_note) li.append(el('span', 'war-dim', l.side_note + ' '));
       if (l.total === false) li.append(el('span', 'war-dim', 'Already inside a count on this card, so not added again. '));
       li.append(ext(host(l.url), l.url)); if (l.url2) { li.append(document.createTextNode(' ')); li.append(ext(host(l.url2), l.url2)); }
-      ul.append(li);
+      return li;
+    };
+    (it.sides || []).forEach(sd => {
+      const grp = el('div', 'war-grp war-grp-' + sd.side);
+      if (it.combat) {
+        const h = el('h5', 'war-grp-h'); h.append(el('span', null, sd.label), el('b', 'war-grp-n', sd.side === 'mixed' ? '' : range(sd.low, sd.high)));
+        grp.append(h);
+      }
+      const ul = el('ul', 'war-list');
+      it.lives.filter(l => l.side === sd.side).forEach(l => ul.append(line(l)));
+      grp.append(ul); ls.append(grp);
     });
-    ls.append(ul);
+    if (miss) ls.append(el('p', 'bud-small war-gap war-miss', miss + ' The total above is only the sides we can source, so the real total is higher.'));
     if (it.lives_gap) ls.append(el('p', 'bud-small war-gap', 'Not yet counted: ' + it.lives_gap.replace(/^Not counted here yet: /, '')));
     c.append(ls);
 

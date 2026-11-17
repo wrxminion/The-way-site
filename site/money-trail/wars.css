@@ -34,9 +34,29 @@
 .war-src{overflow-wrap:anywhere}
 .war-about .war-count{font-size:22px;margin:2px 0 6px}
 .war-about .mt-evcard-head{color:var(--brass)}
+/* D288: lives box shows all sides; the cost sits in its own mint box right under it, never inside the lives box. */
+.war-side{display:flex;flex-direction:column;gap:8px;min-width:150px;max-width:240px}
+.war-side .war-lives{max-width:none}
+.war-lives-miss{font-size:11px;color:#e9c98f;line-height:1.35;margin-top:4px}
+.war-cost{padding:10px 12px;border:1px solid #2f6a62;border-radius:10px;background:#0f2e3330;text-align:right;display:flex;flex-direction:column;gap:2px}
+.war-cost-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mint);font-weight:700}
+.war-cost-n{font:800 22px/1.15 system-ui,sans-serif;color:var(--mint);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.war-cost-n.none{font-size:15px;color:#bcd6d3}
+.war-cost-note{font-size:11px;color:#a9c7c4;line-height:1.35}
+.war-cost-about{text-align:left;margin-top:10px}
+.war-cost-about .war-cost-n{font-size:22px}
+.war-cost-about .war-cost-n.none{font-size:15px}
+.war-grp{margin:0 0 8px}
+.war-grp-h{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;margin:6px 0 4px;font-size:12px;font-weight:700;color:#eefaf6}
+.war-grp-n{color:#f4e7cf;font-variant-numeric:tabular-nums}
+.war-grp .war-list b.war-n{color:#f4e7cf}
+.war-miss{color:#e9c98f}
+.war-all{margin:0 0 6px}
 @media(max-width:600px){
  .war-top{grid-template-columns:minmax(0,1fr)}
  .war-lives{max-width:none;text-align:left}
+ .war-side{max-width:none}
+ .war-cost{text-align:left}
  .war-count{font-size:23px}
  .war-name{font-size:17px}
  .war-pick{flex:1 1 100%}
