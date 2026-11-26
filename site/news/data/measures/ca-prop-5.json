@@ -2,6 +2,33 @@
  "schema": "theway-news/1",
  "items": [
   {
+   "id": "cd40fd015a94e62f",
+   "kind": "news",
+   "title": "Voters Approve Prop 5 Reforming California Recall Process",
+   "source": "Wisevoter",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxON2VMTnZCYmE2aFVFbmtSdjh2UUdROW8zamEyaHBCdnRWbkZxZ2NZdGVSTlRUWHdxT2xZTnY5cTFOTFo0bDhHR05aQVpFZ3BxNDFfZzhJSmpQdXpnSm56WGE5REtYSjJCVGZ4WXhlTGlIekQ1elpYWmhYQkNjeHV0dWlpZ1hEYWRndzFqWEQ5MA?oc=5",
+   "published_at": "2026-11-26",
+   "first_seen_at": "2026-11-26T07:50:26Z",
+   "states": [
+    "ca"
+   ],
+   "places": [],
+   "topics": [],
+   "measures": [],
+   "snapshot": {
+    "status": "not_snapped"
+   },
+   "status": "Unchecked",
+   "about": [
+    {
+     "id": "ca-prop-5",
+     "kind": "measure",
+     "label": "Proposition 5: Recall elections: Removes the replacement-candidate question from recall elections, California",
+     "page": "guide-ca/measures/prop-5.html"
+    }
+   ]
+  },
+  {
    "id": "13f67e508a8a7f10",
    "kind": "news",
    "title": "Prop. 5 passes: Special elections, governor appointments to replace recalled officials",
@@ -1379,5 +1406,5 @@
    ]
   }
  ],
- "generated_at": "2026-11-26T03:59:13Z"
+ "generated_at": "2026-11-26T07:58:09Z"
 }
