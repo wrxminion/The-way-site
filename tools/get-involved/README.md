@@ -33,3 +33,10 @@ National party committees are not on state pages.
 
 The state pages read `/lookup/local/xx.json` live in the browser. That file comes from the local resources job
 (`tools/local-resources/`), which now also collects county board, commission and council meeting dates.
+
+## We wish we had this (D310)
+
+`build_wish.py` writes `site/get-involved/wish-we-had-this/index.html`: public records that are hidden or hard to get, each with a
+sourced fact and a button to the letter tool. The letter issues for these cards are in
+`site/get-involved/contact-your-senator/issues-wish.js` (chamber `both`, so they show on the Senate and House pages).
+Edit `CARDS` in the script and run `python build_wish.py`. Every number needs its sources on the card.

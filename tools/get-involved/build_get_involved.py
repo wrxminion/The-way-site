@@ -750,6 +750,8 @@ def landing(data, bills):
          'contact-your-representative/', 'Write to your House member'),
         ('Your voice', 'Contact your representatives', 'Phone numbers, contact forms and websites for your two senators and your member of the House, state by state.',
          'reps.html', 'Find your representatives'),
+        ('Public records', 'We wish we had this', 'Records that are hidden or hard to get, like police settlement payouts, dark money donors and where earmarks went. Each has a fact you can check and a button to ask your representatives for it.',
+         'wish-we-had-this/', 'See what we wish we had'),
         ('Your area', 'Where you live', 'Your state: your members of Congress and their upcoming votes, elections, the state legislature and public meetings. Then find your county and districts.',
          'states/', 'Pick your state'),
         ('Your area', 'Groups on all sides', 'Political party committees registered in your state, from every party, listed the same way with their campaign money and official filings. No endorsements.',

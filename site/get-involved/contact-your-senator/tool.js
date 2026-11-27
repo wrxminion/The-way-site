@@ -22,7 +22,7 @@ function make(ctx) {
   // issueId: the issue to open. also: other issues to add to the same letter, as "id:for,id:against" (from ?also=).
   function view(issueId, also) {
     const D = HOUSE ? window.HOUSE_CONTACTS : window.SENATE_CONTACTS, L = window.CSLetters;
-    const ISSUES = (window.CS_ISSUES || []).filter((i) => (i.chamber || 'senate') === (HOUSE ? 'house' : 'senate'));
+    const ISSUES = (window.CS_ISSUES || []).filter((i) => i.chamber === 'both' || (i.chamber || 'senate') === (HOUSE ? 'house' : 'senate')); // 'both': both pages (D310)
     if (!D || !L || !window.CSOwn || !ISSUES) { render(notice('The letter tool did not load. The page may be out of date; please reload it.')); return; }
     // Your own words first (the default), then the listed votes for this chamber (D286, Frank Nov 16 2026).
     const OWN = [

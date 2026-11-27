@@ -113,7 +113,7 @@
      (the other chamber, or a party vote they are not part of), the part says where the reader stands and asks for no vote. */
   function issueById(id) { return (window.CS_ISSUES || []).filter(function (i) { return i.id === id; })[0] || null; }
   function chamberOf(sen) { return sen.title ? 'house' : 'senate'; }
-  function votesOn(issue, sen) { return (issue.chamber || 'senate') === chamberOf(sen) && canVote(issue, sen); }
+  function votesOn(issue, sen) { return (issue.chamber === 'both' || (issue.chamber || 'senate') === chamberOf(sen)) && canVote(issue, sen); }
   /* The other issues as [{ issue, c, votes, line }]. A member the issue is about, or a candidate in it, gets where the
      reader stands instead of an ask. */
   function alsoList(main, sen, opts) {
