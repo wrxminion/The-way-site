@@ -15,6 +15,15 @@
    - "record" is optional: a Senate roll call with how each senator voted ("short" is the card label).
      Names are last names; add -ST when two senators share a last name (Scott-FL).
      "rest" is the vote of every senator not listed; "check" must match the official totals.
+   - "voters": 'all' (everyone in that chamber votes), or 'dem' / 'rep' for a party's own vote, such as its leader race.
+     A party vote shows only to members of that party's caucus in that chamber, the same rule for every party (D298).
+   - "until" (optional, YYYY-MM-DD): the last day of the vote. After it, the issue leaves the menus; old links still open it.
+   - "past" (optional): [{ at: 'YYYY-MM-DD', text }] notes the page shows once that date has gone by.
+   - "chamber": 'senate' (default), 'house', or 'both' for an issue that fits both pages.
+   - "scope" (optional): 'national', 'state', 'local' or a list such as ['local', 'national'] for the National, State and
+     Local filters. With "states": ['CO'], 'state' and 'local' apply only to members from those states. Without "scope",
+     an issue that lists the member's state is State, the rest are National.
+   Votes, bills and dates that change week to week come from fit.js and auto.js, not from this file.
    Placeholders you can use in text: {S} (Senator Last), {last}, {state}. */
 (function () {
   'use strict';
@@ -117,7 +126,10 @@
           text: 'Sludge reports that executives at Anduril and Palantir, crypto industry advocates and investors giving through AIPAC helped fund him as he prepares to become Speaker.' }
       ]
     },
-    voters: 'all',
+    // House Democrats choose their leader (Frank Nov 27 2026: not on Republican members' lists).
+    voters: 'dem',
+    until: '2027-01-03',
+    past: [{ at: '2026-11-18', text: 'The November 18 closed vote of House Democrats is over. We have not added its result here yet.' }],
     question: 'Are you for or against Hakeem Jeffries as Speaker?',
     labels: { for: 'Yes Jeffries', against: 'No Jeffries' },
     // For a letter about several issues: a short name, where the writer stands (any office), and the ask (members who vote on it).
@@ -258,6 +270,7 @@
       ]
     },
     voters: 'dem',
+    until: '2026-12-01',
     question: 'Are you for or against Chuck Schumer as Democratic leader?',
     labels: { for: 'For Schumer', against: 'Against Schumer' },
     short: 'the Senate Democratic leader vote',
@@ -448,6 +461,7 @@
       ]
     },
     voters: 'dem',
+    until: '2026-12-01',
     question: 'Are you for or against Chris Van Hollen as Democratic leader?',
     labels: { for: 'Yes Van Hollen', against: 'No Van Hollen' },
     short: 'Chris Van Hollen for Senate Democratic leader',

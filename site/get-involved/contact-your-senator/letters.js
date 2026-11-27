@@ -166,6 +166,8 @@
   var castCache = {};
   function castFor(issue, sen) {
     var r = issue.record;
+    /* A vote from fit.js (House or Senate roll call, by member id). */
+    if (r && r.type === 'fit') return window.CSFit && window.CSFit.votes[r.vote] ? window.CSFit.castOf(window.CSFit.votes[r.vote], sen.id) : null;
     if (!r || r.type !== 'rollcall') return null;
     if (!castCache[issue.id]) {
       var map = {};
@@ -181,13 +183,14 @@
   function recordLine(c) {
     var r = c.issue.record;
     if (!r || !c.record) return '';
-    if (r.type === 'rollcall') {
+    if (r.type === 'rollcall' || r.type === 'fit') {
       var cast = castFor(c.issue, c.sen);
       if (!cast) return '';
       var data = { what: r.what, date: r.date };
-      var src = ' (Source: Senate roll call, ' + r.date + ', ' + r.url + ')';
+      var src = ' (Source: ' + (r.srcLabel || 'Senate roll call') + ', ' + r.date + ', ' + r.url + ')';
       if (cast === 'NV') return r.lines.nv ? fill(r.lines.nv, data) + src : '';
-      return fill(pick(r.lines[c.stance][cast]), data) + src;
+      var set = r.lines[c.stance][cast];
+      return set ? fill(pick(set), data) + src : '';
     }
     if (r.type === 'breaks') return breaksLine(c);
     return '';
@@ -387,10 +390,10 @@
   /* The senator's own roll call vote, said about them (the caller is talking to their staff). */
   function phoneRecord(c) {
     var r = c.issue.record;
-    if (!r || r.type !== 'rollcall' || !c.record || c.self) return '';
+    if (!r || (r.type !== 'rollcall' && r.type !== 'fit') || !c.record || c.self) return '';
     var cast = castFor(c.issue, c.sen);
     if (cast !== 'Yea' && cast !== 'Nay') return '';
-    return c.S + ' voted ' + (cast === 'Yea' ? 'yes' : 'no') + ' on ' + r.what + ' on ' + r.date + ' (Senate roll call).';
+    return c.S + ' voted ' + (cast === 'Yea' ? 'yes' : 'no') + ' on ' + r.what + ' on ' + r.date + ' (' + (r.srcLabel || 'Senate roll call') + ').';
   }
   function callBuild(issue, sen, stance, opts) {
     opts = opts || {};
@@ -498,7 +501,8 @@
     return { points: points, voicemail: tidy(voicemail).trim(), want: want, changes: c.changes };
   }
 
-  function canVote(issue, sen) { return issue.voters === 'all' || (issue.voters === 'dem' && sen.dem); }
+  /* Who votes on it. 'dem' and 'rep' are a party's own vote (its leader race): only that party's caucus votes. */
+  function canVote(issue, sen) { return issue.voters === 'all' || (issue.voters === 'dem' && sen.dem) || (issue.voters === 'rep' && sen.party === 'R'); }
 
   window.CSLetters = {
     build: build,
