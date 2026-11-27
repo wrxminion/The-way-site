@@ -771,6 +771,8 @@ def landing(data, bills):
          'states/', 'See groups by state'),
         ('Your area', 'Town halls and public meetings', 'Hearings in Congress this week, federal agency meetings open to the public, and how to find your county and city meetings.',
          'meetings.html', 'See public meetings'),
+        ('Running for office', 'Barriers to running', 'What it takes to get your name on the ballot in each state: filing fees, petition signatures and deadlines for Congress, governor and the state legislature. The same rules are shown for every party.',
+         'barriers-to-running/', 'See what it takes in your state'),
     ]
     out = ['<header class="gv-hero"><p class="gw-eyebrow">Get Involved</p><h1>Get Involved</h1>'
            '<p class="gv-lede">What is coming up for a vote, who represents you, and how to reach them. Every fact links to an official record so you can check us. The Way does not tell you how to vote or which side to take.</p></header>']
