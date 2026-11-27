@@ -59,7 +59,7 @@
           if (!haveE.has(e.entity_id)) { haveE.set(e.entity_id, RESEARCH.entities.length); RESEARCH.entities.push(e); }
           else if (own) RESEARCH.entities[haveE.get(e.entity_id)] = e; // its own filings are here now
         });
-        got.committees.forEach(c => { loaded.add(c.committee_id); (RESEARCH.meta.fec_more_loaded ??= []).push(c.name); });
+        got.committees.forEach(c => { loaded.add(c.committee_id); (RESEARCH.meta.fec_more_loaded ??= []).push(c.name); (F0.more_loaded ??= []).push(c); }); // D291: its totals for the inspector
       } catch (e) { /* the page still works with the large committees only */ }
     });
     // A ?fec= link with no ?hub= centers the web on the first committee it loaded (app.js reads ?hub= from the address).
