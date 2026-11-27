@@ -460,6 +460,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (!area) {
       area = el('div', 'tracker-area'); box.append(area);
       area.append(el('p', 'state-lead', TEXT[k].lead));
+      if (k === 'pacs') area.append(el('div', 'tar-stats pac-stats'), el('p', 'bud-small pac-stats-note'));
       const lab = el('label', 'tracker-search'); const sp = el('span', null, FIND[k][0]); const inp = el('input'); inp.type = 'search'; inp.autocomplete = 'off'; inp.placeholder = FIND[k][1];
       inp.addEventListener('input', () => { query[k] = inp.value; draw(k); }); lab.append(sp, inp);
       const more = el('button', 'bud-more tracker-more'); more.type = 'button'; more.addEventListener('click', () => { showAll[k] = !showAll[k]; draw(k); });
@@ -467,9 +468,47 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     }
     draw(k);
   }
+  // D290: the money boxes at the top of the PAC tracker. Each filing line (itemized or FEC) that touches a PAC is counted once,
+  // so a PAC-to-PAC gift is not added twice the way adding up the cards would. Reported figures are never added in.
+  // The evidence filters apply, the same as on the cards. Two more boxes give the FEC's own totals for the largest PACs.
+  const pacCache = {};
+  function pacTotals() {
+    const key = JSON.stringify([settings.state, settings.kind, settings.minimum, settings.showReported]); if (pacCache[key]) return pacCache[key];
+    const P = new Set(lists.pacs.map(r => norm(r.web || r.name))), AW = /^(ACTBLUE|WINRED)$/, t = { all: 0, n: 0, inn: 0, between: 0, out: 0, aw: 0, first: '', last: '' };
+    for (const e of [...networkVerified, ...networkContext]) {
+      if ((e.tier !== 'itemized' && e.tier !== 'fec') || !lineOk(e, true)) continue;
+      const f = norm(e.from_name), to = norm(e.to_name), pf = P.has(f), pt = P.has(to); if (!pf && !pt) continue;
+      const a = num(e.amount_usd); t.all += a; t.n++;
+      if (pf && pt) t.between += a; else if (pt) t.inn += a; else t.out += a;
+      if (AW.test(f) || AW.test(to)) t.aw += a;
+      const d = /^\d{4}-\d{2}-\d{2}$/.test(e.date || '') ? e.date : ''; if (d) { if (!t.first || d < t.first) t.first = d; if (!t.last || d > t.last) t.last = d; }
+    }
+    return pacCache[key] = t;
+  }
+  // The FEC's own totals for the PACs loaded with the page (committee totals file), to set beside the lines.
+  function fecTotals() {
+    const C = ((typeof FEC_FILINGS !== 'undefined' && FEC_FILINGS.committees) || []).filter(c => /PAC/i.test(c.committee_type || '') && c.totals);
+    if (!C.length) return [];
+    const r = C.reduce((a, c) => a + num(c.totals.receipts), 0), d = C.reduce((a, c) => a + num(c.totals.disbursements), 0);
+    const th = {}; C.forEach(c => { const x = c.totals.through || ''; if (x) th[x] = (th[x] || 0) + 1; });
+    const most = Object.entries(th).sort((x, y) => y[1] - x[1])[0], when = most ? ', most through ' + dateText(most[0]) : '';
+    return [['Raised, FEC totals', r, 'What the ' + C.length + ' PACs loaded with this page (mostly those that raised $5 million or more) report they raised this cycle' + when + '. Full totals, not lines.'],
+      ['Spent, FEC totals', d, 'What the same ' + C.length + ' PACs report they spent' + when + '. Full totals, not lines.']];
+  }
+  function drawPacStats() {
+    const box = $('#pacs-view .pac-stats'), note = $('#pacs-view .pac-stats-note'); if (!box) return;
+    const t = pacTotals(); box.replaceChildren();
+    [['Money on PAC filing lines', t.all, t.n.toLocaleString('en-US') + (t.n === 1 ? ' filing line' : ' filing lines') + (t.first ? ', ' + dateText(t.first) + ' to ' + dateText(t.last) : '') + '. Each line counted once.'],
+     ['Into PACs', t.inn, 'From people, companies and other groups that are not PACs.'],
+     ['PAC to PAC', t.between, 'Given or moved from one PAC to another.'],
+     ['Out of PACs', t.out, 'To candidates, party committees, vendors, ads and other groups.']].concat(fecTotals()).forEach(([label, v, small], i) => {
+      const d = el('div', 'tar-stat' + (i ? '' : ' pac-stat-all')); d.append(el('span', 'tar-box-label', label), el('b', 'tar-stat-n', bigMoney(v)), el('small', 'tar-box-note', small)); box.append(d); });
+    note.textContent = 'Adding up the cards below would count PAC-to-PAC money twice, so the first four boxes count each filing line once. Money that comes into a PAC and then goes out shows in both Into and Out of PACs. Into PACs looks smaller than Out of PACs because most PAC money comes from people, and a person’s gifts are a line here only if that person gave $1 million or more in all, while each PAC’s 50 largest bills, gifts and ads are kept. The two FEC totals boxes are the full amounts those PACs report; they count PAC-to-PAC money twice. ActBlue and WinRed lines are ' + bigMoney(t.aw) + ' of the lines total; most of that is donors’ gifts passed on to candidates. Figures reported in news or summaries are not added. These are only the filings this archive has read, not all PAC money in the country.' + (filtersOn(true) ? ' The evidence filters are on, so the first four boxes count only the lines that pass them.' : '');
+  }
   const sizeOfRow = r => { const t = r.money; return t ? (t.item > 0 ? t.item : t.repMax) : 0; };
   function draw(k) {
     const list = $('#' + k + '-view .tracker-list'); list.replaceChildren();
+    if (k === 'pacs') drawPacStats();
     const q = norm(query[k]); let rows = lists[k].filter(r => !q || norm(r.name).includes(q));
     // D220: the Filter the evidence panel narrows this list too. Its name search matches the name itself; the other filters
     // keep a row only when it has a line that passes them, and the line count then counts only those lines.
