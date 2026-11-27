@@ -418,6 +418,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     // D299: the lobbying total dot, lobbying clients, the bills named in lobbying reports and lobbying firms belong to the
     // Lobbying tracker and the Money web only.
     if (/\(Lobbying tracker\)$|^lobbying firm$/i.test(t)) return null;
+    // D300: former members of Congress who lobby belong to the Revolving door tracker and the Money web only.
+    if (/\(Revolving door tracker\)$/i.test(t)) return null;
     // D290: companies, the nonprofits with a Form 990 card, media companies, outlets and owners have their own trackers, and
     // upcoming bills are on the Money web and Get Involved, so none of them shows in the Other tracker (it was the Organization tracker).
     if (/^(company|media company|media outlet|media owner|upcoming bill)$/i.test(t) || e.nonprofit_ein) return null;
@@ -939,6 +941,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     ['war', 'Wars, military actions and missions (War tracker)'],
     ['tariff', 'Tariffs and tariff refunds (Tariff tracker)'],
     ['lobby', 'Lobbying clients, firms and bills (Lobbying tracker)'],
+    ['revolving', 'Former members of Congress who lobby (Revolving door tracker)'],
     ['nonprofit', 'Nonprofits and groups in IRS Form 990 returns'],
     ['media', 'Media companies, outlets and owners'],
     ['pac', 'PACs and Super PACs'],
@@ -955,7 +958,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   // D287: wars, military actions and missions, and the laws that authorized them (war-view.js).
   // D289: tariff programs and what companies did with tariff refunds (tariff-view.js).
   // D299: lobbying clients and firms, the lobbying total dot and the bills named in lobbying reports (lobbying-view.js).
-  const typeKind = ty => /\(War tracker\)$|^federal law authorizing military force$/i.test(ty) ? 'war' : /\(Tariff tracker\)$/i.test(ty) ? 'tariff' : /\(Lobbying tracker\)$|^lobbying firm$/i.test(ty) ? 'lobby' : /^Nonprofit, IRS|named on an IRS Form 990/i.test(ty) ? 'nonprofit' : /^media|company PAC of a media/i.test(ty) ? 'media' : /party/i.test(ty) ? 'party' : /candidate/i.test(ty) ? 'candidate' : /ballot measure$/i.test(ty) ? 'measure'
+  // D300: former members of Congress who lobby, and their dot (revolving-view.js).
+  const typeKind = ty => /\(War tracker\)$|^federal law authorizing military force$/i.test(ty) ? 'war' : /\(Tariff tracker\)$/i.test(ty) ? 'tariff' : /\(Lobbying tracker\)$|^lobbying firm$/i.test(ty) ? 'lobby' : /\(Revolving door tracker\)$/i.test(ty) ? 'revolving' : /^Nonprofit, IRS|named on an IRS Form 990/i.test(ty) ? 'nonprofit' : /^media|company PAC of a media/i.test(ty) ? 'media' : /party/i.test(ty) ? 'party' : /candidate/i.test(ty) ? 'candidate' : /ballot measure$/i.test(ty) ? 'measure'
     : /ballot (support |opposition )?committee|issue committee|referendum committee|ballot_group|campaign committee/i.test(ty) ? 'ballotcmte'
     : /labor|education association|NEA/i.test(ty) ? 'union' : /\bPAC\b|political action|political committee|Committee \(FEC\)|hybrid|super pac/i.test(ty) ? 'pac'
     : /payee|vendor/i.test(ty) ? 'payee' : /municipal|public body|election authority/i.test(ty) ? 'gov'
