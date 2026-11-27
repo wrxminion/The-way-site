@@ -63,7 +63,7 @@
       });
     });
     return {
-      id: o.id, chamber: 'both', voters: 'all', wish: true,
+      id: o.id, chamber: 'both', voters: 'all', wish: true, scope: o.scope || 'national', states: o.states,
       menu: o.menu, title: o.title, status: o.status, summary: o.summary,
       searched: SEARCHED + (o.searched || ''),
       question: o.question,
@@ -82,7 +82,7 @@
   var WISH = [
 
   W({
-    id: 'wish-police-payouts',
+    id: 'wish-police-payouts', scope: ['local', 'national'], states: ['CO'], /* scope and states: the National, State and Local filters (D298) */
     menu: 'Police misconduct payouts: a public record of what cities pay',
     title: 'Police misconduct payouts and records: what cities pay, and who can see it',
     status: 'There is no national public list of what cities pay to settle police cases. A federal database of misconduct records for federal officers was shut down on January 20, 2025.',
