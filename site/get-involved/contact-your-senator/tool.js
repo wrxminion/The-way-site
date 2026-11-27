@@ -22,7 +22,7 @@ function make(ctx) {
   // issueId: the issue to open. also: other issues to add to the same letter, as "id:for,id:against" (from ?also=).
   function view(issueId, also) {
     const D = HOUSE ? window.HOUSE_CONTACTS : window.SENATE_CONTACTS, L = window.CSLetters;
-    const ISSUES = (window.CS_ISSUES || []).filter((i) => i.chamber === 'both' || (i.chamber || 'senate') === (HOUSE ? 'house' : 'senate'));
+    const ISSUES = (window.CS_ISSUES || []).filter((i) => i.chamber === 'both' || (i.chamber || 'senate') === (HOUSE ? 'house' : 'senate')); // 'both': both pages (D310)
     if (!D || !L || !window.CSOwn || !ISSUES || !window.CSFit) { render(notice('The letter tool did not load. The page may be out of date; please reload it.')); return; }
     // From a shared link: ?side=for|against, and #letter=... (a friend's letter, in the part of the link that is never sent to any server).
     let side = '', shared = null;

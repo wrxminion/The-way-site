@@ -39,3 +39,17 @@ National party committees are not on state pages.
 
 The state pages read `/lookup/local/xx.json` live in the browser. That file comes from the local resources job
 (`tools/local-resources/`), which now also collects county board, commission and council meeting dates.
+
+## Issue pages (D295)
+
+A date in `upcoming.json` `events` can also carry: `view` (a box that speaks to readers on one side, such as
+"If you think court records should be free"; it is the reader's choice, not The Way's position), `stance_note` (replaces the
+"does not take a side" line; leave it out unless Frank asks), `sides` (each point with its sources), `tools` (free resources, as links)
+and `checked` (its own last-checked date). The first one is `free-court-records` (the Open Courts Act and the PACER fee rise).
+
+## We wish we had this (D310)
+
+`build_wish.py` writes `site/get-involved/wish-we-had-this/index.html`: public records that are hidden or hard to get, each with a
+sourced fact and a button to the letter tool. The letter issues for these cards are in
+`site/get-involved/contact-your-senator/issues-wish.js` (chamber `both`, so they show on the Senate and House pages).
+Edit `CARDS` in the script and run `python build_wish.py`. Every number needs its sources on the card.
