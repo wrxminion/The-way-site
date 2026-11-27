@@ -76,6 +76,18 @@
   var CD_PRESSLEY = c('Common Dreams', 'November 11, 2026', 'https://www.commondreams.org/news/ayanna-pressley-for-speaker');
   var SEARCHED = 'How we built this list: we searched news reports from outlets across the spectrum, official records (Senate roll calls, bill text, FEC filings) and statements from people on both sides, and we kept every point we could tie to a source. We publish both sides the same way and do not take a side. ';
 
+  /* D295: Open Courts Act of 2026 (S. 4667), free court records. */
+  var BILL_S4667 = c('S. 4667 bill record, Library of Congress (govinfo)', 'June 2, 2026', 'https://www.govinfo.gov/bulkdata/BILLSTATUS/119/s/BILLSTATUS-119s4667.xml');
+  var AO_FEES = c('U.S. Courts', 'June 26, 2026', 'https://www.uscourts.gov/data-news/judiciary-news/2026/06/26/judiciary-approves-funding-case-management-and-public-access-modernization');
+  var ABA_FEES = c('ABA Journal', 'June 29, 2026', 'https://www.abajournal.com/news/article/judiciary-approves-pacer-fee-increase-to-modernize-and-secure-case-management-public-access');
+  var FTC_OCA = c('Fix the Court', 'June 2, 2026', 'https://fixthecourt.com/2026/06/fix-the-court-applauds-sens-kennedy-and-wyden-for-introducing-free-pacer-bill/');
+  var JUSTIA_OCA = c('Justia News', 'June 3, 2026', 'https://news.justia.com/senators-reintroduce-open-courts-act-to-make-pacer-free/');
+  var FLP_OCA = c('Free Law Project', 'October 21, 2026', 'https://free.law/2026/10/21/pacer-fee-increase-2027-federal-court-records-should-be-free/');
+  var JC_2020 = c('Judicial Conference letter to the House Judiciary Committee', 'September 23, 2020', 'https://judiciaryforms.house.gov/UploadedFiles/Letter_to_Hon._Jerrold_Nadler_re_Open_Courts_Act_of_2020.pdf');
+  var AO_2021 = c('Administrative Office of the U.S. Courts, letters to Rep. Hank Johnson', 'April 26 and September 27, 2021', 'https://www.uscourts.gov/file/document/letters-chairman-henry-johnson-open-courts-act-2021');
+  var AO_ANALYSIS = c('Judiciary analysis of the Open Courts Act of 2021', 'undated, on uscourts.gov', 'https://www.uscourts.gov/file/document/judiciary-analysis-open-courts-act');
+  var RCFP_2020 = c('Reporters Committee for Freedom of the Press', 'December 11, 2020', 'https://www.rcfp.org/house-passes-open-courts-act/');
+
   window.CS_ISSUES = [
 
   {
@@ -704,6 +716,85 @@
     otherSide: { for: 'I know veterans groups object to the sleep apnea and tinnitus changes, and I take that seriously.', against: 'I support the Star Act benefit for combat-injured retirees.' },
     civic: ['The House passed this by voice vote, so there is no record of who voted how. The Senate vote is where people back home can be heard.', 'This bill affects veterans for years to come, so I want my view on the record with your office.'],
     sources: [BILL_HR9237, c('Congress.gov, H.R. 9237 actions (voice vote)', 'November 11, 2026', ACTIONS_9237), MT, SS, MILCOM, BLUM]
+  },
+
+  {
+    id: 'open-courts-s4667',
+    menu: 'Free federal court records: the Open Courts Act (S. 4667)',
+    title: 'The Open Courts Act of 2026 (S. 4667): free federal court records',
+    status: 'In the Senate Judiciary Committee since June 2, 2026, with no vote yet. The PACER fee rises from 10 to 12 cents a page on January 1, 2027. The bill dies on January 3, 2027 unless it passes both chambers first.',
+    summary: [
+      'Federal court records are public, but reading them on PACER, the courts\' online system, costs 10 cents a page, up to $3 for most documents. Anyone who spends $30 or less in a quarter pays nothing. On June 26, 2026 the courts approved a rise to 12 cents a page from January 1, 2027, for five years, to pay for a new case system (U.S. Courts, ABA Journal).',
+      'The Open Courts Act of 2026 (S. 4667), from Senators John Kennedy (R-La.) and Ron Wyden (D-Ore.), would replace PACER with one new system and make public court records free to read. Heavy users and federal agencies would still pay (Fix the Court, Justia). It went to the Judiciary Committee on June 2, 2026 and has had no vote (Library of Congress record).'
+    ],
+    searched: SEARCHED + 'Searched November 27, 2026, including the bill record, the federal judiciary\'s letters and announcements, and groups that support the bill. The against side is the federal judiciary\'s own published concerns about earlier versions; we found no published judiciary position on the 2026 bill.',
+    voters: 'all',
+    question: 'Are you for or against the Open Courts Act (S. 4667), which would make federal court records free to read?',
+    labels: { for: 'For the bill', against: 'Against the bill' },
+    short: 'the Open Courts Act (S. 4667), free federal court records',
+    stand: { for: 'I support the Open Courts Act of 2026 (S. 4667), which would make federal court records free to read.', against: 'I oppose the Open Courts Act of 2026 (S. 4667) as it is written now.' },
+    also: { for: 'Please support the Open Courts Act (S. 4667) so federal court records are free to read.', against: 'Please do not pass the Open Courts Act (S. 4667) as it is written now.' },
+    topic: ['the Open Courts Act (S. 4667)', 'free access to federal court records', 'PACER fees and the Open Courts Act'],
+    asks: {
+      for: ['Please cosponsor and vote for the Open Courts Act of 2026 (S. 4667), so federal court records are free to read.',
+        'I ask you to support S. 4667 and to push for a Judiciary Committee vote before this Congress ends.',
+        'If the bill runs out of time this Congress, I hope you will help bring it back in 2027.',
+        'I am writing to ask you to make federal court records free for the public.'],
+      forShort: ['Please support S. 4667.', 'Make court records free.'],
+      against: ['Please do not pass the Open Courts Act (S. 4667) unless it has a stable source of funding for the courts that does not raise filing fees.',
+        'I ask you to oppose S. 4667 as it is written now.',
+        'When the Open Courts Act comes up, I hope you will vote no on it as written.',
+        'I am writing to ask you to work with the federal courts on any change to PACER before it passes.'],
+      againstShort: ['Please vote no on S. 4667 as written.', 'Fund the courts first.']
+    },
+    subjects: {
+      for: ['Please support the Open Courts Act (S. 4667)', 'Make federal court records free', 'From a constituent in {state}: free court records', 'My view on PACER fees'],
+      against: ['Please vote no on S. 4667 as written', 'Fund the courts before changing PACER', 'From a constituent in {state}: no on S. 4667 as written', 'My view on the Open Courts Act']
+    },
+    call: { for: 'I would like Senator {last} to support the Open Courts Act, S. 4667, so federal court records are free to read.', against: 'I would like Senator {last} to vote no on the Open Courts Act, S. 4667, as it is written now.' },
+    facts: {
+      for: [
+        { id: 'oca-fee', on: true, cite: [AO_FEES, ABA_FEES],
+          text: 'On January 1, 2027 the PACER fee rises from 10 to 12 cents a page, for five years.' },
+        { id: 'oca-both', on: true, cite: [BILL_S4667, RCFP_2020],
+          text: 'The bill has sponsors in both parties: Senator Kennedy (R-La.) and Senator Wyden (D-Ore.). The House passed a 2020 version from Representatives Johnson (D-Ga.) and Collins (R-Ga.).' },
+        { id: 'oca-cost', on: true, cite: [FTC_OCA],
+          text: 'IT experts cited by Fix the Court estimate a new free system would cost $10 million to $20 million to build and $3 million to $5 million a year to run.' },
+        { id: 'oca-save', cite: [JUSTIA_OCA],
+          text: 'Senator Wyden said the bill would save "more than $60 million" a year in operating costs.' },
+        { id: 'oca-revenue', cite: [FLP_OCA],
+          text: 'PACER took in $154.1 million in fees in 2025, according to Free Law Project.' },
+        { id: 'oca-settle', cite: [FLP_OCA],
+          text: 'In a lawsuit over PACER fees, a $125 million settlement was approved in 2024 and upheld on appeal in March 2026.' },
+        { id: 'oca-heavy', cite: [FTC_OCA],
+          text: 'Users who spend more than $25,000 a quarter and federal agencies would still pay fees under the bill.' }
+      ],
+      against: [
+        { id: 'oca-filing', on: true, cite: [JC_2020],
+          text: 'In 2020 the Judicial Conference estimated that paying for free PACER through filing fees would raise them about $750 per case, taking the $350 civil filing fee to $1,100.' },
+        { id: 'oca-funding', on: true, cite: [AO_ANALYSIS, AO_2021],
+          text: 'The federal courts say money from Congress is "neither stable nor predictable" and want a reliable funding source in place before fees end.' },
+        { id: 'oca-project', cite: [AO_2021],
+          text: 'In 2021 the courts\' administrative office wrote: "If PACER fees are eliminated without a sufficient replacement, we will be unable to successfully pursue this project."' },
+        { id: 'oca-already', cite: [AO_ANALYSIS],
+          text: 'The courts say most ordinary users already pay nothing, because of the free amount each quarter.' },
+        { id: 'oca-few', cite: [JC_2020],
+          text: 'The Judicial Conference said 87 percent of PACER money comes from less than 3 percent of accounts.' },
+        { id: 'oca-conrad', cite: [ABA_FEES],
+          text: 'In June 2026 Judge Robert Conrad, who runs the courts\' administrative office, said that without higher fees the courts could not pay for the new, more secure case system.' }
+      ]
+    },
+    views: {
+      for: ['Court records belong to the public that pays for the courts.', 'Nobody should have to pay to see what a court did in their name.', 'Reporters and researchers need to check the courts without a meter running.', 'Both parties have backed this for years. It is time to finish it.'],
+      against: ['The courts need a secure system, and someone has to pay for it.', 'Free records should not come from higher filing fees for people going to court.', 'Congress should give the courts steady money before it takes the fees away.', 'Changes this big should be worked out with the courts first.']
+    },
+    questions: {
+      for: ['Why should anyone pay by the page to read a public record?', 'If the system can be built for $10 million to $20 million, why does reading cost so much?', 'Will you help bring this bill back in 2027 if it runs out of time?'],
+      against: ['Who pays for a secure court system if the fees end?', 'How will you keep filing fees from going up?', 'Has the bill been worked out with the federal courts?']
+    },
+    otherSide: { for: 'I know the courts worry about steady funding for a secure system, and I take that seriously.', against: 'I agree that public court records should be easy and cheap to read.' },
+    civic: ['Court records are how the public checks the courts, so I want my view on the record with your office.', 'The fee goes up on January 1, and this letter is my way to take part before then.'],
+    sources: [BILL_S4667, AO_FEES, ABA_FEES, FTC_OCA, JUSTIA_OCA, FLP_OCA, JC_2020, AO_2021, AO_ANALYSIS, RCFP_2020]
   }
   ];
 })();

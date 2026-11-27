@@ -654,6 +654,17 @@ def event_page(ev, data):
     out.append('<section class="gv-sec gi-when"><h2>When</h2><p class="gv-note"><strong>%s.</strong> %s</p></section>' % (
         e(ev['date_label']), countdown(ev['at'], ev.get('at_label', 'Countdown'), ev.get('day')) if ev.get('at') else ''))
     out.append('<section class="gv-sec"><h2>What it is</h2>%s</section>' % ''.join('<p>%s</p>' % e(w) for w in ev['what']))
+    if ev.get('view'):
+        # D295: an optional box that speaks to readers on one side ("If you think ..."). Both sides still follow, sourced the same way.
+        out.append('<section class="gv-sec gi-view"><h2>%s</h2>%s</section>' % (e(ev['view']['h']), ''.join('<p>%s</p>' % e(w) for w in ev['view']['p'])))
+    if ev.get('sides'):
+        # D295: both sides, each point with its sources ([text, [label, url], ...]).
+        for sd in ev['sides']:
+            out.append('<section class="gv-sec"><h2>%s</h2><ul class="gv-list">%s</ul></section>' % (e(sd['h']), ''.join(
+                '<li>%s %s</li>' % (e(it[0]), ' '.join('<a class="gw-source" href="%s">%s ↗</a>' % (e(u), e(l)) for l, u in it[1:])) for it in sd['items'])))
+    if ev.get('tools'):
+        out.append('<section class="gv-sec" id="free-now"><h2>%s</h2><ul class="gv-list">%s</ul></section>' % (e(ev['tools']['h']), ''.join(
+            '<li><a href="%s">%s ↗</a> %s</li>' % (e(u), e(l), e(d)) for l, u, d in ev['tools']['items'])))
     law = ev.get('law')
     if law:
         tr = ''.join('<tr><td>%s</td><td>%s</td><td>%s</td></tr>' % (e(nice_date(dt)), e(t), ('<a href="%s">%s ↗</a>' % (e(u), e(l))) if u else '') for dt, t, l, u in law['votes'])
@@ -663,9 +674,10 @@ def event_page(ev, data):
             e(law['bill']), spl, e(congress_url(law['bill'])), e(law['bill']), tr, src_link('Library of Congress bill record', govinfo_url(law['bill']))))
     # web
     nodes = []
+    sp_slug = (by_bio.get((ev.get('law') or {}).get('sponsor_bioguide')) or {}).get('slug')
     for p in ev.get('people_links', []):
         mp = next((x for x in people if x['slug'] == p[1]), None)
-        if mp:
+        if mp and p[1] != sp_slug:  # the sponsor gets its own box below
             nodes.append(('Person', p[0], '/government/congress/members/%s.html' % p[1], 'gi-n-person'))
     if law:
         sp = by_bio.get(law['sponsor_bioguide'])
@@ -715,8 +727,9 @@ def event_page(ev, data):
     if ev.get('contact_issue'):
         act = '<a href="../contact-your-senator/?issue=%s">Write to your senators about this →</a> ' % e(ev['contact_issue']) + act
     out.append('<section class="gv-sec gi-act"><h2>Tell them what you think</h2><p class="gv-links">%s</p></section>' % act)
-    out.append('<section class="gv-sec"><h2>Check us</h2><ul class="gv-list">%s</ul><p class="gw-status">Last checked %s. Being listed here does not mean The Way takes a side.</p></section>' % (
-        ''.join('<li><a href="%s">%s ↗</a></li>' % (e(u), e(l)) for l, u in ev['src']), e(nice_date(data['checked']))))
+    out.append('<section class="gv-sec"><h2>Check us</h2><ul class="gv-list">%s</ul><p class="gw-status">Last checked %s. %s</p></section>' % (
+        ''.join('<li><a href="%s">%s ↗</a></li>' % (e(u), e(l)) for l, u in ev['src']), e(nice_date(ev.get('checked', data['checked']))),
+        e(ev.get('stance_note', 'Being listed here does not mean The Way takes a side.'))))
     out.append('<nav class="gv-next" aria-label="Keep exploring"><a href="./">← All dates to watch</a> · <a href="../">Get Involved</a> · <a href="../bills/">Upcoming votes</a></nav>')
     return page('dates/%s.html' % ev['slug'], ev['title'], '%s: when it is, what it is, the money and people involved, and official records to check.' % ev['title'],
                 [('The Way', '/'), ('Get Involved', '../'), ('Dates to watch', './'), (ev['short'], None)], '\n'.join(out))
@@ -750,6 +763,8 @@ def landing(data, bills):
          'contact-your-representative/', 'Write to your House member'),
         ('Your voice', 'Contact your representatives', 'Phone numbers, contact forms and websites for your two senators and your member of the House, state by state.',
          'reps.html', 'Find your representatives'),
+        ('Court records', 'Free court records', 'Federal court records are public, but reading them on PACER costs 10 cents a page, rising to 12 cents on January 1, 2027. See the bill to make them free, both sides, and free ways to read records now.',
+         'dates/free-court-records.html', 'See the court records page'),
         ('Public records', 'We wish we had this', 'Records that are hidden or hard to get, like police settlement payouts, dark money donors and where earmarks went. Each has a fact you can check and a button to ask your representatives for it.',
          'wish-we-had-this/', 'See what we wish we had'),
         ('Your area', 'Where you live', 'Your state: your members of Congress and their upcoming votes, elections, the state legislature and public meetings. Then find your county and districts.',
@@ -758,6 +773,8 @@ def landing(data, bills):
          'states/', 'See groups by state'),
         ('Your area', 'Town halls and public meetings', 'Hearings in Congress this week, federal agency meetings open to the public, and how to find your county and city meetings.',
          'meetings.html', 'See public meetings'),
+        ('Running for office', 'Barriers to running', 'What it takes to get your name on the ballot in each state: filing fees, petition signatures and deadlines for Congress, governor and the state legislature. The same rules are shown for every party.',
+         'barriers-to-running/', 'See what it takes in your state'),
     ]
     out = ['<header class="gv-hero"><p class="gw-eyebrow">Get Involved</p><h1>Get Involved</h1>'
            '<p class="gv-lede">What is coming up for a vote, who represents you, and how to reach them. Every fact links to an official record so you can check us. The Way does not tell you how to vote or which side to take.</p></header>']
