@@ -8,7 +8,9 @@ Usage (from the repo root, or anywhere):
 BULK_DIR holds the FEC 2025-2026 bulk files (https://www.fec.gov/data/browse-data/?tab=bulk-data):
   cm26.zip (committees), cn26.zip (candidates), webk26.zip (committee totals), indiv26.zip (receipts),
   weball26.zip (candidate totals), oth26.zip (committee to committee), pas226.zip (to candidates, independent expenditures),
-  oppexp26.zip (operating expenses), independent_expenditure_2026.csv (24 and 48 hour reports).
+  oppexp26.zip (operating expenses), independent_expenditure_2026.csv (24 and 48 hour reports),
+  committee_summary_2026.csv (D291: each committee's report summary, for small gifts that are not itemized, cash on
+  hand and debts).
 --download fetches any file that is missing or changed (it compares the size the FEC server reports).
 
 Which committees (the same rule for every side and every party, nobody is picked by hand except the ALWAYS list).
@@ -74,7 +76,7 @@ ALWAYS = {
 NEVER = {'C00530766'}  # Women Speak Out PAC: was in the old pull list by mistake (wrong ID for Women Vote)
 
 FILES = ['cm26.zip', 'cn26.zip', 'webk26.zip', 'weball26.zip', 'pas226.zip', 'oth26.zip', 'oppexp26.zip', 'indiv26.zip',
-         'independent_expenditure_2026.csv']
+         'independent_expenditure_2026.csv', 'committee_summary_2026.csv']
 HOSTS = ['https://www.fec.gov/files/bulk-downloads/2026/',
          'https://cg-519a459a-0ea3-42c2-b7bc-fa1143481f74.s3-us-gov-west-1.amazonaws.com/bulk-downloads/2026/']
 UA = {'User-Agent': 'Michi Institute Money Trail (michiinstitute.com)'}
@@ -184,6 +186,25 @@ for r in rows('weball26.zip'):
     if len(r) >= 28:
         cand_tot[r[0]] = {'receipts': money(r[5]) or 0, 'disbursements': money(r[7]) or 0,
                           'through': r[27][6:10] + '-' + r[27][0:2] + '-' + r[27][3:5] if '/' in r[27] else d8(r[27])}
+
+# D291: the committee summary file (one row per committee, the sums on its reports this cycle). It has what the totals
+# files do not: gifts from people split into itemized (over $200 from one person, each one a line in indiv26) and
+# unitemized (smaller gifts the committee reports only as one sum, so no line anywhere shows them), cash on hand and
+# debts. Where a committee has two identical rows, the one with the latest coverage date is kept.
+summary = {}
+with open(os.path.join(BULK, 'committee_summary_2026.csv'), encoding='latin-1', newline='') as fh:
+    for x in csv.DictReader(fh):
+        cid = (x.get('CMTE_ID') or '').strip()
+        e8 = (x.get('CVG_END_DT') or '').strip()  # YYYYMMDD in this file
+        end = e8[0:4] + '-' + e8[4:6] + '-' + e8[6:8] if re.match(r'^\d{8}$', e8) else ''
+        if not re.match(r'^C\d{8}$', cid) or (cid in summary and summary[cid]['summary_through'] >= end):
+            continue
+        summary[cid] = {'individual_contributions': money(x.get('INDV_CONTB')),
+                        'individual_itemized_contributions': money(x.get('INDV_ITEM_CONTB')),
+                        'individual_unitemized_contributions': money(x.get('INDV_UNITEM_CONTB')),
+                        'cash_on_hand_end': money(x.get('COH_COP')), 'debts_owed_by': money(x.get('DEBTS_OWED_BY_CMTE')),
+                        'summary_through': end}
+print('committee summary rows', len(summary), flush=True)
 
 # independent expenditure file (24 and 48 hour reports, also C9 filers that are not committees)
 ie_csv = []
@@ -488,7 +509,8 @@ for cid, why in sorted(pick.items(), key=lambda kv: -(totals.get(kv[0], {}).get(
                                'district': cn[cand_of[cid]]['district']} if cid in cand_of else None),
                 'why': why, 'totals': {'receipts': t.get('receipts'), 'disbursements': t.get('disbursements'),
                                        'independent_expenditures': t.get('independent_expenditures') or round(ie_tot.get(cid, 0), 2),
-                                       'through': t.get('through')},
+                                       'through': t.get('through'),
+                                       **{k: v for k, v in (summary.get(cid) or {}).items() if v is not None and v != ''}},
                 'receipts_request': 'fec bulk', 'disbursements_request': 'fec bulk',
                 'receipts_retrieved': now, 'disbursements_retrieved': now, **got})
 res = {'source': 'fec_bulk', 'retrieved': now, 'files': meta, 'depth': DEPTH,

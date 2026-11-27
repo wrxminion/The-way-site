@@ -114,6 +114,19 @@ const WEB_ART='/money-trail/art/money-web-link-blue.webp';
 const RECORD_ART='/money-trail/art/registry-record-magnifier.webp';
 function sourceButton(url,label='Open original filing / source',artSrc=CABINET){url=safeUrl(url);return url?`<a class="detail-link mt-evidence-link" href="${escapeHtml(url)}" rel="noopener noreferrer" target="_blank"><img class="mt-evidence-art" src="${escapeHtml(artSrc)}" alt="" width="22" height="24">${escapeHtml(label)} ↗</a>`:''}
 function positionPanel(mid){let ps=positionsByMeasure[mid]||[];let sides={support:[],oppose:[],other:[]};for(let p of ps){let side=/support|yes|favor/i.test(p.stance||'')?'support':/oppose|no|against/i.test(p.stance||'')?'oppose':'other';sides[side].push(p)};return `<div class="side-group"><h4>Campaign sides · documented positions</h4><p><strong>Support:</strong> ${sides.support.length?sides.support.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p><strong>Opposition:</strong> ${sides.oppose.length?sides.oppose.map(p=>escapeHtml(p.entity_name)).join(', '):'Not yet verified'}</p><p>These positions do not prove how any particular donation was allocated.</p></div>`}
+// D291: an FEC committee's own report totals (FEC committee summary file), with the gifts from people that no filing line
+// shows: unitemized individual donations, from people who gave $200 or less, reported only as one sum. Full totals,
+// never added to the lines. Committees loaded on demand (fec-more.js) put theirs in FEC_FILINGS.more_loaded.
+function fecCommitteeTotals(e){const m=/^(?:fec:|FEC )(C\d{8})$/.exec(String((e&&e.id)||''));if(!m||typeof FEC_FILINGS==='undefined')return null;
+ const c=(FEC_FILINGS.committees||[]).concat(FEC_FILINGS.more_loaded||[]).find(x=>x.committee_id===m[1]);return c&&c.totals?c:null}
+function fecTotalsBox(e){const c=fecCommitteeTotals(e);if(!c)return '';const T=c.totals,has=k=>T[k]!=null&&T[k]!=='',when=T.summary_through||T.through;
+ let h=`<div class="mt-web-total mt-fec-totals"><div class="key">Its own FEC totals this cycle${when?', through '+escapeHtml(dateText(when)):''}</div>`;
+ h+=datum('Raised',has('receipts')?money_(T.receipts):'')+datum('Gifts from people, in all',has('individual_contributions')?money_(T.individual_contributions):'')
+  +datum('Itemized gifts from people',has('individual_itemized_contributions')?money_(T.individual_itemized_contributions):'')
+  +datum('Unitemized individual donations',has('individual_unitemized_contributions')?money_(T.individual_unitemized_contributions):'')
+  +datum('Spent',has('disbursements')?money_(T.disbursements):'')+datum('Cash on hand at the end of the period',has('cash_on_hand_end')?money_(T.cash_on_hand_end):'')
+  +datum('Debts it owes',has('debts_owed_by')?money_(T.debts_owed_by):'');
+ return h+`<p>From the committee's reports to the FEC. Itemized gifts come from people who gave more than $200 in all; each one is listed by name on the committee's filings. Unitemized individual donations are the gifts from people who gave $200 or less: the committee reports them only as one sum, so no filing line shows them. These are full totals, not lines, so they are never added to the lines in the web.</p></div>`}
 function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<h2 class="mt-selected">${escapeHtml(selName(e))}</h2><span class="event-kind ${kind}">${escapeHtml(kindLabel(e)||'Graph connection')}</span>`+(kind==='ballot'?outcomeBox(e.measure_id)+ftmBlock(e):'');
  if(kind==='transaction'){
  h+=`<div class="event-amount mt-big">${money(e.amount_usd)}</div>`;
@@ -130,7 +143,7 @@ function details(e){if(!e)return;let kind=e.record_kind||'graph';let h=`<h2 clas
  h+=datum('Report date (not necessarily transfer date)',dateText(e.date))+datum('Recorded date type',e.date_kind)+datum('Source as reported',e.source_name)+datum('Recipient as reported',e.recipient_name)+datum('Reported figure',money(e.amount_usd))+datum('Confidence',e.confidence)+datum('Reconciliation flag',e.reconciliation_flag)+datum('Recipient registration',e.recipient_registry_id);
  h+=sourceButton(e.source_url,'Open reported disclosure')+datum('Notes',e.notes);
  }else if(kind==='entity'){
- h+=webTotalsBox(e.web)+datum('Name as reported',e.name)+datum('Entity type',e.entity_type)+datum('Registry ID',e.id)+datum('Jurisdiction',e.jurisdiction)+sourceButton(e.source_url,/person who gave/i.test(e.entity_type||'')?'Open their gifts on FEC.gov':'Open registry record',RECORD_ART);
+ h+=webTotalsBox(e.web)+fecTotalsBox(e)+datum('Name as reported',e.name)+datum('Entity type',e.entity_type)+datum('Registry ID',e.id)+datum('Jurisdiction',e.jurisdiction)+sourceButton(e.source_url,/person who gave/i.test(e.entity_type||'')?'Open their gifts on FEC.gov':'Open registry record',RECORD_ART);
  h+=`<div class="detail-caution">This is one dot in the money web. Click a line to see one connection and its filing.</div>`+datum('Notes',e.notes);
  }else{
  h+=datum('Connection type',e.edge_type)+datum('From (as reported)',e.from_name)+datum('To (as reported)',e.to_name)+datum('Amount or aggregate figure',e.amount_usd!=null?money(e.amount_usd):'Not a money link')+datum('Date',dateText(e.date))+datum('Date semantics',e.date_kind)+datum('Jurisdiction',e.jurisdiction)+datum('Confidence',e.confidence)+sourceButton(e.source_url,'Open source evidence');
@@ -492,8 +505,13 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     const r = C.reduce((a, c) => a + num(c.totals.receipts), 0), d = C.reduce((a, c) => a + num(c.totals.disbursements), 0);
     const th = {}; C.forEach(c => { const x = c.totals.through || ''; if (x) th[x] = (th[x] || 0) + 1; });
     const most = Object.entries(th).sort((x, y) => y[1] - x[1])[0], when = most ? ', most through ' + dateText(most[0]) : '';
-    return [['Raised, FEC totals', r, 'What the ' + C.length + ' PACs loaded with this page (mostly those that raised $5 million or more) report they raised this cycle' + when + '. Full totals, not lines.'],
+    const out = [['Raised, FEC totals', r, 'What the ' + C.length + ' PACs loaded with this page (mostly those that raised $5 million or more) report they raised this cycle' + when + '. Full totals, not lines.'],
       ['Spent, FEC totals', d, 'What the same ' + C.length + ' PACs report they spent' + when + '. Full totals, not lines.']];
+    // D291: gifts of $200 or less that a PAC reports only as one sum. No filing line shows them, so the line boxes leave them out.
+    const U = C.filter(c => c.totals.individual_unitemized_contributions != null);
+    if (U.length) out.push(['Unitemized individual donations, FEC totals', U.reduce((a, c) => a + num(c.totals.individual_unitemized_contributions), 0),
+      'Gifts from people who gave $200 or less, which the ' + (U.length === C.length ? 'same ' : '') + U.length + ' PACs report only as one sum. No filing line shows them, so they are not in the first four boxes. Part of Raised, not added to it.']);
+    return out;
   }
   function drawPacStats() {
     const box = $('#pacs-view .pac-stats'), note = $('#pacs-view .pac-stats-note'); if (!box) return;
@@ -503,7 +521,7 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
      ['PAC to PAC', t.between, 'Given or moved from one PAC to another.'],
      ['Out of PACs', t.out, 'To candidates, party committees, vendors, ads and other groups.']].concat(fecTotals()).forEach(([label, v, small], i) => {
       const d = el('div', 'tar-stat' + (i ? '' : ' pac-stat-all')); d.append(el('span', 'tar-box-label', label), el('b', 'tar-stat-n', bigMoney(v)), el('small', 'tar-box-note', small)); box.append(d); });
-    note.textContent = 'Adding up the cards below would count PAC-to-PAC money twice, so the first four boxes count each filing line once. Money that comes into a PAC and then goes out shows in both Into and Out of PACs. Into PACs looks smaller than Out of PACs because most PAC money comes from people, and a person’s gifts are a line here only if that person gave $1 million or more in all, while each PAC’s 50 largest bills, gifts and ads are kept. The two FEC totals boxes are the full amounts those PACs report; they count PAC-to-PAC money twice. ActBlue and WinRed lines are ' + bigMoney(t.aw) + ' of the lines total; most of that is donors’ gifts passed on to candidates. Figures reported in news or summaries are not added. These are only the filings this archive has read, not all PAC money in the country.' + (filtersOn(true) ? ' The evidence filters are on, so the first four boxes count only the lines that pass them.' : '');
+    note.textContent = 'Adding up the cards below would count PAC-to-PAC money twice, so the first four boxes count each filing line once. Money that comes into a PAC and then goes out shows in both Into and Out of PACs. Into PACs looks smaller than Out of PACs because most PAC money comes from people, and a person’s gifts are a line here only if that person gave $1 million or more in all, while each PAC’s 50 largest bills, gifts and ads are kept. The FEC totals boxes are the full amounts those PACs report; they count PAC-to-PAC money twice. Unitemized individual donations are the small gifts from people inside Raised that no filing names one by one. ActBlue and WinRed lines are ' + bigMoney(t.aw) + ' of the lines total; most of that is donors’ gifts passed on to candidates. Figures reported in news or summaries are not added. These are only the filings this archive has read, not all PAC money in the country.' + (filtersOn(true) ? ' The evidence filters are on, so the first four boxes count only the lines that pass them.' : '');
   }
   const sizeOfRow = r => { const t = r.money; return t ? (t.item > 0 ? t.item : t.repMax) : 0; };
   function draw(k) {
