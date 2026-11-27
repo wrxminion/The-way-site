@@ -33,3 +33,10 @@ National party committees are not on state pages.
 
 The state pages read `/lookup/local/xx.json` live in the browser. That file comes from the local resources job
 (`tools/local-resources/`), which now also collects county board, commission and council meeting dates.
+
+## Issue pages (D295)
+
+A date in `upcoming.json` `events` can also carry: `view` (a box that speaks to readers on one side, such as
+"If you think court records should be free"; it is the reader's choice, not The Way's position), `stance_note` (replaces the
+"does not take a side" line; leave it out unless Frank asks), `sides` (each point with its sources), `tools` (free resources, as links)
+and `checked` (its own last-checked date). The first one is `free-court-records` (the Open Courts Act and the PACER fee rise).

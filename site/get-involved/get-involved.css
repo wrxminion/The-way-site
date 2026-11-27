@@ -66,3 +66,6 @@
 .gi-statelist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem 1.25rem}
 .gi-statelist li{padding:.35rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
 .gi-statelist .gv-muted{display:block;font-size:.85rem}
+/* D295: an "If you think ..." box on an issue page */
+.gi-view{border-left:4px solid #8cddd0;padding-left:16px}
+.gi-view h2{color:#8cddd0}
