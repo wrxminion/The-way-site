@@ -8,6 +8,7 @@ judges.csv is the FJC's public export: https://www.fjc.gov/sites/default/files/h
 Writes site/government/courts/judges/<slug>.html (one per sitting judge, including the justices)
 and site/government/courts/court/<slug>.html (one per court, listing its judges).
 Pages for judges who are no longer serving are removed so the folders always match the file.
+D293: judges_auto.py does the download and this rebuild every day on a home computer (install-judges-task.ps1).
 """
 import csv
 import json

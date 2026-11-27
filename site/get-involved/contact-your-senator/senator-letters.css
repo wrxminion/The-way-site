@@ -142,3 +142,33 @@
 .cs-changes{margin:8px 0 12px}
 .cs-changes ul{margin:6px 0 0;padding-left:20px}
 .cs-card .cs-note{margin:8px 0}
+/* D298: issue search, Local / State / National filters, tags that fit the member, share links */
+.cs-find{position:relative}
+.cs-find .cs-field{margin-bottom:6px}
+.cs-find-list{position:absolute;left:0;right:0;top:100%;z-index:20;margin:-2px 0 0;padding:6px;list-style:none;background:#021421;border:1px solid #b9f6ed88;border-radius:12px;box-shadow:0 12px 30px #0009;max-height:min(420px,60vh);overflow-y:auto}
+.cs-hit{padding:10px 12px;border-radius:9px;cursor:pointer;display:flex;flex-direction:column;gap:6px;color:#e9ffff;font-size:15px;line-height:1.45}
+.cs-hit:hover,.cs-hit[aria-selected="true"]{background:#0a2c40}
+.cs-hit-own .cs-hit-t{color:#b9f6ed;font-weight:700}
+.cs-admin .cs-find-note{margin:0 0 12px}
+.cs-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.cs-hit .cs-tags{margin:0}
+.cs-tag{display:inline-block;border-radius:99px;padding:3px 10px;font:700 12px/1.4 Inter,system-ui,Arial,sans-serif;background:#0d3346;color:#cfeff0;border:1px solid #c7ffff33}
+.cs-tag-cast{background:#123b2f;color:#c9f7dc}
+.cs-tag-committee,.cs-tag-bill{background:#2f2a12;color:#f3e6b4;border-color:#e7d7ad55}
+.cs-tag-state{background:#21183a;color:#e2d6ff;border-color:#cbb9ff55}
+.cs-tag-party{background:#3a1d1d;color:#ffd9d2;border-color:#ffb9ad55}
+.cs-tag-soon{background:#0b3b44;color:#b9f6ed}
+.cs-filters{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px}
+.cs-filter{min-height:40px;border:1px solid #c7ffff55;border-radius:99px;padding:8px 18px;font:700 14px/1.2 Inter,system-ui,Arial,sans-serif;color:#e9ffff;background:#021421;cursor:pointer}
+.cs-filter.cs-on{background:#b9f6ed;color:#052b3b;border-color:#b9f6ed}
+.cs-filter:focus-visible{outline:2px solid #e4ffff;outline-offset:3px}
+.cs-box{border:1px solid #c7ffff2e;border-radius:14px;padding:14px 16px;margin:0 0 14px;background:#03192ab8}
+.cs-box h4{margin:0 0 8px;font:normal 20px/1.2 Georgia,serif;color:#e9ffff}
+.cs-box ul{margin:6px 0 10px;padding-left:20px;line-height:1.6}
+.cs-admin .cs-count{margin:-6px 0 12px}
+.cs-admin .cs-past{font-size:15px;color:#e7d7ad;border-left:2px solid #e7d7ad88;padding:4px 0 4px 12px}
+.cs-admin .cs-shared-note{font-size:16px;color:#052b3b;background:#b9f6ed;border-radius:12px;padding:12px 14px}
+.cs-share{border-top:1px solid #c7ffff26;margin-top:16px;padding-top:12px}
+.cs-share h4{margin:0 0 8px;font-size:17px;color:#e9ffff}
+.cs-admin .cs-comms{color:#cfe6ea}
+@media(max-width:700px){.cs-filter{padding:8px 14px}.cs-find-list{max-height:55vh}}

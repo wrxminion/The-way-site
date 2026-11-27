@@ -21,7 +21,13 @@ No keys, tokens or passwords anywhere.
 1. Update `upcoming.json` and `meetings.json` from the official schedules.
 2. On a home computer (the cloud cannot reach lda.gov): `python fetch_lda.py`. It reads the official lobbying API with no key,
    one request every 4.5 seconds (lda.gov allows 15 a minute without a key), and stops at the first refusal.
-3. `python build_get_involved.py`, then send the change through the push queue.
+3. `python build_get_involved.py`.
+4. Contact your Senator and Representative pages: on a home computer (the cloud cannot reach clerk.house.gov or senate.gov),
+   `python tools/contact-senator/fetch_votes.py` refreshes the Previous votes in `tools/contact-senator/recent_votes/`
+   (one request every 2 seconds, no key). Then `python tools/contact-senator/build_fit.py committees-current.yaml committee-membership-current.yaml`
+   (the two committee files from github.com/unitedstates/congress-legislators; needs PyYAML) rebuilds `site/get-involved/contact-your-senator/fit.js`.
+   Run build_fit.py again whenever `upcoming.json` or `tools/contact-senator/topics.json` changes, so the bills coming up stay current.
+5. Send the change through the push queue.
 
 ## Groups on all sides
 
@@ -33,3 +39,17 @@ National party committees are not on state pages.
 
 The state pages read `/lookup/local/xx.json` live in the browser. That file comes from the local resources job
 (`tools/local-resources/`), which now also collects county board, commission and council meeting dates.
+
+## Issue pages (D295)
+
+A date in `upcoming.json` `events` can also carry: `view` (a box that speaks to readers on one side, such as
+"If you think court records should be free"; it is the reader's choice, not The Way's position), `stance_note` (replaces the
+"does not take a side" line; leave it out unless Frank asks), `sides` (each point with its sources), `tools` (free resources, as links)
+and `checked` (its own last-checked date). The first one is `free-court-records` (the Open Courts Act and the PACER fee rise).
+
+## We wish we had this (D310)
+
+`build_wish.py` writes `site/get-involved/wish-we-had-this/index.html`: public records that are hidden or hard to get, each with a
+sourced fact and a button to the letter tool. The letter issues for these cards are in
+`site/get-involved/contact-your-senator/issues-wish.js` (chamber `both`, so they show on the Senate and House pages).
+Edit `CARDS` in the script and run `python build_wish.py`. Every number needs its sources on the card.

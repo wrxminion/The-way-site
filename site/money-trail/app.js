@@ -163,6 +163,16 @@ const hubs=['GOPAC ELECTION FUND','COMMON SENSE AMERICA ELECTION FUND','COMMON S
 (RESEARCH.meta.state_committees||[]).forEach(c=>{if(!hubs.includes(c.name))hubs.push(c.name)});
 (RESEARCH.meta.nonprofit_hubs||[]).forEach(n=>{if(!hubs.includes(n))hubs.push(n)}); // D280: nonprofits (nonprofits-view.js)
 function prepareHub(){let h=$('#hub');h.innerHTML=hubs.map(x=>`<option value="${escapeHtml(x)}">${escapeHtml(hubLabel(x))}</option>`).join('');h.value=graphHub;h.addEventListener('change',()=>{graphHub=h.value;graphScale=1;renderGraph()});$('#include-context').addEventListener('change',e=>{settings.includeContext=e.target.checked;renderGraph()})}
+// D294 (Nov 2026): a payee or donor that has no FEC ID but the same name as a federal agency or court (for example
+// "DEPARTMENT OF STATE", paid a qualifying fee by a Florida campaign at an address in Tallahassee) is not proven to be that
+// federal office. The web joins dots by name, so it gets its own name: the filed name plus the state of its address on
+// the filing, for example "DEPARTMENT OF STATE (FL)". Its notes keep the name exactly as filed.
+(function(){const fed=new Set(RESEARCH.entities.filter(e=>!/^fec(name|ind)?:/.test(e.entity_id||'')&&/^federal (agency|court)$/i.test(e.entity_type||'')).map(e=>norm(e.legal_or_reported_name)));
+ if(!fed.size)return;const re={};
+ RESEARCH.entities.forEach(e=>{const id=String(e.entity_id||'');if(!/^fecname:/.test(id)||!fed.has(norm(e.legal_or_reported_name)))return;
+  const st=(/_([A-Z]{2})$/.exec(id)||[])[1],was=e.legal_or_reported_name,now=was+(st?' ('+st+')':' (named on an FEC filing)');
+  re[id]=now;e.legal_or_reported_name=now;e.notes=(e.notes?e.notes+' ':'')+'Named on the filing as '+was+'. Shown '+(st?'with the state of its address on the filing ('+st+') ':'apart ')+'so it is not joined to the federal office with the same name by the name alone.'});
+ RESEARCH.transactions.forEach(t=>{if(re[t.source_entity_id])t.source_name=re[t.source_entity_id];if(re[t.recipient_entity_id])t.recipient_name=re[t.recipient_entity_id]});})();
 const networkVerified=RESEARCH.transactions.map(t=>({id:t.transaction_id,from_name:t.source_name,to_name:t.recipient_name,from_entity_id:t.source_entity_id,to_entity_id:t.recipient_entity_id,amount_usd:t.amount_usd,date:t.transaction_date,date_kind:t.date_kind,jurisdiction:t.jurisdiction,edge_type:t.activity_type,confidence:t.confidence,source_url:t.filing_url,notes:t.notes,record_kind:'transaction',record_ref:t,tier:t.evidence_tier==='fec_filing'?'fec':'itemized'}));
 const networkContext=RESEARCH.graph_edges.filter(e=> !/itemized|verified_.*(contribution|payment)|state_ballot_cash_receipt|state_ballot_in_kind_receipt|state_party_receipt/i.test(e.edge_type||'')).map(e=>({...e,record_kind:'graph',tier:/reported|aggregate|major_contribution|attestation|snapshot/i.test(e.edge_type||'')?'reported':'context'}));
 function nodeKey(name,id,jur){if(id)return String(id);return 'reported-name:'+String(jur||'unknown')+':'+norm(name)}
@@ -411,11 +421,15 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     if (/municipal_public_body|election authority|federal agency|federal court/i.test(t)) return 'departments';
     if (/candidate_named|member_of_congress|supreme_court_justice|president_of_the_united_states|media_owner_person|person who gave/i.test(t) || looksPerson(e.legal_or_reported_name)) return 'people';
     // D290: political action committees get their own PAC tracker: the type the FEC or the state gives says PAC (PAC, Super PAC,
-    // Hybrid PAC, company or union PAC, state PAC), or the name has the word PAC. Candidate campaigns and party committees stay in orgs.
+    // Hybrid PAC, company or union PAC, state PAC), or the name has the word PAC. Campaigns and parties have their own trackers (D292).
+    // D292: candidates' own campaign committees and party committees get their own trackers too. The type decides,
+    // before the word PAC in a name does, so a campaign or party with PAC in its name stays with its kind.
+    if (/^(house|senate|presidential)$|candidate committee|candidate campaign|campaign committee/i.test(t)) return 'campaigns';
+    if (/^party\b|party committee|national party/i.test(t)) return 'parties';
     if (isPac(e)) return 'pacs';
     return 'orgs';
   };
-  const lists = { orgs: [], pacs: [], people: [], departments: [] };
+  const lists = { orgs: [], pacs: [], campaigns: [], parties: [], people: [], departments: [] };
   // D272: people who gave (donors-view.js). Every card says where the names come from and what the law allows.
   const DONOR_NOTE = 'From FEC public filings; federal law bars using donor names to ask for money or for business (52 U.S.C. 30111(a)(4))';
   const seen = new Set();
@@ -452,21 +466,23 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
     lists.departments = lists.departments.filter(r => !inBudget.has(norm(r.name))); }
   Object.values(lists).forEach(a => a.sort((x, y) => y.count - x.count || x.name.localeCompare(y.name)));
   const TEXT = {
-    orgs: { title: 'The other tracker', sub: n => n + ' other groups named in this data', lead: 'Groups named in this archive that no other tracker lists: candidate campaigns, party committees and other committees, vendors and donors named on filings, lobbying firms, and groups named on nonprofits’ tax returns. PACs, companies, nonprofits, media, government offices and people each have their own tracker. Names are as reported; two rows with the same name are not proven to be the same legal group. Groups with more lines in the Money web are listed first.' },
-    pacs: { title: 'The PAC tracker', sub: n => n + ' PACs named in this data', lead: 'Every political action committee named in this archive: PACs, Super PACs (independent expenditure only), hybrid PACs, company and union PACs, and state PACs. A group is listed here when the FEC or the state lists it as a PAC, or when its name has the word PAC. Candidate campaigns and party committees are in the Other tracker. ActBlue and WinRed are here because the FEC lists them as PACs; most of the money on their lines is donors’ gifts passed on to candidates. Names are as reported; two rows with the same name are not proven to be the same legal group. Groups with the most money in this data are listed first.' },
+    orgs: { title: 'The other tracker', sub: n => n + ' other groups named in this data', lead: 'Groups named in this archive that no other tracker lists: committees that are not PACs, campaigns or parties, vendors and donors named on filings, lobbying firms, and groups named on nonprofits’ tax returns. PACs, campaigns, parties, companies, nonprofits, media, government offices and people each have their own tracker. Names are as reported; two rows with the same name are not proven to be the same legal group. Groups with more lines in the Money web are listed first.' },
+    pacs: { title: 'The PAC tracker', sub: n => n + ' PACs named in this data', lead: 'Every political action committee named in this archive: PACs, Super PACs (independent expenditure only), hybrid PACs, company and union PACs, and state PACs. A group is listed here when the FEC or the state lists it as a PAC, or when its name has the word PAC. Candidates’ own campaigns and party committees have their own trackers. ActBlue and WinRed are here because the FEC lists them as PACs; most of the money on their lines is donors’ gifts passed on to candidates. Names are as reported; two rows with the same name are not proven to be the same legal group. Groups with the most money in this data are listed first.' },
+    campaigns: { title: 'The campaign tracker', sub: n => n + ' campaigns named in this data', lead: 'Candidates’ own campaign committees named in this archive, for the House, the Senate, President and a few state offices, by the type the FEC or the state gives them (for example Talarico for Texas). A campaign is the committee a candidate raises and spends money through; it is not the candidate. Names are as reported; two rows with the same name are not proven to be the same legal group. Groups with the most money in this data are listed first.' },
+    parties: { title: 'The party tracker', sub: n => n + ' party committees named in this data', lead: 'Party committees named in this archive: national committees such as the RNC and DNC, the House and Senate campaign committees such as the NRCC and DCCC, and state and local parties, by the type the FEC or the state gives them. Every party alike. Names are as reported; two rows with the same name are not proven to be the same legal group. Groups with the most money in this data are listed first.' },
     people: { title: 'The person tracker', sub: n => n + ' people named in this data', lead: 'People named in this archive: candidates named in spending summaries, and donors that filings list by a person’s name (last, first). Names are as reported and the person’s identity is not verified. Being listed does not imply wrongdoing.' },
     departments: { title: 'The department tracker', sub: n => (((window.TW_BUDGETS || {}).departments || {}).rows || []).length + ' federal departments and agencies, plus ' + n + ' other government offices in this data', lead: 'Other government offices our money records name: state and city offices, and agency trails. Every federal department and agency is in the budget cards above.' }
   };
   const el = (tag, cls, text) => { const d = document.createElement(tag); if (cls) d.className = cls; if (text != null) d.textContent = text; return d; };
-  const query = { orgs: '', pacs: '', people: '', departments: '' };
+  const query = { orgs: '', pacs: '', campaigns: '', parties: '', people: '', departments: '' };
   // D221: the blue web on "See in the Money web", the blue filing cabinet on "Inspect" and on trail links.
   const WEB_ART = '/money-trail/art/money-web-link-blue.webp';
   const btnArt = src => { const im = document.createElement('img'); im.src = src; im.alt = ''; im.width = 22; im.height = 24; im.className = 'tracker-btn-art'; im.decoding = 'async'; return im; };
   function openWeb(name) { graphHub = name; if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; graphScale = 1; setView('network'); $('.center-panel').scrollIntoView({ block: 'start', behavior: 'smooth' }); }
   // D222: each tracker looks like the department budget cards: a "Find a ..." box, then one card per name with a big dollar
   // figure, the name, a size bar, a details line, the source link and Past years. The 12 largest show first.
-  const FIND = { orgs: ['Find a group', 'Type part of a group name…'], pacs: ['Find a PAC', 'Type part of a PAC name…'], people: ['Find a person', 'Type part of a person’s name…'], departments: ['Find another government office', 'Type part of a name…'] };
-  const showAll = { orgs: false, pacs: false, people: false, departments: false };
+  const FIND = { orgs: ['Find a group', 'Type part of a group name…'], pacs: ['Find a PAC', 'Type part of a PAC name…'], campaigns: ['Find a campaign', 'Type part of a campaign or candidate name…'], parties: ['Find a party committee', 'Type part of a party committee name…'], people: ['Find a person', 'Type part of a person’s name…'], departments: ['Find another government office', 'Type part of a name…'] };
+  const showAll = { orgs: false, pacs: false, campaigns: false, parties: false, people: false, departments: false };
   function render(k) {
     const box = $('#' + k + '-view'); if (!box) return;
     let area = box.querySelector('.tracker-area');
@@ -712,8 +728,8 @@ $('#filter-toggle').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key==='
   if (q.get('hub')) { const want = norm(q.get('hub')), allLines = [...networkVerified, ...networkContext], part = (nm, i) => { const m = /^([^(]+)\((.+)\)$/.exec(nm || ''); return m ? norm(m[i]) : ''; }, find = test => allLines.reduce((f, x) => f || [x.from_name, x.to_name].find(nm => nm && test(nm)), ''); graphHub = find(nm => norm(nm) === want) || find(nm => part(nm, 2) === want) || find(nm => part(nm, 1) === want) || q.get('hub').toUpperCase(); if (!hubs.includes(graphHub)) { hubs.push(graphHub); prepareHubRefresh(); } $('#hub').value = graphHub; }
   if (q.get('q')) { settings.search = q.get('q'); $('#search').value = settings.search; }
   const vw = q.get('view');
-  // The page opens on the Money web. ?view=timeline (or a search, ?q=), states, orgs, pacs, people or departments opens that tab.
-  if (['timeline', 'states', 'orgs', 'pacs', 'people', 'departments'].includes(vw)) /* D249: ?view=media is opened by media-tracker.js */ setView(vw); else if (q.get('q') && vw !== 'network') setView('timeline'); else setView('network');
+  // The page opens on the Money web. ?view=timeline (or a search, ?q=), states, orgs, pacs, campaigns, parties, people or departments opens that tab.
+  if (['timeline', 'states', 'orgs', 'pacs', 'campaigns', 'parties', 'people', 'departments'].includes(vw)) /* D249: ?view=media is opened by media-tracker.js */ setView(vw); else if (q.get('q') && vw !== 'network') setView('timeline'); else setView('network');
 })();
 
 // ---- Full screen web (Nov 2026): the Money network web fills the page by itself (not browser full screen).
