@@ -150,6 +150,16 @@ const hubs=['GOPAC ELECTION FUND','COMMON SENSE AMERICA ELECTION FUND','COMMON S
 (RESEARCH.meta.state_committees||[]).forEach(c=>{if(!hubs.includes(c.name))hubs.push(c.name)});
 (RESEARCH.meta.nonprofit_hubs||[]).forEach(n=>{if(!hubs.includes(n))hubs.push(n)}); // D280: nonprofits (nonprofits-view.js)
 function prepareHub(){let h=$('#hub');h.innerHTML=hubs.map(x=>`<option value="${escapeHtml(x)}">${escapeHtml(hubLabel(x))}</option>`).join('');h.value=graphHub;h.addEventListener('change',()=>{graphHub=h.value;graphScale=1;renderGraph()});$('#include-context').addEventListener('change',e=>{settings.includeContext=e.target.checked;renderGraph()})}
+// D294 (Nov 2026): a payee or donor that has no FEC ID but the same name as a federal agency or court (for example
+// "DEPARTMENT OF STATE", paid a qualifying fee by a Florida campaign at an address in Tallahassee) is not proven to be that
+// federal office. The web joins dots by name, so it gets its own name: the filed name plus the state of its address on
+// the filing, for example "DEPARTMENT OF STATE (FL)". Its notes keep the name exactly as filed.
+(function(){const fed=new Set(RESEARCH.entities.filter(e=>!/^fec(name|ind)?:/.test(e.entity_id||'')&&/^federal (agency|court)$/i.test(e.entity_type||'')).map(e=>norm(e.legal_or_reported_name)));
+ if(!fed.size)return;const re={};
+ RESEARCH.entities.forEach(e=>{const id=String(e.entity_id||'');if(!/^fecname:/.test(id)||!fed.has(norm(e.legal_or_reported_name)))return;
+  const st=(/_([A-Z]{2})$/.exec(id)||[])[1],was=e.legal_or_reported_name,now=was+(st?' ('+st+')':' (named on an FEC filing)');
+  re[id]=now;e.legal_or_reported_name=now;e.notes=(e.notes?e.notes+' ':'')+'Named on the filing as '+was+'. Shown '+(st?'with the state of its address on the filing ('+st+') ':'apart ')+'so it is not joined to the federal office with the same name by the name alone.'});
+ RESEARCH.transactions.forEach(t=>{if(re[t.source_entity_id])t.source_name=re[t.source_entity_id];if(re[t.recipient_entity_id])t.recipient_name=re[t.recipient_entity_id]});})();
 const networkVerified=RESEARCH.transactions.map(t=>({id:t.transaction_id,from_name:t.source_name,to_name:t.recipient_name,from_entity_id:t.source_entity_id,to_entity_id:t.recipient_entity_id,amount_usd:t.amount_usd,date:t.transaction_date,date_kind:t.date_kind,jurisdiction:t.jurisdiction,edge_type:t.activity_type,confidence:t.confidence,source_url:t.filing_url,notes:t.notes,record_kind:'transaction',record_ref:t,tier:t.evidence_tier==='fec_filing'?'fec':'itemized'}));
 const networkContext=RESEARCH.graph_edges.filter(e=> !/itemized|verified_.*(contribution|payment)|state_ballot_cash_receipt|state_ballot_in_kind_receipt|state_party_receipt/i.test(e.edge_type||'')).map(e=>({...e,record_kind:'graph',tier:/reported|aggregate|major_contribution|attestation|snapshot/i.test(e.edge_type||'')?'reported':'context'}));
 function nodeKey(name,id,jur){if(id)return String(id);return 'reported-name:'+String(jur||'unknown')+':'+norm(name)}
