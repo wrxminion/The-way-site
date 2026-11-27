@@ -1,0 +1,17 @@
+/* We wish we had this (D310). Builds on government-works.css, government/government.css and get-involved.css. */
+.ww-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:8px}
+.ww-card{background:linear-gradient(145deg,#173b49,#102834);border:1px solid var(--line);border-radius:20px;padding:24px;min-width:0;display:flex;flex-direction:column;scroll-margin-top:100px}
+.ww-card h3{font-size:1.4rem;margin:6px 0 4px}
+.ww-num{font-size:clamp(2rem,5vw,2.8rem);font-weight:800;line-height:1.1;color:#f4d78f;margin:6px 0 4px;letter-spacing:-.02em;overflow-wrap:anywhere}
+.ww-num small{display:block;font-size:.9rem;font-weight:600;color:var(--muted);letter-spacing:0;margin-top:4px}
+.ww-hook{font-size:1.08rem;color:var(--ink)!important}
+.ww-gap,.ww-if{color:#cfdee3}
+.ww-if{border-left:4px solid #8cddd0;padding-left:14px}
+.ww-card .gv-links{margin-top:auto;padding-top:8px}
+.ww-card .gv-links a{margin:0 10px 8px 0}
+.ww-card .gv-links a.ww-go{border-color:var(--sea);background:#1d4a57;font-weight:700}
+.ww-card details{margin-top:6px}
+.ww-card details ul{margin:0 0 6px;padding-left:20px}
+.ww-card details li{margin:4px 0;font-size:.92rem;color:#cfdee3;overflow-wrap:anywhere}
+.ww-where{color:var(--sea)}
+@media (max-width:800px){.ww-grid{grid-template-columns:1fr}.ww-card{padding:20px}}
