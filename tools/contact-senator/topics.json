@@ -1,0 +1,28 @@
+{
+  "note": "Words that mean the same thing for the issue search on the contact pages. Type any word in a group and the search also looks for the others. Plain words only, no side taken. Edit by hand, then run build_fit.py.",
+  "groups": [
+    { "name": "Immigration", "words": ["ice", "immigration", "immigrant", "immigrants", "deport", "deportation", "deportations", "border", "asylum", "migrant", "migrants", "detention", "homeland security", "visa", "citizenship", "refugee", "laken riley", "noem"] },
+    { "name": "Courts and judges", "words": ["court", "courts", "judge", "judges", "judicial", "judiciary", "nomination", "nominee", "supreme court", "justices", "pacer", "court records", "lawsuit"] },
+    { "name": "Veterans", "words": ["veteran", "veterans", "va", "military retiree", "tinnitus", "sleep apnea", "star act", "gi bill"] },
+    { "name": "War and the military", "words": ["war", "war powers", "iran", "military", "armed forces", "defense", "ndaa", "pentagon", "troops", "hegseth"] },
+    { "name": "Taxes", "words": ["tax", "taxes", "irs", "internal revenue", "deduction", "tax relief", "tax credit"] },
+    { "name": "Health care", "words": ["health", "health care", "medicare", "medicaid", "affordable care act", "aca", "obamacare", "preventive", "hhs", "insurance", "doctor", "hospital"] },
+    { "name": "Energy", "words": ["energy", "nuclear", "permitting", "pipeline", "electric", "electricity", "utility", "utilities", "ratepayer", "power bills", "oil", "gas", "mining", "uranium", "enrichment", "data center"] },
+    { "name": "Environment and land", "words": ["environment", "epa", "climate", "pollution", "emissions", "diesel", "wildlife", "refuge", "invasive species", "whale", "bird", "birds", "forest", "public lands", "water", "clean air", "national park", "trail"] },
+    { "name": "Tribes", "words": ["tribe", "tribes", "tribal", "native", "native american", "indian", "indians", "buffalo", "land transfer", "reservation"] },
+    { "name": "Ethics and money in politics", "words": ["stock", "stocks", "stock trading", "insider trading", "ethics", "corruption", "impeach", "impeachment", "lobby", "lobbying", "aipac", "donors"] },
+    { "name": "Party leaders", "words": ["leader", "leadership", "speaker", "schumer", "jeffries", "van hollen", "caucus", "minority leader", "majority leader"] },
+    { "name": "Jobs and labor", "words": ["labor", "union", "unions", "worker", "workers", "jobs", "franchise", "wages", "pay", "secretary of labor", "real estate agent", "direct seller"] },
+    { "name": "Retirement and savings", "words": ["retirement", "retire", "pension", "pensions", "401k", "social security", "savings", "employee ownership"] },
+    { "name": "Budget and spending", "words": ["budget", "funding", "shutdown", "appropriations", "spending", "continuing resolution", "deficit", "debt"] },
+    { "name": "Crime and fraud", "words": ["fraud", "scam", "scams", "crime", "police", "prison", "prisons", "guard act", "whistleblower"] },
+    { "name": "Economy", "words": ["socialism", "capitalism", "economy", "free market", "small business", "main street", "inflation", "prices"] },
+    { "name": "Trade", "words": ["trade", "tariff", "tariffs", "agoa", "africa", "china", "imports", "exports"] },
+    { "name": "Foreign affairs", "words": ["israel", "gaza", "palestine", "palestinian", "human rights", "foreign aid", "foreign affairs", "ukraine", "russia"] },
+    { "name": "Sports and college", "words": ["athlete", "athletes", "college sports", "nil", "ncaa", "student athlete"] },
+    { "name": "Disability", "words": ["disability", "disabled", "ssi", "ssdi"] },
+    { "name": "Survivors of abuse", "words": ["survivor", "survivors", "sexual abuse", "sexual assault", "abuse"] },
+    { "name": "Schools", "words": ["school", "schools", "education", "teacher", "teachers", "educator", "educators", "student", "students", "college", "academic", "university"] },
+    { "name": "Elections and voting", "words": ["election", "elections", "voting", "voter", "voters", "ballot", "ballots"] }
+  ]
+}

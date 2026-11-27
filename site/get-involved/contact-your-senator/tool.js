@@ -22,16 +22,27 @@ function make(ctx) {
   // issueId: the issue to open. also: other issues to add to the same letter, as "id:for,id:against" (from ?also=).
   function view(issueId, also) {
     const D = HOUSE ? window.HOUSE_CONTACTS : window.SENATE_CONTACTS, L = window.CSLetters;
-    const ISSUES = (window.CS_ISSUES || []).filter((i) => (i.chamber || 'senate') === (HOUSE ? 'house' : 'senate'));
-    if (!D || !L || !window.CSOwn || !ISSUES) { render(notice('The letter tool did not load. The page may be out of date; please reload it.')); return; }
+    const ISSUES = (window.CS_ISSUES || []).filter((i) => i.chamber === 'both' || (i.chamber || 'senate') === (HOUSE ? 'house' : 'senate'));
+    if (!D || !L || !window.CSOwn || !ISSUES || !window.CSFit) { render(notice('The letter tool did not load. The page may be out of date; please reload it.')); return; }
+    // From a shared link: ?side=for|against, and #letter=... (a friend's letter, in the part of the link that is never sent to any server).
+    let side = '', shared = null;
+    try { side = new URLSearchParams(location.search).get('side') || ''; } catch { side = ''; }
+    try { const m = /(?:^#|&)letter=([^&]+)/.exec(location.hash); if (m) shared = JSON.parse(unb64(m[1])); } catch { shared = null; }
+    if (shared && (typeof shared.t !== 'string' || shared.t.length > 12000)) shared = null;
     // Your own words first (the default), then the listed votes for this chamber (D286, Frank Nov 16 2026).
     const OWN = [
       { id: 'own', own: true, menu: 'Your own issue: type it in your own words' },
       { id: 'angry', own: true, angry: true, menu: 'Pissed off about something: say it your way, swearing and all' }];
-    tool(D, L, OWN.concat(ISSUES), issueId || 'own', window.CS_ISSUES || [], also || '');
+    tool(D, L, OWN.concat(ISSUES), issueId || (shared && shared.i) || 'own', window.CS_ISSUES || [], also || '', { side, shared });
   }
+  // A letter in a link: UTF-8 text as URL-safe base64.
+  function b64(str) { return btoa(unescape(encodeURIComponent(str))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); }
+  function unb64(str) { return decodeURIComponent(escape(atob(str.replace(/-/g, '+').replace(/_/g, '/')))); }
 
-  function tool(D, L, ISSUES, startId, ALL, startAlso) {
+  function tool(D, L, ISSUES, startId, ALL, startAlso, start) {
+    const FIT = window.CSFit;
+    start = start || {};
+    let sharedLetter = start.shared || null;
     const MEMBERS = D.members || D.senators;
     const titleOf = (s) => s.title || W.title;
     const byId = {}, byIssue = {};
@@ -49,7 +60,7 @@ function make(ctx) {
     let mode = 'letter';
     const partyWord = (p) => (p === 'D' ? 'Democrat' : p === 'R' ? 'Republican' : 'Independent');
     const tel = (p) => 'tel:+1' + p.replace(/-/g, '');
-    const castWord = (c) => (c === 'Yea' ? 'Voted yes' : c === 'Nay' ? 'Voted no' : 'Did not vote');
+    const castWord = (c) => (c === 'Yea' ? 'Voted yes' : c === 'Nay' ? 'Voted no' : c === 'Present' ? 'Voted present' : 'Did not vote');
     const ext = (text, href, cls) => h('a', { class: cls || null, href, target: '_blank', rel: 'noopener', text });
     const num = (n) => h('span', { class: 'cs-num', text: String(n) });
     // Text from issues.js may hold links written as [words](https://...) or [words](/our/page). They become real links; the rest stays text.
@@ -66,15 +77,42 @@ function make(ctx) {
     const srcLinks = (cites) => (cites || []).flatMap((x, i) => [i ? '; ' : '', ext(`${x.src}, ${x.date}`, x.url)]);
 
     // Controls
-    const issueSel = h('select', { id: 'cs-issue' }, ISSUES.map((i) => h('option', { value: i.id, text: i.menu })));
-    const votable = (i) => i.own || !chosen || L.canVote(i, chosen);
-    function markIssues() {
-      [...issueSel.options].forEach((op) => {
-        const i = byIssue[op.value];
-        op.disabled = !votable(i);
-        op.textContent = i.menu + (op.disabled ? ` (not ${titleOf(chosen)} ${chosen.last}'s vote)` : '');
-      });
+    const issueSel = h('select', { id: 'cs-issue' });
+    // An issue fits a member when they vote on it (their chamber, their party's own vote) and were in office for it (D298).
+    const votable = (i) => (i.own && !i.kind) || !chosen || (FIT.shows(i, chosen) && (i.own || L.canVote(i, chosen)));
+    // Local, State and National (Frank Nov 27 2026). "All" shows everything that fits.
+    let scopeF = 'all';
+    const stateNow = () => (chosen ? chosen.st : stateSel ? stateSel.value : '');
+    const tagsOf = (i) => (i.own && !i.kind ? [] : FIT.tags(i, chosen, stateNow()));
+    const inScope = (i) => (i.own && !i.kind) || scopeF === 'all' || FIT.scope(i, chosen, stateNow()).indexOf(scopeF) >= 0;
+    // What the menu and the search offer now: fits the member, not past its date, in the filter.
+    const offered = () => ISSUES.filter((i) => votable(i) && !FIT.expired(i) && inScope(i));
+    const GROUPS = [
+      ['own', 'Say it your way'],
+      ['soon', 'Coming up'],
+      ['issue', 'Issues we researched, both sides'],
+      ['recent', 'Set for a vote, no recorded vote found yet'],
+      ['vote', 'Previous votes: thank them or say you disagree']];
+    const groupOf = (i) => (i.own && !i.kind ? 'own' : i.kind === 'vote' ? 'vote' : i.recent ? 'recent' : i.kind === 'bill' || i.kind === 'date' ? 'soon' : 'issue');
+    const tagLine = (i) => tagsOf(i).filter((t) => t.k !== 'soon').map((t) => t.text).join(' · ');
+    function fillMenu() {
+      const list = offered();
+      if (issue && !list.includes(issue)) list.push(issue);   // a link can open an issue that is past its date or out of the filter
+      const opts = GROUPS.map(([g, label]) => {
+        const items = list.filter((i) => groupOf(i) === g);
+        if (g === 'soon' || g === 'issue') items.sort((a, b) => FIT.score(tagsOf(b)) - FIT.score(tagsOf(a)));
+        return items.length ? h('optgroup', { label }, items.map((i) => {
+          const tl = tagLine(i);
+          return h('option', { value: i.id, text: i.menu + (tl ? ' · ' + tl : '') + (FIT.expired(i) ? ' (vote date passed)' : '') });
+        })) : null;
+      }).filter(Boolean);
+      issueSel.replaceChildren(...opts);
+      issueSel.value = issue ? issue.id : 'own';
+      menuCount.textContent = `${list.filter((i) => !(i.own && !i.kind)).length} issues and votes${chosen ? ` fit ${titleOf(chosen)} ${chosen.last}` : ''}${scopeF !== 'all' ? ` (${scopeWord[scopeF]})` : ''}.`;
     }
+    const markIssues = () => fillMenu();
+    const scopeWord = { all: 'all', national: 'national', state: 'state', local: 'local' };
+    const menuCount = h('p', { class: 'cs-small cs-count', role: 'status' });
     const stateSel = h('select', { id: 'cs-state' }, h('option', { value: '', text: 'Choose a state' }),
       Object.keys(D.states).sort((a, b) => D.states[a].localeCompare(D.states[b])).map((k) => h('option', { value: k, text: D.states[k] })));
     const senSel = h('select', { id: 'cs-senator' }, h('option', { value: '', text: W.choose }),
@@ -186,7 +224,133 @@ function make(ctx) {
       callStatus, callTip);
     const callText = () => `If someone answers:\n${[...callPoints.children].map((li) => '- ' + li.textContent).join('\n')}\n\nIf you get voicemail:\n${voicemail.value}\n`;
 
-    const issueStep = h('div', { class: 'cs-step' }, h('h3', null, num(2), 'Pick an issue, or say it in your own words'), field('Issue or vote', issueSel, true), panel);
+    // Search with a list that drops down as you type. Words that mean the same thing count (ice finds immigration).
+    const findIn = h('input', { type: 'search', id: 'cs-find', autocomplete: 'off', spellcheck: 'false', role: 'combobox', 'aria-expanded': 'false', 'aria-controls': 'cs-find-list', 'aria-autocomplete': 'list', placeholder: 'Type a topic, like ice, veterans, judges or H.R. 4464' });
+    const findList = h('ul', { id: 'cs-find-list', class: 'cs-find-list', role: 'listbox', 'aria-label': 'Matching issues and votes', hidden: true });
+    const findNote = h('p', { class: 'cs-small cs-find-note', role: 'status' });
+    let findHits = [], findAt = -1;
+    function closeFind() { findList.hidden = true; findIn.setAttribute('aria-expanded', 'false'); findAt = -1; findIn.removeAttribute('aria-activedescendant'); }
+    function pickHit(i) {
+      closeFind();
+      if (!i) return;
+      if (i === 'own') { const q = findIn.value.trim(); setIssue('own'); if (q && !ownTopic.value) ownTopic.value = q; findIn.value = ''; findNote.textContent = ''; return; }
+      setIssue(i.id); findIn.value = ''; findNote.textContent = '';
+      issueSel.focus();
+    }
+    function runFind() {
+      const q = findIn.value.trim();
+      if (q.length < 2) { closeFind(); findNote.textContent = ''; return; }
+      const r = FIT.search(q, offered().filter((i) => !(i.own && !i.kind)));
+      // Their own vote on it comes first, then the rest by how well it matches.
+      findHits = r.items.slice(0, 8);
+      const rows = findHits.map((i, n) => {
+        const t = tagsOf(i);
+        return h('li', { id: 'cs-hit-' + n, role: 'option', class: 'cs-hit', 'aria-selected': 'false', onmousedown: (e) => { e.preventDefault(); pickHit(i); } },
+          h('span', { class: 'cs-hit-t', text: i.menu }),
+          t.length ? h('span', { class: 'cs-tags' }, t.map((x) => h('span', { class: 'cs-tag cs-tag-' + x.k, text: x.text }))) : null);
+      });
+      rows.push(h('li', { id: 'cs-hit-own', role: 'option', class: 'cs-hit cs-hit-own', 'aria-selected': 'false', onmousedown: (e) => { e.preventDefault(); pickHit('own'); } },
+        h('span', { class: 'cs-hit-t', text: `Write about "${q}" in your own words` })));
+      findHits.push('own');
+      findList.replaceChildren(...rows);
+      findList.hidden = false; findIn.setAttribute('aria-expanded', 'true'); findAt = -1;
+      findNote.replaceChildren(
+        r.items.length ? `${r.items.length} ${r.items.length === 1 ? 'match' : 'matches'}` : 'Nothing in this list matches yet',
+        r.groups.length ? `, counting words like it (${r.groups.map((g) => g.name).join(', ')})` : '',
+        '. ', own(`Search all of The Way for "${q}"`, '/search/?q=' + encodeURIComponent(q)), ' for case studies and more.');
+    }
+    findIn.addEventListener('input', runFind);
+    findIn.addEventListener('focus', () => { if (findIn.value.trim().length >= 2) runFind(); });
+    findIn.addEventListener('blur', () => setTimeout(closeFind, 150));
+    findIn.addEventListener('keydown', (e) => {
+      if (findList.hidden) { if (e.key === 'ArrowDown') runFind(); return; }
+      const rows = [...findList.children];
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        findAt = (findAt + (e.key === 'ArrowDown' ? 1 : -1) + rows.length) % rows.length;
+        rows.forEach((r, n) => r.setAttribute('aria-selected', n === findAt ? 'true' : 'false'));
+        findIn.setAttribute('aria-activedescendant', rows[findAt].id);
+        rows[findAt].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter') {
+        if (findAt >= 0) { e.preventDefault(); pickHit(findHits[findAt]); } else if (findHits.length > 1) { e.preventDefault(); pickHit(findHits[0]); }
+      } else if (e.key === 'Escape') closeFind();
+    });
+    // Filter buttons
+    const scopeBtns = [['all', 'All'], ['national', 'National'], ['state', 'State'], ['local', 'Local']].map(([k, t]) =>
+      h('button', { type: 'button', class: 'cs-filter' + (k === scopeF ? ' cs-on' : ''), 'aria-pressed': k === scopeF ? 'true' : 'false', text: t, onclick: () => setScope(k) }));
+    const scopeBox = h('div', { class: 'cs-scope', 'aria-live': 'polite' });
+    function setScope(k) {
+      scopeF = k;
+      scopeBtns.forEach((b, n) => { const on = ['all', 'national', 'state', 'local'][n] === k; b.className = 'cs-filter' + (on ? ' cs-on' : ''); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      fillMenu(); showScope();
+      if (findIn.value.trim().length >= 2) runFind();
+    }
+    // State and Local: what Congress does not decide, and where to take part.
+    let localData = {}, localPick = '';
+    function showScope() {
+      const st = stateNow(), S = st ? FIT.states[st] : null;
+      if (scopeF === 'national') { scopeBox.replaceChildren(h('p', { class: 'cs-small', text: 'National: bills, votes and nominations for the whole country.' })); return; }
+      if (scopeF === 'all') { scopeBox.replaceChildren(); return; }
+      if (!S) { scopeBox.replaceChildren(h('p', { class: 'cs-small', text: `Pick your state or your ${W.one} in step 1 to see ${scopeF} issues.` })); return; }
+      if (scopeF === 'state') {
+        const leg = S.leg || {};
+        scopeBox.replaceChildren(h('div', { class: 'cs-box' },
+          h('h4', { text: `State: ${S.name}` }),
+          h('p', { class: 'cs-small', text: `Listed above: votes and bills that name ${S.name} or its people. State laws are made by your state lawmakers, not Congress.` }),
+          h('p', { class: 'cs-links' },
+            leg.home ? ext(`${S.name} legislature ↗`, leg.home, 'cs-btn') : null,
+            leg.bills ? ext('Bills in the legislature ↗', leg.bills, 'cs-btn') : null,
+            S.page ? own(`${S.name} on The Way`, S.page, 'cs-btn') : null),
+          (S.elections || []).filter((e) => !e.date || e.date >= FIT.today).length
+            ? h('ul', null, S.elections.filter((e) => !e.date || e.date >= FIT.today).map((e) => h('li', null, `${e.date ? FIT.dateLabel(e.date) + ': ' : ''}${e.what} `, e.src ? ext('(official page)', e.src, 'cs-cite') : null)))
+            : h('p', { class: 'cs-small', text: S.elections_note || (leg.home ? 'No upcoming state elections listed on the official pages we checked.' : `We have not read ${S.name}'s official state pages yet. The state page on The Way has what we have.`) })));
+        return;
+      }
+      // Local: counties (for a House member, the counties in their district), with their official links and election dates.
+      const head = [h('h4', { text: `Local: ${S.name}` }),
+        h('p', { class: 'cs-small', text: 'Local issues are decided by your county, city, town and school board, not Congress. They meet in public, and most let you speak. Your member of Congress can still help with a problem with a federal agency, so you can write to them about that in your own words.' }),
+        h('p', { class: 'cs-actions' }, h('button', { type: 'button', class: 'cs-btn', text: 'Write about a local problem in your own words', onclick: () => { setIssue('own'); ownTopic.focus(); } }))];
+      if (!S.localData) {
+        scopeBox.replaceChildren(h('div', { class: 'cs-box' }, head, h('p', { class: 'cs-small' }, `We have not collected county and city pages for ${S.name} yet. `,
+          S.local ? ext('County election offices (official state page) ↗', S.local) : null, S.local && S.page ? ' · ' : '', S.page ? own(`${S.name} on The Way`, S.page) : null)));
+        return;
+      }
+      const box2 = h('div', { class: 'cs-box' }, head, h('p', { class: 'cs-small', text: 'Loading county pages…' }));
+      scopeBox.replaceChildren(box2);
+      const draw = (J) => {
+        const dist = chosen && chosen.title && J.districts ? J.districts['us_house:' + (chosen.district || 0)] : null;
+        const fips = Object.keys(J.counties || {}).filter((f) => !dist || dist.includes(f)).sort((a, b) => J.counties[a].name.localeCompare(J.counties[b].name));
+        if (!fips.includes(localPick)) localPick = '';
+        const sel = h('select', { id: 'cs-county' }, h('option', { value: '', text: 'Choose a county' }), fips.map((f) => h('option', { value: f, text: J.counties[f].name })));
+        sel.value = localPick;
+        const list = h('div');
+        const KIND = { government: 'County government', election_office: 'Election office', clerk: 'County clerk', library: 'Library', meeting: 'Public meetings' };
+        const show = () => {
+          localPick = sel.value;
+          const cty = J.counties[sel.value];
+          if (!cty) { list.replaceChildren(); return; }
+          const els = (cty.elections || []).filter((e) => !e.d || e.d >= FIT.today);
+          list.replaceChildren(
+            h('ul', null, (cty.links || []).map((l) => h('li', null, ext(`${KIND[l.k] || l.k}: ${l.t}`, l.u), h('span', { class: 'cs-cite', text: ` (checked ${l.c})` })))),
+            ...(els.length ? [h('p', { class: 'cs-small' }, 'Coming up: ', els.map((e, n) => [n ? '; ' : '', ext(`${e.n || 'Election'}, ${FIT.dateLabel(e.d)}`, e.u)]))] : []));
+        };
+        sel.addEventListener('change', show);
+        box2.replaceChildren(head[0], head[1],
+          h('p', { class: 'cs-small', text: dist ? `${fips.length} counties are in ${chosen.seat || 'this district'}, by the official district maps.` : `${fips.length} counties with official pages so far.` }),
+          field('Your county', sel), list, ...(J.note ? [h('p', { class: 'cs-small', text: J.note })] : []), head[2]);
+        show();
+      };
+      if (localData[st]) draw(localData[st]);
+      else fetch(S.localData).then((r) => (r.ok ? r.json() : Promise.reject(new Error('no')))).then((J) => { localData[st] = J; if (scopeF === 'local' && stateNow() === st) draw(J); })
+        .catch(() => { box2.replaceChildren(head[0], head[1], h('p', { class: 'cs-small' }, 'The county list did not load. ', S.page ? own(`${S.name} on The Way`, S.page) : null), head[2]); });
+    }
+    const sharedNote = h('p', { class: 'cs-shared-note', hidden: !sharedLetter, text: `A friend shared a letter with you. Pick your ${W.one} in step 1, and the letter will be ready for them in step 6. Read it over and change anything you like.` });
+    const issueStep = h('div', { class: 'cs-step' }, h('h3', null, num(2), 'Pick an issue, or say it in your own words'),
+      sharedNote,
+      h('div', { class: 'cs-find' }, field('Search issues and votes', findIn, true), findList), findNote,
+      h('div', { class: 'cs-filters', role: 'group', 'aria-label': 'Show issues' }, scopeBtns),
+      scopeBox,
+      field('Or pick from the list', issueSel, true), menuCount, panel);
 
     // Issue panel
     const factLi = (f) => h('li', null, f.text + ' ', h('span', { class: 'cs-cite' }, '(', srcLinks(f.cite), ')'));
@@ -222,6 +386,15 @@ function make(ctx) {
     // Tracked votes show newest first, like the senator pages.
     const byDate = (list) => list.slice().sort((x, y) => ((x.vote && tracked[x.vote] ? tracked[x.vote].i : 99) - (y.vote && tracked[y.vote] ? tracked[y.vote].i : 99)));
     function showIssue() {
+      if (issue.own && issue.kind === 'date') {
+        panel.replaceChildren(
+          h('h4', { class: 'cs-issue-title', text: `Coming up, ${issue.menu.replace(/^Coming up, /, '').split(':')[0]}` }),
+          h('p', null, issue.note, ' ', (issue.noteSrc || []).map(([t, u], n) => [n ? '; ' : '(', ext(t, u), n === issue.noteSrc.length - 1 ? ')' : ''])),
+          ...(issue.noteMore ? [h('p', { class: 'cs-small', text: issue.noteMore })] : []),
+          h('p', { class: 'cs-small', text: 'There are no sides to pick on a date. Say what you want them to do in your own words below.' }));
+        question.textContent = 'What do you want them to do?';
+        return;
+      }
       if (issue.own) {
         panel.replaceChildren(
           h('h4', { class: 'cs-issue-title', text: issue.angry ? 'Pissed off about something? Say it your way.' : 'Your own issue, in your own words' }),
@@ -233,17 +406,31 @@ function make(ctx) {
         return;
       }
       const either = byDate(issue.facts.either || []);
+      const tg = tagsOf(issue);
+      const pastNotes = (issue.past || []).filter((x) => x.at < FIT.today).map((x) => h('p', { class: 'cs-past', text: x.text }));
+      if (FIT.expired(issue)) pastNotes.unshift(h('p', { class: 'cs-past', text: `The last day for this vote was ${FIT.dateLabel(issue.until)}. It is no longer on the list, but you can still write about it.` }));
+      const f = issue.follow;
+      const later = f ? Object.values(FIT.votes).filter((v) => v.bill === f.bill && v.ch === f.ch && v.date > f.after).sort((a, b) => (a.date < b.date ? -1 : 1)) : [];
+      const cast = chosen && issue.record && issue.record.type === 'fit' ? L.castFor(issue, chosen) : null;
       panel.replaceChildren(...[
         h('h4', { class: 'cs-issue-title', text: issue.title }),
+        tg.length ? h('p', { class: 'cs-tags' }, tg.map((x) => h('span', { class: 'cs-tag cs-tag-' + x.k, text: x.text }))) : null,
         h('p', { class: 'cs-status-line' }, rich(issue.status)),
+        pastNotes,
+        cast ? h('p', { class: 'cs-record' }, `${titleOf(chosen)} ${chosen.last}: ${castWord(cast).toLowerCase()}. `, ext(`${issue.record.srcLabel} ↗`, issue.record.url)) : null,
+        later.length ? h('div', { class: 'cs-side cs-either' }, h('h4', { text: f.label }),
+          h('ul', null, later.map((v) => {
+            const cs = chosen ? FIT.castOf(v, chosen.id) : null;
+            return h('li', null, ext(`${FIT.dateLabel(v.date)}: ${v.q}, ${v.res.toLowerCase()} ${v.yes} to ${v.no}`, v.url), cs ? ` · ${titleOf(chosen)} ${chosen.last}: ${castWord(cs).toLowerCase()}` : '');
+          }))) : null,
         issue.summary.map((p) => h('p', null, rich(p))),
         issue.searched ? h('p', { class: 'cs-searched', text: issue.searched }) : null,
         aboutBox(issue.about),
-        h('div', { class: 'cs-sides' },
+        issue.facts.for.length || issue.facts.against.length ? h('div', { class: 'cs-sides' },
           factList(issue.labels.for, issue.facts.for),
-          factList(issue.labels.against, issue.facts.against)),
+          factList(issue.labels.against, issue.facts.against)) : null,
         either.length ? h('div', { class: 'cs-side cs-either' }, h('h4', { text: `${issue.eitherLabel || 'Either side'} (${either.length})` }),
-          h('p', { class: 'cs-small', text: 'Either side can use these. They are the votes as cast, from the official record, with how their party voted. Each line opens our page for that vote, which says what it was and links to the official roll call.' }),
+          h('p', { class: 'cs-small', text: issue.kind === 'issue' ? 'Either side can use these. They are the votes as cast, from the official record, with how their party voted. Each line opens our page for that vote, which says what it was and links to the official roll call.' : 'Either side can use these. They come from the official record.' }),
           h('ul', null, either.map(voteLi))) : null,
         h('details', { class: 'cs-sources' }, h('summary', { text: 'All sources for this issue' }),
           h('ul', null, issue.sources.map((x) => h('li', null, ext(`${x.src}, ${x.date}`, x.url)))))].flat().filter(Boolean));
@@ -287,7 +474,7 @@ function make(ctx) {
       recordBox = hasRecord ? box(`Mention how ${titleOf(chosen)} ${chosen.last} voted (from the official roll call, with the link)`, true) : null;
       picks.replaceChildren(...[
         h('p', { class: 'cs-small', text: 'Every checked fact goes into the letter with its source: the outlet, the date and the link, so the office can check it. Uncheck anything you do not want to use.' }),
-        group(`Facts for your side: ${issue.labels[st]}`, side),
+        side.length ? group(`Facts for your side: ${issue.labels[st]}`, side) : null,
         either.length ? group(issue.eitherLabel || 'Either side', either, 'Votes as cast. Use any that fit your view.') : null,
         group('Reasons (your opinion, no source needed)', viewBoxes),
         recordBox ? group('Their own record', [recordBox]) : null].filter(Boolean));
@@ -295,7 +482,10 @@ function make(ctx) {
     // More issues in the same letter or call. Each other issue gets Leave out / one side / the other side; a picked side shows
     // its facts to check, like step 4. A member who does not vote on it gets where the reader stands, with no ask.
     function showAlso() {
-      const others = ALL.filter((x) => x.id !== issue.id);
+      // Other issues that fit this member: listed issues (any chamber) and bills coming up in their chamber. Past votes and party
+      // votes of another caucus are left out.
+      const others = ALL.filter((x) => x.id !== issue.id && !x.own && !FIT.expired(x) && FIT.shows(x, chosen)
+        && (x.kind === 'issue' || (x.kind === 'bill' && !x.recent && x.chamber === (HOUSE ? 'house' : 'senate'))));
       const st0 = issue.own ? 'own' : stance();
       // Keep what the reader checked when this redraws (a new member or side).
       Object.keys(alsoItems).forEach((id) => { alsoFacts[id] = alsoItems[id].filter((b) => b.input.checked).map((b) => b.id); delete alsoItems[id]; });
@@ -360,13 +550,18 @@ function make(ctx) {
         h('h4', null, nameLink(s)),
         h('p', { class: 'cs-sub', text: `${partyWord(s.party)}, ${s.seat || D.states[s.st]}${s.since ? ' · ' + W.since + ' ' + s.since : ''}` }),
         h('p', { class: 'cs-links' }, h('a', { class: 'cs-btn', href: tel(s.phone), text: 'Call ' + s.phone }), ext(W.form, s.form, 'cs-btn')),
-        h('p', { class: 'cs-small', text: s.office + ', Washington, DC 20510' }),
+        h('p', { class: 'cs-small', text: s.office + (HOUSE ? ', Washington, DC 20515' : ', Washington, DC 20510') }),
+        FIT.committeesOf(s).length ? h('p', { class: 'cs-small cs-comms', text: 'Committees: ' + FIT.committeesOf(s).map((x) => FIT.shortCommittee(x.code) + (x.role ? ` (${x.role})` : '')).join('; ') }) : null,
         h('p', { class: 'cs-small' }, s.page ? own('Their page and votes', pageOf(s) + '#votes') : null, s.page && s.web ? ' · ' : '', s.web ? own('Money web', s.web) : null),
         cast ? h('p', { class: 'cs-record' }, `${castWord(cast)}${issue.record.short ? ' ' + issue.record.short : ''} on ${issue.record.date}: `,
-          issue.record.ours ? own('the vote on The Way', VOTES_PAGE + '#' + issue.record.ours) : null, issue.record.ours ? ' · ' : '', ext('Senate roll call ↗', issue.record.url)) : null,
-        issue.own || L.canVote(issue, s) ? null : h('p', { class: 'cs-note', text: HOUSE
-          ? `${titleOf(s)} ${s.last} is a Republican, and only House Democrats vote on this. You can still write or call about it in your own words, or about anything else.`
-          : `Senator ${s.last} is a Republican, and only Democratic senators and the two independents who work with them vote on this. You can still write or call about it in your own words, or about anything else.` }),
+          issue.record.ours ? own('the vote on The Way', VOTES_PAGE + '#' + issue.record.ours) : null, issue.record.ours ? ' · ' : '', ext(`${issue.record.srcLabel || 'Senate roll call'} ↗`, issue.record.url)) : null,
+        issue.own || (L.canVote(issue, s) && FIT.shows(issue, s)) ? null : h('p', { class: 'cs-note', text: issue.kind === 'vote'
+          ? `${titleOf(s)} ${s.last} was not in office for this vote. You can still write or call about it in your own words, or about anything else.`
+          : issue.voters === 'dem' ? (HOUSE
+            ? `${titleOf(s)} ${s.last} is not a House Democrat, and this is about who leads House Democrats, so it is not on ${s.last}'s list. You can still write or call in your own words, or about anything else.`
+            : `Senator ${s.last} is not in the Senate Democratic caucus, and only Democratic senators and the two independents who work with them vote on this. You can still write or call about it in your own words, or about anything else.`)
+          : issue.voters === 'rep' ? `${titleOf(s)} ${s.last} is not a Republican, and only Republicans vote on this. You can still write or call in your own words, or about anything else.`
+          : `${titleOf(s)} ${s.last} does not vote on this. You can still write or call in your own words, or about anything else.` }),
         h('p', { class: 'cs-card-go' },
           h('button', { type: 'button', class: 'cs-btn cs-main', text: (on && mode === 'letter' ? 'Writing to ' : 'Write to ') + s.last, onclick: () => { setMode('letter'); choose(s, true); } }),
           h('button', { type: 'button', class: 'cs-btn', text: 'Call script for ' + s.last, onclick: () => { setMode('call'); choose(s, true); } })));
@@ -380,7 +575,8 @@ function make(ctx) {
     function showCards() { cards.replaceChildren(...currentList().map(card)); }
     function choose(s, scroll) {
       chosen = s || null;
-      if (chosen) markIssues();
+      markIssues();
+      if (scopeF === 'state' || scopeF === 'local') showScope();
       if (chosen && !votable(issue)) {
         const was = issue;
         setIssue('own', true);
@@ -392,6 +588,8 @@ function make(ctx) {
       if (!chosen) hideOut();
       showPicks();
       showAlso();
+      if (chosen && sharedLetter) { showIssue(); useShared(); return; }
+      if (chosen) showIssue();
       if (chosen && scroll) issueStep.scrollIntoView({ behavior: 'smooth', block: 'start' });
       if (chosen && shown()) write();
     }
@@ -402,9 +600,10 @@ function make(ctx) {
     }
     function setIssue(id, quiet) {
       issue = byIssue[id] || ISSUES[0];
-      issueSel.value = issue.id;
+      fillMenu();
       aiNote.textContent = '';
       if (issue.own) loadWords();
+      if (issue.kind === 'date' && !ownTopic.value) ownTopic.value = issue.topicText || '';
       rFor.checked = false; rAgainst.checked = false;
       hideOut();
       showPicks();
@@ -415,6 +614,68 @@ function make(ctx) {
       if (chosen) step2.hidden = false;
       try { history.replaceState(null, '', location.pathname + (issue.id === 'own' ? '' : '?issue=' + encodeURIComponent(issue.id))); } catch { /* ignore */ }
     }
+    function setSide(st) {
+      if (issue.own || (st !== 'for' && st !== 'against')) return;
+      (st === 'for' ? rFor : rAgainst).checked = true;
+      showPicks(); showAlso();
+    }
+    // A friend's letter from the link, written for the member the reader picks.
+    function fillTokens(text) {
+      const T = titleOf(chosen);
+      return String(text || '').replace(/\{FULL\}/g, `${T} ${chosen.name}`).replace(/\{NAME\}/g, chosen.name).replace(/\{S\}/g, `${T} ${chosen.last}`)
+        .replace(/\{STATE\}/g, chosen.stateName || D.states[chosen.st] || '');
+    }
+    function useShared() {
+      setMode('letter');
+      subject.value = fillTokens(sharedLetter.j || '');
+      letter.value = fillTokens(sharedLetter.t);
+      voiceLine.textContent = `A letter a friend shared, now addressed to ${titleOf(chosen)} ${chosen.name}. Read it over and make it yours.`;
+      changes.hidden = true;
+      openForm.href = chosen.form; callBtn.href = tel(chosen.phone); callBtn.textContent = 'Call ' + chosen.phone;
+      tip.textContent = HOUSE ? 'Most House offices take messages only through the contact page on their website, and only from people who live in their district. Fill in anything in [brackets] and change anything that does not sound like you.'
+        : `Senator ${chosen.last}'s form may only accept messages from people who live in ${D.states[chosen.st]}. Fill in anything in [brackets] and change anything that does not sound like you.`;
+      status.textContent = '';
+      callOut.hidden = true; out.hidden = false;
+      out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    // Share links (Frank Nov 27 2026): the same letter, or just the topic so a friend writes their own.
+    function letterToken(text) {
+      if (!chosen) return text;
+      const T = titleOf(chosen), st = chosen.stateName || D.states[chosen.st] || '';
+      let t = String(text || '');
+      const swap = (a, b) => { if (a && a.length > 2) t = t.split(a).join(b); };
+      swap(`${T} ${chosen.name}`, '{FULL}'); swap(`The Honorable ${chosen.name}`, 'The Honorable {NAME}'); swap(chosen.name, '{NAME}'); swap(`${T} ${chosen.last}`, '{S}');
+      const nm = nameIn.value.trim(), tw = townIn.value.trim();
+      if (nm.length > 1) t = t.split(nm).join('[Your name]');
+      if (tw.length > 1) t = t.split(tw).join('[your town]');
+      // Their state goes with the friend's member, except inside a fact's source.
+      if (st) t = t.split('\n').map((line) => (/\(Source:/.test(line) ? line : line.split(st).join('{STATE}'))).join('\n');
+      return t;
+    }
+    function shareUrl(withLetter) {
+      const st = stance();
+      let u = location.origin + location.pathname + (issue.id === 'own' ? '' : '?issue=' + encodeURIComponent(issue.id) + (st ? '&side=' + st : ''));
+      if (withLetter) u += '#letter=' + b64(JSON.stringify({ i: issue.id, s: st, t: letterToken(letter.value), j: letterToken(subject.value) }));
+      return u;
+    }
+    function share(withLetter) {
+      const url = shareUrl(withLetter);
+      const done = withLetter ? 'Link copied. Paste it in a text or email. Your friend gets this letter, ready for their own member.'
+        : 'Link copied. Your friend gets the same topic and writes their own letter.';
+      if (navigator.share && /Mobi|Android|iPhone|iPad/.test(navigator.userAgent)) {
+        navigator.share({ title: 'Contact your ' + W.one, url }).then(() => { shareStatus.textContent = 'Shared.'; }, () => copy(url, done, shareStatus));
+      } else copy(url, done, shareStatus);
+    }
+    const shareStatus = h('p', { class: 'cs-status', role: 'status' });
+    const shareBox = h('div', { class: 'cs-share' },
+      h('h4', { text: 'Share with a friend' }),
+      h('p', { class: 'cs-actions' },
+        h('button', { type: 'button', class: 'cs-btn', text: 'Share my letter', onclick: () => share(true) }),
+        h('button', { type: 'button', class: 'cs-btn', text: 'Share the topic', onclick: () => share(false) })),
+      h('p', { class: 'cs-small', text: 'Share my letter: your friend gets this same letter, ready to send to their own member. Your name and town are taken out, and the letter rides in the link itself, so take out anything private first.' }),
+      h('p', { class: 'cs-small', text: 'Share the topic: your friend gets the same issue and side, and writes their own letter.' }),
+      shareStatus);
+    status.after(shareBox);
     issueSel.addEventListener('change', () => setIssue(issueSel.value));
     stateSel.addEventListener('change', () => { senSel.value = ''; chosen = null; hideOut(); autoChoose(); });
     senSel.addEventListener('change', () => {
@@ -595,8 +856,10 @@ function make(ctx) {
         : `Washington office phone and official contact page, checked on senate.gov on ${D.checked}. No senator lists a public email address. Each name opens that senator's page on The Way, with the Senate votes we track.` }),
       table));
 
-    if (startId && byIssue[startId]) issueSel.value = startId;
-    setIssue(issueSel.value);
+    issue = byIssue[startId] || ISSUES[0];
+    setIssue(issue.id);
+    if (start.side) setSide(start.side);
+    else if (sharedLetter && sharedLetter.s) setSide(sharedLetter.s);
     if (AI_ON) privacy.textContent = "What you type stays in your browser. This page does not save it or send it anywhere, unless you press Rewrite it with The Way's AI: then your notes go to The Way's own AI computer to be rewritten, and are not saved there.";
   }
 

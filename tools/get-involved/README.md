@@ -21,7 +21,13 @@ No keys, tokens or passwords anywhere.
 1. Update `upcoming.json` and `meetings.json` from the official schedules.
 2. On a home computer (the cloud cannot reach lda.gov): `python fetch_lda.py`. It reads the official lobbying API with no key,
    one request every 4.5 seconds (lda.gov allows 15 a minute without a key), and stops at the first refusal.
-3. `python build_get_involved.py`, then send the change through the push queue.
+3. `python build_get_involved.py`.
+4. Contact your Senator and Representative pages: on a home computer (the cloud cannot reach clerk.house.gov or senate.gov),
+   `python tools/contact-senator/fetch_votes.py` refreshes the Previous votes in `tools/contact-senator/recent_votes/`
+   (one request every 2 seconds, no key). Then `python tools/contact-senator/build_fit.py committees-current.yaml committee-membership-current.yaml`
+   (the two committee files from github.com/unitedstates/congress-legislators; needs PyYAML) rebuilds `site/get-involved/contact-your-senator/fit.js`.
+   Run build_fit.py again whenever `upcoming.json` or `tools/contact-senator/topics.json` changes, so the bills coming up stay current.
+5. Send the change through the push queue.
 
 ## Groups on all sides
 
